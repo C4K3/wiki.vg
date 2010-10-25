@@ -1,0 +1,1645 @@
+== Minecraft Protocol ==
+
+This page presents a dissection of the new [http://minecraft.net/game/ Minecraft Alpha] protocol by aera ([http://aeracode.org Andrew Godwin]), ylt (Joe Carter) and TkTech (Tyler Kennedy). Additionally, credit goes to the citizens of [irc://irc.esper.net/#mcc <nowiki>#mcc</nowiki>] who helped by providing packet dumps and insight. If you're having trouble, check out the [[Protocol_FAQ|FAQ]].
+
+'''Note:''' While you may use the contents of this page without restriction to create servers, clients, bots, etc… you still need to provide the attribution above if you copy any of the contents of this page for publication elsewhere.
+
+== Data Types ==
+
+All types in Java (and as such Minecraft) are [http://en.wikipedia.org/wiki/Endianness#Big-endian big-endian], that is, the most significant byte comes first. The majority of everyday computers are little endian, and using most programming languages will require converting big endian values to little endian.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" |
+! class="col1" | Size
+! class="col2" | Range
+! class="col3" | Notes
+|- class="row1"
+! class="col0 centeralign" | byte
+| class="col1 centeralign" | 1
+| class="col2" | -128 to 127
+| class="col3" | Signed, two's complement
+|- class="row2"
+! class="col0 centeralign" | short
+| class="col1 centeralign" | 2
+| class="col2" | -32768 to 32767
+| class="col3" | Signed, two's complement
+|- class="row3"
+! class="col0 centeralign" | int
+| class="col1 centeralign" | 4
+| class="col2" | -2147483648 to 2147483647
+| class="col3" | Signed, two's complement
+|- class="row4"
+! class="col0 centeralign" | long
+| class="col1 centeralign" | 8
+| class="col2" | -9223372036854775808 to 9223372036854775807
+| class="col3" | Signed, two's complement
+|- class="row5"
+! class="col0 centeralign" | float
+| class="col1 centeralign" | 4
+| class="col2" |
+See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
+| class="col3" | Single-precision 32-bit IEEE 754 floating point
+|- class="row6"
+! class="col0 centeralign" | double
+| class="col1 centeralign" | 8
+| class="col2" |
+See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
+| class="col3" | Double-precision 64-bit IEEE 754 floating point
+|- class="row7"
+! class="col0 centeralign" | string
+| class="col1 centeralign" | …
+| class="col2" | N/A
+| class="col3" | UTF-8 string. Prefixed by a short containing the length of the string
+|- class="row8"
+! class="col0 centeralign" | bool
+| class="col1 centeralign" | 1
+| class="col2" | 0 or 1
+| class="col3" | Value can be either True (0x01) or False (0x00)
+|}
+
+== Terminology ==
+
+This is a fairly lengthy page, and to make it more readable certain terminology must be understood. Terms used on this page and their definition are provided below.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" |
+! class="col1" | Definition
+|- class="row1"
+! class="col0 centeralign" | Player
+| class="col1" | When used in in the singular, Player always refers to the client connected to the server
+|- class="row2"
+! class="col0 centeralign" | Entity
+| class="col1" | Entity refers to any item, player or mob in the world. This definition is subject to change as Notch extends the protocol
+|- class="row3"
+! class="col0 centeralign" | EID
+| class="col1" | An EID - or Entity ID - is a unique 4-byte integer used to identify a specific entity
+|- class="row4"
+! class="col0 centeralign" | XYZ
+| class="col1" | In this document, the axis names are the same as those used by Notch. Y is always the upwards coordinate, while X and Z are parallel to the ground
+|- class="row5"
+! class="col0 centeralign" | MOTD
+| class="col1" | Message Of The Day
+|}
+
+== Units of Measurement ==
+
+There are several different units of measurement used in the protocol depending on what is being described. For example, it wouldn't make much sense to send the position of a block (which is a constant multiple of 32) in a floating point double.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" |
+! class="col1 centeralign" | Type
+! class="col2" | Represents
+|- class="row1"
+! class="col0" | Absolute
+| class="col1 centeralign" | double
+| class="col2" | Represents an objects '''exact''' location in the world, specified in pixels (each block is 32 pixels).
+|- class="row2"
+! class="col0" | Absolute Integer
+| class="col1 centeralign" | int
+| class="col2" | Represents an objects '''approximate''' location in the world, specified in pixels. <br /> This is the Absolute position cast to an integer, thus losing precision.
+|- class="row3"
+! class="col0" | Block
+| class="col1 centeralign" | int '''or''' byte
+| class="col2" | Represents a blocks '''exact''' location in the world, as Absolute divided by 32.
+|- class="row4"
+! class="col0" | Chunk
+| class="col1 centeralign" | int '''or''' short
+| class="col2" | Represents the '''exact''' position of a chunk, as Block * 16.
+|}
+
+== Client to Server Packets ==
+
+=== Keep Alive (0x00) ===
+
+This packet may be sent by the client to keep the connection alive, or may be a relic of UDP testing. No one is really sure. What we do know is that the server will disconnect a client if it doesn't receive at least one packet before it increments a variable 1200 times.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+|- class="row1"
+| class="col0 centeralign" | 0x00
+|}
+
+=== Login Request (0x01) ===
+
+Sent by the client after the handshake to finish logging in. If the version is outdated or any field is invalid, the server will disconnect the client with a [[Protocol#kick_0xff|kick]]. If the client is started in offline mode, the player's username will default to <code>Player</code>, making LAN play with more than one player impossible (without authenticating) as the server will prevent multiple users with the same name.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x01
+| class="col1 centeralign" | Protocol Version
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>2</code>
+| class="col4" | The latest version of the protocol is 2
+|- class="row2"
+| class="col0 centeralign" | Username
+| class="col1 centeralign" | string
+| class="col2 centeralign" | <code>TkTech</code>
+| class="col3" | The name of the user attempting to login
+|- class="row3"
+| class="col0 centeralign" | Password
+| class="col1 centeralign" | string
+| class="col2 centeralign" | <code>Password</code>
+| class="col3" | Used to login to password-protected servers
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes + length of strings
+|}
+
+=== Handshake (0x02) ===
+
+This is the first packet sent when the client connects and is used for [[Authentication]].
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x02
+| class="col1 centeralign" | Username
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>TkTech</code>
+| class="col4" | The username of the player attempting to connect
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
+|}
+
+=== Chat Message (0x03) ===
+
+The server will check the message to see if it begins with a '/'. If it doesn't, the username of the sender is prepended and sent to all other clients (including the original sender). If it does, the server assumes it to be a command and attempts to process it.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x03
+| class="col1 centeralign" | Message
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>Hello World!</code>
+| class="col4" | User input '''must''' be sanitized server-side
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
+|}
+
+=== Player Inventory (0x05) ===
+
+Sent by the client whenever the inventory is modified (item destruction, pickup, crafting, etc…). For details, see [[Protocol#player_inventory_0x051|here]].
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x05
+| class="col1 centeralign" | Type
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>-1</code>
+| class="col4" |
+The “type” of inventory being sent (see [[Protocol#player_inventory_0x051|here]])
+|- class="row2"
+| class="col0 centeralign" | Count
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>4</code>
+| class="col3" |
+The number of inventory items (see [[Protocol#player_inventory_0x051|here]])
+|- class="row3"
+| class="col0 centeralign" | Payload
+| class="col1 centeralign" | …
+| class="col2 centeralign" | <code></code>
+| class="col3" |
+The payload (see [[Protocol#player_inventory_0x051|here]])
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 7 bytes + size of payload
+|}
+
+=== Player (0x0A) ===
+
+This packet is used to identify the state of the client, with the idea being to send one each game-tick to detect speed hackers. Notch will be optimizing/removing this in the future. This packet was previously referred to as Flying
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x0A
+| class="col1 centeralign" | On Ground
+| class="col2 centeralign" | bool
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | <code>True</code> if the client is on the ground, <code>False</code> otherwise
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
+=== Player Position (0x0B) ===
+
+Updates the players XYZ position on the server. If <code>Stance - Y</code> is less than <code>0.1</code> or greater than <code>1.65</code>, the stance is illegal and the client will be kicked with the message “Illegal Stance”.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x0B
+| class="col1 centeralign" | X
+| class="col2 centeralign" | double
+| class="col3 rightalign" | <code>102.809</code>
+| class="col4" | Absolute position
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>70.00</code>
+| class="col3" | Absolute position
+|- class="row3"
+| class="col0 centeralign" | Stance
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>71.62</code>
+| class="col3" | Used to modify the players bounding box when going up stairs, crouching, etc…
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>68.30</code>
+| class="col3" | Absolute position
+|- class="row5"
+| class="col0 centeralign" | On Ground
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | <code>1</code>
+| class="col3" |
+Derived from packet [[Protocol#player_0x0a|0x0A]]
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 34 bytes
+|}
+
+=== Player Look (0x0C) ===
+
+Updates the direction the player is looking in.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x0C
+| class="col1 centeralign" | Yaw
+| class="col2 centeralign" | float
+| class="col3 centeralign" | <code>0.00</code>
+| class="col4" | Absolute rotation on the X Axis
+|- class="row2"
+| class="col0 centeralign" | Pitch
+| class="col1 centeralign" | float
+| class="col2 centeralign" | <code>0.00</code>
+| class="col3" | Absolute rotation on the Y Axis
+|- class="row3"
+| class="col0 centeralign" | On Ground
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | <code>1</code>
+| class="col3" |
+Derived from packet [[Protocol#player_0x0a|0x0A]]
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 10 bytes
+|}
+
+=== Player Position &amp; Look (0x0D) ===
+
+A combination of [[Protocol#player_look_0x0c|Player Look]] and [[Protocol#player_position_0x0b|Player position]].
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x0D
+| class="col1 centeralign" | X
+| class="col2 centeralign" | double
+| class="col3 centeralign" | <code>6.5</code>
+| class="col4" | Absolute position
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>67.240000009536743</code>
+| class="col3" | Absolute position
+|- class="row3"
+| class="col0 centeralign" | Stance
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>65.620000004768372</code>
+| class="col3" | Used to modify the players bounding box when going up stairs, crouching, etc…
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>7.5</code>
+| class="col3" | Absolute position
+|- class="row5"
+| class="col0 centeralign" | Yaw
+| class="col1 centeralign" | float
+| class="col2 centeralign" | <code>0.0</code>
+| class="col3" | Absolute rotation on the X Axis
+|- class="row6"
+| class="col0 centeralign" | Pitch
+| class="col1 centeralign" | float
+| class="col2 centeralign" | <code>0.0</code>
+| class="col3" | Absolute rotation on the Y Axis
+|- class="row7"
+| class="col0 centeralign" | On Ground
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+Derived from packet [[#player_0x0a|0x0A]]
+|- class="row8"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 42 bytes
+|}
+
+[[File:Icon_exclaim.gif|:!:]] When the server sends this packet to the client, the Stance and Y are swapped, see server Player Position &amp; Look packet.
+
+=== Player Digging (0x0E) ===
+
+Sent repeatedly as the player mines a block.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x0E
+| class="col1 centeralign" | Status
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | The action the player is taking against the block (see below)
+|- class="row2"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>32</code>
+| class="col3" | Block position
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>64</code>
+| class="col3" | Block position
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>32</code>
+| class="col3 leftalign" | Block position
+|- class="row5"
+| class="col0 centeralign" | Face
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>3</code>
+| class="col3" | The face being hit (see below)
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 12 bytes
+|}
+
+Status can (currently) be one of four values:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Meaning
+! class="col1" | Value
+|- class="row1"
+| class="col0 leftalign" | Started digging
+| class="col1 centeralign" | <code>0</code>
+|- class="row2"
+| class="col0 leftalign" | Digging
+| class="col1 centeralign" | <code>1</code>
+|- class="row3"
+| class="col0 leftalign" | Stopped digging
+| class="col1 centeralign" | <code>2</code>
+|- class="row4"
+| class="col0 leftalign" | Block broken
+| class="col1 centeralign" | <code>3</code>
+|}
+
+The face can be one of six values, representing the face being hit:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0 leftalign" | Value
+| class="col1 centeralign" | 0
+| class="col2 centeralign" | 1
+| class="col3 centeralign" | 2
+| class="col4 centeralign" | 3
+| class="col5 centeralign" | 4
+| class="col6 centeralign" | 5
+|- class="row1"
+! class="col0 leftalign" | Offset
+| class="col1" | -Y
+| class="col2" | +Y
+| class="col3" | -Z
+| class="col4" | +Z
+| class="col5" | -X
+| class="col6" | +X
+|}
+
+=== Player Block Placement (0x0F) ===
+
+Sent when the player places a block or (probably) an item. The coordinates sent in this packet are actually the block being built against, which combined with the direction offset tell you where the block should be placed. This is required to correctly position furnaces, torches, etc…
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x0D
+| class="col1 centeralign" | Block '''or''' Item ID
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | The block or item to be placed
+|- class="row2"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>32</code>
+| class="col3" | Block position
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>64</code>
+| class="col3" | Block position
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>32</code>
+| class="col3 leftalign" | Block position
+|- class="row5"
+| class="col0 centeralign" | Direction
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>3</code>
+| class="col3" | The offset to use for block/item placement (see below)
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 13 bytes
+|}
+
+The direction can be one of six values, representing the face the block/item is being placed against:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0 leftalign" | Value
+| class="col1 centeralign" | 0
+| class="col2 centeralign" | 1
+| class="col3 centeralign" | 2
+| class="col4 centeralign" | 3
+| class="col5 centeralign" | 4
+| class="col6 centeralign" | 5
+|- class="row1"
+! class="col0 leftalign" | Offset
+| class="col1" | -Y
+| class="col2" | +Y
+| class="col3" | -Z
+| class="col4" | +Z
+| class="col5" | -X
+| class="col6" | +X
+|}
+
+=== Holding Change (0x10) ===
+
+Sent when the player changes the item or block currently being held.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x10
+| class="col1 centeralign" | Unused
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>6341424</code>
+| class="col4" | Unused when sent from a client, can be any random value
+|- class="row2"
+| class="col0 centeralign" | Block '''or''' Item ID
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | The block/item to be equipped
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 6 bytes
+|}
+
+=== Disconnect (0xFF) ===
+
+Sent by the client when it's doing a clean disconnect.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0xFF
+| class="col1 centeralign" | Reason
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>Quitting</code>
+| class="col4" | The server doesn't appear to do anything with this (yet)
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
+|}
+
+== Server To Client Packets ==
+
+=== Login Response (0x01) ===
+
+Sent by the server if it accepts the clients [[Protocol#login_request_0x01|login request]]. If it didn't, it'll send a [[Protocol#kick_0xff|kick]] instead.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x01
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>0</code>
+| class="col4" | Not yet used
+|- class="row2"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | string
+| class="col2 centeralign" | n/a
+| class="col3" | Not yet used (Possibly the server name?)
+|- class="row3"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | string
+| class="col2 centeralign" | n/a
+| class="col3" | Not yet used (Possibly the MOTD? )
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes + length of strings
+|}
+
+=== Handshake (0x02) ===
+
+This is the first packet sent when the client connects and is used for [[Authentication]]. If the hash is '-', then the client continues without doing name authentication. If the hash is a '+', the client sends the server password in the [[Protocol#login_request_0x01|login request]].
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x02
+| class="col1 centeralign" | Connection Hash
+| class="col2 centeralign" | string
+| class="col3 rightalign" | <code>2e66f1dc032ab5f0</code>
+| class="col4" | A unique, per-connection hash '''or''' '-' '''or''' '+'
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
+|}
+
+=== Chat Message (0x03) ===
+
+A formatted chat message from the server. Note that it is unreliable to parse chat when it's sent from the server → client as each server can/will format it differently (some use &lt;,&gt; others use [,], etc…)
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x03
+| class="col1 centeralign" | Message
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>&lt;Bob&gt; Hello World!</code>
+| class="col4" | User input '''must''' be sanitized server-side
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
+|}
+
+=== Time Update (0x04) ===
+
+The default SMP server increments the time by <code>20</code> every second.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x04
+| class="col1 centeralign" | Time
+| class="col2 centeralign" | long
+| class="col3 centeralign" | <code></code>
+| class="col4 centeralign" | The world (or region) time in minutes
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes
+|}
+
+=== Player Inventory (0x05) ===
+
+[[File:Slots2.png]]] Sent by the server to set or reset a players inventory. This includes the main inventory, equipped armour and crafting slots. Packets for all three types are sent to initialize the players inventory before spawning them.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x05
+| class="col1 centeralign" | Type
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>-1</code>
+| class="col4" | The “type” of inventory being sent (see below)
+|- class="row2"
+| class="col0 centeralign" | Count
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>4</code>
+| class="col3" | The number of inventory items (see below)
+|- class="row3"
+| class="col0 centeralign" | Payload
+| class="col1 centeralign" | …
+| class="col2 centeralign" | <code></code>
+| class="col3" | The payload (see below)
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 7 bytes + size of payload
+|}
+
+Type can (currently) be one of three values:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Inventory Type
+! class="col1" | Value
+! class="col2" | Count
+|- class="row1"
+| class="col0 centeralign" | Main inventory
+| class="col1 centeralign" | -1
+| class="col2 centeralign" | 36
+|- class="row2"
+| class="col0 centeralign" | Equipped armour
+| class="col1 centeralign" | -2
+| class="col2 centeralign" | 4
+|- class="row3"
+| class="col0 centeralign" | Crafting slots
+| class="col1 centeralign" | -3
+| class="col2 centeralign" | 4
+|}
+
+This packet is a bit more tricky to parse than most others because the size of its payload is variable. The payload is an array of shorts (item ID) optionally followed by a byte-short pair (count and health) as long as the item ID does not equal <code>-1</code>, which signifies an empty slot.
+
+<syntaxhighlight lang="python">
+ offset = 0
+ 
+ for slot in count:
+     if payload[offset] as short is not equal to -1:
+         item_id = payload[offset] as short
+         offset += 2
+         count = payload[offset] as byte
+         offset += 1
+         health = payload[offset] as short
+         offset += 2
+         inventory[slot] = new item(item_id, count, health)
+     else:
+         offset += 2
+</syntaxhighlight>
+
+=== Spawn Position (0x06) ===
+
+Sent by the server after login to specify the players starting location and to initialize compasses. It can be sent at any time afterwords to update the point compasses are focused on.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x06
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>117</code>
+| class="col4 centeralign" | Spawn X in block coordinates
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>70</code>
+| class="col3 centeralign" | Spawn Y in block coordinates
+|- class="row3"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>-46</code>
+| class="col3 centeralign" | Spawn Z in block coordinates
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 13 bytes
+|}
+
+=== Player Position &amp; Look (0x0D) ===
+
+A combination of [[Protocol#player_look_0x0c|Player Look]] and [[Protocol#player_position_0x0b|Player position]].
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x0D
+| class="col1 centeralign" | X
+| class="col2 centeralign" | double
+| class="col3 centeralign" | <code>6.5</code>
+| class="col4" | Absolute position
+|- class="row2"
+| class="col0 centeralign" | Stance
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>67.240000009536743</code>
+| class="col3" | Used to modify the players bounding box when going up stairs, crouching, etc…
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>65.620000004768372</code>
+| class="col3" | Absolute position
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>7.5</code>
+| class="col3" | Absolute position
+|- class="row5"
+| class="col0 centeralign" | Yaw
+| class="col1 centeralign" | float
+| class="col2 centeralign" | <code>0.0</code>
+| class="col3" | Absolute rotation on the X Axis
+|- class="row6"
+| class="col0 centeralign" | Pitch
+| class="col1 centeralign" | float
+| class="col2 centeralign" | <code>0.0</code>
+| class="col3" | Absolute rotation on the Y Axis
+|- class="row7"
+| class="col0 centeralign" | On Ground
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+Derived from packet [[#player_0x0a|0x0A]]
+|- class="row8"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 42 bytes
+|}
+
+[[File:Icon_exclaim.gif|:!:]] This packet differs from client Player Position &amp; Look packet, the Stance and Y are sent in a different order, however because of the different order this is sent the client will actually use the X,Y,Stance,Z client layout.
+
+=== Add To Inventory (0x11) ===
+
+Sent by the server when a player has become close enough to collect an item on the ground.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x11
+| class="col1 centeralign" | Item Type
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>5</code>
+| class="col4 leftalign" |
+|- class="row2"
+| class="col0 centeralign" | Count
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>10</code>
+| class="col3 leftalign" |
+|- class="row3"
+| class="col0 centeralign" | Life
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3 leftalign" |
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 6 bytes
+|}
+
+“Life” can range from 0x01 (full health) to 0x32 (no health), 0x00 omits the health bar altogether, and is what should be used for blocks.
+
+=== Arm Animation (0x12) ===
+
+Sent whenever someone swings their arm.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x12
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>55534</code>
+| class="col4" | Player ID
+|- class="row2"
+| class="col0 centeralign" | Animate
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | If <code>true</code>, animate the arm
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 5 bytes
+|}
+
+=== Named Entity Spawn (0x14) ===
+
+The only named entities (at the moment) are players (either real or NPC/Bot). This packet is sent by the server when a player comes into visible range, '''not''' when a player joins.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0 centeralign" | Packet ID
+! class="col1 rightalign" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="8" | 0x14
+| class="col1" | EID
+| class="col2" | int
+| class="col3" | <code>94453</code>
+| class="col4" | Player ID
+|- class="row2"
+| class="col0" | Player Name
+| class="col1" | string
+| class="col2" | <code>Twdtwd</code>
+| class="col3" |
+|- class="row3"
+| class="col0" | X
+| class="col1" | int
+| class="col2" | <code>784</code>
+| class="col3" | Player X as Absolute Integer
+|- class="row4"
+| class="col0" | Y
+| class="col1" | int
+| class="col2" | <code>2131</code>
+| class="col3" | Player Y as Absolute Integer
+|- class="row5"
+| class="col0" | Z
+| class="col1" | int
+| class="col2" | <code>-752</code>
+| class="col3" | Player Z as Absolute Integer
+|- class="row6"
+| class="col0" | Rotation
+| class="col1" | byte
+| class="col2" | <code>0</code>
+| class="col3" | Player rotation as a packed byte
+|- class="row7"
+| class="col0" | Pitch
+| class="col1" | byte
+| class="col2" | <code>0</code>
+| class="col3" | Player rotation as a packed byte
+|- class="row8"
+| class="col0" | Current Item
+| class="col1" | short
+| class="col2" | <code>0</code>
+| class="col3" | The item the player is currently holding
+|- class="row9"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 23 bytes + length of strings
+|}
+
+=== Pickup Spawn (0x15) ===
+
+A pickup spawn is sent whenever an item on the ground (say a pickaxe thrown on the ground) comes into range of the player.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0 centeralign" | Packet ID
+! class="col1 rightalign" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="9" | 0x15
+| class="col1" | EID
+| class="col2" | int
+| class="col3" | <code>157617</code>
+| class="col4" | Unique entity ID
+|- class="row2"
+| class="col0" | Item
+| class="col1" | short
+| class="col2" | <code>4</code>
+| class="col3" | The item ID
+|- class="row3"
+| class="col0" | Count
+| class="col1" | byte
+| class="col2" | <code>1</code>
+| class="col3" | The number of items
+|- class="row4"
+| class="col0" | X
+| class="col1" | int
+| class="col2" | <code>133</code>
+| class="col3" | Item X as Absolute Integer
+|- class="row5"
+| class="col0" | Y
+| class="col1" | int
+| class="col2" | <code>913</code>
+| class="col3" | Item Y as Absolute Integer
+|- class="row6"
+| class="col0" | Z
+| class="col1" | int
+| class="col2" | <code>63552</code>
+| class="col3" | Item Z as Absolute Integer
+|- class="row7"
+| class="col0" | Rotation
+| class="col1" | byte
+| class="col2" | <code>252</code>
+| class="col3" | Item rotation as a packed byte
+|- class="row8"
+| class="col0" | Pitch
+| class="col1" | byte
+| class="col2" | <code>25</code>
+| class="col3" | Item pitch as a packed byte
+|- class="row9"
+| class="col0" | Roll
+| class="col1" | byte
+| class="col2" | <code>12</code>
+| class="col3" | Item roll as a packed byte
+|- class="row10"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 23 bytes
+|}
+
+=== Collect Item (0x16) ===
+
+Sent by the server when someone picks up an item lying on the ground - its sole purpose appears to be the animation of the item flying towards you. It doesn't destroy the entity in the client memory ([[Protocol#destroy_entity_0x1d|0x1D]] does that), and it doesn't add it to your inventory ([[Protocol#add_to_inventory_0x11|0x11]] does that).
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x16
+| class="col1 centeralign" | Collected EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>38</code>
+| class="col4 leftalign" |
+|- class="row2"
+| class="col0 centeralign" | Collector EID
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>20</code>
+| class="col3 leftalign" |
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes
+|}
+
+=== Add Object/Vehicle (0x17) ===
+
+Sent by the server when an Object/Vehicle is created.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x17
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>62</code>
+| class="col4" | Entity ID of the Object
+|- class="row2"
+| class="col0 centeralign" | Type
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>11</code>
+| class="col3" | The type of object (see below)
+|- class="row3"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>16080</code>
+| class="col3" | The Absolute Integer X Position of the object
+|- class="row4"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>2299</code>
+| class="col3" | The Absolute Integer Y Position of the object
+|- class="row5"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>592</code>
+| class="col3" | The Absolute Integer Z Position of the object
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 bytes
+|}
+
+Object Types
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Type ID
+! class="col1" | Type Name
+|- class="row1"
+| class="col0" | 1
+| class="col1" | Boats
+|- class="row2"
+| class="col0" | 10
+| class="col1" | Minecart
+|- class="row3"
+| class="col0" | 11
+| class="col1" | Storage Cart
+|- class="row4"
+| class="col0" | 12
+| class="col1" | Powered Cart
+|}
+
+=== Mob Spawn (0x18) ===
+
+Sent by the server when a Mob Entity is Spawned
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x18
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>446</code>
+| class="col4" | Entity ID
+|- class="row2"
+| class="col0 centeralign" | Type
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>91</code>
+| class="col3" | The type of Mob Entity Type
+|- class="row3"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>13366</code>
+| class="col3" | The Absolute Integer X Position of the object
+|- class="row4"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>2176</code>
+| class="col3" | The Absolute Integer Y Position of the object
+|- class="row5"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>1680</code>
+| class="col3" | The Absolute Integer Z Position of the object
+|- class="row6"
+| class="col0 centeralign" | Yaw
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>-27</code>
+| class="col3" | The X Axis rotation as a fraction of 360
+|- class="row7"
+| class="col0 centeralign" | Pitch
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The Y Axis rotation as a fraction of 360
+|- class="row8"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 20 bytes
+|}
+
+=== Destroy Entity (0x1D) ===
+
+Sent by the server when an Entity is to be destroyed on the client.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x1D
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>446</code>
+| class="col4 centeralign" | Entity ID
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 5 bytes
+|}
+
+=== Entity (0x1E) ===
+
+Most entity-related packets are subclasses of this packet. When sent from the server to the client, it may initialize the entry.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x1E
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>446</code>
+| class="col4 centeralign" | Entity ID
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 5 bytes
+|}
+
+=== Entity Relative Move (0x1F) ===
+
+This packet is sent by the server when an entity moves less then 4 blocks, if an entity moves more then 4 blocks [[Protocol#entity_teleport_0x22|Entity Teleport]] should be sent instead.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x1F
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>459</code>
+| class="col4" | Entity ID
+|- class="row2"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | X axis Relative movement as an Absolute Integer
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>-7</code>
+| class="col3" | Y axis Relative movement as an Absolute Integer
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>5</code>
+| class="col3" | Z axis Relative movement as an Absolute Integer
+|- class="row5"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 8 bytes
+|}
+
+=== Entity Look (0x20) ===
+
+This packet is sent by the server when an entity rotates.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x20
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>459</code>
+| class="col4" | Entity ID
+|- class="row2"
+| class="col0 centeralign" | Yaw
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>126</code>
+| class="col3" | The X Axis rotation as a fraction of 360
+|- class="row3"
+| class="col0 centeralign" | Pitch
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The Y Axis rotation as a fraction of 360
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 7 bytes
+|}
+
+=== Entity Look and Relative Move (0x21) ===
+
+This packet is sent by the server when an entity rotates and moves.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="6" | 0x21
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>459</code>
+| class="col4" | Entity ID
+|- class="row2"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | X axis Relative movement as an Absolute Integer
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>-7</code>
+| class="col3" | Y axis Relative movement as an Absolute Integer
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>5</code>
+| class="col3" | Z axis Relative movement as an Absolute Integer
+|- class="row5"
+| class="col0 centeralign" | Yaw
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>126</code>
+| class="col3" | The X Axis rotation as a fraction of 360
+|- class="row6"
+| class="col0 centeralign" | Pitch
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The Y Axis rotation as a fraction of 360
+|- class="row7"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 10 bytes
+|}
+
+=== Entity Teleport (0x22) ===
+
+This packet is sent by the server when an entity moves more then 4 blocks.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="6" | 0x22
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>459</code>
+| class="col4" | Entity ID
+|- class="row2"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>14162</code>
+| class="col3" | X axis position as an Absolute Integer
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>2176</code>
+| class="col3" | Y axis position as an Absolute Integer
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>1111</code>
+| class="col3" | Z axis position as an Absolute Integer
+|- class="row5"
+| class="col0 centeralign" | Yaw
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>126</code>
+| class="col3" | The X Axis rotation as a fraction of 360
+|- class="row6"
+| class="col0 centeralign" | Pitch
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The Y Axis rotation as a fraction of 360
+|- class="row7"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 19 bytes
+|}
+
+=== Pre-Chunk (0x32) ===
+
+This packet is sent by the server to notify the client to initialize(Mode=1) and unload chunks (Mode=0).
+
+[[File:Icon_exclaim.gif|:!:]] Whenever you send this packet the client will clear any previous chunk at that spot if one has previously been sent. Clients don't like being in or next to an unloaded chunk, so try not to unload it if players are nearby.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x32
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>-9</code>
+| class="col4" | Chunk X Coordinate
+|- class="row2"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>12</code>
+| class="col3" | Chunk Z Coordinate
+|- class="row3"
+| class="col0 centeralign" | Mode
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | If mode is 0 the client will unload the chunk, otherwise the client will initialize the chunk
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 13 bytes
+|}
+
+=== Map Chunk (0x33) ===
+
+The server will subtract one from the sizes and then cast them to a byte before sending. This is so that chunks as large as 256 are possible (the maximum size of a byte is 255; 256 - 1 = 255). The chunk data itself consists of four sections, in order:
+
+* <div class="li"> Block type array (1 byte per block)</div>
+* <div class="li"> Block metadata array (half byte/nibble per block)</div>
+* <div class="li"> Block Light array (half byte/nibble per block)</div>
+* <div class="li"> Sky Light array (half byte/nibble per block)</div>
+
+Your chunk should be exactly (<code>(Size_X+1) * (Size_Y+1) * (Size_Z+1) * 2.5</code>) bytes long.
+
+The block type array is indexed such that:
+
+  index = y + (z * 128) + (x * 128 * 16)
+
+In other words, there are 16 consecutive chunks of x planes, each made up of 16 consecutive chunks of z rows, each made up of 128 blocks indexed by y coordinate.
+
+[[File:Icon_exclaim.gif|:!:]] If the player appears to be twitching and stuck in place after joining the world, there is probably an unloaded chunk too close to them.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="8" | 0x33
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>128</code>
+| class="col4" | Block X Coordinate
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Block Y Coordinate
+|- class="row3"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>-192</code>
+| class="col3" | Block Z Coordinate
+|- class="row4"
+| class="col0 centeralign" | Size_X
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>15</code>
+| class="col3" | Size_X is Actual X Size -1
+|- class="row5"
+| class="col0 centeralign" | Size_Y
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>127</code>
+| class="col3" | Size_Y is Actual Y Size -1
+|- class="row6"
+| class="col0 centeralign" | Size_Z
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>15</code>
+| class="col3" | Size_Z is Actual Z Size -1
+|- class="row7"
+| class="col0 centeralign" | Compressed chunk size
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>3663</code>
+| class="col3" | Size of compressed data
+|- class="row8"
+| class="col0 centeralign" | Compressed chunk
+| class="col1 centeralign" | byte array
+| class="col2 centeralign" | <code>…</code>
+| class="col3" | The chunk is compressed using ZLib Deflate function
+|- class="row9"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 bytes + Compressed chunk size
+|}
+
+=== Multi Block Change (0x34) ===
+
+Further investigation shows that this is a multiple-block-change command; if you take the three arrays, and put together elements with the same index, and then decompose the short into coordinates (top 4 bits is X, next 4 bits is Z, bottom 8 bits is Y), you get things like [((8, 7, 4), 11, 0), ((7, 13, 6), 11, 0), ((13, 1, 8), 11, 0), ((7, 6, 6), 11, 0)].
+
+See the Block Change command for description of the general format of a block change.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="6" | 0x34
+| class="col1 centeralign" | Chunk X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>-9</code>
+| class="col4" | Chunk X Coordinate
+|- class="row2"
+| class="col0 centeralign" | Chunk Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>12</code>
+| class="col3" | Chunk Z Coordinate
+|- class="row3"
+| class="col0 centeralign" | Array size
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>2</code>
+| class="col3" | The total number of elements per array
+|- class="row4"
+| class="col0 centeralign" | Coordinate array
+| class="col1 centeralign" | short array
+| class="col2 centeralign" | <code>…</code>
+| class="col3" | The coordinates of the blocks to change
+|- class="row5"
+| class="col0 centeralign" | Type array
+| class="col1 centeralign" | byte array
+| class="col2 centeralign" | <code>…</code>
+| class="col3" | The type for each block change
+|- class="row6"
+| class="col0 centeralign" | Metadata array
+| class="col1 centeralign" | byte array
+| class="col2 centeralign" | <code>…</code>
+| class="col3 leftalign" | The Metadata for each block changed
+|- class="row7"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 11 bytes + Arrays
+|}
+
+=== Block Change (0x35) ===
+
+[[File:Icon_exclaim.gif|:!:]] Block metadata varies by block type - it should be <code>0x00</code> for most blocks with a few exceptions, shown in the table below.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x35
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>502</code>
+| class="col4" | Block X Coordinate
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>71</code>
+| class="col3" | Block Y Coordinate
+|- class="row3"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>18</code>
+| class="col3" | Block Z Coordinate
+|- class="row4"
+| class="col0 centeralign" | Block Type
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>78</code>
+| class="col3" | The new block type for the block
+|- class="row5"
+| class="col0 centeralign" | Block Metadata
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The new Metadata for the block
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 12 bytes
+|}
+
+=== Complex Entities (0x3B) ===
+
+This is a complex packet used to send entities including their entire NBT representation. This packet is currently used for furnaces, chests, signs and mob spawners. This packet is only temporary, and used for rapid prototyping of new types of entities. Specialized packets for each object will eventually be added.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x3B
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>32</code>
+| class="col4" | Entity X in block coordinates
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>64</code>
+| class="col3" | Entity Y in block coordinates
+|- class="row3"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>32</code>
+| class="col3" | Entity Z in block coordinates
+|- class="row4"
+| class="col0 centeralign" | Payload Size
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>84</code>
+| class="col3" | The size (in bytes) of the payload
+|- class="row5"
+| class="col0 centeralign" | Payload
+| class="col1 centeralign" | byte array
+| class="col2 centeralign" | <code>…</code>
+| class="col3" |
+The payload is a compressed (GZ) [http://www.minecraft.net/docs/NBT.txt NBT] file
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 12 bytes + payload
+|}
+
+=== Kick (0xFF) ===
+
+Sent by the server before it disconnects a client.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0xFF
+| class="col1 centeralign" | Reason
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>The server is full!</code>
+| class="col4" | Displayed to the client when the connection terminates
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
+|}
+
+== Protocol History ==
+
+Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2010-08-20 ===
+* <div class="li"> Protocol version reset from 14 to 1</div>
+* <div class="li"> Packet 0x04 ([[Protocol#time_update_0x04|time update]]) added</div>
+
+=== 2010-09-10 ===
+* <div class="li"> Protocol version changed to 2</div>
+* <div class="li"> Packets 0x05, 0x06, 0x3B added</div>
+* <div class="li"> Server-side inventory (no verification)</div>
+* <div class="li"> Vanilla adds experimental monsters (only damaged by fire)</div>
