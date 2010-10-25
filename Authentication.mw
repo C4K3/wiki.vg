@@ -1,0 +1,23 @@
+== Login ==
+Minecraft Alpha uses an entirely new authentication scheme, both for improved security and to (at least try to) prevent people from stealing the game. Take everything on this page [http://en.wikipedia.org/wiki/Grain_of_salt with a grain of salt], as the protocol can change at any time.
+
+== The Launcher ==
+The first step occurs as soon as you open the downloadable Minecraft launcher and attempt to login. The launcher will make a HTTP GET request like so:
+<pre>http://www.minecraft.net/game/getversion.jsp?user=<username>&password=<password>&version=<launcher version></pre>
+The current launcher version is ''11'', sending a value lower than this will cause the server to return "Old Version" '''however''' you can send any large number and it will return as expected. If the login succeeded, it will return 4 ':' delimited values.
+<pre>1281688214000:a348b469d915a40c9eebd2b9919c1a39:TkTech:8204407531530365141:</pre>
+The first value is the <u>current version</u> of the game files (not the launcher itself). The second value is your <u>download ticket</u> and is required to fetch new versions of minecraft.jar from the server. The third value is your case-correct username. The fourth value is your <u>session id</u> and is required to connect to servers.
+
+== Requesting New Game Files ==
+Once you have a __download ticket__, it's possible to download a new version of minecraft.jar by making another HTTP GET request.
+<pre>http://minecraft.net/game/minecraft.jar?user=<username>&ticket=<download ticket></pre>
+
+== Connecting To A Server ==
+When you first attempt to connect to the server, you begin by sending the [[MC-Ver]] containing your case-sensitive username. The server will return one of three values: '-' for no authentication (in which case you can just continue joining), '+' for password protected or a hash if the server requires name authentication. Name verification is achieved by sending a HTTP GET request to the minecraft.net server:
+<pre>http://www.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
+If the server returns ''ok'' it's safe to continue joining the server, otherwise you'll disconnecting you with an error message.
+
+== Verifying Name Authentication ==
+The server will verify name authentication by making yet another HTTP GET request to minecraft.net:
+<pre>http://www.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash></pre>
+The <u>server hash</u> is the same value that was sent to the client in the handshake. If the server returns ''YES'' then the client is authenticated and allowed to join. Otherwise the client will/should be kicked with “Failed to verify username!”.
