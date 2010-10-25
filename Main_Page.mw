@@ -1,8 +1,47 @@
-'''MediaWiki has been successfully installed.'''
+== Start ==
+Welcome to the Minecraft Coalition wiki.  Thanks to the #mcc community on irc.esper.net
+
+'''You must register and confirm your email address to edit pages (spam prevention)'''
 
 Consult the [http://meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
 
-== Getting started ==
-* [http://www.mediawiki.org/wiki/Manual:Configuration_settings Configuration settings list]
-* [http://www.mediawiki.org/wiki/Manual:FAQ MediaWiki FAQ]
-* [https://lists.wikimedia.org/mailman/listinfo/mediawiki-announce MediaWiki release mailing list]
+== Alpha ==
+[[File:Banner alpha.png]]
+
+Minecraft Alpha is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play.  Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft  (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
+
+=== Documentation ===
+There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be accurate'''.
+
+* The [[Protocol|networking protocol]]
+* The [[Protocol_FAQ|protocol FAQ]]
+* The [[Authentication|authentication scheme]]
+
+=== Server & Client Modding ===
+
+=== Source Code & Snippets ===
+Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
+* Creating 2D images from Minecraft skin files ([[skins.php|PHP]])
+* [[MC-Ver|MC-Ver]], a simple script that monitors for the game client to change versions, and reports the change via http://cia.vc. (Python)
+
+== Classic ==
+[[File:Banner classic.png]]
+
+Minecraft Classic was the original version of Minecraft, available for free to the public. It's still available off of the main website today and is still played by many people, with an active development community. As it's been around for almost a year, and because it's so simplistic, there are many, many programs made to work with Classic - there are over '''18+''' servers alone, written in everything from C++ to PureBasic to Perl. It's highly recommend if you're planning to do a development project at this point to instead look into the Minecraft Alpha specifications.
+
+=== Documentation ===
+As there is no longer any work being done on classic, the documentation for it is relatively stable. If you create something that works with it, it likely always will.
+
+* [[Classic_Protocol|Protocol Specification]]
+* [[Map_Format|Map Format]]
+
+=== Source Code Snippets ===
+Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
+
+* Deserializing the level.dat file format ([[deserialize.c|C]], [[deserialize.cs|C#]])
+* Creating 2D images from Minecraft skin files ([[skins.php|PHP]])
+
+=== Resources ===
+Useful information & links
+
+* Existing [[Classic_Software|software]] that works with Classic
