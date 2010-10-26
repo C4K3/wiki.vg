@@ -125,7 +125,7 @@ This packet may be sent by the client to keep the connection alive, or may be a 
 
 === Login Request (0x01) ===
 
-Sent by the client after the handshake to finish logging in. If the version is outdated or any field is invalid, the server will disconnect the client with a [[Protocol#kick_0xff|kick]]. If the client is started in offline mode, the player's username will default to <code>Player</code>, making LAN play with more than one player impossible (without authenticating) as the server will prevent multiple users with the same name.
+Sent by the client after the handshake to finish logging in. If the version is outdated or any field is invalid, the server will disconnect the client with a [[Protocol#Kick_.280xFF.29|kick]]. If the client is started in offline mode, the player's username will default to <code>Player</code>, making LAN play with more than one player impossible (without authenticating) as the server will prevent multiple users with the same name.
 
 {| class="wikitable"
 |- class="row0"
@@ -216,19 +216,19 @@ Sent by the client whenever the inventory is modified (item destruction, pickup,
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>-1</code>
 | class="col4" |
-The “type” of inventory being sent (see [[Protocol#player_inventory_0x051|here]])
+The “type” of inventory being sent (see [[Protocol#Player_Inventory_.280x05.29_2|here]])
 |- class="row2"
 | class="col0 centeralign" | Count
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>4</code>
 | class="col3" |
-The number of inventory items (see [[Protocol#player_inventory_0x051|here]])
+The number of inventory items (see [[Protocol#Player_Inventory_.280x05.29_2|here]])
 |- class="row3"
 | class="col0 centeralign" | Payload
 | class="col1 centeralign" | …
 | class="col2 centeralign" | <code></code>
 | class="col3" |
-The payload (see [[Protocol#player_inventory_0x051|here]])
+The payload (see [[Protocol#Player_Inventory_.280x05.29_2|here]])
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 7 bytes + size of payload
@@ -293,7 +293,7 @@ Updates the players XYZ position on the server. If <code>Stance - Y</code> is le
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>1</code>
 | class="col3" |
-Derived from packet [[Protocol#player_0x0a|0x0A]]
+Derived from packet [[Protocol#Player_.280x0A.29|0x0A]]
 |- class="row6"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 34 bytes
@@ -326,7 +326,7 @@ Updates the direction the player is looking in.
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>1</code>
 | class="col3" |
-Derived from packet [[Protocol#player_0x0a|0x0A]]
+Derived from packet [[Protocol#Player_.280x0A.29|0x0A]]
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 10 bytes
@@ -334,7 +334,7 @@ Derived from packet [[Protocol#player_0x0a|0x0A]]
 
 === Player Position &amp; Look (0x0D) ===
 
-A combination of [[Protocol#player_look_0x0c|Player Look]] and [[Protocol#player_position_0x0b|Player position]].
+A combination of [[Protocol#Player_Look_.280x0C.29|Player Look]] and [[Protocol#Player_Position_.280x0B.29|Player position]].
 
 {| class="wikitable"
 |- class="row0"
@@ -379,7 +379,7 @@ A combination of [[Protocol#player_look_0x0c|Player Look]] and [[Protocol#player
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>0</code>
 | class="col3" |
-Derived from packet [[#player_0x0a|0x0A]]
+Derived from packet [[#Player_.280x0A.29|0x0A]]
 |- class="row8"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 42 bytes
@@ -586,7 +586,7 @@ Sent by the client when it's doing a clean disconnect.
 
 === Login Response (0x01) ===
 
-Sent by the server if it accepts the clients [[Protocol#login_request_0x01|login request]]. If it didn't, it'll send a [[Protocol#kick_0xff|kick]] instead.
+Sent by the server if it accepts the clients [[Protocol#Login_Request_.280x01.29|login request]]. If it didn't, it'll send a [[Protocol#Kick_.280xFF.29|kick]] instead.
 
 {| class="wikitable"
 |- class="row0"
@@ -618,7 +618,7 @@ Sent by the server if it accepts the clients [[Protocol#login_request_0x01|login
 
 === Handshake (0x02) ===
 
-This is the first packet sent when the client connects and is used for [[Authentication]]. If the hash is '-', then the client continues without doing name authentication. If the hash is a '+', the client sends the server password in the [[Protocol#login_request_0x01|login request]].
+This is the first packet sent when the client connects and is used for [[Authentication]]. If the hash is '-', then the client continues without doing name authentication. If the hash is a '+', the client sends the server password in the [[Protocol#Login_Request_.280x01.29|login request]].
 
 {| class="wikitable"
 |- class="row0"
@@ -787,7 +787,7 @@ Sent by the server after login to specify the players starting location and to i
 
 === Player Position &amp; Look (0x0D) ===
 
-A combination of [[Protocol#player_look_0x0c|Player Look]] and [[Protocol#player_position_0x0b|Player position]].
+A combination of [[Protocol#Player_Look_.280x0C.29|Player Look]] and [[Protocol#Player_Position_.280x0B.29|Player position]].
 
 {| class="wikitable"
 |- class="row0"
@@ -832,7 +832,7 @@ A combination of [[Protocol#player_look_0x0c|Player Look]] and [[Protocol#player
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>0</code>
 | class="col3" |
-Derived from packet [[#player_0x0a|0x0A]]
+Derived from packet [[#Player_.280x0A.29|0x0A]]
 |- class="row8"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 42 bytes
@@ -1022,7 +1022,7 @@ A pickup spawn is sent whenever an item on the ground (say a pickaxe thrown on t
 
 === Collect Item (0x16) ===
 
-Sent by the server when someone picks up an item lying on the ground - its sole purpose appears to be the animation of the item flying towards you. It doesn't destroy the entity in the client memory ([[Protocol#destroy_entity_0x1d|0x1D]] does that), and it doesn't add it to your inventory ([[Protocol#add_to_inventory_0x11|0x11]] does that).
+Sent by the server when someone picks up an item lying on the ground - its sole purpose appears to be the animation of the item flying towards you. It doesn't destroy the entity in the client memory ([[Protocol#Destroy_Entity_.280x1D.29|0x1D]] does that), and it doesn't add it to your inventory ([[Protocol#Add_To_Inventory_.280x11.29|0x11]] does that).
 
 {| class="wikitable"
 |- class="row0"
@@ -1207,7 +1207,7 @@ Most entity-related packets are subclasses of this packet. When sent from the se
 
 === Entity Relative Move (0x1F) ===
 
-This packet is sent by the server when an entity moves less then 4 blocks, if an entity moves more then 4 blocks [[Protocol#entity_teleport_0x22|Entity Teleport]] should be sent instead.
+This packet is sent by the server when an entity moves less then 4 blocks, if an entity moves more then 4 blocks [[Protocol#Entity_Teleport_.280x22.29|Entity Teleport]] should be sent instead.
 
 {| class="wikitable"
 |- class="row0"
@@ -1636,7 +1636,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2010-08-20 ===
 * <div class="li"> Protocol version reset from 14 to 1</div>
-* <div class="li"> Packet 0x04 ([[Protocol#time_update_0x04|time update]]) added</div>
+* <div class="li"> Packet 0x04 ([[Protocol#Time_Update_.280x04.29|time update]]) added</div>
 
 === 2010-09-10 ===
 * <div class="li"> Protocol version changed to 2</div>
