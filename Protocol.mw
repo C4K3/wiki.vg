@@ -684,7 +684,7 @@ The default SMP server increments the time by <code>20</code> every second.
 
 === Player Inventory (0x05) ===
 
-[[File:Slots2.png]]] Sent by the server to set or reset a players inventory. This includes the main inventory, equipped armour and crafting slots. Packets for all three types are sent to initialize the players inventory before spawning them.
+[[File:Slots2.png|frame]] Sent by the server to set or reset a players inventory. This includes the main inventory, equipped armour and crafting slots. Packets for all three types are sent to initialize the players inventory before spawning them.
 
 {| class="wikitable"
 |- class="row0"
