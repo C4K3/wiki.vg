@@ -24,6 +24,12 @@ Source code snippets provide insight into how specific features work or can be a
 * Creating 2D images from Minecraft skin files ([[skins.php|PHP]])
 * [[MC-Ver|MC-Ver]], a simple script that monitors for the game client to change versions, and reports the change via http://cia.vc. (Python)
 
+=== Implementations ===
+* [[Clients]] - third-party SMP clients
+* [[Servers]] - third-party SMP servers
+* [[Libraries]] - libraries to interface with Minecraft data files or network protocols
+* [[Utilities]] - tools that interface with a client, server, or data files (e.g. proxies, bots, inventory editors, etc)
+
 == Classic ==
 [[File:Banner classic.png]]
 
