@@ -557,7 +557,7 @@ Sent when the player changes the item or block currently being held.
 | class="col3" | The block/item to be equipped
 |- class="row3"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 bytes
+| class="col1 rightalign" colspan="4" | 7 bytes
 |}
 
 === Disconnect (0xFF) ===
