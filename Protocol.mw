@@ -898,7 +898,7 @@ Sent whenever someone swings their arm.
 | class="col3" | If <code>true</code>, animate the arm
 |- class="row3"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 5 bytes
+| class="col1 rightalign" colspan="4" | 6 bytes
 |}
 
 === Named Entity Spawn (0x14) ===
@@ -1399,7 +1399,7 @@ This packet is sent by the server to notify the client to initialize(Mode=1) and
 | class="col3" | If mode is 0 the client will unload the chunk, otherwise the client will initialize the chunk
 |- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 13 bytes
+| class="col1 rightalign" colspan="4" | 10 bytes
 |}
 
 === Map Chunk (0x33) ===
@@ -1605,7 +1605,7 @@ This is a complex packet used to send entities including their entire NBT repres
 The payload is a compressed (GZ) [http://www.minecraft.net/docs/NBT.txt NBT] file
 |- class="row6"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 12 bytes + payload
+| class="col1 rightalign" colspan="4" | 13 bytes + payload
 |}
 
 === Kick (0xFF) ===
