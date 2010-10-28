@@ -584,6 +584,17 @@ Sent by the client when it's doing a clean disconnect.
 
 == Server To Client Packets ==
 
+=== Keep Alive (0x00) ===
+
+This packet may be sent by the server to keep the connection alive, or may be a relic of UDP testing. No one is really sure.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+|- class="row1"
+| class="col0 centeralign" | 0x00
+|}
+
 === Login Response (0x01) ===
 
 Sent by the server if it accepts the clients [[Protocol#Login_Request_.280x01.29|login request]]. If it didn't, it'll send a [[Protocol#Kick_.280xFF.29|kick]] instead.
