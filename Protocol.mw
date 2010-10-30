@@ -1485,7 +1485,7 @@ In other words, there are 16 consecutive chunks of x planes, each made up of 16 
 | class="col1 rightalign" colspan="4" | 18 bytes + Compressed chunk size
 |}
 
-[[File:Icon_exclaim.gif|:!:] To make (at least) the .NET DeflateStream class correctly decompress this data, you need to skip 2 bytes at the beginning of the compressed chunk. Their purpose are unknown to me ([[User:Cad|Cad]]) at this point.
+[[File:Icon_exclaim.gif|:!:]] To make (at least) the .NET DeflateStream class correctly decompress this data, you need to skip 2 bytes at the beginning of the compressed chunk. Their purpose are unknown to me ([[User:Cad|Cad]]) at this point.
 
 === Multi Block Change (0x34) ===
 
