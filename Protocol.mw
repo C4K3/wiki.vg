@@ -1452,6 +1452,8 @@ In other words, there are 16 consecutive chunks of x planes, each made up of 16 
 
 [[File:Icon_exclaim.gif|:!:]] If the player appears to be twitching and stuck in place after joining the world, there is probably an unloaded chunk too close to them.
 
+The Compressed chunk is compressed using the deflate() function in [http://www.zlib.net/ zlib].
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -1504,8 +1506,6 @@ In other words, there are 16 consecutive chunks of x planes, each made up of 16 
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes + Compressed chunk size
 |}
-
-[[File:Icon_exclaim.gif|:!:]] For some reason, the DeflateStream class in .NET only accepts this data if you skip the first 2 bytes. They contain the header fields CMF and FLG (see RFC 1950). Here, the values appear to be 0x78 0x01 (DEFLATE with 32K window, then a checksum byte to make (0x7801 % 0x1F) == 0). [[User:Cad|Cad]]
 
 === Multi Block Change (0x34) ===
 
