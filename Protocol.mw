@@ -153,13 +153,13 @@ Sent by the client after the handshake to finish logging in. If the version is o
 |- class="row4"
 | class="col0 centeralign" | Map Seed
 | class="col1 centeralign" | long
-| class="col2 centeralign" | <code>971768181197178410</code>
-| class="col3" | Used for map generation
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | This value is not required for the client
 |- class="row5"
 | class="col0 centeralign" | Dimension
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
+| class="col3" | This value is not required for the client
 |- class="row6"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes + length of strings
