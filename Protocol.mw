@@ -135,7 +135,7 @@ Sent by the client after the handshake to finish logging in. If the version is o
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x01
+| class="col0 centeralign" rowspan="5" | 0x01
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>2</code>
@@ -151,8 +151,18 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col2 centeralign" | <code>Password</code>
 | class="col3" | Used to login to password-protected servers
 |- class="row4"
+| class="col0 centeralign" | Map Seed
+| class="col1 centeralign" | long
+| class="col2 centeralign" | <code>971768181197178410</code>
+| class="col3" | Used for map generation
+|- class="row5"
+| class="col0 centeralign" | Dimension
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
+|- class="row6"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes + length of strings
+| class="col1 rightalign" colspan="4" | 18 bytes + length of strings
 |}
 
 === Handshake (0x02) ===
@@ -607,7 +617,7 @@ Sent by the server if it accepts the clients [[Protocol#Login_Request_.280x01.29
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x01
+| class="col0 centeralign" rowspan="5" | 0x01
 | class="col1 centeralign" | Unknown
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>0</code>
@@ -623,8 +633,18 @@ Sent by the server if it accepts the clients [[Protocol#Login_Request_.280x01.29
 | class="col2 centeralign" | n/a
 | class="col3" | Not yet used (Possibly the MOTD? )
 |- class="row4"
+| class="col0 centeralign" | Map Seed
+| class="col1 centeralign" | long
+| class="col2 centeralign" | <code>971768181197178410</code>
+| class="col3" | Used for map generation
+|- class="row5"
+| class="col0 centeralign" | Dimension
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
+|- class="row6"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes + length of strings
+| class="col1 rightalign" colspan="4" | 18 bytes + length of strings
 |}
 
 === Handshake (0x02) ===
@@ -1646,6 +1666,10 @@ Sent by the server before it disconnects a client.
 == Protocol History ==
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2010-10-31 ===
+* <div class="li"> Protocol version changed to 3</div>
+* <div class="li"> Packet 0x01 ([[Protocol#Login_Request_.280x01.29|login request]]) changed</div>
 
 === 2010-08-20 ===
 * <div class="li"> Protocol version reset from 14 to 1</div>
