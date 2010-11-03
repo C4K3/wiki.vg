@@ -1521,7 +1521,7 @@ The data is exactly <code>(Size_X+1) * (Size_Y+1) * (Size_Z+1) * 2.5</code> byte
 In other words, there are Size_X consecutive chunks of x planes, each made up of Size_Z consecutive chunks of z rows, each made up of Size_Y blocks indexed by y coordinate.
 
 The block type array is indexed with:
-  index = y + (z * Size_X) + (x * Size_Y * Size_Z)
+  index = y + (z * (Size_X+1)) + (x * (Size_Y+1) * (Size_Z+1))
 
 The other arrays are similar but you need to divide the index by two after calculating the above. Then each byte contains data for '''two''' blocks.
 
