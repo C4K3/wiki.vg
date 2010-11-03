@@ -1437,6 +1437,8 @@ This packet is sent by the server to notify the client to initialize (Mode=1) or
 
 The client will overwrite all '''or part''' of a chunk using the region of data contained in this packet. The server specifies the region to write using a block position and size in X,Y,Z. Note that this region will always be inside a single chunk. (At least using the vanilla server. Unknown if the client has this limitation.)
 
+A server '''can''' send a 0x32 packet prior, allowing the client to initialize the chunk. However this doesn't always happen in practice. Thus the client should initialize the chunk on-demand.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -1522,7 +1524,6 @@ The block type array is indexed with:
   index = y + (z * Size_X) + (x * Size_Y * Size_Z)
 
 The other arrays are similar but you need to divide the index by two after calculating the above. Then each byte contains data for '''two''' blocks.
-
 
 === Multi Block Change (0x34) ===
 
