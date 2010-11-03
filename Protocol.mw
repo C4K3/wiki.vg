@@ -1401,9 +1401,9 @@ This packet is sent by the server when an entity moves more then 4 blocks.
 
 === Pre-Chunk (0x32) ===
 
-This packet is sent by the server to notify the client to initialize(Mode=1) and unload chunks (Mode=0).
+This packet is sent by the server to notify the client to initialize (Mode=1) or unload (Mode=0) a chunk. The client is expected to allocate space for a full chunk (currently 16 x 128 x 16 blocks). One or more 0x33 packets will follow, specifying actual data to fill the chunk with.
 
-[[File:Icon_exclaim.gif|:!:]] Whenever you send this packet the client will clear any previous chunk at that spot if one has previously been sent. Clients don't like being in or next to an unloaded chunk, so try not to unload it if players are nearby.
+[[File:Icon_exclaim.gif|:!:]] Whenever you send this packet the client will clear any previous chunk at that spot if one has previously been sent. Clients don't like being in or next to an unloaded chunk, so try not to unload it if players are nearby. If the player appears to be twitching and stuck in place after joining the world, there is probably an unloaded chunk too close to them.
 
 {| class="wikitable"
 |- class="row0"
@@ -1435,24 +1435,7 @@ This packet is sent by the server to notify the client to initialize(Mode=1) and
 
 === Map Chunk (0x33) ===
 
-The server will subtract one from the sizes and then cast them to a byte before sending. This is so that chunks as large as 256 are possible (the maximum size of a byte is 255; 256 - 1 = 255). The chunk data itself consists of four sections, in order:
-
-* <div class="li"> Block type array (1 byte per block)</div>
-* <div class="li"> Block metadata array (half byte/nibble per block)</div>
-* <div class="li"> Block Light array (half byte/nibble per block)</div>
-* <div class="li"> Sky Light array (half byte/nibble per block)</div>
-
-Your chunk should be exactly (<code>(Size_X+1) * (Size_Y+1) * (Size_Z+1) * 2.5</code>) bytes long.
-
-The block type array is indexed such that:
-
-  index = y + (z * 128) + (x * 128 * 16)
-
-In other words, there are 16 consecutive chunks of x planes, each made up of 16 consecutive chunks of z rows, each made up of 128 blocks indexed by y coordinate.
-
-[[File:Icon_exclaim.gif|:!:]] If the player appears to be twitching and stuck in place after joining the world, there is probably an unloaded chunk too close to them.
-
-The Compressed chunk is compressed using the deflate() function in [http://www.zlib.net/ zlib].
+The client will overwrite all '''or part''' of a chunk using the region of data contained in this packet. The server specifies the region to write using a block position and size in X,Y,Z. Note that this region will always be inside a single chunk. (At least using the vanilla server. Unknown if the client has this limitation.)
 
 {| class="wikitable"
 |- class="row0"
@@ -1493,19 +1476,53 @@ The Compressed chunk is compressed using the deflate() function in [http://www.z
 | class="col2 centeralign" | <code>15</code>
 | class="col3" | Size_Z is Actual Z Size -1
 |- class="row7"
-| class="col0 centeralign" | Compressed chunk size
+| class="col0 centeralign" | Compressed size
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>3663</code>
-| class="col3" | Size of compressed data
+| class="col3" | Size of compressed region data
 |- class="row8"
-| class="col0 centeralign" | Compressed chunk
+| class="col0 centeralign" | Compressed data
 | class="col1 centeralign" | byte array
 | class="col2 centeralign" | <code>…</code>
-| class="col3" | The chunk is compressed using ZLib Deflate function.
+| class="col3" | The region data is compressed using ZLib Deflate function.
 |- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes + Compressed chunk size
 |}
+
+=====X, Y, Z=====
+This is the start position of the region, in '''world''' block coordinates.
+
+To find which chunk is affected, mask off the low 4 bits using AND: 
+  ChunkX = X & 0xFFFFFFF0 
+  ChunkY = Y & 0xFFFFFF80  (is always 0)
+  ChunkZ = Z & 0xFFFFFFF0 
+
+And conversely, which local block in the chunk to start at:
+  StartX = X & 15
+  StartY = Y & 127  (not always 0!)
+  StartZ = Z & 15
+
+=====SizeX, SizeY, SizeZ=====
+This is the size of the region, in blocks. The server will subtract one from the sizes and then cast them to a byte before sending. This is so that chunks as large as 256 are possible (the maximum size of a byte is 255; 256 - 1 = 255). 
+
+=====Compressed data=====
+The data is compressed using the deflate() function in [http://www.zlib.net/ zlib]. After uncompressing, the data consists of four sections, in order:
+
+* <div class="li"> Block type array (1 byte per block)</div>
+* <div class="li"> Block metadata array (half byte/nibble per block)</div>
+* <div class="li"> Block Light array (half byte/nibble per block)</div>
+* <div class="li"> Sky Light array (half byte/nibble per block)</div>
+
+The data is exactly <code>(Size_X+1) * (Size_Y+1) * (Size_Z+1) * 2.5</code> bytes long.
+
+In other words, there are Size_X consecutive chunks of x planes, each made up of Size_Z consecutive chunks of z rows, each made up of Size_Y blocks indexed by y coordinate.
+
+The block type array is indexed with:
+  index = y + (z * Size_X) + (x * Size_Y * Size_Z)
+
+The other arrays are similar but you need to divide the index by two after calculating the above. Then each byte contains data for '''two''' blocks.
+
 
 === Multi Block Change (0x34) ===
 
