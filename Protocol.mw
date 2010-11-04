@@ -1495,10 +1495,10 @@ A server '''can''' send a 0x32 packet prior, allowing the client to initialize t
 =====X, Y, Z=====
 This is the start position of the region, in '''world''' block coordinates.
 
-To find which chunk is affected, mask off the low 4 bits using AND: 
-  ChunkX = X & 0xFFFFFFF0 
-  ChunkY = Y & 0xFFFFFF80  (is always 0)
-  ChunkZ = Z & 0xFFFFFFF0 
+To find which chunk is affected, in the same coordinates given by packet 0x32: 
+  ChunkX = X >> 4 
+  ChunkY = Y >> 7
+  ChunkZ = Z >> 4
 
 And conversely, which local block in the chunk to start at:
   StartX = X & 15
@@ -1518,7 +1518,7 @@ The data is compressed using the deflate() function in [http://www.zlib.net/ zli
 
 The data is exactly <code>(Size_X+1) * (Size_Y+1) * (Size_Z+1) * 2.5</code> bytes long.
 
-In other words, there are Size_X consecutive chunks of x planes, each made up of Size_Z consecutive chunks of z rows, each made up of Size_Y blocks indexed by y coordinate.
+In other words, there are Size_X number of '''x planes''', each plane made up of Size_Z number of '''z rows''', each row made up of Size_Y blocks indexed by y coordinate in order.
 
 The block type array is indexed with:
   index = y + (z * (Size_Y+1)) + (x * (Size_Y+1) * (Size_Z+1))
