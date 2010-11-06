@@ -1,5 +1,3 @@
-== Minecraft Protocol ==
-
 This page presents a dissection of the new [http://minecraft.net/game/ Minecraft Alpha] protocol by aera ([http://aeracode.org Andrew Godwin]), ylt (Joe Carter) and TkTech (Tyler Kennedy). Additionally, credit goes to the citizens of [irc://irc.esper.net/#mcc <nowiki>#mcc</nowiki>] who helped by providing packet dumps and insight. If you're having trouble, check out the [[Protocol_FAQ|FAQ]].
 
 '''Note:''' While you may use the contents of this page without restriction to create servers, clients, bots, etc… you still need to provide the attribution above if you copy any of the contents of this page for publication elsewhere.
@@ -1698,3 +1696,6 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * <div class="li"> Packets 0x05, 0x06, 0x3B added</div>
 * <div class="li"> Server-side inventory (no verification)</div>
 * <div class="li"> Vanilla adds experimental monsters (only damaged by fire)</div>
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Alpha]]
