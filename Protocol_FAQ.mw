@@ -1,4 +1,3 @@
-== Protocol FAQ ==
 People very, very often have questions regarding the Minecraft Alpha [[minecraft:alpha:protocol|protocol documentation]], so we'll try to address some of the most common ones on this document. If you're still having trouble, join us on IRC, channel #mcc on irc.esper.net.
 
 '''Is the protocol documentation complete?'''
@@ -26,3 +25,6 @@ C → S : Sends a position + look packet to confirm the spawn position, with the
 <blockquote>
 After sending the common-sense packets ([[protocol#handshake_0x02|Handshake]], [[protocol#login_request_0x01|Login]], [[protocol#player_inventory_0x05|Inventory]], [[protocol#spawn_position_0x06|Compass]] and [[protocol#pre-chunk_0x32|Pre-chunk]]/[[protocol#map_chunk_0x33|Chunk]] pairs) you need to finally send the player their [[protocol#player_position_look_0x0d|initial position]] for them to leave the "Loading Map" screen.
 </blockquote>
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Alpha]]
