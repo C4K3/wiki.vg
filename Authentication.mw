@@ -1,4 +1,3 @@
-== Login ==
 Minecraft Alpha uses an entirely new authentication scheme, both for improved security and to (at least try to) prevent people from stealing the game. Take everything on this page [http://en.wikipedia.org/wiki/Grain_of_salt with a grain of salt], as the protocol can change at any time.
 
 == The Launcher ==
@@ -21,3 +20,6 @@ If the server returns ''ok'' it's safe to continue joining the server, otherwise
 The server will verify name authentication by making yet another HTTP GET request to minecraft.net:
 <pre>http://www.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash></pre>
 The <u>server hash</u> is the same value that was sent to the client in the handshake. If the server returns ''YES'' then the client is authenticated and allowed to join. Otherwise the client will/should be kicked with “Failed to verify username!”.
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Alpha]]
