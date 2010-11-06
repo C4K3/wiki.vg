@@ -1,53 +1,60 @@
-== Start ==
-Welcome to the Minecraft Coalition wiki.  Thanks to the #mcc community on irc.esper.net
+Welcome to the Minecraft Coalition wiki! Thanks to the #mcc community on irc.esper.net.
 
-'''You must register and confirm your email address to edit pages (spam prevention)'''
+'''As spam prevention, you must register and confirm your email address to edit pages.'''
 
 Consult the [http://meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
 
 == Alpha ==
-[[File:Banner alpha.png]]
+[[File:Banner alpha.png|link=Minecraft Alpha]]
 
-Minecraft Alpha is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play.  Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft  (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
+Minecraft Alpha is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play. Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
 
 === Documentation ===
 There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be accurate'''.
-
-* The [[Protocol|networking protocol]]
-* The [[Protocol_FAQ|protocol FAQ]]
-* The [[Authentication|authentication scheme]]
-
-=== Server & Client Modding ===
+* [[Protocol|Protocol Specification]]
+* [[Protocol FAQ]]
+* [[Authentication|Authentication Scheme]]
+* [[Map Format]]
 
 === Source Code & Snippets ===
 Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
-* Creating 2D images from Minecraft skin files ([[skins.php|PHP]])
-* [[MC-Ver|MC-Ver]], a simple script that monitors for the game client to change versions, and reports the change via http://cia.vc. (Python)
+* [[Skins.php]], a script to generate a preview image from a Minecraft skin file (PHP).
+* [[MC-Ver]], a simple script that monitors for the game client to change versions, and reports the change via http://cia.vc/ (Python).
+* [[:Category:Code Snippets|More...]]
 
-=== Implementations ===
-* [[Clients]] - third-party SMP clients
-* [[Servers]] - third-party SMP servers
-* [[Libraries]] - libraries to interface with Minecraft data files or network protocols
-* [[Utilities]] - tools that interface with a client, server, or data files (e.g. proxies, bots, inventory editors, etc)
+=== Tools and Mods ===
+* [[Client List|Clients]] - third-party SMP clients.
+* [[Server List|Servers]] - third-party SMP servers.
+* [[Library List|Libraries]] - libraries to interface with Minecraft data files or network protocols.
+* [[Utility List|Utilities]] - tools that interface with a client, server, or data files, such as proxies, bots, mods, or inventory editors.
+
+
+For more info, check out [[Minecraft Alpha]].
 
 == Classic ==
-[[File:Banner classic.png]]
+[[File:Banner classic.png|link=Minecraft Classic]]
 
-Minecraft Classic was the original version of Minecraft, available for free to the public. It's still available off of the main website today and is still played by many people, with an active development community. As it's been around for almost a year, and because it's so simplistic, there are many, many programs made to work with Classic - there are over '''18+''' servers alone, written in everything from C++ to PureBasic to Perl. It's highly recommend if you're planning to do a development project at this point to instead look into the Minecraft Alpha specifications.
+Minecraft Classic is the original version of Minecraft, available for free to the public. It's still available off of the main website today and is still played by many people, with an active development community. As it's been around for almost a year, and because it's so simplistic, there are many, many programs made to work with Classic - there are over '''18+''' servers alone, written in everything from C++ to PureBasic to Perl. It's highly recommend if you're planning to do a development project at this point to instead look into the Minecraft Alpha specifications.
 
 === Documentation ===
-As there is no longer any work being done on classic, the documentation for it is relatively stable. If you create something that works with it, it likely always will.
-
-* [[Classic_Protocol|Protocol Specification]]
-* [[Map_Format|Map Format]]
+As there is no longer any work being done on classic, the documentation for it is stable. If you create something that works with it, it probably always will.
+* [[Classic Protocol|Protocol Specification]]
+* [[Classic DAT Format|Server Map Format (.dat)]]
+* [[MCLevel Format|Saved Level Format (.mclevel)]]
 
 === Source Code Snippets ===
 Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
-
 * Deserializing the level.dat file format ([[deserialize.c|C]], [[deserialize.cs|C#]])
-* Creating 2D images from Minecraft skin files ([[skins.php|PHP]])
+* [[Skins.php]], a script to generate a preview image from a Minecraft skin file (PHP).
+* [[:Category:Code Snippets|More...]]
 
-=== Resources ===
+=== Tools and Mods ===
 Useful information & links
+* [[Classic Client List|Clients]] - third-party Classic clients.
+* [[Classic Server List|Servers]] - third-party Classic servers.
+* [[Classic Library List|Libraries]] - libraries to interface with Minecraft data files or network protocols.
+* [[Classic Utility List|Utilities]] - tools that interface with a client, server, or data files, such as proxies or bots.
 
-* Existing [[Classic_Software|software]] that works with Classic
+
+
+For more info, check out [[Minecraft Classic]].
