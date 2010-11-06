@@ -1,4 +1,4 @@
-List your project and link to a homepage, wiki entry, or source repo.
+This is a rather incomplete list of Minecraft Alpha servers currently in development.
 
 == C ==
 * craftd - http://mc.kev009.com/craftd/
@@ -7,14 +7,10 @@ List your project and link to a homepage, wiki entry, or source repo.
 * Creativity - http://github.com/TkTech/Creativity/
 * Mineserver - http://github.com/fador/mineserver/
 
-== C# ==
-
-== Java ==
-
 == Python ==
 * Myne2 - http://bitbucket.org/andrewgodwin/myne2/src
 
-== Ruby ==
-
 == Erlang ==
 * Erlcraft - http://github.com/ScottBrooks/Erlcraft
+
+[[Category:Minecraft Alpha]]
