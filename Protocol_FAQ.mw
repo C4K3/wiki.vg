@@ -1,11 +1,11 @@
 People very, very often have questions regarding the Minecraft Alpha [[minecraft:alpha:protocol|protocol documentation]], so we'll try to address some of the most common ones on this document. If you're still having trouble, join us on IRC, channel #mcc on irc.esper.net.
 
-'''Is the protocol documentation complete?'''
+===Is the protocol documentation complete?===
 <blockquote>
 Depending on your definition, '''yes'''! All packet types are known and their layout documented. Some finer details are missing, but everything you need to make functional programs is present. We [[MC-Ver|have a script]] that monitors for new versions of the client and notifies us, allowing us to quickly document new packets.
 </blockquote>
 
-'''What's the normal login sequence for a client?'''
+===What's the normal login sequence for a client?===
 <blockquote>
 The recommended login sequence looks like this, where C is the client and S is the server:<br /><br />
 
@@ -21,10 +21,19 @@ C ← S : Tell the client they're ready to spawn by sending a position + look pa
 C → S : Sends a position + look packet to confirm the spawn position, with the stance and Y swapped back to the correct positions<br />
 </blockquote>
 
-'''I think I've done everything right, but my player isn't spawning'''
+===I think I've done everything right, but my player isn't spawning===
 <blockquote>
 After sending the common-sense packets ([[protocol#handshake_0x02|Handshake]], [[protocol#login_request_0x01|Login]], [[protocol#player_inventory_0x05|Inventory]], [[protocol#spawn_position_0x06|Compass]] and [[protocol#pre-chunk_0x32|Pre-chunk]]/[[protocol#map_chunk_0x33|Chunk]] pairs) you need to finally send the player their [[protocol#player_position_look_0x0d|initial position]] for them to leave the "Loading Map" screen.
 </blockquote>
+
+===What is the official UTF-8 character set?===
+The following list of characters is known to be supported by the official SMP server:
+<blockquote>
+<code>
+"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_'abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»"
+</code>
+</blockquote>
+
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Alpha]]
