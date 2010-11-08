@@ -584,7 +584,7 @@ Sent by the client when it's doing a clean disconnect.
 | class="col1 centeralign" | Reason
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>Quitting</code>
-| class="col4" | Displayed on the disconnect screen if the packet originates from the server
+| class="col4" | The server doesn't appear to do anything with this (yet)
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes + length of strings
