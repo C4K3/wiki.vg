@@ -136,8 +136,8 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col0 centeralign" rowspan="5" | 0x01
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | int
-| class="col3 centeralign" | <code>3</code>
-| class="col4" | The latest version of the protocol is 3
+| class="col3 centeralign" | <code>4</code>
+| class="col4" | The latest version of the protocol is 4
 |- class="row2"
 | class="col0 centeralign" | Username
 | class="col1 centeralign" | string
@@ -240,6 +240,36 @@ The payload (see [[Protocol#Player_Inventory_.280x05.29_2|here]])
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 7 bytes + size of payload
+|}
+
+=== Use Entity? (0x07) ===
+This packet is new to version 4 of the protocol, and is believed to be Use Entity.
+
+(This packet data values are not fully verified)
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x07
+| class="col1 centeralign" | User
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>1298</code>
+| class="col4" |
+The entity of the player (ignored by the server)
+|- class="row2"
+| class="col0 centeralign" | Target
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>1805</code>
+| class="col3" |
+The entity the player has right-clicked on
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes
 |}
 
 === Player (0x0A) ===
@@ -643,10 +673,10 @@ Sent by the server if it accepts the clients [[Protocol#Login_Request_.280x01.29
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="5" | 0x01
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
-| class="col3 centeralign" | <code>0</code>
-| class="col4" | Not yet used
+| class="col3 centeralign" | <code>1298</code>
+| class="col4" | The Players Entity ID
 |- class="row2"
 | class="col0 centeralign" | Unknown
 | class="col1 centeralign" | string
@@ -1217,6 +1247,56 @@ Sent by the server when a Mob Entity is Spawned
 | class="col1 rightalign" colspan="4" | 20 bytes
 |}
 
+=== Entity Velocity? (0x1C) ===
+This packet is new to version 4 of the protocol, and is believed to be Entity Velocity/Motion.
+
+Velocity is believed to in block velocity * 32000 with regards to the speed being server ticks, 200ms
+
+e.g. -1343 would move (-1343 / 32000) = -0.04196875 blocks per tick (or -0.20984375 blocks per second)
+
+Each axis Velocity is capped between -0.9 and 0.9 blocks per tick (Velocity -28800 to 28800)
+
+(This packet data values are not fully verified)
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x1C
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>1805</code>
+| class="col4" |
+The entity ID
+|- class="row2"
+| class="col0 centeralign" | Velocity X
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>-1343</code>
+| class="col3" |
+Velocity on the X axis
+|- class="row3"
+| class="col0 centeralign" | Velocity Y
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+Velocity on the Y axis
+|- class="row4"
+| class="col0 centeralign" | Velocity Z
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+Velocity on the Z axis
+|- class="row5"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 11 bytes
+|}
+
+
+
 === Destroy Entity (0x1D) ===
 
 Sent by the server when an Entity is to be destroyed on the client.
@@ -1423,6 +1503,39 @@ This packet is sent by the server when an entity moves more then 4 blocks.
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 19 bytes
 |}
+
+=== Attach Entity? (0x27) ===
+This packet is new to version 4 of the protocol, and is believed to be Attach Entity.
+
+This packet is sent when a player has been attached to an entity (e.g. Minecart)
+
+(This packet data values are not fully verified)
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x27
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>1298</code>
+| class="col4" |
+The player entity ID being attached
+|- class="row2"
+| class="col0 centeralign" | Vehicle ID
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>1805</code>
+| class="col3" |
+The vehicle entity ID attached to (-1 for unattaching)
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes
+|}
+
 
 === Pre-Chunk (0x32) ===
 
@@ -1709,6 +1822,13 @@ Sent by the server before it disconnects a client.
 == Protocol History ==
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2010-10-11 ===
+* <div class="li"> Protocol version changed to 4</div>
+* <div class="li"> Packet 0x01 ([[Protocol#Login_Request_.280x01.29|login request]]) changed</div>
+* <div class="li"> Packet 0x07 ([[Protocol#Use Entity? (0x07)|Use Entity?]]) added</div>
+* <div class="li"> Packet 0x1C ([[Protocol#Entity Velocity? (0x1C)|Entity Velocity?]]) added</div>
+* <div class="li"> Packet 0x27 ([[Protocol#Attach Entity? (0x27)|Attach Entity?]]) added</div>
 
 === 2010-10-31 ===
 * <div class="li"> Protocol version changed to 3</div>
