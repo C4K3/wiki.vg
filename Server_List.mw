@@ -4,8 +4,8 @@ This is a rather incomplete list of Minecraft Alpha servers currently in develop
 |-style="background:#eee"
 !style="width: 72px" | Name
 !Author(s)
-!style="width: 100px" | Language
-!style="width: 100px" | License
+!style="width: 128px" | Language
+!style="width: 128px" | License
 !style="width: 72px" | Threaded
 !style="width: 72px" | Scripting
 |-
@@ -26,7 +26,7 @@ This is a rather incomplete list of Minecraft Alpha servers currently in develop
 ! [http://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Unknown
+| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
 | {{no}}
 | {{no}}
 |-
