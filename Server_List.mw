@@ -1,16 +1,49 @@
 This is a rather incomplete list of Minecraft Alpha servers currently in development. This page only lists servers written from scratch. For mods and wrappers, see the [[Utility List]].
 
-== C ==
-* craftd - http://mc.kev009.com/craftd/
-
-== C++ ==
-* Creativity - http://github.com/TkTech/Creativity/
-* Mineserver - http://github.com/fador/mineserver/
-
-== Python ==
-* Myne2 - http://bitbucket.org/andrewgodwin/myne2/src
-
-== Erlang ==
-* Erlcraft - http://github.com/ScottBrooks/Erlcraft
+{| class="wikitable" style="width: auto; text-align: center; font-size: smaller"
+|-style="background:#eee"
+!style="width: 68px" | Name
+!Author(s)
+!style="width: 128px" | Language
+!style="width: 102px" | License/Avail.
+!style="width: 72px" | Threaded
+!style="width: 72px" | Scripting
+|-
+! [http://mc.kev009.com/craftd/ craftd]
+| Kev009
+| [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
+| Unknown
+| {{no}}
+| {{no}}
+|-
+! [http://github.com/TkTech/Creativity/ Creativity]
+| TkTech
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Unknown
+| {{yes}}
+| {{no}}
+|-
+! [http://github.com/fador/mineserver/ Mineserver]
+| Fador
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Unknown
+| {{no}}
+| {{no}}
+|-
+! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
+| aera
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
+| Unknown
+| {{no}}
+| {{no}}
+|-
+! [http://github.com/ScottBrooks/Erlcraft Erlcraft]
+| Scott Brooks
+| [http://en.wikipedia.org/wiki/Erlang_%28programming_language%29 Erlang]
+| Unknown
+| {{no}}
+| {{no}}
+|-
+|}
 
 [[Category:Minecraft Alpha]]
