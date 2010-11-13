@@ -9,6 +9,13 @@ This is a rather incomplete list of Minecraft Alpha servers currently in develop
 !style="width: 72px" | Threaded
 !style="width: 72px" | Scripting
 |-
+! [http://github.com/MostAwesomeDude/beta Beta]
+| MostAwesomeDude
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
+| MIT/X11
+| {{no}}
+| {{yes}}
+|-
 ! [http://mc.kev009.com/craftd/ craftd]
 | Kev009
 | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
