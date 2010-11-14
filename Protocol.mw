@@ -339,7 +339,11 @@ Derived from packet [[Protocol#Player_.280x0A.29|0x0A]]
 
 === Player Look (0x0C) ===
 
+[[File:Minecraft-trig-yaw.png|thumb|The unit circle for yaw]]
+
 Updates the direction the player is looking in.
+
+Yaw is measured in degrees, and does not follow classical trigonometry rules. The unit circle of yaw on the xz-plane starts at (0, 1) and turns backwards towards (-1, 0).
 
 {| class="wikitable"
 |- class="row0"
