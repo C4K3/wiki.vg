@@ -1,0 +1,3 @@
+Clients;
+
+* [http://github.com/aniero/golem golem] ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
