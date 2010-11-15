@@ -1,3 +1,25 @@
 Clients;
 
-* add yours here!
+* [http://github.com/aniero/golem golem] ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
+
+This is a rather incomplete list of Minecraft Alpha clients currently in development. This page only lists clients written from scratch. For mods and wrappers, see the [[Utility List]].
+
+{| class="wikitable" style="width: auto; text-align: center;"
+|-style="background:#eee"
+!style="width: 72px" | Name
+!Author(s)
+!style="width: 128px" | Language
+!style="width: 128px" | License
+!style="width: 72px" | Threaded
+!style="width: 72px" | Scripting
+|-
+! [http://github.com/axus/libnet-- mc--c]
+| axus
+| [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++]
+| Unreleased
+| {{no}}
+| {{no}}
+|-
+|}
+
+[[Category:Minecraft Alpha]]
