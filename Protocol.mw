@@ -1916,7 +1916,7 @@ Sent by the server before it disconnects a client.
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
-=== 2010-10-11 ===
+=== 2010-11-10 ===
 * <div class="li"> Protocol version changed to 4</div>
 * <div class="li"> Packet 0x01 ([[Protocol#Login_Request_.280x01.29|login request]]) changed</div>
 * <div class="li"> Packet 0x07 ([[Protocol#Use Entity? (0x07)|Use Entity?]]) added</div>
@@ -1927,15 +1927,15 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * <div class="li"> Protocol version changed to 3</div>
 * <div class="li"> Packet 0x01 ([[Protocol#Login_Request_.280x01.29|login request]]) changed</div>
 
-=== 2010-08-20 ===
-* <div class="li"> Protocol version reset from 14 to 1</div>
-* <div class="li"> Packet 0x04 ([[Protocol#Time_Update_.280x04.29|time update]]) added</div>
-
 === 2010-09-10 ===
 * <div class="li"> Protocol version changed to 2</div>
 * <div class="li"> Packets 0x05, 0x06, 0x3B added</div>
 * <div class="li"> Server-side inventory (no verification)</div>
 * <div class="li"> Vanilla adds experimental monsters (only damaged by fire)</div>
+
+=== 2010-08-20 ===
+* <div class="li"> Protocol version reset from 14 to 1</div>
+* <div class="li"> Packet 0x04 ([[Protocol#Time_Update_.280x04.29|time update]]) added</div>
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Alpha]]
