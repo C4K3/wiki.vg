@@ -893,16 +893,16 @@ This packet is a bit more tricky to parse than most others because the size of i
  offset = 0
  
  for slot in count:
-     if payload[offset] as short is not equal to -1:
-         item_id = payload[offset] as short
-         offset += 2
+     item_id = payload[offset] as short
+     offset += 2
+     if item_id is not equal to -1:
          count = payload[offset] as byte
          offset += 1
          health = payload[offset] as short
          offset += 2
          inventory[slot] = new item(item_id, count, health)
      else:
-         offset += 2
+         inventory[slot] = Null
 </syntaxhighlight>
 
 === Spawn Position (0x06) ===
