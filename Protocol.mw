@@ -575,6 +575,8 @@ The direction can be one of six values, representing the face the block/item is 
 | class="col6" | +X
 |}
 
+This packet has a special case where X, Y, Z, and Direction are all -1. This special packet indicates that the currently held item for the player should have its state updated. (Unverified?)
+
 === Holding Change (0x10) ===
 
 Sent when the player changes the item or block currently being held.
