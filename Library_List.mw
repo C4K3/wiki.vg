@@ -17,6 +17,11 @@ This is a rather incomplete list of Minecraft Alpha related libraries currently 
 | [http://en.wikipedia.org/wiki/Objective-C#Objective-C_2.0 Objective-C 2.0]
 | MIT License
 |-
+! [https://github.com/axus/libmc--c libmc--c]
+| axus
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| LGPL License
+|-
 |}
 
 [[Category:Minecraft Alpha]]
