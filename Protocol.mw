@@ -255,7 +255,7 @@ This packet is new to version 4 of the protocol, and is believed to be Use Entit
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x07
+| class="col0 centeralign" rowspan="3" | 0x07
 | class="col1 centeralign" | User
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>1298</code>
@@ -266,10 +266,16 @@ The entity of the player (ignored by the server)
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>1805</code>
 | class="col3" |
-The entity the player has right-clicked on
+The entity the player is interacting with
 |- class="row3"
+| class="col0 centeralign" | Punching?
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | <code>true</code>
+| class="col3" |
+Seems to be <code>true</code> when the player is punching/slashing a mob, otherwise <code>false</code>.
+|- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes
+| class="col1 rightalign" colspan="4" | 10 bytes
 |}
 
 === Player (0x0A) ===
