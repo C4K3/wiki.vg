@@ -1055,9 +1055,9 @@ Sent by the server when a player has become close enough to collect an item on t
 
 “Life” can range from 0x01 (full health) to 0x32 (no health), 0x00 omits the health bar altogether, and is what should be used for blocks.
 
-=== Arm Animation (0x12) ===
+=== Animation (0x12) ===
 
-Sent whenever someone swings their arm.
+Sent whenever an entity should change animation.
 
 {| class="wikitable"
 |- class="row0"
@@ -1074,9 +1074,9 @@ Sent whenever someone swings their arm.
 | class="col4" | Player ID
 |- class="row2"
 | class="col0 centeralign" | Animate
-| class="col1 centeralign" | bool
+| class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | If <code>true</code>, animate the arm
+| class="col3" | Can be <code>0</code> (no animation), <code>1</code> (swing arm) or <code>2</code> (death animation?).
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
