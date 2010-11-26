@@ -1000,7 +1000,6 @@ Sent by the server after receiving a respawn packet from the client. Not sure of
 | class="col0 centeralign" | 0x09
 |}
 
-
 === Player Position &amp; Look (0x0D) ===
 
 A combination of [[Protocol#Player_Look_.280x0C.29|Player Look]] and [[Protocol#Player_Position_.280x0B.29|Player position]].
