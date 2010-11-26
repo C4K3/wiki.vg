@@ -278,6 +278,28 @@ Seems to be <code>true</code> when the player is punching/slashing a mob, otherw
 | class="col1 rightalign" colspan="4" | 10 bytes
 |}
 
+=== Respawn (0x09) ===
+
+Sent by the client when the player presses the 'respawn' button after dying. The server then drops the player's inventory and teleports the user to the spawn point.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x09
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 00
+| class="col4" | Never seems to be anything but 0.
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes.
+|}
+
 === Player (0x0A) ===
 
 This packet is used to identify the state of the client, with the idea being to send one each game-tick to detect speed hackers. Notch will be optimizing/removing this in the future. This packet was previously referred to as Flying
