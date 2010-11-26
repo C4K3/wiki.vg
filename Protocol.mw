@@ -989,6 +989,18 @@ Sent by the server to update/set the health of the player it is sent to. Added i
 | class="col1 rightalign" colspan="4" | 2 bytes
 |}
 
+=== Respawn (0x09) ===
+
+Sent by the server after receiving a respawn packet from the client. Not sure of use.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+|- class="row1"
+| class="col0 centeralign" | 0x09
+|}
+
+
 === Player Position &amp; Look (0x0D) ===
 
 A combination of [[Protocol#Player_Look_.280x0C.29|Player Look]] and [[Protocol#Player_Position_.280x0B.29|Player position]].
