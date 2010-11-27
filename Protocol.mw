@@ -991,7 +991,7 @@ Sent by the server to update/set the health of the player it is sent to. Added i
 
 === Respawn (0x09) ===
 
-Sent by the server after receiving a respawn packet from the client. Not sure of use.
+Sent by the server after receiving a respawn packet from the client. The client will not leave the respawn screen it seems until this packet is received.
 
 {| class="wikitable"
 |- class="row0"
