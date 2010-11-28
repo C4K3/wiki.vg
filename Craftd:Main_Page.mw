@@ -1,0 +1,9 @@
+Welcome to the craftd wiki page.  craftd lives at http://mc.kev009.com/craftd/.
+
+You can find the latest source on github: https://github.com/kev009/craftd/.
+
+== User Documentation ==
+*[[Craftd:Configuration|Configuration]]
+
+== Developer Documentation ==
+*[[Craftd:Thread_Model|Thread Model]]
