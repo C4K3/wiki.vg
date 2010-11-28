@@ -1,0 +1,29 @@
+craftd relies heavily on the standard pthreads library.  This document describes the current threading model.
+
+== General ==
+When possible, Reader/Writer Locks are used in preference to Mutexes.  Care must be taken to avoid dead locks and starvation.
+
+== Main ==
+The main thread contains accept() and game network I/O callbacks.  When a network I/O event occurs, the main thread passes it off to a member of the worker pool.
+
+Packets are passed to the numbered worker which is determined by a counting semaphore.  The idea is that the fewest number and same threads will continually be used to keep the cache lines hot rather than round-robin distribution.  If context switches are significant, craftd will integrate libnuma or use OS specific CPU affinity calls when available.
+
+== Worker Pool ==
+The worker pool threads determine that an entire packet has been received or return EAGAIN in anticipation of the next buffer event.
+
+When an entire packet has been received, it is decoded and a response is generated.
+
+== Timer Loop ==
+The timer loop contains time bound events and runs as an independent event loop.  For example:
+
+* Send a MOTD via chat packets every 10 minutes
+* fsync world file and make a backup
+* Grow plants
+
+Events are FIFO queued and act when timeval expires.  Events can be one shot (i.e. queue a backup from web admin) or reoccurring.
+
+== httpd ==
+The integrated httpd service is asynchronous and non-blocking.  It runs under its own thread of control with an independent event loop.  The single thread is more than sufficient for the load placed on this service since it uses asynchronous non-blocking I/O for both network and file operations.
+
+== Future Directions ==
+libevent 2.1 may contain additional threading logic to make it easier to assign clients entirely to a specific worker thread.  For instance, the main thread will accept() and then pass the entire bufferevent off to a thread pool.  craftd will switch to this and merge the packet worker threads into this new combined worker thread model when the feature is widely available.
