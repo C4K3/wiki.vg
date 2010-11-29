@@ -989,6 +989,8 @@ Sent by the server after receiving a respawn packet from the client. The client 
 ! class="col0" | Packet ID
 |- class="row1"
 | class="col0 centeralign" | 0x09
+|- class="row2"
+! class="col0" | Total Size:  1 bytes.
 |}
 
 === Player Position &amp; Look (0x0D) ===
