@@ -268,11 +268,11 @@ The entity of the player (ignored by the server)
 | class="col3" |
 The entity the player is interacting with
 |- class="row3"
-| class="col0 centeralign" | Punching?
+| class="col0 centeralign" | Left-click?
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>true</code>
 | class="col3" |
-Seems to be <code>true</code> when the player is punching/slashing a mob, otherwise <code>false</code>.
+Seems to be <code>true</code> when the player is pointing at an entity and left-clicking and <code>false</code> when right-clicking.
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 10 bytes
