@@ -1972,8 +1972,10 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2010-11-24 ===
 * <div class="li"> Protocol version changed to 5</div>
+* <div class="li"> Packet 0x07 ([[Protocol#Use_Entity.3F_.280x07.29|Use Entity]]) got a new field (byte)</div>
 * <div class="li"> Packet 0x08 ([[Protocol#Update Health (0x08)|Update Health]]) added</div>
 * <div class="li"> Packet 0x09 ([[Protocol#Respawn (0x09)|Respawn]]) added</div>
+* <div class="li"> Packet 0x12 ([[Protocol#Animation_.280x12.29|Animation]]) started getting non-boolean values for the Animation field</div>
 
 === 2010-11-10 ===
 * <div class="li"> Protocol version changed to 4</div>
