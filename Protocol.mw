@@ -189,6 +189,8 @@ This is the first packet sent when the client connects and is used for [[Authent
 
 The server will check the message to see if it begins with a '/'. If it doesn't, the username of the sender is prepended and sent to all other clients (including the original sender). If it does, the server assumes it to be a command and attempts to process it.  A short with the length of the message is prepended to the text sent.  eg: 1 byte header [0x03], 2 byte short [string length], N byte string 
 
+A message longer than 100 characters will cause the server to kick you from the server. This limits the chat message packet length to 103 bytes. Note that this limit does not apply to incomming chat messages as the server may have prepended other information, not limited to, but usually including, a username.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
