@@ -1976,7 +1976,11 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2010-12-01 ===
 * <div class="li"> Protocol version changed to 6</div>
-(need info on other changes)
+* <div class="li"> Packet 0x12 ([[Protocol#Animation_.280x12.29|Animation]]) got a lot more new values</div>
+* <div class="li"> Packet 0x26 changed, now indicates entity damage, death and explosion (for creepers, TNT not tested)</div>
+* <div class="li"> Packet 0x3B now being sent from client</div>
+* <div class="li"> Packet 0x3C added</div>
+* (need info on other changes)
 
 === 2010-11-24 ===
 * <div class="li"> Protocol version changed to 5</div>
@@ -1984,6 +1988,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * <div class="li"> Packet 0x08 ([[Protocol#Update Health (0x08)|Update Health]]) added</div>
 * <div class="li"> Packet 0x09 ([[Protocol#Respawn (0x09)|Respawn]]) added</div>
 * <div class="li"> Packet 0x12 ([[Protocol#Animation_.280x12.29|Animation]]) started getting non-boolean values for the Animation field</div>
+* <div class="li"> Packet 0x26 (Entity Death) added</div>
 
 === 2010-11-10 ===
 * <div class="li"> Protocol version changed to 4</div>
