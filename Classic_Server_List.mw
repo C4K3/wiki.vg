@@ -1,0 +1,36 @@
+This is a rather incomplete list of Minecraft Classic servers currently in development. This page only lists servers written from scratch. For mods and wrappers, see the [[Classic Utility List]].
+
+{| class="wikitable" style="width: auto; text-align: center;"
+|-style="background:#eee"
+!style="width: 72px" | Name
+!Author(s)
+!style="width: 128px" | Language
+!style="width: 128px" | License
+!style="width: 72px" | Threaded
+!style="width: 72px" | Scripting
+|-
+! [http://fcraft.net/ fCraft]
+| fragmer, Destroyer, Redshift 
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| MIT/X11
+| {{yes}}
+| {{no}}
+|-
+! [http://www.minecraftwiki.net/wiki/OpenCraft OpenCraft]
+| Graham Edgecombe, Brett, Søren,
+Mark, Trever Fischer, Adam Liszka 
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://www.opensource.org/licenses/bsd-license.php New BSD License]
+| {{yes}}
+| {{yes}}
+|-
+! [http://www.minecraftwiki.net/wiki/Myne Myne]
+| fragmer, Destroyer, Redshift 
+| [http://en.wikipedia.org/wiki/Python_(programming_language) Python]
+| Public Domain 
+| {{yes}}
+| {{yes}}
+|-
+|}
+
+[[Category:Minecraft Alpha]]
