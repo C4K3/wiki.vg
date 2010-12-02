@@ -1948,6 +1948,38 @@ The payload is a compressed (GZ) [http://www.minecraft.net/docs/NBT.txt NBT] fil
 | class="col1 rightalign" colspan="4" | 13 bytes + payload
 |}
 
+=== Unknown Command (0x3C) ===
+
+Seems to be sent when an explosion occurs (both creepers and TNT).
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=3 | 0x3C
+| class="col1 centeralign" | Unknown value(s)
+| class="col2 centeralign" | 28 bytes
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+| class="col1 centeralign" | Record count
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | This is the count, not the size. The size is 3 times this value.
+|- class="row3"
+| class="col1 centeralign" | Records
+| class="col2 centeralign" | byte array
+| class="col3 centeralign" | 
+| class="col4" | each record is 3 bytes
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 33 bytes + size of records array
+|}
+
 === Kick (0xFF) ===
 
 Sent by the server before it disconnects a client.
