@@ -1948,7 +1948,7 @@ The payload is a compressed (GZ) [http://www.minecraft.net/docs/NBT.txt NBT] fil
 | class="col1 rightalign" colspan="4" | 13 bytes + payload
 |}
 
-=== Explosion Command (0x3C) ===
+=== Explosion (0x3C) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
