@@ -6,7 +6,7 @@ When possible, Reader/Writer Locks are used in preference to Mutexes.  Care must
 == Main ==
 The main thread contains accept() and game network I/O callbacks.  When a network I/O event occurs, the main thread passes it off to a member of the worker pool.
 
-Packets are passed to the numbered worker which is determined by a counting semaphore.  The idea is that the fewest number and same threads will continually be used to keep the cache lines hot rather than round-robin distribution.  If context switches are significant, craftd will integrate libnuma or use OS specific CPU affinity calls when available.
+Packets are passed to worker which is determined by a common Pthreads condition variable in the worker loops.  This allows the OS to determine thread scheduling.
 
 == Worker Pool ==
 The worker pool threads determine that an entire packet has been received or return EAGAIN in anticipation of the next buffer event.
