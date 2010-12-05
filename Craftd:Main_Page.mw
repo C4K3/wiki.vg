@@ -46,7 +46,7 @@ These are future research and development ideas in arbitrary order.
 
 == Developer Documentation ==
 *[[Craftd:Thread_Model|Thread Model]]
-*[[Craftd:C99_bool|Use of C99 bool type]]
+*[[Craftd:Coding_Style|Coding Style and Notes]]
 *[http://www.wangafu.net/~nickm/libevent-book/ libevent book]
 *[http://mc.kev009.com/libevent libevent2 Doxygen] - Local, up to date copy
 *[http://www.unix.org/2008edition/ POSIX1-2008]
