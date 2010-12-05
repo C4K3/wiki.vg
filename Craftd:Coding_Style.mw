@@ -1,0 +1,4 @@
+== stdbool ==
+Use of the C99 ''bool'' type in <stdbool.h> is encouraged for internal boolean values within craftd.  Platforms that do not define this can be worked around with Autoconf and preprocessor.
+===NOTE:===
+When sending over the network, first recast to an int8_t to ensure that it only occupies '''1 byte''' as sizeof(bool) differs from compiler to compiler.
