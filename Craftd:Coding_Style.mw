@@ -1,4 +1,12 @@
+== assert ==
+Use of assertions is advised whenever undefined or dangerous state is encountered with internal constructions and declarations.  This includes internal string constructions, thread starting, NULL pointer checks, etc.
+
+Runtime states that come from the network or user should instead use the error handling functions and attempt to punt the client.
+
 == stdbool ==
 Use of the C99 ''bool'' type in <stdbool.h> is encouraged for internal boolean values within craftd.  Platforms that do not define this can be worked around with Autoconf and preprocessor.
 ===NOTE:===
 When sending over the network, first recast to an int8_t to ensure that it only occupies '''1 byte''' as sizeof(bool) differs from compiler to compiler.
+
+== Unknown State ==
+Fail early, kick hard.  Do not try to massage the data stream or recover.  Use of ''goto'' is recommended, especially for breaking out of large loop and conditional chains.  Free all allocated resources and close the bufferevent.
