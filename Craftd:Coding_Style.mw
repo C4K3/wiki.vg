@@ -3,6 +3,23 @@ Use of assertions is advised whenever undefined or dangerous state is encountere
 
 Runtime states that come from the network or user should instead use the error handling functions and attempt to punt the client.
 
+== Internal Documentation ==
+Methods, structs, and unions should have Doxygen/JavaDoc style documentation.
+
+e.g.
+<pre>
+/**
+ * Check if a coordinate pair exists within a rectangle struct.
+ *
+ * @remarks Scope: public
+ * 
+ * @param rectangle pointer to a rectangle struct
+ * @param x the x coordinate
+ * @param y the y coordinate
+ * @return true if the point is within the rectange, false otherwise
+ */
+</pre>
+
 == stdbool ==
 Use of the C99 ''bool'' type in <stdbool.h> is encouraged for internal boolean values within craftd.  Platforms that do not define this can be worked around with Autoconf and preprocessor.
 ===NOTE:===
