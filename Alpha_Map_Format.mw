@@ -1,3 +1,17 @@
+Alpha worlds consist of several files, all held together in one folder under a very rigid directory structure.
+
+= Level =
+
+The level is a file called "level.dat" in the root of the world.
+
+= Chunks =
+
+Chunks are stored in folders inside the world corresponding to their coordinates in base-36.
+
+= Players =
+
+Persistent data for players is stored in a folder called "players". Each player has a file called "<username>.dat".
+
 = Map Generation =
 
 There are several approaches to map generation.
