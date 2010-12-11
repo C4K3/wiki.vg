@@ -12,6 +12,14 @@ Chunks are stored in folders inside the world corresponding to their coordinates
 
 Persistent data for players is stored in a folder called "players". Each player has a file called "<username>.dat".
 
+{| class="wikitable"
+! Name || Type || Description
+|-
+| Pos || List of 3 doubles || X, Y, and Z coordinates of the player position, in pixel coordinates
+|-
+| Rotation || List of 2 doubles || Yaw and pitch of the player, in degrees
+|}
+
 = Map Generation =
 
 There are several approaches to map generation.
