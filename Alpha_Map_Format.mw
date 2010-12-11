@@ -1,0 +1,7 @@
+= Map Generation =
+
+There are several approaches to map generation.
+
+== Noise ==
+
+Two-dimensional noise functions can be used to provide a terrain height at certain coordinates.
