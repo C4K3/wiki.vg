@@ -8,7 +8,7 @@ The level is a file called "level.dat" in the root of the world.
 
 Chunks are stored in folders inside the world corresponding to their coordinates in base-36. The path is "<base-36-x-63>/<base-36-z-63>/c.<base-36-x>.<base-36-z>.dat", where <base-36-x-63> is the base-36 representation of the X coordinate of the chunk AND'd bitwise with 63.
 
-For example, if we have the chunk coordinate <math>(39, -13)</math>, we end up with the path <math>13/1f/c.13.-d.dat</math>
+For example, if we have the chunk coordinate (39, -13), we end up with the path 13/1f/c.13.-d.dat
 
 The main world is stored in the root directory of the world. The Nether is stored in the "DIM-1" folder in the root and uses the same chunk folder system.
 
