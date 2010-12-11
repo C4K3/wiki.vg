@@ -8,6 +8,8 @@ The level is a file called "level.dat" in the root of the world.
 
 Chunks are stored in folders inside the world corresponding to their coordinates in base-36. The path is "<base-36-x-63>/<base-36-z-63>/c.<base-36-x>.<base-36-z>.dat", where <base-36-x-63> is the base-36 representation of the X coordinate of the chunk AND'd bitwise with 63.
 
+The main world is stored in the root directory of the world. The Nether is stored in the "DIM-1" folder in the root and uses the same chunk folder system.
+
 == The Base-36 Algorithm ==
 
 To retrieve the base-36 representation of a number, use the digits "0123456789abcdefghijklmnopqrstuvwxyz", and prefix the result with a hyphen ("-") if the number is negative.
