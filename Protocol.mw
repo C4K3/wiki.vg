@@ -840,6 +840,7 @@ A formatted chat message from the server. Note that it is unreliable to parse ch
 === Time Update (0x04) ===
 
 The default SMP server increments the time by <code>20</code> every second.
+The current time ranges from 0 to 24000.
 
 {| class="wikitable"
 |- class="row0"
