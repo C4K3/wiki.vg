@@ -1711,7 +1711,6 @@ The vehicle entity ID attached to (-1 for unattaching)
 | class="col1 rightalign" colspan="4" | 9 bytes
 |}
 
-
 === Pre-Chunk (0x32) ===
 
 This packet is sent by the server to notify the client to initialize (Mode=1) or unload (Mode=0) a chunk. The client is expected to allocate space for a full chunk (currently 16 x 128 x 16 blocks). One or more 0x33 packets will follow, specifying actual data to fill the chunk with.
