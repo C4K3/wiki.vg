@@ -1658,7 +1658,7 @@ This packet is sent by the server when an entity moves more then 4 blocks.
 | class="col1 rightalign" colspan="4" | 19 bytes
 |}
 
-=== Attach Entity? (0x27) ===
+=== Entity damage, death and explosion (?) (0x26) ===
 This packet is new in version 6 of the protocol, and is believed to be indication of entity damage, death and explosion
 
 {| class="wikitable"
