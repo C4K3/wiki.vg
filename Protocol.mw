@@ -1659,6 +1659,27 @@ This packet is sent by the server when an entity moves more then 4 blocks.
 |}
 
 === Attach Entity? (0x27) ===
+This packet is new in version 6 of the protocol, and is believed to be indication of entity damage, death and explosion
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="1" | 0x26
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | Unknown
+| class="col3 centeralign" | 0x00 0x40 0xC8 0xAC 0x03
+| class="col4" | The first 2 bytes are usually 0x00 0x40
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 6 bytes
+|}
+
+=== Attach Entity? (0x27) ===
 This packet is new to version 4 of the protocol, and is believed to be Attach Entity.
 
 This packet is sent when a player has been attached to an entity (e.g. Minecart)
