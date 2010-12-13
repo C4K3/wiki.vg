@@ -14,7 +14,7 @@ Once you have a __download ticket__, it's possible to download a new version of 
 == Connecting To A Server ==
 When you first attempt to connect to the server, you begin by sending the [[MC-Ver]] containing your case-sensitive username. The server will return one of three values: '-' for no authentication (in which case you can just continue joining), '+' for password protected or a hash if the server requires name authentication. Name verification is achieved by sending a HTTP GET request to the minecraft.net server:
 <pre>http://www.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
-If the server returns ''ok'' it's safe to continue joining the server, otherwise you'll disconnecting you with an error message.
+If the server returns ''ok'' it's safe to continue joining the server, otherwise it'll disconnect you with an error message.
 
 == Verifying Name Authentication ==
 The server will verify name authentication by making yet another HTTP GET request to minecraft.net:
