@@ -25,5 +25,39 @@ Use of the C99 ''bool'' type in <stdbool.h> is encouraged for internal boolean v
 ===NOTE:===
 When sending over the network, first recast to an int8_t to ensure that it only occupies '''1 byte''' as sizeof(bool) differs from compiler to compiler.
 
+== Logging ==
+Logging is handled via a function pointer that enables runtime switching of logging between stdout and syslog.  The function signature is identical to syslog(3) and all POSIX levels are supported.
+
+=== Available functions ===
+* '''LOG'''(int priority, const char *format, ...) - The basic abstract logging function used throughout craftd.
+* '''LOG_setlogmask'''(int maskbits) - use with '''LOG_MASK()''' macro from syslog to mask message types.
+* '''LOGT'''(int priority, const char *format, ...) - Only compiled with -DTRACE
+* '''ERR'''(const char *format, ...) - Fatal conditions that cause exit
+* '''PERR'''(const char *msg) - perror() exit conditions during startup.
+
+=== Examples ===
+<syntaxhighlight lang="C">
+/* Usually set by main to console or syslog depending on daemonize and startup status */
+LOG = &log_console;
+LOG_setlogmask = &log_console_setlogmask;
+
+LOG_setlogmask(LOG_MASK(LOG_DEBUG)); // Don't print debugging messages
+
+LOG(LOG_DEBUG, "This message wont appear");
+LOG(LOG_INFO, "An informative message %s", passedInStringVar);
+
+/* Only appears when compiled with -DTRACE */
+LOGT(LOG_INFO, "A trace message");
+
+/* An error that should cause an exit.  Logs with LOG. */
+ERR("Fatal error caused by %s", aString);
+
+/* perror() and exit failure for startup problems (e.g. socket binding) */
+PERR("Can't bind to socket.");
+
+</syntaxhighlight>
+
+Notes about this implementation can also be found here: http://www.kev009.com/wp/2010/12/no-nonsense-logging-in-c-and-cpp/
+
 == Unknown State ==
 Fail early, kick hard.  Do not try to massage the data stream or recover.  Use of ''goto'' is recommended, especially for breaking out of large loop and conditional chains.  Free all allocated resources and close the bufferevent.
