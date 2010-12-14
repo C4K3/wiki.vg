@@ -1,0 +1,53 @@
+After building and installing craftd, you will need to move the config files into place.  craftd looks for the main config file in the following order:
+* ~/.craftd/craftd.conf
+* /etc/craftd/craftd.conf
+* /usr/local/etc/craftd/craftd.conf
+* Current working directory (useful for developers)
+
+
+By default, these are located in $prefix/etc/craftd/ as *.dist files so as not to overwrite existing configs when you install updates.
+
+<syntaxhighlight lang="bash">
+cd /usr/local/etc
+mv craftd.conf.dist craftd.conf
+mv motd.conf.dist motd.conf
+</syntaxhighlight>
+
+A config file is necessary, but it can consist of nothing more than {} if you wish to accept the defaults.  Options may be omitted, in which case the defaults will be used.  If the file fails to parse, an error message will be logged.
+
+== Available options and their defaults ==
+{| class="wikitable" style="text-align:center"
+|+Game Config
+|-
+! Option !! Default !! Action !! Notes
+|-
+! daemonize
+| true || Fork the server and run in background || N/A
+|-
+! game-port
+| 25565 || The port players connect to || craftd does not run as root; it must be >1024
+|-
+! minecraft-stringmax
+| 100 || Players are not allowed to send messages longer than this || N/A
+|-
+! motd-file
+| ./motd.conf || Text displayed when user logs in || N/A
+|-
+! worker-pool-size
+| 2 || Number of threads to use for packet processing || Set between 1-2x number of CPU cores
+|}
+
+{| class="wikitable" style="text-align:center"
+|+Integrated httpd server
+|-
+! Option !! Default !! Action !! Notes
+|-
+! enabled
+| true || Enable the integrated httpd server || Used for admin and status
+|-
+! httpd-port
+| 25566 || The port web browsers connect to || craftd does not run as root; it must be >1024
+|-
+! static-docroot
+| ./htdocs || Location of static web content || N/A
+|}
