@@ -23,10 +23,10 @@ craftd is on [https://github.com/kev009/craftd/ github]. This is a developer pre
 *Daemon basics -- need conventional SIG handlers, SIGHUP, pid locks
 *Choose a FOSS license -> Simplified BSD
 *Logging. XSI/Single UNIX Specification syslog most likely. -> syslog with alternative stdout selector at runtime.
+*Configuration files -> JSON formatted
 
 === Future directions/TODO: ===
 These are future research and development ideas in arbitrary order.
-*Configuration files
 *World file format. NBT or custom w/import-export? BerkeleyDB?
 *Sparse matrix for ^?
 *Binaries for Linux, Win32(MinGW), FreeBSD
