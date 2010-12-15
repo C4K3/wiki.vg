@@ -1415,6 +1415,9 @@ Mob Types (Incomplete)
 |- class="row2"
 | class="col0" | 92
 | class="col1" | Cow
+|- class="row3"
+| class="col0" | 93
+| class="col1" | Hen
 |}
 
 === Entity Velocity? (0x1C) ===
