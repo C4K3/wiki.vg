@@ -1412,6 +1412,9 @@ Mob Types (Incomplete)
 |- class="row1"
 | class="col0" | 91
 | class="col1" | Sheep
+|- class="row2"
+| class="col0" | 92
+| class="col1" | Cow
 |}
 
 === Entity Velocity? (0x1C) ===
