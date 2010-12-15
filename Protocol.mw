@@ -211,7 +211,7 @@ A message longer than 100 characters will cause the server to kick you from the 
 
 === Player Inventory (0x05) ===
 
-Sent by the client whenever the inventory is modified (item destruction, pickup, crafting, etc…). For details, see [[Protocol#player_inventory_0x051|here]].
+Sent by the client whenever the inventory is modified (item destruction, pickup, crafting, etc…). For details, see [[Protocol#Player_Inventory_.280x05.29_2|here]].
 
 {| class="wikitable"
 |- class="row0"
