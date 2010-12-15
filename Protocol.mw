@@ -2052,7 +2052,7 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col4" | Each record is 3 bytes, which seem to be XYZ offsets of affected blocks.
 |- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 33 bytes + size of records array
+| class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
 === Kick (0xFF) ===
