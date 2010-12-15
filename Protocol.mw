@@ -1410,12 +1410,15 @@ Mob Types (Incomplete)
 ! class="col0" | Type ID
 ! class="col1" | Type Name
 |- class="row1"
+| class="col0" | 90
+| class="col1" | Pig
+|- class="row2"
 | class="col0" | 91
 | class="col1" | Sheep
-|- class="row2"
+|- class="row3"
 | class="col0" | 92
 | class="col1" | Cow
-|- class="row3"
+|- class="row4"
 | class="col0" | 93
 | class="col1" | Hen
 |}
