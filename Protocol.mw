@@ -1403,6 +1403,17 @@ Sent by the server when a Mob Entity is Spawned
 | class="col1 rightalign" colspan="4" | 20 bytes
 |}
 
+Mob Types (Incomplete)
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Type ID
+! class="col1" | Type Name
+|- class="row1"
+| class="col0" | 91
+| class="col1" | Sheep
+|}
+
 === Entity Velocity? (0x1C) ===
 This packet is new to version 4 of the protocol, and is believed to be Entity Velocity/Motion.
 
