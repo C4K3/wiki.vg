@@ -4,6 +4,23 @@ Welcome to the Minecraft Coalition wiki! Thanks to the #mcdevs community on irc.
 
 Consult the [http://meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
 
+== Start Here ==
+===I want to write my own XYZ program, where do I start?===
+Custom Minecraft development is non-trivial and is not something to cut your teeth on with respect to programming.  If you cannot answer the above question, you will likely not have a very fun time.  You will also upset other people if you ask questions that demonstrate a lack of prerequisite knowledge, especially related to general software development strategy or use of the language of your choice.
+
+Likewise, the Minecraft protocol and official client/server are widely criticized in both design and implementation.   Dealing with these issues can be painful.  Worst of all, if you don't have a solid development background you may unknowingly absorb these flaws into your own development strategy - both now and down the line on future projects.
+
+In closing, first see if there is an existing project that you can contribute to.  There are already a variety of mods, clients, servers, utilities and libraries that could use help - and not just related to coding.
+
+===The wiki is WRONG!!!===
+Are you 100% certain, and do you have a testcase to prove your assertion?
+
+If not, many people have implemented projects using the information here and chances are you're doing something wrong.
+
+If so, by making use of this site, you owe it to the community to contribute fixes and documentation enhancements back.
+
+Remember, this wiki is a volunteer effort.  Treat the people who contribute to it with respect.
+
 == Alpha ==
 [[File:Banner alpha.png|link=Minecraft Alpha]]
 
