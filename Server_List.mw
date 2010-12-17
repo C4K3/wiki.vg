@@ -51,13 +51,19 @@ This is a rather incomplete list of Minecraft Alpha servers currently in develop
 | {{yes}}
 | {{no}}
 |-
-|-
 ! [http://codaset.com/moose/quartz-public Quartz]
 | Moose
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | None yet
 | {{yes}}
 | {{no}}
+|-
+! [http://mcserver.ae-c.net MCServer]
+| FakeTruth
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| None yet
+| {{yes}}
+| {{yes}}
 |}
 
 [[Category:Minecraft Alpha]]
