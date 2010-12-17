@@ -1680,7 +1680,7 @@ This packet is sent by the server when an entity moves more then 4 blocks.
 | class="col1 rightalign" colspan="4" | 19 bytes
 |}
 
-=== Entity damage, death and explosion? (0x26) ===
+=== Entity Status? (0x26) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
@@ -1695,20 +1695,15 @@ This packet is new in version 6 of the protocol, and is believed to be indicatio
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="3" | 0x26
-| class="col1 centeralign" | Unknown
-| class="col2 centeralign" | Short
-| class="col3 centeralign" | 0x00 0x40
-| class="col4" | Always (?) 0x00 0x40
-|- class="row2"
-| class="col1 centeralign" | Unknown
-| class="col2 centeralign" | Short
-| class="col3 centeralign" | 0xC8 0xAC
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | Int
+| class="col3 centeralign" | 34353
 | class="col4" | 
 |- class="row3"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Entity Status?
 | class="col2 centeralign" | Byte
 | class="col3 centeralign" | 0x03
-| class="col4" | Seen 0x02 and 0x03
+| class="col4" | Possible values: 2, 3 (entity dead?), 4, 5
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
