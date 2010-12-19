@@ -13,6 +13,9 @@ Contains a single real number represented by a 64-bit IEEE754 double precision f
 Contains a Integral prefix specifying the length of the string in bytes, followed by an arbitrary amount of UTF-8 characters.
 
 === ByteString ===
+
+Contains an Integral prefix, followed by an arbitrary amount of binary data.
+
 === Array ===
 === Set ===
 === Dictionary ===
