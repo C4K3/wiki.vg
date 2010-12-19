@@ -10,13 +10,52 @@ Contains a single real number represented by a 64-bit IEEE754 double precision f
 
 === String ===
 
-Contains a Integral prefix specifying the length of the string in bytes, followed by an arbitrary amount of UTF-8 characters.
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x0E
+| class="col1 centeralign" | Status
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | The action the player is taking against the block (see below)
+|- class="row2"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>32</code>
+| class="col3" | Block position
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>64</code>
+| class="col3" | Block position
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>32</code>
+| class="col3 leftalign" | Block position
+|- class="row5"
+| class="col0 centeralign" | Face
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>3</code>
+| class="col3" | The face being hit (see below)
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 12 bytes
+|}
 
 === ByteString ===
 
 Contains an Integral prefix, followed by an arbitrary amount of binary data.
 
 === Array ===
+
+
+
 === Set ===
 === Dictionary ===
 === StringMap ===
