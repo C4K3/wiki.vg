@@ -46,7 +46,7 @@ The tag types and respective payloads are:
 
     TYPE: 6  NAME: TAG_Double
     Payload: A floating point value (64 bits, big endian, IEEE 754-2008, binary64)
-    
+
     TYPE: 7  NAME: TAG_Byte_Array
     Payload: TAG_Int length 
              An array of bytes of unspecified format. The length of this array is <length> bytes
