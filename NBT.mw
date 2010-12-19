@@ -58,7 +58,7 @@ The tag types and respective payloads are:
     TYPE: 9  NAME: TAG_List
     Payload: Byte tagId (NOT TAGGED)
              Int length (NOT TAGGED)
-             A sequential list of Tags (not Named Tags), of type <typeId>. The length of this array is <length> Tags
+             A sequential list of Tags (not Named Tags, OR TAGS AT ALL), of type <typeId>. The length of this array is <length> Tags
     Notes:   All tags share the same type.
 
     TYPE: 10 NAME: TAG_Compound
