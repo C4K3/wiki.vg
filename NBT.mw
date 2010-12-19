@@ -48,16 +48,16 @@ The tag types and respective payloads are:
     Payload: A floating point value (64 bits, big endian, IEEE 754-2008, binary64)
 
     TYPE: 7  NAME: TAG_Byte_Array
-    Payload: TAG_Int length 
+    Payload: Int length (NOT TAGGED)
              An array of bytes of unspecified format. The length of this array is <length> bytes
 
     TYPE: 8  NAME: TAG_String
-    Payload: TAG_Short length 
+    Payload: Short length  (NOT TAGGED)
              An array of bytes defining a string in UTF-8 format. The length of this array is <length> bytes
 
     TYPE: 9  NAME: TAG_List
-    Payload: TAG_Byte tagId
-             TAG_Int length
+    Payload: Byte tagId (NOT TAGGED)
+             Int length (NOT TAGGED)
              A sequential list of Tags (not Named Tags), of type <typeId>. The length of this array is <length> Tags
     Notes:   All tags share the same type.
 
