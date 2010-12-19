@@ -2,7 +2,7 @@
 
 === Integral ===
 
-Contains a single integral value of arbitrary precision, signedness and endianness. 
+Contains a single integral value of arbitrary precision, signedness and endianness, as specified by a bitfield.
 
 {| class="wikitable"
 |- class="row0"
