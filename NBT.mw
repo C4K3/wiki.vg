@@ -1,5 +1,7 @@
 '''The following is a direct mirror of the no longer existent NBT.txt '''
 
+----
+
 NBT (Named Binary Tag) is a tag based binary format designed to carry large amounts of binary data with smaller amounts of additional data.
 An NBT file consists of a single GZIPped Named Tag of type TAG_Compound.
 
