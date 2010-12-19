@@ -2,27 +2,7 @@
 
 === Integral ===
 
-Contains a single integral value of arbitrary precision, signedness and endianness, as specified by a bitfield.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Tag ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x01
-| class="col1 centeralign" | Specification
-| class="col2 centeralign" | Bitfield (8 bit)
-| class="col3 centeralign" | 
-| class="col4" | Indicates precision, signedness and endianness (see below)
-|- class="row2"
-| class="col0 centeralign" | Protocol Version
-| class="col1 centeralign" | ?
-| class="col2 centeralign" | <code>23</code>
-| class="col3" | The actual integral value.
-|}
+Contains a single integral value stored as a big endian signed 64-bit integer.
 
 === Real ===
 === String ===
