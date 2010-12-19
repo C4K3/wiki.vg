@@ -5,6 +5,9 @@
 Contains a single integral value stored as a big endian signed 64-bit integer.
 
 === Real ===
+
+Contains a single real number represented by a 64-bit IEEE754 double precision floating point number, flipped to big endian byte order.
+
 === String ===
 === ByteString ===
 === Array ===
