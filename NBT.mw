@@ -148,3 +148,7 @@ You should end up with this:
        TAG_Byte_Array("byteArrayTest (the first 1000 values of (n*n*255+n*7)%100, starting with n=0 (0, 62, 34, 16, 8, ...))"): [1000 bytes]
        TAG_Double("doubleTest"): 0.4931287132182315
     }
+
+[[Category:Minecraft Alpha]]
+[[Category:Minecraft Classic]]
+[[Category:File Formats]]
