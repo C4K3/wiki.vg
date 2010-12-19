@@ -2,6 +2,8 @@
 
 === Integral ===
 
+Contains a single integral value of arbitrary precision, signedness and endianness. 
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Tag ID
