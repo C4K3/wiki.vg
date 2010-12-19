@@ -28,7 +28,7 @@ The tag types and respective payloads are:
     Note:    This tag is used to mark the end of a list.
              Cannot be named! If type 0 appears where a Named Tag is expected, the name is assumed to be "".
              (In other words, this Tag is always just a single 0 byte when named, and nothing in all other cases)
-    
+
     TYPE: 1  NAME: TAG_Byte
     Payload: A single signed byte (8 bits)
 
@@ -60,7 +60,7 @@ The tag types and respective payloads are:
              TAG_Int length
              A sequential list of Tags (not Named Tags), of type <typeId>. The length of this array is <length> Tags
     Notes:   All tags share the same type.
-             
+
     TYPE: 10 NAME: TAG_Compound
     Payload: A sequential list of Named Tags. This array keeps going until a TAG_End is found.
              TAG_End end
