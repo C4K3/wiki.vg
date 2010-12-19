@@ -94,10 +94,10 @@ in the TAG_Compound is over, and indeed all of the NBT file.
 
 So we ended up with this:
 
-	TAG_Compound("hello world"): 1 entries
-	{
-	   TAG_String("name"): Bananrama
-	}
+    TAG_Compound("hello world"): 1 entries
+    {
+        TAG_String("name"): Bananrama
+    }
 
 
 
