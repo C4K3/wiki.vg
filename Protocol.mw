@@ -1840,6 +1840,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2010-12-20 ===
 * <div class="li">Notch released Beta on time! Amazing! Refactored the page to be slightly smaller and easier to navigate.</div>
+* A whole host of packet changes. 0x08, 0x10, 0x11, 0x3b, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x6a, and 0x82.
 
 === 2010-12-01 ===
 * <div class="li"> Protocol version changed to 6</div>
