@@ -108,11 +108,11 @@ There are several different units of measurement used in the protocol depending 
 | class="col2" | Represents the '''exact''' position of a chunk. Chunk = Block / 16.
 |}
 
-== Client to Server Packets ==
+== Packets ==
 
 === Keep Alive (0x00) ===
 
-This packet may be sent by the client to keep the connection alive, or may be a relic of UDP testing. No one is really sure. What we do know is that the server will disconnect a client if it doesn't receive at least one packet before it increments a variable 1200 times.
+This packet may be sent to keep the connection alive, or may be a relic of UDP testing. No one is really sure. What we do know is that the Alpha server will disconnect a client if it doesn't receive at least one packet before 1200 in-game ticks, and the Alpha client will time out the connection under the same conditions.
 
 {| class="wikitable"
 |- class="row0"
@@ -122,6 +122,8 @@ This packet may be sent by the client to keep the connection alive, or may be a 
 |}
 
 === Login Request (0x01) ===
+
+==== Client to Server ====
 
 Sent by the client after the handshake to finish logging in. If the version is outdated or any field is invalid, the server will disconnect the client with a [[Protocol#Kick_.280xFF.29|kick]]. If the client is started in offline mode, the player's username will default to <code>Player</code>, making LAN play with more than one player impossible (without authenticating) as the server will prevent multiple users with the same name.
 
@@ -163,7 +165,51 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col1 rightalign" colspan="4" | 18 bytes + length of strings
 |}
 
+==== Server to Client ====
+
+Sent by the server if it accepts the clients [[Protocol#Login_Request_.280x01.29|login request]]. If it didn't, it'll send a [[Protocol#Kick_.280xFF.29|kick]] instead.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x01
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>1298</code>
+| class="col4" | The Players Entity ID
+|- class="row2"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | string
+| class="col2 centeralign" | n/a
+| class="col3" | Not yet used (Possibly the server name?)
+|- class="row3"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | string
+| class="col2 centeralign" | n/a
+| class="col3" | Not yet used (Possibly the MOTD? )
+|- class="row4"
+| class="col0 centeralign" | Map Seed
+| class="col1 centeralign" | long
+| class="col2 centeralign" | <code>971768181197178410</code>
+| class="col3" | Used for map generation
+|- class="row5"
+| class="col0 centeralign" | Dimension
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 bytes + length of strings
+|}
+
 === Handshake (0x02) ===
+
+==== Client to Server ====
 
 This is the first packet sent when the client connects and is used for [[Authentication]].
 
@@ -185,11 +231,33 @@ This is the first packet sent when the client connects and is used for [[Authent
 | class="col1 rightalign" colspan="4" | 3 bytes + length of strings
 |}
 
+==== Server to Client ====
+
+This is the first packet sent when the client connects and is used for [[Authentication]]. If the hash is '-', then the client continues without doing name authentication. If the hash is a '+', the client sends the server password in the [[Protocol#Login_Request_.280x01.29|login request]].
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x02
+| class="col1 centeralign" | Connection Hash
+| class="col2 centeralign" | string
+| class="col3 rightalign" | <code>2e66f1dc032ab5f0</code>
+| class="col4" | A unique, per-connection hash, '''or''' '-', '''or''' '+'
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
+|}
+
 === Chat Message (0x03) ===
 
-The server will check the message to see if it begins with a '/'. If it doesn't, the username of the sender is prepended and sent to all other clients (including the original sender). If it does, the server assumes it to be a command and attempts to process it.  A short with the length of the message is prepended to the text sent.  eg: 1 byte header [0x03], 2 byte short [string length], N byte string 
+A message from the client to the server, or the server to the client. The actual handling of chat messages is variable and depends on the server and client; there are no ''de facto'' standards yet.
 
-A message longer than 100 characters will cause the server to kick you from the server. This limits the chat message packet length to 103 bytes. Note that this limit does not apply to incomming chat messages as the server may have prepended other information, not limited to, but usually including, a username.
+The Alpha server will check the message to see if it begins with a '/'. If it doesn't, the username of the sender is prepended and sent to all other clients (including the original sender). If it does, the server assumes it to be a command and attempts to process it. A message longer than 100 characters will cause the server to kick the client. This limits the chat message packet length to 103 bytes. Note that this limit does not apply to incoming chat messages as the server may have prepended other information, not limited to, but usually including, a username.
 
 {| class="wikitable"
 |- class="row0"
@@ -202,16 +270,39 @@ A message longer than 100 characters will cause the server to kick you from the 
 | class="col0 centeralign" | 0x03
 | class="col1 centeralign" | Message
 | class="col2 centeralign" | string
-| class="col3 centeralign" | <code>Hello World!</code>
+| class="col3 centeralign" | <code>&lt;Bob&gt; Hello World!</code>
 | class="col4" | User input '''must''' be sanitized server-side
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes + length of strings
 |}
 
+=== Time Update (0x04) ===
+
+The default SMP server increments the time by <code>20</code> every second.
+The current time ranges from 0 to 24000.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x04
+| class="col1 centeralign" | Time
+| class="col2 centeralign" | long
+| class="col3 centeralign" | <code></code>
+| class="col4 centeralign" | The world (or region) time in minutes
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes
+|}
+
 === Player Inventory (0x05) ===
 
-Sent by the client whenever the inventory is modified (item destruction, pickup, crafting, etc…). For details, see [[Protocol#Player_Inventory_.280x05.29_2|here]].
+[[File:Slots2.png|frame]] Sent by the server to set or reset a players inventory. This includes the main inventory, equipped armour and crafting slots. Packets for all three types are sent to initialize the players inventory before spawning them. Clients send this packet to the server to indicate the contents of their inventory.
 
 {| class="wikitable"
 |- class="row0"
@@ -225,23 +316,93 @@ Sent by the client whenever the inventory is modified (item destruction, pickup,
 | class="col1 centeralign" | Type
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>-1</code>
-| class="col4" |
-The “type” of inventory being sent (see [[Protocol#Player_Inventory_.280x05.29_2|here]])
+| class="col4" | The “type” of inventory being sent (see below)
 |- class="row2"
 | class="col0 centeralign" | Count
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>4</code>
-| class="col3" |
-The number of inventory items (see [[Protocol#Player_Inventory_.280x05.29_2|here]])
+| class="col3" | The number of inventory items (see below)
 |- class="row3"
 | class="col0 centeralign" | Payload
 | class="col1 centeralign" | …
 | class="col2 centeralign" | <code></code>
-| class="col3" |
-The payload (see [[Protocol#Player_Inventory_.280x05.29_2|here]])
+| class="col3" | The payload (see below)
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 7 bytes + size of payload
+|}
+
+Type can (currently) be one of three values:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Inventory Type
+! class="col1" | Value
+! class="col2" | Count
+|- class="row1"
+| class="col0 centeralign" | Main inventory
+| class="col1 centeralign" | -1
+| class="col2 centeralign" | 36
+|- class="row2"
+| class="col0 centeralign" | Equipped armour
+| class="col1 centeralign" | -2
+| class="col2 centeralign" | 4
+|- class="row3"
+| class="col0 centeralign" | Crafting slots
+| class="col1 centeralign" | -3
+| class="col2 centeralign" | 4
+|}
+
+This packet is a bit more tricky to parse than most others because the size of its payload is variable. The payload is an array of shorts (item ID) optionally followed by a byte-short pair (count and uses) as long as the item ID does not equal <code>-1</code>, which signifies an empty slot.
+
+Uses is the number of times an item has been used (the value starts at 0 and counts up.) Note that an invalid use of an item may count as 2 uses.
+
+<syntaxhighlight lang="python">
+ offset = 0
+ 
+ for slot in count:
+     item_id = payload[offset] as short
+     offset += 2
+     if item_id is not equal to -1:
+         count = payload[offset] as byte
+         offset += 1
+         uses = payload[offset] as short
+         offset += 2
+         inventory[slot] = new item(item_id, count, uses)
+     else:
+         inventory[slot] = None
+</syntaxhighlight>
+
+=== Spawn Position (0x06) ===
+
+Sent by the server after login to specify the players starting location and to initialize compasses. It can be sent at any time afterwords to update the point compasses are focused on.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x06
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>117</code>
+| class="col4 centeralign" | Spawn X in block coordinates
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>70</code>
+| class="col3 centeralign" | Spawn Y in block coordinates
+|- class="row3"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>-46</code>
+| class="col3 centeralign" | Spawn Z in block coordinates
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 13 bytes
 |}
 
 === Use Entity? (0x07) ===
@@ -280,9 +441,31 @@ Seems to be <code>true</code> when the player is pointing at an entity and left-
 | class="col1 rightalign" colspan="4" | 10 bytes
 |}
 
+=== Update Health (0x08) ===
+
+Sent by the server to update/set the health of the player it is sent to. Added in protocol version 5.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x08
+| class="col1 centeralign" | Health
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 20
+| class="col4" | 0 = dead, 20 = full HP
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
 === Respawn (0x09) ===
 
-Sent by the client when the player presses the 'respawn' button after dying. The server then drops the player's inventory and teleports the user to the spawn point.
+Sent by the client when the player presses the "Respawn" button after dying. The server then drops the player's inventory, teleports the user to the spawn point, and sends a respawn packet in response.The client will not leave the respawn screen until it receives a respawn packet.
 
 {| class="wikitable"
 |- class="row0"
@@ -290,7 +473,7 @@ Sent by the client when the player presses the 'respawn' button after dying. The
 |- class="row1"
 | class="col0 centeralign" | 0x09
 |- class="row2"
-! class="col0" | Total Size:  1 bytes.
+! class="col0" | Total Size:  1 bytes
 |}
 
 === Player (0x0A) ===
@@ -413,15 +596,15 @@ A combination of [[Protocol#Player_Look_.280x0C.29|Player Look]] and [[Protocol#
 | class="col3 centeralign" | <code>6.5</code>
 | class="col4" | Absolute position
 |- class="row2"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | double
-| class="col2 centeralign" | <code>67.240000009536743</code>
-| class="col3" | Absolute position
-|- class="row3"
 | class="col0 centeralign" | Stance
 | class="col1 centeralign" | double
-| class="col2 centeralign" | <code>65.620000004768372</code>
+| class="col2 centeralign" | <code>67.240000009536743</code>
 | class="col3" | Used to modify the players bounding box when going up stairs, crouching, etc…
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | double
+| class="col2 centeralign" | <code>65.620000004768372</code>
+| class="col3" | Absolute position
 |- class="row4"
 | class="col0 centeralign" | Z
 | class="col1 centeralign" | double
@@ -448,7 +631,7 @@ Derived from packet [[#Player_.280x0A.29|0x0A]]
 | class="col1 rightalign" colspan="4" | 42 bytes
 |}
 
-[[File:Icon_exclaim.gif|:!:]] When the server sends this packet to the client, the Stance and Y are swapped, see server Player Position &amp; Look packet.
+[[File:Icon_exclaim.gif|:!:]] This packet differs from client Player Position &amp; Look packet, the Stance and Y are sent in a different order, however because of the different order this is sent the client will actually use the X,Y,Stance,Z client layout.
 
 === Player Digging (0x0E) ===
 
@@ -613,461 +796,6 @@ Sent when the player changes the item or block currently being held.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="2" | 0x10
-| class="col1 centeralign" | Unused
-| class="col2 centeralign" | int
-| class="col3 centeralign" | <code>6341424</code>
-| class="col4" | Unused when sent from a client, can be any random value
-|- class="row2"
-| class="col0 centeralign" | Block '''or''' Item ID
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>1</code>
-| class="col3" | The block/item to be equipped
-|- class="row3"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 7 bytes
-|}
-
-=== Arm Animation (0x12) ===
-
-Sent whenever someone swings their arm.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x12
-| class="col1 centeralign" | EID
-| class="col2 centeralign" | int
-| class="col3 centeralign" | <code>55534</code>
-| class="col4" | Player ID
-|- class="row2"
-| class="col0 centeralign" | Animate
-| class="col1 centeralign" | bool
-| class="col2 centeralign" | <code>1</code>
-| class="col3" | If <code>true</code>, animate the arm
-|- class="row3"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 bytes
-|}
-
-=== Pickup Spawn (0x15) ===
-
-A pickup spawn is sent from the client to the server whenever the client drops an item they are holding. This identical to the pickup spawn packet that is sent from the server to the client.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0 centeralign" | Packet ID
-! class="col1 rightalign" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="9" | 0x15
-| class="col1" | EID
-| class="col2" | int
-| class="col3" | <code>157617</code>
-| class="col4" | Unique entity ID
-|- class="row2"
-| class="col0" | Item
-| class="col1" | short
-| class="col2" | <code>4</code>
-| class="col3" | The item ID
-|- class="row3"
-| class="col0" | Count
-| class="col1" | byte
-| class="col2" | <code>1</code>
-| class="col3" | The number of items
-|- class="row4"
-| class="col0" | X
-| class="col1" | int
-| class="col2" | <code>133</code>
-| class="col3" | Item X as Absolute Integer
-|- class="row5"
-| class="col0" | Y
-| class="col1" | int
-| class="col2" | <code>913</code>
-| class="col3" | Item Y as Absolute Integer
-|- class="row6"
-| class="col0" | Z
-| class="col1" | int
-| class="col2" | <code>63552</code>
-| class="col3" | Item Z as Absolute Integer
-|- class="row7"
-| class="col0" | Rotation
-| class="col1" | byte
-| class="col2" | <code>252</code>
-| class="col3" | Item rotation as a packed byte
-|- class="row8"
-| class="col0" | Pitch
-| class="col1" | byte
-| class="col2" | <code>25</code>
-| class="col3" | Item pitch as a packed byte
-|- class="row9"
-| class="col0" | Roll
-| class="col1" | byte
-| class="col2" | <code>12</code>
-| class="col3" | Item roll as a packed byte
-|- class="row10"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 23 bytes
-|}
-
-=== Disconnect (0xFF) ===
-
-Sent by the client when it's doing a clean disconnect.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" | 0xFF
-| class="col1 centeralign" | Reason
-| class="col2 centeralign" | string
-| class="col3 centeralign" | <code>Quitting</code>
-| class="col4" | The server doesn't appear to do anything with this (yet)
-|- class="row2"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
-|}
-
-== Server To Client Packets ==
-
-=== Keep Alive (0x00) ===
-
-This packet may be sent by the server to keep the connection alive, or may be a relic of UDP testing. No one is really sure.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-|- class="row1"
-| class="col0 centeralign" | 0x00
-|}
-
-=== Login Response (0x01) ===
-
-Sent by the server if it accepts the clients [[Protocol#Login_Request_.280x01.29|login request]]. If it didn't, it'll send a [[Protocol#Kick_.280xFF.29|kick]] instead.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x01
-| class="col1 centeralign" | Entity ID
-| class="col2 centeralign" | int
-| class="col3 centeralign" | <code>1298</code>
-| class="col4" | The Players Entity ID
-|- class="row2"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | string
-| class="col2 centeralign" | n/a
-| class="col3" | Not yet used (Possibly the server name?)
-|- class="row3"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | string
-| class="col2 centeralign" | n/a
-| class="col3" | Not yet used (Possibly the MOTD? )
-|- class="row4"
-| class="col0 centeralign" | Map Seed
-| class="col1 centeralign" | long
-| class="col2 centeralign" | <code>971768181197178410</code>
-| class="col3" | Used for map generation
-|- class="row5"
-| class="col0 centeralign" | Dimension
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
-|- class="row6"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 18 bytes + length of strings
-|}
-
-=== Handshake (0x02) ===
-
-This is the first packet sent when the client connects and is used for [[Authentication]]. If the hash is '-', then the client continues without doing name authentication. If the hash is a '+', the client sends the server password in the [[Protocol#Login_Request_.280x01.29|login request]].
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" | 0x02
-| class="col1 centeralign" | Connection Hash
-| class="col2 centeralign" | string
-| class="col3 rightalign" | <code>2e66f1dc032ab5f0</code>
-| class="col4" | A unique, per-connection hash '''or''' '-' '''or''' '+'
-|- class="row2"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
-|}
-
-=== Chat Message (0x03) ===
-
-A formatted chat message from the server. Note that it is unreliable to parse chat when it's sent from the server → client as each server can/will format it differently (some use &lt;,&gt; others use [,], etc…)
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" | 0x03
-| class="col1 centeralign" | Message
-| class="col2 centeralign" | string
-| class="col3 centeralign" | <code>&lt;Bob&gt; Hello World!</code>
-| class="col4" | User input '''must''' be sanitized server-side
-|- class="row2"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 3 bytes + length of strings
-|}
-
-=== Time Update (0x04) ===
-
-The default SMP server increments the time by <code>20</code> every second.
-The current time ranges from 0 to 24000.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" | 0x04
-| class="col1 centeralign" | Time
-| class="col2 centeralign" | long
-| class="col3 centeralign" | <code></code>
-| class="col4 centeralign" | The world (or region) time in minutes
-|- class="row2"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes
-|}
-
-=== Player Inventory (0x05) ===
-
-[[File:Slots2.png|frame]] Sent by the server to set or reset a players inventory. This includes the main inventory, equipped armour and crafting slots. Packets for all three types are sent to initialize the players inventory before spawning them.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x05
-| class="col1 centeralign" | Type
-| class="col2 centeralign" | int
-| class="col3 centeralign" | <code>-1</code>
-| class="col4" | The “type” of inventory being sent (see below)
-|- class="row2"
-| class="col0 centeralign" | Count
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>4</code>
-| class="col3" | The number of inventory items (see below)
-|- class="row3"
-| class="col0 centeralign" | Payload
-| class="col1 centeralign" | …
-| class="col2 centeralign" | <code></code>
-| class="col3" | The payload (see below)
-|- class="row4"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 7 bytes + size of payload
-|}
-
-Type can (currently) be one of three values:
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Inventory Type
-! class="col1" | Value
-! class="col2" | Count
-|- class="row1"
-| class="col0 centeralign" | Main inventory
-| class="col1 centeralign" | -1
-| class="col2 centeralign" | 36
-|- class="row2"
-| class="col0 centeralign" | Equipped armour
-| class="col1 centeralign" | -2
-| class="col2 centeralign" | 4
-|- class="row3"
-| class="col0 centeralign" | Crafting slots
-| class="col1 centeralign" | -3
-| class="col2 centeralign" | 4
-|}
-
-This packet is a bit more tricky to parse than most others because the size of its payload is variable. The payload is an array of shorts (item ID) optionally followed by a byte-short pair (count and uses) as long as the item ID does not equal <code>-1</code>, which signifies an empty slot.
-
-Uses is the number of times an item has been used (the value starts at 0 and counts up.) Note that an invalid use of an item may count as 2 uses.
-
-<syntaxhighlight lang="python">
- offset = 0
- 
- for slot in count:
-     item_id = payload[offset] as short
-     offset += 2
-     if item_id is not equal to -1:
-         count = payload[offset] as byte
-         offset += 1
-         uses = payload[offset] as short
-         offset += 2
-         inventory[slot] = new item(item_id, count, uses)
-     else:
-         inventory[slot] = None
-</syntaxhighlight>
-
-=== Spawn Position (0x06) ===
-
-Sent by the server after login to specify the players starting location and to initialize compasses. It can be sent at any time afterwords to update the point compasses are focused on.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x06
-| class="col1 centeralign" | X
-| class="col2 centeralign" | int
-| class="col3 centeralign" | <code>117</code>
-| class="col4 centeralign" | Spawn X in block coordinates
-|- class="row2"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>70</code>
-| class="col3 centeralign" | Spawn Y in block coordinates
-|- class="row3"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>-46</code>
-| class="col3 centeralign" | Spawn Z in block coordinates
-|- class="row4"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 13 bytes
-|}
-
-=== Update Health (0x08) ===
-
-Sent by the server to update/set the health of the player it is sent to. Added in protocol version 5.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" | 0x08
-| class="col1 centeralign" | Health
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | 20
-| class="col4" | 0 = dead, 20 = full HP
-|- class="row2"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 2 bytes
-|}
-
-=== Respawn (0x09) ===
-
-Sent by the server after receiving a respawn packet from the client. The client will not leave the respawn screen it seems until this packet is received.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-|- class="row1"
-| class="col0 centeralign" | 0x09
-|- class="row2"
-! class="col0" | Total Size:  1 bytes.
-|}
-
-=== Player Position &amp; Look (0x0D) ===
-
-A combination of [[Protocol#Player_Look_.280x0C.29|Player Look]] and [[Protocol#Player_Position_.280x0B.29|Player position]].
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x0D
-| class="col1 centeralign" | X
-| class="col2 centeralign" | double
-| class="col3 centeralign" | <code>6.5</code>
-| class="col4" | Absolute position
-|- class="row2"
-| class="col0 centeralign" | Stance
-| class="col1 centeralign" | double
-| class="col2 centeralign" | <code>67.240000009536743</code>
-| class="col3" | Used to modify the players bounding box when going up stairs, crouching, etc…
-|- class="row3"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | double
-| class="col2 centeralign" | <code>65.620000004768372</code>
-| class="col3" | Absolute position
-|- class="row4"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | double
-| class="col2 centeralign" | <code>7.5</code>
-| class="col3" | Absolute position
-|- class="row5"
-| class="col0 centeralign" | Yaw
-| class="col1 centeralign" | float
-| class="col2 centeralign" | <code>0.0</code>
-| class="col3" | Absolute rotation on the X Axis
-|- class="row6"
-| class="col0 centeralign" | Pitch
-| class="col1 centeralign" | float
-| class="col2 centeralign" | <code>0.0</code>
-| class="col3" | Absolute rotation on the Y Axis
-|- class="row7"
-| class="col0 centeralign" | On Ground
-| class="col1 centeralign" | bool
-| class="col2 centeralign" | <code>0</code>
-| class="col3" |
-Derived from packet [[#Player_.280x0A.29|0x0A]]
-|- class="row8"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 42 bytes
-|}
-
-[[File:Icon_exclaim.gif|:!:]] This packet differs from client Player Position &amp; Look packet, the Stance and Y are sent in a different order, however because of the different order this is sent the client will actually use the X,Y,Stance,Z client layout.
-
-=== Holding Change (0x10) ===
-
-Sent when the player changes the item or block currently being held.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x10
 | class="col1 centeralign" | EID?
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>6341424</code>
@@ -1202,7 +930,9 @@ The only named entities (at the moment) are players (either real or NPC/Bot). Th
 
 === Pickup Spawn (0x15) ===
 
-A pickup spawn is sent whenever an item on the ground (say a pickaxe thrown on the ground) comes into range of the player.
+A pickup spawn is sent by the server whenever an item on the ground (say a pickaxe thrown on the ground) comes into range of the player. It is also sent by the client when an item is dropped from a tile (chest or furnace) or from inventory.
+
+It is completely acceptable for servers to ignore the EID issued by the client in this packet and instead create a new packet with a server-controlled EID when sending this packet out to clients.
 
 {| class="wikitable"
 |- class="row0"
@@ -2050,9 +1780,9 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
-=== Kick (0xFF) ===
+=== Disconnect/Kick (0xFF) ===
 
-Sent by the server before it disconnects a client.
+Sent by the server before it disconnects a client, or by the client before it disconnects from the server. The receiver of this packet assumes that the sender has already closed the connection by the time the packet arrives.
 
 {| class="wikitable"
 |- class="row0"
@@ -2075,6 +1805,9 @@ Sent by the server before it disconnects a client.
 == Protocol History ==
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2010-12-20 ===
+* <div class="li">Notch released Beta on time! Amazing! Refactored the page to be slightly smaller and easier to navigate.</div>
 
 === 2010-12-01 ===
 * <div class="li"> Protocol version changed to 6</div>
