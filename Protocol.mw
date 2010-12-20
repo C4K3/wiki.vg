@@ -1742,7 +1742,7 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" | 0x3C
+| class="col0 centeralign" | 0x65
 | class="col1 centeralign" | ???
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 
@@ -1750,6 +1750,66 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
+=== ??? (0x69) ===
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=3 | 0x69
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | short
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | short
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 6 bytes
+|}
+
+=== ??? (0x6A) ===
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=3 | 0x6A
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | short
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | boolean
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 5 bytes
 |}
 
 === Disconnect/Kick (0xFF) ===
