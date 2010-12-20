@@ -1697,6 +1697,41 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
+=== ??? (0x64) ===
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=4 | 0x3C
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | string
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | byte
+| class="col3 centeralign" |
+| class="col4" |
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 4 bytes + 1 string
+|}
+
 === Disconnect/Kick (0xFF) ===
 
 Sent by the server before it disconnects a client, or by the client before it disconnects from the server. The receiver of this packet assumes that the sender has already closed the connection by the time the packet arrives.
