@@ -1712,7 +1712,7 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan=4 | 0x3C
+| class="col0 centeralign" rowspan=4 | 0x64
 | class="col1 centeralign" | ???
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 
