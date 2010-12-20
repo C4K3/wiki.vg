@@ -1648,49 +1648,6 @@ See the Block Change command for description of the general format of a block ch
 | class="col1 rightalign" colspan="4" | 12 bytes
 |}
 
-=== Complex Entities (0x3B) ===
-
-This is a complex packet used to send entities including their entire NBT representation. This packet is currently used for furnaces, chests, signs and mob spawners. This packet is only temporary, and used for rapid prototyping of new types of entities. Specialized packets for each object will eventually be added.
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x3B
-| class="col1 centeralign" | X
-| class="col2 centeralign" | int
-| class="col3 centeralign" | <code>32</code>
-| class="col4" | Entity X in block coordinates
-|- class="row2"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>64</code>
-| class="col3" | Entity Y in block coordinates
-|- class="row3"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>32</code>
-| class="col3" | Entity Z in block coordinates
-|- class="row4"
-| class="col0 centeralign" | Payload Size
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>84</code>
-| class="col3" | The size (in bytes) of the payload
-|- class="row5"
-| class="col0 centeralign" | Payload
-| class="col1 centeralign" | byte array
-| class="col2 centeralign" | <code>…</code>
-| class="col3" |
-The payload is a compressed (GZ) [http://www.minecraft.net/docs/NBT.txt NBT] file
-|- class="row6"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 13 bytes + payload
-|}
-
 === Explosion (0x3C) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
