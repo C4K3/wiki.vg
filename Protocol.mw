@@ -693,7 +693,12 @@ Status can (currently) be one of four values:
 |- class="row4"
 | class="col0 leftalign" | Block broken
 | class="col1 centeralign" | <code>3</code>
+|- class="row5"
+| class="col0 leftalign" | Drop item
+| class="col1 centeralign" | <code>4</code>
 |}
+
+When the Status value is 4 (Drop item), the coordinates and Face are 0.
 
 The face can be one of six values, representing the face being hit:
 
