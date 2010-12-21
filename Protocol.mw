@@ -1785,12 +1785,12 @@ This packet is sent by the player when it clicks on a slot in the inventory
 | class="col3" | ID of clicked slot
 |- class="row3"
 | class="col0 centeralign" | Right-click?
-| class="col1 centeralign" | char
+| class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
 | class="col3" | Seems to be 1 when rightclicking and otherwise 0
 |- class="row4"
 | class="col0 centeralign" | Num clicks
-| class="col1 centeralign" | char
+| class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>12</code>
 | class="col3" | Number of total inventory clicks
 |- class="row5"
@@ -1800,17 +1800,17 @@ This packet is sent by the player when it clicks on a slot in the inventory
 | class="col3" | ID of Item that was in the slot
 |- class="row6"
 | class="col0 centeralign" | Item count
-| class="col1 centeralign" | char
+| class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>64</code>
 | class="col3" | Number of items that were in the slot
 |- class="row7"
 | class="col0 centeralign" | Item uses
-| class="col1 centeralign" | char
+| class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>10</code>
 | class="col3" | Number of times the item was used that was in the slot
 |- class="row8"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes (+2)
+| class="col1 rightalign" colspan="4" | 9 bytes (+2 for item ID != -1)
 |}
 
 === ??? (0x69) ===
