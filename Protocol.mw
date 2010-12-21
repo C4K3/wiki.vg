@@ -1702,7 +1702,9 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
-=== ??? (0x64) ===
+=== Open Inventory (0x64) ===
+
+[[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
 {| class="wikitable"
 |- class="row0"
@@ -1713,20 +1715,20 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan=4 | 0x64
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Inventory ID
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | 
-| class="col4" | 
+| class="col3 centeralign" | 123
+| class="col4" | ID which identifies this opened inventory
 |- class="row1"
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Inventory Type
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | 
-| class="col4" | 
+| class="col3 centeralign" | 2
+| class="col4" | Check below
 |- class="row1"
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Inventory Name
 | class="col2 centeralign" | string
-| class="col3 centeralign" | 
-| class="col4" | 
+| class="col3 centeralign" | <code>Chest</code>
+| class="col4" | Name shown in the open inventory
 |- class="row1"
 | class="col1 centeralign" | ???
 | class="col2 centeralign" | byte
@@ -1736,6 +1738,8 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 4 bytes + 1 string
 |}
+
+Inventory types: 0 = basic, 1 = crafting table, 2 = furnace
 
 === Inventory Close (0x65) ===
 
