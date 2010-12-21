@@ -1734,7 +1734,7 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 centeralign" | Number of Slots
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 54
-| class="col4" | Number of slots in the opening inventory screen
+| class="col4" | Number of slots in the opening inventory screen (multiple of 9)
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 4 bytes + 1 string
