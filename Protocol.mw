@@ -1754,10 +1754,10 @@ This packet is sent by the client when closing inventory screen.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" | 0x65
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Inventory ID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 0
-| class="col4" | 0 when closed by client, 1 when server closes?
+| class="col4" | this is the inventory ID the player closes (or server wants player to close?)
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
