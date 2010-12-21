@@ -1778,10 +1778,10 @@ This packet is sent by the player when it clicks on a slot in the inventory
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan=7 | 0x69
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Inventory ID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4" | 
+| class="col4" | 0 for player inventory
 |- class="row2"
 | class="col0 centeralign" | Slot ID
 | class="col1 centeralign" | short
