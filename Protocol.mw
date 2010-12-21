@@ -1787,7 +1787,7 @@ This packet is sent by the player when it clicks on a slot in the inventory
 | class="col0 centeralign" | Slot ID
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>36</code>
-| class="col3" | ID of clicked slot
+| class="col3" | ID of clicked slot (-999 is outside of inventory)
 |- class="row3"
 | class="col0 centeralign" | Right-click?
 | class="col1 centeralign" | byte
