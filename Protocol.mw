@@ -1790,7 +1790,7 @@ This packet is sent by the player when it clicks on a slot in the inventory
 | class="col3" | Seems to be 1 when rightclicking and otherwise 0
 |- class="row4"
 | class="col0 centeralign" | Num clicks
-| class="col1 centeralign" | byte
+| class="col1 centeralign" | short
 | class="col2 centeralign" | <code>12</code>
 | class="col3" | Number of total inventory clicks
 |- class="row5"
