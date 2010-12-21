@@ -6,6 +6,9 @@ Depending on your definition, '''yes'''! All packet types are known and their la
 </blockquote>
 
 ===What's the normal login sequence for a client?===
+
+See [[Authentication]] for communication with minecraft.net
+
 <blockquote>
 The recommended login sequence looks like this, where C is the client and S is the server:<br /><br />
 
