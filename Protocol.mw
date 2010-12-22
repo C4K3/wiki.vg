@@ -1823,8 +1823,6 @@ Slots: [http://gyazo.com/9d52e1fd4dc14790ec66eab4a9aee00e.png]
 
 === Window items (0x68) ===
 
-[[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
-
 [[File:Inventory-slots.png|thumb|The inventory slots]]
 
 Sent by the server when an item in a slot (in a window) is added/removed. This includes the main inventory, equipped armour and crafting slots. 
@@ -1837,16 +1835,16 @@ Sent by the server when an item in a slot (in a window) is added/removed. This i
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x05
+| class="col0 centeralign" rowspan="3" | 0x68
 | class="col1 centeralign" | Type
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>1</code>
-| class="col4" | The “type” of inventory being sent (see below)
+| class="col4" | The window which items are being sent for. 0 for player inventory.
 |- class="row2"
 | class="col0 centeralign" | Count
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>4</code>
-| class="col3" | The number of inventory items (see below)
+| class="col3" | The number of items (see below)
 |- class="row3"
 | class="col0 centeralign" | Payload
 | class="col1 centeralign" | …
