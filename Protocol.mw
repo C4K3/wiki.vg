@@ -1742,9 +1742,9 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 
 Inventory types: 0 = basic, 1 = crafting table, 2 = furnace
 
-=== Inventory Close (0x65) ===
+=== Close window (0x65) ===
 
-This packet is sent by the client when closing inventory screen.
+This packet is sent by the client when closing a window.
 
 {| class="wikitable"
 |- class="row0"
@@ -1755,10 +1755,10 @@ This packet is sent by the client when closing inventory screen.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" | 0x65
-| class="col1 centeralign" | Inventory ID
+| class="col1 centeralign" | Window id
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 0
-| class="col4" | this is the inventory ID the player closes (or server wants player to close?)
+| class="col4" | This is the id of the window that was closed. (Note: Test whether this packet is sent when a chest is destroyed, or when player moves out of range.)
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
