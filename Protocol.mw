@@ -1764,7 +1764,7 @@ This packet is sent by the client when closing inventory screen.
 | class="col1 rightalign" colspan="4" | 2 bytes
 |}
 
-=== Inventory Click (0x66) ===
+=== Window click (0x66) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
