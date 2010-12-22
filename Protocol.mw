@@ -1894,7 +1894,9 @@ Slots: [http://gyazo.com/9d52e1fd4dc14790ec66eab4a9aee00e.png]
 | class="col1 rightalign" colspan="4" | 6 bytes
 |}
 
-=== ??? (0x6A) ===
+=== Transaction (0x6A) ===
+
+A packet from the server indicating whether a request from the client was accepted, or whether there was a conflict (due to lag).
 
 {| class="wikitable"
 |- class="row0"
@@ -1905,20 +1907,20 @@ Slots: [http://gyazo.com/9d52e1fd4dc14790ec66eab4a9aee00e.png]
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan=3 | 0x6A
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Window id
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | 
-| class="col4" | 
+| class="col3 centeralign" | 0
+| class="col4" | The id of the window that the action occurred in.
 |- class="row1"
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Action number
 | class="col2 centeralign" | short
-| class="col3 centeralign" | 
-| class="col4" | 
+| class="col3 centeralign" | 12
+| class="col4" | Every action that is to be accepted has a unique number. This field corresponds to that number.
 |- class="row1"
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Accepted?
 | class="col2 centeralign" | boolean
-| class="col3 centeralign" | 
-| class="col4" | 
+| class="col3 centeralign" | true
+| class="col4" | Whether the action was accepted.
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 5 bytes
