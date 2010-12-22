@@ -1818,11 +1818,11 @@ This packet is sent by the player when it clicks on a slot in the inventory
 | class="col1 rightalign" colspan="4" | 9 bytes (+2 for item ID != -1)
 |}
 
-=== Inventory Update (0x67) ===
+=== Set slot (0x67) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
-Sent by the server when adding/removing item to/from inventory
+Sent by the server when an item in a slot (in a window) is added/removed.
 
 {| class="wikitable"
 |- class="row0"
@@ -1833,20 +1833,20 @@ Sent by the server when adding/removing item to/from inventory
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan=5 | 0x67
-| class="col1 centeralign" | Inventory ID
+| class="col1 centeralign" | Window id
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4" | 0 for player inventory
+| class="col4" | The window which is being updated. 0 for player inventory. Note that all known window types include the player inventory. This packet will only be sent for the currently opened window while the player is performing actions, even if it affects the player inventory. After the window is closed, a number of these packets are sent to update the player's inventory window (0).
 |- class="row2"
-| class="col0 centeralign" | Slot ID
+| class="col0 centeralign" | Slot
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>36</code>
-| class="col3" | ID of clicked slot
+| class="col3" | The slot that should be updated
 |- class="row3"
 | class="col0 centeralign" | Item ID
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>-1</code>
-| class="col3" | When -1, this is the last value in this packet
+| class="col3" | When -1, this is the last value in this packet. -1 means no item.
 |- class="row4"
 | class="col0 centeralign" | Item Count
 | class="col1 centeralign" | byte
