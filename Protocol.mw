@@ -1866,6 +1866,8 @@ Slots: [http://gyazo.com/9d52e1fd4dc14790ec66eab4a9aee00e.png]
 
 === Window items (0x68) ===
 
+[[File:Inventory-slots.png|thumb|The inventory slots]]
+
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
 Sent by the server when an item in a slot (in a window) is added/removed.
