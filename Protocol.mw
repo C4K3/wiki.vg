@@ -1768,7 +1768,7 @@ This packet is sent by the client when closing inventory screen.
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
-This packet is sent by the player when it clicks on a slot in the inventory
+This packet is sent by the player when it clicks on a slot in a window.
 
 {| class="wikitable"
 |- class="row0"
@@ -1779,30 +1779,30 @@ This packet is sent by the player when it clicks on a slot in the inventory
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan=7 | 0x66
-| class="col1 centeralign" | Inventory ID
+| class="col1 centeralign" | Window id
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4" | 0 for player inventory
+| class="col4" | The id of the window which was clicked. 0 for player inventory.
 |- class="row2"
-| class="col0 centeralign" | Slot ID
+| class="col0 centeralign" | Slot
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>36</code>
-| class="col3" | ID of clicked slot (-999 is outside of inventory)
+| class="col3" | The clicked slot (-999 is outside of inventory)
 |- class="row3"
 | class="col0 centeralign" | Right-click?
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | Seems to be 1 when rightclicking and otherwise 0
+| class="col3" | Seems to be 1 when right-clicking and otherwise 0
 |- class="row4"
-| class="col0 centeralign" | Num clicks
+| class="col0 centeralign" | Action number
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>12</code>
-| class="col3" | Number of total inventory clicks
+| class="col3" | A unique number for the action, used for transaction handling (See the Transaction packet).
 |- class="row5"
 | class="col0 centeralign" | Item ID
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>3</code>
-| class="col3" | ID of Item that was in the slot
+| class="col3" | ID of Item that was in the slot or -1 if no item. If -1, this is the last field in the packet.
 |- class="row6"
 | class="col0 centeralign" | Item count
 | class="col1 centeralign" | byte
