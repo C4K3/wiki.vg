@@ -764,7 +764,7 @@ The block or item ID corresponds to whatever the client is currently holding, an
 
 === Holding Change (0x10) ===
 
-Sent when the player changes the item or block currently being held.
+Sent when the player changes the slot selection
 
 {| class="wikitable"
 |- class="row0"
@@ -775,16 +775,14 @@ Sent when the player changes the item or block currently being held.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" | 0x10
-| class="col1 centeralign" | Block '''or''' Item ID '''or''' Slot ID
+| class="col1 centeralign" | Slot ID
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>1</code>
-| class="col4" | The block/item to be equipped
+| class="col4" | The slot which the player has selected (0-8)
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
-
-'''Note''' when sent by the client, Slot ID field is the slot the player has selected
 
 === Animation (0x12) ===
 
