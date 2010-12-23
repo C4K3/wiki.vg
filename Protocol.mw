@@ -690,35 +690,48 @@ Sent when the player places a block or (probably) an item. The coordinates sent 
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x0F
-| class="col1 centeralign" | Block '''or''' Item ID
-| class="col2 centeralign" | short
-| class="col3 centeralign" | <code>1</code>
-| class="col4" | The block or item to be placed
+| class="col0 centeralign" rowspan="7" | 0x0F
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>32</code>
+| class="col4" | Block position
 |- class="row2"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>32</code>
-| class="col3" | Block position
-|- class="row3"
 | class="col0 centeralign" | Y
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>64</code>
 | class="col3" | Block position
-|- class="row4"
+|- class="row3"
 | class="col0 centeralign" | Z
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>32</code>
 | class="col3 leftalign" | Block position
-|- class="row5"
+|- class="row4"
 | class="col0 centeralign" | Direction
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>3</code>
 | class="col3" | The offset to use for block/item placement (see below)
+|- class="row5"
+| class="col0 centeralign" | Block '''or''' Item ID
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | The block or item to be placed
 |- class="row6"
+| class="col0 centeralign" | Amount (opt)
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>34</code>
+| class="col3" | The amount of the item in the players hand
+|- class="row7"
+| class="col0 centeralign" | Health (opt)
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>83</code>
+| class="col3" | How much health the item has left
+|- class="row8"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 13 bytes
+| class="col1 rightalign" colspan="4" | 13 bytes or 15 bytes
 |}
+
+If the Block/ItemID field is greater than or equal to 0, then the last 2 bytes (amount and health) are read. Otherwise, they are not read.
+When 'placing' (Or more accurately, using) your empty hand, the client sends -1 as the Block/ItemID
 
 The direction can be one of six values, representing the face the block/item is being placed against:
 
