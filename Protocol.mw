@@ -302,6 +302,8 @@ The current time ranges from 0 to 24000.
 
 === Entity Equipment (0x05) ===
 
+After each "Named Entity Spawn", there will be five of these packets for the equipped item and armor.  If there are changes in visible equipment, another one of these is sent.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -319,7 +321,7 @@ The current time ranges from 0 to 24000.
 | class="col0 centeralign" | Slot
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 4
-| class="col3" | Equipment slot: 0=held, 1-4=armor
+| class="col3" | Equipment slot: 0=held, 1-4=armor slot 
 |- class="row3"
 | class="col0 centeralign" | Item ID
 | class="col1 centeralign" | short
