@@ -125,7 +125,7 @@ This packet may be sent to keep the connection alive, or may be a relic of UDP t
 
 ==== Client to Server ====
 
-Sent by the client after the handshake to finish logging in. If the version is outdated or any field is invalid, the server will disconnect the client with a [[Protocol#Kick_.280xFF.29|kick]]. If the client is started in offline mode, the player's username will default to <code>Player</code>, making LAN play with more than one player impossible (without authenticating) as the server will prevent multiple users with the same name.
+Sent by the client after the handshake to finish logging in. If the version is outdated or any field is invalid, the server will disconnect the client with a [[#Disconnect.2FKick_.280xFF.29|kick]]. If the client is started in offline mode, the player's username will default to <code>Player</code>, making LAN play with more than one player impossible (without authenticating) as the server will prevent multiple users with the same name.
 
 {| class="wikitable"
 |- class="row0"
@@ -167,7 +167,7 @@ Sent by the client after the handshake to finish logging in. If the version is o
 
 ==== Server to Client ====
 
-Sent by the server if it accepts the clients [[Protocol#Login_Request_.280x01.29|login request]]. If it didn't, it'll send a [[Protocol#Kick_.280xFF.29|kick]] instead.
+Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login request]]. If it didn't, it'll send a [[#Disconnect.2FKick_.280xFF.29|kick]] instead.
 
 {| class="wikitable"
 |- class="row0"
@@ -233,7 +233,7 @@ This is the first packet sent when the client connects and is used for [[Authent
 
 ==== Server to Client ====
 
-This is the first packet sent when the client connects and is used for [[Authentication]]. If the hash is '-', then the client continues without doing name authentication. If the hash is a '+', the client sends the server password in the [[Protocol#Login_Request_.280x01.29|login request]].
+This is the first packet sent when the client connects and is used for [[Authentication]]. If the hash is '-', then the client continues without doing name authentication. If the hash is a '+', the client sends the server password in the [[#Login_Request_.280x01.29|login request]].
 
 {| class="wikitable"
 |- class="row0"
@@ -494,7 +494,7 @@ Updates the players XYZ position on the server. If <code>Stance - Y</code> is le
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>1</code>
 | class="col3" |
-Derived from packet [[Protocol#Player_.280x0A.29|0x0A]]
+Derived from packet [[#Player_.280x0A.29|0x0A]]
 |- class="row6"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 34 bytes
@@ -531,7 +531,7 @@ Yaw is measured in degrees, and does not follow classical trigonometry rules. Th
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>1</code>
 | class="col3" |
-Derived from packet [[Protocol#Player_.280x0A.29|0x0A]]
+Derived from packet [[#Player_.280x0A.29|0x0A]]
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 10 bytes
@@ -539,7 +539,7 @@ Derived from packet [[Protocol#Player_.280x0A.29|0x0A]]
 
 === Player Position &amp; Look (0x0D) ===
 
-A combination of [[Protocol#Player_Look_.280x0C.29|Player Look]] and [[Protocol#Player_Position_.280x0B.29|Player position]].
+A combination of [[#Player_Look_.280x0C.29|Player Look]] and [[#Player_Position_.280x0B.29|Player position]].
 
 {| class="wikitable"
 |- class="row0"
@@ -934,7 +934,7 @@ It is completely acceptable for servers to ignore the EID issued by the client i
 
 === Collect Item (0x16) ===
 
-Sent by the server when someone picks up an item lying on the ground - its sole purpose appears to be the animation of the item flying towards you. It doesn't destroy the entity in the client memory ([[Protocol#Destroy_Entity_.280x1D.29|0x1D]] does that), and it doesn't add it to your inventory ([[Protocol#Add_To_Inventory_.280x11.29|0x11]] does that).
+Sent by the server when someone picks up an item lying on the ground - its sole purpose appears to be the animation of the item flying towards you. It doesn't destroy the entity in the client memory ([[#Destroy_Entity_.280x1D.29|0x1D]] does that), and it doesn't add it to your inventory ([[#Add_To_Inventory_.280x11.29|0x11]] does that). '''< FIXME!'''
 
 {| class="wikitable"
 |- class="row0"
@@ -1189,7 +1189,7 @@ Most entity-related packets are subclasses of this packet. When sent from the se
 
 === Entity Relative Move (0x1F) ===
 
-This packet is sent by the server when an entity moves less then 4 blocks, if an entity moves more then 4 blocks [[Protocol#Entity_Teleport_.280x22.29|Entity Teleport]] should be sent instead.
+This packet is sent by the server when an entity moves less then 4 blocks, if an entity moves more then 4 blocks [[#Entity_Teleport_.280x22.29|Entity Teleport]] should be sent instead.
 
 {| class="wikitable"
 |- class="row0"
@@ -2036,7 +2036,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2010-12-01 ===
 * <div class="li"> Protocol version changed to 6</div>
-* <div class="li"> Packet 0x12 ([[Protocol#Animation_.280x12.29|Animation]]) got a lot more new values</div>
+* <div class="li"> Packet 0x12 ([[#Animation_.280x12.29|Animation]]) got a lot more new values</div>
 * <div class="li"> Packet 0x26 changed, now indicates entity damage, death and explosion (for creepers, TNT not tested)</div>
 * <div class="li"> Packet 0x3B now being sent from client</div>
 * <div class="li"> Packet 0x3C added</div>
@@ -2044,22 +2044,22 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2010-11-24 ===
 * <div class="li"> Protocol version changed to 5</div>
-* <div class="li"> Packet 0x07 ([[Protocol#Use_Entity.3F_.280x07.29|Use Entity]]) got a new field (byte)</div>
-* <div class="li"> Packet 0x08 ([[Protocol#Update Health (0x08)|Update Health]]) added</div>
-* <div class="li"> Packet 0x09 ([[Protocol#Respawn (0x09)|Respawn]]) added</div>
-* <div class="li"> Packet 0x12 ([[Protocol#Animation_.280x12.29|Animation]]) started getting non-boolean values for the Animation field</div>
+* <div class="li"> Packet 0x07 ([[#Use_Entity.3F_.280x07.29|Use Entity]]) got a new field (byte)</div>
+* <div class="li"> Packet 0x08 ([[#Update Health (0x08)|Update Health]]) added</div>
+* <div class="li"> Packet 0x09 ([[#Respawn (0x09)|Respawn]]) added</div>
+* <div class="li"> Packet 0x12 ([[#Animation_.280x12.29|Animation]]) started getting non-boolean values for the Animation field</div>
 * <div class="li"> Packet 0x26 (Entity Death) added</div>
 
 === 2010-11-10 ===
 * <div class="li"> Protocol version changed to 4</div>
-* <div class="li"> Packet 0x01 ([[Protocol#Login_Request_.280x01.29|login request]]) changed</div>
-* <div class="li"> Packet 0x07 ([[Protocol#Use Entity? (0x07)|Use Entity?]]) added</div>
-* <div class="li"> Packet 0x1C ([[Protocol#Entity Velocity? (0x1C)|Entity Velocity?]]) added</div>
-* <div class="li"> Packet 0x27 ([[Protocol#Attach Entity? (0x27)|Attach Entity?]]) added</div>
+* <div class="li"> Packet 0x01 ([[#Login_Request_.280x01.29|login request]]) changed</div>
+* <div class="li"> Packet 0x07 ([[#Use Entity? (0x07)|Use Entity?]]) added</div>
+* <div class="li"> Packet 0x1C ([[#Entity Velocity? (0x1C)|Entity Velocity?]]) added</div>
+* <div class="li"> Packet 0x27 ([[#Attach Entity? (0x27)|Attach Entity?]]) added</div>
 
 === 2010-10-31 ===
 * <div class="li"> Protocol version changed to 3</div>
-* <div class="li"> Packet 0x01 ([[Protocol#Login_Request_.280x01.29|login request]]) changed</div>
+* <div class="li"> Packet 0x01 ([[#Login_Request_.280x01.29|login request]]) changed</div>
 
 === 2010-09-10 ===
 * <div class="li"> Protocol version changed to 2</div>
@@ -2069,7 +2069,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2010-08-20 ===
 * <div class="li"> Protocol version reset from 14 to 1</div>
-* <div class="li"> Packet 0x04 ([[Protocol#Time_Update_.280x04.29|time update]]) added</div>
+* <div class="li"> Packet 0x04 ([[#Time_Update_.280x04.29|time update]]) added</div>
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Alpha]]
