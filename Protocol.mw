@@ -196,7 +196,7 @@ Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login r
 | class="col0 centeralign" | Map Seed
 | class="col1 centeralign" | long
 | class="col2 centeralign" | <code>971768181197178410</code>
-| class="col3" | Used for map generation
+| class="col3" | Used for map generation (Possibly biome determination?)
 |- class="row5"
 | class="col0 centeralign" | Dimension
 | class="col1 centeralign" | byte
