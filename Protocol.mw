@@ -1854,7 +1854,7 @@ Sent by the server when an item in a slot (in a window) is added/removed. This i
 |- class="row1"
 | class="col0 centeralign" rowspan="3" | 0x68
 | class="col1 centeralign" | Type
-| class="col2 centeralign" | int
+| class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
 | class="col4" | The window which items are being sent for. 0 for player inventory.
 |- class="row2"
@@ -1869,7 +1869,7 @@ Sent by the server when an item in a slot (in a window) is added/removed. This i
 | class="col3" | The payload (see below)
 |- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 7 bytes + size of payload
+| class="col1 rightalign" colspan="4" | 4 bytes + size of payload
 |}
 
 This packet is a bit trickier to parse than most others because the size of its payload is variable. The payload is an array of shorts (item ID) optionally followed by a byte-short pair (count and uses) as long as the item ID does not equal <code>-1</code>, which signifies an empty slot.
