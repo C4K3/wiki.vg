@@ -506,7 +506,9 @@ Derived from packet [[#Player_.280x0A.29|0x0A]]
 
 Updates the direction the player is looking in.
 
-Yaw is measured in degrees, and does not follow classical trigonometry rules. The unit circle of yaw on the xz-plane starts at (0, 1) and turns backwards towards (-1, 0).
+Yaw is measured in degrees, and does not follow classical trigonometry rules. The unit circle of yaw on the xz-plane starts at (0, 1) and turns backwards towards (-1, 0), or in other words, it turns clockwise instead of counterclockwise. Additionally, yaw is not clamped to between 0 and 360 degrees; any number is valid, including negative numbers and numbers greater than 360.
+
+Pitch is measured in degrees.
 
 {| class="wikitable"
 |- class="row0"
@@ -520,12 +522,12 @@ Yaw is measured in degrees, and does not follow classical trigonometry rules. Th
 | class="col1 centeralign" | Yaw
 | class="col2 centeralign" | float
 | class="col3 centeralign" | <code>0.00</code>
-| class="col4" | Absolute rotation on the X Axis
+| class="col4" | Absolute rotation on the X Axis, in degrees
 |- class="row2"
 | class="col0 centeralign" | Pitch
 | class="col1 centeralign" | float
 | class="col2 centeralign" | <code>0.00</code>
-| class="col3" | Absolute rotation on the Y Axis
+| class="col3" | Absolute rotation on the Y Axis, in degrees
 |- class="row3"
 | class="col0 centeralign" | On Ground
 | class="col1 centeralign" | bool
