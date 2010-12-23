@@ -1,4 +1,4 @@
-This page presents a dissection of the new [http://minecraft.net/game/ Minecraft Alpha] protocol by aera ([http://aeracode.org Andrew Godwin]), ylt (Joe Carter) and TkTech (Tyler Kennedy). Additionally, credit goes to the citizens of [irc://irc.freenode.net/#mcdevs <nowiki>#mcdevs</nowiki>] who helped by providing packet dumps and insight. If you're having trouble, check out the [[Protocol_FAQ|FAQ]].
+This page presents a dissection of the new [http://minecraft.net/game/ Minecraft Beta] protocol by aera ([http://aeracode.org Andrew Godwin]), ylt (Joe Carter) and TkTech (Tyler Kennedy). Additionally, credit goes to the citizens of [irc://irc.freenode.net/#mcdevs <nowiki>#mcdevs</nowiki>] who helped by providing packet dumps and insight. If you're having trouble, check out the [[Protocol_FAQ|FAQ]].
 
 '''Note:''' While you may use the contents of this page without restriction to create servers, clients, bots, etc… you still need to provide the attribution above if you copy any of the contents of this page for publication elsewhere.
 
@@ -112,7 +112,7 @@ There are several different units of measurement used in the protocol depending 
 
 === Keep Alive (0x00) ===
 
-This packet may be sent to keep the connection alive, or may be a relic of UDP testing. No one is really sure. What we do know is that the Alpha server will disconnect a client if it doesn't receive at least one packet before 1200 in-game ticks, and the Alpha client will time out the connection under the same conditions.
+This packet may be sent to keep the connection alive, or may be a relic of UDP testing. No one is really sure. What we do know is that the Beta server will disconnect a client if it doesn't receive at least one packet before 1200 in-game ticks, and the Beta client will time out the connection under the same conditions.
 
 {| class="wikitable"
 |- class="row0"
