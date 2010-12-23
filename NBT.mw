@@ -73,7 +73,7 @@ The tag types and respective payloads are:
 
 
 Decoding example:
-(Use http://www.minecraft.net/docs/test.nbt to test your implementation)
+(Use http://mc.kev009.com/nbt/test.nbt to test your implementation)
 
 
 First we start by reading a Named Tag.
@@ -100,7 +100,7 @@ So we ended up with this:
 
 
 
-For a slightly longer test, download http://www.minecraft.net/docs/bigtest.nbt
+For a slightly longer test, download http://mc.kev009.com/nbt/bigtest.nbt
 You should end up with this:
 
     TAG_Compound("Level"): 11 entries
