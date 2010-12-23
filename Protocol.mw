@@ -300,7 +300,7 @@ The current time ranges from 0 to 24000.
 | class="col1 rightalign" colspan="4" | 9 bytes
 |}
 
-=== ??? (0x05) ===
+=== Entity Equipment (0x05) ===
 
 {| class="wikitable"
 |- class="row0"
@@ -311,20 +311,20 @@ The current time ranges from 0 to 24000.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="3" | 0x05
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
-| class="col3 centeralign" | 
-| class="col4" |
+| class="col3 centeralign" | 0x00010643
+| class="col4" | Named Entity ID
 |- class="row2"
-| class="col0 centeralign" | ???
+| class="col0 centeralign" | Slot
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" |
+| class="col2 centeralign" | 4
+| class="col3" | Equipment slot: 0=held, 1-4=armor
 |- class="row3"
-| class="col0 centeralign" | ???
+| class="col0 centeralign" | Item ID
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" | 
+| class="col2 centeralign" | -1
+| class="col3" | Equipped item (-1 for empty slot)
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 9 bytes
