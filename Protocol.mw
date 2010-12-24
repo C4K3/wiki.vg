@@ -725,16 +725,16 @@ Sent when the player places a block or (probably) an item. The coordinates sent 
 | class="col2 centeralign" | <code>34</code>
 | class="col3" | The amount of the item in the players hand
 |- class="row7"
-| class="col0 centeralign" | Health (opt)
+| class="col0 centeralign" | Damage (opt)
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>83</code>
-| class="col3" | How much health the item has left
+| class="col3" | How much damage the item has taken
 |- class="row8"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 13 bytes or 15 bytes
 |}
 
-If the Block/ItemID field is greater than or equal to 0, then the last 2 bytes (amount and health) are read. Otherwise, they are not read.
+If the Block/ItemID field is greater than or equal to 0, then the last 2 bytes (amount and damage) are read. Otherwise, they are not read.
 When 'placing' (Or more accurately, using) your empty hand, the client sends -1 as the Block/ItemID
 
 The direction can be one of six values, representing the face the block/item is being placed against:
