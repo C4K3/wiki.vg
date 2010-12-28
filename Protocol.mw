@@ -1304,7 +1304,7 @@ This packet is sent by the server when an entity moves less then 4 blocks, if an
 
 === Entity Look (0x20) ===
 
-This packet is sent by the server when an entity rotates.
+This packet is sent by the server when an entity rotates.  Example: "Yaw" field 64 means a 90 degree turn.
 
 {| class="wikitable"
 |- class="row0"
