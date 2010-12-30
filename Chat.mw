@@ -1,4 +1,4 @@
-Chat strings are subject to myriad limitations imposed by defects in the Notchian server and client.
+Chat strings are subject to myriad limitations imposed by defects in the Notchian server and client, and also have special meanings for certain characters.
 
 == Character Set ==
 
@@ -10,6 +10,49 @@ The following list of characters is known to be supported by the Notchian server
 </blockquote>
 
 Characters not in this list will cause Notchian servers to kick clients, and Notchian clients to choke and die horribly.
+
+== Colors ==
+
+The Notchian client has support for colorized text. To select a color, a color escape code, similar to an ANSI color escape code, is inserted to change the color of the following characters.
+
+{| class="wikitable"
+|-
+! Character !! Color
+|-
+| 0 || Black
+|-
+| 1 || Dark blue
+|-
+| 2 || Dark green
+|-
+| 3 || Dark cyan
+|-
+| 4 || Dark red
+|-
+| 5 || Dark magenta
+|-
+| 6 || Dark orange
+|-
+| 7 || Gray
+|-
+| 8 || Dark gray
+|-
+| 9 || Blue
+|-
+| a || Green
+|-
+| b || Cyan
+|-
+| c || Red
+|-
+| d || Magenta
+|-
+| e || Yellow
+|-
+| f || White
+|}
+
+These correspond very roughly to the colors available in ANSI terminals.
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Alpha]]
