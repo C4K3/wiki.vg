@@ -54,5 +54,7 @@ The Notchian client has support for colorized text. To select a color, a color e
 
 These correspond very roughly to the colors available in ANSI terminals.
 
+A color escape code is created by combining the control character § (U+00A7) with the character specifying the color; thus, "§4" selects dark red as the color for the following text.
+
 [[Category:Protocol Details]]
 [[Category:Minecraft Alpha]]
