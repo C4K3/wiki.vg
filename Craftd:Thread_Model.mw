@@ -27,3 +27,5 @@ The integrated httpd service is asynchronous and non-blocking.  It runs under it
 
 == Future Directions ==
 libevent 2.1 may contain additional threading logic to make it easier to assign clients entirely to a specific worker thread.  For instance, the main thread will accept() and then pass the entire bufferevent off to a thread pool.  craftd will switch to this and merge the packet worker threads into this new combined worker thread model when the feature is widely available.
+
+[[Category:Craftd]]
