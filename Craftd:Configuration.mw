@@ -35,6 +35,9 @@ A config file is necessary, but it can consist of nothing more than {} if you wi
 |-
 ! worker-pool-size
 | 2 || Number of threads to use for packet processing || Set between 1-2x number of CPU cores
+|-
+! world-dir
+| ./world || Location of the NBT world save directory || N/A
 |}
 
 {| class="wikitable" style="text-align:center"
