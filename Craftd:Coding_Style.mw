@@ -61,3 +61,5 @@ Notes about this implementation can also be found here: http://www.kev009.com/wp
 
 == Unknown State ==
 Fail early, kick hard.  Do not try to massage the data stream or recover.  Use of ''goto'' is recommended, especially for breaking out of large loop and conditional chains.  Free all allocated resources and close the bufferevent.
+
+[[Category:Craftd]]
