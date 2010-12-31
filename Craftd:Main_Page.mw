@@ -41,7 +41,7 @@ These are future research and development ideas in arbitrary order.
 *JSON-REST admin/status API
 *Security audit - perpetual
 *Running from a chroot
-*Native WIN32 threading & MSVC support - needs a contributor/maintainer
+*Native WIN32 threading with MinGW - needs a contributor/maintainer
 *Protocol testing framework
 *IPC to an IRC relay agent
 *Alternative/improved protocol for NPCs, bots, scripting?
