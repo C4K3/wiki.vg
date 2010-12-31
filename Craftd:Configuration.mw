@@ -54,3 +54,5 @@ A config file is necessary, but it can consist of nothing more than {} if you wi
 ! static-docroot
 | ./htdocs || Location of static web content || N/A
 |}
+
+[[Category:Craftd]]
