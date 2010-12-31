@@ -19,7 +19,7 @@ C → S : After authenticating (if needed), sends the login packet<br />
 C ← S : Either kicks (invalid login) or sends a login response<br />
 C ← S : Sends pre-chunks and chunks<br />
 C ← S : Sends spawn position<br />
-C ← S : Sends inventory (once for each of the three types)<br />
+C ← S : Sends inventory [Need to verify this since inventory changed]<br />
 C ← S : Tell the client they're ready to spawn by sending a position + look packet. '''Note''': The stance and Y should be swapped when the server sends it to the client (See [[protocol#player_position_look_0x0d|Protocol Page]])!<br />
 C → S : Sends a position + look packet to confirm the spawn position, with the stance and Y swapped back to the correct positions<br />
 </blockquote>
