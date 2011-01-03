@@ -860,7 +860,7 @@ Sent whenever an entity should change animation.
 | class="col0 centeralign" | Animate
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | Can be <code>0</code> (no animation), <code>1</code> (swing arm) or <code>2</code> (damage animation).  Getting <code>102</code> somewhat often, too.
+| class="col3" | Can be <code>0</code> (no animation), <code>1</code> (swing arm), <code>2</code> (damage animation), <code>104</code> (crouch), or <code>105</code> (uncrouch). Getting <code>102</code> somewhat often, too.
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
