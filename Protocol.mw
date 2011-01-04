@@ -1075,6 +1075,9 @@ Object Types
 |- class="row4"
 | class="col0" | 12
 | class="col1" | Powered Cart
+|- class="row6"
+| class="col0" | 60
+| class="col1" | Arrow <!-- Player-fired arrows. No data gathered yet on whether skeleton-fired arrows have a different code. -->
 |}
 
 === Mob Spawn (0x18) ===
