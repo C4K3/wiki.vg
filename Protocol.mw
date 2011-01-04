@@ -1076,8 +1076,17 @@ Object Types
 | class="col0" | 12
 | class="col1" | Powered Cart
 |- class="row5"
+| class="col0" | 50
+| class="col1" | Activated TNT
+|- class="row6"
 | class="col0" | 60
 | class="col1" | Arrow <!-- Player-fired arrows. No data gathered yet on whether skeleton-fired arrows have a different code. -->
+|- class="row6"
+| class="col0" | 61
+| class="col1" | Thrown Snowball
+|- class="row6"
+| class="col0" | 62
+| class="col1" | Thrown Egg 
 |- class="row6"
 | class="col0" | 70
 | class="col1" | Falling Sand
