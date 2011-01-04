@@ -29,6 +29,10 @@ C → S : Sends a position + look packet to confirm the spawn position, with the
 After sending the common-sense packets ([[protocol#handshake_0x02|Handshake]], [[protocol#login_request_0x01|Login]], [[protocol#player_inventory_0x05|Inventory]], [[protocol#spawn_position_0x06|Compass]] and [[protocol#pre-chunk_0x32|Pre-chunk]]/[[protocol#map_chunk_0x33|Chunk]] pairs) you need to finally send the player their [[protocol#player_position_look_0x0d|initial position]] for them to leave the "Loading Map" screen.
 </blockquote>
 
+===I think I've done everything right, but my client isn't receiving complete map chunks===
+<blockquote>
+The standard Minecraft server server sends full chunks only when your client is sending player status update packets (any of [[protocol#Player (0x0A)|Player (0x0A)]] through [[protocol#Player Position & Look (0x0D)|Player Position & Look (0x0D)]]).
+</blockquote>
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Alpha]]
