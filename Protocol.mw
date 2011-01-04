@@ -1081,16 +1081,16 @@ Object Types
 |- class="row6"
 | class="col0" | 60
 | class="col1" | Arrow <!-- Player-fired arrows. No data gathered yet on whether skeleton-fired arrows have a different code. -->
-|- class="row6"
+|- class="row7"
 | class="col0" | 61
 | class="col1" | Thrown Snowball
-|- class="row6"
+|- class="row8"
 | class="col0" | 62
 | class="col1" | Thrown Egg 
-|- class="row6"
+|- class="row9"
 | class="col0" | 70
 | class="col1" | Falling Sand
-|- class="row7"
+|- class="row10"
 | class="col0" | 71
 | class="col1" | Falling Gravel
 |}
