@@ -469,7 +469,7 @@ This packet is used to identify the state of the client, with the idea being to 
 
 === Player Position (0x0B) ===
 
-Both '''Server to Client''' (reset position) and '''Client to Server''' (player-controlled movement).
+'''Client to Server''' (player-controlled movement).
 
 Updates the players XYZ position on the server. If <code>Stance - Y</code> is less than <code>0.1</code> or greater than <code>1.65</code>, the stance is illegal and the client will be kicked with the message “Illegal Stance”.
 
@@ -514,7 +514,7 @@ Derived from packet [[#Player_.280x0A.29|0x0A]]
 
 === Player Look (0x0C) ===
 
-Both '''Server to Client''' (reset position) and '''Client to Server''' (player-controlled movement).
+'''Client to Server''' (player-controlled movement).
 
 [[File:Minecraft-trig-yaw.png|thumb|The unit circle for yaw]]
 
