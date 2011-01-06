@@ -1385,6 +1385,8 @@ This packet is sent by the server when an entity rotates.  Example: "Yaw" field 
 '''Server to Client only'''
 
 This packet is sent by the server when an entity rotates and moves.
+Since a byte range is limited from -128 to 127, and movement is offset of Absolute Int,
+this packet allows at most four blocks movement in any direction. (-128/32 == -4)
 
 {| class="wikitable"
 |- class="row0"
@@ -1400,17 +1402,17 @@ This packet is sent by the server when an entity rotates and moves.
 | class="col3 centeralign" | <code>459</code>
 | class="col4" | Entity ID
 |- class="row2"
-| class="col0 centeralign" | X
+| class="col0 centeralign" | dX
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
 | class="col3" | X axis Relative movement as an Absolute Integer
 |- class="row3"
-| class="col0 centeralign" | Y
+| class="col0 centeralign" | dY
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>-7</code>
 | class="col3" | Y axis Relative movement as an Absolute Integer
 |- class="row4"
-| class="col0 centeralign" | Z
+| class="col0 centeralign" | dZ
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>5</code>
 | class="col3" | Z axis Relative movement as an Absolute Integer
