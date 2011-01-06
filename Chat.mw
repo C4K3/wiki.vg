@@ -15,41 +15,69 @@ Characters not in this list will cause Notchian servers to kick clients, and Not
 
 The Notchian client has support for colorized text. To select a color, a color escape code, similar to an ANSI color escape code, is inserted to change the color of the following characters.
 
-{| class="wikitable"
+{| class="wikitable" style="text-align:center;" border="1" cellpadding="5"
 |-
-! Character !! Color
+! colspan="1"  width="8px"| Sample
+! colspan="1" | Code
+! colspan="1"  | Common Name
+! colspan="3" | Foreground Color
+! colspan="3" | Background Color
 |-
-| 0 || Black
+| || ||
+|width="30px"|R
+|width="30px"|G
+|width="30px"|B
+|width="30px"|R
+|width="30px"|G
+|width="30px"|B
 |-
-| 1 || Dark blue
+| bgcolor="black" |
+| &0 || Black || 0 || 0 || 0 || 0 || 0 || 0
 |-
-| 2 || Dark green
+| bgcolor=#0000aa |
+| &1 || Dark blue || 0 || 0 || 170 || 0 || 0 || 42
 |-
-| 3 || Dark cyan
+| bgcolor=#00aa00 |
+| &2 || Dark green || 0 || 170 || 0 || 0 || 42 || 0
 |-
-| 4 || Dark red
+| bgcolor=#00aaaa |
+| &3 || Dark cyan || 0  || 170 || 170 || 0 || 42 || 42
 |-
-| 5 || Dark magenta
+| bgcolor=#aa0000 |
+| &4 || Dark red || 170 || 0 || 0 || 42 || 0 || 0
 |-
-| 6 || Dark orange
+| bgcolor=#aa00aa |
+| &5 || Purple || 170 || 0 || 170 || 42 || 0 || 42
 |-
-| 7 || Gray
+| bgcolor=#ffaa00 |
+| &6 || Gold || 255 || 170 || 0 || 42 || 42 || 0
 |-
-| 8 || Dark gray
+| bgcolor=#aaaaaa |
+| &7 || Gray || 170 || 170 || 170 || 42 || 42 || 42
 |-
-| 9 || Blue
+| bgcolor=#555555 |
+| &8 || Dark gray || 85 || 85 || 85 || 21 || 21 || 21
 |-
-| a || Green
+| bgcolor=#5555ff |
+| &9 || Blue || 85 || 85 || 255 || 21 || 21 || 63
 |-
-| b || Cyan
+| bgcolor=#55ff55 |
+| &a || Bright green || 85 || 255 || 85 || 21 || 63 || 21
 |-
-| c || Red
+| bgcolor=#55FFFF |
+| &b || Cyan || 85 || 255 || 255 || 21 || 63 || 63
 |-
-| d || Magenta
+| bgcolor=#FF5555 |
+| &c || Red || 255 || 85 || 85 || 63 || 21 || 21
 |-
-| e || Yellow
+| bgcolor=#FF55FF |
+| &d || Pink || 255 || 85 || 255 || 63 || 21 || 63
 |-
-| f || White
+| bgcolor=#FFFF55 |
+| &e || Yellow || 255 || 255 || 85 || 63 || 63 || 21
+|-
+| bgcolor=#FFFFFF |
+| &f || White || 255 || 255 || 255 || 63 || 63 || 63
 |}
 
 These correspond very roughly to the colors available in ANSI terminals.
