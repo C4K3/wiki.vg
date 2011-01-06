@@ -1655,14 +1655,17 @@ And conversely, which local block in the chunk to start at:
 This is the size of the region, in blocks. The server will subtract one from the sizes and then cast them to a byte before sending. This is so that chunks as large as 256 are possible (the maximum size of a byte is 255; 256 - 1 = 255). 
 
 =====Compressed data=====
-The data is compressed using the deflate() function in [http://www.zlib.net/ zlib]. After uncompressing, the data consists of four sections, in order:
+
+The data is compressed using the deflate() function in [http://www.zlib.net/ zlib]. After uncompressing, the data consists of four sequential sections, in order:
 
 * <div class="li"> Block type array (1 byte per block)</div>
 * <div class="li"> Block metadata array (half byte/nibble per block)</div>
 * <div class="li"> Block Light array (half byte/nibble per block)</div>
 * <div class="li"> Sky Light array (half byte/nibble per block)</div>
 
-The data is exactly <code>(Size_X+1) * (Size_Y+1) * (Size_Z+1) * 2.5</code> bytes long.
+The data is exactly <code>(Size_X+1) * (Size_Y+1) * (Size_Z+1) * 2.5</code> bytes long. Nibbles are not rounded either direction, which means that at least one dimension of the chunk must be even.
+
+The arrays are not interlaced.
 
 In other words, there are Size_X number of '''x planes''', each plane made up of Size_Z number of '''z rows''', each row made up of Size_Y blocks indexed by y coordinate in order.
 
