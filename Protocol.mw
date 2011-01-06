@@ -281,6 +281,8 @@ For more information, see [[Chat]].
 
 === Time Update (0x04) ===
 
+'''Server to Client only'''
+
 The default SMP server increments the time by <code>20</code> every second.
 The current time ranges from 0 to 24000.
 
@@ -335,6 +337,8 @@ After each "Named Entity Spawn", there will be five of these packets for the equ
 |}
 
 === Spawn Position (0x06) ===
+
+'''Server to Client only'''
 
 Sent by the server after login to specify the players starting location and to initialize compasses. It can be sent at any time afterwords to update the point compasses are focused on.
 
@@ -404,6 +408,8 @@ Seems to be <code>true</code> when the player is pointing at an entity and left-
 
 === Update Health (0x08) ===
 
+'''Server to Client only'''
+
 Sent by the server to update/set the health of the player it is sent to. Added in protocol version 5.
 
 {| class="wikitable"
@@ -439,6 +445,8 @@ Sent by the client when the player presses the "Respawn" button after dying. The
 
 === Player (0x0A) ===
 
+'''Client to Server only'''
+
 This packet is used to identify the state of the client, with the idea being to send one each game-tick to detect speed hackers. Notch will be optimizing/removing this in the future. This packet was previously referred to as Flying
 
 {| class="wikitable"
@@ -460,6 +468,8 @@ This packet is used to identify the state of the client, with the idea being to 
 |}
 
 === Player Position (0x0B) ===
+
+Both '''Server to Client''' (reset position) and '''Client to Server''' (player-controlled movement).
 
 Updates the players XYZ position on the server. If <code>Stance - Y</code> is less than <code>0.1</code> or greater than <code>1.65</code>, the stance is illegal and the client will be kicked with the message “Illegal Stance”.
 
@@ -503,6 +513,8 @@ Derived from packet [[#Player_.280x0A.29|0x0A]]
 |}
 
 === Player Look (0x0C) ===
+
+Both '''Server to Client''' (reset position) and '''Client to Server''' (player-controlled movement).
 
 [[File:Minecraft-trig-yaw.png|thumb|The unit circle for yaw]]
 
@@ -868,6 +880,8 @@ Sent whenever an entity should change animation.
 
 === Named Entity Spawn (0x14) ===
 
+'''Server to Client only'''
+
 The only named entities (at the moment) are players (either real or NPC/Bot). This packet is sent by the server when a player comes into visible range, '''not''' when a player joins.
 
 {| class="wikitable"
@@ -989,6 +1003,8 @@ It is completely acceptable for servers to ignore the EID issued by the client i
 
 === Collect Item (0x16) ===
 
+'''Server to Client only'''
+
 Sent by the server when someone picks up an item lying on the ground - its sole purpose appears to be the animation of the item flying towards you. It doesn't destroy the entity in the client memory ([[#Destroy_Entity_.280x1D.29|0x1D]] does that), and it doesn't add it to your inventory ([[#Window_items_.280x68.29|0x67]] does that).
 
 
@@ -1016,6 +1032,8 @@ Sent by the server when someone picks up an item lying on the ground - its sole 
 |}
 
 === Add Object/Vehicle (0x17) ===
+
+'''Server to Client only'''
 
 Sent by the server when an Object/Vehicle is created.
 
@@ -1096,6 +1114,8 @@ Object Types
 |}
 
 === Mob Spawn (0x18) ===
+
+'''Server to Client only'''
 
 Sent by the server when a Mob Entity is Spawned
 
@@ -1239,9 +1259,9 @@ Velocity on the Z axis
 | class="col1 rightalign" colspan="4" | 11 bytes
 |}
 
-
-
 === Destroy Entity (0x1D) ===
+
+'''Server to Client only'''
 
 Sent by the server when an Entity is to be destroyed on the client.
 
@@ -1265,6 +1285,8 @@ Sent by the server when an Entity is to be destroyed on the client.
 
 === Entity (0x1E) ===
 
+'''Server to Client only'''
+
 Most entity-related packets are subclasses of this packet. When sent from the server to the client, it may initialize the entry.
 
 {| class="wikitable"
@@ -1286,6 +1308,8 @@ Most entity-related packets are subclasses of this packet. When sent from the se
 |}
 
 === Entity Relative Move (0x1F) ===
+
+'''Server to Client only'''
 
 This packet is sent by the server when an entity moves less then 4 blocks, if an entity moves more then 4 blocks [[#Entity_Teleport_.280x22.29|Entity Teleport]] should be sent instead.
 
@@ -1324,6 +1348,8 @@ This packet is sent by the server when an entity moves less then 4 blocks, if an
 
 === Entity Look (0x20) ===
 
+'''Server to Client only'''
+
 This packet is sent by the server when an entity rotates.  Example: "Yaw" field 64 means a 90 degree turn.
 
 {| class="wikitable"
@@ -1355,6 +1381,8 @@ This packet is sent by the server when an entity rotates.  Example: "Yaw" field 
 |}
 
 === Entity Look and Relative Move (0x21) ===
+
+'''Server to Client only'''
 
 This packet is sent by the server when an entity rotates and moves.
 
@@ -1403,6 +1431,8 @@ This packet is sent by the server when an entity rotates and moves.
 
 === Entity Teleport (0x22) ===
 
+'''Server to Client only'''
+
 This packet is sent by the server when an entity moves more then 4 blocks.
 
 {| class="wikitable"
@@ -1449,6 +1479,8 @@ This packet is sent by the server when an entity moves more then 4 blocks.
 |}
 
 === Entity Status? (0x26) ===
+
+'''Server to Client only'''
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
@@ -1511,6 +1543,8 @@ The vehicle entity ID attached to (-1 for unattaching)
 
 === Pre-Chunk (0x32) ===
 
+'''Server to Client only'''
+
 This packet is sent by the server to notify the client to initialize (Mode=1) or unload (Mode=0) a chunk. The client is expected to allocate space for a full chunk (currently 16 x 128 x 16 blocks). One or more 0x33 packets will follow, specifying actual data to fill the chunk with.
 
 [[File:Icon_exclaim.gif|:!:]] Whenever you send this packet the client will clear any previous chunk at that spot if one has previously been sent. Clients don't like being in or next to an unloaded chunk, so try not to unload it if players are nearby. If the player appears to be twitching and stuck in place after joining the world, there is probably an unloaded chunk too close to them.
@@ -1544,6 +1578,8 @@ This packet is sent by the server to notify the client to initialize (Mode=1) or
 |}
 
 === Map Chunk (0x33) ===
+
+'''Server to Client only'''
 
 The client will overwrite all '''or part''' of a chunk using the region of data contained in this packet. The server specifies the region to write using a block position and size in X,Y,Z. Note that this region will always be inside a single chunk. (At least using the vanilla server. Unknown if the client has this limitation.)
 
@@ -1816,6 +1852,8 @@ Inventory types: 0 = basic, 1 = workbench, 2 = furnace
 
 === Close window (0x65) ===
 
+'''Client to Server only'''
+
 This packet is sent by the client when closing a window.
 
 {| class="wikitable"
@@ -1837,6 +1875,8 @@ This packet is sent by the client when closing a window.
 |}
 
 === Window click (0x66) ===
+
+'''Client to Server only'''
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
@@ -1892,6 +1932,8 @@ This packet is sent by the player when it clicks on a slot in a window.
 
 === Set slot (0x67) ===
 
+'''Server to Client only'''
+
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
 Sent by the server when an item in a slot (in a window) is added/removed.
@@ -1937,6 +1979,8 @@ Sent by the server when an item in a slot (in a window) is added/removed.
 Slots: [http://gyazo.com/9d52e1fd4dc14790ec66eab4a9aee00e.png]
 
 === Window items (0x68) ===
+
+'''Server to Client only'''
 
 [[File:Inventory-slots.png|thumb|The inventory slots]]
 
@@ -1992,6 +2036,8 @@ Uses is the number of times an item has been used (the value starts at 0 and cou
 
 === Update progress bar (0x69) ===
 
+'''Server to Client only'''
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -2021,6 +2067,8 @@ Uses is the number of times an item has been used (the value starts at 0 and cou
 |}
 
 === Transaction (0x6A) ===
+
+'''Server to Client only'''
 
 A packet from the server indicating whether a request from the client was accepted, or whether there was a conflict (due to lag).
 
