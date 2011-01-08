@@ -11,6 +11,13 @@ This is a rather incomplete list of Minecraft Alpha clients currently in develop
 !style="width: 72px" | Threaded
 !style="width: 240px" | Features
 |-
+! [http://foundation.x10.mx/index.php?title=Crafti Crafti]*
+| CharlesBroughton
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with Twisted network driver
+| proprietary software / Freeware
+| {{yes}}
+| python standalone bot, controllable via player commands, console input, or configured rules file.  [http://foundation.x10.mx/index.php?title=Crafti See More...]
+|-
 ! [http://github.com/aniero/golem golem]
 | aniero
 | [http://en.wikipedia.org/wiki/Ruby_%28programming_language%29 ruby]
