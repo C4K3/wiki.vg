@@ -1,3 +1,6 @@
+== Commit Messages ==
+Read this: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+
 == assert ==
 Use of assertions is advised whenever undefined or dangerous state is encountered with internal constructions and declarations.  This includes internal string constructions, thread starting, NULL pointer checks, etc.
 
