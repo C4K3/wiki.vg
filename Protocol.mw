@@ -1984,6 +1984,8 @@ Sent by the server when an item in a slot (in a window) is added/removed.
 | class="col1 rightalign" colspan="4" | 6 bytes (+2 for item ID != -1)
 |}
 
+Note that if window ID and slot are both -1, it means the item currently attached to the cursor.
+
 Slots: [http://gyazo.com/9d52e1fd4dc14790ec66eab4a9aee00e.png]
 
 === Window items (0x68) ===
