@@ -1679,6 +1679,11 @@ The block type array is indexed with:
 
 The other arrays are similar but you need to divide the index by two after calculating the above. Then each byte contains data for '''two''' blocks.
 
+If you have a FULL map chunk (Size_X = 15, Size_Y = 127, Size_Z = 15, you can calculate index coordinates:
+  x = X + ( index >> 11 )
+  y = index & 0x7F
+  z = Z + ( (index & 0x780) >> 7 )
+
 === Multi Block Change (0x34) ===
 
 Further investigation shows that this is a multiple-block-change command; if you take the three arrays, and put together elements with the same index, and then decompose the short into coordinates (top 4 bits is X, next 4 bits is Z, bottom 8 bits is Y), you get things like [((8, 7, 4), 11, 0), ((7, 13, 6), 11, 0), ((13, 1, 8), 11, 0), ((7, 6, 6), 11, 0)].
