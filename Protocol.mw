@@ -1111,6 +1111,9 @@ Object Types
 |- class="row10"
 | class="col0" | 71
 | class="col1" | Falling Gravel
+|- class="row11"
+| class="col0" | 90
+| class="col1" | Fishing Float
 |}
 
 === Mob Spawn (0x18) ===
