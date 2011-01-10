@@ -1098,7 +1098,7 @@ Object Types
 | class="col1" | Activated TNT
 |- class="row6"
 | class="col0" | 60
-| class="col1" | Arrow <!-- Player-fired arrows. No data gathered yet on whether skeleton-fired arrows have a different code. -->
+| class="col1" | Arrow <!-- Player- and skeleton- fired arrows.-->
 |- class="row7"
 | class="col0" | 61
 | class="col1" | Thrown Snowball
