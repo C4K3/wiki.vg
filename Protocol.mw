@@ -1830,6 +1830,7 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 === Open window (0x64) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
+This is sent to the client when it should open an inventory, such as a chest, workbench, or furnace.
 
 {| class="wikitable"
 |- class="row0"
