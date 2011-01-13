@@ -2206,6 +2206,10 @@ Sent by the server before it disconnects a client, or by the client before it di
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 2010-1-13 ===
+* <div class="li">Beta 1.2 released.</div>
+* More packet changes: 0x05, 0x0F, 0x15, 0x66, 0x67.
+
 === 2010-12-20 ===
 * <div class="li">Notch released Beta on time! Amazing! Refactored the page to be slightly smaller and easier to navigate.</div>
 * A whole host of packet changes. 0x05, 0x08, 0x10, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x6a, and 0x82. Packets 0x11 and 0x3b removed.
