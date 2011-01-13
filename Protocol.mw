@@ -1950,12 +1950,12 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col3" | Number of items that were in the slot
 |- class="row7"
 | class="col0 centeralign" | Item uses
-| class="col1 centeralign" | byte
+| class="col1 centeralign" | short
 | class="col2 centeralign" | <code>10</code>
 | class="col3" | Number of times the item was used that was in the slot
 |- class="row8"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes (+2 for item ID != -1)
+| class="col1 rightalign" colspan="4" | 9 bytes (+3 for item ID != -1)
 |}
 
 === Set slot (0x67) ===
