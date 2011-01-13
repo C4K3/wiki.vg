@@ -956,7 +956,7 @@ It is completely acceptable for servers to ignore the EID issued by the client i
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="9" | 0x15
+| class="col0 centeralign" rowspan="10" | 0x15
 | class="col1" | EID
 | class="col2" | int
 | class="col3" | <code>157617</code>
@@ -972,36 +972,41 @@ It is completely acceptable for servers to ignore the EID issued by the client i
 | class="col2" | <code>1</code>
 | class="col3" | The number of items
 |- class="row4"
+| class="col0" | Damage ?
+| class="col1" | short
+| class="col2" | 
+| class="col3" | New field in beta 1.2 update
+|- class="row5"
 | class="col0" | X
 | class="col1" | int
 | class="col2" | <code>133</code>
 | class="col3" | Item X as Absolute Integer
-|- class="row5"
+|- class="row6"
 | class="col0" | Y
 | class="col1" | int
 | class="col2" | <code>913</code>
 | class="col3" | Item Y as Absolute Integer
-|- class="row6"
+|- class="row7"
 | class="col0" | Z
 | class="col1" | int
 | class="col2" | <code>63552</code>
 | class="col3" | Item Z as Absolute Integer
-|- class="row7"
+|- class="row8"
 | class="col0" | Rotation
 | class="col1" | byte
 | class="col2" | <code>252</code>
 | class="col3" | Item rotation as a packed byte
-|- class="row8"
+|- class="row9"
 | class="col0" | Pitch
 | class="col1" | byte
 | class="col2" | <code>25</code>
 | class="col3" | Item pitch as a packed byte
-|- class="row9"
+|- class="row10"
 | class="col0" | Roll
 | class="col1" | byte
 | class="col2" | <code>12</code>
 | class="col3" | Item roll as a packed byte
-|- class="row10"
+|- class="row11"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 23 bytes
 |}
