@@ -316,7 +316,7 @@ After each "Named Entity Spawn", there will be five of these packets for the equ
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x05
+| class="col0 centeralign" rowspan="4" | 0x05
 | class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 0x00010643
@@ -332,8 +332,13 @@ After each "Named Entity Spawn", there will be five of these packets for the equ
 | class="col2 centeralign" | -1
 | class="col3" | Equipped item (-1 for empty slot)
 |- class="row4"
+| class="col0 centeralign" | ???
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 
+| class="col3" | Damage?
+|- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes
+| class="col1 rightalign" colspan="4" | 11 bytes
 |}
 
 === Spawn Position (0x06) ===
