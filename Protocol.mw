@@ -1230,7 +1230,7 @@ Sent by the server when a Mob Entity is Spawned
 | class="col3" | Indexed metadata for Mob (STILL DECODING!)
 |- class="row9"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 21 bytes + metadata
+| class="col1 rightalign" colspan="4" | 21 bytes + Metadata
 |}
 
 Mob Types (Incomplete)
