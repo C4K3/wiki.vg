@@ -54,7 +54,28 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 | class="col1 centeralign" | 1
 | class="col2" | 0 or 1
 | class="col3" | Value can be either True (0x01) or False (0x00)
+|- class="row9"
+! class="col0 centeralign" | Metadata
+| class="col1 centeralign" | [Unknown]
+| class="col2" | See below
+| class="Col3" | See below
 |}
+
+=== Metadata ===
+
+The full purpose of the Metadata type remains unknown.  Metadata was introduced in Beta 1.2.  Currently, it takes the following form:
+
+  let x = 0 of type byte
+  while (x = read byte from stream) does not equal 127:
+      select based on value of x:
+          case 0: read byte from stream
+          case 1: read short from stream
+          case 2: read int from stream
+          case 3: read float from stream
+          case 4: read string from stream
+          case 5: read short, byte, short from stream
+      end select
+  end while
 
 == Terminology ==
 
