@@ -1035,7 +1035,7 @@ It is completely acceptable for servers to ignore the EID issued by the client i
 | class="col3" | Item roll as a packed byte
 |- class="row11"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 23 bytes
+| class="col1 rightalign" colspan="4" | 25 bytes
 |}
 
 === Collect Item (0x16) ===
