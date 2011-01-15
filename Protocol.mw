@@ -1990,6 +1990,8 @@ Instrument Types
 | class="col1" | Harp
 |}
 
+More information about how the pitch values correspond to notes in real life are available on the [http://www.minecraftwiki.net/wiki/Note_Block official Minecraft wiki].
+
 === Explosion (0x3C) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
