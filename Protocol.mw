@@ -1923,7 +1923,7 @@ See the Block Change command for description of the general format of a block ch
 | class="col1 rightalign" colspan="4" | 12 bytes
 |}
 
-=== Play Note (0x36) ===
+=== Play Note Block (0x36) ===
 
 '''Server to Client only'''
 
