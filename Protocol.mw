@@ -1955,12 +1955,12 @@ This packet is sent to the client when a note block is played. It shows the note
 |- class="row4"
 | class="col0 centeralign" | Instrument Type
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0</code>
+| class="col2 centeralign" | <code>3</code>
 | class="col3" | The instrument type (see the table below).
 |- class="row5"
 | class="col0 centeralign" | Pitch
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0</code>
+| class="col2 centeralign" | <code>17</code>
 | class="col3" | The pitch of the note (between 0-24 inclusive where 0 is the lowest and 24 is the highest).
 |- class="row6"
 ! class="col0" | Total Size:
