@@ -132,6 +132,8 @@ There are several different units of measurement used in the protocol depending 
 
 == Packets ==
 
+All packets begin with a single "Packet ID" byte.  Listed packet size includes this byte.  Packets are either "server to client", "client to server", or both.  If not specified, assume that the packet can be sent both ways.  There is no "length" field; for variable length packets, you must parse to the end to determine the length.
+
 === Keep Alive (0x00) ===
 
 This packet may be sent to keep the connection alive, or may be a relic of UDP testing. No one is really sure. What we do know is that the Beta server will disconnect a client if it doesn't receive at least one packet before 1200 in-game ticks, and the Beta client will time out the connection under the same conditions.
