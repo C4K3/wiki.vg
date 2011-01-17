@@ -1,4 +1,4 @@
-This page presents a dissection of the new [http://minecraft.net/game/ Minecraft Beta] protocol by aera ([http://aeracode.org Andrew Godwin]), ylt (Joe Carter) and TkTech (Tyler Kennedy). Additionally, credit goes to the citizens of [irc://irc.freenode.net/#mcdevs <nowiki>#mcdevs</nowiki>] who helped by providing packet dumps and insight. If you're having trouble, check out the [[Protocol_FAQ|FAQ]].
+This page presents a dissection of the new [http://minecraft.net/game/ Minecraft Beta] protocol.  Credit goes to the Great Old Ones, and the citizens of [irc://irc.freenode.net/#mcdevs <nowiki>#mcdevs</nowiki>] who helped by providing packet dumps and insight. If you're having trouble, check out the [[Protocol_FAQ|FAQ]].
 
 '''Note:''' While you may use the contents of this page without restriction to create servers, clients, bots, etc… you still need to provide the attribution above if you copy any of the contents of this page for publication elsewhere.
 
