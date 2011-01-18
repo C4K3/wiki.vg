@@ -2083,7 +2083,7 @@ This is sent to the client when it should open an inventory, such as a chest, wo
 | class="col1 rightalign" colspan="4" | 4 bytes + 1 string
 |}
 
-Inventory types: 0 = basic, 1 = workbench, 2 = furnace
+Inventory types: 0 = basic, 1 = workbench, 2 = furnace, 3 = dispenser
 
 === Close window (0x65) ===
 
