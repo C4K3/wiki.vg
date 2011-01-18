@@ -369,7 +369,7 @@ After each "Named Entity Spawn", there will be five of these packets for the equ
 
 '''Server to Client only'''
 
-Sent by the server after login to specify the players starting location and to initialize compasses. It can be sent at any time afterwords to update the point compasses are focused on.
+Sent by the server after login to specify the coordinates of the spawn point (the point at which players spawn at, and which the compass points to). It can be sent at any time to update the point compasses point at.
 
 {| class="wikitable"
 |- class="row0"
