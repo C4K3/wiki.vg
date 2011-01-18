@@ -58,6 +58,14 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | {{no}}
 |
 |-
+! [http://minewithperl.sourceforge.net MWP]
+| jake-anq, goshat
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Unknown
+| {{yes}}
+| {{planned}}
+|
+|-
 ! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
 | aera, iKJames
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
@@ -80,14 +88,6 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | Unknown
 | {{yes}}
 | {{no}}
-|
-|-
-! [http://minewithperl.sourceforge.net MWP]
-| jake-anq, goshat
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Unknown
-| {{yes}}
-| {{planned}}
 |
 |}
 
