@@ -1565,7 +1565,7 @@ this packet allows at most four blocks movement in any direction. (-128/32 == -4
 
 '''Server to Client only'''
 
-This packet is sent by the server when an entity moves more then 4 blocks.
+This packet is sent by the server when an entity moves more than 4 blocks.
 
 {| class="wikitable"
 |- class="row0"
