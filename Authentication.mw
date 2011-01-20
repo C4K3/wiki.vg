@@ -3,7 +3,7 @@ Minecraft Alpha uses an entirely new authentication scheme, both for improved se
 == The Launcher ==
 The first step occurs as soon as you open the downloadable Minecraft launcher and attempt to login. The launcher will make a HTTP GET request like so:
 <pre>http://www.minecraft.net/game/getversion.jsp?user=<username>&password=<password>&version=<launcher version></pre>
-The current launcher version is ''11'', sending a value lower than this will cause the server to return "Old Version" '''however''' you can send any large number and it will return as expected. If the login succeeded, it will return 4 ':' delimited values.
+The current launcher version is ''12'', sending a value lower than this will cause the server to return "Old Version" '''however''' you can send any large number and it will return as expected. If the login succeeded, it will return 4 ':' delimited values.
 <pre>1281688214000:a348b469d915a40c9eebd2b9919c1a39:TkTech:8204407531530365141:</pre>
 The first value is the <u>current version</u> of the game files (not the launcher itself). The second value is your <u>download ticket</u> and is required to fetch new versions of minecraft.jar from the server. The third value is your case-correct username. The fourth value is your <u>session id</u> and is required to connect to servers.
 
