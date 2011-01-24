@@ -1810,7 +1810,7 @@ And conversely, which local block in the chunk to start at:
   StartZ = Z & 15
 
 =====SizeX, SizeY, SizeZ=====
-This is the size of the region, in blocks. The server will subtract one from the sizes and then cast them to a byte before sending. This is so that chunks as large as 256 are possible (the maximum size of a byte is 255; 256 - 1 = 255). 
+This is the size of the region, in blocks. The server will subtract one from the sizes and then cast them to a byte before sending. This is so that chunks as large as 256 are possible (the maximum size of a byte is 255; 256 - 1 = 255). ''but byte values only go up to 127. please clarify.''
 
 =====Compressed data=====
 
