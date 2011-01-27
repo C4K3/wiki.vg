@@ -463,7 +463,7 @@ Sent by the server to update/set the health of the player it is sent to. Added i
 
 === Respawn (0x09) ===
 
-Sent by the client when the player presses the "Respawn" button after dying. The server then drops the player's inventory, teleports the user to the spawn point, and sends a respawn packet in response.The client will not leave the respawn screen until it receives a respawn packet.
+Sent by the client when the player presses the "Respawn" button after dying. The server then teleports the user to the spawn point, and sends a respawn packet in response.  The client will not leave the respawn screen until it receives a respawn packet.
 
 {| class="wikitable"
 |- class="row0"
