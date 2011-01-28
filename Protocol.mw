@@ -1295,6 +1295,10 @@ Mob Types (Incomplete)
 | class="col0" | 93
 | class="col1" | Hen
 | class="col2" | 
+|- class="row13"
+| class="col0" | 94
+| class="col1" | Squid
+| class="col2" | 
 |}
 
 === Entity: Painting (0x19) ===
