@@ -1,3 +1,8 @@
+{| width="30%" align="right" cellpadding="20"
+|-
+| {{CraftdMenu}}
+|}
+
 craftd relies heavily on the standard pthreads library.  This document describes the current threading model.
 
 == General ==
