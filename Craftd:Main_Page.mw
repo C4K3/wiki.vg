@@ -1,6 +1,6 @@
 {{Box|
-BORDER = #ccc|
-BACKGROUND = #aaa|
+BORDER = #9999FF|
+BACKGROUND = #99CCFF|
 WIDTH = 100%|
 ICON = |
 HEADING = '''Introduction''' |
@@ -26,8 +26,8 @@ You can find the latest source on github.
 |- style="vertical-align: top;"
 | <!-- Section 1-1 --> 
 {{Box|
-BORDER = #456CA1|
-BACKGROUND = #80A3CA|
+BORDER = #669933|
+BACKGROUND = #99CC33|
 WIDTH = 100%|
 ICON = |
 HEADING = '''User Documentation''' |
@@ -35,8 +35,8 @@ CONTENT =*[[Craftd:Configuration|Configuration]]
 }} 
 
 {{Box|
-BORDER = #FF6F6F|
-BACKGROUND = #FF2C2C|
+BORDER = #993300|
+BACKGROUND = #CC0000|
 WIDTH = 100%|
 ICON = |
 HEADING = '''Developer Documentation'''|
@@ -55,8 +55,8 @@ CONTENT = *[[Craftd:Thread_Model|Thread Model]]
 |- style="vertical-align: top;"
 | <!-- Section 2-1 --> 
 {{Box|
-BORDER = #eabd00|
-BACKGROUND = #fae462|
+BORDER = #FFCC00|
+BACKGROUND = #FFFF00|
 WIDTH = 100%|
 ICON = |
 HEADING = '''Menu''' |
