@@ -1,18 +1,9 @@
-{| width="30%" align="Left"
+{| width="30%"
 |-
 | {{CraftdMenu}}
 |}
 
-<br> 
-
-<br> 
-
-<br> 
-
-<br> 
-
-<br> 
-= Status =
+== Status ==
 craftd is on [https://github.com/kev009/craftd/ github]. This is a developer preview for feedback. It doesn't currently implement much of the Minecraft protocol, but you can follow along and track progress. Check back later for release tarballs and eventually binaries.
 
 == Things that have been hashed out: ==
