@@ -1,12 +1,11 @@
+{{Box|
+BORDER = #ccc|
+BACKGROUND = #aaa|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Introduction''' |
+CONTENT =  
 [[Image:Craftd-login.png|right|320px]]
-
-'''Welcome to the craftd wiki page.  craftd lives at http://mc.kev009.com/craftd/.'''
-
-You can find the latest source on github: https://github.com/kev009/craftd/.
-
-Want to help?  Need help?  Come talk!  '''irc.freenode.net #craftd'''
-
-== Introduction ==
 '''craftd''' is a third-party implementation of the [http://www.minecraft.net/ Minecraft] SMP server protocol.
 
 The goal of craftd is to provide a <u>high performance, low overhead</u> implementation of the Minecraft Survival Multiplayer (SMP) protocol. After implementing the basics, advanced features such as scripting and extensions shall be considered.
@@ -15,48 +14,53 @@ craftd keeps modern UNIX daemon philosophy in mind. This includes best practice 
 
 Check back soon for a test world.  Shout out to [http://coesquest.com/ Coestar] for providing me with a copy of Minecraft and the motivation for the project.
 
-== Status ==
-craftd is on [https://github.com/kev009/craftd/ github]. This is a developer preview for feedback. It doesn't currently implement much of the Minecraft protocol, but you can follow along and track progress. Check back later for release tarballs and eventually binaries.
+Want to help?  Need help?  Come talk!  '''irc.freenode.net #craftd'''
 
-=== Things that have been hashed out: ===
-*Autotools build system for cross-platform ease & possible distro inclusion
-*libevent2 cross-platform event polling and network I/O
-*Fast packet state machine and variable length packet decoder
-*Pthreads worker pool
-*libevent2 integrated httpd
-*Daemon basics -- need conventional SIG handlers, SIGHUP, pid locks
-*Choose a FOSS license -> Simplified BSD
-*Logging. XSI/Single UNIX Specification syslog most likely. -> syslog with alternative stdout selector at runtime.
-*Configuration files -> JSON formatted
-*Chat, motd, string handling (bstring)
-*Basic NBT read and write support
-*Chunk sending
+You can find the latest source on github.
+}} <!-- Wiki tables are annoying. --> 
 
-=== Future directions/TODO: ===
-These are future research and development ideas in arbitrary order.
-*World file format. custom w/import-export? BerkeleyDB?
-*Sparse matrix for ^?
-*Binaries for Linux, Win32(MinGW), FreeBSD
-*Stress test w/large num users - Goal 100+ simultaneous
-*Dynamically tunable worker pool
-*Use more zero copy I/O
-*JSON-REST admin/status API
-*Security audit - perpetual
-*Running from a chroot
-*Native WIN32 threading with MinGW - needs a contributor/maintainer
-*Protocol testing framework
-*IPC to an IRC relay agent
-*Alternative/improved protocol for NPCs, bots, scripting?
+{| width="100%"
+|- style="vertical-align: top;"
+| width="70%" | <!-- Section 1   --> 
+{| width="100%"
+|- style="vertical-align: top;"
+| <!-- Section 1-1 --> 
+{{Box|
+BORDER = #456CA1|
+BACKGROUND = #80A3CA|
+WIDTH = 100%|
+ICON = |
+HEADING = '''User Documentation''' |
+CONTENT =*[[Craftd:Configuration|Configuration]]
+}} 
 
-== User Documentation ==
-*[[Craftd:Configuration|Configuration]]
-
-== Developer Documentation ==
-*[[Craftd:Thread_Model|Thread Model]]
+{{Box|
+BORDER = #FF6F6F|
+BACKGROUND = #FF2C2C|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Developer Documentation'''|
+CONTENT = *[[Craftd:Thread_Model|Thread Model]]
 *[[Craftd:Coding_Style|Coding Style and Notes]]
 *[http://www.wangafu.net/~nickm/libevent-book/ libevent book]
 *[http://mc.kev009.com/libevent libevent2 Doxygen] - Local, up to date copy
 *[http://lists.apple.com/archives/xcode-users/2008/May/msg00665.html C99 Info]
 *[http://www.unix.org/2008edition/ POSIX1-2008]
+}} 
 
-[[Category:Craftd]]
+|}
+
+| width="50%" | <!-- Section 2   --> 
+{| width="100%"
+|- style="vertical-align: top;"
+| <!-- Section 2-1 --> 
+{{Box|
+BORDER = #eabd00|
+BACKGROUND = #fae462|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Menu''' |
+CONTENT = 
+*[[Craftd:Status|Development status]]
+*[https://github.com/kev009/craftd/ Craftd on github]
+}}
