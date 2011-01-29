@@ -1841,7 +1841,7 @@ In other words, there are Size_X number of '''x planes''', each plane made up of
 The block type array is indexed with:
   index = y + (z * (Size_Y+1)) + (x * (Size_Y+1) * (Size_Z+1))
 
-The other arrays are similar but you need to divide the index by two after calculating the above. Then each byte contains data for '''two''' blocks.
+The other arrays are similar but you need to divide the index by two after calculating the above. Then each byte contains data for '''two''' blocks. Each byte is packed low nibble first and high nibble second.
 
 If you have a FULL map chunk (Size_X = 15, Size_Y = 127, Size_Z = 15, you can calculate index coordinates:
   x = X + ( index >> 11 )
