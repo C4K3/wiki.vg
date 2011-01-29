@@ -1,0 +1,32 @@
+= Status =
+craftd is on [https://github.com/kev009/craftd/ github]. This is a developer preview for feedback. It doesn't currently implement much of the Minecraft protocol, but you can follow along and track progress. Check back later for release tarballs and eventually binaries.
+
+== Things that have been hashed out: ==
+*Autotools build system for cross-platform ease & possible distro inclusion
+*libevent2 cross-platform event polling and network I/O
+*Fast packet state machine and variable length packet decoder
+*Pthreads worker pool
+*libevent2 integrated httpd
+*Daemon basics -- need conventional SIG handlers, SIGHUP, pid locks
+*Choose a FOSS license -> Simplified BSD
+*Logging. XSI/Single UNIX Specification syslog most likely. -> syslog with alternative stdout selector at runtime.
+*Configuration files -> JSON formatted
+*Chat, motd, string handling (bstring)
+*Basic NBT read and write support
+*Chunk sending
+
+== Future directions/TODO: ==
+These are future research and development ideas in arbitrary order.
+*World file format. custom w/import-export? BerkeleyDB?
+*Sparse matrix for ^?
+*Binaries for Linux, Win32(MinGW), FreeBSD
+*Stress test w/large num users - Goal 100+ simultaneous
+*Dynamically tunable worker pool
+*Use more zero copy I/O
+*JSON-REST admin/status API
+*Security audit - perpetual
+*Running from a chroot
+*Native WIN32 threading with MinGW - needs a contributor/maintainer
+*Protocol testing framework
+*IPC to an IRC relay agent
+*Alternative/improved protocol for NPCs, bots, scripting?
