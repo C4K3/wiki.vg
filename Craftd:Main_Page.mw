@@ -54,16 +54,6 @@ CONTENT = *[[Craftd:Thread_Model|Thread Model]]
 {| width="100%"
 |- style="vertical-align: top;"
 | <!-- Section 2-1 --> 
-{{Box|
-BORDER = #FFCC00|
-BACKGROUND = #FFFF00|
-WIDTH = 100%|
-ICON = |
-HEADING = '''Menu''' |
-CONTENT = 
-*[[Craftd:Status|Development status]]
-*[https://github.com/kev009/craftd/ Craftd on github]
-*[http://openhatch.org/+projects/craftd I want to help!] (OpenHatch entry)
-}}
+{{CraftdMenu}}
 
 [[Category:Craftd]]
