@@ -1990,20 +1990,20 @@ Instrument Types
 ! class="col0" | Type ID
 ! class="col1" | Type Name
 |- class="row1"
+| class="col0" | 0
+| class="col1" | Harp
+|- class="row2"
 | class="col0" | 1
 | class="col1" | Double Bass
-|- class="row2"
+|- class="row3"
 | class="col0" | 2
 | class="col1" | Snare Drum
-|- class="row3"
+|- class="row4"
 | class="col0" | 3
 | class="col1" | Clicks/Sticks
-|- class="row4"
+|- class="row5"
 | class="col0" | 4
 | class="col1" | Bass Drum
-|- class="row5"
-| class="col0" | 5
-| class="col1" | Harp
 |}
 
 More information about how the pitch values correspond to notes in real life are available on the [http://www.minecraftwiki.net/wiki/Note_Block official Minecraft wiki].
