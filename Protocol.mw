@@ -97,7 +97,7 @@ This is a fairly lengthy page, and to make it more readable certain terminology 
 | class="col1" | An EID - or Entity ID - is a unique 4-byte integer used to identify a specific entity
 |- class="row4"
 ! class="col0 centeralign" | XYZ
-| class="col1" | In this document, the axis names are the same as those used by Notch. Y is always the upwards coordinate, while X and Z are parallel to the ground
+| class="col1" | In this document, the axis names are the same as those used by Notch. Y points upwards, X points South, and Z points East.
 |- class="row5"
 ! class="col0 centeralign" | MOTD
 | class="col1" | Message Of The Day
