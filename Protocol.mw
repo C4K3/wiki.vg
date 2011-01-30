@@ -124,7 +124,7 @@ A block represents 1 meter x 1 meter x 1 meter. There are 32 pixels per meter, a
 ! class="col0" | Absolute Integer
 | class="col1 centeralign" | int
 | class="col2 centeralign" | pixels
-| class="col3" | Represents an object's location in the world. <br/> Functions the same as Absolute Double, but requires fewer bytes and is less precise. <br/> In C/C++/Java: <code>absolute_int = (int)(absolute_double / 32.0);</code>
+| class="col3" | Represents an object's location in the world. <br/> Functions the same as Absolute Double, but requires fewer bytes and is less precise. <br/> In C/C++/Java: <code>absolute_int = (int)(absolute_double * 32.0);</code>
 |- class="row3"
 ! class="col0" | Block
 | class="col1 centeralign" | byte, short, int
