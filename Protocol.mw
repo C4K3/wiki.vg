@@ -1289,7 +1289,7 @@ Mob Types (Incomplete)
 |- class="row9"
 | class="col0" | 90
 | class="col1" | Pig
-| class="col2" | 
+| class="col2" | Index 16. Possible values: 0, 1
 |- class="row10"
 | class="col0" | 91
 | class="col1" | Sheep
