@@ -1293,7 +1293,7 @@ Mob Types (Incomplete)
 |- class="row10"
 | class="col0" | 91
 | class="col1" | Sheep
-| class="col2" | Bit 0x10 indicates shearedness, the lower 4 bits indicate wool color.
+| class="col2" | Index 16. Bit 0x10 indicates shearedness, the lower 4 bits indicate wool color.
 |- class="row11"
 | class="col0" | 92
 | class="col1" | Cow
