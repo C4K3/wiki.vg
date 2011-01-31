@@ -1239,7 +1239,7 @@ Sent by the server when a Mob Entity is Spawned
 | class="col0 centeralign" | Data Stream
 | class="col1 centeralign" | Metadata
 | class="col2 centeralign" | <code>127</code>
-| class="col3" | Indexed metadata for Mob (STILL DECODING!). Terminated by 0xf7.
+| class="col3" | Indexed metadata for Mob (STILL DECODING!). Terminated by 0x7F.
 |- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 20 bytes + Metadata (at least 1)
