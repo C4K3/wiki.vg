@@ -1257,11 +1257,11 @@ Metadata index 0 is a byte representing a set of 8 boolean flags:
 | class="col1" | 0x01
 | class="col2" | Entity on fire
 |- class="row2"
-| class="col0" | 2
+| class="col0" | 1
 | class="col1" | 0x02
 | class="col2" | Entity crouched
 |- class="row3"
-| class="col0" | 3
+| class="col0" | 2
 | class="col1" | 0x04
 | class="col2" | Entity riding
 |}
