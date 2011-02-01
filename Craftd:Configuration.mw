@@ -36,7 +36,7 @@ Using this configuration file will not change any of the internal default variab
     "day-rate": 20,
     "sunset-rate": 20,
     "night-rate": 20,
-    "unrise-rate": 20,
+    "sunrise-rate": 20,
     "proxy-enabled": false,
     "default-server": "Default Server",
     "servers" : [ {
