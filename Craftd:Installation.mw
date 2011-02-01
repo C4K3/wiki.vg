@@ -1,0 +1,14 @@
+{| width="30%" align="right" cellpadding="20"
+|-
+| {{CraftdMenu}}
+|}
+
+== Binary Package ==
+''TODO''
+
+== Source ==
+''Stub''
+
+* Mention extra/build.sh
+* Mention pulling from git and running autoconf -i on first checkout
+* Mention --disable-gameserver and --disable-proxy (both default to enabled)
