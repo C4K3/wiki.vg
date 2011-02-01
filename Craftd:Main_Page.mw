@@ -31,7 +31,8 @@ BACKGROUND = #99CC33|
 WIDTH = 100%|
 ICON = |
 HEADING = '''User Documentation''' |
-CONTENT =*[[Craftd:Configuration|Configuration]]
+CONTENT = *[[Craftd:Installation|Installing craftd]]
+*[[Craftd:Configuration|Configuration]]
 }} 
 
 {{Box|
