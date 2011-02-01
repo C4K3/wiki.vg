@@ -20,6 +20,40 @@ mv motd.conf.dist motd.conf
 
 A config file is necessary, but it can consist of nothing more than {} if you wish to accept the defaults.  Options may be omitted, in which case the defaults will be used.  If the file fails to parse, an error message will be logged.
 
+== Default configuration file ==
+Using this configuration file will not change any of the internal default variables
+<syntaxhighlight lang="javascript">
+{
+  "00": "craftd config file.  Must be valid JSON.",
+  "server": {
+    "daemonize": true,
+    "game-port": 25565,
+    "minecraft-stringmax": 100,
+    "max-listenbacklog": 16,
+    "worker-pool-size": 2,
+    "motd-file": "motd.conf",
+    "world-dir": "world/",
+    "day-rate": 20,
+    "sunset-rate": 20,
+    "night-rate": 20,
+    "unrise-rate": 20,
+    "proxy-enabled": false,
+    "default-server": "Default Server",
+    "servers" : [ {
+        "host" : "127.0.0.1",
+        "name" : "Default Server",
+        "port" : 25565 }
+    ]
+  },
+  "httpd": {
+    "enabled": false,
+    "httpd-port": 25566,
+    "static-docroot": "htdocs/"
+  }
+}
+</syntaxhighlight>
+
+
 == Available options and their defaults ==
 {| class="wikitable" style="text-align:center"
 |+Game Config
@@ -43,8 +77,43 @@ A config file is necessary, but it can consist of nothing more than {} if you wi
 |-
 ! world-dir
 | ./world || Location of the NBT world save directory || N/A
+|-
+! day-rate
+| 20 || Game time tick rate during day || N/A
+|-
+! sunset-rate
+| 20 || Game time tick rate during sunset || N/A
+|-
+! night-rate
+| 20 || Game time tick rate during night || N/A
+|-
+! sunrise-rate
+| 20 || Game time tick rate during sunrise || N/A
+|-
+! proxy-enabled
+| false || Run in proxy mode on port 'game-port' || To run both a game server and proxy, run as separate processes on different ports
+|-
+! default-server
+| Default Server || The name of the server to connect to when a client logs in and the server is in proxy mode || N/A
+|-
+! servers
+| N/A || Specifies an array of servers || See the server section for default values
 |}
 
+{| class="wikitable" style="text-align:center"
+|+Server options
+|-
+! Option !! Default !! Action !! Notes
+|-
+! host
+| 127.0.0.1 || The ip address or domain name || N/A
+|-
+! name
+| undefined || The name for use in configuration files or in-game commands || N/A
+|-
+! port
+| 25565 || The port of the currently described server || N/A
+|}
 {| class="wikitable" style="text-align:center"
 |+Integrated httpd server
 |-
