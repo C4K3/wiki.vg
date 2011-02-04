@@ -10,5 +10,5 @@
 ''Stub''
 
 * Mention extra/build.sh
-* Mention pulling from git and running autoconf -i on first checkout
+* Mention pulling from git and running autoreconf -i on first checkout
 * Mention --disable-gameserver and --disable-proxy (both default to enabled)
