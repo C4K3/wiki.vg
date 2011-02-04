@@ -1,0 +1,24 @@
+Clients;
+
+This is a rather incomplete list of Minecraft Creative clients currently in development. This page only lists clients written from scratch.
+
+{| class="wikitable" style="width: auto; text-align: center;"
+|-style="background:#eee"
+!style="width: 72px" | Name
+!Author(s)
+!style="width: 128px" | Language
+!style="width: 128px" | License
+!style="width: 72px" | Threaded
+!style="width: 240px" | Features
+|-
+! [http://umby.x10.mx/forum/ VB Minebot]*
+| Umby24
+| [http://en.wikipedia.org/wiki/Visual_basic_.net Visual Basic .NET]
+| Open Source
+| {{yes}}
+| VB.NET standalone bot, controllable via player commands, console input, or User-Made Scripts in VBscript.  [http://umby.x10.mx/forum/showthread.php?tid=2&pid=2#pid2 See More...]
+|-
+
+|-|}
+
+[[Category:Minecraft Classic]]
