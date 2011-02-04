@@ -20,9 +20,38 @@ Connect to the server at localhost, port 25565.
 
 Paraphrase (with no authentication): send a 0x02, get a 0x02, send a 0x01, get a 0x01. Then you get a 0x0D, and that's when the game really begins.
 
+To test if this worked, connect to your localhost server with the notchian client and see if you can see your custom client appear and float in the air.
+
 == Getting the map chunks ==
 
-Now you have to convince the server that you deserve to know about all the map chunks that are around you. This is not totally understood yet.
+You have to convince the server that you deserve to know about all the map chunks that are around you.
 
 * Every 200 milliseconds, send one of 0x0A - 0x0D.
-* TODO: That's not all. What else?
+
+To test if this worked, count the number of 0x33 map chunks you get that are full-sized chunks (16,128,16). You should get hundreds.
+
+If you're not doing it right, you might only see bits and pieces of the map loading really far away, or possibly just one chunk load where you're standing.
+
+== Moving around ==
+
+TODO: can you just fly around? is there a max speed? can you teleport?
+
+== Digging ==
+
+TODO: is digging speed limited on the server side?
+
+== Placing/using stuff ==
+
+TODO: can you place blocks from behind walls?
+
+== Crafting ==
+
+TODO
+
+== Attacking mobs/players ==
+
+TODO
+
+== Chat ==
+
+TODO
