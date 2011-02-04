@@ -1,0 +1,28 @@
+This tutorial is being created to document what it takes to write a stand-alone client. The tutorial is incomplete but will be updated whenever more information is discovered.
+
+== Before You Get Started ==
+
+* Make sure you don't want to join or fork an existing project instead.
+* Ponder how much work it will be.
+* Download the latest official minecraft server and run it with authentication turned off. Bind it to localhost if you want.
+
+== Parsing the messages ==
+
+''Main article: [[Protocol]]''
+
+Sorry, but you have to be able to parse ''all'' the messages. Write all the message parsing code. If you don't, your client will effectively crash if the server sends you any message you can't parse. 
+
+== Login ==
+
+Connect to the server at localhost, port 25565.
+
+''Main article: [[Protocol FAQ]]''
+
+Paraphrase (with no authentication): send a 0x02, get a 0x02, send a 0x01, get a 0x01. Then you get a 0x0D, and that's when the game really begins.
+
+== Getting the map chunks ==
+
+Now you have to convince the server that you deserve to know about all the map chunks that are around you. This is not totally understood yet.
+
+* Every 200 milliseconds, send one of 0x0A - 0x0D.
+* TODO: That's not all. What else?
