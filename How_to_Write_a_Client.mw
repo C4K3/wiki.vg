@@ -53,7 +53,7 @@ Here are some super-human abilities that are allowed:
 * '''Teleporting''' - put yourself anywhere instantly. Tested with a teleport distance of 1000m, which exceeds the bounds of the loaded map. Only tested with on-ground set to false.
 * '''Moving arbitrarily fast''' - due to being able to teleport, simply update your position to move as far as you like with each step to move arbitrarily fast.
 
-To test if this is working, watch your avatar move around from a notchian client. If your avatar remains still despite your position update messages, then you're doing something wrong.
+To test if moving around is working, watch your avatar move around from a notchian client. If your avatar remains still despite your position update messages, then you're doing something wrong. If your avatar seems to be gone completely from the world despite the server sending you reasonable spawn coordinates, it may help to delete the player file: world/players/<playername>.dat. This will cause the server to forget the player was ever logged in and spawn them in a new location. You may need to restart the server after deleting the player file.
 
 TODO: how is fall damage calculated and how to avoid it.
 
