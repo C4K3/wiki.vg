@@ -483,7 +483,11 @@ Sent by the client when the player presses the "Respawn" button after dying. The
 
 '''Client to Server only'''
 
-This packet is used to identify the state of the client, with the idea being to send one each game-tick to detect speed hackers. Notch will be optimizing/removing this in the future. This packet was previously referred to as Flying
+This packet is used to indicate whether the player is on ground (walking/swimming), or airborne (jumping/falling).
+
+When dropping from sufficient height, fall damage is applied when this state goes from False to True. The amount of damage applied is based on the point where it last changed from True to False. Note that there are several movement related packets containing this state.
+
+This packet was previously referred to as Flying
 
 {| class="wikitable"
 |- class="row0"
