@@ -18,7 +18,7 @@ Connect to the server at localhost, port 25565.
 
 ''Main article: [[Protocol FAQ]]''
 
-Paraphrase (with no authentication): send a 0x02, get a 0x02, send a 0x01, get a 0x01. Then you get a 0x0D, and that's when the game really begins.
+Paraphrase (with no authentication): send a 0x02, get a 0x02, send a 0x01, get a 0x01. Then you'll eventually get a 0x0D, and that's when the game really begins.
 
 To test if this worked, connect to your localhost server with the notchian client and see if you can see your custom client appear and float in the air.
 
