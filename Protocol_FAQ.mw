@@ -32,6 +32,7 @@ After sending the common-sense packets ([[protocol#handshake_0x02|Handshake]], [
 </blockquote>
 
 ====…my client isn't receiving complete map chunks!====
+''Main article: [[How to Write a Client]]''
 <blockquote>
 The standard Minecraft server server sends full chunks only when your client is sending player status update packets (any of [[protocol#Player (0x0A)|Player (0x0A)]] through [[protocol#Player Position & Look (0x0D)|Player Position & Look (0x0D)]]).
 </blockquote>
