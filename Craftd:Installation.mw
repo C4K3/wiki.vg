@@ -7,8 +7,38 @@
 ''TODO''
 
 == Source ==
-''Stub''
 
-* Mention extra/build.sh
-* Mention pulling from git and running autoreconf -i on first checkout
-* Mention --disable-gameserver and --disable-proxy (both default to enabled)
+'''NOTE: There is a build script available which performs the majority of the following procedure for you. To use it, skip the first step of this guide, follow the second step to get the source code and then execute the build.sh script from the extras subfolder of your working copy directory.'''
+
+=== Obtain prerequisites ===
+To build craftd from source in Linux, you will need:
+* autotools/make/gcc
+* git
+* libevent (http://monkey.org/~provos/libevent/)
+
+Most popular distributions do not have a package for the latest version of libevent. Therefore, it is best to fetch it from their website (shown above) and compile it. The latest release as of Feb. 5, 2011 is 2.0.10. Once you have obtained this package, extract it and run the following inside the resulting folder:
+<blockquote>./configure<br />make<br />make install<br />ldconfig</blockquote>
+
+=== Get the Source ===
+
+First, checkout the code by running:
+<blockquote>git clone git://github.com/kev009/craftd.git</blockquote>
+
+The first time you check out the source, you will need to generate a configure script. You can do this by running the following in the working copy directory:
+<blockquote>autoreconf -i</blockquote>
+
+Now that you have a configure script, run it by executing:
+<blockquote>./configure</blockquote>
+
+See the README file for more information on options to pass to configure.
+
+=== Compile ===
+
+'''NOTE: If you have a multi-core processor available, you can decrease compile-time by running `make -jX` instead of `make`, where X is the number of processor cores you have.'''
+
+You can compile and install the server by running the following from your working copy directory:
+<blockquote>make<br />make install</blockquote>
+
+=== Configuration ===
+
+By default, an example config file is installed to /usr/local/etc/craftd/craftd.conf.dist. You should make a copy of this file called craftd.conf and edit that to suit your purposes. See [[Craftd:Configuration]] for more information on editing this file.
