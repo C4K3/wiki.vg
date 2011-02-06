@@ -5,110 +5,137 @@
 ! Name
 ! AABB Height
 ! AABB Width
+! Notes
 |-
 ! Player
 | &nbsp;
 | 1.8 || 0.6
+| &nbsp;
 |-
 ! Pickup
 | &nbsp;
 | 0.25 || 0.25
+| &nbsp;
 |-
 ! Mob
 | Creeper
 | 1.8 || 0.6
+| &nbsp;
 |-
 ! Mob
 | Skeleton
 | 1.8 || 0.6
+| &nbsp;
 |-
 ! Mob
 | Spider
 | 0.9 || 1.4
+| &nbsp;
 |-
 ! Mob
 | Giant Zombie
 | 6 * 1.8 || 6 * 0.6
+| &nbsp;
 |-
 ! Mob
 | Zombie
 | 1.8 || 0.6
+| &nbsp;
 |-
 ! Mob
 | Slime
-| (2 ^ rand(0, 3)) * 0.6 || (2 ^ rand(0, 3)) * 0.6
+| n * 0.6 || n * 0.6
+| n = 2 ^ rand(0, 3)
 |-
 ! Mob
 | Ghast
 | 4.0 || 4.0
+| &nbsp;
 |-
 ! Mob
 | Zombie Pig
 | 1.8 || 0.6
+| &nbsp;
 |-
 ! Mob
 | Pig
 | 0.9 || 0.9
+| &nbsp;
 |-
 ! Mob
 | Sheep
 | 1.3 || 0.9
+| &nbsp;
 |-
 ! Mob
 | Cow
 | 1.3 || 0.9
+| &nbsp;
 |-
 ! Mob
 | Hen
 | 0.4 || 0.3
+| &nbsp;
 |-
 ! Mob
 | Squid
 | 0.95 || 0.95
+| &nbsp;
 |-
 ! Object
 | Boat
 | 0.6 || 1.5
+| &nbsp;
 |-
 ! Object
 | Minecart
 | 0.7 || 0.98
+| &nbsp;
 |-
 ! Object
 | Minecart (Storage)
 | 0.7 || 0.98
+| &nbsp;
 |-
 ! Object
 | Minecart (Powered)
 | 0.7 || 0.98
+| &nbsp;
 |-
 ! Object
 | Activated TNT
 | 0.98 || 0.98
+| &nbsp;
 |-
 ! Object
 | Arrow Projectile
 | 0.5 || 0.5
+| &nbsp;
 |-
 ! Object
 | Snowball Projectile
 | 0.25 || 0.25
+| &nbsp;
 |-
 ! Object
 | Egg Projectile
 | 0.25 || 0.25
+| &nbsp;
 |-
 ! Object
 | Falling Sand
 | 0.98 || 0.98
+| &nbsp;
 |-
 ! Object
 | Falling Gravel
 | 0.98 || 0.98
+| &nbsp;
 |-
 ! Object
 | Fishing Float
 | 0.25? || 0.25?
+| &nbsp;
 |}
 [[File:Icon_exclaim.gif|:!:]] Note: Slimes are always cubes. rand(0, 3) includes both 0 and 3.
 
