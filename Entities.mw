@@ -1,0 +1,105 @@
+{| class="wikitable"
+|+Entities
+|-
+! Type
+! Name
+! Height
+! Width
+|-
+! Pickup
+| &nbsp;
+| 0.25 || 0.25
+|-
+! Mob
+| Creeper
+| 1.8 || 0.6
+|-
+! Mob
+| Skeleton
+| 1.8 || 0.6
+|-
+! Mob
+| Spider
+| 0.9 || 1.4
+|-
+! Mob
+| Giant Zombie
+| 6 * 1.8 || 6 * 0.6
+|-
+! Mob
+| Zombie
+| 1.8 || 0.6
+|-
+! Mob
+| Slime
+| (2 ^ rand(0, 3)) * 0.6 || (2 ^ rand(0, 3)) * 0.6
+|-
+! Mob
+| Ghast
+| 4.0 || 4.0
+|-
+! Mob
+| Zombie Pig
+| 1.8 || 0.6
+|-
+! Mob
+| Pig
+| 0.9 || 0.9
+! Mob
+| Sheep
+| 1.3 || 0.9
+! Mob
+| Cow
+| 1.3 || 0.9
+! Mob
+| Hen
+| 0.4 || 0.3
+! Mob
+| Squid
+| 0.95 || 0.95
+|-
+! Object
+| Boat
+| 0.6 || 1.5
+|-
+! Object
+| Minecart
+| 0.7 || 0.98
+|-
+! Object
+| Minecart (Storage)
+| 0.7 || 0.98
+|-
+! Object
+| Minecart (Powered)
+| 0.7 || 0.98
+|-
+! Object
+| Activated TNT
+| 0.98 || 0.98
+|-
+! Object
+| Arrow Projectile
+| 0.5 || 0.5
+|-
+! Object
+| Snowball Projectile
+| 0.25 || 0.25
+|-
+! Object
+| Egg Projectile
+| 0.25 || 0.25
+|-
+! Object
+| Falling Sand
+| 0.98 || 0.98
+|-
+! Object
+| Falling Gravel
+| 0.98 || 0.98
+|-
+! Object
+| Fishing Float
+| 0.25 || 0.25
+|}
+[[File:Icon_exclaim.gif|:!:]] Note: Slimes are always cubes.
