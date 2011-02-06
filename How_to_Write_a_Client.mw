@@ -28,7 +28,7 @@ You have to convince the server that you deserve to know about all the map chunk
 
 * Every 200 milliseconds, send one of 0x0A - 0x0D.
 
-To test if this worked, count the number of 0x33 map chunks you get that are full-sized chunks (16,128,16). You should get hundreds.
+To test if this worked, count the number of 0x33 map chunk messages you get that are full-sized chunks (16,128,16). You should get hundreds.
 
 If you're not doing it right, you might only see bits and pieces of the map loading really far away, or possibly just one chunk load where you're standing.
 
