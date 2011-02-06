@@ -1074,7 +1074,7 @@ It is completely acceptable for servers to ignore the EID issued by the client i
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 25 bytes
 |}
-=== "Damage" field ===
+'''"Damage" field'''
 This field is also used to store item metadata. E.g. you mined birch wood(its id is the same as normal wood) so you must set damage to the metadata of birch wood(2). The same case is wool. Id is the same but data is different.For example: you mined blue wool so your damage field should send value 0xB.
 
 === Collect Item (0x16) ===
