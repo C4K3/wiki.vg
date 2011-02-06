@@ -116,6 +116,13 @@ Dig counts varies with block type and equipped tool. The wrong tool will take da
 | class="col1 centeralign" | <code>38</code>
 |}
 
+=== Left to test ===
+* Can you dig behind blocks?
+* Digging further than 6 blocks away
+* Is tools enforced to drop blocks like stone?
+* What happens to your tool if you dig too many times?
+* Figure out tool modifiers to number of digs and verify dig counts on different blocks
+
 == Placing/using stuff ==
 
 TODO: can you place blocks from behind walls?
