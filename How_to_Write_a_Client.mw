@@ -63,7 +63,58 @@ TODO: experiment with and document Look stuff.
 
 == Digging ==
 
-TODO: is digging speed limited on the server side?
+Requirements from the server to break a block
+* The dig modifier is '3'
+* The distance from the players eyes to the block is less than 16
+* For the server to process 0 and 1 modifiers, you must be within 6.0 of the center of the block you are mining
+* Waiting between packets doesn't seem necessary (And can break digging. Conditions need verification)
+* Face of the block is currently not validated and neither is where the player looks
+
+=== To dig a block ===
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Optional arm animation
+| class="col1" | [http://mc.kev009.com/Protocol#Animation_.280x12.29 0x12], entity_id, 1
+|- class="row1"
+| class="col0 leftalign" | Start digging
+| class="col1 centeralign" | [http://mc.kev009.com/Protocol#Player_Digging_.280x0E.29 0x0e], 0, x, y, z, face
+|- class="row2"
+| class="col0 leftalign" | Dig (send multiple)
+| class="col1 centeralign" | [http://mc.kev009.com/Protocol#Player_Digging_.280x0E.29 0x0e], 1, x, y, z, face
+|- class="row3"
+| class="col0 leftalign" | Break block
+| class="col1 centeralign" | [http://mc.kev009.com/Protocol#Player_Digging_.280x0E.29 0x0e], 3, x, y, z, face
+|- class="row4"
+| class="col0 leftalign" | Stop digging
+| class="col1 centeralign" | [http://mc.kev009.com/Protocol#Player_Digging_.280x0E.29 0x0e], 2, 0, 0, 0, 0
+|}
+
+=== How many times do I have to dig? ===
+
+Dig counts varies with block type and equipped tool. The wrong tool will take damage while the right tool will lower the amount of digs required. Digging too many times doesn't seem to have a negative effect.
+
+'''NOTE:''' Needs verification. Empty handed dig requires many more than this.
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Block
+! class="col1" | Req digs
+|- class="row1"
+| class="col0 leftalign" | Snow
+| class="col1 centeralign" | <code>4</code>
+|- class="row2"
+| class="col0 leftalign" | Sand
+| class="col1 centeralign" | <code>10</code>
+|- class="row3"
+| class="col0 leftalign" | Dirt
+| class="col1 centeralign" | <code>10</code>
+|- class="row4"
+| class="col0 leftalign" | Stone
+| class="col1 centeralign" | <code>29</code>
+|- class="row5"
+| class="col0 leftalign" | Wood
+| class="col1 centeralign" | <code>38</code>
+|}
 
 == Placing/using stuff ==
 
