@@ -4,10 +4,11 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 |-style="background:#eee"
 !style="min-width: 120px" | Name
 !style="min-width: 120px" | Author(s)
-!style="min-width: 120px" | Language
+!style="min-width: 72px" | Language
 !style="min-width: 120px" | License
 !style="width: 72px" | Threaded
 !style="width: 72px" | Scripting
+!style="width: 72px" | Scripting language
 !style="width: 120px" | Last Update
 |-
 ! [https://github.com/MostAwesomeDude/bravo Bravo]
@@ -16,6 +17,7 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | MIT/X11
 | {{no}}
 | {{yes}}
+| {{unknown}}
 |
 |-
 ! [http://mc.kev009.com/craftd/ craftd]
@@ -24,6 +26,7 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | Simplified BSD
 | {{yes}}
 | {{planned}}
+| {{unknown}}
 |
 |-
 ! [http://github.com/ScottBrooks/Erlcraft Erlcraft]
@@ -31,6 +34,7 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [http://en.wikipedia.org/wiki/Erlang_%28programming_language%29 Erlang]
 | Unknown
 | {{yes}}
+| {{no}}
 | {{no}}
 |
 |-
@@ -40,6 +44,7 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [http://www.gnu.org/licenses/gpl.html GPL]
 | {{yes}}
 | {{planned}}
+| {{unknown}}
 |
 |-
 ! [http://mcserver.ae-c.net MCServer]
@@ -48,6 +53,7 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | Unknown
 | {{yes}}
 | {{yes}}
+| [http://en.wikipedia.org/wiki/Lua Lua]
 |
 |-
 ! [http://github.com/fador/mineserver/ Mineserver]
@@ -56,20 +62,23 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
 | {{no}}
 | {{no}}
+| {{no}}
 |
 |-
-! [http://minewithperl.sourceforge.net MWP]
+! [http://sourceforge.net/projects/minewithperl MWP]
 | jake-anq, goshat
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Unknown
-| {{yes}}
+| {{unknown}}
 | {{planned}}
+| [http://en.wikipedia.org/wiki/Perl Perl]
 |
 |-
 ! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
 | aera, iKJames
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | Unknown
+| {{no}}
 | {{no}}
 | {{no}}
 |
@@ -80,6 +89,7 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [http://creativecommons.org/licenses/by-sa/3.0/ CC-BY-SA 3.0]
 | {{yes}}
 | {{no}}
+| {{no}}
 |
 |-
 ! [http://codaset.com/moose/quartz-public Quartz]
@@ -87,6 +97,7 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Unknown
 | {{yes}}
+| {{no}}
 | {{no}}
 |
 |}
