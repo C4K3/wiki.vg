@@ -99,12 +99,14 @@ Dig counts varies with block type and equipped tool. The wrong tool will take da
 |- class="row0"
 ! class="col0" | Block
 ! class="col1" | Req digs
+! class="col2" | Empty hand
 |- class="row1"
 | class="col0 leftalign" | Snow
 | class="col1 centeralign" | <code>4</code>
 |- class="row2"
 | class="col0 leftalign" | Sand
 | class="col1 centeralign" | <code>10</code>
+| class="col2 centeralign" | <code>76</code>
 |- class="row3"
 | class="col0 leftalign" | Dirt
 | class="col1 centeralign" | <code>10</code>
