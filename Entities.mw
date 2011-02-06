@@ -45,7 +45,7 @@
 ! Mob
 | Slime
 | n * 0.6 || n * 0.6
-| n = 2 ^ rand(0, 3)
+| n = 2 ^ rand(0, 2)
 |-
 ! Mob
 | Ghast
@@ -137,6 +137,6 @@
 | 0.25? || 0.25?
 | &nbsp;
 |}
-[[File:Icon_exclaim.gif|:!:]] Note: Slimes are always cubes. rand(0, 3) includes both 0 and 3.
+[[File:Icon_exclaim.gif|:!:]] Note: Slimes are always cubes. rand(0, 2) includes both 0 and 2.
 
 [[File:Icon_exclaim.gif|:!:]] Note: Width is in both horizontal directions. Entity collision boxes are square from a top-down view.
