@@ -36,28 +36,35 @@ If you're not doing it right, you might only see bits and pieces of the map load
 
 Send the server updates on your position (0x0A - 0x0D) every 200 milliseconds. This section was written experimenting with sending only 0x0D messages.
 
-The server will mostly keep quiet about your position, which means that your movements are acceptable. If the server sends you your position, it means you've done something wrong. After this happens, it is possible that the server will begin ignoring any future position updates. TODO: how to avoid this situation? Maybe send back identical data like after a login.
+The server will mostly keep quiet about your position, which means that your movements are acceptable. If the server sends you your position, it means you've done something wrong. In this situation, you must apologize by sending back identical data or else the server will begin ignoring any future position updates. The jerking effect that happens in this event can be seen in notchian clients when trying to walk across missing chunks.
 
-The walking animation is automatically sent to other clients when you move around on the ground. The walking animation is not sent when moving straight up and down.
+The walking animation is automatically sent to or in some other way displayed in notchian clients when you move around on the ground. There's no walking animation when you move straight up and down though.
 
-Here are some restrictions you must obey:
+==== Restrictions ====
 
 * You cannot move to inside of a solid block.
 
 If you break any of the above rules, the server will send you your corrected position. Corrected positions preserve your on-ground status, even if you were trying to fall through the top of a solid block.
 
-Here are some super-human abilities that are allowed:
+==== Allowed super-human abilities ====
 
 * '''Flying''' - move about in the air. Make sure on-ground is false or else you might get stuck to the ground.
 * '''Walking in the air''' - walk off a cliff with on-ground set to true. The avatar will continue walking as if there were ground bellow him. Tested over shallow holes and across water at sea level.
 * '''Teleporting''' - put yourself anywhere instantly. Tested with a teleport distance of 1000m, which exceeds the bounds of the loaded map. Only tested with on-ground set to false.
 * '''Moving arbitrarily fast''' - due to being able to teleport, simply update your position to move as far as you like with each step to move arbitrarily fast.
 
-To test if moving around is working, watch your avatar move around from a notchian client. If your avatar remains still despite your position update messages, then you're doing something wrong. If your avatar seems to be gone completely from the world despite the server sending you reasonable spawn coordinates, it may help to delete the player file: world/players/<playername>.dat. This will cause the server to forget the player was ever logged in and spawn them in a new location. You may need to restart the server after deleting the player file.
+==== Testing/Debugging ====
+
+To test if moving around is working, watch your avatar move around from a notchian client.
+
+If your avatar remains still despite your position update messages, then maybe you didn't apologize in response to the server correcting your position. Reconnect to give yourself another chance.
+
+If your avatar is invisible to notchian clients despite the server sending you reasonable spawn coordinates, then maybe you "moved wrongly". Check the server console/log for "[WARNING] <username> moved wrongly!". It is not clear how exactly the server to comes to this conclusion. It has happened with flawed client-side physics engines. Delete the server's player file (world/players/<username>.dat) to recover from this situation. This will cause the server to forget you were ever logged in and spawn you afresh back in the spawn zone with an empty inventory.
+
 
 TODO: how is fall damage calculated and how to avoid it.
 
-TODO: can you crawl through 1x1 spaces with a stance of < 1m?
+TODO: what is the effect of your stance?
 
 TODO: experiment with and document Look stuff.
 
