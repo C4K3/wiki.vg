@@ -705,7 +705,7 @@ Derived from packet [[#Player_.280x0A.29|0x0A]]
 
 === Player Digging (0x0E) ===
 
-Sent repeatedly as the player mines a block.
+Sent repeatedly as the player mines a block.  A Notchian server only accepts digging packets with coordinates within a 6-unit radius of the player's position.
 
 {| class="wikitable"
 |- class="row0"
@@ -768,7 +768,7 @@ Status can (currently) be one of four values:
 | class="col1 centeralign" | <code>4</code>
 |}
 
-When the Status value is 4 (Drop item), the coordinates and Face are 0.
+When the Status value is 2 (Stopped digging) or 4 (Drop item), the coordinates and Face are 0.
 
 The face can be one of six values, representing the face being hit:
 
