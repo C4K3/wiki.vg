@@ -101,27 +101,24 @@ Requirements from the server to break a block
 Dig counts varies with block type and equipped tool. The wrong tool will take damage while the right tool will lower the amount of digs required. Digging too many times doesn't seem to have a negative effect.
 
 '''NOTE:''' Needs verification. Empty handed dig requires many more than this.
+
+'''NOTE:''' Holding a random block seems to require same amount of digs as empty hands.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Block
-! class="col1" | Req digs
 ! class="col2" | Empty hand
+! class="col3" | Wood Shovel
 |- class="row1"
-| class="col0 leftalign" | Snow
-| class="col1 centeralign" | <code>4</code>
-|- class="row2"
 | class="col0 leftalign" | Sand
-| class="col1 centeralign" | <code>10</code>
 | class="col2 centeralign" | <code>76</code>
-|- class="row3"
+| class="col3 centeralign" | <code>38</code>
+|- class="row2"
 | class="col0 leftalign" | Dirt
-| class="col1 centeralign" | <code>10</code>
-|- class="row4"
+|- class="row3"
 | class="col0 leftalign" | Stone
-| class="col1 centeralign" | <code>29</code>
-|- class="row5"
+|- class="row4"
 | class="col0 leftalign" | Wood
-| class="col1 centeralign" | <code>38</code>
 |}
 
 === Left to test ===
