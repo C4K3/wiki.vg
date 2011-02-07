@@ -148,4 +148,4 @@ TODO
 
 The server sends 0x08 health updates whenever your health changes. If the server sends a health value less than 1, you are dead. Your avatar will disappear a second or two after dying. The "fall over" animation is not automatic.
 
-TODO: test respawning
+You can safely send a 0x09 Respawn immediately after you get a death notice. You'll be given a 0x0D and possibly other messages after you do.
