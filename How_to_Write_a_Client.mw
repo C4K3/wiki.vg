@@ -146,3 +146,9 @@ TODO
 == Chat ==
 
 ''Main article: [[Chat]]''
+
+== Health and Respawning ==
+
+The server sends 0x08 health updates whenever your health changes. If the server sends a health value less than 1, you are dead. Your avatar will disappear a second or two after dying. The "fall over" animation is not automatic.
+
+TODO: test respawning
