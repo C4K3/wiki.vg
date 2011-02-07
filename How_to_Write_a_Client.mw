@@ -30,7 +30,7 @@ You have to convince the server that you deserve to know about all the map chunk
 
 To test if this worked, count the number of 0x33 map chunk messages you get that are full-sized chunks (16,128,16). You should get hundreds.
 
-If you're not doing it right, you might only see bits and pieces of the map loading really far away, or possibly just one chunk load where you're standing.
+If you're not doing it right, you might only see bits and pieces of the map loading really far away, or possibly just one chunk load where you're standing. It seems notchian servers send several partial chunks very far away from spawn when clients first log in. The chunks these fragments belong to will eventually be loaded completely, so it's probably safe to ignore the initial fragments.
 
 == Moving around ==
 
