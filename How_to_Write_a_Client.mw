@@ -59,8 +59,7 @@ To test if moving around is working, watch your avatar move around from a notchi
 
 If your avatar remains still despite your position update messages, then maybe you didn't apologize in response to the server correcting your position. Reconnect to give yourself another chance.
 
-If your avatar is invisible to notchian clients despite the server sending you reasonable spawn coordinates, then maybe you "moved wrongly". Check the server console/log for "[WARNING] <username> moved wrongly!". It is not clear how exactly the server to comes to this conclusion. It has happened with flawed client-side physics engines. Delete the server's player file (world/players/<username>.dat) to recover from this situation. This will cause the server to forget you were ever logged in and spawn you afresh back in the spawn zone with an empty inventory.
-
+If your avatar is invisible to notchian clients despite the server sending you reasonable spawn coordinates, then maybe you died. Watch for 0x08 health updates to verify this cause. Try respawning or deleting the server's player file (world/players/<username>.dat) to recover from this situation.
 
 TODO: how is fall damage calculated and how to avoid it.
 
