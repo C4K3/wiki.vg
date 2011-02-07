@@ -40,20 +40,20 @@ The server will mostly keep quiet about your position, which means that your mov
 
 The walking animation is automatically sent to or in some other way displayed in notchian clients when you move around on the ground. There's no walking animation when you move straight up and down though.
 
-==== Restrictions ====
+=== Restrictions ===
 
 * You cannot move to inside of a solid block.
 
 If you break any of the above rules, the server will send you your corrected position. Corrected positions preserve your on-ground status, even if you were trying to fall through the top of a solid block.
 
-==== Allowed super-human abilities ====
+=== Allowed super-human abilities ===
 
 * '''Flying''' - move about in the air. Make sure on-ground is false or else you might get stuck to the ground.
 * '''Walking in the air''' - walk off a cliff with on-ground set to true. The avatar will continue walking as if there were ground bellow him. Tested over shallow holes and across water at sea level.
 * '''Teleporting''' - put yourself anywhere instantly. Tested with a teleport distance of 1000m, which exceeds the bounds of the loaded map. Only tested with on-ground set to false.
 * '''Moving arbitrarily fast''' - due to being able to teleport, simply update your position to move as far as you like with each step to move arbitrarily fast.
 
-==== Testing/Debugging ====
+=== Testing/Debugging ===
 
 To test if moving around is working, watch your avatar move around from a notchian client.
 
