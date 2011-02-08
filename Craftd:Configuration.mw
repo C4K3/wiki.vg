@@ -27,6 +27,8 @@ Using this configuration file will not change any of the internal default variab
   "00": "craftd config file.  Must be valid JSON.",
   "server": {
     "daemonize": true,
+    "game-bind": "0.0.0.0",
+    "game-bind6": "::",
     "game-port": 25565,
     "minecraft-stringmax": 100,
     "max-listenbacklog": 16,
@@ -47,6 +49,8 @@ Using this configuration file will not change any of the internal default variab
   },
   "httpd": {
     "enabled": false,
+    "httpd-bind": "127.0.0.1",
+    "httpd-bind6": "::1",
     "httpd-port": 25566,
     "static-docroot": "htdocs/"
   }
@@ -62,6 +66,12 @@ Using this configuration file will not change any of the internal default variab
 |-
 ! daemonize
 | true || Fork the server and run in background || N/A
+|-
+! game-bind
+| 0.0.0.0 || The IP address to listen on || 0.0.0.0 means all available IPs
+|-
+! game-bind6
+| :: || The IPv6 address to listen on || :: means all available IPv6 addresses
 |-
 ! game-port
 | 25565 || The port players connect to || craftd does not run as root; it must be >1024
@@ -121,6 +131,12 @@ Using this configuration file will not change any of the internal default variab
 |-
 ! enabled
 | true || Enable the integrated httpd server || Used for admin and status
+|-
+! httpd-bind
+| 127.0.0.1 || The IP address to listen on || localhost only by default
+|-
+! httpd-bind6
+| ::1 || The IPv6 address to listen on || ::1 means only localhost(6)
 |-
 ! httpd-port
 | 25566 || The port web browsers connect to || craftd does not run as root; it must be >1024
