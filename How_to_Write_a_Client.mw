@@ -53,6 +53,12 @@ If you break any of the above rules, the server will send you your corrected pos
 * '''Teleporting''' - put yourself anywhere instantly. Tested with a teleport distance of 1000m, which exceeds the bounds of the loaded map. Only tested with on-ground set to false.
 * '''Moving arbitrarily fast''' - due to being able to teleport, simply update your position to move as far as you like with each step to move arbitrarily fast.
 
+=== Look and Stance ===
+
+Look is defined by yaw and pitch. Providing the yaw component to the server rotates your avatar's head about on the vertical-axis. The notion of an avatar's body orientation seems to exist only in clients and updates automatically in notchian clients when players rotate their yaw and move around. Providing the pitch component rotates your avatar's head up and down. There seems to be no limit to the pitch, so providing a pitch of 180 degrees result in your avatar's head appearing upsidedown. See [[Protocol]] for how the yaw and pitch values are calibrated.
+
+Modifying your stance seems to have no visible effect. Its purpose is known.
+
 === Testing/Debugging ===
 
 To test if moving around is working, watch your avatar move around from a notchian client.
@@ -62,10 +68,6 @@ If your avatar remains still despite your position update messages, then maybe y
 If your avatar is invisible to notchian clients despite the server sending you reasonable spawn coordinates, then maybe you died. Watch for 0x08 health updates to verify this cause. Try respawning or deleting the server's player file (world/players/<username>.dat) to recover from this situation.
 
 TODO: how is fall damage calculated and how to avoid it.
-
-TODO: what is the effect of your stance?
-
-TODO: experiment with and document Look stuff.
 
 == Digging ==
 
