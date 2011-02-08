@@ -55,7 +55,7 @@ If you break any of the above rules, the server will send you your corrected pos
 
 === Look and Stance ===
 
-Look is defined by yaw and pitch. Providing the yaw component to the server rotates your avatar's head about on the vertical-axis. The notion of an avatar's body orientation seems to exist only in clients and updates automatically in notchian clients when players rotate their yaw and move around. Providing the pitch component rotates your avatar's head up and down. There seems to be no limit to the pitch, so providing a pitch of 180 degrees result in your avatar's head appearing upsidedown. See [[Protocol]] for how the yaw and pitch values are calibrated.
+Look is defined by yaw and pitch. Providing the yaw component to the server rotates your avatar's head about the vertical-axis. The notion of an avatar's body orientation seems to exist only in clients and updates automatically in notchian clients when players rotate their yaw and move around. Providing the pitch component rotates your avatar's head up and down. There seems to be no limit to the pitch, so providing a pitch of 180 degrees result in your avatar's head appearing upsidedown. See [[Protocol]] for how the yaw and pitch values are calibrated.
 
 Modifying your stance seems to have no visible effect. Its purpose is known.
 
