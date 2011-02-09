@@ -1514,6 +1514,8 @@ Sent by the server when an Entity is to be destroyed on the client.
 '''Server to Client only'''
 
 Most entity-related packets are subclasses of this packet. When sent from the server to the client, it may initialize the entry.
+For player entities, either this packet or any move/look packet is sent several times per second.
+So the meaning of this packet is basically that the entity did not move/look since the last such packet.
 
 {| class="wikitable"
 |- class="row0"
