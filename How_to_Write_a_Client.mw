@@ -38,7 +38,7 @@ Send the server updates on your position (0x0A - 0x0D) every 200 milliseconds. T
 
 The server will mostly keep quiet about your position, which means that your movements are acceptable. If the server sends you your position, it means you've done something wrong. In this situation, you must apologize by sending back identical data or else the server will begin ignoring any future position updates. The jerking effect that happens in this event can be seen in notchian clients when trying to walk across missing chunks.
 
-The walking animation is automatically sent to or in some other way displayed in notchian clients when you move around on the ground. There's no walking animation when you move straight up and down though.
+The walking animation is automatically displayed in notchian clients when you move around on the ground. There's no walking animation when you move straight up and down though.
 
 === Allowed super-human abilities ===
 
