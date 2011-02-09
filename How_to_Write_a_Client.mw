@@ -24,7 +24,7 @@ To test if this worked, connect to your localhost server with the notchian clien
 
 == Getting the map chunks ==
 
-You have to convince the server that you deserve to know about all the map chunks that are around you.
+Once you get your first 0x0D, you have to convince the server that you deserve to know about all the map chunks that are around you.
 
 * Every 200 milliseconds, send one of 0x0A - 0x0D.
 
