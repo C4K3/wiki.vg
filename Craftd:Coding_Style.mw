@@ -6,6 +6,22 @@ Use of assertions is advised whenever undefined or dangerous state is encountere
 
 Runtime states that come from the network or user should instead use the error handling functions and attempt to punt the client.
 
+== Code Formatting ==
+* Use LF endings. If you're contributing from Windows, get a text editor capable of outputting UNIX-style line endings.
+* Each indent should be two spaces. No tab characters.
+* As a general rule, limit C code to 80-column lines.
+* Put brackets on a new line, like so:
+<pre>
+if (foo)
+{
+  //This is good
+}
+
+if (foo) {
+  //This is bad
+}
+</pre>
+
 == Internal Documentation ==
 Methods, structs, and unions should have Doxygen/JavaDoc style documentation.
 
