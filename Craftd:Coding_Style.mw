@@ -11,7 +11,8 @@ Runtime states that come from the network or user should instead use the error h
 * Each indent should be two spaces. No tab characters.
 * As a general rule, limit C code to 80-column lines.
 * Put brackets on a new line, like so:
-<pre>
+
+<syntaxhighlight lang="C">
 if (foo)
 {
   //This is good
@@ -20,13 +21,13 @@ if (foo)
 if (foo) {
   //This is bad
 }
-</pre>
+</syntaxhighlight>
 
 == Internal Documentation ==
 Methods, structs, and unions should have Doxygen/JavaDoc style documentation.
 
 e.g.
-<pre>
+<syntaxhighlight lang="cpp">
 /**
  * Check if a coordinate pair exists within a rectangle struct.
  *
@@ -37,7 +38,7 @@ e.g.
  * @param y the y coordinate
  * @return true if the point is within the rectange, false otherwise
  */
-</pre>
+</syntaxhighlight>
 
 == stdbool ==
 Use of the C99 ''bool'' type in <stdbool.h> is encouraged for internal boolean values within craftd.  Platforms that do not define this can be worked around with Autoconf and preprocessor.
