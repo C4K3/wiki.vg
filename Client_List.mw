@@ -32,12 +32,13 @@ This is a rather incomplete list of Minecraft Alpha clients currently in develop
 | {{no}}
 | Draw the map.  Can't talk or move.
 |-
-! [http://github.com/superjoe30/mineflayer mineflayer]
+! [[Mineflayer]]
 | superjoe30, thejoshwolfe
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/Qt_%28framework%29 Qt]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
-| client and JavaScript bot framework
+| 3D client: physics and most graphics work. 
+JavaScript bot framework: Chatting and moving around works. See [[Mineflayer]] for more details.
 |-
 ! [http://github.com/espes/esbot esbot]
 | espes
