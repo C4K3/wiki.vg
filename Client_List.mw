@@ -33,7 +33,7 @@ This is a rather incomplete list of Minecraft Alpha clients currently in develop
 | Draw the map.  Can't talk or move.
 |-
 ! [[Mineflayer]]
-| superjoe30, thejoshwolfe
+| Superjoe, thejoshwolfe
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/Qt_%28framework%29 Qt]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
