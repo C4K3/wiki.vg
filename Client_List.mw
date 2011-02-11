@@ -38,6 +38,13 @@ This is a rather incomplete list of Minecraft Alpha clients currently in develop
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
 | client and autonomous bot
+|-
+! [http://github.com/espes/esbot esbot]
+| espes
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with twisted
+| GPL
+| {{no}}
+| dependency gathering
 |-|}
 
 [[Category:Minecraft Alpha]]
