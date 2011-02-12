@@ -156,4 +156,4 @@ The server sends 0x08 health updates whenever your health changes. If the server
 
 You can safely send a 0x09 Respawn immediately after you get a death notice. You'll be given a 0x0D and possibly other messages after you do.
 
-TODO: why do health updates come so slowly sometimes? Damage from fire and healing from peaceful mode can be about 1/3 the speed of a notchian client.
+If your health updates come much slower than on the notchian client, make sure your sending position updates fast enough.
