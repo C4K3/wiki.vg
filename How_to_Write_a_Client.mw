@@ -34,7 +34,7 @@ To test if this worked, count the number of 0x33 map chunk messages you get that
 
 == Moving around ==
 
-Send the server updates on your position (0x0A - 0x0D) every 200 milliseconds. This section was written experimenting with sending only 0x0D messages.
+Send the server updates on your position (0x0A - 0x0D) at every 50 milliseconds. This section was written experimenting with sending only 0x0D messages. You can send position updates slower, but it causes health updates to be slower.
 
 The server will mostly keep quiet about your position, which means that your movements are acceptable. If the server sends you your position, it means you've done something wrong. In this situation, you must apologize by sending back identical data or else the server will begin ignoring any future position updates. The jerking effect that happens in this event can be seen in notchian clients when trying to walk across missing chunks.
 
@@ -50,9 +50,8 @@ The walking animation is automatically displayed in notchian clients when you mo
 
 * You cannot intersect with solid blocks. Your bounding box is an apothem of 0.3m in the horizontal axises, and 1.74m from your feet to the top of your head.
 * You cannot move through walls. If there are solid blocks in your way, you have to move around them no matter how fast you're going.
-* Sometimes moving super fast is not allowed. Most of the time it is allowed. It is unknown what exactly makes the server reject your motion.
 
-If you break any of the above rules, the server will send you your corrected position. Corrected positions preserve your on-ground status, even if you were trying to fall through the top of a solid block.
+If you break any of the above rules, the server will send you your corrected position. Corrected positions preserve your on-ground status, even if you were trying to fall through the top of a solid block. Note that sometimes increasing the rate of position update messages will help the server follow along and not correct your position. 50 milliseconds seems to be a good update interval.
 
 === Look and Stance ===
 
