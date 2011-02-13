@@ -2255,12 +2255,12 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col0 centeralign" | Slot
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>36</code>
-| class="col3" | The clicked slot (-999 is outside of inventory)
+| class="col3" | The clicked slot. See below.
 |- class="row3"
-| class="col0 centeralign" | Right-click?
+| class="col0 centeralign" | Right-click
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | Seems to be 1 when right-clicking and otherwise 0
+| class="col3" | 1 when right-clicking and otherwise 0.
 |- class="row4"
 | class="col0 centeralign" | Action number
 | class="col1 centeralign" | short
@@ -2285,6 +2285,8 @@ This packet is sent by the player when it clicks on a slot in a window.
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 9 bytes (+3 for item ID != -1)
 |}
+
+The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory. The number of unique slots in the window is in the Open Window message for all window types except the default inventory window, in which the number of unique slots is 9. This means the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots. Slot number -999 is for clicking outside the window.
 
 === Set slot (0x67) ===
 
