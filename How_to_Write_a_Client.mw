@@ -138,9 +138,11 @@ Dig counts varies with block type and equipped tool. The wrong tool will take da
 
 TODO: can you place blocks from behind walls?
 
-== Crafting ==
+== Inventory and Crafting ==
 
-TODO
+When you log in, before you get a 0x0D, you will get a 0x68 Window Items with your complete inventory including armor. You will then get a series of 0x67 Set Slot messages repeating the information for each non-empty slot. The slot indexes of these messages are for an inventory window with the crafting zone empty.
+
+TODO: more info.
 
 == Attacking mobs/players ==
 
