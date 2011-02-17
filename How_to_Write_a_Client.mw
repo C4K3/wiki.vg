@@ -25,6 +25,7 @@ To test if this worked, connect to your localhost server with the notchian clien
 == Getting the map chunks ==
 
 Once you get your first 0x0D, you have to convince the server that you deserve to know about all the map chunks that are around you.
+The vanilla client will actually start sending 0x0D packets BEFORE receiving it's first 0x0D packet (while receiving 0x32 prechunks)
 
 * Every 50 milliseconds, send one of 0x0A - 0x0D.
 
