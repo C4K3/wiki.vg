@@ -117,17 +117,23 @@ Dig counts varies with block type and equipped tool. The wrong tool will take da
 ! class="col2" | Wood Shovel
 |- class="row1"
 | class="col0 leftalign" | Sand
-| class="col1 centeralign" | 76
-| class="col2 centeralign" | 38
+| class="col1 centeralign" | 16
 |- class="row2"
 | class="col0 leftalign" | Dirt
+| class="col1 centeralign" | 20
+|- class="row2"
+| class="col0 leftalign" | Grass
+| class="col1 centeralign" | 24
 |- class="row3"
 | class="col0 leftalign" | Stone
 |- class="row4"
 | class="col0 leftalign" | Wood
 |- class="row5"
 | class="col0 leftalign" | Obsidian
-| class="col1 centeralign" | 1002
+| class="col1 centeralign" | 1000
+|- class="row6"
+| class="col0 leftalign" | Gravel
+| class="col1 centeralign" | 24
 |}
 
 === Left to test ===
