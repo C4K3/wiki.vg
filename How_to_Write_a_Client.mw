@@ -26,7 +26,7 @@ To test if this worked, connect to your localhost server with the notchian clien
 
 Once you get your first 0x0D, you have to convince the server that you deserve to know about all the map chunks that are around you.
 
-* Every 200 milliseconds, send one of 0x0A - 0x0D.
+* Every 50 milliseconds, send one of 0x0A - 0x0D.
 
 You will get several fragments of chunks at first that are very far away from your location. Ignore these, since the chunks they are in will be loaded fully later. Full chunks load spiraling outward from your location in a circular (not square) pattern, eventually creating a 20x20 square for a total of 400 chunks.
 
