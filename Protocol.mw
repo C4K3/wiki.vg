@@ -2140,7 +2140,7 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col4" | This is the count, not the size. The size is 3 times this value.
 |- class="row3"
 | class="col1 centeralign" | Records
-| class="col2 centeralign" | byte array
+| class="col2 centeralign" | (byte, byte, byte) × count
 | class="col3 centeralign" | 
 | class="col4" | Each record is 3 bytes, which seem to be XYZ offsets of affected blocks.
 |- class="row4"
