@@ -1442,11 +1442,10 @@ TODO: Verify "Type" field and coordinate type.
 === Entity Velocity? (0x1C) ===
 This packet is new to version 4 of the protocol, and is believed to be Entity Velocity/Motion.
 
-Velocity is believed to in block velocity * 32000 with regards to the speed being server ticks, 200ms
+Velocity is believed to be in units of 1/32000 of a block per server tick (200ms);
+for example, -1343 would move (-1343 / 32000) = -0.04196875 blocks per tick (or -0.20984375 blocks per second).
 
-e.g. -1343 would move (-1343 / 32000) = -0.04196875 blocks per tick (or -0.20984375 blocks per second)
-
-Each axis Velocity is capped between -0.9 and 0.9 blocks per tick (Velocity -28800 to 28800)
+Each axis' velocity is capped between -0.9 and 0.9 blocks per tick (packet values -28800 to 28800).
 
 (This packet data values are not fully verified)
 
