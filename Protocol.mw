@@ -471,6 +471,8 @@ Sent by the server to update/set the health of the player it is sent to. Added i
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
+[[File:Icon_exclaim.gif|:!:]] The health value may be less than 0 depending on the amount of damage that killed the player. Treat all values ≤ 0 as dead and needing respawn.
+
 === Respawn (0x09) ===
 
 Sent by the client when the player presses the "Respawn" button after dying. The server then teleports the user to the spawn point, and sends a respawn packet in response.  The client will not leave the respawn screen until it receives a respawn packet.
