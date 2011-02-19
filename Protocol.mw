@@ -2211,9 +2211,9 @@ Inventory Types
 
 === Close window (0x65) ===
 
-'''Client to Server only'''
+This packet is sent by the client when closing a window. This packet is sent from the server to the client when a window is forcibly closed, such as when a chest is destroyed while it's open.
 
-This packet is sent by the client when closing a window. Note, notchian clients send a close window message with window id 0 to close their inventory even though there is never an Open Window message for inventory.
+Note, notchian clients send a close window message with window id 0 to close their inventory even though there is never an Open Window message for inventory. 
 
 {| class="wikitable"
 |- class="row0"
@@ -2232,8 +2232,6 @@ This packet is sent by the client when closing a window. Note, notchian clients 
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
 |}
-
-Note: Test whether this packet is sent when a chest is destroyed, or when player moves out of range.
 
 === Window click (0x66) ===
 
