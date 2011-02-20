@@ -465,13 +465,11 @@ Sent by the server to update/set the health of the player it is sent to. Added i
 | class="col1 centeralign" | Health
 | class="col2 centeralign" | short
 | class="col3 centeralign" | 20
-| class="col4" | 0 = dead, 20 = full HP
+| class="col4" | 0 or less = dead, 20 = full HP
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
-
-[[File:Icon_exclaim.gif|:!:]] The health value may be less than 0 depending on the amount of damage that killed the player. Treat all values ≤ 0 as dead and needing respawn.
 
 === Respawn (0x09) ===
 
