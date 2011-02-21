@@ -82,4 +82,39 @@ Notes about this implementation can also be found here: http://www.kev009.com/wp
 == Unknown State ==
 Fail early, kick hard.  Do not try to massage the data stream or recover.  Use of ''goto'' is recommended, especially for breaking out of large loop and conditional chains.  Free all allocated resources and close the bufferevent.
 
+
+== Style and naming convention proposal ==
+
+<syntaxhighlight lang="C">
+
+typedef struct _Thing {
+    char wat;
+} Thing;
+
+void CD_fooBar (int bar); // This is a public function
+void cd_barFoo (int foo); // This is private
+
+void
+CD_foo (int bar, char* pointer)
+{
+    int* wild;  // each declaration on its own line
+    int  anger;
+
+    if (omg) {
+        call("omg", 3);
+
+        while (true) {
+            Thing thing;
+        }
+    }
+}
+
+void
+cd_barFoo (int foo)
+{
+
+}
+
+</syntaxhighlight>
+
 [[Category:Craftd]]
