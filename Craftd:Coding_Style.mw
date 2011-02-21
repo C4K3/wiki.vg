@@ -91,13 +91,13 @@ typedef struct _Thing {
     char wat;
 } Thing;
 
-void CD_fooBar (int bar); // This is a public function
-void cd_barFoo (int foo); // This is private
+void CD_FooBar (int bar); // This is a public function
+void cd_BarFoo (int foo); // This is private
 
 void
-CD_foo (int bar, char* pointer)
+CD_FooBar (int bar, char* pointer)
 {
-    int* wild;  // each declaration on its own line
+    int* wildBeast;  // each declaration on its own line
     int  anger;
 
     if (omg) {
@@ -110,7 +110,7 @@ CD_foo (int bar, char* pointer)
 }
 
 void
-cd_barFoo (int foo)
+cd_BarFoo (int foo)
 {
 
 }
