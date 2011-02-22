@@ -2537,6 +2537,10 @@ Sent by the server before it disconnects a client, or by the client before it di
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 2011-2-22 ===
+* <div class="li">Beta 1.3 released.</div>
+* Packet changes: Some information at https://gist.github.com/9e5940fb65ac8cc171d5
+
 === 2011-1-13 ===
 * <div class="li">Beta 1.2 released.</div>
 * More packet changes ([http://pastebin.com/HHW52Awn pastebin]): 0x05, 0x0F, 0x13, 0x15, 0x18, 0x19, 0x28, 0x36, 0x66, 0x67.
