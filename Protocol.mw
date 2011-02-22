@@ -2431,8 +2431,6 @@ Uses is the number of times an item has been used (the value starts at 0 and cou
 
 === Transaction (0x6A) ===
 
-'''Server to Client only'''
-
 A packet from the server indicating whether a request from the client was accepted, or whether there was a conflict (due to lag).
 
 {| class="wikitable"
