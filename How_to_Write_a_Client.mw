@@ -76,6 +76,8 @@ If your avatar is invisible to notchian clients despite the server sending you r
 
 == Digging ==
 
+Note: digging is changed in 1.3. The following information is outdated.
+
 Requirements from the server to break a block
 * The dig modifier is '3'
 * The distance from the players eyes to the block is less than 16
@@ -111,6 +113,7 @@ Dig counts varies with block type and equipped tool. The wrong tool will take da
 
 '''NOTE:''' Holding a random block seems to require same amount of digs as empty hands.
 
+Hardness
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Block
