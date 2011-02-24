@@ -2539,7 +2539,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2011-2-22 ===
 * <div class="li">Beta 1.3 released.</div>
-* New packets 0x11, 0x1B: Some information at https://gist.github.com/9e5940fb65ac8cc171d5
+* New packets 0x11, 0x1B: Some information at https://gist.github.com/841590
 * Protocol number is now 9 (updated)
 
 === 2011-1-13 ===
