@@ -2259,9 +2259,9 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col3" | The clicked slot. See below.
 |- class="row3"
 | class="col0 centeralign" | Right-click
-| class="col1 centeralign" | bool
-| class="col2 centeralign" | <code>true</code>
-| class="col3" | true when right-clicking and otherwise false.
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | 1 when right-clicking and otherwise 0.
 |- class="row4"
 | class="col0 centeralign" | Action number
 | class="col1 centeralign" | short
