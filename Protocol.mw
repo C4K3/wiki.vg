@@ -900,9 +900,9 @@ Sent when the player changes the slot selection
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
-=== ??? (0x11) ===
+=== Entity Location? (0x11) ===
 
-???
+Some kind of entity movement packet.
 
 {| class="wikitable"
 |- class="row0"
@@ -913,7 +913,7 @@ Sent when the player changes the slot selection
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="5" | 0x11
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 
 | class="col4" | 
@@ -921,22 +921,22 @@ Sent when the player changes the slot selection
 | class="col0 centeralign" | ???
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | 
-| class="col3" |
+| class="col3" | Only appears to do things when set to 0
 |- class="row1"
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | X coordinate
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 
-| class="col4" | 
+| class="col4" | Block-level coordinate
 |- class="row2"
-| class="col0 centeralign" | ???
+| class="col0 centeralign" | Y coordinate
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | 
-| class="col3" |
+| class="col3" | Block-level coordinate
 |- class="row1"
-| class="col1 centeralign" | ???
+| class="col1 centeralign" | Z coordinate
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 
-| class="col4" | 
+| class="col4" | Block-level coordinate
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 15 bytes
