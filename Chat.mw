@@ -34,52 +34,52 @@ The Notchian client has support for colorized text. To select a color, a color e
 ||
 |-
 | bgcolor="black" |
-| &0 || Black || 0 || 0 || 0 || 0 || 0 || 0 || #000000
+| §0 || Black || 0 || 0 || 0 || 0 || 0 || 0 || #000000
 |-
 | bgcolor=#0000aa |
-| &1 || Dark blue || 0 || 0 || 170 || 0 || 0 || 42 || #0000aa
+| §1 || Dark blue || 0 || 0 || 170 || 0 || 0 || 42 || #0000aa
 |-
 | bgcolor=#00aa00 |
-| &2 || Dark green || 0 || 170 || 0 || 0 || 42 || 0 || #00aa00
+| §2 || Dark green || 0 || 170 || 0 || 0 || 42 || 0 || #00aa00
 |-
 | bgcolor=#00aaaa |
-| &3 || Dark cyan || 0  || 170 || 170 || 0 || 42 || 42 || #00aaaa
+| §3 || Dark cyan || 0  || 170 || 170 || 0 || 42 || 42 || #00aaaa
 |-
 | bgcolor=#aa0000 |
-| &4 || Dark red || 170 || 0 || 0 || 42 || 0 || 0 || #aa0000
+| §4 || Dark red || 170 || 0 || 0 || 42 || 0 || 0 || #aa0000
 |-
 | bgcolor=#aa00aa |
-| &5 || Purple || 170 || 0 || 170 || 42 || 0 || 42 || #aa00aa
+| §5 || Purple || 170 || 0 || 170 || 42 || 0 || 42 || #aa00aa
 |-
 | bgcolor=#ffaa00 |
-| &6 || Gold || 255 || 170 || 0 || 42 || 42 || 0 || #ffaa00
+| §6 || Gold || 255 || 170 || 0 || 42 || 42 || 0 || #ffaa00
 |-
 | bgcolor=#aaaaaa |
-| &7 || Gray || 170 || 170 || 170 || 42 || 42 || 42 || #aaaaaa
+| §7 || Gray || 170 || 170 || 170 || 42 || 42 || 42 || #aaaaaa
 |-
 | bgcolor=#555555 |
-| &8 || Dark gray || 85 || 85 || 85 || 21 || 21 || 21 || #555555
+| §8 || Dark gray || 85 || 85 || 85 || 21 || 21 || 21 || #555555
 |-
 | bgcolor=#5555ff |
-| &9 || Blue || 85 || 85 || 255 || 21 || 21 || 63 || #5555ff
+| §9 || Blue || 85 || 85 || 255 || 21 || 21 || 63 || #5555ff
 |-
 | bgcolor=#55ff55 |
-| &a || Bright green || 85 || 255 || 85 || 21 || 63 || 21 || #55ff55
+| §a || Bright green || 85 || 255 || 85 || 21 || 63 || 21 || #55ff55
 |-
 | bgcolor=#55FFFF |
-| &b || Cyan || 85 || 255 || 255 || 21 || 63 || 63 || #55ffff
+| §b || Cyan || 85 || 255 || 255 || 21 || 63 || 63 || #55ffff
 |-
 | bgcolor=#FF5555 |
-| &c || Red || 255 || 85 || 85 || 63 || 21 || 21 || #ff5555
+| §c || Red || 255 || 85 || 85 || 63 || 21 || 21 || #ff5555
 |-
 | bgcolor=#FF55FF |
-| &d || Pink || 255 || 85 || 255 || 63 || 21 || 63 || #ff55ff
+| §d || Pink || 255 || 85 || 255 || 63 || 21 || 63 || #ff55ff
 |-
 | bgcolor=#FFFF55 |
-| &e || Yellow || 255 || 255 || 85 || 63 || 63 || 21 || #ff5555
+| §e || Yellow || 255 || 255 || 85 || 63 || 63 || 21 || #ff5555
 |-
 | bgcolor=#FFFFFF |
-| &f || White || 255 || 255 || 255 || 63 || 63 || 63 || #ffffff
+| §f || White || 255 || 255 || 255 || 63 || 63 || 63 || #ffffff
 |}
 
 These correspond very roughly to the colors available in ANSI terminals.
