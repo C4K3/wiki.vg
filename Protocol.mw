@@ -900,6 +900,48 @@ Sent when the player changes the slot selection
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
+=== ??? (0x11) ===
+
+???
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x11
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | ???
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | ???
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row1"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 15 bytes
+|}
+
 === Animation (0x12) ===
 
 Sent whenever an entity should change animation.
