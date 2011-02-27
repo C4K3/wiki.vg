@@ -902,7 +902,7 @@ Sent when the player changes the slot selection
 
 === Use Bed (0x11) ===
 '''Server to Client'''<br/>
-Associated with Players using beds.
+Associated with players using beds.
 
 {| class="wikitable"
 |- class="row0"
@@ -918,25 +918,25 @@ Associated with Players using beds.
 | class="col3 centeralign" | 89
 | class="col4" | Player ID
 |- class="row2"
-| class="col0 centeralign" | ???
+| class="col0 centeralign" | ???In Bed???
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | 
+| class="col2 centeralign" | 0
 | class="col3" | Only appears to do things when set to 0
 |- class="row1"
 | class="col1 centeralign" | X coordinate
 | class="col2 centeralign" | int
 | class="col3 centeralign" | -247
-| class="col4" | Bed X as Absolute Integer
+| class="col4" | Bed (headboard?) X as block coordinate
 |- class="row2"
 | class="col0 centeralign" | Y coordinate
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | 78
-| class="col3" | Bed Y as Absolute Integer
+| class="col3" | Bed (headboard?) Y as block coordinate
 |- class="row1"
 | class="col1 centeralign" | Z coordinate
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 128
-| class="col4" | Bed Z as Absolute Integer
+| class="col4" | Bed (headboard?) Z as block coordinate
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 15 bytes
