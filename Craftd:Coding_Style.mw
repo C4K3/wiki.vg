@@ -12,6 +12,7 @@ Runtime states that come from the network or user should instead use the error h
 * As a general rule, limit C code to 80/100-column lines.
 * Avoid incomprensible names with abbreviations, use extended names for everything.
 * Instead of pointers to void* use CDPointer, and remember to explicitly typecast to CDPointer or the other way around.
+* To state that a function didn't work well return false and set errno to the value saying what happened, DO NOT use 0 and -1 to state errors, please.
 * Put brackets on the same line separated by a space except for function definitions, like so:
 
 <syntaxhighlight lang="C">
