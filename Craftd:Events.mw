@@ -1,0 +1,10 @@
+== Events ==
+Events are the main way of acting with a craftd Server. Plugins work by registering to events and dispatching events.
+
+An event callback has at least 1 parameter, which is the Server that the event was dispatched on, then other parameters are simply passed with some C magic. Remember to use only types that would work with a va_arg, this means use int/long even if a short/char is passed and use double instead of float, you can typecast them later, using smaller types would cause the data to be wrong. Pointers are always safe.
+
+The event callback HAS to return true, if you return false the event chain is stopped, in this way your plugin can stop the chain of events.
+
+You can also register to "Event.dispatch:before" and "Event.dispatch:after", these events are special events, and are called everytime an event is dispatched, other than the server a string parameter with the name of the event is passed, and a va_list. In this way you can inspect the event being called and abort it even before it's called, or act after an event as been called.
+
+[[Category:Craftd]]
