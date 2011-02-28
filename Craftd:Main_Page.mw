@@ -43,6 +43,8 @@ ICON = |
 HEADING = '''Developer Documentation'''|
 CONTENT = *[[Craftd:Thread_Model|Thread Model]]
 *[[Craftd:Coding_Style|Coding Style and Notes]]
+*[[Craftd:Events|Event handling]]
+*[[Craftd:Plugins|Writing plugins]]
 *[http://www.wangafu.net/~nickm/libevent-book/ libevent book]
 *[http://mc.kev009.com/libevent libevent2 Doxygen] - Local, up to date copy
 *[http://lists.apple.com/archives/xcode-users/2008/May/msg00665.html C99 Info]
