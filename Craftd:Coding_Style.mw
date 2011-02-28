@@ -8,92 +8,33 @@ Runtime states that come from the network or user should instead use the error h
 
 == Code Formatting ==
 * Use LF endings. If you're contributing from Windows, get a text editor capable of outputting UNIX-style line endings.
-* Each indent should be two spaces. No tab characters.
-* As a general rule, limit C code to 80-column lines.
-* Put brackets on a new line, like so:
+* Each indent should be four (4) spaces. No tab characters.
+* As a general rule, limit C code to 80/100-column lines.
+* Avoid incomprensible names with abbreviations, use extended names for everything.
+* Put brackets on the same line separated by a space except for function definitions, like so:
 
 <syntaxhighlight lang="C">
-if (foo)
+int bar (int foo)
 {
-  //This is good
-}
-
-if (foo) {
-  //This is bad
+    if (foo) {
+        // code
+    }
 }
 </syntaxhighlight>
 
-== Internal Documentation ==
-Methods, structs, and unions should have Doxygen/JavaDoc style documentation.
-
-e.g.
-<syntaxhighlight lang="cpp">
-/**
- * Check if a coordinate pair exists within a rectangle struct.
- *
- * @remarks Scope: public
- * 
- * @param rectangle pointer to a rectangle struct
- * @param x the x coordinate
- * @param y the y coordinate
- * @return true if the point is within the rectange, false otherwise
- */
-</syntaxhighlight>
-
-== stdbool ==
-Use of the C99 ''bool'' type in <stdbool.h> is encouraged for internal boolean values within craftd.  Platforms that do not define this can be worked around with Autoconf and preprocessor.
-===NOTE:===
-When sending over the network, first recast to an int8_t to ensure that it only occupies '''1 byte''' as sizeof(bool) differs from compiler to compiler.
-
-== Logging ==
-Logging is handled via a function pointer that enables runtime switching of logging between stdout and syslog.  The function signature is identical to syslog(3) and all POSIX levels are supported.
-
-=== Available functions ===
-* '''LOG'''(int priority, const char *format, ...) - The basic abstract logging function used throughout craftd.
-* '''LOG_setlogmask'''(int maskbits) - use with '''LOG_MASK()''' macro from syslog to mask message types.
-* '''LOGT'''(int priority, const char *format, ...) - Only compiled with -DTRACE
-* '''ERR'''(const char *format, ...) - Fatal conditions that cause exit
-* '''PERR'''(const char *msg) - perror() exit conditions during startup.
-
-=== Examples ===
-<syntaxhighlight lang="C">
-/* Usually set by main to console or syslog depending on daemonize and startup status */
-LOG = &log_console;
-LOG_setlogmask = &log_console_setlogmask;
-
-LOG_setlogmask(LOG_MASK(LOG_DEBUG)); // Don't print debugging messages
-
-LOG(LOG_DEBUG, "This message wont appear");
-LOG(LOG_INFO, "An informative message %s", passedInStringVar);
-
-/* Only appears when compiled with -DTRACE */
-LOGT(LOG_INFO, "A trace message");
-
-/* An error that should cause an exit.  Logs with LOG. */
-ERR("Fatal error caused by %s", aString);
-
-/* perror() and exit failure for startup problems (e.g. socket binding) */
-PERR("Can't bind to socket.");
-
-</syntaxhighlight>
-
-Notes about this implementation can also be found here: http://www.kev009.com/wp/2010/12/no-nonsense-logging-in-c-and-cpp/
-
-== Unknown State ==
-Fail early, kick hard.  Do not try to massage the data stream or recover.  Use of ''goto'' is recommended, especially for breaking out of large loop and conditional chains.  Free all allocated resources and close the bufferevent.
-
-
-== Style and naming convention proposal ==
+== Style and naming convention ==
 
 <syntaxhighlight lang="C">
 
-typedef struct _Thing {
+typedef struct _CDThing {
     char wat;
-} Thing;
+} CDThing;
 
 void CD_FooBar (int bar); // This is a public function
-void cd_BarFoo (int foo); // This is private
 
+const int cd_BarFoo (int foo); // This is private
+
+static
 void
 CD_FooBar (int bar, char* pointer)
 {
@@ -104,17 +45,62 @@ CD_FooBar (int bar, char* pointer)
         call("omg", 3);
 
         while (true) {
-            Thing thing;
+            CDThing* thing = CD_CreateThing();
         }
     }
 }
 
-void
+extern
+const int
 cd_BarFoo (int foo)
 {
 
 }
-
 </syntaxhighlight>
+
+
+
+== Internal Documentation ==
+Methods, structs, and unions should have Doxygen/JavaDoc style documentation.
+
+e.g.
+<syntaxhighlight lang="cpp">
+/**
+ * Check if a coordinate pair exists within a rectangle struct.
+ *
+ * @remarks Scope: public
+ *
+ * @param rectangle pointer to a rectangle struct
+ * @param x the x coordinate
+ * @param y the y coordinate
+ *
+ * @return true if the point is within the rectange, false otherwise
+ */
+</syntaxhighlight>
+
+== stdbool ==
+Use of the C99 ''bool'' type in <stdbool.h> is encouraged for internal boolean values within craftd.  Platforms that do not define this can be worked around with Autoconf and preprocessor.
+
+== Logging ==
+Logging is handled via a function pointer that enables runtime switching of logging between stdout and syslog.  The function signature is identical to syslog(3) and all POSIX levels are supported.
+
+=== Available functions ===
+Tries logging with the CDMainServer or CDDefaultLogger
+* '''LOG'''(int priority, const char* format, ...) - The basic abstract logging function used throughout craftd.
+* '''DEBUG'''(const char* format, ...) - Debugging logging
+* '''ERR'''(const char* format, ...) - Fatal conditions
+
+Use CDConsoleLogger
+* '''CLOG'''(int priority, const char* format, ...) - The basic abstract logging function used throughout craftd.
+* '''CDEBUG'''(const char* format, ...) - Debugging logging
+* '''CERR'''(const char* format, ...) - Fatal conditions
+
+Use the given server and its logger
+* '''SLOG'''(CDServer* server, int priority, const char* format, ...) - The basic abstract logging function used throughout craftd.
+* '''SDEBUG'''(CDServer* server, const char* format, ...) - Debugging logging
+* '''SERR'''(CDServer* server, const char* format, ...) - Fatal conditions
+
+== Unknown State ==
+Fail early, kick hard.  Do not try to massage the data stream or recover.  Use of ''goto'' is recommended, especially for breaking out of large loop and conditional chains.  Free all allocated resources and close the bufferevent.
 
 [[Category:Craftd]]
