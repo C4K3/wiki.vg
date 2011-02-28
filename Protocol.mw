@@ -775,7 +775,9 @@ Status can (currently) be one of four values:
 | class="col1 centeralign" | <code>4</code>
 |}
 
-When the Status value is 2 (Stopped digging) or 4 (Drop item), the coordinates and Face are 0.
+Prior to 1.3 Beta, digging consisted of a Notchian client repeatedly sending dig packets with status 'started' and 'digging', the number of which varied by the tool used and the block being dug.  When the client was finished, it would send the 'block broken' and 'drop item' packets.  This arrangement allowed a speed hack of simply sending more dig packets faster than the vanilla client would, making it possible to dig as fast as the player could walk.
+
+With the 1.3 Beta update, only 0 (started digging) and 2 (stopped digging) are used.  The success of digging seems to be tied to the interval of time between the two packets.
 
 The face can be one of six values, representing the face being hit:
 
