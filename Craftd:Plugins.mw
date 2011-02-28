@@ -1,0 +1,28 @@
+== Plugins ==
+
+Writing a plugin is pretty simple, you just have to create a loadable object with the 2 following functions:
+
+<syntaxhighlight lang="C">
+extern
+bool
+CD_PluginInitialize (CDPlugin* self)
+{
+    // Initialize data, register to events, register to timeouts, do whatever is need to initialize your plugin
+
+    // return true if everything went as expected, return false to let the plugin manager know this plugin wasn't loaded correctly
+}
+
+extern
+bool
+CD_PluginFinalize (CDPlugin* self)
+{
+    // Destroy data, unregister events and stuff
+
+    // Same as for the initialize, return value states if the plugin unloaded correctly
+}
+</syntaxhighlight>
+
+It's adviced to use the hash in PRIVATE(self) instead of global static variables to keep the data, in this way other plugins
+can work with the data of your plugin if they want to.
+
+[[Category:Craftd]]
