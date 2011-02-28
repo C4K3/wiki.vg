@@ -11,6 +11,7 @@ Runtime states that come from the network or user should instead use the error h
 * Each indent should be four (4) spaces. No tab characters.
 * As a general rule, limit C code to 80/100-column lines.
 * Avoid incomprensible names with abbreviations, use extended names for everything.
+* Instead of pointers to void* use CDPointer, and remember to explicitly typecast to CDPointer or the other way around.
 * Put brackets on the same line separated by a space except for function definitions, like so:
 
 <syntaxhighlight lang="C">
