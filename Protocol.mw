@@ -915,7 +915,7 @@ Associated with players using beds.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="5" | 0x11
-| class="col1 centeralign" | Player ID
+| class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 89
 | class="col4" | Player ID
