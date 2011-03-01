@@ -25,4 +25,13 @@ CD_PluginFinalize (CDPlugin* self)
 It's adviced to use the hash in PRIVATE(self) instead of global static variables to keep the data, in this way other plugins
 can work with the data of your plugin if they want to.
 
+=== Building Plugins ===
+There are no requirements on specific build systems when writing plugins.
+
+craftd uses autotools, and more specifically, [http://www.gnu.org/software/libtool/manual/ libtool] internally.  craftd uses lt_dlopenext() to load your plugins, so it will correctly load i.e. .so, .sl, .dylib, .dll as appropriate for the system you are running on.  
+
+Note, however, that using libtool is advised to make using your plugin possible on many system types.
+
+pkg-config files will be added in the future to ease cflag and include requirements for build/linkage.
+
 [[Category:Craftd]]
