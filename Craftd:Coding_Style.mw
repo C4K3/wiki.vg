@@ -106,6 +106,7 @@ Use the given server and its logger
 Fail early, kick hard.  Do not try to massage the data stream or recover.  Use of ''goto'' is recommended, especially for breaking out of large loop and conditional chains.  Free all allocated resources and close the bufferevent.
 
 == vim config ==
+<syntaxhighlight>
 set autoindent
 set smartindent
 set smarttab
@@ -113,5 +114,6 @@ set smartcase
 set shiftwidth=4
 set ts=4
 set expandtab
+</syntaxhighlight>
 
 [[Category:Craftd]]
