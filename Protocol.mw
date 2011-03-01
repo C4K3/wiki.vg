@@ -943,6 +943,7 @@ Associated with players using beds.
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 15 bytes
 |}
+* NOTE: This Packet seems to be sent when 2 or more players are on a server, and at least one player uses a Bed.
 
 === Animation (0x12) ===
 
