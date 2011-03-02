@@ -1,22 +1,3 @@
-{| width="30%" align="right" cellpadding="20"
-|-
-| {{CraftdMenu}}
-|}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 == Plugins ==
 
 Writing a plugin is pretty simple, you just have to create a loadable object with the 2 following functions:
