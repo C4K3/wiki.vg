@@ -1005,6 +1005,10 @@ Sent at least when crouching
 
 The only named entities (at the moment) are players (either real or NPC/Bot). This packet is sent by the server when a player comes into visible range, '''not''' when a player joins.
 
+Servers can, however, safely spawn player entities for players not in visible range. The client appears to handle it correctly.
+
+The Notchian client is not okay with receiving player entity packets, including 0x14, that refer to its own username or EID; it will teleport to the absolute origin of the map and fall through the Void any time it receives them.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0 centeralign" | Packet ID
