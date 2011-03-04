@@ -1829,7 +1829,7 @@ This packet is new in version 6 of the protocol, and is believed to be indicatio
 | class="col1 centeralign" | Entity Status?
 | class="col2 centeralign" | Byte
 | class="col3 centeralign" | 0x03
-| class="col4" | Possible values: 2 (entity drowning?), 3 (entity dead?), 4, 5
+| class="col4" | Possible values: 2 (entity hurt), 3 (entity dead?), 4, 5
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
