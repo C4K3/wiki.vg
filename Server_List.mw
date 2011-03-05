@@ -58,11 +58,11 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [[User:Graham|Graham Edgecombe]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://www.gnu.org/licenses/gpl.html GPL]
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
 | {{yes}}
-| {{planned}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
 | {{unknown}}
 | {{unknown}}
 |
@@ -72,9 +72,9 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Closed source
 | {{yes}}
-| {{no}}
-| {{no}}
 | {{unknown}}
+| {{no}}
+| {{no}}
 | {{yes}}
 | {{unknown}}
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
