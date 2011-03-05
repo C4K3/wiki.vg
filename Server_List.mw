@@ -70,15 +70,15 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 ! [http://mcserver.ae-c.net MCServer]
 | FakeTruth
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Unknown
-| {{unknown}}
-| {{unknown}}
+| Closed source
+| {{yes}}
+| {{no}}
+| {{no}}
 | {{unknown}}
 | {{yes}}
-| {{yes}}
 | {{unknown}}
-| [http://en.wikipedia.org/wiki/Lua Lua]
-|
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| Active
 |-
 ! [http://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
