@@ -23,23 +23,23 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | {{yes|Alpha, Beta}}
 | {{yes}}
 | {{no}}
+| {{yes|Players}}
 | {{yes|Processes}}
 | {{yes|Python}}
-| {{yes|Active}}
-|
+| Active
 |-
 ! [http://mc.kev009.com/craftd/ craftd]
 | [[User:Kev009|kev009]]
 | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
 | Simplified BSD
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
+| {{yes}}
+| {{yes|Alpha}}
+| {{no}}
 | {{yes}}
 | {{planned}}
-| {{unknown}}
-| {{unknown}}
-|
+| {{yes|Threads}}
+| {{yes|Python}}
+| Active
 |-
 ! [http://github.com/ScottBrooks/Erlcraft Erlcraft]
 | Scott Brooks
