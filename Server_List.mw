@@ -6,17 +6,25 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 !style="min-width: 120px" | Author(s)
 !style="min-width: 72px" | Language
 !style="min-width: 120px" | License
-!style="width: 72px" | Threaded
+!style="width: 72px" | Networking
+!style="width: 72px" | World Formats
+!style="width: 72px" | Multiworld
+!style="width: 72px" | Physics
+!style="width: 72px" | Entities
+!style="width: 72px" | Concurrency Model
 !style="width: 72px" | Scripting
-!style="width: 72px" | Scripting language
-!style="width: 120px" | Last Update
+!style="width: 120px" | Development Status
 |-
 ! [https://github.com/MostAwesomeDude/bravo Bravo]
 | MostAwesomeDude
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{no}}
 | {{yes}}
+| {{unknown}}
 | {{unknown}}
 |
 |-
@@ -24,8 +32,12 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [[User:Kev009|kev009]]
 | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
 | Simplified BSD
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{yes}}
 | {{planned}}
+| {{unknown}}
 | {{unknown}}
 |
 |-
@@ -33,17 +45,25 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | Scott Brooks
 | [http://en.wikipedia.org/wiki/Erlang_%28programming_language%29 Erlang]
 | Unknown
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{yes}}
 | {{no}}
 | {{no}}
+| {{unknown}}
 |
 |-
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://www.gnu.org/licenses/gpl.html GPL]
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{yes}}
 | {{planned}}
+| {{unknown}}
 | {{unknown}}
 |
 |-
@@ -51,8 +71,12 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | FakeTruth
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Unknown
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{yes}}
 | {{yes}}
+| {{unknown}}
 | [http://en.wikipedia.org/wiki/Lua Lua]
 |
 |-
@@ -60,9 +84,13 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{no}}
 | {{no}}
 | {{no}}
+| {{unknown}}
 |
 |-
 ! [http://sourceforge.net/projects/minewithperl MWP]
@@ -70,35 +98,51 @@ This is a rather incomplete list of Minecraft Beta servers currently in developm
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Unknown
 | {{unknown}}
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{planned}}
 | [http://en.wikipedia.org/wiki/Perl Perl]
+| {{unknown}}
 |
 |-
 ! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
 | aera, iKJames
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | Unknown
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{no}}
 | {{no}}
 | {{no}}
+| {{unknown}}
 |
 |-
 ! [http://github.com/SpaceManiac/Spacecraft-GT Spacecraft GT]
 | SpaceManiac, Blocky
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://creativecommons.org/licenses/by-sa/3.0/ CC-BY-SA 3.0]
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{yes}}
 | {{no}}
 | {{no}}
+| {{unknown}}
 |
 |-
 ! [http://codaset.com/moose/quartz-public Quartz]
 | Moose
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Unknown
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
 | {{yes}}
 | {{no}}
 | {{no}}
+| {{unknown}}
 |
 |}
 
