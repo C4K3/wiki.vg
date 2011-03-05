@@ -193,7 +193,7 @@ TODO: more info.
 
 == Attacking mobs/players ==
 
-To attack another player or mob, send a 0x07 with the entity's id. The range seems to be unlimited as long as there is a clear line of sight. Damage is calculated on the server side.
+To attack another player or mob, send a 0x07 with the entity's id. The range seems to be limited to 4 meters or so and there must be a clear line of sight. If these conditions are not met, nothings happens. Damage is calculated on the server side.
 
 == Chat ==
 
