@@ -76,118 +76,110 @@ If your avatar is invisible to notchian clients despite the server sending you r
 
 == Digging ==
 
-1. send a start digging packet and an abort digging packet
-2. server sends you an update block telling you of your success or failure, after amount of time has passed. explanation of how time is computed below (note that you the client don't have to know about it.):
-
-
-
-20 ticks per second
-
-sum = 0
-every tick, sum += strengthVsBlock
-when sum >= 1.0, block is broken
-
-function strengthVsBlock(tool, block, underwater, on_ground) {
-    if block.hardness < 0:
-        return 0
-    if not canHarvestBlock(tool, block):
-        return 1.0 / block.hardness / 100
-        
-    mult = 1
-    
-    if tool effective against block:
-        mult *= tool.effectiveness
-    if underwater:
-        mult /= 5
-    if not on_ground:
-        mult /= 5
-    
-    return mult / block.hardness / 30
-}
-
-
-function canHarvestBlock(block) {
-
-    if block material is not in (rock, iron, snow, snow_block):
-        return true
-    else
-        return whether equipped item can harvest block
-
-}
-
-effectiveness against proper material
-wood: 2.0
-stone: 4.0
-iron: 6.0
-diamond: 8.0
-gold: 12.0
-
-
-
-Shovel effective against:
-Block.grass, Block.dirt, Block.sand, Block.gravel, Block.snow, Block.blockSnow, Block.blockClay
-
-
-axe affective against:
-
-Block.planks, Block.bookShelf, Block.wood, Block.crate
-
-
-pick effective against:
-            Block.cobblestone, Block.stairDouble, Block.stairSingle, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold, 
-
-            Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.bloodStone, Block.oreLapis, Block.blockLapis
-            
-pick can harvest:
-    switch(harvest level of tool):
-        case 3:
-            obsidian
-        case 2:
-            diamond
-            diamondore
-            gold
-            goldore
-            redstone
-            redstoneglowing
-        case 1:
-            iron
-            ironore
-            lapis
-            lapisore
-            
-    if block.material is rock
-        return true
-    if block.material is iron
-        return true
-    
-    
-    return false
-
-shovel can harvest:
-    both types of snow = true
-    else false
-
-axe can harvest:
-    false
-
-
-harvest level:
-wood: 0
-stone: 1
-iron: 2
-diamond: 3
-gold: 0
-
-for the following fields, see https://github.com/superjoe30/mineflayer/blob/dev/resources/items.txt
-Block.hardness
-block.material 
+ 1. send a start digging packet and an abort digging packet
+ 2. server sends you an update block telling you of your success or failure, after amount of time has passed. explanation of how time is computed below (note that you the client don't have to know about it.):
+ 
+ 20 ticks per second
+ 
+ sum = 0
+ every tick, sum += strengthVsBlock
+ when sum >= 1.0, block is broken
+ 
+ function strengthVsBlock(tool, block, underwater, on_ground) {
+     if block.hardness < 0:
+         return 0
+     if not canHarvestBlock(tool, block):
+         return 1.0 / block.hardness / 100
+         
+     mult = 1
+     
+     if tool effective against block:
+         mult *= tool.effectiveness
+     if underwater:
+         mult /= 5
+     if not on_ground:
+         mult /= 5
+     
+     return mult / block.hardness / 30
+ }
+ 
+ function canHarvestBlock(block) {
+ 
+     if block material is not in (rock, iron, snow, snow_block):
+         return true
+     else
+         return whether equipped item can harvest block
+ 
+ }
+ 
+ effectiveness against proper material
+ wood: 2.0
+ stone: 4.0
+ iron: 6.0
+ diamond: 8.0
+ gold: 12.0
+ 
+ 
+ Shovel effective against:
+ Block.grass, Block.dirt, Block.sand, Block.gravel, Block.snow, Block.blockSnow, Block.blockClay
+ 
+ 
+ axe affective against:
+ 
+ Block.planks, Block.bookShelf, Block.wood, Block.crate
+ 
+ 
+ pick effective against:
+             Block.cobblestone, Block.stairDouble, Block.stairSingle, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold, 
+ 
+             Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.bloodStone, Block.oreLapis, Block.blockLapis
+             
+ pick can harvest:
+     switch(harvest level of tool):
+         case 3:
+             obsidian
+         case 2:
+             diamond
+             diamondore
+             gold
+             goldore
+             redstone
+             redstoneglowing
+         case 1:
+             iron
+             ironore
+             lapis
+             lapisore
+             
+     if block.material is rock
+         return true
+     if block.material is iron
+         return true
+     
+     
+     return false
+ 
+ shovel can harvest:
+     both types of snow = true
+     else false
+ 
+ axe can harvest:
+     false
+ 
+ 
+ harvest level:
+ wood: 0
+ stone: 1
+ iron: 2
+ diamond: 3
+ gold: 0
+ 
+ for the following fields, see https://github.com/superjoe30/mineflayer/blob/dev/resources/items.txt
+ Block.hardness
+ block.material 
 
 === Left to test ===
 * Can you dig behind blocks?
-* Digging further than 6 blocks away
-* Is tools enforced to drop blocks like stone?
-* What happens to your tool if you dig too many times?
-* Figure out tool modifiers to number of digs and verify dig counts on different blocks
 
 == Placing/using stuff ==
 
