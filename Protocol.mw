@@ -2604,6 +2604,8 @@ A packet from the server indicating whether a request from the client was accept
 | class="col1 rightalign" colspan="4" | 11 bytes + 4 strings
 |}
 
+This message is sent from the server to the client whenever a sign is discovered or created. This message is sent from the client to the server when the "Done" button is pushed after placing a sign. This message is NOT sent when a sign is destroyed or unloaded.
+
 === Disconnect/Kick (0xFF) ===
 
 Sent by the server before it disconnects a client, or by the client before it disconnects from the server. The receiver of this packet assumes that the sender has already closed the connection by the time the packet arrives.
