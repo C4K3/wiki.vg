@@ -1,6 +1,6 @@
 Clients;
 
-This is a rather incomplete list of Minecraft Alpha clients currently in development. This page only lists clients written from scratch. For mods and wrappers, see the [[Utility List]].
+This is a rather incomplete list of Minecraft Alpha/Beta clients currently in development. This page only lists clients written from scratch. For mods and wrappers, see the [[Utility List]].
 
 {| class="wikitable" style="width: auto; text-align: center;"
 |-style="background:#eee"
@@ -37,8 +37,7 @@ This is a rather incomplete list of Minecraft Alpha clients currently in develop
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/Qt_%28framework%29 Qt]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
-| 3D client: physics and most graphics work. 
-JavaScript bot framework: Chatting and moving around works. See [[Mineflayer]] for more details.
+| JavaScript bot framework. See [[Mineflayer]] for more details.
 |-
 ! [http://github.com/espes/esbot esbot]
 | espes
