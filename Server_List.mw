@@ -101,15 +101,15 @@ A couple things for contributors:
 ! [http://sourceforge.net/projects/minewithperl MWP]
 | jake-anq, goshat
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Unknown
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
-| {{planned}}
-| {{unknown}}
-| {{yes|[http://en.wikipedia.org/wiki/Perl Perl]}}
-|
+| Unknown (No notices on source file)
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| Not started
 |-
 ! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
 | aera, iKJames
