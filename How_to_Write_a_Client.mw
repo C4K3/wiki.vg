@@ -76,9 +76,21 @@ If your avatar is invisible to notchian clients despite the server sending you r
 
 == Digging ==
 
- 1. send a start digging packet and an abort digging packet
- 2. server sends you an update block telling you of your success or failure, after amount of time has passed. explanation of how time is computed below (note that you the client don't have to know about it.):
- 
+If you don't want to be able to abort digging:
+
+# send a start digging (0) packet and an finish digging (2) packet.
+# server sends you an update block telling you of your success or failure after some amount of time has passed.
+
+If you do want to be able to abort digging:
+
+# send a start digging (0).
+# wait appropriate amount of time (see below).
+# if you haven't aborted yet, send a finish digging (2).
+
+If you go with the first option, you must wait until the block has been dug before you can start digging another block.
+
+=== How long to wait ===
+
  20 ticks per second
  
  sum = 0
