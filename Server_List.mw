@@ -68,9 +68,9 @@ A couple things for contributors:
 | {{no}}
 | {{no}}
 | {{no}}
-| {{unknown}}
-| {{unknown}}
-|
+| {{yes|Event-driven}}
+| {{no}}
+| Active
 |-
 ! [http://mcserver.ae-c.net MCServer]
 | FakeTruth
