@@ -17,6 +17,7 @@ Remember that every event has as first parameter the Server, I won't list it in 
 * '''Player.connect (CDPlayer* player)''': Called when a client connects to the server, at this point it's added to the entities list but still hasn't an username
 * '''Player.login (CDPlayer* player, bool status)''': The client has tried to login, the status states if the login was succesful or not.
 * '''Player.process (CDPlayer* player, CDPacket* packet)''': Called when a Packet has been read from a Player and has been parsed.
+* '''Player.logout (CDPlayer* player, bool status)''': Called when a logged in Player disconnects.
 * '''Player.disconnect (CDPlayer* player, bool status)''': Called when a Player disconnect, status is true if the player disconnected on its own, false if disconnected because an error occurred.
 
 [[Category:Craftd]]
