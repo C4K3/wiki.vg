@@ -11,12 +11,12 @@ You can also register to "Event.dispatch:before" and "Event.dispatch:after", the
 
 Remember that every event has as first parameter the Server, I won't list it in the event signatures because it is implied.
 
-* ''Event.dispatch:before (const char* event, va_list args)'': Called before every event is dispatched, if it returns false the event is stopped.
-* ''Event.dispatch:after (const char* event, va_list args)'': Called after every event is dispatched.
+* '''Event.dispatch:before (const char* event, va_list args)''': Called before every event is dispatched, if it returns false the event is stopped.
+* '''Event.dispatch:after (const char* event, va_list args)''': Called after every event is dispatched.
 
-* ''Player.connect (CDPlayer* player)'': Called when a client connects to the server, at this point it's added to the entities list but still hasn't an username
-* ''Player.login (CDPlayer* player, bool status)'': The client has tried to login, the status states if the login was succesful or not.
-* ''Player.process (CDPlayer* player, CDPacket* packet)'': Called when a Packet has been read from a Player and has been parsed.
-* ''Player.disconnect (CDPlayer* player, bool status)'': Called when a Player disconnect, status is true if the player disconnected on its own, false if disconnected because an error occurred.
+* '''Player.connect (CDPlayer* player)''': Called when a client connects to the server, at this point it's added to the entities list but still hasn't an username
+* '''Player.login (CDPlayer* player, bool status)''': The client has tried to login, the status states if the login was succesful or not.
+* '''Player.process (CDPlayer* player, CDPacket* packet)''': Called when a Packet has been read from a Player and has been parsed.
+* '''Player.disconnect (CDPlayer* player, bool status)''': Called when a Player disconnect, status is true if the player disconnected on its own, false if disconnected because an error occurred.
 
 [[Category:Craftd]]
