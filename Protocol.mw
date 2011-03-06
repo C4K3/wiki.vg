@@ -712,7 +712,7 @@ Derived from packet [[#Player_.280x0A.29|0x0A]]
 
 === Player Digging (0x0E) ===
 
-Sent as the player mines a block.  A Notchian server only accepts digging packets with coordinates within a 6-unit radius of the player's position.
+Sent when the player mines a block.  A Notchian server only accepts digging packets with coordinates within a 6-unit radius of the player's position.
 
 {| class="wikitable"
 |- class="row0"
@@ -762,20 +762,14 @@ Status can (currently) be one of four values:
 | class="col0 leftalign" | Started digging
 | class="col1 centeralign" | <code>0</code>
 |- class="row2"
-| class="col0 leftalign" | Digging
-| class="col1 centeralign" | <code>1</code>
-|- class="row3"
-| class="col0 leftalign" | Stopped digging
+| class="col0 leftalign" | Finished digging
 | class="col1 centeralign" | <code>2</code>
-|- class="row4"
-| class="col0 leftalign" | Block broken
-| class="col1 centeralign" | <code>3</code>
-|- class="row5"
+|- class="row3"
 | class="col0 leftalign" | Drop item
 | class="col1 centeralign" | <code>4</code>
 |}
 
-With the 1.3 Beta update, only 0 (started digging) and 2 (stopped digging) are used for digging.  
+Notchian clients send a 0 (started digging) when they start digging and a 2 (finished digging) once they think they are finished. If digging is aborted, no notice is sent to the server; the client simply does not send a 2 (finished digging).
 
 Status code 4 (drop item) is a special case.  In-game, when you use the Drop Item command (keypress 'q'), a dig packet with a status of 4, and all other values set to 0, is sent from client to server.
 
