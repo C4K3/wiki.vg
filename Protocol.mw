@@ -966,6 +966,8 @@ Sent whenever an entity should change animation.
 | class="col1 rightalign" colspan="4" | 6 bytes
 |}
 
+Only <code>1</code> (swing arm) is sent by notchian clients. Crouching is sent via 0x13. Damage is server-side, and so is not sent by notchian clients. See also 0x26.
+
 === Entity Action ??? (0x13) ===
 
 Sent at least when crouching
