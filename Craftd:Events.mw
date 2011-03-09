@@ -19,5 +19,8 @@ Remember that every event has as first parameter the Server, I won't list it in 
 * '''Player.process (CDPlayer* player, CDPacket* packet)''': Called when a Packet has been read from a Player and has been parsed.
 * '''Player.logout (CDPlayer* player, bool status)''': Called when a logged in Player disconnects.
 * '''Player.disconnect (CDPlayer* player, bool status)''': Called when a Player disconnect, status is true if the player disconnected on its own, false if disconnected because an error occurred.
+* '''Player.destroy (CDPlayer* player)''': Called when a Player object is destroyed
+
+* '''Mapgen.generateChunk (int x, int z, MCChunkData* data, CDString* seed)''': Callable to generate a chunk with the currently loaded map generator.
 
 [[Category:Craftd]]
