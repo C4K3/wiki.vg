@@ -1,8 +1,8 @@
 This is a rather incomplete list of Minecraft Beta servers currently in development. This page only lists servers written from scratch. For mods and wrappers, see the [[Utility List]].
 
 A couple things for contributors:
-* If you haven't committed to your repo in a few months, I (MAD) am likely to mark you as on hiatus. Don't take it personally; just write more code and update the wiki.
-* I (MAD) rely on READMEs to gather server features. If you don't have one, you run the risk that I will read your source code to discern what your server can do. This might not be what you wanted. >:3
+* If you haven't committed to your repository in a few months, I (MAD) am likely to mark you as on hiatus. Don't take it personally; just write more code and update the wiki.
+* I (MAD) rely on README files to gather server features. If you don't have one, you run the risk that I will read your source code to discern what your server can do. This might not be what you wanted. >:3
 * Yes, the "Networking" column really does ask the question, "Can your server actually talk to clients?" This is just a litmus test. If your server can't do it, then consider whether it's ready for this page.
 
 {| class="wikitable" style="width: auto; text-align: center;"
@@ -31,7 +31,7 @@ A couple things for contributors:
 | {{yes|Players}}
 | {{yes|Processes}}
 | {{yes|Python}}
-| Active
+| {{yes|Active}}
 |-
 ! [http://mc.kev009.com/craftd/ craftd]
 | [[User:Kev009|kev009]]
@@ -44,7 +44,7 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|Threads}}
 | {{yes|Python}}
-| Active
+| {{yes|Active}}
 |-
 ! [http://github.com/ScottBrooks/Erlcraft Erlcraft]
 | Scott Brooks
@@ -57,7 +57,7 @@ A couple things for contributors:
 | {{unknown}}
 | {{unknown}}
 | {{unknown}}
-| On hiatus
+| {{unknown|On hiatus}}
 |-
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
@@ -70,7 +70,7 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Event-driven}}
 | {{no}}
-| Active
+| {{yes|Active}}
 |-
 ! [http://mcserver.ae-c.net MCServer]
 | FakeTruth
@@ -83,7 +83,7 @@ A couple things for contributors:
 | {{yes}}
 | {{unknown}}
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| Active
+| {{yes|Active}}
 |-
 ! [http://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
@@ -96,20 +96,20 @@ A couple things for contributors:
 | {{yes|Players}}
 | {{unknown}}
 | {{yes|C++}}
-| Active
+| {{yes|Active}}
 |-
 ! [http://sourceforge.net/projects/minewithperl MWP]
 | jake-anq, goshat
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://en.wikipedia.org/wiki/Perl Perl],[http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Unknown (No notices on source file)
-| {{no}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{no}}
-| Not started
+| {{planned|In progress}}
+| {{planned|Beta/Custom}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{yes|Events,Coroutines}}
+| {{planned|[http://en.wikipedia.org/wiki/Perl Perl]}}
+| {{planned|Pre-alpha}}
 |-
 ! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
 | aera, iKJames
@@ -122,7 +122,7 @@ A couple things for contributors:
 | {{unknown}}
 | {{unknown}}
 | {{unknown}}
-| On hiatus
+| {{unknown|On hiatus}}
 |-
 ! [https://www.assembla.com/spaces/mc_server RealMC]
 | thomasfn
@@ -135,7 +135,7 @@ A couple things for contributors:
 | {{yes}}
 | {{yes|Async IO}}
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| Active
+| {{yes|Active}}
 |-
 ! [http://github.com/SpaceManiac/Spacecraft-GT Spacecraft GT]
 | SpaceManiac, Blocky
@@ -148,7 +148,7 @@ A couple things for contributors:
 | {{yes}}
 | {{yes|Threads}}
 | {{no}}
-| On hiatus
+| {{unknown|On hiatus}}
 |-
 ! [http://codaset.com/moose/quartz-public Quartz]
 | Moose
@@ -161,7 +161,7 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Threads}}
 | {{no}}
-| On hiatus
+| {{unknown|On hiatus}}
 |}
 
 [[Category:Minecraft Alpha]]
