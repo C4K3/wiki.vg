@@ -870,7 +870,7 @@ The direction can be one of six values, representing the face the block/item is 
 | class="col6" | +X
 |}
 
-This packet has a special case where X, Y, Z, and Direction are all -1. This special packet indicates that the currently held item for the player should have its state updated.
+This packet has a special case where X, Y, Z, and Direction are all -1. This special packet indicates that the currently held item for the player should have its state updated such as eating food, shooting bows, etc.
 
 The block or item ID corresponds to whatever the client is currently holding, and the Alpha client sends one of these packets any time a right-click is issued on a surface, so no assumptions can be made about the safety of the ID.
 
