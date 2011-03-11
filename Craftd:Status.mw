@@ -35,6 +35,11 @@ craftd is on [https://github.com/kev009/craftd/ github]. This is a developer pre
 === 0.1a - Released ===
 Experimental release exploring the Minecraft protocol and various libraries.  Basic support for loading worlds and walking around.
 
+=== Unplanned ===
+These depend on developer interest and current needs.
+* Proxy (dotblank?)- re-implement proxy support to front-end other servers for multi-world, protocol optimization, etc. 
+* InfiniCraft - if this isn't dead, implement it some time https://github.com/InfiniCraft/
+
 == Dev stuff ==
 === Things that have been hashed out: ===
 *Autotools build system for cross-platform ease & possible distro inclusion
