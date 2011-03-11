@@ -6,7 +6,37 @@
 == Status ==
 craftd is on [https://github.com/kev009/craftd/ github]. This is a developer preview for feedback. It doesn't currently implement much of the Minecraft protocol, but you can follow along and track progress. Check back later for release tarballs and eventually binaries.
 
-== Things that have been hashed out: ==
+== Roadmap ==
+
+=== 0.4 - Future ===
+* Production grade scripting module (one or more of: javascript, ruby, python, lua)
+* Major protocol implementation
+** Chests
+** Weapons
+** Projectiles
+** Signs
+** etc
+* Mobs
+* Tree growth
+
+=== 0.3 - Future ===
+* Multiple persistence modules - store player info, world, etc.  (one or more of: NBT, SQLite, Berkeley DB, libdbi)
+* Inventory and basic item support
+* Basic mutable world (digging, crafting)
+* Return of cdhttpd and start of stateless JSON API and web admin.
+
+=== 0.2 - In Progress ===
+* Refactoring of code (meh!) - Much cleaner and conductive to modular development.  Dynamically loaded plugins.
+* Initial map generator (youx!)
+* Basic plugin set - standard gameplay, NBT/McRegion, chat commands
+* Local broadcast - finally send entities and optionally chat
+* Stable core and operation with 100 players
+
+=== 0.1a - Released ===
+Experimental release exploring the Minecraft protocol and various libraries.  Basic support for loading worlds and walking around.
+
+== Dev stuff ==
+=== Things that have been hashed out: ===
 *Autotools build system for cross-platform ease & possible distro inclusion
 *libevent2 cross-platform event polling and network I/O
 *Fast packet state machine and variable length packet decoder
@@ -19,14 +49,14 @@ craftd is on [https://github.com/kev009/craftd/ github]. This is a developer pre
 *Chat, motd, string handling (bstring)
 *Basic NBT read and write support
 *Chunk sending
+*Dynamically tunable worker pool
 
-== Future directions/TODO: ==
+=== Future directions/TODO: ===
 These are future research and development ideas in arbitrary order.
 *World file format. custom w/import-export? BerkeleyDB?
 *Sparse matrix for ^?
 *Binaries for Linux, Win32(MinGW), FreeBSD
 *Stress test w/large num users - Goal 100+ simultaneous
-*Dynamically tunable worker pool
 *Use more zero copy I/O
 *JSON-REST admin/status API
 *Security audit - perpetual
