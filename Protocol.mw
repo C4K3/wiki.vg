@@ -872,9 +872,17 @@ The direction can be one of six values, representing the face the block/item is 
 | class="col6" | +X
 |}
 
+In normal operation (ie placing a block), this packet is sent once, with the values set normally.
+
 This packet has a special case where X, Y, Z, and Direction are all -1. This special packet indicates that the currently held item for the player should have its state updated such as eating food, shooting bows, etc.
 
-The block or item ID corresponds to whatever the client is currently holding, and the Alpha client sends one of these packets any time a right-click is issued on a surface, so no assumptions can be made about the safety of the ID.
+The special case is used in two manners:
+* Eating / shooting bow - a single packet is sent for the action, with the special case values.
+* Using a bucket
+** First, a normal packet is sent, with the values set normally (the block of water/lava you want to scoop up)
+** Second, a second packet is sent with the special case values, to tell the server to update the bucket to be full
+
+In a Notchian Beta client, the block or item ID corresponds to whatever the client is currently holding, and the client sends one of these packets any time a right-click is issued on a surface, so no assumptions can be made about the safety of the ID.  However, with the implementation of server-side inventory, a Notchian server seems to ignore the item ID, instead operating on server-side inventory information and holding selection.
 
 === Holding Change (0x10) ===
 
