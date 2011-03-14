@@ -878,7 +878,7 @@ This packet has a special case where X, Y, Z, and Direction are all -1. This spe
 
 In a Notchian Beta client, the block or item ID corresponds to whatever the client is currently holding, and the client sends one of these packets any time a right-click is issued on a surface, so no assumptions can be made about the safety of the ID.  However, with the implementation of server-side inventory, a Notchian server seems to ignore the item ID, instead operating on server-side inventory information and holding selection.
 
-Special note on using buckets:  When using buckets, the Notchian client might send two packets:  first a normal and then a special case.  The first normal packet is sent when you're looking at a block (e.g. the water you want to scoop up).  This normal packet does not appear to do anything with a Notchian server.  The second, special case packet appears to perform the action - based on current position/orientation and with a distance check - it appears that buckets can only be used within a radius of 4 units.
+Special note on using buckets:  When using buckets, the Notchian client might send two packets:  first a normal and then a special case.  The first normal packet is sent when you're looking at a block (e.g. the water you want to scoop up).  This normal packet does not appear to do anything with a Notchian server.  The second, special case packet appears to perform the action - based on current position/orientation and with a distance check - it appears that buckets can only be used within a radius of 6 units.
 
 === Holding Change (0x10) ===
 
