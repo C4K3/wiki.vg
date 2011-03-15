@@ -20,6 +20,7 @@ craftd is on [https://github.com/kev009/craftd/ github]. This is a developer pre
 * Tree growth
 
 === 0.3 - Future ===
+* Second code refactor (meh!)
 * Multiple persistence modules - store player info, world, etc.  (one or more of: NBT, SQLite, Berkeley DB, libdbi)
 * Inventory and basic item support
 * Basic mutable world (digging, crafting)
