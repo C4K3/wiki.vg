@@ -1478,12 +1478,12 @@ This packet shows location, name, and type of painting.
 | class="col1 centeralign" | Y
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>66</code>
-| class="col4 centeralign" | Block X coordinate
+| class="col4 centeralign" | Block Y coordinate
 |- class="row5"
 | class="col1 centeralign" | Z
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>-50</code>
-| class="col4 centeralign" | Block X coordinate
+| class="col4 centeralign" | Block Z coordinate
 |- class="row6"
 | class="col1 centeralign" | Direction
 | class="col2 centeralign" | int
