@@ -1451,7 +1451,6 @@ Sheep Wool Colors
 
 This packet shows location, name, and type of painting.
 
-TODO: Verify "Type" field and coordinate type.
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -1474,22 +1473,22 @@ TODO: Verify "Type" field and coordinate type.
 | class="col1 centeralign" | X
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>50</code>
-| class="col4 centeralign" | Block? coordinate
+| class="col4 centeralign" | Block X coordinate
 |- class="row4"
 | class="col1 centeralign" | Y
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>66</code>
-| class="col4 centeralign" | Block? coordinate
+| class="col4 centeralign" | Block X coordinate
 |- class="row5"
 | class="col1 centeralign" | Z
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>-50</code>
-| class="col4 centeralign" | Block? coordinate
+| class="col4 centeralign" | Block X coordinate
 |- class="row6"
-| class="col1 centeralign" | Type
+| class="col1 centeralign" | Direction
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | (?) Indicate which graphic to use
+| class="col4 centeralign" | Direction the painting faces (0 -z, 1 -x, 2 +z, 3 +x)
 |}
 
 === ??? (0x1B) ===
