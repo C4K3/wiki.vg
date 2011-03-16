@@ -1473,23 +1473,28 @@ This packet shows location, name, and type of painting.
 | class="col1 centeralign" | X
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>50</code>
-| class="col4 centeralign" | Block X coordinate
+| class="col4 centeralign" | Center X coordinate
 |- class="row4"
 | class="col1 centeralign" | Y
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>66</code>
-| class="col4 centeralign" | Block Y coordinate
+| class="col4 centeralign" | Center Y coordinate
 |- class="row5"
 | class="col1 centeralign" | Z
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>-50</code>
-| class="col4 centeralign" | Block Z coordinate
+| class="col4 centeralign" | Center Z coordinate
 |- class="row6"
 | class="col1 centeralign" | Direction
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>0</code>
 | class="col4 centeralign" | Direction the painting faces (0 -z, 1 -x, 2 +z, 3 +x)
 |}
+
+Calculating the center of an image: given a (width x height) grid of cells, with (0, 0) being the top left corner, the center is (max(0, width / 2 - 1), height / 2). E.g.
+
+2x1 (1, 0)
+4x4 (1, 2)
 
 === ??? (0x1B) ===
 
