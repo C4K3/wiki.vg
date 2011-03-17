@@ -976,7 +976,7 @@ Only <code>1</code> (swing arm) is sent by notchian clients. Crouching is sent v
 
 === Entity Action ??? (0x13) ===
 
-Sent at least when crouching
+Sent at least when crouching and leaving a bed.
 
 {| class="wikitable"
 |- class="row0"
@@ -995,7 +995,7 @@ Sent at least when crouching
 | class="col0 centeralign" | Action
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | Can be <code>1</code> (crouch), or <code>2</code> (uncrouch).
+| class="col3" | Can be <code>1</code> (crouch), <code>2</code> (uncrouch) or <code>3</code> (leave bed).
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
