@@ -1309,27 +1309,6 @@ Sent by the server when a Mob Entity is Spawned
 | class="col1 rightalign" colspan="4" | 20 bytes + Metadata (at least 1)
 |}
 
-Metadata index 0 is a byte representing a set of 8 boolean flags:
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Bit index
-! class="col1" | Bit mask
-! class="col2" | Meaning
-|- class="row1"
-| class="col0" | 0
-| class="col1" | 0x01
-| class="col2" | Entity on fire
-|- class="row2"
-| class="col0" | 1
-| class="col1" | 0x02
-| class="col2" | Entity crouched
-|- class="row3"
-| class="col0" | 2
-| class="col1" | 0x04
-| class="col2" | Entity riding
-|}
-
 Mob Types (Incomplete)
 
 {| class="wikitable"
@@ -1340,7 +1319,7 @@ Mob Types (Incomplete)
 |- class="row1"
 | class="col0" | 50
 | class="col1" | Creeper
-| class="col2" | Index 16. Byte. possible values: -1, 1
+| class="col2" | Index 16 - byte - possible values: -1, 1. Referred to as "max damage" in MCP.
 |- class="row2"
 | class="col0" | 51
 | class="col1" | Skeleton
@@ -1372,11 +1351,11 @@ Mob Types (Incomplete)
 |- class="row9"
 | class="col0" | 90
 | class="col1" | Pig
-| class="col2" | Index 16. Byte. Possible values: 0, 1
+| class="col2" | Index 16 - byte - set to 1 if the pig has a saddle, 0 otherwise.
 |- class="row10"
 | class="col0" | 91
 | class="col1" | Sheep
-| class="col2" | Index 16. Byte. Bit 0x10 indicates shearedness, the lower 4 bits indicate wool color.
+| class="col2" | Index 16 - byte - Bit 0x10 indicates shearedness, the lower 4 bits indicate wool color.
 |- class="row11"
 | class="col0" | 92
 | class="col1" | Cow
@@ -1468,6 +1447,27 @@ The type of object is given by the top three bits of the metametadata. The lower
 | 6 || Coordinates (int - int - int). Attempting to read an item stack will, after reading the stack, discard it and fall through to here.
 |-
 | 7 || Invalid
+|}
+
+Metadata index 0 is a byte representing a set of 8 boolean flags:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Bit index
+! class="col1" | Bit mask
+! class="col2" | Meaning
+|- class="row1"
+| class="col0" | 0
+| class="col1" | 0x01
+| class="col2" | Entity on fire
+|- class="row2"
+| class="col0" | 1
+| class="col1" | 0x02
+| class="col2" | Entity crouched
+|- class="row3"
+| class="col0" | 2
+| class="col1" | 0x04
+| class="col2" | Entity riding
 |}
 
 === Entity: Painting (0x19) ===
