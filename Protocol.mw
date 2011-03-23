@@ -1303,7 +1303,7 @@ Sent by the server when a Mob Entity is Spawned
 | class="col0 centeralign" | Data Stream
 | class="col1 centeralign" | Metadata
 | class="col2 centeralign" | <code>127</code>
-| class="col3" | Indexed metadata for Mob (STILL DECODING!). Terminated by 0x7F.
+| class="col3" | Indexed metadata for Mob. Terminated by 0x7F. See below.
 |- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 20 bytes + Metadata (at least 1)
@@ -1445,6 +1445,29 @@ Sheep Wool Colors
 |- class="row16"
 | class="col0" | 15
 | class="col1" | Black
+|}
+
+====Metadata format====
+The metadata is a series of WatchableObjects (using the Minecraft Coder's Pack terminology), each preceded by a byte of meta-metadata.
+The type of object is given by the top three bits of the metametadata. The lower five bits are written to a field in WatchableObject called "dataValueId" in the Minecraft Coder's Pack.
+{| class="wikitable"
+! Value !! Type
+|-
+| 0 || Byte
+|-
+| 1 || Short
+|-
+| 2 || Int
+|-
+| 3 || Float (Note: If the metametadata byte is 0x7F, this is the end of the data)
+|-
+| 4 || String
+|-
+| 5 || Item stack (short - byte - short, unknown which is which field). Bugged in beta 1.3 and might not ever be used.
+|-
+| 6 || Coordinates (int - int - int). Attempting to read an item stack will, after reading the stack, discard it and fall through to here.
+|-
+| 7 || Invalid
 |}
 
 === Entity: Painting (0x19) ===
