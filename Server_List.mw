@@ -62,14 +62,14 @@ A couple things for contributors:
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://www.gnu.org/licenses/gpl.html GPL]
+| [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{no}}
+| {{planned|Planned (Beta)}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
 | {{yes|Event-driven}}
-| {{no}}
+| {{planned|Planned ([http://ruby-lang.org Ruby])}}
 | {{yes|Active}}
 |-
 ! [http://mcserver.ae-c.net MCServer]
