@@ -93,7 +93,7 @@ This is a fairly lengthy page, and to make it more readable certain terminology 
 | class="col1" | When used in in the singular, Player always refers to the client connected to the server
 |- class="row2"
 ! class="col0 centeralign" | Entity
-| class="col1" | Entity refers to any item, player or mob in the world. This definition is subject to change as Notch extends the protocol
+| class="col1" | Entity refers to any item, player, mob, minecart or boat in the world. This definition is subject to change as Notch extends the protocol
 |- class="row3"
 ! class="col0 centeralign" | EID
 | class="col1" | An EID - or Entity ID - is a unique 4-byte integer used to identify a specific entity
