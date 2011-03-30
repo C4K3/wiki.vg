@@ -2413,6 +2413,8 @@ The slot number is calculated starting at 0, counting up through the window's un
 
 Rectangular regions are always indexed starting with the upper-left corner and scanning across rows. If a window has a crafting region, the output slot is always slot 0 followed immediately by the input region.
 
+When right-clicking on a stack of items, half the stack will be picked up and half left in the slot.  If the stack is an odd number, the half left in the slot will be smaller of the amounts.
+
 === Set slot (0x67) ===
 
 '''Server to Client only'''
