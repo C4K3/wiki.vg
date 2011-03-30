@@ -75,7 +75,7 @@ The Metadata type provides extra information about an entity, such as sheep colo
           case 2: read int from stream
           case 3: read float from stream
           case 4: read string from stream
-          case 5: read short, byte, short from stream
+          case 5: read short, byte, short from stream, discard it and continue to case 6
       end select
   end while
 The last 5 bits of x (x & 0x1F) are either an index or bitmask.  Currently, only "byte" type metadata has been seen from the server.
@@ -1303,7 +1303,7 @@ Sent by the server when a Mob Entity is Spawned
 | class="col0 centeralign" | Data Stream
 | class="col1 centeralign" | Metadata
 | class="col2 centeralign" | <code>127</code>
-| class="col3" | Indexed metadata for Mob. Terminated by 0x7F. See below.
+| class="col3" | Indexed metadata for Mob. Terminated by 0x7F. See below, and see [[#Metadata]] for the general format.
 |- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 20 bytes + Metadata (at least 1)
@@ -1424,29 +1424,6 @@ Sheep Wool Colors
 |- class="row16"
 | class="col0" | 15
 | class="col1" | Black
-|}
-
-====Metadata format====
-The metadata is a series of WatchableObjects (using the Minecraft Coder's Pack terminology), each preceded by a byte of meta-metadata.
-The type of object is given by the top three bits of the metametadata. The lower five bits are written to a field in WatchableObject called "dataValueId" in the Minecraft Coder's Pack.
-{| class="wikitable"
-! Value !! Type
-|-
-| 0 || Byte
-|-
-| 1 || Short
-|-
-| 2 || Int
-|-
-| 3 || Float (Note: If the metametadata byte is 0x7F, this is the end of the data)
-|-
-| 4 || String
-|-
-| 5 || Item stack (short - byte - short, unknown which is which field). Bugged in beta 1.3 and might not ever be used.
-|-
-| 6 || Coordinates (int - int - int). Attempting to read an item stack will, after reading the stack, discard it and fall through to here.
-|-
-| 7 || Invalid
 |}
 
 Metadata index 0 is a byte representing a set of 8 boolean flags:
