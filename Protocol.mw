@@ -2252,6 +2252,32 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
+=== Invalid bed? (0x46) ===
+
+[[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
+
+It looks like this packet has something to do with the new 1.4 feature that allows you to move your spawn point to a bed you have slept in. Apparently, the server sends this packet to the client when respawning at the player's bed is not possible for some reason.
+
+This packet appeared with protocol version 10.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x46
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | byte
+| class="col3 centeralign" |
+| class="col4" |
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
 === Open window (0x64) ===
 
 This is sent to the client when it should open an inventory, such as a chest, workbench, or furnace. This message is not sent anywhere for clients opening their own inventory.
@@ -2643,6 +2669,12 @@ Sent by the server before it disconnects a client, or by the client before it di
 == Protocol History ==
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2011-3-31 ===
+* <div class="li">Beta 1.4 released.</div>
+* New packet 0x46.
+* Protocol version number is now 10.
+* '''TODO:''' The protocol itself does not seem to have changed much, but what about possible data values and stuff like that?
 
 === 2011-2-22 ===
 * <div class="li">Beta 1.3 released.</div>
