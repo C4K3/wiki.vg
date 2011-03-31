@@ -2258,7 +2258,7 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 
 It looks like this packet has something to do with the new 1.4 feature that allows you to move your spawn point to a bed you have slept in. Apparently, the server sends this packet to the client when respawning at the player's bed is not possible for some reason.
 
-This packet appeared with protocol version 10.
+This packet appeared with protocol version 10. Its "packet class" is ''bi''.
 
 {| class="wikitable"
 |- class="row0"
