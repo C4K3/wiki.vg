@@ -33,6 +33,19 @@ A couple things for contributors:
 | {{yes|Python}}
 | {{yes|Active}}
 |-
+! [https://github.com/huin/chunkymonkey Chunkymonkey]
+| Huin
+| [http://en.wikipedia.org/wiki/Go_(programming_language) Google Go]
+| [http://www.opensource.org/licenses/mit-license.php MIT]
+| {{yes}}
+| {{yes|Alpha}}
+| {{planned}}
+| {{planned|In progress}}
+| {{planned|In progress}}
+| {{yes|Goroutines (Multi-host planned)}}
+| {{unknown|(TBD)}}
+| {{yes|Active}}
+|-
 ! [http://mc.kev009.com/craftd/ craftd]
 | [[User:Kev009|kev009]]
 | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
