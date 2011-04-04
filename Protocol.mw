@@ -1371,7 +1371,7 @@ Mob Types (Incomplete)
 |- class="row14"
 | class="col0" | 95
 | class="col1" | Wolf
-| class="col2" | 
+| class="col2" | Index 16 - byte - Bitflags (see below)<br /> Index 17 - string - Name of the player who tamed the wolf<br /> Index 18 - int - Health of the wolf
 |}
 
 Sheep Wool Colors
@@ -1449,6 +1449,27 @@ Metadata index 0 is a byte representing a set of 8 boolean flags:
 | class="col0" | 2
 | class="col1" | 0x04
 | class="col2" | Entity riding
+|}
+
+Metadata index 16 for wolves:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Bit index
+! class="col1" | Bit mask
+! class="col2" | Meaning
+|- class="row1"
+| class="col0" | 0
+| class="col1" | 0x01
+| class="col2" | Sitting down
+|- class="row2"
+| class="col0" | 1
+| class="col1" | 0x02
+| class="col2" | Agressive (red eyes)
+|- class="row3"
+| class="col0" | 2
+| class="col1" | 0x04
+| class="col2" | Tamed
 |}
 
 === Entity: Painting (0x19) ===
