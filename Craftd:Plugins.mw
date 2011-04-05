@@ -1,5 +1,11 @@
 == Plugins ==
 
+Plugins for Craftd are placed in subdirectories under the <code>./plugins</code> directory. It is standard to have <code>main.c</code>, in which the following statements are needed to do much of value:
+<syntaxhighlight lang="C">
+#include <craftd/Server.h>
+#include <craftd/Plugin.h>
+</syntaxhighlight>
+
 Writing a plugin is pretty simple, you just have to create a loadable object with the 2 following functions:
 
 <syntaxhighlight lang="C">
@@ -22,7 +28,7 @@ CD_PluginFinalize (CDPlugin* self)
 }
 </syntaxhighlight>
 
-It's adviced to use the hash in PRIVATE(self) instead of global static variables to keep the data, in this way other plugins
+It's advised to use the hash in PRIVATE(self) instead of global static variables to keep the data, in this way other plugins
 can work with the data of your plugin if they want to.
 
 === Building Plugins ===
