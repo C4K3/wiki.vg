@@ -1926,6 +1926,43 @@ The vehicle entity ID attached to (-1 for unattaching)
 | class="col1 rightalign" colspan="4" | 5 bytes + Metadata
 |}
 
+==== Metadata ====
+
+Metadata has a massively quirky packing format, the details of which are not quite all understood. However, successful parsing of metadata is possible, according to the following rules.
+
+A metadata '''field''' is a byte. The top three bits of the byte, when masked off and interpreted as a three-bit number from 0 to 7, indicate the type of the field. The lower five bits are some sort of unknown identifier. The type of the byte indicates the size and type of a payload which follows the initial byte of the field.
+
+The metadata format consists of at least one field, followed by either another field or the magic number 0x7F. 0x7F terminates a metadata stream.
+
+Thus, the example metadata stream 0x00 0x01 0x7f is decoded as a field of type 0, id 0, with a payload of byte 0x00.
+
+{| class="wikitable"
+|-
+! Field ID
+! Field Type
+|-
+| 0
+| Byte
+|-
+| 1
+| Short
+|-
+| 2
+| Int
+|-
+| 3
+| Float
+|-
+| 4
+| String
+|-
+| 5
+| Item: Short id, byte count, short damage
+|-
+| 6
+| Vector: Int x, int y, int z
+|}
+
 === Pre-Chunk (0x32) ===
 
 '''Server to Client only'''
