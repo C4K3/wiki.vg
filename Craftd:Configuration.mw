@@ -3,6 +3,10 @@
 | {{CraftdMenu}}
 |}
 
+
+'''THIS IS DEPRECATED, NEED REWRITE'''
+
+
 After building and installing craftd, you will need to move the config files into place.  craftd looks for the main config file in the following order:
 * ~/.craftd/craftd.conf
 * /etc/craftd/craftd.conf
