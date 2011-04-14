@@ -201,6 +201,19 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{no}}
 | {{unknown|On hiatus}}
+|-
+| [http://http://sourceforge.net/projects/open-mc/ OpenMC]
+| [[User:Xinnx]]
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
+| {{yes}}
+| {{yes|Alpha, Beta: WIP}}
+| {{no}}
+| {{no}}
+| {{yes|Support in the core}}
+| {{yes|Threads + Async File IO}}
+| {{yes|.NET Plugins}}
+| {{yes|Active}}
 |}
 
 [[Category:Minecraft Alpha]]
