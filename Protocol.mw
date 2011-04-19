@@ -2728,6 +2728,10 @@ Sent by the server before it disconnects a client, or by the client before it di
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 2011-4-19 ===
+* <div class="li">Beta 1.5 released.</div>
+* Needs investigation
+
 === 2011-3-31 ===
 * <div class="li">Beta 1.4 released.</div>
 * New packet 0x46.
