@@ -2706,7 +2706,6 @@ This message is sent from the server to the client whenever a sign is discovered
 
 === Increment statistic (0xC8) ===
 * Class: nj
-* [http://www.minecraftforum.net/viewtopic.php?f=1020&t=295360 List of statistics]
 
 {| class="wikitable"
 |- class="row0"
@@ -2719,12 +2718,12 @@ This message is sent from the server to the client whenever a sign is discovered
 | class="col0 centeralign" rowspan=3 | 0xC8
 | class="col1 centeralign" | Statistic ID
 | class="col2 centeralign" | int
-| class="col3 centeralign" | 0
-| class="col4" | The statistic's ID.
+| class="col3 centeralign" | 1003
+| class="col4" | The ID of the statistic. See [http://www.minecraftforum.net/viewtopic.php?f=1020&t=295360 List of statistics].
 |- class="row1"
 | class="col1 centeralign" | Amount
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | 0
+| class="col3 centeralign" | 1
 | class="col4" | The amount to increment the statistic.
 |- class="row2"
 ! class="col0" | Total Size:
