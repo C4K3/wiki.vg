@@ -55,7 +55,7 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 ! class="col0 centeralign" | string16
 | class="col1 centeralign" | ≥ 2
 | class="col2" | N/A
-| class="col3" | [http://en.wikipedia.org/wiki/UTF-16/UCS-2 UCS-2/UTF-16] string. Prefixed by a short containing the length of the string in characters.
+| class="col3" | [http://en.wikipedia.org/wiki/UTF-16/UCS-2 UCS-2/UTF-16] string, big-endian. Prefixed by a short containing the length of the string in characters.
 |- class="row9"
 ! class="col0 centeralign" | bool
 | class="col1 centeralign" | 1
