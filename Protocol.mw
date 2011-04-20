@@ -299,7 +299,7 @@ For more information, see [[Chat]].
 |- class="row1"
 | class="col0 centeralign" | 0x03
 | class="col1 centeralign" | Message
-| class="col2 centeralign" | string
+| class="col2 centeralign" | string16
 | class="col3 centeralign" | <code>&lt;Bob&gt; Hello World!</code>
 | class="col4" | User input '''must''' be sanitized server-side
 |- class="row2"
