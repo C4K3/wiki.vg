@@ -2730,7 +2730,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2011-4-19 ===
 * <div class="li">Beta 1.5 released.</div>
-* Needs investigation
+* Some packet info at https://gist.github.com/929803
 
 === 2011-3-31 ===
 * <div class="li">Beta 1.4 released.</div>
