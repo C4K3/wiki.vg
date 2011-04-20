@@ -273,7 +273,7 @@ This is the first packet sent when the client connects and is used for [[Authent
 |- class="row1"
 | class="col0 centeralign" | 0x02
 | class="col1 centeralign" | Connection Hash
-| class="col2 centeralign" | string
+| class="col2 centeralign" | string16
 | class="col3 rightalign" | <code>2e66f1dc032ab5f0</code>
 | class="col4" | A unique, per-connection hash, '''or''' '-', '''or''' '+'
 |- class="row2"
