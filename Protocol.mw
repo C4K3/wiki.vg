@@ -2310,13 +2310,13 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
-=== Invalid bed? (0x46) ===
+=== Invalid bed (0x46) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
 
-It looks like this packet has something to do with the new 1.4 feature that allows you to move your spawn point to a bed you have slept in. Apparently, the server sends this packet to the client when respawning at the player's bed is not possible for some reason. It may serve an informational purpose only (display message to user?).
+It looks like this packet has something to do with the new 1.4 feature that allows you to move your spawn point to a bed you have slept in. The server sends this packet to the client when respawning at the player's bed is not possible for some reason. It may serve an informational purpose only (display message to user?).
 
-This packet appeared with protocol version 10. Its "packet class" is ''bi'' for the client and ''ax'' for the server (Minecraft Beta 1.4).
+This packet appeared with protocol version 10. Its "packet class" is ''bt'' for the client and ''???'' for the server (Minecraft Beta 1.5)
 
 {| class="wikitable"
 |- class="row0"
@@ -2335,6 +2335,17 @@ This packet appeared with protocol version 10. Its "packet class" is ''bi'' for 
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
 |}
+
+=== Weather? (0x47) ===
+[[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
+This packet appeared with either 1.4 or 1.5.
+* 1.5 Class: eq
+* Protocol: int, byte, int, int, int
+* Last three ints are packed doubles specifying the position of an object of type rj
+** rj appears to be some sort of entity base class
+* Byte is a boolean value indicating whether the object of type rj is also of type c
+** c involves thunder
+* First integer is the entity ID
 
 === Open window (0x64) ===
 
