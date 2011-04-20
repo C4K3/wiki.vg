@@ -2711,7 +2711,9 @@ A packet from the server indicating whether a request from the client was accept
 This message is sent from the server to the client whenever a sign is discovered or created. This message is sent from the client to the server when the "Done" button is pushed after placing a sign. This message is NOT sent when a sign is destroyed or unloaded.
 
 === Unknown ??? (0xC8) ===
-''Class: nj''
+* Class: nj
+* Format: int, byte
+* Packet ID: 0xC8 (200)
 {{stub}}
 
 === Disconnect/Kick (0xFF) ===
