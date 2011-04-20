@@ -2499,21 +2499,26 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col2 centeralign" | <code>12</code>
 | class="col3" | A unique number for the action, used for transaction handling (See the Transaction packet).
 |- class="row5"
+| class="col0 centeralign" | ???
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Unknown boolean flag
+|- class="row6"
 | class="col0 centeralign" | Item ID
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>3</code>
 | class="col3" | ID of Item that was in the slot or -1 if no item. If -1, this is the last field in the packet.
-|- class="row6"
+|- class="row7"
 | class="col0 centeralign" | Item count
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>64</code>
 | class="col3" | Number of items that were in the slot
-|- class="row7"
+|- class="row8"
 | class="col0 centeralign" | Item uses
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>10</code>
 | class="col3" | Number of times the item was used that was in the slot
-|- class="row8"
+|- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 9 bytes (+3 for item ID != -1)
 |}
