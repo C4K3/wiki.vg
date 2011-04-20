@@ -2345,6 +2345,7 @@ This packet appeared with either 1.4 or 1.5.
 ** rj appears to be some sort of entity base class
 * Byte is a boolean value indicating whether the object of type rj is also of type c
 ** c involves thunder
+** True if rain, false if snow, perhaps?
 * First integer is the entity ID
 
 === Open window (0x64) ===
