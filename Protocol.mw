@@ -2529,6 +2529,10 @@ Rectangular regions are always indexed starting with the upper-left corner and s
 
 When right-clicking on a stack of items, half the stack will be picked up and half left in the slot.  If the stack is an odd number, the half left in the slot will be smaller of the amounts.
 
+The Action number is actually a counter, starting at 1.  This number is used by the server as a transaction ID to send back a Transaction packet.
+
+The Item (short, optional byte,short) is a critical piece of information in this packet.  The Item that is sent by the client is what is in the slot before it is clicked.  The server compares that with it's notes, and accepts the transaction if items match.
+
 === Set slot (0x67) ===
 
 '''Server to Client only'''
