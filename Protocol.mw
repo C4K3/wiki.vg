@@ -2748,7 +2748,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 2011-4-19 ===
 * <div class="li">Beta 1.5 released.</div>
 * Some packet info at https://gist.github.com/929803
-* Added three new packets: 70, 71, and 200 (classes bt, eq, and nj, respectively)
+* Added two new packets: 71 and 200 (classes eq and nj, respectively)
 
 === 2011-3-31 ===
 * <div class="li">Beta 1.4 released.</div>
