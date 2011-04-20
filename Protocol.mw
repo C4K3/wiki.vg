@@ -232,7 +232,7 @@ Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login r
 | class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
 |- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 18 bytes + length of strings
+| class="col1 rightalign" colspan="4" | 15 bytes + length of strings
 |}
 
 === Handshake (0x02) ===
