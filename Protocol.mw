@@ -47,11 +47,16 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
 | class="col3" | Double-precision 64-bit IEEE 754 floating point
 |- class="row7"
-! class="col0 centeralign" | string
+! class="col0 centeralign" | string8
 | class="col1 centeralign" | ≥ 2
 | class="col2" | N/A
 | class="col3" | [http://en.wikipedia.org/wiki/UTF-8#Modified_UTF-8 Modified UTF-8] string. Prefixed by a short containing the length of the string.
 |- class="row8"
+! class="col0 centeralign" | string16
+| class="col1 centeralign" | ≥ 2
+| class="col2" | N/A
+| class="col3" | [http://en.wikipedia.org/wiki/UTF-16/UCS-2 UCS-2/UTF-16] string. Prefixed by a short containing the length of the string in characters.
+|- class="row9"
 ! class="col0 centeralign" | bool
 | class="col1 centeralign" | 1
 | class="col2" | 0 or 1
