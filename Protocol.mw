@@ -2336,7 +2336,44 @@ This packet appeared with either 1.4 or 1.5.
 * Byte is a boolean value indicating whether the object of type rj is also of type c
 ** c involves thunder
 ** True if rain, false if snow, perhaps?
-* First integer is the entity ID
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=5 | 0x47
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 4
+| class="col4" | The weather type? entity.
+|- class="row1"
+| class="col1 centeralign" | Raining?
+| class="col2 centeralign" | boolean
+| class="col3 centeralign" | true
+| class="col4" | True if it is rain, False if it is snow?
+|- class="row1"
+| class="col1 centeralign" | X?
+| class="col2 centeralign" | int
+| class="col3 centeralign" | ?
+| class="col4" | Byte-packed double.
+|- class="row1"
+| class="col1 centeralign" | Y?
+| class="col2 centeralign" | int
+| class="col3 centeralign" | ?
+| class="col4" | Byte-packed double.
+|- class="row1"
+| class="col1 centeralign" | Z?
+| class="col2 centeralign" | int
+| class="col3 centeralign" | ?
+| class="col4" | Byte-packed double.
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 17 bytes
+|}
 
 === Open window (0x64) ===
 
