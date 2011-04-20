@@ -217,7 +217,7 @@ Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login r
 | class="col4" | The Players Entity ID
 |- class="row2"
 | class="col0 centeralign" | Unknown
-| class="col1 centeralign" | string
+| class="col1 centeralign" | string16
 | class="col2 centeralign" | n/a
 | class="col3" | Not yet used (Possibly the server name?)
 |- class="row3"
