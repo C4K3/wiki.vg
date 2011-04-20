@@ -2310,6 +2310,14 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
+=== WeatherA (0x46) ===
+''Class: bt''
+{{stub}}
+
+=== WeatherB (0x47) ===
+''Class: eq''
+{{stub}}
+
 === Invalid bed? (0x46) ===
 
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
