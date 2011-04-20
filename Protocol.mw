@@ -2778,7 +2778,7 @@ This message is sent from the server to the client whenever a sign is discovered
 | class="col4" | The amount to increment the statistic.
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 5 bytes
+| class="col1 rightalign" colspan="4" | 6 bytes
 |}
 
 === Disconnect/Kick (0xFF) ===
