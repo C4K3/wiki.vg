@@ -179,21 +179,16 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col2 centeralign" | <code>TkTech</code>
 | class="col3" | The name of the user attempting to login
 |- class="row3"
-| class="col0 centeralign" | Password
-| class="col1 centeralign" | string
-| class="col2 centeralign" | <code>Password</code>
-| class="col3" | Used to login to password-protected servers
-|- class="row4"
 | class="col0 centeralign" | Map Seed
 | class="col1 centeralign" | long
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | This value is not required for the client
-|- class="row5"
+|- class="row4"
 | class="col0 centeralign" | Dimension
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | This value is not required for the client
-|- class="row6"
+|- class="row5"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes + length of strings
 |}
@@ -221,21 +216,16 @@ Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login r
 | class="col2 centeralign" | n/a
 | class="col3" | Not yet used (Possibly the server name?)
 |- class="row3"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | string
-| class="col2 centeralign" | n/a
-| class="col3" | Not yet used (Possibly the MOTD? )
-|- class="row4"
 | class="col0 centeralign" | Map Seed
 | class="col1 centeralign" | long
 | class="col2 centeralign" | <code>971768181197178410</code>
 | class="col3" | Used for map generation (Possibly biome determination?)
-|- class="row5"
+|- class="row4"
 | class="col0 centeralign" | Dimension
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
-|- class="row6"
+|- class="row5"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes + length of strings
 |}
@@ -2751,12 +2741,14 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 2011-4-19 ===
 * <div class="li">Beta 1.5 released.</div>
 * Some packet info at https://gist.github.com/929803
-* Added two new packets: 71 and 200 (classes eq and nj, respectively)
+* Packet 0x01 ([[#Login_Request_.280x01.29|Login Request]]) changed (removed second string)
+* Added two new packets: 71 (0x47) and 200 (0xC8) (classes eq and nj, respectively)
+* Protocol version number is now 11
 
 === 2011-3-31 ===
 * <div class="li">Beta 1.4 released.</div>
 * New packet 0x46.
-* Protocol version number is now 10.
+* Protocol version number is now 10
 * '''TODO:''' The protocol itself does not seem to have changed much, but what about possible data values and stuff like that?
 
 === 2011-2-22 ===
