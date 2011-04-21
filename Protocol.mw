@@ -513,7 +513,11 @@ This packet was previously referred to as Flying
 
 '''Client to Server''' (player-controlled movement).
 
-Updates the players XYZ position on the server. If <code>Stance - Y</code> is less than <code>0.1</code> or greater than <code>1.65</code>, the stance is illegal and the client will be kicked with the message “Illegal Stance”.
+Updates the players XYZ position on the server. 
+If <code>Stance - Y</code> is less than <code>0.1</code> or greater than <code>1.65</code>, the stance is illegal and the client will be kicked with the message “Illegal Stance”.
+If the distance between the last known position of the player on the server and the new position set by this packet has a distance greater than 100 units will result in the client being kicked for "You moved too quickly :( (Hacking?)"
+Also if the absolute number of X or Z is set greater than <code>3.2E7D</code> the client will be kicked for "Illegal position" 
+
 
 {| class="wikitable"
 |- class="row0"
