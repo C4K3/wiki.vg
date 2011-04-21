@@ -72,12 +72,25 @@ A couple things for contributors:
 | {{unknown}}
 | {{unknown|On hiatus}}
 |-
+! [https://github.com/SpaceManiac/Glowstone Glowstone]
+| [[User:SpaceManiac|SpaceManiac]] (fork of Lightstone)
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://www.opensource.org/licenses/mit-license.php MIT]
+| {{yes}}
+| {{planned|In Progress (Beta)}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{yes|Event-driven}}
+| {{planned|Planned ([http://bukkit.org/ Bukkit])}}
+| {{unknown|Semi-Active}}
+|-
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
-| {{planned|Planned (Beta)}}
+| {{planned|In Progress (Beta)}}
 | {{planned}}
 | {{planned}}
 | {{planned}}
@@ -174,7 +187,7 @@ A couple things for contributors:
 | {{yes}}
 | {{yes|Threads}}
 | {{no}}
-| {{unknown|On hiatus}}
+| {{unknown|Probably cancelled}}
 |-
 ! [https://www.silent-productions.net SilentCraft]
 | Silentneeb, astrlvapor
