@@ -55,7 +55,7 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 ! class="col0 centeralign" | string16
 | class="col1 centeralign" | ≥ 2
 | class="col2" | N/A
-| class="col3" | [http://en.wikipedia.org/wiki/UTF-16/UCS-2 UCS-2/UTF-16] string, big-endian. Prefixed by a short containing the length of the string in characters.
+| class="col3" | [http://en.wikipedia.org/wiki/UTF-16/UCS-2 UCS-2] string, big-endian. Prefixed by a short containing the length of the string in characters. UCS-2 consists of 16-bit words, each of which represent a Unicode code point between U+0000 and U+FFFF inclusive.
 |- class="row9"
 ! class="col0 centeralign" | bool
 | class="col1 centeralign" | 1
@@ -2813,7 +2813,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Packet 0x01 ([[#Login_Request_.280x01.29|Login Request]]) changed (removed second string)
 * Added two new packets: 0x47 ([[#Weather.3F_.280x47.29|Weather?]]) and 0xC8 ([[#Increment_Statistic_.280xC8.29|Increment Statistic]]) (classes eq and nj, respectively)
 * Protocol version number is now 11
-* All of the strings are now UTF-16, except for Open window (0x64), which is still UTF-8
+* All of the strings are now UCS-2, except for Open window (0x64), which is still UTF-8
 
 === 2011-3-31 ===
 * <div class="li">Beta 1.4 released.</div>
