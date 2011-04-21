@@ -104,13 +104,14 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Closed source
 | {{yes}}
-| {{raw}}
+| {{yes|Raw}}
 | {{no}}
 | {{yes}}
 | {{yes}}
-| {{Threads}}
+| {{yes|Threads}}
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|Active}}|-
+| {{yes|Active}}
+|-
 ! [http://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
