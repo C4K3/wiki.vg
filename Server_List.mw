@@ -5,18 +5,6 @@ A couple things for contributors:
 * I (MAD) rely on README files to gather server features. If you don't have one, you run the risk that I will read your source code to discern what your server can do. This might not be what you wanted. >:3
 * Yes, the "Networking" column really does ask the question, "Can your server actually talk to clients?" This is just a litmus test. If your server can't do it, then consider whether it's ready for this page.
 
-! [http://mcserver.ae-c.net MCServer]
-| FakeTruth
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Closed source
-| {{yes}}
-| {{raw}}
-| {{no}}
-| {{yes}}
-| {{yes}}
-| {{Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|Active}}
 
 {| class="wikitable" style="width: auto; text-align: center;"
 |-style="background:#eee"
@@ -111,8 +99,18 @@ A couple things for contributors:
 | {{planned|Planned ([http://ruby-lang.org Ruby])}}
 | {{yes|Active}}
 |-
-----
-|-
+! [http://mcserver.ae-c.net MCServer]
+| FakeTruth
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Closed source
+| {{yes}}
+| {{raw}}
+| {{no}}
+| {{yes}}
+| {{yes}}
+| {{Threads}}
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| {{yes|Active}}|-
 ! [http://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
