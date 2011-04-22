@@ -8,15 +8,15 @@ CONTENT =
 [[Image:Craftd-login.png|right|320px]]
 '''craftd''' is a third-party implementation of the [http://www.minecraft.net/ Minecraft] SMP server protocol.
 
-The goal of craftd is to provide a <u>high performance, low overhead</u> implementation of the Minecraft Survival Multiplayer (SMP) protocol. After implementing the basics, advanced features such as scripting and extensions shall be considered.
+The goal of craftd is to provide a <u>high performance, low overhead</u> implementation of the Minecraft Survival Multiplayer (SMP) protocol
 
-craftd keeps modern UNIX daemon philosophy in mind. This includes best practice like async polling I/O, multi-threading, and use of high quality libraries whenever possible. craftd is written in C99 and the current plan is to extend it with Python for scripting.
+craftd keeps modern UNIX daemon philosophy in mind. This includes best practice like async polling I/O, multi-threading, and use of high quality libraries whenever possible. craftd is written in C99.  Advanced platform features such as plugins and scripting are offered.  The primary focus is now on implementing fundamental game logic and features ([[Craftd:Status#Roadmap|roadmap]]).
 
-Check back soon for a test world.  Shout out to [http://coesquest.com/ Coestar] for providing me with a copy of Minecraft and the motivation for the project.
+* You can find the latest source on [https://github.com/craftd/craftd/ github].  Feel free to watch or fork!
+* Want to help?  Need help?  Come talk!  '''irc.freenode.net #craftd'''.
+* A test world is sometimes available at '''mc.kev009.com:25565'''.
 
-Want to help?  Need help?  Come talk!  '''irc.freenode.net #craftd'''
-
-You can find the latest source on github.
+Shout out to [http://coesquest.com/ Coestar] for providing me with a copy of Minecraft and the motivation for the project.
 }} <!-- Wiki tables are annoying. --> 
 
 {| width="100%"
