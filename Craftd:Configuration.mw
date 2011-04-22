@@ -3,10 +3,6 @@
 | {{CraftdMenu}}
 |}
 
-
-'''THIS IS DEPRECATED, NEED REWRITE'''
-
-
 After building and installing craftd, you will need to move the config files into place.  craftd looks for the main config file in the following order:
 * ~/.craftd/craftd.conf
 * /etc/craftd/craftd.conf
@@ -19,50 +15,16 @@ By default, these are located in $prefix/etc/craftd/ as *.dist files so as not t
 <syntaxhighlight lang="bash">
 cd /usr/local/etc
 mv craftd.conf.dist craftd.conf
-mv motd.conf.dist motd.conf
 </syntaxhighlight>
 
-A config file is necessary, but it can consist of nothing more than {} if you wish to accept the defaults.  Options may be omitted, in which case the defaults will be used.  If the file fails to parse, an error message will be logged.
+A config file is necessary, but options may be omitted in which case the defaults will be used.  If the file fails to parse, an error message will be logged.
 
 == Default configuration file ==
-Using this configuration file will not change any of the internal default variables
-<syntaxhighlight lang="javascript">
-{
-  "00": "craftd config file.  Must be valid JSON.",
-  "server": {
-    "daemonize": true,
-    "game-bind": "0.0.0.0",
-    "game-bind6": "::",
-    "game-port": 25565,
-    "minecraft-stringmax": 100,
-    "max-listenbacklog": 16,
-    "worker-pool-size": 2,
-    "motd-file": "motd.conf",
-    "world-dir": "world/",
-    "day-rate": 20,
-    "sunset-rate": 20,
-    "night-rate": 20,
-    "sunrise-rate": 20,
-    "proxy-enabled": false,
-    "default-server": "Default Server",
-    "servers" : [ {
-        "host" : "127.0.0.1",
-        "name" : "Default Server",
-        "port" : 25565 }
-    ]
-  },
-  "httpd": {
-    "enabled": false,
-    "httpd-bind": "127.0.0.1",
-    "httpd-bind6": "::1",
-    "httpd-port": 25566,
-    "static-docroot": "htdocs/"
-  }
-}
-</syntaxhighlight>
-
+'''craftd.conf.dist''' - Using this configuration file will not change any of the internal default variables.
 
 == Available options and their defaults ==
+'''THIS IS STALE, NEED REWRITE!!'''
+
 {| class="wikitable" style="text-align:center"
 |+Game Config
 |-
