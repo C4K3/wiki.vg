@@ -15,6 +15,11 @@ To build craftd from source in Linux, you will need the following packages and d
 * libconfig (http://www.hyperrealm.com/libconfig/)
 * pcre
 
+Optional features:
+* jansson - JSON RPC and web administration (http://www.digip.org/jansson/)
+* SpiderMonkey - Javascript scripting (http://www.mozilla.org/js/spidermonkey/)
+* ECL - Common LISP scripting (http://ecls.sourceforge.net/)
+
 Most popular distributions do not have a package for the latest version of libevent. Therefore, it is best to fetch it from their website (shown above) and compile it. The latest release as of Feb. 5, 2011 is 2.0.10. Once you have obtained this package, extract it and run the following inside the resulting folder:
 <blockquote>./configure<br />make<br />make install<br />ldconfig</blockquote>
 
