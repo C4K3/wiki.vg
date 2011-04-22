@@ -8,13 +8,12 @@
 
 == Source ==
 
-'''NOTE: There is a build script available which performs the majority of the following procedure for you. To use it, skip the first step of this guide, follow the second step to get the source code and then execute the build.sh script from the extras subfolder of your working copy directory.'''
-
 === Obtain prerequisites ===
-To build craftd from source in Linux, you will need:
+To build craftd from source in Linux, you will need the following packages and development headers installed:
 * autotools/make/gcc
-* git
 * libevent (http://monkey.org/~provos/libevent/)
+* libconfig (http://www.hyperrealm.com/libconfig/)
+* pcre
 
 Most popular distributions do not have a package for the latest version of libevent. Therefore, it is best to fetch it from their website (shown above) and compile it. The latest release as of Feb. 5, 2011 is 2.0.10. Once you have obtained this package, extract it and run the following inside the resulting folder:
 <blockquote>./configure<br />make<br />make install<br />ldconfig</blockquote>
@@ -22,10 +21,10 @@ Most popular distributions do not have a package for the latest version of libev
 === Get the Source ===
 
 First, checkout the code by running:
-<blockquote>git clone git://github.com/kev009/craftd.git</blockquote>
+<blockquote>git clone git://github.com/craftd/craftd.git</blockquote>
 
 The first time you check out the source, you will need to generate a configure script. You can do this by running the following in the working copy directory:
-<blockquote>autoreconf -i</blockquote>
+<blockquote>./autogen</blockquote>
 
 Now that you have a configure script, run it by executing:
 <blockquote>./configure</blockquote>
