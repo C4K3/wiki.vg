@@ -182,7 +182,7 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col0 centeralign" | Username
 | class="col1 centeralign" | string16
 | class="col2 centeralign" | <code>TkTech</code>
-| class="col3" | The name of the user attempting to login
+| class="col3" | The name of the user attempting to login, max length of 16
 |- class="row3"
 | class="col0 centeralign" | Map Seed
 | class="col1 centeralign" | long
