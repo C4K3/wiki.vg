@@ -2313,7 +2313,9 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 
 This packet appeared with protocol version 10. Currently, it appears when a bed can't be used as a spawn point and when the rain state changes.  it could have additional uses in the future.
 
-Its "packet class" is ''ba'' for the client and ''???'' for the server (Minecraft Beta 1.5).  The class has an array of strings linked to reason codes 0, 1 and 2, but only the code for 0 is non-null.
+Its "packet class" is ''ba'' for the client and ''???'' for the server (Minecraft Beta 1.5).  
+
+The class has an array of strings linked to reason codes 0, 1 and 2, but only the code for 0 is non-null.
 
 {| class="wikitable"
 |- class="row0"
