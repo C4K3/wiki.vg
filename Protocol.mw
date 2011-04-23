@@ -2503,10 +2503,10 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col2 centeralign" | <code>12</code>
 | class="col3" | A unique number for the action, used for transaction handling (See the Transaction packet).
 |- class="row5"
-| class="col0 centeralign" | ???
+| class="col0 centeralign" | Shift
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | Unknown boolean flag - shift-clicking?
+| class="col3" | This is true if the user was holding keyboard shift when they clicked.
 |- class="row6"
 | class="col0 centeralign" | Item ID
 | class="col1 centeralign" | short
