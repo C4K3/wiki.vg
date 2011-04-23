@@ -2309,9 +2309,11 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
-=== Invalid state (0x46) ===
+=== New/Invalid State (0x46) ===
 
-This packet appeared with protocol version 10. Its "packet class" is ''bt'' for the client and ''???'' for the server (Minecraft Beta 1.5).  Currently, it only appears when a bed can't be used as a spawn point, but could have additional uses in the future.
+This packet appeared with protocol version 10. Currently, it appears when a bed can't be used as a spawn point and when the rain state changes.  it could have additional uses in the future.
+
+Its "packet class" is ''ba'' for the client and ''???'' for the server (Minecraft Beta 1.5).  The class has an array of strings linked to reason codes 0, 1 and 2, but only the code for 0 is non-null.
 
 {| class="wikitable"
 |- class="row0"
@@ -2333,7 +2335,24 @@ This packet appeared with protocol version 10. Its "packet class" is ''bt'' for 
 
 ==== Reason codes ====
 
-There are three possible reason codes: 0, 1, and 3.  Only 0 is linked to text: "tile.bed.notValid"
+{| class="wikitable"
+|-
+! Code
+! Effect
+! Text
+|-
+| 0
+| Invalid Bed
+| "tile.bed.notValid"
+|-
+| 1
+| Begin raining
+| null
+|-
+| 2
+| End raining
+| null
+|}
 
 === Weather? (0x47) ===
 [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
