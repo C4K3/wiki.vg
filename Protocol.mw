@@ -1027,7 +1027,7 @@ The Notchian client is not okay with receiving player entity packets, including 
 | class="col0" | Player Name
 | class="col1" | string16
 | class="col2" | <code>Twdtwd</code>
-| class="col3" |
+| class="col3" | Max length of 16
 |- class="row3"
 | class="col0" | X
 | class="col1" | int
