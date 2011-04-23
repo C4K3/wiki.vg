@@ -1492,7 +1492,7 @@ This packet shows location, name, and type of painting.
 | class="col1 centeralign" | Title
 | class="col2 centeralign" | String16
 | class="col3 centeralign" | <code>Creepers</code>
-| class="col4 centeralign" | Name of the painting
+| class="col4 centeralign" | Name of the painting; max length 13 (length of "SkullAndRoses")
 |- class="row3"
 | class="col1 centeralign" | X
 | class="col2 centeralign" | int
