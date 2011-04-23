@@ -253,7 +253,7 @@ This is the first packet sent when the client connects and is used for [[Authent
 | class="col1 centeralign" | Username
 | class="col2 centeralign" | string16
 | class="col3 centeralign" | <code>TkTech</code>
-| class="col4" | The username of the player attempting to connect
+| class="col4" | The username of the player attempting to connect, max length of 16
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes + length of strings
