@@ -53,7 +53,7 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 | class="col3" | [http://en.wikipedia.org/wiki/UTF-8#Modified_UTF-8 Modified UTF-8] string. Prefixed by a short containing the length of the string.
 |- class="row8"
 ! class="col0 centeralign" | string16
-| class="col1 centeralign" | ≥ 2
+| class="col1 centeralign" | ≥ 2 <br />≤ 240
 | class="col2" | N/A
 | class="col3" | [http://en.wikipedia.org/wiki/UTF-16/UCS-2 UCS-2] string, big-endian. Prefixed by a short containing the length of the string in characters. UCS-2 consists of 16-bit words, each of which represent a Unicode code point between U+0000 and U+FFFF inclusive.
 |- class="row9"
@@ -287,6 +287,8 @@ This is the first packet sent when the client connects and is used for [[Authent
 A message from the client to the server, or the server to the client. The actual handling of chat messages is variable and depends on the server and client; there are no ''de facto'' standards yet.
 
 The Alpha server will check the message to see if it begins with a '/'. If it doesn't, the username of the sender is prepended and sent to all other clients (including the original sender). If it does, the server assumes it to be a command and attempts to process it. A message longer than 100 characters will cause the server to kick the client. This limits the chat message packet length to 103 bytes. Note that this limit does not apply to incoming chat messages as the server may have prepended other information, not limited to, but usually including, a username.
+
+A message longer than 119 characters will cause the Beta (≥1.5) server and client to crash.
 
 For more information, see [[Chat]].
 
