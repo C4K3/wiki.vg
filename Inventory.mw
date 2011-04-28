@@ -1,0 +1,41 @@
+== Windows ==
+
+Minecraft displays the player inventory differently, according to how the window was opened. Ranges of slot indices vary in meaning between different "windows".
+
+
+Slot indices in various MC windows. All ranges are inclusive. Generally rectangular regions' slot indices start from the top-left corner, and increase from left to right, and then onto the next row.
+
+=== Inventory ===
+
+0 = crafting output
+1-4 = crafting input (1 + x + 2 * y)
+5-8 = armor (head, chest, legs, feet)
+9-35 = main inventory
+36-44 = held items
+
+=== Crafting window ===
+
+0 = crafting output
+1-9 = crafting input (1 + x + 3 * y)
+10-36 = main inventory
+37-45 = held items
+
+=== Chest ===
+
+0-26 = chest
+27-53 = main inventory
+54-62 = held items
+
+=== Large chest ===
+
+0-53 = chest
+54-80 = main inventory
+81-89 = held items
+
+=== Furnace ===
+
+0 = above flame
+1 = fuel
+2 = output
+3-29 = main inventory
+30-38 = held items
