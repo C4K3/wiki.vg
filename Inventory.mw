@@ -7,35 +7,100 @@ Slot indices in various MC windows. All ranges are inclusive. Generally rectangu
 
 === Inventory ===
 
-0 = crafting output
-1-4 = crafting input (1 + x + 2 * y)
-5-8 = armor (head, chest, legs, feet)
-9-35 = main inventory
-36-44 = held items
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Slot range
+! class="col1" | Description
+|- class="row1"
+| class="col0" | 0
+| class="col1" | crafting output
+|- class="row2"
+| class="col0" | 1-4
+| class="col1" | crafting input (1 + x + 2 * y)
+|- class="row3"
+| class="col0" | 5-8
+| class="col1" | armor (head, chest, legs, feet)
+|- class="row4"
+| class="col0" | 9-35
+| class="col1" | main inventory
+|- class="row5"
+| class="col0" | 36-44
+| class="col1" | held items
+|}
 
 === Crafting window ===
 
-0 = crafting output
-1-9 = crafting input (1 + x + 3 * y)
-10-36 = main inventory
-37-45 = held items
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Slot range
+! class="col1" | Description
+|- class="row1"
+| class="col0" | 0
+| class="col1" | crafting output
+|- class="row2"
+| class="col0" | 1-9
+| class="col1" | crafting input (1 + x + 3 * y)
+|- class="row3"
+| class="col0" | 10-36
+| class="col1" | main inventory
+|- class="row4"
+| class="col0" | 37-45
+| class="col1" | held items
+|}
 
 === Chest ===
 
-0-26 = chest
-27-53 = main inventory
-54-62 = held items
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Slot range
+! class="col1" | Description
+|- class="row1"
+| class="col0" | 0-26
+| class="col1" | chest
+|- class="row2"
+| class="col0" | 27-53
+| class="col1" | main inventory
+|- class="row3"
+| class="col0" | 54-62
+| class="col1" | held items
+|}
 
 === Large chest ===
 
-0-53 = chest
-54-80 = main inventory
-81-89 = held items
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Slot range
+! class="col1" | Description
+|- class="row1"
+| class="col0" | 0-53
+| class="col1" | chest
+|- class="row2"
+| class="col0" | 54-80
+| class="col1" | main inventory
+|- class="row3"
+| class="col0" | 81-89
+| class="col1" | held items
+|}
 
 === Furnace ===
 
-0 = above flame
-1 = fuel
-2 = output
-3-29 = main inventory
-30-38 = held items
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Slot range
+! class="col1" | Description
+|- class="row1"
+| class="col0" | 0
+| class="col1" | above flame
+|- class="row2"
+| class="col0" | 1
+| class="col1" | fuel
+|- class="row3"
+| class="col0" | 2
+| class="col1" | output
+|- class="row4"
+| class="col0" | 3-29
+| class="col1" | main inventory
+|- class="row5"
+| class="col0" | 30-38
+| class="col1" | held items
+|}
