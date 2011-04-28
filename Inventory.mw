@@ -1,9 +1,27 @@
 == Windows ==
 
-Minecraft displays the player inventory differently, according to how the window was opened. Ranges of slot indices vary in meaning between different "windows".
+Minecraft displays the player inventory differently, according to how the window was opened. Ranges of slot indices vary in meaning between different "windows". Minecraft indicates which window is being opened according to:
 
+Inventory Types
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Inventory Type
+! class="col1" | Description
+|- class="row1"
+| class="col0" | 0
+| class="col1" | Chest/Large chest
+|- class="row2"
+| class="col0" | 1
+| class="col1" | Workbench
+|- class="row3"
+| class="col0" | 2
+| class="col1" | Furnace
+|- class="row4"
+| class="col0" | 3
+| class="col1" | Dispenser
+|}
 
-Slot indices in various MC windows. All ranges are inclusive. Generally rectangular regions' slot indices start from the top-left corner, and increase from left to right, and then onto the next row.
+Each window type is described in the following sections. All slot index ranges are inclusive and reflect the indices observed in the Minecraft Beta protocol. Generally rectangular regions' slot indices start from the top-left corner, and increase from left to right, and then onto the next row.
 
 === Inventory ===
 
@@ -16,7 +34,7 @@ Slot indices in various MC windows. All ranges are inclusive. Generally rectangu
 | class="col1" | crafting output
 |- class="row2"
 | class="col0" | 1-4
-| class="col1" | crafting input (1 + x + 2 * y)
+| class="col1" | (2x2) crafting input (1 + x + 2 * y)
 |- class="row3"
 | class="col0" | 5-8
 | class="col1" | armor (head, chest, legs, feet)
@@ -39,7 +57,7 @@ Slot indices in various MC windows. All ranges are inclusive. Generally rectangu
 | class="col1" | crafting output
 |- class="row2"
 | class="col0" | 1-9
-| class="col1" | crafting input (1 + x + 3 * y)
+| class="col1" | (3x3) crafting input (1 + x + 3 * y)
 |- class="row3"
 | class="col0" | 10-36
 | class="col1" | main inventory
