@@ -2,7 +2,6 @@
 
 Minecraft displays the player inventory differently, according to how the window was opened. Ranges of slot indices vary in meaning between different "windows". Minecraft indicates which window is being opened according to:
 
-Inventory Types
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Inventory Type
@@ -24,6 +23,10 @@ Inventory Types
 Each window type is described in the following sections. All slot index ranges are inclusive and reflect the indices observed in the Minecraft Beta protocol. Generally rectangular regions' slot indices start from the top-left corner, and increase from left to right, and then onto the next row.
 
 === Inventory ===
+
+[[File:Inventory-slots.png|thumb|Inventory slots]]
+
+This is the inventory window that the player can always open, typically by pressing "I".
 
 {| class="wikitable"
 |- class="row0"
@@ -48,6 +51,8 @@ Each window type is described in the following sections. All slot index ranges a
 
 === Crafting window ===
 
+This is the window that is opened when the player right-clicks on a workbench.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Slot range
@@ -68,6 +73,8 @@ Each window type is described in the following sections. All slot index ranges a
 
 === Chest ===
 
+This is the window that is opened when the player right-clicks on a single chest block.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Slot range
@@ -84,6 +91,8 @@ Each window type is described in the following sections. All slot index ranges a
 |}
 
 === Large chest ===
+
+This is the window that is opened when the player right-clicks on a double chest block (two adjacent chest blocks).
 
 {| class="wikitable"
 |- class="row0"
@@ -124,6 +133,8 @@ Each window type is described in the following sections. All slot index ranges a
 |}
 
 === Dispenser ===
+
+This is the window that is opened when the player right-clicks on a dispenser.
 
 {| class="wikitable"
 |- class="row0"
