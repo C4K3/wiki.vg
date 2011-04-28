@@ -20,7 +20,11 @@ Minecraft displays the player inventory differently, according to how the window
 | class="col1" | Dispenser
 |}
 
-Each window type is described in the following sections. All slot index ranges are inclusive and reflect the indices observed in the Minecraft Beta protocol. Generally rectangular regions' slot indices start from the top-left corner, and increase from left to right, and then onto the next row.
+The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory. The number of unique slots in the window is in the [[Protocol#Open_window_.280x64.29|Open Window]] message for all window types except the default inventory window, in which the number of unique slots is 9. This means the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots. Slot number -999 is for clicking outside the window.
+
+Rectangular regions are always indexed starting with the upper-left corner and scanning across rows. If a window has a crafting region, the output slot is always slot 0 followed immediately by the input region.
+
+Each window type is described in the following sections. All slot index ranges are inclusive and reflect the indices observed in the Minecraft Beta protocol.
 
 === Inventory ===
 
