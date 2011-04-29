@@ -2628,6 +2628,8 @@ Sent by the server when an item in a slot (in a window) is added/removed. This i
 | class="col1 rightalign" colspan="4" | 4 bytes + size of payload
 |}
 
+See [[Inventory#Windows|inventory windows]] for further information about how slots are indexed.
+
 This packet is a bit trickier to parse than most others because the size of its payload is variable. The payload is an array of shorts (item ID) optionally followed by a byte-short pair (count and uses) as long as the item ID does not equal <code>-1</code>, which signifies an empty slot.
 
 Uses is the number of times an item has been used (the value starts at 0 and counts up.) Note that an invalid use of an item may count as 2 uses.
