@@ -1527,6 +1527,8 @@ Calculating the center of an image: given a (width x height) grid of cells, with
 
 ???
 
+NOTE: The packet struct has been changed from (float float float float bool bool) to (float float bool bool float float) since at least server 1.5_02.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -1547,22 +1549,22 @@ Calculating the center of an image: given a (width x height) grid of cells, with
 | class="col4 centeralign" |
 |- class="row2"
 | class="col1 centeralign" | ???
-| class="col2 centeralign" | float
-| class="col3 centeralign" | 
-| class="col4 centeralign" |
-|- class="row2"
-| class="col1 centeralign" | ???
-| class="col2 centeralign" | float
-| class="col3 centeralign" | 
-| class="col4 centeralign" |
-|- class="row2"
-| class="col1 centeralign" | ???
 | class="col2 centeralign" | boolean
 | class="col3 centeralign" | 
 | class="col4 centeralign" |
 |- class="row2"
 | class="col1 centeralign" | ???
 | class="col2 centeralign" | boolean
+| class="col3 centeralign" | 
+| class="col4 centeralign" |
+|- class="row2"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | float
+| class="col3 centeralign" | 
+| class="col4 centeralign" |
+|- class="row2"
+| class="col1 centeralign" | ???
+| class="col2 centeralign" | float
 | class="col3 centeralign" | 
 | class="col4 centeralign" |
 |}
