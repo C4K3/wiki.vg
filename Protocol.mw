@@ -2588,6 +2588,8 @@ Sent by the server when an item in a slot (in a window) is added/removed.
 
 Note that if window ID and slot are both -1, it means the item currently attached to the cursor.
 
+See [[Inventory#Windows|inventory windows]] for further information about how slots are indexed.
+
 Slots: [http://gyazo.com/9d52e1fd4dc14790ec66eab4a9aee00e.png]
 
 === Window items (0x68) ===
