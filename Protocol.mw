@@ -196,7 +196,7 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col3" | This value is not required for the client
 |- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 15 bytes + length of strings
+| class="col1 rightalign" colspan="4" | 16 bytes + length of strings
 |}
 
 ==== Server to Client ====
