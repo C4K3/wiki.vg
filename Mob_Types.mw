@@ -1,0 +1,162 @@
+Mob Types
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Type ID
+! class="col1" | Type Name
+! class="col2" | Metadata
+|- class="row1"
+| class="col0" | 50
+| class="col1" | Creeper
+| class="col2" | Index 16 - byte - possible values: -1, 1. Referred to as "max damage" in MCP.
+|- class="row2"
+| class="col0" | 51
+| class="col1" | Skeleton
+| class="col2" | 
+|- class="row3"
+| class="col0" | 52
+| class="col1" | Spider
+| class="col2" | 
+|- class="row4"
+| class="col0" | 53
+| class="col1" | Giant Zombie
+| class="col2" | 
+|- class="row5"
+| class="col0" | 54
+| class="col1" | Zombie
+| class="col2" | 
+|- class="row6"
+| class="col0" | 55
+| class="col1" | Slime (random size?)
+| class="col2" | 
+|- class="row7"
+| class="col0" | 56
+| class="col1" | Ghast
+| class="col2" | 
+|- class="row8"
+| class="col0" | 57
+| class="col1" | Zombie Pigman
+| class="col2" | 
+|- class="row9"
+| class="col0" | 90
+| class="col1" | Pig
+| class="col2" | Index 16 - byte - set to 1 if the pig has a saddle, 0 otherwise.
+|- class="row10"
+| class="col0" | 91
+| class="col1" | Sheep
+| class="col2" | Index 16 - byte - Bit 0x10 indicates shearedness, the lower 4 bits indicate wool color.
+|- class="row11"
+| class="col0" | 92
+| class="col1" | Cow
+| class="col2" | 
+|- class="row12"
+| class="col0" | 93
+| class="col1" | Hen
+| class="col2" | 
+|- class="row13"
+| class="col0" | 94
+| class="col1" | Squid
+| class="col2" | 
+|- class="row14"
+| class="col0" | 95
+| class="col1" | Wolf
+| class="col2" | Index 16 - byte - Bitflags (see below)<br /> Index 17 - string - Name of the player who tamed the wolf<br /> Index 18 - int - Health of the wolf
+|}
+
+Sheep Wool Colors
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Index
+! class="col1" | Wool Color
+|- class="row1"
+| class="col0" | 0
+| class="col1" | White
+|- class="row2"
+| class="col0" | 1
+| class="col1" | Orange
+|- class="row3"
+| class="col0" | 2
+| class="col1" | Magenta
+|- class="row4"
+| class="col0" | 3
+| class="col1" | LightBlue
+|- class="row5"
+| class="col0" | 4
+| class="col1" | Yellow
+|- class="row6"
+| class="col0" | 5
+| class="col1" | Lime
+|- class="row7"
+| class="col0" | 6
+| class="col1" | Pink
+|- class="row8"
+| class="col0" | 7
+| class="col1" | Gray
+|- class="row9"
+| class="col0" | 8
+| class="col1" | Silver
+|- class="row10"
+| class="col0" | 9
+| class="col1" | Cyan
+|- class="row11"
+| class="col0" | 10
+| class="col1" | Purple
+|- class="row12"
+| class="col0" | 11
+| class="col1" | Blue
+|- class="row13"
+| class="col0" | 12
+| class="col1" | Brown
+|- class="row14"
+| class="col0" | 13
+| class="col1" | Green
+|- class="row15"
+| class="col0" | 14
+| class="col1" | Red
+|- class="row16"
+| class="col0" | 15
+| class="col1" | Black
+|}
+
+Metadata index 0 is a byte representing a set of 8 boolean flags:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Bit index
+! class="col1" | Bit mask
+! class="col2" | Meaning
+|- class="row1"
+| class="col0" | 0
+| class="col1" | 0x01
+| class="col2" | Entity on fire
+|- class="row2"
+| class="col0" | 1
+| class="col1" | 0x02
+| class="col2" | Entity crouched
+|- class="row3"
+| class="col0" | 2
+| class="col1" | 0x04
+| class="col2" | Entity riding
+|}
+
+Metadata index 16 for wolves:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Bit index
+! class="col1" | Bit mask
+! class="col2" | Meaning
+|- class="row1"
+| class="col0" | 0
+| class="col1" | 0x01
+| class="col2" | Sitting down
+|- class="row2"
+| class="col0" | 1
+| class="col1" | 0x02
+| class="col2" | Agressive (red eyes)
+|- class="row3"
+| class="col0" | 2
+| class="col1" | 0x04
+| class="col2" | Tamed
+|}
