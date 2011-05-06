@@ -81,10 +81,12 @@ The Metadata type provides extra information about an entity, such as sheep colo
           case 3: read float from stream
           case 4: read string from stream
           case 5: read short, byte, short from stream; save as item stack (id, count, damage, respectively)
-          case 6: read int, int, int from stream; save as ???
+          case 6: read int, int, int from stream; save as extra entity information.
       end select
   end while
 The last 5 bits of x (x & 0x1F) are either an index or bitmask.  Currently, only "byte" type metadata has been seen from the server.
+
+For known extra entity information values, see [[Mob Types]].
 
 == Terminology ==
 
