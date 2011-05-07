@@ -140,7 +140,7 @@ Metadata index 0 is a byte representing a set of 8 boolean flags:
 | class="col2" | Entity riding
 |}
 
-Metadata index 17 for creepers (This may be a bitmask, and may apply to other mobs):
+Metadata index 17 for creepers (This may apply to other mobs):
 
 {| class="wikitable"
 |-
