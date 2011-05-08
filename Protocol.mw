@@ -1062,7 +1062,7 @@ The Notchian client is not okay with receiving player entity packets, including 
 | class="col0" | Current Item
 | class="col1" | short
 | class="col2" | <code>0</code>
-| class="col3" | The item the player is currently holding
+| class="col3" | The item the player is currently holding. Note that this should be 0 for "no item", unlike -1 used in other packets. A negative value crashes clients.
 |- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 23 bytes + length of strings
