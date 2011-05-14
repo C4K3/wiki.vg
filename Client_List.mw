@@ -52,6 +52,13 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | GPL
 | {{no}}
 | Work in progress standalone bot
+|-
+! [http://hg.sitedethib.com/mcclient/ mcclient]
+| ThibG
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with C extension
+| GPLv3
+| {{no}}
+| Work in progress SMP client
 |-|}
 
 [[Category:Minecraft Alpha]]
