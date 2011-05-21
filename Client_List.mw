@@ -25,7 +25,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | {{no}}
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
 |-
-! [http://www.sixbynine.net/filequick/ mc--c]
+! [https://github.com/axus/libmc--c]
 | axus
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++]
 | Do not distribute
