@@ -2409,7 +2409,7 @@ This packet appeared with either 1.4 or 1.5.
 | class="col4" | Byte-packed double.
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 18 bytes
+| class="col1 rightalign" colspan="4" | 17 bytes
 |}
 
 === Open window (0x64) ===
