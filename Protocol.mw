@@ -2409,7 +2409,7 @@ This packet appeared with either 1.4 or 1.5.
 | class="col4" | Byte-packed double.
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 17 bytes
+| class="col1 rightalign" colspan="4" | 18 bytes
 |}
 
 === Open window (0x64) ===
@@ -2446,7 +2446,7 @@ This is sent to the client when it should open an inventory, such as a chest, wo
 | class="col4" | Number of slots in the window (excluding the number of slots in the player inventory).
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 4 bytes + 1 string
+| class="col1 rightalign" colspan="4" | 6 bytes + length of string
 |}
 
 The window titles sent by the Notchian server are "Chest", "Large chest", "Crafting", "Furnace", and "Trap". Notchian clients force window titles for some windows, like dispensers and furnaces, but other titles are customizable. However, the window title sent by the server is always used for chests. See [[Inventory#Windows|inventory windows]] for further information.
