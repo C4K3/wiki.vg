@@ -2363,16 +2363,11 @@ The class has an array of strings linked to reason codes 0, 1 and 2, but only th
 | null
 |}
 
-=== Weather? (0x47) ===
-[[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
-This packet appeared with either 1.4 or 1.5.
-* 1.5 Class: eq
-* Protocol: int, byte, int, int, int
-* Last three ints are packed doubles specifying the position of an object of type rj
-** rj appears to be some sort of entity base class
-* Byte is a boolean value indicating whether the object of type rj is also of type c
-** c involves thunder
-** True if rain, false if snow, perhaps?
+=== Thunderbold (0x47) ===
+
+'''Server to Client only'''
+
+With this packet, the server notifies the client of thunderbolts striking somewhere (near the player?). The coordinates specify where exactly the thunderbolt strikes.
 
 {| class="wikitable"
 |- class="row0"
@@ -2386,27 +2381,27 @@ This packet appeared with either 1.4 or 1.5.
 | class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 4
-| class="col4" | The weather type? entity.
+| class="col4" | The entity ID of the thunderbolt
 |- class="row1"
-| class="col1 centeralign" | Raining?
+| class="col1 centeralign" | Unknown
 | class="col2 centeralign" | boolean
 | class="col3 centeralign" | true
-| class="col4" | True if it is rain, False if it is snow?
+| class="col4" | Always true. Might have a meaning in the future...
 |- class="row1"
-| class="col1 centeralign" | X?
+| class="col1 centeralign" | X
 | class="col2 centeralign" | int
-| class="col3 centeralign" | ?
-| class="col4" | Byte-packed double.
+| class="col3 centeralign" | 133
+| class="col4" | Thunderbolt X as Absolute Integer
 |- class="row1"
-| class="col1 centeralign" | Y?
+| class="col1 centeralign" | Y
 | class="col2 centeralign" | int
-| class="col3 centeralign" | ?
-| class="col4" | Byte-packed double.
+| class="col3 centeralign" | 913
+| class="col4" | Thunderbolt Y as Absolute Integer
 |- class="row1"
-| class="col1 centeralign" | Z?
+| class="col1 centeralign" | Z
 | class="col2 centeralign" | int
-| class="col3 centeralign" | ?
-| class="col4" | Byte-packed double.
+| class="col3 centeralign" | 63552
+| class="col4" | Thunderbolt Z as Absolute Integer
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes
