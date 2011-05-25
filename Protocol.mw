@@ -2363,7 +2363,7 @@ The class has an array of strings linked to reason codes 0, 1 and 2, but only th
 | null
 |}
 
-=== Thunderbold (0x47) ===
+=== Thunderbolt (0x47) ===
 
 '''Server to Client only'''
 
