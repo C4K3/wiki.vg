@@ -33,5 +33,36 @@ The server will verify name authentication by making yet another HTTP GET reques
 <pre>http://www.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash></pre>
 The <u>server hash</u> is the same value that was sent to the client in the handshake. If the server returns ''YES'' then the client is authenticated and allowed to join. Otherwise the client will/should be kicked with “Failed to verify username!”.
 
+== Sample Implementation ==
+
+This is a simple implementation of the authentication (client&server part) in POSIX shell. It needs the curl command line client for HTTP requests.
+
+<pre><nowiki>
+#!/bin/sh
+
+user=$1
+pass=$2
+
+echo "Login..."
+oldIFS="$IFS"
+IFS=':'
+set -- `curl -d "user=$user&password=$pass&version=9999" https://login.minecraft.net/`
+IFS="$oldIFS"
+if [ $# -ne 4 ]
+then
+        echo "ERR: $@"
+        exit 1
+fi
+sid=$4
+user=$3
+hash=$RANDOM
+echo "Now I'm the client ($user)..."
+curl -L "http://www.minecraft.net/game/joinserver.jsp?user=$user&sessionId=$sid&serverId=$hash"
+echo
+echo "Now I'm the server..."
+curl -L "http://www.minecraft.net/game/checkserver.jsp?user=$user&serverId=$hash"
+echo
+</nowiki></pre>
+
 [[Category:Protocol Details]]
 [[Category:Minecraft Alpha]]
