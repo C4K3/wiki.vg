@@ -1079,7 +1079,7 @@ The Notchian client is not okay with receiving player entity packets, including 
 
 === Pickup Spawn (0x15) ===
 
-A pickup spawn is sent by the server whenever an item on the ground (say a pickaxe thrown on the ground) comes into range of the player. It used to be sent by the client when an item is dropped from a tile (chest or furnace) or from inventory, but that is now done with the new packets for server-side inventory (see [[#Window click (0x66)|0x66]]).
+A pickup spawn is sent by the server whenever an item on the ground (say a pickaxe thrown on the ground) comes into range of the player. (note: this means range for item vision, not range for pickup!) It used to be sent by the client when an item is dropped from a tile (chest or furnace) or from inventory, but that is now done with the new packets for server-side inventory (see [[#Window click (0x66)|0x66]]).
 
 It is completely acceptable for servers to ignore the EID issued by the client in this packet and instead create a new packet with a server-controlled EID when sending this packet out to clients.
 
