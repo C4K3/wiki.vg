@@ -179,8 +179,8 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col0 centeralign" rowspan="5" | 0x01
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | int
-| class="col3 centeralign" | <code>8</code>
-| class="col4" | The latest version of the protocol is 11
+| class="col3 centeralign" | <code>13</code>
+| class="col4" | The latest version of the protocol is 13
 |- class="row2"
 | class="col0 centeralign" | Username
 | class="col1 centeralign" | string16
