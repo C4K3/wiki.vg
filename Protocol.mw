@@ -2386,7 +2386,7 @@ Seems to be sent when a door is opened by hand or redstone.
 | class="col4" | 
 |- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 16 bytes
+| class="col1 rightalign" colspan="4" | 18 bytes
 |}
 
 === New/Invalid State (0x46) ===
