@@ -2829,6 +2829,9 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 2011-5-26 ===
 * <div class="li">Beta 1.6 released.</div>
 * Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (added world byte)
+* Protocol increase by 2: 13
+* Packet 0x83 added
+* Bravo did it: https://github.com/MostAwesomeDude/bravo/commit/4249080204c1b44de5a736fcf6be3ac6490932c6
 
 === 2011-4-19 ===
 * <div class="li">Beta 1.5 released.</div>
