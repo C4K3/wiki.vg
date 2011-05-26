@@ -489,7 +489,7 @@ Sent by the client when the player presses the "Respawn" button after dying. The
 | class="col1 centeralign" | World
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
-| class="col4" | <code>1</code> for standard world, <code>-1</code> for nether.
+| class="col4" | <code>0</code> for standard world, <code>-1</code> for nether.
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
