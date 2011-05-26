@@ -2856,25 +2856,25 @@ The data sent here is not of the actual map, but of a map item in the players in
 | class="col1 centeralign" | Unknown
 | class="col2 centeralign" | short
 | class="col3 centeralign" | 
-| class="col4" | Map ID?
+| class="col4" | Unknown constant value(s)?
 |- class="row2"
 | class="col0 centeralign" | Unknown
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 
-| class="col3" | 
+| class="col3" | Map ID?
 |- class="row3"
-| class="col0 centeralign" | Data size
+| class="col0 centeralign" | Text length
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>35</code>
 | class="col3" | Length of following byte array
 |- class="row4"
-| class="col0 centeralign" | Data
+| class="col0 centeralign" | Text
 | class="col1 centeralign" | byte array
 | class="col2 centeralign" | 
-| class="col3" | The actual map data
+| class="col3" | ASCII text.
 |- class="row9"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 bytes + Data size
+| class="col1 rightalign" colspan="4" | 6 bytes + Text length
 |}
 
 === Increment Statistic (0xC8) ===
