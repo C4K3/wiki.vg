@@ -861,7 +861,7 @@ Sent when the player places a block or (probably) an item. The coordinates sent 
 | class="col1 rightalign" colspan="4" | 13 bytes or 16 bytes
 |}
 
-If the Block/ItemID field is greater than or equal to 0, then the last 2 bytes (amount and damage) are read. Otherwise, they are not read.
+If the Block/ItemID field is greater than or equal to 0, then the last 2 fields (amount and damage) are read. Otherwise, they are not read.
 When 'placing' (Or more accurately, using) your empty hand, the client sends -1 as the Block/ItemID
 
 The direction can be one of six values, representing the face the block/item is being placed against:
