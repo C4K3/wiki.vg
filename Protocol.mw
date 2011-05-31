@@ -1554,9 +1554,8 @@ Calculating the center of an image: given a (width x height) grid of cells, with
 2x1 (1, 0)
 4x4 (1, 2)
 
-=== ??? (0x1B) ===
-
-???
+=== Stance update (?) (0x1B) ===
+This packet appears used in controlling position, orientation, and crouching. It doesn't seem to be used (see [[Protocol#Player Position & Look (0x0D)|0x0D]]).
 
 NOTE: The packet struct has been changed from (float float float float bool bool) to (float float bool bool float float) since at least server 1.5_02.
 
