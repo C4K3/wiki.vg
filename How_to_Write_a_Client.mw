@@ -191,11 +191,7 @@ If you go with the first option, you must wait until the block has been dug befo
  block.material 
 
 === Digging/Placing Blocks Behind Walls ===
-* Neither the Notchian server nor Bukkit check whether you actually have line-of-sight to a block when you dig or place blocks. Thus, if you noclip through a wall and mine the blocks behind it, the server will correct your position and ignore position updates, but still break those blocks which were within four meters of your corrected position.
-
-== Placing/using stuff ==
-
-TODO: can you place blocks from behind walls?
+* Neither the Notchian server nor Bukkit check whether you actually have line-of-sight to a block when you dig or place blocks. Thus, if you noclip through a wall and mine the blocks behind it, the server will correct your position and ignore position updates, but still break those blocks which were within four meters of your corrected position. Likewise, any chests, buttons or levers can be used as long as they are within that critical 4-m distance.
 
 == Inventory and Crafting ==
 
