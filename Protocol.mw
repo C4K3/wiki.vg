@@ -2941,7 +2941,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Some packet info at https://gist.github.com/929803
 * Packet 0x01 ([[#Login_Request_.280x01.29|Login Request]]) changed (removed second string)
 * Packet 0x66 (Window Click) changed (added bool for shift)
-* Added two new packets: 0x47 ([[#Weather.3F_.280x47.29|Weather?]]) and 0xC8 ([[#Increment_Statistic_.280xC8.29|Increment Statistic]]) (classes eq and nj, respectively)
+* Added two new packets: 0x47 ([[#Thunderbolt_.280x47.29|Thunderbolt]]) and 0xC8 ([[#Increment_Statistic_.280xC8.29|Increment Statistic]]) (classes eq and nj, respectively)
 * Protocol version number is now 11
 * All of the strings are now UCS-2, except for Open window (0x64), which is still UTF-8
 
