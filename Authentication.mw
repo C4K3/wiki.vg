@@ -24,7 +24,7 @@ The other resource files for Minecraft are kept at:
 <pre>http://s3.amazonaws.com/MinecraftResources/</pre>
 
 == Connecting To A Server ==
-When you first attempt to connect to the server, you begin by sending the [[MC-Ver]] containing your case-sensitive username. The server will return one of three values: '-' for no authentication (in which case you can just continue joining), '+' for password protected or a hash if the server requires name authentication. Name verification is achieved by sending a HTTP GET request to the minecraft.net server:
+When you first attempt to connect to the server, you begin by sending the [[Protocol#Handshake_.280x02.29 | Handshake]] containing your case-sensitive username. The server will return one of three values: '-' for no authentication (in which case you can just continue joining), '+' for password protected or a hash if the server requires name authentication. Name verification is achieved by sending a HTTP GET request to the minecraft.net server:
 <pre>http://www.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
 If the server returns ''OK'' it's safe to continue joining the server, otherwise it'll disconnect you with an error message.
 
