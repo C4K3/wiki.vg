@@ -129,7 +129,7 @@ The XYZ coordinates of the block are just integers representing the coordinate o
 |rowspan=3| 0x0d
 |rowspan=3| Message
 | Packet ID || Byte
-|rowspan=3| Contain chat messages sent by player.
+|rowspan=3| Contain chat messages sent by player. (See [[Chat|How chat works]])
 |-
 | Unused, maybe message color || Byte (0xFF)
 |-
