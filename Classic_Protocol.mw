@@ -1,8 +1,8 @@
 Documentation on the server protocol used by the [http://minecraft.net/servers.jsp Minecraft Classic Creative] server.
 
-==[[Minecraft.net]] Communication==
+==Minecraft.net Communication==
 ===Heartbeats===
-To be able to connect to a server in [[Minecraft Classic]] from the [[Server]] List, a [[server]] must broadcast to [[minecraft.net]] a so-called "heartbeat" every few minutes.
+To be able to connect to a server in Minecraft Classic from the Server List, a server must broadcast to minecraft.net a so-called "heartbeat" every few minutes.
 
 The stock server broadcasts this heartbeat every 45 seconds.
 
@@ -13,21 +13,21 @@ It can be a GET or POST request. A table of the required parameters is below:
 {| class="wikitable"
 !Name !!Details
 |-
-|port || Port number of the [[server]]. This is usually 25565
+|port || Port number of the server. This is usually 25565
 |-
-|max || Maximum number of players on the [[server]]
+|max || Maximum number of players on the server
 |-
-|name || The name of the [[server]]
+|name || The name of the server
 |-
-|public || Whether the [[server]] is public (i.e. appears in the lobby) or not. Can be '''True''' or '''False''', in that capitalisation.
+|public || Whether the server is public (i.e. appears in the lobby) or not. Can be '''True''' or '''False''', in that capitalisation.
 |-
-|version || [[Version_History|Minecraft version]], this should be 7
+|version || Minecraft version, this should be 7
 |-
 |salt || A random, 16-character base-62 salt
 |-
-|users || Number of users connected to the [[server]]
+|users || Number of users connected to the server
 |}
-The simplest way to send a heartbeat is to open a TCP socket to port 80 on [[minecraft.net|www.minecraft.net]], and send the following (with the values changed, obviously):
+The simplest way to send a heartbeat is to open a TCP socket to port 80 on minecraft.net, and send the following (with the values changed, obviously):
 
 '''GET /heartbeat.jsp?port=25565&max=32&name=My%20Server&public=True&version=7&salt=wo6kVAHjxoJcInKx&users=0''', plus a CRLF(Carriage-return and Line feed).
 
@@ -36,7 +36,7 @@ Make sure any strings, like name, are escaped.
 If everything goes well, in the response body you'll receive a URL to the server. Otherwise you'll get a nice HTML error message. There aren't an HTML headers to parse, as the HTTP version is not specified so HTTP/0.9 is used, which does not have headers.
 
 ===User Authentication===
-The "key" provided when a user joins the server can be compared to the MD5 checksum of the server's "salt" plus the username to verify that the user is logged in to [[minecraft.net]] with that username.  This is useful for establishing enough trust of the name provided to ban or op the player by name.
+The "key" provided when a user joins the server can be compared to the MD5 checksum of the server's "salt" plus the username to verify that the user is logged in to minecraft.net with that username.  This is useful for establishing enough trust of the name provided to ban or op the player by name.
 
  if( player.key == md5( server.salt + player.name ) ) {
   // player is logged in via minecraft.net
@@ -44,10 +44,10 @@ The "key" provided when a user joins the server can be compared to the MD5 check
   // player is forging the username
  }
 
-Note: This means that you should make sure your "salt" is kept a secret and shared only with heartbeat.jsp.  If your server's "salt" is visible anywhere to users, it is trivial for users to produce valid-looking "key"s without being logged in to [[minecraft.net]].
+Note: This means that you should make sure your "salt" is kept a secret and shared only with heartbeat.jsp.  If your server's "salt" is visible anywhere to users, it is trivial for users to produce valid-looking "key"s without being logged in to minecraft.net.
 
-===[[Skins]]===
-[[Skins]] for a player are downloaded by the client from '''http://minecraft.net/skin/skinname.png''', where skinname is the name of the player. This means that the name for a player can be faked to give a desired skin.
+===Skins===
+Skins for a player are downloaded by the client from '''http://minecraft.net/skin/skinname.png''', where skinname is the name of the player. This means that the name for a player can be faked to give a desired skin.
 
 ==Packet Protocol==
 
