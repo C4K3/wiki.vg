@@ -1,0 +1,403 @@
+Documentation on the server protocol used by the [http://minecraft.net/servers.jsp Minecraft Classic Creative] server.
+
+==[[Minecraft.net]] Communication==
+===Heartbeats===
+To be able to connect to a server in [[Minecraft Classic]] from the [[Server]] List, a [[server]] must broadcast to [[minecraft.net]] a so-called "heartbeat" every few minutes.
+
+The stock server broadcasts this heartbeat every 45 seconds.
+
+A "heartbeat" takes the form of an HTTP request to http://www.minecraft.net/heartbeat.jsp.
+After sending a heartbeat, the URL for the server is returned.
+
+It can be a GET or POST request. A table of the required parameters is below:
+{| class="wikitable"
+!Name !!Details
+|-
+|port || Port number of the [[server]]. This is usually 25565
+|-
+|max || Maximum number of players on the [[server]]
+|-
+|name || The name of the [[server]]
+|-
+|public || Whether the [[server]] is public (i.e. appears in the lobby) or not. Can be '''True''' or '''False''', in that capitalisation.
+|-
+|version || [[Version_History|Minecraft version]], this should be 7
+|-
+|salt || A random, 16-character base-62 salt
+|-
+|users || Number of users connected to the [[server]]
+|}
+The simplest way to send a heartbeat is to open a TCP socket to port 80 on [[minecraft.net|www.minecraft.net]], and send the following (with the values changed, obviously):
+
+'''GET /heartbeat.jsp?port=25565&max=32&name=My%20Server&public=True&version=7&salt=wo6kVAHjxoJcInKx&users=0''', plus a CRLF(Carriage-return and Line feed).
+
+Make sure any strings, like name, are escaped.
+
+If everything goes well, in the response body you'll receive a URL to the server. Otherwise you'll get a nice HTML error message. There aren't an HTML headers to parse, as the HTTP version is not specified so HTTP/0.9 is used, which does not have headers.
+
+===User Authentication===
+The "key" provided when a user joins the server can be compared to the MD5 checksum of the server's "salt" plus the username to verify that the user is logged in to [[minecraft.net]] with that username.  This is useful for establishing enough trust of the name provided to ban or op the player by name.
+
+ if( player.key == md5( server.salt + player.name ) ) {
+  // player is logged in via minecraft.net
+ } else {
+  // player is forging the username
+ }
+
+Note: This means that you should make sure your "salt" is kept a secret and shared only with heartbeat.jsp.  If your server's "salt" is visible anywhere to users, it is trivial for users to produce valid-looking "key"s without being logged in to [[minecraft.net]].
+
+===[[Skins]]===
+[[Skins]] for a player are downloaded by the client from '''http://minecraft.net/skin/skinname.png''', where skinname is the name of the player. This means that the name for a player can be faked to give a desired skin.
+
+==Packet Protocol==
+
+Every packet starts with a byte representing the Packet ID.
+
+=== Protocol Data Types ===
+{| class="wikitable"
+!Type !! Size [bytes] !! Description
+|-
+|Byte || 1 || Single byte integer (0 to 255)
+|-
+|SByte || 1 || Single byte signed integer (-128 to 127)
+|-
+|Short || 2 || Signed integer, [http://en.wikipedia.org/wiki/Endianness#Endianness_in_networking network order] (-32768 to 32767)
+|-
+|String || 64 || US-ASCII/ISO646-US encoded string padded with spaces (0x20)
+|-
+|Byte array || 1024 || Binary data padded with null bytes (0x00)
+|}
+
+=== Client &rarr; Server packets ===
+{| class="wikitable"
+!width="64"| Packet ID
+!width="160"| Purpose
+!width="160"| Field Description
+!width="72"| Field Type
+! Notes
+|-
+|rowspan=5| 0x00
+|rowspan=5| Player Identification
+| Packet ID || Byte
+|rowspan=5| Sent by a player joining a server with relevant information.  Current protocol version is 0x07.
+|-
+| Protocol version || Byte
+|-
+| Username || String
+|-
+| Verification key || String
+|-
+| Unused || Byte
+|-
+|rowspan=6| 0x05
+|rowspan=6| Set Block
+| Packet ID || Byte
+|rowspan=6| Sent when a user changes a block.  The mode field indicates whether a block was created (0x01) or destroyed (0x00).
+Block type is always the type player is holding, (even when deleting).
+
+Client assumes that this command packet always succeeds, and so draws the new block immediately. To disallow block creation, server must send back Set Block packet with the old block type.
+
+The XYZ coordinates of the block are just integers representing the coordinate of the block. (As opposed to player coordinates where the lower 5 bits are fractional coordinates)
+|-
+| X || Short
+|-
+| Y || Short
+|-
+| Z || Short
+|-
+| Mode || Byte
+|-
+| Block type || Byte
+|-
+|rowspan=7| 0x08
+|rowspan=7| Position and Orientation
+| Packet ID || Byte
+|rowspan=7| Sent frequently (even while not moving) by the player with the player's current location and orientation. Player ID is always 255, referring to itself. Player coordinates are fixed-point values with the lowest 5 bits representing the fractional position (i.e. divide by 32 to get actual position in terms of block coordinates).  The angle parameters are scaled such that a value of 256 would correspond to 360 degrees.
+|-
+| Player ID || Byte
+|-
+| X || Short
+|-
+| Y || Short
+|-
+| Z || Short
+|-
+| Yaw (Heading) || Byte
+|-
+| Pitch || Byte
+|-
+|rowspan=3| 0x0d
+|rowspan=3| Message
+| Packet ID || Byte
+|rowspan=3| Contain chat messages sent by player.
+|-
+| Unused, maybe message color || Byte (0xFF)
+|-
+| Message || String
+|}
+
+=== Server &rarr; Client packets ===
+{| class="wikitable"
+!width="64"| Packet ID
+!width="160"| Purpose
+!width="160"| Field Description
+!width="72"| Field Type
+! Notes
+|-
+|rowspan=5| 0x00
+|rowspan=5| Server Identification
+| Packet ID || Byte
+|rowspan=5| Response to a joining player.  The user type indicates whether a player is an op (0x64) or not (0x00)  Current protocol version is 0x07.
+|-
+| Protocol version || Byte
+|-
+| Server name || String
+|-
+| Server MOTD || String
+|-
+| User type || Byte
+|-
+| 0x01
+| Ping
+| Packet ID || Byte
+| Sent to clients periodically.  The only way a client can disconnect at the moment is to force it closed, which does not let the server know. The ping packet is used to determine if the connection is still open.
+|-
+| 0x02
+| Level Initialize
+| Packet ID || Byte
+| Notifies player of incoming level data.
+|-
+|rowspan=4| 0x03
+|rowspan=4| Level Data Chunk
+| Packet ID || Byte
+|rowspan=4| Contains a chunk of gzipped map (not level.dat file). After decompression the map consists of a int(4 bytes) containing number of blocks + raw map array. (chunk is up to 1024 bytes, padded with 0x00s if less).
+|-
+| Chunk Length || Short
+|-
+| Chunk Data || Byte Array
+|-
+| Percent Complete || Byte
+|-
+|rowspan=4| 0x04
+|rowspan=4| Level Finalize
+| Packet ID || Byte
+|rowspan=4| Sent after level data is complete and gives map dimensions. The y coordinate is how tall the map is.
+|-
+| X Size || Short
+|-
+| Y Size || Short
+|-
+| Z Size || Short
+|-
+|rowspan=5| 0x06
+|rowspan=5| Set Block
+| Packet ID || Byte
+|rowspan=5| Sent to indicate a block change by physics or by players.  In the case of a player change, the server will also echo the block change back to the player who initiated it.
+|-
+| X || Short
+|-
+| Y || Short
+|-
+| Z || Short
+|-
+| Block Type || Byte
+|-
+|rowspan=8| 0x07
+|rowspan=8| Spawn Player
+| Packet ID || Byte
+|rowspan=8| Sent to indicate where a new player is spawning in the world.  Position and orientation are encoded the same as for packet 0x08 below.
+|-
+| Player ID || SByte
+|-
+| Player Name || String
+|-
+| X || Short
+|-
+| Y || Short
+|-
+| Z || Short
+|-
+| Yaw (Heading) || Byte
+|-
+| Pitch || Byte
+|-
+|rowspan=7| 0x08
+|rowspan=7| Position and Orientation (Player Teleport)
+| Packet ID || Byte
+|rowspan=7| Sent with changes in player position and rotation. Teleports player it's sent to if player ID < 0 (For sending initial position in map, and /tp)
+|-
+| Player ID || SByte
+|-
+| X || Short
+|-
+| Y || Short
+|-
+| Z || Short
+|-
+| Yaw (Heading) || Byte
+|-
+| Pitch || Byte
+|-
+|rowspan=7| 0x09
+|rowspan=7| Position and Orientation Update
+| Packet ID || Byte
+|rowspan=7| Sent with changes in player position and rotation. Sent when both position and orientation is changed at the same time.
+Not required for server operation.
+|-
+| Player ID || SByte
+|-
+| Change in X || SByte
+|-
+| Change in Y || SByte
+|-
+| Change in Z || SByte
+|-
+| Yaw (Heading) || Byte
+|-
+| Pitch || Byte
+|-
+|rowspan=5| 0x0a
+|rowspan=5| Position Update
+| Packet ID || Byte
+|rowspan=5| Sent with changes in player position.
+Not required for server operation.
+|-
+| Player ID || SByte
+|-
+| Change in X || SByte
+|-
+| Change in Y || SByte
+|-
+| Change in Z || SByte
+|-
+|rowspan=4| 0x0b
+|rowspan=4| Orientation Update
+| Packet ID || Byte
+|rowspan=4| Sent with changes in player rotation.
+Not required for server operation.
+|-
+| Player ID || SByte
+|-
+| Yaw (Heading) || Byte
+|-
+| Pitch || Byte
+|-
+|rowspan=2| 0x0c
+|rowspan=2| Despawn Player
+| Packet ID || Byte
+|rowspan=2| Sent when player disconnects.
+|-
+| Player ID || SByte
+|-
+|rowspan=3| 0x0d
+|rowspan=3| Message
+| Packet ID || Byte
+|rowspan=3| Messages sent by chat or from the console.
+|-
+| Player ID || SByte
+|-
+| Message || String
+|-
+|rowspan=2| 0x0e
+|rowspan=2| Disconnect player
+| Packet ID || Byte
+|rowspan=2| Sent to a player when they're disconnected from the server.
+#"Cheat detected: Distance" - happens not only when setting tile too far away from the player (how far is maximum distance and how it is measured?), but also when player moves and then immediately builds.
+#"Cheat detected: Tile type"
+|-
+| Disconnect reason || String
+|-
+|rowspan=2| 0x0f
+|rowspan=2| Update user type
+| Packet ID || Byte
+|rowspan=2| Sent when a player is opped/deopped
+|-
+| User type || Byte
+|-
+|}
+
+==Player Position==
+===Fixed Point===
+Player position is represented via X, Y, and Z fixed-point coordinates.  The fractional portion is 5 bits, so dividing the short integers received in position update packets by 32, you will have floating point coordinates for the player. This position corresponds to the center of the client viewport.
+===Standing On Things===
+The bottom of the player's feet is located 1.59375 (fixed-point: 51) units below the center of the viewport, so to position the player on top of a particular block you could send a teleport (0x08) packet specifying a Y value based on the block position as: (Y x 32 + 51)
+===Orientation===
+A yaw value of 0 means the player is facing in the Z=0 (negative Z) direction.  This value increases in a clockwise direction as seen from above.  If we call the negative Z direction "North", then a yaw of 64 means "East", 128 means "South", and 192 means "West".
+
+A pitch value of 0 means level and this value increases in a downward direction.  64 is down, and 192 is up.  Values of 65 to 191 should never occur because the player cannot look further up or down than the 64 → 0, 255 → 192 range. However, the Minecraft Classic client does not ignore invalid values, so it is possible to make players' heads "upside-down".
+
+==Color Codes==
+Messages sent from the server to the client can contain color codes, which allow coloring of text for various purposes.
+
+An ampersand followed by a hex digit in the message tells the client to switch colors while displaying text.
+
+Colour coding at the start of the message will only work if the player ID byte is less than 127. If it's 127 or higher, the game automatically adds &e before the message, making it yellow. However, colour codes after the first character still work. If you use an ID below 127, it doesn't add a colour code, so the ones you use will work.
+
+It is important to note that an ampersand at the end of a message that is not followed by a hex digit will crash all clients that receive it, so it is a must to sanitize chat messages received from clients.
+
+[[File:Colors.png|thumb|Hex digit to color mapping]]
+
+{| class="wikitable" style="text-align:center;" border="1" cellpadding="5"
+|-
+! colspan="1"  width="8px"| Sample
+! colspan="1" | Code
+! colspan="1"  | Common Name
+! colspan="3" | Foreground Color
+! colspan="3" | Background Color
+|-
+| || ||
+|width="30px"|R
+|width="30px"|G
+|width="30px"|B
+|width="30px"|R
+|width="30px"|G
+|width="30px"|B
+|-
+| bgcolor="black" |
+| &0 || Black || 0 || 0 || 0 || 0 || 0 || 0
+|-
+| bgcolor=#0000BF |
+| &1 || Dark Blue || 0 || 0 || 191 || 0 || 0 || 47
+|-
+| bgcolor=#00BF00 |
+| &2 || Dark Green || 0 || 191 || 0 || 0 || 47 || 0
+|-
+| bgcolor=#00BFBF |
+| &3 || Dark Teal || 0  || 191 || 191 || 0 || 47 || 47
+|-
+| bgcolor=#BF0000 |
+| &4 || Dark Red || 191 || 0 || 0 || 47 || 0 || 0
+|-
+| bgcolor=#BF00BF |
+| &5 || Purple || 191 || 0 || 191 || 47 || 0 || 47
+|-
+| bgcolor=#BFBF00 |
+| &6 || Gold || 191 || 191 || 0 || 47 || 47 || 0
+|-
+| bgcolor=#BFBFBF |
+| &7 || Gray || 191 || 191 || 191 || 47 || 47 || 47
+|-
+| bgcolor=#404040 |
+| &8 || Dark Gray || 64 || 64 || 64 || 16 || 16 || 16
+|-
+| bgcolor=#4040FF |
+| &9 || Blue || 64 || 64 || 255 || 16 || 16 || 63
+|-
+| bgcolor=#49FF40 |
+| &a || Bright Green || 64 || 255 || 64 || 16 || 63 || 16
+|-
+| bgcolor=#40FFFF |
+| &b || Teal || 64 || 255 || 255 || 16 || 63 || 63
+|-
+| bgcolor=#FF4040 |
+| &c || Red || 255 || 64 || 64 || 63 || 16 || 16
+|-
+| bgcolor=#FF40FF |
+| &d || Pink || 255 || 64 || 255 || 63 || 16 || 63
+|-
+| bgcolor=#FFFF40 |
+| &e || Yellow || 255 || 255 || 64 || 63 || 63 || 16
+|-
+| bgcolor=#FFFFFF |
+| &f || White || 255 || 255 || 255 || 63 || 63 || 63
+|}
