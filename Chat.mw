@@ -14,7 +14,6 @@ Characters not in this list will cause Notchian servers to kick clients, and Not
 == Colors ==
 
 The Notchian client has support for colorized text. To select a color, a color escape code, similar to an ANSI color escape code, is inserted to change the color of the following characters.
-In Minecraft Classic, the color escape code is &, and in Minecraft Beta, the color escape code is §.
 
 [[File:Colors.png|thumb|Hex digit to color mapping]]
 
@@ -87,7 +86,7 @@ In Minecraft Classic, the color escape code is &, and in Minecraft Beta, the col
 
 These correspond very roughly to the colors available in ANSI terminals.
 
-A color escape code is created by combining the control character § (U+00A7) with the character specifying the color; thus, "§4" selects dark red as the color for the following text.
+A color escape code is created by combining the control character § (U+00A7) for Minecraft Beta, or & for Minecraft Classic, with the character specifying the color; thus, "§4" in Minecraft Beta selects dark red as the color for the following text, and "&4" does the same for classic.
 
 === Bugs ===
 
