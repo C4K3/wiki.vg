@@ -292,7 +292,7 @@ Not required for server operation.
 |rowspan=3| 0x0d
 |rowspan=3| Message
 | Packet ID || Byte
-|rowspan=3| Messages sent by chat or from the console.
+|rowspan=3| Messages sent by chat or from the console. (See [[Chat|How chat works]])
 |-
 | Player ID || SByte
 |-
