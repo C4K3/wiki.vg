@@ -2344,11 +2344,9 @@ Seems to be sent when an explosion occurs (both creepers and TNT).
 | class="col1 rightalign" colspan="4" | 33 bytes + 3*(Record count) bytes
 |}
 
-=== Door change (0x3D) ===
+=== Sound effect (0x3D) ===
 
-[[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
-
-Seems to be sent when a door is opened by hand or redstone.
+Sent when a client is to play a sound effect.
 
 {| class="wikitable"
 |- class="row0"
@@ -2359,33 +2357,73 @@ Seems to be sent when a door is opened by hand or redstone.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan=5 | 0x3D
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Effect ID
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 1003
-| class="col4" | 
+| class="col4" | The ID of the sound effect to play, see below.
 |- class="row1"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | X
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 
-| class="col4" | X
+| class="col4" | The X location of the effect.
 |- class="row1"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Y
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 
-| class="col4" | Y
+| class="col4" | The Y location of the effect.
 |- class="row1"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Z
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 
-| class="col4" | Z
+| class="col4" | The Z location of the effect.
 |- class="row2"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Sound data
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 0
-| class="col4" | 
+| class="col4" | Extra data about RECORD_PLAY, SMOKE, and STEP_SOUND
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes
+|}
+
+Valid sound effects are:
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Effect ID
+! class="col1" | Name
+! class="col2" | Notes
+|- class="row1"
+! class="col0" | 1000
+| class="col1" | CLICK2
+| class="col2" | 
+|- class="row2"
+! class="col0" | 1001
+| class="col1" | CLICK1
+| class="col2" | 
+|- class="row3"
+! class="col0" | 1002
+| class="col1" | BOW_FIRE
+| class="col2" | 
+|- class="row4"
+! class="col0" | 1003
+| class="col1" | DOOR_TOGGLE
+| class="col2" | 
+|- class="row5"
+! class="col0" | 1004
+| class="col1" | EXTINGUISH
+| class="col2" | 
+|- class="row6"
+! class="col0" | 1005
+| class="col1" | RECORD_PLAY
+| class="col2" | Has data (presumably record ID)
+|- class="row7"
+! class="col0" | 2000
+| class="col1" | SMOKE
+| class="col2" | Has data (?)
+|- class="row8"
+! class="col0" | 2001
+| class="col1" | STEP_SOUND
+| class="col2" | Has data (type of block walked on?)
 |}
 
 === New/Invalid State (0x46) ===
