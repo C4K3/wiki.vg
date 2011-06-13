@@ -108,9 +108,6 @@ This is a fairly lengthy page, and to make it more readable certain terminology 
 |- class="row4"
 ! class="col0 centeralign" | XYZ
 | class="col1" | In this document, the axis names are the same as those used by Notch. Y points upwards, X points South, and Z points West.
-|- class="row5"
-! class="col0 centeralign" | MOTD
-| class="col1" | Message Of The Day
 |}
 
 == Units of Measurement ==
