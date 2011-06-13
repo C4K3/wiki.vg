@@ -11,6 +11,13 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 !style="width: 72px" | Threaded
 !style="width: 240px" | Features
 |-
+! [http://github.com/Wallbraker/Charged-Miners Charged Miners]
+| Wallbraker et al.
+| [http://en.wikipedia.org/wiki/D_%28programming_language%29 D], [http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]
+| GPLv2
+| {{no}}
+| Minecraft Viewer that can use Mineflayer to connect to servers.
+|-
 ! [http://foundation.x10.mx/index.php?title=Crafti Crafti]*
 | CharlesBroughton
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with Twisted network driver
