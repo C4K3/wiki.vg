@@ -15,6 +15,10 @@ To build craftd from source in Linux, you will need the following packages and d
 * libconfig (http://www.hyperrealm.com/libconfig/)
 * pcre
 
+Debian users may need to additionally install '''libltdl-dev'''. Symptoms:
+* AC_LTDL_DLLIB not defined
+* ltdl.m4 not found
+
 Optional features:
 * jansson - JSON RPC and web administration (http://www.digip.org/jansson/)
 * SpiderMonkey - Javascript scripting (http://www.mozilla.org/js/spidermonkey/)
