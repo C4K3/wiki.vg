@@ -93,4 +93,4 @@ A color escape code is created by combining the control character § (U+00A7) fo
 The Notchian client expects that a color escape code in a chat message will be followed by at least one character, and will otherwise crash with a StringIndexOutOfBoundsException. The workaround for servers is to never end a message with a color control character.
 
 [[Category:Protocol Details]]
-[[Category:Minecraft Alpha]]
+[[Category:Minecraft Beta]]
