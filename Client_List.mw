@@ -1,79 +1,77 @@
-Clients;
-
 This is a rather incomplete list of Minecraft Alpha/Beta clients currently in development. This page only lists clients written from scratch. For mods and wrappers, see the [[Utility List]].
 
 {| class="wikitable" style="width: auto; text-align: center;"
 |-style="background:#eee"
 !style="width: 72px" | Name
-!Author(s)
+!style="width: 240px" | Features
 !style="width: 128px" | Language
 !style="width: 128px" | License
 !style="width: 72px" | Threaded
-!style="width: 240px" | Features
-!style="width: 128px" | Status
+!style="width: 120px" | Author(s)
+!style="width: 64px" | Status
 |-
 ! [http://github.com/Wallbraker/Charged-Miners Charged Miners]
-| Wallbraker et al.
+| Minecraft Viewer that can use Mineflayer to connect to servers.
 | [http://en.wikipedia.org/wiki/D_%28programming_language%29 D], [http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]
 | GPLv2
 | {{no}}
-| Minecraft Viewer that can use Mineflayer to connect to servers.
+| Wallbraker et al.
 | style="background:#90ff90; color:black;" | In development
 |-
 ! [http://foundation.x10.mx/index.php?title=Crafti Crafti]*
-| CharlesBroughton
+| python standalone bot, controllable via player commands, console input, or configured rules file.  [http://foundation.x10.mx/index.php?title=Crafti See More...]
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with Twisted network driver
 | proprietary software / Freeware
 | {{yes}}
-| python standalone bot, controllable via player commands, console input, or configured rules file.  [http://foundation.x10.mx/index.php?title=Crafti See More...]
+| CharlesBroughton
 | style="background:#ff9090; color:black;" | Dead
 |-
 ! [http://github.com/aniero/golem golem]
-| aniero
+| ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
 | [http://en.wikipedia.org/wiki/Ruby_%28programming_language%29 ruby]
 | a kind of "0-clause" BSD license
 | {{no}}
-| ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
+| aniero
 | style="background:#ff9090; color:black;" | Last update: Beta 1.4
 |-
 ! [https://github.com/axus/libmc--c mc--c]
-| axus
+| Draw the map.  Can't talk or move.
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++]
 | Do not distribute
 | {{no}}
-| Draw the map.  Can't talk or move.
+| axus
 | style="background:#ffff90; color:black;" | Last updated May 2011
 |-
 ! [[Mineflayer]]
-| Superjoe, thejoshwolfe
+| JavaScript bot framework. See [[Mineflayer]] for more details.
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/Qt_%28framework%29 Qt]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
-| JavaScript bot framework. See [[Mineflayer]] for more details.
+| Superjoe, thejoshwolfe
 | style="background:#90ff90; color:black;" | Mostly mature, well maintained
 |-
 ! [http://github.com/espes/esbot esbot]
-| espes
+| dependency gathering and other awesomeness
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with twisted
 | GPL
 | {{no}}
-| dependency gathering and other awesomeness
+| espes
 | style="background:#ffff90; color:black;" | Last updated for 1.5, buggy 1.6 support with minor tweaks
 |-
 ! [[Vb Minebot]]
-| Umby24
+| Work in progress standalone bot
 | [http://en.wikipedia.org/wiki/Visual_Basic_.NET VB.NET]
 | GPL
 | {{no}}
-| Work in progress standalone bot
+| Umby24
 | style="background:#ff9090; color:black;" | Dead<br>(Site suspended)
 |-
 ! [http://hg.sitedethib.com/mcclient/ mcclient]
-| ThibG
+| Work in progress SMP client
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with C extension
 | GPLv3
 | {{no}}
-| Work in progress SMP client
+| ThibG
 | style="background:#ff9090; color:black;" | Dead<br>(Server down)
 |-|}
 
