@@ -10,6 +10,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 !style="width: 128px" | License
 !style="width: 72px" | Threaded
 !style="width: 240px" | Features
+!style="width: 128px" | Status
 |-
 ! [http://github.com/Wallbraker/Charged-Miners Charged Miners]
 | Wallbraker et al.
@@ -17,6 +18,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | GPLv2
 | {{no}}
 | Minecraft Viewer that can use Mineflayer to connect to servers.
+| style="background:#90ff90; color:black;" | In development
 |-
 ! [http://foundation.x10.mx/index.php?title=Crafti Crafti]*
 | CharlesBroughton
@@ -24,6 +26,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | proprietary software / Freeware
 | {{yes}}
 | python standalone bot, controllable via player commands, console input, or configured rules file.  [http://foundation.x10.mx/index.php?title=Crafti See More...]
+| style="background:#ff9090; color:black;" | Dead
 |-
 ! [http://github.com/aniero/golem golem]
 | aniero
@@ -31,6 +34,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | a kind of "0-clause" BSD license
 | {{no}}
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
+| style="background:#ff9090; color:black;" | Last update: Beta 1.4
 |-
 ! [https://github.com/axus/libmc--c mc--c]
 | axus
@@ -38,6 +42,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | Do not distribute
 | {{no}}
 | Draw the map.  Can't talk or move.
+| style="background:#ffff90; color:black;" | Last updated May 2011
 |-
 ! [[Mineflayer]]
 | Superjoe, thejoshwolfe
@@ -45,6 +50,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
 | JavaScript bot framework. See [[Mineflayer]] for more details.
+| style="background:#90ff90; color:black;" | Mostly mature, well maintained
 |-
 ! [http://github.com/espes/esbot esbot]
 | espes
@@ -52,6 +58,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | GPL
 | {{no}}
 | dependency gathering and other awesomeness
+| style="background:#ffff90; color:black;" | Last updated for 1.5, buggy 1.6 support with minor tweaks
 |-
 ! [[Vb Minebot]]
 | Umby24
@@ -59,6 +66,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | GPL
 | {{no}}
 | Work in progress standalone bot
+| style="background:#ff9090; color:black;" | Dead<br>(Site suspended)
 |-
 ! [http://hg.sitedethib.com/mcclient/ mcclient]
 | ThibG
@@ -66,6 +74,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | GPLv3
 | {{no}}
 | Work in progress SMP client
+| style="background:#ff9090; color:black;" | Dead<br>(Server down)
 |-|}
 
 [[Category:Minecraft Beta]]
