@@ -79,7 +79,7 @@ The Metadata type provides extra information about an entity, such as sheep colo
           case 1: read short from stream
           case 2: read int from stream
           case 3: read float from stream
-          case 4: read string from stream
+          case 4: read string (UCS-2) from stream
           case 5: read short, byte, short from stream; save as item stack (id, count, damage, respectively)
           case 6: read int, int, int from stream; save as extra entity information.
       end select
