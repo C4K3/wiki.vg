@@ -1,4 +1,4 @@
-Minecraft Alpha uses an entirely new authentication scheme, both for improved security and to (at least try to) prevent people from stealing the game. Take everything on this page [http://en.wikipedia.org/wiki/Grain_of_salt with a grain of salt], as the protocol can change at any time.
+Minecraft Betauses an entirely new authentication scheme, both for improved security and to (at least try to) prevent people from stealing the game. Take everything on this page [http://en.wikipedia.org/wiki/Grain_of_salt with a grain of salt], as the protocol can change at any time.
 
 == The Old Launcher ==
 The first step occurs as soon as you open the downloadable Minecraft launcher and attempt to login. The launcher will make a HTTP POST request to:
