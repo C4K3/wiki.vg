@@ -30,7 +30,8 @@ Each window type is described in the following sections. All slot index ranges a
 
 [[File:Inventory-slots.png|thumb|Inventory slots]]
 
-This is the inventory window that the player can always open, typically by pressing "I".
+This is the inventory window that the player can always open, typically by pressing "E" since update 1.4.
+Before you had to press "I".
 
 {| class="wikitable"
 |- class="row0"
