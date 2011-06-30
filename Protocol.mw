@@ -1769,7 +1769,7 @@ This packet is sent by the server when an entity rotates.  Example: "Yaw" field 
 | class="col3" | The Y Axis rotation as a fraction of 360
 |- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 bytes
+| class="col1 rightalign" colspan="4" | 7 bytes
 |}
 
 === Entity Look and Relative Move (0x21) ===
