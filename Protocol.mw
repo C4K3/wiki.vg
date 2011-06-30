@@ -720,6 +720,8 @@ Derived from packet [[#Player_.280x0A.29|0x0A]]
 
 [[File:Icon_exclaim.gif|:!:]] Stance and Y seems to be the opposite as in the table (from Client to Server = X, Y, Stance, Z, froom Server to client = X, Stance, Y, Z) please confirm ! [BackBone`:] The opposite stance<->y confirmed, however the given structs had the server and client struct reversed, which I fixed.
 
+[[File:Icon_exclaim.gif|:!:]] Looks like the table is still incorrect for 1.6.6.
+
 [[File:Icon_exclaim.gif|:!:]] When you connect to the official server, it will push a 0x0D packet.  If you do not immediately respond with a 0x0D (or maybe 0x0A-0x0C) packet with similar and valid information, it will have unexpected results, such as map chunks not loading and future 0x0A-0x0D packets being ignored.
 
 === Player Digging (0x0E) ===
