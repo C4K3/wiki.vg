@@ -2223,11 +2223,15 @@ See the Block Change command for description of the general format of a block ch
 | class="col1 rightalign" colspan="4" | 12 bytes
 |}
 
-=== Play Note Block (0x36) ===
+=== Block Action (0x36) ===
 
 '''Server to Client only'''
 
-This packet is sent to the client when a note block is played. It shows the note particle being emitted from the block as well as playing the tone.
+This packet is sent to the client when a note block is played or a piston changes it's state. 
+
+==== Note Block ====
+
+It shows the note particle being emitted from the block as well as playing the tone.
 
 {| class="wikitable"
 |- class="row0"
@@ -2253,7 +2257,7 @@ This packet is sent to the client when a note block is played. It shows the note
 | class="col2 centeralign" | <code>18</code>
 | class="col3" | Block Z Coordinate
 |- class="row4"
-| class="col0 centeralign" | Instrument Type
+| class="col0 centeralign" | Instrument Type 
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>3</code>
 | class="col3" | The instrument type (see the table below).
@@ -2268,7 +2272,6 @@ This packet is sent to the client when a note block is played. It shows the note
 |}
 
 Instrument Types
-
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Type ID
@@ -2291,6 +2294,71 @@ Instrument Types
 |}
 
 More information about how the pitch values correspond to notes in real life are available on the [http://www.minecraftwiki.net/wiki/Note_Block official Minecraft wiki].
+
+==== Pistons ====
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x35
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>502</code>
+| class="col4" | Block X Coordinate
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>71</code>
+| class="col3" | Block Y Coordinate
+|- class="row3"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>18</code>
+| class="col3" | Block Z Coordinate
+|- class="row4"
+| class="col0 centeralign" | State
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | The state the piston changes to. (0 for pushing, 1 for pulling)
+|- class="row5"
+| class="col0 centeralign" | Direction
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>5</code>
+| class="col3" | The direction the piston pushes. See table below.
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 13 bytes
+|}
+
+Directions
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Direction ID
+! class="col1" | Direction
+|- class="row1"
+| class="col0" | 0
+| class="col1" | Down
+|- class="row2"
+| class="col0" | 1
+| class="col1" | Up
+|- class="row3"
+| class="col0" | 2
+| class="col1" | East
+|- class="row4"
+| class="col0" | 3
+| class="col1" | West
+|- class="row5"
+| class="col0" | 4
+| class="col1" | North
+|- class="row5"
+| class="col0" | 5
+| class="col1" | East
+|}
 
 === Explosion (0x3C) ===
 
