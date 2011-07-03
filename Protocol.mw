@@ -2445,7 +2445,7 @@ Sent when a client is to play a sound effect.
 | class="col1 centeralign" | Sound data
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 0
-| class="col4" | Extra data about RECORD_PLAY, SMOKE, and STEP_SOUND
+| class="col4" | Extra data about RECORD_PLAY, SMOKE, and BLOCK_BREAK
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes
@@ -2487,8 +2487,8 @@ Valid sound effects are:
 | class="col2" | Has data (?)
 |- class="row8"
 ! class="col0" | 2001
-| class="col1" | STEP_SOUND
-| class="col2" | Has data (type of block walked on?)
+| class="col1" | BLOCK_BREAK
+| class="col2" | Has data (Block ID broken)
 |}
 
 === New/Invalid State (0x46) ===
