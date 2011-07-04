@@ -3033,7 +3033,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 2011-6-30 ===
 * <div class="li">Beta 1.7 released.</div>
-* Protocol increase by 1: 14
+* Protocol version number is now 14
 * No new packets
 * Packet 0x36 ([[#Block_Action_.280x36.29|Block Action]]) is now used for pistons too.
 
