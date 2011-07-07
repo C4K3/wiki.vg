@@ -2484,7 +2484,7 @@ Valid sound effects are:
 |- class="row7"
 ! class="col0" | 2000
 | class="col1" | SMOKE
-| class="col2" | Has data (Seems to control the yawn(Angle)) 0 - 180?
+| class="col2" | Has data (The direction of the smoke 1 - 9)
 |- class="row8"
 ! class="col0" | 2001
 | class="col1" | BLOCK_BREAK
