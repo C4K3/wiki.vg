@@ -2484,11 +2484,45 @@ Valid sound effects are:
 |- class="row7"
 ! class="col0" | 2000
 | class="col1" | SMOKE
-| class="col2" | Has data (The direction of the smoke 1 - 9)
+| class="col2" | Has data (direction, check below)
 |- class="row8"
 ! class="col0" | 2001
 | class="col1" | BLOCK_BREAK
 | class="col2" | Has data (Block ID broken)
+|}
+
+Smoke Directions
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Direction ID
+! class="col1" | Direction
+|- class="row1"
+| class="col0" | 0
+| class="col1" | South - East
+|- class="row2"
+| class="col0" | 1
+| class="col1" | South
+|- class="row3"
+| class="col0" | 2
+| class="col1" | South - West
+|- class="row4"
+| class="col0" | 3
+| class="col1" | East
+|- class="row5"
+| class="col0" | 4
+| class="col1" | (Up or middle ?)
+|- class="row6"
+| class="col0" | 5
+| class="col1" | West
+|- class="row7"
+| class="col0" | 6
+| class="col1" | North - East
+|- class="row8"
+| class="col0" | 7
+| class="col1" | North
+|- class="row9"
+| class="col0" | 8
+| class="col1" | North - West
 |}
 
 === New/Invalid State (0x46) ===
