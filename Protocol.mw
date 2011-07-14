@@ -3006,12 +3006,18 @@ The data sent here is not of the actual map, but of a map item in the players in
 |- class="row4"
 | class="col0 centeralign" | Text
 | class="col1 centeralign" | byte array
-| class="col2 centeralign" | 
+| class="col2 centeralign" | {0,0,0,20,20,20,20,20}
 | class="col3" | ASCII text.
 |- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes + Text length
 |}
+
+'''The byte array'''
+
+The byte array is a maximum of 131 bytes in size.
+It follow the structure {0, x, y, COLOR, COLOR,..}
+There is also a second packet for cursors which has the first byte as 1.
 
 === Increment Statistic (0xC8) ===
 * Class: nj
