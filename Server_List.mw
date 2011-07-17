@@ -78,13 +78,13 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
-| {{planned|In Progress (Beta)}}
-| {{planned}}
+| {{yes|Beta}}
+| {{yes}}
 | {{planned}}
 | {{planned}}
 | {{yes|Event-driven}}
-| {{planned|Planned ([http://bukkit.org/ Bukkit])}}
-| {{unknown|Semi-Active}}
+| {{yes|[http://bukkit.org/ Bukkit]}}
+| {{yes|Active}}
 |-
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
@@ -97,7 +97,7 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|Event-driven}}
 | {{planned|Planned ([http://ruby-lang.org Ruby])}}
-| {{yes|Active}}
+| {{unknown|Semi-Active}}
 |-
 ! [http://mcserver.ae-c.net MCServer]
 | FakeTruth
@@ -189,19 +189,6 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{no}}
 | {{yes|Active}}
-|-
-! [http://github.com/SpaceManiac/Spacecraft-GT Spacecraft GT]
-| SpaceManiac, Blocky
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| [http://creativecommons.org/licenses/by-sa/3.0/ CC-BY-SA 3.0]
-| {{yes}}
-| {{yes|Alpha}}
-| {{no}}
-| {{no}}
-| {{yes}}
-| {{yes|Threads}}
-| {{no}}
-| {{unknown|Probably cancelled}}
 |-
 ! [https://www.silent-productions.net SilentCraft]
 | Silentneeb, Looking for Devs
