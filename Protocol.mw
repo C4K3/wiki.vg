@@ -3082,7 +3082,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Protocol increase by 2: 13
 * Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (added world byte)
 * Packet 0x17 ([[#Add_Object.2FVehicle_.280x17.29|Add Object]]) changed.
-* Packet 0x3d ([[#Door_change_.280x3D.29|Door change]]) added 
+* Packet 0x3d ([[#Sound_effect_.280x3D.29|Sound effect]]) added 
 * Packet 0x83 ([[#Map_Data_.280x83.29|Map Data]]) added
 
 === 2011-4-19 ===
