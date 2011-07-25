@@ -51,12 +51,12 @@ Source code snippets provide insight into how specific features work or can be a
 === Tutorials ===
 * [[How to Write a Client]]
 
-For more info, check out [[:Category:Minecraft Alpha|Minecraft Alpha]].
+For more info, check out [[:Category:Minecraft Alpha|Minecraft Beta]].
 
 == Classic ==
 [[File:Banner classic.png|link=Category:Minecraft Classic]]
 
-Minecraft Classic is the original version of Minecraft, available for free to the public. It's still available off of the main website today and is still played by many people, with an active development community. As it's been around for almost a year, and because it's so simplistic, there are many, many programs made to work with Classic - there are over '''18+''' servers alone, written in everything from C++ to PureBasic to Perl. It's highly recommend if you're planning to do a development project at this point to instead look into the Minecraft Alpha specifications.
+Minecraft Classic is the original version of Minecraft, available for free to the public. It's still available off of the main website today and is still played by many people, with an active development community. As it's been around for almost a year, and because it's so simplistic, there are many, many programs made to work with Classic - there are over '''18+''' servers alone, written in everything from C++ to PureBasic to Perl. It's highly recommend if you're planning to do a development project at this point to instead look into the Minecraft Beta specifications.
 
 === Documentation ===
 As there is no longer any work being done on classic, the documentation for it is stable. If you create something that works with it, it probably always will.
