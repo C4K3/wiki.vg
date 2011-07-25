@@ -1,4 +1,4 @@
-This tutorial is being created to document what it takes to write a stand-alone client to interact with a notchian server (version Beta 1.3). The tutorial is incomplete but will be updated whenever more information is discovered.
+This tutorial is being created to document what it takes to write a stand-alone client to interact with a notchian server. The tutorial is incomplete but will be updated whenever more information is discovered.
 
 == Before You Get Started ==
 
@@ -10,7 +10,7 @@ This tutorial is being created to document what it takes to write a stand-alone 
 
 ''Main article: [[Protocol]]''
 
-Sorry, but you have to be able to parse ''all'' the messages. Write all the message parsing code. If you don't, your client will effectively crash if the server sends you any message you can't parse. 
+Sorry, but you have to be able to parse ''all'' the messages. Write all the message parsing code. If you don't, your client will probably crash due to the packets being out of synchronism.
 
 == Login ==
 
@@ -43,9 +43,9 @@ The walking animation is automatically displayed in notchian clients when you mo
 
 === Allowed super-human abilities ===
 
-* '''Flying''' - float and move about in the air. You must set on-ground to false to move vertically. Gravity only exists if you say it exists.
-* '''Walking in the air''' - walk off a cliff with on-ground set to true. The avatar will continue walking as if there were ground bellow him. Maybe the server doesn't even check any correlation between on-ground and proximity to the ground.
-* '''Moving arbitrarily fast''' - update your position to move as far as you like with each step to move arbitrarily fast (as long as you have a clear path). Tested up to 1000m in a single step.
+* '''Flying''' - float and move about in the air. You must set on-ground to false to move vertically. Gravity only exists if you say it exists. If the server has "allow-flight=false" on the configuration, after certain amount of time (5 seconds) the player will be kicked.
+* '''Walking in the air''' - walk off a cliff with on-ground set to true. The avatar will continue walking as if there were ground bellow him. Maybe the server doesn't even check any correlation between on-ground and proximity to the ground. Again, to do this the server needs to have flight enabled.
+*<s>'''Moving arbitrarily fast''' - update your position to move as far as you like with each step to move arbitrarily fast (as long as you have a clear path). Tested up to 1000m in a single step.</s> (this does not work anymore, gives a "Kicked for moving too fast. Hacking? :(" message.
 
 === Restrictions ===
 
@@ -58,13 +58,13 @@ If you break any of the above rules, the server will send you your corrected pos
 
 Look is defined by yaw and pitch. Providing the yaw component to the server rotates your avatar's head about the vertical-axis. The notion of an avatar's body orientation seems to exist only in clients and updates automatically in notchian clients when players rotate their yaw and move around. Providing the pitch component rotates your avatar's head up and down. There seems to be no limit to the pitch, so providing a pitch of 180 degrees result in your avatar's head appearing upsidedown. See [[Protocol]] for how the yaw and pitch values are calibrated.
 
-Modifying your stance seems to have no visible effect. Its purpose is known.
+Modifying your stance seems to have no visible effect. Its purpose is to modify the bounding box (for example, when the player is crouching it bounding box should be shorter)
 
 === Fall damage ===
 
 Fall damage happens when on-ground changes from false to true and the fall height is greater than some threshold around 4 meters. Fall height seems to be calculated by the difference between the point where on-ground changed to true and the highest point of the jump/fall/flight while on-ground was false.
 
-TODO: can you avoid fall damage while flying if you set on-ground to true in the air?
+You can avoid fall damage if you fly at a slow constant speed (instead of constant acceleration) towards the floor.
 
 === Testing/Debugging ===
 
@@ -87,7 +87,7 @@ If you do want to be able to abort digging:
 # wait appropriate amount of time (see below).
 # if you haven't aborted yet, send a finish digging (2).
 
-If you go with the first option, you must wait until the block has been dug before you can start digging another block.
+If you go with the first option, you must wait until the block has been dug before you can start digging another block. In older versions of the server (1.4 and previous) you could bypass the time and destroy lots of blocks at once (instant mining) by sending "start digging" and "finish digging" packets without an interval in between.
 
 === How long to wait ===
 
