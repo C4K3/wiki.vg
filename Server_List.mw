@@ -215,6 +215,19 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{no}}
 | {{unknown|On hiatus}}
+|-
+! [https://github.com/SenkChristian/de.csenk.mcserver McCraft]
+| [[Nemrael]]
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
+| {{yes|Yes (Java NIO)}}
+| {{planned|Beta (read-access)}}
+| {{yes}}
+| {{planned}}
+| {{planned}}
+| {{yes|Threads}}
+| {{planned}}
+| {{yes|Active}}
 |}
 
 [[Category:Minecraft Beta]]
