@@ -2735,7 +2735,7 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col3" | Number of times the item was used that was in the slot
 |- class="row9"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes (+3 for item ID != -1)
+| class="col1 rightalign" colspan="4" | 10 bytes (+3 for item ID != -1)
 |}
 
 See [[Inventory#Windows|inventory windows]] for further information about how slots are indexed.
