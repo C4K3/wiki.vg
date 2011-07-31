@@ -287,7 +287,7 @@ A message from the client to the server, or the server to the client. The actual
 
 The Alpha server will check the message to see if it begins with a '/'. If it doesn't, the username of the sender is prepended and sent to all other clients (including the original sender). If it does, the server assumes it to be a command and attempts to process it. A message longer than 100 characters will cause the server to kick the client. This limits the chat message packet length to 103 bytes. Note that this limit does not apply to incoming chat messages as the server may have prepended other information, not limited to, but usually including, a username.
 
-A message longer than 119 characters will cause the Beta (≥1.5) server and client to crash.
+A message longer than 119 characters will cause the Beta (≥1.5) server and client <s>to crash</s> to print the message "Received string length longer than maximum allowed (X > 119)", with no side effects.
 
 For more information, see [[Chat]].
 
