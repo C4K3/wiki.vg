@@ -48,3 +48,5 @@ delete []in;
 </source>
 
 You could also decompress the data as you get it (instead of doing it after getting the whole packet).
+
+[[Category:Code Snippets]]
