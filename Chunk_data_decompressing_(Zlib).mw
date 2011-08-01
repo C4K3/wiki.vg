@@ -39,10 +39,12 @@ switch (ret) {
       ret = Z_DATA_ERROR;   
    case Z_DATA_ERROR:
    case Z_MEM_ERROR:
-      cerr << "Zlib error" << endl;
+      cerr << "Zlib error: inflate()" << endl;
       return ret;
 }               
 inflateEnd(&strm);    
 delete []in;
 //Data is now in "out" buffer	
 </source>
+
+You could also decompress the data as you get it (instead of doing it after getting the whole packet).
