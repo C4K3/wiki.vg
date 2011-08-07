@@ -35,13 +35,13 @@ A couple things for contributors:
 | {{yes|Active}}
 |-
 ! [https://github.com/huin/chunkymonkey Chunky Monkey]
-| agon, huin (lead contributor), nictuku
+| agon, huin (lead contributor), jnwhiteh, nictuku
 | [http://en.wikipedia.org/wiki/Go_(programming_language) Google Go]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
 | {{yes}}
 | {{yes|Alpha, Beta}}
 | {{planned}}
-| {{planned|In progress}}
+| {{planned|Entities: yes; Blocks: Planned}}
 | {{planned|Players: yes; Mobs: In progress}}
 | {{yes|Goroutines (Multi-host planned)}}
 | {{unknown|(TBD)}}
