@@ -1323,12 +1323,12 @@ Sent by the server when a Mob Entity is Spawned
 | class="col0 centeralign" | Yaw
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>-27</code>
-| class="col3" | The X Axis rotation with 255 being 360 degrees
+| class="col3" | The X Axis rotation in steps of 2π/255
 |- class="row7"
 | class="col0 centeralign" | Pitch
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | The Y Axis rotation with 255 being 360 degrees
+| class="col3" | The Y Axis rotation in steps of 2π/255
 |- class="row8"
 | class="col0 centeralign" | Data Stream
 | class="col1 centeralign" | Metadata
