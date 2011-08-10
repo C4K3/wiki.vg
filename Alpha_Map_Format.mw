@@ -84,6 +84,73 @@ public static string Base36Encode(long input)
 
 Persistent data for players is stored in a folder called "players". Each player has a file called "<username>.dat".
 
+
+== Beta player files ==
+
+Player files are [[NBT]] encoded.
+
+The file starts with a nameless TAG_Compound which contains all other data.
+
+{| class="wikitable"
+! Tag Name || Type || Description
+|-
+| SleepTimer || TAG_Short || 
+|-
+| Motion || TAG_List(3 TAG_Double) || 
+|-
+| OnGround || TAG_Byte || 
+|-
+| HurtTime || TAG_Short || 
+|-
+| Health || TAG_Short || 
+|-
+| Dimension || TAG_Int || 
+|-
+| Air || TAG_Short || 
+|-
+| Inventory || TAG_List or TAG_Byte(when empty) || See Inventory table below
+|-
+| Pos || TAG_List(3 TAG_Double) || 
+|-
+| AttackTime || TAG_Short || 
+|-
+| Sleeping || TAG_Byte || 
+|-
+| Fire || TAG_Short || 
+|-
+| FallDistance || TAG_Float || 
+|-
+| Rotation || TAG_List(2 TAG_Float) || 
+|-
+| DeathTime || TAG_Short || 
+|-
+| SpawnX || TAG_Int || Only present when spawn is set elsewhere
+|-
+| SpawnY || TAG_Int || Only present when spawn is set elsewhere
+|-
+| SpawnZ || TAG_Int || Only present when spawn is set elsewhere
+|}
+
+
+Inventory items are in the TAG_Compound format with the following tags:
+
+{| class="wikitable"
+! Tag Name || Type || Description
+|-
+| Slot || TAG_byte || 
+|-
+| id || TAG_Short || 
+|-
+| Damage || TAG_Short || 
+|-
+| Count || TAG_Byte || 
+|}
+
+== Other formats ==
+
+The following format is not used in Beta. 
+May be the Alpha format.
+
 {| class="wikitable"
 ! Name || Type || Description
 |-
