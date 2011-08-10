@@ -61,23 +61,23 @@ Example code in C#:
 
 <source lang=csharp>
 public static string Base36Encode(long input)
-                {
-	         if (input == 0){ return "0"; }
-	         string chars = "0123456789abcdefghijklmnopqrstuvwxyz";
-	         bool negative = (input < 0);
+{
+	if (input == 0){ return "0"; }
+	string chars = "0123456789abcdefghijklmnopqrstuvwxyz";
+	bool negative = (input < 0);
 
-		 StringBuilder sb = new StringBuilder();
+	StringBuilder sb = new StringBuilder();
 
-			if (negative) {
-				input = -input;
-				sb.Append("-");
-			}
-			while (input > 0) {
-				sb.Insert((negative ? 1 : 0), chars[(int)(input % 36)]);
-				input /= 36;
-			}
-			return sb.ToString();
-		}
+	if (negative) {
+		input = -input;
+		sb.Append("-");
+	}
+	while (input > 0) {
+		sb.Insert((negative ? 1 : 0), chars[(int)(input % 36)]);
+		input /= 36;
+	}
+	return sb.ToString();
+}
 </source>
 
 = Players =
