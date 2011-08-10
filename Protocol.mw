@@ -2489,6 +2489,8 @@ Valid sound effects are:
 | class="col2" | Has data (Block ID broken)
 |}
 
+Smoke is a silent effect with only a visual element.
+
 Smoke Directions
 {| class="wikitable"
 |- class="row0"
