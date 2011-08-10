@@ -2781,12 +2781,12 @@ Sent by the server when an item in a slot (in a window) is added/removed.
 | class="col0 centeralign" | Item Count
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>64</code>
-| class="col3" | Number of items in a stack
+| class="col3" | Number of items in a stack. Not sent when Item ID is -1.
 |- class="row5"
 | class="col0 centeralign" | Item uses
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>3</code>
-| class="col3" | 
+| class="col3" | Not sent when Item ID is -1.
 |- class="row8"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes (+3 for item ID != -1)
