@@ -989,6 +989,7 @@ Only <code>1</code> (swing arm) and <code>3</code> (leave bed) is sent by notchi
 '''Client to Server only'''
 
 Sent at least when crouching and leaving a bed.
+To send action animation to client use 0x28.
 
 {| class="wikitable"
 |- class="row0"
