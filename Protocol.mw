@@ -986,6 +986,8 @@ Only <code>1</code> (swing arm) and <code>3</code> (leave bed) is sent by notchi
 
 === Entity Action ??? (0x13) ===
 
+'''Client to Server only'''
+
 Sent at least when crouching and leaving a bed.
 
 {| class="wikitable"
