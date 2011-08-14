@@ -409,6 +409,9 @@ Sent by the server after login to specify the coordinates of the spawn point (th
 |}
 
 === Use Entity? (0x07) ===
+
+'''Client to Server only'''
+
 This packet is new to version 4 of the protocol, and is believed to be Use Entity. This packet is sent from the client to the server when the client attacks or right-clicks another entity.
 
 A Notchian server only accepts this packet if the entity being attacked/used is visible without obstruction and within a 4-unit radius of the player's position.
