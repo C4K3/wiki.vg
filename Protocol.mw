@@ -72,7 +72,7 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 
 The Metadata type provides extra information about an entity, such as sheep color.  Metadata was introduced in Beta 1.2.  Currently, it takes the following form:
 
-  let x = 0 of type byte
+  let x = 0 of type UNSIGNED byte
   while (x = read byte from stream) does not equal 127:
       select based on value of (x >> 5):
           case 0: read byte from stream
