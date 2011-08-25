@@ -1998,6 +1998,20 @@ Thus, the example metadata stream 0x00 0x01 0x7f is decoded as a field of type 0
 | Vector: Int x, int y, int z
 |}
 
+===== Data values =====
+
+
+{| class="wikitable"
+|-
+! Field Byte
+! Field Description
+! Field Value
+|-
+| 0
+| ID 0 Byte
+| 0 = entity normal, 1 = entity on fire
+|}
+
 === Pre-Chunk (0x32) ===
 
 '''Server to Client only'''
