@@ -813,6 +813,8 @@ The face can be one of six values, representing the face being hit:
 
 Sent when the player places a block or (probably) an item. The coordinates sent in this packet are actually the block being built against, which combined with the direction offset tell you where the block should be placed. This is required to correctly position furnaces, torches, etc…
 
+In 1.7.3, when a player opens a door with right click, the server receives Packet 0xF (block placement, but opens door).
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
