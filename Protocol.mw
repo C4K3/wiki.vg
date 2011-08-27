@@ -809,6 +809,8 @@ The face can be one of six values, representing the face being hit:
 | class="col6" | +X
 |}
 
+In 1.7.3, when a player opens a door with left click the server receives Packet 0xE+start digging and opens the door.
+
 === Player Block Placement (0x0F) ===
 
 Sent when the player places a block or (probably) an item. The coordinates sent in this packet are actually the block being built against, which combined with the direction offset tell you where the block should be placed. This is required to correctly position furnaces, torches, etc…
