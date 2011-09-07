@@ -78,7 +78,7 @@ The Notchian client has support for colorized text. To select a color, a color e
 | d || Pink || 255 || 85 || 255 || 63 || 21 || 63 || #ff55ff
 |-
 | bgcolor=#FFFF55 |
-| e || Yellow || 255 || 255 || 85 || 63 || 63 || 21 || #ff5555
+| e || Yellow || 255 || 255 || 85 || 63 || 63 || 21 || #ffff55
 |-
 | bgcolor=#FFFFFF |
 | f || White || 255 || 255 || 255 || 63 || 63 || 63 || #ffffff
