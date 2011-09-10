@@ -3409,12 +3409,12 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * <div class="li">Beta 1.8 pre-release.</div>
 * Protocol version is now 15
 * Packet 0x00 ([[#Keep_Alive_.280x00.29|Keep Alive]]) changed (added keep-alive id)
-* Packet 0x01 ([[#Login_Request_.280x01.29|Login]]) changed (some fields added, possibly removed?)
-* Packet 0x08 ([[#Update_Health_.280x08.29|Health]]) changed (added food bar and an unknown field)
-* Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (map seed and two unknown fields added)
-* Packet 0x46 ([[#New.2FInvalid_State_.280x46.29|New/invalid state]]) changed (byte added)
-* New packet 0x29 ([[#Unknown_.280x29.29|Unknown]]) added
-* New packet 0x2a ([[#Unknown_.280x2A.29|Unknown]]) added
+* Packet 0x01 ([[#Login_Request_.280x01.29|Login]]) changed (added server mode, height limit, and an unknown field)
+* Packet 0x08 ([[#Update_Health_.280x08.29|Health]]) changed (added food bar and food saturation)
+* Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (added map seed, server mode, height limit)
+* Packet 0x46 ([[#New.2FInvalid_State_.280x46.29|New/invalid state]]) changed (added game mode reason, and a game mode byte)
+* New packet 0x29 ([[#Entity_Effect_.280x29.29|Entity Effect]]) added
+* New packet 0x2a ([[#Remove_Entity_Effect_.280x2A.29|Remove Entity Effect]]) added
 * New packet 0x2b ([[#Experience_.280x2B.29|Experience update]]) added
 * New packet 0x6b ([[#Creative_inventory_action_.280x6B.29|Creative item get]]) added
 * New packet 0xc9 ([[#User_List_Item_.280xC9.29|User list item]]) added
