@@ -2102,7 +2102,7 @@ Sometimes sent when another player respawns
 | class="col0 centeralign" | Unknown
 | class="col1 centeralign" | long
 | class="col2 centeralign" | <code>64</code>
-| class="col3" | 
+| class="col3" | I've seen 64 and 600
 |- class="row5"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 15 bytes
@@ -2121,14 +2121,14 @@ Class is wv. I haven't seen this packet yet.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="2" | 0x2a
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 
-| class="col4" | Possibly an entity id?
+| class="col4" | Entity ID of a player
 |- class="row2"
 | class="col0 centeralign" | Unknown
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | 
+| class="col2 centeralign" | <code>17</code>
 | class="col3" |
 |- class="row5"
 ! class="col0" | Total Size:
