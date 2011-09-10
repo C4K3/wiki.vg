@@ -2620,14 +2620,19 @@ The class has an array of strings linked to reason codes 0, 1 and 2, but only th
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" | 0x46
+| class="col0 centeralign" rowspan="2" | 0x46
 | class="col1 centeralign" | Reason
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 0
 | class="col4" |
 |- class="row2"
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 0
+| class="col4" |
+|- class="row3"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 2 bytes
+| class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
 ==== Reason codes ====
