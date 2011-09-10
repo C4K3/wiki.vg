@@ -2706,7 +2706,7 @@ This packet appeared with protocol version 10. Currently, it appears when a bed 
 
 Its "packet class" is ''ba'' for the client and ''???'' for the server (Minecraft Beta 1.5).  
 
-The class has an array of strings linked to reason codes 0, 1 and 2, but only the code for 0 is non-null.
+The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only the codes for 1 and 2 are null.
 
 {| class="wikitable"
 |- class="row0"
@@ -2722,10 +2722,10 @@ The class has an array of strings linked to reason codes 0, 1 and 2, but only th
 | class="col3 centeralign" | 0
 | class="col4" |
 |- class="row2"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Game mode
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 0
-| class="col4" |
+| class="col4" | Used only when reason = 3. 0 is survival, 1 is creative.
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes
@@ -2750,6 +2750,10 @@ The class has an array of strings linked to reason codes 0, 1 and 2, but only th
 | 2
 | End raining
 | null
+|-
+| 3
+| Change game mode
+| gameMode.changed
 |}
 
 === Thunderbolt (0x47) ===
