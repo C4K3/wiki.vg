@@ -2071,7 +2071,7 @@ Thus, the example metadata stream 0x00 0x01 0x7f is decoded as a field of type 0
 
 For known extra entity information values, see [[Mob Types]].
 
-=== Unknown (0x29) ===
+=== Entity effect (0x29) ===
 
 Sometimes sent when another player respawns
 
@@ -2089,23 +2089,87 @@ Sometimes sent when another player respawns
 | class="col3 centeralign" | <code>14</code>
 | class="col4" | Entity ID of a player
 |- class="row2"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Effect ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>17</code>
-| class="col3" | Possibly metadata type?
+| class="col3" | See table below
 |- class="row3"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Amplifier
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | Possibly metadata?
+| class="col3" |
 |- class="row4"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Duration
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>64</code>
-| class="col3" | I've seen 64 and 600
+| class="col3" |
 |- class="row5"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 9 bytes
+|}
+
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Value
+! class="col1" | Meaning
+|- class="row1"
+| class="col0" | <code>1</code>
+| class="col1" | moveSpeed
+|- class="row1"
+| class="col0" | <code>2</code>
+| class="col1" | moveSlowdown
+|- class="row1"
+| class="col0" | <code>3</code>
+| class="col1" | digSpeed
+|- class="row1"
+| class="col0" | <code>4</code>
+| class="col1" | digSlowDown
+|- class="row1"
+| class="col0" | <code>5</code>
+| class="col1" | damageBoost
+|- class="row1"
+| class="col0" | <code>6</code>
+| class="col1" | heal
+|- class="row1"
+| class="col0" | <code>7</code>
+| class="col1" | harm
+|- class="row1"
+| class="col0" | <code>8</code>
+| class="col1" | jump
+|- class="row1"
+| class="col0" | <code>9</code>
+| class="col1" | confusion
+|- class="row1"
+| class="col0" | <code>10</code>
+| class="col1" | regeneration
+|- class="row1"
+| class="col0" | <code>11</code>
+| class="col1" | resistance
+|- class="row1"
+| class="col0" | <code>12</code>
+| class="col1" | fireResistance
+|- class="row1"
+| class="col0" | <code>13</code>
+| class="col1" | waterBreathing
+|- class="row1"
+| class="col0" | <code>14</code>
+| class="col1" | invisibility
+|- class="row1"
+| class="col0" | <code>15</code>
+| class="col1" | blindness
+|- class="row1"
+| class="col0" | <code>16</code>
+| class="col1" | nightVision
+|- class="row1"
+| class="col0" | <code>17</code>
+| class="col1" | hunger
+|- class="row1"
+| class="col0" | <code>18</code>
+| class="col1" | weakness
+|- class="row1"
+| class="col0" | <code>19</code>
+| class="col1" | poison
 |}
 
 === Unknown (0x2A) ===
