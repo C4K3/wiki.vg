@@ -3348,10 +3348,10 @@ Sent by the server frequently. Each packet contains the data for one online user
 | class="col3 centeralign" | barneygale
 | class="col4" |
 |- class="row2"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Online
 | class="col2 centeralign" | bool
 | class="col3 centeralign" | true
-| class="col4" | I've only seen True.
+| class="col4" | If false, the client will remove the user from the list.
 |- class="row3"
 | class="col1 centeralign" | Ping
 | class="col2 centeralign" | short
