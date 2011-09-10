@@ -2156,6 +2156,7 @@ Sent by the server when the client should change experience levels.
 | class="col0 centeralign" | Level
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>2</code>
+| class="col4" | Incremented when the experience bar rolls over from 19 to 0
 |- class="row3"
 | class="col0 centeralign" | Total experience
 | class="col1 centeralign" | short
