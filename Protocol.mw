@@ -3165,6 +3165,17 @@ If the first byte of the text is 1, the rest of the bytes are in groups of three
 | class="col1 rightalign" colspan="4" | 6 bytes
 |}
 
+=== Server List Ping (0xFE) ===
+
+Sent by the client when refreshing the server list.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+|- class="row1"
+| class="col0 centeralign" | 0xFE
+|}
+
 === Disconnect/Kick (0xFF) ===
 
 Sent by the server before it disconnects a client, or by the client before it disconnects from the server. The receiver of this packet assumes that the sender has already closed the connection by the time the packet arrives.
@@ -3204,7 +3215,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * New packet 0x2b ([[#TODO|Experience update]]) added
 * New packet 0x6b ([[#TODO|Creative item get]]) added
 * New packet 0xc9 ([[#TODO|User list item]]) added
-* New packet 0xfe ([[#TODO|Server list ping]]) added
+* New packet 0xfe ([[#Server_List_Ping_.280xFE.29|Server list ping]]) added
 
 
 === 2011-6-30 ===
