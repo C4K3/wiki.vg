@@ -2071,7 +2071,7 @@ Thus, the example metadata stream 0x00 0x01 0x7f is decoded as a field of type 0
 
 For known extra entity information values, see [[Mob Types]].
 
-=== Entity effect (0x29) ===
+=== Entity Effect (0x29) ===
 
 Sometimes sent when another player respawns
 
@@ -2108,10 +2108,11 @@ Sometimes sent when another player respawns
 | class="col1 rightalign" colspan="4" | 9 bytes
 |}
 
+==== Effects ====
 
 {| class="wikitable"
 |- class="row0"
-! class="col0" | Value
+! class="col0" | ID
 ! class="col1" | Meaning
 |- class="row1"
 | class="col0" | <code>1</code>
@@ -2172,9 +2173,8 @@ Sometimes sent when another player respawns
 | class="col1" | poison
 |}
 
-=== Unknown (0x2A) ===
+=== Remove Entity Effect (0x2A) ===
 
-Class is wv. I haven't seen this packet yet.
 
 {| class="wikitable"
 |- class="row0"
@@ -2190,11 +2190,11 @@ Class is wv. I haven't seen this packet yet.
 | class="col3 centeralign" | 
 | class="col4" | Entity ID of a player
 |- class="row2"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Effect ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>17</code>
-| class="col3" |
-|- class="row5"
+| class="col3" | See table above
+|- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
 |}
