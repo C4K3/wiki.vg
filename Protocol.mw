@@ -163,12 +163,24 @@ The Beta server will disconnect a client if it doesn't receive at least one pack
 |- class="row1"
 | class="col0 centeralign" | 0x00
 | class="col1 centeralign" | Keep-alive ID
-| class="col2 centeralign" | int
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0x80</code>
+| class="col4" | If 0x80 only one more byte follows in the packet
+|- class="row2"
+| class="col0 centeralign" | 0x00
+| class="col1 centeralign" | Keep-alive Data
+| class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>957759560</code>
 | class="col4" | Server-generated random id
-|- class="row2"
+|- class="row3"
+| class="col0 centeralign" | 0x00
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>957759560</code>
+| class="col4" | Only sent if the first byte != 0x80
+|- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 5 bytes
+| class="col1 rightalign" colspan="4" | 3-5 bytes
 |}
 
 === Login Request (0x01) ===
