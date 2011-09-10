@@ -2073,8 +2073,6 @@ For known extra entity information values, see [[Mob Types]].
 
 === Entity Effect (0x29) ===
 
-Sometimes sent when another player respawns
-
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -2193,7 +2191,7 @@ Sometimes sent when another player respawns
 | class="col0 centeralign" | Effect ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>17</code>
-| class="col3" | See table above
+| class="col3" | See [[#Effects|table above]]
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
