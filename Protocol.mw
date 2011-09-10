@@ -3300,6 +3300,8 @@ Sent by the server frequently. Each packet contains the data for one online user
 | class="col1 rightalign" colspan="4" | 6 bytes + length of string
 |}
 
+It is observed that if Unknown is set to false the player is not shown in the list.
+
 === Server List Ping (0xFE) ===
 
 To load server info in the multiplayer menu, the notchian client connects to each known server and sends an 0xFE.
