@@ -2100,12 +2100,12 @@ Sometimes sent when another player respawns
 | class="col3" | Possibly metadata?
 |- class="row4"
 | class="col0 centeralign" | Unknown
-| class="col1 centeralign" | long
+| class="col1 centeralign" | short
 | class="col2 centeralign" | <code>64</code>
 | class="col3" | I've seen 64 and 600
 |- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 15 bytes
+| class="col1 rightalign" colspan="4" | 9 bytes
 |}
 
 === Unknown (0x2A) ===
