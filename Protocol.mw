@@ -150,13 +150,25 @@ All packets begin with a single "Packet ID" byte.  Listed packet size includes t
 
 === Keep Alive (0x00) ===
 
-This packet may be sent to keep the connection alive, or may be a relic of UDP testing. No one is really sure. What we do know is that the Beta server will disconnect a client if it doesn't receive at least one packet before 1200 in-game ticks, and the Beta client will time out the connection under the same conditions.
+The server will frequently send out keep-alives contain a random ID. The client must respond with the same packet.
+The Beta server will disconnect a client if it doesn't receive at least one packet before 1200 in-game ticks, and the Beta client will time out the connection under the same conditions.
 
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" | 0x00
+| class="col1 centeralign" | Keep-alive ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>957759560</code>
+| class="col4" | Server-generated random id
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 5 bytes
 |}
 
 === Login Request (0x01) ===
@@ -173,29 +185,44 @@ Sent by the client after the handshake to finish logging in. If the version is o
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x01
+| class="col0 centeralign" rowspan="7" | 0x01
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>14</code>
-| class="col4" | The latest version of the protocol is 14
+| class="col4" | The latest version of the protocol is 15
 |- class="row2"
 | class="col0 centeralign" | Username
 | class="col1 centeralign" | string16
 | class="col2 centeralign" | <code>TkTech</code>
 | class="col3" | The name of the user attempting to login, max length of 16
 |- class="row3"
-| class="col0 centeralign" | Map Seed
+| class="col0 centeralign" | Not used
 | class="col1 centeralign" | long
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | This value is not required for the client
+| class="col3" | 
 |- class="row4"
-| class="col0 centeralign" | Dimension
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | 
+|- class="row5"
+| class="col0 centeralign" | Not used
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | This value is not required for the client
+| class="col3" |
+|- class="row6"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Probably not used
+|- class="row7"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Probably not used
 |- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 16 bytes + length of strings
+| class="col1 rightalign" colspan="4" | 22 bytes + length of strings
 |}
 
 ==== Server to Client ====
@@ -210,29 +237,44 @@ Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login r
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x01
+| class="col0 centeralign" rowspan="7" | 0x01
 | class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>1298</code>
 | class="col4" | The Players Entity ID
 |- class="row2"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Not used
 | class="col1 centeralign" | string16
-| class="col2 centeralign" | n/a
-| class="col3" | Not yet used (Possibly the server name?)
+| class="col2 centeralign" | (empty string)
+| class="col3" | Not used
 |- class="row3"
 | class="col0 centeralign" | Map Seed
 | class="col1 centeralign" | long
 | class="col2 centeralign" | <code>971768181197178410</code>
-| class="col3" | Used for terrain and biome generation. Not actually used by the client.
+| class="col3" | The server's map seed. Must be sent in respawn packets by the client.
 |- class="row4"
+| class="col0 centeralign" | Server mode (?)
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | *POSSIBLY* server mode. 1 for creative, 0 for survival.
+|- class="row5"
 | class="col0 centeralign" | Dimension
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
-|- class="row5"
+|- class="row6"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>128</code>
+| class="col3" | Unknown - I've only seen 128
+|- class="row7"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>8</code>
+| class="col3" | Unknown - I've seen 8 and 150
+|- class="row8"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 16 bytes + length of strings
+| class="col1 rightalign" colspan="4" | 22 bytes + length of strings
 |}
 
 === Handshake (0x02) ===
@@ -3081,6 +3123,22 @@ Sent by the server before it disconnects a client, or by the client before it di
 == Protocol History ==
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2011-9-10 ===
+* <div class="li">Beta 1.8 pre-release.</div>
+* Protocol version is now 15
+* Packet 0x00 ([[#TODO|Keep-Alive]]) changed (added keep-alive id)
+* Packet 0x02 ([[#TODO|Login]]) changed (some fields added, possibly removed?)
+* Packet 0x08 ([[#TODO|Health]]) changed (added food bar and sprint fatigue)
+* Packet 0x09 ([[#TODO|Respawn]]) changed (map seed and two unknown fields added)
+* Packet 0x46 ([[#TODO|New/invalid state]]) changed (byte added)
+* New packet 0x29 ([[#TODO|Unknown]]) added
+* New packet 0x2a ([[#TODO|Unknown]]) added
+* New packet 0x2b ([[#TODO|Experience update]]) added
+* New packet 0x6b ([[#TODO|Creative item get]]) added
+* New packet 0xc9 ([[#TODO|User list item]]) added
+* New packet 0xfe ([[#TODO|Server list ping]]) added
+
 
 === 2011-6-30 ===
 * <div class="li">Beta 1.7 released.</div>
