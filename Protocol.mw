@@ -2071,6 +2071,43 @@ Thus, the example metadata stream 0x00 0x01 0x7f is decoded as a field of type 0
 
 For known extra entity information values, see [[Mob Types]].
 
+=== Unknown (0x29) ===
+
+Sometimes sent when another player respawns
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x29
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>14</code>
+| class="col4" | Entity ID of a player
+|- class="row2"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>17</code>
+| class="col3" |
+|- class="row3"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | 
+|- class="row4"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | long
+| class="col2 centeralign" | <code>64</code>
+| class="col3" | 
+|- class="row5"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 15 bytes
+|}
+
 === Pre-Chunk (0x32) ===
 
 '''Server to Client only'''
