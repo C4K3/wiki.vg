@@ -2092,12 +2092,12 @@ Sometimes sent when another player respawns
 | class="col0 centeralign" | Unknown
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>17</code>
-| class="col3" |
+| class="col3" | Possibly metadata type?
 |- class="row3"
 | class="col0 centeralign" | Unknown
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | 
+| class="col3" | Possibly metadata?
 |- class="row4"
 | class="col0 centeralign" | Unknown
 | class="col1 centeralign" | long
