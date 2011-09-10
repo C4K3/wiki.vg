@@ -2108,7 +2108,7 @@ Sometimes sent when another player respawns
 | class="col1 rightalign" colspan="4" | 15 bytes
 |}
 
-=== Unknown (0x2a) ===
+=== Unknown (0x2A) ===
 
 Class is wv. I haven't seen this packet yet.
 
@@ -2133,6 +2133,37 @@ Class is wv. I haven't seen this packet yet.
 |- class="row5"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 7 bytes
+|}
+
+=== Experience (0x2B) ===
+
+Sent by the server when the client should change experience levels.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x2B
+| class="col1 centeralign" | Experience bar
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>15</code>
+| class="col4" | Value to give the experience bar, 0 - 19
+|- class="row2"
+| class="col0 centeralign" | Level
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>2</code>
+|- class="row3"
+| class="col0 centeralign" | Total experience
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>45</code>
+| class="col3" | Total experience
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 5 bytes
 |}
 
 === Pre-Chunk (0x32) ===
