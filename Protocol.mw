@@ -3106,8 +3106,8 @@ A packet from the server indicating whether a request from the client was accept
 
 While the user is in the standard inventory (i.e., not a crafting bench) on a creative-mode server then the server will send this packet:
 
- * If an item is dropped into the quick bar
- * If an item is picked up from the quick bar (special case: item id is -1 and quantity/damage are both 0)
+* <div class="li"> If an item is dropped into the quick bar</li>
+* If an item is picked up from the quick bar (special case: item id is -1 and quantity/damage are both 0)
 
 {| class="wikitable"
 |- class="row0"
