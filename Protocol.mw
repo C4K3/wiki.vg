@@ -1062,7 +1062,7 @@ Only <code>1</code> (swing arm) and <code>3</code> (leave bed) is sent by notchi
 
 '''Client to Server only'''
 
-Sent at least when crouching and leaving a bed.
+Sent at least when crouching, leaving a bed, or sprinting.
 To send action animation to client use 0x28.
 
 {| class="wikitable"
@@ -1079,13 +1079,36 @@ To send action animation to client use 0x28.
 | class="col3 centeralign" | <code>55534</code>
 | class="col4" | Player ID
 |- class="row2"
-| class="col0 centeralign" | Action
+| class="col0 centeralign" | Action ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | Can be <code>1</code> (crouch), <code>2</code> (uncrouch) or <code>3</code> (leave bed).
+| class="col3" | The ID of the action, see below.
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
+|}
+
+Action ID can be one of the following values:
+
+{| class="wikitable"
+|-
+! ID
+! Action
+|-
+| 1
+| Crounch
+|-
+| 2
+| Uncrouch
+|-
+| 3
+| Leave bed
+|-
+| 4
+| Start sprinting
+|-
+| 5
+| Stop sprinting
 |}
 
 === Named Entity Spawn (0x14) ===
