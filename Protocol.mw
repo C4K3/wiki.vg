@@ -3380,7 +3380,9 @@ If the first byte of the text is 1, the rest of the bytes are in groups of three
 
 === User List Item (0xC9) ===
 
-Sent by the server frequently. Each packet contains the data for one online user.
+Sent by the notchian server to update the user list (<tab> in the client). The server sends one packet per user per tick, amounting to 20 packets/s for 1 online user, 40 for 2, and so forth.
+
+The player name supports chat coloring.
 
 {| class="wikitable"
 |- class="row0"
@@ -3409,8 +3411,6 @@ Sent by the server frequently. Each packet contains the data for one online user
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes + length of string
 |}
-
-It is observed that if Unknown is set to false the player is not shown in the list.
 
 === Server List Ping (0xFE) ===
 
