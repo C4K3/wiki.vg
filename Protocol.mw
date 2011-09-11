@@ -151,7 +151,7 @@ All packets begin with a single "Packet ID" byte.  Listed packet size includes t
 === Keep Alive (0x00) ===
 
 The server will frequently send out keep-alives contain a random ID. The client must respond with the same packet.
-The Beta server will disconnect a client if it doesn't receive at least one packet before 1200 in-game ticks, and the Beta client will time out the connection under the same conditions.
+The Beta server will disconnect a client if it doesn't receive at least one packet before 1200 in-game ticks, and the Beta client will time out the connection under the same conditions. The client may send packets with Keep-alive ID=0.
 
 {| class="wikitable"
 |- class="row0"
