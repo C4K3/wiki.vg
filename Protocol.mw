@@ -216,7 +216,7 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col2 centeralign" | <code>0</code>
 | class="col3" |
 |- class="row7"
-| class="col0 centeralign" | Note used
+| class="col0 centeralign" | Not used
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
 | class="col3" |
