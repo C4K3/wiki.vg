@@ -217,7 +217,7 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col3" |
 |- class="row7"
 | class="col0 centeralign" | Not used
-| class="col1 centeralign" | byte
+| class="col1 centeralign" | unsigned byte
 | class="col2 centeralign" | <code>0</code>
 | class="col3" |
 |- class="row5"
@@ -268,7 +268,7 @@ Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login r
 | class="col2 centeralign" | <code>128</code>
 | class="col3" | Defaults to <code>128</code>
 |- class="row7"
-| class="col0 centeralign" | Max Players
+| class="col0 centeralign" | Max players
 | class="col1 centeralign" | unsigned byte
 | class="col2 centeralign" | <code>8</code>
 | class="col3" | Used by the client to draw the user list
