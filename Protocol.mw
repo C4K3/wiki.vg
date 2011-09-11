@@ -216,10 +216,10 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col2 centeralign" | <code>0</code>
 | class="col3" |
 |- class="row7"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Note used
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | Probably not used
+| class="col3" |
 |- class="row5"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 22 bytes + length of strings
@@ -268,10 +268,10 @@ Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login r
 | class="col2 centeralign" | <code>128</code>
 | class="col3" | Defaults to <code>128</code>
 |- class="row7"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | byte
+| class="col0 centeralign" | Max Players
+| class="col1 centeralign" | unsigned byte
 | class="col2 centeralign" | <code>8</code>
-| class="col3" | Unknown - I've seen 8 and 150
+| class="col3" | Used by the client to draw the user list
 |- class="row8"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 22 bytes + length of strings
