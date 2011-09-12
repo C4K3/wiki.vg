@@ -409,10 +409,10 @@ After each "Named Entity Spawn", there will be five of these packets for the equ
 | class="col2 centeralign" | -1
 | class="col3" | Equipped item (-1 for empty slot)
 |- class="row4"
-| class="col0 centeralign" | ???
+| class="col0 centeralign" | Damage
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 
-| class="col3" | Damage?
+| class="col3" |
 |- class="row5"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 11 bytes
@@ -452,7 +452,7 @@ Sent by the server after login to specify the coordinates of the spawn point (th
 | class="col1 rightalign" colspan="4" | 13 bytes
 |}
 
-=== Use Entity? (0x07) ===
+=== Use Entity (0x07) ===
 
 '''Client to Server only'''
 
@@ -474,20 +474,17 @@ A Notchian server only accepts this packet if the entity being attacked/used is 
 | class="col1 centeralign" | User
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>1298</code>
-| class="col4" |
-The entity of the player (ignored by the server)
+| class="col4" | The entity of the player (ignored by the server)
 |- class="row2"
 | class="col0 centeralign" | Target
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>1805</code>
-| class="col3" |
-The entity the player is interacting with
+| class="col3" | The entity the player is interacting with
 |- class="row3"
 | class="col0 centeralign" | Left-click?
 | class="col1 centeralign" | bool
 | class="col2 centeralign" | <code>true</code>
-| class="col3" |
-Seems to be <code>true</code> when the player is pointing at an entity and left-clicking and <code>false</code> when right-clicking.
+| class="col3" | Seems to be <code>true</code> when the player is pointing at an entity and left-clicking and <code>false</code> when right-clicking.
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 10 bytes
@@ -1062,7 +1059,7 @@ Sent whenever an entity should change animation.
 
 Only <code>1</code> (swing arm) and <code>3</code> (leave bed) is sent by notchian clients. Crouching is sent via 0x13. Damage is server-side, and so is not sent by notchian clients. See also 0x26.
 
-=== Entity Action ??? (0x13) ===
+=== Entity Action (0x13) ===
 
 '''Client to Server only'''
 
@@ -1701,7 +1698,7 @@ This packet appears used in controlling position, orientation, and crouching. It
 | class="col4 centeralign" |
 |}
 
-=== Entity Velocity? (0x1C) ===
+=== Entity Velocity (0x1C) ===
 This packet is new to version 4 of the protocol, and is believed to be Entity Velocity/Motion.
 
 Velocity is believed to be in units of 1/32000 of a block per server tick (200ms);
@@ -1975,7 +1972,7 @@ This packet is sent by the server when an entity moves more than 4 blocks.
 | class="col1 rightalign" colspan="4" | 19 bytes
 |}
 
-=== Entity Status? (0x26) ===
+=== Entity Status (0x26) ===
 
 '''Server to Client only'''
 
@@ -1997,7 +1994,7 @@ This packet is new in version 6 of the protocol, and is believed to be indicatio
 | class="col3 centeralign" | 34353
 | class="col4" | 
 |- class="row3"
-| class="col1 centeralign" | Entity Status?
+| class="col1 centeralign" | Entity Status
 | class="col2 centeralign" | Byte
 | class="col3 centeralign" | 0x03
 | class="col4" | Possible values: 2 (entity hurt), 3 (entity dead?), 4, 5
@@ -2006,7 +2003,7 @@ This packet is new in version 6 of the protocol, and is believed to be indicatio
 | class="col1 rightalign" colspan="4" | 6 bytes
 |}
 
-=== Attach Entity? (0x27) ===
+=== Attach Entity (0x27) ===
 This packet is new to version 4 of the protocol, and is believed to be Attach Entity.
 
 This packet is sent when a player has been attached to an entity (e.g. Minecart)
@@ -2837,8 +2834,6 @@ Smoke Directions
 === New/Invalid State (0x46) ===
 
 This packet appeared with protocol version 10. Currently, it appears when a bed can't be used as a spawn point and when the rain state changes.  it could have additional uses in the future.
-
-Its "packet class" is ''ba'' for the client and ''???'' for the server (Minecraft Beta 1.5).  
 
 The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only the codes for 1 and 2 are null.
 
