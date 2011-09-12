@@ -2270,6 +2270,8 @@ Only noted effects are currently implemented by the 1.8pre2 client/server
 
 Sent by the server when the client should change experience levels.
 
+The amount of experience needed to reach the next level increases by 10 with each level. At level 0, you need 10 experience to progress to level 1. At level 1, the requirement is 20 to progress, and so forth.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -2279,20 +2281,20 @@ Sent by the server when the client should change experience levels.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="3" | 0x2B
-| class="col1 centeralign" | Experience bar
+| class="col1 centeralign" | Current experience
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>15</code>
-| class="col4" | Value to give the experience bar, 0 - 19
+| class="col4" | Experience at current level
 |- class="row2"
 | class="col0 centeralign" | Level
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>2</code>
-| class="col4" | Incremented when the experience bar rolls over from 19 to 0
+| class="col4" |
 |- class="row3"
 | class="col0 centeralign" | Total experience
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>45</code>
-| class="col3" | Total experience
+| class="col3" |
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 5 bytes
