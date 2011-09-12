@@ -229,7 +229,7 @@ Sent by the client after the handshake to finish logging in. If the version is o
 
 Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login request]]. If it didn't, it'll send a [[#Disconnect.2FKick_.280xFF.29|kick]] instead.
 
-Max players is used by the client to draw the user list. Setting this value lower than the actual max players, or indeed the number of players online, will only affect the size and number of users displayed. Values above 127 will cause the player list not to be drawn. Values above 60 will cause usernames to overlap and not fit in their bounding boxes.
+Max players is used by the client to draw the player list. Setting this value lower than the actual max players, or indeed the number of players online, will only affect the size and number of users displayed. Values above 127 will cause the player list not to be drawn. Values above 60 will cause usernames to overlap and not fit in their bounding boxes.
 
 {| class="wikitable"
 |- class="row0"
@@ -273,7 +273,7 @@ Max players is used by the client to draw the user list. Setting this value lowe
 | class="col0 centeralign" | Max players
 | class="col1 centeralign" | unsigned byte
 | class="col2 centeralign" | <code>8</code>
-| class="col3" | Used by the client to draw the user list
+| class="col3" | Used by the client to draw the player list
 |- class="row8"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 22 bytes + length of strings
@@ -3402,11 +3402,9 @@ If the first byte of the text is 1, the rest of the bytes are in groups of three
 | class="col1 rightalign" colspan="4" | 6 bytes
 |}
 
-=== User List Item (0xC9) ===
+=== Player List Item (0xC9) ===
 
 Sent by the notchian server to update the user list (<tab> in the client). The server sends one packet per user per tick, amounting to 20 packets/s for 1 online user, 40 for 2, and so forth.
-
-The player name supports chat coloring.
 
 {| class="wikitable"
 |- class="row0"
@@ -3420,7 +3418,7 @@ The player name supports chat coloring.
 | class="col1 centeralign" | Player name
 | class="col2 centeralign" | string16
 | class="col3 centeralign" | barneygale
-| class="col4" |
+| class="col4" | Supports chat colouring, limited to 16 characters.
 |- class="row2"
 | class="col1 centeralign" | Online
 | class="col2 centeralign" | bool
@@ -3489,7 +3487,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * New packet 0x2a ([[#Remove_Entity_Effect_.280x2A.29|Remove Entity Effect]]) added
 * New packet 0x2b ([[#Experience_.280x2B.29|Experience update]]) added
 * New packet 0x6b ([[#Creative_inventory_action_.280x6B.29|Creative item get]]) added
-* New packet 0xc9 ([[#User_List_Item_.280xC9.29|User list item]]) added
+* New packet 0xc9 ([[#Player_List_Item_.280xC9.29|Player list item]]) added
 * New packet 0xfe ([[#Server_List_Ping_.280xFE.29|Server list ping]]) added
 
 
