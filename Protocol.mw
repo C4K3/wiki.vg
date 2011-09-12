@@ -229,6 +229,8 @@ Sent by the client after the handshake to finish logging in. If the version is o
 
 Sent by the server if it accepts the clients [[#Login_Request_.280x01.29|login request]]. If it didn't, it'll send a [[#Disconnect.2FKick_.280xFF.29|kick]] instead.
 
+Max players is used by the client to draw the user list. Setting this value lower than the actual max players, or indeed the number of players online, will only affect the size and number of users displayed. Values above 127 will cause the player list not to be drawn. Values above 60 will cause usernames to overlap and not fit in their bounding boxes.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
