@@ -3477,6 +3477,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Packet 0x01 ([[#Login_Request_.280x01.29|Login]]) changed (added server mode, height limit, and an unknown field)
 * Packet 0x08 ([[#Update_Health_.280x08.29|Health]]) changed (added food bar and food saturation)
 * Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (added map seed, server mode, height limit)
+* Packet 0x13 ([[#Entity_Action_.280x13.29|Entity Action]]) has new values for starting/stopping sprinting.
 * Packet 0x46 ([[#New.2FInvalid_State_.280x46.29|New/invalid state]]) changed (added game mode reason, and a game mode byte)
 * New packet 0x29 ([[#Entity_Effect_.280x29.29|Entity Effect]]) added
 * New packet 0x2a ([[#Remove_Entity_Effect_.280x2A.29|Remove Entity Effect]]) added
