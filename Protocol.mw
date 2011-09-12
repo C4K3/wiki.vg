@@ -499,6 +499,8 @@ Seems to be <code>true</code> when the player is pointing at an entity and left-
 
 Sent by the server to update/set the health of the player it is sent to. Added in protocol version 5.
 
+Food saturation acts as a food "overcharge". Food values will not decrease while the saturation is over zero. Players logging in automatically get a saturation of 5.0. Eating food increases the saturation as well as the food bar.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
