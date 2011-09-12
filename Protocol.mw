@@ -2192,7 +2192,7 @@ Only noted effects are currently implemented by the 1.8pre2 client/server
 | class="col0" | 10
 | class="col1" | regeneration
 | class="col2" | Hearts pulse one-by-one
-| class="col3" | Caused by golden apple. Food and saturation both set to 20, health quickly increases.
+| class="col3" | Caused by golden apple. Health regenerates over 600-tick (30s) period.
 |- class="row1"
 | class="col0" | 11
 | class="col1" | resistance
