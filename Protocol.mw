@@ -1665,6 +1665,13 @@ Calculating the center of an image: given a (width x height) grid of cells, with
 2x1 (1, 0)
 4x4 (1, 2)
 
+=== Unknown (0x1A) ===
+
+Sample data:
+
+[U0x1A: 00-00-B5-C6-FF-FF-E2-28-00-00-07-E4-00-00-08-8A-00-00]
+[U0x1A: 00-00-B5-C7-FF-FF-E2-28-00-00-07-E4-00-00-08-8A-00-00]
+
 === Stance update (?) (0x1B) ===
 This packet appears used in controlling position, orientation, and crouching. It doesn't seem to be used (see [[Protocol#Player Position & Look (0x0D)|0x0D]]).
 
