@@ -865,6 +865,9 @@ Status can (currently) be one of four values:
 |- class="row3"
 | class="col0 leftalign" | Drop item
 | class="col1 centeralign" | <code>4</code>
+|- class="row4"
+| class="col0 leftalign" | Shoot arrow
+| class="col1 centeralign" | <code>5</code>
 |}
 
 Notchian clients send a 0 (started digging) when they start digging and a 2 (finished digging) once they think they are finished. If digging is aborted, no notice is sent to the server; the client simply does not send a 2 (finished digging).
