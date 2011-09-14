@@ -1386,15 +1386,12 @@ Object Types
 | class="col0" | 62
 | class="col1" | Thrown Egg 
 |- class="row9"
-| class="col0" | 63
-| class="col1" | Experience Orb
-|- class="row10"
 | class="col0" | 70
 | class="col1" | Falling Sand
-|- class="row11"
+|- class="row10"
 | class="col0" | 71
 | class="col1" | Falling Gravel
-|- class="row12"
+|- class="row11"
 | class="col0" | 90
 | class="col1" | Fishing Float
 |}
