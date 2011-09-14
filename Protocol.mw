@@ -557,7 +557,7 @@ Sent by the client when the player presses the "Respawn" button after dying. The
 | class="col1 centeralign" | Unknown
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
-| class="col4" | (Creative mode is now the third byte)
+| class="col4" | Only <code>1</code> has been seen so far
 |- class="row2"
 | class="col1 centeralign" | Creative mode
 | class="col2 centeralign" | byte
