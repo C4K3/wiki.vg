@@ -1673,6 +1673,24 @@ This is two packets, each packet has 18 bytes payload.
 
 [U0x1A: 00-00-B5-C7-FF-FF-E2-28-00-00-07-E4-00-00-08-8A-00-00]
 
+
+
+It looks like it may be 4 ints, followed by a short.
+
+The bytes below are displayed in the order they are received.
+
+[00-00-1F-04-00-00-05-F8-00-00-08-A8-FF-FF-FC-94-00-01] (7940  1528  2216  -876  1)
+
+[00-00-1F-03-00-00-05-9C-00-00-08-A8-FF-FF-FC-C6-00-01] (7939  1436  2216  -826  1)
+
+[00-00-1F-02-00-00-05-F8-00-00-08-48-FF-FF-FC-49-00-01] (7938  1528  2120  -951  1)
+
+[00-00-1F-01-00-00-05-F5-00-00-08-88-FF-FF-FC-69-00-01] (7937  1525  2184  -919  1)
+
+[00-00-1F-00-00-00-05-F8-00-00-08-A8-FF-FF-FC-B8-00-01] (7936  1528  2216  -840  1)
+
+[00-00-1E-FF-00-00-06-14-00-00-08-C8-FF-FF-FC-B8-00-01] (7935  1556  2248  -840  1)
+
 === Stance update (?) (0x1B) ===
 This packet appears used in controlling position, orientation, and crouching. It doesn't seem to be used (see [[Protocol#Player Position & Look (0x0D)|0x0D]]).
 
