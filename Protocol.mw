@@ -273,7 +273,7 @@ Max players is used by the client to draw the player list. Setting this value lo
 | class="col0 centeralign" | Unknown
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | Only <code>1</code> has been seen so far
+| class="col3" | Only <code>1</code> and <code>2</code>(Beta 1.8) has been seen so far
 |- class="row7"
 | class="col0 centeralign" | World height
 | class="col1 centeralign" | unsigned byte
