@@ -3532,7 +3532,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Packet 0x01 ([[#Login_Request_.280x01.29|Login]]) changed (added byte, world height now unsigned)
 * Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (added byte)
 * Packet 0x64 ([[#Open_window_.280x64.29|Open Window]]) changed (Window title changed from string8 to string16)
-* New packet 0x1a ([[#TODO|Experience orb]]) added
+* New packet 0x1a ([[#Experience_Orb_.280x1A.29|Experience Orb]]) added
 * Assumedly 0x17 ([[#Add_Object.2FVehicle_.280x17.29|Add Object/Vehicle]]) is no longer used for exp orbs.
 
 === 2011-9-10 ===
