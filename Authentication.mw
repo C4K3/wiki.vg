@@ -25,12 +25,12 @@ The other resource files for Minecraft are kept at:
 
 == Connecting To A Server ==
 When you first attempt to connect to the server, you begin by sending the [[Protocol#Handshake_.280x02.29 | Handshake]] containing your case-sensitive username. The server will return one of three values: '-' for no authentication (in which case you can just continue joining), '+' for password protected or a hash if the server requires name authentication. Name verification is achieved by sending a HTTP GET request to the minecraft.net server:
-<pre>http://www.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
+<pre>http://session.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
 If the server returns ''OK'' it's safe to continue joining the server, otherwise it'll disconnect you with an error message.
 
 == Verifying Name Authentication ==
 The server will verify name authentication by making yet another HTTP GET request to minecraft.net:
-<pre>http://www.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash></pre>
+<pre>http://session.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash></pre>
 The <u>server hash</u> is the same value that was sent to the client in the handshake. If the server returns ''YES'' then the client is authenticated and allowed to join. Otherwise the client will/should be kicked with “Failed to verify username!”.
 
 == Sample Implementation ==
@@ -57,10 +57,10 @@ sid=$4
 user=$3
 hash=$RANDOM
 echo "Now I'm the client ($user)..."
-curl -L "http://www.minecraft.net/game/joinserver.jsp?user=$user&sessionId=$sid&serverId=$hash"
+curl -L "http://session.minecraft.net/game/joinserver.jsp?user=$user&sessionId=$sid&serverId=$hash"
 echo
 echo "Now I'm the server..."
-curl -L "http://www.minecraft.net/game/checkserver.jsp?user=$user&serverId=$hash"
+curl -L "http://session.minecraft.net/game/checkserver.jsp?user=$user&serverId=$hash"
 echo
 </nowiki></pre>
 
