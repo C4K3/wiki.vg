@@ -270,13 +270,13 @@ Max players is used by the client to draw the player list. Setting this value lo
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
 |- class="row6"
-| class="col0 centeralign" | World height???
+| class="col0 centeralign" | Unknown
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | Defaults to <code>1</code>
+| class="col3" | Only <code>1</code> has been seen so far
 |- class="row7"
 | class="col0 centeralign" | World height
-| class="col1 centeralign" | byte
+| class="col1 centeralign" | unsigned byte
 | class="col2 centeralign" | <code>128</code>
 | class="col3" | Defaults to <code>128</code>
 |- class="row8"
