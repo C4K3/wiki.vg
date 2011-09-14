@@ -1682,6 +1682,8 @@ This is two packets, each packet has 18 bytes payload.
 
 The structure appears to be 4 ints, followed by either a short (likely) or 2 bytes (less likely).
 
+The first int appears to be an entity id.
+
 The bytes below are displayed in the order they were received.
 
 [00-00-1F-04-00-00-05-F8-00-00-08-A8-FF-FF-FC-94-00-01] (7940  1528  2216  -876  1)
