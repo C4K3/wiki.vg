@@ -8,29 +8,40 @@ craftd is on [https://github.com/kev009/craftd/ github]. This is a developer pre
 
 == Roadmap ==
 
-=== 0.4 - Future ===
-* Production grade scripting module (one or more of: javascript, ruby, python, lua)
-* Major protocol implementation
-** Chests
-** Weapons
-** Projectiles
-** Signs
-** etc
-* Mobs
-* Tree growth
+=== 0.3 - Future (May change) ===
+GOAL: Stable core and operation with 100 player over 24 hours
 
-=== 0.3 - Future ===
-* Multiple persistence modules - store player info, world, etc.  (one or more of: NBT, SQLite, Berkeley DB, libdbi)
-* Inventory and basic item support
-* Basic mutable world (digging, crafting)
-* Return of cdhttpd and start of stateless JSON API and web admin.
+* Complex world modifications
+** Implement simple World Block Actions
+*** Grass Spread
+*** Fire Spread
+*** Water/Lava Spread
+** Fix Implementation of Time
+** Implement Lighting Engine
+** Implement Block Identifiers (Wood, Stone, etc)
+* Basic Mobs
+** Implement Pigs
+** Implement Cows
+** Implement Sheep
+** Implement mutant duck/bird thing we call Chickens
+* Correctly Implement Creative Mode
 
 === 0.2 - In Progress ===
-* Refactoring of code (meh!) - Much cleaner and conductive to modular development.  Dynamically loaded plugins.
-* Initial map generator (youx!)
-* Basic plugin set - standard gameplay, NBT/McRegion, chat commands
-* Local broadcast - finally send entities and optionally chat
-* Stable core and operation with 100 players
+GOAL: Stable core and operation with 100 players over 30 minutes
+
+* Update survival plugin to 1.8 specs (currently is 1.4)
+* Simple world modifications (digging/placing blocks)
+** World saving
+*** Implemented Crimity's seemingly faster chunk hashing code ('''Done''')
+*** Basic digging ('''Done''')
+*** Basic block placement
+*** Chunk Saving/Loading
+* Implement Protocol 17 (MC 1.8.1) Structs
+** Packets ('''Almost Done, need packet [http://wiki.vg/Protocol#Item_Data_.280x83.29 0x83]''')
+** Mobs
+* Improved Error handling
+** Catch socket errors
+
 
 === 0.1a - Released ===
 Experimental release exploring the Minecraft protocol and various libraries.  Basic support for loading worlds and walking around.
