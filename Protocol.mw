@@ -1500,7 +1500,7 @@ Mob Types (Incomplete)
 |- class="row8"
 | class="col0" | 58
 | class="col1" | Enderman
-| class="col2" | ?
+| class="col2" | Index 16 is byte: item in hand <br/> Index 17 is byte: 1 if the enderman is aggressive, 0 otherwise
 |- class="row8"
 | class="col0" | 59
 | class="col1" | Cave Spider
