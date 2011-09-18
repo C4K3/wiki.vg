@@ -32,16 +32,16 @@ GOAL: Stable core and operation with 100 players over 30 minutes
 * Update survival plugin to 1.8 specs (currently is 1.4)
 * Simple world modifications (digging/placing blocks)
 ** World saving
-*** Implemented Crimity's seemingly faster chunk hashing code ('''Done''')
-*** Basic digging ('''Done''')
+*** Implemented Crimity's seemingly faster chunk hashing code ('''Experimental build in progress''')
+*** Basic digging ('''Experimental Build in progress''')
 *** Basic block placement
 *** Chunk Saving/Loading
 * Implement Protocol 17 (MC 1.8.1) Structs
 ** Packets ('''Almost Done, need packet [http://wiki.vg/Protocol#Item_Data_.280x83.29 0x83]''')
+*** Check packets against newest protocol for accuracy
 ** Mobs
 * Improved Error handling
 ** Catch socket errors
-
 
 === 0.1a - Released ===
 Experimental release exploring the Minecraft protocol and various libraries.  Basic support for loading worlds and walking around.
