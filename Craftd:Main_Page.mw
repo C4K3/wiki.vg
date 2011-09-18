@@ -15,7 +15,7 @@ craftd keeps modern UNIX daemon philosophy in mind. This includes best practice 
 Currently, craftd is managed by Precipice Games developers dotblank and HACKhalo2, hopefully to spark interest again :D .
 
 * You can find the latest source on [https://github.com/PrecipiceGames/craftd/ github].  Feel free to watch or fork!
-* The latest roadmap of craftd is ([[Craftd:Status#Roadmap|here]]).
+* The latest roadmap of craftd is [[Craftd:Status#Roadmap|here]].
 * Want to help?  Need help?  Come talk!  '''irc.freenode.net #craftd'''.
 * A test world is sometimes available at '''mc.kev009.com:25565''' or '''hackhalo2.com'''.
 
