@@ -2602,11 +2602,10 @@ See the Block Change command for description of the general format of a block ch
 
 '''Server to Client only'''
 
-This packet is sent to the client when a note block is played or a piston changes it's state. 
-
-==== Note Block ====
-
-It shows the note particle being emitted from the block as well as playing the tone.
+This packet is used for a number of things:
+* <div class="li">Chests opening and closing
+* Pistons pushing and pulling
+* Note blocks playing
 
 {| class="wikitable"
 |- class="row0"
@@ -2632,21 +2631,28 @@ It shows the note particle being emitted from the block as well as playing the t
 | class="col2 centeralign" | <code>18</code>
 | class="col3" | Block Z Coordinate
 |- class="row4"
-| class="col0 centeralign" | Instrument Type 
+| class="col0 centeralign" | Byte 1
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>3</code>
-| class="col3" | The instrument type (see the table below).
+| class="col3" | Varies depending on block - see below
 |- class="row5"
-| class="col0 centeralign" | Pitch
+| class="col0 centeralign" | Byte 2
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>17</code>
-| class="col3" | The pitch of the note (between 0-24 inclusive where 0 is the lowest and 24 is the highest).
+| class="col3" | Varies depending on block - see below
 |- class="row6"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 13 bytes
 |}
 
-Instrument Types
+==== Note Block ====
+
+It shows the note particle being emitted from the block as well as playing the tone.
+
+===== Byte 1 =====
+
+Instrument type.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Type ID
@@ -2668,9 +2674,11 @@ Instrument Types
 | class="col1" | Bass Drum
 |}
 
-More information about how the pitch values correspond to notes in real life are available on the [http://www.minecraftwiki.net/wiki/Note_Block official Minecraft wiki].
+===== Byte 2 =====
 
-==== Pistons ====
+The pitch of the note (between 0-24 inclusive where 0 is the lowest and 24 is the highest). More information about how the pitch values correspond to notes in real life are available on the [http://www.minecraftwiki.net/wiki/Note_Block official Minecraft wiki].
+
+==== Piston ====
 
 {| class="wikitable"
 |- class="row0"
@@ -2710,7 +2718,14 @@ More information about how the pitch values correspond to notes in real life are
 | class="col1 rightalign" colspan="4" | 13 bytes
 |}
 
-Directions
+===== Byte 1 =====
+
+The state the piston changes to - 0 for pushing, 1 for pulling.
+
+===== Byte 2 =====
+
+Direction.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Direction ID
@@ -2734,6 +2749,18 @@ Directions
 | class="col0" | 5
 | class="col1" | East
 |}
+
+==== Chest ====
+
+Animates the chest's lid opening. Note that the notchian server will send this every 3s even if the state hasn't changed.
+
+===== Byte 1 =====
+
+Not used - always 1
+
+===== Byte 2 =====
+
+State of the chest - 0 for closed, 1 for open.
 
 === Explosion (0x3C) ===
 
