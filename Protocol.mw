@@ -3497,6 +3497,7 @@ In return, the server sends a kick (0xFF), with its string containing data (serv
 
 Example server pinger: 
 https://gist.github.com/1209061 (Python)
+
 https://gist.github.com/1226084 (PHP)
 
 {| class="wikitable"
