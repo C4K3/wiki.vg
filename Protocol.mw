@@ -3495,7 +3495,9 @@ To load server info in the multiplayer menu, the notchian client connects to eac
 
 In return, the server sends a kick (0xFF), with its string containing data (server description, number of users, number of slots), delimited by a §
 
-Example server pinger: https://gist.github.com/1209061
+Example server pinger: 
+https://gist.github.com/1209061 (Python)
+https://gist.github.com/1226084 (PHP)
 
 {| class="wikitable"
 |- class="row0"
