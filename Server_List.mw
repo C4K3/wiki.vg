@@ -86,6 +86,19 @@ A couple things for contributors:
 | {{yes|[http://bukkit.org/ Bukkit]}}
 | {{yes|Active}}
 |-
+! [http://www.mcdevs.org/forum/thread-jckf-s-server-project Gruved]
+| [[User:Jckf|Jckf]]
+| [http://en.wikipedia.org/wiki/Perl Perl]
+| Open source
+| {{yes|Yes}}
+| {{planned|Beta planned}}
+| {{planned|Partial}}
+| {{planned}}
+| {{planned}}
+| {{yes|Event-driven}}
+| {{yes|[http://en.wikipedia.org/wiki/Perl Perl]}}
+| {{yes|Active}}
+|-
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -228,19 +241,6 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{no}}
 | {{unknown|Cancelled}}
-|-
-! [http://www.mcdevs.org/forum/thread-jckf-s-server-project Gruved]
-| [[User:Jckf|Jckf]]
-| [http://en.wikipedia.org/wiki/Perl Perl]
-| Open source
-| {{yes|Yes}}
-| {{planned|Beta planned}}
-| {{planned|Partial}}
-| {{planned}}
-| {{planned}}
-| {{yes|Event-driven}}
-| {{yes|[http://en.wikipedia.org/wiki/Perl Perl]}}
-| {{yes|Active}}
 |}
 
 [[Category:Minecraft Beta]]
