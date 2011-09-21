@@ -270,10 +270,10 @@ Max players is used by the client to draw the player list. Setting this value lo
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | Used for specifying the players dimension -1 for hell, 0 otherwise
 |- class="row6"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Difficulty
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | Only <code>1</code> and <code>2</code>(Beta 1.8) has been seen so far
+| class="col3" | 0 thru 3 for Peaceful, Easy, Normal, Hard
 |- class="row7"
 | class="col0 centeralign" | World height
 | class="col1 centeralign" | unsigned byte
