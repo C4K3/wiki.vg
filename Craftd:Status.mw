@@ -27,28 +27,12 @@ GOAL: Stable core and operation with 100 player over 24 hours
 * Correctly Implement Creative Mode
 
 === 0.2 - In Progress ===
-'''Experimental Branch can be found [https://github.com/HACKhalo2/craftd/tree/experimental here]'''
 
 GOAL: Stable core and operation with 100 players over 30 minutes
 
-* Simple world modifications (digging/placing blocks) ('''In Progress''')
-** World saving ('''Currently in Memory''')
-*** Implemented Crimity's seemingly faster chunk hashing code ('''Experimental build in progress''')
-*** Basic digging ('''Experimental Build Done, needs overview''')
-**** Creative Mode ('''Done''')
-**** Survival Mode ('''Done''')
-*** Basic block placement ('''Experimental Build in progress''')
-**** Creative Mode ('''Buggy, but Working''')
-**** Survival Mode ('''Same as Above''')
-*** Chunk Saving/Loading
-* Implement Protocol 17 (MC 1.8.1) Structs
-** Update survival plugin to 1.8 specs (currently is 1.4)
-** Packets ('''Almost Done, need packet [http://wiki.vg/Protocol#Item_Data_.280x83.29 0x83]''')
-*** Check packets against newest protocol for accuracy
-** Mobs
-** Per-World Dimension and Mode ('''Partially Complete''')
-* Improved Error handling
-** Catch socket errors
+Current Projects:
+
+Block Breaking (including Event Handles) '''HACKhalo2''' [https://github.com/HACKhalo2/craftd/tree/block_break github]
 
 === 0.1a - Released ===
 Experimental release exploring the Minecraft protocol and various libraries.  Basic support for loading worlds and walking around.
