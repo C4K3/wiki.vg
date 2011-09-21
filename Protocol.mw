@@ -273,7 +273,7 @@ Max players is used by the client to draw the player list. Setting this value lo
 | class="col0 centeralign" | Difficulty
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
-| class="col3" | 0 thru 3 for Peaceful, Easy, Normal, Hard
+| class="col3" | <code>0</code> thru <code>3</code> for Peaceful, Easy, Normal, Hard
 |- class="row7"
 | class="col0 centeralign" | World height
 | class="col1 centeralign" | unsigned byte
