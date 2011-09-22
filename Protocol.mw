@@ -188,8 +188,8 @@ Sent by the client after the handshake to finish logging in. If the version is o
 | class="col0 centeralign" rowspan="8" | 0x01
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | int
-| class="col3 centeralign" | <code>17</code>
-| class="col4" | The latest version of the protocol is 17
+| class="col3 centeralign" | <code>18</code>
+| class="col4" | The latest version of the protocol is 18
 |- class="row2"
 | class="col0 centeralign" | Username
 | class="col1 centeralign" | string16
@@ -3533,6 +3533,10 @@ Sent by the server before it disconnects a client, or by the client before it di
 == Protocol History ==
 
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2011-9-22 ===
+* <div class="li">Beta 1.9 pre-release.</div>
+* Protocol version is now 18
 
 === 2011-9-14 ===
 * <div class="li">Beta 1.8 release.</div>
