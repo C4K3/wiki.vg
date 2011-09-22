@@ -1458,84 +1458,127 @@ Sent by the server when a Mob Entity is Spawned
 | class="col1 rightalign" colspan="4" | 20 bytes + Metadata (at least 1)
 |}
 
-Mob Types (Incomplete)
+==== Mob Types ====
 
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Type ID
 ! class="col1" | Type Name
-! class="col2" | Metadata
 |- class="row1"
 | class="col0" | 50
 | class="col1" | Creeper
-| class="col2" | Index 16 is byte: status of the creeper (depends on the fuse) <br/> Index 17 is byte: 1 if creeper was Struck by lightning, 0 otherwise
 |- class="row2"
 | class="col0" | 51
 | class="col1" | Skeleton
-| class="col2" | No metadata
 |- class="row3"
 | class="col0" | 52
 | class="col1" | Spider
-| class="col2" | No metadata
 |- class="row4"
 | class="col0" | 53
 | class="col1" | Giant Zombie
-| class="col2" | No metadata
 |- class="row5"
 | class="col0" | 54
 | class="col1" | Zombie
-| class="col2" | No metadata
 |- class="row6"
 | class="col0" | 55
 | class="col1" | Slime
-| class="col2" | Index 16: Byte containing the size of it: 1 << rand.nextInt(3)
 |- class="row7"
 | class="col0" | 56
 | class="col1" | Ghast
-| class="col2" | Index 16: Byte saying if ghast is attacking (red eyes) or not
 |- class="row8"
 | class="col0" | 57
 | class="col1" | Zombie Pigman
-| class="col2" | No metadata
-|- class="row8"
+|- class="row9"
 | class="col0" | 58
 | class="col1" | Enderman
-| class="col2" | Index 16 is byte: item in hand <br/> Index 17 is byte: 1 if the enderman is aggressive, 0 otherwise
-|- class="row8"
+|- class="row10"
 | class="col0" | 59
 | class="col1" | Cave Spider
-| class="col2" | No metadata
-|- class="row8"
+|- class="row11"
 | class="col0" | 60
 | class="col1" | Silverfish
-| class="col2" | No metadata
-|- class="row9"
+|- class="row12"
+| class="col0" | 61
+| class="col1" | Blaze
+|- class="row13"
+| class="col0" | 62
+| class="col1" | Magma Cube
+|- class="row14"
 | class="col0" | 90
 | class="col1" | Pig
-| class="col2" | Index 16 - byte - set to 1 if the pig has a saddle, 0 otherwise.
-|- class="row10"
+|- class="row15"
 | class="col0" | 91
 | class="col1" | Sheep
-| class="col2" | Index 16 - byte - Bit 0x10 indicates shearedness, the lower 4 bits indicate wool color.
-|- class="row11"
+|- class="row16"
 | class="col0" | 92
 | class="col1" | Cow
-| class="col2" | No metadata
-|- class="row12"
+|- class="row17"
 | class="col0" | 93
 | class="col1" | Hen
-| class="col2" | No metadata
-|- class="row13"
+|- class="row18"
 | class="col0" | 94
 | class="col1" | Squid
-| class="col2" | No metadata
-|- class="row14"
+|- class="row19"
 | class="col0" | 95
 | class="col1" | Wolf
-| class="col2" | Index 16 - byte - Bitflags (see below)<br /> Index 17 - string - Name of the player who tamed the wolf<br /> Index 18 - int - Health of the wolf
+|- class="row20"
+| class="col0" | 97
+| class="col1" | Snowman
+|- class="row21"
+| class="col0" | 120
+| class="col1" | Villager
 |}
 
-Sheep Wool Colors
+==== Mob Metadata ====
+
+All mobs send a metadata entry with index 0. This is a byte representing three boolean flags:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Bit index
+! class="col1" | Bit mask
+! class="col2" | Meaning
+|- class="row1"
+| class="col0" | 0
+| class="col1" | 0x01
+| class="col2" | Entity on fire
+|- class="row2"
+| class="col0" | 1
+| class="col1" | 0x02
+| class="col2" | Entity crouched
+|- class="row3"
+| class="col0" | 2
+| class="col1" | 0x04
+| class="col2" | Entity riding
+|}
+
+Some mob types have more metadata:
+
+===== Creeper =====
+
+* <div class="li">'''16''' (byte): Status. Depends on the fuse
+* '''17''' (byte): Charged. <code>1</code> if the creeper has been hit by lightning, <code>0</code> otherwise.
+
+===== Slime/Magma Cube =====
+
+* <div class="li">'''16''' (byte): Size. Randomly-generated. <code>0</code>, <code>1</code>, <code>2</code> or <code>4</code>.
+
+===== Ghast =====
+
+* <div class="li">'''16''' (byte): Aggression. <code>1</code> for aggressive (red eyes), <code>0</code> otherwise.
+
+===== Enderman =====
+
+* <div class="li">'''16''' (byte): Item in hand
+* '''17''' (byte): Aggression. <code>1</code> for aggressive, <code>0</code> otherwise.
+
+===== Pig =====
+
+* <div class="li">'''16''' (byte): Saddled. <code>1</code> if the pig is wearing a saddle, <code>0</code> otherwise.
+
+===== Sheep =====
+
+* <div class="li">'''16''' (byte): bit 0x10 indicates shearedness. bits 0x0F indicate color (see below).
 
 {| class="wikitable"
 |- class="row0"
@@ -1591,28 +1634,12 @@ Sheep Wool Colors
 | class="col1" | Black
 |}
 
-Metadata index 0 is a byte representing a set of 8 boolean flags:
+===== Wolf =====
 
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Bit index
-! class="col1" | Bit mask
-! class="col2" | Meaning
-|- class="row1"
-| class="col0" | 0
-| class="col1" | 0x01
-| class="col2" | Entity on fire
-|- class="row2"
-| class="col0" | 1
-| class="col1" | 0x02
-| class="col2" | Entity crouched
-|- class="row3"
-| class="col0" | 2
-| class="col1" | 0x04
-| class="col2" | Entity riding
-|}
+* <div class="li">'''16''' (byte): Flags (see below).
+* '''17''' (string): Name of player that tamed wolf.
+* '''18''' (int): Health.
 
-Metadata index 16 for wolves:
 
 {| class="wikitable"
 |- class="row0"
