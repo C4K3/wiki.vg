@@ -3459,8 +3459,6 @@ If the first byte of the text is 0, the next two bytes are X start and Y start a
 If the first byte of the text is 1, the rest of the bytes are in groups of three: (data, x, y). The lower half of the data is the type (always 0 under vanilla) and the upper half is the direction.
 
 === Increment Statistic (0xC8) ===
-* Class: nj
-
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
