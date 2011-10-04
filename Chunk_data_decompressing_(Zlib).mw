@@ -28,9 +28,9 @@ if (ret != Z_OK){
 }
 
 strm.avail_in = len;
-strm.next_in = in;
+strm.next_in = (Bytef*)in; 
 strm.avail_out = 100000;
-strm.next_out = out;
+strm.next_out = (Bytef*)out; 
 
 ret = inflate(&strm, Z_NO_FLUSH);
             
