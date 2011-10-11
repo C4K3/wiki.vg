@@ -1,0 +1,36 @@
+{{Box|
+BORDER = #9999FF|
+BACKGROUND = #99CCFF|
+WIDTH = 100%|
+ICON = |
+HEADING = '''ChunkPS Overview''' |
+CONTENT = 
+'''ChunkPS''' (Tentitive Title) is a cloud-based NBT Chunk provider. It's currently being drafted, so things are likely going to change drastically.
+
+ChunkPS is going to be [[craftd:Main_Page|craftd's]] main Chunk provider interface. But this doesn't mean that other servers, like [https://github.com/huin/chunkymonkey Chunky Monkey], [https://github.com/SpaceManiac/Glowstone Glowstone], ect al won't be able to use it. On the contrary, ChunkPS will be designed for anything that deals with the Beta/Release NBT world format.
+}}
+
+{| width="100%"
+|- style="vertical-align: top;"
+| <!-- Section 1-1 --> 
+{{Box|
+BORDER = #669933|
+BACKGROUND = #99CC33|
+WIDTH = 100%|
+ICON = |
+HEADING = '''User Documentation and Resources''' |
+CONTENT = To be populated later on... :)
+}} 
+| <!-- Section 1-2 --> 
+{{Box|
+BORDER = #993300|
+BACKGROUND = #CC0000|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Developer Documentation and Resources'''|
+CONTENT =
+*[http://www.wangafu.net/~nickm/libevent-book/ libevent book]
+*[http://lists.apple.com/archives/xcode-users/2008/May/msg00665.html C99 Info]
+*github (none yet)
+}}
+|}
