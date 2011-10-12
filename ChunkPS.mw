@@ -31,6 +31,7 @@ HEADING = '''Developer Documentation and Resources'''|
 CONTENT =
 *[http://www.wangafu.net/~nickm/libevent-book/ libevent book]
 *[http://lists.apple.com/archives/xcode-users/2008/May/msg00665.html C99 Info]
+*[[ChunkPS/Coding_Style | Coding style]]
 *github (none yet)
 }}
 | <!-- Section 1-3 -->
