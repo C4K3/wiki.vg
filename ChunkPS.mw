@@ -33,4 +33,14 @@ CONTENT =
 *[http://lists.apple.com/archives/xcode-users/2008/May/msg00665.html C99 Info]
 *github (none yet)
 }}
+| <!-- Section 1-3 -->
+{{Box|
+BORDER = #00AA66|
+BACKGROUND = #00CC33|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Drafting Resources'''|
+CONTENT =
+*[http://www.dabbleboard.com/draw/HACKhalo2/ChunkPS_Draft1 Dabbleboard Draft 1]
+}}
 |}
