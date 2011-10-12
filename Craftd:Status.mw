@@ -32,8 +32,8 @@ GOAL: Stable core and operation with 100 players over 30 minutes
 
 Current Projects:
 
-Block Breaking (including Event Handles) '''HACKhalo2''' [https://github.com/HACKhalo2/craftd/tree/block_break github]
-Player Inventories '''Alyawn''' [https://github.com/alyawn/craftd github]
+*Block Breaking (including Event Handles) '''HACKhalo2''' [https://github.com/HACKhalo2/craftd/tree/block_break github]
+*Player Inventories '''Alyawn''' [https://github.com/alyawn/craftd github]
 
 === 0.1a - Released ===
 Experimental release exploring the Minecraft protocol and various libraries.  Basic support for loading worlds and walking around.
