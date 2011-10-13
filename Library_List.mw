@@ -23,6 +23,11 @@ This is a rather incomplete list of Minecraft Alpha related libraries currently 
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | GPLv3
 |-
+! [https://github.com/eddyb/node-mcsmp node-mcsmp]
+| eddyb
+| [http://nodejs.org/ node.js (JavaScript)]
+| 
+|-
 ! [https://github.com/barneygale/Ashitaka Ashitaka]
 | Barney Gale
 | [http://en.wikipedia.org/wiki/Python Python]
