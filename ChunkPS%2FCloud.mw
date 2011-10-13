@@ -1,0 +1,12 @@
+=Node Cloud=
+The '''[[ChunkPS]] Node Cloud''' is two or more [[ChunkPS/Node|Chunk Nodes]] connected to one another. This '''Cloud''' hosts the NBT Maps that Minecraft Beta servers use. Think of it like most other Cloud service, but optimized for Minecraft.
+
+==How It Works==
+Each Node connects to another on it's '''Node List''' (or the '''Public Node List''' if it doesn't exist). After the newly connected Node passed the Handshake, it will query for the newest available revisions of any World it is tracking, and updates it as needed. After this update, the Node will start accepting Server requests and everything else it needs to keep itself running.
+
+Every Node either serves as a '''[[ChunkPS/Node#Backup_Node|Backup Node]]''' or a '''[[ChunkPS/Node#Provider_Node]]'''. More information is given about these nodes on their respective pages. The Provider Node Mode will start once a Server Instance connects to that Node. The Node will start sending Notchian Pre-Chunk and Chunk Packets for the server to handle. The Node will wait for a Block Update, a Multi-Block Update, or a Chunk Update, and execute the required methods to make sure the Map and the other Nodes are updated as quickly as possible.
+
+Provider Nodes will always be updated first so the connected Server Instances can have the most up-to-date information available. Backup Nodes are updated via a ''Round Robin'' Packet sent from the origin Provider Node.
+
+==Hybrid Mode==
+If there is only one Node in a Node Cloud, it enters '''Hybrid Mode'''. Hybrid Mode is where the Node acts like the Notchian Chunk Provider Server, Updating all connected Server Instances and the Map at the same time. This Mode is '''NOT''' recommended for large servers, since it does act like Notchian code, and will likely cause problems under high load. This Mode, however, is (theoretically) great for Micro-Servers (Server Instances with multiple separate Worlds with 1-10 Players on each World), since only a few Regions will be loaded into memory at any one time per world.
