@@ -5,7 +5,11 @@ WIDTH = 100%|
 ICON = |
 HEADING = '''ChunkPS Overview''' |
 CONTENT = 
-'''ChunkPS''' (Tentitive Title) is a cloud-based NBT Chunk provider. It's currently being drafted, so things are likely going to change drastically.
+'''ChunkPS''' (Tentitive Title) is a cloud-based NBT Chunk provider, designed for multi-server connectivity. It's currently being drafted, so things are likely going to change drastically.
+
+The goal of ChunkPS is simple: Remove the burden of the Chunk Provider Server, or CPS, from the actual server and push it into the cloud in the form of [[ChunkPS/Node|Chunk Nodes]]. These nodes can be linked together to form the [[ChunkPS/Cloud|Chunk Cloud]], which in turn hosts the NBT map files. ChunkPS is also going to have optional Entity Tracking (for supported servers), so more then one server instance can share the same world. This means that you can set up Server Nodes on multiple racks and run the same map off all of them.
+
+ChunkPS is also Open Sourced, so anyone can fork it from GitHub and change it to their liking. All I ask is, if you do modify ChunkPS, please consider making a pull request so everyone can benefit from it. It's not required, but every little bit helps.
 
 ChunkPS is going to be [[craftd:Main_Page|craftd's]] main Chunk provider interface. But this doesn't mean that other servers, like [https://github.com/huin/chunkymonkey Chunky Monkey], [https://github.com/SpaceManiac/Glowstone Glowstone], ect al won't be able to use it. On the contrary, ChunkPS will be designed for anything that deals with the Beta/Release NBT world format.
 }}
