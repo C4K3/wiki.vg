@@ -3,8 +3,15 @@ A ChunkPS Server is more commonly referred to as a '''Node''' or '''Chunk Node''
 
 ==Public Node==
 A '''Public Chunk Node''' is a node that connects to every other public Chunk Node. This set up is good for Maps that are not important (A vanilla-type Survival Map, for instance) and can be thrown away if need be. Hosting a Public Node also means that every map hosted on every other Public Node will be hosted on this one too. This is useful for a Multi-Server world setup, so you can set up cheap Server instances in multiple geological locations for people in those locations. The problem with this set up is that every Chunk Node can access your world, so if you have an important world (like a Creative or Race world), a malicious user could corrupt the map.
+
 ==Private Node==
 A '''Private Chunk Node''' is a node that doesn't access the Public Node List, and are hosted by the user or company that wants to only host their maps. A good example of this is a Creative Map, with hundreds of hours invested in it. Each Private Node can only be accessed by the person or group that set it up, so there is little chance of a malicious user corrupting your maps.
+
+==Backup Node==
+A '''Backup Node''' is a Node that doesn't have a Server Instance connected to it. These Nodes serve as fail-safes for their respective Provider Nodes, providing an up-to-date version of any Region or Chunk at any time.
+
+==Provider Node==
+A '''Provider Node''' is a Node that has a Server Instance connected to it. These Nodes provide whatever the Server needs. Provider Nodes  will track regions that the Server Instance's Players are in over the idle regions, and will query a Backup Node if a newly entered region needs to be updated.
 
 ==Entity Tracking==
 A ChunkPS Entity Tracker is basically a pass through system for servers to communicate with one another. This is extremely useful, and the core, of a '''Multi-Server World'''. This is optional and defaults to '''false''' on any Node, since the Server Instance may not choose to support it.
