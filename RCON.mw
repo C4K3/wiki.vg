@@ -9,7 +9,7 @@ RCON is a protocol introduced in 1.9pre4 for the purpose of remote administratio
 
 Integers are little-endian, in contrast with the [[Protocol|Beta protocol]].
 
-You should generate a new request ID for every packet you send. This allows you to match up incoming packets (responses) with what you sent. 
+Responses are sent back with the same Request ID that you send. 
 
 In the event of an auth failure (i.e. your login is incorrect, or you're trying to send commands without first logging in), request ID will be set to <code>-1</code>
 
@@ -58,7 +58,7 @@ Incoming payload is the output of the command, though many commands return nothi
 
 Maximum request length: 1460 (giving a max payload length of 1446)
 
-Code exists in the notchian server to split large responses (>4096 bytes) into multiple smaller packets. However, the code that actually encodes each packet expects a max length of 1248, giving a max return payload length of 1234 bytes.
+Code exists in the notchian server to split large responses (>4096 bytes) into multiple smaller packets. However, the code that actually encodes each packet expects a max length of 1248, giving a max response payload length of 1234 bytes.
 
 == Example implementations ==
 
