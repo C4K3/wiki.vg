@@ -1,0 +1,65 @@
+Rcon is a protocol introduced in 1.9pre4 for the purpose of remote administration of a server.
+
+== Server Config ==
+
+    enable-rcon=true
+    rcon.password=<your password>
+
+== Packet Format ==
+
+Integers are little-endian, in contrast with the [[Protocol|Beta protocol]].
+
+You should generate a new packet ID for every packet you send. This allows you to match up incoming packets (responses) with what you sent. 
+
+In the event of an auth failure (i.e. your login is incorrect, or you're trying to send commands without first logging in), packet ID will be set to <code>-1</code>
+
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Notes
+|- 
+| Length
+| int
+| Length of ''remainder'' of packet
+|-
+| Packet ID
+| int
+| Client-generated token
+|-
+| Packet Type
+| int
+| <code>3</code> for login, <code>2</code> to run a command
+|-
+| Payload
+| byte[]
+| ASCII text
+|-
+| 2-byte pad
+| byte, byte
+| Two null bytes
+|}
+
+== Packets ==
+
+=== 3: Login === 
+
+Outgoing payload: password. 
+
+If the server returns a packet with the same ID, auth was successful. If you get an ID of -1, auth failed (wrong password).
+
+=== 2: Command ===
+
+Outgoing payload should be the command to run, e.g. <code>time set 0</code>
+
+Incoming payload is the output of the command, though many commands return nothing, and there's no way of detecting unknown commands.
+
+== Implementation details ==
+
+Maximum request length: 1460 (giving a max payload length of 1446)
+
+Code exists in the notchian server to split large responses (>4096 bytes) into multiple smaller packets. However, the code that actually encodes each packet expects a max length of 1248, giving a max return payload length of 1234 bytes.
+
+== Example implementations ==
+
+* <div class="li">https://github.com/barneygale/MCRcon (python, basic, synchronous)
