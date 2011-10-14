@@ -1,5 +1,5 @@
-Rcon is a protocol introduced in 1.9pre4 for the purpose of remote administration of a server.
-
+RCON is a protocol introduced in 1.9pre4 for the purpose of remote administration of a server. It's basically a shitty implementation of the Source RCON protocol [http://developer.valvesoftware.com/wiki/Source_RCON_Protocol]
+ 
 == Server Config ==
 
     enable-rcon=true
@@ -9,9 +9,9 @@ Rcon is a protocol introduced in 1.9pre4 for the purpose of remote administratio
 
 Integers are little-endian, in contrast with the [[Protocol|Beta protocol]].
 
-You should generate a new packet ID for every packet you send. This allows you to match up incoming packets (responses) with what you sent. 
+You should generate a new request ID for every packet you send. This allows you to match up incoming packets (responses) with what you sent. 
 
-In the event of an auth failure (i.e. your login is incorrect, or you're trying to send commands without first logging in), packet ID will be set to <code>-1</code>
+In the event of an auth failure (i.e. your login is incorrect, or you're trying to send commands without first logging in), request ID will be set to <code>-1</code>
 
 {| class="wikitable"
 |-
@@ -23,11 +23,11 @@ In the event of an auth failure (i.e. your login is incorrect, or you're trying 
 | int
 | Length of ''remainder'' of packet
 |-
-| Packet ID
+| Request ID
 | int
-| Client-generated token
+| Client-generated ID
 |-
-| Packet Type
+| Type
 | int
 | <code>3</code> for login, <code>2</code> to run a command
 |-
@@ -46,7 +46,7 @@ In the event of an auth failure (i.e. your login is incorrect, or you're trying 
 
 Outgoing payload: password. 
 
-If the server returns a packet with the same ID, auth was successful. If you get an ID of -1, auth failed (wrong password).
+If the server returns a packet with the same request ID, auth was successful (note: packet type is 2, not 3). If you get an request ID of -1, auth failed (wrong password).
 
 === 2: Command ===
 
