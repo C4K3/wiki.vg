@@ -15,10 +15,10 @@ All packets start with a single byte that identifies the packet type, the rest o
 === 0x02 - client broadcast query ===
 
 * int8 = 0x02 (packet type ID)
-* int64 = ping ID (client seems to use time in milliseconds since the program was started)
+* int64 = ping ID
 * MAGIC
 
-UDP packet broadcast to port 19132, 25 bytes long. Connection ident changes each time - seems to increment by some amount that relates to time.
+Clients start out by sending this packet to the IP broadcast address on port 19132 repeatedly when joining a server was chosen on the main screen. The ping ID from the client increases over time, and appears to be the number of milliseconds since the client program was started (might be used to measure server response latency).
 
 === 0x05 - mtu sizing request ===
 
@@ -45,6 +45,6 @@ Sent from server after it receives packet 0x05.
 * int64 = ping ID from client
 * int64 = server ID
 * MAGIC
-* string ("MCCPP;Demo;" + Username)
+* string ("MCCPP;Demo;" + Host username)
 
-UDP packet sent to port/address that sent query. Probably variable length given the strings.
+Server sends this packet in response to a 0x02 packet.
