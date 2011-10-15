@@ -33,7 +33,7 @@ this with reducing sizes until it successfully receives a reply.
 
 * int8 = 0x06 (packet type ID)
 * MAGIC
-* int64 server ID
+* int64 = server ID
 * int8 = 0 (unknown meaning)
 * int16 = total bytes received in MTU sizing packet (i.e determined MTU size)
 
