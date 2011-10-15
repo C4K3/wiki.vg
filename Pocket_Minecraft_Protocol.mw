@@ -4,9 +4,9 @@ Servers listen on UDP port 19132. Clients don't pick any specific port to listen
 
 == Types ==
 
-string: int16 length prefix, counts number of bytes following. So far only ASCII bytes have been seen, but might not be restricted to ASCII.
+* string: int16 length prefix, counts number of bytes following. So far only ASCII bytes have been seen, but might not be restricted to ASCII.
 
-MAGIC: constant 16 bytes of data, always hex bytes 00ffff00fefefefefdfdfdfd12345678.
+* MAGIC: constant 16 bytes of data, always hex bytes 00ffff00fefefefefdfdfdfd12345678.
 
 == Packets ==
 
