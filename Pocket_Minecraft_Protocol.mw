@@ -1,0 +1,50 @@
+string: int16 length prefix, counts number of bytes following.
+
+MAGIC: 16 bytes of data, always hex 00ffff00fefefefefdfdfdfd12345678
+
+
+Packet structure:
+
+* int8 (packet type ID?)
+* payload?
+
+
+0x02 - client broadcast query:
+
+* int8 = 0x02 (packet type ID)
+* int64 = ping ID (client seems to use time in milliseconds since the program was started)
+* MAGIC
+
+UDP packet broadcast to port 19132, 25 bytes long. Connection ident changes each time - seems to increment by some amount that relates to time.
+
+
+0x1d - server query response:
+
+* int8 = 0x1d (packet type ID)
+* int64 = ping ID from client
+* int64 = server ID
+* MAGIC
+* string ("MCCPP;Demo;" + Username)
+
+UDP packet sent to port/address that sent query. Probably variable length given the strings.
+
+
+0x05 - mtu sizing request:
+
+* int8 = 0x05
+* MAGIC
+* int8 = 0x04 (unknown meaning)
+
+Sent from client after it receives packet 0x1d. The client will repeatedly send
+this with reducing sizes until it successfully receives a reply.
+
+
+0x06 - server mtu sizing response:
+
+* int8 = 0x06 (packet type ID)
+* MAGIC
+* int64 server ID
+* int8 = 0 (unknown meaning)
+* int16 = total bytes received in MTU sizing packet (i.e determined MTU size)
+
+Sent from server after it receives packet 0x05.
