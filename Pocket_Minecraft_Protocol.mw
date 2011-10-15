@@ -39,6 +39,14 @@ this with reducing sizes until it successfully receives a reply.
 
 Sent from server after it receives packet 0x05.
 
+=== 0x07 - unknown ===
+
+* int8 = 0x07 (packet type ID)
+* MAGIC
+* unknown data (17 bytes long in observed example)
+
+Sent from client in response to packet 0x06.
+
 === 0x1d - server query response ===
 
 * int8 = 0x1d (packet type ID)
