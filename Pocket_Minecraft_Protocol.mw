@@ -1,18 +1,18 @@
 Unlike the Minecraft protocol, this protocol uses UDP with (so far observed, at least) one message per packet. This makes the protocol easier to work with when it comes to packet serialization, and might offer latency improvements, but will inevitably have the usual UDP issues (packets lost, truncated, duplicated, out-of-order, etc.).
 
+Servers listen on UDP port 19132. Clients don't pick any specific port to listen on.
 
-string: int16 length prefix, counts number of bytes following.
+== Types ==
 
-MAGIC: 16 bytes of data, always hex 00ffff00fefefefefdfdfdfd12345678
+string: int16 length prefix, counts number of bytes following. So far only ASCII bytes have been seen, but might not be restricted to ASCII.
 
+MAGIC: constant 16 bytes of data, always hex bytes 00ffff00fefefefefdfdfdfd12345678.
 
-Packet structure:
+== Packets ==
 
-* int8 (packet type ID?)
-* payload?
+All packets start with a single byte that identifies the packet type, the rest of the packet follows it.
 
-
-0x02 - client broadcast query:
+=== 0x02 - client broadcast query ===
 
 * int8 = 0x02 (packet type ID)
 * int64 = ping ID (client seems to use time in milliseconds since the program was started)
@@ -20,19 +20,7 @@ Packet structure:
 
 UDP packet broadcast to port 19132, 25 bytes long. Connection ident changes each time - seems to increment by some amount that relates to time.
 
-
-0x1d - server query response:
-
-* int8 = 0x1d (packet type ID)
-* int64 = ping ID from client
-* int64 = server ID
-* MAGIC
-* string ("MCCPP;Demo;" + Username)
-
-UDP packet sent to port/address that sent query. Probably variable length given the strings.
-
-
-0x05 - mtu sizing request:
+=== 0x05 - mtu sizing request ===
 
 * int8 = 0x05
 * MAGIC
@@ -41,8 +29,7 @@ UDP packet sent to port/address that sent query. Probably variable length given 
 Sent from client after it receives packet 0x1d. The client will repeatedly send
 this with reducing sizes until it successfully receives a reply.
 
-
-0x06 - server mtu sizing response:
+=== 0x06 - server mtu sizing response ===
 
 * int8 = 0x06 (packet type ID)
 * MAGIC
@@ -51,3 +38,13 @@ this with reducing sizes until it successfully receives a reply.
 * int16 = total bytes received in MTU sizing packet (i.e determined MTU size)
 
 Sent from server after it receives packet 0x05.
+
+=== 0x1d - server query response ===
+
+* int8 = 0x1d (packet type ID)
+* int64 = ping ID from client
+* int64 = server ID
+* MAGIC
+* string ("MCCPP;Demo;" + Username)
+
+UDP packet sent to port/address that sent query. Probably variable length given the strings.
