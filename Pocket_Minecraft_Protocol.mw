@@ -47,6 +47,14 @@ Sent from server after it receives packet 0x05.
 
 Sent from client in response to packet 0x06.
 
+=== 0x08 - unknown ===
+
+* int8 = 0x08 (packet type ID)
+* MAGIC
+* unknown data (18 bytes long in observed example)
+
+Sent from server in response to packet 0x07.
+
 === 0x1d - server query response ===
 
 * int8 = 0x1d (packet type ID)
