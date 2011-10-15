@@ -1,3 +1,6 @@
+Unlike the Minecraft protocol, this protocol uses UDP with (so far observed, at least) one message per packet. This makes the protocol easier to work with when it comes to packet serialization, and might offer latency improvements, but will inevitably have the usual UDP issues (packets lost, truncated, duplicated, out-of-order, etc.).
+
+
 string: int16 length prefix, counts number of bytes following.
 
 MAGIC: 16 bytes of data, always hex 00ffff00fefefefefdfdfdfd12345678
