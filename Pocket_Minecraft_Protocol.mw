@@ -22,7 +22,7 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 
 === 0x05 - mtu sizing request ===
 
-* int8 = 0x05
+* int8 = 0x05 (packet type ID)
 * MAGIC
 * int8 = 0x04 (unknown meaning)
 
