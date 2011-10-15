@@ -61,6 +61,10 @@ Mob Types
 | class="col0" | 95
 | class="col1" | Wolf
 | class="col2" | Index 16 - byte - Bitflags (see below)<br /> Index 17 - string - Name of the player who tamed the wolf<br /> Index 18 - int - Health of the wolf
+|- class="row15"
+| class="col0" | 120
+| class="col1" | Villager (1.9 pre1)
+| class="col2" |
 |}
 
 Sheep Wool Colors
