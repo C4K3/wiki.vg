@@ -4,6 +4,10 @@ Servers listen on UDP port 19132. Clients don't pick any specific port to listen
 
 Please note that even where packet field names are written in this page, these are still largely hypothetical and could well be incorrect guesses.
 
+== Terminology ==
+
+;PM:Pocket Minecraft (aka Minecraft PE or Minecraft Pocket Edition)
+
 == Types ==
 
 * string: int16 length prefix, counts number of bytes following. So far only ASCII bytes have been seen, but might not be restricted to ASCII.
