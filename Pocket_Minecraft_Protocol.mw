@@ -52,7 +52,11 @@ Sent from server after it receives packet 0x05.
 
 * int8 = 0x07 (packet type ID)
 * MAGIC
-* unknown data (17 bytes long in observed example)
+* 5 bytes - unknown meaning, only seen 0x043f57fefd
+* int16 - server UDP port number (typically 19132)
+* int16 - unknown, might be decided MTU size (seen values of 548, 1464 - but doesn't always match what the server sent in packet 0x06)
+* int32 - unknown, only seen 0xffffffff.
+* int32 - randomly-generated session ID? value changes, but the same value is seen later on.
 
 Sent from client in response to packet 0x06.
 
