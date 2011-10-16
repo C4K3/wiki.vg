@@ -10,7 +10,7 @@ Please note that even where packet field names are written in this page, these a
 
 == Types ==
 
-* string: int16 length prefix, counts number of bytes following. So far only ASCII bytes have been seen, but might not be restricted to ASCII.
+* string: int16 length prefix, counts number of bytes following. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 
 * MAGIC: constant 16 bytes of data, always hex bytes 00ffff00fefefefefdfdfdfd12345678.
 
