@@ -25,6 +25,7 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 * int8 = 0x05 (packet type ID)
 * MAGIC
 * int8 = 0x04 (unknown meaning)
+* many 0x00 bytes (bringing packet size up to 1464 or less).
 
 Sent from client after it receives packet 0x1d. The client will repeatedly send
 this with reducing sizes until it successfully receives a reply.
