@@ -16,6 +16,8 @@ All packets start with a single byte that identifies the packet type, the rest o
 
 === 0x02 - client broadcast query ===
 
+client->broadcast
+
 * int8 = 0x02 (packet type ID)
 * int64 = ping ID
 * MAGIC
@@ -23,6 +25,8 @@ All packets start with a single byte that identifies the packet type, the rest o
 Clients start out by sending this packet to the IP broadcast address on port 19132 repeatedly (approx once per second) when joining a server was chosen on the main screen, and stops when the user selects a server (or leaves the screen). The ping ID from the client increases over time, and appears to be the number of milliseconds since the client program was started (might be used to measure server response latency).
 
 === 0x05 - mtu sizing request ===
+
+client->server
 
 * int8 = 0x05 (packet type ID)
 * MAGIC
@@ -40,6 +44,8 @@ After this the client appears not to send any more packets to the server, but al
 
 === 0x06 - server mtu sizing response ===
 
+server->client
+
 * int8 = 0x06 (packet type ID)
 * MAGIC
 * int64 = server ID
@@ -49,6 +55,8 @@ After this the client appears not to send any more packets to the server, but al
 Sent from server after it receives packet 0x05.
 
 === 0x07 - unknown ===
+
+client->server
 
 * int8 = 0x07 (packet type ID)
 * MAGIC
@@ -62,13 +70,22 @@ Sent from client in response to packet 0x06.
 
 === 0x08 - unknown ===
 
+server->client
+
 * int8 = 0x08 (packet type ID)
 * MAGIC
-* unknown data (18 bytes long in observed example)
+* int32 - unknown, only seen 0xffffffff.
+* int32 - unknown, apparently random value (need to confirm that this changes, maybe another session ID?)
+* 5 bytes - unknown meaning, only seen 0x043f57fefd (same as in packet 0x07)
+* int16 - client UDP port number (typically varies)
+* int16 - unknown, might be decided MTU size (seen value of 548, maybe others)
+* int8 - unknown, seen value 0x00 only
 
 Sent from server in response to packet 0x07.
 
 === 0x1d - server query response ===
+
+server->client
 
 * int8 = 0x1d (packet type ID)
 * int64 = ping ID from client
