@@ -4,6 +4,9 @@ Servers listen on UDP port 19132. Clients don't pick any specific port to listen
 
 Please note that even where packet field names are written in this page, these are still largely hypothetical and could well be incorrect guesses.
 
+It has been determined that PM uses RakNet for its networking library, [http://www.jenkinssoftware.com/raknet/manual/networkmessages.html some documentation that seems relevant].
+
+
 == Terminology ==
 
 ;PM:Pocket Minecraft (aka Minecraft PE or Minecraft Pocket Edition)
