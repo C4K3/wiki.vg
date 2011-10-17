@@ -1,0 +1,27 @@
+[[Realcraft]] is a custom Minecraft server built around the Beta 1.8.1 protocol by [[User:Jailout2000|Jailout2000]]. It is coded in REALbasic, a crappy language but very easy to use and learn. Since it's coded in REALbasic, this means that it does not have access to kernel threads, and therefore is not a multi-threaded server. The server runs out of the console; it does not have a GUI to which you can control it.
+
+== License ==
+
+Realcraft is written as closed source, therefore it is not available to the general public. If you really wish to see the source, message Jailout2000.
+
+== Project Status ==
+
+Currently the project is in '''active''' development.
+
+=== Plans ===
+
+* Eventually use an external library for generation of worlds. At the moment, generation of worlds is done internally, and is not very impressive (just flat worlds with some scenery).
+* Provide a download for the server so others may use it.
+** This will mean building the server for cross-platform support. Currently it is Windows only.
+* Player authentication with Minecraft.net.
+* MySQL database support.
+* Advertise the server to others, so that it can be stress tested.
+
+=== Live Server ===
+
+This server may or may not be online; it's only online when Jailout2000 is working on the server.
+* mc.clan-warp.net:25566
+
+
+----
+[[Server_List|Return to Custom Minecraft Beta servers]]
