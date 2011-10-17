@@ -63,3 +63,4 @@ Code exists in the notchian server to split large responses (>4096 bytes) into m
 == Example implementations ==
 
 * <div class="li">https://github.com/barneygale/MCRcon (python, basic, synchronous)
+* <div class="li">https://gist.github.com/1292348 (php, basic, synchronous)
