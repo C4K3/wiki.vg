@@ -65,7 +65,7 @@ Protocol version is 20, as of 1.9pre4
 
 [[Protocol#Mob_Types|New mobs]]: Blaze, Magma Cube, Ender Dragon, Snowman, Villager
 
-Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java) and [[G4S|G4S]] [http://pear.php.net/package/Net_GameServerQuery]
+Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java) and [[Query|Query]] (server class: su.java)
 
 == Protocol History ==
 
