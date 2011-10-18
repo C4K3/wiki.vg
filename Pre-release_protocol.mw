@@ -1,0 +1,104 @@
+This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.8.1) to the current pre-release (currently 1.9pre4)
+
+== New packets ==
+
+=== Enchant Item (0x6C) ===
+
+'''Client to Server only'''
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=2 | 0x6C
+| class="col1 centeralign" | Window ID
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 1
+| class="col4" | The ID sent by [[#Open_window_.280x64.29|0x64]]
+|- class="row2"
+| class="col1 centeralign" | Enchantment
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 0
+| class="col4" | The position of the enchantment on the enchantment table window, starting with 0 as the topmost one.
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes
+|}
+
+== Changed packets ==
+
+=== "Slot" type change ===
+
+Four packets changed:
+
+*<div class="li"> [[Protocol#Player_Block_Placement_.280x0F.29|0x0F player block placement]]
+* [[Protocol#Window_click_.280x66.29|0x66 window click]]
+* [[Protocol#Set_slot_.280x67.29|0x67 set slot]]
+* [[Protocol#Window_items_.280x68.29|0x68 window items]]
+
+This change affects the "slot" datatype. This type consists of at least a short (item_id). If this id isn't <code>-1</code>, a byte (count) and a short (uses) follow.
+
+From 1.9pre2 onward, additional data is sent but only for [https://gist.github.com/1268479 certain item_ids]. This means the protocol is no longer context free. The additional data is ''at least'' a short. If this short isn't -1, a byte[] array follows, containing ''gzipped'' NBT data
+
+As of 1.9pre3, the format of the NBT is as follows
+
+<code>
+  COMPOUND
+    LIST: 'ench'
+      SHORT: 'id'
+      SHORT: 'lvl'
+    END
+  END
+</code>
+
+=== [[#Experience_.280x2B.29|Experience (0x2B)]] ===
+
+Now float, short, short
+
+== Other changes ==
+
+Protocol version is 20, as of 1.9pre4
+
+Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java) and [[G4S|G4S]] [http://pear.php.net/package/Net_GameServerQuery]
+
+== Protocol History ==
+
+Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2011-10-13 ===
+* <div class="li">Beta 1.9 pre4-release.</div>
+* Protocol version is now 20
+* Packet 0x2B ([[#Experience_.280x2B.29|Experience]]) changed: now (float, short, short)
+* New packet 0x6C ([[#Unknown_.280x6C.29|Unknown]]) added: (byte, byte)
+* Flint and steel no longer enchantable (see 1.9pre3 changes). Might be others, too.
+* Notchian server now features an [[Rcon|RCON]] server (server class: o.java)
+* Notchian server now features "G4S" server [http://pear.php.net/package/Net_GameServerQuery]
+
+=== 2011-9-29 ===
+* <div class="li">Beta 1.9 pre2-release.</div>
+* Protocol version is now 19
+* Four packets changed:
+** [[#Player_Block_Placement_.280x0F.29|0x0F player block placement]]
+** [[#Window_click_.280x66.29|0x66 window click]]
+** [[#Set_slot_.280x67.29|0x67 set slot]]
+** [[#Window_items_.280x68.29|0x68 window items]]
+* The change affects the "slot" datatype. This type consists of at least a short (item_id). If this id isn't <code>-1</code>, a byte (count) and a short (uses) follow.
+* From 1.9pre2 onward, additional data is sent but only for [https://gist.github.com/1268479 certain item_ids]. This means the protocol is no longer context free. The additional data is ''at least'' a short. If this short isn't -1, a byte[] array follows, containing ''gzipped'' NBT data
+* The format of the NBT is as follows
+<code>
+  COMPOUND
+    LIST: 'ench'
+      SHORT: 'id'
+      SHORT: 'lvl'
+    END
+  END
+</code>
+* So far only this format, with 'id' and 'lvl' set to <code>2</code> and <code>1</code> respectively, has been seen.
+
+=== 2011-9-22 ===
+* <div class="li">Beta 1.9 pre-release.</div>
+* Protocol version is now 18
