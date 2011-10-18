@@ -7,7 +7,7 @@ All data types are little-endian, with the exception of <code>short</code>
     enable-query=true
     #query.port=25565
 
-== Outgoing Packet Format ==
+== Client to Server Packet Format ==
 
 {| class="wikitable"
 |-
@@ -32,7 +32,7 @@ All data types are little-endian, with the exception of <code>short</code>
 | See below
 |}
 
-== Incoming Packet Format ==
+== Server to Client Packet Format ==
 
 {| class="wikitable"
 |-
