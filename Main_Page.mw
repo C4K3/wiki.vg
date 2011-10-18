@@ -30,7 +30,8 @@ Minecraft Beta is the latest (and only updated) version of Minecraft which requi
 
 === Documentation ===
 There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be accurate'''.
-* [[Protocol|Protocol Specification]]
+* [[Protocol|Protocol Spec]]
+* [[Pre-release protocol|Pre-release Protocol Spec]]
 * [[Chat|How Chat Works]]
 * [[Protocol FAQ]]
 * [[Authentication|Authentication Scheme]]
