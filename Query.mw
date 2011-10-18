@@ -95,13 +95,10 @@ After these strings, a 2-byte, ''big-endian'' short, giving the hostport
 At the end is a final null-terminated string, giving the hostname
 
 <code>
-  00 00 00 00 01 41 20 4D | .....A M
-  69 6E 65 63 72 61 66 74 | inecraft
-  20 53 65 72 76 65 72 00 |  Server.
-  53 4D 50 00 77 6F 72 6C | SMP.worl
-  64 00 32 00 32 30 00 DD | d.2.20.#
-  63 31 32 37 2E 30 2E 30 | #127.0.0
-  2E 31 00                | .1.
+  00 00 00 00 01 41 20 4D 69 6E 65 63 72 61 66 74 | .....A Minecraft
+  20 53 65 72 76 65 72 00 53 4D 50 00 77 6F 72 6C |  Server.SMP.worl
+  64 00 32 00 32 30 00 DD 63 31 32 37 2E 30 2E 30 | d.2.20.##127.0.0
+  2E 31 00                                        | .1.
 </code>
 
 === Full stat === 
