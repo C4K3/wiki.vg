@@ -183,11 +183,11 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GNU GPL v3]
 | {{yes}}
-| {{yes|Beta: in progress}}
+| {{no|Beta; Restarted project! Need time}}
 | {{planned}}
 | {{planned}}
-| {{yes|Players, mobs in progress}}
-| {{yes|Multithreaded}}
+| {{no|Restarted project! Need time}}
+| {{yes|Will be multithreaded}}
 | {{yes|Ruby (planned)}}
 | {{yes|Active}}
 |-
