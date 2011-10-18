@@ -88,7 +88,7 @@ Your payload should be your session token, packed as an int32.
 
 ==== Response ====
 
-Five null-terminated strings make up the beginning of the payload. They correspond to (motd, gametype, world, numplayers, maxplayers)
+Five null-terminated strings make up the beginning of the payload. They correspond to (motd, gametype, map, numplayers, maxplayers)
 
 After these strings, a 2-byte, ''big-endian'' short, giving the hostport
 
