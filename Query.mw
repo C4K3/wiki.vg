@@ -72,8 +72,7 @@ Send a request with an empty payload.
 The response payload will be a session token (note: different to a session id) encoded as a null-terminated string. You should convert it to an int32 and store it.
 
 <code>
-  09 00 00 00 01 39 35 31 33 33 30 37 00
-                  9  5  1  3  3  0  7
+  09 00 00 00 01 39 35 31 33 33 30 37 00 | .....9513307.         
 </code>
 
 === Basic stat ===
