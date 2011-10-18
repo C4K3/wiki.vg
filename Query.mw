@@ -143,4 +143,4 @@ At the very end there's a single null byte.
 
 == Example implementations ==
 
-* https://github.com/barneygale/MCRcon (python)
+* https://github.com/barneygale/MCRQuery (python)
