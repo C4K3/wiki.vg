@@ -1,4 +1,4 @@
-Query is a UDP protocol introduced in 1.9pre4 for the purpose of remote administration of a server. It looks a lot like the UT3 (or GameSpot) Query Protocol [http://wiki.unrealadmin.org/UT3_query_protocol]
+Query is a UDP protocol introduced in 1.9pre4 for the purpose of querying server properties. It looks a lot like the UT3 (or GameSpot) Query Protocol [http://wiki.unrealadmin.org/UT3_query_protocol]
 
 All data types are little-endian, with the exception of <code>short</code>
  
