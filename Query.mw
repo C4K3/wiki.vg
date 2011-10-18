@@ -1,0 +1,146 @@
+Query is a UDP protocol introduced in 1.9pre4 for the purpose of remote administration of a server. It looks a lot like the UT3 (or GameSpot) Query Protocol [http://wiki.unrealadmin.org/UT3_query_protocol]
+
+All data types are little-endian, with the exception of <code>short</code>
+ 
+== Server Config ==
+
+    enable-query=true
+    #query.port=25565
+
+== Outgoing Packet Format ==
+
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Notes
+|- 
+| Magic
+| byte, byte
+| Always <code>0xFE 0xFD</code>
+|-
+| Type
+| byte
+| <code>9</code> to handshake, <code>0</code> to stat
+|-
+| Session ID
+| int32
+| 
+|-
+| Payload
+| Varies
+| See below
+|}
+
+== Incoming Packet Format ==
+
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Notes
+|-
+| Type
+| byte
+| <code>9</code> for handshake, <code>0</code> for stat
+|-
+| Session ID
+| int32
+| 
+|-
+| Payload
+| Varies
+| See below
+|}
+
+== Operations ==
+
+=== Handshake ===
+
+First, generate a session ID. It can be whatever you want.
+
+==== Request ====
+
+Send a request with an empty payload.
+
+<code>
+  FE FD 09 00 00 00 01
+</code>
+    
+==== Response ====
+
+The response payload will be a session token (note: different to a session id) encoded as a null-terminated string. You should convert it to an int32 and store it.
+
+<code>
+  09 00 00 00 01 39 35 31 33 33 30 37 00
+                  9  5  1  3  3  0  7
+</code>
+
+=== Basic stat ===
+
+==== Request ====
+
+Your payload should be your session token, packed as an int32. 
+
+<code>
+  FE FD 00 00 00 00 01 00 3A 0D 5F
+</code>
+
+==== Response ====
+
+Five null-terminated strings make up the beginning of the payload. They correspond to (motd, gametype, world, numplayers, maxplayers)
+
+After these strings, a 2-byte, ''big-endian'' short, giving the hostport
+
+At the end is a final null-terminated string, giving the hostname
+
+<code>
+  00 00 00 00 01 41 20 4D | .....A M
+  69 6E 65 63 72 61 66 74 | inecraft
+  20 53 65 72 76 65 72 00 |  Server.
+  53 4D 50 00 77 6F 72 6C | SMP.worl
+  64 00 32 00 32 30 00 DD | d.2.20.#
+  63 31 32 37 2E 30 2E 30 | #127.0.0
+  2E 31 00                | .1.
+</code>
+
+=== Full stat === 
+
+==== Request ====
+
+The request is the same as in a basic stat, except the payload '''must''' be padded to 8 bytes. Sending 0x00 0x00 0x00 0x00 at the end works.
+
+<code>
+  FE FD 00 00 00 00 01 00 3A 0D 5F 00 00 00 00
+</code>
+
+==== Response ====
+
+The response is in two parts. You should split the response around the token <code>\x00\x01player_\x00\x00</code>.
+
+The first part is a list of null-terminated strings, representing (key1, value1, key2, value2 ...)
+
+The second part is another list of null-terminated strings, each representing a player.
+
+At the very end there's a single null byte.
+
+<code>
+  00 00 00 00 01 73 70 6C 69 74 6E 75 6D 00 80 00 | .....splitnum...
+  68 6F 73 74 6E 61 6D 65 00 41 20 4D 69 6E 65 63 | hostname.A minec
+  72 61 66 74 20 53 65 72 76 65 72 00 67 61 6D 65 | raft Server.game
+  74 79 70 65 00 53 4D 50 00 67 61 6D 65 5F 69 64 | type.SMP.game_id
+  00 4D 49 4E 45 43 52 41 46 54 00 76 65 72 73 69 | .MINECRAFT.versi
+  6F 6E 00 42 65 74 61 20 31 2E 39 20 50 72 65 72 | on.Beta 1.9 Prer
+  65 6C 65 61 73 65 20 34 00 70 6C 75 67 69 6E 73 | elease 4.plugins
+  00 00 6D 61 70 00 77 6F 72 6C 64 00 6E 75 6D 70 | ..map.world.nump
+  6C 61 79 65 72 73 00 32 00 6D 61 78 70 6C 61 79 | layers.2.maxplay
+  65 72 73 00 32 30 00 68 6F 73 74 70 6F 72 74 00 | ers.20.hostport.
+  32 35 35 36 35 00 68 6F 73 74 6E 61 6D 65 00 31 | 25565.hostname.1
+  32 37 2E 30 2E 30 2E 31 00 00 01 70 6C 61 79 65 | 27.0.0.1...playe
+  72 5F 00 00 62 61 72 6E 65 79 67 61 6C 65 00 56 | r_..barneygale.V
+  69 76 61 6C 61 68 65 6C 76 69 67 00 00          | ivalahelvig..
+</code>
+
+== Example implementations ==
+
+* None so far
