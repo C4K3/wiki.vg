@@ -114,13 +114,13 @@ The request is the same as in a basic stat, except the payload '''must''' be pad
 
 You should ignore the first 11 bytes of the payload - they're garbage
 
-The response is in two parts. You should split the response around the token <code>\x00\x01player_\x00\x00</code>.
+The response is in two parts. You should split the response around the token <code>\x00\x01player_\x00\x00</code>
 
 The first part is a list of null-terminated strings, representing (key1, value1, key2, value2 ...)
 
 The second part is another list of null-terminated strings, each representing a player.
 
-At the very end there's a single null byte.
+At the very end there's an extra null byte.
 
 <code>
   00 00 00 00 01 73 70 6C 69 74 6E 75 6D 00 80 00 | .....splitnum...
