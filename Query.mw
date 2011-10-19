@@ -112,6 +112,8 @@ The request is the same as in a basic stat, except the payload '''must''' be pad
 
 ==== Response ====
 
+You should ignore the first 11 bytes of the payload - they're garbage
+
 The response is in two parts. You should split the response around the token <code>\x00\x01player_\x00\x00</code>.
 
 The first part is a list of null-terminated strings, representing (key1, value1, key2, value2 ...)
