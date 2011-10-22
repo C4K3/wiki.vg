@@ -64,5 +64,82 @@ curl -L "http://session.minecraft.net/game/checkserver.jsp?user=$user&serverId=$
 echo
 </nowiki></pre>
 
+This is an implementation of the authentication protocol in Perl, written by someone (i.e., myself) who has zero prior Perl experience. So I'm sure this is ugly code, but it did work for my purposes.
+
+<pre><nowiki>
+#!/usr/bin/perl -w
+
+use strict;
+use LWP::UserAgent;
+
+my $client_version = 9999;
+my $ua = new LWP::UserAgent; $ua->agent("someUA");
+my %auth;#holds login creds
+my @values;#holds the ':' delimited values returned from the POST
+my $hash = int(rand());
+$auth{username} = "usernameGoesHere"; #put the username here
+$auth{password} = "passwordGoesHere"; #and the pass here
+
+##################################################
+
+#Launcher (Makes the POST statement to https://login.minecraft.net)
+
+##################################################
+
+my $req = HTTP::Request->new(POST => 'https://login.minecraft.net/');
+$req->content_type('application/x-www-form-urlencoded');
+$req->content('user='.$auth{username}.'&password='.$auth{password}.'&version='.$client_version);
+
+my $res = $ua->request($req);
+
+if ($res->is_success)
+{
+	print $res->content, "\n";
+	@values = split(':', $res->content);
+}
+else
+{
+	print $res->status_line, "\n";
+}
+
+
+
+##################################################
+
+#Client
+
+##################################################
+
+my $req2 = HTTP::Request->new(GET => 'http://session.minecraft.net/game/joinserver.jsp?user='.$auth{username}.'&sessionId='.$values[3].'&serverId='.$hash.'');
+my $res2 = $ua->request($req2);
+
+if ($res2->is_success)
+{
+        print $res2->content, "\n";
+}
+else
+{
+        print $res2->status_line, "\n";
+}
+
+##################################################
+
+#server
+
+##################################################
+
+my $req3 = HTTP::Request->new(GET => 'http://session.minecraft.net/game/checkserver.jsp?user='.$auth{username}.'&serverId='.$hash.'');
+my $res3 = $ua->request($req3);
+
+if ($res3->is_success)
+{
+        print $res3->content, "\n";
+}
+else
+{
+        print $res3->status_line, "\n";
+}
+</nowiki></pre>
+
 [[Category:Protocol Details]]
 [[Category:Minecraft Beta]]
