@@ -138,7 +138,7 @@ A couple things for contributors:
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|Active}}
 |-
-! [http://github.com/fador/mineserver/ Mineserver]
+! [https://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
@@ -150,6 +150,19 @@ A couple things for contributors:
 | {{unknown}}
 | {{yes|C++}}
 | {{unknown|Semi-Active}}
+|-
+! [https://github.com/Mineserver/mineserver2 Mineserver 2]
+| deoxxa
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+| {{yes}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{unknown}}
+| {{yes|C++}}
+| {{yes|Active}}
 |-
 ! [http://sourceforge.net/projects/minewithperl MWP]
 | jake-anq, goshat
