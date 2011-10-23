@@ -22,6 +22,62 @@ Currently the project is in '''active''' development.
 This server may or may not be online; it's only online when Jailout2000 is working on the server.
 * mc.clan-warp.net:25566
 
+== Technical Details ==
+
+=== Class Hierarchy ===
+* Entity
+** Item
+** Mob
+*** Player
+** Projectile
+*** Vehicle
+* ServerSocket
+** GameServer
+* TCPSocket
+** GameSocket
+* World
+* WorldChunk
+
+=== Class Objectives ===
+{| class="wikitable"
+|- class="row0"
+! class="col0" width="5%" | Class
+! class="col1" width="50%" | Description
+! class="col2" width="45" | Objectives
+|- class="row1"
+! class="col0 centeralign" | Entity
+| class="col1" | Entity refers to any item, mob, player, projectile, or vehicle in the world. Every entity has an ID (known as an EID or Entity ID) which is a unique 32-bit integer used to identify a specific entity. All entities have an XYZ double-precision floating-point (64-bit) integer coordinate pair along with single-precision floating-point (32-bit) integer pitch and yaw coordinates. Y points upwards, X points South, and Z points West.
+| class="col2" | Act as a base for each entity type.
+|- class="row2"
+! class="col0 centeralign" | Item
+| class="col1" | An entity of type Item. It has the properties: ID, Damage/Uses, and Count.
+| class="col2" | Act as a representation of any item in the world.
+|- class="row3"
+! class="col0 centeralign" | Mob
+| class="col1" | An entity of type Mob. It has the properties: Health, Stance, and On-Ground.
+| class="col2" | Act as a representation of any aggressive or passive mob in the world.
+|- class="row4"
+! class="col0 centeralign" | Player
+| class="col1" | An entity of type Player, a subclass of Mob. It has the properties: Experience, Food, Food Saturation, and Name.
+| class="col2" | Act as a representation of any player in the world.
+|- class="row5"
+! class="col0 centeralign" | Projectile
+| class="col1" | An entity of type Projectile. It has the properties: Type, Velocity X, Velocity Y, and Velocity Z. The Type IDs are shared between vehicles as well.
+| class="col2" | Act as a representation of any projectile in the world (such as an arrow).
+|- class="row6"
+! class="col0 centeralign" | Vehicle
+| class="col1" | An entity of type Vehicle. It has the properties: Type, Velocity X, Velocity Y, and Velocity Z, and Passenger. The Type IDs are shared between projectiles as well. The Passenger is a reference to a valid Mob object.
+| class="col2" | Act as a representation of any vehicle in the world (such as a Minecart).
+|}
+
+=== Logging ===
+The logger is called whenever there is text displayed to the command line. Whatever you see on screen is also sent to a file. The only exception to this rule is when Realcraft is displaying a percentile of an action being done (i.e. ''Generating world... 50%''), in this case the file does not get updated until the full line is displayed (''Generating world... done.'') or when there's an error while doing the action.
+
+All logs are stored in the folder called '''Logs''' under the folder '''Realcraft''' inside the application data folder of your system. On Windows Vista and newer, this is your %APPDATA% folder (C:\Users\&lt;user&gt;\AppData\Roaming).
+
+The filename is always in the format '''YYYY-MM-DD.log''' where YYYY is the year, MM is the month, and DD is the day of the month.
+
 
 ----
 [[Server_List|Return to Custom Minecraft Beta servers]]
+[[Category:Servers]]
