@@ -35,7 +35,7 @@ The <u>server hash</u> is the same value that was sent to the client in the hand
 
 == Sample Implementation ==
 
-This is a simple implementation of the authentication (client&server part) in POSIX shell. It needs the curl command line client for HTTP requests.
+This is a simple implementation of the authentication (client and server parts) in POSIX shell. It needs the curl command line client for HTTP requests.
 
 <pre><nowiki>
 #!/bin/sh
@@ -64,7 +64,7 @@ curl -L "http://session.minecraft.net/game/checkserver.jsp?user=$user&serverId=$
 echo
 </nowiki></pre>
 
-This is an implementation of the authentication protocol in Perl, written by someone (i.e., myself) who has zero prior Perl experience. So I'm sure this is ugly code, but it did work for my purposes.
+This is an implementation of the authentication protocol in Perl, written by [[User:Aspensmonster|Aspensmonster]] who has zero prior Perl experience. So I'm sure this is ugly code, but it did work for my purposes.
 
 <pre><nowiki>
 #!/usr/bin/perl -w
