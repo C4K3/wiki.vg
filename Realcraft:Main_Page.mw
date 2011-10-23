@@ -55,19 +55,35 @@ This server may or may not be online; it's only online when Jailout2000 is worki
 |- class="row3"
 ! class="col0 centeralign" | Mob
 | class="col1" | An entity of type Mob. It has the properties: Health, Stance, and On-Ground.
-| class="col2" | Act as a representation of any aggressive or passive mob in the world.
+| class="col2" | Act as a representation of any aggressive or passive mob in the world (such as a creeper or spider).
 |- class="row4"
 ! class="col0 centeralign" | Player
 | class="col1" | An entity of type Player, a subclass of Mob. It has the properties: Experience, Food, Food Saturation, and Name.
-| class="col2" | Act as a representation of any player in the world.
+| class="col2" | Act as a representation of any player in the world (an actual person).
 |- class="row5"
 ! class="col0 centeralign" | Projectile
 | class="col1" | An entity of type Projectile. It has the properties: Type, Velocity X, Velocity Y, and Velocity Z. The Type IDs are shared between vehicles as well.
 | class="col2" | Act as a representation of any projectile in the world (such as an arrow).
 |- class="row6"
 ! class="col0 centeralign" | Vehicle
-| class="col1" | An entity of type Vehicle. It has the properties: Type, Velocity X, Velocity Y, and Velocity Z, and Passenger. The Type IDs are shared between projectiles as well. The Passenger is a reference to a valid Mob object.
+| class="col1" | An entity of type Vehicle. It has the property: Passenger. The Type IDs are shared between projectiles as well. The Passenger is a reference to a valid Mob object.
 | class="col2" | Act as a representation of any vehicle in the world (such as a Minecart).
+|- class="row7"
+! class="col0 centeralign" | GameServer
+| class="col1" | A class to wait for connections from outside the machine. All connections are handed off to a GameSocket object.
+| class="col2" | Act as the front-end of the server's connections.
+|- class="row8"
+! class="col0 centeralign" | GameSocket
+| class="col1" | A class to process all network data events such as data received or data sent.
+| class="col2" | Read and parse all Minecraft game data, and possibly respond with data for the Minecraft client. Optionally, it can also disconnect the client when and where it sees fit.
+|- class="row9"
+! class="col0 centeralign" | World
+| class="col1" | Holds data for each world on the server, including the name, who's in what world, the chunks related to the world, and much more.
+| class="col2" | Allow the server to host multiple worlds by having identifiable world objects.
+|- class="row10"
+! class="col0 centeralign" | WorldChunk
+| class="col1" | Holds chunk data for a world on the server. The world seed plays a big role in how a chunk formulates its block data. The chunk is responsible for generating itself for the world to use.
+| class="col2" | Allow the world to have a set of chunks to send to a Minecraft client.
 |}
 
 === Logging ===
