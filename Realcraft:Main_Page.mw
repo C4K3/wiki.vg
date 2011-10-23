@@ -93,6 +93,8 @@ All logs are stored in the folder called '''Logs''' under the folder '''Realcraf
 
 The filename is always in the format '''YYYY-MM-DD.log''' where YYYY is the year, MM is the month, and DD is the day of the month.
 
+Log data is always appended to the current log file, it never replaces a file's previous data. Log data is outputted as plain text. Each line represents a new log entry, and all log entries have a format of '''[HH:MM:SS]&lt;space&gt;&lt;payload&gt;''' where HH:MM:SS is the timestamp in 24-hour format, &lt;space&gt; is a 0x20 (a spacebar), and &lt;payload&gt; is the information. All new lines are ended as per the system the data is logged to. Linux and other minor systems end all lines in 0x0D (\n), Windows ends all lines in 0x0D and 0x0A (\r\n) respectively, and Mac ends all lines in 0x0A (\r).
+
 
 ----
 [[Server_List|Return to Custom Minecraft Beta servers]]
