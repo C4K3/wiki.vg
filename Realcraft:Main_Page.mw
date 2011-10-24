@@ -22,6 +22,10 @@ Currently the project is in '''active''' development.
 This server may or may not be online; it's only online when Jailout2000 is working on the server.
 * mc.clan-warp.net:25566
 
+== Development Status ==
+
+Got chunks to load correctly. Need to test if entities can be seen, or if entity animation is sent to other notchian clients. Currently a player is spawned at y=2, but it should be y=67, I need to look into how to fix this. [[User:Jailout2000|Jailout2000]] 02:38, 24 October 2011 (MST)
+
 == Technical Details ==
 
 === Class Hierarchy ===
