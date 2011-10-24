@@ -58,11 +58,11 @@ Got chunks to load correctly. Need to test if entities can be seen, or if entity
 | class="col2" | Act as a representation of any item in the world.
 |- class="row3"
 ! class="col0 centeralign" | Mob
-| class="col1" | An entity of type Mob. It has the properties: Health, Stance, and On-Ground.
+| class="col1" | An entity of type Mob. It has the properties: Health, Stance, On-Ground, and Type.
 | class="col2" | Act as a representation of any aggressive or passive mob in the world (such as a creeper or spider).
 |- class="row4"
 ! class="col0 centeralign" | Player
-| class="col1" | An entity of type Player, a subclass of Mob. It has the properties: Experience, Food, Food Saturation, and Name.
+| class="col1" | An entity of type Player, a subclass of Mob. It has the properties: Experience, Food, Food Saturation, and Name. The inherited property ''Type'' is always set to zero.
 | class="col2" | Act as a representation of any player in the world (an actual person).
 |- class="row5"
 ! class="col0 centeralign" | Projectile
