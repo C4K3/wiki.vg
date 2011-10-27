@@ -163,13 +163,10 @@ Metadata index 8 is an int representing potion effects:
 |- class="row1"
 | class="col0" | 0
 | class="col1" | No potion in effect
+|- class="row1"
+| class="col0" | 0x00RRGGBB
+| class="col1" | Color code for effect
 |}
-
-    0x5A6C81 Slow
-    0x7CAFC6 Speed
-    0x7CAFC6 Speed II
-    0x7098AF Speed II + Slow
-    0x6B8DA3 Slow + Speed
 
 == Wolves, index 16 ==
 
