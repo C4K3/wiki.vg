@@ -156,8 +156,6 @@ Metadata index 0 is a byte representing a set of 8 boolean flags:
 
 Metadata index 8 is an int representing potion effects:
 
-Format unknown:
-
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Value
@@ -165,17 +163,13 @@ Format unknown:
 |- class="row1"
 | class="col0" | 0
 | class="col1" | No potion in effect
-|- class="row2"
-| class="col0" | 0x5A6C81
-| class="col1" | Slowness
-|- class="row3"
-| class="col0" | 0x7CAFC6
-| class="col1" | Switftness
-|- class="row4"
-| class="col0" | 0x6B8DA3
-| class="col1" | Slowness and Switftness
 |}
 
+    0x5A6C81 Slow
+    0x7CAFC6 Speed
+    0x7CAFC6 Speed II
+    0x7098AF Speed II + Slow
+    0x6B8DA3 Slow + Speed
 
 == Wolves, index 16 ==
 
