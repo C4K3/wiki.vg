@@ -142,6 +142,10 @@ Metadata index 0 is a byte representing a set of 8 boolean flags:
 | class="col0" | 2
 | class="col1" | 0x04
 | class="col2" | Entity riding
+|- class="row4"
+| class="col0" | 3
+| class="col1" | 0x08
+| class="col2" | Sprinting
 |}
 
 Metadata index 8 is an int representing potion effects:
