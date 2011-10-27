@@ -1,5 +1,3 @@
-Mob Types
-
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Type ID
@@ -67,7 +65,9 @@ Mob Types
 | class="col2" |
 |}
 
-Sheep Wool Colors
+
+== Sheep Wool Colors ==
+
 
 {| class="wikitable"
 |- class="row0"
@@ -123,6 +123,9 @@ Sheep Wool Colors
 | class="col1" | Black
 |}
 
+
+== Player, Index 0 ==
+
 Metadata index 0 is a byte representing a set of 8 boolean flags:
 
 {| class="wikitable"
@@ -148,6 +151,9 @@ Metadata index 0 is a byte representing a set of 8 boolean flags:
 | class="col2" | Sprinting
 |}
 
+
+== Potions, index 8 ==
+
 Metadata index 8 is an int representing potion effects:
 
 Format unknown:
@@ -170,25 +176,9 @@ Format unknown:
 | class="col1" | Slowness and Switftness
 |}
 
-Metadata index 17 for creepers (This may apply to other mobs):
 
-{| class="wikitable"
-|-
-! Value
-! Effect
-|-
-| 0
-| normal
-|-
-| 1
-| creeper that got hit by a lightning gains a blue aura. http://www.youtube.com/watch?v=uq0Lm1EULxQ
-|-
-| 2, 3, 4 and 255
-| no apparent effect
-|-
-| other values
-| unknown, not tested
-|}
+== Wolves, index 16 ==
+
 
 Metadata index 16 for wolves:
 
@@ -209,4 +199,28 @@ Metadata index 16 for wolves:
 | class="col0" | 2
 | class="col1" | 0x04
 | class="col2" | Tamed
+|}
+
+
+== Creepers, index 17 ==
+
+
+Metadata index 17 for creepers (This may apply to other mobs):
+
+{| class="wikitable"
+|-
+! Value
+! Effect
+|-
+| 0
+| normal
+|-
+| 1
+| creeper that got hit by a lightning gains a blue aura. http://www.youtube.com/watch?v=uq0Lm1EULxQ
+|-
+| 2, 3, 4 and 255
+| no apparent effect
+|-
+| other values
+| unknown, not tested
 |}
