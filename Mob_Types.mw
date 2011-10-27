@@ -149,8 +149,11 @@ Metadata index 0 is a byte representing a set of 8 boolean flags:
 | class="col0" | 3
 | class="col1" | 0x08
 | class="col2" | Sprinting
+|- class="row4"
+| class="col0" | 4
+| class="col1" | 0x10
+| class="col2" | Eating/Drinking
 |}
-
 
 == Potions, index 8 ==
 
