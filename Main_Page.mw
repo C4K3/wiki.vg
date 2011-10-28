@@ -44,8 +44,8 @@ Source code snippets provide insight into how specific features work or can be a
 * [[:Category:Code Snippets|More...]]
 
 === Tools and Mods ===
-* [[Client List|Clients]] - third-party SMP clients.
-* [[Server List|Servers]] - third-party SMP servers.
+* [[Client List|Clients]] - third-party Minecraft clients.
+* [[Server List|Servers]] - third-party Minecraft servers.
 * [[Library List|Libraries]] - libraries to interface with Minecraft data files or network protocols.
 * [[Utility List|Utilities]] - tools that interface with a client, server, or data files, such as proxies, bots, or inventory editors.
 * [[Wrapper List|Wrappers]] - mods that override features in the client or server
