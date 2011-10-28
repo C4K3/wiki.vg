@@ -1,147 +1,353 @@
-{| class="wikitable"
-|+Entities
-|-
-! Type
-! Code
-! Subtype
-! AABB Height
-! AABB Width
-! Notes
-|-
-! Player
-| &nbsp;
-| &nbsp;
-| 1.8 || 0.6
-| &nbsp;
-|-
-! Pickup
-| &nbsp;
-| &nbsp;
-| 0.25 || 0.25
-| &nbsp;
-|-
-! rowspan="13" | Mob
-| 50
-| Creeper
-| 1.8 || 0.6
-| &nbsp;
-|-
-| 51
-| Skeleton
-| 1.8 || 0.6
-| &nbsp;
-|-
-| 52
-| Spider
-| 0.9 || 1.4
-| &nbsp;
-|-
-| 53
-| Giant Zombie
-| 6 * 1.8 || 6 * 0.6
-| &nbsp;
-|-
-| 54
-| Zombie
-| 1.8 || 0.6
-| &nbsp;
-|-
-| 55
-| Slime
-| n * 0.6 || n * 0.6
-| n = 2 ^ rand(0, 2)
-|-
-| 56
-| Ghast
-| 4.0 || 4.0
-| &nbsp;
-|-
-| 57
-| Zombie Pigman
-| 1.8 || 0.6
-| &nbsp;
-|-
-| 90
-| Pig
-| 0.9 || 0.9
-| &nbsp;
-|-
-| 91
-| Sheep
-| 1.3 || 0.9
-| &nbsp;
-|-
-| 92
-| Cow
-| 1.3 || 0.9
-| &nbsp;
-|-
-| 93
-| Hen
-| 0.4 || 0.3
-| &nbsp;
-|-
-| 94
-| Squid
-| 0.95 || 0.95
-| &nbsp;
-|-
-! rowspan="13" | Object
-| 1
-| Boat
-| 0.6 || 1.5
-| &nbsp;
-|-
-| 10
-| Minecart
-| 0.7 || 0.98
-| &nbsp;
-|-
-| 11
-| Minecart (Storage)
-| 0.7 || 0.98
-| &nbsp;
-|-
-| 12
-| Minecart (Powered)
-| 0.7 || 0.98
-| &nbsp;
-|-
-| 50
-| Activated TNT
-| 0.98 || 0.98
-| &nbsp;
-|-
-| 60
-| Arrow Projectile
-| 0.5 || 0.5
-| &nbsp;
-|-
-| 61
-| Snowball Projectile
-| 0.25 || 0.25
-| &nbsp;
-|-
-| 62
-| Egg Projectile
-| 0.25 || 0.25
-| &nbsp;
-|-
-| 70
-| Falling Sand
-| 0.98 || 0.98
-| &nbsp;
-|-
-| 71
-| Falling Gravel
-| 0.98 || 0.98
-| &nbsp;
-|-
-| 90
-| Fishing Float
-| 0.25? || 0.25?
-| &nbsp;
-|}
-[[File:Icon_exclaim.gif|:!:]] Note: Slimes are always cubes. rand(0, 2) includes both 0 and 2.
 
-[[File:Icon_exclaim.gif|:!:]] Note: Width is in both horizontal directions. Entity collision boxes are square from a top-down view.
+== Metadata Format ==
+
+The metadata format is quirky dictionary format, where the key and the value's type are packed in a single byte.
+
+To parse, repeat the following procedure:
+ 1) Read an unsigned byte
+ 2) If this byte == 127, stop reading
+ 3) Decompose the byte. 
+    The bottom 5 bytes (0x1F) serve as an identifier (key) for the data to follow. 
+    The top 3 bits (0xE0) serve as a type:
+     0: byte
+     1: short
+     2: int
+     3: float
+     4: string16,
+     5: short, byte, short (slot type)
+     6: int, int, int
+ 4) Read and unpack based on the type (above)
+
+In python:
+
+    #socket is positioned at the beginning of the metadata array
+    metadata = {}
+    x = socket.unpack('byte')
+    while x != 127:
+        index = x & 0x1F # Lower 5 bits
+        ty    = x >> 5   # Upper 3 bites
+        if ty == 0: val = socket.unpack('byte') 
+        if ty == 1: val = socket.unpack('short') 
+        if ty == 2: val = socket.unpack('int') 
+        if ty == 3: val = socket.unpack('float') 
+        if ty == 4: val = socket.unpack('string16')
+        if ty == 5:
+            val = {}
+            val["id"]     = socket.unpack('short')
+            val["count"]  = socket.unpack('byte')
+            val["damage"] = socket.unpack('short')
+        if ty == 6:
+            val = []
+            for i in range(3):
+                val.append(socket.unpack('int'))
+        metadata[index] = (ty, val)
+        x = socket.unpack('byte')
+    return metadata
+
+== Common Metadata ==
+
+=== Index 0: Flags ===
+
+All mobs, objects and players send metadata with index <code>0</code>. The value is a byte representing 8 boolean flags:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Bit index
+! class="col1" | Bit mask
+! class="col2" | Meaning
+|- class="row1"
+| class="col0" | 0
+| class="col1" | 0x01
+| class="col2" | Entity on fire
+|- class="row2"
+| class="col0" | 1
+| class="col1" | 0x02
+| class="col2" | Entity crouched
+|- class="row3"
+| class="col0" | 2
+| class="col1" | 0x04
+| class="col2" | Entity riding
+|- class="row4"
+| class="col0" | 3
+| class="col1" | 0x08
+| class="col2" | Sprinting
+|- class="row4"
+| class="col0" | 4
+| class="col1" | 0x10
+| class="col2" | Eating/Drinking
+|}
+
+=== Index 8: Potion effects ===
+
+Players and most (all?) mobs send metadata with index <code>8</code>. This specifies the colour of the bubbling effects around the player.
+
+The value is an int, that should be decomposed into four 4-bit nibbles, representing <code>0x00RRGGBB</code>
+
+If the value is 0, no potion effects currently apply to the entity.
+
+== Mobs ==
+
+Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
+
+=== 50: Creeper ===
+
+* <div class="li">Dimensions: 0.6 * 1.8
+* '''Index 16''' (byte): Status. Depends on the fuse
+* '''Index 17''' (byte): Charged. <code>1</code> if the creeper has been hit by lightning, <code>0</code> otherwise.
+
+=== 51: Skeleton ===
+
+* <div class="li">Dimensions: 0.6 * 1.8
+* No extra metadata
+
+=== 52: Spider ===
+
+* <div class="li">Dimensions: 1.4 * 0.9 (note: has this changed?)
+* No extra metadata
+
+=== 53: Giant Zombie ===
+
+* <div class="li">Dimensions: 3.6 * 10.8
+* No extra metadata
+
+=== 54: Zombie ===
+
+* <div class="li">Dimensions: 0.6 * 1.8
+* No extra metadata
+
+=== 55: Slime ===
+
+* <div class="li">Dimensions: 0.6*size * 0.6*size
+* '''Index 16''' (byte): Size. Randomly-generated. <code>0</code>, <code>1</code>, <code>2</code> or <code>4</code>.
+
+=== 56: Ghast ===
+
+* <div class="li">Dimensions: 4 * 4
+* '''Index 16''' (byte): Aggression. <code>1</code> for aggressive (red eyes), <code>0</code> otherwise.
+
+=== 57: Zombie Pigman ===
+
+* <div class="li">Dimensions: 0.6 * 1.8
+* No extra metadata
+
+=== 58: Enderman ===
+
+* <div class="li">Dimensions: Unknown
+* '''Index 16''' (byte): Item in hand
+* '''Index 17''' (byte): Aggression. <code>1</code> for aggressive, <code>0</code> otherwise.
+
+=== 59: Cave Spider ===
+
+* <div class="li">Dimensions: Unknown
+* No extra metadata
+
+=== 60: Silverfish ===
+
+* <div class="li">Dimensions: Unknown
+* No extra metadata
+
+=== 61: Blaze ===
+
+* <div class="li">Dimensions: Unknown
+* No extra metadata
+
+=== 62: Magma Cube ===
+
+* <div class="li">Dimensions: 0.6*size * 0.6*size
+* '''Index 16''' (byte): Size. Randomly-generated. <code>0</code>, <code>1</code>, <code>2</code> or <code>4</code>.
+
+=== 63: Ender Dragon ===
+
+* <div class="li">Dimensions: Unknown
+* No extra metadata
+
+=== 90: Pig ===
+
+* <div class="li">Dimensions: 0.9 * 0.9
+* '''Index 16''' (byte): Saddled. <code>1</code> if the pig is wearing a saddle, <code>0</code> otherwise.
+
+=== 91: Sheep ===
+
+* <div class="li">Dimensions: 0.9 * 1.3
+* '''Index 16''' (byte): bit 0x10 indicates shearedness. bits 0x0F indicate color (see below).
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Index
+! class="col1" | Wool Color
+|- class="row1"
+| class="col0" | 0
+| class="col1" | White
+|- class="row2"
+| class="col0" | 1
+| class="col1" | Orange
+|- class="row3"
+| class="col0" | 2
+| class="col1" | Magenta
+|- class="row4"
+| class="col0" | 3
+| class="col1" | LightBlue
+|- class="row5"
+| class="col0" | 4
+| class="col1" | Yellow
+|- class="row6"
+| class="col0" | 5
+| class="col1" | Lime
+|- class="row7"
+| class="col0" | 6
+| class="col1" | Pink
+|- class="row8"
+| class="col0" | 7
+| class="col1" | Gray
+|- class="row9"
+| class="col0" | 8
+| class="col1" | Silver
+|- class="row10"
+| class="col0" | 9
+| class="col1" | Cyan
+|- class="row11"
+| class="col0" | 10
+| class="col1" | Purple
+|- class="row12"
+| class="col0" | 11
+| class="col1" | Blue
+|- class="row13"
+| class="col0" | 12
+| class="col1" | Brown
+|- class="row14"
+| class="col0" | 13
+| class="col1" | Green
+|- class="row15"
+| class="col0" | 14
+| class="col1" | Red
+|- class="row16"
+| class="col0" | 15
+| class="col1" | Black
+|}
+
+
+=== 92: Cow ===
+
+* <div class="li">Dimensions: 0.9 * 1.3
+* No extra metadata
+
+=== 93: Duck ===
+
+* <div class="li">Dimensions: 0.3 * 0.4
+* No extra metadata
+
+=== 94: Squid ===
+
+* <div class="li">Dimensions: 0.95 * 0.95
+* No extra metadata
+
+=== 95: Wolf ===
+
+* <div class="li">Dimensions: Unknown
+* '''Index 16''' (byte): Flags (see below).
+* '''Index 17''' (string): Name of player that tamed wolf.
+* '''Index 18''' (int): Health.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Bit index
+! class="col1" | Bit mask
+! class="col2" | Meaning
+|- class="row1"
+| class="col0" | 0
+| class="col1" | 0x01
+| class="col2" | Sitting down
+|- class="row2"
+| class="col0" | 1
+| class="col1" | 0x02
+| class="col2" | Agressive (red eyes)
+|- class="row3"
+| class="col0" | 2
+| class="col1" | 0x04
+| class="col2" | Tamed
+|}
+
+=== 96: Mooshroom? ===
+
+Suspected to be mooshroom, but currently undocumented
+
+=== 97: Snowman ===
+
+* <div class="li">Dimensions: Unknown
+* No extra metadata
+
+=== 120: Villager ===
+
+* <div class="li">Dimensions: Unknown
+* No extra metadata
+
+== Objects ==
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | ID
+! class="col1" | Name
+! class="col2" | Width
+! class="col3" | Height
+|- class="row1"
+| class="col0" | 1
+| class="col1" | Boat
+| class="col2" | 1.5
+| class="col3" | 0.6
+|- class="row2"
+| class="col0" | 10
+| class="col1" | Minecart
+| class="col2" | 0.98
+| class="col3" | 0.7
+|- class="row3"
+| class="col0" | 11
+| class="col1" | Minecart (storage)
+| class="col2" | 0.98
+| class="col3" | 0.7
+|- class="row4"
+| class="col0" | 12
+| class="col1" | Minecart (powered)
+| class="col2" | 0.98
+| class="col3" | 0.7
+|- class="row5"
+| class="col0" | 50
+| class="col1" | Activated TNT
+| class="col2" | 0.98
+| class="col3" | 0.98
+|- class="row6"
+| class="col0" | 60
+| class="col1" | Arrow (projectile)
+| class="col2" | 0.5
+| class="col3" | 0.5
+|- class="row7"
+| class="col0" | 61
+| class="col1" | Snowball (projectile)
+| class="col2" | 0.25
+| class="col3" | 0.25
+|- class="row8"
+| class="col0" | 62
+| class="col1" | Egg (projectile)
+| class="col2" | 0.25
+| class="col3" | 0.25
+|- class="row9"
+| class="col0" | 70
+| class="col1" | Falling Sand
+| class="col2" | 0.98
+| class="col3" | 0.98
+|- class="row10"
+| class="col0" | 71
+| class="col1" | Falling Gravel
+| class="col2" | 0.98
+| class="col3" | 0.98
+|- class="row11"
+| class="col0" | 90
+| class="col1" | Fishing Float
+| class="col2" | 0.25?
+| class="col3" | 0.25?
+|}
+
+== Other ==
+
+Player entities have dimensions 0.6 * 1.8
+
+Pickups have dimensions 0.25 * 0.25
