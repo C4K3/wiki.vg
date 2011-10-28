@@ -1,6 +1,8 @@
 
 == Entity Metadata Format ==
 
+Note that entity metadata is a totally distinct concept from block metadata.
+
 The entity metadata format is quirky dictionary format, where the key and the value's type are packed in a single byte.
 
 To parse, repeat the following procedure:
