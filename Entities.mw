@@ -255,7 +255,7 @@ Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
 | class="col1" | Magenta
 |- class="row4"
 | class="col0" | 3
-| class="col1" | LightBlue
+| class="col1" | Light Blue
 |- class="row5"
 | class="col0" | 4
 | class="col1" | Yellow
