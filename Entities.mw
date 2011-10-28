@@ -9,8 +9,8 @@ To parse, repeat the following procedure:
  1) Read an unsigned byte
  2) If this byte == 127, stop reading
  3) Decompose the byte. 
-    The bottom 5 bytes (0x1F) serve as an identifier (key) for the data to follow. 
-    The top 3 bits (0xE0) serve as a type:
+    The bottom 5 bits (0x1F) serve as an identifier (key) for the data to follow. 
+    The top 3 bits (0xE0) serve as [[Protocol#Data_Types|a type]]:
      0: byte
      1: short
      2: int
