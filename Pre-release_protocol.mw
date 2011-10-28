@@ -56,7 +56,7 @@ As of 1.9pre3, the format of the NBT is as follows
   END
 </code>
 
-=== [[#Experience_.280x2B.29|Experience (0x2B)]] ===
+=== Experience (0x2B) ===
 
 Now float, short, short
 
