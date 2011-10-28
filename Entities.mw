@@ -27,7 +27,7 @@ In python:
     x = socket.unpack('byte')
     while x != 127:
         index = x & 0x1F # Lower 5 bits
-        ty    = x >> 5   # Upper 3 bites
+        ty    = x >> 5   # Upper 3 bits
         if ty == 0: val = socket.unpack('byte') 
         if ty == 1: val = socket.unpack('short') 
         if ty == 2: val = socket.unpack('int') 
