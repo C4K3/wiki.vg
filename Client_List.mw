@@ -20,7 +20,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes}}
 | Wallbraker et al.
-| style="background:#90ff90; color:black;" | In development
+| {{yes|In development}}
 |-
 ! [http://foundation.x10.mx/index.php?title=Crafti Crafti]*
 | python standalone bot, controllable via player commands, console input, or configured rules file.  [http://foundation.x10.mx/index.php?title=Crafti See More...]
@@ -29,7 +29,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{no}}
 | CharlesBroughton
-| style="background:#ff9090; color:black;" | Dead
+| {{no|Dead}}
 |-
 ! [http://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
@@ -38,7 +38,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no}}
 | aniero
-| style="background:#ff9090; color:black;" | Last update: Beta 1.4
+| {{no|Last update: Beta 1.4}}
 |-
 ! [https://github.com/axus/libmc--c mc--c]
 | Draw the map.  Can't talk or move.
@@ -47,7 +47,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes}}
 | axus
-| style="background:#ffff90; color:black;" | Last updated May 2011
+| {{planned|Last updated May 2011}}
 |-
 ! [[Mineflayer]]
 | JavaScript bot framework. See [[Mineflayer]] for more details.
@@ -56,7 +56,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{yes}}
 | Superjoe, thejoshwolfe
-| style="background:#90ff90; color:black;" | Mostly mature, well maintained
+| {{yes|Mostly mature, well maintaned}}
 |-
 ! [http://github.com/espes/esbot esbot]
 | dependency gathering and other awesomeness
@@ -65,7 +65,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no}}
 | espes
-| style="background:#ffff90; color:black;" | Last updated for 1.5, buggy 1.6 support with minor tweaks
+| {{planned|Last updated for 1.5, buggy 1.6 support with minor tweaks}}
 |-
 ! [[Vb Minebot]]
 | Work in progress standalone bot
@@ -74,7 +74,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no}}
 | Umby24
-| style="background:#ff9090; color:black;" | Dead
+| {{no|Dead}}
 |-
 ! [http://hg.sitedethib.com/mcclient/ mcclient]
 | Work in progress SMP client
@@ -83,7 +83,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes}}
 | ThibG
-| style="background:#ff9090; color:black;" | Dead<br>(Server down)
+| {{no|Dead<br>(Server down)}}
 |-|}
 
 [[Category:Minecraft Beta]]
