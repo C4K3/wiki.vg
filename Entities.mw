@@ -1,7 +1,7 @@
 
-== Metadata Format ==
+== Entity Metadata Format ==
 
-The metadata format is quirky dictionary format, where the key and the value's type are packed in a single byte.
+The entity metadata format is quirky dictionary format, where the key and the value's type are packed in a single byte.
 
 To parse, repeat the following procedure:
  1) Read an unsigned byte
