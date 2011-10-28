@@ -1,4 +1,6 @@
-This is a rather incomplete list of Minecraft Alpha/Beta clients currently in development. This page only lists clients written from scratch. For mods and wrappers, see the [[Utility List]].
+This is a rather incomplete list of Minecraft Alpha/Beta clients that users have worked or are working on. This page only lists clients written from scratch; for mods and wrappers, see the [[Utility List]].
+
+The column ''Game Graphics'' asks if your client displays in-game activity at a graphical level, such as world chunks, people or mobs moving, or any of that sort. If you are simply displaying things as text, that does '''not''' count. You can also optionally tell us the library you're using for your game graphics while providing your answer.
 
 {| class="wikitable" style="width: auto; text-align: center;"
 |-style="background:#eee"
@@ -7,6 +9,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 !style="width: 128px" | Language
 !style="width: 128px" | License
 !style="width: 72px" | Threaded
+!style="width: 94px" | Game Graphics
 !style="width: 120px" | Author(s)
 !style="width: 64px" | Status
 |-
@@ -15,6 +18,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | [http://en.wikipedia.org/wiki/D_%28programming_language%29 D], [http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]
 | GPLv2
 | {{no}}
+| {{yes}}
 | Wallbraker et al.
 | style="background:#90ff90; color:black;" | In development
 |-
@@ -23,6 +27,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with Twisted network driver
 | proprietary software / Freeware
 | {{yes}}
+| {{no}}
 | CharlesBroughton
 | style="background:#ff9090; color:black;" | Dead
 |-
@@ -30,6 +35,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
 | [http://en.wikipedia.org/wiki/Ruby_%28programming_language%29 ruby]
 | a kind of "0-clause" BSD license
+| {{no}}
 | {{no}}
 | aniero
 | style="background:#ff9090; color:black;" | Last update: Beta 1.4
@@ -39,6 +45,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++]
 | Do not distribute
 | {{no}}
+| {{yes}}
 | axus
 | style="background:#ffff90; color:black;" | Last updated May 2011
 |-
@@ -46,6 +53,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | JavaScript bot framework. See [[Mineflayer]] for more details.
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/Qt_%28framework%29 Qt]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
+| {{yes}}
 | {{yes}}
 | Superjoe, thejoshwolfe
 | style="background:#90ff90; color:black;" | Mostly mature, well maintained
@@ -55,6 +63,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with twisted
 | GPL
 | {{no}}
+| {{no}}
 | espes
 | style="background:#ffff90; color:black;" | Last updated for 1.5, buggy 1.6 support with minor tweaks
 |-
@@ -62,6 +71,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | Work in progress standalone bot
 | [http://en.wikipedia.org/wiki/Visual_Basic_.NET VB.NET]
 | GPL
+| {{no}}
 | {{no}}
 | Umby24
 | style="background:#ff9090; color:black;" | Dead
@@ -71,6 +81,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients currently in de
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with C extension
 | GPLv3
 | {{no}}
+| {{yes}}
 | ThibG
 | style="background:#ff9090; color:black;" | Dead<br>(Server down)
 |-|}
