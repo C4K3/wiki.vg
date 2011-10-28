@@ -327,8 +327,8 @@ Objects are spawned via [[Protocol#Add_Object.2FVehicle_.280x17.29|0x17 Add Obje
 |- class="row0"
 ! class="col0" | ID
 ! class="col1" | Name
-! class="col2" | Width
-! class="col3" | Height
+! class="col2" | x, z
+! class="col3" | y
 |- class="row1"
 | class="col0" | 1
 | class="col1" | Boat
