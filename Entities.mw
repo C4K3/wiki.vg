@@ -283,7 +283,7 @@ Suspected to be mooshroom, but currently undocumented
 
 == Objects ==
 
-Objects are spawned via [[http://wiki.vg/Protocol#Add_Object.2FVehicle_.280x17.29|0x17 Add Object/Vehicle]]
+Objects are spawned via [[Protocol#Add_Object.2FVehicle_.280x17.29|0x17 Add Object/Vehicle]]
 
 {| class="wikitable"
 |- class="row0"
