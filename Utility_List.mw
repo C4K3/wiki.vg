@@ -6,4 +6,5 @@ A list of tools to help out your Minecraft development.
 * MC-Ver v2 - http://www.tkte.ch/projects/pymy/
 * minecraft-proxy - Haskell implementation of network protocol and proxy server providing various client "enhancements" - http://github.com/glguy/minecraft-proxy
 * mcproxy - Modular client- and server-side network protocol proxy written in C - https://github.com/Nadrin/mcproxy
+* [https://github.com/mmcgill/mc3p m3cp] - Actively maintained Python Minecraft proxy with plugin support. Runs on Linux/OS X/Windows, supports Beta 1.8 - 1.9pre5
 [[Category:Minecraft Beta]]
