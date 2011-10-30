@@ -199,7 +199,7 @@ Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
 | class="col3" | 1.8
 |- class="row21"
 | class="col0" | 96
-| class="col1" | Mooshroom?
+| class="col1" | Mooshroom
 | class="col2" | 
 | class="col3" | 
 |- class="row22"
