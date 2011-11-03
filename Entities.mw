@@ -87,6 +87,13 @@ The value is an int, that should be decomposed into four 4-bit nibbles, represen
 
 If the value is 0, no potion effects currently apply to the entity.
 
+
+=== Index 12 (int): Animals ===
+
+0 for ordinary animals.
+
+Baby animals have the value 0xFFFFA241.
+
 == Mobs ==
 
 Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
