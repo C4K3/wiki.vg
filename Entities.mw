@@ -48,7 +48,7 @@ In python:
 
 == Common Metadata ==
 
-=== Index 0: Flags ===
+=== Index 0, byte: Flags ===
 
 All mobs, objects and players send metadata with index <code>0</code>. The value is a byte representing 8 boolean flags:
 
@@ -79,7 +79,7 @@ All mobs, objects and players send metadata with index <code>0</code>. The value
 | class="col2" | Eating/Drinking
 |}
 
-=== Index 8: Potion effects ===
+=== Index 8, int: Potion effects ===
 
 Players and most (all?) mobs send metadata with index <code>8</code>. This specifies the colour of the bubbling effects around the player.
 
@@ -88,7 +88,7 @@ The value is an int, that should be decomposed into four 4-bit nibbles, represen
 If the value is 0, no potion effects currently apply to the entity.
 
 
-=== Index 12 (int): Animals ===
+=== Index 12, int: Animals ===
 
 0 for ordinary animals.
 
