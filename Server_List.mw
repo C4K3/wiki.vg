@@ -240,7 +240,7 @@ A couple things for contributors:
 | {{yes}}
 | {{yes|Event-driven}}
 | {{no}}
-| {{yes|Active}}
+| {{unknown|Semi-Active}}
 |-
 ! [https://www.assembla.com/spaces/mc_server RealMC]
 | thomasfn
