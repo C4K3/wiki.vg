@@ -22,6 +22,10 @@ Currently the project is in '''temporary inactive''' development.
 This server may or may not be online; it's only online when Jailout2000 is working on the server.
 * mc.clan-warp.net:25566
 
+=== Source Code ===
+
+The project source is '''closed/private, and available upon request'''. If you would like to see the source, message [[User:Jailout2000|Jailout2000]]. He would have released it to the general public, but the problem with that is REALbasic isn't equipped to handle separation of files for things like github or Google Code; the closest thing it has is separated files in XML format (or as it calls it, <span title="RealBasic Version Control Project">RBVCP</span>), not plaintext.
+
 == Development Status ==
 
 Notchian clients no longer crash. Lots of internal code has been reworked with the help of [[User:Ribose|Ribose]]. Fixed spawning bugs, it now works correctly on the first time. Fixed gltches with walking/jumping/arm-throwing; you are now free to walk around, just don't hit any blocks (left or right click) at the moment ;). Entities were worked on a bit, and understood a bit more; players should now see other players (but they cannot move right now, they can arm swing though!). Chat is now working properly, and is logged under a different log file. Other than all of this, the server is fairly stable, I can't crash it as of this moment, but that's not to say it isn't crashable, I'm sure somewhere there's a problem. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 22:27, 24 October 2011 (MST)
