@@ -194,10 +194,10 @@ A couple things for contributors:
 | [[User:Syntaxial|Cruz Bishop (for Massive Dynamics)]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{planned|Partial (pre-login)}}
-| {{planned|Planned (Customized beta)}}
+| {{yes|Up to login supported}}
+| {{planned|Planned (Custom)}}
 | {{planned|In progress}}
-| {{no}}
+| {{planned|In block definition}}
 | {{planned|Partial mob definition support}}
 | {{yes|Threads + Scheduled events}}
 | {{planned|Dynamic (Java planned)}}
