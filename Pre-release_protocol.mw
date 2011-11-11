@@ -70,15 +70,18 @@ Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java)
 
 == Protocol History ==
 
-Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+=== 2011-11-11 ===
+* Beta 1.9 pre6.
+* Protocol version is now 22
+* Any protocol changes?
 
 === 2011-10-27 ===
-* Beta 1.9 pre5-release.
+* Beta 1.9 pre5.
 * Protocol version is now 21
 * Packet 0x6B (Create Inventory) changed: uses Slot datatype.
 
 === 2011-10-13 ===
-* <div class="li">Beta 1.9 pre4-release.</div>
+* <div class="li">Beta 1.9 pre4.</div>
 * Protocol version is now 20
 * Packet 0x2B ([[#Experience_.280x2B.29|Experience]]) changed: now (float, short, short)
 * New packet 0x6C ([[#Enchant_Item_.280x6C.29|Enchant item]]) added: (byte, byte)
@@ -87,7 +90,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Notchian server now features "G4S" server [http://pear.php.net/package/Net_GameServerQuery]
 
 === 2011-9-29 ===
-* <div class="li">Beta 1.9 pre2-release.</div>
+* <div class="li">Beta 1.9 pre2.</div>
 * Protocol version is now 19
 * Four packets changed:
 ** [[Protocol#Player_Block_Placement_.280x0F.29|0x0F player block placement]]
@@ -108,5 +111,5 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * So far only this format, with 'id' and 'lvl' set to <code>2</code> and <code>1</code> respectively, has been seen.
 
 === 2011-9-22 ===
-* <div class="li">Beta 1.9 pre-release.</div>
+* <div class="li">Beta 1.9 pre1.</div>
 * Protocol version is now 18
