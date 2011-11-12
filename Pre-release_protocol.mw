@@ -62,9 +62,9 @@ Now float, short, short
 
 == Other changes ==
 
-[[Protocol#Mob_Types|New mobs]]: Blaze, Magma Cube, Ender Dragon, Snowman, Villager
+Protocol version is 20, as of 1.9pre4
 
-New object: Ender Crystal(51)
+[[Protocol#Mob_Types|New mobs]]: Blaze, Magma Cube, Ender Dragon, Snowman, Villager
 
 Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java) and [[Query|Query]] (server class: su.java)
 
