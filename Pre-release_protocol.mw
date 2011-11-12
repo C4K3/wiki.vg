@@ -64,7 +64,7 @@ Now float, short, short
 
 Protocol version is 20, as of 1.9pre4
 
-[[Protocol#Mob_Types|New mobs]]: Blaze, Magma Cube, Ender Dragon, Snowman, Villager, EnderCrystal
+[[Protocol#Mob_Types|New mobs]]: Blaze, Magma Cube, Ender Dragon, Snowman, Villager
 
 Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java) and [[Query|Query]] (server class: su.java)
 
@@ -74,7 +74,7 @@ Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java)
 * Beta 1.9 pre6.
 * Protocol version is now 22
 * NewState: Reason 4 = Enter scrolling text mode after slaying the dragon.
-* New mob: EnderCrystal
+* New entity: EnderCrystal (Spawned using the [[Protocol#Add_Object.2FVehicle_.280x17.29|Add Object/Vehicle (0x17)]] packet with type 51)
 
 === 2011-10-27 ===
 * Beta 1.9 pre5.
