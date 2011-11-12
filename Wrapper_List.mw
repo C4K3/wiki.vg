@@ -1,14 +1,66 @@
-== List of Third-Party Wrapper ==
+These are wrappers for both the client and server vanilla interfaces.
 
+See the [[Client_List|client list]] page for custom clients and the [[Server_List|server list]] page for custom servers.
 
-=== Client Wrappers ===
-* [[Nuble]] by Earth2Me ([http://nuble.org/ nuble.org])
+== Client Wrappers ==
+These are wrappers for the vanilla Minecraft client.
 
-=== Server Wrappers ===
-* [[hMod]] by hey0 and team ([http://forum.hey0.net/ forum.hey0.net]) (discontinued)
-* [[CanaryMod]] by the CanaryMod team ([http://canarymod.net/ canarymod.net]) (continuation of hMod)
-* [[Bukkit]] by the former hey0 team ([http://bukkit.org bukkit.org])
-* [[Llamacraft]] by SuperLlama ([http://www.minecraftforum.net/viewtopic.php?f=1012&t=23483 thread on minecraftforum.net])
-* [https://github.com/SimpleServer/SimpleServer SimpleServer] by [[User:sadimusi|sadimusi]] ([http://www.minecraftforum.net/viewtopic.php?f=1023&t=336496 minecraftforum.net])
+{| class="wikitable" style="width: auto; text-align: center;"
+|-style="background:#eee"
+!style="min-width: 120px" | Name
+!style="min-width: 120px" | Author(s)
+!style="min-width: 78px" | Language
+!style="min-width: 120px" | License
+!style="width: 120px" | Scripting
+!style="width: 120px" | Development Status
+|-
+|colspan="6" | There are no client wrappers at this time
+|}
 
-{{stub}}
+== Server Wrappers ==
+These are wrappers for the vanilla Minecraft server.
+
+{| class="wikitable" style="width: auto; text-align: center;"
+|-style="background:#eee"
+!style="min-width: 120px" | Name
+!style="min-width: 120px" | Author(s)
+!style="min-width: 78px" | Language
+!style="min-width: 120px" | License
+!style="width: 120px" | Scripting
+!style="width: 120px" | Development Status
+|-
+! [http://bukkit.org/ Bukkit]
+| Former hey0 Team
+| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
+| [http://www.gnu.org/copyleft/gpl.html GPLv3]
+| {{yes|Java Archives}}
+| {{yes|Active}}
+|-
+! [http://canarymod.net/ CanaryMod]
+| CanaryMod Team
+| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
+| {{unknown|n/a}}
+| {{unknown|n/a}}
+| {{yes|Active}}
+|-
+! hMod
+| hey0 and Team
+| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
+| {{unknown|n/a}}
+| {{unknown|n/a}}
+| {{no|Discontinued}}
+|-
+! [http://www.minecraftforum.net/viewtopic.php?f=1012&t=23483 Llamacraft]
+| SuperLlama
+| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
+| General Public
+| {{no}}
+| {{unknown|Last updated:<br />6 Aug 2010}}
+|-
+! [http://www.minecraftforum.net/viewtopic.php?f=1023&t=336496 SimpleServer]
+| [[User:sadimusi|sadimusi]]
+| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
+| [https://github.com/SimpleServer/SimpleServer/blob/master/LICENSE See LICENSE]
+| {{no}}
+| {{yes|Active}}
+|}
