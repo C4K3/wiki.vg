@@ -49,6 +49,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | axus
 | {{unknown|Last updated May 2011}}
 |-
+! [https://github.com/jrupac/minecraft-opengl minecraft-opengl]
+| Draw the map, move around, break stuff, gather stuff, etc.; doesn't appear to have networking
+| [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++]
+| proprietary software / Freeware
+| {{no}}
+| {{yes}}
+| Rohan Bansal, Dmitry Drutskoy, Ajay Roopakalu, Sarah Tang
+| {{unknown|Last updated June 2011}}
+|-
 ! [[Mineflayer]]
 | JavaScript bot framework. See [[Mineflayer]] for more details.
 | [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/Qt_%28framework%29 Qt]
