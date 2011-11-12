@@ -73,7 +73,7 @@ Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java)
 === 2011-11-11 ===
 * Beta 1.9 pre6.
 * Protocol version is now 22
-* Any protocol changes?
+* NewState: Reason 4 = Enter scrolling text mode after slaying the dragon.
 
 === 2011-10-27 ===
 * Beta 1.9 pre5.
