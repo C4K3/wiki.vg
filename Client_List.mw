@@ -13,7 +13,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 !style="width: 120px" | Author(s)
 !style="width: 64px" | Status
 |-
-! [http://github.com/Wallbraker/Charged-Miners Charged Miners]
+! [https://github.com/Wallbraker/Charged-Miners Charged Miners]
 | Minecraft Viewer that can use Mineflayer to connect to servers.
 | [http://en.wikipedia.org/wiki/D_%28programming_language%29 D], [http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]
 | GPLv2
@@ -31,7 +31,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | CharlesBroughton
 | {{no|Dead}}
 |-
-! [http://github.com/aniero/golem golem]
+! [https://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
 | [http://en.wikipedia.org/wiki/Ruby_%28programming_language%29 ruby]
 | a kind of "0-clause" BSD license
@@ -51,7 +51,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/jrupac/minecraft-opengl minecraft-opengl]
 | Draw the map, move around, break stuff, gather stuff, etc.; doesn't appear to have networking
-| [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++]
+| [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/OpenGL OpenGL]
 | proprietary software / Freeware
 | {{no}}
 | {{yes}}
@@ -67,7 +67,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | Superjoe, thejoshwolfe
 | {{yes|Mostly mature, well maintaned}}
 |-
-! [http://github.com/espes/esbot esbot]
+! [https://github.com/espes/esbot esbot]
 | dependency gathering and other awesomeness
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with twisted
 | GPL
