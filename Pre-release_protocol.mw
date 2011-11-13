@@ -70,6 +70,11 @@ Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java)
 
 == Protocol History ==
 
+=== 2011-11-13 ===
+* 1.0rc2
+* Protocol version is not changed
+* Client is more picky with the server key, needs investigation.
+
 === 2011-11-11 ===
 * Beta 1.9 pre6.
 * Protocol version is now 22
