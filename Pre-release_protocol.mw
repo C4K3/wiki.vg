@@ -74,6 +74,7 @@ Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java)
 * 1.0rc2
 * Protocol version is not changed
 * Client gives invalid server key when authentication hash is 8 bytes and the first byte is > 0x80
+* Bow how has extra metadata as slot item.
 
 === 2011-11-11 ===
 * Beta 1.9 pre6.
