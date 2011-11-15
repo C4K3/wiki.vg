@@ -81,7 +81,7 @@ All mobs, objects and players send metadata with index <code>0</code>. The value
 
 === Index 1, short: Drowning counter ===
 
-Initialized to <code>300</code> on entity spawn. When underwater, this is decremented by 3 every tick (and sent S->C with [[Protocol#Entity_Metadata_.280x28.29|Entity Metadata (0x28)]]. If the value dips below -19, an [[Protocol#Entity_Status_.280x26.29|Entity Status (0x26)]] is sent (i.e. the entity is hurt) and counter is reset to 0.
+Initialized to <code>300</code> on entity spawn. When underwater, this is decremented by 3 every tick (and sent S->C with [[Protocol#Entity_Metadata_.280x28.29|Entity Metadata (0x28)]]). If the value dips below -19, an [[Protocol#Entity_Status_.280x26.29|Entity Status (0x26)]] is sent (i.e. the entity is hurt) and counter is reset to 0.
 
 Seems to be sent for *at least* all mobs. Not sure about players.
 
