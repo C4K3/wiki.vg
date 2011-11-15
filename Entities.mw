@@ -253,7 +253,11 @@ Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
 
 ==== Blaze ====
 
-* Index '''16''' (byte): Attacking. <code>1</code> sets the blaze on fire, and shortly after it will attack. <code>0</code>  signals the end of the attack.
+* Index '''16''' (byte): Attacking. <code>1</code> sets the blaze on fire, and shortly after it will attack. <code>0</code>  signals the end of the attack.#
+
+==== Ender Dragon ====
+
+* Index '''16''' (short): Health. Full health = <code>200</code>
 
 ==== Pig ====
 
