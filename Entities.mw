@@ -79,6 +79,10 @@ All mobs, objects and players send metadata with index <code>0</code>. The value
 | class="col2" | Eating/Drinking
 |}
 
+=== Index 1, short: Unknown ===
+
+Seems to be sent for *at least* all mobs. I've only seen <code>300</code> as a value so far.
+
 === Index 8, int: Potion effects ===
 
 Players and most (all?) mobs send metadata with index <code>8</code>. This specifies the colour of the bubbling effects around the player.
