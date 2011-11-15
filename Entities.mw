@@ -408,6 +408,11 @@ Objects are spawned via [[Protocol#Add_Object.2FVehicle_.280x17.29|0x17 Add Obje
 | class="col2" | 0.98
 | class="col3" | 0.98
 |- class="row12"
+| class="col0" | 72
+| class="col1" | Eye of Ender
+| class="col2" | 
+| class="col3" | 
+|- class="row13"
 | class="col0" | 90
 | class="col1" | Fishing Float
 | class="col2" | 0.25?
