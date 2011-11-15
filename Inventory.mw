@@ -18,6 +18,9 @@ Minecraft displays the player inventory differently, according to how the window
 |- class="row4"
 | class="col0" | 3
 | class="col1" | Dispenser
+|- class="row5"
+| class="col0" | 4
+| class="col1" | Enchantment table
 |}
 
 The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory. The number of unique slots in the window is in the [[Protocol#Open_window_.280x64.29|Open Window]] message for all window types except the default inventory window, in which the number of unique slots is 9. This means the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots. Slot number -999 is for clicking outside the window.
@@ -153,6 +156,25 @@ This is the window that is opened when the player right-clicks on a dispenser.
 | class="col1" | main inventory
 |- class="row3"
 | class="col0" | 36-44
+| class="col1" | held items
+|}
+
+=== Enchantment Table ===
+
+Note, this window incorrectly reports its number of slots as 9. It should be 1.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Slot range
+! class="col1" | Description
+|- class="row1"
+| class="col0" | 0
+| class="col1" | enchantment slot
+|- class="row2"
+| class="col0" | 1-27
+| class="col1" | main inventory
+|- class="row3"
+| class="col0" | 28-36
 | class="col1" | held items
 |}
 
