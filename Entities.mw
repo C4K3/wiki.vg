@@ -249,6 +249,10 @@ Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
 * Index '''16''' (byte): Item in hand
 * Index '''17''' (byte): Aggression. <code>1</code> for aggressive, <code>0</code> otherwise.
 
+==== Blaze ====
+
+* Index '''16''' (byte): Attacking. <code>1</code> sets the blaze on fire, and shortly after it will attack. <code>0</code>  signals the end of the attack.
+
 ==== Pig ====
 
 * Index '''16''' (byte): Saddled. <code>1</code> if the pig is wearing a saddle, <code>0</code> otherwise.
