@@ -232,6 +232,10 @@ Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
 * Index '''16''' (byte): Status. Depends on the fuse
 * Index '''17''' (byte): Charged. <code>1</code> if the creeper has been hit by lightning, <code>0</code> otherwise.
 
+==== Spider ====
+
+* Index '''16''' (byte): Unknown - possibly aggression.
+
 ==== Slime / Magma Cube ====
 
 * Index '''16''' (byte): Size. Randomly-generated. <code>0</code>, <code>1</code>, <code>2</code> or <code>4</code>.
