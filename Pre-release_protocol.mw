@@ -56,9 +56,35 @@ As of 1.9pre3, the format of the NBT is as follows
   END
 </code>
 
-=== Experience (0x2B) ===
+=== [[Protocol#Experience_.280x2B.29|Experience (0x2B)]] ===
 
-Now float, short, short
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x2B
+| class="col1 centeralign" | Experience bar
+| class="col2 centeralign" | float
+| class="col3 centeralign" | <code>0.5960060358047485</code>
+| class="col4" | Used for drawing the experience bar - value is between 0 and 1.
+|- class="row2"
+| class="col0 centeralign" | Level
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>8</code>
+| class="col4" |
+|- class="row3"
+| class="col0 centeralign" | Total experience
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>130</code>
+| class="col3" |
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes
+|}
 
 == Other changes ==
 
