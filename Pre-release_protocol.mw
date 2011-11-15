@@ -86,6 +86,12 @@ As of 1.9pre3, the format of the NBT is as follows
 | class="col1 rightalign" colspan="4" | 9 bytes
 |}
 
+=== [[Protocol#Update_progress_bar_.280x69.29|Update progress bar (0x69)]] ===
+
+Now used to list available enchantments in the enchantment table. The "progress bar" field is the index - 0, 1 or 2. The "value" field gives the enchantment's level.
+
+This field should probably be renamed to "Window property change" or something.
+
 == Other changes ==
 
 Protocol version is 20, as of 1.9pre4
