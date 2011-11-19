@@ -1,0 +1,61 @@
+The '''slot''' data structure is how minecraft represents an item and its associated data in the [[Protocol|minecraft protocol]]
+
+== Packets ==
+
+* [[Protocol#Player_Block_Placement_.280x0F.29|0x0F player block placement]]
+* [[Protocol#Window_click_.280x66.29|0x66 window click]]
+* [[Protocol#Set_slot_.280x67.29|0x67 set slot]]
+* [[Protocol#Window_items_.280x68.29|0x68 window items]] (as an array)
+* [[Protocol#Creative_inventory_action_.280x6B.29|0x6B creative inventory action]]
+
+== Format ==
+
+The structure consists of at least a short, which gives the item/block ID [http://www.minecraftwiki.net/wiki/Block_ids#Block_IDs_.28Minecraft_Beta.29]. A value of <code>-1</code> signifies that the slot is empty, and no further data follows.
+
+For non-empty slots, at least two further fields follow. These fields are a byte (item count) and a short (damage/block metadata)
+
+For certain block IDs, [[#Enchantable_items|given below]], further data follows. First, a short gives the length of a proceeding byte array. A value of <code>-1</code> signifies no further data.
+
+The byte array (if present) contains gzipped (that is RFC 1952 rather than RFC 1950) [[NBT]] data. The format of this data is as follows:
+
+<code>
+  COMPOUND: <nowiki>''</nowiki>
+    LIST: 'ench'
+      COMPOUND
+        SHORT: 'id'
+        SHORT: 'lvl'
+      END
+      COMPOUND
+        ...etc
+      END
+  END
+</code>
+
+Each of the inner, untagged COMPOUNDs represents an enchantment, with its ID[http://www.minecraftwiki.net/wiki/Enchantment#Enchantment_Types] and level given as child SHORT elements.
+
+== Enchantable items ==
+
+Every item that has a "damage bar" in-game is considered enchantable by the protocol, though the notchian server/client do not support enchantment of some items. These include: hoes, flint and steel, bows, fishing rods and shears.
+
+<code>
+  0x103, #Flint and steel
+  0x105, #Bow
+  0x15A, #Fishing rod
+  0x167, #Shears
+  
+  #TOOLS
+  #sword, shovel, pickaxe, axe, hoe
+  0x10C, 0x10D, 0x10E, 0x10F, 0x122, #WOOD
+  0x110, 0x111, 0x112, 0x113, 0x123, #STONE
+  0x10B, 0x100, 0x101, 0x102, 0x124, #IRON
+  0x114, 0x115, 0x116, 0x117, 0x125, #DIAMOND
+  0x11B, 0x11C, 0x11D, 0x11E, 0x126, #GOLD
+  
+  #ARMOUR
+  #helmet, chestplate, leggings, boots
+  0x12A, 0x12B, 0x12C, 0x12D, #LEATHER
+  0x12E, 0x12F, 0x130, 0x131, #CHAIN
+  0x132, 0x133, 0x134, 0x135, #IRON
+  0x136, 0x137, 0x138, 0x139, #DIAMOND
+  0x13A, 0x13B, 0x13C, 0x14D  #GOLD
+</code>
