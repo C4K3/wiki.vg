@@ -1,6 +1,6 @@
 Query is a UDP protocol introduced in 1.9pre4 for the purpose of querying server properties. It looks a lot like the UT3 (or GameSpot) Query Protocol [http://wiki.unrealadmin.org/UT3_query_protocol]
 
-All data types are little-endian, with the exception of <code>short</code>
+All data types are big-endian, with the exception of <code>short</code>
  
 == Server Config ==
 
