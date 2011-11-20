@@ -428,3 +428,5 @@ Objects are spawned via [[Protocol#Add_Object.2FVehicle_.280x17.29|0x17 Add Obje
 Players are spawned via [[Protocol#Named_Entity_Spawn_.280x14.29|0x14 Named Entity Spawn]]. They have dimensions 0.6 * 1.8.
 
 Pickups are spawned via [[Protocol#Pickup_Spawn_.280x15.29|0x15 Pickup Spawn]]. They have dimensions 0.25 * 0.25.
+
+Paintings are spawned via [[Protocol#Entity:_Painting_.280x19.29|0x19 Entity: Painting]]. Their dimensions depend on their type.
