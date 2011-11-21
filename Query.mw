@@ -142,3 +142,4 @@ At the very end there's an extra null byte.
 == Example implementations ==
 
 * https://github.com/barneygale/MCQuery (python)
+* https://github.com/kmpm/node-mcquery (node.js)
