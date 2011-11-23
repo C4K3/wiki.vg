@@ -55,3 +55,7 @@ The client discards the server's response.
 #:If it returns '''YES''' then the client is authenticated and allowed to join. Otherwise the client will/should be [[Protocol#Disconnect.2FKick_.280xFF.29|kicked]] with “Failed to verify username!”
 # Server sends a 0x01 login request to the client
 # ... send map chunks, etc...
+
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Beta]]
