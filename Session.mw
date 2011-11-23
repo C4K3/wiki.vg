@@ -1,0 +1,57 @@
+The minecraft client and server communicate with minecraft.net to validate player sessions. This page describes some of the operations.
+
+== Login ==
+
+To log the player in, the official launcher sends an HTTPS POST request to:
+<pre>https://login.minecraft.net</pre>
+with the postdata:
+  user=<username>&password=<password>&version=<launcher version>
+and a "application/x-www-form-urlencoded" Content-Type header.
+
+The current launcher version is ''12'', sending a value lower than this will cause the server to return "Old Version", however you can send any large number and it will return as expected. If the login succeeded, it will return 4 ':' delimited values.
+  1281688214000:deprecated:TkTech:8204407531530365141:
+#'''current version''' of the game files (not the launcher itself). This is a unix timestamp which the launcher compares to the ~/.minecraft/bin/version file.
+#Previously contained a '''download ticket''' for requesting new versions of minecraft.jar from the server. Now contains only "deprecated".
+#'''case-correct username'''.
+#'''sessionId''' - a unique ID for your current session.
+
+== Updating ==
+
+To update, the client sends a request to 
+<pre>http://s3.amazonaws.com/MinecraftDownload/minecraft.jar?user=foo&ticket=deprecated</pre>
+It converts the Last-modified header to a unix timestamp and stores in ~/.minecraft/bin/version
+
+The client also downloads LWJGL jars from /MinecraftDownload, but doesn't pass any GET variables. Further resources are stored in /MinecraftResources.
+
+== Keep-alive ==
+
+Every 6000 ticks, the client sends an HTTPS request to
+<pre>https://login.minecraft.net/session?name=<username>&session=<session id></pre>
+The client discards the server's response.
+
+== Joining a Server ==
+
+=== Client operation ===
+
+# Client connects to server
+# Client sends a [[Protocol#Handshake_.280x02.29|0x02 handshake]] containing the current player name
+# Client receives a 0x02 handshake from the server containing a randomly generated hash, which is saves as serverId
+# Client sends a HTTP request to 
+#:<pre>http://session.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
+#:If the response is '''OK''' then continue, otherwise stop
+# Client sends [[Protocol#Login_Request_.280x01.29|0x01 login request]]
+# Client receives a 0x01 login request
+# ... receive map chunks, etc...
+
+=== Server operation ===
+
+# Server answers tcp connection request
+# Server receives a [[Protocol#Handshake_.280x02.29|0x02 handshake]] containing the client's player name
+# Server generates a hash for this client
+# Server sends a 0x02 handshake to the client containing the hash
+# Server receives a [[Protocol#Login_Request_.280x01.29|0x01 login request]] from the client
+# Server sends a HTTP request to
+#:<pre>http://session.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash></pre>
+#:If it returns '''YES''' then the client is authenticated and allowed to join. Otherwise the client will/should be [[Protocol#Disconnect.2FKick_.280xFF.29|kicked]] with “Failed to verify username!”
+# Server sends a 0x01 login request to the client
+# ... send map chunks, etc...
