@@ -210,8 +210,8 @@ A couple things for contributors:
 | {{yes}}
 | {{yes|Alpha, Beta: WIP}}
 | {{no}}
-| {{no}}
-| {{no}}
+| {{planned}}
+| {{planned|Players, Partial mob support}}
 | {{yes|Threads + Async File IO}}
 | {{yes|.NET Plugins}}
 | {{Unknown|Rewrite in Progress}}
