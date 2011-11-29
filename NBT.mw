@@ -1,106 +1,84 @@
-'''The following is a slightly modified mirror of the no longer existent NBT.txt '''
+NBT (Named Binary Tag) is a tag-based binary format designed to carry binary data accompanied by additional data.
+
+An NBT file consists of a single root TAG_Compound and is compressed with GZip.
+
+A single named tag is structured as follows:
+
+{| class="wikitable" style="margin: 1em auto 1em auto;"
+! scope="col" | Tag Type
+! scope="col" | Name Length
+! scope="col" | Name
+! scope="col" | Payload
+|-
+| 1 byte || 2 bytes, 16 bit integer, signed, big endian || UTF-8 Encoded String || Depends on type of tag
+|}
+
+There are 10 different types of tags:
+
+{| class="wikitable" style="margin: 1em auto 1em auto;"
+! scope="col" | Tag Type Value
+! scope="col" | Name
+! scope="col" | Description
+! scope="col" | Comments
+|-
+| 0 || TAG_End || Marks the end of a TAG_Compound. || This tag occurs to end a previously opened TAG_Compound.  This tag has no name, and no payload.
+|-
+| 1 || TAG_Byte || Payload is a single signed byte (8 bits). || 
+|-
+| 2 || TAG_Short || Payload is a signed 16 bit integer (big endian). ||
+|-
+| 3 || TAG_Int || Payload is a signed 32 bit integer (big endian). ||
+|-
+| 4 || TAG_Long || Payload is a singed 64 bit integer (big endian). ||
+|-
+| 5 || TAG_Float || Payload is a 32 bit floating point value (big endian, IEEE 754) ||
+|-
+| 6 || TAG_Double || Payload is a 64 bit floating point value (big endian, IEEE 754) ||
+|-
+| 7 || TAG_Byte_Array || An array of bytes. || Payload consists of four bytes which form a signed 32 bit integer (big endian) which specifies the length of the remainder of the payload.
+|-
+| 8 || TAG_String || A string. || Payload consists of two bytes which form a signed 16 bit integer (big endian) which specifies the length of the remainder of the payload.  The remainder of the payload is a UTF-8 encoded string.
+|-
+| 9 || TAG_List || A list of tags. || Payload consists of one byte which specifies the type of tags found in the list, followed by four bytes which form a signed 32 bit integer (big endian) which specifies the number of tags which form the remainder of the payload.  Tags in the list do not specify their type (i.e. they're missing the first byte) and do not have a name (i.e. they do not have two bytes for the length of their name, nor the bytes which makes up the name).
+|-
+| 10 || TAG_Compound || The root of nested tags. || Payload consists of sequential named tags.  This sequence of named tags ends when a TAG_End is encountered.  Note that TAG_Compounds can be nested within themselves, so the next TAG_End is not necessarily the end of this TAG_Compound.  Recursion advised.
+|}
 
 ----
 
-NBT (Named Binary Tag) is a tag based binary format designed to carry large amounts of binary data with smaller amounts of additional data.
-An NBT file consists of a single GZIPped Named Tag of type TAG_Compound.
+Note that none of the examples below are GZip'd
 
-A Named Tag has the following format:
+----
 
-    byte tagType
-    TAG_String name
-    [payload]
-    
-The tagType is a single byte defining the contents of the payload of the tag.
+Decoding example: http://mc.kev009.com/nbt/test.nbt
 
-The name is a descriptive name, and can be anything (eg "cat", "banana", "Hello World!"). It has nothing to do with the tagType.
-The purpose for this name is to name tags so parsing is easier and can be made to only look for certain recognized tag names.
-Exception: If tagType is TAG_End, the name is skipped and assumed to be "".
+The first byte of this file is 10.  This means that the first tag is a TAG_Compound (which is to be expected).
 
-The [payload] varies by tagType.
+We read two more bytes to get the length of the name of this tag.  The next two bytes are 0 and 11, meaning the name is 11 bytes long.  On a little endian system be sure to reverse them before creating a 16 bit signed integer with them.
 
-Note that ONLY Named Tags carry the name and tagType data. Explicitly identified Tags (such as TAG_String above) only contains the payload. 
+We read the next 11 bytes and decode them as per UTF-8.  The resulting string is "hello world".
 
-The tag types and respective payloads are:
+Next we move onto the payload, which, since this is a TAG_Compound, is going to be more tags until we reach the TAG_End which corresponds to our TAG_Compound.
 
-    TYPE: 0  NAME: TAG_End
-    Payload: None.
-    Note:    This tag is used to mark the end of a list.
-             Cannot be named! If type 0 appears where a Named Tag is expected, the name is assumed to be "".
-             (In other words, this Tag is always just a single 0 byte when named, and nothing in all other cases)
+Therefore, we read the next byte to determine the type of the first tag in the TAG_Compound.  The next byte is an 8 -- TAG_String.
 
-    TYPE: 1  NAME: TAG_Byte
-    Payload: A single signed byte (8 bits)
+The next two bytes tell us that the length of the name of this string is 4, and the next 4 bytes UTF-8 decode into "name".
 
-    TYPE: 2  NAME: TAG_Short
-    Payload: A signed short (16 bits, big endian)
+Next we read two more bytes to find the name of the string which is the payload of this tag, these two bytes are 0 and 9.  The next 9 bytes UTF-8 decode into "Bananrama".
 
-    TYPE: 3  NAME: TAG_Int
-    Payload: A signed short (32 bits, big endian)
+We read the next byte to get the type of the next named tag, and find that it is 0 -- TAG_End.
 
-    TYPE: 4  NAME: TAG_Long
-    Payload: A signed long (64 bits, big endian)
+Therefore, we are done.
 
-    TYPE: 5  NAME: TAG_Float
-    Payload: A floating point value (32 bits, big endian, IEEE 754-2008, binary32)
-
-    TYPE: 6  NAME: TAG_Double
-    Payload: A floating point value (64 bits, big endian, IEEE 754-2008, binary64)
-
-    TYPE: 7  NAME: TAG_Byte_Array
-    Payload: Int length (NOT TAGGED)
-             An array of bytes of unspecified format. The length of this array is <length> bytes
-
-    TYPE: 8  NAME: TAG_String
-    Payload: Short length  (NOT TAGGED)
-             An array of bytes defining a string in UTF-8 format. The length of this array is <length> bytes
-
-    TYPE: 9  NAME: TAG_List
-    Payload: Byte tagId (NOT TAGGED)
-             Int length (NOT TAGGED)
-             A sequential list of Tags (not Named Tags, OR TAGS AT ALL), of type <typeId>. The length of this array is <length> Tags
-    Notes:   All tags share the same type.
-
-    TYPE: 10 NAME: TAG_Compound
-    Payload: A sequential list of Named Tags. This array keeps going until a TAG_End is found.
-             TAG_End end
-    Notes:   If there's a nested TAG_Compound within this tag, that one will also have a TAG_End, so simply reading until the next TAG_End will not work.
-             The names of the named tags have to be unique within each TAG_Compound
-             The order of the tags is not guaranteed.
-             
-             
-
-
-
-Decoding example:
-(Use http://mc.kev009.com/nbt/test.nbt to test your implementation)
-
-
-First we start by reading a Named Tag.
-After unzipping the stream, the first byte is a 10. That means the tag is a TAG_Compound (as expected by the specification).
-
-The next two bytes are 0 and 11, meaning the name string consists of 11 UTF-8 characters. In this case, they happen to be "hello world".
-That means our root tag is named "hello world". We can now move on to the payload.
-
-From the specification, we see that TAG_Compound consists of a series of Named Tags, so we read another byte to find the tagType.
-It happens to be an 8. The name is 4 letters long, and happens to be "name". Type 8 is TAG_String, meaning we read another two bytes to get the length,
-then read that many bytes to get the contents. In this case, it's "Bananrama".
-
-So now we know the TAG_Compound contains a TAG_String named "name" with the content "Bananrama"
-
-We move on to reading the next Named Tag, and get a 0. This is TAG_End, which always has an implied name of "". That means that the list of entries
-in the TAG_Compound is over, and indeed all of the NBT file.
-
-So we ended up with this:
+The result:
 
     TAG_Compound("hello world"): 1 entries
     {
         TAG_String("name"): Bananrama
     }
 
+For a slightly longer test, use http://mc.kev009.com/nbt/bigtest.nbt
 
-
-For a slightly longer test, download http://mc.kev009.com/nbt/bigtest.nbt
 You should end up with this:
 
     TAG_Compound("Level"): 11 entries
