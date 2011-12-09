@@ -23,10 +23,10 @@ Remember, this wiki is a volunteer effort.  Treat the people who contribute to i
 
 Also, the wiki is out of date a lot.  Check "Recent changes" and "Discussion" pages for more info.
 
-== Beta ==
+== Final ==
 [[File:Banner beta.png|link=Category:Minecraft Alpha]]
 
-Minecraft Beta is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play. Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
+Minecraft is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play. Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
 
 === Documentation ===
 There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be accurate'''.
