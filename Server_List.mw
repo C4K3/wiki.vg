@@ -11,7 +11,8 @@ A couple things for contributors:
 !style="min-width: 120px" | Name
 !style="min-width: 120px" | Author(s)
 !style="min-width: 72px" | Language
-!style="min-width: 120px" | License
+!style="min-width: 72px" | License
+!style="width: 72px" | Asynchronous I/O
 !style="width: 72px" | Networking
 !style="width: 72px" | World Formats
 !style="width: 72px" | Multiworld
@@ -25,6 +26,7 @@ A couple things for contributors:
 | MostAwesomeDude
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
+| {{Unknown}}
 | {{yes}}
 | {{yes|Alpha, Beta}}
 | {{yes}}
@@ -38,6 +40,7 @@ A couple things for contributors:
 | agon, huin (lead contributor), jnwhiteh, nictuku
 | [http://en.wikipedia.org/wiki/Go_(programming_language) Google Go]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
+| {{Unknown}}
 | {{yes}}
 | {{yes|Alpha, Beta}}
 | {{planned}}
@@ -51,6 +54,7 @@ A couple things for contributors:
 | [[User:Kev009|kev009]]
 | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
 | Simplified BSD
+| {{Unknown}}
 | {{yes}}
 | {{yes|Alpha}}
 | {{no}}
@@ -64,6 +68,7 @@ A couple things for contributors:
 | Scott Brooks
 | [http://en.wikipedia.org/wiki/Erlang_%28programming_language%29 Erlang]
 | Unknown (Source files have no copyright?!)
+| {{Unknown}}
 | {{unknown}}
 | {{unknown}}
 | {{unknown}}
@@ -77,6 +82,7 @@ A couple things for contributors:
 | [[User:SpaceManiac|SpaceManiac]] (fork of Lightstone)
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
+| {{Unknown}}
 | {{yes}}
 | {{yes|Beta}}
 | {{yes}}
@@ -90,6 +96,7 @@ A couple things for contributors:
 | [[User:Jckf|Jckf]], [[User:ElectronicsRules|electronicsRules]]
 | [http://en.wikipedia.org/wiki/Perl Perl]
 | Open source
+| {{No}}
 | {{yes|Yes}}
 | {{planned|Beta planned}}
 | {{planned|Partial}}
@@ -97,12 +104,13 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|Event-driven}}
 | {{yes|[http://en.wikipedia.org/wiki/Perl Perl]}}
-| {{yes|Active}}
+| {{yes|Semi-Active}}
 |-
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
+| {{Unknown}}
 | {{yes}}
 | {{planned|In Progress (Beta)}}
 | {{planned}}
@@ -116,6 +124,7 @@ A couple things for contributors:
 | Nemrael
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
+| {{Unknown}}
 | {{yes|Yes (Java NIO)}}
 | {{planned|Beta (read-access)}}
 | {{yes}}
@@ -129,6 +138,7 @@ A couple things for contributors:
 | FakeTruth
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Closed source
+| {{Unknown}}
 | {{yes}}
 | {{yes|Raw}}
 | {{no}}
@@ -142,6 +152,7 @@ A couple things for contributors:
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+| {{Unknown}}
 | {{yes}}
 | {{yes|Beta}}
 | {{yes}}
@@ -155,6 +166,7 @@ A couple things for contributors:
 | deoxxa, [[User:Jailout2000|Jailout2000]]
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+| {{Unknown}}
 | {{yes}}
 | {{planned}}
 | {{planned}}
@@ -168,6 +180,7 @@ A couple things for contributors:
 | jake-anq, goshat
 | [http://en.wikipedia.org/wiki/Perl Perl],[http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Open source
+| {{No}}
 | {{planned|In progress}}
 | {{planned|Beta/Custom}}
 | {{planned}}
@@ -181,6 +194,7 @@ A couple things for contributors:
 | aera, iKJames
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | Simplified BSD
+| {{Unknown}}
 | {{yes}}
 | {{yes|n/a}}
 | {{no}}
@@ -194,6 +208,7 @@ A couple things for contributors:
 | [[User:Syntaxial|Cruz Bishop (for Massive Dynamics)]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{Unknown}}
 | {{yes|Up to login supported}}
 | {{planned|Planned (Custom)}}
 | {{planned|In progress}}
@@ -208,6 +223,7 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
 | {{yes}}
+| {{yes}}
 | {{yes|Alpha, Beta: WIP}}
 | {{no}}
 | {{planned}}
@@ -220,6 +236,7 @@ A couple things for contributors:
 | Moose
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Unknown
+| {{Unknown}}
 | {{yes}}
 | {{yes|Alpha}}
 | {{no}}
@@ -233,6 +250,7 @@ A couple things for contributors:
 | [[User:Jailout2000|Jailout2000]]
 | [http://en.wikipedia.org/wiki/Realbasic REALbasic]
 | Closed source
+| {{Unknown}}
 | {{yes}}
 | {{yes|Custom}}
 | {{yes}}
@@ -247,11 +265,12 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | Closed source
 | {{yes}}
+| {{yes}}
 | {{no|Custom}}
 | {{no}}
 | {{no}}
 | {{yes}}
-| {{yes|Async IO}}
+| {{yes|Async IO}} <!--Any other concurrency models? ASIO is now a seperate column-->
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|Active}}
 |-
@@ -259,6 +278,7 @@ A couple things for contributors:
 | louisdx
 | C++0x
 | unspecified open source
+| {{Unknown}}
 | {{yes}}
 | {{planned|n/a}}
 | {{no}}
@@ -272,6 +292,7 @@ A couple things for contributors:
 | Silentneeb, BizarreCake
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | Closed source
+| {{Unknown}}
 | {{yes}}
 | {{yes|Alpha}}
 | {{no}}
