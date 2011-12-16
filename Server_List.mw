@@ -172,7 +172,7 @@ A couple things for contributors:
 | {{planned}}
 | {{planned}}
 | {{planned}}
-| {{planned|ZeroMQ}}
+| {{planned|boost, ZeroMQ}}
 | {{yes|C++}}
 | {{yes|Active}}
 |-
