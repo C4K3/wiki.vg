@@ -82,12 +82,26 @@ A couple things for contributors:
 | [[User:SpaceManiac|SpaceManiac]] (fork of Lightstone)
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
-| {{Unknown}}
+| {{planned| Networking ([http://netty.io/ Netty])}}
 | {{yes}}
 | {{yes|Beta}}
 | {{yes}}
 | {{planned}}
 | {{planned}}
+| {{yes|Event-driven}}
+| {{yes|[http://bukkit.org/ Bukkit]}}
+| {{unknown|Superseded by Spout}}
+|-
+! [https://github.com/SpoutDev/Spout Spout]
+| [http://forums.getspout.org/team/ Spout Team] (fork of Glowstone)
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://raw.github.com/SpoutDev/Spout/master/LICENSE.txt SpoutDev v1]
+| {{planned| Networking ([http://netty.io/ Netty])}}
+| {{yes}}
+| {{yes|Beta}}
+| {{yes}}
+| {{planned|Partial}}
+| {{planned|Partial}}
 | {{yes|Event-driven}}
 | {{yes|[http://bukkit.org/ Bukkit]}}
 | {{yes|Active}}
