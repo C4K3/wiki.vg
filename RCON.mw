@@ -66,3 +66,4 @@ Code exists in the notchian server to split large responses (>4096 bytes) into m
 * https://gist.github.com/1292348 (php, basic, synchronous)
 * https://github.com/tehbeard/node-rcon (node.js, basic, asyncronous)
 * https://bitbucket.org/jonathanyc/rcon.js (RingoJS, synchronous, BSD-licensed)
+* https://bitbucket.org/jonathanyc/rcon (PHP, synchronous, BSD-licensed)
