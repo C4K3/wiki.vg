@@ -236,15 +236,15 @@ A couple things for contributors:
 | [[User:Jailout2000|Jailout2000]]
 | [http://en.wikipedia.org/wiki/Realbasic REALbasic]
 | Closed source
-| {{planned|Multi-Threaded SQL}}
+| {{planned}}
 | {{yes}}
 | {{yes|Custom}}
 | {{yes}}
 | {{planned}}
 | {{yes}}
-| {{yes|Event-driven}}
+| {{yes|[http://en.wikipedia.org/wiki/Object-oriented_programming Structured/Object-oriented]}}
 | {{no}}
-| {{unknown|Semi-Active}}
+| {{unknown|Rewrite in progress}}
 |-
 ! [https://www.assembla.com/spaces/mc_server RealMC]
 | thomasfn
@@ -291,7 +291,7 @@ A couple things for contributors:
 ! [https://github.com/SpoutDev/Spout Spout]
 | [http://forums.getspout.org/team/ Spout Team] (fork of Glowstone)
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://raw.github.com/SpoutDev/Spout/master/LICENSE.txt SpoutDev v1]
+| [https://raw.github.com/SpoutDev/Spout/master/LICENSE.txt SpoutDev v1]
 | {{planned| Networking ([http://netty.io/ Netty])}}
 | {{yes}}
 | {{yes|Beta}}
@@ -314,7 +314,7 @@ A couple things for contributors:
 | {{planned|Players, Partial mob support}}
 | {{yes|Threads + Async File IO}}
 | {{yes|.NET Plugins}}
-| {{Unknown|Rewrite in Progress}}
+| {{unknown|Rewrite in progress}}
 |}
 
 [[Category:Minecraft Beta]]
