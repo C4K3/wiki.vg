@@ -286,7 +286,7 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Threads}}
 | {{no}}
-| {{unknown|Cancelled}}
+| {{no|Cancelled}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout]
 | [http://forums.getspout.org/team/ Spout Team] (fork of Glowstone)
