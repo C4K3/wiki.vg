@@ -202,7 +202,7 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Threads}}
 | {{yes|Python}}
-| {{unknown|Cancelled}}
+| {{no|Cancelled}}
 |-
 ! [https://github.com/Massive-Dynamics/Netherrack Netherrack]
 | [[User:Syntaxial|Cruz Bishop (for Massive Dynamics)]]
