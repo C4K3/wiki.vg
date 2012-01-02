@@ -40,7 +40,7 @@ The client discards the server's response.
 #:<pre>http://session.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
 #:If the response is '''OK''' then continue, otherwise stop
 # Client sends [[Protocol#Login_Request_.280x01.29|0x01 login request]]
-# Client receives a 0x01 login request
+# Client receives a 0x01 login response
 # ... receive map chunks, etc...
 
 === Server operation ===
