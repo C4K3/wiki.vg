@@ -238,13 +238,13 @@ A couple things for contributors:
 | Closed source
 | {{planned}}
 | {{yes}}
-| {{yes|Custom}}
+| {{planned|Custom}}
 | {{yes}}
 | {{planned}}
 | {{yes}}
 | {{yes|[http://en.wikipedia.org/wiki/Object-oriented_programming Structured/Object-oriented]}}
 | {{no}}
-| {{unknown|Rewrite in progress}}
+| {{yes|Active}}
 |-
 ! [https://www.assembla.com/spaces/mc_server RealMC]
 | thomasfn
