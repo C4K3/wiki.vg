@@ -35,7 +35,7 @@ Development will begin again soon. -- [[User:Jailout2000|<span style="color: #00
 Notchian clients no longer crash. Lots of internal code has been reworked with the help of [[User:Ribose|Ribose]]. Fixed spawning bugs, it now works correctly on the first time. Fixed gltches with walking/jumping/arm-throwing; you are now free to walk around, just don't hit any blocks (left or right click) at the moment ;). Entities were worked on a bit, and understood a bit more; players should now see other players (but they cannot move right now, they can arm swing though!). Chat is now working properly, and is logged under a different log file. Other than all of this, the server is fairly stable, I can't crash it as of this moment, but that's not to say it isn't crashable, I'm sure somewhere there's a problem. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 22:27, 24 October 2011 (MST)
 
 == Technical Details ==
-<span style="color: #C00000;">These details are incorrect now that the server's codebase was written. I will most likely not include this section, and it is subject for removal now. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 19:36, 2 January 2012 (MST)</span>
+<span style="color: #C00000;">These details are incorrect now that the server's codebase was rewritten. I will most likely not include this section, and it is subject for removal now. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 19:36, 2 January 2012 (MST)</span>
 
 === Class Hierarchy ===
 * Entity
