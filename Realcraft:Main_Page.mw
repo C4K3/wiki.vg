@@ -28,11 +28,11 @@ The project source is '''closed/private''', and '''available upon request'''. If
 
 == Development Status ==
 
+Server has been rewritten with a new packet buffering system. It's now much easier for me to do things with the Minecraft protocol as opposed to before. The reason for the rewrite is because A) it was mostly hard to maintain and B) I lost the source code in a hard drive failure. Right now the rewrite is at the point of where the earlier version was; you can run around but don't swing your arm or click anything, don't even walk or jog. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 19:33, 2 January 2012 (MST)
+
 Development will begin again soon. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 08:40, 30 December 2011 (MST)
 
 Notchian clients no longer crash. Lots of internal code has been reworked with the help of [[User:Ribose|Ribose]]. Fixed spawning bugs, it now works correctly on the first time. Fixed gltches with walking/jumping/arm-throwing; you are now free to walk around, just don't hit any blocks (left or right click) at the moment ;). Entities were worked on a bit, and understood a bit more; players should now see other players (but they cannot move right now, they can arm swing though!). Chat is now working properly, and is logged under a different log file. Other than all of this, the server is fairly stable, I can't crash it as of this moment, but that's not to say it isn't crashable, I'm sure somewhere there's a problem. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 22:27, 24 October 2011 (MST)
-
-Got chunks to load correctly. Need to test if entities can be seen, or if entity animation is sent to other notchian clients. Currently a player is spawned at y=2, but it should be y=67, I need to look into how to fix this. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 02:51, 24 October 2011 (MST)
 
 == Technical Details ==
 
