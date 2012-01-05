@@ -8,14 +8,20 @@ Realcraft is written as closed source, therefore it is not available to the gene
 
 Currently the project is in '''temporary inactive''' development.
 
-=== Plans ===
+=== Plans / To-Do ===
 
-* Eventually use an external library for generation of worlds. At the moment, generation of worlds is done internally, and is not very impressive (just flat worlds with some scenery).
-* Provide a download for the server so others may use it.
-** This will mean building the server for cross-platform support. Currently it is Windows only.
-* Player authentication with Minecraft.net.
-* MySQL database support.
-* Advertise the server to others, so that it can be stress tested.
+* Eventually use an external library for generation of worlds. At the moment, generation of worlds is done internally
+** It might be possible to use a libnoise .dll/.so file and declare into it from the server, but I cannot say for sure yet
+* Provide a download for the server so others may use it
+** This will mean building the server for cross-platform support. Currently it is Windows x86 only
+** This would also mean having a new license for the project
+* Player authentication with Minecraft.net
+* MySQL database support
+** Player whitelist and/or blacklist support
+** Player ranks
+** Logging
+** Chest/door/area protection
+** Server and world-specific options
 
 === Live Server ===
 
