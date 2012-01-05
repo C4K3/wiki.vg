@@ -102,6 +102,10 @@ Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java)
 
 == Protocol History ==
 
+=== 2012-01-05 ===
+* 12w01a
+* Protocol version is now 23
+
 === 2011-11-13 ===
 * 1.0rc2
 * Protocol version is not changed
