@@ -1,10 +1,8 @@
-This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.8.1) to the current pre-release (currently 1.0RC2)
+This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.0.1) to the current pre-release (currently 12w01a)
 
 == New packets ==
 
-=== Enchant Item (0x6C) ===
-
-'''Client to Server only'''
+=== Unknown (0xFA) ===
 
 {| class="wikitable"
 |- class="row0"
@@ -14,49 +12,33 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan=2 | 0x6C
-| class="col1 centeralign" | Window ID
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | 1
-| class="col4" | The ID sent by [[Protocol#Open_window_.280x64.29|0x64]]
+| class="col0 centeralign" rowspan=3 | 0xFA
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | string
+| class="col3 centeralign" | 
+| class="col4" |
 |- class="row2"
-| class="col1 centeralign" | Enchantment
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | 0
-| class="col4" | The position of the enchantment on the enchantment table window, starting with 0 as the topmost one.
+| class="col1 centeralign" | Length of array
+| class="col2 centeralign" | short
+| class="col3 centeralign" |
+| class="col4" | Length of the following array
 |- class="row3"
+| class="col1 centeralign" | Array
+| class="col2 centeralign" | byte[]
+| class="col3 centeralign" |
+| class="col4" |
+|- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 3 bytes
+| class="col1 rightalign" colspan="4" | 5 bytes + string + array
 |}
 
 == Changed packets ==
 
-=== "Slot" type change ===
+=== [[Protocol#Login_Request_.280x01.29|Login Request (0x01)]] ===
 
-Four packets changed:
+New string field added
 
-* [[Protocol#Player_Block_Placement_.280x0F.29|0x0F player block placement]]
-* [[Protocol#Window_click_.280x66.29|0x66 window click]]
-* [[Protocol#Set_slot_.280x67.29|0x67 set slot]]
-* [[Protocol#Window_items_.280x68.29|0x68 window items]]
-* 0x6B Create Inventory
-
-This change affects the "slot" datatype. This type consists of at least a short (item_id). If this id isn't <code>-1</code>, a byte (count) and a short (uses) follow.
-
-From 1.9pre2 onward, additional data is sent but only for [https://gist.github.com/1268479 certain item_ids]. This means the protocol is no longer context free. The additional data is ''at least'' a short. If this short isn't -1, a byte[] array follows, containing ''gzipped'' NBT data
-
-As of 1.9pre3, the format of the NBT is as follows
-
-<code>
-  COMPOUND
-    LIST: 'ench'
-      SHORT: 'id'
-      SHORT: 'lvl'
-    END
-  END
-</code>
-
-=== [[Protocol#Experience_.280x2B.29|Experience (0x2B)]] ===
+==== Client to Server ====
 
 {| class="wikitable"
 |- class="row0"
@@ -66,39 +48,165 @@ As of 1.9pre3, the format of the NBT is as follows
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x2B
-| class="col1 centeralign" | Experience bar
-| class="col2 centeralign" | float
-| class="col3 centeralign" | <code>0.5960060358047485</code>
-| class="col4" | Used for drawing the experience bar - value is between 0 and 1.
+| class="col0 centeralign" rowspan="9" | 0x01
+| class="col1 centeralign" | Protocol Version
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>20</code>
+| class="col4" | 1.0.0's protocol version is <code>22</code>
 |- class="row2"
-| class="col0 centeralign" | Level
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>8</code>
-| class="col4" |
+| class="col0 centeralign" | Username
+| class="col1 centeralign" | string
+| class="col2 centeralign" | <code>TkTech</code>
+| class="col3" | The name of the user attempting to login, max length of 16
 |- class="row3"
-| class="col0 centeralign" | Total experience
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>130</code>
-| class="col3" |
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | long
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | 
 |- class="row4"
+| class="col0 centeralign" | '''Unknown'''
+| class="col1 centeralign" | string
+| class="col2 centeralign" | 
+| class="col3" | 
+|- class="row5"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | 
+|- class="row6"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+|- class="row7"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+|- class="row8"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | unsigned byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+|- class="row9"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | unsigned byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+|- class="row10"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 bytes
+| class="col1 rightalign" colspan="4" | 25 bytes + length of strings
 |}
 
-=== [[Protocol#Update_progress_bar_.280x69.29|Update progress bar (0x69)]] ===
+==== Server to Client ====
 
-Now used to list available enchantments in the enchantment table. The "progress bar" field is the index - 0, 1 or 2. The "value" field gives the enchantment's level.
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="9" | 0x01
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>1298</code>
+| class="col4" | The Players Entity ID
+|- class="row2"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | string
+| class="col2 centeralign" | (empty string)
+| class="col3" | Not used
+|- class="row3"
+| class="col0 centeralign" | Map Seed
+| class="col1 centeralign" | long
+| class="col2 centeralign" | <code>971768181197178410</code>
+| class="col3" | The server's map seed. Must be sent in respawn packets by the client.
+|- class="row4"
+| class="col0 centeralign" | '''Unknown'''
+| class="col1 centeralign" | string
+| class="col2 centeralign" | 
+| class="col3" | 
+|- class="row5"
+| class="col0 centeralign" | Server mode
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | 0 for survival, 1 for creative
+|- class="row6"
+| class="col0 centeralign" | Dimension
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | <code>-1</code>: The Nether, <code>0</code>: The Overworld, <code>1</code>: The End
+|- class="row7"
+| class="col0 centeralign" | Difficulty
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | <code>0</code> thru <code>3</code> for Peaceful, Easy, Normal, Hard
+|- class="row8"
+| class="col0 centeralign" | World height
+| class="col1 centeralign" | unsigned byte
+| class="col2 centeralign" | <code>128</code>
+| class="col3" | Defaults to <code>128</code>
+|- class="row9"
+| class="col0 centeralign" | Max players
+| class="col1 centeralign" | unsigned byte
+| class="col2 centeralign" | <code>8</code>
+| class="col3" | Used by the client to draw the player list
+|- class="row10"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 25 bytes + length of strings
+|}
 
-This field should probably be renamed to "Window property change" or something.
+=== [[Protocol#Respawn_.280x09.29|Respawn (0x09) ]] ===
+
+New string field added
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="6" | 0x09
+| class="col1 centeralign" | Dimension
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | <code>-1</code>: The Nether, <code>0</code>: The Overworld, <code>1</code>: The End
+|- class="row2"
+| class="col1 centeralign" | Difficulty
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | <code>0</code> thru <code>3</code> for Peaceful, Easy, Normal, Hard. <code>1</code> is always sent c->s
+|- class="row2"
+| class="col1 centeralign" | Creative mode
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | <code>0</code> for survival, <code>1</code> for creative.
+|- class="row1"
+| class="col1 centeralign" | World height
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>128</code>
+| class="col4" | Defaults to <code>128</code>
+|- class="row1"
+| class="col1 centeralign" | Map Seed
+| class="col2 centeralign" | long
+| class="col3 centeralign" | <code>-3815848935435401459</code>
+|- class="row1"
+| class="col1 centeralign" | '''Unknown'''
+| class="col2 centeralign" | string
+| class="col3 centeralign" | 
+| class="col4" |
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 16 bytes + length of string
+|}
 
 == Other changes ==
 
-Protocol version is 20, as of 1.9pre4
-
-[[Protocol#Mob_Types|New mobs]]: Blaze, Magma Cube, Ender Dragon, Snowman, Villager
-
-Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java) and [[Query|Query]] (server class: su.java)
+None currently.
 
 == Protocol History ==
 
@@ -106,53 +214,14 @@ Notchian server features two new protocols: [[Rcon|RCON]] (server class: o.java)
 * 12w01a
 * Protocol version is now 23
 
-=== 2011-11-13 ===
-* 1.0rc2
-* Protocol version is not changed
-* Client gives invalid server key when authentication hash is 8 bytes and the first byte is > 0x80
-* Bow has extra metadata as slot item.
+=== 2011-12-15 ===
+* 11w50a
 
-=== 2011-11-11 ===
-* Beta 1.9 pre6.
-* Protocol version is now 22
-* NewState: Reason 4 = Enter scrolling text mode after slaying the dragon.
-* New entity: EnderCrystal (Spawned using the [[Protocol#Add_Object.2FVehicle_.280x17.29|Add Object/Vehicle (0x17)]] packet with type 51)
+=== 2011-12-08 ===
+* 11w49a
 
-=== 2011-10-27 ===
-* Beta 1.9 pre5.
-* Protocol version is now 21
-* Packet 0x6B (Create Inventory) changed: uses Slot datatype.
+=== 2011-12-01 ===
+* 11w48a
 
-=== 2011-10-13 ===
-* <div class="li">Beta 1.9 pre4.</div>
-* Protocol version is now 20
-* Packet 0x2B ([[#Experience_.280x2B.29|Experience]]) changed: now (float, short, short)
-* New packet 0x6C ([[#Enchant_Item_.280x6C.29|Enchant item]]) added: (byte, byte)
-* Flint and steel no longer enchantable (see 1.9pre3 changes). Might be others, too.
-* Notchian server now features an [[Rcon|RCON]] server (server class: o.java)
-* Notchian server now features "G4S" server [http://pear.php.net/package/Net_GameServerQuery]
-
-=== 2011-9-29 ===
-* <div class="li">Beta 1.9 pre2.</div>
-* Protocol version is now 19
-* Four packets changed:
-** [[Protocol#Player_Block_Placement_.280x0F.29|0x0F player block placement]]
-** [[Protocol#Window_click_.280x66.29|0x66 window click]]
-** [[Protocol#Set_slot_.280x67.29|0x67 set slot]]
-** [[Protocol#Window_items_.280x68.29|0x68 window items]]
-* The change affects the "slot" datatype. This type consists of at least a short (item_id). If this id isn't <code>-1</code>, a byte (count) and a short (uses) follow.
-* From 1.9pre2 onward, additional data is sent but only for [https://gist.github.com/1268479 certain item_ids]. This means the protocol is no longer context free. The additional data is ''at least'' a short. If this short isn't -1, a byte[] array follows, containing ''gzipped'' NBT data
-* The format of the NBT is as follows
-<code>
-  COMPOUND
-    LIST: 'ench'
-      SHORT: 'id'
-      SHORT: 'lvl'
-    END
-  END
-</code>
-* So far only this format, with 'id' and 'lvl' set to <code>2</code> and <code>1</code> respectively, has been seen.
-
-=== 2011-9-22 ===
-* <div class="li">Beta 1.9 pre1.</div>
-* Protocol version is now 18
+=== 2011-11-24 ===
+* 11w47a
