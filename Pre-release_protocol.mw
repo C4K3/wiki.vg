@@ -66,7 +66,7 @@ New string field added: level generator
 |- class="row4"
 | class="col0 centeralign" | Not used
 | class="col1 centeralign" | string
-| class="col2 centeralign" | 
+| class="col2 centeralign" | (empty string)
 | class="col3" | 
 |- class="row5"
 | class="col0 centeralign" | Not used
