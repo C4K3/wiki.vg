@@ -1,4 +1,4 @@
-[[Realcraft]] is a custom Minecraft Beta server coded by [[User:Jailout2000|Jailout2000]] around the Beta 1.8.1 protocol. It is coded in Realbasic. Since it's coded in Realbasic, this means that it does not have access to kernel threads without a lot of effort, and therefore is not a multi-threaded server. The server runs out of the console; it does not have a GUI to which you could control it.
+[[Realcraft]] is a custom Minecraft Beta server coded by [[User:Jailout2000|Jailout2000]] around the Minecraft 1.0.0 protocol. It is coded in Realbasic. The server runs out of the console; it does not have a GUI to which you could control it.
 
 == License ==
 
