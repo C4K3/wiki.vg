@@ -43,7 +43,7 @@ BACKGROUND = #CC0000|
 WIDTH = 100%|
 ICON = |
 HEADING = '''Developer Information'''|
-CONTENT = *[[Realcraft:Features#ToDo|Features (To-Do)]]
+CONTENT = *[[Realcraft:Features#Planned|Features (Planned/To-Do)]]
 *[[Realcraft:Development_Status|Project Status Updates]]
 }} 
 
