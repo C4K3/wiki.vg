@@ -1,132 +1,384 @@
-NBT (Named Binary Tag) is a tag-based binary format designed to carry binary data accompanied by additional data.
+The Named Binary Tag (NBT) file format is an extremely simple, albiet annoying (did we really need yet ''another'' format?) structured binary format used by the [http://www.minecraft.net Minecraft] game for a variety of things. Due to this, several third-party utilities now also utilize the format.
 
-An NBT file consists of a single root TAG_Compound and is compressed with GZip.
+== Current Uses ==
+The NBT format is currently used in several places, chiefly:
+* In the [[Protocol]] as part of [[Slot Data]]
+* Multiplayer saved server list (<code>servers.dat</code>).
+* Player data (both single player and multiplayer, one file per player). This includes such things as inventory and location.
+* Saved worlds (both single player and multiplayer).
+** World index file (<code>level.dat</code>) that contains general information (spawn point, time of day, etc...)
+** Chunk data (see [[Region Files]])
 
-A single named tag is structured as follows:
+Unfortunately, the NBT files you can encounter as a developer will be stored in three different ways, just to make things interesting.
+* Uncompressed,
+* [http://en.wikipedia.org/wiki/Gzip gzip'd],
+* [http://en.wikipedia.org/wiki/Zlib zlib'd] (aka DEFLATE with a few bytes extra)
 
-{| class="wikitable" style="margin: 1em auto 1em auto;"
-! scope="col" | Tag Type
-! scope="col" | Name Length
-! scope="col" | Name
-! scope="col" | Payload
+=== Libraries ===
+There are many, many libraries for manipulating NBT, written in several languages, and often several per language. For example,
+
+* [https://github.com/twoolie/NBT Python],
+* [https://github.com/FliPPeh/cNBT C],
+* [https://github.com/mental/nbtfile Ruby], 
+* [https://github.com/aphistic/libnbt C#], 
+* [https://github.com/sjmulder/nbt-js Javascript], 
+* [https://github.com/TheFrozenFire/PHP-NBT-Decoder-Encoder PHP],
+* You get the idea...
+
+Unless you have specific goals or licence requirements, it is ''extremely recommended'' to go with one of the existing libraries.
+
+=== Utilities ===
+Almost every 3rd-party Minecraft application uses NBT on some level. There also exist several dedicated NBT editors, which will likely be useful to you if you are developing an NBT library of your own. These include:
+* [http://www.minecraftforum.net/topic/6661-nbtedit/ NBTEdit] (C#, Mono-capable), one of the very first NBT editors.
+* [http://gerritg.de/?p=152 NEINedit] (Obj-C), an OS X specific editor.
+
+== Specification ==
+The NBT file format is extremely simple, and writing a library capable of reading/writing it is a simple affair, usually taking no more than an hour, depending on your skills and language of choice. There are 9 datatypes supported by this format, and one type used to close compound tags. It is strongly advised to read this entire section (no skimming!) or you '''will''' run into issues.
+
+
+{| class="wikitable"
 |-
-| 1 byte || 2 bytes, 16 bit integer, signed, big endian || UTF-8 Encoded String || Depends on type of tag
+! Type ID
+! Type Name
+! Payload Size (Bytes)
+! Description
+|-
+| 0 
+| TAG_End  
+| 0  
+| This tag serves no purpose but to signify the end of an open TAG_Compound. In most libraries, this type is abstracted away and never seen.
+|-
+| 1
+| TAG_Byte
+| 1
+| A single '''signed''' <code>byte</code>
+|-
+| 2
+| TAG_Short
+| 2
+| A single '''signed''' <code>short</code>
+|-
+| 3
+| TAG_Int
+| 4
+| A single '''signed''' <code>integer</code>
+|-
+| 4
+| TAG_Long
+| 8
+| A single '''signed''' <code>long</code> (typically <code>long long</code> in C/C++)
+|-
+| 5
+| TAG_Float
+| 4
+| A single [http://en.wikipedia.org/wiki/IEEE_754-2008 IEEE-754] single-precision floating point number
+|-
+| 6
+| TAG_Double
+| 8
+| A single [http://en.wikipedia.org/wiki/IEEE_754-2008 IEEE-754] double-precision floating point number
+|-
+| 7
+| TAG_Byte_Array
+| ...
+| A length-prefixed array of '''signed''' bytes. The prefix is a '''signed''' integer (thus 4 bytes)
+|-
+| 8
+| TAG_String
+| ...
+| A length-prefixed [http://en.wikipedia.org/wiki/UTF-8 UTF-8] string. The prefix is an '''unsigned''' short (thus 2 bytes)
+|-
+| 9
+| TAG_List
+| ...'
+| A list of '''nameless''' tags, all of the same type. The list is prefixed with the <code>Type ID</code> of the items it contains (thus 1 byte), and the length of the list as a '''signed''' integer (a further 4 bytes).
+|-
+| 10
+| TAG_Compound
+| ...
+| Effectively a list of a '''named''' tags
 |}
 
-There are 10 different types of tags:
 
-{| class="wikitable" style="margin: 1em auto 1em auto;"
-! scope="col" | Tag Type Value
-! scope="col" | Name
-! scope="col" | Description
-! scope="col" | Comments
+There are five simple things to remember:
+* '''Everything''' is in big-endian. Unless you're using Java, you will most likely have to swap it to little-endian. See the Wikipedia article on [http://en.wikipedia.org/wiki/Endianness Endianess].
+* Every NBT file will '''always''' begin with a TAG_Compound. No exceptions.
+* Every tag begins with a single byte which is is the <code>Type ID</code> of the following tag.
+* Every tag begins with a TAG_String, minus the <code>Type ID</code>. This is the name given to whatever is stored in the tag.
+* The preceding two rules do '''not apply''' to the first level of tags within a <code>TAG_List</code>.
+
+For example, here's the example layout of a <code>TAG_Short</code> on disk:
+
+{| class="wikitable"
 |-
-| 0 || TAG_End || Marks the end of a TAG_Compound. || This tag occurs to end a previously opened TAG_Compound.  This tag has no name, and no payload.
+| 
+! Type ID
+! Length of Name
+! Name
+! Payload
 |-
-| 1 || TAG_Byte || Payload is a single signed byte (8 bits). || 
+! Decoded
+| 2
+| 9
+| <code>shortTest</code>
+| <code>127</code>
 |-
-| 2 || TAG_Short || Payload is a signed 16 bit integer (big endian). ||
-|-
-| 3 || TAG_Int || Payload is a signed 32 bit integer (big endian). ||
-|-
-| 4 || TAG_Long || Payload is a singed 64 bit integer (big endian). ||
-|-
-| 5 || TAG_Float || Payload is a 32 bit floating point value (big endian, IEEE 754) ||
-|-
-| 6 || TAG_Double || Payload is a 64 bit floating point value (big endian, IEEE 754) ||
-|-
-| 7 || TAG_Byte_Array || An array of bytes. || Payload consists of four bytes which form a signed 32 bit integer (big endian) which specifies the length of the remainder of the payload.
-|-
-| 8 || TAG_String || A string. || Payload consists of two bytes which form a signed 16 bit integer (big endian) which specifies the length of the remainder of the payload.  The remainder of the payload is a UTF-8 encoded string.
-|-
-| 9 || TAG_List || A list of tags. || Payload consists of one byte which specifies the type of tags found in the list, followed by four bytes which form a signed 32 bit integer (big endian) which specifies the number of tags which form the remainder of the payload.  Tags in the list do not specify their type (i.e. they're missing the first byte) and do not have a name (i.e. they do not have two bytes for the length of their name, nor the bytes which makes up the name).
-|-
-| 10 || TAG_Compound || The root of nested tags. || Payload consists of sequential named tags.  This sequence of named tags ends when a TAG_End is encountered.  Note that TAG_Compounds can be nested within themselves, so the next TAG_End is not necessarily the end of this TAG_Compound.  Recursion advised.
+! On Disk (in hex)
+| <code>02</code>
+| <code>00 09</code>
+| <code>73 68 6F 72 74 54 65 73 74</code>
+| <code>7F FF</code>
 |}
 
-----
+If this <code>TAG_Short<code> had been in a <code>TAG_List</code>, it would have been nothing more than the payload, since the type is implied and tags within the first level of a list are nameless.
 
-Note that none of the examples below are GZip'd
+=== Examples ===
+There are two defacto example files used for testing your implementation (<code>test.nbt</code> & <code>bigtest.nbt</code>), originally provided by Markus. The example output provided below was generated using [https://github.com/TkTech/OpenNBT OpenNBT]'s ''debug-nbt'' tool.
 
-----
+==== test.nbt ====
+This first example is an uncompressed [http://en.wikipedia.org/wiki/Hello_world_program "Hello World"] NBT example. Should you parse it correctly, you will get a structure similar to the following:
 
-Decoding example: http://mc.kev009.com/nbt/test.nbt
+<code>
+  TAG_Compound('hello world'): 1 entries
+  {
+    TAG_String('name'): 'Bananrama'
+  }
+</code>
 
-The first byte of this file is 10.  This means that the first tag is a TAG_Compound (which is to be expected).
-
-We read two more bytes to get the length of the name of this tag.  The next two bytes are 0 and 11, meaning the name is 11 bytes long.  On a little endian system be sure to reverse them before creating a 16 bit signed integer with them.
-
-We read the next 11 bytes and decode them as per UTF-8.  The resulting string is "hello world".
-
-Next we move onto the payload, which, since this is a TAG_Compound, is going to be more tags until we reach the TAG_End which corresponds to our TAG_Compound.
-
-Therefore, we read the next byte to determine the type of the first tag in the TAG_Compound.  The next byte is an 8 -- TAG_String.
-
-The next two bytes tell us that the length of the name of this string is 4, and the next 4 bytes UTF-8 decode into "name".
-
-Next we read two more bytes to find the name of the string which is the payload of this tag, these two bytes are 0 and 9.  The next 9 bytes UTF-8 decode into "Bananrama".
-
-We read the next byte to get the type of the next named tag, and find that it is 0 -- TAG_End.
-
-Therefore, we are done.
-
-The result:
-
-    TAG_Compound("hello world"): 1 entries
+==== bigtest.nbt ====
+This second example is an uncompressed test of every available tag. If your program can successfully parse this file, then you've done well. Note that the tags under ''TAG_List'' do not have a name, as mentioned above. 
+<code>
+  TAG_Compound('Level'): 11 entries
+  {
+    TAG_Compound('nested compound test'): 2 entries
     {
-        TAG_String("name"): Bananrama
+      TAG_Compound('egg'): 2 entries
+      {
+        TAG_String('name'): 'Eggbert'
+        TAG_Float('value'): 0.5
+      }
+      TAG_Compound('ham'): 2 entries
+      {
+        TAG_String('name'): 'Hampus'
+        TAG_Float('value'): 0.75
+      }
     }
-
-For a slightly longer test, use http://mc.kev009.com/nbt/bigtest.nbt
-
-You should end up with this:
-
-    TAG_Compound("Level"): 11 entries
+    TAG_Int('intTest'): 2147483647
+    TAG_Byte('byteTest'): 127
+    TAG_String('stringTest'): 'HELLO WORLD THIS IS A TEST STRING \xc3\x85\xc3\x84\xc3\x96!'
+    TAG_List('listTest (long)'): 5 entires
     {
-       TAG_Short("shortTest"): 32767
-       TAG_Long("longTest"): 9223372036854775807
-       TAG_Float("floatTest"): 0.49823147
-       TAG_String("stringTest"): HELLO WORLD THIS IS A TEST STRING ÅÄÖ!
-       TAG_Int("intTest"): 2147483647
-       TAG_Compound("nested compound test"): 2 entries
-       {
-          TAG_Compound("ham"): 2 entries
-          {
-             TAG_String("name"): Hampus
-             TAG_Float("value"): 0.75
-          }
-          TAG_Compound("egg"): 2 entries
-          {
-             TAG_String("name"): Eggbert
-             TAG_Float("value"): 0.5
-          }
-       }
-       TAG_List("listTest (long)"): 5 entries of type TAG_Long
-       {
-          TAG_Long: 11
-          TAG_Long: 12
-          TAG_Long: 13
-          TAG_Long: 14
-          TAG_Long: 15
-       }
-       TAG_Byte("byteTest"): 127
-       TAG_List("listTest (compound)"): 2 entries of type TAG_Compound
-       {
-          TAG_Compound: 2 entries
-          {
-             TAG_String("name"): Compound tag #0
-             TAG_Long("created-on"): 1264099775885
-          }
-          TAG_Compound: 2 entries
-          {
-             TAG_String("name"): Compound tag #1
-             TAG_Long("created-on"): 1264099775885
-          }
-       }
-       TAG_Byte_Array("byteArrayTest (the first 1000 values of (n*n*255+n*7)%100, starting with n=0 (0, 62, 34, 16, 8, ...))"): [1000 bytes]
-       TAG_Double("doubleTest"): 0.4931287132182315
+      TAG_Long(None): 11
+      TAG_Long(None): 12
+      TAG_Long(None): 13
+      TAG_Long(None): 14
+      TAG_Long(None): 15
     }
+    TAG_Double('doubleTest'): 0.49312871321823148
+    TAG_Float('floatTest'): 0.49823147058486938
+    TAG_Long('longTest'): 9223372036854775807L
+    TAG_List('listTest (compound)'): 2 entires
+    {
+      TAG_Compound(None): 2 entries
+      {
+        TAG_Long('created-on'): 1264099775885L
+        TAG_String('name'): 'Compound tag #0'
+      }
+      TAG_Compound(None): 2 entries
+      {
+        TAG_Long('created-on'): 1264099775885L
+        TAG_String('name'): 'Compound tag #1'
+      }
+    }
+    TAG_Byte_Array('byteArrayTest (the first 1000 values of (n*n*255+n*7)%100, starting with n=0 (0, 62, 34, 16, 8, ...))'): [1000 bytes]
+    TAG_Short('shortTest'): 32767
+  }
+</code>
 
-[[Category:Minecraft Beta]]
-[[Category:Minecraft Classic]]
-[[Category:File Formats]]
+==== servers.dat ====
+The ''servers.dat'' file contains a list of multiplayer servers you've added to the game. To mix things up a bit, this file will always be uncompressed. Below is an example of the structure seen in ''servers.dat''.
+<code>
+  TAG_Compound(<nowiki>''</nowiki>): 1 entries
+  {
+    TAG_List('servers'): 2 entires
+    {
+      TAG_Compound(None): 2 entries
+      {
+        TAG_String('ip'): '199.167.132.229:25620'
+        TAG_String('name'): 'Dainz1 - Creative'
+      }
+      TAG_Compound(None): 2 entries
+      {
+        TAG_String('ip'): '76.127.122.65:25565'
+        TAG_String('name'): 'minstarmin4'
+      }
+    }
+  }
+</code>
+
+==== level.dat ====
+This final example is of a single player ''level.dat'', which is compressed using gzip. Notice the player's inventory and general world details such as spawn position, world name, and the game seed.
+<code>
+  TAG_Compound(<nowiki>''</nowiki>): 1 entries
+  {
+    TAG_Compound('Data'): 17 entries
+    {
+      TAG_Byte('raining'): 0
+      TAG_Long('RandomSeed'): 3142388825013346304L
+      TAG_Int('SpawnX'): 0
+      TAG_Int('SpawnZ'): 0
+      TAG_Long('LastPlayed'): 1323133681772L
+      TAG_Int('GameType'): 1
+      TAG_Int('SpawnY'): 63
+      TAG_Byte('MapFeatures'): 1
+      TAG_Compound('Player'): 24 entries
+      {
+        TAG_Int('XpTotal'): 0
+        TAG_Compound('abilities'): 4 entries
+        {
+          TAG_Byte('instabuild'): 1
+          TAG_Byte('flying'): 1
+          TAG_Byte('mayfly'): 1
+          TAG_Byte('invulnerable'): 1
+        }
+        TAG_Int('XpLevel'): 0
+        TAG_Int('Score'): 0
+        TAG_Short('Health'): 20
+        TAG_List('Inventory'): 13 entires
+        {
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 0
+            TAG_Short('id'): 24
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 1
+            TAG_Short('id'): 25
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 2
+            TAG_Short('id'): 326
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 3
+            TAG_Short('id'): 29
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 10
+            TAG_Byte('Slot'): 4
+            TAG_Short('id'): 69
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 3
+            TAG_Byte('Slot'): 5
+            TAG_Short('id'): 33
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 43
+            TAG_Byte('Slot'): 6
+            TAG_Short('id'): 356
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 64
+            TAG_Byte('Slot'): 7
+            TAG_Short('id'): 331
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 20
+            TAG_Byte('Slot'): 8
+            TAG_Short('id'): 76
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 64
+            TAG_Byte('Slot'): 9
+            TAG_Short('id'): 331
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 10
+            TAG_Short('id'): 323
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 16
+            TAG_Byte('Slot'): 11
+            TAG_Short('id'): 331
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 12
+            TAG_Short('id'): 110
+            TAG_Short('Damage'): 0
+          }
+        }
+        TAG_Short('HurtTime'): 0
+        TAG_Short('Fire'): -20
+        TAG_Float('foodExhaustionLevel'): 0.0
+        TAG_Float('foodSaturationLevel'): 5.0
+        TAG_Int('foodTickTimer'): 0
+        TAG_Short('SleepTimer'): 0
+        TAG_Short('DeathTime'): 0
+        TAG_List('Rotation'): 2 entires
+        {
+          TAG_Float(None): 1151.9342041015625
+          TAG_Float(None): 32.249679565429688
+        }
+        TAG_Float('XpP'): 0.0
+        TAG_Float('FallDistance'): 0.0
+        TAG_Short('Air'): 300
+        TAG_List('Motion'): 3 entires
+        {
+          TAG_Double(None): -2.9778325794951344e-11
+          TAG_Double(None): -0.078400001525878907
+          TAG_Double(None): 1.1763942772801152e-11
+        }
+        TAG_Int('Dimension'): 0
+        TAG_Byte('OnGround'): 1
+        TAG_List('Pos'): 3 entires
+        {
+          TAG_Double(None): 256.87499499518492
+          TAG_Double(None): 112.62000000476837
+          TAG_Double(None): -34.578128612797634
+        }
+        TAG_Byte('Sleeping'): 0
+        TAG_Short('AttackTime'): 0
+        TAG_Int('foodLevel'): 20
+      }
+      TAG_Int('thunderTime'): 2724
+      TAG_Int('version'): 19132
+      TAG_Int('rainTime'): 5476
+      TAG_Long('Time'): 128763
+      TAG_Byte('thundering'): 1
+      TAG_Byte('hardcore'): 0
+      TAG_Long('SizeOnDisk'): 0
+      TAG_String('LevelName'): 'Sandstone Test World'
+    }
+  }
+</code>
