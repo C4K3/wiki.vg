@@ -32,7 +32,7 @@ This server may or may not be online; it's only online when Jailout2000 is worki
 
 === Source Code ===
 
-The project source is '''closed/private''', and '''available upon request'''. If you would like to see the source, message [[User:Jailout2000|Jailout2000]]. He would have released it to the general public, but the problem with that is REALbasic isn't equipped to handle separation of files for things like github or Google Code; the closest thing it has is separated files in <span title="RealBasic Version Control Project">RBVCP</span> format, which include #tag lines that you don't see in the Real Studio IDE, so it would make no sense to use it.
+The project source is '''open-source''' and is provided under the License heading at the top of this page.
 
 == Development Status ==
 
