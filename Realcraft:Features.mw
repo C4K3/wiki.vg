@@ -1,0 +1,23 @@
+{| width="30%" align="right" cellpadding="20"
+|-
+| {{RealcraftMenu}}
+|}
+
+== Implemented ==
+These features are currently implemented in Realcraft.
+
+* Cross-platform support
+* MySQL database support ''(partial completion, see planned features)''
+** Player ranks
+** Server and world-specific options
+** Player position saving/loading
+
+== Planned ==
+These features have yet to be implemented into Realcraft, but are planned for the future.
+
+* Use libnoise for world generation
+* Player authentication using Minecraft.net
+* MySQL database support ''(partial completion, see implemented features)''
+** Player whitelist and blacklist support
+** Server logging
+** Chest/door/area protection ''(MySQL tables are in-place for such features)''
