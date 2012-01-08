@@ -1,49 +1,56 @@
-[[Realcraft]] is a custom Minecraft server coded by [[User:Jailout2000|Jailout2000]] around the Minecraft 1.0.0 protocol. It is coded in Realbasic. The server runs out of the console; it does not have a GUI to which you could control it.
-[[File:Realcraft-Testing-Ranks-And-Custom-Labels.png|thumb|border|right|top|400px|This was on January 7th, 2012 while I was testing out user ranks, colors, and custom user labels.]]
+{{Box|
+BORDER = #9999FF|
+BACKGROUND = #99CCFF|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Introduction''' |
+CONTENT =  
+[[Image:Realcraft-Testing-Ranks-And-Custom-Labels.png|thumb|border|right|top|400px|This was on January 7th, 2012 while I was testing out user ranks, colors, and custom user labels.]]
+'''Realcraft''' is a custom (third-party) Minecraft server written in [http://www.realbasic.com/ Realbasic] by [[User:Jailout2000|Jailout2000]]. It implements the [http://www.minecraft.net/ Minecraft] 1.0.0 server protocol. The server runs out of the console; it does not have a GUI to which you could control it.
 
-== License ==
+The server is being written for Windows mainly but will also be compatible with Linux. I plan to support Mac OS X in the future, but currently it is not supported.
 
-Realcraft is written as open-source at [https://github.com/Jailout2000/Realcraft github]. See the LICENSE file there. If there is no LICENSE file, then assume general public / proprietary software.
+You can find the source on [https://github.com/Jailout2000/Realcraft/ github]. I plan to use github as solely a backup of my local source, so do not expect too many updates on github. Feel free to report issues through github though.
 
-Also note that the github repository is not where the source will live. The source lives on my hard drive until I feel like uploading it to git. I will be using github for a backup of Realcraft's source only, and not as the main source.
+I offer my services through any of my contact names, or through IRC ([irc://irc.freenode.net/#realcraft irc.freenode.net#realcraft]).
 
-== Project Status ==
+When I am coding Realcraft, you can find the live server at <code>mc.clan-warp.net:25566</code>.
 
-Currently the project is in '''active''' development.
+}}
 
-=== Plans / To-Do ===
+{| width="100%"
+|- style="vertical-align: top;"
+| width="70%" | <!-- Section 1   --> 
+{| width="100%"
+|- style="vertical-align: top;"
+| <!-- Section 1-1 --> 
+{{Box|
+BORDER = #669933|
+BACKGROUND = #99CC33|
+WIDTH = 100%|
+ICON = |
+HEADING = '''User Information''' |
+CONTENT = *[[Realcraft:License|License Information]]
+*[[Realcraft:Configuration|Configuration]]
+*[[Realcraft:Features#Implemented|Features (Implemented)]]
+}} 
 
-* Eventually use an external library for generation of worlds. At the moment, generation of worlds is done internally
-** It might be possible to use a libnoise .dll/.so file and declare into it from the server, but I cannot say for sure yet
-* Provide a download for the server so others may use it
-** This will mean building the server for cross-platform support. Currently it is Windows x86 only
-** This would also mean having a new license for the project
-* Player authentication with Minecraft.net
-* <strike>MySQL database support</strike> Completed.
-** Player whitelist and/or blacklist support
-** <strike>Player ranks</strike> Completed.
-** Logging
-** Chest/door/area protection
-** <strike>Server and world-specific options</strike> Completed.
+{{Box|
+BORDER = #993300|
+BACKGROUND = #CC0000|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Developer Information'''|
+CONTENT = *[[Realcraft:Features#ToDo|Features (To-Do)]]
+*[[Realcraft:Development_Status|Project Status Updates]]
+}} 
 
-=== Live Server ===
+|}
 
-This server may or may not be online; it's only online when Jailout2000 is working on the server.
-* mc.clan-warp.net:25566
+| width="50%" | <!-- Section 2   --> 
+{| width="100%"
+|- style="vertical-align: top;"
+| <!-- Section 2-1 --> 
+{{RealcraftMenu}}
 
-=== Source Code ===
-
-The project source is '''open-source''' and is provided under the License heading at the top of this page.
-
-== Development Status ==
-
-MySQL support has been added. More packets. Entities are still a work in progress, though events are fired whenever a player moves/looks. Basic chat commands have been added (/emote, /me, /ping, /world). Multi-world support has been finished, including the option to generate a flat nether world (currently based on the world's dimension id whether to generate netherrack or grass). Users now have an ID given to them from a mysql table, and user ranks are also given to users. The tab window, or better known as the server's ping list, has been implemented with fully functional user colors. More updates will be arriving soon. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 21:40, 7 January 2012 (MST)
-
-Server has been rewritten with a new packet buffering system. It's now much easier for me to do things with the Minecraft protocol as opposed to before. The reason for the rewrite is because A) it was mostly hard to maintain and B) I lost the source code in a hard drive failure. Right now the rewrite is at the point of where the earlier version was; you can run around but don't swing your arm or click anything, don't even walk or jog. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 19:33, 2 January 2012 (MST)
-
-Development will begin again soon. -- [[User:Jailout2000|<span style="color: #0080C0; font-weight: bold;">Jailout2000</span>]] 08:40, 30 December 2011 (MST)
-
-
-----
-[[Server_List|Return to Custom Minecraft servers]]
-[[Category:Custom Minecraft Servers]]
+[[Category:Realcraft]]
