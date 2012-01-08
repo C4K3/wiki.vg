@@ -8,7 +8,7 @@ Also note that the github repository is not where the source will live. The sour
 
 == Project Status ==
 
-Currently the project is in '''temporary inactive''' development.
+Currently the project is in '''active''' development.
 
 === Plans / To-Do ===
 
@@ -18,12 +18,12 @@ Currently the project is in '''temporary inactive''' development.
 ** This will mean building the server for cross-platform support. Currently it is Windows x86 only
 ** This would also mean having a new license for the project
 * Player authentication with Minecraft.net
-* MySQL database support
+* <strike>MySQL database support</strike> Completed.
 ** Player whitelist and/or blacklist support
-** Player ranks
+** <strike>Player ranks</strike> Completed.
 ** Logging
 ** Chest/door/area protection
-** Server and world-specific options
+** <strike>Server and world-specific options</strike> Completed.
 
 === Live Server ===
 
