@@ -20,4 +20,8 @@ These features have yet to be implemented into Realcraft, but are planned for th
 * MySQL database support ''(partial completion, see implemented features)''
 ** Player whitelist and blacklist support
 ** Server logging
+*** Access logs for chests
+*** Entry logs for areas, some moderation so they cannot spam the logs by leaving/entering the area repeatedly in a small period
+*** Chat and command history
+*** Attempted access for blocked chests (i.e. chest owner X banned Y player, Y player tries to access chest)
 ** Chest/door/area protection ''(MySQL tables are in-place for such features)''
