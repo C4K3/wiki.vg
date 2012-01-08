@@ -11,6 +11,7 @@ These features are currently implemented in Realcraft.
 ** Player ranks
 ** Server and world-specific options
 ** Player position saving/loading
+** Player whitelist and blacklist support
 
 == Planned ==
 These features have yet to be implemented into Realcraft, but are planned for the future.
@@ -18,7 +19,6 @@ These features have yet to be implemented into Realcraft, but are planned for th
 * Use libnoise for world generation
 * Player authentication using Minecraft.net
 * MySQL database support ''(partial completion, see implemented features)''
-** Player whitelist and blacklist support
 ** Server logging
 *** Access logs for chests
 *** Entry logs for areas, some moderation so they cannot spam the logs by leaving/entering the area repeatedly in a small period
