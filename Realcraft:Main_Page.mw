@@ -30,7 +30,7 @@ BACKGROUND = #99CC33|
 WIDTH = 100%|
 ICON = |
 HEADING = '''User Information''' |
-CONTENT = *[[Realcraft:License|License Information]]
+CONTENT = *[[Realcraft:License|License / Disclaimer]]
 *[[Realcraft:Configuration|Configuration]]
 *[[Realcraft:Features#Implemented|Features (Implemented)]]
 }} 
