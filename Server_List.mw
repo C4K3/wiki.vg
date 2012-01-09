@@ -294,7 +294,7 @@ A couple things for contributors:
 | [http://spout.org/SpoutDevLicenseV1.txt SpoutDev v1]
 | {{yes| Networking ([http://netty.io/ Netty])}}
 | {{yes}}
-| {{yes|Beta, Custom}}
+| {{yes|Custom<br />(Converters planned)}}
 | {{yes}}
 | {{planned|Partial}}
 | {{planned|Partial}}
