@@ -288,18 +288,18 @@ A couple things for contributors:
 | {{no}}
 | {{no|Cancelled}}
 |-
-! [https://github.com/SpoutDev/Spout Spout]
-| [http://forums.getspout.org/team/ Spout Team] (fork of Glowstone)
+! [https://spout.org/ Spout (with Vanilla plugin)]
+| [http://spout.org/team/ SpoutDev] (fork of Glowstone)
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [https://raw.github.com/SpoutDev/Spout/master/LICENSE.txt SpoutDev v1]
-| {{planned| Networking ([http://netty.io/ Netty])}}
+| [http://spout.org/SpoutDevLicenseV1.txt SpoutDev v1]
+| {{yes| Networking ([http://netty.io/ Netty])}}
 | {{yes}}
-| {{yes|Beta}}
+| {{yes|Beta, Custom}}
 | {{yes}}
 | {{planned|Partial}}
 | {{planned|Partial}}
 | {{yes|Event-driven}}
-| {{yes|[http://bukkit.org/ Bukkit]}}
+| {{yes|[http://spout.org/ SpoutAPI]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/Xinnx/XMC XMC]
