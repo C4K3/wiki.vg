@@ -17,11 +17,6 @@ This is a rather incomplete list of Minecraft Beta related libraries currently i
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | LGPL License
 |-
-! [http://sourceforge.net/projects/libminecraft/ LibMinecraft]
-| Yuri Sevatz
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| GPLv3
-|-
 ! [https://github.com/eddyb/node-mcsmp node-mcsmp]
 | eddyb
 | [http://nodejs.org/ node.js (JavaScript)]
