@@ -31,6 +31,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | CharlesBroughton
 | {{no|Dead}}
 |-
+! [https://github.com/espes/esbot esbot]
+| dependency gathering and other awesomeness
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with twisted
+| GPL
+| {{no}}
+| {{no}}
+| espes
+| {{unknown|Last updated for 1.8}}
+|-
 ! [https://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
 | [http://en.wikipedia.org/wiki/Ruby_%28programming_language%29 ruby]
@@ -48,6 +57,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | axus
 | {{unknown|Last updated May 2011}}
+|-
+! [http://hg.sitedethib.com/mcclient/ mcclient]
+| Work in progress SMP client
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with C extension
+| GPLv3
+| {{no}}
+| {{yes}}
+| ThibG
+| {{no|Dead<br>(Server down)}}
 |-
 ! [https://github.com/jrupac/minecraft-opengl minecraft-opengl]
 | Draw the map, move around, break stuff, gather stuff, etc.; doesn't appear to have networking
@@ -76,14 +94,14 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | Superjoe, thejoshwolfe
 | {{yes|Mostly mature, well maintaned}}
 |-
-! [https://github.com/espes/esbot esbot]
-| dependency gathering and other awesomeness
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with twisted
-| GPL
-| {{no}}
-| {{no}}
-| espes
-| {{unknown|Last updated for 1.8}}
+! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
+| Work in progress SMP (might add SSP) client.
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| Temporarily [http://en.wikipedia.org/wiki/All_rights_reserved ARP] until further notice
+| {{yes}}
+| {{yes|Yes, using [http://en.wikipedia.org/wiki/Microsoft_XNA XNA]}}
+| [https://github.com/Vijfhoek Vijfhoek] and [https://github.com/F16Gaming F16Gaming]
+| {{yes|In Development}}
 |-
 ! [[Vb Minebot]]
 | Work in progress standalone bot
@@ -93,24 +111,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | Umby24
 | {{no|Dead}}
-|-
-! [http://hg.sitedethib.com/mcclient/ mcclient]
-| Work in progress SMP client
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with C extension
-| GPLv3
-| {{no}}
-| {{yes}}
-| ThibG
-| {{no|Dead<br>(Server down)}}
-|-
-! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
-| Work in progress SMP (might add SSP) client.
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| Temporarily [http://en.wikipedia.org/wiki/All_rights_reserved ARP] until further notice
-| {{yes}}
-| {{yes|Yes, using [http://en.wikipedia.org/wiki/Microsoft_XNA XNA]}}
-| [https://github.com/Vijfhoek Vijfhoek] and [https://github.com/F16Gaming F16Gaming]
-| {{yes|In Development}}
 |-|}
 
 [[Category:Minecraft Beta]]
