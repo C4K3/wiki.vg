@@ -10,8 +10,6 @@ CONTENT =
 
 The server is being written for Windows mainly but will also be compatible with Linux. I plan to support Mac OS X in the future, but currently it is not supported.
 
-You can find the source on [https://github.com/Jailout2000/Realcraft/ github]. I plan to use github as solely a backup of my local source, so do not expect too many updates on github. Feel free to report issues through github though.
-
 I offer my services through any of my contact names, or through IRC ([irc://irc.freenode.net/#realcraft irc.freenode.net#realcraft]).
 
 When I am coding Realcraft, you can find the live server at <code>mc.clan-warp.net:25566</code>.
