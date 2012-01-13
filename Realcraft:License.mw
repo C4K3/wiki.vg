@@ -5,7 +5,7 @@
 
 == License ==
 
-Realcraft is written as open-source at [https://github.com/Jailout2000/Realcraft github]. If there is no LICENSE file over at Github, then assume general public / proprietary software, otherwise refer to that file for the license.
+Realcraft is written as closed-source. Assume general public / proprietary software if you ever receive a copy of Realcraft.
 
 Also note that the github repository is not where the source will live. The source lives on my hard drive until I feel like uploading it to git. I will be using github for a backup of Realcraft's source only, and not as the main source. Also note that I update the single binary file more often than any of the version-control-format files, therefore you'll have to download Real Studio to see any recent changes, unless I update the other files.
 
