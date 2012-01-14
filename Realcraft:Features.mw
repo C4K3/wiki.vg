@@ -14,6 +14,8 @@ These features are currently implemented in Realcraft.
 * Chat and command support
 * Player ping list (in-game tab window) support (includes user colors and actual pings)
 * Entity actions such as sprinting and crouching
+* Custom world saving/loading
+** Custom format must be smaller than MCRegion format and also must not use NBT
 
 == Planned ==
 These features have yet to be implemented into Realcraft, but are planned for the future.
