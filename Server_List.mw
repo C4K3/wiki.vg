@@ -234,16 +234,16 @@ A couple things for contributors:
 |-
 ! [[Realcraft:Main_Page|Realcraft]]
 | [[User:Jailout2000|Jailout2000]]
-| [http://en.wikipedia.org/wiki/Realbasic REALbasic]
+| [http://en.wikipedia.org/wiki/Realbasic Realbasic]
 | General public / proprietary
 | {{no}}
 | {{yes}}
-| {{planned|Custom}}
+| {{yes|Custom<br />(Converters planned)}}
 | {{yes}}
 | {{planned}}
-| {{yes}}
+| {{planned|Players, other entities are WIP}}
 | {{no|None}}
-| {{no}}
+| {{planned|Custom Realcraft Text Files}}
 | {{yes|Active}}
 |-
 ! [https://www.assembla.com/spaces/mc_server RealMC]
