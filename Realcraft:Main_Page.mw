@@ -6,7 +6,7 @@ ICON = |
 HEADING = '''Introduction''' |
 CONTENT =  
 [[Image:Realcraft-Testing-Ranks-And-Custom-Labels.png|thumb|border|right|top|400px|This was on January 7th, 2012 while I was testing out user ranks, colors, and custom user labels.]]
-'''Realcraft''' is a custom (third-party) Minecraft server written in [http://www.realbasic.com/ Realbasic] by [[User:Jailout2000|Jailout2000]]. It implements the [http://www.minecraft.net/ Minecraft] 1.0.0 server protocol. The server runs out of the console; it does not have a GUI to which you could control it.
+'''Realcraft''' is a custom (third-party) Minecraft server written in [http://www.realbasic.com/ Realbasic] by [[User:Jailout2000|Jailout2000]]. It implements the [http://www.minecraft.net/ Minecraft] 1.1 server protocols. The server runs out of the console; it does not have a GUI to which you could control it.
 
 The server is being written for Windows mainly but will also be compatible with Linux. I plan to support Mac OS X in the future, but currently it is not supported.
 
