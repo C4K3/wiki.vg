@@ -214,7 +214,7 @@ None currently.
 
 == Protocol History ==
 
-=== 2012-01-05 ===
+=== 2012-01-19 ===
 * 12w03a
 * Protocol version is now 24
 * New packet: 0x23
