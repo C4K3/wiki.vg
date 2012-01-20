@@ -218,7 +218,7 @@ None currently.
 * 12w03a
 * Protocol version is now 24
 * New packet: 0x23
-* MobSpawn: new fields, 3 bytes inserted before metadata.
+* MobSpawn: new field, 1 byte inserted before metadata.
 
 === 2012-01-05 ===
 * 12w01a
