@@ -6,8 +6,6 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 Changes the direction an entity's head is facing.
 
-This needs confirmation!
-
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
