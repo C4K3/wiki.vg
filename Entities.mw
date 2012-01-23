@@ -197,7 +197,7 @@ Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
 | class="col3" | 1.3
 |- class="row18"
 | class="col0" | 93
-| class="col1" | Duck
+| class="col1" | Chicken
 | class="col2" | 0.3
 | class="col3" | 0.4
 |- class="row19"
