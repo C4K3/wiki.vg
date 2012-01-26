@@ -102,6 +102,11 @@ Protocol version is now 24.
 
 == Protocol History ==
 
+=== 2012-01-26 ===
+* 12w04a
+* Protocol version has not been changed
+* Handshake Packet by client (0x02) now contains the server host and port
+
 === 2012-01-19 ===
 * 12w03a
 * Protocol version is now 24
