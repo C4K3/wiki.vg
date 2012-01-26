@@ -15,8 +15,6 @@ The current launcher version is ''12'', sending a value lower than this will cau
 #'''case-correct username'''.
 #'''sessionId''' - a unique ID for your current session.
 
-Alternatively, a client sided exploit was created which fetches a username and session id from a server. It takes that information and injects into the current session and re-authenticates, allowing the logging in of any account in-game.
-
 == Updating ==
 
 To update, the client sends a request to 
