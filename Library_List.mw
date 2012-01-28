@@ -3,34 +3,46 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 {| class="wikitable" style="width: auto; text-align: center;"
 |-style="background:#eee"
 !style="width: 72px" | Name
-!Author(s)
+!Description
+!style="width: 128px" | Author(s)
 !style="width: 128px" | Language
 !style="width: 128px" | License
 |-
+! [http://libminecraft.codeplex.com LibMinecraft]
+| .NET library for Minecraft clients and servers
+| Drew DeVault (SirCmpwn)
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| MIT License
+|-
+! [https://github.com/eddyb/node-mcsmp node-mcsmp]
+| Simple Minecraft multiplayer protocol library for node.js.
+| eddyb
+| [http://nodejs.org/ node.js (JavaScript)]
+|
+|-
+! [https://github.com/mave/mcproxy mcproxy]
+| Minecraft Proxy (and bot) framework in C++
+| mave
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| LGPL License
+|-
 ! [http://mcsharpclient.googlecode.com MCSharpClient]
+| .NET Minecraft Client Protocol Library
 | Justin Head (dv90)
 | [http://www.mono-project.com/Main_Page Mono] [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | GPL License
 |-
 ! [https://github.com/axus/libmc--c libmc--c]
+| World representation data structures and OpenGL drawing functions.
 | axus
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | LGPL License
 |-
-! [https://github.com/eddyb/node-mcsmp node-mcsmp]
-| eddyb
-| [http://nodejs.org/ node.js (JavaScript)]
-|
-|-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
+|
 | ags131
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 |
-|-
-! [http://libminecraft.codeplex.com LibMinecraft]
-| Drew DeVault (SirCmpwn)
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| MIT License
 |}
 
 [[Category:Minecraft Beta]]
