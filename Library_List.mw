@@ -24,7 +24,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | Minecraft Proxy (and bot) framework in C++
 | mave
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| LGPL License
+| GPL License
 |-
 ! [http://mcsharpclient.googlecode.com MCSharpClient]
 | .NET Minecraft Client Protocol Library
