@@ -218,6 +218,20 @@ A couple things for contributors:
 | {{planned|Dynamic (Java planned)}}
 | {{yes|Active extremely early snapshots}}
 |-
+! [http://partycraft.codeplex.com PartyCraft]
+| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{yes}}
+| {{yes}}
+| {{planned|Custom}}
+| {{planned|In progress}}
+| {{planned}}
+| {{planned}}
+| {{yes|Worker + Scheduled Events}}
+| {{yes|.NET}}
+| {{yes|Active}}
+|-
 ! [http://codaset.com/moose/quartz-public Quartz]
 | Moose
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
