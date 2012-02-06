@@ -329,6 +329,20 @@ A couple things for contributors:
 | {{yes|Threads + Async File IO}}
 | {{yes|.NET Plugins}}
 | {{unknown|Rewrite in progress}}
+|-
+! [https://github.com/sprenger120/FastCraft FastCraft]
+| sprenger120
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
+| {{yes}}
+| {{yes}}
+| {{planned|Planned (Beta/Custom)}}
+| {{planned}}
+| {{planned}}
+| {{planned|Players, mobs}}
+| {{yes|Threads}}
+| {{planned|Shared Libaries}}
+| {{yes|Active}}
 |}
 
 [[Category:Minecraft Beta]]
