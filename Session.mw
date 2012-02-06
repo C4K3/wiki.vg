@@ -19,7 +19,7 @@ The current launcher version is ''12'', sending a value lower than this will cau
 
 To update, the launcher downloads files from 
 <pre>http://s3.amazonaws.com/MinecraftDownload/</pre>
-It converts the Last-modified header to a unix timestamp and stores in ~/.minecraft/bin/version<br />
+It converts the Last-modified header of minecraft.jar to a unix timestamp and stores in ~/.minecraft/bin/version<br />
 The following files are downloaded from /MinecraftDownload/ in this exact order:<br />
 *lwjgl.jar
 *jinput.jar
