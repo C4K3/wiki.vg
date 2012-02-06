@@ -28,7 +28,7 @@ The following files are downloaded from /MinecraftDownload/ in this exact order:
 And then the natives.jar appropriate for the following operating systems: windows, linux, macosx, and solaris
 *<os-from-list-above>_natives.jar.lzma
 
-When downloading minecraft.jar, GET variables are set as follows: ?user=foo&ticket=deprecated
+When downloading minecraft.jar, GET variables are set as follows: ?user=foo&ticket=deprecated <br />
 Furthermore, the downloaded files are all verified via MD5 which is sent via ETag by the server on the page for each file.
 
 Further resources are stored in /MinecraftResources. Loading /MinecraftResources provides an XML formatted list of resources, some of which are downloaded by Minecraft.
