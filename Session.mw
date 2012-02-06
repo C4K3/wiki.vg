@@ -19,9 +19,16 @@ The current launcher version is ''12'', sending a value lower than this will cau
 
 To update, the client sends a request to 
 <pre>http://s3.amazonaws.com/MinecraftDownload/minecraft.jar?user=foo&ticket=deprecated</pre>
-It converts the Last-modified header to a unix timestamp and stores in ~/.minecraft/bin/version
+It converts the Last-modified header to a unix timestamp and stores in ~/.minecraft/bin/version<br />
+Minecraft also downloads the following files from /MinecraftDownload, in the exact order:<br />
+*lwjgl.jar
+*jinput.jar
+*lwjgl_util.jar
+*minecraft.jar
+And then the natives.jar appropriate for the following operating systems: windows, linux, macosx, and solaris
+*<os-from-list-above>_natives.jar.lzma
 
-The client also downloads LWJGL jars from /MinecraftDownload, but doesn't pass any GET variables. Further resources are stored in /MinecraftResources.
+The client also downloads LWJGL jars from /MinecraftDownload, but doesn't pass any GET variables. Further resources are stored in /MinecraftResources. Loading /MinecraftResources provides an XML formatted list of resources, some of which are downloaded by Minecraft.
 
 == Keep-alive ==
 
