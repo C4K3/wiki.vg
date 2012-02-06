@@ -2,7 +2,7 @@ The minecraft client and server communicate with minecraft.net to validate playe
 
 == Login ==
 
-To log the player in, the official launcher sends an HTTPS POST request to:
+To log the player in, the official launcher sends an HTTPS POST (GET appears to suffice as well) request to:
 <pre>https://login.minecraft.net</pre>
 with the postdata:
   user=<username>&password=<password>&version=<launcher version>
