@@ -182,6 +182,11 @@ Protocol version is now 25.
 
 == Protocol History ==
 
+=== 2012-02-09 ===
+* 12w06a
+* Protocol version is now 25
+* New packet: 0x84
+
 === 2012-01-26 ===
 * 12w04a
 * Protocol version has not been changed
