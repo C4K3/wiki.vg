@@ -43,7 +43,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 ! [https://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
 | [http://en.wikipedia.org/wiki/Ruby_%28programming_language%29 ruby]
-| a kind of "0-clause" BSD license
+| MIT
 | {{no}}
 | {{no}}
 | aniero
