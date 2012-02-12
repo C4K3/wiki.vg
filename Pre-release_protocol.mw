@@ -90,9 +90,7 @@ Essentially a block update on a tile entity.
 === [[Protocol#Handshake_.280x02.29|Handshake (0x02)]] ===
 
 ==== Client to Server ====
-
-This needs confirmation!
-
+The hostname and port were added to this packet, most likely to allow [http://en.wikipedia.org/wiki/Virtual_hosting virtual hosting] .([https://github.com/sadimusi/MVHP/blob/master/mvhp.py sample implementation])
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -110,7 +108,6 @@ This needs confirmation!
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes + length of strings
 |}
-
 
 === [[Protocol#Mob_Spawn_.280x18.29|Mob Spawn (0x18)]] ===
 
