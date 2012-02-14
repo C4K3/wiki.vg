@@ -98,6 +98,7 @@ server->client
 * int64 = ping ID from client
 * int64 = server ID
 * MAGIC
+* 0x[usernamelength + 5]
 * string ("MCCPP;Demo;" + Host username)
 
 Server sends this packet in response to a 0x02 packet.
