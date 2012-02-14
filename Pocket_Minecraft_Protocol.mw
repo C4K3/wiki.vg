@@ -90,7 +90,7 @@ server->client
 
 Sent from server in response to packet 0x07.
 
-=== 0x1d - server query response ===
+=== 0x1d or 0x1c - server query response ===
 
 server->client
 
@@ -101,3 +101,4 @@ server->client
 * string ("MCCPP;Demo;" + Host username)
 
 Server sends this packet in response to a 0x02 packet.
+It may be either a 0x1d or a 0x1c, depending on version.
