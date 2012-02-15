@@ -317,19 +317,19 @@ Here's a packet capture: https://gist.github.com/1835702
 | class="col0 centeralign" | Primary bit map
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 15
-| class="col3" | Bitmask with 1 for every 16x16x16 chunk which data follows in Compressed data.
+| class="col3" | Bitmask with 1 for every 16x16x16 chunk which data follows in the compressed data.
 |- class="row5"
-| class="col0 centeralign" | Unknown, secondary bit map
+| class="col0 centeralign" | Add bit map
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 0
-| class="col3" | I've only seen <code>0</code>. Used after (presumably) block ids, metadata, lighting, etc.
+| class="col3" | Same as above, but this is used exclusively for the 'add' portion of the payload
 |- class="row6"
 | class="col0 centeralign" | Compressed size
 | class="col1 centeralign" | int
 | class="col2 centeralign" | 
 | class="col3" | Size of compressed region data.
 |- class="row7"
-| class="col0 centeralign" | Unused Int
+| class="col0 centeralign" | Unused int
 | class="col1 centeralign" | int
 | class="col2 centeralign" | 0
 | class="col3" | Doesn't seem to be used by the client. Always 0. I expect this is Mod API stuff.
@@ -343,58 +343,49 @@ Here's a packet capture: https://gist.github.com/1835702
 | class="col1 rightalign" colspan="4" | 22 bytes + Compressed chunk size
 |}
 
-(Unconfirmed, guess) '''Height bit map''' where each bit indicates which vertical chunk it contain.
-Counting the number of binary 1's indicate the number of vertical chunks(16x16x16) of the uncompressed
+The payload is a set of 16x16x16 chunks, sharing the same X and Z chunk coordinates. What is and isn't sent is provided by the two bitmask fields. The least significant bit is '1' if the chunk spanning from Y=0 to Y=15 is not completely air, and so forth. For block IDs, metadata, and lighting, the primary bitmask is used. A secondary bitmask is used for 'add' data, which is mojang's means of provided Block IDs past 256. In vanilla minecraft, you can expect this to always be zero.
 
-N = number of vertical chunks.
+The data is compressed using the deflate() function in [http://www.zlib.net/ zlib]. After uncompressing, the data consists of five sequential sections, in order:
 
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Size
-! class="col1" | Name
-! class="col2" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" | 16*16*16*N
-| class="col1 centeralign" | Block ID
-| class="col2" | 7(bedrock)
-| class="col4" | 1 byte per block.
-|- class="row2"
-| class="col0 centeralign" | 16*16*16*N
-| class="col1 centeralign" | Add Block ID
-| class="col2" | 0
-| class="col4" | (unconfirmed)1 byte per block.
-|- class="row2"
-| class="col0 centeralign" | 16*16*8*N
-| class="col1 centeralign" | Unknown
-| class="col2" | 255
-| class="col3" | (unconfirmed) Biome? Skylight?
-|- class="row9"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="3" | 16*16*16*N*2 + 16*16*8*N bytes (uncompressed)
-|}
+* Block type array (1 byte per block)
+* Block metadata array (half byte per block)
+* Block light array (half byte per block)
+* Sky light array (half byte per block)
+* Add array (half byte per block, uses second bitmask)
 
-That would make the boolean mean "Contiguous?". Possibly a memory optimisation? The bit shifting in the chunk loading code makes this idea seem likely to me - good thought! [[User:Barneygale|Barneygale]] 08:37, 15 February 2012 (MST)
-: It could be an indicator that non included chunks are assumed to be empty/air, a guess --[[User:Ceiru|Ceiru]] 09:14, 15 February 2012 (MST)
+In each section, your loop should look something like this:
+<code>
+  for (i=0;i<16;i++) {
+    if (bitmask & 1 << i) {
+      data = io.read(4096); //2048 for the other arrays, where you'll need to split the data
+      
+      for(int j=0; j<len(data); j++) {
+        
+        //Block data
+        x = (j & 0xF0) >> 4;
+        y = j & 0x0F;
+        z = j >> 8;
+ 
+        //Nibble arrays
+        k = 2*j;
+        
+        d1 = data[j] & 0x0F;
+        x1 = (k & 0xF0) >> 4;
+        y1 = k & 0x0F;
+        z1 = k >> 8;
+        
+        k++;
+        
+        d2 = data[j] >> 4;
+        x2 = (k & 0xF0) >> 4;
+        y2 = k & 0x0F;
+        z2 = k >> 8;
+       }
+    }
+  }
+</code>
 
-:(edit conflict, lol)
-:The first part of the uncompressed data is the chunk block ids (I think), which as you say are loaded based on the bitmask. Each chunk is 4096 bytes. 
-:Three near identical loops follow, iterating over the column of chunks. They all set the .a property of a qi - and I'm not sure what this is. I'm guessing it's a handler for chunk attributes like metadata, skylight and blocklight.
-:Next there's a loop that bears a striking similarity to the first, but uses the second short as a bitmask. For each chunk, if it's mentioned in the mask, it will initialise or use the existing .e (another qi) of that chunk and copy data to it. Here's where the bool comes in. If the chunks are contiguous, and the current chunk is both loaded and has .e set, it will set .e to null.
-:Then there's some chunk initialisation stuff I don't understand. [[User:Barneygale|Barneygale]] 09:25, 15 February 2012 (MST)
-
-Data is:
-
-Blocks (4096 bytes per chunk)
-Metadata (2048 per chunk) [uhg...]
-Blocklight (2048 per chunk)
-Skylight (2048 per chunk)
-
-Add (2048 per chunk)
-
-Everything apart from Blocks is in nibbles, hence this.a = new byte[paramInt1 >> 1]; in qi. [[User:Barneygale|Barneygale]] 10:00, 15 February 2012 (MST)
-
-[[User:Barneygale|Barneygale]] 10:00, 15 February 2012 (MST)
+The 'add' array is specified at the very end, but uses the second bitmask. Block IDs are presumed to be <code>block_id | add << 8</code>
 
 == Other changes ==
 
