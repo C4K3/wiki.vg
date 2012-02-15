@@ -319,7 +319,7 @@ Here's a packet capture: https://gist.github.com/1835702
 | class="col0 centeralign" | Unknown Short #1
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 15
-| class="col3" | Possibly the dimensions in all directions. Or Y offset? Guess: could be the number of vertical "16x16x16 chunks" - 1.
+| class="col3" | When this value is 15 the uncompressed size is 40960, and for 31 the size is 51200. Possibly the dimensions in all directions. Or Y offset? 
 |- class="row5"
 | class="col0 centeralign" | Unknown Short #2
 | class="col1 centeralign" | short
