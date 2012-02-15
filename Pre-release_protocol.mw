@@ -365,11 +365,11 @@ In each section, your loop should look something like this:
         x = (j & 0xF0) >> 4;
         y = j & 0x0F;
         z = j >> 8;
- 
+        
         //Nibble arrays
         d1 = data[j] & 0x0F;
         d2 = data[j] >> 4;
-
+        
         k = 2*j;
         x1 = (k & 0xF0) >> 4;
         y1 = k & 0x0F;
