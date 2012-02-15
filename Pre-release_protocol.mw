@@ -316,10 +316,10 @@ Here's a packet capture: https://gist.github.com/1835702
 | class="col2 centeralign" | 
 | class="col3" | Seems to be True when Unknown Short #1 is 2^n - 1
 |- class="row4"
-| class="col0 centeralign" | Unknown Short #1
+| class="col0 centeralign" | Height bit map
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 15
-| class="col3" | When this value is 15 the uncompressed size is 40960, and for 31 the size is 51200. Possibly the dimensions in all directions. Or Y offset? 
+| class="col3" | Possibly the dimensions in all directions. Or Y offset? 
 |- class="row5"
 | class="col0 centeralign" | Unknown Short #2
 | class="col1 centeralign" | short
@@ -344,6 +344,11 @@ Here's a packet capture: https://gist.github.com/1835702
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 22 bytes + Compressed chunk size
 |}
+
+(Unconfirmed, guess) '''Height bit map''' where each bit indicates which vertical chunk it contain.
+So far only complete range from the bottom is observed such as 1111b, 11111b, 111111b up to 1111111111111111b where the latest represent all 16 vertical chunks.
+The compressed data start with 16*16*16 * 2 bytes of block data(only confirmed for the first half, second is the extended id?).
+The remainder is 2084 bytes per chunk or 8 bytes per vertical block, This data is only observed with value of 255(using coarse manual sampling).
 
 == Other changes ==
 
