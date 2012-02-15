@@ -367,16 +367,15 @@ In each section, your loop should look something like this:
         z = j >> 8;
  
         //Nibble arrays
-        k = 2*j;
-        
         d1 = data[j] & 0x0F;
+        d2 = data[j] >> 4;
+
+        k = 2*j;
         x1 = (k & 0xF0) >> 4;
         y1 = k & 0x0F;
         z1 = k >> 8;
         
         k++;
-        
-        d2 = data[j] >> 4;
         x2 = (k & 0xF0) >> 4;
         y2 = k & 0x0F;
         z2 = k >> 8;
