@@ -235,6 +235,63 @@ This needs confirmation!
 | class="col1 rightalign" colspan="4" | 21 bytes + Metadata (at least 1)
 |}
 
+=== [[Protocol#Map_Chunk_.280x33.29|Map Chunk (0x33)]] ===
+
+This is currently a ''best guess''
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="8" | 0x33
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | Block X Coordinate
+|- class="row2"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" |
+| class="col3" | Block Z Coordinate
+|- class="row3"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | boolean
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row4"
+| class="col0 centeralign" | Size_X
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 
+| class="col3" | 
+|- class="row5"
+| class="col0 centeralign" | Size_Z
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row6"
+| class="col0 centeralign" | Compressed size
+| class="col1 centeralign" | int
+| class="col2 centeralign" | 
+| class="col3" | Size of compressed region data
+|- class="row7"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | int
+| class="col2 centeralign" |
+| class="col3" | Not used?
+|- class="row8"
+| class="col0 centeralign" | Compressed data
+| class="col1 centeralign" | unsigned byte array
+| class="col2 centeralign" | <code>…</code>
+| class="col3" | The region data is compressed using ZLib Deflate function.
+|- class="row9"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 22 bytes + Compressed chunk size
+|}
+
 == Other changes ==
 
 Protocol version is now 27.
