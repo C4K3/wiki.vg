@@ -318,12 +318,12 @@ Here's a packet capture: https://gist.github.com/1835702
 |- class="row4"
 | class="col0 centeralign" | Unknown Short #1
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" | Possibly the dimensions in all directions. Or Y offset?
+| class="col2 centeralign" | 15
+| class="col3" | Possibly the dimensions in all directions. Or Y offset? Guess: could be the number of vertical "16x16x16 chunks" - 1.
 |- class="row5"
 | class="col0 centeralign" | Unknown Short #2
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 
+| class="col2 centeralign" | 0
 | class="col3" | I've only seen <code>0</code>
 |- class="row6"
 | class="col0 centeralign" | Compressed size
@@ -333,7 +333,7 @@ Here's a packet capture: https://gist.github.com/1835702
 |- class="row7"
 | class="col0 centeralign" | Unknown Int
 | class="col1 centeralign" | int
-| class="col2 centeralign" |
+| class="col2 centeralign" | 0
 | class="col3" | Doesn't seem to be used by the client. Always 0. I expect this is Mod API stuff.
 |- class="row8"
 | class="col0 centeralign" | Compressed data
