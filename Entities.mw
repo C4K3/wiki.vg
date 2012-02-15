@@ -220,6 +220,11 @@ Mobs are spawned via [[Protocol#Mob_Spawn_.280x18.29|0x18 Mob Spawn]]
 | class="col1" | Snowman
 | class="col2" | 
 | class="col3" | 
+|- class="row22"
+| class="col0" | 98
+| class="col1" | Ocelot
+| class="col2" | 
+| class="col3" | 
 |- class="row23"
 | class="col0" | 120
 | class="col1" | Villager
