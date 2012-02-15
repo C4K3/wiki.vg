@@ -177,9 +177,6 @@ The hostname and port were added to this packet, most likely to allow [http://en
 
 Dimension is now an int, slightly bizarrely. I wonder if they intended to make world_height an int, in line with 0x01 login?
 
-I never see this packet with 12w07a, please confirm --[[User:Ceiru|Ceiru]] 07:06, 15 February 2012 (MST)
-:No, I see it. I tested it to make sure the fields weren't re-ordered. Try killing yourself or using a nether portal [[User:Barneygale|Barneygale]] 08:30, 15 February 2012 (MST)
-
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
