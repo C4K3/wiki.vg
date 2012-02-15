@@ -317,7 +317,7 @@ Here's a packet capture: https://gist.github.com/1835702
 | class="col0 centeralign" | Height bit map
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 15
-| class="col3" | Possibly the dimensions in all directions. Or Y offset? 
+| class="col3" | Bitmask with 1 for every chunk which data follows in Compressed data.
 |- class="row5"
 | class="col0 centeralign" | Unknown Short #2
 | class="col1 centeralign" | short
@@ -344,10 +344,38 @@ Here's a packet capture: https://gist.github.com/1835702
 |}
 
 (Unconfirmed, guess) '''Height bit map''' where each bit indicates which vertical chunk it contain.
-So far only complete range from the bottom is observed such as 1111b, 11111b, 111111b up to 1111111111111111b where the latest represent all 16 vertical chunks.
-The compressed data start with 16*16*16 * 2 bytes of block data(only confirmed for the first half, second is the extended id?).
-The remainder is 2084 bytes per chunk or 8 bytes per vertical block, This data is only observed with value of 255(using coarse manual sampling).
-:That would make the boolean mean "Contiguous?". Possibly a memory optimisation? The bit shifting in the chunk loading code makes this idea seem likely to me - good thought! [[User:Barneygale|Barneygale]] 08:37, 15 February 2012 (MST)
+Counting the number of binary 1's indicate the number of vertical chunks(16x16x16) of the uncompressed
+
+N = number of vertical chunks.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Size
+! class="col1" | Name
+! class="col2" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 16*16*16*N
+| class="col1 centeralign" | Block ID
+| class="col2" | 7(bedrock)
+| class="col4" | 1 byte per block.
+|- class="row2"
+| class="col0 centeralign" | 16*16*16*N
+| class="col1 centeralign" | Add Block ID
+| class="col2" | 0
+| class="col4" | (unconfirmed)1 byte per block.
+|- class="row2"
+| class="col0 centeralign" | 16*16*8*N
+| class="col1 centeralign" | Unknown
+| class="col2" | 255
+| class="col3" | (unconfirmed) Biome? Skylight?
+|- class="row9"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="3" | 16*16*16*N*2 + 16*16*8*N bytes (uncompressed)
+|}
+
+That would make the boolean mean "Contiguous?". Possibly a memory optimisation? The bit shifting in the chunk loading code makes this idea seem likely to me - good thought! [[User:Barneygale|Barneygale]] 08:37, 15 February 2012 (MST)
+: It could be an indicator that non included chunks are assumed to be empty/air, a guess --[[User:Ceiru|Ceiru]] 09:14, 15 February 2012 (MST)
 
 == Other changes ==
 
