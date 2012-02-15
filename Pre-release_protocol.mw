@@ -337,7 +337,7 @@ Here's a packet capture: https://gist.github.com/1835702
 | class="col0 centeralign" | Compressed data
 | class="col1 centeralign" | unsigned byte array
 | class="col2 centeralign" | <code>…</code>
-| class="col3" | The region data is compressed using ZLib Deflate function. '''Confirmed!'''
+| class="col3" | The region data is compressed using ZLib Deflate function.
 |- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 22 bytes + Compressed chunk size
