@@ -89,7 +89,7 @@ Essentially a block update on a tile entity.
 
 === [[Protocol#Login_Request_.280x01.29|Login Request (0x01)]] ===
 
-World height was changed to an integer.
+World height was changed to an integer. -- Please verify, I found world height to still be a byte but set to 0.
 
 {| class="wikitable"
 |- class="row0"
