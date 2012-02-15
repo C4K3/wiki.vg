@@ -134,9 +134,9 @@ World height was changed to an integer.
 | class="col3" | <code>0</code> thru <code>3</code> for Peaceful, Easy, Normal, Hard
 |- class="row8"
 | class="col0 centeralign" | World height
-| class="col1 centeralign" | integer
-| class="col2 centeralign" | <code>128</code>
-| class="col3" | Defaults to <code>128</code>
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>256</code>
+| class="col3" | Defaults to <code>256</code>
 |- class="row9"
 | class="col0 centeralign" | Max players
 | class="col1 centeralign" | unsigned byte
@@ -146,6 +146,8 @@ World height was changed to an integer.
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 28 bytes + length of strings
 |}
+
+TODO: Figure out other packets
 
 === [[Protocol#Handshake_.280x02.29|Handshake (0x02)]] ===
 
@@ -168,8 +170,6 @@ The hostname and port were added to this packet, most likely to allow [http://en
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes + length of strings
 |}
-
-TODO: Figure out other packets
 
 === [[Protocol#Mob_Spawn_.280x18.29|Mob Spawn (0x18)]] ===
 
