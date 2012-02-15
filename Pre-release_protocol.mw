@@ -309,10 +309,10 @@ Here's a packet capture: https://gist.github.com/1835702
 | class="col2 centeralign" |
 | class="col3" | Chunk Z Coordinate (x16 to get true Z) '''Confirmed!'''
 |- class="row3"
-| class="col0 centeralign" | Unknown Bool
+| class="col0 centeralign" | Complete
 | class="col1 centeralign" | boolean
 | class="col2 centeralign" | 
-| class="col3" | Seems to be True when Unknown Short #1 is 2^n - 1
+| class="col3" | (unconfirmed) If true all vertical chunks not included is assumed to be air. Seems to be True when Unknown Short #1 is 2^n - 1
 |- class="row4"
 | class="col0 centeralign" | Height bit map
 | class="col1 centeralign" | short
