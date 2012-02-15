@@ -377,6 +377,12 @@ N = number of vertical chunks.
 That would make the boolean mean "Contiguous?". Possibly a memory optimisation? The bit shifting in the chunk loading code makes this idea seem likely to me - good thought! [[User:Barneygale|Barneygale]] 08:37, 15 February 2012 (MST)
 : It could be an indicator that non included chunks are assumed to be empty/air, a guess --[[User:Ceiru|Ceiru]] 09:14, 15 February 2012 (MST)
 
+:(edit conflict, lol)
+:The first part of the uncompressed data is the chunk block ids (I think), which as you say are loaded based on the bitmask. Each chunk is 4096 bytes. 
+:Three near identical loops follow, iterating over the column of chunks. They all set the .a property of a qi - and I'm not sure what this is. I'm guessing it's a handler for chunk attributes like metadata, skylight and blocklight.
+:Next there's a loop that bears a striking similarity to the first, but uses the second short as a bitmask. For each chunk, if it's mentioned in the mask, it will initialise or use the existing .e (another qi) of that chunk and copy data to it. Here's where the bool comes in. If the chunks are contiguous, and the current chunk is both loaded and has .e set, it will set .e to null.
+:Then there's some chunk initialisation stuff I don't understand.
+
 == Other changes ==
 
 Protocol version is now 27.
