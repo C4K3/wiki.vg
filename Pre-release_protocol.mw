@@ -173,7 +173,7 @@ The hostname and port were added to this packet, most likely to allow [http://en
 | class="col1 rightalign" colspan="4" | 3 bytes + length of strings
 |}
 
-=== [[Protocol#Respawn_.280x09.29|Respawn (0x09]] ===
+=== [[Protocol#Respawn_.280x09.29|Respawn (0x09)]] ===
 
 Dimension is now an int, slightly bizarrely. I wonder if they intended to make world_height an int, in line with 0x01 login?
 
@@ -217,7 +217,7 @@ Dimension is now an int, slightly bizarrely. I wonder if they intended to make w
 | class="col4" | See 0x01 login
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 16 bytes + length of string
+| class="col1 rightalign" colspan="4" | 19 bytes + length of string
 |}
 
 === [[Protocol#Mob_Spawn_.280x18.29|Mob Spawn (0x18)]] ===
