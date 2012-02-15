@@ -383,6 +383,19 @@ That would make the boolean mean "Contiguous?". Possibly a memory optimisation? 
 :Next there's a loop that bears a striking similarity to the first, but uses the second short as a bitmask. For each chunk, if it's mentioned in the mask, it will initialise or use the existing .e (another qi) of that chunk and copy data to it. Here's where the bool comes in. If the chunks are contiguous, and the current chunk is both loaded and has .e set, it will set .e to null.
 :Then there's some chunk initialisation stuff I don't understand. [[User:Barneygale|Barneygale]] 09:25, 15 February 2012 (MST)
 
+Data is:
+
+Blocks (4096 bytes per chunk)
+Metadata (2048 per chunk) [uhg...]
+Blocklight (2048 per chunk)
+Skylight (2048 per chunk)
+
+Add (2048 per chunk)
+
+Everything apart from Blocks is in nibbles, hence this.a = new byte[paramInt1 >> 1]; in qi. [[User:Barneygale|Barneygale]] 10:00, 15 February 2012 (MST)
+
+[[User:Barneygale|Barneygale]] 10:00, 15 February 2012 (MST)
+
 == Other changes ==
 
 Protocol version is now 27.
