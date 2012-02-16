@@ -89,7 +89,7 @@ Essentially a block update on a tile entity.
 
 === [[Protocol#Login_Request_.280x01.29|Login Request (0x01)]] ===
 
-World height was changed to an integer. -- Please verify, I found world height to still be a byte but set to 0.
+World height field is no longer used, always 0.
 
 {| class="wikitable"
 |- class="row0"
@@ -117,8 +117,8 @@ World height was changed to an integer. -- Please verify, I found world height t
 |- class="row4"
 | class="col0 centeralign" | Level Type
 | class="col1 centeralign" | string
-| class="col2 centeralign" | DEFAULT
-| class="col3" | DEFAULT or SUPERFLAT; level-type in server.properties
+| class="col2 centeralign" | default
+| class="col3" | default or SUPERFLAT; level-type in server.properties
 |- class="row5"
 | class="col0 centeralign" | Server mode
 | class="col1 centeralign" | int
@@ -136,9 +136,9 @@ World height was changed to an integer. -- Please verify, I found world height t
 | class="col3" | <code>0</code> thru <code>3</code> for Peaceful, Easy, Normal, Hard
 |- class="row8"
 | class="col0 centeralign" | World height
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>256</code>
-| class="col3" | Defaults to <code>256</code>
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Probably not used anymore since Map Chunk is hardcoded to 256 blocks.
 |- class="row9"
 | class="col0 centeralign" | Max players
 | class="col1 centeralign" | unsigned byte
