@@ -339,18 +339,16 @@ Here's a packet capture: https://gist.github.com/1835702
 
 The payload is a set of 16x16x16 chunks, sharing the same X and Z chunk coordinates. What is and isn't sent is provided by the two bitmask fields. The least significant bit is '1' if the chunk spanning from Y=0 to Y=15 is not completely air, and so forth. For block IDs, metadata, and lighting, the primary bitmask is used. A secondary bitmask is used for 'add' data, which is mojang's means of provided Block IDs past 256. In vanilla minecraft, you can expect this to always be zero.
 
-The data is compressed using the deflate() function in [http://www.zlib.net/ zlib]. After uncompressing, the data consists of five sequential sections, in order:
+The data is compressed using the deflate() function in [http://www.zlib.net/ zlib]. After uncompressing, the data consists of five (or six) sequential sections, in order:
 
-* Block type array (1 byte per block)
-* Block metadata array (half byte per block)
-* Block light array (half byte per block)
-* Sky light array (half byte per block)
-* Biome array (byte per XZ block)
-* Add array (half byte per block, uses second bitmask)
+* Block type array (1 byte per block, 4096 bytes per chunk)
+* Block metadata array (half byte per block, 2048 bytes per chunk)
+* Block light array (half byte per block, 2048 bytes per chunk)
+* Sky light array (half byte per block, 2048 bytes per chunk)
+* Add array (half byte per block, 2048 bytes per chunk, uses second bitmask)
+* Biome array (1 byte per XZ column, 256 bytes total, only sent if 'ground up contiguous' is true)
 
-Each biome byte can have the values from 0 to 22, higher will cause the client to crash.
-
-In each section, your loop should look something like this:
+In each section except biome data, your loop should look something like this:
 <code>
   for (i=0;i<16;i++) {
     if (bitmask & 1 << i) {
@@ -381,7 +379,9 @@ In each section, your loop should look something like this:
   }
 </code>
 
-The 'add' array is specified at the very end, but uses the second bitmask. Block IDs are presumed to be <code>block_id | add << 8</code>
+Each biome byte can have the values from 0 to 22, higher will cause the client to crash.
+
+The 'add' array uses the second bitmask. Block IDs are presumed to be <code>block_id | add << 8</code>
 
 === Multi Block Change (0x34) ===
 
