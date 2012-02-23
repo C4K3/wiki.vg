@@ -429,10 +429,6 @@ See the Block Change command for description of the general format of a block ch
 | class="col1 rightalign" colspan="4" | 11 bytes + Arrays
 |}
 
-== Other changes ==
-
-Protocol version is now 27.
-
 == Protocol History ==
 
 === 2012-02-23 ===
