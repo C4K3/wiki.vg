@@ -409,6 +409,11 @@ See the Block Change command for description of the general format of a block ch
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>2</code>
 | class="col3" | The total number of elements per array
+|- class="row2"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>40</code>
+| class="col3" | Unknown
 |- class="row4"
 | class="col0 centeralign" | Coordinate array
 | class="col1 centeralign" | short array
