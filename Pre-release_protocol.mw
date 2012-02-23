@@ -91,6 +91,8 @@ Essentially a block update on a tile entity.
 
 World height field is no longer used, always 0.
 
+Map seed field removed
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
@@ -99,7 +101,7 @@ World height field is no longer used, always 0.
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="9" | 0x01
+| class="col0 centeralign" rowspan="8" | 0x01
 | class="col1 centeralign" | Entity ID
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>1298</code>
@@ -110,43 +112,38 @@ World height field is no longer used, always 0.
 | class="col2 centeralign" | (empty string)
 | class="col3" | Not used
 |- class="row3"
-| class="col0 centeralign" | Map Seed
-| class="col1 centeralign" | long
-| class="col2 centeralign" | <code>971768181197178410</code>
-| class="col3" | The server's map seed. Must be sent in respawn packets by the client.
-|- class="row4"
 | class="col0 centeralign" | Level Type
 | class="col1 centeralign" | string
 | class="col2 centeralign" | default
 | class="col3" | default or SUPERFLAT; level-type in server.properties
-|- class="row5"
+|- class="row4"
 | class="col0 centeralign" | Server mode
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | 0 for survival, 1 for creative
-|- class="row6"
+|- class="row5"
 | class="col0 centeralign" | Dimension
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | <code>-1</code>: The Nether, <code>0</code>: The Overworld, <code>1</code>: The End
-|- class="row7"
+|- class="row6"
 | class="col0 centeralign" | Difficulty
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>1</code>
 | class="col3" | <code>0</code> thru <code>3</code> for Peaceful, Easy, Normal, Hard
-|- class="row8"
+|- class="row7"
 | class="col0 centeralign" | World height
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | Probably not used anymore since Map Chunk is hardcoded to 256 blocks.
-|- class="row9"
+|- class="row8"
 | class="col0 centeralign" | Max players
 | class="col1 centeralign" | unsigned byte
 | class="col2 centeralign" | <code>8</code>
 | class="col3" | Used by the client to draw the player list
-|- class="row10"
+|- class="row9"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 27 bytes + length of strings
+| class="col1 rightalign" colspan="4" | 19 bytes + length of strings
 |}
 
 === [[Protocol#Handshake_.280x02.29|Handshake (0x02)]] ===
