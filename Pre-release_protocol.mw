@@ -380,6 +380,55 @@ In each section, your loop should look something like this:
 
 The 'add' array is specified at the very end, but uses the second bitmask. Block IDs are presumed to be <code>block_id | add << 8</code>
 
+=== Multi Block Change (0x34) ===
+
+Further investigation shows that this is a multiple-block-change command; if you take the three arrays, and put together elements with the same index, and then decompose the short into coordinates (top 4 bits is X, next 4 bits is Z, bottom 8 bits is Y), you get things like [((8, 7, 4), 11, 0), ((7, 13, 6), 11, 0), ((13, 1, 8), 11, 0), ((7, 6, 6), 11, 0)].
+
+See the Block Change command for description of the general format of a block change.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="6" | 0x34
+| class="col1 centeralign" | Chunk X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>-9</code>
+| class="col4" | Chunk X Coordinate
+|- class="row2"
+| class="col0 centeralign" | Chunk Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>12</code>
+| class="col3" | Chunk Z Coordinate
+|- class="row3"
+| class="col0 centeralign" | Array size
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>2</code>
+| class="col3" | The total number of elements per array
+|- class="row4"
+| class="col0 centeralign" | Coordinate array
+| class="col1 centeralign" | short array
+| class="col2 centeralign" | <code>…</code>
+| class="col3" | The coordinates of the blocks to change
+|- class="row5"
+| class="col0 centeralign" | Type array
+| class="col1 centeralign" | byte array
+| class="col2 centeralign" | <code>…</code>
+| class="col3" | The type for each block change
+|- class="row6"
+| class="col0 centeralign" | Metadata array
+| class="col1 centeralign" | byte array
+| class="col2 centeralign" | <code>…</code>
+| class="col3 leftalign" | The Metadata for each block changed
+|- class="row7"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 11 bytes + Arrays
+|}
+
 == Other changes ==
 
 Protocol version is now 27.
