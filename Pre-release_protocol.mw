@@ -172,7 +172,9 @@ The hostname and port were added to this packet, most likely to allow [http://en
 
 === [[Protocol#Respawn_.280x09.29|Respawn (0x09)]] ===
 
-Dimension is now an int, slightly bizarrely. I wonder if they intended to make world_height an int, in line with 0x01 login?
+Dimension is now an int, slightly bizarrely. I wonder if they intended to make world_height an int, in line with 0x01 login? 
+
+Map seed field removed
 
 {| class="wikitable"
 |- class="row0"
@@ -182,7 +184,7 @@ Dimension is now an int, slightly bizarrely. I wonder if they intended to make w
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="6" | 0x09
+| class="col0 centeralign" rowspan="5" | 0x09
 | class="col1 centeralign" | Dimension
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>1</code>
@@ -203,18 +205,13 @@ Dimension is now an int, slightly bizarrely. I wonder if they intended to make w
 | class="col3 centeralign" | <code>128</code>
 | class="col4" | Defaults to <code>128</code>
 |- class="row1"
-| class="col1 centeralign" | Map Seed
-| class="col2 centeralign" | long
-| class="col3 centeralign" | <code>-3815848935435401459</code>
-| class="col4" | The server's map seed.
-|- class="row1"
 | class="col1 centeralign" | Level Type
 | class="col2 centeralign" | string
 | class="col3 centeralign" | DEFAULT
 | class="col4" | See 0x01 login
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 19 bytes + length of string
+| class="col1 rightalign" colspan="4" | 11 bytes + length of string
 |}
 
 === [[Protocol#Mob_Spawn_.280x18.29|Mob Spawn (0x18)]] ===
