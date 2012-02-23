@@ -386,6 +386,11 @@ Protocol version is now 27.
 
 == Protocol History ==
 
+=== 2012-02-23 ===
+* 12w08a
+* Protocol version is now 28
+* Updated packets: 0x01, 0x09, 0x34
+
 === 2012-02-15 ===
 * 12w07a
 * Protocol version is now 27
