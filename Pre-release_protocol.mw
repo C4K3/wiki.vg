@@ -126,7 +126,7 @@ World height field is no longer used, always 0.
 | class="col3" | 0 for survival, 1 for creative
 |- class="row6"
 | class="col0 centeralign" | Dimension
-| class="col1 centeralign" | byte
+| class="col1 centeralign" | int
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | <code>-1</code>: The Nether, <code>0</code>: The Overworld, <code>1</code>: The End
 |- class="row7"
@@ -146,7 +146,7 @@ World height field is no longer used, always 0.
 | class="col3" | Used by the client to draw the player list
 |- class="row10"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 28 bytes + length of strings
+| class="col1 rightalign" colspan="4" | 27 bytes + length of strings
 |}
 
 === [[Protocol#Handshake_.280x02.29|Handshake (0x02)]] ===
