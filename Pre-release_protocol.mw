@@ -345,6 +345,7 @@ The data is compressed using the deflate() function in [http://www.zlib.net/ zli
 * Block metadata array (half byte per block)
 * Block light array (half byte per block)
 * Sky light array (half byte per block)
+* Biome array (byte per XZ block)
 * Add array (half byte per block, uses second bitmask)
 
 In each section, your loop should look something like this:
