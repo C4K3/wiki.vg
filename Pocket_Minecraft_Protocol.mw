@@ -1,6 +1,8 @@
 Unlike the Minecraft protocol, this protocol uses UDP with (so far observed, at least) one message per packet. This makes the protocol easier to work with when it comes to packet serialization, and might offer latency improvements, but will inevitably have the usual UDP issues (packets lost, truncated, duplicated, out-of-order, etc.).
 
-Servers listen on UDP port 19132. Clients don't pick any specific port to listen on.
+Old servers listen on UDP port 19132. 
+As of the survival update, the port is different (unknown as of now)
+Clients don't pick any specific port to listen on.
 
 Please note that even where packet field names are written in this page, these are still largely hypothetical and could well be incorrect guesses.
 
