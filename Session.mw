@@ -45,7 +45,7 @@ The client discards the server's response.
 
 # Client connects to server
 # Client sends a [[Protocol#Handshake_.280x02.29|0x02 handshake]] containing the current player name
-# Client receives a 0x02 handshake from the server containing a randomly generated hash, which is saves as serverId
+# Client receives a 0x02 handshake from the server containing a randomly generated hash, which it saves as serverId
 # Client sends a HTTP request to 
 #:<pre>http://session.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
 #:If the response is '''OK''' then continue, otherwise stop
