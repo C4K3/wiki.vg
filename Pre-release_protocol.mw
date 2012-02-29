@@ -359,7 +359,7 @@ In each section except biome data, your loop should look something like this:
       
       for(int j=0; j<len(cubic_chunk_data); j++) {
         //Retrieve x,y,z and data from each element in cubic_chunk_array
-
+        
         //Byte arrays
         x = chunk_x*16 + (j & 0xF0) >> 4;
         y = i*16       + j & 0x0F;
