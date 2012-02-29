@@ -350,30 +350,35 @@ The data is compressed using the deflate() function in [http://www.zlib.net/ zli
 
 In each section except biome data, your loop should look something like this:
 <code>
+  //Loop over 16x16x16 chunks in the 16x256x16 column
   for (i=0;i<16;i++) {
+    //If the bitmask indicates this chunk has been sent...
     if (bitmask & 1 << i) {
-      data = io.read(4096); //2048 for the other arrays, where you'll need to split the data
+      //Read data...
+      cubic_chunk_data = io.read(4096); //2048 for the other arrays, where you'll need to split the data
       
-      for(int j=0; j<len(data); j++) {
-        
-        //Block data
-        x = (j & 0xF0) >> 4;
-        y = j & 0x0F;
-        z = j >> 8;
+      for(int j=0; j<len(cubic_chunk_data); j++) {
+        //Retrieve x,y,z and data from each element in cubic_chunk_array
+
+        //Byte arrays
+        x = chunk_x*16 + (j & 0xF0) >> 4;
+        y = i*16       + j & 0x0F;
+        z = chunk_z*16 + j >> 8;
+        data = cubic_chunk_data[j]
         
         //Nibble arrays
-        d1 = data[j] & 0x0F;
-        d2 = data[j] >> 4;
+        data1 = cubic_chunk_data[j] & 0x0F;
+        data2 = cubic_chunk_data[j] >> 4;
         
         k = 2*j;
-        x1 = (k & 0xF0) >> 4;
-        y1 = k & 0x0F;
-        z1 = k >> 8;
+        x1 = chunk_x*16 + (k & 0xF0) >> 4;
+        y1 = i*16       + k & 0x0F;
+        z1 = chunk_z*16 + k >> 8;
         
         k++;
-        x2 = (k & 0xF0) >> 4;
-        y2 = k & 0x0F;
-        z2 = k >> 8;
+        x2 = chunk_x*16 + (k & 0xF0) >> 4;
+        y2 = i*16       + k & 0x0F;
+        z2 = chunk_z*16 + k >> 8;
        }
     }
   }
