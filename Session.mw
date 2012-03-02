@@ -39,6 +39,16 @@ Every 6000 ticks, the client sends an HTTPS request to
 <pre>https://login.minecraft.net/session?name=<username>&session=<session id></pre>
 The client discards the server's response.
 
+== Snoop ==
+
+Currently partially implemented in the official client. Every 10 minutes, the client sends a HTTP POST request to:
+<pre>http://snoop.minecraft.net</pre>
+With the postdata:
+<pre>fName=???&lName=???</pre>
+These parameters are expected to change (and contain non-dummy values). Indeed, the official client has code for at least one variable: "mode", containing one of: title, single_creative, single_demo, single_survival, multiplayer.
+
+Currently the server only returns a 503
+
 == Joining a Server ==
 
 === Client operation ===
