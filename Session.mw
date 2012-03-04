@@ -5,7 +5,7 @@ The minecraft client and server communicate with minecraft.net to validate playe
 To log the player in, the official launcher sends an HTTPS POST (GET appears to suffice as well) request to:
 <pre>https://login.minecraft.net</pre>
 with the postdata:
-  user=<username>&password=<password>&version=<launcher version>
+  ?user=<username>&password=<password>&version=<launcher version>
 and a "application/x-www-form-urlencoded" Content-Type header.
 
 The current launcher version is ''12'', sending a value lower than this will cause the server to return "Old Version", however you can send any large number and it will return as expected. If the login succeeded, it will return 4 ':' delimited values.
