@@ -29,3 +29,6 @@ A block represents 1 meter x 1 meter x 1 meter. There are 32 pixels per meter, a
 | class="col2 centeralign" | chunks
 | class="col3" | Represents the position of a chunk.
 |}
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Beta]]
