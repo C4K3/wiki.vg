@@ -1,0 +1,183 @@
+Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
+
+=== 2012-03-01 ===
+* 1.2.2
+* Protocol version is now 28
+* New packet: [[#Entity_Head_Look_.280x23.29|0x23 entity head look]]
+* New packet: [[#Update_Tile_Entity_.280x84.29|0x84 update tile entity]]
+* [[#Handshake_.280x02.29|0x02 handshake]] when sent C->S now additionally contains the hostname/port the client is connecting to
+* [[#Login_Request_.280x01.29|0x01 login request]]: map seed (long) parameter removed and dimension changed from byte to int
+* [[#Respawn_.280x09.29|0x09 respawn]] has the same changes (dimension changed from byte to int and seed removed)
+* [[#Mob_Spawn_.280x18.29|0x18 mob spawn]] has a new byte field: head yaw
+* [[#Map_Chunks_.280x33.29|0x33 map chunks]] packet was completely changed to use the new 16x16x16 chunk format
+* [[#Multi_Block_Change_.280x34.29|0x34 multi block change]] has a new format also
+
+=== 2012-01-12 ===
+* 1.1
+* Protocol version is now 23
+* New packet: [[Protocol#Plugin_message_.280xFA.29|0xFA Plugin message]]
+* [[#Login_Request_.280x01.29|0x01 login request]] has a new string field: level-type (DEFAULT or SUPERFLAT)
+* [[#Respawn_.280x09.29|0x09 respawn]] has the same change
+* Packet removed: 0x1B stance update (had been unused for some time)
+
+=== 2011-11-13 ===
+* 1.0rc2
+* Protocol version is not changed
+* Client gives invalid server key when authentication hash is 8 bytes and the first byte is > 0x80
+* Bow has extra metadata as slot item.
+
+=== 2011-11-11 ===
+* Beta 1.9 pre6.
+* Protocol version is now 22
+* NewState: Reason 4 = Enter scrolling text mode after slaying the dragon.
+* New entity: EnderCrystal (Spawned using the [[Protocol#Add_Object.2FVehicle_.280x17.29|Add Object/Vehicle (0x17)]] packet with type 51)
+
+=== 2011-10-27 ===
+* Beta 1.9 pre5.
+* Protocol version is now 21
+* Packet 0x6B (Create Inventory) changed: uses Slot datatype.
+
+=== 2011-10-13 ===
+* <div class="li">Beta 1.9 pre4.</div>
+* Protocol version is now 20
+* Packet 0x2B ([[#Experience_.280x2B.29|Experience]]) changed: now (float, short, short)
+* New packet 0x6C ([[#Enchant_Item_.280x6C.29|Enchant item]]) added: (byte, byte)
+* Flint and steel no longer enchantable (see 1.9pre3 changes). Might be others, too.
+* Notchian server now features an [[Rcon|RCON]] server (server class: o.java)
+* Notchian server now features "G4S" server [http://pear.php.net/package/Net_GameServerQuery]
+
+=== 2011-9-29 ===
+* <div class="li">Beta 1.9 pre2.</div>
+* Protocol version is now 19
+* Four packets changed:
+** [[Protocol#Player_Block_Placement_.280x0F.29|0x0F player block placement]]
+** [[Protocol#Window_click_.280x66.29|0x66 window click]]
+** [[Protocol#Set_slot_.280x67.29|0x67 set slot]]
+** [[Protocol#Window_items_.280x68.29|0x68 window items]]
+* The change affects the "slot" datatype. This type consists of at least a short (item_id). If this id isn't <code>-1</code>, a byte (count) and a short (uses) follow.
+* From 1.9pre2 onward, additional data is sent but only for [https://gist.github.com/1268479 certain item_ids]. This means the protocol is no longer context free. The additional data is ''at least'' a short. If this short isn't -1, a byte[] array follows, containing ''gzipped'' NBT data
+* The format of the NBT is as follows
+<code>
+  COMPOUND
+    LIST: 'ench'
+      SHORT: 'id'
+      SHORT: 'lvl'
+    END
+  END
+</code>
+* So far only this format, with 'id' and 'lvl' set to <code>2</code> and <code>1</code> respectively, has been seen.
+
+=== 2011-9-22 ===
+* <div class="li">Beta 1.9 pre1.</div>
+* Protocol version is now 18
+
+=== 2011-9-14 ===
+* <div class="li">Beta 1.8 release.</div>
+* Protocol version is now 17
+
+=== 2011-9-13 ===
+* <div class="li">Beta 1.8 pre2-release.</div>
+* Protocol version is now 16
+* Packet 0x01 ([[#Login_Request_.280x01.29|Login]]) changed (added byte, world height now unsigned)
+* Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (added byte)
+* Packet 0x64 ([[#Open_window_.280x64.29|Open Window]]) changed (Window title changed from string8 to string16)
+* New packet 0x1a ([[#Experience_Orb_.280x1A.29|Experience Orb]]) added
+* Assumedly 0x17 ([[#Add_Object.2FVehicle_.280x17.29|Add Object/Vehicle]]) is no longer used for exp orbs.
+
+=== 2011-9-10 ===
+* <div class="li">Beta 1.8 pre-release.</div>
+* Protocol version is now 15
+* Packet 0x00 ([[#Keep_Alive_.280x00.29|Keep Alive]]) changed (added keep-alive id)
+* Packet 0x01 ([[#Login_Request_.280x01.29|Login]]) changed (added server mode, height limit, and an unknown field)
+* Packet 0x08 ([[#Update_Health_.280x08.29|Health]]) changed (added food bar and food saturation)
+* Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (added map seed, server mode, height limit)
+* Packet 0x13 ([[#Entity_Action_.280x13.29|Entity Action]]) has new values for starting/stopping sprinting.
+* Packet 0x46 ([[#New.2FInvalid_State_.280x46.29|New/invalid state]]) changed (added game mode reason, and a game mode byte)
+* New packet 0x29 ([[#Entity_Effect_.280x29.29|Entity Effect]]) added
+* New packet 0x2a ([[#Remove_Entity_Effect_.280x2A.29|Remove Entity Effect]]) added
+* New packet 0x2b ([[#Experience_.280x2B.29|Experience update]]) added
+* New packet 0x6b ([[#Creative_inventory_action_.280x6B.29|Creative item get]]) added
+* New packet 0xc9 ([[#Player_List_Item_.280xC9.29|Player list item]]) added
+* New packet 0xfe ([[#Server_List_Ping_.280xFE.29|Server list ping]]) added
+* New values for 0x13 ([[#Entity_Action_.280x13.29|Entity Action]]): start sprinting, stop sprinting
+* New value for 0x17 ([[#Add_Object.2FVehicle_.280x17.29|Add Object/Vehicle]]): experience orb
+
+
+=== 2011-6-30 ===
+* <div class="li">Beta 1.7 released.</div>
+* Protocol version number is now 14
+* No new packets
+* Packet 0x36 ([[#Block_Action_.280x36.29|Block Action]]) is now used for pistons too.
+
+=== 2011-5-26 ===
+* <div class="li">Beta 1.6 released.</div>
+* Protocol increase by 2: 13
+* Packet 0x09 ([[#Respawn_.280x09.29|Respawn]]) changed (added world byte)
+* Packet 0x17 ([[#Add_Object.2FVehicle_.280x17.29|Add Object]]) changed.
+* Packet 0x3d ([[#Sound_effect_.280x3D.29|Sound effect]]) added 
+* Packet 0x83 ([[#Map_Data_.280x83.29|Map Data]]) added
+
+=== 2011-4-19 ===
+* <div class="li">Beta 1.5 released.</div>
+* Some packet info at https://gist.github.com/929803
+* Packet 0x01 ([[#Login_Request_.280x01.29|Login Request]]) changed (removed second string)
+* Packet 0x66 (Window Click) changed (added bool for shift)
+* Added two new packets: 0x47 ([[#Thunderbolt_.280x47.29|Thunderbolt]]) and 0xC8 ([[#Increment_Statistic_.280xC8.29|Increment Statistic]]) (classes eq and nj, respectively)
+* Protocol version number is now 11
+* All of the strings are now UCS-2, except for Open window (0x64), which is still UTF-8
+
+=== 2011-3-31 ===
+* <div class="li">Beta 1.4 released.</div>
+* New packet 0x46.
+* Protocol version number is now 10
+* '''TODO:''' The protocol itself does not seem to have changed much, but what about possible data values and stuff like that?
+
+=== 2011-2-22 ===
+* <div class="li">Beta 1.3 released.</div>
+* New packets 0x11, 0x1B: Some information at https://gist.github.com/841590
+* Protocol number is now 9 (updated)
+
+=== 2011-1-13 ===
+* <div class="li">Beta 1.2 released.</div>
+* More packet changes ([http://pastebin.com/HHW52Awn pastebin]): 0x05, 0x0F, 0x13, 0x15, 0x18, 0x19, 0x28, 0x36, 0x66, 0x67.
+
+=== 2010-12-20 ===
+* <div class="li">Notch released Beta on time! Amazing! Refactored the page to be slightly smaller and easier to navigate.</div>
+* A whole host of packet changes. 0x05, 0x08, 0x10, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x6a, and 0x82. Packets 0x11 and 0x3b removed.
+
+=== 2010-12-01 ===
+* <div class="li"> Protocol version changed to 6</div>
+* <div class="li"> Packet 0x12 ([[#Animation_.280x12.29|Animation]]) got a lot more new values</div>
+* <div class="li"> Packet 0x26 changed, now indicates entity damage, death and explosion (for creepers, TNT not tested)</div>
+* <div class="li"> Packet 0x3B now being sent from client</div>
+* <div class="li"> Packet 0x3C added</div>
+* (need info on other changes)
+
+=== 2010-11-24 ===
+* <div class="li"> Protocol version changed to 5</div>
+* <div class="li"> Packet 0x07 ([[#Use_Entity.3F_.280x07.29|Use Entity]]) got a new field (byte)</div>
+* <div class="li"> Packet 0x08 ([[#Update Health (0x08)|Update Health]]) added</div>
+* <div class="li"> Packet 0x09 ([[#Respawn (0x09)|Respawn]]) added</div>
+* <div class="li"> Packet 0x12 ([[#Animation_.280x12.29|Animation]]) started getting non-boolean values for the Animation field</div>
+* <div class="li"> Packet 0x26 (Entity Death) added</div>
+
+=== 2010-11-10 ===
+* <div class="li"> Protocol version changed to 4</div>
+* <div class="li"> Packet 0x01 ([[#Login_Request_.280x01.29|login request]]) changed</div>
+* <div class="li"> Packet 0x07 ([[#Use Entity? (0x07)|Use Entity?]]) added</div>
+* <div class="li"> Packet 0x1C ([[#Entity Velocity? (0x1C)|Entity Velocity?]]) added</div>
+* <div class="li"> Packet 0x27 ([[#Attach Entity? (0x27)|Attach Entity?]]) added</div>
+
+=== 2010-10-31 ===
+* <div class="li"> Protocol version changed to 3</div>
+* <div class="li"> Packet 0x01 ([[#Login_Request_.280x01.29|login request]]) changed</div>
+
+=== 2010-09-10 ===
+* <div class="li"> Protocol version changed to 2</div>
+* <div class="li"> Packets 0x05, 0x06, 0x3B added</div>
+* <div class="li"> Server-side inventory (no verification)</div>
+* <div class="li"> Vanilla adds experimental monsters (only damaged by fire)</div>
+
+=== 2010-08-20 ===
+* <div class="li"> Protocol version reset from 14 to 1</div>
+* <div class="li"> Packet 0x04 ([[#Time_Update_.280x04.29|time update]]) added</div>
