@@ -181,3 +181,6 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 2010-08-20 ===
 * <div class="li"> Protocol version reset from 14 to 1</div>
 * <div class="li"> Packet 0x04 ([[#Time_Update_.280x04.29|time update]]) added</div>
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Beta]]
