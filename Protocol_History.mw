@@ -3,21 +3,21 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 2012-03-01 ===
 * 1.2.2
 * Protocol version is now 28
-* New packet: [[#Entity_Head_Look_.280x23.29|0x23 entity head look]]
-* New packet: [[#Update_Tile_Entity_.280x84.29|0x84 update tile entity]]
-* [[#Handshake_.280x02.29|0x02 handshake]] when sent C->S now additionally contains the hostname/port the client is connecting to
-* [[#Login_Request_.280x01.29|0x01 login request]]: map seed (long) parameter removed and dimension changed from byte to int
-* [[#Respawn_.280x09.29|0x09 respawn]] has the same changes (dimension changed from byte to int and seed removed)
-* [[#Mob_Spawn_.280x18.29|0x18 mob spawn]] has a new byte field: head yaw
-* [[#Map_Chunks_.280x33.29|0x33 map chunks]] packet was completely changed to use the new 16x16x16 chunk format
-* [[#Multi_Block_Change_.280x34.29|0x34 multi block change]] has a new format also
+* New packet: [[Protocol#Entity_Head_Look_.280x23.29|0x23 entity head look]]
+* New packet: [[Protocol#Update_Tile_Entity_.280x84.29|0x84 update tile entity]]
+* [[Protocol#Handshake_.280x02.29|0x02 handshake]] when sent C->S now additionally contains the hostname/port the client is connecting to
+* [[Protocol#Login_Request_.280x01.29|0x01 login request]]: map seed (long) parameter removed and dimension changed from byte to int
+* [[Protocol#Respawn_.280x09.29|0x09 respawn]] has the same changes (dimension changed from byte to int and seed removed)
+* [[Protocol#Mob_Spawn_.280x18.29|0x18 mob spawn]] has a new byte field: head yaw
+* [[Protocol#Map_Chunks_.280x33.29|0x33 map chunks]] packet was completely changed to use the new 16x16x16 chunk format
+* [[Protocol#Multi_Block_Change_.280x34.29|0x34 multi block change]] has a new format also
 
 === 2012-01-12 ===
 * 1.1
 * Protocol version is now 23
 * New packet: [[Protocol#Plugin_message_.280xFA.29|0xFA Plugin message]]
-* [[#Login_Request_.280x01.29|0x01 login request]] has a new string field: level-type (DEFAULT or SUPERFLAT)
-* [[#Respawn_.280x09.29|0x09 respawn]] has the same change
+* [[Protocol#Login_Request_.280x01.29|0x01 login request]] has a new string field: level-type (DEFAULT or SUPERFLAT)
+* [[Protocol#Respawn_.280x09.29|0x09 respawn]] has the same change
 * Packet removed: 0x1B stance update (had been unused for some time)
 
 === 2011-11-13 ===
