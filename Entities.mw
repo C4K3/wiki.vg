@@ -20,31 +20,32 @@ To parse, repeat the following procedure:
      6: int, int, int
  4) Read and unpack based on the type (above)
 
-In python:
-
-    #socket is positioned at the beginning of the metadata array
-    metadata = {}
+In Python:
+<source lang="python">
+#socket is positioned at the beginning of the metadata array
+metadata = {}
+x = socket.unpack('byte')
+while x != 127:
+    index = x & 0x1F # Lower 5 bits
+    ty    = x >> 5   # Upper 3 bits
+    if ty == 0: val = socket.unpack('byte') 
+    if ty == 1: val = socket.unpack('short') 
+    if ty == 2: val = socket.unpack('int') 
+    if ty == 3: val = socket.unpack('float') 
+    if ty == 4: val = socket.unpack('string16')
+    if ty == 5:
+        val = {}
+        val["id"]     = socket.unpack('short')
+        val["count"]  = socket.unpack('byte')
+        val["damage"] = socket.unpack('short')
+    if ty == 6:
+        val = []
+        for i in range(3):
+            val.append(socket.unpack('int'))
+    metadata[index] = (ty, val)
     x = socket.unpack('byte')
-    while x != 127:
-        index = x & 0x1F # Lower 5 bits
-        ty    = x >> 5   # Upper 3 bits
-        if ty == 0: val = socket.unpack('byte') 
-        if ty == 1: val = socket.unpack('short') 
-        if ty == 2: val = socket.unpack('int') 
-        if ty == 3: val = socket.unpack('float') 
-        if ty == 4: val = socket.unpack('string16')
-        if ty == 5:
-            val = {}
-            val["id"]     = socket.unpack('short')
-            val["count"]  = socket.unpack('byte')
-            val["damage"] = socket.unpack('short')
-        if ty == 6:
-            val = []
-            for i in range(3):
-                val.append(socket.unpack('int'))
-        metadata[index] = (ty, val)
-        x = socket.unpack('byte')
-    return metadata
+return metadata
+</code>
 
 == Common Metadata ==
 
