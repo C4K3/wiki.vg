@@ -45,7 +45,7 @@ while x != 127:
     metadata[index] = (ty, val)
     x = socket.unpack('byte')
 return metadata
-</code>
+</source>
 
 == Common Metadata ==
 
