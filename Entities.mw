@@ -90,10 +90,9 @@ Seems to be sent for *at least* all mobs. Not sure about players.
 
 Players and most (all?) mobs send metadata with index <code>8</code>. This specifies the colour of the bubbling effects around the player.
 
-The value is an int, that should be decomposed into four 4-bit nibbles, representing <code>0x00RRGGBB</code>
+The value is an int, that should be decomposed into four bytes, representing <code>0x00RRGGBB</code>
 
 If the value is 0, no potion effects currently apply to the entity.
-
 
 === Index 12, int: Animals ===
 
