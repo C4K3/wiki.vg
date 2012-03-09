@@ -37,7 +37,7 @@ There are ongoing efforts to keep reverse engineered documentation updated, but 
 * [[Protocol FAQ]]
 * [[Authentication|Authentication Scheme]]
 * [[Map Format]] (See also: mirror of the old [[NBT]].txt)
-* [http://b.wiki.vg/ Burger Vitrine] shows you differences in data and protocol between arbitrary versions.
+* [http://b.wiki.vg/ Burger Vitrine] shows differences in data and protocol between arbitrary versions.
 
 === Source Code & Snippets ===
 Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
