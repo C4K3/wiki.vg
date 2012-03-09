@@ -1,6 +1,6 @@
 A list of tools to help out your Minecraft development. '''Caution:''' Most of this is outdated!
 
-* Wireshark Dissector - http://github.com/ScottBrooks/minecraft-dissector
+* Wireshark Dissector - http://github.com/ScottBrooks/minecraft-dissector - supports Minecraft ''Beta'' 1.2.2
 * MineProxy - http://github.com/ReDucTor/mineproxy
 * [http://github.com/aniero/golem golem] ruby 1.9 client, acts as a standalone bot or transparent proxy
 * MC-Ver v2 - http://www.tkte.ch/projects/pymy/
