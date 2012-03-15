@@ -25,6 +25,8 @@ All packets start with a single byte that identifies the packet type, the rest o
 
 === 0x02 - client broadcast query ===
 
+RakNet name: ID_UNCONNECTED_PING_OPEN_CONNECTIONS
+
 client->broadcast
 
 * int8 = 0x02 (packet type ID)
@@ -34,6 +36,8 @@ client->broadcast
 Clients start out by sending this packet to the IP broadcast address on port 19132 repeatedly (approx once per second) when joining a server was chosen on the main screen, and stops when the user selects a server (or leaves the screen). The ping ID from the client increases over time, and appears to be the number of milliseconds since the client program was started (might be used to measure server response latency).
 
 === 0x05 - mtu sizing request ===
+
+RakNet name: ID_OPEN_CONNECTION_REQUEST_1
 
 client->server
 
@@ -53,6 +57,8 @@ After this the client appears not to send any more packets to the server, but al
 
 === 0x06 - server mtu sizing response ===
 
+RakNet name: ID_OPEN_CONNECTION_REPLY_1
+
 server->client
 
 * int8 = 0x06 (packet type ID)
@@ -64,6 +70,8 @@ server->client
 Sent from server after it receives packet 0x05.
 
 === 0x07 - unknown ===
+
+RakNet name: ID_OPEN_CONNECTION_REQUEST_2
 
 client->server
 
@@ -79,6 +87,8 @@ Sent from client in response to packet 0x06.
 
 === 0x08 - unknown ===
 
+RakNet name: ID_OPEN_CONNECTION_REPLY_2
+
 server->client
 
 * int8 = 0x08 (packet type ID)
@@ -93,6 +103,8 @@ server->client
 Sent from server in response to packet 0x07.
 
 === 0x1d or 0x1c - server query response ===
+
+RakNet names: ID_ADVERTISE_SYSTEM, ID_UNCONNECTED_PONG
 
 server->client
 
