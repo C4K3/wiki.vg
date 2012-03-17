@@ -304,6 +304,7 @@ Not required for server operation.
 |rowspan=2| Sent to a player when they're disconnected from the server.
 #"Cheat detected: Distance" - happens not only when setting tile too far away from the player (how far is maximum distance and how it is measured?), but also when player moves and then immediately builds.
 #"Cheat detected: Tile type"
+#"Cheat detected: Too much clicking!"
 |-
 | Disconnect reason || String
 |-
