@@ -82,7 +82,7 @@ All mobs, objects and players send metadata with index <code>0</code>. The value
 
 === Index 1, short: Drowning counter ===
 
-Initialized to <code>300</code> on entity spawn. When underwater, this is decremented by 3 every tick (and sent S->C with [[Protocol#Entity_Metadata_.280x28.29|Entity Metadata (0x28)]]). If the value dips below -19, an [[Protocol#Entity_Status_.280x26.29|Entity Status (0x26)]] is sent (i.e. the entity is hurt) and counter is reset to 0.
+Initialized to <code>300</code> on entity spawn. When underwater, this is decremented by 3 every tick (and sent S->C with [[Protocol#0x28|Entity Metadata (0x28)]]). If the value dips below -19, an [[Protocol#0x26|Entity Status (0x26)]] is sent (i.e. the entity is hurt) and counter is reset to 0.
 
 Seems to be sent for *at least* all mobs. Not sure about players.
 
@@ -358,7 +358,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 == Objects ==
 
-Objects are spawned via [[Protocol#Add_Object.2FVehicle_.280x17.29|0x17 Add Object/Vehicle]]
+Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
 
 {| class="wikitable"
 |- class="row0"
@@ -440,8 +440,8 @@ Objects are spawned via [[Protocol#Add_Object.2FVehicle_.280x17.29|0x17 Add Obje
 
 == Other ==
 
-Players are spawned via [[Protocol#Named_Entity_Spawn_.280x14.29|0x14 Named Entity Spawn]]. They have dimensions 0.6 * 1.8.
+Players are spawned via [[Protocol#0x14|0x14 Named Entity Spawn]]. They have dimensions 0.6 * 1.8.
 
-Pickups are spawned via [[Protocol#Pickup_Spawn_.280x15.29|0x15 Pickup Spawn]]. They have dimensions 0.25 * 0.25.
+Pickups are spawned via [[Protocol#0x15|0x15 Pickup Spawn]]. They have dimensions 0.25 * 0.25.
 
-Paintings are spawned via [[Protocol#Entity:_Painting_.280x19.29|0x19 Entity: Painting]]. Their dimensions depend on their type.
+Paintings are spawned via [[Protocol#0x19|0x19 Entity: Painting]]. Their dimensions depend on their type.
