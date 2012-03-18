@@ -229,7 +229,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 | class="col3" | 
 |- class="row22"
 | class="col0" | 99
-| class="col1" | Iron golem
+| class="col1" | Iron Golem
 | class="col2" | 
 | class="col3" | 
 |- class="row23"
@@ -243,12 +243,12 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 ==== Creeper ====
 
-* Index '''16''' (byte): Status. Depends on the fuse
+* Index '''16''' (byte): Status. Depends on the fuse, values from -1 to 1
 * Index '''17''' (byte): Charged. <code>1</code> if the creeper has been hit by lightning, <code>0</code> otherwise.
 
-==== Spider ====
+==== Spider / Cave Spider ====
 
-* Index '''16''' (byte): Unknown - possibly aggression.
+* Index '''16''' (byte): Unknown, Values 0 and 1. Possibly aggression.
 
 ==== Slime / Magma Cube ====
 
@@ -337,7 +337,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 * <div class="li">Index '''16''' (byte): Flags (see below).
 * Index '''17''' (string): Name of player that tamed wolf.
-* Index '''18''' (int): Health.
+* Index '''18''' (int): Health. Values from 8 to 0
 
 {| class="wikitable"
 |- class="row0"
@@ -360,9 +360,19 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 ==== Ocelot ====
 
-* Index '''16''' (byte): Flags?.
+* Index '''16''' (byte): Flags. Same as Wolf but without the Agressive flag.
 * Index '''17''' (string): Name of player that tamed the ocelot.
-* Index '''18''' (byte): Unknown.
+* Index '''18''' (byte): Skin: 0 - ocelot, 3 - tamed cat, probably 1 and 2 too.
+
+
+==== Villager ====
+
+* Index '''16''' (int): Unknown, example: 0
+
+
+==== Iron Golem ====
+
+* Index '''16''' (byte): Unknown, example: 1
 
 == Objects ==
 
