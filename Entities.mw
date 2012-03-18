@@ -356,6 +356,12 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 | class="col2" | Tamed
 |}
 
+==== Ocelot ====
+
+* Index '''16''' (byte): Flags?.
+* Index '''17''' (string): Name of player that tamed the ocelot.
+* Index '''18''' (byte): Unknown.
+
 == Objects ==
 
 Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
