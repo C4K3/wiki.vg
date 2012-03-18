@@ -98,7 +98,9 @@ If the value is 0, no potion effects currently apply to the entity.
 
 0 for ordinary animals.
 
-Baby animals have the value -23999. This corresponds to the number of ticks in a minecraft day, which is how long it takes for a baby animal to "grow up". It is therefore considered likely that this field determines the size of the animal, and that Entity Metadata will update it as the animal grows. This needs to be confirmed by someone!
+Baby animals have the value -23999. This corresponds to the number of ticks in a minecraft day, which is how long it takes for a baby animal to "grow up". It is therefore considered likely that this field determines the size of the animal, and that Entity Metadata will update it as the animal grows.
+
+When an animal becomes a parent this value is set to 6000 and is then decreased over time. Probably a countdown until they can have a new baby.
 
 == Mobs ==
 
