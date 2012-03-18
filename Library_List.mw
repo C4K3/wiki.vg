@@ -42,6 +42,12 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 |
 | ags131
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| 
+|-
+! [https://github.com/Maincraft/MCPackets MCPackets]
+| Java Minecraft protocol library
+| main()
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 |
 |}
 
