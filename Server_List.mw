@@ -204,17 +204,17 @@ A couple things for contributors:
 | {{yes|Python}}
 | {{no|Cancelled}}
 |-
-! [https://github.com/Massive-Dynamics/Netherrack Netherrack]
+! [https://launchpad.net/netherrack Netherrack]
 | [[User:Syntaxial|Cruz Bishop (for Massive Dynamics)]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{Unknown}}
-| {{yes|Up to login supported}}
+| {{planned}}
+| {{planned}}
 | {{planned|Planned (Custom)}}
-| {{planned|In progress}}
-| {{planned|In block definition}}
-| {{planned|Partial mob definition support}}
-| {{yes|Threads + Scheduled events}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
 | {{planned|Dynamic (Java planned)}}
 | {{yes|Active extremely early snapshots}}
 |-
