@@ -13,7 +13,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * [[Protocol#Multi_Block_Change_.280x34.29|0x34 multi block change]] has a new format also
 
 === 2012-01-12 ===
-* 1.1
+* [http://www.wiki.vg/wiki/index.php?title=Protocol&oldid=1826 1.1]
 * Protocol version is now 23
 * New packet: [[Protocol#Plugin_message_.280xFA.29|0xFA Plugin message]]
 * [[Protocol#Login_Request_.280x01.29|0x01 login request]] has a new string field: level-type (DEFAULT or SUPERFLAT)
