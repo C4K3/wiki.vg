@@ -1,5 +1,10 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 2012-03-22 ===
+* 1.2.4
+* Protocol version is now 29
+* New packet: [[Protocol#Player_Abilities_.280xCA.29|0xCA player abilities]]
+
 === 2012-03-01 ===
 * 1.2.2
 * Protocol version is now 28
