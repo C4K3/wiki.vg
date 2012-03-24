@@ -35,7 +35,7 @@ Each of the inner, untagged COMPOUNDs represents an enchantment, with its ID[htt
 
 == Enchantable items ==
 
-Every item that has a "damage bar" in-game is considered enchantable by the protocol, though the notchian server/client do not support enchantment of some items. These include: hoes, flint and steel, bows, fishing rods and shears.
+Every item that has a "damage bar" in-game is considered enchantable by the protocol, though the notchian server/client do not support enchantment of some items. These include: hoes, flint and steel, fishing rods and shears.
 
 <code>
   0x103, #Flint and steel
