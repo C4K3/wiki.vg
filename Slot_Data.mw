@@ -59,3 +59,18 @@ Every item that has a "damage bar" in-game is considered enchantable by the prot
   0x136, 0x137, 0x138, 0x139, #DIAMOND
   0x13A, 0x13B, 0x13C, 0x13D  #GOLD
 </code>
+
+Or, more simply:
+
+<code>
+        private static bool CanEnchant(short value)
+        {
+            return  (256 <= value && value <= 259) ||
+                    (267 <= value && value <= 279) ||
+                    (283 <= value && value <= 286) ||
+                    (290 <= value && value <= 294) ||
+                    (298 <= value && value <= 317) ||
+                    value == 261 || value == 359 ||
+                    value == 346;
+        }
+</code>
