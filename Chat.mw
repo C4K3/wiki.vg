@@ -98,17 +98,17 @@ Minecraft 1.2.4 added several new font style escape codes. Like the color codes 
 ! colspan="1" | Code
 ! colspan="1" | Style
 |-
-| [[File:plain_chat.png]] || r || Plain White
+| [[File:random_chat.gif]] || k || Random
 |-
 | [[File:bold_chat.png]] || l || Bold
 |-
-| [[File:italic_chat.png]] || o || Italic 
+| [[File:strikethrough_chat.png]] || m || Strikethrough 
 |-
 | [[File:underlined_chat.png]] || n || Underlined 
 |-
-| [[File:strikethrough_chat.png]] || m || Strikethrough 
+| [[File:italic_chat.png]] || o || Italic 
 |-
-| [[File:random_chat.gif]] || k || Random
+| [[File:plain_chat.png]] || r || Plain White
 |}
 
 === Bugs ===
