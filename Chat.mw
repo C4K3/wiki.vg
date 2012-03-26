@@ -86,17 +86,19 @@ The Notchian client has support for colorized text. To select a color, a color e
 
 These correspond very roughly to the colors available in ANSI terminals.
 
-A color escape code is created by combining the control character § (U+00A7) for Minecraft Beta, or & for Minecraft Classic, with the character specifying the color; thus, "§4" in Minecraft Beta selects dark red as the color for the following text, and "&4" does the same for classic.
+A color escape code is created by combining the control character § (U+00A7) for Minecraft, or & for Minecraft Classic, with the character specifying the color; thus, "§4" in Minecraft selects dark red as the color for the following text, and "&4" does the same for classic.
 
 == Styles==
 
-Minecraft 1.2.4 added several new font style escape codes. Style codes can be combined (except for "r") to enable multiple effects at once. Using any color codes will reset the current style back to plain (unknown if this is a bug or intended behavior). The plain style "r" code will also reset the current chat color back to white (may also be a bug).
+Minecraft 1.2.4 added several new font style escape codes. Like the color codes above, style escape codes are created by combining § (U+00A7) with one of the following characters. Style codes can be combined (except for "r") to enable multiple effects at once. Using any color codes will reset the current style back to plain (unknown if this is a bug or intended behavior). The "r" plain style code will also reset the current chat color back to white (may also be a bug). The "k" random style code already existed before 1.2.4, and it is used for the "§kFUNKY LOL" message in /title/splashes.txt inside minecraft.jar.
 
-{| class="wikitable" border="1" cellpadding="5"
+{| class="wikitable" style="text-align:center;" border="1" cellpadding="5"
 |-
 ! colspan="1" | Sample
 ! colspan="1" | Code
 ! colspan="1" | Style
+|-
+| [[File:plain_chat.png]] || r || Plain White
 |-
 | [[File:bold_chat.png]] || l || Bold
 |-
@@ -106,7 +108,7 @@ Minecraft 1.2.4 added several new font style escape codes. Style codes can be co
 |-
 | [[File:strikethrough_chat.png]] || m || Strikethrough 
 |-
-| || r || Plain
+| [[File:random_chat.gif]] || k || Random
 |}
 
 === Bugs ===
