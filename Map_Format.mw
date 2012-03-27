@@ -103,3 +103,128 @@ What follows the bit-maps is compressed data.  First, an integer representing th
 Only include the add array if that particular chunk is represented in the add bit-map.  After all the chunks have been concatenated in this manner, and if ground-up continuous is set to true, concat the biome array.
 
 ==Storage==
+
+This section documents the Anvil format for servers.
+
+Maps are stored as a specific directory structure with several [[NBT]] files within.  For the sake of examples, the world we'll be working with is stored in a folder called "/world".
+
+===Directory Structure===
+
+* /world/data: Unused
+* /world/DIM-1: Nether world
+* /world/DIM-1/region: Nether world regions
+* /world/DIM1: End world
+* /world/DIM1/region: End world regions
+* /world/players: Player data
+* /world/region: Overworld regions
+
+===level.dat===
+
+In the root directory is a level.dat file.  The structure of that file is this:
+
+* NBTCompound(Data)
+** NBTByte(hardcore)
+** NBTByte(MapFeatures): Set to 1 if structures are generated, such as villages
+** NBTByte(raining): Set to 1 if currently raining
+** NBTByte(thundering): Set to 1 if currently thundering (only if there is potential for thunder, not if a thunderbolt is currently in progress)
+** NBTInt(GameType)
+** NBTInt(generatorVersion): 0 for 1.2.3
+** NBTInt(rainTime): The ticks remaining until rain stops?
+** NBTInt(SpawnX)
+** NBTInt(SpawnY)
+** NBTInt(SpawnZ)
+** NBTInt(thunderTime)
+** NBTInt(version): 19113 for 1.2.4
+** NBTLong(LastPlayed)
+** NBTLong(RandomSeed)
+** NBTLong(SizeOnDisk): Always 0 for 1.2.4
+** NBTLong(Time)
+** NBTString(generatorName)
+** NBTString(levelName)
+
+===[playername].dat===
+
+Each player that has ever connected is given a [playername].dat file.
+
+* NBTCompound
+** NBTByte(OnGround)
+** NBTByte(Sleeping)
+** NBTShort(Air)
+** NBTShort(AttackTime)
+** NBTShort(DeathTime)
+** NBTShort(Fire): Ticks until the player is no longer on fire, or zero
+** NBTShort(Health)
+** NBTShort(HurtTime)
+** NBTShort(SleepTimer)
+** NBTInt(Dimension)
+** NBTInt(foodLevel)
+** NBTInt(foodTickTimer)
+** NBTInt(playerGameType)
+** NBTInt(XpLevel)
+** NBTInt(XpTotal)
+** NBTFloat(FallDistance)
+** NBTFloat(foodExhastionLevel)
+** NBTFloat(foodSaturationLevel)
+** NBTFloat(XpP)
+** NBTCompound(Inventory)
+*** NBTCompound
+**** NBTByte(Count)
+**** NBTByte(Slot)
+**** NBTShort(Damage): Damage -or- metadata
+**** NBTShort(id)
+** NBTList(Motion)
+*** NBTDouble
+*** NBTDouble
+*** NBTDouble
+** NBTList(Position)
+*** NBTDouble
+*** NBTDouble
+*** NBTDouble
+** NBTList(Rotation)
+*** NBTFloat
+*** NBTFloat
+
+==[region].dat==
+
+Each region file is named "r.x.z.dat", where x and z are the coordinates.  These coordinates are relative to each region.  Given column coordinates, divide them by 32 to get the region coordinates.
+
+* NBTCompound
+** NBTCompound(Chunk [x,z]): x and z are region column coordinates, not relative to the overall world.  The compound name is a misnomer, it actually represents column.
+*** NBTCompound(Level)
+**** NBTByte(TerrainPopulated): 1 if this column has been generated
+**** NBTInt(xPos): In global, world-relative chunk coordinates
+**** NBTInt(yPos): In global, world-relative chunk coordinates
+**** NBTLong(LastUpdate): The last time a block changed in this column
+**** NBTByteArray(Biomes)
+**** NBTList(Entities)
+***** NBTCompound
+****** NBTByte(OnGround)
+****** NBTShort(Air)
+****** NBTShort(AttackTime)
+****** NBTShort(DeathTime)
+****** NBTShort(Fire)
+****** NBTShort(Health)
+****** NBTShort(HurtTime)
+****** NBTFloat(FallDistance)
+****** NBTString(id): Example: "Skeleton"
+****** NBTList(Motion)
+******* NBTDouble
+******* NBTDouble
+******* NBTDouble
+***** NBTList(Pos)
+******* NBTDouble
+******* NBTDouble
+******* NBTDouble
+***** NBTList(Rotation)
+***** NBTFloat
+***** NBTFloat
+**** NBTList(Sections): Chunks
+***** NBTCompound
+****** NBTByte(Y): 0-16
+****** NBTByteArray(BlockLight)
+****** NBTByteArray(Blocks)
+****** NBTByteArray(Data)
+****** NBTByteArray(SkyLight)
+**** NBTList(TileEntities)
+***** [http://www.minecraftwiki.net/wiki/Alpha_Level_Format/Chunk_File_Format#Tile_Entity_Format See this]
+**** NBTIntArray(HeightMap)
