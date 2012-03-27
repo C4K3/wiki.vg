@@ -184,7 +184,7 @@ Each player that has ever connected is given a [playername].dat file.
 *** NBTFloat
 *** NBTFloat
 
-==[region].dat==
+===[region].dat===
 
 Each region file is named "r.x.z.dat", where x and z are the coordinates.  These coordinates are relative to each region.  Given column coordinates, divide them by 32 to get the region coordinates.
 
