@@ -1,8 +1,10 @@
-Chat strings are subject to myriad limitations imposed by defects in the Notchian server and client, and also have special meanings for certain characters.
+Minecraft supports two-way chat communication via the [[Protocol#Chat_Message_.280x03.29|0x03 chat message]] packet.
 
 == Character Set ==
 
-The following list of characters are known to be supported by the Notchian server:
+Minecraft loads its internal 8-bit character set from <code>fonts.txt</code> in <code>minecraft.jar</code>. Ignoring the first line then stripping spaces, the file lists characters 32-255 in order. It follows ASCII for values under 0x80.
+
+The character set is as follows:
 <blockquote>
 <code>
 " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»"
@@ -11,9 +13,28 @@ The following list of characters are known to be supported by the Notchian serve
 
 Characters not in this list will cause Notchian servers to kick clients, and Notchian clients to choke and die horribly.
 
-== Colors ==
+== Font ==
 
-The Notchian client has support for colorized text. To select a color, a color escape code, similar to an ANSI color escape code, is inserted to change the color of the following characters.
+Minecraft loads its font from <code>font/default.png</code> in <code>minecraft.jar</code>. Glyphs 0-255 are given, each in an 8x8 area. 
+
+Minecraft also provides other font pages, as <code>font/glyph_XX.png</code>, where XX is the hex representation of the first byte of the UTF-16 character. The archive also provides <code>font/glyph_sizes.bin</code>. Glyphs are in-order, a byte a piece. The glyph's width can be ascertained from the expression <code>(byte & 0x0F - byte >> 4)</code>. However, the sizes for the first 256 glyphs are *not* correct and the minecraft client generates them on startup.
+
+== Control Sequences ==
+
+The client treats certain two-character sequences specially. The first character must be:
+
+*§ (U+00A7) for minecraft
+*& for minecraft classic
+
+The following character indicates a certain colour or formatting to apply to the proceeding text.
+
+The Notchian client expects that an escape code in a chat message will be followed by at least one character, and will otherwise crash with a StringIndexOutOfBoundsException. The workaround for servers is to never end a message with a color control character.
+
+=== Colors ===
+
+These correspond very roughly to the colors available in ANSI terminals.
+
+e.g.: <code>This is white, but §4this is dark red</code>
 
 [[File:Colors.png|thumb|Hex digit to color mapping]]
 
@@ -84,13 +105,9 @@ The Notchian client has support for colorized text. To select a color, a color e
 | f || White || 255 || 255 || 255 || 63 || 63 || 63 || #ffffff
 |}
 
-These correspond very roughly to the colors available in ANSI terminals.
+=== Styles ===
 
-A color escape code is created by combining the control character § (U+00A7) for Minecraft, or & for Minecraft Classic, with the character specifying the color; thus, "§4" in Minecraft selects dark red as the color for the following text, and "&4" does the same for classic.
-
-== Styles==
-
-Minecraft 1.2.4 added several new font style escape codes. Like the color codes above, style escape codes are created by combining § (U+00A7) with one of the following characters. Style codes can be combined (except for "r") to enable multiple effects at once. Using any color codes will reset the current style back to plain (unknown if this is a bug or intended behavior). The "r" plain style code will also reset the current chat color back to white (may also be a bug). The "k" random style code already existed before 1.2.4, and it is used for the "§kFUNKY LOL" message in /title/splashes.txt inside minecraft.jar.
+Like the color codes above, style escape codes are created by combining § (U+00A7) with one of the following characters. Style codes can be combined (except for "r") to enable multiple effects at once. Using any color codes will reset the current style back to plain (unknown if this is a bug or intended behavior). The "r" plain style code will also reset the current chat color back to white (may also be a bug). The "k" random style code is used for the "§kFUNKY LOL" message in /title/splashes.txt inside minecraft.jar.
 
 {| class="wikitable" style="text-align:center;" border="1" cellpadding="5"
 |-
@@ -110,10 +127,6 @@ Minecraft 1.2.4 added several new font style escape codes. Like the color codes 
 |-
 | [[File:plain_chat.png]] || r || Plain White
 |}
-
-=== Bugs ===
-
-The Notchian client expects that a color escape code in a chat message will be followed by at least one character, and will otherwise crash with a StringIndexOutOfBoundsException. The workaround for servers is to never end a message with a color control character.
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
