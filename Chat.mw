@@ -116,4 +116,4 @@ Minecraft 1.2.4 added several new font style escape codes. Like the color codes 
 The Notchian client expects that a color escape code in a chat message will be followed by at least one character, and will otherwise crash with a StringIndexOutOfBoundsException. The workaround for servers is to never end a message with a color control character.
 
 [[Category:Protocol Details]]
-[[Category:Minecraft Beta]]
+[[Category:Minecraft Modern]]
