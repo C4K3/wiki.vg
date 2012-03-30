@@ -230,6 +230,7 @@ Each region file is named "r.x.z.dat", where x and z are the coordinates.  These
 **** NBTIntArray(HeightMap)
 
 === See also ===
+
 [http://wiki.vg/User:Sprenger120 How to read Minecraft mca files]
 
 [[Category:Minecraft_Modern]]
