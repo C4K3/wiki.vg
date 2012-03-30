@@ -229,4 +229,7 @@ Each region file is named "r.x.z.dat", where x and z are the coordinates.  These
 ***** [http://www.minecraftwiki.net/wiki/Alpha_Level_Format/Chunk_File_Format#Tile_Entity_Format See this]
 **** NBTIntArray(HeightMap)
 
+=== See also ===
+[http://wiki.vg/User:Sprenger120 How to read Minecraft mca files]
+
 [[Category:Minecraft_Modern]]
