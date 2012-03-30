@@ -82,7 +82,7 @@ Worlds are represented as a series of regions, within which are a number of colu
 
 ==Protocol==
 
-[https://gist.github.com/2164987 Here] is a dump of 1.2.4 world-related packets.
+[https://gist.github.com/2164987 Here] is a dump of 1.2.5 world-related packets.
 
 [[Protocol#0x32|Here]] and [[Protocol#0x33|here]] is the relevant documentation.
 
