@@ -11,8 +11,8 @@ The NBT format is currently used in several places, chiefly:
 
 Unfortunately, the NBT files you can encounter as a developer will be stored in three different ways, just to make things interesting.
 * Uncompressed,
-* [http://en.wikipedia.org/wiki/Gzip gzip'd],
-* [http://en.wikipedia.org/wiki/Zlib zlib'd] (aka DEFLATE with a few bytes extra)
+* [[wikipedia:Gzip|gzip'd]],
+* [[wikipedia:Zlib|zlib'd]] (aka DEFLATE with a few bytes extra)
 
 === Libraries ===
 There are many, many libraries for manipulating NBT, written in several languages, and often several per language. For example,
@@ -71,12 +71,12 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 5
 | TAG_Float
 | 4
-| A single [http://en.wikipedia.org/wiki/IEEE_754-2008 IEEE-754] single-precision floating point number
+| A single [[wikipedia:IEEE 754-2008|IEEE-754]] single-precision floating point number
 |-
 | 6
 | TAG_Double
 | 8
-| A single [http://en.wikipedia.org/wiki/IEEE_754-2008 IEEE-754] double-precision floating point number
+| A single [[wikipedia:IEEE 754-2008|IEEE-754]] double-precision floating point number
 |-
 | 7
 | TAG_Byte_Array
@@ -86,7 +86,7 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 8
 | TAG_String
 | ...
-| A length-prefixed [http://en.wikipedia.org/wiki/UTF-8 UTF-8] string. The prefix is an '''unsigned''' short (thus 2 bytes)
+| A length-prefixed [[wikipedia:UTF-8|UTF-8]] string. The prefix is an '''unsigned''' short (thus 2 bytes)
 |-
 | 9
 | TAG_List
@@ -101,7 +101,7 @@ The NBT file format is extremely simple, and writing a library capable of readin
 
 
 There are five simple things to remember:
-* '''Everything''' is in big-endian. Unless you're using Java, you will most likely have to swap it to little-endian. See the Wikipedia article on [http://en.wikipedia.org/wiki/Endianness Endianess].
+* '''Everything''' is in big-endian. Unless you're using Java, you will most likely have to swap it to little-endian. See [[wikipedia:Endianness|the Wikipedia article on Endianness]].
 * Every NBT file will '''always''' begin with a TAG_Compound. No exceptions.
 * Every tag begins with a single byte which is is the <code>Type ID</code> of the following tag.
 * Every tag begins with a TAG_String, minus the <code>Type ID</code>. This is the name given to whatever is stored in the tag.
@@ -136,7 +136,7 @@ If this <code>TAG_Short<code> had been in a <code>TAG_List</code>, it would have
 There are two defacto example files used for testing your implementation (<code>test.nbt</code> & <code>bigtest.nbt</code>), originally provided by Markus. The example output provided below was generated using [https://github.com/TkTech/OpenNBT OpenNBT]'s ''debug-nbt'' tool.
 
 ==== test.nbt ====
-This first example is an uncompressed [http://en.wikipedia.org/wiki/Hello_world_program "Hello World"] NBT example. Should you parse it correctly, you will get a structure similar to the following:
+This first example is an uncompressed [[wikipedia:Hello world program|"Hello World"]] NBT example. Should you parse it correctly, you will get a structure similar to the following:
 
 <code>
   TAG_Compound('hello world'): 1 entries
