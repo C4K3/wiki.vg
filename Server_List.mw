@@ -148,6 +148,20 @@ A couple things for contributors:
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|Active}}
 |-
+! [https://github.com/clonejo/mc-erl/ mc-erl]
+| Apiocera, clonejo
+| [http://en.wikipedia.org/wiki/Erlang Erlang]
+| not decided yet
+| {{planned|partially}}
+| {{yes}}
+| {{planned|custom (Mnesia)}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Erlang processes}}
+| {{planned}}
+| {{yes|Active}}
+|-
 ! [https://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
