@@ -184,9 +184,9 @@ Each player that has ever connected is given a [playername].dat file.
 *** NBTFloat
 *** NBTFloat
 
-===[region].dat===
+===[region].mca===
 
-Each region file is named "r.x.z.dat", where x and z are the coordinates.  These coordinates are relative to each region.  Given column coordinates, divide them by 32 to get the region coordinates.
+Each region file is named "r.x.z.mca", where x and z are the coordinates.  These coordinates are relative to each region.  Given column coordinates, divide them by 32 to get the region coordinates.
 
 * NBTCompound
 ** NBTCompound(Chunk [x,z]): x and z are region column coordinates, not relative to the overall world.  The compound name is a misnomer, it actually represents column.
