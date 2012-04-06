@@ -46,7 +46,7 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 0 
 | TAG_End  
 | 0  
-| This tag serves no purpose but to signify the end of an open TAG_Compound. In most libraries, this type is abstracted away and never seen.
+| This tag serves no purpose but to signify the end of an open TAG_Compound. In most libraries, this type is abstracted away and never seen. TAG_End is not named.
 |-
 | 1
 | TAG_Byte
@@ -90,13 +90,18 @@ The NBT file format is extremely simple, and writing a library capable of readin
 |-
 | 9
 | TAG_List
-| ...'
+| ...
 | A list of '''nameless''' tags, all of the same type. The list is prefixed with the <code>Type ID</code> of the items it contains (thus 1 byte), and the length of the list as a '''signed''' integer (a further 4 bytes).
 |-
 | 10
 | TAG_Compound
 | ...
 | Effectively a list of a '''named''' tags
+|-
+| 11
+| TAG_Int_Array
+| ...
+| A length-prefixed array of '''signed''' integers. The prefix is a '''signed''' integer (thus 4 bytes) and indicates the number of 4 byte integers.
 |}
 
 
@@ -104,7 +109,7 @@ There are five simple things to remember:
 * '''Everything''' is in big-endian. Unless you're using Java, you will most likely have to swap it to little-endian. See [[wikipedia:Endianness|the Wikipedia article on Endianness]].
 * Every NBT file will '''always''' begin with a TAG_Compound. No exceptions.
 * Every tag begins with a single byte which is is the <code>Type ID</code> of the following tag.
-* Every tag begins with a TAG_String, minus the <code>Type ID</code>. This is the name given to whatever is stored in the tag.
+* Every tag, except TAG_End, begins with a TAG_String, minus the <code>Type ID</code>. This is the name given to whatever is stored in the tag.
 * The preceding two rules do '''not apply''' to the first level of tags within a <code>TAG_List</code>.
 
 For example, here's the example layout of a <code>TAG_Short</code> on disk:
