@@ -77,13 +77,13 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|Last updated June 2011}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
-| Uses PHP to connect to servers. Can connect to premium servers also. Maybe useful for bots. Now a Help Bot
+| Uses PHP to connect to servers. Can connect to premium servers also. Maybe useful for bots. Now a Help Bot. It can move and other things.
 | [http://php.net/ PHP]
 | open source
 | {{no}}
 | {{no}}
 | [https://twitter.com/shoghicp shoghicp]
-| {{yes|Work in progress, works from b1.7 to 1.2.0}}
+| {{yes|Work in progress, works from b1.6 to 1.2.5}}
 |-
 ! [[Mineflayer]]
 | JavaScript bot framework. See [[Mineflayer]] for more details.
