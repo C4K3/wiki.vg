@@ -41,13 +41,40 @@ The client discards the server's response.
 
 == Snoop ==
 
-Currently partially implemented in the official client. Every 10 minutes, the client sends a HTTP POST request to:
-<pre>http://snoop.minecraft.net</pre>
-With the postdata:
-<pre>fName=???&lName=???</pre>
-These parameters are expected to change (and contain non-dummy values). Indeed, the official client has code for at least one variable: "mode", containing one of: title, single_creative, single_demo, single_survival, multiplayer.
+Every 10 minutes, the minecraft sends a HTTP POST request giving stats. Note that this information is anonymous, and isn't tied to account names or server addresses
 
-Currently the server only returns a 503
+=== Client ===
+
+The client posts the following data to <code>http://snoop.minecraft.net/client</code>
+
+*'''version''' e.g. "1.2.5"
+*'''os_name''' via <code>System.getProperty("os.name");</code>
+*'''os_version''' via <code>System.getProperty("os.version");</code>
+*'''os_architecture''' via <code>System.getProperty("os.arch");</code>
+*'''memory_total''' via <code>Runtime.getRuntime().totalMemory();</code>
+*'''memory_max''' via <code>Runtime.getRuntime().maxMemory();</code>
+*'''java_version''' via <code>System.getProperty("java.version");</code>
+*'''opengl_version''' via <code>GL11.glGetString(GL_VERSION);</code>
+*'''opengl_vendor''' via <code>GL11.glGetString(GL_VENDOR);</code>
+
+=== Server ===
+
+Uses <code>http://snoop.minecraft.net/server</code>
+
+*'''version''' as above
+*'''os_name''' as above
+*'''os_version''' as above
+*'''os_architecture''' as above
+*'''memory_total''' as above
+*'''memory_max''' as above
+*'''memory_free''' via <code>Runtime.getRuntime().freeMemory();</code>
+*'''java_version''' as above
+*'''cpu_cores''' via <code>Runtime.getRuntime().availableProcessors();</code>
+*'''players_current'''
+*'''players_max'''
+*'''players_seen''' simply counts the number of files in <code>world/players</code>
+*'''uses_auth''' corresponds to the <code>online-mode</code> option in server.properties
+*'''server_brand''': via <code>MinecraftServer.getServerModName();</code>. 'vanilla' by default; CraftBukkit et al overwrite this method.
 
 == Joining a Server ==
 
