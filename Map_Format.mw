@@ -216,8 +216,8 @@ Each region file is named "r.x.z.mca", where x and z are the coordinates.  These
 ******* NBTDouble
 ******* NBTDouble
 ***** NBTList(Rotation)
-***** NBTFloat
-***** NBTFloat
+****** NBTFloat
+****** NBTFloat
 **** NBTList(Sections): Chunks
 ***** NBTCompound
 ****** NBTByte(Y): 0-16
