@@ -77,7 +77,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|Last updated June 2011}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
-| Uses PHP to connect to servers. Can connect to premium servers also. Maybe useful for bots. Now a Help Bot. It can move and other things.
+| Uses PHP to connect to servers. Can connect to premium servers also. Maybe useful for bots. It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
 | [http://php.net/ PHP]
 | [http://www.gnu.org/copyleft/lgpl.html LGPL]
 | {{yes|Yes, but only linux}}
