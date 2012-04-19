@@ -2,7 +2,7 @@ Minecraft supports two-way chat communication via the [[Protocol#Chat_Message_.2
 
 == Character Set ==
 
-Minecraft loads its internal 8-bit character set from <code>fonts.txt</code> in <code>minecraft.jar</code>. Ignoring the first line then stripping spaces, the file lists characters 32-255 in order. It follows ASCII for values under 0x80.
+Minecraft loads its internal 8-bit character set from <code>fonts.txt</code> in <code>minecraft.jar</code>. Ignoring the first line then stripping newlines, the file lists characters 32-255 in order. It follows ASCII for values under 0x80.
 
 The character set is as follows:
 <blockquote>
