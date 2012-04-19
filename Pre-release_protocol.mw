@@ -1,10 +1,62 @@
 This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.2.5) to the current pre-release (or weekly release).
 
-There are currently no pre-releases past the current official release.
-
 == New packets ==
 
-''none''
+=== Tab-complete (0xCB) ===
+
+''Two-way''
+
+Sent C->S when the user presses [tab] while writing text. The payload contains all text behind the cursor.
+
+The server responds with an auto-completion of the last word sent to it. In the case of regular chat, this is a player username. Command names and parameters are also supported.
+
+In the event of more than one possible completion, the server responds with the options packed into the single string field, separated by a null character. Note that as strings are UTF-16, this is two bytes wide.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0xCB
+| class="col1 centeralign" | Text
+| class="col2 centeralign" | string
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes + length of string
+|}
+
+=== Locale and View Distance (0xCC) ===
+
+''Client to server''
+
+Sent when the player connects, or when settings are changed.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0xCC
+| class="col1 centeralign" | Locale
+| class="col2 centeralign" | string
+| class="col3 centeralign" | en_GB
+|- class="row2"
+| class="col1 centeralign" | View distance
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 0
+| class="col4" | 0-3 for 'far', 'normal', 'short', 'tiny'.
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 7 bytes + length of string
+|}
 
 == Changed packets ==
 
@@ -12,4 +64,8 @@ There are currently no pre-releases past the current official release.
 
 == Protocol History ==
 
-''n/a''
+=== 2012-04-19 ===
+* 12w16a
+* Protocol version is now 30
+* New packet: 0xCB Tab-complete
+* New packet: 0xCC Locale and View Distance
