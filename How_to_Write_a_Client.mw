@@ -10,7 +10,9 @@ This tutorial is being created to document what it takes to write a stand-alone 
 
 ''Main article: [[Protocol]]''
 
-Sorry, but you have to be able to parse ''all'' the messages. Write all the message parsing code. If you don't, your client will probably crash due to the packets being out of synchronism.
+Sorry, but you have to be able to parse ''all'' the messages. Write all the message parsing code. If you don't, your client will probably crash due to the packets being out of sync.
+
+More accurately, your client must be able to ''handle'' all the messages, but not necessarily be able to parse all the data. Your client can simply skip the correct number of bytes to stay in sync. Many messages have a fixed length and can easily be skipped.
 
 == Login ==
 
