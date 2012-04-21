@@ -1,6 +1,6 @@
 There are several different units of measurement used in the protocol depending on what is being described. For example, it wouldn't make much sense to send the position of a block (which is a constant multiple of 32) in a floating point double.
 
-A block represents 1 meter x 1 meter x 1 meter. There are 32 pixels per meter, and chunks are 16m x 128m x 16m.
+A block represents 1 meter x 1 meter x 1 meter. There are 32 pixels per meter, and chunks are 16m x 256m x 16m.
 
 {| class="wikitable"
 |- class="row0"
