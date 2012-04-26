@@ -62,6 +62,8 @@ Sent when the player connects, or when settings are changed.
 
 === Hanshake (0x02) ===
 
+''Client to server only''
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
