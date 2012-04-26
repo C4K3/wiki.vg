@@ -60,9 +60,17 @@ Sent when the player connects, or when settings are changed.
 
 == Changed packets ==
 
-''none''
+=== Hanshake (0x02) ===
+
+New field, protocol version(offset 0), value: 31.
 
 == Protocol History ==
+
+=== 2012-04-26 ===
+* 12w17a
+* Protocol version is now 31
+* Changed packet: 0x02 Handshake
+* ...
 
 === 2012-04-19 ===
 * 12w16a
