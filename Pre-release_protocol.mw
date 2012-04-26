@@ -49,14 +49,14 @@ Sent when the player connects, or when settings are changed.
 | class="col2 centeralign" | string
 | class="col3 centeralign" | en_GB
 |- class="row2"
-| class="col1 centeralign" | Chat info
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | Bits: 0: chat enabled, 2: colors enabled
-|- class="row3"
 | class="col1 centeralign" | View distance
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 0
 | class="col4" | 0-3 for 'far', 'normal', 'short', 'tiny'.
+|- class="row3"
+| class="col1 centeralign" | Chat info
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | Bits: 0: chat enabled, 2: colors enabled
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 7 bytes + length of string
