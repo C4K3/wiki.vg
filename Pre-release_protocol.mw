@@ -119,6 +119,112 @@ Sent after handshakes.
 
 == Changed packets ==
 
+=== Login Request (0x01) ===
+
+''Two-Way''
+
+Just a guess: stripped unused string field.
+
+'''Client to Server'''
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="8" | 0x01
+| class="col1 centeralign" | Protocol Version
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>20</code>
+| class="col4" | 1.2.5's protocol version is <code>29</code>
+|- class="row2"
+| class="col0 centeralign" | Username
+| class="col1 centeralign" | string
+| class="col2 centeralign" | <code>TkTech</code>
+| class="col3" | The name of the user attempting to login, max length of 16
+|- class="row3"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | 
+|- class="row4"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+|- class="row5"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+|- class="row6"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | unsigned byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+|- class="row7"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | unsigned byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" |
+|- class="row8"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 20 bytes + length of strings
+|}
+
+'''Server to Client'''
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="8" | 0x01
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>1298</code>
+| class="col4" | The Players Entity ID
+|- class="row2"
+| class="col0 centeralign" | Level Type
+| class="col1 centeralign" | string
+| class="col2 centeralign" | default
+| class="col3" | default or SUPERFLAT; level-type in server.properties
+|- class="row3"
+| class="col0 centeralign" | Server mode
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | 0 for survival, 1 for creative
+|- class="row4"
+| class="col0 centeralign" | Dimension
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | <code>-1</code>: The Nether, <code>0</code>: The Overworld, <code>1</code>: The End
+|- class="row5"
+| class="col0 centeralign" | Difficulty
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>1</code>
+| class="col3" | <code>0</code> thru <code>3</code> for Peaceful, Easy, Normal, Hard
+|- class="row6"
+| class="col0 centeralign" | Not used
+| class="col1 centeralign" | unsigned byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Only 0 observed from vanilla server, was previously world height
+|- class="row7"
+| class="col0 centeralign" | Max players
+| class="col1 centeralign" | unsigned byte
+| class="col2 centeralign" | <code>8</code>
+| class="col3" | Used by the client to draw the player list
+|- class="row8"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 20 bytes + length of strings
+|}
+
 === Hanshake (0x02) ===
 
 ''Client to server only''
