@@ -49,9 +49,9 @@ Sent when the player connects, or when settings are changed.
 | class="col2 centeralign" | string
 | class="col3 centeralign" | en_GB
 |- class="row2"
-| class="col1 centeralign" | unknown
+| class="col1 centeralign" | Chat info
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | 
+| class="col3 centeralign" | Bits: 0: chat enabled, 2: colors enabled
 |- class="row3"
 | class="col1 centeralign" | View distance
 | class="col2 centeralign" | int
