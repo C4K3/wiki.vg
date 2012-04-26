@@ -93,7 +93,7 @@ Sent when the player connects, or when settings are changed.
 * 12w17a
 * Protocol version is now 31
 * Changed packet: 0x02 Handshake
-* ...
+* New packet: 0xFD (Handshake or authentication)
 
 === 2012-04-19 ===
 * 12w16a
