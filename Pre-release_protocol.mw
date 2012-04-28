@@ -95,7 +95,7 @@ Sent after receiving 0xFD.
 
 Sent after handshakes.
 
-Public key encryption: Unknown.
+Public key encryption: RSA.
 
 {| class="wikitable"
 |- class="row0"
