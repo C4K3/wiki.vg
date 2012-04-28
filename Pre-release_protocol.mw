@@ -67,6 +67,7 @@ Sent when the player connects, or when settings are changed.
 ''Two-Way''
 
 Sent after receiving 0xFD. After the client send a Encryption Key Response packet to the server the server responds with one too(with a empty Shared key).
+The shared key is a client-generated, 16 bytes long key for RC4 encryption. The key is encrypted with RSA with the public key from the Encryption Key Request packet.
 
 {| class="wikitable"
 |- class="row0"
