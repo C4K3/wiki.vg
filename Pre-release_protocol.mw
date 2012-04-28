@@ -227,7 +227,7 @@ Just a guess: stripped unused string field.
 
 === Hanshake (0x02) ===
 
-''Client to server only''
+''Client to server only'' - before encryption, not sure what happens thereafter, may still be a server reply --[[User:Ceiru|Ceiru]] 23:12, 27 April 2012 (MST)
 
 {| class="wikitable"
 |- class="row0"
