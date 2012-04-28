@@ -64,9 +64,9 @@ Sent when the player connects, or when settings are changed.
 
 === Encryption Key Response (0xFC) ===
 
-''Client to server''
+''Two-Way''
 
-Sent after receiving 0xFD.
+Sent after receiving 0xFD. After the client send a Encryption Key Response packet to the server the server responds with one too(with a empty Shared key).
 
 {| class="wikitable"
 |- class="row0"
