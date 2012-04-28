@@ -95,6 +95,8 @@ Sent after receiving 0xFD.
 
 Sent after handshakes.
 
+Public key encryption: Unknown.
+
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
