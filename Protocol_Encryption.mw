@@ -4,7 +4,7 @@ Totally there are two different encryption methods used. RC4 to encrypt every ne
 
 After the client connects to the server the client sends a 0x02 Handshake Request, which contains the Protocol Version (currently 31) and the username of the player connecting to the server. Now the server responds with a 0xFD Encryption Request packet, which contains the RSA Public key, the server generated at the server startup, and the serverId, which is used for the minecraft.net authentication. The client now creates a random RC4 Key for the packet encryption.
 
-If the server id ist not "-" (offline mode) the client hashes the serverId  from the 0x0D packet, the public RSA key from the server and the generated RC4 secret key. Now the client sends a Http Request to
+If the server id ist not "-" (offline mode) the client hashes the serverId  from the 0xFD packet, the public RSA key from the server and the generated RC4 secret key. Now the client sends a Http Request to
 
 <pre>http://session.minecraft.net/game/joinserver.jsp?user=[username]&sessionId=[user_session]&serverId=[hash]</pre>
 
