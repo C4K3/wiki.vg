@@ -1,6 +1,6 @@
 Since the pre-release 1.2.5 12w17a the network protocol is encrypted.
 
-Totally there are two different encryption methods used. RC4 to encrypt every network packet after the login, and AES to transfer the RC4 packet at the login.
+Totally there are two different encryption methods used. RC4 to encrypt every network packet after the login, and RSA to transfer the RC4 packet at the login.
 
 After the client connects to the server the client sends a 0x02 Handshake Request, which contains the Protocol Version (currently 31) and the username of the player connecting to the server. Now the server responds with a 0xFD Encryption Request packet, which contains the RSA Public key, the server generated at the server startup, and the serverId, which is used for the minecraft.net authentication. The client now creates a random RC4 Key for the packet encryption.
 
