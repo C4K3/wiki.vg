@@ -8,7 +8,7 @@ If the server id ist not "-" (offline mode) the client hashes the serverId  from
 
 <pre>http://session.minecraft.net/game/joinserver.jsp?user=[username]&sessionId=[user_session]&serverId=[hash]</pre>
 
-[user_session] is the user session he got then he logged into minecraft, and the [hash] is the hash generated above.
+[user_session] is the user session he got when he logged into minecraft, and the [hash] is the hash generated above.
 
 The client uses the rsa public key to encrypt the RC4 Key and sends it to the server using a 0xFC Encryption Key Response packet. The server answeres with a 0xFC packet, too, with a empty byte-Array as shared key. The server decrypts the RC4 key with the generated private key. After this every packet on both sides are encrypted using the RC4 Key. 
 
