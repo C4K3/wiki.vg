@@ -142,12 +142,12 @@ Just a guess: stripped unused string field.
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>20</code>
-| class="col4" | 1.2.5's protocol version is <code>29</code>
+| class="col4" | <del>1.2.5's protocol version is <code>29</code></del> - since version 31 always 0
 |- class="row2"
 | class="col0 centeralign" | Username
 | class="col1 centeralign" | string
 | class="col2 centeralign" | <code>TkTech</code>
-| class="col3" | The name of the user attempting to login, max length of 16
+| class="col3" | <del>The name of the user attempting to login, max length of 16</del> - since version 31 empty string
 |- class="row3"
 | class="col0 centeralign" | Not used
 | class="col1 centeralign" | int
