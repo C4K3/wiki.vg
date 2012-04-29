@@ -266,6 +266,7 @@ Just a guess: stripped unused string field.
 * Changed packet: 0xCC Locale and View Distance
 * New packet: 0xFC Encryption Key Response
 * New packet: 0xFD Encryption Key Request
+* New Item: Book & Quills (0x182) is enchantable
 === 2012-04-19 ===
 * 12w16a
 * Protocol version is now 30
