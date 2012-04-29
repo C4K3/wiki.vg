@@ -260,7 +260,7 @@ Just a guess: stripped unused string field.
 === 2012-04-26 ===
 * 12w17a
 * Protocol version is now 31
-* After exchanging handshakes, RC4 based encryption is initiated. The server sends 0xFD, which is replied by the client using 0xFC.
+* RC4 based encryption, described in [[Protocol_Encryption]]
 * Changed packet: 0x01 Login Request
 * Changed packet: 0x02 Handshake
 * Changed packet: 0xCC Locale and View Distance
