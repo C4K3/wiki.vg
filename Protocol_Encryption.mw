@@ -1,17 +1,17 @@
 Since the pre-release 1.2.5 12w17a the network protocol is encrypted.
 
-Totally there are two different encryption methods used. RC4 to encrypt every network packet after the login, and RSA to transfer the RC4 packet at the login.
+There are two different encryption methods used. RC4 is used to encrypt every network packet after the login, and RSA is used to transfer the RC4 packet at login.
 
-After the client connects to the server the client sends a 0x02 Handshake Request, which contains the Protocol Version (currently 31) and the username of the player connecting to the server. Now the server responds with a 0xFD Encryption Request packet, which contains the RSA Public key, the server generated at the server startup, and the serverId, which is used for the minecraft.net authentication. The client now creates a random RC4 Key for the packet encryption.
+After the client connects to the server the client sends a 0x02 Handshake Request, which contains the Protocol Version (currently 31) and the username of the player connecting to the server. Then the server responds with a 0xFD Encryption Request packet, which contains the RSA public key, which the server generated at the server startup, and the serverId, which is used for minecraft.net authentication. The client now creates a random RC4 Key for the packet encryption.
 
-If the server ID is not "-" (offline mode) the client hashes the serverId  from the 0xFD packet, the public RSA key from the server and the generated RC4 secret key. Now the client sends a Http Request to
+If the server ID is not "-" (offline mode) then client hashes the serverId from the 0xFD packet, the public RSA key from the server and the generated RC4 secret key. Then the client sends an HTTP request to:
 
 <pre>http://session.minecraft.net/game/joinserver.jsp?user=[username]&sessionId=[user_session]&serverId=[hash]</pre>
 
-[user_session] is the user session he got when he logged into minecraft, and the [hash] is the hash generated above.
+[user_session] is the user session which he/she got when they logged into minecraft, and the [hash] is the hash generated above.
 
-The client uses the rsa public key to encrypt the RC4 Key and sends it to the server using a 0xFC Encryption Key Response packet. The server answeres with a 0xFC packet, too, with a empty byte-Array as shared key. The server decrypts the RC4 key with the generated private key. After this every packet on both sides are encrypted using the RC4 Key. 
+The client uses the RSA public key to encrypt the RC4 Key and sends it to the server using a 0xFC Encryption Key Response packet. The server answeres with a 0xFC packet, too, with a empty byte-Array as shared key. The server decrypts the RC4 key with the generated private key. After this every packet on both sides are encrypted using the RC4 Key.
 
 After this the client sends a Login Request (0x01) packet, and the server responds with a Login Response packet (0x01).
 
-See [[Protocol FAQ]] to get infos about what happens next.
+See [[Protocol FAQ]] to get information about what happens next.
