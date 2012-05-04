@@ -185,6 +185,8 @@ Used to play a sound effect on the client.
 
 ''Two-Way''
 
+See [[Protocol Encryption]] for information on logging in.
+
 '''Client to Server'''
 
 Just 1 byte C->S
@@ -249,6 +251,8 @@ Just 1 byte C->S
 === Handshake (0x02) ===
 
 ''Client to server''
+
+See [[Protocol Encryption]] for information on logging in.
 
 {| class="wikitable"
 |- class="row0"
