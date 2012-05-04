@@ -61,7 +61,7 @@ Sent when the player connects, or when settings are changed.
 | class="col1 centeralign" | Unknown
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 0
-| class="col4 centeralign" | First three bits(bitmask 0x7) are used as int, bit four(bitmask 0x8) is used as bool
+| class="col4 centeralign" | First three bits(bitmask 0x7) are used as a number, bit four(bitmask 0x8) is used as bool
 |- class="row5"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 8 bytes + length of string
