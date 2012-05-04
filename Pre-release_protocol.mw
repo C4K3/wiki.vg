@@ -121,6 +121,55 @@ Public key encryption: RSA.
 | class="col1 rightalign" colspan="4" | 5 bytes + length of string + length of key
 |}
 
+=== Named Sound Effect (0x3E) ===
+
+''Server to client''
+
+Used to play a sound effect on the client.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="6" | 0x3E
+| class="col1 centeralign" | Sound name
+| class="col2 centeralign" | string
+| class="col3 centeralign" | step.grass
+| class="col4 centeralign" | 250
+|- class="row2"
+| class="col1 centeralign" | Effect position X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 250
+| class="col4 centeralign" | effect X multiplied by 8
+|- class="row3"
+| class="col1 centeralign" | Effect position Y
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 250
+| class="col4 centeralign" | effect Y multiplied with 8
+|- class="row4"
+| class="col1 centeralign" | Effect position Z
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 250
+| class="col4 centeralign" | effect Z multiplied with 8
+|- class="row5"
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 9
+| class="col4 centeralign" | 
+|- class="row6"
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 63
+| class="col4 centeralign" | 
+|- class="row7"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 17 bytes + length of string
+|}
+
 == Changed packets ==
 
 === Login Request (0x01) ===
