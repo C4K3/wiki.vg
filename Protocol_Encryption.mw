@@ -6,10 +6,10 @@ As of 12w17a, minecraft implements SSL-like encryption.
 #'''C->S''' 0x02 handshake
 #'''S->C''' 0xFD encryption request - server sends its public key
 #Client generates symmetric key (shared secret)
-#Client pings minecraft.net
+#Client authenticates via session.minecraft.net
 #'''C->S''' 0xFC encryption response - client encrypts shared secret with server's public key and sends
 #Server decrypts shared secret with its private key
-#Server pings minecraft.net
+#Server checks player authenticity via session.minecraft.net
 #'''S->C''' 0xFC encryption response - empty payload
 #Server enables RC4 stream encryption
 #Client enables RC4 stream encryption
@@ -43,9 +43,9 @@ On receipt of a 0xFD from the server, the client will generate a 16-byte shared 
 
 The server decrypts the shared secret using its private key. It then sends a 0xFC to the client with an empty payload, and enables RC4 encryption. Similarly, the client will also enable encryption upon receipt of the empty 0xFC. From this point forward, everything is encrypted.
 
-== minecraft.net ==
+== Authentication ==
 
-Both server and client need to make a request to minecraft.net if the server is in online-mode.
+Both server and client need to make a request to session.minecraft.net if the server is in online-mode.
 
 === Client ===
 
@@ -59,15 +59,12 @@ After generating the shared secret, the client generates the following hash:
 </code>
 
 And sends an HTTP request to
-
-<code>
-    <nowiki>http://session.minecraft.net/game/joinserver.jsp?user=</nowiki>''username''&sessionId=''[[Session#Login|user_session]]''&serverId=''hash''
-</code>
-
+ <nowiki>http://session.minecraft.net/game/joinserver.jsp?user=</nowiki>''username''&sessionId=''[[Session#Login|user_session]]''&serverId=''hash''
 If it returns '''OK''' then continue, otherwise stop
 
 === Server ===
 
-As above, after decrypting the shared secret in 0xFD.
+After decrypting the shared secret in 0xFD, the sever generates the login hash as above and sens it to
+ <nowiki>http://session.minecraft.net/game/checkserver?user=</nowiki>''username''&serverId=''hash''
 
 If the response is '''YES''' then the client is authenticated and allowed to join. Otherwise the client will/should be [[Protocol#Disconnect.2FKick_.280xFF.29|kicked]] (unencrypted) with "Failed to verify username!"
