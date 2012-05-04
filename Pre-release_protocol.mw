@@ -44,7 +44,7 @@ Sent when the player connects, or when settings are changed.
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0xCC
+| class="col0 centeralign" rowspan="4" | 0xCC
 | class="col1 centeralign" | Locale
 | class="col2 centeralign" | string
 | class="col3 centeralign" | en_GB
@@ -58,8 +58,13 @@ Sent when the player connects, or when settings are changed.
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | Bits: 0: chat enabled, 2: colors enabled
 |- class="row4"
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 0
+| class="col4 centeralign" | First three bits(bitmask 0x7) are used as int, bit four(bitmask 0x8) is used as bool
+|- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 7 bytes + length of string
+| class="col1 rightalign" colspan="4" | 8 bytes + length of string
 |}
 
 === Encryption Key Response (0xFC) ===
