@@ -365,7 +365,7 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 * 12w18a
 * New packet: 0x3D Name Sound Effect
 * Changed packet: 0x01 Login Request
-* Changed packet: 0x02 Handhshake
+* Changed packet: 0x02 Handshake
 * Changed packet: 0xCA Player Abilities
 * Changed packet: 0xCC Locale and View Distance
 * Changed packet: 0x09 Respawn
@@ -375,7 +375,7 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 === 2012-04-26 ===
 * 12w17a
 * Protocol version is now 31
-* RC4 based encryption, described in [[Protocol_Encryption]]
+* RC4 based encryption, described in [[Protocol Encryption]]
 * Changed packet: 0x01 Login Request
 * Changed packet: 0x02 Handshake
 * Changed packet: 0xCC Locale and View Distance
