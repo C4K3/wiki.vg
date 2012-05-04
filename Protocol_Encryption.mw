@@ -19,7 +19,23 @@ As of 12w17a, minecraft implements SSL-like encryption.
 
 == Key Exchange ==
 
-The server generates a 1024-bit RSA keypair on startup. The key, when packed into a 0xFD packet, is in PKCS#1 DER format. If you're struggling to import this using a crypto library, you can convert this to common PEM by base64-encoding and wrapping in '-----BEGIN PUBLIC KEY-----' and '-----END PUBLIC KEY-----'.
+The server generates a 1024-bit RSA keypair on startup. The key, when packed into a 0xFD packet, is in ASN.1 format as defined by x.509.
+The ASN.1 structure looks as follows
+
+ SubjectPublicKeyInfo ::= SEQUENCE {
+   algorithm SEQUENCE {
+     algorithm         OBJECT IDENTIFIER
+     parameters        ANY OPTIONAL
+   }
+   subjectPublicKey  BITSTRING
+ }
+ 
+ SubjectPublicKey ::= SEQUENCE {
+   modulus           INTEGER
+   publicExponent    INTEGER
+ }
+
+If you're struggling to import this using a crypto library, you can convert it to common PEM by base64-encoding and wrapping in '-----BEGIN PUBLIC KEY-----' and '-----END PUBLIC KEY-----'.
 
 == Symmetric Encryption ==
 
