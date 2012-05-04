@@ -50,4 +50,4 @@ And sends an HTTP request to
 
 === Server ===
 
-TBC.
+As above, after decrypting the shared secret in 0xFD
