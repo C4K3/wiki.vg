@@ -246,9 +246,9 @@ Just 1 byte C->S
 | class="col1 rightalign" colspan="4" | 12 bytes + length of strings
 |}
 
-=== Hanshake (0x02) ===
+=== Handshake (0x02) ===
 
-''Client to server only'' - before encryption, not sure what happens thereafter, may still be a server reply --[[User:Ceiru|Ceiru]] 23:12, 27 April 2012 (MST)
+''Client to server''
 
 {| class="wikitable"
 |- class="row0"
@@ -261,13 +261,13 @@ Just 1 byte C->S
 | class="col0 centeralign" rowspan="4" | 0x02
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>31</code>
+| class="col3 centeralign" | <code>32</code>
 | class="col4" | 
 |- class="row2"
-| class="col1 centeralign" | Username <del>and Host</del>
+| class="col1 centeralign" | Username
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>TkTech</code>
-| class="col4" | The username of the player attempting to connect<del>, and the host he is connecting to, seperated by a semicolon.</del>
+| class="col4" | The username of the player attempting to connect
 |- class="row3"
 | class="col1 centeralign" | Server Host
 | class="col2 centeralign" | string
