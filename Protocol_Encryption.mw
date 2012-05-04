@@ -48,6 +48,10 @@ And sends an HTTP request to
     <nowiki>http://session.minecraft.net/game/joinserver.jsp?user=</nowiki>''username''&sessionId=''[[Session#Login|user_session]]''&serverId=''hash''
 </code>
 
+If it returns '''OK''' then continue, otherwise stop
+
 === Server ===
 
-As above, after decrypting the shared secret in 0xFD
+As above, after decrypting the shared secret in 0xFD.
+
+If the response is '''YES''' then the client is authenticated and allowed to join. Otherwise the client will/should be [[Protocol#Disconnect.2FKick_.280xFF.29|kicked]] (unencrypted) with "Failed to verify username!"
