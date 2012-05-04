@@ -56,7 +56,8 @@ Sent when the player connects, or when settings are changed.
 |- class="row3"
 | class="col1 centeralign" | Chat flags
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | Bit field. 0: chat enabled, 2: colors enabled
+| class="col3 centeralign" | 8
+| class="col4" | Bit field. 0: chat enabled, 2: colors enabled
 |- class="row4"
 | class="col1 centeralign" | Unknown
 | class="col2 centeralign" | byte
