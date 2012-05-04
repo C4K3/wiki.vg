@@ -161,12 +161,12 @@ Used to play a sound effect on the client.
 | class="col3 centeralign" | 250
 | class="col4 centeralign" | effect Z multiplied with 8
 |- class="row5"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Volume (64 is 100%)
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 9
 | class="col4 centeralign" | 
 |- class="row6"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Pitch (64 is 100%)
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 63
 | class="col4 centeralign" | 
