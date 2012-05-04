@@ -287,7 +287,6 @@ Just 1 byte C->S
 
 ''Two-Way''
 
-
 Sent by the client when the player presses the "Respawn" button after dying. The server then teleports the user to the spawn point, and sends a respawn packet in response.  The client will not leave the respawn screen until it receives a respawn packet.
 
 To change the player's dimension (overworld/nether/end), send them a respawn packet with the appropriate dimension, followed by prechunks/chunks for the new dimension, and finally a position and look packet.  You do not need to unload chunks, the client will do it automatically.
@@ -297,19 +296,8 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="1" | 0x09
-| class="col1 centeralign" | 
-| class="col2 centeralign" | 
-| class="col3 centeralign" | 
-| class="col4" | If the client send this packet it is empty
-|- class="row2"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 1 byte
+| class="col0 centeralign" | 0x09
 |}
 
 '''Server to Client'''
