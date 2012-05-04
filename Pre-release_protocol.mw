@@ -185,26 +185,15 @@ Used to play a sound effect on the client.
 
 ''Two-Way''
 
-Just a guess: stripped unused string field.
-
 '''Client to Server'''
+
+Just 1 byte C->S
 
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="1" | 0x01
-| class="col1 centeralign" | 
-| class="col2 centeralign" | 
-| class="col3 centeralign" | 
-| class="col4" | This packet is sent by the client and empty
-|- class="row8"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 1 byte
+| class="col0 centeralign" | 0x01
 |}
 
 '''Server to Client'''
