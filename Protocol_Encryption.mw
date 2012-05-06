@@ -51,10 +51,12 @@ Both server and client need to make a request to session.minecraft.net if the se
 
 After generating the shared secret, the client generates the following hash:
 <code>
-    hash := sha1(concat(a, b, c))
+    sha1 := Sha1()
+    sha1.update(concat(a, b, c)) #Each is a string
+    hash := sha1.hexdigest() #String of hex characters
     where:
       a = serverId from 0xFC
-      b = server's public key
+      b = server's public key from 0xFC
       c = shared secret
 </code>
 
