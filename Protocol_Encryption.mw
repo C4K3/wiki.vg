@@ -65,6 +65,6 @@ If it returns '''OK''' then continue, otherwise stop
 === Server ===
 
 After decrypting the shared secret in 0xFD, the sever generates the login hash as above and sends it to
- <nowiki>http://session.minecraft.net/game/checkserver?user=</nowiki>''username''&serverId=''hash''
+ <nowiki>http://session.minecraft.net/game/checkserver.jsp?user=</nowiki>''username''&serverId=''hash''
 
 If the response is '''YES''' then the client is authenticated and allowed to join. Otherwise the client will/should be [[Protocol#Disconnect.2FKick_.280xFF.29|kicked]] (unencrypted) with "Failed to verify username!"
