@@ -347,6 +347,9 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 
 == Protocol History ==
 
+=== 2012-05-10 ===
+* 12w19a
+* No changes
 === 2012-05-03 ===
 * 12w18a
 * New packet: 0x3D Name Sound Effect
