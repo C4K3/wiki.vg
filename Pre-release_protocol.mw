@@ -349,7 +349,8 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 
 === 2012-05-10 ===
 * 12w19a
-* No changes
+* No packet changes, but an other encryption algorythm is used, described in [[Protocol Encryption]]
+
 === 2012-05-03 ===
 * 12w18a
 * New packet: 0x3D Name Sound Effect
