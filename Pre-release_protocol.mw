@@ -400,6 +400,7 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 * Changed packet: 0x01 Login Request
 * Changed packet: 0x02 Handshake
 * Changed packet: 0xCC Locale and View Distance
+* Changed packet: 0xCA Player Abilities 
 * New packet: 0xFC Encryption Key Response
 * New packet: 0xFD Encryption Key Request
 * New Item: Book & Quills (0x182) is enchantable
