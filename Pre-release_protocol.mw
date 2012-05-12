@@ -345,6 +345,36 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 | class="col1 rightalign" colspan="4" | 11 bytes + length of string
 |}
 
+=== Player Abilities (0xCA) ===
+This packet changed with 12w17a. It now contains 3 booleans but the values of these 3 booleans are not currently known.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=4 | 0xCA
+| class="col1 centeralign" | Invulnerability?
+| class="col2 centeralign" | bool
+| class="col3 centeralign" | true
+| class="col4" | True if the player cannot take damage
+|- class="row2"
+| class="col1 centeralign" | Can fly
+| class="col2 centeralign" | bool
+| class="col3 centeralign" | true
+| class="col4" | True if the player is able to fly
+|- class="row3"
+| class="col1 centeralign" | Instant Destroy
+| class="col2 centeralign" | bool
+| class="col3 centeralign" | true
+| class="col4" | True if the player can destroy blocks instantly
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 4 bytes
+|}
 == Protocol History ==
 
 === 2012-05-10 ===
