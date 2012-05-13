@@ -1,6 +1,6 @@
 All types in Java (and as such Minecraft) are [http://en.wikipedia.org/wiki/Endianness#Big-endian big-endian], that is, the most significant byte comes first. The majority of everyday computers are little endian, and using most programming languages will require converting big endian values to little endian.
 
-These data formats are identical to those provided by the Java classes [http://download.oracle.com/javase/1.4.2/docs/api/java/io/DataInputStream.html DataInputStream] and [http://download.oracle.com/javase/1.4.2/docs/api/java/io/DataOutputStream.html DataOutputStream].
+Other than 'String' and 'Metadata', which are decoded with a custom function, these data formats are identical to those provided by the Java classes [http://download.oracle.com/javase/1.4.2/docs/api/java/io/DataInputStream.html DataInputStream] and [http://download.oracle.com/javase/1.4.2/docs/api/java/io/DataOutputStream.html DataOutputStream].
 
 {| class="wikitable"
 |- class="row0"
