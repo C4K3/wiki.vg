@@ -380,6 +380,7 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 === 2012-05-10 ===
 * 12w19a
 * No packet changes, but an other encryption algorythm is used, described in [[Protocol Encryption]]
+* The items which are not enchantable in 12w18a are now readded
 
 === 2012-05-03 ===
 * 12w18a
