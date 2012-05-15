@@ -345,6 +345,74 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 | class="col1 rightalign" colspan="4" | 11 bytes + length of string
 |}
 
+=== Spawn Object/Vehicle (0x17) ===
+
+''Server to Client''
+
+Sent by the server when an Object/Vehicle is created. The throwers entity id is now used for fishing floats too.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="9" | 0x17
+| class="col1 centeralign" | EID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>62</code>
+| class="col4" | Entity ID of the Object
+|- class="row2"
+| class="col0 centeralign" | Type
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>11</code>
+| class="col3" | The type of object (see [[Entities#Objects]])
+|- class="row3"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>16080</code>
+| class="col3" | The Absolute Integer X Position of the object
+|- class="row4"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>2299</code>
+| class="col3" | The Absolute Integer Y Position of the object
+|- class="row5"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>592</code>
+| class="col3" | The Absolute Integer Z Position of the object
+|- class="row6"
+| class="col0 centeralign" | thrower's entity ID
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | If this is bigger than 0, this is a entity trown by a other entity and the next 3 fields are sent.
+|- class="row7"
+| class="col0 centeralign" | Speed X
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Not sent if the thrower entity ID is 0. The speed of this entity along the X axis.
+|- class="row5"
+| class="col0 centeralign" | Speed Y
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Not sent if the thrower entity ID is 0. The speed of this entity along the Y axis.
+|- class="row5"
+| class="col0 centeralign" | Speed Z
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Not sent if the thrower entity ID is 0. The speed of this entity along the Z axis.
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 22 or 28 bytes
+|}
+
+
+{{anchor|0x18}}
+
+
 === Player Abilities (0xCA) ===
 This packet changed with 12w17a. It now contains 3 booleans but the values of these 3 booleans are not currently known.
 
@@ -375,6 +443,7 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 4 bytes
 |}
+
 == Protocol History ==
 
 === 2012-05-10 ===
