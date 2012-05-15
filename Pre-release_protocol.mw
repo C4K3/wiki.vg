@@ -450,6 +450,7 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 * 12w19a
 * No packet changes, but an other encryption algorythm is used, described in [[Protocol Encryption]]
 * The items which are not enchantable in 12w18a are now readded
+* Fishing floats, spawned by a 0x17 packet do now use the extra fields
 
 === 2012-05-03 ===
 * 12w18a
