@@ -68,6 +68,6 @@ These are wrappers for the vanilla Minecraft server.
 | Paul Andreassen
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | [http://www.gnu.org/copyleft/gpl.html GPLv3]
-| {{no}}
+| {{yes|Python but only console messages}}
 | {{yes|Active}}
 |}
