@@ -57,7 +57,7 @@ The server decrypts the shared secret using its private key. It then sends a 0xF
 
 12w21a:
 
-On receipt of a 0xFD from the server, the client will generate a 32-byte shared secret, to be used with the AES/CFB stream cipher. It then encrypts it with the server's public key (PKCS#5 padded), and sends it to the server with a 0xFC.
+On receipt of a 0xFD from the server, the client will generate a 32-byte shared secret, to be used with the AES/CFB stream cipher. It then encrypts it with the server's public key (PKCS#1 padded), and sends it to the server with a 0xFC.
 
 The server decrypts the shared secret using its private key. It then sends a 0xFC to the client with an empty payload, and enables  AES/CFB encryption. For the Initial Vector (IV) Both sides use the secret key. Similarly, the client will also enable encryption upon receipt of the empty 0xFC. From this point forward, everything is encrypted.
 
