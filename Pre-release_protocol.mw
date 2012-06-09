@@ -445,9 +445,16 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 |}
 
 == Protocol History ==
+
+=== 2012-06-07 ===
+* 12w23b
+* Protocol version is now 35
+* Either new packet(0xF2) or changed 0x01 Login Request
+
 === 2012-05-24 ===
 * 12w21a
 * No packet changes but the algorithm was changed to AES128 with the shared key as the IV, will be described in [[Protocol Encryption]]
+
 === 2012-05-10 ===
 * 12w19a
 * No packet changes, but an other encryption algorythm is used, described in [[Protocol Encryption]]
