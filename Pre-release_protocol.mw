@@ -449,7 +449,6 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 === 2012-06-07 ===
 * 12w23b
 * Protocol version is now 35
-* Either new packet(0xF2) or changed 0x01 Login Request
 
 === 2012-05-24 ===
 * 12w21a
