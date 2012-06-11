@@ -70,7 +70,7 @@ Both server and client need to make a request to session.minecraft.net if the se
 After generating the shared secret, the client generates the following hash:
 
  sha1 := Sha1()
- sha1.update(serverId from 0xFC) 
+ sha1.update(ASCII encoding of the serverId string from 0xFC) 
  sha1.update(shared secret) 
  sha1.update(server's encoded public key from 0xFC) 
  hash := sha1.hexdigest()  # String of hex characters
