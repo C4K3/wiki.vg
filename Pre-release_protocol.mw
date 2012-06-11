@@ -495,20 +495,20 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan=4 | 0xCA
-| class="col1 centeralign" | Invulnerability?
-| class="col2 centeralign" | bool
-| class="col3 centeralign" | true
-| class="col4" | True if the player cannot take damage
+| class="col1 centeralign" | Flags
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 5
+| class="col4" | 
 |- class="row2"
-| class="col1 centeralign" | Can fly?
+| class="col1 centeralign" | Walking speed
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 12
-| class="col4" | Flags?
+| class="col4" | 
 |- class="row3"
-| class="col1 centeralign" | Instant Destroy?
+| class="col1 centeralign" | Flying speed
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 25
-| class="col4" | ?
+| class="col4" | 
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 4 bytes
