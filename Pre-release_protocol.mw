@@ -326,6 +326,38 @@ See [[Protocol Encryption]] for information on logging in.
 | class="col1 rightalign" colspan="4" | 10 bytes + length of strings
 |}
 
+=== Entity Equipment (0x05) ===
+
+''Server to Client''
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x05
+| class="col1 centeralign" | Entity ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 0x00010643
+| class="col4" | Named Entity ID
+|- class="row2"
+| class="col0 centeralign" | Slot
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 4
+| class="col3" | Equipment slot: 0=held, 1-4=armor slot 
+|- class="row3"
+| class="col0 centeralign" | Item
+| class="col1 centeralign" | slot
+| class="col2 centeralign" | 
+| class="col3" | Item in slot format
+|- class="row5"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 11 bytes
+|}
+
 === Respawn (0x09) ===
 
 ''Two-Way''
