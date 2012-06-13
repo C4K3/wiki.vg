@@ -1,8 +1,8 @@
 This is a rather incomplete list of Minecraft Modern servers currently in development. This page only lists servers written from scratch. For mods and wrappers, see the [[Utility List]].
 
 A couple things for contributors:
-* If you haven't committed to your repository in a few months, I (MAD) am likely to mark you as on hiatus. Don't take it personally; just write more code and update the wiki.
-* I (MAD) rely on README files to gather server features. If you don't have one, you run the risk that I will read your source code to discern what your server can do. This might not be what you wanted. >:3
+* If you haven't committed to your repository in a few months, it will be marked as on hiatus. Don't take it personally; just write more code and update the wiki.
+* Wiki editors rely on README files to gather server features. If you don't have one, you run the risk that they will read your source code to discern what your server can do. This might not be what you wanted. >:3
 * Yes, the "Networking" column really does ask the question, "Can your server actually talk to clients?" This is just a litmus test. If your server can't do it, then consider whether it's ready for this page.
 
 
