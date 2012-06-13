@@ -6,7 +6,7 @@ A couple things for contributors:
 * Yes, the "Networking" column really does ask the question, "Can your server actually talk to clients?" This is just a litmus test. If your server can't do it, then consider whether it's ready for this page.
 
 
-{| class="wikitable" style="width: auto; text-align: center;"
+{| class="wikitable sortable" style="width: auto; text-align: center;"
 |-style="background:#eee"
 !style="min-width: 120px" | Name
 !style="min-width: 120px" | Author(s)
