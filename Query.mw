@@ -1,5 +1,7 @@
 Query is a UDP protocol introduced in 1.9pre4 for the purpose of querying server properties. It looks a lot like the UT3 (or GameSpot) Query Protocol [http://wiki.unrealadmin.org/UT3_query_protocol]
 
+A slightly simpler alternative to the query protocol involves connecting to the main minecraft TCP port and sending a [[Protocol#Server_List_Ping_.280xFE.29|Server List Ping]] packet, which returns motd, number of users and number of slots. More details on the [[Protocol#Server_List_Ping_.280xFE.29|main protocol page]].
+
 All data types are big-endian, with the exception of <code>short</code>
  
 == Server Config ==
