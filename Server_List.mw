@@ -190,20 +190,6 @@ A couple things for contributors:
 | {{yes|C++}}
 | {{yes|Active}}
 |-
-! [http://sourceforge.net/projects/minewithperl MWP]
-| jake-anq, goshat
-| [http://en.wikipedia.org/wiki/Perl Perl],[http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Open source
-| {{No}}
-| {{planned|In progress}}
-| {{planned|Beta/Custom}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{yes|Events,Coroutines}}
-| {{planned|[http://en.wikipedia.org/wiki/Perl Perl]}}
-| {{planned|Pre-alpha (On hiatus)}}
-|-
 ! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
 | aera, iKJames
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
@@ -217,20 +203,6 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{yes|Python}}
 | {{no|Cancelled}}
-|-
-! [https://launchpad.net/netherrack Netherrack]
-| [[User:Syntaxial|Cruz Bishop (for Massive Dynamics)]]
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{planned}}
-| {{planned}}
-| {{planned|Planned (Custom)}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{planned|Dynamic (Java planned)}}
-| {{yes|Active extremely early snapshots}}
 |-
 ! [http://partycraft.codeplex.com PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
