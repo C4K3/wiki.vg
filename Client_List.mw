@@ -2,7 +2,7 @@ This is a rather incomplete list of Minecraft Alpha/Beta clients that users have
 
 The column ''Game Graphics'' asks if your client displays in-game activity at a graphical level, such as world chunks, people or mobs moving, or any of that sort. If you are simply displaying things as text, that does '''not''' count. You can also optionally tell us the library you're using for your game graphics while providing your answer.
 
-{| class="wikitable" style="width: auto; text-align: center;"
+{| class="wikitable sortable" style="width: auto; text-align: center;"
 |-style="background:#eee"
 !style="width: 72px" | Name
 !style="width: 240px" | Features
@@ -20,10 +20,10 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes}}
 | Wallbraker et al.
-| {{yes|In development}}
+| {{yes|Active}}
 |-
-! [http://foundation.x10.mx/index.php?title=Crafti Crafti]*
-| python standalone bot, controllable via player commands, console input, or configured rules file.  [http://foundation.x10.mx/index.php?title=Crafti See More...]
+! [http://foundation.x10.mx/index.php?title=Crafti Crafti] (dead link)
+| python standalone bot, controllable via player commands, console input, or configured rules file.
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with Twisted network driver
 | proprietary software / Freeware
 | {{yes}}
@@ -38,7 +38,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no}}
 | espes
-| {{unknown|Last updated for 1.8}}
+| {{unknown|Last updated Sep 2011}}
 |-
 ! [https://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
@@ -47,7 +47,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no}}
 | aniero
-| {{no|Last update: Beta 1.4}}
+| {{no|Last updated Apr 2011}}
 |-
 ! [https://github.com/axus/libmc--c mc--c]
 | Draw the map.  Can't talk or move.
@@ -65,7 +65,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes}}
 | ThibG
-| {{no|Dead<br>(Server down)}}
+| {{unknown|Last updated Jul 2011}}
 |-
 ! [https://github.com/jrupac/minecraft-opengl minecraft-opengl]
 | Draw the map, move around, break stuff, gather stuff, etc.; doesn't appear to have networking
@@ -74,7 +74,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes}}
 | Rohan Bansal, Dmitry Drutskoy, Ajay Roopakalu, Sarah Tang
-| {{unknown|Last updated June 2011}}
+| {{unknown|Last updated Jun 2011}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
 | Uses PHP to connect to servers. Can connect to premium servers also. Maybe useful for bots. It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
@@ -83,7 +83,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|Yes, but only linux}}
 | {{no}}
 | [https://twitter.com/shoghicp shoghicp]
-| {{yes|Works from b1.6 to 1.2.5}}
+| {{yes|Active. Works from b1.6 to 1.2.5}}
 |-
 ! [[Mineflayer]]
 | JavaScript bot framework. See [[Mineflayer]] for more details.
@@ -92,7 +92,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{yes}}
 | Superjoe, thejoshwolfe
-| {{yes|Mostly mature, well maintaned}}
+| {{unknown|Last updated Nov 2011}}
 |-
 ! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
 | Work in progress SMP (might add SSP) client.
@@ -101,7 +101,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{yes|Yes, using [http://en.wikipedia.org/wiki/Microsoft_XNA XNA]}}
 | [https://github.com/Vijfhoek Vijfhoek] and [https://github.com/F16Gaming F16Gaming]
-| {{yes|In Development}}
+| {{yes|Active}}
 |-
 ! [[Vb Minebot]]
 | Work in progress standalone bot
@@ -110,7 +110,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no}}
 | Umby24
-| {{yes|Released, In Development}}
+| {{yes|Active}}
 |-|}
 
 [[Category:Minecraft Modern]]
