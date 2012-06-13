@@ -34,7 +34,7 @@ A couple things for contributors:
 | {{yes|Players, Mobs}}
 | {{yes|Processes}}
 | {{yes|Python}}
-| {{unknown|On hiatus}}
+| {{unknown|On hiatus since Dec 2011}}
 |-
 ! [https://github.com/huin/chunkymonkey Chunky Monkey]
 | agon, huin (lead contributor), jnwhiteh, nictuku
@@ -48,7 +48,7 @@ A couple things for contributors:
 | {{planned|Players: yes; Mobs: In progress}}
 | {{yes|Goroutines (Multi-host planned)}}
 | {{unknown|(TBD)}}
-| {{yes|Active}}
+| {{unknown|On hiatus since Oct 2011}}
 |-
 ! [[craftd:Main_Page|craftd]]
 | [[User:Kev009|kev009]]
@@ -62,21 +62,21 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|Threads}}
 | {{yes|Many (plugins)}}
-| {{yes|Active}}
+| {{unknown|On hiatus since May 2011}}
 |-
 ! [http://github.com/ScottBrooks/Erlcraft Erlcraft]
 | Scott Brooks
 | [http://en.wikipedia.org/wiki/Erlang_%28programming_language%29 Erlang]
 | Unknown (Source files have no copyright?!)
 | {{Unknown}}
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
-| {{unknown}}
-| {{unknown|On hiatus}}
+| {{yes}}
+| {{yes|Alpha}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{yes|Erlang processes}}
+| {{no}}
+| {{no|On hiatus since Sep 2010}}
 |-
 ! [https://github.com/SpaceManiac/Glowstone Glowstone]
 | [[User:SpaceManiac|SpaceManiac]] (fork of Lightstone)
@@ -86,13 +86,13 @@ A couple things for contributors:
 | {{yes}}
 | {{yes|Beta}}
 | {{yes}}
-| {{planned}}
-| {{planned}}
+| {{no}}
+| {{no}}
 | {{yes|Event-driven}}
 | {{yes|[http://bukkit.org/ Bukkit]}}
 | {{unknown|Superseded by Spout}}
 |-
-! [http://www.mcdevs.org/forum/thread-jckf-s-server-project Gruved]
+! [http://www.mcdevs.org/forum/thread-jckf-s-server-project Gruved] (dead link)
 | [[User:Jckf|Jckf]], [[User:ElectronicsRules|electronicsRules]]
 | [http://en.wikipedia.org/wiki/Perl Perl]
 | Open source
@@ -104,7 +104,7 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|Event-driven}}
 | {{yes|[http://en.wikipedia.org/wiki/Perl Perl]}}
-| {{unknown|On hiatus}}
+| {{no|Website/repo dead}}
 |-
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
@@ -118,7 +118,7 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|Event-driven}}
 | {{planned|Planned ([http://ruby-lang.org Ruby])}}
-| {{unknown|Semi-Active}}
+| {{unknown|On hiatus since Jun 2011}}
 |-
 ! [https://github.com/SenkChristian/net.mccraft McCraft]
 | Nemrael
@@ -132,7 +132,7 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|Threads}}
 | {{planned}}
-| {{yes|Active}}
+| {{unknown|On hiatus since Aug 2011}}
 |-
 ! [http://mcserver.ae-c.net MCServer]
 | FakeTruth
@@ -204,7 +204,7 @@ A couple things for contributors:
 | {{yes|Python}}
 | {{no|Cancelled}}
 |-
-! [http://partycraft.codeplex.com PartyCraft]
+! [http://partycraft.github.com/ PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
@@ -218,7 +218,7 @@ A couple things for contributors:
 | {{yes|.NET}}
 | {{yes|Active}}
 |-
-! [http://codaset.com/moose/quartz-public Quartz]
+! [http://codaset.com/moose/quartz-public Quartz] (dead link)
 | Moose
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Unknown
@@ -230,7 +230,7 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Threads}}
 | {{no}}
-| {{unknown|On hiatus}}
+| {{no|Repo dead}}
 |-
 ! [[Realcraft:Main_Page|Realcraft]]
 | [[User:Jailout2000|Jailout2000]]
@@ -244,9 +244,9 @@ A couple things for contributors:
 | {{planned|Players, other entities are WIP}}
 | {{no|None}}
 | {{planned|Custom Realcraft Text Files}}
-| {{planned|On hold}}
+| {{unknown|On hiatus since Jan 2012}}
 |-
-! [https://www.assembla.com/spaces/mc_server RealMC]
+! [https://www.assembla.com/spaces/mc_server RealMC] (link requires "permission")
 | thomasfn
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | Closed source
@@ -258,7 +258,7 @@ A couple things for contributors:
 | {{yes}}
 | {{yes|Async IO}} <!--Any other concurrency models? ASIO is now a seperate column-->
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|Active}}
+| {{no|No downloads available}}
 |-
 ! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
 | louisdx
@@ -272,7 +272,7 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|Threads}}
 | {{no}}
-| {{yes|Active}}
+| {{unknown|On hiatus since Nov 2011}}
 |-
 ! [https://www.silent-productions.net SilentCraft]
 | Silentneeb, BizarreCake
@@ -288,7 +288,7 @@ A couple things for contributors:
 | {{no}}
 | {{no|Cancelled}}
 |-
-! [http://spout.org/ Spout]<br />(with [http://github.com/SpoutDev/Vanilla Vanilla] plugin)
+! [http://spout.org/ Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
 | [http://spout.org/team/ SpoutDev] (fork of Glowstone)
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://spout.org/SpoutDevLicenseV1.txt SpoutDev v1]
