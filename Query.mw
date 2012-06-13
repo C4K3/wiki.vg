@@ -1,4 +1,4 @@
-Query is a UDP protocol introduced in 1.9pre4 for the purpose of querying server properties. It looks a lot like the UT3 (or GameSpot) Query Protocol [http://wiki.unrealadmin.org/UT3_query_protocol]
+Query is a UDP protocol introduced in 1.9pre4 for the purpose of querying server properties. It's meant to be compatible with the [http://wiki.unrealadmin.org/UT3_query_protocol UT3 (or GameSpot) Query Protocol]
 
 A slightly simpler alternative to the query protocol involves connecting to the main minecraft TCP port and sending a [[Protocol#Server_List_Ping_.280xFE.29|Server List Ping]] packet, which returns motd, number of users and number of slots. More details on the [[Protocol#Server_List_Ping_.280xFE.29|main protocol page]].
 
@@ -7,9 +7,13 @@ All data types are big-endian, with the exception of <code>short</code>
 == Server Config ==
 
     enable-query=true
-    #query.port=25565
+    query.port=<1-65535>
 
-== Client to Server Packet Format ==
+The default port is 25565
+
+== Base packet format ==
+
+=== Client to Server Packet Format ===
 
 {| class="wikitable"
 |-
@@ -19,7 +23,7 @@ All data types are big-endian, with the exception of <code>short</code>
 |- 
 | Magic
 | byte, byte
-| Always <code>0xFE 0xFD</code>
+| Always <code>FE FD</code>
 |-
 | Type
 | byte
@@ -34,7 +38,7 @@ All data types are big-endian, with the exception of <code>short</code>
 | See below
 |}
 
-== Server to Client Packet Format ==
+=== Server to Client Packet Format ===
 
 {| class="wikitable"
 |-
@@ -55,45 +59,169 @@ All data types are big-endian, with the exception of <code>short</code>
 | See below
 |}
 
-== Operations ==
+== Handshake ==
 
-=== Handshake ===
+First, generate a session ID, any arbitrary int32 (or 4 chars) that you can use to identify your requests. The following examples use session ID = 1 (encoded as <code>00 00 00 01</code> on the hex dumps)
 
-First, generate a session ID. It can be whatever you want.
-
-==== Request ====
+=== Request ===
 
 Send a request with an empty payload.
+
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Example
+|- 
+| Magic
+| byte, byte
+| <code>FE FD</code>
+|-
+| Type
+| byte
+| <code>09</code>
+|-
+| Session ID
+| int32
+| <code>00 00 00 01</code>
+|-
+| Payload
+| 
+| ''(empty)''
+|}
+
+Dump:
 
 <code>
   FE FD 09 00 00 00 01
 </code>
     
-==== Response ====
+=== Response ===
 
-The response payload will be a session token (note: different to a session id) encoded as a null-terminated string. You should convert it to an int32 and store it.
+The response payload will be a challenge token encoded as a null-terminated string. You should convert it to an int32 and store it
+
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Example
+|-
+| Type
+| byte
+| <code>09</code>
+|-
+| Session ID
+| int32
+| <code>00 00 00 01</code>
+|-
+| Challenge token string
+| Null-terminated string
+| <code>"9513307\0"</code>
+|}
+
+In this example, after parsing the string "9513307\0" as an integer and packing it as a big endian int32, the result should be 00 91 29 5B
+
+Dump:
 
 <code>
   09 00 00 00 01 39 35 31 33 33 30 37 00 | .....9513307.         
 </code>
 
-=== Basic stat ===
+== Expiration of the challenge token ==
 
-==== Request ====
+Quoting [http://dinnerbone.com/blog/2011/10/14/minecraft-19-has-rcon-and-query/ dinnerbone's original post] on the minecraft query protocol:
 
-Your payload should be your session token, packed as an int32. 
+<blockquote>
+Note that the challenge token is bound '''to your IP and port''' (as opposed to the [session ID]), and lasts up to 30 seconds. You read that right, it's up to; it's not "your token will expire after 30 seconds", it's "every token ever" is expired every 30 seconds. This means it's entirely possible that you may get a token and use it within the same second and have it expire.
+</blockquote>
+
+Additionally:
+
+<blockquote>
+You'll need to provide your challenge token, or you will not receive any reply. If you provide a token and it's wrong, you still won't receive a reply. With that in mind, if you're going to store your challenge token and use it later then you may want to do some kind of timeout on waiting for a reply, in case the server restarted and your token is no longer valid. It's impossible to identify between an offline server and a server that refused your challenge without any additional requests, so you'll want to try for another challenge token and if that fails then flag them as unavailable
+</blockquote>
+
+== Basic stat ==
+
+=== Request ===
+
+Your payload should be your challenge token, packed as an int32. 
+
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Example
+|- 
+| Magic
+| byte, byte
+| <code>FE FD</code>
+|-
+| Type
+| byte
+| <code>00</code>
+|-
+| Session ID
+| int32
+| <code>00 00 00 01</code>
+|-
+| Challenge token
+| int32
+| <code>00 91 29 5B</code>
+|}
+
+Dump:
 
 <code>
-  FE FD 00 00 00 00 01 00 3A 0D 5F
+  FE FD 00 00 00 00 01 00 91 29 5B
 </code>
 
-==== Response ====
+=== Response ===
 
-Five null-terminated strings make up the beginning of the payload. They correspond to (motd, gametype, map, numplayers, maxplayers)
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Example
+|-
+| Type
+| byte
+| <code>00</code>
+|-
+| Session ID
+| int32
+| <code>00 00 00 01</code>
+|-
+| MOTD
+| Null-terminated string
+| <code>"A Minecraft Server\0"</code>
+|-
+| gametype
+| Null-terminated string
+| <code>"SMP\0"</code>
+|-
+| map
+| Null-terminated string
+| <code>"world\0"</code>
+|-
+| numplayers
+| Null-terminated string
+| <code>"2\0"</code>
+|-
+| maxplayers
+| Null-terminated string
+| <code>"20\0"</code>
+|-
+| hostport
+| Little endian short
+| <code>DD 63</code> ( = 25565)
+|-
+| hostip
+| Null-terminated string
+| <code>"127.0.0.1\0"</code>
+|}
 
-After these strings, a 2-byte, ''big-endian'' short, giving the hostport
-
-At the end is a final null-terminated string, giving the hostname
+Dump:
 
 <code>
   00 00 00 00 01 41 20 4D 69 6E 65 63 72 61 66 74 | .....A Minecraft
@@ -102,27 +230,111 @@ At the end is a final null-terminated string, giving the hostname
   2E 31 00                                        | .1.
 </code>
 
-=== Full stat === 
+== Full stat ==
 
-==== Request ====
+This method is cached every 5 seconds.
+
+=== Request ===
 
 The request is the same as in a basic stat, except the payload '''must''' be padded to 8 bytes. Sending 0x00 0x00 0x00 0x00 at the end works.
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Example
+|- 
+| Magic
+| byte, byte
+| <code>FE FD</code>
+|-
+| Type
+| byte
+| <code>00</code>
+|-
+| Session ID
+| int32
+| <code>00 00 00 01</code>
+|-
+| Challenge token
+| int32
+| <code>00 91 29 5B</code>
+|-
+| Padding
+| 
+| <code>00 00 00 00</code>
+|}
+
+Dump:
 
 <code>
-  FE FD 00 00 00 00 01 00 3A 0D 5F 00 00 00 00
+  FE FD 00 00 00 00 01 00 91 29 5B 00 00 00 00
 </code>
 
-==== Response ====
+=== Response ===
 
-You should ignore the first 11 bytes of the payload - they're garbage
+The response is in two parts. The first part is a list of null-terminated strings, representing (key1, value1, key2, value2 ...). The second part is another list of null-terminated strings, each representing a player.
 
-The response is in two parts. You should split the response around the token <code>\x00\x01player_\x00\x00</code>
+A simple way to parse the payload is to ignore the first 11 bytes, and then split the response around the token <code>\x00\x01player_\x00\x00</code>. At the very end there's an extra null byte.
 
-The first part is a list of null-terminated strings, representing (key1, value1, key2, value2 ...)
+{| class="wikitable"
+|-
+! Field name
+! Field Type
+! Example
+! Notes
+|-
+| Type
+| byte
+| <code>00</code>
+|
+|-
+| Session ID
+| int32
+| <code>00 00 00 01</code>
+|
+|-
+| splitnum
+| Null-terminated string
+| <code>"splitnum\0"</code>
+| Always this hardcoded value.
+|-
+| key_val_start
+| Little endian short
+| <code>80 00</code>
+| Always <code>0x80</code>. After this there will be a number of key+value pairs (only the first pair of examples is included in this table)
+|-
+| key
+| Null-terminated string
+| <code>"hostname\0"</code>
+| Keyname for the following value. Is repeated
+|-
+| value
+| Null-terminated string
+| <code>"A Minecraft Server\0"</code>
+| A value that goes with the previous key. Is repeated
+|-
+| key_val_end
+| Little endian short
+| <code>00 01</code>
+| Always <code>0x100</code>. When you reach this there are no more key+value pairs
+|-
+| player_
+| Null-terminated string
+| <code>"player_\0"</code>
+| Always this hardcoded value. Start of a list of null terminated strings with online players
+|-
+| padding?
+| byte
+| <code>00</code>
+| 
+|-
+| playername
+| Null-terminated string
+| <code>"barneygale\0"</code>
+| Repeat until you get an empty string
+|}
 
-The second part is another list of null-terminated strings, each representing a player.
-
-At the very end there's an extra null byte.
+Full dump:
 
 <code>
   00 00 00 00 01 73 70 6C 69 74 6E 75 6D 00 80 00 | .....splitnum...
@@ -141,52 +353,12 @@ At the very end there's an extra null byte.
   69 76 61 6C 61 68 65 6C 76 69 67 00 00          | ivalahelvig..
 </code>
 
-===== Payload format for V1.0 =====
-Same as above described somewhat differently.
-{| class="wikitable"
-|-
-! Field Name
-! Field Type
-! Notes
-|- 
-| (''splitnum'')
-| string
-| Always <code>splitnum</code>
-|-
-| (''key_val_start'')
-| short/uint_16
-| Allways <code>0x80</code> After this there will be a number of key+value pairs
-|-
-| key
-| string
-| Keyname for the following value. Is repeated
-|-
-| value
-| string
-| A value that goes with the previous key. Is repeated
-|-
-| (''key_val_end'')
-| short/uint_16
-| Allways <code>0x100</code> When you reach this there is no more key+value pairs
-|-
-| player_
-| string
-| Allways <code>player_</code> Star of a list of null terminated strings with online players
-|-
-| ''N/A''
-| byte
-| Allways <code>0x00</code>
-|-
-| playername
-| string
-| Repeat until you get a empty string
-|}
+Keys found querying a 1.2.5 bukkit server:
 
-The keys that I have found querying a 1.0 server are...
 {| class="wikitable"
 |-
-! Name
-! Example
+! Key
+! Example value
 ! Description
 |-
 | hostname
@@ -202,12 +374,15 @@ The keys that I have found querying a 1.0 server are...
 | hardcoded to MINECRAFT
 |-
 | version
-| '1.0.0'
+| '1.2.5'
 | Server version
 |-
 | plugins
-| ' '
-| List of plugins, not yet used
+| 'CraftBukkit on Bukkit 1.2.5-R4.0:
+WorldEdit 5.3; CommandBook 2.1'
+| List of plugins, not used by the vanilla server, where it is an empty string (but still null terminated, see the hex dump above).
+This is the format proposed by dinnerbone and currently used by bukkit: <br />
+<code>[SERVER_MOD_NAME[: PLUGIN_NAME(; PLUGIN_NAME...)]]</code>
 |-
 | map
 | 'world'
