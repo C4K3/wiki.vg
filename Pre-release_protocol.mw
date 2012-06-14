@@ -571,6 +571,14 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 
 == Protocol History ==
 
+=== 2012-06-14 ===
+* 12w24a
+* Protocol version is now 36
+* Changed Packet 0x01(Login Request), only used as Login Reply
+* New Packet 0xCD Login Request(1 byte payload)
+* Dye is "enchantable"
+* more...
+
 === 2012-06-07 ===
 * 12w23b
 * Protocol version is now 35
