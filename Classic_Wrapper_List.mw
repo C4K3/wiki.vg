@@ -1,0 +1,38 @@
+These are wrappers for both the client and server vanilla interfaces.
+
+See the [[Classic_Client_List|client list]] page for custom clients and the [[Classic_Server_List|server list]] page for custom servers.
+
+== Client Wrappers ==
+These are wrappers for the vanilla Minecraft Classic client.
+
+{| class="wikitable" style="width: auto; text-align: center;"
+|-style="background:#eee"
+!style="min-width: 120px" | Name
+!style="min-width: 120px" | Author(s)
+!style="min-width: 78px" | Language
+!style="min-width: 120px" | License
+!style="width: 120px" | Scripting
+!style="width: 120px" | Development Status
+|-
+! [http://github.com/Steveice10/OpenClassic-Client OpenClassic Client]
+| Steveice10
+| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
+| [http://www.opensource.org/licenses/mit-license.php MIT]
+| {{yes|Java}}
+| {{yes|Active}}
+|}
+
+== Server Wrappers ==
+These are wrappers for the vanilla Minecraft Classic server.
+
+{| class="wikitable" style="width: auto; text-align: center;"
+|-style="background:#eee"
+!style="min-width: 120px" | Name
+!style="min-width: 120px" | Author(s)
+!style="min-width: 78px" | Language
+!style="min-width: 120px" | License
+!style="width: 120px" | Scripting
+!style="width: 120px" | Development Status
+|-
+|colspan="6" | There are no server wrappers at this time
+|}
