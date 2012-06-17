@@ -577,7 +577,6 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 * Changed Packet 0x01(Login Request), only used as Login Reply
 * New Packet 0xCD used for Login Request and Respawn (1 byte payload)
 * All items (except the empty hand) now send enchantment data
-* more...
 
 === 2012-06-07 ===
 * 12w23b
