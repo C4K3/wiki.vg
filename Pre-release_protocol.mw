@@ -591,6 +591,11 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 
 == Protocol History ==
 
+=== 2012-06-21 ===
+* 12w25a
+* Packet 0xFC and 0xFD include a 4 byte long byte array. This is hashed with the public RSA key and sent back. See [[Protocol Encryption]] for further info.
+* Packet 0x3E changed to include float rather than byte.
+
 === 2012-06-14 ===
 * 12w24a
 * Protocol version is now 36
