@@ -96,7 +96,7 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 10
 | TAG_Compound
 | ...
-| Effectively a list of a '''named''' tags
+| Effectively a list of a '''named''' tags. Order is not guaranteed.
 |-
 | 11
 | TAG_Int_Array
