@@ -187,7 +187,7 @@ Used to play a sound effect on the client.
 | class="col4 centeralign" | effect Z multiplied with 8
 |- class="row5"
 | class="col1 centeralign" | Volume
-| class="col2 centeralign" | byte
+| class="col2 centeralign" | float
 | class="col3 centeralign" | 9
 | class="col4 centeralign" | 63 is 100%, can be more
 |- class="row6"
@@ -197,7 +197,7 @@ Used to play a sound effect on the client.
 | class="col4 centeralign" | 63 is 100%, can be more
 |- class="row7"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 17 bytes + length of string
+| class="col1 rightalign" colspan="4" | 20 bytes + length of string
 |}
 
 === Block Break Animation (0x37) ===
