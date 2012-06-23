@@ -15,7 +15,7 @@ As of 12w17a, minecraft implements SSL-like encryption.
 #'''S->C''' 0xFC encryption response - empty payload
 #Server enables AES stream encryption
 #Client enables AES stream encryption
-#'''C->S''' 0x01 login
+#'''C->S''' 0xCD - Payload of 0 (byte)
 #'''S->C''' 0x01 login
 #see [[Protocol FAQ]] to get information about what happens next.
 
