@@ -103,6 +103,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | [https://github.com/Vijfhoek Vijfhoek] and [https://github.com/F16Gaming F16Gaming]
 | {{yes|Active}}
 |-
+! [http://www.planetminecraft.com/project/new-c-driven-minecraft-client-461392/ Revolutional RedStone]
+| Parial Redstone support
+| C++
+| {{Unknown}}
+| {{yes}}
+| {{yes}}
+| RevolutionalRedstone
+| {{yes|Active}}
+|-
 ! [[Vb Minebot]]
 | Work in progress standalone bot
 | [http://en.wikipedia.org/wiki/Visual_Basic_.NET VB.NET], w/Ruby 
