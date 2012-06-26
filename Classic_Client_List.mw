@@ -11,6 +11,13 @@ This is a rather incomplete list of Minecraft Creative clients currently in deve
 !style="width: 72px" | Threaded
 !style="width: 240px" | Features
 |-
+! [https://github.com/Wallbraker/Charged-Miners Charged Miners]
+| Minecraft Viewer, can connect to classic servers.
+| [http://en.wikipedia.org/wiki/D_%28programming_language%29 D], [http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]
+| GPLv2
+| {{no}}
+| Ingame server list, chat & block picker.
+|-
 ! [http://umby.d3s.co/forum/ VB Minebot]*
 | Umby24
 | [http://en.wikipedia.org/wiki/Visual_basic_.net Visual Basic .NET]
