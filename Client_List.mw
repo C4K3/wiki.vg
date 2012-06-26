@@ -14,7 +14,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 !style="width: 64px" | Status
 |-
 ! [https://github.com/Wallbraker/Charged-Miners Charged Miners]
-| Minecraft Viewer that can use Mineflayer to connect to servers.
+| Minecraft Viewer, can connect to classic servers.
 | [http://en.wikipedia.org/wiki/D_%28programming_language%29 D], [http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]
 | GPLv2
 | {{no}}
