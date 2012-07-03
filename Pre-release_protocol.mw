@@ -57,7 +57,7 @@ Sent when the player connects, or when settings are changed.
 | class="col1 centeralign" | Chat flags
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 8
-| class="col4" | Bit field. 0: chat enabled, 2: colors enabled
+| class="col4" | Chat settings. See notes below.
 |- class="row4"
 | class="col1 centeralign" | Difficulty
 | class="col2 centeralign" | byte
@@ -67,6 +67,14 @@ Sent when the player connects, or when settings are changed.
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 8 bytes + length of string
 |}
+
+Chat settings:
+
+This is based on bits.
+
+'''Chat Enabled:''' Bits 0-1. 00: Enabled.  01: Commands only.  10: Hidden.
+
+'''Colors Enabled:''' Bit 3.  0: Disabled.  1: Enabled.
 
 === Client Statuses (0xCD) ===
 
