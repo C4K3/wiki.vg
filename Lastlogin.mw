@@ -19,7 +19,7 @@ The code to get the cipher from the launcher takes the form of:
         random.nextBytes(salt);
         PBEParameterSpec pbeParamSpec = new PBEParameterSpec(salt, 5);
 
-        SecretKey pbeKey = SecretKeyFactory.getInstance("PBEWithMD5AndDES").generateSecret(new PBEKeySpec(password.toCharArray()));
+        SecretKey pbeKey = SecretKeyFactory.getInstance("PBEWithMD5AndDES").generateSecret(new PBEKeySpec("password".toCharArray()));
         Cipher cipher = Cipher.getInstance("PBEWithMD5AndDES");
         cipher.init(mode, pbeKey, pbeParamSpec);
 </code>
