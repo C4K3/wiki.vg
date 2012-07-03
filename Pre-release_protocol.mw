@@ -620,7 +620,7 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 
 == Removed packets ==
 
-* 0x32 Chunk Allocation Packet
+=== Chunk Allocation Packet (0x32) ===
 
 == Protocol History ==
 
