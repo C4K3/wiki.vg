@@ -1,5 +1,25 @@
+== Introduction ==
+
 The lastlogin file sits in the root directory (.minecraft) and contains the encrypted username and password from the last user who logged in on your machine.
 
 A c++ code snippet to decrypt the file using the crypto++ library can be found here: [http://pastebin.com/wJ4Z1zEn c++ code]
 
 The c++ code is loosely based on the python code in sadimusi's mc3p found here: [https://github.com/sadimusi/mc3p/tree/master/mc3p python code]
+
+
+== Encryption ==
+The last login file is encrypted with some not so secure random data. First a Java Random is created with an initial seed of 43287234. Then the next 8 bytes produced by this random are used as a salt. These bytes correspond to: 'x0c, 0x9d, 0x4a, 0xe4, 0x1e, 0x83, 0x15, 0xfc'
+Next a secret key based on PBEWithMD5AndDES is generated based on the secret password. Again this password is not very secret and takes the form of the string "password"
+
+After this Cipher has been constructed, two UTF-8 strings can be read from the lastlogin file and decrypted with the above mentioned cipher.
+The code to get the cipher from the launcher takes the form of:
+<code>
+        Random random = new Random(43287234L);
+        byte[] salt = new byte[8];
+        random.nextBytes(salt);
+        PBEParameterSpec pbeParamSpec = new PBEParameterSpec(salt, 5);
+
+        SecretKey pbeKey = SecretKeyFactory.getInstance("PBEWithMD5AndDES").generateSecret(new PBEKeySpec(password.toCharArray()));
+        Cipher cipher = Cipher.getInstance("PBEWithMD5AndDES");
+        cipher.init(mode, pbeKey, pbeParamSpec);
+</code>
