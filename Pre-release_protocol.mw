@@ -68,9 +68,7 @@ Sent when the player connects, or when settings are changed.
 | class="col1 rightalign" colspan="4" | 8 bytes + length of string
 |}
 
-Chat settings:
-
-This is based on bits.
+Chat flags has several values packed into one byte.
 
 '''Chat Enabled:''' Bits 0-1. 00: Enabled.  01: Commands only.  10: Hidden.
 
