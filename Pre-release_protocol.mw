@@ -618,6 +618,10 @@ This packet changed with 12w17a. It now contains 3 booleans but the values of th
 | class="col1 rightalign" colspan="4" | 11 bytes + slot data
 |}
 
+== Removed packets ==
+
+* 0x32 Chunk Allocation Packet
+
 == Protocol History ==
 
 === 2012-06-21 ===
