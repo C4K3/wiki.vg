@@ -1,0 +1,5 @@
+The lastlogin file sits in the root directory (.minecraft) and contains the encrypted username and password from the last user who logged in on your machine.
+
+A c++ code snippet to decrypt the file using the crypto++ library can be found here: [http://pastebin.com/wJ4Z1zEn c++ code]
+
+The c++ code is loosely based on the python code in sadimusi's mc3p found here: [https://github.com/sadimusi/mc3p/tree/master/mc3p python code]
