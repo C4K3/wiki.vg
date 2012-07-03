@@ -76,14 +76,23 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | Rohan Bansal, Dmitry Drutskoy, Ajay Roopakalu, Sarah Tang
 | {{unknown|Last updated Jun 2011}}
 |-
+! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
+| Complete rewrite of "Minecraft PHP Client", so it becomes modular and maintenable. It's object-oriented, and have an event system
+| [http://php.net/ PHP]
+| [http://www.gnu.org/copyleft/lgpl.html LGPL]
+| {{no}}
+| {{no}}
+| [https://twitter.com/shoghicp shoghicp]
+| {{yes|Active. Works from 1.0.0 to 1.2.5}}
+|-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
-| Uses PHP to connect to servers. Can connect to premium servers also. Maybe useful for bots. It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
+| "- Superseded by Minecraft PHP Client 2 -" It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
 | [http://php.net/ PHP]
 | [http://www.gnu.org/copyleft/lgpl.html LGPL]
 | {{yes|Yes, but only linux}}
 | {{no}}
 | [https://twitter.com/shoghicp shoghicp]
-| {{yes|Active. Works from b1.6 to 1.2.5}}
+| {{no|Stopped. Works from b1.6 to 1.2.5 }}
 |-
 ! [[Mineflayer]]
 | JavaScript bot framework. See [[Mineflayer]] for more details.
