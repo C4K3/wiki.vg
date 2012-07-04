@@ -77,7 +77,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|Last updated Jun 2011}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
-| Complete rewrite of "Minecraft PHP Client", so it becomes modular and maintenable. It's object-oriented, and have an event system
+| Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
 | [http://php.net/ PHP]
 | [http://www.gnu.org/copyleft/lgpl.html LGPL]
 | {{no}}
