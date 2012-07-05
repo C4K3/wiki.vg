@@ -40,7 +40,7 @@ To split this packet into chunks you need to uncompress the data array. Then you
 | class="col4 centeralign" | Chunk column count times the Meta information structure (See notes for details)
 |- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 7 + (Chunk data size) + 4 * (Chunk Column Count) bytes
+| class="col1 rightalign" colspan="4" | 7 + (Chunk data size) + 12 * (Chunk Column Count) bytes
 |}
 
 
