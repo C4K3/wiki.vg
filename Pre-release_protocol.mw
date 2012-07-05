@@ -683,7 +683,7 @@ Sent by the server when a Mob Entity is Spawned
 | class="col3" | Varies by mob, see [[Entities]]
 |- class="row13"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 21 bytes + Metadata (at least 1)
+| class="col1 rightalign" colspan="4" | 27 bytes + Metadata (at least 1)
 |}
 
 
