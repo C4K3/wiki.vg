@@ -2,6 +2,82 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 == New packets ==
 
+=== Map Chunk Bulk (0x38) ===
+
+To reduce the number of bytes this packet is used to send chunk columns together for better compression results. The packet contains up to 100 chunk columns (later this might be reduced to 50).
+
+The data part is a zlib compressed byte array containing the chunk data. The meta data part specifies which chunks in which order the data part exists of. 
+
+To split this packet into chunks you need to uncompress the data array. Then you can iterate through the data part. Each part is 10240 * n + 256 bytes. n is the number of chunks in the current chunk column(this is the number of flags set in the primary bitmap). 10240 is the amount of bytes for each chunk without add bitmap, 256 bytes are used for biomes. The second short in the meta data part is not yet in use. It could specify if the chunk uses the add bitmap part, because it has very high block ids, but not in the current snapshot. 
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=5 | 0x38
+| class="col1 centeralign" | Chunk Column Count
+| class="col2 centeralign" | short
+| class="col3 centeralign" | 
+| class="col4" | The number of chunk columns in this packet
+|- class="row2"
+| class="col1 centeralign" | Chunk data size
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | the size of the data field
+|- class="row3"
+| class="col1 centeralign" | Data
+| class="col2 centeralign" | byte array
+| class="col3 centeralign" | 
+| class="col4" | compressed chunk data
+|- class="row4"
+| class="col1 centeralign" | meta information
+| class="col2 centeralign" | chunk bulk meta information
+| class="col3 centeralign" |
+| class="col4 centeralign" | Chunk column count times the Meta information structure (See notes for details)
+|- class="row5"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 7 + (Chunk data size) + 4 * (Chunk Column Count) bytes
+|}
+
+
+====Chunk Bulk Meta Information Structure====
+
+{| class="wikitable"
+|- class="row0"
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col1 centeralign" | Chunk Column X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 10
+| class="col4" | The X coordinate of the specific chunk column
+|- class="row2"
+| class="col1 centeralign" | Chunk Column Z
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 10
+| class="col4" | The Z coordinate of the specific chunk column
+|- class="row3"
+| class="col1 centeralign" | Chunk Primary bitmap
+| class="col2 centeralign" | short
+| class="col3 centeralign" | 15
+| class="col4" | A bitmap which specifies which chunk is not empty in this chunk column
+|- class="row4"
+| class="col1 centeralign" | Chunk Add bitmap?
+| class="col2 centeralign" | short
+| class="col3 centeralign" | 0
+| class="col4" | A bitmap which specifies which chunk need add information because of very high block ids. not yet used. needs verification
+|- class="row5"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="3" | 12 bytes
+|}
+
+
 === Tab-complete (0xCB) ===
 
 ''Two-way''
