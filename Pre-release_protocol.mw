@@ -721,6 +721,62 @@ Sent by the server when an list of Entities is to be destroyed on the client.
 
 {{anchor|0x1E}}
 
+=== Chunk Data (0x33) ===
+
+''Server to Client''
+
+See also: [[Map Format]]
+
+Chunks are sent a column at a time, with some sections optionally missing from each packet (those consisting only of air).
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x33
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | Chunk X Coordinate (*16 to get true X)
+|- class="row2"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" |
+| class="col3" | Chunk Z Coordinate (*16 to get true Z)
+|- class="row3"
+| class="col0 centeralign" | Ground-up continuous
+| class="col1 centeralign" | boolean
+| class="col2 centeralign" | 
+| class="col3" | This is True if the packet represents all sections in this vertical column, where the primary bit map specifies exactly which sections are included, and which are air.
+|- class="row4"
+| class="col0 centeralign" | Primary bit map
+| class="col1 centeralign" | unsigned short
+| class="col2 centeralign" | 15
+| class="col3" | Bitmask with 1 for every 16x16x16 section which data follows in the compressed data.
+|- class="row5"
+| class="col0 centeralign" | Add bit map
+| class="col1 centeralign" | unsigned short
+| class="col2 centeralign" | 0
+| class="col3" | Same as above, but this is used exclusively for the 'add' portion of the payload
+|- class="row6"
+| class="col0 centeralign" | Compressed size
+| class="col1 centeralign" | int
+| class="col2 centeralign" | 
+| class="col3" | Size of compressed chunk data.
+|- class="row78"
+| class="col0 centeralign" | Compressed data
+| class="col1 centeralign" | unsigned byte array
+| class="col2 centeralign" | <code>…</code>
+| class="col3" | The chunk data is compressed using ZLib Deflate function.
+|- class="row8"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 22 bytes + Compressed chunk size
+|}
+
 
 
 === Player Abilities (0xCA) ===
