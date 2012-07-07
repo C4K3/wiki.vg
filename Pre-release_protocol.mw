@@ -924,7 +924,7 @@ To get the values of these booleans, simply AND (&) the byte with 1,2,4 and 8 re
 == Removed packets ==
 
 === Chunk Allocation Packet (0x32) ===
-The chunk Allocation Packet is not longer in use. Memory will automatically allocated with a incoming Map Chunk packet. To deallocate memory you need to send a MapChunk packet, which only contains biome data for plains(all biome bytes set to 1). So the Add and Primary bitmap must set to 0, and Ground-up continuous to true. Because the payload of this packet is encrypted and static you can use a hardcoded value for it, so you don't need to encrypt it each time.
+The chunk Allocation Packet is not longer in use. Memory will automatically allocated with a incoming Map Chunk packet. To deallocate memory you need to send a MapChunk packet, which only contains biome data for plains(all biome bytes set to 1). So the Add and Primary bitmap must set to 0, and Ground-up continuous to true. Because the payload of this packet is compressed and static you can use a hardcoded value for it, so you don't need to compress it each time.
 
 This is the payload which is used in the Compressed Data part to deallocate a chunk column:
 
