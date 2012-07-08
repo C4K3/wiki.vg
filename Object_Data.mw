@@ -1,0 +1,48 @@
+== Object Data ==
+
+In the "Spawn Object/Vehicle" packet, additional metadata about the spawned entity may be provided.  The length and contents of this extra data depend on the type of object being spawned.
+
+=== Falling Block (70) ===
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Field Name
+! class="col1" | Field Type
+! class="col2" | Example
+! class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Block Type
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>12</code>
+| class="col3" | <code>BlockID | (Metadata << 0xC)</code>
+|}
+
+=== Ghast Fireball ===
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Field Name
+! class="col1" | Field Type
+! class="col2" | Example
+! class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Entity ID
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>64</code>
+| class="col3" | The ID of the ghast that created the fireball
+|- class="row2"
+| class="col0 centeralign" | Speed X
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The speed of the fireball
+|- class="row2"
+| class="col0 centeralign" | Speed Y
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The speed of the fireball
+|- class="row2"
+| class="col0 centeralign" | Speed Z
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The speed of the fireball
+|}
