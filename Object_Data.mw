@@ -12,17 +12,17 @@ In the "Spawn Object/Vehicle" packet, additional metadata about the spawned enti
 | class="col0 centeralign" | Speed X
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the fireball
+| class="col3" | The speed of the object
 |- class="row2"
 | class="col0 centeralign" | Speed Y
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the fireball
+| class="col3" | The speed of the object
 |- class="row2"
 | class="col0 centeralign" | Speed Z
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the fireball
+| class="col3" | The speed of the object
 |}
 
 === Falling Block (70) ===
