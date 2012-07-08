@@ -40,7 +40,9 @@ In the "Spawn Object/Vehicle" packet, additional metadata about the spawned enti
 | class="col3" | <code>BlockID | (Metadata << 0xC)</code>
 |}
 
-=== Ghast Fireball ===
+=== Projectiles ===
+
+This includes ghast fireballs, arrows, and fishhooks (probably more).
 
 {| class="wikitable"
 |- class="row0"
@@ -52,5 +54,23 @@ In the "Spawn Object/Vehicle" packet, additional metadata about the spawned enti
 | class="col0 centeralign" | Entity ID
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>64</code>
-| class="col3" | The ID of the ghast that created the fireball
+| class="col3" | The entity ID of the thrower
 |}
+
+
+=== Splash Potions ===
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Field Name
+! class="col1" | Field Type
+! class="col2" | Example
+! class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Entity ID
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>64</code>
+| class="col3" | Potion data value
+|}
+
+For more information on potion data values, see [http://www.minecraftwiki.net/wiki/Data_values#Potions].
