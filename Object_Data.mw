@@ -1,6 +1,29 @@
 == Object Data ==
 
-In the "Spawn Object/Vehicle" packet, additional metadata about the spawned entity may be provided.  The length and contents of this extra data depend on the type of object being spawned.
+In the "Spawn Object/Vehicle" packet, additional metadata about the spawned entity may be provided.  The length and contents of this extra data depend on the type of object being spawned.  No matter what, you must send at least one integer to the client, although 0 is a valid value.  If a number other than zero is provided (for all entities), the following data is appended to the end of the object data:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Field Name
+! class="col1" | Field Type
+! class="col2" | Example
+! class="col3" | Notes
+|- class="row2"
+| class="col0 centeralign" | Speed X
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The speed of the fireball
+|- class="row2"
+| class="col0 centeralign" | Speed Y
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The speed of the fireball
+|- class="row2"
+| class="col0 centeralign" | Speed Z
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The speed of the fireball
+|}
 
 === Falling Block (70) ===
 
@@ -30,19 +53,4 @@ In the "Spawn Object/Vehicle" packet, additional metadata about the spawned enti
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>64</code>
 | class="col3" | The ID of the ghast that created the fireball
-|- class="row2"
-| class="col0 centeralign" | Speed X
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the fireball
-|- class="row2"
-| class="col0 centeralign" | Speed Y
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the fireball
-|- class="row2"
-| class="col0 centeralign" | Speed Z
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the fireball
 |}
