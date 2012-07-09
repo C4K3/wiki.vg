@@ -84,7 +84,7 @@ Uses <code>http://snoop.minecraft.net/server</code>
 
 # Client connects to server
 # Client sends a [[Protocol#Handshake_.280x02.29|0x02 handshake]] containing the current player name
-# Client receives a 0x02 handshake from the server containing a randomly generated hash, which it saves as serverId
+# Client receives a 0x02 handshake from the server containing a random long expressed as hex, as a string, which it saves as serverId
 # Client sends a HTTP request to 
 #:<pre>http://session.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
 #:If the response is '''OK''' then continue, otherwise stop
@@ -97,7 +97,7 @@ Uses <code>http://snoop.minecraft.net/server</code>
 # Server answers tcp connection request
 # Server receives a [[Protocol#Handshake_.280x02.29|0x02 handshake]] containing the client's player name
 # Server generates a hash for this client
-# Server sends a 0x02 handshake to the client containing the hash
+# Server sends a 0x02 handshake to the client containing a random long expressed as hex, as a string
 # Server receives a [[Protocol#Login_Request_.280x01.29|0x01 login request]] from the client
 # Server sends a HTTP request to
 #:<pre>http://session.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash></pre>
