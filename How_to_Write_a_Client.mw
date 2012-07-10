@@ -221,6 +221,7 @@ If your health updates come much slower than on the notchian client, make sure y
 
 * Always sneak: You can do it via the Packet 0x13. On notchian clients, crouching reduces your speed and your ability to maneuver while jumping, but the server doesn't restrict it.
 * Fly: Just change the "on-ground" flag and send the server positions in the air. As long as you don't collide with a block, the server will obey.
+* Semi-invulnerability: Don't send position updates, that causes that you'll not recieve health updates and entities will be unable to attack you.
 * Full bright (Night vision): Don't render any lights, just use an ambient term
 * Wallhack+ESP: Disable zbuffer tests for entities. This will make them appear even if they are behind walls. Also you can make some billboard texts showing position, item shown, bigger name.
 * Xray: Treat some blocks as air.
