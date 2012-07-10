@@ -429,7 +429,7 @@ See [[Protocol Encryption]] for information on logging in.
 | class="col0 centeralign" rowspan="4" | 0x02
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>32</code>
+| class="col3 centeralign" | <code>38</code>
 | class="col4" | 
 |- class="row2"
 | class="col1 centeralign" | Username
