@@ -168,11 +168,12 @@ Sent when the client is ready to complete login and when the client is ready to 
 | class="col1 centeralign" | Payload
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 0
-| class="col4" | Bit field. 0: Initial spawn, 2: Respawn after death
+| class="col4" | Bit field. 0: Initial spawn, 1: Respawn after death
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="5" | 2 bytes
 |}
+
 === Encryption Key Response (0xFC) ===
 
 ''Two-Way''
