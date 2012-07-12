@@ -123,7 +123,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://bitbucket.org/lukleh/twistedbot TwistedBot]
 | 12w27a compatible
-| Python with twisted
+| [http://en.wikipedia.org/wiki/Python_(programming_language) Python] with [http://en.wikipedia.org/wiki/Twisted_(software) twisted]
 | BSD
 | {{no}}
 | {{no}}
