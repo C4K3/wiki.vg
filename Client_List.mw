@@ -121,6 +121,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | RevolutionalRedstone
 | {{yes|Active}}
 |-
+! [https://bitbucket.org/lukleh/twistedbot TwistedBot]
+| 12w27a compatible
+| Python
+| BSD
+| {{no}}
+| {{no}}
+| [[User:Lukleh | lukleh]]
+| {{yes|Active}}
+|-
 ! [[Vb Minebot]]
 | Work in progress standalone bot
 | [http://en.wikipedia.org/wiki/Visual_Basic_.NET VB.NET], w/Ruby 
