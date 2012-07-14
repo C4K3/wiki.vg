@@ -4,7 +4,7 @@ A list of tools to help out your Minecraft development.
 The following tools support version 1.2.5 (protocol version 29):
 
 * NetMinecraftMapViewer - http://code.google.com/p/netminecraftmapviewer - Map viewer showing entity locations and special blocks via TCP proxy for Minecraft 1.2.5, written in c#
-* SMProxy - http://smproxy.codeplex.com/ - Supports Minecraft 1.2.5
+* SMProxy - https://github.com/SirCmpwn/SMProxy - Supports Minecraft 1.2.5
 * [https://github.com/mmcgill/mc3p m3cp] - Actively maintained Python Minecraft proxy with plugin support. Runs on Linux/OS X/Windows, supports Beta 1.8 - Final 1.2.5
 * MCProxy - https://github.com/Maincraft/MCProxy - Java minecraft-proxy that can load plugins. Supports Minecraft 1.2.5
 
