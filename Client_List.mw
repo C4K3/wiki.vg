@@ -122,13 +122,13 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|Active}}
 |-
 ! [https://bitbucket.org/lukleh/twistedbot TwistedBot]
-| 12w27a compatible
+| bot and proxy
 | [http://en.wikipedia.org/wiki/Python_(programming_language) Python] with [http://en.wikipedia.org/wiki/Twisted_(software) twisted]
 | BSD
 | {{no}}
 | {{no}}
 | [[User:Lukleh | lukleh]]
-| {{yes|Active}}
+| {{yes|12w27a}}
 |-
 ! [[Vb Minebot]]
 | Work in progress standalone bot
