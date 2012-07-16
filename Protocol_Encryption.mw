@@ -12,7 +12,7 @@ As of 12w17a, minecraft implements SSL-like encryption.
 #Server checks that the encrypted bytes match
 #Server decrypts shared secret with its private key
 #Server checks player authenticity via session.minecraft.net
-#'''S->C''' 0xFC encryption response - empty payload
+#'''S->C''' 0xFC encryption response - empty payload meaning two zero length byte arrays and two zero shorts
 #Server enables AES stream encryption
 #Client enables AES stream encryption
 #'''C->S''' 0xCD - Payload of 0 (byte)
