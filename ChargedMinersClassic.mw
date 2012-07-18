@@ -2,6 +2,9 @@
 
 == Improvments ==
 * Larger chat window
+* Irssi style tab complete
+* The toolbox not allowing more than one of the same block
+* Repeated breaking/placing on mouseclick hold
 
 == Bugs ==
 * Intel graphics cards rendering is broken.
