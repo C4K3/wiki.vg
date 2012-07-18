@@ -853,12 +853,12 @@ To get the values of these booleans, simply AND (&) the byte with 1,2,4 and 8 re
 | class="col3 centeralign" | 5
 | class="col4" | 
 |- class="row2"
-| class="col1 centeralign" | Walking speed
+| class="col1 centeralign" | Flying speed
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 12
 | class="col4" | 
 |- class="row3"
-| class="col1 centeralign" | Flying speed
+| class="col1 centeralign" | Walking speed
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 25
 | class="col4" | 
