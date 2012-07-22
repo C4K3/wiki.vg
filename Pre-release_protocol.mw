@@ -541,6 +541,73 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 | class="col1 rightalign" colspan="4" | 11 bytes + length of string
 |}
 
+=== Spawn Named Entity (0x14) ===
+
+''Server to Client''
+
+{| class="wikitable"
+|- class="row0"
+! class="col0 centeralign" | Packet ID
+! class="col1 rightalign" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="10" | 0x14
+| class="col1" | EID
+| class="col2" | int
+| class="col3" | <code>94453</code>
+| class="col4" | Player ID
+|- class="row2"
+| class="col0" | Player Name
+| class="col1" | string
+| class="col2" | <code>Twdtwd</code>
+| class="col3" | Max length of 16
+|- class="row3"
+| class="col0" | X
+| class="col1" | int
+| class="col2" | <code>784</code>
+| class="col3" | Player X as Absolute Integer
+|- class="row4"
+| class="col0" | Y
+| class="col1" | int
+| class="col2" | <code>2131</code>
+| class="col3" | Player Y as Absolute Integer
+|- class="row5"
+| class="col0" | Z
+| class="col1" | int
+| class="col2" | <code>-752</code>
+| class="col3" | Player Z as Absolute Integer
+|- class="row6"
+| class="col0" | Yaw
+| class="col1" | byte
+| class="col2" | <code>0</code>
+| class="col3" | Player rotation as a packed byte
+|- class="row7"
+| class="col0" | Pitch
+| class="col1" | byte
+| class="col2" | <code>0</code>
+| class="col3" | Player rotation as a packed byte
+|- class="row8"
+| class="col0" | Current Item
+| class="col1" | short
+| class="col2" | <code>0</code>
+| class="col3" | The item the player is currently holding. Note that this should be 0 for "no item", unlike -1 used in other packets. A negative value crashes clients.
+|- class="row9"
+| class="col0" | Metadata
+| class="col1" | Metadata
+| class="col2" | <code>127</code>
+| class="col3" | 
+|- class="row10"
+| class="col0" | Unknown
+| class="col1" | Byte
+| class="col2" | 
+| class="col3" | 
+|- class="row11"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 23 bytes + length of strings + metadata (at least 1)
+|}
+
 === Spawn Object/Vehicle (0x17) ===
 
 ''Server to Client''
@@ -818,7 +885,7 @@ Chunks are sent a column at a time, with some sections optionally missing from e
 | class="col3" | The new Metadata for the block
 |- class="row6"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 12 bytes
+| class="col1 rightalign" colspan="4" | 13 bytes
 |}
 
 === Block Action (0x36) ===
