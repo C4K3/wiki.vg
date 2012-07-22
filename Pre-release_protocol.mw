@@ -933,6 +933,11 @@ This is the payload which is used in the Compressed Data part to deallocate a ch
 
 == Protocol History ==
 
+=== 2012-07-23 ===
+* 12w30a
+* Protocol version is still 38
+* Changed packets 0x14 and 0x35
+
 === 2012-07-05 ===
 * 12w27a
 * Protocol version is now 38
