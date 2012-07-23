@@ -257,6 +257,10 @@ See [[Protocol Encryption]] for information on this packet.
 | class="col1 rightalign" colspan="4" | 7 bytes + length of string + length of key + length of token
 |}
 
+
+
+
+
 === Named Sound Effect (0x3E) ===
 
 ''Server to client''
@@ -941,6 +945,70 @@ This packet is used for a number of things:
 |}
 
 See Also: [[Block Actions]]
+
+=== Explosion (0x3C) ===
+
+''Server to Client''
+
+Sent when an explosion occurs (creepers, TNT, and ghast fireballs).
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=9 | 0x3C
+| class="col1 centeralign" | X
+| class="col2 centeralign" | double
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | Y
+| class="col2 centeralign" | double
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | Z
+| class="col2 centeralign" | double
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row1"
+| class="col1 centeralign" | Radius
+| class="col2 centeralign" | float
+| class="col3 centeralign" | 3.0
+| class="col4" | Currently unused in the client
+|- class="row2"
+| class="col1 centeralign" | Record count
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | This is the count, not the size. The size is 3 times this value.
+|- class="row3"
+| class="col1 centeralign" | Records
+| class="col2 centeralign" | (byte, byte, byte) × count
+| class="col3 centeralign" | 
+| class="col4" | Each record is 3 bytes, which seem to be XYZ offsets of affected blocks.
+|- class="row4"
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | float
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row5"
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | float
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row6"
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | float
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row7"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 45 bytes + 3*(Record count) bytes
+|}
 
 
 === Player Abilities (0xCA) ===
