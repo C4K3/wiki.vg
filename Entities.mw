@@ -6,19 +6,41 @@ Note that entity metadata is a totally distinct concept from block metadata.
 The entity metadata format is quirky dictionary format, where the key and the value's type are packed in a single byte.
 
 To parse, repeat the following procedure:
- 1) Read an unsigned byte
- 2) If this byte == 127, stop reading
- 3) Decompose the byte. 
-    The bottom 5 bits (0x1F) serve as an identifier (key) for the data to follow. 
-    The top 3 bits (0xE0) serve as [[Data_Types|a type]]:
-     0: byte
-     1: short
-     2: int
-     3: float
-     4: string16,
-     5: short, byte, short (slot type)
-     6: int, int, int
- 4) Read and unpack based on the type (above)
+
+# Read an unsigned byte
+# If this byte == 127, stop reading
+# Decompose the byte. <br> The bottom 5 bits (0x1F) serve as an identifier (key) for the data to follow. <br> The top 3 bits (0xE0) serve as a type.
+# Read and unpack based on the type (below)
+
+{| class="wikitable"
+|- 
+! Type
+! Meaning
+|- 
+| 0
+| byte
+|-
+| 1
+| short
+|-
+| 2
+| int
+|-
+| 3
+| float<sup>*</sup>
+|-
+| 4
+| string16
+|-
+| 5
+| short, byte, short (slot type)<sup>*</sup>
+|-
+| 6
+| int, int, int (x, y, z)<sup>*</sup>
+|}
+
+<nowiki>*</nowiki>Not currently used (last checked in 1.2.5 [http://gist.github.com/0a1062c3b5c2d268f7e9])
+
 
 In Python:
 <source lang="python">
