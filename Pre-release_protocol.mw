@@ -604,7 +604,7 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
 | class="col3" | 
 |- class="row10"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 23 bytes + length of strings + metadata (at least 1)
+| class="col1 rightalign" colspan="4" | 22 bytes + length of strings + metadata (at least 1)
 |}
 
 === Spawn Object/Vehicle (0x17) ===
