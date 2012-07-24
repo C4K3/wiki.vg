@@ -1154,7 +1154,9 @@ This is the payload which is used in the Compressed Data part to deallocate a ch
 
 === 2012-07-24 ===
 * 12w30c
+* Protocol version 39
 * Changed packets 0x84
+
 === 2012-07-23 ===
 * 12w30a
 * Protocol version is still 38
