@@ -976,8 +976,8 @@ Essentially a block update on a tile entity.
 | class="col2 centeralign" | 
 | class="col3" | The type of update to perform
 |- class="row5"
-| class="col0 centeralign" | Item
-| class="col1 centeralign" | Itemstack
+| class="col0 centeralign" | Misc Data
+| class="col1 centeralign" | Short sized NBT data
 | class="col2 centeralign" | 
 | class="col3" | Varies
 |- class="row6"
@@ -988,6 +988,7 @@ Essentially a block update on a tile entity.
 '''Actions'''
 
 * '''1''': Set mob displayed inside a mob spawner. Custom 1 contains the [[Entities#Mobs|mob type]]
+
 === Explosion (0x3C) ===
 
 ''Server to Client''
