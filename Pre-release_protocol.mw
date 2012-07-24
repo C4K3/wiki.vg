@@ -941,6 +941,53 @@ This packet is used for a number of things:
 
 See Also: [[Block Actions]]
 
+=== Update Tile Entity (0x84) ===
+
+''Server to Client''
+
+Essentially a block update on a tile entity.
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x84
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 
+| class="col3" | 
+|- class="row3"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | int
+| class="col2 centeralign" | 
+| class="col3" | 
+|- class="row4"
+| class="col0 centeralign" | Action
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 
+| class="col3" | The type of update to perform
+|- class="row5"
+| class="col0 centeralign" | Item
+| class="col1 centeralign" | Itemstack
+| class="col2 centeralign" | 
+| class="col3" | Varies
+|- class="row6"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 12 + itemstack bytes
+|}
+
+'''Actions'''
+
+* '''1''': Set mob displayed inside a mob spawner. Custom 1 contains the [[Entities#Mobs|mob type]]
 === Explosion (0x3C) ===
 
 ''Server to Client''
@@ -1004,7 +1051,6 @@ Sent when an explosion occurs (creepers, TNT, and ghast fireballs).
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 45 bytes + 3*(Record count) bytes
 |}
-
 
 === Player Abilities (0xCA) ===
 This packet has now been compressed into 3 bytes. The latter 2 bytes are used to indicate the walking and flying sppeds respectively, while the first byte is used to determine the value of 4 booleans.
