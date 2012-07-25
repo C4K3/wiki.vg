@@ -81,7 +81,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | [http://php.net/ PHP]
 | [http://www.gnu.org/copyleft/lgpl.html LGPL]
 | {{no}}
-| {{no}}
+| {{unknown|Convert Map to PNG}}
 | [https://twitter.com/shoghicp shoghicp]
 | {{yes|Active. Works from 1.0.0 to 1.2.5 (and 12w30b)}}
 |-
