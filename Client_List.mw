@@ -123,7 +123,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [http://www.planetminecraft.com/project/new-c-driven-minecraft-client-461392/ Revolutional RedStone]
 | Parial Redstone support
-| C++
+| C++, Lua
 | {{Unknown}}
 | {{yes}}
 | {{yes}}
