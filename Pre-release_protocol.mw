@@ -367,22 +367,9 @@ This change affects any packets with [[Slot Data]], including:
 
 === Login Request (0x01) ===
 
-''Two-Way''
+''Server to Client''
 
 See [[Protocol Encryption]] for information on logging in.
-
-'''Client to Server'''
-
-Just 1 byte C->S
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-|- class="row1"
-| class="col0 centeralign" | 0x01
-|}
-
-'''Server to Client'''
 
 {| class="wikitable"
 |- class="row0"
