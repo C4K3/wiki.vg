@@ -354,7 +354,7 @@ Used to play a sound effect on the client.
 
 The meta data for items no longer requires a table.  If an item has no meta data, the byte array is given a length of -1.
 
-This affects at least packet 0x6B (Creative inventory).
+This affects at least packet 0x0F (Player Block Placement), 0x66 (Window click codec), 0x6B (Creative inventory), 0x68 (Window Set Slot), 0x05 (Entity Equipment).
 
 == Changed packets ==
 
