@@ -348,6 +348,10 @@ Used to play a sound effect on the client.
 | class="col1 rightalign" colspan="4" | 4 bytes
 |}
 
+== Changed Data Type ==
+
+The meta data for items no longer requires a table.  If an item has no meta data, the byte array is given a length of -1.
+
 == Changed packets ==
 
 === Login Request (0x01) ===
