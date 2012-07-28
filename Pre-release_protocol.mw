@@ -350,11 +350,16 @@ Used to play a sound effect on the client.
 
 == Changed Data Type ==
 
-=== Item Meta Data ===
+=== Item Meta Data for slots ===
 
-The meta data for items no longer requires a table.  If an item has no meta data, the byte array is given a length of -1.
+Parsing or encoding of [[Slot Data]] no longer requires a list of all enchantable item IDs.  Every slot transmitted now includes a short that indicates the length of the NBT data.  As before, a length of -1 means there is no NBT data.
 
-This affects at least packet 0x0F (Player Block Placement), 0x66 (Window click codec), 0x6B (Creative inventory), 0x68 (Window Set Slot), 0x05 (Entity Equipment).
+This change affects any packets with [[Slot Data]], including:
+* 0x0F (Player Block Placement)
+* 0x66 (Window click codec)
+* 0x6B (Creative Inventory Action)
+* 0x68 (Set Window Items)
+* 0x05 (Entity Equipment)
 
 == Changed packets ==
 
