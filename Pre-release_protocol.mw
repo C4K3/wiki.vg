@@ -492,7 +492,7 @@ See [[Protocol Encryption]] for information on logging in.
 
 === Respawn (0x09) ===
 
-'''Server to Client'''
+''Server to Client''
 
 To change the player's dimension (overworld/nether/end), send them a respawn packet with the appropriate dimension, followed by prechunks/chunks for the new dimension, and finally a position and look packet.  You do not need to unload chunks, the client will do it automatically.
 
