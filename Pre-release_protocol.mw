@@ -977,12 +977,12 @@ This packet is used for a number of things:
 | class="col3" | Varies depending on block - see below
 |- class="row6"
 | class="col0 centeralign" | Block ID
-| class="col1 centeralign" | byte
+| class="col1 centeralign" | short
 | class="col2 centeralign" | <code>29</code>
 | class="col3" | The block id this action is set for
 |- class="row7"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 13 bytes
+| class="col1 rightalign" colspan="4" | 14 bytes
 |}
 
 See Also: [[Block Actions]]
