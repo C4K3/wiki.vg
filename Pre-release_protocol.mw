@@ -1195,7 +1195,7 @@ This is the payload which is used in the Compressed Data part to deallocate a ch
 === 2012-05-03 ===
 * 12w18a
 * Protocol version is now 32
-* New packet: 0x3D Name Sound Effect
+* New packet: 0x3E Name Sound Effect
 * Changed packet: 0x01 Login Request
 * Changed packet: 0x02 Handshake
 * Changed packet: 0xCA Player Abilities
