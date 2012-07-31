@@ -100,6 +100,12 @@ After decrypting the shared secret in 0xFD, the sever generates the login hash a
 
 If the response is '''YES''' then the client is authenticated and allowed to join. Otherwise the client will/should be [[Protocol#Disconnect.2FKick_.280xFF.29|kicked]] (unencrypted) with "Failed to verify username!"
 
+=== Sample Code ===
+
+Examples of generating Java-style hex digests:
+
+* C#: https://gist.github.com/404223052379e82f91e6
+
 == Additional Links ==
 
 [http://pastebin.com/8eYyKZn6 Generate RSA-Keys and building the ASN.1v8 structure of the x.509 certificate using Crypto++]
