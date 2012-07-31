@@ -339,13 +339,13 @@ Used to play a sound effect on the client.
 | class="col2 centeralign" | int
 | class="col3 centeralign" | 
 |- class="row3"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | Destroy Stage
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 1
-| class="col4" | ?
+| class="col4" | How far destroyed this block is.
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 4 bytes
+| class="col1 rightalign" colspan="4" | 18 bytes
 |}
 
 == Changed Data Type ==
