@@ -99,3 +99,7 @@ After decrypting the shared secret in 0xFD, the sever generates the login hash a
  <nowiki>http://session.minecraft.net/game/checkserver.jsp?user=</nowiki>''username''&serverId=''hash''
 
 If the response is '''YES''' then the client is authenticated and allowed to join. Otherwise the client will/should be [[Protocol#Disconnect.2FKick_.280xFF.29|kicked]] (unencrypted) with "Failed to verify username!"
+
+== Additional Links ==
+
+[http://pastebin.com/8eYyKZn6 Generate RSA-Keys and building the ASN.1v8 structure of the x.509 certificate using Crypto++]
