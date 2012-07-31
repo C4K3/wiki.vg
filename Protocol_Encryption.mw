@@ -103,3 +103,4 @@ If the response is '''YES''' then the client is authenticated and allowed to joi
 == Additional Links ==
 
 [http://pastebin.com/8eYyKZn6 Generate RSA-Keys and building the ASN.1v8 structure of the x.509 certificate using Crypto++]
+[http://pastebin.com/7Jvaama1 Decrypt shared secret using Crypto++]
