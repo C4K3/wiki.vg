@@ -1,5 +1,31 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 2012-08-01 ===
+* 1.3.1
+* Protocol version is now 39
+
+* Fishing floats, spawned by a 0x17 packet do now use the extra fields* New packet: 0x3D Name Sound Effect
+* All items (except the empty hand) now send enchantment data
+
+* Added packet: 0x37 Block breaking animation
+* Added packet:  0x38 Map Chunk Bulk 
+* Added packet: 0x3E Name Sound Effect
+* Added packet: 0xCB Tab-complete
+* Added packet: 0xCC Locale and View Distance
+* Added packet: 0xCD used for Login Request and Respawn (1 byte payload) 
+* Added packet: 0xFC Encryption Key Response
+* Added packet: 0xFD Encryption Key Request
+
+* Changed packet: 0x01 Login Request
+* Changed packet: 0x02 Handshake
+* Changed packet: 0x09 Respawn
+* Changed packet: 0x0F Player Block Placement
+* Changed packet: 0x14 Spawn named entity
+* Changed packet: 0x35 Block Change
+* Changed packet: 0xCA Player Abilities 
+
+* Removed packet: 0x32 Map Column Allocation
+
 === 2012-03-22 ===
 * 1.2.4
 * Protocol version is now 29
