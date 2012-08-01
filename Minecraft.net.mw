@@ -1,6 +1,3 @@
-I googled "site:minecraft.net" trying to find some of the URLs that one can access Minecraft database info with. Here's what I found (I have also posted this info [http://www.minecraftforum.net/topic/90270-fact-urls-like-haspaidjsp/page__gopid__8545080#entry8545080 here]):
-
-
  <nowiki>http://www.minecraft.net/haspaid.jsp?user=<USERNAME></nowiki>
 Used to check if an account is premium or not. Returns true if the username is a premium Minecraft account, returns false otherwise.
 
