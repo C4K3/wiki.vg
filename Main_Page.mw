@@ -44,7 +44,7 @@ There are ongoing efforts to keep reverse engineered documentation updated, but 
 Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
 * [http://w.tkte.ch/doku.php/minecraft/skin_previews PHP and Python scripts] to generate images & GIFs from minecraft skins.
 * [[Chunk_data_decompressing_(Zlib)|Chunk data decompressing using Zlib]], a small snippet showing how to use Zlib to decompress the chunk data sent by 0x33 packets.
-* [[:Category:Code Snippets|More...]]
+* [[:Code Snippets|More...]]
 
 === Tools and Mods ===
 * [[Client List|Clients]] - third-party Minecraft clients.
