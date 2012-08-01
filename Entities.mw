@@ -453,12 +453,7 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
 | class="col3" | 0.25
 |- class="row10"
 | class="col0" | 70
-| class="col1" | Falling Sand
-| class="col2" | 0.98
-| class="col3" | 0.98
-|- class="row11"
-| class="col0" | 71
-| class="col1" | Falling Gravel
+| class="col1" | Falling Objects - The object data field specifies the block id. in vanilla only used to spawn falling sand/falling gravel/falling dragon eggs
 | class="col2" | 0.98
 | class="col3" | 0.98
 |- class="row12"
