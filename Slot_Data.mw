@@ -14,7 +14,7 @@ The structure consists of at least a short, which gives the item/block ID [http:
 
 For non-empty slots, at least two further fields follow. These fields are a byte (item count) and a short (damage/block metadata)
 
-For certain block IDs, [[#Enchantable_items|given below]], further data follows. First, a short gives the length of a proceeding byte array. A value of <code>-1</code> signifies no further data.
+For every block ID, except -1, further data follows. First, a short gives the length of a proceeding byte array. A value of <code>-1</code> signifies no further data.
 
 The byte array (if present) contains gzipped (that is RFC 1952 rather than RFC 1950) [[NBT]] data. The format of this data is as follows:
 
@@ -32,45 +32,3 @@ The byte array (if present) contains gzipped (that is RFC 1952 rather than RFC 1
 </code>
 
 Each of the inner, untagged COMPOUNDs represents an enchantment, with its ID[http://www.minecraftwiki.net/wiki/Enchantment#Enchantment_Types] and level given as child SHORT elements.
-
-== Enchantable items ==
-
-Every item that has a "damage bar" in-game is considered enchantable by the protocol, though the notchian server/client do not support enchantment of some items. These include: hoes, flint and steel, fishing rods and shears.
-
-<code>
-  0x103, #Flint and steel
-  0x105, #Bow
-  0x15A, #Fishing rod
-  0x167, #Shears
-  
-  #TOOLS
-  #sword, shovel, pickaxe, axe, hoe
-  0x10C, 0x10D, 0x10E, 0x10F, 0x122, #WOOD
-  0x110, 0x111, 0x112, 0x113, 0x123, #STONE
-  0x10B, 0x100, 0x101, 0x102, 0x124, #IRON
-  0x114, 0x115, 0x116, 0x117, 0x125, #DIAMOND
-  0x11B, 0x11C, 0x11D, 0x11E, 0x126, #GOLD
-  
-  #ARMOUR
-  #helmet, chestplate, leggings, boots
-  0x12A, 0x12B, 0x12C, 0x12D, #LEATHER
-  0x12E, 0x12F, 0x130, 0x131, #CHAIN
-  0x132, 0x133, 0x134, 0x135, #IRON
-  0x136, 0x137, 0x138, 0x139, #DIAMOND
-  0x13A, 0x13B, 0x13C, 0x13D  #GOLD
-</code>
-
-Or, more simply:
-
-<code>
-        private static bool CanEnchant(short value)
-        {
-            return  (256 <= value && value <= 259) ||
-                    (267 <= value && value <= 279) ||
-                    (283 <= value && value <= 286) ||
-                    (290 <= value && value <= 294) ||
-                    (298 <= value && value <= 317) ||
-                    value == 261 || value == 359 ||
-                    value == 346;
-        }
-</code>
