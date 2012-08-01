@@ -1,0 +1,8 @@
+== Code Snippets ==
+
+* Minecraft Skin Preview Creation [ Python, PHP ]: http://w.tkte.ch/minecraft/skin_previews
+* zlib chunk decompression [ C ]: http://wiki.vg/Chunk_data_decompressing_%28Zlib%29
+* Java Hex Digest SHA-1 Hash Creation [ C# ]: https://github.com/SirCmpwn/Craft.Net/blob/master/Craft.Net.Server/Cryptography.cs
+* Slot Data Parsing [ C# ]: https://github.com/SirCmpwn/Craft.Net/blob/master/Craft.Net.Server/Slot.cs
+* Nibble array storage for chunk metadata, block light, sky light, etc [ C# ]: https://github.com/SirCmpwn/Craft.Net/blob/master/Craft.Net.Server/Worlds/NibbleArray.cs
+* Outdated 1.2.5 virtual hosting software [ C# ]: https://github.com/SirCmpwn/MCVHost
