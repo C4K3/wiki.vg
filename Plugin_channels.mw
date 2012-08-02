@@ -1,0 +1,31 @@
+'''Plugin channels''' are implemented using [[Protocol#0xFA|packet 0xFA]], allowing client mods and server plugins to communicate without cluttering up chat. [http://dinnerbone.com/blog/2012/01/13/minecraft-plugin-channels-messaging/ This post by Dinnerbone] is a good introduction and basic documentation.
+{{anchor|Internal}}
+== Channels internal to Minecraft ==
+As of 1.3, Minecraft itself started using plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>.
+=== <code>MC|BEdit</code> ===
+''Client to server''
+
+When a player edits an unsigned book.
+
+=== <code>MC|BSign</code> ===
+''Client to server''
+
+When a player signs a book.
+
+=== <code>MC|TPack</code> ===
+''Two-Way''
+
+Remote texture packs.
+
+===  <code>MC|TrList</code> ===
+''Two-Way''
+
+The list of trades a villager NPC is offering.
+
+=== <code>MC|TrSel</code> ===
+''Client to server''
+
+When a player selects a specific trade offered by a villager NPC.
+
+== Notable community plugin channels ==
+Channels listed in this section are not Mojang-sanctioned. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
