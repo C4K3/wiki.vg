@@ -6,6 +6,7 @@ A c++ code snippet to decrypt the file using the crypto++ library can be found h
 
 The c++ code is loosely based on the python code in sadimusi's mc3p found here: [https://github.com/sadimusi/mc3p/tree/master/mc3p python code]
 
+[https://gist.github.com/834093b909d92de5b392 C# code]
 
 == Encryption ==
 The last login file is encrypted with some not so secure random data. First a Java Random is created with an initial seed of 43287234. Then the next 8 bytes produced by this random are used as a salt. These bytes correspond to: '0x0c, 0x9d, 0x4a, 0xe4, 0x1e, 0x83, 0x15, 0xfc'
