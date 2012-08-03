@@ -87,6 +87,10 @@ Examples of generating Java-style hex digests:
 
 * C#: https://gist.github.com/404223052379e82f91e6
 
+Example of AES/CFB8 Stream encryption:
+
+* C#: https://gist.github.com/3249875
+
 == Additional Links ==
 
 [http://pastebin.com/8eYyKZn6 Generate RSA-Keys and building the ASN.1v8 structure of the x.509 certificate using Crypto++]
