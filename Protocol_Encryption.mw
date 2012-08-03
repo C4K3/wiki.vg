@@ -48,6 +48,8 @@ On receipt of a 0xFD from the server, the client will generate a 16-byte shared 
 
 The server decrypts the shared secret and token using its private key, and checks if the token is the same. It then sends a 0xFC to the client with an empty payload, and enables  AES/CFB8 encryption. For the Initial Vector (IV) and AES setup, both sides use the secret key. Similarly, the client will also enable encryption upon receipt of the empty 0xFC. From this point forward, everything is encrypted.
 
+This the C# implementation of the AES/CFB8 encryption, https://gist.github.com/3249875
+
 == Authentication ==
 
 Both server and client need to make a request to session.minecraft.net if the server is in online-mode.
