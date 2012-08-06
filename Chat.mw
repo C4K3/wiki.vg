@@ -11,7 +11,7 @@ The character set is as follows:
 </code>
 </blockquote>
 
-Characters not in this list will cause Notchian servers to kick clients, and Notchian clients to choke and die horribly.
+This list encapsulates all characters that are in the fonts file. Characters outside of this are acceptable, but are rendered differently.
 
 == Font ==
 
