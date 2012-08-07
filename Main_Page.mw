@@ -37,6 +37,7 @@ There are ongoing efforts to keep reverse engineered documentation updated, but 
 * [[Chat|How Chat Works]]
 * [[Protocol FAQ]]
 * [[Authentication|Authentication Scheme]]
+* [[Protocol Encryption]]
 * [[Map Format]] (See also: mirror of the old [[NBT]].txt)
 * [http://b.wiki.vg/ Burger Vitrine] shows differences in data and protocol between arbitrary versions.
 
