@@ -7,6 +7,9 @@ As of 1.3, Minecraft itself started using plugin channels to implement new featu
 
 When a player edits an unsigned book.
 
+The payload starts with the following unknown sequence: 01-82-01-00-00
+Next follows a length-prefixe(int16) that is the size of the remaining GZip-ed NBT-data.
+
 === <code>MC|BSign</code> ===
 ''Client to server''
 
