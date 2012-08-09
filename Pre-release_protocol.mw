@@ -4,6 +4,50 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 -None-
 
+== Changed packets ==
+
+{{anchor|0x4}}
+=== Time Update (0x4) ===
+
+''Server to Client''
+
+
+Time is based on ticks, where 20 ticks happen every second. There are 24000 ticks in a day, making Minecraft days exactly 20 minutes long. 
+
+The time of day is based on the timestamp modulo 24000. 0 is sunrise, 6000 is noon, 12000 is sunset, and 18000 is midnight. 
+
+The default SMP server increments both by 20 every second. 
+
+The &#39;Time&#39; is the Age of the world. It is not changing on server commands and will increased by 20 every second.
+
+
+
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x4
+| class="col1 centeralign" | Time
+| class="col2 centeralign" | long
+| class="col3 centeralign" | 45464654
+| class="col4" | The &#39;Age of the world&#39;, in ticks
+
+|- class="row2"
+| class="col0 centeralign" | Day Time
+| class="col1 centeralign" | long
+| class="col2 centeralign" | 21321
+| class="col3" | The world (or region) time, in ticks
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 1 Byte
+|}
+
+
 == Changed Data Type ==
 
 -None-
@@ -14,4 +58,8 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 == Protocol History ==
 
--None
+=== 2012-08-09 ===
+* 12w32a
+* Protocol version is now 40
+
+* Changed Time Update packet
