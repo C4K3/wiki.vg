@@ -7,7 +7,7 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 == Changed packets ==
 
 {{anchor|0x4}}
-=== Time Update (0x4) ===
+=== Time Update (0x04) ===
 
 ''Server to Client''
 
@@ -31,7 +31,7 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x4
+| class="col0 centeralign" rowspan="2" | 0x04
 | class="col1 centeralign" | Time
 | class="col2 centeralign" | long
 | class="col3 centeralign" | 45464654
@@ -44,9 +44,8 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 | class="col3" | The world (or region) time, in ticks
 |- class="row3"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 1 Byte
+| class="col1 rightalign" colspan="4" | 17 Bytes
 |}
-
 
 == Changed Data Type ==
 
