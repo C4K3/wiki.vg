@@ -7,70 +7,70 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 !Author(s)
 !Language
 !License
-!Development Status
+!Minecraft Version Supported
 |-
 ! [http://libminecraft.github.com LibMinecraft]
 | .NET library for Minecraft clients and servers
 | Drew DeVault (SirCmpwn)
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | {{MIT}}
-| {{yes|Active}}
+| {{supports|1.2.3}}
 |-
 ! [https://github.com/eddyb/node-mcsmp node-mcsmp]
 | Simple Minecraft multiplayer protocol library for node.js.
 | eddyb
 | [http://nodejs.org/ node.js (JavaScript)]
-|
-| {{yes|Active}}
+| {{unknown}}
+| {{supports|Beta 1.8.1}}
 |-
 ! [https://github.com/mave/mcproxy mcproxy]
 | Minecraft Proxy (and bot) framework in C++
 | mave
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | {{GPLv3}}
-| {{yes|Active}}
+| {{supports|1.1}}
 |-
 ! [http://mcsharpclient.googlecode.com MCSharpClient]
 | .NET Minecraft Client Protocol Library
 | Justin Head (dv90)
 | [http://www.mono-project.com/Main_Page Mono] [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | {{GPLv3}}
-| {{yes|Active}}
+| {{supports|Beta 1.2}}
 |-
 ! [https://github.com/axus/libmc--c libmc--c]
 | World representation data structures and OpenGL drawing functions.
 | axus
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | {{GPLv3}}
-| {{yes|Active}}
+| {{supports|1.1}}
 |-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
 |
 | ags131
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| 
-| {{yes|Active}}
+| {{unknown}}
+| {{supports|1.3.1}}
 |-
 ! [https://github.com/Maincraft/MCPackets MCPackets]
 | Java Minecraft protocol library
 | main()
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| 
-| {{yes|Active}}
+| {{unknown}}
+| {{supports|1.2.5}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
 | PHP client and protocol library. With events, actions and API
 | [https://twitter.com/shoghicp shoghicp]
 | [http://php.net/ PHP]
 | {{LGPL}}
-| {{yes|Active}}
+| {{supports|1.3.1}}
 |-
 ! [https://github.com/pdelvo/Pdelvo.Minecraft Pdelvos Protocol Implementation]
 | Minecraft beta protocol implementation for both client and server for every version above 1.0.0. supports many different versions at the same time
 | pdelvo
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| 
-| {{yes|Active}}
+| {{unknown}}
+| {{supports|1.3.1}}
 |-
 |}
 
