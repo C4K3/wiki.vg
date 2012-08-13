@@ -1,9 +1,9 @@
-[https://github.com/Wallbraker/Charged-Miners Charged Miners] is a client for classic, download the launcher [https://github.com/downloads/Wallbraker/Charged-Miners/Charged%20Miners.exe here]
+[http://charged-miners.com Charged Miners] is a client for classic, download the launcher [https://github.com/downloads/Wallbraker/Charged-Miners/Charged%20Miners.exe here]
 
 == Improvments ==
-* Larger chat window
+* Better error messages!
 * The toolbox not allowing more than one of the same block
 * Repeated breaking/placing on mouseclick hold
 
 == Bugs ==
-* Intel graphics cards rendering is broken.
+* Intel graphics cards doesn't get smooth textures.
