@@ -81,22 +81,30 @@ Uses <code>http://snoop.minecraft.net/server</code>
 
 == Joining a Server ==
 
-#Client connects to server
-#'''C->S''' 0x02 handshake
-#'''S->C''' 0xFD encryption request - server sends its public key and 4 random bytes
-#Client generates symmetric key (shared secret)
-#Client authenticates via session.minecraft.net
-#Client encrypts these 4 bytes with the servers public key.
-#'''C->S''' 0xFC encryption response - client encrypts shared secret with server's public key and sends along with encrypted 4 bytes
-#Server checks that the encrypted bytes match
-#Server decrypts shared secret with its private key
-#Server checks player authenticity via session.minecraft.net
-#'''S->C''' 0xFC encryption response - empty payload meaning two zero length byte arrays and two zero shorts
-#Server enables AES stream encryption
-#Client enables AES stream encryption
-#'''C->S''' 0xCD - Payload of 0 (byte)
-#'''S->C''' 0x01 login
-#see [[Protocol FAQ]] to get information about what happens next.
+=== Client operation ===
+
+# Client connects to server
+# Client sends a [[Protocol#Handshake_.280x02.29|0x02 handshake]] containing the current player name
+# Client receives a 0x02 handshake from the server containing a random long expressed as hex, as a string, which it saves as serverId
+# Client sends a HTTP request to 
+#:<pre>http://session.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
+#:If the response is '''OK''' then continue, otherwise stop
+# Client sends [[Protocol#Login_Request_.280x01.29|0x01 login request]]
+# Client receives a 0x01 login response
+# ... receive map chunks, etc...
+
+=== Server operation ===
+
+# Server answers tcp connection request
+# Server receives a [[Protocol#Handshake_.280x02.29|0x02 handshake]] containing the client's player name
+# Server generates a hash for this client
+# Server sends a 0x02 handshake to the client containing a random long expressed as hex, as a string
+# Server receives a [[Protocol#Login_Request_.280x01.29|0x01 login request]] from the client
+# Server sends a HTTP request to
+#:<pre>http://session.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash></pre>
+#:If it returns '''YES''' then the client is authenticated and allowed to join. Otherwise the client will/should be [[Protocol#Disconnect.2FKick_.280xFF.29|kicked]] with “Failed to verify username!”
+# Server sends a 0x01 login response to the client
+# ... send map chunks, etc...
 
 
 [[Category:Protocol Details]]
