@@ -14,7 +14,7 @@ The current launcher version is "13", sending a value lower "12" than this will 
 #Previously contained a '''download ticket''' for requesting new versions of minecraft.jar from the server. Now contains only "deprecated".
 #'''case-correct username'''.
 #'''sessionId''' - a unique ID for your current session.
-#'''UUID''' - currently unused, introduced near August 8th, 2012. Grum says this is the unique ID for the user, potentially for changing Minecraft names in future.
+#'''UID''' - currently unused, introduced near August 8th, 2012. Grum says this is the unique ID for the user, potentially for changing Minecraft names in future.
 
 If the request is missing a parameter, the server will return "Bad response". If the login information is incorrect, the server will return "Bad login". If the login information is correct but the account isn't premium, the server will return "User not premium".
 
