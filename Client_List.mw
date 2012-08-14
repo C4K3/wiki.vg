@@ -22,69 +22,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{supports current}}
 |-
-! [https://github.com/cbroughton/Crafti Crafti]
-| python standalone bot, controllable via player commands, console input, or configured rules file.
-| CharlesBroughton
-| {{Python}}, {{Twisted}}
-| {{all rights reserved}}
-| {{yes}}
-| {{no}}
-| {{supports|Beta 1.1}}
-|-
-! [https://github.com/espes/esbot esbot]
-| dependency gathering and other awesomeness
-| {{Python}}, {{Twisted}}
-| espes
-| {{GPLv3}}
-| {{no}}
-| {{no}}
-| {{supports|Beta 1.8.1}}
-|-
-! [https://github.com/aniero/golem golem]
-| ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
-| aniero
-| {{Ruby}}
-| {{MIT}}
-| {{no}}
-| {{no}}
-| {{supports|Beta 1.4}}
-|-
-! [https://github.com/axus/libmc--c mc--c]
-| Draw the map.  Can't talk or move.
-| axus
-| {{C++}}
-| {{LGPL}}
-| {{no}}
-| {{yes}}
-| {{supports|1.1}}
-|-
-! [http://hg.sitedethib.com/mcclient/ mcclient]
-| Work in progress SMP client
-| ThibG
-| {{Python}} with {{C}} extension
-| {{GPLv3}}
-| {{no}}
-| {{yes}}
-| {{supports|Beta 1.7.2}}
-|-
-! [https://github.com/jrupac/minecraft-opengl minecraft-opengl]
-| Draw the map, move around, break stuff, gather stuff, etc.; doesn't appear to have networking
-| Rohan Bansal, Dmitry Drutskoy, Ajay Roopakalu, Sarah Tang
-| {{C++}} with {{OpenGL}}
-| {{all rights reserved}}
-| {{no}}
-| {{yes}}
-| {{supports|Beta 1.6.6}}
-|-
-! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
-| "- Superseded by Minecraft PHP Client 2 -" It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
-| [https://twitter.com/shoghicp shoghicp]
-| {{PHP}}
-| {{LGPL}}
-| {{yes|Yes, but only linux}}
-| {{no}}
-| {{supports|1.2.5}}
-|-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
 | Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
 | [https://twitter.com/shoghicp shoghicp]
@@ -94,15 +31,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|Convert Map to PNG}}
 | {{supports current}}
 |-
-! [[Mineflayer]]
-| JavaScript bot framework. See [[Mineflayer]] for more details.
-| Superjoe, thejoshwolfe
-| {{C++}}, {{Qt}}
-| {{MIT}}
-| {{yes}}
-| {{yes}}
-| {{supports|1.2.5}}
-|-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
 | Ammar Askar, resba
@@ -111,15 +39,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{no}}
 | {{supports current}}
-|-
-! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
-| Work in progress SMP (might add SSP) client.
-| [https://github.com/Vijfhoek Vijfhoek] and [https://github.com/F16Gaming F16Gaming]
-| {{C sharp}}
-| {{GPLv3}}
-| {{yes}}
-| {{yes|Yes, using [http://en.wikipedia.org/wiki/Microsoft_XNA XNA]}}
-| {{supports|1.2.5}}
 |-
 ! [http://www.planetminecraft.com/project/new-c-driven-minecraft-client-461392/ Revolutional RedStone]
 | Partial Redstone support
@@ -139,6 +58,33 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{supports current}}
 |-
+! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
+| "- Superseded by Minecraft PHP Client 2 -" It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
+| [https://twitter.com/shoghicp shoghicp]
+| {{PHP}}
+| {{LGPL}}
+| {{yes|Yes, but only linux}}
+| {{no}}
+| {{supports|1.2.5}}
+|-
+! [[Mineflayer]]
+| JavaScript bot framework. See [[Mineflayer]] for more details.
+| Superjoe, thejoshwolfe
+| {{C++}}, {{Qt}}
+| {{MIT}}
+| {{yes}}
+| {{yes}}
+| {{supports|1.2.5}}
+|-
+! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
+| Work in progress SMP (might add SSP) client.
+| [https://github.com/Vijfhoek Vijfhoek] and [https://github.com/F16Gaming F16Gaming]
+| {{C sharp}}
+| {{GPLv3}}
+| {{yes}}
+| {{yes|Yes, using [http://en.wikipedia.org/wiki/Microsoft_XNA XNA]}}
+| {{supports|1.2.5}}
+|-
 ! [[Vb Minebot]]
 | Work in progress standalone bot
 | Umby24
@@ -147,6 +93,60 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{no}}
 | {{supports|1.2.5}}
+|-
+! [https://github.com/axus/libmc--c mc--c]
+| Draw the map.  Can't talk or move.
+| axus
+| {{C++}}
+| {{LGPL}}
+| {{no}}
+| {{yes}}
+| {{supports|1.1}}
+|-
+! [https://github.com/espes/esbot esbot]
+| dependency gathering and other awesomeness
+| {{Python}}, {{Twisted}}
+| espes
+| {{GPLv3}}
+| {{no}}
+| {{no}}
+| {{supports|Beta 1.8.1}}
+|-
+! [http://hg.sitedethib.com/mcclient/ mcclient]
+| Work in progress SMP client
+| ThibG
+| {{Python}} with {{C}} extension
+| {{GPLv3}}
+| {{no}}
+| {{yes}}
+| {{supports|Beta 1.7.2}}
+|-
+! [https://github.com/jrupac/minecraft-opengl minecraft-opengl]
+| Draw the map, move around, break stuff, gather stuff, etc.; doesn't appear to have networking
+| Rohan Bansal, Dmitry Drutskoy, Ajay Roopakalu, Sarah Tang
+| {{C++}} with {{OpenGL}}
+| {{all rights reserved}}
+| {{no}}
+| {{yes}}
+| {{supports|Beta 1.6.6}}
+|-
+! [https://github.com/aniero/golem golem]
+| ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
+| aniero
+| {{Ruby}}
+| {{MIT}}
+| {{no}}
+| {{no}}
+| {{supports|Beta 1.4}}
+|-
+! [https://github.com/cbroughton/Crafti Crafti]
+| python standalone bot, controllable via player commands, console input, or configured rules file.
+| CharlesBroughton
+| {{Python}}, {{Twisted}}
+| {{all rights reserved}}
+| {{yes}}
+| {{no}}
+| {{supports|Beta 1.1}}
 |-|}
 
 [[Category:Minecraft Modern]]
