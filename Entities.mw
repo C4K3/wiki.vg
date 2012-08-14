@@ -361,6 +361,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 * <div class="li">Index '''16''' (byte): Flags (see below).
 * Index '''17''' (string): Name of player that tamed wolf.
 * Index '''18''' (int): Health. Values from 8 to 0
+* Index '''19''' (byte): Unknown, either 0 or 1
 
 {| class="wikitable"
 |- class="row0"
@@ -473,6 +474,25 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
 | class="col2" | 0.25?
 | class="col3" | 0.25?
 |}
+
+=== Extra metadata ===
+
+==== Arrow ====
+
+* Index '''16''' (byte): Unknown, either 0 or 1
+
+==== Minecart ====
+
+* Index '''16''' (byte): Bitfield for flags, but the only known value is 1 if the minecart is powered and has fuel. 
+* Index '''17''' (int): Unknown. Initialized to 0
+* Index '''18''' (int): Unknown. Initialized to 1
+* Index '''19''' (int): Damage taken. The cart breaks when this is over 40.
+
+==== Boat ====
+
+* Index '''17''' (int): Time since last hit
+* Index '''18''' (int): "Forward direction". Initialized to 1.
+* Index '''19''' (int): Damage taken.
 
 == Other ==
 
