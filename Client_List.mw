@@ -4,14 +4,14 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 
 {| class="wikitable sortable" style="width: auto; text-align: center;"
 |-style="background:#eee"
-!style="width: 72px" | Name
-!style="width: 240px" | Features
-!style="width: 120px" | Author(s)
-!style="width: 128px" | Language
-!style="width: 128px" | License
-!style="width: 72px" | Threaded
-!style="width: 94px" | Game Graphics
-!style="width: 64px" | Last Version Supported
+!Name
+!class="unsortable"|Features
+!Author(s)
+!Language
+!License
+!Threaded
+!Game Graphics
+!Last Version Supported
 |-
 ! [https://github.com/Wallbraker/Charged-Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
@@ -22,7 +22,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{supports current}}
 |-
-! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
+! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client&nbsp;2]
 | Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
@@ -105,8 +105,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/espes/esbot esbot]
 | dependency gathering and other awesomeness
-| {{Python}}, {{Twisted}}
 | espes
+| {{Python}}, {{Twisted}}
 | {{GPLv3}}
 | {{no}}
 | {{no}}
