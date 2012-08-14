@@ -283,7 +283,8 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 ==== Enderman ====
 
 * Index '''16''' (byte): Item in hand
-* Index '''17''' (byte): Aggression. <code>1</code> for aggressive, <code>0</code> otherwise.
+* Index '''17''' (byte): Item metadata
+* Index '''18''' (byte): Aggression. <code>1</code> for aggressive, <code>0</code> otherwise.
 
 ==== Blaze ====
 
