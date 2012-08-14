@@ -15,8 +15,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/Wallbraker/Charged-Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
-| [http://en.wikipedia.org/wiki/D_%28programming_language%29 D], [http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]
-| GPLv2
+| {{D}}, {{Lua}}
+| {{GPLv2}}
 | {{no}}
 | {{yes}}
 | Wallbraker et al.
@@ -24,8 +24,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [http://foundation.x10.mx/index.php?title=Crafti Crafti] (dead link)
 | python standalone bot, controllable via player commands, console input, or configured rules file.
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with Twisted network driver
-| proprietary software / Freeware
+| {{Python}}, {{Twisted}}
+| {{all rights reserved}}
 | {{yes}}
 | {{no}}
 | CharlesBroughton
@@ -33,8 +33,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/espes/esbot esbot]
 | dependency gathering and other awesomeness
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with twisted
-| GPL
+| {{Python}}, {{Twisted}}
+| {{GPLv3}}
 | {{no}}
 | {{no}}
 | espes
@@ -42,8 +42,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
-| [http://en.wikipedia.org/wiki/Ruby_%28programming_language%29 ruby]
-| MIT
+| {{Ruby}}
+| {{MIT}}
 | {{no}}
 | {{no}}
 | aniero
@@ -51,8 +51,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/axus/libmc--c mc--c]
 | Draw the map.  Can't talk or move.
-| [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++]
-| Do not distribute
+| {{C++}}
+| {{LGPL}}
 | {{no}}
 | {{yes}}
 | axus
@@ -60,8 +60,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [http://hg.sitedethib.com/mcclient/ mcclient]
 | Work in progress SMP client
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 python] with C extension
-| GPLv3
+| {{Python}} with {{C}} extension
+| {{GPLv3}}
 | {{no}}
 | {{yes}}
 | ThibG
@@ -69,8 +69,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/jrupac/minecraft-opengl minecraft-opengl]
 | Draw the map, move around, break stuff, gather stuff, etc.; doesn't appear to have networking
-| [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/OpenGL OpenGL]
-| proprietary software / Freeware
+| {{C++}} with {{OpenGL}}
+| {{all rights reserved}}
 | {{no}}
 | {{yes}}
 | Rohan Bansal, Dmitry Drutskoy, Ajay Roopakalu, Sarah Tang
@@ -78,8 +78,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
 | Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
-| [http://php.net/ PHP]
-| [http://www.gnu.org/copyleft/lgpl.html LGPL]
+| {{PHP}}
+| {{LGPL}}
 | {{no}}
 | {{unknown|Convert Map to PNG}}
 | [https://twitter.com/shoghicp shoghicp]
@@ -87,8 +87,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
 | "- Superseded by Minecraft PHP Client 2 -" It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
-| [http://php.net/ PHP]
-| [http://www.gnu.org/copyleft/lgpl.html LGPL]
+| {{PHP}}
+| {{LGPL}}
 | {{yes|Yes, but only linux}}
 | {{no}}
 | [https://twitter.com/shoghicp shoghicp]
@@ -96,8 +96,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [[Mineflayer]]
 | JavaScript bot framework. See [[Mineflayer]] for more details.
-| [http://en.wikipedia.org/wiki/C++_%28programming_language%29 C++] with [http://en.wikipedia.org/wiki/Qt_%28framework%29 Qt]
-| [http://www.opensource.org/licenses/mit-license.php MIT]
+| {{C++}}, {{Qt}}
+| {{MIT}}
 | {{yes}}
 | {{yes}}
 | Superjoe, thejoshwolfe
@@ -105,8 +105,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
-| Python
-| Apache License, Version 2.0
+| {{Python}}
+| {{Apache}}
 | {{yes}}
 | {{no}}
 | Ammar Askar, resba
@@ -114,8 +114,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
 | Work in progress SMP (might add SSP) client.
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| [http://www.gnu.org/copyleft/gpl.html GPLv3]
+| {{C sharp}}
+| {{GPLv3}}
 | {{yes}}
 | {{yes|Yes, using [http://en.wikipedia.org/wiki/Microsoft_XNA XNA]}}
 | [https://github.com/Vijfhoek Vijfhoek] and [https://github.com/F16Gaming F16Gaming]
@@ -123,7 +123,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [http://www.planetminecraft.com/project/new-c-driven-minecraft-client-461392/ Revolutional RedStone]
 | Parial Redstone support
-| C++, Lua
+| {{C++}}, {{Lua}}
 | {{Unknown}}
 | {{yes}}
 | {{yes}}
@@ -132,8 +132,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [https://github.com/lukleh/TwistedBot TwistedBot]
 | bot and proxy
-| [http://en.wikipedia.org/wiki/Python_(programming_language) Python] with [http://en.wikipedia.org/wiki/Twisted_(software) twisted]
-| BSD
+| {{Python}}, {{Twisted}}
+| {{no|{{BSD}}? No mention of license in source}}
 | {{no}}
 | {{no}}
 | [[User:Lukleh | lukleh]]
@@ -141,8 +141,8 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 |-
 ! [[Vb Minebot]]
 | Work in progress standalone bot
-| [http://en.wikipedia.org/wiki/Visual_Basic_.NET VB.NET], w/Ruby 
-| GPL
+| {{VB.NET}}, {{Ruby}}
+| {{no|{{GPLv3}}? No mention of license in source}}
 | {{yes}}
 | {{no}}
 | Umby24
