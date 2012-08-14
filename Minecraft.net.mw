@@ -7,7 +7,7 @@ OR
 http://login.minecraft.net/?user=<USERNAME>&password=<PASSWORD>&version=12
 OR
 https://login.minecraft.net/?user=<USERNAME>&password=<PASSWORD>&version=12</nowiki>
-The Minecraft launcher uses this to authenticate logins. If the username and password are valid for a premium account, returns "<[[wikipedia:Unix time|POSIX]] time>:<hash of password???>:<username with correct capitalization>:<freshly generated session id>:". If username and password are invalid, returns "Bad login". If the username and password are correct, but the account isn't premium, returns "User not premium". If the given version number is less than 12, returns "Old version". The username is not case-sensitive, but naturally, the password is.
+The Minecraft launcher uses this to authenticate logins. If the username and password are valid for a premium account, returns "<[[wikipedia:Unix time|POSIX]] time>:<hash of password???>:<username with correct capitalization>:<freshly generated session id>:<UID (Presently unused)>". If username and password are invalid, returns "Bad login". If the username and password are correct, but the account isn't premium, returns "User not premium". If the given version number is less than 12, returns "Old version". The username is not case-sensitive, but naturally, the password is.
 
 
  <nowiki>http://session.minecraft.net/game/joinserver.jsp?user=<USERNAME>&sessionId=<SESSION ID></nowiki>
