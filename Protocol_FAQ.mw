@@ -26,7 +26,6 @@ The recommended login sequence looks like this, where C is the client and S is t
 #Server enables AES stream encryption
 #Client enables AES stream encryption
 #'''C->S''' 0xCD - Payload of 0 (byte)
-#'''S->C''' 0x01 login
 #'''S->C''' : Either kicks (invalid login) or sends a login response
 #'''S->C''' : Sends pre-chunks and chunks and entities
 #'''S->C''' : Sends spawn position
