@@ -21,7 +21,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
-| {{supports current}}
+| {{supportspre|12w32a}}
 |-
 ! [https://github.com/pdelvo/Pdelvo.Minecraft Pdelvos Protocol Implementation]
 | Minecraft beta protocol implementation for both client and server for every version above 1.0.0. supports many different versions at the same time
