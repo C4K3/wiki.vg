@@ -13,6 +13,7 @@ This payload is simply a set of bytes corresponding to an ItemStack. It is seria
 ''Client to server''
 
 When a player signs a book.
+This payload is simply a set of bytes corresponding to an ItemStack. It is serialized / deserialized exactly the same as itemstacks in packets.
 
 === <code>MC|TPack</code> ===
 ''Two-Way''
