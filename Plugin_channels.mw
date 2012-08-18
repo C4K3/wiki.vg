@@ -19,6 +19,7 @@ This payload is simply a set of bytes corresponding to an ItemStack. It is seria
 ''Two-Way''
 
 Remote texture packs.
+This contains a string representing the url to get the texture pack from, followed by null (\0000) and then '16'.
 
 ===  <code>MC|TrList</code> ===
 ''Two-Way''
