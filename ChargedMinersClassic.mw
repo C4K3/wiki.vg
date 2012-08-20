@@ -5,6 +5,7 @@
 * Add ability to part a server after joining, to go back to the server list.
 * Collision detection with terrain.
 * Non-flying player movement code.
+* Expose more options through in-game menus.
 
 == Bugs ==
 * Intel graphics cards doesn't get smooth textures.
