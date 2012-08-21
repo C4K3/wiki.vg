@@ -6,6 +6,8 @@
 * Collision detection with terrain.
 * Non-flying player movement code.
 * Expose more options through in-game menus.
+* Show a list of players when pressing <tab>
+* Save last few messages typed into the console, and allow using up/down arrows to scroll through them (like you would in a terminal).
 
 == Bugs ==
 * Intel graphics cards doesn't get smooth textures.
