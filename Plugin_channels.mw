@@ -1,7 +1,19 @@
 '''Plugin channels''' are implemented using [[Protocol#0xFA|packet 0xFA]], allowing client mods and server plugins to communicate without cluttering up chat. [http://dinnerbone.com/blog/2012/01/13/minecraft-plugin-channels-messaging/ This post by Dinnerbone] is a good introduction and basic documentation.
 {{anchor|Internal}}
+== Reserved channels ==
+=== <code>REGISTER</code> ===
+''Client to server''
+
+Allows the client to register for one or more custom channels, indicating that the server should send data on those channels if the appropriate plugin is installed. Payload is a null-separated list of strings.
+
+=== <code>UNREGISTER</code> ===
+''Client to server''
+
+Allows the client to unregister from one or more custom channels, indicating that the server should stop sending data on those channels. Payload is a null-separated list of strings.
+
 == Channels internal to Minecraft ==
-As of 1.3, Minecraft itself started using plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>.
+As of 1.3, Minecraft itself started using plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>. They are not formally registered using the REGISTER channel. The vanilla Minecraft server will send these packets regardless, and the vanilla client will accept them.
+
 === <code>MC|BEdit</code> ===
 ''Client to server''
 
@@ -16,13 +28,13 @@ When a player signs a book.
 This payload is simply a set of bytes corresponding to an ItemStack. It is serialized / deserialized exactly the same as itemstacks in packets.
 
 === <code>MC|TPack</code> ===
-''Two-Way''
+''Server to client''
 
 Remote texture packs.
 This contains a string representing the url to get the texture pack from, followed by null (\0000) and then '16'.
 
 ===  <code>MC|TrList</code> ===
-''Two-Way''
+''Server to client''
 
 The list of trades a villager NPC is offering.
 
@@ -34,3 +46,13 @@ It contains a single int id corresponding to the selected slot int the players c
 
 == Notable community plugin channels ==
 Channels listed in this section are not Mojang-sanctioned. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
+
+=== <code>ML|OpenTE</code> ===
+''Server to client''
+
+Used by [http://www.minecraftforum.net/topic/75440-v132-risugamis-mods-preliminary-updates/ ModLoader] to support custom GUI windows. Does not use the REGISTER channel.
+
+=== <code>WECUI</code> ===
+''Two-way''
+
+Used by the server-side [http://dev.bukkit.org/server-mods/worldedit/ WorldEdit] and the client-side [http://www.minecraftforum.net/topic/885099-131-worldeditcui-gui-visualizer-for-worldedit-v131/ WorldEditCUI] to coordinate selections.
