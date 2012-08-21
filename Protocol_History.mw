@@ -7,22 +7,22 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Fishing floats, spawned by a 0x17 packet do now use the extra fields
 * All items (except the empty hand) now send enchantment data
 
-* Added packet: 0x37 Block breaking animation
-* Added packet: 0x38 Map Chunk Bulk 
-* Added packet: 0x3E Name Sound Effect
-* Added packet: 0xCB Tab-complete
-* Added packet: 0xCC Locale and View Distance
-* Added packet: 0xCD used for Login Request and Respawn (1 byte payload) 
-* Added packet: 0xFC Encryption Key Response
-* Added packet: 0xFD Encryption Key Request
+* Added packet: [[Protocol#Block_Break_Animation_.280x37.29|0x37 Block breaking animation]]
+* Added packet: [[Protocol#Map_Chunk_Bulk_.280x38.29|0x38 Map Chunk Bulk]]
+* Added packet: [[Protocol#Named_Sound_Effect_.280x3E.29|0x3E Name Sound Effect]]
+* Added packet: [[Protocol#Tab-complete_.280xCB.29|0xCB Tab-complete]]
+* Added packet: [[Protocol#Locale_and_View_Distance_.280xCC.29|0xCC Locale and View Distance]]
+* Added packet: [[Protocol#Client_Statuses_.280xCD.29|0xCD Client Statuses]] used for Login Request and Respawn (1 byte payload)
+* Added packet: [[Protocol#Encryption_Key_Response_.280xFC.29|0xFC Encryption Key Response]]
+* Added packet: [[Protocol#Encryption_Key_Request_.280xFD.29|0xFD Encryption Key Request]]
 
-* Changed packet: 0x01 Login Request
-* Changed packet: 0x02 Handshake
-* Changed packet: 0x09 Respawn
-* Changed packet: 0x0F Player Block Placement
-* Changed packet: 0x14 Spawn named entity
-* Changed packet: 0x35 Block Change
-* Changed packet: 0xCA Player Abilities 
+* Changed packet: [[Protocol#Login_Request_.280x01.29|0x01 Login Request]]
+* Changed packet: [[Protocol#Handshake_.280x02.29|0x02 Handshake]]
+* Changed packet: [[Protocol#Respawn_.280x09.29|0x09 Respawn]]
+* Changed packet: [[Protocol#Player_Block_Placement_.280x0F.29|0x0F Player Block Placement]]
+* Changed packet: [[Protocol#Spawn_Named_Entity_.280x14.29|0x14 Spawn named entity]]
+* Changed packet: [[Protocol#Block_Change_.280x35.29|0x35 Block Change]]
+* Changed packet: [[Protocol#Player_Abilities_.280xCA.29|0xCA Player Abilities]]
 
 * Removed packet: 0x32 Map Column Allocation
 
