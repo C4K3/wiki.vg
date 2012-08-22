@@ -1,7 +1,7 @@
-This is a rather incomplete list of Minecraft Alpha/Beta clients that users have worked or are working on. This page only lists clients written from scratch; for mods and wrappers, see the [[Utility List]].
+{{ToolsNavbox}}
+This is a rather incomplete list of Minecraft clients that users have worked or are working on. This page only lists clients written from scratch; for mods and wrappers, see the [[Utility List]].
 
-The column ''Game Graphics'' asks if your client displays in-game activity at a graphical level, such as world chunks, people or mobs moving, or any of that sort. If you are simply displaying things as text, that does '''not''' count. You can also optionally tell us the library you're using for your game graphics while providing your answer.
-
+The column ''Game Graphics'' asks if your client displays in-game activity at a graphical level, such as world chunks, people or mobs moving, or any of that sort. If you are simply displaying things as text, that does '''not''' count. You can also optionally tell us the library you're using for your game graphics while providing your answer.<br style="clear:both;" />
 {| class="wikitable sortable" style="width: auto; text-align: center;"
 |-style="background:#eee"
 !Name
