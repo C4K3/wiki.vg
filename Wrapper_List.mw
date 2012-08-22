@@ -1,6 +1,7 @@
+{{ToolsNavbox}}
 These are wrappers for both the client and server vanilla interfaces.
 
-See the [[Client_List|client list]] page for custom clients and the [[Server_List|server list]] page for custom servers.
+See the [[Client_List|client list]] page for custom clients and the [[Server_List|server list]] page for custom servers.<br style="clear:both;" />
 
 == Client Wrappers ==
 These are wrappers for the vanilla Minecraft client.
