@@ -18,7 +18,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{supportspre|12w34a}}
 |-
 ! [https://github.com/pdelvo/Pdelvo.Minecraft Pdelvos Protocol Implementation]
-| Minecraft beta protocol implementation for both client and server for every version above 1.0.0. supports many different versions at the same time
+| .NET client/server protocol library with support for several versions.
 | pdelvo
 | {{C sharp}}
 | {{unknown}}
