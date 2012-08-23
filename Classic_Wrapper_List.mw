@@ -14,11 +14,7 @@ These are wrappers for the vanilla Minecraft Classic client.
 !style="width: 120px" | Scripting
 !style="width: 120px" | Development Status
 |-
-! [http://github.com/Steveice10/OpenClassic-Client OpenClassic Client]
-| Steveice10
-| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
-| [http://www.opensource.org/licenses/mit-license.php MIT]
-| {{yes|Java}}
+|colspan="6" | There are no client wrappers at this time
 | {{yes|Active}}
 |}
 
