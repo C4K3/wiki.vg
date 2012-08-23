@@ -21,7 +21,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | .NET client/server protocol library with support for several versions.
 | pdelvo
 | {{C sharp}}
-| {{unknown}}
+| {{MIT}}
 | {{supportspre|12w34a}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
