@@ -160,7 +160,7 @@ A couple things for contributors:
 | {{planned|Players}}
 | {{yes|Erlang processes}}
 | {{planned}}
-| {{yes|Active}}
+| {{no|Inactive}}
 |-
 ! [https://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
@@ -174,7 +174,7 @@ A couple things for contributors:
 | {{yes|Players, Mobs}}
 | {{unknown}}
 | {{yes|C++}}
-| {{yes|Active}}
+| {{No|Inactive}}
 |-
 ! [https://github.com/Mineserver/mineserver2 Mineserver 2]
 | deoxxa, [[User:Jailout2000|Jailout2000]]
