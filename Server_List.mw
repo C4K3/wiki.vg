@@ -118,7 +118,7 @@ A couple things for contributors:
 | {{planned|Players}}
 | {{yes|Erlang processes}}
 | {{planned}}
-| {{no|Inactive}}
+| {{unknown|On hiatus since April 2012}}
 |-
 ! [https://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
@@ -146,7 +146,7 @@ A couple things for contributors:
 | {{planned}}
 | {{planned|boost, ZeroMQ}}
 | {{yes|C++}}
-| {{no|Inactive}}
+| {{unknown|On hiatus since April 2012}}
 |-
 ! [http://partycraft.github.com/ PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
@@ -160,7 +160,7 @@ A couple things for contributors:
 | {{yes|Players + limited others}}
 | {{yes|Worker + Scheduled Events}}
 | {{yes|.NET}}
-| {{unknown|Suspended}}
+| {{unknown|On hiatus pending Craft.Net progress}}
 |-
 ! [[Realcraft:Main_Page|Realcraft]]
 | [[User:Jailout2000|Jailout2000]]
