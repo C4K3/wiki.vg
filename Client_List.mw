@@ -138,15 +138,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no}}
 | {{supports|Beta 1.4}}
-|-
-! [https://github.com/cbroughton/Crafti Crafti]
-| python standalone bot, controllable via player commands, console input, or configured rules file.
-| CharlesBroughton
-| {{Python}}, {{Twisted}}
-| {{all rights reserved}}
-| {{yes}}
-| {{no}}
-| {{supports|Beta 1.1}}
 |-|}
 
 [[Category:Minecraft Modern]]
