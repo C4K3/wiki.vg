@@ -64,34 +64,6 @@ A couple things for contributors:
 | {{yes|Many (plugins)}}
 | {{unknown|On hiatus since May 2011}}
 |-
-! [http://github.com/ScottBrooks/Erlcraft Erlcraft]
-| Scott Brooks
-| [http://en.wikipedia.org/wiki/Erlang_%28programming_language%29 Erlang]
-| Unknown (Source files have no copyright?!)
-| {{Unknown}}
-| {{yes}}
-| {{yes|Alpha}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{yes|Erlang processes}}
-| {{no}}
-| {{no|On hiatus since Sep 2010}}
-|-
-! [https://github.com/SpaceManiac/Glowstone Glowstone]
-| [[User:SpaceManiac|SpaceManiac]] (fork of Lightstone)
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://www.opensource.org/licenses/mit-license.php MIT]
-| {{planned| Networking ([http://netty.io/ Netty])}}
-| {{yes}}
-| {{yes|Beta}}
-| {{yes}}
-| {{no}}
-| {{no}}
-| {{yes|Event-driven}}
-| {{yes|[http://bukkit.org/ Bukkit]}}
-| {{unknown|Superseded by Spout}}
-|-
 ! [https://github.com/grahamedgecombe/lightstone Lightstone]
 | [[User:Graham|Graham Edgecombe]]
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -176,20 +148,6 @@ A couple things for contributors:
 | {{yes|C++}}
 | {{no|Inactive}}
 |-
-! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
-| aera, iKJames
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
-| Simplified BSD
-| {{Unknown}}
-| {{yes}}
-| {{yes|n/a}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{yes|Threads}}
-| {{yes|Python}}
-| {{no|Cancelled}}
-|-
 ! [http://partycraft.github.com/ PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
@@ -203,20 +161,6 @@ A couple things for contributors:
 | {{yes|Worker + Scheduled Events}}
 | {{yes|.NET}}
 | {{unknown|Suspended}}
-|-
-! [http://codaset.com/moose/quartz-public Quartz] (dead link)
-| Moose
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Unknown
-| {{Unknown}}
-| {{yes}}
-| {{yes|Alpha}}
-| {{no}}
-| {{yes}}
-| {{no}}
-| {{yes|Threads}}
-| {{no}}
-| {{no|Repo dead}}
 |-
 ! [[Realcraft:Main_Page|Realcraft]]
 | [[User:Jailout2000|Jailout2000]]
@@ -232,20 +176,6 @@ A couple things for contributors:
 | {{planned|Custom Realcraft Text Files}}
 | {{unknown|On hiatus since Jan 2012}}
 |-
-! [https://www.assembla.com/spaces/mc_server RealMC] (link requires "permission")
-| thomasfn
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| Closed source
-| {{yes}}
-| {{yes}}
-| {{no|Custom}}
-| {{no}}
-| {{no}}
-| {{yes}}
-| {{yes|Async IO}} <!--Any other concurrency models? ASIO is now a seperate column-->
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{no|No downloads available}}
-|-
 ! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
 | louisdx
 | C++0x
@@ -259,20 +189,6 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{no}}
 | {{unknown|On hiatus since Nov 2011}}
-|-
-! [https://www.silent-productions.net SilentCraft]
-| Silentneeb, BizarreCake
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| Closed source
-| {{Unknown}}
-| {{yes}}
-| {{yes|Alpha}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{yes|Threads}}
-| {{no}}
-| {{no|Cancelled}}
 |-
 ! [http://spout.org/ Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
 | [http://spout.org/team/ SpoutDev] (fork of Glowstone)
