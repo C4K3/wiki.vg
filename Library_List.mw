@@ -15,7 +15,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | Drew DeVault (SirCmpwn)
 | {{C sharp}}
 | {{MIT}}
-| {{supportspre|12w32a}}
+| {{supportspre|12w34a}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
 | PHP client and protocol library. With events, actions and API
@@ -29,7 +29,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | pdelvo
 | {{C sharp}}
 | {{unknown}}
-| {{supports current}}
+| {{supportspre|12w34a}}
 |-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
 |
