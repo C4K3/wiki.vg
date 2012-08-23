@@ -14,6 +14,8 @@ Unfortunately, the NBT files you can encounter as a developer will be stored in 
 * [[wikipedia:Gzip|gzip'd]],
 * [[wikipedia:Zlib|zlib'd]] (aka DEFLATE with a few bytes extra)
 
+See [[NBT compression]] for details about how to auto-detect compression type.
+
 === Libraries ===
 There are many, many libraries for manipulating NBT, written in several languages, and often several per language. For example,
 
