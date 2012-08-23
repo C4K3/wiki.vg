@@ -174,7 +174,7 @@ A couple things for contributors:
 | {{yes|Players, Mobs}}
 | {{unknown}}
 | {{yes|C++}}
-| {{No|Inactive}}
+| {{yes|Active}}
 |-
 ! [https://github.com/Mineserver/mineserver2 Mineserver 2]
 | deoxxa, [[User:Jailout2000|Jailout2000]]
@@ -188,7 +188,7 @@ A couple things for contributors:
 | {{planned}}
 | {{planned|boost, ZeroMQ}}
 | {{yes|C++}}
-| {{yes|Active}}
+| {{no|Inactive}}
 |-
 ! [http://bitbucket.org/andrewgodwin/myne2/src Myne2]
 | aera, iKJames
