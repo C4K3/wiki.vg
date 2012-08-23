@@ -128,7 +128,7 @@ For example, here's the example layout of a <code>TAG_Short</code> on disk:
 | 2
 | 9
 | <code>shortTest</code>
-| <code>127</code>
+| <code>32767</code>
 |-
 ! On Disk (in hex)
 | <code>02</code>
