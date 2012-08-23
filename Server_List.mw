@@ -12,7 +12,7 @@ A couple things for contributors:
 !style="min-width: 120px" | Author(s)
 !style="min-width: 72px" | Language
 !style="min-width: 72px" | License
-!style="width: 72px" | Asynchronous I/O
+!style="width: 72px" | Last Version Supported
 !style="width: 72px" | Networking
 !style="width: 72px" | World Formats
 !style="width: 72px" | Multiworld
@@ -22,11 +22,81 @@ A couple things for contributors:
 !style="width: 72px" | Scripting
 !style="width: 120px" | Development Status
 |-
+! [https://github.com/fador/mineserver/ Mineserver]
+| Fador, Psoden, deoxxa
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+| {{yes|1.3.2}}
+| {{yes}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{unknown}}
+| {{yes|C++}}
+| {{yes|Active}}
+|-
+! [http://spout.org/ Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
+| [http://spout.org/team/ SpoutDev] (fork of Glowstone)
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://spout.org/SpoutDevLicenseV1.txt SpoutDev v1]
+| {{yes|1.3.2}}
+| {{yes}}
+| {{yes|Custom<br />(Converters planned)}}
+| {{yes}}
+| {{planned|Partial}}
+| {{planned|Partial}}
+| {{yes|Event-driven}}
+| {{yes|[http://spout.org/ SpoutAPI]}}
+| {{yes|Active}}
+|-
+! [https://github.com/clonejo/mc-erl/ mc-erl]
+| Apiocera, clonejo
+| [http://en.wikipedia.org/wiki/Erlang Erlang]
+| not decided yet
+| {{yes|1.3.2}}
+| {{yes}}
+| {{planned|custom (Mnesia)}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Erlang processes}}
+| {{planned}}
+| {{yes|Active}}
+|-
+! [http://partycraft.github.com/ PartyCraft]
+| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{unknown|1.2.5}}
+| {{yes}}
+| {{planned|Custom}}
+| {{yes}}
+| {{planned}}
+| {{yes|Players + limited others}}
+| {{yes|Worker + Scheduled Events}}
+| {{yes|.NET}}
+| {{unknown|On hiatus pending Craft.Net progress}}
+|-
+! [[Realcraft:Main_Page|Realcraft]]
+| [[User:Jailout2000|Jailout2000]]
+| [http://en.wikipedia.org/wiki/Realbasic Realbasic]
+| General public / proprietary
+| {{unknown|1.1}}
+| {{yes}}
+| {{yes|Custom<br />(Converters planned)}}
+| {{yes}}
+| {{planned}}
+| {{planned|Players, other entities are WIP}}
+| {{no|None}}
+| {{planned|Custom Realcraft Text Files}}
+| {{unknown|On hiatus since Jan 2012}}
+|-
 ! [https://github.com/MostAwesomeDude/bravo Bravo]
 | MostAwesomeDude
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
-| {{Unknown}}
+| {{unknown|Beta 1.9 Pre 6}}
 | {{yes}}
 | {{yes|Alpha, Beta}}
 | {{yes}}
@@ -37,10 +107,10 @@ A couple things for contributors:
 | {{unknown|On hiatus since Dec 2011}}
 |-
 ! [https://github.com/huin/chunkymonkey Chunky Monkey]
-| agon, huin (lead contributor), jnwhiteh, nictuku
+| agon, huin, jnwhiteh, nictuku
 | [http://en.wikipedia.org/wiki/Go_(programming_language) Google Go]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
-| {{Unknown}}
+| {{unknown|Beta 1.8}}
 | {{yes}}
 | {{yes|Alpha, Beta}}
 | {{planned}}
@@ -49,6 +119,62 @@ A couple things for contributors:
 | {{yes|Goroutines (Multi-host planned)}}
 | {{unknown|(TBD)}}
 | {{unknown|On hiatus since Oct 2011}}
+|-
+! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
+| louisdx
+| C++0x
+| unspecified open source
+| {{unknown|Beta 1.6}}
+| {{yes}}
+| {{planned|n/a}}
+| {{no}}
+| {{planned}}
+| {{planned}}
+| {{yes|Threads}}
+| {{no}}
+| {{unknown|On hiatus since Nov 2011}}
+|-
+! [https://github.com/Xinnx/XMC XMC]
+| [[User:Xinnx|Xinnx]]
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
+| {{unknown|Beta 1.4}}
+| {{yes}}
+| {{yes|Alpha, Beta: WIP}}
+| {{no}}
+| {{planned}}
+| {{planned|Players, Partial mob support}}
+| {{yes|Threads + Async File IO}}
+| {{yes|.NET Plugins}}
+| {{unknown|Rewrite in progress}}
+|-
+! [https://github.com/sprenger120/FastCraft FastCraft]
+| [http://mc.kev009.com/User:sprenger120 sprenger120]
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
+| {{unknown}}
+| {{yes}}
+| {{yes|Anvil (read access)}}
+| {{planned}}
+| {{planned}}
+| {{planned|Players, mobs}}
+| {{yes|Threads}}
+| {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
+| {{yes|Active}}
+|-
+! [http://mcserver.ae-c.net MCServer]
+| FakeTruth
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Open source
+| {{Unknown}}
+| {{yes}}
+| {{yes|Raw}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Threads}}
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| {{yes|Active}}
 |-
 ! [[craftd:Main_Page|craftd]]
 | [[User:Kev009|kev009]]
@@ -92,48 +218,6 @@ A couple things for contributors:
 | {{planned}}
 | {{unknown|On hiatus since Aug 2011}}
 |-
-! [http://mcserver.ae-c.net MCServer]
-| FakeTruth
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Open source
-| {{Unknown}}
-| {{yes}}
-| {{yes|Raw}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|Active}}
-|-
-! [https://github.com/clonejo/mc-erl/ mc-erl]
-| Apiocera, clonejo
-| [http://en.wikipedia.org/wiki/Erlang Erlang]
-| not decided yet
-| {{planned|partially}}
-| {{yes}}
-| {{planned|custom (Mnesia)}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Erlang processes}}
-| {{planned}}
-| {{unknown|On hiatus since April 2012}}
-|-
-! [https://github.com/fador/mineserver/ Mineserver]
-| Fador, Psoden, deoxxa
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{Unknown}}
-| {{yes}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{unknown}}
-| {{yes|C++}}
-| {{yes|Active}}
-|-
 ! [https://github.com/Mineserver/mineserver2 Mineserver 2]
 | deoxxa, [[User:Jailout2000|Jailout2000]]
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
@@ -147,90 +231,6 @@ A couple things for contributors:
 | {{planned|boost, ZeroMQ}}
 | {{yes|C++}}
 | {{unknown|On hiatus since April 2012}}
-|-
-! [http://partycraft.github.com/ PartyCraft]
-| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes}}
-| {{yes}}
-| {{planned|Custom}}
-| {{yes}}
-| {{planned}}
-| {{yes|Players + limited others}}
-| {{yes|Worker + Scheduled Events}}
-| {{yes|.NET}}
-| {{unknown|On hiatus pending Craft.Net progress}}
-|-
-! [[Realcraft:Main_Page|Realcraft]]
-| [[User:Jailout2000|Jailout2000]]
-| [http://en.wikipedia.org/wiki/Realbasic Realbasic]
-| General public / proprietary
-| {{no}}
-| {{yes}}
-| {{yes|Custom<br />(Converters planned)}}
-| {{yes}}
-| {{planned}}
-| {{planned|Players, other entities are WIP}}
-| {{no|None}}
-| {{planned|Custom Realcraft Text Files}}
-| {{unknown|On hiatus since Jan 2012}}
-|-
-! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
-| louisdx
-| C++0x
-| unspecified open source
-| {{Unknown}}
-| {{yes}}
-| {{planned|n/a}}
-| {{no}}
-| {{planned}}
-| {{planned}}
-| {{yes|Threads}}
-| {{no}}
-| {{unknown|On hiatus since Nov 2011}}
-|-
-! [http://spout.org/ Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
-| [http://spout.org/team/ SpoutDev] (fork of Glowstone)
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://spout.org/SpoutDevLicenseV1.txt SpoutDev v1]
-| {{yes| Networking ([http://netty.io/ Netty])}}
-| {{yes}}
-| {{yes|Custom<br />(Converters planned)}}
-| {{yes}}
-| {{planned|Partial}}
-| {{planned|Partial}}
-| {{yes|Event-driven}}
-| {{yes|[http://spout.org/ SpoutAPI]}}
-| {{yes|Active}}
-|-
-! [https://github.com/Xinnx/XMC XMC]
-| [[User:Xinnx|Xinnx]]
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
-| {{yes}}
-| {{yes}}
-| {{yes|Alpha, Beta: WIP}}
-| {{no}}
-| {{planned}}
-| {{planned|Players, Partial mob support}}
-| {{yes|Threads + Async File IO}}
-| {{yes|.NET Plugins}}
-| {{unknown|Rewrite in progress}}
-|-
-! [https://github.com/sprenger120/FastCraft FastCraft]
-| [http://mc.kev009.com/User:sprenger120 sprenger120]
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
-| {{yes}}
-| {{yes}}
-| {{yes|Anvil (read access)}}
-| {{planned}}
-| {{planned}}
-| {{planned|Players, mobs}}
-| {{yes|Threads}}
-| {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
-| {{yes|Active}}
 |}
 
 [[Category:Minecraft Modern]]
