@@ -64,6 +64,20 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Active}}
 |-
+! [http://mcserver.ae-c.net MCServer]
+| FakeTruth
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Open source
+| {{unknown|1.2.5}}
+| {{yes}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Threads}}
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| {{yes|Active}}
+|-
 ! [http://partycraft.github.com/ PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
@@ -160,20 +174,6 @@ A couple things for contributors:
 | {{planned|Players, mobs}}
 | {{yes|Threads}}
 | {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
-| {{yes|Active}}
-|-
-! [http://mcserver.ae-c.net MCServer]
-| FakeTruth
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Open source
-| {{Unknown}}
-| {{yes}}
-| {{yes|Raw}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/Mineserver/mineserver2 Mineserver 2]
