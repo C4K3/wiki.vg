@@ -43,6 +43,11 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 | class="col1 rightalign" colspan="4" | 17 Bytes
 |}
 
+
+=== Spawn Dropped Item (0x15) ===
+
+'''''TODO'''''
+
 == Changed Data Type ==
 
 -None-
@@ -58,3 +63,9 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 * Protocol version is now 40
 
 * Changed Time Update packet
+
+=== 2012-08-24 ===
+* 12w34b
+* Protocol version is now ???
+
+* In [[Entities#Entity_Metadata_Format|Entity metadata]] the slot type (5) can now be empty. Instead of (short, byte, short), only -1 as a short is sent. This affects 0x14 Spawn Named Entity, 0x18 Spawn Mob and 0x28 Entity Metadata
