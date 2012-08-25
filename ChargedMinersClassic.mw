@@ -9,7 +9,7 @@
 == Bugs ==
 * Intel graphics cards doesn't get smooth textures.
 * Water surface becomes invisible when underwater.
-* Individual water blocks are clickable (unlike vanilla Minecraft water blocks), which makes underwater very difficult.
+* Individual water blocks are clickable (unlike vanilla Minecraft water blocks), which makes underwater building very difficult.
 
 == Done ==
 * <strike>Turn on the ability to resize the window by default (at least on Windows).</strike>
