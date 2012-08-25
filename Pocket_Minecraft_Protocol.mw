@@ -17,7 +17,7 @@ It has been determined that PM uses RakNet for its networking library, [http://w
 
 * string: int16 length prefix, counts number of bytes following. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 
-* MAGIC: constant 16 bytes of data, always hex bytes 00ffff00fefefefefdfdfdfd12345678.
+* MAGIC: constant 16 bytes of data, always hex bytes 00ffff00fefefefefdfdfdfd12345678, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
 
 == Packets ==
 
