@@ -5,6 +5,7 @@
 * Non-flying player movement code.
 * Expose more options through in-game menus.
 * Save last few messages typed into the console, and allow using up/down arrows to scroll through them (like you would in a terminal).
+* Ability to paste text while typing (Ctrl+V or Shift+Ins).
 
 == Bugs ==
 * Intel graphics cards doesn't get smooth textures.
