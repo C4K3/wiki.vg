@@ -5,7 +5,6 @@
 * Non-flying player movement code.
 * Expose more options through in-game menus.
 * Save last few messages typed into the console, and allow using up/down arrows to scroll through them (like you would in a terminal).
-* Ability to paste text while typing (Ctrl+V or Shift+Ins).
 
 == Bugs ==
 * Intel graphics cards doesn't get smooth textures.
@@ -13,6 +12,7 @@
 * Individual water blocks are clickable (unlike vanilla Minecraft water blocks), which makes underwater building very difficult.
 
 == Done ==
+* <strike>Ability to paste text while typing (Ctrl+V or Shift+Ins).</strike>
 * <strike>Turn on the ability to resize the window by default (at least on Windows).</strike>
 * <strike>Add ability to part a server after joining, to go back to the server list.</strike>
 * <strike>Show a list of players when pressing <tab></strike>
