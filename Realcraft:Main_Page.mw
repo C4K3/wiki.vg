@@ -6,15 +6,17 @@ ICON = |
 HEADING = '''Introduction''' |
 CONTENT =  
 [[Image:Realcraft-Testing-Ranks-And-Custom-Labels.png|thumb|border|right|top|400px|This was on January 7th, 2012 while I was testing out user ranks, colors, and custom user labels.]]
-'''Realcraft''' is a custom (third-party) Minecraft server written in [http://www.realbasic.com/ Realbasic] by [[User:Jailout2000|Jailout2000]]. It implements the [http://www.minecraft.net/ Minecraft] 1.1 server protocols. The server runs out of the console; it does not have a GUI to which you could control it.
+'''Realcraft''' is a custom (third-party) Minecraft server written in [http://www.realbasic.com/ Realbasic] by [[User:Jailout2000|Jailout2000]]. It implements the [http://www.minecraft.net/ Minecraft] 1.3.2 server protocol. The server runs out of the console. It is also closed source, meaning anyone with a copy of it will not receive updates and the author will consider their copy a leaked build.
 
-The server is being written for Windows mainly but will also be compatible with Linux. I plan to support Mac OS X in the future, but currently it is not supported.
+The author does not wish for anyone to obtain a copy of Realcraft. Anyone who wishes to play on Realcraft must connect to the author's server if and when it is online.
 
-I offer my services through any of my contact names, or through IRC ([irc://irc.freenode.net/#realcraft irc.freenode.net#realcraft]).
+The server is being written on and tested with Microsoft Windows, but it must be compatible with Linux so it can be ran on the author's server machine. There are no plans to support Mac OS X at this time.
 
-When I am coding Realcraft, you can find the live server at <code>mc.clan-warp.net:25566</code>.
+The author may be contacted through IRC ([irc://irc.freenode.net/#realcraft irc.freenode.net#realcraft]) if you have any queries about the software itself or how all of this is setup.
 
-Eventually Realcraft will become a duplicate of the [http://innectis.net/ Innectis] community's server. This is a long-term goal.
+Eventually Realcraft will become a duplicate of the [http://innectis.net/ Innectis] community's server. This is a long-term goal and is expected to never be completed until years from now.
+
+The author also wants to note that at anytime Realcraft may go on hiatus, meaning that development has been paused or stopped for a long time. If this happens and you still want to use Realcraft, contact the author through the IRC services above. A little demand always helps a sole freelance programmer.
 
 }}
 
