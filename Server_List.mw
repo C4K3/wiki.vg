@@ -22,6 +22,20 @@ A couple things for contributors:
 !style="width: 72px" | Scripting
 !style="width: 120px" | Development Status
 |-
+! [https://github.com/clonejo/mc-erl/ mc-erl]
+| Apiocera, clonejo
+| [http://en.wikipedia.org/wiki/Erlang Erlang]
+| not decided yet
+| {{yes|1.3.2}}
+| {{yes}}
+| {{planned|custom (Mnesia)}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Erlang processes}}
+| {{no}}
+| {{yes|Active}}
+|-
 ! [https://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
@@ -50,17 +64,17 @@ A couple things for contributors:
 | {{yes|[http://spout.org/ SpoutAPI]}}
 | {{yes|Active}}
 |-
-! [https://github.com/clonejo/mc-erl/ mc-erl]
-| Apiocera, clonejo
-| [http://en.wikipedia.org/wiki/Erlang Erlang]
-| not decided yet
+! [[Realcraft:Main_Page|Realcraft]]
+| [[User:Jailout2000|Jailout2000]]
+| [http://en.wikipedia.org/wiki/Realbasic Realbasic]
+| Closed source
 | {{yes|1.3.2}}
 | {{yes}}
-| {{planned|custom (Mnesia)}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Erlang processes}}
+| {{yes|Custom<br />(Converters planned)}}
+| {{yes}}
+| {{planned}}
+| {{planned|Players, other entities are WIP}}
+| {{yes|Event-driven}}
 | {{no}}
 | {{yes|Active}}
 |-
@@ -91,20 +105,6 @@ A couple things for contributors:
 | {{yes|Worker + Scheduled Events}}
 | {{yes|.NET}}
 | {{unknown|On hiatus pending Craft.Net progress}}
-|-
-! [[Realcraft:Main_Page|Realcraft]]
-| [[User:Jailout2000|Jailout2000]]
-| [http://en.wikipedia.org/wiki/Realbasic Realbasic]
-| General public / proprietary
-| {{unknown|1.1}}
-| {{yes}}
-| {{yes|Custom<br />(Converters planned)}}
-| {{yes}}
-| {{planned}}
-| {{planned|Players, other entities are WIP}}
-| {{no|None}}
-| {{planned|Custom Realcraft Text Files}}
-| {{unknown|On hiatus since Jan 2012}}
 |-
 ! [https://github.com/MostAwesomeDude/bravo Bravo]
 | MostAwesomeDude
