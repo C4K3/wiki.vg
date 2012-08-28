@@ -31,7 +31,7 @@ This payload is simply a set of bytes corresponding to an ItemStack. It is seria
 ''Server to client''
 
 Remote texture packs.
-This contains a string representing the url to get the texture pack from, followed by null (\0000) and then '16'.
+This contains a string representing the url to get the texture pack from, followed by null (\0000) and then '16', all in ASCII.
 
 ===  <code>MC|TrList</code> ===
 ''Server to client''
