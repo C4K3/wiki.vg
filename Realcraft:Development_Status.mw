@@ -3,6 +3,9 @@
 | {{RealcraftMenu}}
 |}
 
+== 15:28, 28 August 2012 (MST) ==
+Started to work on the project again. Started from what looks to be a newer project file but lacks all of the features I talked about before. Though this one looks cleaner, so I'm keeping it. I have worked up to protocol 1.3.2 without encryption (it will bypass it for now). I need to get worlds setup. Banning IPs and usernames works. Found out I can use chat colors/styles in the disconnect message, so I made the ban messages use them. I also found out I can use a LF (0x0A) character to create a new line, however a CR (0x0D) alone does not work and I didn't try CRLF (0x0D + 0x0A) together. I also want to note that when I create a new line, the next line needs to be spaced three times (0x20 character) in order to get it center-aligned with the line above it, don't know if that's a normal bug or if it's a bug because I'm using chat colors. I do work today into the next day, but I don't work tomorrow (the next day). I will be putting lots of time into this project this week and the coming weeks.
+
 == 05:07, 28 January 2012 (MST) ==
 The project is on temporary hold until further notice. I am far too busy to be spending time with Realcraft at the moment.
 
