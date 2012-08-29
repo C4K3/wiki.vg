@@ -13,11 +13,11 @@ The '''slot''' data structure is how minecraft represents an item and its associ
 
 The structure consists of at least a short, which gives the item/block ID [http://www.minecraftwiki.net/wiki/Block_ids#Block_IDs_.28Minecraft_Beta.29]. A value of <code>-1</code> signifies that the slot is empty, and no further data follows.
 
-For non-empty slots, at least two further fields follow. These fields are a byte (item count) and a short (damage/block metadata)
+If the block ID is not <code>-1</code>, two more fields follow. These fields are a byte (item count) and a short (length of item metadata).
 
-For every block ID, except -1, further data follows. First, a short gives the length of a proceeding byte array. A value of <code>-1</code> signifies no further data.
+If the short (length of item metadata) is <code>-1</code>, there is no item metadata, and no further data follows. Otherwise, a byte array will follow.
 
-The byte array (if present) contains gzipped (that is RFC 1952 rather than RFC 1950) [[NBT]] data. The format of this data is as follows:
+The byte array contains gzipped (that is RFC 1952 rather than RFC 1950) [[NBT]] data. The format of this data is as follows:
 
 <code>
   COMPOUND: <nowiki>''</nowiki>
