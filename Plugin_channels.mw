@@ -2,7 +2,7 @@
 {{anchor|Internal}}
 == Reserved channels ==
 === <code>REGISTER</code> ===
-''Client to server''
+''Two-way''
 
 Allows the client to register for one or more custom channels, indicating that the server should send data on those channels if the appropriate plugin is installed. Payload is a null-separated list of strings.
 
