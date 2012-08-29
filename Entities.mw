@@ -42,9 +42,9 @@ To parse, repeat the following procedure:
 <nowiki>*</nowiki>Not currently used (last checked in 1.3.1 [http://gist.github.com/0a1062c3b5c2d268f7e9])
 
 
-In Python:
+In Python-like code:
 <source lang="python">
-#socket is positioned at the beginning of the metadata array
+#socket is positioned at the beginning of the metadata array. Also note that the method unpack() doesn't exist in socket
 metadata = {}
 x = socket.unpack('byte')
 while x != 127:
