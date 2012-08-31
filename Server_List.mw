@@ -22,6 +22,20 @@ A couple things for contributors:
 !style="width: 72px" | Scripting
 !style="width: 120px" | Development Status
 |-
+! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
+| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{planned|12w34b}}
+| {{yes}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Async Networking/Logic}}
+| {{no}}
+| {{yes|Active}}
+|-
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
 | Apiocera, clonejo
 | [http://en.wikipedia.org/wiki/Erlang Erlang]
@@ -105,20 +119,6 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|Active}}
-|-
-! [http://partycraft.github.com/ PartyCraft]
-| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{unknown|1.2.5}}
-| {{yes}}
-| {{planned|Custom}}
-| {{yes}}
-| {{planned}}
-| {{yes|Players + limited others}}
-| {{yes|Worker + Scheduled Events}}
-| {{yes|.NET}}
-| {{unknown|On hiatus pending Craft.Net progress}}
 |-
 ! [https://github.com/MostAwesomeDude/bravo Bravo]
 | MostAwesomeDude
