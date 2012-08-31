@@ -92,6 +92,20 @@ A couple things for contributors:
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|Active}}
 |-
+! [https://github.com/sprenger120/FastCraft FastCraft]
+| [http://mc.kev009.com/User:sprenger120 sprenger120]
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
+| {{yes|1.3.2}}
+| {{yes}}
+| {{yes|Anvil (read access)}}
+| {{planned}}
+| {{planned}}
+| {{planned|Players, mobs}}
+| {{yes|Threads}}
+| {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
+| {{yes|Active}}
+|-
 ! [http://partycraft.github.com/ PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
@@ -161,20 +175,6 @@ A couple things for contributors:
 | {{yes|Threads + Async File IO}}
 | {{yes|.NET Plugins}}
 | {{unknown|Rewrite in progress}}
-|-
-! [https://github.com/sprenger120/FastCraft FastCraft]
-| [http://mc.kev009.com/User:sprenger120 sprenger120]
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
-| {{yes|1.3.2}}
-| {{yes}}
-| {{yes|Anvil (read access)}}
-| {{planned}}
-| {{planned}}
-| {{planned|Players, mobs}}
-| {{yes|Threads}}
-| {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
-| {{yes|Active}}
 |-
 ! [https://github.com/Mineserver/mineserver2 Mineserver 2]
 | deoxxa, [[User:Jailout2000|Jailout2000]]
