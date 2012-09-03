@@ -13,8 +13,15 @@ These are wrappers for the vanilla Minecraft Classic client.
 !style="min-width: 120px" | License
 !style="width: 120px" | Scripting
 !style="width: 120px" | Development Status
+<!--|-
+|colspan="6" | There are no client wrappers at this time-->
 |-
-|colspan="6" | There are no client wrappers at this time
+! [http://www.youtube.com/user/ManiaDevelopmentCom/ MinecraftMania]
+| oyasunadev
+| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
+| [http://creativecommons.org/licenses/by-nc-sa/3.0/ CC BY-NC-SA 3.0]
+| {{yes|Java Archives}}
+| {{yes|Active}}
 |}
 
 == Server Wrappers ==
