@@ -57,6 +57,8 @@ Before you had to press "I".
 | class="col1" | held items
 |}
 
+Note that this is different than inventory items stored in a player.dat file. This may help: [https://gist.github.com/459a1691c3dd751db160 https://gist.github.com/459a1691c3dd751db160]
+
 === Crafting window ===
 
 This is the window that is opened when the player right-clicks on a workbench.
