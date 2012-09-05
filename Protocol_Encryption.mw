@@ -19,9 +19,6 @@ As of 12w17a, minecraft implements SSL-like encryption.
 #'''S->C''' 0x01 login
 #see [[Protocol FAQ]] to get information about what happens next.
 
-For a Code example you can have a look at this example of a Chat Bot using a C# Protocol Library: 
-https://minecraftprotocol.codeplex.com/SourceControl/changeset/view/68979#1204175
-
 == Key Exchange ==
 
 The server generates a 1024-bit RSA keypair on startup. The key, when packed into a 0xFD packet, is in ASN.1 format as defined by x.509.
