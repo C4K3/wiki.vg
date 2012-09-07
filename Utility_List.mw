@@ -1,6 +1,11 @@
 {{ToolsNavbox}}
 A list of tools to help out your Minecraft development.<br style="clear:both;" />
 
+The following tools support version 1.3.2 (protocol version 39):
+
+* ProtoProxy - a subproject of MCServer, https://code.google.com/p/mc-server/source/browse/#svn%2Ftrunk%2FProtoProxy - protocol proxy performing a man-in-the-middle attack on the protocol encryption, parses basic packets. Written in C++; note that you need to checkout whole trunk to compile; windows-only.
+
+
 The following tools support version 1.2.5 (protocol version 29):
 
 * NetMinecraftMapViewer - http://code.google.com/p/netminecraftmapviewer - Map viewer showing entity locations and special blocks via TCP proxy for Minecraft 1.2.5, written in c#
