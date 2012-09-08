@@ -17,6 +17,14 @@ This is a rather incomplete list of Minecraft Creative clients currently in deve
 | GPLv2
 | {{no}}
 | Ingame server list, chat & block picker.
+|-|
+|-
+! [https://github.com/ManiaDevelopment/MinecraftMania MinecraftMania]
+| Minecraft Classic Wrapper plus many more features!
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://creativecommons.org/licenses/by-nc-sa/3.0/ CC BY-NC-SA 3.0]
+| {{no}}
+| Minecraft Classic in a window. Use cheats such as fly, speed, noclip, and xray. Take screenshots, save levels, and play in fullscreen. Cheats API for developers.
 |-|}
 
 [[Category:Minecraft Classic]]
