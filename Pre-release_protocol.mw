@@ -6,7 +6,6 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 == Changed packets ==
 
-{{anchor|0x4}}
 === Time Update (0x04) ===
 
 ''Server to Client''
@@ -43,8 +42,19 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 | class="col1 rightalign" colspan="4" | 17 Bytes
 |}
 
+=== Spawn Named Entity (0x14) ===
+
+'''''TODO'''''
 
 === Spawn Dropped Item (0x15) ===
+
+'''''TODO'''''
+
+=== Spawn Mob (0x18) ===
+
+'''''TODO'''''
+
+=== Entity Metadata (0x28) ===
 
 '''''TODO'''''
 
@@ -57,7 +67,6 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 -None-
 
 == Protocol History ==
-
 
 === 2012-09-06 ===
 * 12w36a
