@@ -134,6 +134,20 @@ A couple things for contributors:
 | {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
 | {{yes|Active}}
 |-
+! [https://github.com/JoeDoyle23/BurningPig BurningPig]
+| Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
+| [http://en.wikipedia.org/wiki/Javascript JavaScript(Node.js)]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{yes|1.3.2}}
+| {{yes}}
+| {{planned}}
+| {{planned}}
+| {{no}}
+| {{planned}}
+| {{yes|Async Networking}}
+| {{no}}
+| {{yes|Active}}
+|-
 ! [https://github.com/MostAwesomeDude/bravo Bravo]
 | MostAwesomeDude
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
