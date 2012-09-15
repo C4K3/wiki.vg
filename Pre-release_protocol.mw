@@ -44,7 +44,7 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 
 === Spawn Named Entity (0x14) ===
 
-'''''TODO'''''
+New rule for Metadata.
 
 === Spawn Dropped Item (0x15) ===
 
@@ -52,15 +52,17 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 
 === Spawn Mob (0x18) ===
 
-'''''TODO'''''
+New rule for Metadata.
 
 === Entity Metadata (0x28) ===
 
-'''''TODO'''''
+New rule for Metadata.
 
 == Changed data types ==
 
--None-
+=== Metadata ===
+
+When sending a entity, and its metadata, if the entity type is 5 (presumed to be item drop?) and the metadata does not exist, then its "id" field is -1, and the "count" and "damage" fields are skipped.
 
 == Removed packets ==
 
