@@ -28,7 +28,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/ReDucTor/mineproxy Mineproxy] || mineproxy || ? || ? || C & C++ || ? || ReDucTor
 |-
-| [http://github.com/aniero/golem golem] || Ruby 1.9 client, acts as a standalone bot or transparent proxy || ? || #10 || Ruby || ? || aniero
+| [http://github.com/aniero/golem golem] || Ruby 1.9 client, acts as a standalone bot or transparent proxy || b1.4 || #10 || Ruby || ? || aniero
 |-
 | [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || ? || ? || Haskell || ? || glguy
 |-
