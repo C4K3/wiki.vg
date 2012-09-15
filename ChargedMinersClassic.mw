@@ -1,7 +1,7 @@
 [http://charged-miners.com Charged Miners] is a client for classic, download the launcher [https://github.com/downloads/Wallbraker/Charged-Miners/Charged%20Miners.exe here]
 
 == Improvements ==
-* Collision detection with terrain.
+* Optional/toggle-able collision detection with terrain.
 * Non-flying player movement code.
 * Expose more options through in-game menus.
 * Save last few messages typed into the console, and allow using up/down arrows to scroll through them (like you would in a terminal).
