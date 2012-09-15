@@ -62,7 +62,74 @@ See the change in metadata [[#metadata|below]]. (Under Protocol History, 2012-08
 
 == Changed data types ==
 
--None-
+{{anchor|metadata}}
+== Entity Metadata Format ==
+
+Note that entity metadata is a totally distinct concept from block metadata.
+
+The entity metadata format is quirky dictionary format, where the key and the value's type are packed in a single byte.
+
+To parse, repeat the following procedure:
+
+# Read an unsigned byte
+# If this byte == 127, stop reading
+# Decompose the byte. <br> The bottom 5 bits (0x1F) serve as an identifier (key) for the data to follow. <br> The top 3 bits (0xE0) serve as a type.
+# Read and unpack based on the type (below)
+
+{| class="wikitable"
+|- 
+! Type
+! Meaning
+|- 
+| 0
+| byte
+|-
+| 1
+| short
+|-
+| 2
+| int
+|-
+| 3
+| float
+|-
+| 4
+| string16
+|-
+| 5
+| short, byte, short (slot type) - If first short is empty, no further data is sent.
+|-
+| 6
+| int, int, int (x, y, z)
+|}
+
+In Python-like code:
+<source lang="python">
+#socket is positioned at the beginning of the metadata array. Also note that the method unpack() doesn't exist in socket
+metadata = {}
+x = socket.unpack('byte')
+while x != 127:
+    index = x & 0x1F # Lower 5 bits
+    ty    = x >> 5   # Upper 3 bits
+    if ty == 0: val = socket.unpack('byte') 
+    if ty == 1: val = socket.unpack('short') 
+    if ty == 2: val = socket.unpack('int') 
+    if ty == 3: val = socket.unpack('float') 
+    if ty == 4: val = socket.unpack('string16')
+    if ty == 5:
+        val = {}
+        val["id"] = socket.unpack('short')
+        if val["id] != -1:
+            val["count"]  = socket.unpack('byte')
+            val["damage"] = socket.unpack('short')
+    if ty == 6:
+        val = []
+        for i in range(3):
+            val.append(socket.unpack('int'))
+    metadata[index] = (ty, val)
+    x = socket.unpack('byte')
+return metadata
+</source>
 
 == Removed packets ==
 
@@ -78,8 +145,7 @@ See the change in metadata [[#metadata|below]]. (Under Protocol History, 2012-08
 * 12w34b
 * Protocol version is now 41
 
-{{anchor|metadata}}
-* In [[Entities#Entity_Metadata_Format|Entity metadata]] the slot type (5) can now be empty. Instead of (short, byte, short), only -1 as a short is sent. This affects 0x14 Spawn Named Entity, 0x18 Spawn Mob and 0x28 Entity Metadata
+* Changed Entity Metadata Format
 
 === 2012-08-09 ===
 * 12w32a
