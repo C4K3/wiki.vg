@@ -50,7 +50,7 @@ New rule for Metadata.
 
 '''''TODO'''''
 
-It would appear as though it also includes similar changes to how metadata is sent.
+It would appear as though it also includes similar changes to how metadata is sent. It includes a new byte array after the "Damage" field, and before the "X" field if certain conditions are met. If the array does not exist, then the length of the array is "-1".
 
 === Spawn Mob (0x18) ===
 
