@@ -11,6 +11,7 @@
 
 == Bugs ==
 * Intel graphics cards doesn't get smooth textures.
+* Bringing up chat should release the mouse.
 
 == Done ==
 * <strike>Water surface becomes invisible when underwater.</strike>
