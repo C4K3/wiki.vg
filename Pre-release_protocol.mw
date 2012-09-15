@@ -62,7 +62,7 @@ New rule for Metadata.
 
 === Metadata ===
 
-When sending a entity, and its metadata, if the entity type is 5 (presumed to be item drop?) and the metadata does not exist, then its "id" field is -1, and the "count" and "damage" fields are skipped.
+When sending metadata, if the entity type is 5 (presumed to be item drop?) and the metadata does not exist, then its "id" field is to be -1, and the "count" and "damage" fields are skipped.
 
 == Removed packets ==
 
