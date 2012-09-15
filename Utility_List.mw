@@ -1,37 +1,38 @@
 {{ToolsNavbox}}
 A list of tools to help out your Minecraft development.<br style="clear:both;" />
 
-{| class="wikitable sortable" border="1"
+{| class="wikitable sortable" border="1" style="text-align: center"
 |+ Tools
 |-
 ! scope="col" | Name
-! scope="col" class="unsortable" | Description
-! scope="col" | Latest Protocol
+! style="width: 400px" scope="col" class="unsortable" | Description
+! style="width: 150px" scope="col" | Last Supported Protocol
 ! scope="col" | Language
 ! scope="col" class="unsortable" | Operating System
 ! scope="col" | Author
+! scope="col" | Development Status
 |-
-| [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{yes|#39}} - 1.3.2 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]]
+| [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{yes|#39}} - 1.3.2 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
 |-
-| [https://code.google.com/p/mc-server/ ProtoProxy] || a subproject of MCServer, protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parses basic packets. || {{yes|#39}} - 1.3.2 || C++ || Windows || tedik
+| [https://code.google.com/p/mc-server/ ProtoProxy] || a subproject of MCServer, protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parses basic packets. || {{yes|#39}} - 1.3.2 || C++ || Windows || tedik || {{yes|Active}}
 |-
-| [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.3.2-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{yes|#39}} - 1.3.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]]
+| [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.3.2-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{yes|#39}} - 1.3.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
 |-
-| [https://github.com/mmcgill/mc3p m3cp] || Actively maintained Python Minecraft proxy with plugin support. || {{no|#29}} - 1.2.5 || Python || Windows, Mac, & Linux || mmcgill
+| [https://github.com/mmcgill/mc3p m3cp] || Actively maintained Python Minecraft proxy with plugin support. || {{no|#29}} - 1.2.5 || Python || Windows, Mac, & Linux || mmcgill || {{no|Inactive}}
 |-
-| [http://code.google.com/p/netminecraftmapviewer/ NetMinecraftMapViewer] || Map viewer showing entity locations and special blocks via TCP proxy || {{no|#29}} - 1.2.5 || C# ||   ||  
+| [http://code.google.com/p/netminecraftmapviewer/ NetMinecraftMapViewer] || Map viewer showing entity locations and special blocks via TCP proxy || {{no|#29}} - 1.2.5 || C# ||   ||   || {{no|Inactive}}
 |-
-| [https://github.com/Maincraft/MCProxy MCProxy] || A java minecraft-proxy that can load plugins. || {{no|#29}} - 1.2.5 || Java ||   || Maincraft
+| [https://github.com/Maincraft/MCProxy MCProxy] || A java minecraft-proxy that can load plugins. || {{no|#29}} - 1.2.5 || Java ||   || Maincraft || {{no|Inactive}}
 |-
-| [https://github.com/ScottBrooks/minecraft-dissector WiresharkDissector] || A wireshark dissector for the Minecraft protocol || {{no|#28}} - 1.2 || C ||   || ScottBrooks
+| [https://github.com/ScottBrooks/minecraft-dissector WiresharkDissector] || A wireshark dissector for the Minecraft protocol || {{no|#28}} - 1.2 || C ||   || ScottBrooks || {{no|Inactive}}
 |-
-| [http://github.com/aniero/golem golem] || Ruby 1.9 client, acts as a standalone bot or transparent proxy || {{no|#10}} - 1.4b || Ruby ||   || aniero
+| [http://github.com/aniero/golem golem] || Ruby 1.9 client, acts as a standalone bot or transparent proxy || {{no|#10}} - 1.4b || Ruby ||   || aniero || {{no|Inactive}}
 |-
-| [https://github.com/ReDucTor/mineproxy Mineproxy] || mineproxy || {{unknown|}} || C & C++ ||   || ReDucTor
+| [https://github.com/ReDucTor/mineproxy Mineproxy] || mineproxy || {{unknown|}} || C & C++ ||   || ReDucTor || {{no|Inactive}}
 |-
-| [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || {{unknown|}} || Haskell ||   || glguy
+| [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || {{unknown|}} || Haskell ||   || glguy || {{no|Inactive}}
 |-
-| [https://github.com/Nadrin/mcproxy mcproxy] || A modular client and server-side network protocol proxy || {{unknown|}} || C ||   || Nadrin
+| [https://github.com/Nadrin/mcproxy mcproxy] || A modular client and server-side network protocol proxy || {{unknown|}} || C ||   || Nadrin || {{no|Inactive}}
 |}
 
 [[Category:Minecraft Modern]]
