@@ -20,19 +20,19 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/mmcgill/mc3p m3cp] || Actively maintained Python Minecraft proxy with plugin support. || 1.2.5 (and 1.8?) || #29 || Python || Windows, Mac, & Linux || mmcgill
 |-
-| [http://code.google.com/p/netminecraftmapviewer/ NetMinecraftMapViewer] || Map viewer showing entity locations and special blocks via TCP proxy || 1.2.5 || #29 || C# || ? || ?
+| [http://code.google.com/p/netminecraftmapviewer/ NetMinecraftMapViewer] || Map viewer showing entity locations and special blocks via TCP proxy || 1.2.5 || #29 || C# ||   ||  
 |-
-| [https://github.com/Maincraft/MCProxy MCProxy] || A java minecraft-proxy that can load plugins. || 1.2.5 || #29 || Java || ? || Maincraft
+| [https://github.com/Maincraft/MCProxy MCProxy] || A java minecraft-proxy that can load plugins. || 1.2.5 || #29 || Java ||   || Maincraft
 |-
-| [https://github.com/ScottBrooks/minecraft-dissector WiresharkDissector] || A wireshark dissector for the Minecraft protocol || 1.2 || #28 || C || ? || ScottBrooks
+| [https://github.com/ScottBrooks/minecraft-dissector WiresharkDissector] || A wireshark dissector for the Minecraft protocol || 1.2 || #28 || C ||   || ScottBrooks
 |-
-| [http://github.com/aniero/golem golem] || Ruby 1.9 client, acts as a standalone bot or transparent proxy || b1.4 || #10 || Ruby || ? || aniero
+| [http://github.com/aniero/golem golem] || Ruby 1.9 client, acts as a standalone bot or transparent proxy || b1.4 || #10 || Ruby ||   || aniero
 |-
-| [https://github.com/ReDucTor/mineproxy Mineproxy] || mineproxy || ? || ? || C & C++ || ? || ReDucTor
+| [https://github.com/ReDucTor/mineproxy Mineproxy] || mineproxy ||   ||   || C & C++ ||   || ReDucTor
 |-
-| [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || ? || ? || Haskell || ? || glguy
+| [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy ||   ||   || Haskell ||   || glguy
 |-
-| [https://github.com/Nadrin/mcproxy mcproxy] || A modular client and server-side network protocol proxy || ? || ? || C || ? || Nadrin
+| [https://github.com/Nadrin/mcproxy mcproxy] || A modular client and server-side network protocol proxy ||   ||   || C ||   || Nadrin
 |}
 
 [[Category:Minecraft Modern]]
