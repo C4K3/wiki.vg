@@ -5,7 +5,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |+ Sortable table
 |-
 ! scope="col" | Name
-! scope="col" | Description
+! scope="col" class="unsortable" | Description
 ! scope="col" | Version
 ! scope="col" | Protocol Version
 ! scope="col" | Language
