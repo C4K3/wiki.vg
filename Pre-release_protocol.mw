@@ -44,27 +44,27 @@ The &#39;Time&#39; is the Age of the world. It is not changing on server command
 
 === Spawn Named Entity (0x14) ===
 
-New rule for Metadata.
+See the change in metadata [[#metadata|below]].
 
 === Spawn Dropped Item (0x15) ===
 
 '''''TODO'''''
 
-It would appear as though it also includes similar changes to how metadata is sent. It includes a new byte array after the "Damage" field, and before the "X" field if certain conditions are met. If the array does not exist, then the length of the array is "-1".
+It includes a new byte array after the "Damage" field, and before the "X" field if certain conditions are met. If the array does not exist, then the length of the array is "-1".
 
 === Spawn Mob (0x18) ===
 
-New rule for Metadata.
+See the change in metadata [[#metadata|below]].
 
 === Entity Metadata (0x28) ===
 
-New rule for Metadata.
+See the change in metadata [[#metadata|below]].
 
 == Changed data types ==
 
 === Metadata ===
 
-When sending metadata, if the entity type is 5 (presumed to be item drop?) and the metadata does not exist, then its "id" field is sent as '-1', and the "count" and "damage" fields are not sent.
+-None-
 
 == Removed packets ==
 
@@ -80,6 +80,7 @@ When sending metadata, if the entity type is 5 (presumed to be item drop?) and t
 * 12w34b
 * Protocol version is now 41
 
+{{anchor|metadata}}
 * In [[Entities#Entity_Metadata_Format|Entity metadata]] the slot type (5) can now be empty. Instead of (short, byte, short), only -1 as a short is sent. This affects 0x14 Spawn Named Entity, 0x18 Spawn Mob and 0x28 Entity Metadata
 
 === 2012-08-09 ===
