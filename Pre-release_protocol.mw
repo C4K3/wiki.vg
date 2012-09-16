@@ -119,7 +119,7 @@ while x != 127:
     if ty == 5:
         val = {}
         val["id"] = socket.unpack('short')
-        if val["id] != -1:
+        if val["id"] != -1:
             val["count"]  = socket.unpack('byte')
             val["damage"] = socket.unpack('short')
     if ty == 6:
