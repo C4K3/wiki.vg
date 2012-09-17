@@ -14,7 +14,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{yes|#39}} - 1.3.2 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
 |-
-| [https://code.google.com/p/mc-server/ ProtoProxy] || a subproject of MCServer, protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parses basic packets. || {{yes|#39}} - 1.3.2 || C++ || Windows || tedik || {{yes|Active}}
+| [https://code.google.com/p/mc-server/ ProtoProxy] || a subproject of MCServer, protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parses basic packets. || {{yes|#39}} - 1.3.2 || C++ || Windows || [[user:xoft|xoft]] || {{yes|Active}}
 |-
 | [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.3.2-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{yes|#39}} - 1.3.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
 |-
