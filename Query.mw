@@ -410,3 +410,4 @@ This is the format proposed by dinnerbone and currently used by bukkit: <br />
 * https://github.com/barneygale/MCQuery (python)
 * https://github.com/kmpm/node-mcquery (node.js)
 * https://github.com/Dinnerbone/mcstatus (python)
+* https://github.com/A2PLab/minelib (scala)
