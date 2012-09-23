@@ -13,7 +13,8 @@
 == Bugs ==
 * Intel graphics cards doesn't get smooth textures.
 * Bringing up chat should release the mouse.
-* With viewdistance Furthestest ghost clones of the players on the same map as you can be seen far down below the world.
+* With viewdistance Furthestest, ghost clones of the players on the same map as you can be seen far down below the world.
+**That's fCraft-specific. As part of its bandwidth-saving algorithm, fCraft hides players who are too far away to be visible by the player at (0,0,-32768). If you add a special handler that doesn't draw players at that location, that'd be great.
 
 == Done ==
 * <strike>Water surface becomes invisible when underwater.</strike>
