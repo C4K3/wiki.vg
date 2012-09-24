@@ -17,6 +17,7 @@
 * With viewdistance Furthestest, ghost clones of the players on the same map as you can be seen far down below the world.
 **That's fCraft-specific. As part of its bandwidth-saving algorithm, fCraft hides players who are too far away to be visible by the player at (0,0,-32768). If you add a special handler that doesn't draw players at that location, that'd be great. --[[User:F|F]] ([[User talk:F|talk]]) 19:43, 22 September 2012 (MST)
 * Admincrete is delete-able by non-ops.
+**Check the last byte of the handshake (opcode 0) packet. If it's less than 100, admincrete should NOT be clickable/deletable by players. Also check SetPermission packet (opcode 15).
 
 == Done ==
 * <strike>--resume argument that connects to last connected to server.</strike>
