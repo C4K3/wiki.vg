@@ -9,6 +9,7 @@
 * More chat/terminal improvements (being able to move cursor around with arrow keys, selection with shift key, etc).
 * Lighting mode faithful to Minecraft Classic (straight-down shadows), to allow viewing pixelart properly.
 * Create an entry in the configuration file allowing to adjust the movement speed.
+** Ideally separate entries for normal horizontal and vertical speeds, and for sped-up horizontal and vertical speeds.
 * XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
 
 == Bugs ==
