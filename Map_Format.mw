@@ -140,7 +140,7 @@ In the root directory is a level.dat file.  The structure of that file is this:
 ** NBTLong(SizeOnDisk): Always 0 for 1.2.5
 ** NBTLong(Time)
 ** NBTString(generatorName)
-** NBTString(levelName)
+** NBTString(LevelName)
 
 ===[playername].dat===
 
