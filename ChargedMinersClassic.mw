@@ -19,6 +19,7 @@
 * Player models lack hats.
 * Charged Miners doesn't report the same player location to the server as the official client (though the official client may be in error).
 ** Yeah, I'm pretty sure Charged Miners is consistent while classic is not. --[[User:Wallbraker|Wallbraker]] ([[User talk:Wallbraker|talk]]) 03:10, 24 September 2012 (MST)
+* Half steps make the underside of the block above them transparent.
 
 == Done ==
 * <strike>Admincrete is delete-able by non-ops.</strike>
