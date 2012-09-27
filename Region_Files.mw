@@ -101,10 +101,7 @@ Each chunk has an additional 5-byte header, followed by the actual chunk which i
 | <code>2</code> 
 |-
 ! On disk (in hex) 
-| <code>00</code> 
-| <code>00</code> 
-| <code>02</code> 
-| <code>10</code> 
+| <code>00 00 02 10</code> 
 | <code>02</code> 
 |} 
 There are two possible values for the compression scheme. If it is a <code>1</code>, the following chunk is compressed using [[gzip]]. If it&#039;s a <code>2</code>, the following chunk is compressed with [[zlib]]. In practice, you will only ever encounter chunks compressed using zlib.
