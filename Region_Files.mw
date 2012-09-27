@@ -64,9 +64,7 @@ As an example, this is the location entry for the first chunk in a region:
 | <code>1</code> 
 |-
 ! On Disk (in hex) 
-| <code>00</code> 
-| <code>00</code> 
-| <code>02</code> 
+| <code>00 00 02</code> 
 | <code>01</code> 
 |} 
 Here&#039;s an example in Python to decode a location entry:
@@ -81,7 +79,7 @@ Here&#039;s an example in Python to decode a location entry:
  
     return &#40;offset * 4096, size * 4096&#41;
 </pre>
-  
+
 ==== Timestamp Table ====
   
 The timestamp table is composed of 1024 timestamps, each a 4-byte integer. This is the time that the chunk was last modified, and is in the same order as the location table. Thus, the chunk whose location was at <code>location_table[15]</code> has a timestamp at <code>timestamp_table[15]</code>.
