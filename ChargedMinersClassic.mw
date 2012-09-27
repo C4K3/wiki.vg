@@ -11,7 +11,8 @@
 * Create an entry in the configuration file allowing to adjust the movement speed.
 ** Ideally separate entries for normal horizontal and vertical speeds, and for sped-up horizontal and vertical speeds.
 * XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
-* Clickable links
+* Clickable links.
+* Make walking/running speeds configurable.
 
 == Bugs ==
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
