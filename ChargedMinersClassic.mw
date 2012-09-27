@@ -14,6 +14,7 @@
 * Clickable links
 
 == Bugs ==
+* "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
 * Intel graphics cards doesn't get smooth textures.
 * Interpolate other players' movement.
 * Player models lack hats.
