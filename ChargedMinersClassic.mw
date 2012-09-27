@@ -13,6 +13,7 @@
 * XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
 * Clickable links.
 * Make walking/running speeds configurable.
+* Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.
 
 == Bugs ==
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
