@@ -33,7 +33,7 @@ Almost every 3rd-party Minecraft application uses NBT on some level. There also 
 * [http://gerritg.de/?p=152 NEINedit] (Obj-C), an OS X specific editor.
 
 == Specification ==
-The NBT file format is extremely simple, and writing a library capable of reading/writing it is a simple affair, usually taking no more than an hour, depending on your skills and language of choice. There are 9 datatypes supported by this format, and one type used to close compound tags. It is strongly advised to read this entire section (no skimming!) or you '''will''' run into issues.
+The NBT file format is extremely simple, and writing a library capable of reading/writing it is a simple affair, usually taking no more than an hour, depending on your skills and language of choice. There are 11 datatypes supported by this format, and one type used to close compound tags. It is strongly advised to read this entire section (no skimming!) or you '''will''' run into issues.
 
 
 {| class="wikitable"
