@@ -13,7 +13,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 !Game Graphics
 !Last Version Supported
 |-
-! [https://github.com/Wallbraker/Charged-Miners Charged Miners]
+! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
 | Wallbraker et al.
 | {{D}}, {{Lua}}
