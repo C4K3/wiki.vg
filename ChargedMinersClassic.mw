@@ -15,6 +15,7 @@
 * Clickable links.
 * Make walking/running speeds configurable.
 * Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.
+* Add extension protocol.
 
 == Launcher ==
 * Button/Menu item to open the %AppData%/Roaming/charge folder.
@@ -25,10 +26,6 @@
 * Intel graphics cards doesn't get smooth textures.
 * Interpolate other players' movement.
 * Player models lack hats.
-* Charged Miners doesn't report the same player location to the server as the official client (though the official client may be in error).
-** Yeah, I'm pretty sure Charged Miners is consistent while classic is not. --[[User:Wallbraker|Wallbraker]] ([[User talk:Wallbraker|talk]]) 03:10, 24 September 2012 (MST)
-** Minecraft classic is off by several units when receiving self-teleport packets. Most custom servers compensate for it, but that compensation is not needed for CM. [[User:F|F]] ([[User talk:F|talk]]) 00:43, 27 September 2012 (MST)
-
 
 == Done ==
 * <strike>Charged Miners doesn't report the same player location to the server as the official client (though the official client may be in error).</strike> Not a bug.
