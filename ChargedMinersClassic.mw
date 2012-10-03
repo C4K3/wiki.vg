@@ -16,6 +16,10 @@
 * Make walking/running speeds configurable.
 * Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.
 
+== Launcher ==
+* Button/Menu item to open the %AppData%/Roaming/charge folder.
+** Bonus Objective: Button/Menu item that uploads log.txt to a paste site.
+
 == Bugs ==
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
 * Intel graphics cards doesn't get smooth textures.
