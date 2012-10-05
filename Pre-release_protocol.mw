@@ -139,6 +139,7 @@ return metadata
 === 2012-10-04 ===
 * 12w40a
 * Protocol version is now 45
+* Packet 0x66 changed
 
 === 2012-09-06 ===
 * 12w36a
