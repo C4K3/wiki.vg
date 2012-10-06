@@ -28,6 +28,7 @@
 * Player models lack hats.
 * Ignores terrain.classic.png and doesn't load textures from terrain.png (classic) correctly unless manipulateTextureClassic(pic); is commented out (line 306, miners/startup.d) (Tested on Linux 3.5.4-1 x86_64, nvidia-304.51)
 * The default skin is completely white
+* Crashes when a map has a large amount of players on it
 
 == Done ==
 * <strike>Charged Miners doesn't report the same player location to the server as the official client (though the official client may be in error).</strike> Not a bug.
