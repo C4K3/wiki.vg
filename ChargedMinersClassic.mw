@@ -16,7 +16,7 @@
 * Make walking/running speeds configurable.
 * Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.
 * Add extension protocol.
-
+* Toggle the ability to destroy water/lava blocks. Some servers allow this, and it's convenient and helps against grief.
 == Launcher ==
 * Button/Menu item to open the %AppData%/Roaming/charge folder.
 ** Bonus Objective: Button/Menu item that uploads log.txt to a paste site.
