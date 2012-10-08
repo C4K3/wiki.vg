@@ -24,13 +24,14 @@
 == Bugs ==
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
 * Intel graphics cards doesn't get smooth textures.
-* Interpolate other players' movement.
 * Player models lack hats.
 * Ignores terrain.classic.png and doesn't load textures from terrain.png (classic) correctly unless manipulateTextureClassic(pic); is commented out (line 306, miners/startup.d) (Tested on Linux 3.5.4-1 x86_64, nvidia-304.51)
 * The default skin is completely white
-* Crashes when a map has a large amount of players on it
+
 
 == Done ==
+* <strike>Interpolate other players' movement.</strike>
+* <strike>Crashes when a map has a large amount of players on it</strike>
 * <strike>Charged Miners doesn't report the same player location to the server as the official client (though the official client may be in error).</strike> Not a bug.
 * <strike>Half steps make the underside of the block above them transparent.</strike>
 * <strike>Admincrete is delete-able by non-ops.</strike>
