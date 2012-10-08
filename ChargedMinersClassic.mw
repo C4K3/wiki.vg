@@ -29,7 +29,8 @@
 == Done ==
 * <strike>The default skin is completely white.</strike>
 * <strike>Interpolate other players' movement.</strike>
-* <strike>Ignores terrain.classic.png and doesn't load textures from terrain.png (classic) correctly unless manipulateTextureClassic(pic); is commented out (line 306, miners/startup.d) (Tested on Linux 3.5.4-1 x86_64, nvidia-304.51)</strike> Works for me, make sure you put terrain.classic.png somewhere it can find it.
+* <strike>Ignores terrain.classic.png and doesn't load textures from terrain.png (classic) correctly unless manipulateTextureClassic(pic); is commented out (line 306, miners/startup.d) (Tested on Linux 3.5.4-1 x86_64, nvidia-304.51)</strike>
+**Works for me, make sure you put terrain.classic.png somewhere it can find it.
 * <strike>Charged Miners doesn't report the same player location to the server as the official client (though the official client may be in error).</strike> Not a bug.
 * <strike>Half steps make the underside of the block above them transparent.</strike>
 * <strike>Admincrete is delete-able by non-ops.</strike>
