@@ -77,3 +77,6 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
+
+===EmoteFix===
+:Presence of this extension indicates that the client can render emotes in chat properly, without padding or suffixes that are required for vanilla client. This extension does not define any new packets.
