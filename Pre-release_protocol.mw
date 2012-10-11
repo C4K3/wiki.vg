@@ -110,6 +110,50 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col1 rightalign" colspan="4" | 9 bytes + slot data
 |}
 
+=== Locale and View Distance (0xCC) ===
+
+''Client to server''
+
+Sent when the player connects, or when settings are changed.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0xCC
+| class="col1 centeralign" | Locale
+| class="col2 centeralign" | string
+| class="col3 centeralign" | en_GB
+|- class="row2"
+| class="col0 centeralign" | View distance
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 0
+| class="col3" | 0-3 for 'far', 'normal', 'short', 'tiny'.
+|- class="row3"
+| class="col0 centeralign" | Chat flags
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 8
+| class="col3" | Chat settings. See notes below.
+|- class="row4"
+| class="col0 centeralign" | Difficulty
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 0
+| class="col3 centeralign" | Client-side difficulty from options.txt
+|- class="row5"
+| class="col0 centeralign" | 
+| class="col1 centeralign" | boolean
+| class="col2 centeralign" | true
+| class="col3 centeralign" | 
+|- class="row6"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 9 bytes + length of string
+|}
+
+
 == Changed data types ==
 
 {{anchor|metadata}}
@@ -189,7 +233,7 @@ return metadata
 === 2012-10-11 ===
 * 12w41a
 * Protocol version is now 46
-* ??? Changed
+* 0xcc Changed
 
 === 2012-10-04 ===
 * 12w40a
