@@ -121,3 +121,6 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 :<h4>KeyEvent packet</h4>
 :''Client to Server''
 :'''TODO'''
+
+===Alias===
+:This extension allows the server to fully change a player's name without breaking skins. The client will use the provided alias for the player list and to show above the heads of the player.
