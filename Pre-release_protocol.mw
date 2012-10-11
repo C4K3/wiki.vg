@@ -186,6 +186,11 @@ return metadata
 -None-
 
 == Protocol History ==
+=== 2012-10-11 ===
+* 12w41a
+* Protocol version is now 46
+* ??? Changed
+
 === 2012-10-04 ===
 * 12w40a
 * Protocol version is now 45
