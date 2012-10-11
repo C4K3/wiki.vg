@@ -124,7 +124,7 @@ Sent when the player connects, or when settings are changed.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="4" | 0xCC
+| class="col0 centeralign" rowspan="5" | 0xCC
 | class="col1 centeralign" | Locale
 | class="col2 centeralign" | string
 | class="col3 centeralign" | en_GB
@@ -152,7 +152,6 @@ Sent when the player connects, or when settings are changed.
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 9 bytes + length of string
 |}
-
 
 == Changed data types ==
 
