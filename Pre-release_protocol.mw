@@ -144,10 +144,10 @@ Sent when the player connects, or when settings are changed.
 | class="col2 centeralign" | 0
 | class="col3 centeralign" | Client-side difficulty from options.txt
 |- class="row5"
-| class="col0 centeralign" | 
+| class="col0 centeralign" | Show Cape
 | class="col1 centeralign" | boolean
 | class="col2 centeralign" | true
-| class="col3 centeralign" | 
+| class="col3 centeralign" | Client-side "show cape" option
 |- class="row6"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 9 bytes + length of string
