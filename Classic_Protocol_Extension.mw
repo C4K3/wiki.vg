@@ -78,5 +78,30 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
+===HeldBlock===
+:Provides a way for the client to notify the server about the blocktype that it is currently holding, and for the server to change the currently-held block type. When this extension is mutually supported, client should use the unused ''Player ID'' field of the [[Classic_Protocol#Client_.E2.86.92_Server_packets|Position and Orientation packet]] to indicate which block the client is currently holding.
+:<h4>HoldThis packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x21
+| class="col1 centeralign" | BlockToHold
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | Obsidian
+| class="col4" |
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
 ===EmoteFix===
-:Presence of this extension indicates that the client can render emotes in chat properly, without padding or suffixes that are required for vanilla client. This extension does not define any new packets.
+:This extension indicates that the client can render emotes in chat properly, without padding or suffixes that are required for vanilla client. When this extension is mutually supported, server should not pad or suffix emotes in chat. This extension does not define any new packets.
+
+===Weather===
+:''WIP''
