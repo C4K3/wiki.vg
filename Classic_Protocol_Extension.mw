@@ -1,11 +1,11 @@
 ==Negotiation==
 Extended clients should use magic number of <code>0x42</code> for the padding byte of the [[Classic_Protocol#Client_.E2.86.92_Server_packets|Player Identification packet]]. All standard/non-extended clients pad this packet with <code>0x00</code>, so extended servers should be able to easily notice extended clients. All standard/non-extended servers will ignore the modified padding byte, preserving compatibility.
 
-When the server sees that padding byte is <code>0x42</code>, it should immediately reply with an <b>ExtInfo</b> packet, followed by zero or more <b>ExtEntry</b> packets, and await a response (<code>ExtInfo</code> packet) from the client.
+When the server sees that padding byte is <code>0x42</code>, it should immediately reply with an '''ExtInfo''' packet, followed by zero or more '''ExtEntry''' packets, and await a response ('''ExtInfo''' packet) from the client.
 
-After the client has sent its identification packet, it should await a response. If the server responds with an <b>ExtInfo</b> packet, it should parse it and any <b>ExtEntry</b> packets that follow. Client should then compare its locally-supported set of extensions with the list of extensions provided by the server, and find an intersection of these sets. These are the mutually-supported extensions.
+After the client has sent its identification packet, it should await a response. If the server responds with an '''ExtInfo''' packet, it should parse it and any '''ExtEntry''' packets that follow. Client should then compare its locally-supported set of extensions with the list of extensions provided by the server, and find an intersection of these sets. These are the mutually-supported extensions.
 
-At this time, client should send <code>ExtInfo</code> packet of its own, followed by the list of mutually-supported extensions. After receiving the last of <b>ExtEntry</b> packets, server should activate the mutually-supported extensions, and resume normal login procedure.
+At this time, client should send '''ExtInfo''' packet of its own, followed by the list of mutually-supported extensions. After receiving the last of '''ExtEntry''' packets, server should activate the mutually-supported extensions, and resume normal login procedure.
 
 ===ExtInfo===
 {| class="wikitable"
