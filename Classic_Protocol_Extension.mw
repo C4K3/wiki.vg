@@ -58,9 +58,9 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ==Extensions==
 ===ClickDistance===
 :Used to extend or restrict the distance at which client may click blocks, controlled by the server. Click range is given in player-space units (32 units per block). Upon receiving a '''SetClickDistance''' packet, client should immediately apply the change.
-====SetClickDistance packet====
-''Server to Client'''
-{| class="wikitable"
+:====SetClickDistance packet====
+:''Server to Client''
+:{| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
 | class="col1" | Field Name
