@@ -162,7 +162,7 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col4" | Player name whose skin should be used by the client.
 |- class="row6"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 67 bytes
+| class="col1 rightalign" colspan="4" | 258 bytes
 |}
 
 ===EnvColors===
