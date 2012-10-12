@@ -4,7 +4,7 @@
 === <code>REGISTER</code> ===
 ''Two-way''
 
-Allows the client to register for one or more custom channels, indicating that the server should send data on those channels if the appropriate plugin is installed. Payload is a null-separated list of strings.
+Allows the client to register for one or more custom channels, indicating that the server should send data on those channels if the appropriate plugin is installed. Payload is a null (\00) separated list of strings.
 
 === <code>UNREGISTER</code> ===
 ''Two-way''
