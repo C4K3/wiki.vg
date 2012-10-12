@@ -119,7 +119,7 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x22
+| class="col0 centeralign" rowspan="3" | 0x22
 | class="col1 centeralign" | Action
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>/Copy </code>
