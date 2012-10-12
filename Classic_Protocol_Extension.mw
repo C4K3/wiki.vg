@@ -186,6 +186,60 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col1 rightalign" colspan="4" | 258 bytes
 |}
 
+===GroupedPlayerList===
+:This extension allows the client to be aware - for purposes of autocompletion and player-list (tab-list) display - of players on other worlds. It separates tracking of entities from tracking of names, and allows players in the tab list to be categorized by world/map. When this extension is mutually supported, information from [[Classic_Protocol#Server_.E2.86.92_Client_packets|Spawn Player]] packet and '''ExtAddEntity''' packets should not be used for autocompletion or player-list display.
+:When '''ExtAddPlayerName''' packet is received for an unrecognized PlayerName, they should be added to the list. For recognized PlayerNames, client should update ListName and GroupName for an existing player. When '''ExtRemovePlayerName''' packet is received for a recognized PlayerName, they should be removed from autocompletion list and player tab-list. When '''PlayerName''' is received for an unrecognized PlayerName, no action should be taken.
+
+:<h4>ExtAddPlayerName Packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x24
+| class="col1 centeralign" | PlayerName
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>Notch</code>
+| class="col4" | Player name used for autocompletion
+|- class="row2"
+| class="col1 centeralign" | ListName
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>&c[Op]Notch</code>
+| class="col4" |
+|- class="row3"
+| class="col1 centeralign" | GroupName
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>Staff</code>
+| class="col4" |
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 193 bytes
+|}
+
+:<h4>ExtRemovePlayerName Packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x24
+| class="col1 centeralign" | PlayerName
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>Notch</code>
+| class="col4" | Matches PlayerName of the ExtAddPlayerName packet
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 65 bytes
+|}
+
 ===EnvColors===
 :This extension allows server to change some of the colors used in world rendering, to give worlds unique feel (time-of-day, climate, etc).
 :<h4>EnvSetColor Packet</h4>
