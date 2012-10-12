@@ -264,7 +264,10 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 |}
 
 ===EnvColors===
-:This extension allows server to change some of the colors used in world rendering, to give worlds unique feel (time-of-day, climate, etc).
+:This extension allows server to alter some of the colors used by the client in environment rendering.
+:'''Motivation''': To allow the server to give worlds/maps a unique feel: time-of-day, weather/climate, lighting effect, etc.
+:'''Client behavior''': Client must check for '''EnvSetColor''' packets right before [[Classic_Protocol#Server_.E2.86.92_Client_packets|Level Finalize]] packet, and apply these changes before the map is displayed. Client should be able to read this packet at other times, but it is not required to then apply the changes immediately.
+
 :<h4>EnvSetColor Packet</h4>
 :''Server to Client''
 :{| class="wikitable"
