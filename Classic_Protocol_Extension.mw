@@ -114,7 +114,10 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 |}
 
 ===EmoteFix===
-:This extension indicates that the client can render emotes in chat properly, without padding or suffixes that are required for vanilla client. When this extension is mutually supported, server should not pad or suffix emotes in chat. This extension does not define any new packets.
+:This extension indicates that the client can render emotes in chat properly, without padding or suffixes that are required for vanilla client. This extension does not define any new packets.
+:'''Motivation''': To improve appearance of emotes in chat.
+:'''Client behavior''': Client should not emulate vanilla client's quirks.
+:'''Server behavior''': Server should not pad or suffix emotes in chat.
 
 ===TextHotKey===
 :This extension allows the server to define "hotkeys" for certain commands.
