@@ -168,7 +168,6 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col3 centeralign" | <code>5</code>
 | class="col4" | Between 0 and 254
 |- class="row2"
-| class="col0 centeralign" rowspan="4" | 0x24
 | class="col1 centeralign" | PlayerName
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>Notch</code>
@@ -198,7 +197,7 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x23
+| class="col0 centeralign" rowspan="5" | 0x24
 | class="col1 centeralign" | PlayerID
 | class="col2 centeralign" | unsigned byte
 | class="col3 centeralign" | <code>5</code>
@@ -228,7 +227,7 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" | 0x24
+| class="col0 centeralign" | 0x25
 | class="col1 centeralign" | PlayerName
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>Notch</code>
