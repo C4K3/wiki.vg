@@ -100,8 +100,8 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col0 centeralign" rowspan="2" | 0x21
 | class="col1 centeralign" | BlockToHold
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | Obsidian
-| class="col4" |
+| class="col3 centeralign" | <code>49</code>
+| class="col4" | Standard block type
 |- class="row2"
 | class="col1 centeralign" | PreventChange
 | class="col2 centeralign" | byte
