@@ -322,6 +322,12 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col1 rightalign" colspan="4" | 5 bytes
 |}
 
+===OnScreenMenu===
+:TODO
+
+===SelectionCuboid===
+:TODO
+
 ===ExtPlayer===
 :Should be sent by the server after a Spawn Player packet, to identify other players using clients that support the extended protocol.
 :<h4>ExtPlayer packet</h4>
