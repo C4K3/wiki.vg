@@ -266,7 +266,8 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ===EnvColors===
 :This extension allows server to alter some of the colors used by the client in environment rendering.
 :'''Motivation''': To allow the server to give worlds/maps a unique feel: time-of-day, weather/climate, lighting effect, etc.
-:'''Client behavior''': Client must check for '''EnvSetColor''' packets right before [[Classic_Protocol#Server_.E2.86.92_Client_packets|Level Finalize]] packet, and apply these changes before the map is displayed. Client should be able to read this packet at other times, but it is not required to then apply the changes immediately.
+:'''Client behavior''': Client must check for '''EnvSetColor''' packets right before [[Classic_Protocol#Server_.E2.86.92_Client_packets|Level Finalize]] packet, and apply these changes before the map is displayed. Client should be able to read this packet at other times, but it is not required to then apply the changes immediately. If an unrecognized or unsupported ''Variable'' field is given, no action is needed.
+:'''Server behavior''': Server should normally only use '''EnvSetColor''' packets before the Level Finalize packet.
 
 :<h4>EnvSetColor Packet</h4>
 :''Server to Client''
@@ -279,16 +280,15 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="4" | 0x26
-| class="col1 centeralign" | VariableToSet
+| class="col1 centeralign" | Variable
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
 | class="col4" | Enumeration of environmental variables
-*0 = reset everything
-*1 = sky color
-*2 = cloud color
-*3 = fog color
-*4 = diffuse light (blocks in shadow) color
-*5 = sunlight (blocks in sun) color
+*0 = sky color
+*1 = cloud color
+*2 = fog color
+*3 = diffuse light (blocks in shadow) color
+*4 = sunlight (blocks in sun) color
 |- class="row2"
 | class="col1 centeralign" | Red
 | class="col2 centeralign" | unsigned byte
