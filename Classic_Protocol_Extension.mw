@@ -146,9 +146,11 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ===ExtPlayerList===
 :This extension augments the [[Classic_Protocol#Server_.E2.86.92_Client_packets|Spawn Player]] packet to support more players and provide more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. It also turns PlayerID byte from a signed to an unsigned, allowing up to 250 players/entities to be uniquely numbered on one map). IDs 0-254 should be used to identify other players. ID 255 ("-1" signed) should still refer to "self."
 
-:'''Motivation''': This extension separates tracking of entities from tracking of names, to allow listing and autocompleting names of players on worlds/maps other than client's own. It also allows organizing player names into groups, making the player tab-list easier to read.
+:<h4>Motivation</h4>
+This extension separates tracking of entities from tracking of names, to allow listing and autocompleting names of players on worlds/maps other than client's own. It also allows organizing player names into groups, making the player tab-list easier to read.
 
-:'''Client behavior''': When '''ExtAddPlayerName''' packet is received for an unrecognized ''PlayerID'', a new entry should be added to the autocompletion list and player tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''PlayerID'', client should just update ''ListName'', ''GroupName',' and ''GroupRank''.
+:<h4>Client Behavior</h4>
+:When '''ExtAddPlayerName''' packet is received for an unrecognized ''PlayerID'', a new entry should be added to the autocompletion list and player tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''PlayerID'', client should just update ''ListName'', ''GroupName',' and ''GroupRank''.
 
 :When an '''ExtAddEntity''' packet is received, it should be treated as the [[Classic_Protocol#Server_.E2.86.92_Client_packets|Spawn Player]] packet. ''InGameName'' should be shown above the player's heads in-game. Skin should be loaded from minecraft.net using the given ''SkinName'' for a player name.
 
@@ -156,7 +158,8 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 
 :When '''ExtRemovePlayerName''' packet is received for a recognized ''PlayerID'', they should be removed from autocompletion list and player tab-list. If ExtAddEntity packet was used to spawn a player with the same ID, it should be despawned (treated as [[Classic_Protocol#Server_.E2.86.92_Client_packets|Despawn Player]] packet). When '''PlayerID''' is received for an unrecognized ''PlayerID'', no action should be taken.
 
-:'''Server behavior''': When a new player connects, '''ExtAddPlayerName''' should be sent. ''GroupName'' can be used in any way, for example to group players by map/world or rank. Server should re-send '''ExtAddPlayerName''' packet, using the identical ''PlayerName'', when player's ''ListName'', ''GroupName'', or ''GroupRank'' change. Server should reliably send an '''ExtRemovePlayerName''' when the player disconnects. Color codes are permitted in ''ListName'', ''GroupName'', and ''InGameName''.
+:<h4>Server Behavior</h4>
+:When a new player connects, '''ExtAddPlayerName''' should be sent. ''GroupName'' can be used in any way, for example to group players by map/world or rank. Server should re-send '''ExtAddPlayerName''' packet, using the identical ''PlayerName'', when player's ''ListName'', ''GroupName'', or ''GroupRank'' change. Server should reliably send an '''ExtRemovePlayerName''' when the player disconnects. Color codes are permitted in ''ListName'', ''GroupName'', and ''InGameName''.
 
 :<h4>ExtAddPlayerName Packet</h4>
 :''Server to Client''
