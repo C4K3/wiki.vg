@@ -148,9 +148,9 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 
 :'''Motivation''': This extension separates tracking of entities from tracking of names, to allow listing and autocompleting names of players on worlds/maps other than client's own. It also allows organizing player names into groups, making the player tab-list easier to read.
 
-:'''Client behavior''': When '''ExtAddPlayerName''' packet is received for an unrecognized ''PlayerName'', they should be added to the autocompletion list and player tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''PlayerName'', client should just update ''ListName'' and ''GroupName''. Player names should be grouped by ''GroupName'' in the player tab-list. Lists should persist when client changes worlds/maps. When '''ExtRemovePlayerName''' packet is received for a recognized ''PlayerName'', they should be removed from autocompletion list and player tab-list. When '''PlayerName''' is received for an unrecognized ''PlayerName'', no action should be taken.
+:'''Client behavior''': When '''ExtAddPlayerName''' packet is received for an unrecognized ''PlayerName'', they should be added to the autocompletion list and player tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''PlayerName'', client should just update ''ListName'' and ''GroupName''. Player names should be grouped by ''GroupName'' in the player tab-list. Players within a ''GroupName'' should be sorted by ''GroupRank'' (in ascending order). Players within the same ''GroupName'' and ''GroupRank'' should be sorted alphabetically by ''ListName''. Color codes should be either drawn or stripped in ''ListName'', ''GroupName'', and ''InGameName''. Lists should persist when client changes worlds/maps. When '''ExtRemovePlayerName''' packet is received for a recognized ''PlayerName'', they should be removed from autocompletion list and player tab-list. When '''PlayerName''' is received for an unrecognized ''PlayerName'', no action should be taken.
 
-:'''Server behavior''': When a new player connects, '''ExtAddPlayerName''' should be sent. ''GroupName'' can be used in any way, for example to group players by map/world or rank. Server should re-send '''ExtAddPlayerName''' packet, using the identical ''PlayerName'', when player's ''ListName'' or ''GroupName'' changes. Server should send an '''ExtRemovePlayerName''' reliably when the player disconnects.
+:'''Server behavior''': When a new player connects, '''ExtAddPlayerName''' should be sent. ''GroupName'' can be used in any way, for example to group players by map/world or rank. Server should re-send '''ExtAddPlayerName''' packet, using the identical ''PlayerName'', when player's ''ListName'' or ''GroupName'' changes. Server should send an '''ExtRemovePlayerName''' reliably when the player disconnects. Color codes are permitted in ''ListName'', ''GroupName'', and ''InGameName''.
 
 :<h4>ExtAddPlayerName Packet</h4>
 :''Server to Client''
@@ -186,7 +186,7 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col1 centeralign" | GroupRank
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4" | Rank of a player within the group. Players within a GroupName should be sorted by GroupRank (in ascending order). Players within the same GroupName and GroupRank should be sorted alphabetically by ListName.
+| class="col4" | Rank of a player within the group.
 |- class="row6"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 193 bytes
