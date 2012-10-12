@@ -107,7 +107,13 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 :This extension indicates that the client can render emotes in chat properly, without padding or suffixes that are required for vanilla client. When this extension is mutually supported, server should not pad or suffix emotes in chat. This extension does not define any new packets.
 
 ===TextHotKey===
-:This extension allows the server to define "hotkeys" for certain commands. The server should send a definition of each hotkey ('''SetTextHotKey''' packet) once per connection. Client should not try to persist previously-defined hotkeys between sessions. When a defined hotkey is activated by the user, client should open up a text prompt and type in contents of the "Action" field. A newline character ("\n") in the ''Action'' field indicates that whatever is currently typed-in should be sent to the server. If ''Action'' does not end with a newline, text prompt should be left open, for the user to complete.
+:This extension allows the server to define "hotkeys" for certain commands.
+
+:'''Motivation''': To speed up and simplify access to commonly-used commands and command macros by providing server-defined client-side hotkeys.
+
+:'''Client behavior:''' Client should not try to persist previously-defined hotkeys between sessions. When a defined hotkey is activated by the user, client should open up a text prompt and type in contents of the "Action" field. A newline character ("\n") in the ''Action'' field indicates that whatever is currently typed-in should be sent to the server. If ''Action'' does not end with a newline, text prompt should be left open, for the user to complete.
+
+:'''Server behavior:''' The server should send a definition of each hotkey ('''SetTextHotKey''' packet) once per connection.
 
 :<h4>SetTextHotKey packet</h4>
 :''Server to Client''
