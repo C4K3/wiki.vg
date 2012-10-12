@@ -106,9 +106,6 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 ===EmoteFix===
 :This extension indicates that the client can render emotes in chat properly, without padding or suffixes that are required for vanilla client. When this extension is mutually supported, server should not pad or suffix emotes in chat. This extension does not define any new packets.
 
-===Weather===
-:'''TODO'''
-
 ===HotKey===
 :This extension allowed the server to define "hotkeys" for certain actions. Keys that are not normally used by Minecraft clients can be used to trigger server-side events. The server should enumerate and name hotkeys that it intends to use, using '''SetHotKey''' packet. The client should then send '''KeyEvent''' packets any time that the hotkey is pressed. Only a specific list of keys, listed below, may be used as a hotkey. '''KeyEvent''' packets should not be sent while the player is typing in chat.
 
