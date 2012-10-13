@@ -64,6 +64,20 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Active}}
 |-
+! [http://www.wiki.vg/HCraft hCraft]
+| BizarreCake
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Closed source
+| {{yes|1.3.2}}
+| {{yes}}
+| {{yes|Custom (HWv1)}}
+| {{planned}}
+| {{planned}}
+| {{planned|Players}}
+| {{yes|Threads/Events}}
+| {{no}}
+| {{yes|Active}}
+|-
 ! [https://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
