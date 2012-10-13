@@ -233,6 +233,7 @@ return metadata
 * 12w41a
 * Protocol version is now 46
 * 0xcc Changed to include boolean 'show cape' field.
+* Spawn named entity metadata includes an int at index 16, 1 = show cape, 0 = don't show cape
 
 === 2012-10-04 ===
 * 12w40a
