@@ -405,6 +405,26 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col1 rightalign" colspan="4" | 82 bytes
 |}
 
+:<h4>RemoveSelection packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x28
+| class="col1 centeralign" | SelectionID
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4" |
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
 ===ExtPlayer===
 :Should be sent by the server after a Spawn Player packet, to identify other players using clients that support the extended protocol.
 :<h4>ExtPlayer packet</h4>
