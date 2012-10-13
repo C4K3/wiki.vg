@@ -110,6 +110,8 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col1 rightalign" colspan="4" | 9 bytes + slot data
 |}
 
+When the user middle-clicks a slot, "shift" is 2 and "right click" is 3. The vanilla software treats a middle click as if no click occurred in the first place.
+
 === Locale and View Distance (0xCC) ===
 
 ''Client to server''
