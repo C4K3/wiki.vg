@@ -97,9 +97,9 @@ This packet is sent by the player when it clicks on a slot in a window.
 | class="col3" | A unique number for the action, used for transaction handling (See the Transaction packet).
 |- class="row5"
 | class="col0 centeralign" | Shift
-| class="col1 centeralign" | boolean
+| class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | This is true if the user was holding keyboard shift when they clicked.
+| class="col3" | This is 1 if the user was holding keyboard shift when they clicked. See below.
 |- class="row6"
 | class="col0 centeralign" | Clicked item
 | class="col1 centeralign" | [[Slot_Data|slot]]
