@@ -14,12 +14,6 @@ This is a rather incomplete list of Minecraft Classic related libraries currentl
 | GPLv3
 | Classic Client API, Remote Connections, Map/Player/Entity Tracking, Session Abstraction
 |-
-! [http://libminecraft.codeplex.com LibMinecraft]
-| Drew DeVault
-| [http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29 C#]
-| MIT
-| (Unrelated to Yuri's LibMinecraft) Originally with only the Modern protocol, LibMinecraft was extended to include Classic.
-|-
 |}
 
 [[Category:Minecraft Classic]]
