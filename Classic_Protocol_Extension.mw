@@ -7,7 +7,7 @@
 ==Support==
 These custom servers plan to add support for CPE: [http://www.fcraft.net/ fCraft], [http://femto.fcraft.net/ FemtoCraft], [http://800craft.net/ 800Craft], [https://github.com/GamezGalaxy/GGS/tree/Extenstion-Protocol GGS]
 
-These custom clients plan to add support for CPE: [http://charged-miners.com/ Charged Miners]
+These custom clients plan to add support for CPE: [http://charged-miners.com/ Charged Miners], [http://github.com/Steveice10/OpenClassic/ OpenClassic]
 
 ==Negotiation==
 Extended clients should use magic number of <code>0x42</code> for the padding byte of the [[Classic_Protocol#Client_.E2.86.92_Server_packets|Player Identification packet]]. All standard/non-extended clients pad this packet with <code>0x00</code>, so extended servers should be able to easily notice extended clients. All standard/non-extended servers will ignore the modified padding byte, preserving compatibility.
