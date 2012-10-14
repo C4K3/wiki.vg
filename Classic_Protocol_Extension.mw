@@ -1,3 +1,9 @@
+'''Classic Protocol Extension''' (CPE) is a project to augment the Minecraft Classic network protocol. Extensions are designed to keep custom clients and servers compatible to standard/vanilla clients and servers. Standard clients and extended clients can play on the same server at the same time. Extensions are also designed to be modular: clients and servers can choose to implement any subset of extensions, and only mutually-supported extensions will be used.
+
+==Support==
+These custom servers plan to add support for CPE: [http://www.fcraft.net/ fCraft], [http://femto.fcraft.net/ FemtoCraft], [http://800craft.net/ 800Craft]
+These custom clients plan to add support for CPE: [http://charged-miners.com/ Charged Miners]
+
 ==Negotiation==
 Extended clients should use magic number of <code>0x42</code> for the padding byte of the [[Classic_Protocol#Client_.E2.86.92_Server_packets|Player Identification packet]]. All standard/non-extended clients pad this packet with <code>0x00</code>, so extended servers should be able to easily notice extended clients. All standard/non-extended servers will ignore the modified padding byte, preserving compatibility.
 
