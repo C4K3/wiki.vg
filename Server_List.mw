@@ -162,20 +162,6 @@ A couple things for contributors:
 | {{yes|Python}}
 | {{unknown|On hiatus since Dec 2011}}
 |-
-! [https://github.com/huin/chunkymonkey Chunky Monkey]
-| agon, huin, jnwhiteh, nictuku
-| [http://en.wikipedia.org/wiki/Go_(programming_language) Google Go]
-| [http://www.opensource.org/licenses/mit-license.php MIT]
-| {{unknown|Beta 1.8}}
-| {{yes}}
-| {{yes|Alpha, Beta}}
-| {{planned}}
-| {{planned|Entities: yes; Blocks: Planned}}
-| {{planned|Players: yes; Mobs: In progress}}
-| {{yes|Goroutines (Multi-host planned)}}
-| {{unknown|(TBD)}}
-| {{unknown|On hiatus since Oct 2011}}
-|-
 ! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
 | louisdx
 | C++0x
@@ -218,47 +204,6 @@ A couple things for contributors:
 | {{yes|C++}}
 | {{unknown|On hiatus since April 2012}}
 |-
-! [[craftd:Main_Page|craftd]]
-| [[User:Kev009|kev009]]
-| [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
-| Simplified BSD
-| {{Unknown}}
-| {{yes}}
-| {{yes|Alpha}}
-| {{no}}
-| {{yes}}
-| {{planned}}
-| {{yes|Threads}}
-| {{yes|Many (plugins)}}
-| {{unknown|On hiatus since May 2011}}
-|-
-! [https://github.com/grahamedgecombe/lightstone Lightstone]
-| [[User:Graham|Graham Edgecombe]]
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://www.opensource.org/licenses/mit-license.php MIT]
-| {{Unknown}}
-| {{yes}}
-| {{planned|In Progress (Beta)}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{yes|Event-driven}}
-| {{planned|Planned ([http://ruby-lang.org Ruby])}}
-| {{unknown|On hiatus since Jun 2011}}
-|-
-! [https://github.com/SenkChristian/net.mccraft McCraft]
-| Nemrael
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
-| {{Unknown}}
-| {{yes|Yes (Java NIO)}}
-| {{planned|Beta (read-access)}}
-| {{yes}}
-| {{planned}}
-| {{planned}}
-| {{yes|Threads}}
-| {{planned}}
-| {{unknown|On hiatus since Aug 2011}}
 |}
 
 [[Category:Minecraft Modern]]
