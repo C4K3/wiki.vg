@@ -73,13 +73,6 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{unknown}}
 | {{supports|Beta 1.8.1}}
 |-
-! [http://mcsharpclient.googlecode.com MCSharpClient]
-| .NET Minecraft Client Protocol Library
-| Justin Head (dv90)
-| {{C sharp}}
-| {{GPLv3}}
-| {{supports|Beta 1.2}}
-|-
 |}
 
 [[Category:Minecraft Modern]]
