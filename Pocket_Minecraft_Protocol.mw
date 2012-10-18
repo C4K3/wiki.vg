@@ -110,7 +110,7 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 | class="col0 centeralign" | Version
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | 5
-| class="col3" | Client version, currently 5
+| class="col3" | Protocol version, currently 5
 |- class="row2"
 | class="col0 centeralign" | Null Payload
 | class="col1 centeralign" | many 0x00 bytes
@@ -154,10 +154,10 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 | class="col2 centeralign" | 
 | class="col3" | This value seems to be constant for an installation of PM, or differs between the demo and full version.
 |- class="row3"
-| class="col0 centeralign" | Version
+| class="col0 centeralign" | Unused
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | 5
-| class="col3" | Server version, currently 5
+| class="col2 centeralign" | 0
+| class="col3" | 
 |- class="row4"
 | class="col0 centeralign" | Null Payload Lenght
 | class="col1 centeralign" | short
@@ -190,31 +190,26 @@ Sent from server after it receives packet 0x05.
 | class="col3 centeralign" | 
 | class="col4" | 
 |- class="row2"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Unused
 | class="col1 centeralign" | 5 bytes
 | class="col2 centeralign" | 0x043f57fefd
-| class="col3" |
+| class="col3" | Always 0x043f57fefd
 |- class="row3"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Port
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 1087
-| class="col3" | Was Server port
+| class="col2 centeralign" | 19132
+| class="col3" | 
 |- class="row4"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | MTU Size
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 22527
+| class="col2 centeralign" | 1464
 | class="col3" | 
 |- class="row5"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | int32
+| class="col0 centeralign" | Client ID
+| class="col1 centeralign" | int64
 | class="col2 centeralign" | 1061862405
 | class="col3" | 
 |- class="row6"
-| class="col0 centeralign" | Session ID?
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | -1476395009
-| class="col3" | 
-|- class="row7"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 39 Bytes
 |}
@@ -241,38 +236,18 @@ Sent from client in response to packet 0x06.
 | class="col3 centeralign" | 
 | class="col4" | 
 |- class="row2"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | int32
+| class="col0 centeralign" | Client ID
+| class="col1 centeralign" | int64
 | class="col2 centeralign" | 0xffffffff
 | class="col3" |
 |- class="row3"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" | 
-|- class="row4"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Unused
 | class="col1 centeralign" | 5 bytes
 | class="col2 centeralign" | 0x043f57fefd
 | class="col3" | 
-|- class="row5"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" | Client UDP port?
-|- class="row6"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" | 
-|- class="row6"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 0x00
-| class="col3" | 
-|- class="row7"
+|- class="row4"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 37 Bytes
+| class="col1 rightalign" colspan="4" | 30 Bytes
 |}
 
 Sent from server in response to packet 0x07.
