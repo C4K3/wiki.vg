@@ -288,16 +288,18 @@ See 0x1c
 | class="col0 centeralign" | Host Info
 | class="col1 centeralign" | string
 | class="col2 centeralign" | MCCPP;Demo;Steve
-| class="col3" | Used to send the username
+| class="col3" | Used to send the username (MCCPP;Demo; + username)
 |- class="row3"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 35 Bytes + lenght of string
 |}
 
 Server sends this packet in response to a 0x02 packet. It may be either a 0x1d or a 0x1c, depending on version.
+If the Server is invisible, this packet will be sent without username)
 
 
 {{anchor|0x84}}
+
 === Unknown (0x84) ===
 
 ''Client to Server''
