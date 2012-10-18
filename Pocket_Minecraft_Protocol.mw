@@ -1,7 +1,7 @@
 Unlike the Minecraft protocol, this protocol uses UDP with (so far observed, at least) one message per packet. This makes the protocol easier to work with when it comes to packet serialization, and might offer latency improvements, but will inevitably have the usual UDP issues (packets lost, truncated, duplicated, out-of-order, etc.).
 
 Old servers listen on UDP port 19132. 
-As of the survival update, the port is different (unknown as of now)
+As of the survival update, the port is the same
 Clients don't pick any specific port to listen on.
 
 Please note that even where packet field names are written in this page, these are still largely hypothetical and could well be incorrect guesses.
@@ -15,107 +15,309 @@ It has been determined that PM uses RakNet for its networking library, [http://w
 
 == Types ==
 
-* string: int16 length prefix, counts number of bytes following. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
-
-* MAGIC: constant 16 bytes of data, always hex bytes 00ffff00fefefefefdfdfdfd12345678, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
+{| class="wikitable"
+|- class="row0"
+| class="col0" |
+! class="col1" | Size
+! class="col2" | Range
+! class="col3" | Notes
+|- class="row1"
+! class="col0 centeralign" | byte
+| class="col1 centeralign" | 1
+| class="col2" | -128 to 127
+| class="col3" | Signed, two's complement
+|- class="row2"
+! class="col0 centeralign" | short
+| class="col1 centeralign" | 2
+| class="col2" | -32768 to 32767
+| class="col3" | Signed, two's complement
+|- class="row3"
+! class="col0 centeralign" | int32
+| class="col1 centeralign" | 4
+| class="col2" | -2147483648 to 2147483647
+| class="col3" | Signed, two's complement
+|- class="row4"
+! class="col0 centeralign" | int64
+| class="col1 centeralign" | 8
+| class="col2" | 
+| class="col3" | Maybe a double?
+|- class="row5"
+! class="col0 centeralign" | MAGIC
+| class="col1 centeralign" | 16
+| class="col2" | 0x00ffff00fefefefefdfdfdfd12345678
+| class="col3" | always hex bytes 0x00ffff00fefefefefdfdfdfd12345678, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
+|- class="row6"
+! class="col0 centeralign" | string
+| class="col1 centeralign" | ≥ 1
+| class="col2" | N/A
+| class="col3" | Prefixed by a short containing the length of the string in characters. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+|}
 
 == Packets ==
 
 All packets start with a single byte that identifies the packet type, the rest of the packet follows it.
 
-=== 0x02 - client broadcast query ===
+{{anchor|0x02}}
+=== ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x02) ===
 
-RakNet name: ID_UNCONNECTED_PING_OPEN_CONNECTIONS
+''Client to Broadcast''
 
-client->broadcast
-
-* int8 = 0x02 (packet type ID)
-* int64 = ping ID (time since start in ms)
-* MAGIC
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x02
+| class="col1 centeralign" | Ping ID
+| class="col2 centeralign" | int64
+| class="col3 centeralign" | <code>0x0000000000301dfb</code>
+| class="col4" | Time since start in Milliseconds
+|- class="row2"
+| class="col0 centeralign" | MAGIC
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 25 Bytes
+|}
 
 Clients start out by sending this packet to the IP broadcast address on port 19132 repeatedly (approx once per second) when joining a server was chosen on the main screen, and stops when the user selects a server (or leaves the screen). The ping ID from the client increases over time, and appears to be the number of milliseconds since the client program was started (might be used to measure server response latency).
 
-=== 0x05 - mtu sizing request ===
 
-RakNet name: ID_OPEN_CONNECTION_REQUEST_1
+{{anchor|0x05}}
+=== ID_OPEN_CONNECTION_REQUEST_1 (0x05) ===
 
-client->server
+''Client to Server''
 
-* int8 = 0x05 (packet type ID)
-* MAGIC
-* int8 = 0x04 (unknown meaning)
-* many 0x00 bytes (bringing size of the data portion of the UDP packet up to 1464 in the initial case by this "field" being 1446 bytes long).
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x05
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | MAGIC
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | Version
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 5
+| class="col3" | Client version, currently 5
+|- class="row2"
+| class="col0 centeralign" | Null Payload
+| class="col1 centeralign" | many 0x00 bytes
+| class="col2 centeralign" | 0x00 * 1447
+| class="col3" | Version number, currently 5
+|- class="row4"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 Bytes + lenght of Null Payload
+|}
 
-Sent from client after it receives packet 0x1d. The client will repeatedly send
-this with reducing sizes until it successfully receives a reply. Observed behaviour is that the client will send packets ~0.5s apart in the following way, until it gets a 0x06 response packet, or reaches the end of these:
-
-* 4 packets of total data length 1464
-* 4 packets of total data length 1172
-* 5 packets of total data length 548
-
+Sent from client after it receives packet 0x1d. The client will repeatedly send this with reducing sizes until it successfully receives a reply. Observed behaviour is that the client will send packets ~0.5s apart in the following way, until it gets a 0x06 response packet, or reaches the end of these:
+4 packets of Null Payload lenght of 1447
+4 packets of Null Payload lenght of 1155
+5 packets of Null Payload lenght of 531
 After this the client appears not to send any more packets to the server, but also doesn't (at least immediately) leave the "locating server" progress screen.
+If the server doesnt't reply the client, the client will display a "Connect Error" window
 
-=== 0x06 - server mtu sizing response ===
 
-RakNet name: ID_OPEN_CONNECTION_REPLY_1
+{{anchor|0x06}}
+=== ID_OPEN_CONNECTION_REPLY_1 (0x06) ===
 
-server->client
+''Server to Client''
 
-* int8 = 0x06 (packet type ID)
-* MAGIC
-* int64 = server ID? This value seems to be constant for an installation of PM, or differs between the demo and full version.
-* int8 = 0 (unknown meaning)
-* int16 = total bytes received in MTU sizing packet (i.e determined MTU size)
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x05
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | MAGIC
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | Server ID
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | 
+| class="col3" | This value seems to be constant for an installation of PM, or differs between the demo and full version.
+|- class="row3"
+| class="col0 centeralign" | Version
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 5
+| class="col3" | Server version, currently 5
+|- class="row4"
+| class="col0 centeralign" | Null Payload Lenght
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 1447
+| class="col3" | Lenght of Null Payload in 0x05 or Lenght of 0x05 packet. Used to determine packet loss, maybe?
+|- class="row5"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 28 Bytes
+|}
 
 Sent from server after it receives packet 0x05.
 
-=== 0x07 - unknown ===
 
-RakNet name: ID_OPEN_CONNECTION_REQUEST_2
+{{anchor|0x07}}
+=== ID_OPEN_CONNECTION_REQUEST_2 (0x07) ===
 
-client->server
+''Client to Server''
 
-* int8 = 0x07 (packet type ID)
-* MAGIC
-* 5 bytes - unknown meaning, only seen 0x043f57fefd
-* int16 - server UDP port number (typically 19132)
-* int16 - unknown, might be decided MTU size (seen values of 548, 1464 - but doesn't always match what the server sent in packet 0x06)
-* int32 - unknown, only seen 0x00000000 and 0xffffffff.
-* int32 - randomly-generated session ID? value changes, but the same value is seen later on.
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x07
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | MAGIC
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | 5 bytes
+| class="col2 centeralign" | 0x043f57fefd
+| class="col3" |
+|- class="row3"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 1087
+| class="col3" | Was Server port
+|- class="row4"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 22527
+| class="col3" | 
+|- class="row5"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | 1061862405
+| class="col3" | 
+|- class="row6"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | -1476395009
+| class="col3" | 
+|- class="row7"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 39 Bytes
+|}
 
 Sent from client in response to packet 0x06.
 
-=== 0x08 - unknown ===
 
-RakNet name: ID_OPEN_CONNECTION_REPLY_2
+{{anchor|0x08}}
+=== ID_OPEN_CONNECTION_REPLY_2 (0x08) ===
 
-server->client
+''Server to Client''
 
-* int8 = 0x08 (packet type ID)
-* MAGIC
-* int32 - unknown, only seen 0xffffffff.
-* int32 - unknown, apparently random value (need to confirm that this changes, maybe another session ID?)
-* 5 bytes - unknown meaning, only seen 0x043f57fefd (same as in packet 0x07)
-* int16 - client UDP port number (typically varies)
-* int16 - unknown, might be decided MTU size (seen value of 548, maybe others)
-* int8 - unknown, seen value 0x00 only
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x08
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | MAGIC
+| class="col3 centeralign" | 
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | 0xffffffff
+| class="col3" |
+|- class="row3"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | 
+| class="col3" | 
+|- class="row4"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | 5 bytes
+| class="col2 centeralign" | 0x043f57fefd
+| class="col3" | 
+|- class="row5"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 
+| class="col3" | Client UDP port?
+|- class="row6"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | 
+| class="col3" | 
+|- class="row6"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 0x00
+| class="col3" | 
+|- class="row7"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 37 Bytes
+|}
 
 Sent from server in response to packet 0x07.
 
-=== 0x1d or 0x1c - server query response ===
+{{anchor|0x1d}}
+=== ID_ADVERTISE_SYSTEM (0x1d) ===
+See 0x1c
 
-RakNet names: ID_ADVERTISE_SYSTEM, ID_UNCONNECTED_PONG
+{{anchor|0x1c}}
+=== ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1c) ===
 
-server->client
+''Server to Client''
 
-* int8 = 0x1d (packet type ID)
-* int64 = ping ID from client
-* int64 = server ID
-* MAGIC
-* 0x[usernamelength + 5]
-* string ("MCCPP;Demo;" + Host username)
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0x1c
+| class="col1 centeralign" | Ping ID
+| class="col2 centeralign" | int64
+| class="col3 centeralign" | <code>0x0000000000301dfb</code>
+| class="col4" | Time since start in Milliseconds
+|- class="row2"
+| class="col0 centeralign" | Server ID
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row4"
+| class="col0 centeralign" | MAGIC
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row2"
+| class="col0 centeralign" | Host Info
+| class="col1 centeralign" | string
+| class="col2 centeralign" | MCCPP;Demo;Steve
+| class="col3" | Used to send the username
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 35 Bytes + lenght of string
+|}
 
-Server sends this packet in response to a 0x02 packet.
-It may be either a 0x1d or a 0x1c, depending on version.
+Server sends this packet in response to a 0x02 packet. It may be either a 0x1d or a 0x1c, depending on version.
 
 [[Category:Pocket Minecraft]]
