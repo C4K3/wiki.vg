@@ -115,7 +115,7 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 | class="col0 centeralign" | Null Payload
 | class="col1 centeralign" | many 0x00 bytes
 | class="col2 centeralign" | 0x00 * 1447
-| class="col3" | Version number, currently 5
+| class="col3" | 
 |- class="row4"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 Bytes + lenght of Null Payload
@@ -130,6 +130,7 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 
 
 {{anchor|0x06}}
+
 === ID_OPEN_CONNECTION_REPLY_1 (0x06) ===
 
 ''Server to Client''
