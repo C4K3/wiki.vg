@@ -191,11 +191,11 @@ If the number of available slots sent is equal to or less than 0, the client sho
 This would be an example for such a kick message: 
 
 <code>
-§1\047\012w42b\0Wiki.vg Minecraft Server\5\010
+§1\047\012w42b\0Wiki.vg Minecraft Server\05\010
 </code>
 (protocol version 47, minecraft version 12w42b, motd 'Wiki.vg Minecraft Server', 5 users, 10 slots)
 
-Note that '\0' is a 0x00.
+Note that '\0' is a 0x0000.
 
 The client will show a notice with the server version string if the server protocol version is not equal to the client version.
 
