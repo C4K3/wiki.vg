@@ -155,6 +155,54 @@ Sent when the player connects, or when settings are changed.
 | class="col1 rightalign" colspan="4" | 9 bytes + length of string
 |}
 
+=== Server List Ping (0xFE) ===
+
+''Client to Server''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="1" | 0xFE
+| class="col1 centeralign" | Magic Number
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 1
+| class="col4 centeralign" | always 1
+|- class="row2"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
+
+To load server info in the multiplayer menu, the notchian client connects to each known server and sends an 0xFE.
+
+In return, the server sends a kick (0xFF), with its string containing §1 and data (server protocol version, server version string, server description, number of users, number of slots), delimited by a 0(0x00).
+
+Note that as this is the last packet you'll see, you can get away with just chopping off the first three bytes (the ident and the string length) and decoding the remainder as a UCS-2 string.
+
+The server severs the socket connection after sending the kick (0xFF) packet.  You will need to open a new socket to continue communicating.
+
+If the number of available slots sent is equal to or less than 0, the client should display it as "???". 
+
+This would be an example for such a kick message: 
+
+<code>
+§1\047\012w42b\0Wiki.vg Minecraft Server\5\010
+</code>
+(protocol version 47, minecraft version 12w42b, motd 'Wiki.vg Minecraft Server', 5 users, 10 slots)
+
+Note that '\0' is a 0x00.
+
+The client will show a notice with the server version string if the server protocol version is not equal to the client version.
+
+The official client and server are backward compatible and can read and write the old format too.
+
+{{anchor|0xFF}}
+
 == Changed data types ==
 
 {{anchor|metadata}}
