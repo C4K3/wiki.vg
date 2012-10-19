@@ -1,0 +1,31 @@
+List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools. Because of the lack of documentation, there aren't more.
+
+{| class="wikitable sortable" style="width: auto; text-align: center;"
+|-style="background:#eee"
+!Name
+!class="unsortable"|Description
+!Type
+!Author(s)
+!Language
+!License
+!Last Version Supported
+|-
+! [https://github.com/shoghicp/Pocket-Minecraft-PHP Pocket Minecraft PHP]
+| Client / Server Minecraft Pocket Edition library written in PHP. Currently a work in progress
+| Library
+| [https://twitter.com/shoghicp shoghicp]
+| {{PHP}}
+| {{LGPL}}
+| {{supports|In progress}}
+|-
+! [https://github.com/shoghicp/Pocket-Minecraft-Python Pocket Minecraft Python]
+| Client / Server Minecraft Pocket Edition library written in Python.
+| Library
+| [https://twitter.com/shoghicp shoghicp]
+| {{Python}}
+| {{LGPL}}
+| {{supports|Waiting for PHP version}}
+|-
+|}
+
+[[Category:Pocket Minecraft]]
