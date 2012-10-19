@@ -44,8 +44,8 @@ It has been determined that PM uses RakNet for its networking library, [http://w
 |- class="row5"
 ! class="col0 centeralign" | MAGIC
 | class="col1 centeralign" | 16
-| class="col2" | 0x00ffff00fefefefefdfdfdfd12345678
-| class="col3" | always hex bytes 0x00ffff00fefefefefdfdfdfd12345678, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
+| class="col2" | <code>0x00ffff00fefefefefdfdfdfd12345678</code>
+| class="col3" | always hex bytes <code>0x00ffff00fefefefefdfdfdfd12345678</code>, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
 |- class="row6"
 ! class="col0 centeralign" | string
 | class="col1 centeralign" | ≥ 1
@@ -125,7 +125,6 @@ Sent from client after it receives packet 0x1d. The client will repeatedly send 
 4 packets of Null Payload lenght of 1447
 4 packets of Null Payload lenght of 1155
 5 packets of Null Payload lenght of 531
-After this the client appears not to send any more packets to the server, but also doesn't (at least immediately) leave the "locating server" progress screen.
 If the server doesnt't reply the client, the client will display a "Connect Error" window
 
 
@@ -296,7 +295,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 |}
 
 Server sends this packet in response to a 0x02 packet. It may be either a 0x1d or a 0x1c, depending on version.
-If the Server is invisible, this packet will be sent without username)
+If the Server is invisible, this packet will be sent without username
 
 
 {{anchor|0x84}}
@@ -323,7 +322,7 @@ Fields in this packet are variable, also the lenght
 | class="col4" | 
 |- class="row6"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 28 Bytes
+| class="col1 rightalign" colspan="4" | ? Bytes
 |}
 
 Sent after 0x08, and 0xC0
