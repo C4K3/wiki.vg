@@ -240,7 +240,7 @@ To parse, repeat the following procedure:
 | string16
 |-
 | 5
-| short, byte, short (slot type) - If first short is empty, no further data is sent.
+| short, byte, short (slot type) - If first short is less than 0, no further data is sent.
 |-
 | 6
 | int, int, int (x, y, z)
