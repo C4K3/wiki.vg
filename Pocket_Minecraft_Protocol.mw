@@ -143,7 +143,7 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x05
+| class="col0 centeralign" rowspan="7" | 0x06
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
