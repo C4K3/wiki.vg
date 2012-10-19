@@ -73,7 +73,7 @@ All packets start with a single byte that identifies the packet type, the rest o
 | class="col0 centeralign" rowspan="7" | 0x02
 | class="col1 centeralign" | Ping ID
 | class="col2 centeralign" | int64
-| class="col3 centeralign" | <code>0x0000000000301dfb</code>
+| class="col3 centeralign" | <code>0x00000000003c6d0d</code>
 | class="col4" | Time since start in Milliseconds
 |- class="row2"
 | class="col0 centeralign" | MAGIC
@@ -109,12 +109,12 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 |- class="row2"
 | class="col0 centeralign" | Version
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | 5
+| class="col2 centeralign" | <code>5</code>
 | class="col3" | Protocol version, currently 5
 |- class="row2"
 | class="col0 centeralign" | Null Payload
 | class="col1 centeralign" | many 0x00 bytes
-| class="col2 centeralign" | 0x00 * 1447
+| class="col2 centeralign" | <code>0x00 * 1447</code>
 | class="col3" | MTU (Maximum Transport Unit)
 |- class="row4"
 | class="col0" | Total Size:
@@ -151,17 +151,17 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 |- class="row2"
 | class="col0 centeralign" | Server ID
 | class="col1 centeralign" | int64
-| class="col2 centeralign" | 
+| class="col2 centeralign" | <code>0x00000000372cdc9e</code>
 | class="col3" | This value seems to be constant for an installation of PM, or differs between the demo and full version.
 |- class="row3"
 | class="col0 centeralign" | Unused
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | 0
+| class="col2 centeralign" | <code>0</code>
 | class="col3" | 
 |- class="row4"
 | class="col0 centeralign" | MTU Size
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 1447
+| class="col2 centeralign" | <code>1447</code>
 | class="col3" | Lenght of 0x05. Used to determine packet loss and max UDP packet size (MTU)
 |- class="row5"
 | class="col0" | Total Size:
@@ -193,23 +193,23 @@ Sent from server after it receives packet 0x05.
 |- class="row2"
 | class="col0 centeralign" | Unused
 | class="col1 centeralign" | 5 bytes
-| class="col2 centeralign" | 0x043f57fefd
-| class="col3" | Always 0x043f57fefd
+| class="col2 centeralign" | <code>0x043f57fefd</code>
+| class="col3" | Only seen this value
 |- class="row3"
 | class="col0 centeralign" | Port
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 19132
+| class="col2 centeralign" | <code>19132</code>
 | class="col3" | 
 |- class="row4"
 | class="col0 centeralign" | MTU Size
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 1464
+| class="col2 centeralign" | <code>1464</code>
 | class="col3" | 
 |- class="row5"
 | class="col0 centeralign" | Client ID
 | class="col1 centeralign" | int64
-| class="col2 centeralign" | 1061862405
-| class="col3" | 
+| class="col2 centeralign" | <code>0x00000000372cdc9e</code>
+| class="col3" | The Client / Server ID will be the same for a device
 |- class="row6"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 39 Bytes
@@ -237,14 +237,14 @@ Sent from client in response to packet 0x06.
 | class="col3 centeralign" | 
 | class="col4" | 
 |- class="row2"
-| class="col0 centeralign" | Client ID
+| class="col0 centeralign" | Server ID
 | class="col1 centeralign" | int64
-| class="col2 centeralign" | 0xffffffff
+| class="col2 centeralign" | <code>0x00000000372cdc9e</code>
 | class="col3" |
 |- class="row3"
 | class="col0 centeralign" | Unused
 | class="col1 centeralign" | 5 bytes
-| class="col2 centeralign" | 0x043f57fefd
+| class="col2 centeralign" | <code>0x043f57fefd</code>
 | class="col3" | 
 |- class="row4"
 | class="col0" | Total Size:
@@ -253,12 +253,12 @@ Sent from client in response to packet 0x06.
 
 Sent from server in response to packet 0x07.
 
-{{anchor|0x1d}}
-=== ID_ADVERTISE_SYSTEM (0x1d) ===
-See 0x1c
+{{anchor|0x1D}}
+=== ID_ADVERTISE_SYSTEM (0x1D) ===
+Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version
 
-{{anchor|0x1c}}
-=== ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1c) ===
+{{anchor|0x1C}}
+=== ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C) ===
 
 ''Server to Client''
 
@@ -273,12 +273,12 @@ See 0x1c
 | class="col0 centeralign" rowspan="7" | 0x1c
 | class="col1 centeralign" | Ping ID
 | class="col2 centeralign" | int64
-| class="col3 centeralign" | <code>0x0000000000301dfb</code>
+| class="col3 centeralign" | <code>0x00000000003c6d0d</code>
 | class="col4" | Time since start in Milliseconds
 |- class="row2"
 | class="col0 centeralign" | Server ID
 | class="col1 centeralign" | int64
-| class="col2 centeralign" | 
+| class="col2 centeralign" | <code>0x00000000372cdc9e</code>
 | class="col3" |
 |- class="row4"
 | class="col0 centeralign" | MAGIC
@@ -288,7 +288,7 @@ See 0x1c
 |- class="row2"
 | class="col0 centeralign" | Host Info
 | class="col1 centeralign" | string
-| class="col2 centeralign" | MCCPP;Demo;Steve
+| class="col2 centeralign" | <code>MCCPP;Demo;Steve</code>
 | class="col3" | Used to send the username (MCCPP;Demo; + username)
 |- class="row3"
 | class="col0" | Total Size:
@@ -303,7 +303,10 @@ If the Server is invisible, this packet will be sent without username)
 
 === Unknown (0x84) ===
 
-''Client to Server''
+''Two-Way''
+
+
+Fields in this packet are variable, also the lenght
 
 {| class="wikitable"
 |- class="row0"
@@ -314,41 +317,41 @@ If the Server is invisible, this packet will be sent without username)
 | class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="7" | 0x84
-| class="col1 centeralign" | Count
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | 2
-| class="col4" | Count of 0x84 packets sent
-|- class="row2"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | 9 bytes
-| class="col2 centeralign" | Only seen 0x000040009000000009
-| class="col3" | Unknown, could be split in more fields
-|- class="row3"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | int
-| class="col2 centeralign" | Only seen 0xffffffff
-| class="col3" | 
-|- class="row4"
-| class="col0 centeralign" | Session ID?
-| class="col1 centeralign" | int
-| class="col2 centeralign" | 0xb2e9b623
-| class="col3" | Same as last field of 0x07
-|- class="row5"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | 5 bytes
-| class="col2 centeralign" | Only seen 0x0000000000
-| class="col3" | 
-|- class="row5"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | 4 bytes
-| class="col2 centeralign" | 0xa6b42b00
-| class="col3" | Last byte only seen as 0x00
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | variable
+| class="col3 centeralign" | 
+| class="col4" | 
 |- class="row6"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 28 Bytes
 |}
 
-Sent after 0x08. The client will send 5 0x84 packets, incrementing the count every time (starting at 0)
+Sent after 0x08, and 0xC0
 
+
+{{anchor|0xC0}}
+=== Unknown (0xC0) ===
+
+''Two-Way''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="7" | 0xC0
+| class="col1 centeralign" | Ping ID
+| class="col2 centeralign" | 6 bytes
+| class="col3 centeralign" | <code>0x000101000000</code>
+| class="col4" | 
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 7 Bytes
+|}
+
+Sent by the Client after the first 0x84. Then, the Server replies with the same packet
 
 [[Category:Pocket Minecraft]]
