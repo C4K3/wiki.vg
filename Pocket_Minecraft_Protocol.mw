@@ -159,10 +159,10 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 | class="col2 centeralign" | 0
 | class="col3" | 
 |- class="row4"
-| class="col0 centeralign" | Null Payload Lenght
+| class="col0 centeralign" | MTU Size
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 1447
-| class="col3" | Lenght of Null Payload in 0x05. Used to determine packet loss and max UDP packet size
+| class="col3" | Lenght of 0x05. Used to determine packet loss and max UDP packet size (MTU)
 |- class="row5"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 28 Bytes
@@ -172,6 +172,7 @@ Sent from server after it receives packet 0x05.
 
 
 {{anchor|0x07}}
+
 === ID_OPEN_CONNECTION_REQUEST_2 (0x07) ===
 
 ''Client to Server''
