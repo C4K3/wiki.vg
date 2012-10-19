@@ -60,6 +60,55 @@ See the change in metadata [[#metadata|below]]. (Under Protocol History, 2012-08
 
 See the change in metadata [[#metadata|below]]. (Under Protocol History, 2012-08-24)
 
+=== Sound Or Particle Effect (0x3D) ===
+
+''Server to Client''
+
+Sent when a client is to play a sound or particle effect.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=6 | 0x3D
+| class="col1 centeralign" | Effect ID
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 1003
+| class="col4" | The ID of the effect, see below.
+|- class="row1"
+| class="col1 centeralign" | X
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | The X location of the effect.
+|- class="row1"
+| class="col1 centeralign" | Y
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 
+| class="col4" | The Y location of the effect.
+|- class="row2"
+| class="col1 centeralign" | Z
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 
+| class="col4" | The Z location of the effect.
+|- class="row3"
+| class="col1 centeralign" | Data
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 0
+| class="col4" | Extra data for certain effects, see below.
+|- class="row4"
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | boolean
+| class="col3 centeralign" |
+| class="col4 centeralign" | Usage of this field is unknown
+|- class="row5"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 bytes
+|}
+
 
 === Click Window (0x66) ===
 
