@@ -56,7 +56,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{LGPL}}
 | {{no}}
 | {{unknown|Convert Map to PNG}}
-| {{supports current}}
+| {{supportspre|1.4 pre-release}}
 |-
 ! [http://www.planetminecraft.com/project/new-c-driven-minecraft-client-461392/ Revolutional RedStone]
 | Partial Redstone support
