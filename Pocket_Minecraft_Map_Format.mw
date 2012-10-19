@@ -1,0 +1,12 @@
+The PE uses a different format for saved games, a NBT little-endian format.
+Inside a world save folder exists 3 files:
+
+* level.dat
+* entities.dat
+* chunks.dat
+
+
+Further information can be found on the [http://www.minecraftwiki.net/wiki/Pocket_Edition_Level_Format Minecraft Wiki]
+
+
+[[Category:Pocket Minecraft]]
