@@ -1,4 +1,4 @@
-The Named Binary Tag (NBT) file format is an extremely simple, albiet annoying (did we really need yet ''another'' format?) structured binary format used by the [http://www.minecraft.net Minecraft] game for a variety of things. Due to this, several third-party utilities now also utilize the format.
+The Named Binary Tag (NBT) file format is an extremely simple, albiet annoying (did we really need yet ''another'' format?) structured binary format used by the [http://www.minecraft.net Minecraft] game for a variety of things. Due to this, several third-party utilities now also utilize the format. You may find example files at: http://wiki.vg/nbt/
 
 == Current Uses ==
 The NBT format is currently used in several places, chiefly:
