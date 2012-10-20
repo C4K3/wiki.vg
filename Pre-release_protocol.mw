@@ -100,15 +100,14 @@ Sent when a client is to play a sound or particle effect.
 | class="col3 centeralign" | 0
 | class="col4" | Extra data for certain effects, see below.
 |- class="row4"
-| class="col1 centeralign" | Unknown
+| class="col1 centeralign" | No Volume Decrease
 | class="col2 centeralign" | boolean
-| class="col3 centeralign" |
-| class="col4 centeralign" | Usage of this field is unknown
+| class="col3 centeralign" | false
+| class="col4 centeralign" | If true the volume of the soundeffect will not spawn at the position specified in this packet. it will spawn 2 blocks away from the player, but in the right direction. In vanilla, this is only implemented for sound effect 1013 (mob.wither.spawn). If the packet is sent with an other id it will be ignored. 
 |- class="row5"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 bytes
 |}
-
 
 === Click Window (0x66) ===
 
