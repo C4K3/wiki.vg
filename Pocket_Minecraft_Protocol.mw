@@ -352,7 +352,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 
 ''Two-Way''
 
-'''This packet is part of the real Minecraft PE implementation.'''
+'''This packet is part of the real Minecraft PE implementation. The structure can change anytime.'''
 
 
 This packet has a partial unknown structure
@@ -383,7 +383,7 @@ Sent after 0x08, and 0xC0
 
 ''Two-Way''
 
-'''This packet is part of the real Minecraft PE implementation.'''
+'''This packet is part of the real Minecraft PE implementation. The structure can change anytime.'''
 
 {| class="wikitable"
 |- class="row0"
