@@ -70,7 +70,7 @@ All packets start with a single byte that identifies the packet type, the rest o
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x02
+| class="col0 centeralign" rowspan="3" | 0x02
 | class="col1 centeralign" | Ping ID
 | class="col2 centeralign" | int64
 | class="col3 centeralign" | <code>0x00000000003c6d0d</code>
@@ -101,16 +101,16 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x05
+| class="col0 centeralign" rowspan="4" | 0x05
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
 | class="col4" | 
 |- class="row2"
-| class="col0 centeralign" | Version
+| class="col0 centeralign" | Protocol Version
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>5</code>
-| class="col3" | Protocol version, currently 5
+| class="col3" | Currently 5
 |- class="row2"
 | class="col0 centeralign" | Null Payload
 | class="col1 centeralign" | many 0x00 bytes
@@ -120,6 +120,8 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 Bytes + lenght of Null Payload
 |}
+If the version is different than yours, reply with a 
+[[#0x1A|ID_INCOMPATIBLE_PROTOCOL_VERSION (0x1A)]
 
 Sent from client after it receives packet 0x1d. The client will repeatedly send this with reducing sizes until it successfully receives a reply. Observed behaviour is that the client will send packets ~0.5s apart in the following way, until it gets a 0x06 response packet, or reaches the end of these:
 4 packets of Null Payload lenght of 1447
@@ -142,7 +144,7 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x06
+| class="col0 centeralign" rowspan="5" | 0x06
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
@@ -153,10 +155,10 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 | class="col2 centeralign" | <code>0x00000000372cdc9e</code>
 | class="col3" | This value seems to be constant for an installation of PM, or differs between the demo and full version.
 |- class="row3"
-| class="col0 centeralign" | Unused
+| class="col0 centeralign" | Server Security
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | 
+| class="col3" | Always 0
 |- class="row4"
 | class="col0 centeralign" | MTU Size
 | class="col1 centeralign" | short
@@ -184,18 +186,18 @@ Sent from server after it receives packet 0x05.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x07
+| class="col0 centeralign" rowspan="6" | 0x07
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
 | class="col4" | 
 |- class="row2"
-| class="col0 centeralign" | Unused
-| class="col1 centeralign" | 5 bytes
+| class="col0 centeralign" | Security + Cookie
+| class="col1 centeralign" | 1 + 4 bytes
 | class="col2 centeralign" | <code>0x043f57fefd</code>
-| class="col3" | Only seen this value
+| class="col3" | Unused, constant value
 |- class="row3"
-| class="col0 centeralign" | Port
+| class="col0 centeralign" | Server UDP Port
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>19132</code>
 | class="col3" | 
@@ -208,10 +210,10 @@ Sent from server after it receives packet 0x05.
 | class="col0 centeralign" | Client ID
 | class="col1 centeralign" | int64
 | class="col2 centeralign" | <code>0x00000000372cdc9e</code>
-| class="col3" | The Client / Server ID will be the same for a device
+| class="col3" | The Client / Server ID will be the same for a given device
 |- class="row6"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 39 Bytes
+| class="col1 rightalign" colspan="4" | 34 Bytes
 |}
 
 Sent from client in response to packet 0x06.
@@ -230,7 +232,7 @@ Sent from client in response to packet 0x06.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x08
+| class="col0 centeralign" rowspan="6" | 0x08
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
@@ -241,20 +243,61 @@ Sent from client in response to packet 0x06.
 | class="col2 centeralign" | <code>0x00000000372cdc9e</code>
 | class="col3" |
 |- class="row3"
-| class="col0 centeralign" | Unused
-| class="col1 centeralign" | 5 bytes
-| class="col2 centeralign" | <code>0x043f57fefd</code>
+| class="col0 centeralign" | Client UDP Port
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>46946</code>
 | class="col3" | 
 |- class="row4"
+| class="col0 centeralign" | MTU Size
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>1464</code>
+| class="col3" |
+|- class="row5"
+| class="col0 centeralign" | Security
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Always 0
+|- class="row6"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 30 Bytes
 |}
 
 Sent from server in response to packet 0x07.
 
-{{anchor|0x1D}}
-=== ID_ADVERTISE_SYSTEM (0x1D) ===
-Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version
+
+{{anchor|0x1A}}
+=== ID_INCOMPATIBLE_PROTOCOL_VERSION (0x1A) ===
+
+''Server to Client''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x1A
+| class="col1 centeralign" | Protocol Version
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>5</code>
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | MAGIC
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row2"
+| class="col0 centeralign" | Server ID
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | <code>0x00000000372cdc9e</code>
+| class="col3" | 
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 26 Bytes
+|}
+
 
 {{anchor|0x1C}}
 === ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C) ===
@@ -269,7 +312,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x1c
+| class="col0 centeralign" rowspan="5" | 0x1C
 | class="col1 centeralign" | Ping ID
 | class="col2 centeralign" | int64
 | class="col3 centeralign" | <code>0x00000000003c6d0d</code>
@@ -285,7 +328,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 | class="col2 centeralign" | 
 | class="col3" |
 |- class="row2"
-| class="col0 centeralign" | Host Info
+| class="col0 centeralign" | Data
 | class="col1 centeralign" | string
 | class="col2 centeralign" | <code>MCCPP;Demo;Steve</code>
 | class="col3" | Used to send the username (MCCPP;Demo; + username)
@@ -298,14 +341,21 @@ Server sends this packet in response to a 0x02 packet. It may be either a 0x1d o
 If the Server is invisible, this packet will be sent without username
 
 
+{{anchor|0x1D}}
+=== ID_ADVERTISE_SYSTEM (0x1D) ===
+Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version
+
+
 {{anchor|0x84}}
 
-=== Unknown (0x84) ===
+=== ID_RESERVED_7 (0x84) ===
 
 ''Two-Way''
 
+'''This packet is part of the real Minecraft PE implementation.'''
 
-Fields in this packet are variable, also the lenght
+
+This packet has a partial unknown structure
 
 {| class="wikitable"
 |- class="row0"
@@ -315,7 +365,7 @@ Fields in this packet are variable, also the lenght
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0x84
+| class="col0 centeralign" rowspan="2" | 0x84
 | class="col1 centeralign" | Unknown
 | class="col2 centeralign" | variable
 | class="col3 centeralign" | 
@@ -333,6 +383,8 @@ Sent after 0x08, and 0xC0
 
 ''Two-Way''
 
+'''This packet is part of the real Minecraft PE implementation.'''
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
@@ -341,7 +393,7 @@ Sent after 0x08, and 0xC0
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="7" | 0xC0
+| class="col0 centeralign" rowspan="2" | 0xC0
 | class="col1 centeralign" | Ping ID
 | class="col2 centeralign" | 6 bytes
 | class="col3 centeralign" | <code>0x000101000000</code>
