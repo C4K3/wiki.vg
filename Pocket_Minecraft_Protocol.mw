@@ -1,10 +1,11 @@
 Unlike the Minecraft protocol, this protocol uses UDP with (so far observed, at least) one message per packet. This makes the protocol easier to work with when it comes to packet serialization, and might offer latency improvements, but will inevitably have the usual UDP issues (packets lost, truncated, duplicated, out-of-order, etc.).
 
-Old servers listen on UDP port 19132. 
-As of the survival update, the port is the same
+'''Servers listen on UDP port 19132.'''
+
 Clients don't pick any specific port to listen on.
 
-Please note that even where packet field names are written in this page, these are still largely hypothetical and could well be incorrect guesses.
+
+Please note that even where packet field names are written in this page, these are still largely hypothetical and could well be incorrect guesses. Some packets are fixed to the RakNet protocol, and will be marked as "RakNet Packet", which means that these packets will not change on future versions.
 
 It has been determined that PM uses RakNet for its networking library, [http://www.jenkinssoftware.com/raknet/manual/networkmessages.html some documentation that seems relevant].
 
@@ -62,6 +63,9 @@ All packets start with a single byte that identifies the packet type, the rest o
 
 ''Client to Broadcast''
 
+
+'''RakNet Packet'''
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
@@ -92,6 +96,9 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 === ID_OPEN_CONNECTION_REQUEST_1 (0x05) ===
 
 ''Client to Server''
+
+
+'''RakNet Packet'''
 
 {| class="wikitable"
 |- class="row0"
@@ -136,6 +143,9 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 
 ''Server to Client''
 
+
+'''RakNet Packet'''
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
@@ -177,6 +187,9 @@ Sent from server after it receives packet 0x05.
 === ID_OPEN_CONNECTION_REQUEST_2 (0x07) ===
 
 ''Client to Server''
+
+
+'''RakNet Packet'''
 
 {| class="wikitable"
 |- class="row0"
@@ -224,6 +237,9 @@ Sent from client in response to packet 0x06.
 
 ''Server to Client''
 
+
+'''RakNet Packet'''
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
@@ -270,6 +286,9 @@ Sent from server in response to packet 0x07.
 
 ''Server to Client''
 
+
+'''RakNet Packet'''
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
@@ -304,6 +323,9 @@ Sent from server in response to packet 0x07.
 
 ''Server to Client''
 
+
+'''RakNet Packet'''
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
@@ -337,13 +359,52 @@ Sent from server in response to packet 0x07.
 | class="col1 rightalign" colspan="4" | 35 Bytes + lenght of string
 |}
 
-Server sends this packet in response to a 0x02 packet. It may be either a 0x1d or a 0x1c, depending on version.
+Server sends this packet in response to a 0x02 packet. Depends of the version to send a 0x1D or a 0x1C
 If the Server is invisible, this packet will be sent without username
 
 
 {{anchor|0x1D}}
 === ID_ADVERTISE_SYSTEM (0x1D) ===
-Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version
+
+''Server to Client''
+
+
+'''RakNet Packet'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="5" | 0x1D
+| class="col1 centeralign" | Ping ID
+| class="col2 centeralign" | int64
+| class="col3 centeralign" | <code>0x00000000003c6d0d</code>
+| class="col4" | Time since start in Milliseconds
+|- class="row2"
+| class="col0 centeralign" | Server ID
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | <code>0x00000000372cdc9e</code>
+| class="col3" |
+|- class="row4"
+| class="col0 centeralign" | MAGIC
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row2"
+| class="col0 centeralign" | Data
+| class="col1 centeralign" | string
+| class="col2 centeralign" | <code>MCCPP;Demo;Steve</code>
+| class="col3" | Used to send the username (MCCPP;Demo; + username)
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 35 Bytes + lenght of string
+|}
+
+Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version to send a 0x1D or a 0x1C
 
 
 {{anchor|0x84}}
