@@ -332,6 +332,11 @@ A simple way to parse the payload is to ignore the first 11 bytes, and then spli
 | Null-terminated string
 | <code>"barneygale\0"</code>
 | Repeat until you get an empty string
+|-
+| padding?
+| byte
+| <code>00</code>
+| 
 |}
 
 Full dump:
