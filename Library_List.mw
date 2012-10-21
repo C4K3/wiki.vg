@@ -73,6 +73,20 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{unknown}}
 | {{supports|Beta 1.8.1}}
 |-
+! [https://github.com/deoxxa/libmcnet libmcnet]
+| Event based, zero-copy, portable Minecraft network protocol parser
+| deoxxa
+| {{C}}
+| {{BSD}}
+| {{supports current}}
+|-
+! [https://github.com/deoxxa/node-mcnet node-mcnet]
+| Node.JS bindings to [https://github.com/deoxxa/libmcnet libmcnet]
+| deoxxa
+| {{JavaScript}}, [http://nodejs.org/ node.js]
+| {{BSD}}
+| {{supports current}}
+|-
 |}
 
 [[Category:Minecraft Modern]]
