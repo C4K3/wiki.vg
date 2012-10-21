@@ -16,7 +16,7 @@ The time of day is based on the timestamp modulo 24000. 0 is sunrise, 6000 is no
 
 The default SMP server increments both by 20 every second. 
 
-The &#39;Time&#39; is the Age of the world. It is not changing on server commands and will increased by 20 every second.
+The &#39;Time&#39; is the Age of the world. It is not changed by server commands and is increased by 20 every second.
 
 {| class="wikitable"
 |- class="row0"
