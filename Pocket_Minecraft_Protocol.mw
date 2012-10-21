@@ -501,14 +501,13 @@ Sent after 0x84
 | class="col1 centeralign" | Ping ID
 | class="col2 centeralign" | 6 bytes
 | class="col3 centeralign" | <code>0x000101000000</code>
-| class="col4" | 
+| class="col4" | Maybe dependent of firsth 0x84
 |- class="row3"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 7 Bytes
 |}
 
-Sent by the Client after the first 0x84. Then, the Server replies with the same packet
-
+Sent by the Server after the first 0x84. Then, the Client replies with the same packet
 
 == Packet Dumps ==
 Due to the lack of information about the protocol, packet dumps are welcome. You can also post here pcap files of Client <-> Server sessions
