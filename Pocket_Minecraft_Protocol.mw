@@ -438,7 +438,7 @@ This packet has a partial unknown structure
 | class="col3" |
 |- class="row3"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | ? Bytes
+| class="col1 rightalign" colspan="4" | 1 + ? Bytes
 |}
 
 Sent after 0x08, and 0xC0. Packet Order is independient from server/client
@@ -482,6 +482,34 @@ This packet has a partial unknown structure, but it seems to complement the pack
 Sent after 0x84
 
 
+{{anchor|0xA0}}
+=== Unknown (0xA0) ===
+
+''Two-Way''
+
+'''This packet is part of the real Minecraft PE implementation. The structure can change anytime.'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0xA0
+| class="col1 centeralign" | Data
+| class="col2 centeralign" | 6 bytes
+| class="col3 centeralign" | <code>0x000101000000</code>
+| class="col4" | 
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 7 Bytes
+|}
+
+Sent after an invalid Packet Order ID.
+
+
 {{anchor|0xC0}}
 === Unknown (0xC0) ===
 
@@ -498,7 +526,7 @@ Sent after 0x84
 | class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="2" | 0xC0
-| class="col1 centeralign" | Ping ID
+| class="col1 centeralign" | Data
 | class="col2 centeralign" | 6 bytes
 | class="col3 centeralign" | <code>0x000101000000</code>
 | class="col4" | Maybe dependent of firsth 0x84
@@ -507,7 +535,8 @@ Sent after 0x84
 | class="col1 rightalign" colspan="4" | 7 Bytes
 |}
 
-Sent by the Server after the first 0x84. Then, the Client replies with the same packet
+Sent after the first 0x84. Then, the peer replies with the same packet. Could be used to ACK recieval of packets.
+
 
 == Packet Dumps ==
 Due to the lack of information about the protocol, packet dumps are welcome. You can also post here pcap files of Client <-> Server sessions
