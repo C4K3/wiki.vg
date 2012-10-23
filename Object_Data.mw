@@ -25,7 +25,8 @@ In the "Spawn Object/Vehicle" packet, additional metadata about the spawned enti
 | class="col3" | The speed of the object
 |}
 
-=== Falling Block (70) ===
+== Meaning of int field ==
+=== Falling Block (id 70) ===
 
 {| class="wikitable"
 |- class="row0"
