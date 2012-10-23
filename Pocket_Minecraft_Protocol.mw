@@ -543,7 +543,7 @@ Due to the lack of information about the protocol, packet dumps are welcome. You
 
 * [https://gist.github.com/3928612 Partial Custom Client server connection]
 * [https://gist.github.com/3928624 Partial Custom Server client info + connection]
-* [http://www.mediafire.com/?768jwkj3orkp7tt Full Client / Server Communication]. PCAP. Includes bad version packet
+* [http://www.cloudshark.org/captures/5e9ee11bb05a Full Client / Server Communication]. PCAP, including server search. [http://www.mediafire.com/?768jwkj3orkp7tt download]
 
 
 [[Category:Pocket Minecraft]]
