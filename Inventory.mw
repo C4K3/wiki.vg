@@ -21,6 +21,9 @@ Minecraft displays the player inventory differently, according to how the window
 |- class="row5"
 | class="col0" | 4
 | class="col1" | Enchantment table
+|- class="row6"
+| class="col0" | 5
+| class="col1" | Brewing Stand
 |}
 
 The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory. The number of unique slots in the window is in the [[Protocol#Open_window_.280x64.29|Open Window]] message for all window types except the default inventory window, in which the number of unique slots is 9. This means the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots. Slot number -999 is for clicking outside the window.
