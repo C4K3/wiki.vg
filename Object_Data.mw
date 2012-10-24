@@ -73,4 +73,20 @@ This includes ghast fireballs, arrows, and fishhooks (probably more).
 | class="col3" | Potion data value
 |}
 
+
+=== Arrows ===
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Field Name
+! class="col1" | Field Type
+! class="col2" | Example
+! class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Entity ID
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>1234</code>
+| class="col3" | Entity id of the target
+|}
+
 For more information on potion data values, see [http://www.minecraftwiki.net/wiki/Data_values#Potions].
