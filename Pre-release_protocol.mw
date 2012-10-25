@@ -50,7 +50,7 @@ See the change in metadata [[#metadata|below]]. (Under Protocol History, 2012-08
 
 '''''TODO'''''
 
-It includes a new byte array after the "Damage" field, and before the "X" field if certain conditions are met. If the array does not exist, then the length of the array is "-1".
+It includes a new byte array after the "Damage" field, and before the "X" field if the item has NBT tags, presumably compressed with gzip. If the array does not exist, then the length of the array is "-1".
 
 === Spawn Mob (0x18) ===
 
