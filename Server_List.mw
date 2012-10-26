@@ -152,7 +152,7 @@ A couple things for contributors:
 | MostAwesomeDude
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
-| {{unknown|Beta 1.9 Pre 6}}
+| {{no|Beta 1.9 Pre 6}}
 | {{yes}}
 | {{yes|Alpha, Beta}}
 | {{yes}}
@@ -166,7 +166,7 @@ A couple things for contributors:
 | louisdx
 | C++0x
 | unspecified open source
-| {{unknown|Beta 1.6}}
+| {{no|Beta 1.6}}
 | {{yes}}
 | {{planned|n/a}}
 | {{no}}
@@ -180,7 +180,7 @@ A couple things for contributors:
 | [[User:Xinnx|Xinnx]]
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
-| {{unknown|Beta 1.4}}
+| {{no|Beta 1.4}}
 | {{yes}}
 | {{yes|Alpha, Beta: WIP}}
 | {{no}}
@@ -194,7 +194,7 @@ A couple things for contributors:
 | deoxxa, [[User:Jailout2000|Jailout2000]]
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{Unknown}}
+| {{no}}
 | {{yes}}
 | {{planned}}
 | {{planned}}
