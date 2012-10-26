@@ -1,6 +1,6 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
-=== 2012-10-xx ===
+=== 2012-10-23 ===
 * 1.4.1
 * Protocol version is now 47
 * [[Entities#Entity_Metadata_Format|Entity metadata format]] updated: type 5 (slot type) now terminates after item_id if it's less than zero.
@@ -8,7 +8,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Changed packet: [[Protocol#Spawn_Dropped_Item_.280x15.29|0x15 spawn dropped item]] - updated to use [[Slot Data|slot]] format
 * Changed packet: [[Protocol#Sound_Or_Particle_Effect_.280x3D.29|0x3D particle or sound effect]] - add new boolean field that forces the sound-effect to play from close range
 * (sort of) Changed packet: [[Protocol#Click_Window_.280x66.29|0x66 click window]] - "right click?" field changed from bool to byte
-* Changed packet: [[Protocol#Locale_and_View_Distance_.280xCC.29|0xcc locale and view distance]] - added boolean "show cape?" field.
+* Changed packet: [[Protocol#Client_Settings_.280xCC.29|0xCC client settings]] - added boolean "show cape?" field.
 * Changed packet: [[Protocol#Server_List_Ping_.280xFE.29|0xFE server list ping]] - extra field added; response format slightly expanded to include protocol version.
 
 === 2012-08-01 ===
