@@ -13,6 +13,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 !Game Graphics
 !Last Version Supported
 |-
+! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client&nbsp;2]
+| Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
+| [https://twitter.com/shoghicp shoghicp]
+| {{PHP}}
+| {{LGPL}}
+| {{no}}
+| {{unknown|Convert Map to PNG}}
+| {{supports current}}
+|-
 ! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
 | Wallbraker et al.
@@ -20,7 +29,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{GPLv2}}
 | {{no}}
 | {{yes}}
-| {{supports current}}
+| {{supports|1.3.2}}
 |-
 ! [https://github.com/Dav1dde/BraLa BraLa]
 | Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
@@ -29,7 +38,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{GPLv3}}
 | {{yes}}
 | {{yes}}
-| {{supports current}}
+| {{supports|1.3.2}}
 |-
 ! [https://github.com/lukleh/TwistedBot TwistedBot]
 | bot and proxy
@@ -38,7 +47,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|{{BSD}}? No mention of license in source}}
 | {{no}}
 | {{no}}
-| {{supports current}}
+| {{supports|1.3.2}}
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
@@ -47,16 +56,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{Apache}}
 | {{yes}}
 | {{no}}
-| {{supports current}}
-|-
-! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client&nbsp;2]
-| Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
-| [https://twitter.com/shoghicp shoghicp]
-| {{PHP}}
-| {{LGPL}}
-| {{no}}
-| {{unknown|Convert Map to PNG}}
-| {{supportspre|1.4 pre-release}}
+| {{supports|1.3.2}}
 |-
 ! [http://www.planetminecraft.com/project/new-c-driven-minecraft-client-461392/ Revolutional RedStone]
 | Partial Redstone support
@@ -65,7 +65,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{Unknown}}
 | {{yes}}
 | {{yes}}
-| {{supports current}}
+| {{supports|1.3.2}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
 | "- Superseded by Minecraft PHP Client 2 -" It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
