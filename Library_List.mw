@@ -15,49 +15,49 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | Drew DeVault (SirCmpwn)
 | {{C sharp}}
 | {{MIT}}
-| {{supportspre|12w41b}}
+| {{supports current}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
 | PHP client and protocol library. With events, actions and API
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
-| {{supportspre|1.4 pre-release}}
+| {{supports current}}
 |-
 ! [https://github.com/pdelvo/Pdelvo.Minecraft Pdelvos Protocol Implementation]
 | .NET client/server protocol library with support for several versions.
 | pdelvo
 | {{C sharp}}
 | {{MIT}}
-| {{supportspre|12w41b}}
+| {{supports|12w41b}}
 |-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
 |
 | ags131
 | {{C sharp}}
 | {{unknown}}
-| {{supports current}}
+| {{supports|1.3.2}}
 |-
 ! [http://github.com/Steveice10/mc-protocol-lib mc-protocol-lib]
 | Java implementation of the Minecraft protocol.
 | Steveice10
 | {{Java}}
 | {{MIT}}
-| {{supports current}}
+| {{supports|1.3.2}}
 |-
 ! [https://github.com/deoxxa/libmcnet libmcnet]
 | Event based, zero-copy, portable Minecraft network protocol parser
 | deoxxa
 | {{C}}
 | {{BSD}}
-| {{supports current}}
+| {{supports|1.3.2}}
 |-
 ! [https://github.com/deoxxa/node-mcnet node-mcnet]
 | Node.JS bindings to [https://github.com/deoxxa/libmcnet libmcnet]
 | deoxxa
 | {{JavaScript}}, [http://nodejs.org/ node.js]
 | {{BSD}}
-| {{supports current}}
+| {{supports|1.3.2}}
 |-
 ! [https://github.com/Maincraft/MCPackets MCPackets]
 | Java Minecraft protocol library
