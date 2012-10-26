@@ -80,13 +80,6 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{GPLv3}}
 | {{supports|1.1}}
 |-
-! [https://github.com/eddyb/node-mcsmp node-mcsmp]
-| Simple Minecraft multiplayer protocol library for node.js.
-| eddyb
-| {{JavaScript}}, [http://nodejs.org/ node.js]
-| {{unknown}}
-| {{supports|Beta 1.8.1}}
-|-
 |}
 
 [[Category:Minecraft Modern]]
