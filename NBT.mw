@@ -172,7 +172,7 @@ This second example is an uncompressed test of every available tag. If your prog
     TAG_Int('intTest'): 2147483647
     TAG_Byte('byteTest'): 127
     TAG_String('stringTest'): 'HELLO WORLD THIS IS A TEST STRING \xc3\x85\xc3\x84\xc3\x96!'
-    TAG_List('listTest (long)'): 5 entires
+    TAG_List('listTest (long)'): 5 entries
     {
       TAG_Long(None): 11
       TAG_Long(None): 12
@@ -183,7 +183,7 @@ This second example is an uncompressed test of every available tag. If your prog
     TAG_Double('doubleTest'): 0.49312871321823148
     TAG_Float('floatTest'): 0.49823147058486938
     TAG_Long('longTest'): 9223372036854775807L
-    TAG_List('listTest (compound)'): 2 entires
+    TAG_List('listTest (compound)'): 2 entries
     {
       TAG_Compound(None): 2 entries
       {
@@ -206,7 +206,7 @@ The ''servers.dat'' file contains a list of multiplayer servers you've added to 
 <code>
   TAG_Compound(<nowiki>''</nowiki>): 1 entries
   {
-    TAG_List('servers'): 2 entires
+    TAG_List('servers'): 2 entries
     {
       TAG_Compound(None): 2 entries
       {
@@ -250,7 +250,7 @@ This final example is of a single player ''level.dat'', which is compressed usin
         TAG_Int('XpLevel'): 0
         TAG_Int('Score'): 0
         TAG_Short('Health'): 20
-        TAG_List('Inventory'): 13 entires
+        TAG_List('Inventory'): 13 entries
         {
           TAG_Compound(None): 4 entries
           {
@@ -351,7 +351,7 @@ This final example is of a single player ''level.dat'', which is compressed usin
         TAG_Int('foodTickTimer'): 0
         TAG_Short('SleepTimer'): 0
         TAG_Short('DeathTime'): 0
-        TAG_List('Rotation'): 2 entires
+        TAG_List('Rotation'): 2 entries
         {
           TAG_Float(None): 1151.9342041015625
           TAG_Float(None): 32.249679565429688
@@ -359,7 +359,7 @@ This final example is of a single player ''level.dat'', which is compressed usin
         TAG_Float('XpP'): 0.0
         TAG_Float('FallDistance'): 0.0
         TAG_Short('Air'): 300
-        TAG_List('Motion'): 3 entires
+        TAG_List('Motion'): 3 entries
         {
           TAG_Double(None): -2.9778325794951344e-11
           TAG_Double(None): -0.078400001525878907
@@ -367,7 +367,7 @@ This final example is of a single player ''level.dat'', which is compressed usin
         }
         TAG_Int('Dimension'): 0
         TAG_Byte('OnGround'): 1
-        TAG_List('Pos'): 3 entires
+        TAG_List('Pos'): 3 entries
         {
           TAG_Double(None): 256.87499499518492
           TAG_Double(None): 112.62000000476837
