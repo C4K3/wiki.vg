@@ -44,10 +44,10 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | bot and proxy
 | [[User:Lukleh | lukleh]]
 | {{Python}}, {{Twisted}}
-| {{unknown|{{BSD}}? No mention of license in source}}
+| {{BSD}}
 | {{no}}
 | {{no}}
-| {{supports|1.3.2}}
+| {{yes|1.4.2}}
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
