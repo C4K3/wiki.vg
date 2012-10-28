@@ -36,6 +36,20 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Active}}
 |-
+! [https://github.com/BizarreCake/hCraft/ hCraft]
+| BizarreCake
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://gplv3.fsf.org/ GPLv3]
+| {{yes|1.4.2}}
+| {{yes}}
+| {{yes|Custom (HWv1)}}
+| {{yes}}
+| {{planned}}
+| {{planned|Players}}
+| {{yes|Threads/Events}}
+| {{no}}
+| {{yes|Active}}
+|-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
 | Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
 | [http://en.wikipedia.org/wiki/Javascript JavaScript(Node.js)]
@@ -75,20 +89,6 @@ A couple things for contributors:
 | {{no}}
 | {{planned|Players}}
 | {{yes|Erlang processes}}
-| {{no}}
-| {{yes|Active}}
-|-
-! [https://github.com/BizarreCake/hCraft/ hCraft]
-| BizarreCake
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://gplv3.fsf.org/ GPLv3]
-| {{yes|1.4.2}}
-| {{yes}}
-| {{yes|Custom (HWv1)}}
-| {{yes}}
-| {{planned}}
-| {{planned|Players}}
-| {{yes|Threads/Events}}
 | {{no}}
 | {{yes|Active}}
 |-
