@@ -136,7 +136,7 @@ For example, here's the example layout of a <code>TAG_Short</code> on disk:
 | <code>7F FF</code>
 |}
 
-If this <code>TAG_Short<code> had been in a <code>TAG_List</code>, it would have been nothing more than the payload, since the type is implied and tags within the first level of a list are nameless.
+If this <code>TAG_Short</code> had been in a <code>TAG_List</code>, it would have been nothing more than the payload, since the type is implied and tags within the first level of a list are nameless.
 
 === Examples ===
 There are two defacto example files used for testing your implementation (<code>test.nbt</code> & <code>bigtest.nbt</code>), originally provided by Markus. The example output provided below was generated using [https://github.com/TkTech/PyNBT PyNBT]'s ''debug-nbt'' tool.
