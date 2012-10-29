@@ -64,6 +64,20 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Active}}
 |-
+! [https://github.com/deoxxa/jsmc jsmc]
+| Conrad Pankoff ([[User:deoxxa|deoxxa]])
+| [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
+| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+| {{yes|1.4.2}}
+| {{yes}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Async Networking/Logic}}
+| {{yes|JavaScript}}
+| {{yes|Active}}
+|-
 ! [http://www.mc-server.org MCServer]
 | FakeTruth, xoft
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
