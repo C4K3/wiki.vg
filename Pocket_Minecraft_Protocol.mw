@@ -447,9 +447,9 @@ Sent after 0x08, and 0xC0. Packet Order is independient from server/client
 
 
 {{anchor|0x8C}}
-=== Unknown (0x8C) ===
+=== Unknown (0x8C) (Maybe AddEntityPacket) ===
 
-''Server to Client''
+''Two-way''
 
 '''This packet is part of the real Minecraft PE implementation. The structure can change anytime.'''
 
@@ -469,20 +469,26 @@ This packet has a partial unknown structure, but it seems to complement the pack
 | class="col2 centeralign" | byte?
 | class="col3 centeralign" | <code>57</code>
 | class="col4" | Could be used to reorder packets
-|- class="row2"
+|- class="row3"
+| class="col2 centeralign" | ?
+| class="col1 centeralign" | Integer?
+| class="col2 centeralign" | 00 00 40 00
+| class="col3" | These 4 bytes seem to always be the same. Needs confirmation.
+|- class="row3"
 | class="col2 centeralign" | Unknown
 | class="col1 centeralign" | variable
 | class="col2 centeralign" | 
 | class="col3" |
-|- class="row3"
+|- class="row4"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 1 + ? Bytes
 |}
 
-Sent after 0x84
+Sent after 0x84 by client, server responds with packet of same type, different data.
 
 
 {{anchor|0xA0}}
+
 === Unknown (0xA0) ===
 
 ''Two-Way''
