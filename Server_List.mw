@@ -22,6 +22,20 @@ A couple things for contributors:
 !style="width: 72px" | Scripting
 !style="width: 120px" | Development Status
 |-
+! [http://www.mc-server.org MCServer]
+| FakeTruth, xoft
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Open source
+| {{yes|1.4.2, 1.3.2 and 1.2.5 simultaneously!}}
+| {{yes}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Threads}}
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| {{yes|Active}}
+|-
 ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
@@ -76,20 +90,6 @@ A couple things for contributors:
 | {{planned|Players}}
 | {{yes|Async Networking/Logic}}
 | {{yes|JavaScript}}
-| {{yes|Active}}
-|-
-! [http://www.mc-server.org MCServer]
-| FakeTruth, xoft
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Open source
-| {{no|1.3.2 and 1.2.5 simultaneously}}
-| {{yes}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
