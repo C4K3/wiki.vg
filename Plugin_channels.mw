@@ -21,6 +21,11 @@ When a player edits an unsigned book.
 
 This payload is simply a set of bytes corresponding to an ItemStack. It is serialized / deserialized exactly the same as itemstacks in packets.
 
+=== <code>MC|Beacon</code> ===
+''Client to server''
+
+Two integers corresponding to the 2 effects a user wishes to have active.
+
 === <code>MC|BSign</code> ===
 ''Client to server''
 
@@ -38,10 +43,6 @@ This contains a string representing the url to get the texture pack from, follow
 
 The list of trades a villager NPC is offering.
 
-=== <code>MC|Beacon</code> ===
-''Client to server''
-
-To integers corresponding to the 2 effects a user wishes to have active
 === <code>MC|TrSel</code> ===
 ''Client to server''
 −	
