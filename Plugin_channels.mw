@@ -14,17 +14,17 @@ Allows the client to unregister from one or more custom channels, indicating tha
 == Channels internal to Minecraft ==
 As of 1.3, Minecraft itself started using plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>. They are not formally registered using the REGISTER channel. The vanilla Minecraft server will send these packets regardless, and the vanilla client will accept them.
 
+=== <code>MC|Beacon</code> ===
+''Client to server''
+
+Two integers corresponding to the 2 effects a user wishes to have active.
+
 === <code>MC|BEdit</code> ===
 ''Client to server''
 
 When a player edits an unsigned book.
 
 This payload is simply a set of bytes corresponding to an ItemStack. It is serialized / deserialized exactly the same as itemstacks in packets.
-
-=== <code>MC|Beacon</code> ===
-''Client to server''
-
-Two integers corresponding to the 2 effects a user wishes to have active.
 
 === <code>MC|BSign</code> ===
 ''Client to server''
