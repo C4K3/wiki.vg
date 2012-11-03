@@ -62,10 +62,15 @@ It contains a single int id corresponding to the selected slot int the players c
 == Notable community plugin channels ==
 Channels listed in this section are not Mojang-sanctioned. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
 
+=== <code>FML</code> ===
+''Two-way''
+
+Used by [http://www.minecraftforge.net/forum/index.php Forge] ModLoader to negotiate required mods, among other things. [https://github.com/cpw/FML/blob/master/common/cpw/mods/fml/common/network/FMLNetworkHandler.java]
+
 === <code>ML|OpenTE</code> ===
 ''Server to client''
 
-Used by [http://www.minecraftforum.net/topic/75440-v132-risugamis-mods-preliminary-updates/ ModLoader] to support custom GUI windows. Does not use the REGISTER channel.
+Used by [http://www.minecraftforum.net/topic/75440-modloader/ ModLoader] to support custom GUI windows. Does not use the REGISTER channel.
 
 === <code>WECUI</code> ===
 ''Two-way''
