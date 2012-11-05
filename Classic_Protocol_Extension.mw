@@ -444,7 +444,7 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 
 :'''Motivation''': To allow any custom client software to recognize other players using the same client and interact with them accordingly.
 :'''Client behavior''': Implementation-specific.  An example might be displaying an alternate model for players using the same client.
-:'''Server behavior''': The packet should be sent immediately following the Spawn Player packet when a new client connects to the server.
+:'''Server behavior''': The packet should be sent immediately following the Spawn Player packet (or '''ExtAddPlayerName''' packet, if [[#ExtPlayerList|ExtPlayerList]] is supported) when a new client connects to the server.
 
 :<h4>ExtPlayer packet</h4>
 :''Server to Client''
