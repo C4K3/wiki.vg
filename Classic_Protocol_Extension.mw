@@ -58,7 +58,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col0 centeralign" | Version
 | class="col1 centeralign" | int
 | class="col2 centeralign" | 1
-| class="col3" |
+| class="col3" | Only extensions with identical version numbers should be considered compatible.
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 69 bytes
