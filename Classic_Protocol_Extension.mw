@@ -412,6 +412,8 @@ At this time, client should send '''ExtInfo''' packet of its own, followed by th
 | class="col1 centeralign" | Opacity
 | class="col2 centeralign" | unsigned byte
 | class="col3 centeralign" | <code>0xFF</code>
+| class="col4" | 0x00 = fully transparent
+0xFF = fully opaque
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 82 bytes
