@@ -21,6 +21,7 @@
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
 * Intel graphics cards doesn't get smooth textures.
 * Player models lack hats.
+* Player should be able to go above the map (beyond the map boundary) even when NoClip is disabled.
 
 == Done ==
 * <strike>Optional/toggle-able collision detection with terrain.</strike>
