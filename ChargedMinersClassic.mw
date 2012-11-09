@@ -16,6 +16,7 @@
 == Launcher ==
 * <s>Button/Menu item to open the %AppData%/Roaming/charge folder.</s> - Done in 1.1
 ** <s>Bonus Objective: Button/Menu item that uploads log.txt to a paste site.</s> - Done in 1.1
+* Add a list of recently-joined/favorite servers.
 
 == Bugs ==
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
