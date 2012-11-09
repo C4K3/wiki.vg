@@ -59,7 +59,7 @@ of the following NBT array, presumably gzipped NBT data.
 
 == Protocol History ==
 
-'''1.4.4'''
+'''1.4.4 Pre-release'''
 
 Protocol version is now 49. Packet 0x83 updated.
 
