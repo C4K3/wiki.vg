@@ -8,7 +8,7 @@
 * Create an entry in the configuration file allowing to adjust the movement speed.
 ** Ideally separate entries for normal horizontal and vertical speeds, and for sped-up horizontal and vertical speeds.
 * XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
-* Clickable links.
+* Clickable links in game chat.
 * Make walking/running speeds configurable.
 * Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.
 * Add extension protocol.
