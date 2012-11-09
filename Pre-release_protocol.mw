@@ -58,4 +58,11 @@ of the following NBT array, presumably gzipped NBT data.
 -None-
 
 == Protocol History ==
--None-
+
+'''1.4.4'''
+
+Protocol version is now 49. Packet 0x83 updated.
+
+'''1.4.3 Pre-release'''
+
+Protocol version is now 48. Entity metadata updated.
