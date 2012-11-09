@@ -10,6 +10,7 @@
 * XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
 * Clickable links in game chat.
 * Make walking/running speeds configurable.
+* Make key mappings more easily configurable.
 * Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.
 * Add extension protocol.
 
