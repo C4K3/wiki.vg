@@ -4,10 +4,55 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 -None-
 
 == Changed Packets ==
--None-
+
+=== Item Data (0x83) ===
+
+''Server to Client''
+
+Sent to specify complex data on an item; currently used only for maps.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x83
+| class="col1 centeralign" | Item Type
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>358</code>
+| class="col4" | Type of item being modified
+|- class="row2"
+| class="col0 centeralign" | Item ID
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | The ID (damage value) of the item being modified
+|- class="row3"
+| class="col0 centeralign" | Text length
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>35</code>
+| class="col3" | Length of following byte array
+|- class="row4"
+| class="col0 centeralign" | Text
+| class="col1 centeralign" | byte array
+| class="col2 centeralign" | {0,0,0,20,20,20,20,20}
+| class="col3" | ASCII text.
+|- class="row9"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 7 bytes + Text length
+|}
+
+'''Maps'''
+If the first byte of the text is 0, the next two bytes are X start and Y start and the rest of the bytes are the colors in that column.
+
+If the first byte of the text is 1, the rest of the bytes are in groups of three: (data, x, y). The lower half of the data is the type (always 0 under vanilla) and the upper half is the direction.
 
 == Changed Data Types ==
--None
+
+Entity Metadata has an additional field for Slot data types. It now has a short (-1) at the end if there is no further data, or that short is the length
+of the following NBT array, presumably gzipped NBT data.
 
 == Removed Packets ==
 -None-
