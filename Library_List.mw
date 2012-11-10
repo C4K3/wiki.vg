@@ -36,7 +36,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | ags131
 | {{C sharp}}
 | {{unknown}}
-| {{supports|1.3.2}}
+| {{supports current}}
 |-
 ! [http://github.com/Steveice10/mc-protocol-lib mc-protocol-lib]
 | Java implementation of the Minecraft protocol.
