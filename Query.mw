@@ -293,53 +293,28 @@ A simple way to parse the payload is to ignore the first 11 bytes, and then spli
 | <code>00 00 00 01</code>
 |
 |-
-| splitnum
-| Null-terminated string
-| <code>"splitnum\0"</code>
-| Always this hardcoded value.
+| Padding
+| 11 bytes, constant
+| <code>73 70 6C 69 74 6E 75 6D 00 80 00</code>
+| Meaningless
 |-
-| key_val_start
-| Little endian short
-| <code>80 00</code>
-| Always <code>0x80</code>. After this there will be a number of key+value pairs (only the first pair of examples is included in this table)
+| K, V section
+| Several pairs of null-terminated strings
+| <code>hostname\0A Minecraft Server\0gametype\0SMP\0 ... hostip\0127.0.0.1\0\0</code>
+| Terminated when you read a 0-length key (break from loop, don't read value)
 |-
-| key
-| Null-terminated string
-| <code>"hostname\0"</code>
-| Keyname for the following value. Is repeated
+| Padding
+| 10 bytes, constant
+| <code>01 70 6C 61 79 65 72 5F 00 00</code>
+| Meaningless
 |-
-| value
-| Null-terminated string
-| <code>"A Minecraft Server\0"</code>
-| A value that goes with the previous key. Is repeated
-|-
-| key_val_end
-| Little endian short
-| <code>00 01</code>
-| Always <code>0x100</code>. When you reach this there are no more key+value pairs
-|-
-| player_
-| Null-terminated string
-| <code>"player_\0"</code>
-| Always this hardcoded value. Start of a list of null terminated strings with online players
-|-
-| padding?
-| byte
-| <code>00</code>
-| 
-|-
-| playername
-| Null-terminated string
-| <code>"barneygale\0"</code>
-| Repeat for all players
-|-
-| padding?
-| byte
-| <code>00</code>
-| 
+| Players section
+| Several null-terminated strings
+| <code>"barneygale\0TkTech\0 ... sadimusi\0\0"</code>
+| Terminated when you read a 0-length player name
 |}
 
-Full dump:
+Dump:
 
 <code>
   00 00 00 00 01 73 70 6C 69 74 6E 75 6D 00 80 00 | .....splitnum...
@@ -358,7 +333,7 @@ Full dump:
   69 76 61 6C 61 68 65 6C 76 69 67 00 00          | ivalahelvig..
 </code>
 
-Keys found querying a 1.2.5 bukkit server:
+==== K, V section ====
 
 {| class="wikitable"
 |-
