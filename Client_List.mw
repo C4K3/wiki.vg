@@ -148,6 +148,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{supports|Beta 1.6.6}}
 |-
+! [https://github.com/wolftein/rocky Rocky]
+| Outstanding C++ client using Boost and Ogre3D. Supports custom features using RockyPlugin.
+| Wolftein
+| {{C++}}
+| {{MIT}}
+| {{yes}}
+| {{yes}}
+| {{1.4.2}}
+|-
 ! [https://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
 | aniero
