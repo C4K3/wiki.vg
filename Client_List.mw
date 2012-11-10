@@ -76,6 +76,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes|1.4.2}}
 |-
+! [https://github.com/wolftein/rocky Rocky]
+| Outstanding C++ client using Boost. Supports custom features using RockyPlugin.
+| Wolftein
+| {{C++}}
+| {{LGPL}}
+| {{yes}}
+| {{yes|Yes, using [http://en.wikipedia.org/wiki/OGRE_3D Ogre3D]}}
+| {{yes|1.4.2}}
+|-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
 | "- Superseded by Minecraft PHP Client 2 -" It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
 | [https://twitter.com/shoghicp shoghicp]
@@ -147,15 +156,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes}}
 | {{supports|Beta 1.6.6}}
-|-
-! [https://github.com/wolftein/rocky Rocky]
-| Outstanding C++ client using Boost. Supports custom features using RockyPlugin.
-| Wolftein
-| {{C++}}
-| {{LGPL}}
-| {{yes}}
-| {{yes|Yes, using [http://en.wikipedia.org/wiki/OGRE_3D Ogre3D]}}
-| {{supports|1.4.2}}
 |-
 ! [https://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
