@@ -17,7 +17,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
-| {{LGPL}}
+| {{WTFPL}}
 | {{no}}
 | {{unknown|Convert Map to PNG}}
 | {{supports current}}
