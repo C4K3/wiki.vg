@@ -152,7 +152,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | Outstanding C++ client using Boost and Ogre3D. Supports custom features using RockyPlugin.
 | Wolftein
 | {{C++}}
-| {{MIT}}
+| {{LGPL}}
 | {{yes}}
 | {{yes}}
 | {{1.4.2}}
