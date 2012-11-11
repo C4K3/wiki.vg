@@ -46,8 +46,8 @@ The client discards the server's response.
 
 Every 15 minutes, minecraft sends a HTTP POST request giving stats. This can be disabled in server.properties
 
-* ''client'': http://snoop.minecraft.net/client?version=1
-* ''server'': http://snoop.minecraft.net/server?version=1
+* '''client''': http://snoop.minecraft.net/client?version=1
+* '''server''': http://snoop.minecraft.net/server?version=1
 
 {| class="wikitable"
 |- class="row0"
