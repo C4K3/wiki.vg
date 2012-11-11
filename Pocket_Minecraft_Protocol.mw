@@ -722,7 +722,7 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col1 centeralign" | 0x82
 | class="col2 centeralign" | LoginPacket
 |- class="row43"
-| class="col0 centeralign" colspan="4" | Total: 43 Packets
+| class="col0 centeralign" colspan="4" | Total: 42 Packets
 |}
 † Packet exists but the Assembly shows no further code for it (Blank Packet?).
 
