@@ -5,11 +5,10 @@
 * Water cosmetic improvements: specularity, volumetric fog underwater, etc.
 * More chat/terminal improvements (being able to move cursor around with arrow keys, selection with shift key, etc).
 * Lighting mode faithful to Minecraft Classic (straight-down shadows), to allow viewing pixelart properly.
-* Create an entry in the configuration file allowing to adjust the movement speed.
+* Make walking/running speeds configurable and create an entry in the configuration file allowing to adjust the movement speed.
 ** Ideally separate entries for normal horizontal and vertical speeds, and for sped-up horizontal and vertical speeds.
 * XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
 * Clickable links in game chat.
-* Make walking/running speeds configurable.
 * Make key mappings more easily configurable.
 * Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.
 * Add extension protocol.
@@ -28,6 +27,7 @@
 * There is no application icon on Windows for CM.
 
 == Done ==
+* <strike>Player should be able to go above the map (beyond the map boundary) even when NoClip is disabled.</strike>
 * <strike>Optional/toggle-able collision detection with terrain.</strike>
 * <strike>Non-flying player movement code.</strike>
 * <strike>Expose more options through in-game menus.</strike>
