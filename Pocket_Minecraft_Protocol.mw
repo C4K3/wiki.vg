@@ -533,17 +533,33 @@ Sent after an invalid Packet Order ID.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="2" | 0xC0
-| class="col1 centeralign" | Data
-| class="col2 centeralign" | 6 bytes
-| class="col3 centeralign" | <code>0x000101000000</code>
-| class="col4" | Maybe dependent of firsth 0x84
+| class="col0 centeralign" rowspan="4" | 0xC0
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | 2 bytes
+| class="col3 centeralign" | <code>0x0001</code>
+| class="col4" | 
+|- class="row2"
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | boolean
+| class="col3 centeralign" | <code>''true''</code>
+| class="col4" | ''true'' when there is only one packet received
 |- class="row3"
+| class="col1 centeralign" | Packet number
+| class="col2 centeralign" | 3 bytes
+| class="col3 centeralign" | <code>0x000000</code>
+| class="col4" | Received packet number
+|- class="row4"
+| class="col1 centeralign" | Packet number
+| class="col2 centeralign" | 3 bytes
+| class="col3 centeralign" | <code>0x000004</code>
+| class="col4" | Last received packet number (only when ''false'')
+|- class="row5"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 7 Bytes
+| class="col1 rightalign" colspan="4" | 7 or 10 Bytes
 |}
 
 Sent after the first 0x84. Then, the peer replies with the same packet. Could be used to ACK recieval of packets.
+The second packet number is optional and only there when bool is false.
 
 ==List of all packets==
 All the information in this list is based on the RakNet and Minecraft ID for each packet. The RakNet ID is the first byte in each packet, while the Minecraft ID is the first byte after each RakNet header. All names for each packet are based on the Android assembly code. Each packet is in the format of RakNet ID first, Minecraft ID second, Name third. All packets are found by using the tutorial posted by Jocopa3 found [http://www.minecraftforum.net/topic/1446513-mcpeserver-and-server-modding-api-in-development/page__st__100#entry18330091 here].
