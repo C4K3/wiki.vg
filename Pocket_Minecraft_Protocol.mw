@@ -426,32 +426,28 @@ This packet has a partial unknown structure
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x84
-| class="col1 centeralign" | Packet Order ID
-| class="col2 centeralign" | byte?
-| class="col3 centeralign" | <code>2</code>
-| class="col4" | Could be used to reorder packets
+| class="col0 centeralign" rowspan="2" | 0x84
+| class="col1 centeralign" | Packet number
+| class="col2 centeralign" | 3 bytes
+| class="col3 centeralign" | <code>0</code>
+| class="col4" | Increments once every packet. 
 |- class="row2"
-| class="col2 centeralign" | ?
-| class="col1 centeralign" | Integer?
-| class="col2 centeralign" | 00 00 40 00
-| class="col3" | These 4 bytes seem to always be the same. Needs confirmation.
-|- class="row3"
-| class="col2 centeralign" | Unknown
-| class="col1 centeralign" | variable
-| class="col2 centeralign" | 
-| class="col3" |
+| class="col2 centeralign" | Other ID?
+| class="col1 centeralign" | 3 bytes
+| class="col2 centeralign" | <code>0x400090</code>
+| class="col3" | Looks like another ID, there are multiple ID's.
 |- class="row4"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 1 + ? Bytes
+| class="col1 rightalign" colspan="4" | 7 Bytes
 |}
 
-Sent after 0x08, and 0xC0. Packet Order is independient from server/client
+Sent after 0x08. The receiver will use the Packet number in the 0xc0 packet and send it back.
 
 [https://gist.github.com/3928516 Different 0x84 values sent in a session], use this to help understand this packet
 
 
 {{anchor|0x8C}}
+
 === Unknown (0x8C) ===
 
 ''Server -> Client''
