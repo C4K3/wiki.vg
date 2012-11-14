@@ -1,5 +1,9 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 2012-11-14 ===
+* 1.4.4
+* Protocol version is now 49
+
 === 2012-10-23 ===
 * 1.4.1
 * Protocol version is now 47
