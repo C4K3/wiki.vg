@@ -7,9 +7,7 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 -None-
 
 == Changed Data Types ==
-
-Entity Metadata has an additional field for Slot data types. It now has a short (-1) at the end if there is no further data, or that short is the length
-of the following NBT array, presumably gzipped NBT data.
+-None-
 
 == Removed Packets ==
 -None-
