@@ -74,7 +74,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | TBD
 | {{yes}}
 | {{no}}
-| {{yes|1.4.4}}
+| {{yes|1.4.2}}
 |-
 ! [https://github.com/wolftein/rocky Rocky]
 | Outstanding C++ client using Boost. Supports custom features using RockyPlugin.
