@@ -33,7 +33,7 @@ To parse, repeat the following procedure:
 | string16
 |-
 | 5
-| short, byte, short ([[Slot Data]] except without the enchantment metdata) - if first short is less than 0, no further data is sent.
+| short, byte, short, short sized byte array - if first short is less than 0, no further data is sent.
 |-
 | 6
 | int, int, int (x, y, z)<sup>*</sup>
@@ -61,7 +61,9 @@ while x != 127:
         if val["id"] != -1:
             val["count"]  = socket.unpack('byte')
             val["damage"] = socket.unpack('short')
-            # No enchantment metadata here!
+            val["nbtLength"] = socket.unpack('short')
+            if val["nbtLength"] > 0:
+                val["nbt"] = socket.unpack(val["nbtLength"])
     if ty == 6:
         val = []
         for i in range(3):
