@@ -33,7 +33,7 @@ To parse, repeat the following procedure:
 | string16
 |-
 | 5
-| short, byte, short, short sized byte array - if first short is less than 0, no further data is sent.
+| [[Slot Data|slot]]
 |-
 | 6
 | int, int, int (x, y, z)<sup>*</sup>
