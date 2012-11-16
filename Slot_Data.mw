@@ -34,3 +34,11 @@ The byte array contains gzipped (that is RFC 1952 rather than RFC 1950) [[NBT]] 
 </code>
 
 Each of the inner, untagged COMPOUNDs represents an enchantment, with its ID[http://www.minecraftwiki.net/wiki/Enchantment#Enchantment_Types] and level given as child SHORT elements.
+
+== Examples ==
+
+<code>
+  ff ff                            | empty slot
+  01 16 01 00 00 ff ff             | a diamond pickaxe
+  01 16 01 00 00 00 04 CA FE BA BE | a diamond pickaxe with (made-up) NBT data
+</code>
