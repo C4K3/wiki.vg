@@ -3,6 +3,8 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 2012-11-14 ===
 * 1.4.4
 * Protocol version is now 49
+* Packet 0x83 has a short not unsigned byte header before the byte array
+* Item metadata (5) has an NBT field at the end. As usual if the short is < 0, no data is sent
 
 === 2012-10-23 ===
 * 1.4.1
