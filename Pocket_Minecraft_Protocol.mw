@@ -566,7 +566,7 @@ The second packet number is optional and only there when bool is false.
 === Data ID List ===
 All the information in this list is based on the RakNet and Minecraft ID for each packet. The RakNet ID is the first byte in each packet, while the Minecraft ID is the first byte after each RakNet header. All names for each packet are based on the Android assembly code. Each packet is in the format of RakNet ID first, Minecraft ID second, Name third. All packets are found by using the tutorial posted by Jocopa3 found [http://www.minecraftforum.net/topic/1446513-mcpeserver-and-server-modding-api-in-development/page__st__100#entry18330091 here].
 
-{| class"wikitable"
+{| class="wikitable"
 |- class="row0"
 | class="col0" | RakNet ID
 | class="col1" | Minecraft ID
