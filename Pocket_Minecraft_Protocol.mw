@@ -344,26 +344,33 @@ Sent from server in response to packet 0x07.
 | class="col1 centeralign" | int64
 | class="col2 centeralign" | <code>0x00000000372cdc9e</code>
 | class="col3" |
-|- class="row4"
+|- class="row3"
 | class="col0 centeralign" | MAGIC
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | 
 | class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Data
+|-class="row4"
+| class="col0 centeralign" | Identifier
 | class="col1 centeralign" | string
-| class="col2 centeralign" | <code>MCCPP;Demo;Steve</code>
-| class="col3" | Used to send the username (MCCPP;Demo; + username)
-|- class="row3"
+| class="col2 centeralign" | MCCPP;Demo;
+| class="col3" |
+|- class="row5"
+| class="col0 centeralign" | Server name
+| class="col1 centeralign" | string
+| class="col2 centeralign" | <code>Steve</code>
+| class="col3" | 
+|- class="row6"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 35 Bytes + lenght of string
+| class="col1 rightalign" colspan="4" | 46 Bytes + Server name length
 |}
 
 Server sends this packet in response to a 0x02 packet. Depends of the version to send a 0x1D or a 0x1C
 If the Server is invisible, this packet will be sent without username
 
+Minecraft Pocket Edition v0.5.0.0 introduced another identifier special for Minecon 2012 "MCCPP;MINECON;". This will show a Minecon logo in front of the server name, and the color of the name is changed to blue.
 
 {{anchor|0x1D}}
+
 === ID_ADVERTISE_SYSTEM (0x1D) ===
 
 ''Server to Client''
