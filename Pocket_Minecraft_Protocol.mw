@@ -888,6 +888,68 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col1 rightalign" colspan="4" | 11 Bytes
 |}
 
+=== AddEntityPacket (0x8c) ===
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Field Name
+| class="col1" | Field Type
+| class="col2" | Example
+| class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Bytes
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 
+| class="col3 centeralign" | 
+|- class="row2"
+| class="col0 centeralign" | Integer
+| class="col1 centeralign" | integer
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row3"
+| class="col0 centeralign" | Bytes
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row4"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row5"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row6"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row7"
+| class="col0 centeralign" | Integer
+| class="col1 centeralign" | integer
+| class="col2 centeralign" | 
+| class="col3" centeralign" | World?
+|- class="row8"
+| class="col0 centeralign" | Short
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 
+| class="col3" centeralign" | Motion?
+|- class="row9"
+| class="col0 centeralign" | Short
+| class="col1 centeralign" | short
+| class="col2" |
+| class="col3" centeralign" | Motion?
+|- class="row10"
+| class="col0 centeralign" | Short
+| class="col1 centeralign" | short
+| class="col2" |
+| class="col3" centeralign" | Motion?
+|- class="row11"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | ? Bytes
+|}
+
 === MoveEntityPacket_PosRot (0x93) ===
 {| class="wikitable"
 |- class="row0"
