@@ -851,6 +851,8 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col1 rightalign" colspan="4" | 8 Bytes
 |}
 
+This seems to be incorrect/incomplete. The amount of bytes noted varies between 16 and 54. (header included) (reference: https://dl.dropbox.com/u/35774053/html.zip)
+
 === SetTimePacket (0x86) ===
 {| class="wikitable"
 |- class="row0"
