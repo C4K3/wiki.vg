@@ -30,7 +30,7 @@
 * There is no application icon on Windows for CM.
 * Intel graphics cards doesn't get smooth textures.
 * Alt-tabbing out of the game window sometimes keeps the mouse focus stolen.
-
+* CM should prefer, or at least fall back to, terrain.png from Minecraft Classic's minecraft.jar
 
 == Done ==
 * <strike>Make walking/running speeds configurable and create an entry in the configuration file allowing to adjust the movement speed.</strike>
