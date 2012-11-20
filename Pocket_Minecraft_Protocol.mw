@@ -814,6 +814,29 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col1 rightalign" colspan="4" | 11 Bytes + Name length
 |}
 
+=== LoginStatusPacket (0x83) ===
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Field Name
+| class="col1" | Field Type
+| class="col2" | Example
+| class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Minecraft ID
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0x83</code>
+| class="col3" |
+|- class="row2"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 5 Bytes
+|}
+
 === ReadyPacket (0x84) ===
 {| class="wikitable"
 |- class="row0"
@@ -821,7 +844,6 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col1" | Field Type
 | class="col2" | Example
 | class="col3" | Notes
-
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
