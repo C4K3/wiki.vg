@@ -444,10 +444,10 @@ This packet has a partial unknown structure
 | class="col2 centeralign" | <code>0x40</code>
 | class="col3" | Different Packet types
 |- class="row3"
-| class="col2 centeralign" | Lenght
+| class="col2 centeralign" | Length
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>128</code>
-| class="col3" | Lenght of following data * 8 (for example, if lenght is 16 this field will be 0x0080)
+| class="col3" | Length of following data * 8 (for example, if length is 16 this field will be 0x0080)
 |- class="row4"
 | class="col2 centeralign" | Data payload
 | class="col1 centeralign" | Lenght bytes
