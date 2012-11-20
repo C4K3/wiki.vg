@@ -40,7 +40,7 @@ A couple things for contributors:
 | FakeTruth, xoft
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Open source
-| {{no|1.2.5-1.4.4}}
+| {{yes|1.2.5-1.4.5}}
 | {{yes}}
 | {{yes|Anvil}}
 | {{yes}}
@@ -54,7 +54,7 @@ A couple things for contributors:
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{no|1.4.4}}
+| {{yes|1.4.5}}
 | {{yes}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
