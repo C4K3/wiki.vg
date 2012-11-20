@@ -22,25 +22,11 @@ A couple things for contributors:
 !style="width: 72px" | Scripting
 !style="width: 120px" | Development Status
 |-
-! [http://www.mc-server.org MCServer]
-| FakeTruth, xoft
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Open source
-| {{yes|1.4.4, 1.4.2, 1.3.2, 1.2.5}}
-| {{yes}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|Active}}
-|-
 ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{supportspre|1.4.4}}
+| {{yes|1.4.5}}
 | {{yes}}
 | {{yes|Anvil}}
 | {{yes}}
@@ -50,11 +36,25 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Active}}
 |-
+! [http://www.mc-server.org MCServer]
+| FakeTruth, xoft
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Open source
+| {{no|1.2.5-1.4.4}}
+| {{yes}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Threads}}
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| {{yes|Active}}
+|-
 ! [https://github.com/BizarreCake/hCraft/ hCraft]
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{supportspre|1.4.4}}
+| {{no|1.4.4}}
 | {{yes}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
@@ -68,7 +68,7 @@ A couple things for contributors:
 | Conrad Pankoff ([[User:deoxxa|deoxxa]])
 | [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{yes|1.4.2}}
+| {{no|1.4.2}}
 | {{yes}}
 | {{no}}
 | {{no}}
