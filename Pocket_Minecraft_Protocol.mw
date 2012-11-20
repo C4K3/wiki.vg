@@ -821,32 +821,21 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col1" | Field Type
 | class="col2" | Example
 | class="col3" | Notes
+
 |- class="row1"
-| class="col0 centeralign" | ID?
-| class="col1 centeralign" | 3 bytes
-| class="col2 centeralign" | <code>0x400010</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Number
-| class="col1 centeralign" | 3 bytes
-| class="col2 centeralign" | <code>0x010000</code>
-| class="col3" |
-|- class="row3"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0x84</code>
 | class="col3" |
-|- class="row4"
+|- class="row2"
 | class="col0 centeralign" | Byte
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0x01</code>
 | class="col3" |
-|- class="row5"
+|- class="row3"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 8 Bytes
+| class="col1 rightalign" colspan="4" | 2 Bytes
 |}
-
-This seems to be incorrect/incomplete. The amount of bytes noted varies between 16 and 54. (header included) (reference: https://dl.dropbox.com/u/35774053/html.zip)
 
 === SetTimePacket (0x86) ===
 {| class="wikitable"
