@@ -867,33 +867,23 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col2" | Example
 | class="col3" | Notes
 |- class="row1"
-| class="col0 centeralign" | ID?
-| class="col1 centeralign" | 3 bytes
-| class="col2 centeralign" | <code>0x400028</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Number
-| class="col1 centeralign" | 3 bytes
-| class="col2 centeralign" | <code>0x010000</code>
-| class="col3" |
-|- class="row3"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0x86</code>
 | class="col3" |
-|- class="row4"
+|- class="row2"
 | class="col0 centeralign" | Short
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>0x0000</code>
 | class="col3" |
-|- class="row5"
+|- class="row3"
 | class="col0 centeralign" | Short
 | class="col1 centeralign" | short
 | class="col2 centeralign" | <code>0x0100</code>
 | class="col3" |
-|- class="row6"
+|- class="row4"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 11 Bytes
+| class="col1 rightalign" colspan="4" | 5 Bytes
 |}
 
 === AddEntityPacket (0x8c) ===
