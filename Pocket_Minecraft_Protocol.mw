@@ -1404,22 +1404,22 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col0 centeralign" | Int
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | 
-| class="col3" |
+| class="col3" | Maybe Entity ID?
 |- class="row5"
 | class="col0 centeralign" | Short
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 
-| class="col3" |
+| class="col3" | Maybe X motion?
 |- class="row6"
 | class="col0 centeralign" | Short
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 
-| class="col3" |
+| class="col3" | Maybe Y motion?
 |- class="row7"
 | class="col0 centeralign" | Short
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 
-| class="col3" |
+| class="col3" | Maybe Z motion?
 |- class="row8"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 17 Bytes
