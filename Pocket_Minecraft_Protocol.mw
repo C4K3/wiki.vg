@@ -1425,6 +1425,28 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 | class="col1 rightalign" colspan="4" | 17 Bytes
 |}
 
+=== SetHealthPacket (0xa5) ===
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Field Name
+| class="col1" | Field Type
+| class="col2" | Example
+| class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Minecraft ID
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0xa5</code>
+| class="col3 centeralign" | 
+|- class="row2"
+| class="col0 centeralign" | Health
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0x14</code>
+| class="col3" |
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 Bytes
+|}
+
 == Packet Dumps ==
 Due to the lack of information about the protocol, packet dumps are welcome. You can also post here pcap files of Client <-> Server sessions
 
