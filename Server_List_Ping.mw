@@ -2,7 +2,7 @@ Minecraft supports querying the MOTD, player count, max players and server versi
 
 == Client -> Server ==
 
-The client initiates a TCP connection to the minecraft server on the standard port. Instead of doing auth and logging in (as detailed in [[Protocol Encryption]]), it sends the two byte sequence <code>FE 01</code>. This is a [[Protocol#Server_List_Ping_.280xFE.29|0xFE server list ping]] packet.
+The client initiates a TCP connection to the minecraft server on the standard port. Instead of doing auth and logging in (as detailed in [[Protocol Encryption]]), it sends the two byte sequence <code>FE 01</code>. This is a [[Protocol#Server_List_Ping_.280xFE.29|0xFE server list ping]] packet. If the second byte (the 0x01) is missing, the server waits about 1000ms then replies with the Server -> Client format used in 1.3 and earlier.
 
 == Server -> Client ==
 
