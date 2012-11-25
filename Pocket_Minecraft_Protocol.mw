@@ -724,7 +724,7 @@ Multiple Data Encapsulation packets could be present in one packet. If you want 
 | class="col3" |
 |- class="row6"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 Bytes + ? + Packet Data length
+| class="col1 rightalign" colspan="4" | 12 Bytes + Packet Data length
 |}
 
 
