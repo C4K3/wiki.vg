@@ -870,6 +870,58 @@ All the information in this list is based on the RakNet and Minecraft ID for eac
 |}
 † Packet exists but the Assembly shows no further code for it (Blank Packet?).
 
+=== ClientConnect (0x09) ===
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Field Name
+| class="col1" | Field Type
+| class="col2" | Example
+| class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Minecraft ID
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0x09</code>
+| class="col3" |
+|- class="row2"
+| class="col0 centeralign" | Client ID
+| class="col1 centeralign" | 8 bytes
+| class="col2 centeralign" | <code>0xffffffffb287d2a5</code>
+| class="col3" |
+|- class="row3"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | 5 bytes
+| class="col2 centeralign" | <code>0x0000000000</code>
+| class="col3" |
+|- class="row3"
+| class="col0 centeralign" | Session
+| class="col1 centeralign" | 4 bytes
+| class="col2 centeralign" | <code>0x000002fc</code>
+| class="col3" |
+|- class="row4"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 Bytes
+|}
+
+
+=== ClientDisconnect (0x15) ===
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Field Name
+| class="col1" | Field Type
+| class="col2" | Example
+| class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Minecraft ID
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0x15</code>
+| class="col3" |
+|- class="row2"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 1 byte
+|}
+
 === LoginPacket (0x82) ===
 
 {| class="wikitable"
