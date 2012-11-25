@@ -26,6 +26,14 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{LGPL}}
 | {{supports|Waiting for PHP version}}
 |-
+! [https://www.dropbox.com/s/xgkjso39ex7t23j/mcpe.lua Wireshark Dissector]
+| Wireshark Dissector
+| Dissector
+| [[Intyre]]
+| {{Lua}}
+| Unknown
+| {{yes|v0.5.0}}
+|-
 |}
 
 [[Category:Pocket Minecraft]]
