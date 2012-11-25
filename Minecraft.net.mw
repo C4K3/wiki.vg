@@ -1,3 +1,5 @@
+This page serves to document the various access mechanisms availible to the Minecraft web services.
+
  <nowiki>http://www.minecraft.net/haspaid.jsp?user=<USERNAME></nowiki>
 Used to check if an account is premium or not. Returns true if the username is a premium Minecraft account, returns false otherwise.
 
