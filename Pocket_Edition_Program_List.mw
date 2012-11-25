@@ -1,4 +1,4 @@
-List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools. Because of the lack of documentation, there aren't more.
+List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 
 {| class="wikitable sortable" style="width: auto; text-align: center;"
 |-style="background:#eee"
@@ -16,7 +16,7 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools. Because of
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
-| {{supports|In progress}}
+| {{supports|In progress [v0.5.0}}
 |-
 ! [https://github.com/shoghicp/Pocket-Minecraft-Python Pocket Minecraft Python]
 | Client / Server Minecraft Pocket Edition library written in Python.
