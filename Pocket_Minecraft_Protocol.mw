@@ -77,7 +77,7 @@ All packets start with a single byte that identifies the packet type, the rest o
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x02
+| class="col0 centeralign" rowspan="2" | 0x02
 | class="col1 centeralign" | Ping ID
 | class="col2 centeralign" | int64
 | class="col3 centeralign" | <code>0x00000000003c6d0d</code>
@@ -111,7 +111,7 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="4" | 0x05
+| class="col0 centeralign" rowspan="3" | 0x05
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
@@ -157,7 +157,7 @@ If the server doesnt't reply the client, the client will display a "Connect Erro
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x06
+| class="col0 centeralign" rowspan="4" | 0x06
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
@@ -202,7 +202,7 @@ Sent from server after it receives packet 0x05.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="6" | 0x07
+| class="col0 centeralign" rowspan="5" | 0x07
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
@@ -251,7 +251,7 @@ Sent from client in response to packet 0x06.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="6" | 0x08
+| class="col0 centeralign" rowspan="5" | 0x08
 | class="col1 centeralign" | MAGIC
 | class="col2 centeralign" | MAGIC
 | class="col3 centeralign" | 
@@ -300,7 +300,7 @@ Sent from server in response to packet 0x07.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="4" | 0x1A
+| class="col0 centeralign" rowspan="3" | 0x1A
 | class="col1 centeralign" | Protocol Version
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>5</code>
@@ -389,7 +389,7 @@ Minecraft Pocket Edition v0.5.0.0 introduced another identifier special for Mine
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="5" | 0x1D
+| class="col0 centeralign" rowspan="4" | 0x1D
 | class="col1 centeralign" | Ping ID
 | class="col2 centeralign" | int64
 | class="col3 centeralign" | <code>0x00000000003c6d0d</code>
@@ -433,7 +433,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x80
+| class="col0 centeralign" rowspan="2" | 0x80
 | class="col1 centeralign" | Count
 | class="col2 centeralign" | 3 bytes
 | class="col3 centeralign" | <code>0</code>
@@ -441,7 +441,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 |- class="row2"
 | class="col2 centeralign" | Data payload
 | class="col1 centeralign" |
-| class="col2 centeralign" | <code>0x40009000000009d9214556220cb5c90000000000000c9800</code>
+| class="col2 centeralign" | <code>0x40009000000009...</code>
 | class="col3" | Uses [[#Packet_Encapsulation|Packet Encapsulation format]]
 
 |- class="row3"
@@ -467,7 +467,7 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x84
+| class="col0 centeralign" rowspan="2" | 0x84
 | class="col1 centeralign" | Count
 | class="col2 centeralign" | 3 bytes
 | class="col3 centeralign" | <code>0</code>
@@ -475,7 +475,7 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 |- class="row2"
 | class="col2 centeralign" | Data payload
 | class="col1 centeralign" |
-| class="col2 centeralign" | <code>0x40009000000009d9214556220cb5c90000000000000c9800</code>
+| class="col2 centeralign" | <code>0x40009000000009...</code>
 | class="col3" | Uses [[#Packet_Encapsulation|Packet Encapsulation format]]
 
 |- class="row3"
@@ -503,7 +503,7 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x88
+| class="col0 centeralign" rowspan="2" | 0x88
 | class="col1 centeralign" | Count
 | class="col2 centeralign" | 3 bytes
 | class="col3 centeralign" | <code>0</code>
@@ -511,7 +511,7 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 |- class="row2"
 | class="col2 centeralign" | Data payload
 | class="col1 centeralign" |
-| class="col2 centeralign" | <code>0x40009000000009d9214556220cb5c90000000000000c9800</code>
+| class="col2 centeralign" | <code>0x40009000000009...</code>
 | class="col3" | Uses [[#Packet_Encapsulation|Packet Encapsulation format]]
 
 |- class="row3"
@@ -538,7 +538,7 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x8C
+| class="col0 centeralign" rowspan="2" | 0x8C
 | class="col1 centeralign" | Count
 | class="col2 centeralign" | 3 bytes
 | class="col3 centeralign" | <code>0</code>
@@ -546,7 +546,7 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 |- class="row2"
 | class="col2 centeralign" | Data payload
 | class="col1 centeralign" |
-| class="col2 centeralign" | <code>0x40009000000009d9214556220cb5c90000000000000c9800</code>
+| class="col2 centeralign" | <code>0x40009000000009...</code>
 | class="col3" | Uses [[#Packet_Encapsulation|Packet Encapsulation format]]
 
 |- class="row3"
@@ -559,7 +559,7 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 
 {{anchor|0xA0}}
 
-=== Unknown (0xA0) ===
+=== NACK (0xA0) ===
 
 ''Two-Way''
 
@@ -573,7 +573,7 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="2" | 0xA0
+| class="col0 centeralign" rowspan="1" | 0xA0
 | class="col1 centeralign" | Data
 | class="col2 centeralign" | 6 bytes
 | class="col3 centeralign" | <code>0x000101000000</code>
