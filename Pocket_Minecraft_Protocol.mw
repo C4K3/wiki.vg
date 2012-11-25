@@ -1,8 +1,5 @@
 Unlike the Minecraft protocol, this protocol uses UDP with (so far observed, at least) one message per packet. This makes the protocol easier to work with when it comes to packet serialization, and might offer latency improvements, but will inevitably have the usual UDP issues (packets lost, truncated, duplicated, out-of-order, etc.).
 
-Also check #mcpedevs on irc.freenode.net
-
-
 '''Servers listen on UDP port 19132.'''
 
 Clients don't pick any specific port to listen on.
