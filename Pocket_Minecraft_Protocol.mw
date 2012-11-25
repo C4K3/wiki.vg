@@ -49,7 +49,7 @@ It has been determined that PM uses RakNet for its networking library, [http://w
 ! class="col0 centeralign" | MAGIC
 | class="col1 centeralign" | 16
 | class="col2" | <code>0x00ffff00fefefefefdfdfdfd12345678</code>
-| class="col3" | always hex bytes <code>0x00ffff00fefefefefdfdfdfd12345678</code>, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
+| class="col3" | always those hex bytes, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
 |- class="row6"
 ! class="col0 centeralign" | string
 | class="col1 centeralign" | = 1
