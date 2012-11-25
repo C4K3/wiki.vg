@@ -72,7 +72,6 @@ As there is no longer any work being done on classic, the documentation for it i
 === Source Code Snippets ===
 Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
 * Deserializing the level.dat file format ([[deserialize.c|C]], [[deserialize.cs|C#]])
-* [[Skins.php]], a script to generate a preview image from a Minecraft skin file (PHP).
 * [[:Category:Code Snippets|More...]]
 
 === Tools and Mods ===
