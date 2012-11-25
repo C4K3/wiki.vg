@@ -16,7 +16,7 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
-| {{supports|In progress [v0.5.0}}
+| {{supports|In progress (v0.5.0)}}
 |-
 ! [https://github.com/shoghicp/Pocket-Minecraft-Python Pocket Minecraft Python]
 | Client / Server Minecraft Pocket Edition library written in Python.
