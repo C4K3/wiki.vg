@@ -633,7 +633,7 @@ The second packet number is optional and only there when bool is false.
 {{anchor|Packet_Encapsulation}}
 
 == Packet Encapsulation format ==
-The payload in 0x80, 0x84, 0x88, 0x8c packets is incoded using different schemes.
+The payload in 0x80, 0x84, 0x88, 0x8c packets is encoded using different schemes.
 To decode them, you've to use the Encapsulation ID to check wich type you should use.
 The Encapsulation ID is the first byte of the payload.
 
