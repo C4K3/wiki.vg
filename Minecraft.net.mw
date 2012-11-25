@@ -1,15 +1,14 @@
 This page serves to document the various access mechanisms availible to the Minecraft web services.
 
  <nowiki>http://www.minecraft.net/haspaid.jsp?user=<USERNAME></nowiki>
-Used to check if an account is premium or not. Returns true if the username is a premium Minecraft account, returns false otherwise.
-
+Used to check if an account is premium or not. Returns true if the username is a premium Minecraft account, returns false otherwise. This should be used with caution as it has been slated for removal by Mojang.
 
  <nowiki>http://session.minecraft.net/game/getversion.jsp?user=<USERNAME>&password=<PASSWORD>&version=12
 OR
 http://login.minecraft.net/?user=<USERNAME>&password=<PASSWORD>&version=12
 OR
 https://login.minecraft.net/?user=<USERNAME>&password=<PASSWORD>&version=12</nowiki>
-The Minecraft launcher uses this to authenticate logins. If the username and password are valid for a premium account, returns "<[[wikipedia:Unix time|POSIX]] time>:<hash of password???>:<username with correct capitalization>:<freshly generated session id>:<UID (Presently unused)>". If username and password are invalid, returns "Bad login". If the username and password are correct, but the account isn't premium, returns "User not premium". If the given version number is less than 12, returns "Old version". The username is not case-sensitive, but naturally, the password is.
+The Minecraft launcher uses this to authenticate logins. If the username and password are valid for a premium account, returns "<[[wikipedia:Unix time|POSIX]] time>:<hash of password???>:<username with correct capitalization>:<freshly generated session id>:<UID (Presently unused)>". If username and password are invalid, returns "Bad login". If the username and password are correct, but the account isn't premium, returns "User not premium". If the given version number is less than 12, returns "Old version". The username is not case-sensitive, but naturally, the password is. Both GET and POST methods are supported.
 
 
  <nowiki>http://session.minecraft.net/game/joinserver.jsp?user=<USERNAME>&sessionId=<SESSION ID></nowiki>
@@ -17,18 +16,17 @@ This link seems to be called when a server with online-mode=true checks if it sh
 
 
  <nowiki>http://skins.minecraft.net/MinecraftSkins/<USERNAME>.png</nowiki>
-Returns the skin for a given username. Case-sensitive, returns an XML access denied page if the skin doesn't exist.
+Returns the skin for a given username. Case-sensitive, returns an HTTP 404 error if the skin doesn't exist.
 
  <nowiki>http://skins.minecraft.net/MinecraftCloaks/<USERNAME>.png</nowiki>
-Returns the skin for a given username. Case-sensitive, returns an XML access denied page if the skin doesn't exist.
+Returns the skin for a given username. Case-sensitive, returns an HTTP 404 error if the user does not have a cape.
 
 
  <nowiki>http://www.minecraft.net/heartbeat.jsp?port=27015&users=0&max=0&name=blah&public=false&version=7&salt=1234123412341234</nowiki>
-I think this is used to create the classic server list. I have no idea how all the parameters work (which is why I didn't change them from what I found on the Google page), though some of them you could figure out. Returns a link to a classic server page (have not investigated the effects of the params on the link fully)
-
+This is used to create the classic server list. It is documented properly on [[Classid Protocol]]
 
  <nowiki>http://launch.minecraft.net/test.html</nowiki>
-A test page that Mojang asked people to use as they worked on a new launcher for Minecraft. Runs a few processes in the bwoser, then starts a new version of the launcher, which will be downloaded to /.minecraft/launcher as launcher.jar (only known difference between this launcher and the normal one - this launcher has the new logo)
+A test page that Mojang asked people to use as they worked on a new launcher for Minecraft. Runs a few processes in the browser, then starts a new version of the launcher, which will be downloaded to /.minecraft/launcher as launcher.jar (only known difference between this launcher and the normal one - this launcher has the new logo)
 
 
  <nowiki>http://launch.minecraft.net/join.html?serverip=<SERVER IP></nowiki>
