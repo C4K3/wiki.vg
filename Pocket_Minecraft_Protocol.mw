@@ -1051,69 +1051,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 5 Bytes
 |}
 
-=== AddEntityPacket (0x8c) ===
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Bytes
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Integer
-| class="col1 centeralign" | integer
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Bytes
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row7"
-| class="col0 centeralign" | Integer
-| class="col1 centeralign" | integer
-| class="col2 centeralign" | 
-| class="col3" centeralign" | World?
-|- class="row8"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" centeralign" | Motion?
-|- class="row9"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
-| class="col2" |
-| class="col3" centeralign" | Motion?
-|- class="row10"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
-| class="col2" |
-| class="col3" centeralign" | Motion?
-|- class="row11"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | ? Bytes
-|}
-
-=== AddItemEntityPacket (0x8e) ===
+=== AddEntityPacket (0x8C) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1123,7 +1061,74 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x8e</code>
+| class="col2 centeralign" | <code>0x8C</code>
+| class="col3 centeralign" |
+|- class="row2"
+| class="col0 centeralign" | Bytes
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 
+| class="col3 centeralign" | 
+|- class="row3"
+| class="col0 centeralign" | Integer
+| class="col1 centeralign" | integer
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row4"
+| class="col0 centeralign" | Bytes
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row5"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row6"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row7"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row8"
+| class="col0 centeralign" | Integer
+| class="col1 centeralign" | integer
+| class="col2 centeralign" | 
+| class="col3" centeralign" | World?
+|- class="row9"
+| class="col0 centeralign" | Short
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 
+| class="col3" centeralign" | Motion?
+|- class="row10"
+| class="col0 centeralign" | Short
+| class="col1 centeralign" | short
+| class="col2" |
+| class="col3" centeralign" | Motion?
+|- class="row11"
+| class="col0 centeralign" | Short
+| class="col1 centeralign" | short
+| class="col2" |
+| class="col3" centeralign" | Motion?
+|- class="row12"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | ? Bytes
+|}
+
+=== AddItemEntityPacket (0x8E) ===
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Field Name
+| class="col1" | Field Type
+| class="col2" | Example
+| class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Minecraft ID
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0x8E</code>
 | class="col3 centeralign" | 
 |- class="row2"
 | class="col0 centeralign" | Entity ID?
@@ -1180,7 +1185,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 25 Bytes
 |}
 
-=== TakeItemEntityPacket (0x8f) ===
+=== TakeItemEntityPacket (0x8F) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1190,7 +1195,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x8f</code>
+| class="col2 centeralign" | <code>0x8F</code>
 | class="col3 centeralign" | 
 |- class="row2"
 | class="col0 centeralign" | Collector Entity ID?
@@ -1214,23 +1219,13 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1" | Field Type
 | class="col2" | Example
 | class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | ID?
-| class="col1 centeralign" | 3 bytes
-| class="col2 centeralign" | <code>0x4000c8</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Number
-| class="col1 centeralign" | 3 bytes
-| class="col2 centeralign" | <code>0x010000</code>
-| class="col3" |
 |- class="row3"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0x93</code>
 | class="col3" |
 |- class="row4"
-| class="col0 centeralign" | Entity ID?
+| class="col0 centeralign" | Entity ID
 | class="col1 centeralign" | 3 bytes
 | class="col2 centeralign" | <code>0x0000</code>
 | class="col3" |
@@ -1276,23 +1271,13 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1" | Field Type
 | class="col2" | Example
 | class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | ID?
-| class="col1 centeralign" | 3 bytes
-| class="col2 centeralign" | <code>0x4000c8</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Number
-| class="col1 centeralign" | 3 bytes
-| class="col2 centeralign" | <code>0x010000</code>
-| class="col3" |
 |- class="row3"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0x94</code>
 | class="col3" |
 |- class="row4"
-| class="col0 centeralign" | Int
+| class="col0 centeralign" | Entity ID
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | 
 | class="col3" |
@@ -1420,7 +1405,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 14 Bytes
 |}
 
-=== TileEventPacket (0x9b) ===
+=== TileEventPacket (0x9B) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1430,7 +1415,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9b</code>
+| class="col2 centeralign" | <code>0x9B</code>
 | class="col3" |
 |- class="row2"
 | class="col0 centeralign" | Int
@@ -1462,7 +1447,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 21 Bytes
 |}
 
-=== EntityEventPacket (0x9c) ===
+=== EntityEventPacket (0x9C) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1472,7 +1457,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9c</code>
+| class="col2 centeralign" | <code>0x9C</code>
 | class="col3" |
 |- class="row2"
 | class="col0 centeralign" | Int
@@ -1489,7 +1474,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 9 Bytes
 |}
 
-=== RequestChunkPacket (0x9d) ===
+=== RequestChunkPacket (0x9D) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1499,7 +1484,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9d</code>
+| class="col2 centeralign" | <code>0x9D</code>
 | class="col3" |
 |- class="row2"
 | class="col0 centeralign" | X
@@ -1516,7 +1501,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 9 Bytes
 |}
 
-=== ChunkDataPacket (0x9e) ===
+=== ChunkDataPacket (0x9E) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1526,7 +1511,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9e</code>
+| class="col2 centeralign" | <code>0x9E</code>
 | class="col3" |
 |- class="row2"
 | class="col0 centeralign" | Int
@@ -1543,7 +1528,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 9 Bytes
 |}
 
-=== SetEntityMotionPacket (0xa3) ===
+=== SetEntityMotionPacket (0xA3) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1551,46 +1536,51 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col2" | Example
 | class="col3" | Notes
 |- class="row1"
+| class="col0 centeralign" | Minecraft ID
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0xA3</code>
+| class="col3" |
+|- class="row2"
 | class="col0 centeralign" | ID?
 | class="col1 centeralign" | 3 bytes
 | class="col2 centeralign" | <code>0x400058</code>
 | class="col3 centeralign" | 
-|- class="row2"
+|- class="row3"
 | class="col0 centeralign" | Number
 | class="col1 centeralign" | 3 bytes
 | class="col2 centeralign" | <code>0x010000</code>
 | class="col3" |
-|- class="row3"
+|- class="row4"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>0xa3</code>
 | class="col3" |
-|- class="row4"
+|- class="row5"
 | class="col0 centeralign" | Entity ID?
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | 
 | class="col3" |
-|- class="row5"
+|- class="row6"
 | class="col0 centeralign" | X Motion
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 
 | class="col3" |
-|- class="row6"
+|- class="row7"
 | class="col0 centeralign" | Y Motion
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 
 | class="col3" |
-|- class="row7"
+|- class="row8"
 | class="col0 centeralign" | Z Motion
 | class="col1 centeralign" | short
 | class="col2 centeralign" | 
 | class="col3" |
-|- class="row8"
+|- class="row9"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 17 Bytes
 |}
 
-=== SetHealthPacket (0xa5) ===
+=== SetHealthPacket (0xA5) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1600,7 +1590,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0xa5</code>
+| class="col2 centeralign" | <code>0xA5</code>
 | class="col3 centeralign" | 
 |- class="row2"
 | class="col0 centeralign" | Health
