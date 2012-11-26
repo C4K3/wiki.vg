@@ -41,6 +41,14 @@ The recommended login sequence looks like this, where C is the client and S is t
 After sending the common-sense packets ([[protocol#handshake_0x02|Handshake]], [[protocol#login_request_0x01|Login]], [[protocol#player_inventory_0x05|Inventory]], [[protocol#spawn_position_0x06|Compass]] and [[protocol#pre-chunk_0x32|Pre-chunk]]/[[protocol#map_chunk_0x33|Chunk]] pairs) you need to finally send the player their [[protocol#player_position_look_0x0d|initial position]] for them to leave the "Loading Map" screen.
 </blockquote>
 
+'''Note that if the following steps are taken, a Minecraft client will spawn the player:'''
+
+1) Do Handshake (See [[Protocol_Encryption|Protocol Encryption]])<br />
+2) Send [[protocol#spawn_position_0x06|Spawn Position]] PDU<br />
+3) Send [[protocol#player_position_look_0x0d|Player Position and Look]] PDU<br />
+
+While the above steps are sufficient for Minecraft 1.4.5, it is good form to send PDUs that inform the client about the world around the player before allowing the player to spawn.
+
 ====…my client isn't receiving complete map chunks!====
 ''Main article: [[How to Write a Client]]''
 <blockquote>
