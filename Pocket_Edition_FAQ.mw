@@ -1,0 +1,21 @@
+
+== Normal Login Sequence ==
+ C = Client
+ S = Server
+ B = Broadcast
+
+=== Server searching ===
+#'''C->B''' 0x02 ID_UNCONNECTED_PING_OPEN_CONNECTIONS
+#'''S->C''' 0x1c ID_UNCONNECTED_PONG
+=== Connecting a server ===
+#'''C->S''' 0x05 ID_OPEN_CONNECTION_REQUEST_1 (different packet sizes until a correct response is sent)
+#'''S->C''' 0x06 ID_OPEN_CONNECTION_REPLY_1
+#'''C->S''' 0x07 ID_OPEN_CONNECTION_REQUEST_2
+#'''S->C''' 0x08 ID_OPEN_CONNECTION_REPLY_2
+#'''C->S''' 0x09 DATA ClientConnect
+#'''S->C''' 0x10 DATA
+#'''C->S''' 0x13 DATA
+#'''C->S''' 0x82 DATA Login (send username)
+
+
+[[Category:Pocket Minecraft]]
