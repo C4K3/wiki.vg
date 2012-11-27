@@ -1021,7 +1021,8 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 2 Bytes
 |}
 
-=== SetTimePacket (0x86) ===
+
+=== StartGamePacket (0x87) ===
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1031,22 +1032,48 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row1"
 | class="col0 centeralign" | Minecraft ID
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x86</code>
+| class="col2 centeralign" | <code>0x87</code>
 | class="col3" |
 |- class="row2"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>0x0000</code>
+| class="col0 centeralign" | Seed
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | <code>0x00000194</code>
 | class="col3" |
 |- class="row3"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>0x0100</code>
+| class="col0 centeralign" | Spawn X?
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | <code>0x00000000</code>
 | class="col3" |
 |- class="row4"
+| class="col0 centeralign" | Spawn Y?
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | <code>0x00000000</code>
+| class="col3" |
+|- class="row5"
+| class="col0 centeralign" | Spawn Z?
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | <code>0x00000017</code>
+| class="col3" |
+|- class="row6"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | float
+| class="col2 centeralign" | <code>0x43008000</code>
+| class="col3" |
+|- class="row7"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | float
+| class="col2 centeralign" | <code>0x42820000</code>
+| class="col3" |
+|- class="row8"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | float
+| class="col2 centeralign" | <code>0x43008000</code>
+| class="col3" |
+|- class="row9"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 5 Bytes
+| class="col1 rightalign" colspan="4" | 29 Bytes
 |}
+
 
 === AddEntityPacket (0x8C) ===
 {| class="wikitable"
