@@ -4,7 +4,7 @@ As of 12w17a, minecraft implements SSL-like encryption.
 
 #Client connects to server
 #'''C->S''' 0x02 handshake
-#'''S->C''' 0xFD encryption request - server sends its public key and 4 random bytes
+#'''S->C''' 0xFD encryption request - server sends its server id string, public key, and 4 random bytes
 #Client generates symmetric key (shared secret)
 #Client authenticates via session.minecraft.net
 #Client encrypts these 4 bytes with the servers public key.
@@ -54,9 +54,9 @@ Both server and client need to make a request to session.minecraft.net if the se
 After generating the shared secret, the client generates the following hash:
 
  sha1 := Sha1()
- sha1.update(ASCII encoding of the serverId string from 0xFC) 
+ sha1.update(ASCII encoding of the server id string from 0xFD) 
  sha1.update(shared secret) 
- sha1.update(server's encoded public key from 0xFC) 
+ sha1.update(server's encoded public key from 0xFD) 
  hash := sha1.hexdigest()  # String of hex characters
 
 [[File:Icon_exclaim.gif|:!:]] Note that the Sha1.hexdigest() method used by minecraft removes leading zeros and uses the two's-complement of negative numbers prefixed with a minus sign:
