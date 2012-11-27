@@ -45,8 +45,6 @@ On receipt of a 0xFD from the server, the client will generate a 16-byte shared 
 
 The server decrypts the shared secret and token using its private key, and checks if the token is the same. It then sends a 0xFC to the client with an empty payload, and enables  AES/CFB8 encryption. For the Initial Vector (IV) and AES setup, both sides use the secret key. Similarly, the client will also enable encryption upon receipt of the empty 0xFC. From this point forward, everything is encrypted.
 
-This the C# implementation of the AES/CFB8 encryption, https://gist.github.com/3249875
-
 == Authentication ==
 
 Both server and client need to make a request to session.minecraft.net if the server is in online-mode.
@@ -83,10 +81,6 @@ If the response is '''YES''' then the client is authenticated and allowed to joi
 Examples of generating Java-style hex digests:
 
 * C#: https://gist.github.com/404223052379e82f91e6
-
-Example of AES/CFB8 Stream encryption:
-
-* C#: https://gist.github.com/3249875
 
 == Additional Links ==
 [https://gist.github.com/3900517 Encrypt shared secret using OpenSSL]
