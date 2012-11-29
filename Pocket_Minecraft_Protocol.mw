@@ -1572,7 +1572,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row3"
 | class="col0 centeralign" | Block/Item ID
 | class="col1 centeralign" | bytes
-| class="col2 centeralign" | 0x0144
+| class="col2 centeralign" | 0x0144 or 0x002e
 | class="col3" | See below
 |- class="row4"
 | class="col0 centeralign" | Block/Item data
@@ -1583,8 +1583,9 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 15 Bytes
 |}
-If the item in hand is a block then the block ID will be 1 byte, if the item in hand is an item, it'll have two bytes.
-The data ID is what helps set one type of block with the same ID as others apart. Leaves, wood and slabs are all blocks that use this field.
+If the item in hand is a block then the block ID will be one byte, if the item in hand is an item, it'll have two bytes.
+The data ID is what helps set one type of block with the same ID as others apart. Leaves, wood and slabs are examples of blocks that use the data field.
+
 === SetEntityMotionPacket (0xA3) ===
 {| class="wikitable"
 |- class="row0"
