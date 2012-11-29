@@ -1552,6 +1552,39 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col1 rightalign" colspan="4" | 9 Bytes
 |}
 
+=== PlayerEquipmentPacket (0x9F) ===
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Field Name
+| class="col1" | Field Type
+| class="col2" | Example
+| class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Minecraft ID
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code>0x9F</code>
+| class="col3" |
+|- class="row2"
+| class="col0 centeralign" | Unknown
+| class="col1 centeralign" | bytes
+| class="col2 centeralign" | 0x0e7993
+| class="col3" |
+|- class="row3"
+| class="col0 centeralign" | Block/Item ID
+| class="col1 centeralign" | bytes
+| class="col2 centeralign" | 0x0144
+| class="col3" | See below
+|- class="row4"
+| class="col0 centeralign" | Block/Item data
+| class="col1 centeralign" | bytes
+| class="col2 centeralign" | 0x0001
+| class="col3" | See below
+|- class="row5"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 15 Bytes
+|}
+If the item in hand is a block then the block ID will be 1 byte, if the item in hand is an item, it'll have two bytes.
+The data ID is what helps set one type of block with the same ID as others apart. Leaves, wood and slabs are all blocks that use this field.
 === SetEntityMotionPacket (0xA3) ===
 {| class="wikitable"
 |- class="row0"
