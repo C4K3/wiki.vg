@@ -405,9 +405,8 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 
 ==== Villager ====
-
-* Index '''16''' (int): Unknown, example: 0
-
+* Index '''12''' (int): Same as index 12 of Animals, except that when the baby villager becomes a parent, no countdown starts.
+* Index '''16''' (int): Profession of villager, as according to [http://www.minecraftwiki.net/wiki/Villager#Professions this].
 
 ==== Iron Golem ====
 
