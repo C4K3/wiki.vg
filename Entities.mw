@@ -96,6 +96,10 @@ All mobs, objects and players send metadata with index <code>0</code>. The value
 | class="col0" | 4
 | class="col1" | 0x10
 | class="col2" | Eating/Drinking/Blocking (any right click action?)
+|- class="row5"
+| class="col0" | 5
+| class="col1" | 0x20
+| class="col2" | Invisible
 |}
 
 === Index 1, short: Drowning counter ===
