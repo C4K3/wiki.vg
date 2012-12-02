@@ -4,7 +4,6 @@ This is a rather incomplete list of Minecraft Modern servers currently in develo
 A couple things for contributors:
 * If you haven't committed to your repository in a few months, it will be marked as on hiatus. Don't take it personally; just write more code and update the wiki.
 * Wiki editors rely on README files to gather server features. If you don't have one, you run the risk that they will read your source code to discern what your server can do. This might not be what you wanted. >:3
-* Yes, the "Networking" column really does ask the question, "Can your server actually talk to clients?" This is just a litmus test. If your server can't do it, then consider whether it's ready for this page.<br style="clear:both;" />
 
 {| class="wikitable sortable" style="width: auto; text-align: center;"
 |-style="background:#eee"
@@ -13,7 +12,6 @@ A couple things for contributors:
 !style="min-width: 72px" | Language
 !style="min-width: 72px" | License
 !style="width: 72px" | Last Version Supported
-!style="width: 72px" | Networking
 !style="width: 72px" | World Formats
 !style="width: 72px" | Multiworld
 !style="width: 72px" | Physics
@@ -27,7 +25,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
 | {{yes|1.4.5}}
-| {{yes}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -41,7 +38,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Open source
 | {{yes|1.2.5-1.4.5}}
-| {{yes}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -55,7 +51,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
 | {{yes|1.4.5}}
-| {{yes}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
 | {{planned}}
@@ -69,7 +64,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
 | {{no|1.4.2}}
-| {{yes}}
 | {{no}}
 | {{no}}
 | {{no}}
@@ -83,7 +77,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Javascript JavaScript(Node.js)]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
 | {{no|12w42b}}
-| {{yes}}
 | {{yes|Custom}}
 | {{planned}}
 | {{no}}
@@ -97,7 +90,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Erlang Erlang]
 | not decided yet
 | {{no|1.3.2}}
-| {{yes}}
 | {{planned|custom (Mnesia)}}
 | {{no}}
 | {{no}}
@@ -111,7 +103,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
 | {{no|1.3.2}}
-| {{yes}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -124,8 +115,7 @@ A couple things for contributors:
 | [http://spout.org/team/ SpoutDev] (fork of Glowstone)
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://spout.org/SpoutDevLicenseV1.txt SpoutDev v1]
-| {{yes|1.4.4}}
-| {{yes}}
+| {{yes|1.4.5}}
 | {{yes|Custom<br />(Converters planned)}}
 | {{yes}}
 | {{planned|Partial}}
@@ -139,7 +129,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Realbasic Realbasic]
 | Closed source
 | {{no|1.3.2}}
-| {{yes}}
 | {{yes|Custom<br />(Converters planned)}}
 | {{yes}}
 | {{planned}}
@@ -153,7 +142,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
 | {{no|1.3.2}}
-| {{yes}}
 | {{yes|Anvil (read access)}}
 | {{planned}}
 | {{planned}}
@@ -167,7 +155,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
 | {{no|Beta 1.9 Pre 6}}
-| {{yes}}
 | {{yes|Alpha, Beta}}
 | {{yes}}
 | {{yes}}
@@ -181,7 +168,6 @@ A couple things for contributors:
 | C++0x
 | [https://github.com/louisdx/schlagwetter/blob/master/COPYING Custom]
 | {{no|Beta 1.6}}
-| {{yes}}
 | {{planned|n/a}}
 | {{no}}
 | {{planned}}
@@ -195,7 +181,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
 | {{no|Beta 1.4}}
-| {{yes}}
 | {{yes|Alpha, Beta: WIP}}
 | {{no}}
 | {{planned}}
@@ -209,7 +194,6 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
 | {{no|Unknown}}
-| {{yes}}
 | {{planned}}
 | {{planned}}
 | {{planned}}
