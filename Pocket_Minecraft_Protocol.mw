@@ -992,7 +992,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row2"
 | class="col0 centeralign" | Status
 | class="col1 centeralign" | int32
-| class="col2 centeralign" | 0x00000000
+| class="col2 centeralign" | <code>0x00000000</code>
 | class="col3" |
 |- class="row3"
 | class="col0" | Total Size:
