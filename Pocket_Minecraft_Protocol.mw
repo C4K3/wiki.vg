@@ -1040,17 +1040,17 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col2 centeralign" | <code>0x00000194</code>
 | class="col3" |
 |- class="row3"
-| class="col0 centeralign" | Spawn X?
+| class="col0 centeralign" | Unknown
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | <code>0x00000000</code>
 | class="col3" |
 |- class="row4"
-| class="col0 centeralign" | Spawn Y?
+| class="col0 centeralign" | Gamemode
 | class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x00000000</code>
+| class="col2 centeralign" | <code>0x00000001</code>
 | class="col3" |
 |- class="row5"
-| class="col0 centeralign" | Spawn Z?
+| class="col0 centeralign" | Unknown
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | <code>0x00000017</code>
 | class="col3" |
@@ -1073,7 +1073,6 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 29 Bytes
 |}
-
 
 === AddEntityPacket (0x8C) ===
 {| class="wikitable"
