@@ -8,6 +8,7 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 !Author(s)
 !Language
 !License
+!Status
 !Last Version Supported
 |-
 ! [https://github.com/shoghicp/Pocket-Minecraft-PHP Pocket Minecraft PHP]
@@ -16,6 +17,7 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
+| Spawns player in map
 | {{yes|v0.5.0}}
 |-
 ! [https://github.com/shoghicp/Pocket-Minecraft-Python Pocket Minecraft Python]
@@ -24,7 +26,8 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | [https://twitter.com/shoghicp shoghicp]
 | {{Python}}
 | {{LGPL}}
-| {{no|Waiting for PHP version}}
+| Waiting for PHP version
+| {{no}}
 |-
 |}
 
