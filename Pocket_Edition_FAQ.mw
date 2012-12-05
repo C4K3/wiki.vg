@@ -15,8 +15,10 @@
 #'''C->S''' 0x09 DATA ClientConnect
 #'''S->C''' 0x10 DATA
 #'''C->S''' 0x13 DATA
-#'''C->S''' 0x82 DATA Login (send username)
-#?
-
+#'''C->S''' 0x82 DATA Login (sends username)
+#'''S->C''' 0x83 DATA LoginStatus
+#'''S->C''' 0x87 DATA StartGame (send seed and spawn position)
+#'''C''' Generates base map with seed
+#'''C->S''' 0x84 DATA Ready (client spawns)
 
 [[Category:Pocket Minecraft]]
