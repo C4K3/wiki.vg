@@ -5,21 +5,21 @@
  B = Broadcast
 
 === Server searching ===
-#'''C->B''' 0x02 ID_UNCONNECTED_PING_OPEN_CONNECTIONS
-#'''S->C''' 0x1C ID_UNCONNECTED_PONG
+#'''C->B''' <code>0x02</code> ID_UNCONNECTED_PING_OPEN_CONNECTIONS
+#'''S->C''' <code>0x1C</code> ID_UNCONNECTED_PONG
 
 === Connecting a server ===
-#'''C->S''' 0x05 ID_OPEN_CONNECTION_REQUEST_1 (different packet sizes until a correct response is sent)
-#'''S->C''' 0x06 ID_OPEN_CONNECTION_REPLY_1
-#'''C->S''' 0x07 ID_OPEN_CONNECTION_REQUEST_2
-#'''S->C''' 0x08 ID_OPEN_CONNECTION_REPLY_2
-#'''C->S''' 0x09 DATA ClientConnect
-#'''S->C''' 0x10 DATA
-#'''C->S''' 0x13 DATA
-#'''C->S''' 0x82 DATA Login (sends username)
-#'''S->C''' 0x83 DATA LoginStatus
-#'''S->C''' 0x87 DATA StartGame (send seed and spawn position)
-#'''C''' Generates base map with seed
-#'''C->S''' 0x84 DATA Ready (client spawns)
+#'''C->S''' <code>0x05</code> ID_OPEN_CONNECTION_REQUEST_1 (different packet sizes until a correct response is sent)
+#'''S->C''' <code>0x06</code> ID_OPEN_CONNECTION_REPLY_1
+#'''C->S''' <code>0x07</code> ID_OPEN_CONNECTION_REQUEST_2
+#'''S->C''' <code>0x08</code> ID_OPEN_CONNECTION_REPLY_2
+#'''C->S''' <code>0x09</code> DATA ClientConnect
+#'''S->C''' <code>0x10</code> DATA ServerHandshake
+#'''C->S''' <code>0x13</code> DATA ClientHandshake
+#'''C->S''' <code>0x82</code> DATA Login (sends username)
+#'''S->C''' <code>0x83</code> DATA LoginStatus
+#'''S->C''' <code>0x87</code> DATA StartGame (send seed and spawn position)
+#'''C''' ''Generates base map with seed''
+#'''C->S''' <code>0x84</code> DATA Ready (client spawns)
 
 [[Category:Pocket Minecraft]]
