@@ -1064,7 +1064,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col2 centeralign" | <code>0x00000001</code>
 | class="col3" |
 |- class="row5"
-| class="col0 centeralign" | Unknown
+| class="col0 centeralign" | Entity ID
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | <code>0x00000017</code>
 | class="col3" |
