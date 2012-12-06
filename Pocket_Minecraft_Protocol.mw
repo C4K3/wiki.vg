@@ -887,6 +887,8 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 † Packet exists but the Assembly shows no further code for it (Blank Packet?).
 
 === ClientConnect (0x09) ===
+''Client to Server''
+
 
 {| class="wikitable"
 |- class="row0"
@@ -921,6 +923,8 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 
 
 === ClientDisconnect (0x15) ===
+''Client to Server''
+
 
 {| class="wikitable"
 |- class="row0"
@@ -939,6 +943,8 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |}
 
 === LoginPacket (0x82) ===
+''Client to Server''
+
 
 {| class="wikitable"
 |- class="row0"
@@ -977,6 +983,8 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |}
 
 === LoginStatusPacket (0x83) ===
+''Server to Client''
+
 
 {| class="wikitable"
 |- class="row0"
@@ -1000,6 +1008,9 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |}
 
 === ReadyPacket (0x84) ===
+''Client to Server''
+
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1023,6 +1034,9 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 
 
 === StartGamePacket (0x87) ===
+''Server to Client''
+
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1075,6 +1089,9 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |}
 
 === AddEntityPacket (0x8C) ===
+''Server to Client''
+
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1142,6 +1159,9 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |}
 
 === AddItemEntityPacket (0x8E) ===
+''Server to Client''
+
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
@@ -1498,6 +1518,9 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |}
 
 === RequestChunkPacket (0x9D) ===
+''Client to Server''
+
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Field Name
