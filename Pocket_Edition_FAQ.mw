@@ -6,7 +6,8 @@
 
 === Server searching ===
 #'''C->B''' 0x02 ID_UNCONNECTED_PING_OPEN_CONNECTIONS
-#'''S->C''' 0x1c ID_UNCONNECTED_PONG
+#'''S->C''' 0x1C ID_UNCONNECTED_PONG
+
 === Connecting a server ===
 #'''C->S''' 0x05 ID_OPEN_CONNECTION_REQUEST_1 (different packet sizes until a correct response is sent)
 #'''S->C''' 0x06 ID_OPEN_CONNECTION_REPLY_1
