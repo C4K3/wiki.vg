@@ -1594,12 +1594,12 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 |- class="row3"
 | class="col0 centeralign" | Block/Item ID
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 0x0144
+| class="col2 centeralign" | <code>0x0144</code>
 | class="col3" |
 |- class="row4"
 | class="col0 centeralign" | Block/Item metadata
 | class="col1 centeralign" | short
-| class="col2 centeralign" | 0x0001
+| class="col2 centeralign" | <code>0x0001</code>
 | class="col3" | See below
 |- class="row5"
 | class="col0" | Total Size:
