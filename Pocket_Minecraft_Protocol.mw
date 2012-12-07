@@ -1424,12 +1424,12 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col2 centeralign" | <code>0x96</code>
 | class="col3 centeralign" | 
 |- class="row2"
-| class="col0 centeralign" | X
+| class="col0 centeralign" | Entity ID
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | 
 | class="col3" |
 |- class="row3"
-| class="col0 centeralign" | Y
+| class="col0 centeralign" | X
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | 
 | class="col3" |
@@ -1439,9 +1439,9 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col2 centeralign" | 
 | class="col3" |
 |- class="row5"
-| class="col0 centeralign" | Byte
+| class="col0 centeralign" | Y
 | class="col1 centeralign" | byte
-| class="col2 centeralign" | Face?
+| class="col2 centeralign" | 
 | class="col3" |
 |- class="row6"
 | class="col0" | Total Size:
