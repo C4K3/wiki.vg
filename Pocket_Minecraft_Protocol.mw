@@ -1269,7 +1269,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col3" |
 |- class="row4"
 | class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | 4 bytes
+| class="col1 centeralign" | int32
 | class="col2 centeralign" | <code>0x0000</code>
 | class="col3" |
 |- class="row5"
