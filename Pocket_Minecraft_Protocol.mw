@@ -1269,7 +1269,7 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col3" |
 |- class="row4"
 | class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | 3 bytes
+| class="col1 centeralign" | 4 bytes
 | class="col2 centeralign" | <code>0x0000</code>
 | class="col3" |
 |- class="row5"
@@ -1288,23 +1288,18 @@ All packets are found by using the tutorial posted by Jocopa3 found [http://www.
 | class="col2 centeralign" |
 | class="col3" |
 |- class="row8"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
+| class="col0 centeralign" | Yaw
+| class="col1 centeralign" | float
 | class="col2 centeralign" |
 | class="col3" |
 |- class="row9"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
+| class="col0 centeralign" | Pitch
+| class="col1 centeralign" | float
 | class="col2 centeralign" |
 | class="col3" |
 |- class="row10"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row11"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 30 Bytes
+| class="col1 rightalign" colspan="4" | 25 Bytes
 |}
 
 === MovePlayerPacket (0x94) ===
