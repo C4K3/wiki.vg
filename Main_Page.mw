@@ -71,7 +71,7 @@ As there is no longer any work being done on classic, the documentation for it i
 
 === Source Code Snippets ===
 Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
-* Deserializing the level.dat file format ([[deserialize.c|C]], [[deserialize.cs|C#]])
+* Deserializing the level.dat file format ([[deserialize.c|C]], [https://gist.github.com/324122945a569a513bae C#])
 * [[:Category:Code Snippets|More...]]
 
 === Tools and Mods ===
