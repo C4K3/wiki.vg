@@ -108,7 +108,7 @@ The NBT file format is extremely simple, and writing a library capable of readin
 
 
 There are five simple things to remember:
-* '''Everything''' is in big-endian. Unless you're using Java, you will most likely have to swap it to little-endian. See [[wikipedia:Endianness|the Wikipedia article on Endianness]].
+* '''Everything''' is in big-endian in the PC version, but Pocket Version is in little-endian. Unless you're using Java, you will most likely have to swap it to little-endian. See [[wikipedia:Endianness|the Wikipedia article on Endianness]].
 * Every NBT file will '''always''' begin with a TAG_Compound. No exceptions.
 * Every tag begins with a single byte which is is the <code>Type ID</code> of the following tag.
 * Every tag, except TAG_End, begins with a TAG_String, minus the <code>Type ID</code>. This is the name given to whatever is stored in the tag.
