@@ -637,7 +637,7 @@ The Encapsulation ID is the first byte of the payload.
 Multiple Data Encapsulation packets could be present in one packet. If you want to send data, use 0x00
 
 
-'''Calculate lenght in bytes:'''
+'''Calculate length in bytes:'''
  real length = length / 8
 
 
