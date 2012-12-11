@@ -389,3 +389,7 @@ This final example is of a single player ''level.dat'', which is compressed usin
     }
   }
 </code>
+
+==== Download ====
+* [https://raw.github.com/Dav1dde/nbd/master/test/hello_world.nbt test.nbt/hello_world.nbt] (uncompressed),
+* [https://raw.github.com/Dav1dde/nbd/master/test/bigtest.nbt bigtest.nbt] (gzip compressed)
