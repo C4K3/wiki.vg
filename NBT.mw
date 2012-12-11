@@ -19,6 +19,7 @@ There are many, many libraries for manipulating NBT, written in several language
 
 * [https://github.com/twoolie/NBT Python],
 * [https://github.com/FliPPeh/cNBT C],
+* [https://github.com/Dav1dde/nbd D],
 * [https://github.com/mental/nbtfile Ruby], 
 * [https://github.com/fragmer/LibNbt2012 C#], 
 * [https://github.com/sjmulder/nbt-js Javascript], 
