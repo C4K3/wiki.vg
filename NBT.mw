@@ -152,7 +152,7 @@ This first example is an uncompressed [[wikipedia:Hello world program|"Hello Wor
 </code>
 
 ==== bigtest.nbt ====
-This second example is an uncompressed test of every available tag. If your program can successfully parse this file, then you've done well. Note that the tags under ''TAG_List'' do not have a name, as mentioned above. 
+This second example is a gzip compressed test of every available tag. If your program can successfully parse this file, then you've done well. Note that the tags under ''TAG_List'' do not have a name, as mentioned above. 
 <code>
   TAG_Compound('Level'): 11 entries
   {
