@@ -1560,18 +1560,23 @@ You can also teleport the client by sending this packet.
 | class="col2 centeralign" | <code>0x9E</code>
 | class="col3" |
 |- class="row2"
-| class="col0 centeralign" | Int
+| class="col0 centeralign" | X
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | 
 | class="col3" |
 |- class="row3"
-| class="col0 centeralign" | Int
+| class="col0 centeralign" | Z
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | 
 | class="col3" |
 |- class="row4"
+| class="col0 centeralign" | Chunk Data payload
+| class="col1 centeralign" | bytes
+| class="col2 centeralign" | <code>0x10080808...</code>
+| class="col3" |
+|- class="row5"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 Bytes
+| class="col1 rightalign" colspan="4" | 9 Bytes + payload
 |}
 
 === PlayerEquipmentPacket (0x9F) ===
