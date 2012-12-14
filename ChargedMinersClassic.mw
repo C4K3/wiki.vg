@@ -33,7 +33,7 @@
 * Intel graphics cards doesn't get smooth textures.
 * Alt-tabbing out of the game window sometimes keeps the mouse focus stolen.
 * CM should prefer, or at least fall back to, terrain.png from Minecraft Classic's minecraft.jar
-* Player "jumps" when walking along inside corner of block whilst in this configuration. [http://imgur.com/zhXNj Block_Config]
+* Player "jumps" when walking along inside wall of walkway whilst in this configuration. [http://imgur.com/qVKHH Block_Config]
 
 == Done ==
 * <strike>Make walking/running speeds configurable and create an entry in the configuration file allowing to adjust the movement speed.</strike>
