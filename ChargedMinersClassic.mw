@@ -19,6 +19,7 @@
 * UI Scale - Increasing or decreasing the size of chat should probably be an option, if only in settings.ini.
 * Old OpenGL causes silent failure - I've had several reports of mysterious aborts when launching Miners, and almost all of them are caused by the OpenGL 2.1 requirement. Perhaps there should be some sort of message box error, rather than only dumping to the log?
 * Implement [[CPE]]
+* Add option to save all on-screen text to a .txt file for later viewing.
 
 == Launcher ==
 * <s>Button/Menu item to open the %AppData%/Roaming/charge folder.</s> - Done in 1.1
