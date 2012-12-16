@@ -1,7 +1,7 @@
 
 == Entity Metadata Format ==
 
-Note that entity metadata is a totally distinct concept from block metadata.
+Note that entity metadata is a totally distinct concept from block metadata. All entities '''must''' send at least one item of metadata, in most cases this will be the health item.
 
 The entity metadata format is quirky dictionary format, where the key and the value's type are packed in a single byte.
 
