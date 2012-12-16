@@ -570,20 +570,33 @@ The receiver will use the Packet number in the 0xC0 packet and send it back.
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="1" | 0xA0
-| class="col1 centeralign" | Data
-| class="col2 centeralign" | 6 bytes
-| class="col3 centeralign" | <code>0x000101000000</code>
+| class="col0 centeralign" rowspan="4" | 0xN0
+| class="col1 centeralign" | Unknown
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>1</code>
 | class="col4" | 
+|- class="row2"
+| class="col1 centeralign" | Additional Packet
+| class="col2 centeralign" | boolean
+| class="col3 centeralign" | <code>''true''</code>
+| class="col4" | ''true'' when there is only one packet received
 |- class="row3"
+| class="col1 centeralign" | Packet Number
+| class="col2 centeralign" | 3 bytes
+| class="col3 centeralign" | <code>0x000000</code>
+| class="col4" | Packet to resend
+|- class="row4"
+| class="col1 centeralign" | Packet Number #2
+| class="col2 centeralign" | 3 bytes
+| class="col3 centeralign" | <code>0x000004</code>
+| class="col4" | Aditional packet to resend (only when ''false'')
+|- class="row5"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 7 Bytes
+| class="col1 rightalign" colspan="4" | 7 or 10 Bytes
 |}
 
-Sent after an invalid Packet Order ID.
+Send these when a packet was lost, or reply to this resending the lost packet.
 
-
-{{anchor|0xC0}}
 === ACK (0xC0) ===
 
 ''Two-Way''
