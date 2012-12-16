@@ -1,14 +1,4 @@
-The '''slot''' data structure is how minecraft represents an item and its associated data in the [[Protocol|minecraft protocol]]
-
-== Packets ==
-
-* [[Protocol#Entity_Equipment_.280x05.29|0x05 Entity Equipment]]
-* [[Protocol#Player_Block_Placement_.280x0F.29|0x0F Player Block Placement]]
-* [[Protocol#Spawn Dropped Item (0x15)| 0x15 Spawn Dropped Item]]
-* [[Protocol#Window_click_.280x66.29|0x66 Window Click]]
-* [[Protocol#Set_slot_.280x67.29|0x67 Set Slot]]
-* [[Protocol#Window_items_.280x68.29|0x68 Window Items]] (as an array)
-* [[Protocol#Creative_inventory_action_.280x6B.29|0x6B Creative Inventory Action]]
+The '''slot''' data structure is how Minecraft represents an item and its associated data in the [[Protocol|minecraft protocol]]
 
 == Format ==
 
