@@ -8,8 +8,6 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 ''Two-Way''
 
-Sent when the player changes the slot selection, Server sends it when you travel to a different dimension.
-
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
@@ -27,6 +25,8 @@ Sent when the player changes the slot selection, Server sends it when you travel
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
+
+'''This packet is now bidirectional.'''
 
 == Changed Data Types ==
 
