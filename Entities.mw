@@ -482,6 +482,11 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
 | class="col1" | Falling Objects - The object data field specifies the block id. in vanilla only used to spawn falling sand/falling gravel/falling dragon eggs
 | class="col2" | 0.98
 | class="col3" | 0.98
+|- class="row12"
+| class="col0" | 71
+| class="col1" | Item frames
+| class="col2" | ?
+| class="col3" | ?
 |- class="row13"
 | class="col0" | 72
 | class="col1" | Eye of Ender
