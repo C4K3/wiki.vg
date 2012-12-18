@@ -1,7 +1,8 @@
 [http://charged-miners.com Charged Miners] is a client for classic, download the launcher [https://github.com/downloads/Charged/Miners/Charged%20Miners.exe here]
 
 == Improvements ==
-* Add extension protocol.
+* Implement [[CPE]]
+* Add option to save all on-screen text to a .txt file for later viewing.
 * XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
 * Save last few messages typed into the console, and allow using up/down arrows to scroll through them (like you would in a terminal).
 * Water cosmetic improvements: specularity, volumetric fog underwater, etc.
@@ -16,10 +17,6 @@
 ** It is quite common for portable applications to check for the presence of a specific file within the application folder to determine the status of "portable" mode. If the file does not exist, it falls back to reading from AppData.
 * Gravity Value Tweaking - Compared to WoM and the native mc.net client, it seems that the affect of gravity is quite high in Charged. Perhaps a gravity can be imported from a settings.ini value for further tweaking.
 * Double-Jump - A feature from WOM, double jump makes jumping over typical two-block user-created walls easier, without the need to toggle fly mode for such a short ascend.
-* UI Scale - Increasing or decreasing the size of chat should probably be an option, if only in settings.ini.
-* Old OpenGL causes silent failure - I've had several reports of mysterious aborts when launching Miners, and almost all of them are caused by the OpenGL 2.1 requirement. Perhaps there should be some sort of message box error, rather than only dumping to the log?
-* Implement [[CPE]]
-* Add option to save all on-screen text to a .txt file for later viewing.
 
 == Launcher ==
 * <s>Button/Menu item to open the %AppData%/Roaming/charge folder.</s> - Done in 1.1
@@ -36,6 +33,8 @@
 * Player "jumps" when walking along inside wall of walkway whilst in this configuration. [http://imgur.com/qVKHH Block_Config]
 
 == Done ==
+* <strike>UI Scale - Increasing or decreasing the size of chat should probably be an option, if only in settings.ini.</strike>
+* <strike>Old OpenGL causes silent failure - I've had several reports of mysterious aborts when launching Miners, and almost all of them are caused by the OpenGL 2.1 requirement. Perhaps there should be some sort of message box error, rather than only dumping to the log?</strike>
 * <strike>Make walking/running speeds configurable and create an entry in the configuration file allowing to adjust the movement speed.</strike>
 * <strike>Player should be able to go above the map (beyond the map boundary) even when NoClip is disabled.</strike>
 * <strike>Optional/toggle-able collision detection with terrain.</strike>
