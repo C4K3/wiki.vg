@@ -70,12 +70,12 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 |- class="row5"
 | class="col0 centeralign" | '''Yaw'''
 | class="col1 centeralign" | '''byte'''
-| class="col2 centeralign" | '''<code>592</code>'''
+| class="col2 centeralign" | '''<code>0</code>'''
 | class="col3" | '''The yaw in steps of 2p/256'''
 |- class="row5"
 | class="col0 centeralign" | '''Pitch'''
 | class="col1 centeralign" | '''byte'''
-| class="col2 centeralign" | '''<code>592</code>'''
+| class="col2 centeralign" | '''<code>67</code>'''
 | class="col3" | '''The pitch in steps of 2p/256 '''
 |- class="row6"
 | class="col0 centeralign" | [[Object Data]]
