@@ -131,7 +131,7 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 == Removed Packets ==
 
-0x15 "Spawn Dropped Item" has been removed, and its purpose is now handled by 0x17 "Spawn Object/Vehicle". The entity type ID is 0x02. You can set the item type by sending an 0x18 "Entity Metadata" packet with a slot at index 10. [https://gist.github.com/4325656 Vanilla packet dump]
+0x15 "Spawn Dropped Item" has been removed, and its purpose is now handled by 0x17 "Spawn Object/Vehicle". The entity type ID is 0x02. You can set the item type by sending an 0x28 "Entity Metadata" packet with a slot at index 10. [https://gist.github.com/4325656 Vanilla packet dump]
 
 == Protocol History ==
 
