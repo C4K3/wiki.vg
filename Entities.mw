@@ -427,6 +427,11 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
 | class="col1" | Boat
 | class="col2" | 1.5
 | class="col3" | 0.6
+|- class="row1"
+| class="col0" | 2
+| class="col1" | Item Stack ([[Slot]])
+| class="col2" | 0.5
+| class="col3" | 0.5
 |- class="row2"
 | class="col0" | 10
 | class="col1" | Minecart
