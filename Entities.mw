@@ -412,10 +412,6 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 * Index '''16''' (byte): Unknown, example: 1
 
-==== Item Stack ([[Slot]]) ====
-
-* Index '''10''' (slot): Item stack ([[Slot]])
-
 == Objects ==
 
 Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
@@ -541,6 +537,10 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
 * Index '''17''' (int): Time since last hit
 * Index '''18''' (int): "Forward direction". Initialized to 1.
 * Index '''19''' (int): Damage taken.
+
+==== Item Stack ([[Slot]]) ====
+
+* Index '''10''' (slot): Item stack ([[Slot]])
 
 == Other ==
 
