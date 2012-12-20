@@ -1,4 +1,4 @@
-This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.4.5, protocol 49) to the current pre-release (or weekly release). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
+This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.4.6, protocol 51) to the current pre-release (or weekly release). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 
 == New Packets ==
 -None-
@@ -13,14 +13,8 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 == Removed Packets ==
 
-0x15 "Spawn Dropped Item" has been removed, and its purpose is now handled by 0x17 "Spawn Object/Vehicle". The entity type ID is 0x02. You can set the item type by sending an 0x28 "Entity Metadata" packet with a slot at index 10. [https://gist.github.com/4325656 Vanilla packet dump]
+-None-
 
 == Protocol History ==
 
-'''1.4.6 Pre-release'''
-
-Protocol version is now 51. Spawn dropped item (0x15) removed, merged into spawn object (0x17). Map chunk bulk (0x38) adds a boolean field with unknown purpose.
-
-'''12w49a'''
-
-Protocol version is now 50. Packet 0x10 is sent both ways. Packet 0x17 has two new bytes, currently unknown.
+-None-
