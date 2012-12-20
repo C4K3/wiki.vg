@@ -409,9 +409,7 @@ Minecraft Pocket Edition v0.5.0.0 introduced another identifier special for Mine
 Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version to send a 0x1D or a 0x1C
 
 
-{{anchor|0x80}}
-
-=== Custom Packet (0x80) ===
+=== Custom Packet (0x80-0x8F) ===
 
 ''Two-Way''
 
@@ -425,7 +423,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x80
+| class="col0 centeralign" rowspan="2" | 0x80-0x8F
 | class="col1 centeralign" | Count
 | class="col2 centeralign" | 3 bytes
 | class="col3 centeralign" | <code>0</code>
@@ -442,112 +440,6 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 |}
 
 The receiver will use the Packet number in the 0xC0 packet and send it back.
-
-{{anchor|0x84}}
-
-=== Custom Packet (0x84) ===
-
-''Two-Way''
-
-'''This packet is part of the real Minecraft PE implementation. The structure can change anytime.'''
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x84
-| class="col1 centeralign" | Count
-| class="col2 centeralign" | 3 bytes
-| class="col3 centeralign" | <code>0</code>
-| class="col4" | Increments once every packet. 
-|- class="row2"
-| class="col2 centeralign" | Data payload
-| class="col1 centeralign" |
-| class="col2 centeralign" | <code>0x40009000000009...</code>
-| class="col3" | Uses [[#Packet_Encapsulation|Packet Encapsulation format]]
-
-|- class="row3"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 Bytes + payload
-|}
-
-The receiver will use the Packet number in the 0xC0 packet and send it back.
-
-
-
-{{anchor|0x88}}
-
-=== Custom Packet (0x88) ===
-
-''Two-Way''
-
-'''This packet is part of the real Minecraft PE implementation. The structure can change anytime.'''
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x88
-| class="col1 centeralign" | Count
-| class="col2 centeralign" | 3 bytes
-| class="col3 centeralign" | <code>0</code>
-| class="col4" | Increments once every packet. 
-|- class="row2"
-| class="col2 centeralign" | Data payload
-| class="col1 centeralign" |
-| class="col2 centeralign" | <code>0x40009000000009...</code>
-| class="col3" | Uses [[#Packet_Encapsulation|Packet Encapsulation format]]
-
-|- class="row3"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 Bytes + payload
-|}
-
-The receiver will use the Packet number in the 0xC0 packet and send it back.
-
-
-{{anchor|0x8C}}
-
-=== Custom Packet (0x8C) ===
-
-''Two-Way''
-
-'''This packet is part of the real Minecraft PE implementation. The structure can change anytime.'''
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x8C
-| class="col1 centeralign" | Count
-| class="col2 centeralign" | 3 bytes
-| class="col3 centeralign" | <code>0</code>
-| class="col4" | Increments once every packet. 
-|- class="row2"
-| class="col2 centeralign" | Data payload
-| class="col1 centeralign" |
-| class="col2 centeralign" | <code>0x40009000000009...</code>
-| class="col3" | Uses [[#Packet_Encapsulation|Packet Encapsulation format]]
-
-|- class="row3"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 Bytes + payload
-|}
-
-The receiver will use the Packet number in the 0xC0 packet and send it back.
-
 
 {{anchor|0xA0}}
 
@@ -631,7 +523,7 @@ Send these when a packet was lost, or reply to this resending the lost packet.
 | class="col1 rightalign" colspan="4" | 7 or 10 Bytes
 |}
 
-Sent after a 0x84 or 0x8C. It's used to ACK recieval of packets.
+Sent after a 0x8X. It's used to ACK recieval of packets.
 The second packet number is optional and only there when bool is false.
 
 
