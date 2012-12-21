@@ -80,28 +80,6 @@ Worlds are represented as a series of regions, within which are a number of colu
 | 22
 |}
 
-==Protocol==
-
-[https://gist.github.com/2164987 Here] is a dump of 1.2.5 world-related packets.
-
-[[Protocol#0x32|Here]] and [[Protocol#0x33|here]] is the relevant documentation.
-
-For sending map packets to a client, all of the above information is required.  Even though lighting is sent to the client, the vanilla client will calculate lighting itself.  For distant areas, the client's value is used.  For the immediate surroundings, the value provided by the server is used.  If a custom server has not properly implemented lighting yet, setting all block light and sky light values to 0xF will not cause client lag, where other values are likely to cause significant lag.
-
-The map is sent a column at a time.  Initialize each column with a [[Protocol#0x32|map column allocation packet (0x32)]]  The entire column need not be sent; only the chunks that are not completely air are actually sent.  If your column is representative of all chunks from Y=0 to Y=255, you should set "ground-up continuous" to true.  This holds true even if you omit several packets because they are completely air.  If you omit chunks that are not completely air, set this value to false.
-
-The chunks that you do choose to send are specified via the primay bit-map.  You specify chunks from the bottom up, starting at Y=0.  The primary [http://en.wikipedia.org/wiki/Bit_array bit-map's] first bit (representing the lowermost chunk) is the least significant bit.  This assumes that you use little-endian and reverse the endianness when sending the value to a client.  The add bit-map is the same, but you should only include it for chunks whose block IDs require the additional information.
-
-What follows the bit-maps is compressed data.  First, an integer representing the total size of the compressed data, followed by an unused int.  The compressed data is a concatenated array of raw chunk data, followed by biome data.  For each chunk included in the primary bit-map, concat the following information into a byte array:
-
-* Block type array (1 byte per block, 4096 bytes per chunk)
-* Block metadata array (half byte per block, 2048 bytes per chunk)
-* Block light array (half byte per block, 2048 bytes per chunk)
-* Sky light array (half byte per block, 2048 bytes per chunk)
-* Add array (half byte per block, 2048 bytes per chunk)
-
-Only include the add array if that particular chunk is represented in the add bit-map.  After all the chunks have been concatenated in this manner, and if ground-up continuous is set to true, concat the biome array.
-
 ==Storage==
 
 This section documents the Anvil format for servers.
