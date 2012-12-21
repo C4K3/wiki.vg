@@ -22,6 +22,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|Convert Map to PNG}}
 | {{supports current}}
 |-
+! [https://github.com/DavidEGrayson/redstone-bot2 redstone-bot2]
+| Wheat farming, supersonic flying speed, general awareness of world, but no documentation.
+| DavidEGrayson
+| {{Ruby}}
+| TBD
+| {{yes}}
+| {{no}}
+| {{yes|1.4.6}}
+|-
 ! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
 | Wallbraker et al.
@@ -66,15 +75,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{yes}}
 | {{supports|1.3.2}}
-|-
-! [https://github.com/DavidEGrayson/redstone-bot2 redstone-bot2]
-| Wheat farming, supersonic flying speed, general awareness of world, but no documentation.
-| DavidEGrayson
-| {{Ruby}}
-| TBD
-| {{yes}}
-| {{no}}
-| {{yes|1.4.5}}
 |-
 ! [https://github.com/wolftein/rocky Rocky]
 | Outstanding C++ client using Boost. Supports custom features using RockyPlugin.
