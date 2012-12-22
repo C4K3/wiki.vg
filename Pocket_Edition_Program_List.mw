@@ -11,13 +11,13 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 !Features
 !Last Version Supported
 |-
-! [https://github.com/shoghicp/Pocket-Minecraft-PHP Pocket Minecraft PHP]
-| Server (and client) library written in PHP. Currently a work in progress
+! [https://github.com/shoghicp/PocketMine-MP PocketMine-MP]
+| Server written in PHP, with API, maps and more
 | Library
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
-| Players, PvP, cycles, Map +more
+| Full Creative
 | {{yes|v0.5.0}}
 |-
 ! [https://github.com/shoghicp/Pocket-Minecraft-Python Pocket Minecraft Python]
