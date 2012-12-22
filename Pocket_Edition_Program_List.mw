@@ -20,6 +20,15 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | Full Creative
 | {{yes|v0.5.0}}
 |-
+! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
+| UDP proxy for MCPE Servers, allowing joining Online Servers from your local network
+| Proxy
+| [https://github.com/brandon15811 brandon15811]
+| Node.js
+| Unknown
+| Allows seeing sent/received packets through a web interface
+| {{yes|v0.5.0}}
+|-
 ! [https://github.com/shoghicp/Pocket-Minecraft-Python Pocket Minecraft Python]
 | Client / Server Minecraft Pocket Edition library written in Python.
 | Library
