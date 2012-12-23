@@ -154,14 +154,14 @@ A couple things for contributors:
 | MostAwesomeDude
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
-| {{no|Beta 1.9 Pre 6}}
-| {{yes|Alpha, Beta}}
+| {{yes|1.4.6}}
+| {{yes|Alpha, Beta, Anvil}}
 | {{yes}}
 | {{yes}}
 | {{yes|Players, Mobs}}
-| {{yes|Processes}}
+| {{yes|Async I/O, Processes}}
 | {{yes|Python}}
-| {{unknown|On hiatus since Dec 2011}}
+| {{yes|Active}}
 |-
 ! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
 | louisdx
