@@ -46,6 +46,19 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Active}}
 |-
+! [https://github.com/MostAwesomeDude/bravo Bravo]
+| MostAwesomeDude
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
+| MIT/X11
+| {{yes|1.4.6}}
+| {{yes|Alpha, Beta, Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Async I/O, Processes}}
+| {{yes|Python}}
+| {{yes|Active}}
+|-
 ! [http://www.mc-server.org MCServer]
 | FakeTruth, xoft
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
@@ -148,19 +161,6 @@ A couple things for contributors:
 | {{planned|Players, mobs}}
 | {{yes|Threads}}
 | {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
-| {{yes|Active}}
-|-
-! [https://github.com/MostAwesomeDude/bravo Bravo]
-| MostAwesomeDude
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
-| MIT/X11
-| {{yes|1.4.6}}
-| {{yes|Alpha, Beta, Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Async I/O, Processes}}
-| {{yes|Python}}
 | {{yes|Active}}
 |-
 ! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
