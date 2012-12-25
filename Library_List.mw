@@ -10,7 +10,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 !Last Version Supported
 |-
 ! [https://github.com/SirCmpwn/Craft.Net Craft.Net]
-| .NET Minecraft server and data manipulation library
+| .NET Minecraft client, server, and data manipulation library
 | Drew DeVault (SirCmpwn)
 | {{C sharp}}
 | {{MIT}}
