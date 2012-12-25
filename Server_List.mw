@@ -129,11 +129,11 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://spout.in/licensev1 Spout License v1]
 | {{yes|1.4.6}}
-| {{yes|Custom<br />(Converter planned)}}
+| {{yes|Custom<br />(Converter planned), with infinite world height}}
 | {{yes}}
 | {{planned|Partial}}
 | {{planned|Partial}}
-| {{yes|Event-driven}}
+| {{yes|Parallel Threads}}
 | {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
 | {{yes|Active}}
 |-
