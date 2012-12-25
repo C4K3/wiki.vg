@@ -124,17 +124,17 @@ A couple things for contributors:
 | {{yes|C++}}
 | {{yes|Active}}
 |-
-! [http://spout.org/ Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
-| [http://spout.org/team/ SpoutDev] (fork of Glowstone)
+! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
+| [http://www.spout.org/ Spout LLC] and community
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://spout.org/SpoutDevLicenseV1.txt SpoutDev v1]
-| {{no|1.4.5}}
-| {{yes|Custom<br />(Converters planned)}}
+| [http://spout.in/licensev1 Spout License v1]
+| {{yes|1.4.6}}
+| {{yes|Custom<br />(Converter planned)}}
 | {{yes}}
 | {{planned|Partial}}
 | {{planned|Partial}}
 | {{yes|Event-driven}}
-| {{yes|[http://spout.org/ SpoutAPI]}}
+| {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
 | {{yes|Active}}
 |-
 ! [[Realcraft:Main_Page|Realcraft]]
