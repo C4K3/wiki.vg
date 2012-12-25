@@ -2,6 +2,7 @@
 This is a rather incomplete list of Minecraft clients that users have worked or are working on. This page only lists clients written from scratch; for mods and wrappers, see the [[Utility List]].
 
 The column ''Game Graphics'' asks if your client displays in-game activity at a graphical level, such as world chunks, people or mobs moving, or any of that sort. If you are simply displaying things as text, that does '''not''' count. You can also optionally tell us the library you're using for your game graphics while providing your answer.<br style="clear:both;" />
+
 {| class="wikitable sortable" style="width: auto; text-align: center;"
 |-style="background:#eee"
 !Name
@@ -31,6 +32,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes|1.4.6}}
 |-
+! [https://github.com/SpoutDev/Spout Spout] (with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
+| 
+| [http://www.spout.org Spout LLC] and community
+| {{C++}}
+| [http://spout.in/licensev1 Spout License v1]
+| {{yes}}
+| {{yes|Yes, using [http://www.lwjgl.org LWJGL]}}
+| {{yes|1.4.6}}
+|-
 ! [https://github.com/Dav1dde/BraLa BraLa]
 | Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
 | Dav1d
@@ -40,21 +50,30 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{supports|1.4.2}}
 |-
-! [https://github.com/lukleh/TwistedBot TwistedBot]
-| bot and proxy
-| [https://twitter.com/lukleh lukleh]
-| {{Python}}, {{Twisted}}
-| {{BSD}}
-| {{no}}
-| {{no}}
-| {{supports|1.4.2}}
-|-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
 | Ammar Askar, resba
 | {{Python}}
 | {{Apache}}
 | {{yes}}
+| {{no}}
+| {{supports|1.4.2}}
+|-
+! [https://github.com/wolftein/rocky Rocky]
+| Outstanding C++ client using Boost. Supports custom features using RockyPlugin.
+| Wolftein
+| {{C++}}
+| {{LGPL}}
+| {{yes}}
+| {{yes|Yes, using [http://en.wikipedia.org/wiki/OGRE_3D Ogre3D]}}
+| {{supports|1.4.2}}
+|-
+! [https://github.com/lukleh/TwistedBot TwistedBot]
+| bot and proxy
+| [https://twitter.com/lukleh lukleh]
+| {{Python}}, {{Twisted}}
+| {{BSD}}
+| {{no}}
 | {{no}}
 | {{supports|1.4.2}}
 |-
@@ -75,15 +94,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{yes}}
 | {{supports|1.3.2}}
-|-
-! [https://github.com/wolftein/rocky Rocky]
-| Outstanding C++ client using Boost. Supports custom features using RockyPlugin.
-| Wolftein
-| {{C++}}
-| {{LGPL}}
-| {{yes}}
-| {{yes|Yes, using [http://en.wikipedia.org/wiki/OGRE_3D Ogre3D]}}
-| {{supports|1.4.2}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
 | "- Superseded by Minecraft PHP Client 2 -" It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
