@@ -20,17 +20,17 @@ A couple things for contributors:
 !style="width: 72px" | Scripting
 !style="width: 120px" | Development Status
 |-
-! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
-| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
+! [http://bravoserver.org/ Bravo]
+| Corbin Simpson
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
+| MIT/X11
 | {{yes|1.4.6}}
-| {{yes|Anvil}}
+| {{yes|Alpha, Beta, Anvil}}
 | {{yes}}
 | {{yes}}
-| {{planned|Players, Items, Blocks}}
-| {{yes|Async Networking/Logic}}
-| {{no}}
+| {{yes|Players, Mobs}}
+| {{yes|Async I/O, Processes}}
+| {{yes|Python}}
 | {{yes|Active}}
 |-
 ! [https://github.com/BizarreCake/hCraft/ hCraft]
@@ -46,19 +46,6 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Active}}
 |-
-! [http://bravoserver.org/ Bravo]
-| Corbin Simpson
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
-| MIT/X11
-| {{yes|1.4.6}}
-| {{yes|Alpha, Beta, Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Async I/O, Processes}}
-| {{yes|Python}}
-| {{yes|Active}}
-|-
 ! [http://www.mc-server.org MCServer]
 | FakeTruth, xoft, luksor
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
@@ -72,17 +59,30 @@ A couple things for contributors:
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|Active}}
 |-
-! [https://github.com/deoxxa/jsmc jsmc]
-| Conrad Pankoff ([[User:deoxxa|deoxxa]])
-| [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
-| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{no|1.4.2}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
+! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
+| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{yes|1.4.6}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{planned|Players, Items, Blocks}}
 | {{yes|Async Networking/Logic}}
-| {{yes|JavaScript}}
+| {{no}}
+| {{yes|Active}}
+|-
+! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
+| [http://www.spout.org/ Spout LLC] and community
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://spout.in/licensev1 Spout License v1]
+| {{yes|1.4.6}}
+| {{yes|Custom<br />(Converter planned), with infinite world height}}
+| {{yes}}
+| {{planned|Partial}}
+| {{planned|Partial}}
+| {{yes|Parallel Threads}}
+| {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
 | {{yes|Active}}
 |-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
@@ -111,43 +111,17 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Active}}
 |-
-! [https://github.com/fador/mineserver/ Mineserver]
-| Fador, Psoden, deoxxa
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+! [https://github.com/deoxxa/jsmc jsmc]
+| Conrad Pankoff ([[User:deoxxa|deoxxa]])
+| [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{no|1.3.2}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{unknown}}
-| {{yes|C++}}
-| {{yes|Active}}
-|-
-! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
-| [http://www.spout.org/ Spout LLC] and community
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://spout.in/licensev1 Spout License v1]
-| {{yes|1.4.6}}
-| {{yes|Custom<br />(Converter planned), with infinite world height}}
-| {{yes}}
-| {{planned|Partial}}
-| {{planned|Partial}}
-| {{yes|Parallel Threads}}
-| {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
-| {{yes|Active}}
-|-
-! [[Realcraft:Main_Page|Realcraft]]
-| [[User:Jailout2000|Jailout2000]]
-| [http://en.wikipedia.org/wiki/Realbasic Realbasic]
-| Closed source
-| {{no|1.3.2}}
-| {{yes|Custom<br />(Converters planned)}}
-| {{yes}}
-| {{planned}}
-| {{planned|Players, other entities are WIP}}
-| {{yes|Event-driven}}
+| {{no|1.4.2}}
 | {{no}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Async Networking/Logic}}
+| {{yes|JavaScript}}
 | {{yes|Active}}
 |-
 ! [https://github.com/sprenger120/FastCraft FastCraft]
@@ -161,6 +135,32 @@ A couple things for contributors:
 | {{planned|Players, mobs}}
 | {{yes|Threads}}
 | {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
+| {{yes|Active}}
+|-
+! [https://github.com/fador/mineserver/ Mineserver]
+| Fador, Psoden, deoxxa
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+| {{no|1.3.2}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{unknown}}
+| {{yes|C++}}
+| {{yes|Active}}
+|-
+! [[Realcraft:Main_Page|Realcraft]]
+| [[User:Jailout2000|Jailout2000]]
+| [http://en.wikipedia.org/wiki/Realbasic Realbasic]
+| Closed source
+| {{no|1.3.2}}
+| {{yes|Custom<br />(Converters planned)}}
+| {{yes}}
+| {{planned}}
+| {{planned|Players, other entities are WIP}}
+| {{yes|Event-driven}}
+| {{no}}
 | {{yes|Active}}
 |-
 ! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
