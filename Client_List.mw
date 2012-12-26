@@ -33,7 +33,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|1.4.6}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout] (with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
-| Open source, multi-threaded voxel game framework and platform that opens the doors for infinite possibilities. Features infinite height worlds, infinite content, .obj support, and more!
+| Open source, multi-threaded voxel game framework and platform that opens the doors for infinite possibilities. Features infinite height worlds, infinite content, advanced modeling support, and more!
 | [http://www.spout.org Spout LLC] and community
 | {{Java}}
 | [http://spout.in/licensev1 Spout License v1]
