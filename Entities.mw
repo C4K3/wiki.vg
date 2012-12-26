@@ -545,6 +545,7 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
 ==== Item Frame ====
 
 * Index '''2''' (slot): Item stack ([[Slot]])
+* Index '''3''' (byte): Orientation (0-3, increments of 90 degrees)
 
 == Other ==
 
