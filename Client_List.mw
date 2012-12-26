@@ -30,7 +30,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | TBD
 | {{yes}}
 | {{no}}
-| {{yes|1.4.6}}
+| {{supports current}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout] (with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
 | Open source, multi-threaded voxel game framework and platform that opens the doors for infinite possibilities. Features infinite height worlds, infinite content, advanced modeling support, and more!
@@ -39,16 +39,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | [http://spout.in/licensev1 Spout License v1]
 | {{yes}}
 | {{yes|Yes, using [http://www.lwjgl.org LWJGL]}}
-| {{yes|1.4.6}}
-|-
-! [https://github.com/Dav1dde/BraLa BraLa]
-| Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
-| Dav1d
-| {{D}}
-| {{GPLv3}}
-| {{yes}}
-| {{yes}}
-| {{supports|1.4.5}}
+| {{supports current}}
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
@@ -58,6 +49,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{no}}
 | {{supports current}}
+|-
+! [https://github.com/Dav1dde/BraLa BraLa]
+| Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
+| Dav1d
+| {{D}}
+| {{GPLv3}}
+| {{yes}}
+| {{yes}}
+| {{supports|1.4.5}}
 |-
 ! [https://github.com/wolftein/rocky Rocky]
 | Outstanding C++ client using Boost. Supports custom features using RockyPlugin.
