@@ -542,6 +542,10 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
 
 * Index '''10''' (slot): Item stack ([[Slot]])
 
+==== Item Frame ====
+
+* Index '''2''' (slot): Item stack ([[Slot]])
+
 == Other ==
 
 Players are spawned via [[Protocol#0x14|0x14 Named Entity Spawn]]. They have dimensions 0.6 * 1.8.
