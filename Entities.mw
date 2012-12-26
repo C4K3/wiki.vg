@@ -414,7 +414,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 == Objects ==
 
-Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]
+Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Object Data]] for more details.
 
 {| class="wikitable"
 |- class="row0"
