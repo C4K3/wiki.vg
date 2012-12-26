@@ -26,6 +26,22 @@ In the "Spawn Object/Vehicle" packet, additional metadata about the spawned enti
 |}
 
 == Meaning of int field ==
+
+=== Item Frame (id 71) ===
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Field Name
+! class="col1" | Field Type
+! class="col2" | Example
+! class="col3" | Notes
+|- class="row1"
+| class="col0 centeralign" | Orientation
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>3</code>
+| class="col3" | 0-3: South, West, North, East
+|}
+
 === Falling Block (id 70) ===
 
 {| class="wikitable"
