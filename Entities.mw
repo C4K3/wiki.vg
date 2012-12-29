@@ -411,7 +411,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 ==== Iron Golem ====
 
-* Index '''16''' (byte): Unknown, example: 1
+* Index '''16''' (byte): 0 or 1. Indicates whether the iron golem was spawned by natural means (0) or by a player constructing it (1).
 
 == Objects ==
 
