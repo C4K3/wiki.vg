@@ -28,7 +28,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{WTFPL}}
-| {{supports|1.4.5}}
+| {{supportspre|1.4.7}}
 |-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
 |
