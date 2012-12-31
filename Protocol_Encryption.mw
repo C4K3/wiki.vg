@@ -81,6 +81,7 @@ If the response is '''YES''' then the client is authenticated and allowed to joi
 Examples of generating Java-style hex digests:
 
 * C#: https://gist.github.com/404223052379e82f91e6
+* node.js: https://gist.github.com/4425843
 
 == Additional Links ==
 [https://gist.github.com/3900517 Encrypt shared secret using OpenSSL]
