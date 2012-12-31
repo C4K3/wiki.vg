@@ -96,7 +96,7 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://spout.in/licensev1 Spout License v1]
 | {{yes|1.4.6}}
-| {{yes|Custom<br />(Converter planned), with infinite world height}}
+| {{yes|Custom}}
 | {{yes}}
 | {{planned|Partial}}
 | {{planned|Partial}}
@@ -174,20 +174,6 @@ A couple things for contributors:
 | {{no}}
 | {{yes|Linux,Windows}}
 | {{yes|Active}}
-|-
-! [http://louisdx.github.com/schlagwetter/ Schlagwetter]
-| louisdx
-| C++0x
-| [https://github.com/louisdx/schlagwetter/blob/master/COPYING Custom]
-| {{no|Beta 1.6}}
-| {{planned|n/a}}
-| {{no}}
-| {{planned}}
-| {{planned}}
-| {{yes|Threads}}
-| {{no}}
-| {{unknown}}
-| {{unknown|On hiatus since Nov 2011}}
 |-
 ! [https://github.com/Xinnx/XMC XMC]
 | [[User:Xinnx|Xinnx]]
