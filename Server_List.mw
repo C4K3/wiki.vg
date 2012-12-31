@@ -166,7 +166,7 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Realbasic Realbasic]
 | Closed source
 | {{no|1.3.2}}
-| {{yes|Custom<br />(Converters planned)}}
+| {{yes|Custom}}
 | {{yes}}
 | {{planned}}
 | {{planned|Players, other entities are WIP}}
@@ -180,7 +180,7 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
 | {{no|Beta 1.4}}
-| {{yes|Alpha, Beta: WIP}}
+| {{planned|Alpha, Beta}}
 | {{no}}
 | {{planned}}
 | {{planned|Players, Partial mob support}}
