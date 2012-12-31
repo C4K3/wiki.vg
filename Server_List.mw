@@ -32,7 +32,7 @@ A couple things for contributors:
 | {{yes|Players, Mobs}}
 | {{yes|Async I/O, Processes}}
 | {{yes|Python}}
-| {{yes|Linux, Windows}}
+| {{yes|{{linux}}{{windows}}}}
 | {{yes|Active}}
 |-
 ! [https://github.com/BizarreCake/hCraft/ hCraft]
@@ -46,7 +46,7 @@ A couple things for contributors:
 | {{planned|Players}}
 | {{yes|Threads/Events}}
 | {{no}}
-| {{yes|Linux}}
+| {{yes|{{linux}}}}
 | {{yes|Active}}
 |-
 ! [http://www.mc-server.org MCServer]
@@ -60,7 +60,7 @@ A couple things for contributors:
 | {{yes|Players, Mobs}}
 | {{yes|Threads}}
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|Windows,Mac,<br>Linux,Android}}
+| {{yes|{{windows}}{{linux}}{{mac}}<br />Android}}
 | {{yes|Active}}
 |-
 ! [https://github.com/fador/mineserver/ Mineserver]
@@ -74,7 +74,7 @@ A couple things for contributors:
 | {{yes|Players, Mobs}}
 | {{unknown}}
 | {{yes|C++}}
-| {{yes|Linux,<br>Windows,Mac}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
 | {{yes|Active}}
 |-
 ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
@@ -88,7 +88,7 @@ A couple things for contributors:
 | {{yes}}
 | {{yes|Async Networking/Logic}}
 | {{no}}
-| {{yes|Windows,Linux}}
+| {{yes|{{windows}}{{linux}}{{mac}}}}
 | {{yes|Active}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
@@ -102,7 +102,7 @@ A couple things for contributors:
 | {{planned|Partial}}
 | {{yes|Parallel Threads}}
 | {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
-| {{yes|Linux,<br>Windows,Mac}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
 | {{yes|Active}}
 |-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
@@ -116,7 +116,7 @@ A couple things for contributors:
 | {{planned|Players}}
 | {{yes|Async Networking}}
 | {{no}}
-| {{yes|Linux,<br>Windows,Mac}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
 | {{yes|Active}}
 |-
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
@@ -144,7 +144,7 @@ A couple things for contributors:
 | {{planned|Players}}
 | {{yes|Async Networking/Logic}}
 | {{yes|JavaScript}}
-| {{yes|Linux,<br>Windows,Mac}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
 | {{yes|Active}}
 |-
 ! [https://github.com/sprenger120/FastCraft FastCraft]
@@ -172,7 +172,7 @@ A couple things for contributors:
 | {{planned|Players, other entities are WIP}}
 | {{yes|Event-driven}}
 | {{no}}
-| {{yes|Linux,Windows}}
+| {{yes|{{linux}}{{windows}}}}
 | {{yes|Active}}
 |-
 ! [https://github.com/Xinnx/XMC XMC]
