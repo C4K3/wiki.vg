@@ -21,6 +21,20 @@ A couple things for contributors:
 !style="width: 72px" | Platform
 !style="width: 120px" | Development Status
 |-
+! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
+| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{supportspre|1.4.7}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes}}
+| {{yes|Async Networking/Logic}}
+| {{no}}
+| {{yes|{{windows}}{{linux}}{{mac}}}}
+| {{yes|Active}}
+|-
 ! [http://bravoserver.org/ Bravo]
 | Corbin Simpson
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
@@ -75,20 +89,6 @@ A couple things for contributors:
 | {{unknown}}
 | {{yes|C++}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{yes|Active}}
-|-
-! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
-| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.4.6}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes}}
-| {{yes|Async Networking/Logic}}
-| {{no}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
 | {{yes|Active}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
