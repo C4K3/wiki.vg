@@ -9,6 +9,7 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 !Language
 !License
 !Features
+!Platform
 !Last Version Supported
 |-
 ! [https://github.com/shoghicp/PocketMine-MP PocketMine-MP]
@@ -18,7 +19,8 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{PHP}}
 | {{LGPL}}
 | Alpha (Full Creative)
-| {{yes|v0.5.0}}
+| {{windows}}{{linux}}{{mac}}
+| {{yes|Alpha v0.5.0}}
 |-
 ! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
 | UDP proxy for MCPE Servers, allowing joining Online Servers from your local network
@@ -27,7 +29,8 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | Node.js
 | Unknown
 | Allows seeing sent/received packets through a web interface
-| {{yes|v0.5.0}}
+| {{windows}}{{linux}}{{mac}}
+| {{yes|Alpha v0.5.0}}
 |-
 |}
 
