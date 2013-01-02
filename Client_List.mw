@@ -59,15 +59,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{supports current}}
 |-
-! [https://github.com/wolftein/rocky Rocky]
-| Outstanding C++ client using Boost. Supports custom features using RockyPlugin.
-| Wolftein
-| {{C++}}
-| {{LGPL}}
-| {{yes}}
-| {{yes|Yes, using [http://en.wikipedia.org/wiki/OGRE_3D Ogre3D]}}
-| {{supports|1.4.2}}
-|-
 ! [https://github.com/lukleh/TwistedBot TwistedBot]
 | bot and proxy
 | [https://twitter.com/lukleh lukleh]
