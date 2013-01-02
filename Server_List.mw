@@ -105,6 +105,20 @@ A couple things for contributors:
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | {{yes|Active}}
 |-
+! [https://github.com/clonejo/mc-erl/ mc-erl]
+| clonejo
+| [http://en.wikipedia.org/wiki/Erlang Erlang]
+| not decided yet
+| {{yes|1.4.6}}
+| {{planned|custom (Mnesia)}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Erlang processes}}
+| {{no}}
+| {{yes|{{linux}}}}
+| {{yes|Active}}
+|-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
 | Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
 | [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
@@ -117,20 +131,6 @@ A couple things for contributors:
 | {{yes|Async Networking}}
 | {{no}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{yes|Active}}
-|-
-! [https://github.com/clonejo/mc-erl/ mc-erl]
-| Apiocera, clonejo
-| [http://en.wikipedia.org/wiki/Erlang Erlang]
-| not decided yet
-| {{no|1.4.5}}
-| {{planned|custom (Mnesia)}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Erlang processes}}
-| {{no}}
-| {{unknown}}
 | {{yes|Active}}
 |-
 ! [https://github.com/deoxxa/jsmc jsmc]
