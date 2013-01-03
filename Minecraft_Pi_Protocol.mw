@@ -1,0 +1,167 @@
+This page documents the Minecraft Pi API Protocol. The multiplayer protocol for Minecraft Pi is based on [Pocket_Minecraft_Protocol|Minecraft PE's protocol].
+
+Parts of this documentation is based on the official Mojang documentation, which were [https://twitter.com/danfrisk/status/286797258048012288 released for free use.] Other parts are based on the Desktop Protocol specification.
+
+The Minecraft Pi client listens to TCP port 4711 by default.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" |
+| class="col1" | Definition
+|- class="row1"
+| class="col0 centeralign" | Player
+| class="col1" | When used in the singular, Player always refers to the client connected to the server
+|- class="row2"
+| class="col0 centeralign" | Entity
+| class="col1" | Entity refers to any item, player, or mob in the world. This definition is subject to change as Mojang extends the protocol
+|- class="row3"
+| class="col0 centeralign" | EID
+| class="col1" | An EID - or Entity ID - is a unique 4-byte integer used to identify a specific entity
+|- class="row4"
+| class="col0 centeralign" | XYZ
+| class="col1" | In this document, the axis names are the same as those used by the official protocol documentation. Y points upwards, X points South, and Z points West.
+|}
+
+A command in the Pi protocol consists of an ASCII line terminated with an LF character. The general format of a command is of the form
+
+ package.command(param1,param2,param3)
+
+Commands are sent by the client to the server. No authentication is required before sending commands.
+
+Some commands may have return values: they are also in ASCII, and terminate with an LF character.
+
+Locations in the Minecraft Pi protocol are relative to the spawn point of the world.
+
+The official Mojang documentation specifies conventions for specifying parameters:
+
+*x,y,z -- vector of three integers.
+
+*xf,yf,zf -- vector of three floats.
+
+*blockTypeId -- integer 0-108. 0 is air.
+
+*blockData -- integer 0-15. Block data beyond the type, for example wool color.
+
+== Packages ==
+
+=== world package ===
+
+Contains methods that modify the world and terrain.
+
+==== world.getBlock(x,y,z) ====
+
+Gets the ID of a block in the world.
+
+x, y, z: coordinates of the block relative to spawn
+
+
+Returns: an integer of type blockTypeId, corresponding to a block type in Minecraft Pi.
+
+==== world.setBlock(x,y,z,blockTypeId,[blockData]) ====
+
+Sets the ID of a block in the world. The data parameter is optional.
+
+x, y, z: coordinates of the block relative to spawn
+
+blockTypeId: ID of the block
+
+blockData: metadata of the block
+
+==== world.setBlocks(x1,y1,z1,x2,y2,z2,blockTypeId,[blockData]) ====
+
+Sets all blocks in a cuboid defined by two points to a speficied type. The blockData parameter is optional.
+
+x1, y1, z1: coordinates of the first selection point relative to spawn
+
+x2, y2, z2: coordinates of the second selection point relative to spawn
+
+blockTypeId: ID of the block
+
+blockData: metadata of the block
+
+==== world.getHeight(x,z) ====
+
+Returns the Y coordinate of the last block that isn't solid from top-down.
+
+x, z: coordinates of a column 
+
+
+Returns: an integer containing the Y coordinate
+
+==== world.getPlayerIds() ====
+
+Gets the Entity IDs of all connected players.
+
+
+Returns: A list of Entity IDs, seperated by the character |
+
+==== world.setting(key,value) ====
+
+Sets a world parameter (similar to GameRules on the Desktop Edition)
+
+key: the name of the setting:
+*world_immutable
+*nametags_visible
+
+value: a Boolean value: either 0 or 1
+
+==== world.checkpoint.save() ====
+
+Save a checkpoint that can be used for restoring the world.
+
+==== world.checkpoint.restore() ====
+
+Restores the world to the last checkpoint.
+
+=== chat package ===
+
+Contains methods to post messages to the chat display.
+
+==== chat.post(message) ====
+
+message: the message to be sent.
+
+=== player package ===
+
+Contains methods that modify the host player.
+
+==== player.getTile() ====
+
+Gets the position of the host player, to the nearest block.
+
+
+Returns: The x, y, and z coordinates of the player, separated by commas.
+
+==== player.setTile(x,y,z) ====
+
+Sets the position of the host player to the specified block coordinates.
+
+x, y, z: the coordinates that the player is to be moved to.
+
+==== player.getPos() ====
+
+Returns the precise position of the host player.
+
+
+Returns: the x, y, and z coordinates of the player as floats, separated by commas.
+
+==== player.setPos(xf,yf,zf) ====
+
+Sets the position of the host player to the specified coordinates.
+
+xf, yf, zf: the coordinates that the player is to be moved to. Decimals are allowed.
+
+==== player.setting(key,value) ====
+
+Sets a property on the host player.
+
+key: the property to be set.
+*autojump: enable or disable autojump.
+
+value: a Boolean value: either 1 for on or 0 for off.
+
+=== entity package ===
+
+=== camera package ===
+
+=== events package ===
