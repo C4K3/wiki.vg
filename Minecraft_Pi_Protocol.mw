@@ -1,4 +1,4 @@
-This page documents the Minecraft Pi API Protocol. The multiplayer protocol for Minecraft Pi is based on [Pocket_Minecraft_Protocol|Minecraft PE's protocol].
+This page documents the [[Minecraft Pi]] API Protocol. The multiplayer protocol for Minecraft Pi is based on [[Pocket_Minecraft_Protocol|Minecraft PE's protocol]].
 
 Parts of this documentation is based on the official Mojang documentation, which were [https://twitter.com/danfrisk/status/286797258048012288 released for free use.] Other parts are based on the Desktop Protocol specification.
 
@@ -165,3 +165,6 @@ value: a Boolean value: either 1 for on or 0 for off.
 === camera package ===
 
 === events package ===
+
+[[Category: Minecraft Pi]]
+[[Category: Pocket Minecraft]]
