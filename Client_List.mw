@@ -41,6 +41,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|Yes, using [http://www.lwjgl.org LWJGL]}}
 | {{yes|1.4.6}}
 |-
+! [https://github.com/superjoe30/mineflayer mineflayer]
+| Mission statement: Create Minecraft bots with a powerful, stable, and high level JavaScript API. Current status: login and chat work.
+| [https://github.com/superjoe30 superjoe30]
+| [http://nodejs.org/ node.js]
+| {{MIT}}
+| {{no}}
+| {{no}}
+| {{supports|1.4.6}}
+|-
 ! [https://github.com/Dav1dde/BraLa BraLa]
 | Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
 | Dav1d
@@ -93,15 +102,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{LGPL}}
 | {{yes|Yes, but only linux}}
 | {{no}}
-| {{supports|1.2.5}}
-|-
-! [[Mineflayer]]
-| JavaScript bot framework. See [[Mineflayer]] for more details.
-| Superjoe, thejoshwolfe
-| {{C++}}, {{Qt}}
-| {{MIT}}
-| {{yes}}
-| {{yes}}
 | {{supports|1.2.5}}
 |-
 ! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
