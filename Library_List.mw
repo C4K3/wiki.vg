@@ -86,6 +86,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{GPLv3}}
 | {{supports|1.1}}
 |-
+! [https://github.com/fragmer/fNbt fNbt]
+| Minecraft Proxy (and bot) framework in C++
+| fragmer (Scootabyte)
+| {{C#}}
+| {{BSD}}
+| n/a
+|-
 |}
 
 [[Category:Minecraft Modern]]
