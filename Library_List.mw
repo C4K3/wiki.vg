@@ -30,6 +30,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{WTFPL}}
 | {{supportspre|1.4.7}}
 |-
+! [https://github.com/superjoe30/node-minecraft-protocol node-minecraft-protocol]
+| npm install minecraft-protocol
+| [https://github.com/superjoe30 superjoe]
+| [http://nodejs.org/ node.js]
+| {{BSD}}
+| {{supportspre|1.4.7}}
+|-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
 |
 | ags131, electronicboy
