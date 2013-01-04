@@ -26,15 +26,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/Maincraft/MCProxy MCProxy] || A java minecraft-proxy that can load plugins. || {{no|#29}} - 1.2.5 || Java ||   || Maincraft || {{no|Inactive}}
 |-
-| [https://github.com/ScottBrooks/minecraft-dissector WiresharkDissector] || A wireshark dissector for the Minecraft protocol || {{no|#28}} - 1.2 || C ||   || ScottBrooks || {{no|Inactive}}
-|-
-| [http://github.com/aniero/golem golem] || Ruby 1.9 client, acts as a standalone bot or transparent proxy || {{no|#10}} - 1.4b || Ruby ||   || aniero || {{no|Inactive}}
-|-
-| [https://github.com/ReDucTor/mineproxy Mineproxy] || mineproxy || {{unknown|}} || C & C++ ||   || ReDucTor || {{no|Inactive}}
-|-
-| [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || {{unknown|}} || Haskell ||   || glguy || {{no|Inactive}}
-|-
-| [https://github.com/Nadrin/mcproxy mcproxy] || A modular client and server-side network protocol proxy || {{unknown|}} || C ||   || Nadrin || {{no|Inactive}}
+| [https://github.com/Nadrin/mcproxy mcproxy] || A modular client and server-side network protocol proxy || {{no|#29}} - 1.2.5 || C ||   || Nadrin || {{no|Inactive}}
 |}
 
 [[Category:Minecraft Modern]]
