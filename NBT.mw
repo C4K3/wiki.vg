@@ -21,7 +21,7 @@ There are many, many libraries for manipulating NBT, written in several language
 * [https://github.com/FliPPeh/cNBT C],
 * [https://github.com/Dav1dde/nbd D],
 * [https://github.com/mental/nbtfile Ruby], 
-* [https://github.com/fragmer/LibNbt2012 C#], 
+* [https://github.com/fragmer/fNbt C#], 
 * [https://github.com/sjmulder/nbt-js Javascript], 
 * [https://github.com/TheFrozenFire/PHP-NBT-Decoder-Encoder PHP],
 * You get the idea...
