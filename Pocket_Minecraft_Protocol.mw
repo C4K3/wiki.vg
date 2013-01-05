@@ -1267,48 +1267,43 @@ You can also teleport the client by sending this packet.
 | class="col2 centeralign" | <code>0x95</code>
 | class="col3 centeralign" | 
 |- class="row2"
-| class="col0 centeralign" | X
+| class="col0 centeralign" | Entity ID
 | class="col1 centeralign" | int32
 | class="col2 centeralign" | 
 | class="col3" |
 |- class="row3"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | int32
+| class="col0 centeralign" | X
+| class="col1 centeralign" | float
 | class="col2 centeralign" | 
 | class="col3" |
 |- class="row4"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | int32
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | float
 | class="col2 centeralign" | 
 | class="col3" |
 |- class="row5"
-| class="col0 centeralign" | Byte
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | Direction?
+| class="col0 centeralign" | X
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 
 | class="col3" |
 |- class="row6"
-| class="col0 centeralign" | Byte
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | Held Item?
+| class="col0 centeralign" | Block ID
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | 
 | class="col3" |
 |- class="row7"
-| class="col0 centeralign" | Byte
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | Touch X?
+| class="col0 centeralign" | Meta
+| class="col1 centeralign" | int32
+| class="col2 centeralign" | 
 | class="col3" |
 |- class="row8"
-| class="col0 centeralign" | Byte
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | Touch Y?
+| class="col0 centeralign" | Face
+| class="col1 centeralign" | Byte
+| class="col2 centeralign" | 
 | class="col3" |
 |- class="row9"
-| class="col0 centeralign" | Byte
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | Touch Z?
-| class="col3" |
-|- class="row10"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 18 Bytes
+| class="col1 rightalign" colspan="4" | 16 Bytes
 |}
 
 === RemoveBlockPacket (0x96) ===
