@@ -52,7 +52,7 @@ The format is thus:
 * Block type array - whole byte per block
 * Block metadata array - half byte per block
 * Block light array - half byte per block
-* Sky light array - half byte per block - only if 'skylight' is true
+* Sky light array - half byte per block - only if secondary bitmask has a 1 bit for this chunk
 * Add array  - half byte per block - only if secondary bitmask is nonzero
 * Biome array - whole byte per XZ coordinate, 256 bytes total, only sent if 'ground up continuous' is true
   
