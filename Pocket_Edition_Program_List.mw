@@ -12,15 +12,15 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 !Platform
 !Last Version Supported
 |-
-! [https://github.com/shoghicp/PocketMine-MP PocketMine-MP]
+! [http://shoghicp.github.com/PocketMine-MP/ PocketMine-MP]
 | Server written in PHP, with API, maps and more
 | Server
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
-| Alpha (Full Creative)
+| Full Creative
 | {{windows}}{{linux}}{{mac}}
-| {{yes|Alpha v0.5.0}}
+| {{yes|v0.5.0 alpha}}
 |-
 ! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
 | UDP proxy for MCPE Servers, allowing joining Online Servers from your local network
