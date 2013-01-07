@@ -53,7 +53,7 @@ The format is thus:
 * Block metadata array - half byte per block
 * Block light array - half byte per block
 * Sky light array - half byte per block - only if 'skylight' is true
-* Add array  - half byte per block - only if secondary bitmask has a 1 bit for this chunk
+* Add array  - half byte per block - uses secondary bitmask
 * Biome array - whole byte per XZ coordinate, 256 bytes total, only sent if 'ground up continuous' is true
   
 Each section (except for biome) contains packed chunk data for zero or more 16x16x16 chunks. You need to refer to the primary bitmask for the chunk column to see which chunks are sent, or the add bitmask for 'add' data, which is Mojang's means of provided Block IDs past 256. In vanilla minecraft, you can expect this to always be zero.
