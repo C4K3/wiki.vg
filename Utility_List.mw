@@ -16,9 +16,9 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{yes|#51}} - 1.4.6 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
 |-
-| [https://github.com/bencvt/McPacketSniffer McPacketSniffer] || A Minecraft client mod that logs packets to text files || {{no|#47}} - 1.4.4 || Java || Windows, Mac, & Linux || [[User:Benc|bencvt]] || {{yes|Active}}
+| [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.4.6-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{yes|#42}} - 13w01b || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
 |-
-| [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.4.2-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{no|#47}} - 1.4.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
+| [https://github.com/bencvt/McPacketSniffer McPacketSniffer] || A Minecraft client mod that logs packets to text files || {{no|#47}} - 1.4.4 || Java || Windows, Mac, & Linux || [[User:Benc|bencvt]] || {{yes|Active}}
 |-
 | [https://github.com/mmcgill/mc3p m3cp] || Actively maintained Python Minecraft proxy with plugin support. || {{no|#29}} - 1.2.5 || Python || Windows, Mac, & Linux || mmcgill || {{no|Inactive}}
 |-
