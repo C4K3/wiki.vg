@@ -56,7 +56,7 @@ A couple things for contributors:
 | Corbin Simpson
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
-| {{yes|1.4.6}}
+| {{no|1.4.6}}
 | {{yes|Alpha, Beta, Anvil}}
 | {{yes}}
 | {{yes}}
@@ -71,7 +71,7 @@ A couple things for contributors:
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{yes|1.4.6}}
+| {{no|1.4.6}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
 | {{yes}}
@@ -86,7 +86,7 @@ A couple things for contributors:
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{yes|1.4.6}}
+| {{no|1.4.6}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -101,7 +101,7 @@ A couple things for contributors:
 | [http://www.spout.org/ Spout LLC] and community
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://spout.in/licensev1 Spout License v1]
-| {{yes|1.4.6}}
+| {{no|1.4.6}}
 | {{yes|Custom}}
 | {{yes}}
 | {{planned|Partial}}
@@ -116,7 +116,7 @@ A couple things for contributors:
 | clonejo
 | [http://en.wikipedia.org/wiki/Erlang Erlang]
 | not decided yet
-| {{yes|1.4.6}}
+| {{no|1.4.6}}
 | {{planned|custom (Mnesia)}}
 | {{no}}
 | {{no}}
