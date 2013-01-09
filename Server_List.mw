@@ -26,7 +26,7 @@ A couple things for contributors:
 | FakeTruth, xoft, luksor
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Apache 2.0
-| {{supportspre|1.4.7}}
+| {{yes|1.4.7}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -41,7 +41,7 @@ A couple things for contributors:
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{supportspre|1.4.7}}
+| {{yes|1.4.7}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
