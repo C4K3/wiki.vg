@@ -19,6 +19,7 @@ A couple things for contributors:
 !style="width: 72px" | Concurrency Model
 !style="width: 72px" | Scripting
 !style="width: 72px" | Platform
+!style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
 ! [http://www.mc-server.org MCServer]
@@ -33,6 +34,7 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|{{windows}}{{linux}}{{mac}}<br />Android}}
+| [http://forum.mc-server.org/showthread.php?tid=499 Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
@@ -47,6 +49,7 @@ A couple things for contributors:
 | {{yes|Async Networking/Logic}}
 | {{no}}
 | {{yes|{{windows}}{{linux}}{{mac}}}}
+| {{yes|[https://github.com/SirCmpwn/PartyCraft#features Link]}}
 | {{yes|Active}}
 |-
 ! [http://bravoserver.org/ Bravo]
@@ -61,6 +64,7 @@ A couple things for contributors:
 | {{yes|Async I/O, Processes}}
 | {{yes|Python}}
 | {{yes|{{linux}}{{windows}}}}
+| {{yes|[https://github.com/bravoserver/bravo#features Link]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/BizarreCake/hCraft/ hCraft]
@@ -75,6 +79,7 @@ A couple things for contributors:
 | {{yes|Threads/Events}}
 | {{no}}
 | {{yes|{{linux}}}}
+| {{yes|[https://github.com/BizarreCake/hCraft/#features Link]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/fador/mineserver/ Mineserver]
@@ -89,6 +94,7 @@ A couple things for contributors:
 | {{unknown}}
 | {{yes|C++}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{yes|[https://github.com/fador/mineserver/#features Link]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
@@ -103,6 +109,7 @@ A couple things for contributors:
 | {{yes|Parallel Threads}}
 | {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{no|unknown}}
 | {{yes|Active}}
 |-
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
@@ -117,6 +124,7 @@ A couple things for contributors:
 | {{yes|Erlang processes}}
 | {{no}}
 | {{yes|{{linux}}}}
+| {{yes|[https://github.com/clonejo/mc-erl/#feature-list Link]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
@@ -131,6 +139,7 @@ A couple things for contributors:
 | {{yes|Async Networking}}
 | {{no}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{yes|[https://github.com/JoeDoyle23/BurningPig#current-features Link]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/deoxxa/jsmc jsmc]
@@ -145,6 +154,7 @@ A couple things for contributors:
 | {{yes|Async Networking/Logic}}
 | {{yes|JavaScript}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{yes|[https://github.com/deoxxa/jsmc#features Link]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/sprenger120/FastCraft FastCraft]
@@ -159,6 +169,7 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
 | {{unknown}}
+| {{no|Unknown}}
 | {{yes|Active}}
 |-
 ! [[Realcraft:Main_Page|Realcraft]]
@@ -173,6 +184,7 @@ A couple things for contributors:
 | {{yes|Event-driven}}
 | {{no}}
 | {{yes|{{linux}}{{windows}}}}
+| {{yes|[http://www.wiki.vg/Realcraft:Features Link]}}
 | {{yes|Active}}
 |-
 ! [https://github.com/Xinnx/XMC XMC]
@@ -187,6 +199,7 @@ A couple things for contributors:
 | {{yes|Threads + Async File IO}}
 | {{yes|.NET Plugins}}
 | {{unknown}}
+| {{no|Unknown}}
 | {{unknown|Rewrite in progress}}
 |-
 ! [https://github.com/Mineserver/mineserver2 Mineserver 2]
@@ -201,6 +214,7 @@ A couple things for contributors:
 | {{planned|boost, ZeroMQ}}
 | {{yes|C++}}
 | {{unknown}}
+| {{no|Unknown}}
 | {{unknown|On hiatus since April 2012}}
 |-
 |}
