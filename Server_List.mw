@@ -52,6 +52,21 @@ A couple things for contributors:
 | [https://github.com/SirCmpwn/PartyCraft#features Link]
 | {{yes|Active}}
 |-
+! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
+| [http://www.spout.org/ Spout LLC] and community
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://spout.in/licensev1 Spout License v1]
+| {{yes|1.4.7}}
+| {{yes|Custom}}
+| {{yes}}
+| {{planned|Partial}}
+| {{planned|Partial}}
+| {{yes|Parallel Threads}}
+| {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{no|unknown}}
+| {{yes|Active}}
+|-
 ! [http://bravoserver.org/ Bravo]
 | Corbin Simpson
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
@@ -95,21 +110,6 @@ A couple things for contributors:
 | {{yes|C++}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | [https://github.com/fador/mineserver/#features Link]
-| {{yes|Active}}
-|-
-! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
-| [http://www.spout.org/ Spout LLC] and community
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://spout.in/licensev1 Spout License v1]
-| {{no|1.4.6}}
-| {{yes|Custom}}
-| {{yes}}
-| {{planned|Partial}}
-| {{planned|Partial}}
-| {{yes|Parallel Threads}}
-| {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{no|unknown}}
 | {{yes|Active}}
 |-
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
