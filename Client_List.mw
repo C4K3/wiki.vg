@@ -75,7 +75,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{BSD}}
 | {{no}}
 | {{no}}
-| {{supports|1.4.2}}
+| {{yes|1.4.7}}
 |-
 ! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
