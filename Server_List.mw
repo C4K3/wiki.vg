@@ -49,7 +49,7 @@ A couple things for contributors:
 | {{yes|Async Networking/Logic}}
 | {{no}}
 | {{yes|{{windows}}{{linux}}{{mac}}}}
-| {{yes|[https://github.com/SirCmpwn/PartyCraft#features Link]}}
+| [https://github.com/SirCmpwn/PartyCraft#features Link]
 | {{yes|Active}}
 |-
 ! [http://bravoserver.org/ Bravo]
@@ -64,7 +64,7 @@ A couple things for contributors:
 | {{yes|Async I/O, Processes}}
 | {{yes|Python}}
 | {{yes|{{linux}}{{windows}}}}
-| {{yes|[https://github.com/bravoserver/bravo#features Link]}}
+| [https://github.com/bravoserver/bravo#features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/BizarreCake/hCraft/ hCraft]
@@ -79,7 +79,7 @@ A couple things for contributors:
 | {{yes|Threads/Events}}
 | {{no}}
 | {{yes|{{linux}}}}
-| {{yes|[https://github.com/BizarreCake/hCraft/#features Link]}}
+| [https://github.com/BizarreCake/hCraft/#features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/fador/mineserver/ Mineserver]
@@ -94,7 +94,7 @@ A couple things for contributors:
 | {{unknown}}
 | {{yes|C++}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{yes|[https://github.com/fador/mineserver/#features Link]}}
+| [https://github.com/fador/mineserver/#features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
@@ -124,7 +124,7 @@ A couple things for contributors:
 | {{yes|Erlang processes}}
 | {{no}}
 | {{yes|{{linux}}}}
-| {{yes|[https://github.com/clonejo/mc-erl/#feature-list Link]}}
+| [https://github.com/clonejo/mc-erl/#feature-list Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
@@ -139,7 +139,7 @@ A couple things for contributors:
 | {{yes|Async Networking}}
 | {{no}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{yes|[https://github.com/JoeDoyle23/BurningPig#current-features Link]}}
+| [https://github.com/JoeDoyle23/BurningPig#current-features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/deoxxa/jsmc jsmc]
@@ -154,7 +154,7 @@ A couple things for contributors:
 | {{yes|Async Networking/Logic}}
 | {{yes|JavaScript}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{yes|[https://github.com/deoxxa/jsmc#features Link]}}
+| [https://github.com/deoxxa/jsmc#features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/sprenger120/FastCraft FastCraft]
@@ -184,7 +184,7 @@ A couple things for contributors:
 | {{yes|Event-driven}}
 | {{no}}
 | {{yes|{{linux}}{{windows}}}}
-| {{yes|[http://www.wiki.vg/Realcraft:Features Link]}}
+| [http://www.wiki.vg/Realcraft:Features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/Xinnx/XMC XMC]
