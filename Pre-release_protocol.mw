@@ -1,11 +1,52 @@
 This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.4.6, protocol 51) to the current pre-release (or weekly release). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 
 == New Packets ==
+
 -None-
 
 == Changed Packets ==
 
--None-
+''Server to Client''
+
+This is sent to the client when it should open an inventory, such as a chest, workbench, or furnace. This message is not sent anywhere for clients opening their own inventory.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=4 | 0x64
+| class="col1 centeralign" | Window id
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 123
+| class="col4" | A unique id number for the window to be displayed.  Notchian server implementation is a counter, starting at 1.
+|- class="row1"
+| class="col0 centeralign" | Inventory Type
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 2
+| class="col3" | The window type to use for display.  Check below
+|- class="row1"
+| class="col0 centeralign" | Window title
+| class="col1 centeralign" | string
+| class="col2 centeralign" | <code>Chest</code>
+| class="col3" | The title of the window.
+|- class="row1"
+| class="col0 centeralign" | Number of Slots
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 3
+| class="col3" | Number of slots in the window (excluding the number of slots in the player inventory).
+|- class="row1"
+| class="col0 centeralign" | Use provided window title
+| class="col1 centeralign" | boolean
+| class="col2 centeralign" | 3
+| class="col3" | If false, the client will look up a string like "window.minecart". If true, the client uses what the server provides.
+|- class="row2"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 6 bytes + length of string
+|}
 
 == Changed Data Types ==
 
