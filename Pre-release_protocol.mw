@@ -58,4 +58,4 @@ This is sent to the client when it should open an inventory, such as a chest, wo
 
 == Protocol History ==
 
--None-
+13w02a: Added boolean to 0x64 to determine whether or not to use the provided window title.
