@@ -18,7 +18,7 @@ This is sent to the client when it should open an inventory, such as a chest, wo
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan=4 | 0x64
+| class="col0 centeralign" rowspan=5 | 0x64
 | class="col1 centeralign" | Window id
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 123
