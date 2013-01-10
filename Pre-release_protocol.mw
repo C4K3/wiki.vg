@@ -41,7 +41,7 @@ This is sent to the client when it should open an inventory, such as a chest, wo
 |- class="row1"
 | class="col0 centeralign" | Use provided window title
 | class="col1 centeralign" | boolean
-| class="col2 centeralign" | 3
+| class="col2 centeralign" | 1
 | class="col3" | If false, the client will look up a string like "window.minecart". If true, the client uses what the server provides.
 |- class="row2"
 | class="col0" | Total Size:
