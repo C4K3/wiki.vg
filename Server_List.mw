@@ -67,6 +67,21 @@ A couple things for contributors:
 | {{no|unknown}}
 | {{yes|Active}}
 |-
+! [https://github.com/BizarreCake/hCraft/ hCraft]
+| BizarreCake
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://gplv3.fsf.org/ GPLv3]
+| {{yes|1.4.7}}
+| {{yes|Custom (HWv1)}}
+| {{yes}}
+| {{yes}}
+| {{planned|Players}}
+| {{yes|Threads/Events}}
+| {{no}}
+| {{yes|{{linux}}}}
+| [https://github.com/BizarreCake/hCraft/#features Link]
+| {{yes|Active}}
+|-
 ! [http://bravoserver.org/ Bravo]
 | Corbin Simpson
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
@@ -80,21 +95,6 @@ A couple things for contributors:
 | {{yes|Python}}
 | {{yes|{{linux}}{{windows}}}}
 | [https://github.com/bravoserver/bravo#features Link]
-| {{yes|Active}}
-|-
-! [https://github.com/BizarreCake/hCraft/ hCraft]
-| BizarreCake
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://gplv3.fsf.org/ GPLv3]
-| {{no|1.4.6}}
-| {{yes|Custom (HWv1)}}
-| {{yes}}
-| {{yes}}
-| {{planned|Players}}
-| {{yes|Threads/Events}}
-| {{no}}
-| {{yes|{{linux}}}}
-| [https://github.com/BizarreCake/hCraft/#features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/fador/mineserver/ Mineserver]
