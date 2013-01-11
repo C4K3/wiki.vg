@@ -82,6 +82,21 @@ A couple things for contributors:
 | [https://github.com/BizarreCake/hCraft/#features Link]
 | {{yes|Active}}
 |-
+! [https://github.com/clonejo/mc-erl/ mc-erl]
+| Apiocera, clonejo
+| [http://en.wikipedia.org/wiki/Erlang Erlang]
+| not decided yet
+| {{yes|1.4.7}}
+| {{planned|custom (Mnesia)}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Erlang processes}}
+| {{no}}
+| {{yes|{{linux}}}}
+| [https://github.com/clonejo/mc-erl/#feature-list Link]
+| {{yes|Active}}
+|-
 ! [http://bravoserver.org/ Bravo]
 | Corbin Simpson
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
@@ -110,21 +125,6 @@ A couple things for contributors:
 | {{yes|C++}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | [https://github.com/fador/mineserver/#features Link]
-| {{yes|Active}}
-|-
-! [https://github.com/clonejo/mc-erl/ mc-erl]
-| clonejo
-| [http://en.wikipedia.org/wiki/Erlang Erlang]
-| not decided yet
-| {{no|1.4.6}}
-| {{planned|custom (Mnesia)}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Erlang processes}}
-| {{no}}
-| {{yes|{{linux}}}}
-| [https://github.com/clonejo/mc-erl/#feature-list Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
