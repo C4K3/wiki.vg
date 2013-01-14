@@ -529,7 +529,7 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 ==== Minecart ====
 
 * Index '''16''' (byte): Bitfield for flags, but the only known value is 1 if the minecart is powered and has fuel. 
-* Index '''17''' (int): Unknown. Initialized to 0
+* Index '''17''' (int): Minecart shaking (When punched). Initialized to 0. Higher number gives a higher shaking.
 * Index '''18''' (int): Unknown. Initialized to 1
 * Index '''19''' (int): Damage taken. The cart breaks when this is over 40.
 
