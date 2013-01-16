@@ -52,7 +52,18 @@ This is sent to the client when it should open an inventory, such as a chest, wo
 
 == Changed Data Types ==
 
--None-
+=== Entity Metadata ===
+
+
+'''Index 5, string: Mob Name'''
+
+The name to be displayed on the nameplate above the entity (If Show nameplate = 1).
+
+
+'''Index 6, byte: Show nameplate'''
+
+Set to 1 to show the nameplate, otherwise it is not displayed.
+
 
 == Removed Packets ==
 
