@@ -90,4 +90,6 @@ Set to 1 to show the block in the minecart, otherwise the block is not displayed
 
 == Protocol History ==
 
+13w03a: Protocol version is now 53. '''All''' Minecart entities use object type 10, and send the block within seperately.
+
 13w02a: Added boolean to 0x64 (Open Window) to determine whether or not to use the provided window title.
