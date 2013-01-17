@@ -54,15 +54,34 @@ This is sent to the client when it should open an inventory, such as a chest, wo
 
 === Entity Metadata ===
 
+==== Mobs ====
 
 '''Index 5, string: Mob Name'''
 
 The name to be displayed on the nameplate above the entity (If Show nameplate = 1).
 
-
 '''Index 6, byte: Show nameplate'''
 
 Set to 1 to show the nameplate, otherwise it is not displayed.
+
+
+==== Minecart ====
+
+'''Index 20, int: Block id & metadata'''
+
+The id and metadata of the block to be shown in the minecart (If Show block = 1). 
+
+The block id can be obtained by: value & 0xFFFF. 
+
+The block metadata can be obtained by: value >> 16.
+
+'''Index 21, int: Block position'''
+
+The position (Y axis) of the block in the minecart. (Default: 6)
+
+'''Index 22, byte: Show block'''
+
+Set to 1 to show the block in the minecart, otherwise the block is not displayed.
 
 
 == Removed Packets ==
