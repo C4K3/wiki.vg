@@ -29,6 +29,6 @@ The entire packet looks something like this:
 
 === Sample code ===
 
-* [https://gist.github.com/1209061] - Python
-* [http://forums.bukkit.org/threads/solved-minecraft-server-list-ping-php-script-for-1-4.108096/#post-1395553] - PHP
-* [https://gist.github.com/4574114] - Java
+* [https://gist.github.com/1209061 Python]
+* [http://forums.bukkit.org/threads/solved-minecraft-server-list-ping-php-script-for-1-4.108096/#post-1395553 PHP]
+* [https://gist.github.com/4574114 Java]
