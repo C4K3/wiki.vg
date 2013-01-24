@@ -75,7 +75,7 @@ This is sent to the client when it should update a scoreboard item.
 | class="col1 rightalign" colspan="4" | 9 bytes + length of strings
 |}
 
-=== Display scoreboard (0xD0) ===
+=== Display Scoreboard (0xD0) ===
 
 ''Server to Client''
 
