@@ -13,7 +13,7 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 !Last Version Supported
 |-
 ! [http://www.pocketmine.org/ PocketMine-MP]
-| Server written in PHP, with API, maps and more
+| Server with API, maps and more
 | Server
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
