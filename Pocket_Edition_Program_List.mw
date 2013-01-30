@@ -32,6 +32,16 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{windows}}{{linux}}{{mac}}
 | {{yes|v0.6.0 alpha}}
 |-
+! [https://gist.github.com/4678643 Protocol Comparator]
+| Script that parses .lst files generated from the libminecraftpe.so to obtain information about the protocol
+| Parser
+| [https://twitter.com/shoghicp shoghicp]
+| {{PHP}}
+| {{LGPL}}
+| 
+| {{windows}}{{linux}}{{mac}}
+| {{yes|v0.6.0 alpha}}
+|-
 |}
 
 [[Category:Pocket Minecraft]]
