@@ -18,9 +18,9 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
-| Alpha_1.1dev
+| Alpha_1.2dev
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.5.0 alpha}}
+| {{yes|v0.6.0 alpha}}
 |-
 ! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
 | UDP proxy for MCPE Servers, allowing joining Online Servers from your local network. Dumps packets
@@ -30,7 +30,7 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | Unknown
 | Allows seeing sent/received packets through a web interface
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.5.0 alpha}}
+| {{yes|v0.6.0 alpha}}
 |-
 |}
 
