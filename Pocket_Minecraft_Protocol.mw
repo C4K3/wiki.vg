@@ -633,6 +633,13 @@ Multiple Data Encapsulation packets could be present in one packet. If you want 
 
 == Data Packets ==
 
+=== Raw Information ===
+* Generated using [https://gist.github.com/4678643 this parser]
+* [http://pastie.org/5981487 0.6.0 protocol]
+* [http://pastie.org/5981489 0.5.0 protocol]
+* [http://pastie.org/5981490 0.4.0 protocol]
+
+
 === Data ID List ===
 The Minecraft ID is the first byte of the data got in Custom Packets and parsing them.
 All packets are found by using the tutorial posted by Jocopa3 found [http://www.minecraftforum.net/topic/1446513-mcpeserver-and-server-modding-api-in-development/page__st__100#entry18330091 here].
