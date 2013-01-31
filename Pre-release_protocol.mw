@@ -108,7 +108,7 @@ This is sent to the client when it should display a scoreboard.
 
 ''Server to Client''
 
-(Needs testing)
+Creates and updates teams.
 
 {| class="wikitable"
 |- class="row0"
@@ -122,7 +122,7 @@ This is sent to the client when it should display a scoreboard.
 | class="col1 centeralign" | Team Name
 | class="col2 centeralign" | string
 | class="col3 centeralign" | mcdevs
-| class="col4" | An unique name for the team. (Shares with scoreboard).
+| class="col4" | An unique name for the team. (Shared with scoreboard).
 |- class="row2"
 | class="col0 centeralign" | Mode
 | class="col1 centeralign" | byte
@@ -139,19 +139,19 @@ If 4 then players are removed from the team.
 | class="col1 centeralign" | Team Display Name
 | class="col2 centeralign" | string
 | class="col3 centeralign" | McDevs
-| class="col4" |  Only if Mode = 0 or 2.
+| class="col4" |  Only if Mode = 0 or 2. 
 |- class="row3"
-| class="col1 centeralign" | Team Prefix?
+| class="col1 centeralign" | Team Prefix
 | class="col2 centeralign" | string
 | class="col3 centeralign" | 
-| class="col4" |  Only if Mode = 0 or 2.
+| class="col4" |  Only if Mode = 0 or 2. Displayed before the players' name that are part of this team. 
 |- class="row4"
-| class="col1 centeralign" | Team Suffix?
+| class="col1 centeralign" | Team Suffix
 | class="col2 centeralign" | string
 | class="col3 centeralign" | 
-| class="col4" |  Only if Mode = 0 or 2.
+| class="col4" |  Only if Mode = 0 or 2. Displayed after the players' name that are part of this team. 
 |- class="row5"
-| class="col1 centeralign" | Friendly fire?
+| class="col1 centeralign" | Friendly fire
 | class="col2 centeralign" | bool
 | class="col3 centeralign" | false
 | class="col4" |  Only if Mode = 0 or 2.
@@ -159,12 +159,12 @@ If 4 then players are removed from the team.
 | class="col1 centeralign" | Player count
 | class="col2 centeralign" | short
 | class="col3 centeralign" | 0
-| class="col4" |  Only if Mode = 0 or 3 or 4.
+| class="col4" |  Only if Mode = 0 or 3 or 4. Number of players in the array
 |- class="row7"
 | class="col1 centeralign" | Players
 | class="col2 centeralign" | Array of strings
 | class="col3 centeralign" | 
-| class="col4" |  Only if Mode = 0 or 3 or 4.
+| class="col4" |  Only if Mode = 0 or 3 or 4. Players to be added/remove from the team.
 |- class="row8"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | Variable
