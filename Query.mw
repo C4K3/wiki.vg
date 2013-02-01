@@ -61,7 +61,10 @@ The default port is 25565
 
 == Handshake ==
 
-First, generate a session ID, any arbitrary int32 (or 4 chars) that you can use to identify your requests. The following examples use session ID = 1 (encoded as <code>00 00 00 01</code> on the hex dumps)
+=== Generating a Session ID ===
+The session ID is used identify your requests. The following examples use session ID = 1 (encoded as <code>00 00 00 01</code> on the hex dumps).
+
+Only the lower 4-bits on each byte of the session ID should be used as Minecraft does not process the higher 4-bits on each byte. To convert any 4-byte session ID to a valid Minecraft session ID, simply mask the bits with <code>sessionId & 0x0F0F0F0F</code>.
 
 === Request ===
 
