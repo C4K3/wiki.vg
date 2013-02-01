@@ -50,6 +50,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Changed packet: [[Protocol#Destroy_Entity_.280x1D.29|0x1D Destroy Entity]]
 * Changed packet: [[Protocol#Chunk_Data_.280x33.29|0x33 Chunk Data]] - remove Unused int
 * Changed packet: [[Protocol#Block_Change_.280x35.29|0x35 Block Change]]
+* Changed packet: [[Protocol#Block_Action_.280x36.29|0x36 Block Action]]
 * Changed packet: [[Protocol#Player_Abilities_.280xCA.29|0xCA Player Abilities]]
 
 * Removed packet: 0x32 Map Column Allocation
