@@ -37,7 +37,7 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 | Parser/Comparator
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
-| {{LGPL}}
+| 
 | Generates JSON/HTML output
 | {{windows}}{{linux}}{{mac}}
 | {{yes|v0.6.1 alpha}}
