@@ -77,6 +77,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes|1.4.7}}
 |-
+! [https://github.com/nickelpro/spock SpockBot]
+| WIP Client and Bot, based off of BarneyGale's protocol implementation
+| nickelpro
+| {{Python}}
+| {{MIT}}
+| {{no}}
+| {{no}}
+| {{yes|1.4.7}}
+|-
 ! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
 | Wallbraker et al.
