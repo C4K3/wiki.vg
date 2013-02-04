@@ -42,7 +42,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|1.4.6}}
 |-
 ! [https://github.com/superjoe30/mineflayer mineflayer]
-| Mission statement: Create Minecraft bots with a powerful, stable, and high level JavaScript API. Current status: basic physics and movement, entity tracking, block knowledge
+| Mission statement: Create Minecraft bots with a powerful, stable, and high level JavaScript API.
 | [https://github.com/superjoe30 superjoe30]
 | [http://nodejs.org/ node.js]
 | {{MIT}}
