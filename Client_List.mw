@@ -78,7 +78,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|1.4.7}}
 |-
 ! [https://github.com/nickelpro/spock SpockBot]
-| WIP Client and Bot, based off of BarneyGale's protocol implementation
+| WIP SMP Client and Bot, based on BarneyGale's protocol implementation
 | nickelpro
 | {{Python}}
 | {{MIT}}
