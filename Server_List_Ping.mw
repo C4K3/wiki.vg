@@ -13,7 +13,7 @@ After the first 3 bytes, the packet is a big-endian UCS-2 string. It begins with
 The remainder is null character (that is <code>00 00</code>) delimited fields:
 
 # Protocol version (e.g. <code>47</code>)
-# Minecraft server version (e.g. <code>1.4.1</code>)
+# Minecraft server version (e.g. <code>1.4.2</code>)
 # Message of the day (e.g. <code>A Minecraft Server</code>)
 # Current player count
 # Max players
