@@ -12,11 +12,13 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 ! scope="col" | Author
 ! scope="col" | Development Status
 |-
+| [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.4.6-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{yes|#52}} - 13w01b || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
+|-
+| [https://github.com/superjoe30/mc-proxy mc-proxy] || gives you an "online mode whitelist" (or blacklist) || {{yes|#51}} - 1.4.7 || node.js || Windows, Mac, & Linux || [[user:Superjoe|superjoe]] || {{yes|Active}}
+|-
 | [https://code.google.com/p/mc-server/ ProtoProxy] || a subproject of MCServer, protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parses basic packets. || {{yes|#51}} - 1.4.6 || C++ || Windows || [[user:xoft|xoft]] || {{yes|Active}}
 |-
 | [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{yes|#51}} - 1.4.6 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
-|-
-| [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.4.6-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{yes|#52}} - 13w01b || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
 |-
 | [https://github.com/bencvt/McPacketSniffer McPacketSniffer] || A Minecraft client mod that logs packets to text files || {{no|#47}} - 1.4.4 || Java || Windows, Mac, & Linux || [[User:Benc|bencvt]] || {{yes|Active}}
 |-
