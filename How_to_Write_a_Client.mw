@@ -215,7 +215,7 @@ To attack another player or mob, send a 0x07 with the entity's id. The range see
 
 The server sends 0x08 health updates whenever your health changes. If the server sends a health value less than 1, you are dead. Your avatar will disappear a second or two after dying. The "fall over" animation is not automatic.
 
-You can safely send a 0x09 Respawn immediately after you get a death notice. You'll be given a 0x0D and possibly other messages after you do.
+You can safely send a [[protocol#0xCD|0xCD Client Status]] immediately after you get a death notice. You'll be given a 0x0D and possibly other messages after you do.
 
 If your health updates come much slower than on the notchian client, make sure you are sending position updates fast enough.
 
