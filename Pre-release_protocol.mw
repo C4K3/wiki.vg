@@ -261,4 +261,6 @@ Set to 1 to show the block in the minecart, otherwise the block is not displayed
 
 13w03a: Protocol version is now 54. 
 
-13w02a: Protocol version is now 53. '''All''' Minecart entities use [[Entities#Objects|object type]] 10, and send the block within seperately. Minecarts now send their type as [[Object_Data|object data]] in [[Protocol#Spawn_Object.2FVehicle_.280x17.29|0x17]]. Added boolean to 0x64 (Open Window) to determine whether or not to use the provided window title.
+13w02a: Protocol version is now 53. '''All''' Minecart entities use [[Entities#Objects|object type]] 10, and send the block within seperately. Minecarts now send their type as [[Object_Data|object data]] in [[Protocol#Spawn_Object.2FVehicle_.280x17.29|0x17]]. 
+
+13w01a: Protocol version is now 52. Added boolean to 0x64 (Open Window) to determine whether or not to use the provided window title.
