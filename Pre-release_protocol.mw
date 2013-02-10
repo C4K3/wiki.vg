@@ -255,6 +255,8 @@ Set to 1 to show the block in the minecart, otherwise the block is not displayed
 == Protocol History ==
 13w06a: Protocol version is now <strike>57</strike> '''58''' (Changed after bug fix, version is still 13w06a).
 
+13w05b: Protocol version is now 57
+
 13w05a: Protocol version is now 56. New packets for teams.
 
 13w04a: Protocol version is now 55. New packets for scoreboards.
