@@ -8,6 +8,13 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Changed packet: [[Protocol#Map_Chunk_Bulk_.280x38.29|0x38 Map Chunk Bulk]] - Added boolean field
 * Removed packet: 0x15 Spawn Dropped Item - Now merged into [[Protocol#Spawn_Object.2FVehicle_.280x17.29|0x17 Spawn Object/Vehicle]]. The Entity Type ID is 0x02. Set the item type by sending [[Protocol#Entity_Metadata_.280x28.29|0x28 Entity Metadata]] with a slot at index 10.  [https://gist.github.com/4325656 Vanilla packet dump]
 
+===== Pre-release protocol =====
+* 13w06a: Protocol version is now 57, 58.
+* 13w05a: Protocol version is now 56. New packets for teams: 0xD1
+* 13w04a: Protocol version is now 55. New packets for scoreboards: 0xCE, 0xCF, 0xD0
+* 13w03a: Protocol version is now 54.
+* 13w02a: Protocol version is now 53. All Minecart entities use object type 10, and send the block within seperately. Minecarts now send their type as object data in 0x17. Added boolean to 0x64 (Open Window) to determine whether or not to use the provided window title.
+
 === 2012-11-14 ===
 * 1.4.4
 * Protocol version is now 49
