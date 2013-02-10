@@ -13,7 +13,8 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * 13w05a: Protocol version is now 56. New packets for teams: 0xD1
 * 13w04a: Protocol version is now 55. New packets for scoreboards: 0xCE, 0xCF, 0xD0
 * 13w03a: Protocol version is now 54.
-* 13w02a: Protocol version is now 53. All Minecart entities use object type 10, and send the block within seperately. Minecarts now send their type as object data in 0x17. Added boolean to 0x64 (Open Window) to determine whether or not to use the provided window title.
+* 13w02a: Protocol version is now 53. All Minecart entities use object type 10, and send the block within seperately. Minecarts now send their type as object data in 0x17. 
+* 13w01a: Protocol version is now 52. Added boolean to 0x64 (Open Window) to determine whether or not to use the provided window title.
 
 === 2012-11-14 ===
 * 1.4.4
