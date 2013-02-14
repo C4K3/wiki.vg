@@ -69,13 +69,13 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{supports current}}
 |-
 ! [https://github.com/lukleh/TwistedBot TwistedBot]
-| bot and proxy
+| bot and proxy, up to date information in readme on github
 | [https://twitter.com/lukleh lukleh]
 | {{Python}}, {{Twisted}}
 | {{BSD}}
 | {{no}}
 | {{no}}
-| {{yes|1.4.7}}
+| {{yes|13w07a}}
 |-
 ! [https://github.com/nickelpro/spock SpockBot]
 | WIP SMP Client and Bot, based on BarneyGale's protocol implementation
