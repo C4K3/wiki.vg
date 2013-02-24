@@ -57,6 +57,14 @@ x, y, z: coordinates of the block relative to spawn
 
 Returns: an integer of type blockTypeId, corresponding to a block type in Minecraft Pi.
 
+==== world.getBlockWithData(x,y,z) ====
+
+Gets the ID and Optional Parameter for a block in the world.
+
+x, y, z: coordinates of the block relative to spawn
+
+Returns: a block object corresponding toa  block type in Minecraft Pi.
+
 ==== world.setBlock(x,y,z,blockTypeId,[blockData]) ====
 
 Sets the ID of a block in the world. The data parameter is optional.
