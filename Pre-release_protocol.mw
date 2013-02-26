@@ -152,8 +152,8 @@ If 4 then players are removed from the team.
 | class="col4" |  Only if Mode = 0 or 2. Displayed after the players' name that are part of this team. 
 |- class="row5"
 | class="col1 centeralign" | Friendly fire
-| class="col2 centeralign" | bool
-| class="col3 centeralign" | false
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 0
 | class="col4" |  Only if Mode = 0 or 2.
 |- class="row6"
 | class="col1 centeralign" | Player count
@@ -253,9 +253,11 @@ Set to 1 to show the block in the minecart, otherwise the block is not displayed
 -None-
 
 == Protocol History ==
+13w05b: Protocol version is now 59.
+
 13w06a: Protocol version is now <strike>57</strike> '''58''' (Changed after bug fix, version is still 13w06a).
 
-13w05b: Protocol version is now 57
+13w05b: Protocol version is now 57.
 
 13w05a: Protocol version is now 56. New packets for teams.
 
