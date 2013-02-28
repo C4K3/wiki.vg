@@ -122,7 +122,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|Yes, using [http://en.wikipedia.org/wiki/Microsoft_XNA XNA]}}
 | {{supports|1.2.5}}
 |-
-! [[C# Minebot]]
+! [https://github.com/umby24/Minebot C# Minebot]
 | Work in progress standalone bot
 | Umby24
 | {{C#}}
