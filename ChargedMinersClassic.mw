@@ -32,7 +32,7 @@
 * Intel graphics cards doesn't get smooth textures.
 * Alt-tabbing out of the game window sometimes keeps the mouse focus stolen.
 * CM should prefer, or at least fall back to, terrain.png from Minecraft Classic's minecraft.jar
-* Player "jumps" when walking along inside wall of walkway whilst in this configuration. [http://imgur.com/qVKHH Block_Config]
+* Player "jumps" when walking along inside wall of walkway whilst in any two block tall tunnel or arch - this configuration is a good example. [http://imgur.com/qVKHH Block_Config]
 
 == Done ==
 * <strike>UI Scale - Increasing or decreasing the size of chat should probably be an option, if only in settings.ini.</strike>
