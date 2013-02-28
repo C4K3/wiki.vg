@@ -253,7 +253,7 @@ Set to 1 to show the block in the minecart, otherwise the block is not displayed
 -None-
 
 == Protocol History ==
-13w05b: Protocol version is now 59.
+13w09b: Protocol version is now 59.
 
 13w06a: Protocol version is now <strike>57</strike> '''58''' (Changed after bug fix, version is still 13w06a).
 
