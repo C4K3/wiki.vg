@@ -129,7 +129,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|{{GPLv3}}? No mention of license in source}}
 | {{yes}}
 | {{no}}
-| {{supports|1.4.7}}
+| {{yes|1.4.7}}
 |-
 ! [https://github.com/axus/libmc--c mc--c]
 | Draw the map.  Can't talk or move.
