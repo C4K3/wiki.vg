@@ -39,7 +39,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | [http://spout.in/licensev1 Spout License v1]
 | {{yes}}
 | {{yes|Yes, using [http://www.lwjgl.org LWJGL]}}
-| {{yes|1.4.6}}
+| {{yes|1.4.7}}
 |-
 ! [https://github.com/superjoe30/mineflayer mineflayer]
 | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
