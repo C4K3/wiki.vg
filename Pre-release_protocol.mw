@@ -2,6 +2,70 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 == New Packets ==
 
+=== Particle (0x3F) ===
+
+''Server to Client''
+
+This displays the named particle
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=9 | 0x3F
+| class="col1 centeralign" | Particle name
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>hugeexplosion</code>
+| class="col4" | The name of the particle to create
+|- class="row2"
+| class="col0 centeralign" | X
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 0
+| class="col3" | X position of the particle
+|- class="row3"
+| class="col0 centeralign" | Y
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 0
+| class="col3" | Y position of the particle
+|- class="row4"
+| class="col0 centeralign" | Z
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 0
+| class="col3" | Z position of the particle
+|- class="row5"
+| class="col0 centeralign" | Offset X
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 0
+| class="col3" | This is added to the X position after being multiplied by random.nextGaussian() 
+|- class="row6"
+| class="col0 centeralign" | Offset Y
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 0
+| class="col3" | This is added to the Y position after being multiplied by random.nextGaussian() 
+|- class="row7"
+| class="col0 centeralign" | Offset Z
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 0
+| class="col3" | This is added to the Z position after being multiplied by random.nextGaussian() 
+|- class="row4"
+| class="col0 centeralign" | Particle speed
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 0
+| class="col3" | The speed of each particle
+|- class="row4"
+| class="col0 centeralign" | Number of particles
+| class="col1 centeralign" | int
+| class="col2 centeralign" | 0
+| class="col3" | The number of particles to create
+|- class="row8"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 34 bytes + length of string
+|}
+
 === Create Scoreboard (0xCE) ===
 
 ''Server to Client''
