@@ -20,7 +20,7 @@ This displays the named particle
 | class="col1 centeralign" | Particle name
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>hugeexplosion</code>
-| class="col4" | The name of the particle to create
+| class="col4" | The name of the particle to create. A list can be found [https://gist.github.com/thinkofdeath/5110835 here]
 |- class="row2"
 | class="col0 centeralign" | X
 | class="col1 centeralign" | float
