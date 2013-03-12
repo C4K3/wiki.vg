@@ -1,0 +1,7 @@
+The Minecraft Realms API is the api endpoint used to control worlds hosted by Mojang's Minecraft Realms service.
+
+The API endpoint for Desktop Edition is located at https://mcoapi.minecraft.net .
+
+There is also an endpoint for Pocket Edition in development, located at https://peoapi.minecraft.net .
+
+[[Category:Minecraft Modern]]
