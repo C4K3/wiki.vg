@@ -312,6 +312,14 @@ The position (Y axis) of the block in the minecart. (Default: 6)
 
 Set to 1 to show the block in the minecart, otherwise the block is not displayed.
 
+== Closing the connection ==
+
+When a connection has been closed by either party the other party will respond with at least 100 bytes, each having the same value.
+
+Servers will send the byte 0x7C repeatedly.
+
+Clients will send the byte 0x01 repeatedly.
+
 == Removed Packets ==
 
 -None-
