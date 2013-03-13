@@ -26,7 +26,7 @@ A couple things for contributors:
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{Snapshot|13w03a}}
+| {{supports current}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -41,7 +41,7 @@ A couple things for contributors:
 | FakeTruth, xoft, luksor
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Apache 2.0
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -56,7 +56,7 @@ A couple things for contributors:
 | [http://www.spout.org/ Spout LLC] and community
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://spout.in/licensev1 Spout License v1]
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 | {{yes|Custom}}
 | {{yes}}
 | {{planned|Partial}}
@@ -71,7 +71,7 @@ A couple things for contributors:
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
 | {{yes}}
@@ -86,7 +86,7 @@ A couple things for contributors:
 | Apiocera, clonejo
 | [http://en.wikipedia.org/wiki/Erlang Erlang]
 | not decided yet
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 | {{planned|custom (Mnesia)}}
 | {{no}}
 | {{no}}
@@ -131,7 +131,7 @@ A couple things for contributors:
 | Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
 | [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 | {{yes|Custom}}
 | {{planned}}
 | {{no}}
