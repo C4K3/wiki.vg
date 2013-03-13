@@ -21,7 +21,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{WTFPL}}
 | {{no}}
 | {{unknown|Convert Map to PNG}}
-| {{supports current}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/DavidEGrayson/redstone-bot2 redstone-bot2]
 | Wheat farming, supersonic flying speed, general awareness of world, but no documentation.
@@ -30,7 +30,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | TBD
 | {{yes}}
 | {{no}}
-| {{yes|1.4.6}}
+| {{supports|1.4.6}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout] (with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
 | Open source, multi-threaded voxel game framework and platform that opens the doors for infinite possibilities. Features infinite height worlds, infinite content, advanced modeling support, and more!
@@ -39,7 +39,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | [http://spout.in/licensev1 Spout License v1]
 | {{yes}}
 | {{yes|Yes, using [http://www.lwjgl.org LWJGL]}}
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/superjoe30/mineflayer mineflayer]
 | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
@@ -48,7 +48,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/Dav1dde/BraLa BraLa]
 | Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
@@ -57,7 +57,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{GPLv3}}
 | {{yes}}
 | {{yes}}
-| {{yes|1.4.6}}
+| {{supports|1.4.6}}
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
@@ -66,7 +66,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{Apache}}
 | {{yes}}
 | {{no}}
-| {{supports current}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/lukleh/TwistedBot TwistedBot]
 | bot and proxy, up to date information in readme on github
@@ -75,7 +75,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{BSD}}
 | {{no}}
 | {{no}}
-| {{yes|13w07a}}
+| {{supports|13w07a}}
 |-
 ! [https://github.com/nickelpro/spock SpockBot]
 | WIP SMP Client and Bot, based on BarneyGale's protocol implementation
@@ -84,7 +84,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
@@ -129,7 +129,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|{{GPLv3}}? No mention of license in source}}
 | {{yes}}
 | {{no}}
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/axus/libmc--c mc--c]
 | Draw the map.  Can't talk or move.
