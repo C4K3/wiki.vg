@@ -14,28 +14,28 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | Drew DeVault (SirCmpwn)
 | {{C sharp}}
 | {{MIT}}
-| {{Snapshot|1.5 Prerelease}}
+| {{yes|1.5}}
 |-
 ! [https://github.com/pdelvo/Pdelvo.Minecraft Pdelvos Protocol Implementation]
 | .NET client/server protocol library with support for several versions.
 | pdelvo
 | {{C sharp}}
 | {{MIT}}
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
 | PHP client and protocol library. With events, actions and API
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{WTFPL}}
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/superjoe30/node-minecraft-protocol node-minecraft-protocol]
 | npm install minecraft-protocol
 | [https://github.com/superjoe30 superjoe]
 | [http://nodejs.org/ node.js]
 | {{BSD}}
-| {{yes|1.4.7}}
+| {{supports|1.4.7}}
 |-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
 |
