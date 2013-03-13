@@ -75,7 +75,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{BSD}}
 | {{no}}
 | {{no}}
-| {{supports|13w07a}}
+| {{yes|1.5}}
 |-
 ! [https://github.com/nickelpro/spock SpockBot]
 | WIP SMP Client and Bot, based on BarneyGale's protocol implementation
