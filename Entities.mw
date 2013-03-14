@@ -109,6 +109,14 @@ Initialized to <code>300</code> on entity spawn. When underwater, this is decrem
 
 Seems to be sent for *at least* all mobs. Not sure about players.
 
+=== Index 5, string: Name ===
+
+The string to display on the nameplate, if shown.
+
+=== Index 6, byte: Show name ===
+
+If 1, the nameplate will be displayed over the entity.
+
 === Index 8, int: Potion effects ===
 
 Players and most (all?) mobs send metadata with index <code>8</code>. This specifies the colour of the bubbling effects around the player.
