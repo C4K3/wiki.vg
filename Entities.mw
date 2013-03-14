@@ -540,6 +540,9 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 * Index '''17''' (int): Minecart shaking (When punched). Initialized to 0. Higher number gives a higher shaking.
 * Index '''18''' (int): Unknown. Initialized to 1
 * Index '''19''' (int): Damage taken. The cart breaks when this is over 40.
+* Index '''20''' (int): Block ID and metadata (upper 16 bits: metadata; lower 16: block ID)
+* Index '''21''' (int): Block Y position (default: 6)
+* Index '''22''' (byte): Show block (1: true; 0: false)
 
 ==== Boat ====
 
