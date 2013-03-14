@@ -18,7 +18,6 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 13w01a: Protocol version is now 52. Added boolean to 0x64 (Open Window) to determine whether or not to use the provided window title.
 
-=== Pre-release protocol ===
 * 13w06a: Protocol version is now 58.
 * 13w05b: Protocol version is now 57.
 * 13w05a: Protocol version is now 56. New packets for teams: 0xD1
