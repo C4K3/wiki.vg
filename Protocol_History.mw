@@ -1,5 +1,7 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 1.5.x ===
+
 13w09c: Protocol version is now 60.
 
 13w09b: Protocol version is now 59.
@@ -17,6 +19,8 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 13w02a: Protocol version is now 53. '''All''' Minecart entities use [[Entities#Objects|object type]] 10, and send the block within seperately. Minecarts now send their type as [[Object_Data|object data]] in [[Protocol#Spawn_Object.2FVehicle_.280x17.29|0x17]]. 
 
 13w01a: Protocol version is now 52. Added boolean to 0x64 (Open Window) to determine whether or not to use the provided window title.
+
+=== 1.4.x ===
 
 * 13w06a: Protocol version is now 58.
 * 13w05b: Protocol version is now 57.
