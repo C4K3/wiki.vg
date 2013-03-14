@@ -2,6 +2,7 @@
 
 == Improvements ==
 * Implement [[CPE]]
+* Ability to allocate more memory to the client.
 * Add option to save all on-screen text to a .txt file for later viewing.
 * Double-Jump - A feature from WOM, double jump makes jumping over typical two-block user-created walls easier, without the need to toggle fly mode for such a short ascend.
 * XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
