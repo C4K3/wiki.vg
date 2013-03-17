@@ -16,7 +16,7 @@ The current launcher version is "13", sending a value lower "12" than this will 
 #'''sessionId''' - a unique ID for your current session.
 #'''UID''' - currently unused, introduced near August 8th, 2012. Grum says this is the unique ID for the user, potentially for changing Minecraft names in future.
 
-If the request is missing a parameter, the server will return "Bad response". If the login information is incorrect, the server will return "Bad login". If the login information is correct but the account isn't premium, the server will return "User not premium".
+If the request is missing a parameter, the server will return "Bad response". If the login information is incorrect, the server will return "Bad login". If the login information is correct but the account isn't premium, the server will return "User not premium". If your minecraft.net account has been migrated to a Mojang account but you're logging in with your minecraft.net username the server will return "Acount migrated, use e-mail".
 
 == Updating ==
 
