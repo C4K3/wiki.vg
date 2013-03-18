@@ -18,6 +18,8 @@
 * Portable Mode
 ** Many users store their minecraft installs on network shares, thumbdrives, or dropbox instances. If there was some way to indicate to Charged that the settings were stored in the application directory, rather than AppData, this would relieve the need to re-configure the client on every machine the game is launched on.
 ** It is quite common for portable applications to check for the presence of a specific file within the application folder to determine the status of "portable" mode. If the file does not exist, it falls back to reading from AppData.
+*Ability to toggle the Reach Hack. 
+*Ability to change controls.
 
 == Launcher ==
 * <s>Button/Menu item to open the %AppData%/Roaming/charge folder.</s> - Done in 1.1
