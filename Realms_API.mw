@@ -5,3 +5,32 @@ The API endpoint for Desktop Edition is located at https://mcoapi.minecraft.net 
 There is also an endpoint for Pocket Edition in development, located at https://peoapi.minecraft.net .
 
 [[Category:Minecraft Modern]]
+
+== Sessions ==
+Session identification is stored in a pair of cookies sent with the header of every request.
+sid is the session ID of the currently logged in user (see [[Authentication]])
+user is the case-correct? username of the current user.
+An example session is shown below:
+<pre>
+GET /mco/available HTTP/1.1
+Cookie: sid=-000000000000000000;user=Herobrine
+Cache-Control: no-cache
+Pragma: no-cache
+User-Agent: Java/1.6.0_27
+Host: mcoapi.minecraft.net
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+</pre>
+
+
+== Endpoints: ==
+=== GET /mco/available ===
+
+Returns whether the user can access the Minecraft Realms service.
+
+Parameters: none
+
+Returns: plain text; either 
+ true
+or 
+ false
