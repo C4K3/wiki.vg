@@ -78,13 +78,13 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|1.5}}
 |-
 ! [https://github.com/nickelpro/spock SpockBot]
-| WIP SMP Client and Bot, based on BarneyGale's protocol implementation
+| SMP Bot framework, based on BarneyGale's protocol implementation
 | nickelpro
 | {{Python}}
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{supports|1.4.7}}
+| {{yes|1.5}}
 |-
 ! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
