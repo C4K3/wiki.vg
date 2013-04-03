@@ -8,7 +8,7 @@ with the postdata:
   ?user=<username>&password=<password>&version=<launcher version>
 and a "application/x-www-form-urlencoded" Content-Type header.
 
-The current launcher version is "13", sending a value lower "12" than this will cause the server to return "Old version", however you can send any large number and it will return as expected. If the login succeeded, it will return 5 ':' delimited values.
+The current launcher version is "13", sending a value lower than 12 will cause the server to return "Old version", however you can send any large number and it will return as expected. If the login succeeded, it will return 5 ':' delimited values.
   1343825972000:deprecated:SirCmpwn:7ae9007b9909de05ea58e94199a33b30c310c69c:dba0c48e1c584963b9e93a038a66bb98
 #'''current version''' of the game files (not the launcher itself). This is a unix timestamp which the launcher compares to the ~/.minecraft/bin/version file.
 #Previously contained a '''download ticket''' for requesting new versions of minecraft.jar from the server. Now contains only "deprecated".
