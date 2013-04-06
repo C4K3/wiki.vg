@@ -6,9 +6,9 @@ The client initiates a TCP connection to the minecraft server on the standard po
 
 == Server -> Client ==
 
-The server responds with a [[Protocol#Disconnect.2FKick_.280xFF.29|0xFF kick]] packet. The packet begins with a single byte identifier <code>ff</code>, then a two-byte big endian short giving the length of the proceeding string in characters. You can actually ignore the length because the server closes the connection after the response is sent.
+The server responds with a [[Protocol#Disconnect.2FKick_.280xFF.29|0xFF kick]] packet. The packet begins with a single byte identifier <code>ff</code>, then a two-byte little endian short giving the length of the proceeding string in characters. You can actually ignore the length because the server closes the connection after the response is sent.
 
-After the first 3 bytes, the packet is a big-endian UCS-2 string. It begins with two characters: <code>§1</code>, followed by a null character. On the wire these look like <code>00 a7 00 31 00 00</code>.
+After the first 3 bytes, the packet is a little-endian UCS-2 string. It begins with two characters: <code>§1</code>, followed by a null character. On the wire these look like <code>00 a7 00 31 00 00</code>.
 
 The remainder is null character (that is <code>00 00</code>) delimited fields:
 
