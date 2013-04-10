@@ -16,6 +16,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{MIT}}
 | {{yes|1.5}}
 |-
+! [https://github.com/superjoe30/node-minecraft-protocol node-minecraft-protocol]
+| npm install minecraft-protocol
+| [https://github.com/superjoe30 superjoe]
+| [http://nodejs.org/ node.js]
+| {{BSD}}
+| {{yes|1.5}}
+|-
 ! [https://github.com/pdelvo/Pdelvo.Minecraft Pdelvos Protocol Implementation]
 | .NET client/server protocol library with support for several versions.
 | pdelvo
@@ -28,13 +35,6 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{WTFPL}}
-| {{supports|1.4.7}}
-|-
-! [https://github.com/superjoe30/node-minecraft-protocol node-minecraft-protocol]
-| npm install minecraft-protocol
-| [https://github.com/superjoe30 superjoe]
-| [http://nodejs.org/ node.js]
-| {{BSD}}
 | {{supports|1.4.7}}
 |-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
