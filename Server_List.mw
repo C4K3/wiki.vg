@@ -22,6 +22,21 @@ A couple things for contributors:
 !style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
+! [http://bravoserver.org/ Bravo]
+| Corbin Simpson
+| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
+| MIT/X11
+| {{yes|1.5}}
+| {{yes|Alpha, Beta, Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Async I/O, Processes}}
+| {{yes|Python}}
+| {{yes|{{linux}}{{windows}}}}
+| [https://github.com/bravoserver/bravo#features Link]
+| {{yes|Active}}
+|-
 ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
@@ -110,21 +125,6 @@ A couple things for contributors:
 | {{no}}
 | {{yes|{{linux}}}}
 | [https://github.com/clonejo/mc-erl/#feature-list Link]
-| {{yes|Active}}
-|-
-! [http://bravoserver.org/ Bravo]
-| Corbin Simpson
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
-| MIT/X11
-| {{no|1.4.6}}
-| {{yes|Alpha, Beta, Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Async I/O, Processes}}
-| {{yes|Python}}
-| {{yes|{{linux}}{{windows}}}}
-| [https://github.com/bravoserver/bravo#features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
