@@ -17,13 +17,14 @@ Unfortunately, the NBT files you can encounter as a developer will be stored in 
 === Libraries ===
 There are many, many libraries for manipulating NBT, written in several languages, and often several per language. For example,
 
-* [https://github.com/twoolie/NBT Python],
 * [https://github.com/FliPPeh/cNBT C],
-* [https://github.com/Dav1dde/nbd D],
-* [https://github.com/mental/nbtfile Ruby], 
 * [https://github.com/fragmer/fNbt C#], 
+* [https://github.com/Dav1dde/nbd D],
+* [https://github.com/toqueteos/minero/tree/master/proto/nbt Go],
 * [https://github.com/sjmulder/nbt-js Javascript], 
 * [https://github.com/TheFrozenFire/PHP-NBT-Decoder-Encoder PHP],
+* [https://github.com/twoolie/NBT Python],
+* [https://github.com/mental/nbtfile Ruby], 
 * You get the idea...
 
 Unless you have specific goals or licence requirements, it is ''extremely recommended'' to go with one of the existing libraries.
