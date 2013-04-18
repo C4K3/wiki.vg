@@ -1,4 +1,4 @@
-This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.5, protocol 60) to the current pre-release (or weekly release). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
+This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.5, protocol 60) to the current pre-release, 13w16a (protocol 62). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 
 == New Packets ==
 
@@ -6,7 +6,39 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 == Changed Packets ==
 
--None-
+=== Update Health (0x08) ===
+
+''Server to Client''
+
+http://wiki.vg/Protocol#Update_Health_.280x08.29
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x08
+| class="col1 centeralign" | Health
+| class="col2 centeralign" | '''float'''
+| class="col3 centeralign" | '''20.0'''
+| class="col4" | 0 or less = dead, 20 = full HP
+|- class="row2"
+| class="col0 centeralign" | Food
+| class="col1 centeralign" | short
+| class="col2 centeralign" | 20
+| class="col3" | 0 - 20
+|- class="row3"
+| class="col0 centeralign" | Food Saturation
+| class="col1 centeralign" | float
+| class="col2 centeralign" | 5.0
+| class="col3" | Seems to vary from 0.0 to 5.0 in integer increments
+|- class="row4"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | '''11 bytes'''
+|}
 
 == Removed Packets ==
 
