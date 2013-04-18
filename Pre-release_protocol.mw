@@ -127,7 +127,7 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 | class="col0 centeralign" | '''Unknown'''
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | Probably related to jumping with horses
+| class="col3" | Probably related to horses
 |- class="row3"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 13 bytes
