@@ -40,6 +40,53 @@ http://wiki.vg/Protocol#Update_Health_.280x08.29
 | class="col1 rightalign" colspan="4" | '''11 bytes'''
 |}
 
+=== Player Abilities (0xCA) ===
+
+''Two-Way''
+
+The latter 2 bytes are used to indicate the walking and flying speeds respectively, while the first byte is used to determine the value of 4 booleans.
+ 
+These booleans are whether damage is disabled (god mode, '8' bit), whether the player can fly ('4' bit), whether the player is flying ('2' bit), and whether the player is in creative mode ('1' bit).
+ 
+To get the values of these booleans, simply AND (&) the byte with 1,2,4 and 8 respectively, to get the 0 or 1 bitwise value. To set them OR (|) them with their repspective masks.
+The vanilla client sends this packet when the player starts/stops flying with the second parameter changed accordingly. All other parameters are ignored by the vanilla server.
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan=4 | 0xCA
+| class="col1 centeralign" | Flags
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 5
+| class="col4" | 
+|- class="row2"
+| class="col0 centeralign" | Flying speed
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 12
+| class="col3" | 
+|- class="row3"
+| class="col0 centeralign" | Walking speed
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 25
+| class="col3" | 
+|- class="row3"
+| class="col0 centeralign" | '''Unknown'''
+| class="col1 centeralign" | ''byte[9]''
+| class="col2 centeralign" | { 0xCC, 0xCD, 0x3D, 0xCC, 0xCC, 0xCD, 0x10, 0x00, 0x00 }
+| class="col3" | Probably multiple fields.
+|- class="row2"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 4 bytes
+|}
+
+{{anchor|0xCB}}
+
+
 == Removed Packets ==
 
 -None-
