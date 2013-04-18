@@ -125,9 +125,9 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 | class="col3" | The vehicle entity ID attached to (-1 for unattaching)
 |- class="row2"
 | class="col0 centeralign" | '''Leash'''
-| class="col1 centeralign" | unsigned byte
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | If set to 1, leashes the entity to the vehicle
+| class="col1 centeralign" | boolean
+| class="col2 centeralign" | <code>false</code>
+| class="col3" | If set to true, leashes the entity to the vehicle
 |- class="row3"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 13 bytes
