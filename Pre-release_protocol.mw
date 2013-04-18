@@ -68,9 +68,9 @@ The client will send this with Action ID = 3 when "Leave Bed" is clicked.
 | class="col3" | The ID of the action, see below.
 |- class="row2"
 | class="col0 centeralign" | '''Unknown'''
-| class="col1 centeralign" | byte[]
-| class="col2 centeralign" | <code>{ 0, 0, 0, 0 }</code>
-| class="col3" | Probably an int32
+| class="col1 centeralign" | int
+| class="col2 centeralign" | <code>0</code>
+| class="col3" | Something to do with horses
 |- class="row3"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 10 bytes
