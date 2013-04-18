@@ -159,19 +159,14 @@ The vanilla client sends this packet when the player starts/stops flying with th
 | class="col4" | 
 |- class="row2"
 | class="col0 centeralign" | Flying speed
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 12
+| class="col1 centeralign" | '''float'''
+| class="col2 centeralign" | '''12.0'''
 | class="col3" | 
 |- class="row3"
 | class="col0 centeralign" | Walking speed
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 25
+| class="col1 centeralign" | '''float'''
+| class="col2 centeralign" | '''25.0'''
 | class="col3" | 
-|- class="row3"
-| class="col0 centeralign" | '''Unknown'''
-| class="col1 centeralign" | byte[6]
-| class="col2 centeralign" | <code>{ 0xCC, 0xCD, 0x3D, 0xCC, 0xCC, 0xCD }</code>
-| class="col3" | Probably multiple fields.
 |- class="row2"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 10 bytes
