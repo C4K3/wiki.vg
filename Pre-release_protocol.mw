@@ -125,7 +125,7 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 | class="col3" | The vehicle entity ID attached to (-1 for unattaching)
 |- class="row2"
 | class="col0 centeralign" | '''Unknown'''
-| class="col1 centeralign" | int
+| class="col1 centeralign" | unsigned byte
 | class="col2 centeralign" | <code>0</code>
 | class="col3" | Probably related to horses
 |- class="row3"
