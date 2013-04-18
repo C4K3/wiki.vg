@@ -76,16 +76,13 @@ The vanilla client sends this packet when the player starts/stops flying with th
 | class="col3" | 
 |- class="row3"
 | class="col0 centeralign" | '''Unknown'''
-| class="col1 centeralign" | ''byte[9]''
+| class="col1 centeralign" | byte[9]
 | class="col2 centeralign" | { 0xCC, 0xCD, 0x3D, 0xCC, 0xCC, 0xCD, 0x10, 0x00, 0x00 }
 | class="col3" | Probably multiple fields.
 |- class="row2"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 4 bytes
 |}
-
-{{anchor|0xCB}}
-
 
 == Removed Packets ==
 
