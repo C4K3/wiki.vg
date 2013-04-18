@@ -70,7 +70,7 @@ The client will send this with Action ID = 3 when "Leave Bed" is clicked.
 | class="col0 centeralign" | '''Unknown'''
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>0</code>
-| class="col3" | Something to do with horses
+| class="col3" | Something to do with horses. Ranged from 0 -> 90
 |- class="row3"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 10 bytes
