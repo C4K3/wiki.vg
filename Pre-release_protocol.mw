@@ -10,7 +10,9 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 
 ''Server to Client''
 
-http://wiki.vg/Protocol#Update_Health_.280x08.29
+Sent by the server to update/set the health of the player it is sent to. Added in protocol version 5.
+
+Food saturation acts as a food "overcharge". Food values will not decrease while the saturation is over zero. Players logging in automatically get a saturation of 5.0. Eating food increases the saturation as well as the food bar.
 
 {| class="wikitable"
 |- class="row0"
@@ -37,7 +39,7 @@ http://wiki.vg/Protocol#Update_Health_.280x08.29
 | class="col3" | Seems to vary from 0.0 to 5.0 in integer increments
 |- class="row4"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | '''11 bytes'''
+| class="col1 rightalign" colspan="4" | 11 bytes
 |}
 
 === Entity Action (0x13) ===
@@ -130,7 +132,7 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 | class="col3" | If set to true, leashes the entity to the vehicle
 |- class="row3"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 13 bytes
+| class="col1 rightalign" colspan="4" | 10 bytes
 |}
 
 === Player Abilities (0xCA) ===
