@@ -52,6 +52,21 @@ A couple things for contributors:
 | [https://github.com/bravoserver/bravo#features Link]
 | {{yes|Active}}
 |-
+! [http://c-raft.com C#raft]
+| ementalo, smjert
+| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+| {{unknown|unknown}}
+| {{yes|1.5}}
+| {{yes|Custom}}
+| {{no}}
+| {{no}}
+| {{planned|Player}}
+| {{unknown}}
+| {{yes|C#}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{unknown}}
+| {{yes|Active}}
+|-
 ! [http://www.mc-server.org MCServer]
 | FakeTruth, xoft, luksor
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
