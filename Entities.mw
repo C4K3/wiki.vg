@@ -287,6 +287,10 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 === Extra Metadata ===
 
+==== Player ====
+
+* Index '''10''' (byte): Number of arrows sticking into the player
+
 ==== Creeper ====
 
 * Index '''16''' (byte): Status. Depends on the fuse, values from -1 to 1
