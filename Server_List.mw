@@ -112,6 +112,21 @@ A couple things for contributors:
 | [https://github.com/fador/mineserver/#features Link]
 | {{yes|Active}}
 |-
+! [https://github.com/thinkofdeath/netherrack Netherrack]
+| Thinkofdeath
+| [http://golang.org/ Go]
+| [http://www.gnu.org/licenses/gpl-3.0.html GNU GPL]
+| {{yes|1.5}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Goroutines}}
+| {{no}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{no}}
+| {{yes|Active}}
+|-
 ! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
 | [http://www.spout.org/ Spout LLC] and community
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
