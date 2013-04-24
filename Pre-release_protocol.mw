@@ -38,10 +38,10 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 | class="col2 centeralign" | true
 | class="col3" | 
 |- class="row4"
-| class="col0 centeralign" | Unkown
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 0
-| class="col3" | 
+| class="col0 centeralign" | Unmount
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | false
+| class="col3" | True when leaving the vehicle
 |- class="row5"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 11 bytes
