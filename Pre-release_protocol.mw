@@ -11,8 +11,7 @@ As of 13w16b the protocol version is 63.
 ''Client to Server''
 
 Sent by client to steer the horse, minecart and boats.
-Horses listen to all directions, boats and minecarts only listen to the positive Forward value in combination with the direction the player is looking in.
-
+Horses listen to all directions, boats and minecarts only listen to the positive forward value in combination with the direction the player is looking in.
 
 {| class="wikitable"
 |- class="row0"
