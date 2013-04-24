@@ -1,8 +1,51 @@
 This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.5, protocol 60) to the current pre-release, 13w16a (protocol 62). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 
+== Protocol Version ==
+
+As of 13w16b the protocol version is 63.
+
 == New Packets ==
 
--None-
+=== Steer Vehicle (0x1B) ===
+
+''Client to Server''
+
+Sent by client to steer the horse, minecart and boats.
+Horses listen to all directions, boats and minecarts only listen to the positive Forward value in combination with the direction the player is looking in.
+
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x1B
+| class="col1 centeralign" | Sideways
+| class="col2 centeralign" | float
+| class="col3 centeralign" | 0.98
+| class="col4" | Positive to the left of the player
+|- class="row2"
+| class="col0 centeralign" | Forward
+| class="col1 centeralign" | float
+| class="col2 centeralign" | -0.98
+| class="col3" | Positive forward
+|- class="row3"
+| class="col0 centeralign" | Jump
+| class="col1 centeralign" | bool
+| class="col2 centeralign" | true
+| class="col3" | 
+|- class="row4"
+| class="col0 centeralign" | Unkown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | 0
+| class="col3" | 
+|- class="row5"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 11 bytes
+|}
 
 == Changed Packets ==
 
