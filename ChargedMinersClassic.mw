@@ -20,7 +20,6 @@
 ** Extend movement speed config separate entries for normal horizontal and vertical speeds, and for sped-up horizontal and vertical speeds.
 ** Gravity Value Tweaking - Compared to WoM and the native mc.net client, it seems that the affect of gravity is quite high in Charged. Perhaps a gravity can be imported from a settings.ini value for further tweaking.
 * '''Portable Mode'''
-* '''Ability to allocate more memory to the client.'''
 * '''Ability to load terrain.png from MC Classic minecraft.jar'''
 * '''Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.'''
 ** Many users store their minecraft installs on network shares, thumbdrives, or dropbox instances. If there was some way to indicate to Charged that the settings were stored in the application directory, rather than AppData, this would relieve the need to re-configure the client on every machine the game is launched on.
@@ -73,3 +72,4 @@
 * <strike>Irssi style tab complete</strike>
 * <strike>Water isn't transparent</strike>
 * <strike>Larger chat window</strike>
+* <strike>Ability to allocate more memory to the client.</strike> There is no benefit to allocate memory that's not needed.
