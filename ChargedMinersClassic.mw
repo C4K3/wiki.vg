@@ -1,30 +1,30 @@
 [http://charged-miners.com Charged Miners] is a client for classic, download the launcher [https://github.com/downloads/Charged/Miners/Charged%20Miners.exe here]
 
 == Improvements ==
-* Chat improvements
+* '''Chat / Interface'''
 ** Show cursor in chat, with ability to move it, and select text.
 ** Add an option to log chat to a text file.
 ** Save last few messages typed into the console, and allow using up/down arrows to scroll through them (like you would in a terminal).
 ** Clickable links in game chat.
-* Graphics improvements
+** Show currently-held block "in hand"
+* '''Graphics improvements'''
 ** Disable shadows for glass blocks, to prevent ugly moire effect.
 ** Lighting mode faithful to Minecraft Classic (straight-down shadows), to allow viewing pixelart properly.
 ** Water cosmetic improvements: specularity, volumetric fog underwater, etc.
-* Show currently-held block "in hand"
-* Ability to allocate more memory to the client.
-* Controls
+* '''Controls'''
 ** Double-Jump - A feature from WOM, double jump makes jumping over typical two-block user-created walls easier, without the need to toggle fly mode for such a short ascend.
 ** XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
 ** Make it easier to remap controls.
 ** Ability to toggle the Reach Hack (extend the distance at which blocks can be clicked).
-* Physics / Movement
+* '''Physics / Movement'''
 ** Extend movement speed config separate entries for normal horizontal and vertical speeds, and for sped-up horizontal and vertical speeds.
 ** Gravity Value Tweaking - Compared to WoM and the native mc.net client, it seems that the affect of gravity is quite high in Charged. Perhaps a gravity can be imported from a settings.ini value for further tweaking.
-* Portable Mode
-* Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.
+* '''Portable Mode'''
+* '''Ability to allocate more memory to the client.'''
+* '''Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.'''
 ** Many users store their minecraft installs on network shares, thumbdrives, or dropbox instances. If there was some way to indicate to Charged that the settings were stored in the application directory, rather than AppData, this would relieve the need to re-configure the client on every machine the game is launched on.
 ** It is quite common for portable applications to check for the presence of a specific file within the application folder to determine the status of "portable" mode. If the file does not exist, it falls back to reading from AppData.
-* Implement [[CPE]]
+* '''Implement [[CPE]]'''
 
 == Launcher ==
 * <s>Button/Menu item to open the %AppData%/Roaming/charge folder.</s> - Done in 1.1
