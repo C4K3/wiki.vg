@@ -12,7 +12,6 @@
 ** Lighting mode faithful to Minecraft Classic (straight-down shadows), to allow viewing pixelart properly.
 ** Water cosmetic improvements: specularity, volumetric fog underwater, etc.
 * '''Controls'''
-** Double-Jump - A feature from WOM, double jump makes jumping over typical two-block user-created walls easier, without the need to toggle fly mode for such a short ascend.
 ** XBox 360 gamepad support (triggers are on the same axis thanks to MS's driver)
 ** Make it easier to remap controls.
 ** Ability to toggle the Reach Hack (extend the distance at which blocks can be clicked).
@@ -20,7 +19,6 @@
 ** Extend movement speed config separate entries for normal horizontal and vertical speeds, and for sped-up horizontal and vertical speeds.
 ** Gravity Value Tweaking - Compared to WoM and the native mc.net client, it seems that the affect of gravity is quite high in Charged. Perhaps a gravity can be imported from a settings.ini value for further tweaking.
 * '''Portable Mode'''
-* '''Ability to load terrain.png from MC Classic minecraft.jar'''
 * '''Ability to bookmark/favourite/sticky servers in the serverlist, keeping them at the top.'''
 ** Many users store their minecraft installs on network shares, thumbdrives, or dropbox instances. If there was some way to indicate to Charged that the settings were stored in the application directory, rather than AppData, this would relieve the need to re-configure the client on every machine the game is launched on.
 ** It is quite common for portable applications to check for the presence of a specific file within the application folder to determine the status of "portable" mode. If the file does not exist, it falls back to reading from AppData.
@@ -38,10 +36,14 @@
 * There is no application icon on Windows for CM.
 * Intel graphics cards doesn't get smooth textures.
 * Alt-tabbing out of the game window sometimes keeps the mouse focus stolen.
-* CM should prefer, or at least fall back to, terrain.png from Minecraft Classic's minecraft.jar
-* Player "jumps" when walking along inside wall of walkway whilst in any two block tall tunnel or arch - this configuration is a good example. [http://imgur.com/qVKHH Block_Config]
+
+
 
 == Done ==
+* <strike>Player "jumps" when walking along inside wall of walkway whilst in any two block tall tunnel or arch - this configuration is a good example. [http://imgur.com/qVKHH Block_Config]</strike>
+* <strike>CM should prefer, or at least fall back to, terrain.png from Minecraft Classic's minecraft.jar</strike>
+* <strike>Ability to load terrain.png from MC Classic minecraft.jar</strike>
+* <strike>Double-Jump - A feature from WOM, double jump makes jumping over typical two-block user-created walls easier, without the need to toggle fly mode for such a short ascend.</strike>
 * <strike>UI Scale - Increasing or decreasing the size of chat should probably be an option, if only in settings.ini.</strike>
 * <strike>Old OpenGL causes silent failure - I've had several reports of mysterious aborts when launching Miners, and almost all of them are caused by the OpenGL 2.1 requirement. Perhaps there should be some sort of message box error, rather than only dumping to the log?</strike>
 * <strike>Make walking/running speeds configurable and create an entry in the configuration file allowing to adjust the movement speed.</strike>
