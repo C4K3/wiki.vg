@@ -36,8 +36,7 @@
 * There is no application icon on Windows for CM.
 * Intel graphics cards doesn't get smooth textures.
 * Alt-tabbing out of the game window sometimes keeps the mouse focus stolen.
-
-
+* Changing levels on servers running Opticraft does not work, causes client to exit upon level load completion.
 
 == Done ==
 * <strike>Player "jumps" when walking along inside wall of walkway whilst in any two block tall tunnel or arch - this configuration is a good example. [http://imgur.com/qVKHH Block_Config]</strike>
