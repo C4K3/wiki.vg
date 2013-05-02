@@ -23,6 +23,7 @@
 ** Many users store their minecraft installs on network shares, thumbdrives, or dropbox instances. If there was some way to indicate to Charged that the settings were stored in the application directory, rather than AppData, this would relieve the need to re-configure the client on every machine the game is launched on.
 ** It is quite common for portable applications to check for the presence of a specific file within the application folder to determine the status of "portable" mode. If the file does not exist, it falls back to reading from AppData.
 * '''Implement [[CPE]]'''
+* '''Add "Rejoin" link when disconnected from server, that tries connecting with same credentials.
 
 == Launcher ==
 * <s>Button/Menu item to open the %AppData%/Roaming/charge folder.</s> - Done in 1.1
@@ -31,6 +32,7 @@
 ** Launcher does run on most Linux distros, via [http://www.mono-project.com/Main_Page Mono]. Native launcher may be nice, but it's a lot of work, and there are no plans to make it at this time. &mdash;[[User:F|F]] ([[User talk:F|talk]]) 21:50, 4 February 2013 (MST)
 
 == Bugs ==
+* Server should detect disconnection from server quicker.
 * Player models lack hats.
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
 * There is no application icon on Windows for CM.
