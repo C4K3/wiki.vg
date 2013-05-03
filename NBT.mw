@@ -54,32 +54,32 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 1
 | TAG_Byte
 | 1
-| A single '''signed''' <code>byte</code>
+| A single signed byte
 |-
 | 2
 | TAG_Short
 | 2
-| A single '''signed''' <code>short</code>
+| A single signed, big endian 16 bit integer
 |-
 | 3
 | TAG_Int
 | 4
-| A single '''signed''' <code>integer</code>
+| A single signed, big endian 32 bit integer
 |-
 | 4
 | TAG_Long
 | 8
-| A single '''signed''' <code>long</code> (typically <code>long long</code> in C/C++)
+| A single signed, big endian 64 bit integer
 |-
 | 5
 | TAG_Float
 | 4
-| A single [[wikipedia:IEEE 754-2008|IEEE-754]] single-precision floating point number
+| A single, big endian [[wikipedia:IEEE 754-2008|IEEE-754]] single-precision floating point number
 |-
 | 6
 | TAG_Double
 | 8
-| A single [[wikipedia:IEEE 754-2008|IEEE-754]] double-precision floating point number
+| A single, big endian [[wikipedia:IEEE 754-2008|IEEE-754]] double-precision floating point number
 |-
 | 7
 | TAG_Byte_Array
