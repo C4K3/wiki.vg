@@ -16,6 +16,8 @@
 ** Make it easier to remap controls.
 ** Ability to toggle the Reach Hack (extend the distance at which blocks can be clicked).
 ** Add keyboard shortcut to cycle through viewing distances (<code>F</code> key by default).
+** Lower sprint speed (shift) a little
+** Add intermediate speed (mapped to control), between walk and sprint
 * '''Physics / Movement'''
 ** Extend movement speed config separate entries for normal horizontal and vertical speeds, and for sped-up horizontal and vertical speeds.
 ** Gravity Value Tweaking - Compared to WoM and the native mc.net client, it seems that the affect of gravity is quite high in Charged. Perhaps a gravity can be imported from a settings.ini value for further tweaking.
