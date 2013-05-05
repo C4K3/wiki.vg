@@ -36,12 +36,13 @@
 
 == Bugs ==
 * Server should detect disconnection from server quicker.
-* Player models lack hats.
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
 * There is no application icon on Windows for CM.
 * Intel graphics cards doesn't get smooth textures.
 * Alt-tabbing out of the game window sometimes keeps the mouse focus stolen.
 * Changing levels on servers running Opticraft does not work, causes client to exit upon level load completion.
+** This is caused by Opticraft sending handshake packet (0x00) mid-load to update the text. Clients should be able to handle handshake packets between MapBegin and MapEnd packets.
+* Player models lack hats.
 
 == Done ==
 * <strike>Player "jumps" when walking along inside wall of walkway whilst in any two block tall tunnel or arch - this configuration is a good example. [http://imgur.com/qVKHH Block_Config]</strike>
