@@ -81,8 +81,8 @@ This page lists the protocol version numbers used in the various MC releases. Of
 | class="col1 centeralign" | 12w34a
 | class="col2 centeralign" | 
 |- class="row20"
-| class="col0 centeralign" | '''42'''
-| class="col1 centeralign" | '''12w34b'''
+| class="col0 centeralign" | 42
+| class="col1 centeralign" | 12w34b
 | class="col2 centeralign" | 
 |- class="row21"
 | class="col0 centeralign" | 45
