@@ -8,30 +8,27 @@ Minecraft Modern is the latest (and only updated) version of Minecraft which req
 
 === Documentation ===
 There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be up to date'''.
-* [[Protocol|Protocol Spec]]
-* [[Pre-release protocol|Pre-release Protocol Spec]]
-* [[Rcon]] and [[Query]] protocols
-* [[Chat|How Chat Works]]
+
 * [[Protocol FAQ]]
+* [[Protocol|Current Protocol Specification]]
+* [[Pre-release protocol|Pre-release Protocol Specificaton]]
+* [[Rcon]] and [[Query]] protocol specifications
 * [[Authentication|Authentication Scheme]]
 * [[Protocol Encryption]]
 * [[Map Format]] (See also: mirror of the old [[NBT]].txt)
-* [http://b.wiki.vg/ Burger Vitrine] shows differences in data and protocol between arbitrary versions.
 
-=== Source Code & Snippets ===
-Source code snippets provide insight into how specific features work or can be accomplished, and by themselves are generally free to use in your own program.
-* [[Chunk_data_decompressing_(Zlib)|Chunk data decompressing using Zlib]], a small snippet showing how to use Zlib to decompress the chunk data sent by 0x33 packets.
-* [[:Code Snippets|More...]]
-
-=== Tools and Mods ===
+=== Tools & Mods ===
 * [[Client List|Clients]] - third-party Minecraft clients.
 * [[Server List|Servers]] - third-party Minecraft servers.
 * [[Library List|Libraries]] - libraries to interface with Minecraft data files or network protocols.
 * [[Utility List|Utilities]] - tools that interface with a client, server, or data files, such as proxies, bots, or inventory editors.
 * [[Wrapper List|Wrappers]] - mods that override features in the client or server
+* [http://b.wiki.vg/ Burger Vitrine] shows differences in data and protocol between arbitrary versions.
+* [[:Code Snippets]]
 
-=== Tutorials ===
+=== Tutorials & Guides ===
 * [[How to Write a Client]]
+* [[Chat|How Chat Works]]
 
 For more info, check out [[:Category:Minecraft Modern|Minecraft Modern]].
 
