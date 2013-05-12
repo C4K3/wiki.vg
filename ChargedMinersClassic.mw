@@ -28,6 +28,7 @@
 ** It is quite common for portable applications to check for the presence of a specific file within the application folder to determine the status of "portable" mode. If the file does not exist, it falls back to reading from AppData.
 * '''Improved server list'''
 ** Displaying player counts, option to filter out empty/full servers, sorting by name/fullness, etc.
+* '''Download Minecraft Classic's [https://s3.amazonaws.com/MinecraftDownload/classic/minecraft.jar minecraft.jar] if it is missing.'''
 * '''Implement [[CPE]]'''
 
 == Launcher ==
