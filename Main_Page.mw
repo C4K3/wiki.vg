@@ -1,36 +1,13 @@
 __NOTOC__
-Welcome to the Minecraft Coalition wiki! Thanks to the #mcdevs community on irc.freenode.net.
+Welcome to the #mcdevs wiki! The wiki is primarily curated by the [irc://irc.freenode.net/mcdevs #mcdevs] community on [http://freenode.net/ Freenode].
 
-'''As spam prevention, you must register and confirm your email address to edit pages.'''
-
-Consult the [http://meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
-
-== Start Here ==
-===I want to write my own XYZ program, where do I start?===
-Custom Minecraft development is non-trivial and is not something to cut your teeth on with respect to programming.  If you cannot answer the above question, you will likely not have a very fun time.  You will also upset other people if you ask questions that demonstrate a lack of prerequisite knowledge, especially related to general software development strategy or use of the language of your choice.
-
-Likewise, the Minecraft protocol and official client/server are widely criticized in both design and implementation.   Dealing with these issues can be painful.  Worst of all, if you don't have a solid development background you may unknowingly absorb these flaws into your own development strategy - both now and down the line on future projects.
-
-In closing, first see if there is an existing project that you can contribute to.  There are already a variety of mods, clients, servers, utilities and libraries that could use help - and not just related to coding.
-
-===The wiki is WRONG!!!===
-Are you 100% certain, and do you have a testcase to prove your assertion?
-
-If not, many people have implemented projects using the information here and chances are you're doing something wrong.
-
-If so, by making use of this site, you owe it to the community to contribute fixes and documentation enhancements back.
-
-Remember, this wiki is a volunteer effort.  Treat the people who contribute to it with respect.
-
-Also, the wiki is out of date a lot.  Check "Recent changes" and "Discussion" pages for more info.
-
-== Modern ==
+== Minecraft Modern ==
 [[File:Banner beta.png|link=Category:Minecraft Modern]]
 
 Minecraft Modern is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play. Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
 
 === Documentation ===
-There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be accurate'''.
+There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be up to date'''.
 * [[Protocol|Protocol Spec]]
 * [[Pre-release protocol|Pre-release Protocol Spec]]
 * [[Rcon]] and [[Query]] protocols
@@ -58,7 +35,7 @@ Source code snippets provide insight into how specific features work or can be a
 
 For more info, check out [[:Category:Minecraft Modern|Minecraft Modern]].
 
-== Classic ==
+== Minecraft Classic ==
 [[File:Banner classic.png|link=Category:Minecraft Classic]]
 
 Minecraft Classic is the original version of Minecraft, available for free to the public. It's still available off of the main website today and is still played by many people, with an active development community. As it's been around since 2010, and because it's so simplistic, there are many, many programs made to work with Classic - there are over '''18+''' servers alone, written in everything from C++ to PureBasic to Perl. It's highly recommend if you're planning to do a development project at this point to instead look into the Minecraft Modern specifications.
@@ -84,7 +61,7 @@ Useful information & links
 
 For more info, check out [[:Category:Minecraft Classic|Minecraft Classic]].
 
-== Pocket ==
+== Minecraft Pocket Edition ==
 [[File:Banner pocket.png|link=Category:Pocket Minecraft]]
 
 Pocket Minecraft is the version of Minecraft for portable systems such as Android or iOS devices. It currently has very little documentation.
