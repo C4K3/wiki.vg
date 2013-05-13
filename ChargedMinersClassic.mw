@@ -39,6 +39,7 @@
 
 == Bugs ==
 * Server should detect disconnection from server quicker.
+* Other players lag when standing still.
 * Alt-tabbing out of the game window sometimes keeps the mouse focus stolen.
 * "gfx" eats 95% of time (realtime, not CPU time) if vsync is enabled.
 * Changing levels on servers running Opticraft does not work, causes client to exit upon level load completion.
