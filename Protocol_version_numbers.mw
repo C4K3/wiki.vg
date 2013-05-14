@@ -160,4 +160,12 @@ This page lists the protocol version numbers used in the various MC releases. Of
 | class="col0 centeralign" | 64
 | class="col1 centeralign" | 13w17a
 | class="col2 centeralign" |
+|- class="row41"
+| class="col0 centeralign" | 65
+| class="col1 centeralign" | 13w18a
+| class="col2 centeralign" |
+|- class="row42"
+| class="col0 centeralign" | 66
+| class="col1 centeralign" | 13w19a
+| class="col2 centeralign" |
 |}
