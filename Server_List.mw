@@ -131,7 +131,7 @@ A couple things for contributors:
 | [http://www.spout.org/ Spout LLC] and community
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://spout.in/licensev1 Spout License v1]
-| {{supports|1.5.2}}
+| {{yes|1.5.2}}
 | {{yes|Custom}}
 | {{yes}}
 | {{planned|Partial}}
