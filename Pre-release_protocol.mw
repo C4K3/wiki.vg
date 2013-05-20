@@ -1,55 +1,57 @@
 This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.5, protocol 60) to the current pre-release, 13w16b (protocol 63). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 
+He who wishes to commandeer the merging of this into [[Protocol]] when an update is made must be sure to respect any changes that may have occured to the respective packets there.
+
 == Protocol Version ==
 
 As of 13w17a the protocol version is 64.
 
 == New Packets ==
 
+{{anchor|0xC8}}
 === Steer Vehicle (0x1B) ===
-
 ''Client to Server''
 
 Sent by client to steer the horse, minecart and boats.
 Horses listen to all directions, boats and minecarts only listen to the positive forward value in combination with the direction the player is looking in.
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="4" | 0x1B
-| class="col1 centeralign" | Sideways
-| class="col2 centeralign" | float
-| class="col3 centeralign" | 0.98
-| class="col4" | Positive to the left of the player
-|- class="row2"
-| class="col0 centeralign" | Forward
-| class="col1 centeralign" | float
-| class="col2 centeralign" | -0.98
-| class="col3" | Positive forward
-|- class="row3"
-| class="col0 centeralign" | Jump
-| class="col1 centeralign" | bool
-| class="col2 centeralign" | true
-| class="col3" | 
-|- class="row4"
-| class="col0 centeralign" | Unmount
-| class="col1 centeralign" | bool
-| class="col2 centeralign" | false
-| class="col3" | True when leaving the vehicle
-|- class="row5"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 11 bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| 0x1B
+| Sideways
+| float
+| 0.98
+| Positive to the left of the player
+|-
+| Forward
+| float
+| -0.98
+| Positive forward
+|-
+| Jump
+| bool
+| true
+| 
+|-
+| Unmount
+| bool
+| false
+| True when leaving the vehicle
+|-
+| Total Size:
+| 11 bytes
 |}
 
 == Changed Packets ==
 
+{{anchor|0x08}}
 === Update Health (0x08) ===
-
 ''Server to Client''
 
 Sent by the server to update/set the health of the player it is sent to. Added in protocol version 5.
@@ -57,35 +59,35 @@ Sent by the server to update/set the health of the player it is sent to. Added i
 Food saturation acts as a food "overcharge". Food values will not decrease while the saturation is over zero. Players logging in automatically get a saturation of 5.0. Eating food increases the saturation as well as the food bar.
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x08
-| class="col1 centeralign" | Health
-| class="col2 centeralign" | '''float'''
-| class="col3 centeralign" | '''20.0'''
-| class="col4" | 0 or less = dead, 20 = full HP
-|- class="row2"
-| class="col0 centeralign" | Food
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 20
-| class="col3" | 0 - 20
-|- class="row3"
-| class="col0 centeralign" | Food Saturation
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 5.0
-| class="col3" | Seems to vary from 0.0 to 5.0 in integer increments
-|- class="row4"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 11 bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| 0x08
+| Health
+| '''float'''
+| '''20.0'''
+| 0 or less = dead, 20 = full HP
+|-
+| Food
+| short
+| 20
+| 0 - 20
+|-
+| Food Saturation
+| float
+| 5.0
+| Seems to vary from 0.0 to 5.0 in integer increments
+|-
+| Total Size:
+| 11 bytes
 |}
 
+{{anchor|0x13}}
 === Entity Action (0x13) ===
-
 ''Client to Server''
 
 Sent at least when crouching, leaving a bed, or sprinting.
@@ -93,31 +95,31 @@ To send action animation to client use 0x28.
 The client will send this with Action ID = 3 when "Leave Bed" is clicked.
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x13
-| class="col1 centeralign" | EID
-| class="col2 centeralign" | int
-| class="col3 centeralign" | <code>55534</code>
-| class="col4" | Player ID
-|- class="row2"
-| class="col0 centeralign" | Action ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>1</code>
-| class="col3" | The ID of the action, see below.
-|- class="row2"
-| class="col0 centeralign" | '''Unknown'''
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | Something to do with horses. Ranged from 0 -> 90
-|- class="row3"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 10 bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| 0x13
+| EID
+| int
+| <code>55534</code>
+| Player ID
+|-
+| Action ID
+| byte
+| <code>1</code>
+| The ID of the action, see below.
+|-
+| '''Unknown'''
+| int
+| <code>0</code>
+| Something to do with horses. Ranged from 0 -> 90
+|-
+| Total Size:
+| 10 bytes
 |}
 
 Action ID can be one of the following values:
@@ -143,42 +145,42 @@ Action ID can be one of the following values:
 | Stop sprinting
 |}
 
+{{anchor|0x27}}
 === Attach Entity (0x27) ===
-
 ''Server to Client''
 
 This packet is sent when a player has been attached to an entity (e.g. Minecart)
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x27
-| class="col1 centeralign" | Entity ID
-| class="col2 centeralign" | int
-| class="col3 centeralign" | <code>1298</code>
-| class="col4" | The player entity ID being attached
-|- class="row2"
-| class="col0 centeralign" | Vehicle ID
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>1805</code>
-| class="col3" | The vehicle entity ID attached to (-1 for unattaching)
-|- class="row2"
-| class="col0 centeralign" | '''Leash'''
-| class="col1 centeralign" | boolean
-| class="col2 centeralign" | <code>false</code>
-| class="col3" | If set to true, leashes the entity to the vehicle
-|- class="row3"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 10 bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| 0x27
+| Entity ID
+| int
+| <code>1298</code>
+| The player entity ID being attached
+|-
+| Vehicle ID
+| int
+| <code>1805</code>
+| The vehicle entity ID attached to (-1 for unattaching)
+|-
+| '''Leash'''
+| boolean
+| <code>false</code>
+| If set to true, leashes the entity to the vehicle
+|-
+| Total Size:
+| 10 bytes
 |}
 
+{{anchor|0xCA}}
 === Player Abilities (0xCA) ===
-
 ''Two-Way''
 
 The latter 2 bytes are used to indicate the walking and flying speeds respectively, while the first byte is used to determine the value of 4 booleans.
@@ -189,31 +191,31 @@ To get the values of these booleans, simply AND (&) the byte with 1,2,4 and 8 re
 The vanilla client sends this packet when the player starts/stops flying with the second parameter changed accordingly. All other parameters are ignored by the vanilla server.
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
 | class="col0 centeralign" rowspan=4 | 0xCA
-| class="col1 centeralign" | Flags
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | 5
-| class="col4" | 
-|- class="row2"
-| class="col0 centeralign" | Flying speed
-| class="col1 centeralign" | '''float'''
-| class="col2 centeralign" | '''0.05'''
-| class="col3" | previous integer value divided by 250
-|- class="row3"
-| class="col0 centeralign" | Walking speed
-| class="col1 centeralign" | '''float'''
-| class="col2 centeralign" | '''0.1'''
-| class="col3" | previous integer value divided by 250
-|- class="row2"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 10 bytes
+| Flags
+| byte
+| 5
+| 
+|-
+| Flying speed
+| '''float'''
+| '''0.05'''
+| previous integer value divided by 250
+|-
+| Walking speed
+| '''float'''
+| '''0.1'''
+| previous integer value divided by 250
+|-
+| Total Size:
+| 10 bytes
 |}
 
 == Removed Packets ==
