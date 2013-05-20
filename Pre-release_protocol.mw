@@ -1,4 +1,4 @@
-This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.5, protocol 60) to the current pre-release, 13w16b (protocol 63). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
+This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.5, protocol 60) to the current pre-release, 13w17a (protocol 64). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 
 He who wishes to commandeer the merging of this into [[Protocol]] when an update is made must be sure to respect any changes that may have occured to the respective packets there.
 
@@ -23,7 +23,7 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 | Example
 | Notes
 |-
-| 0x1B
+| rowspan="4" | 0x1B
 | Sideways
 | float
 | 0.98
@@ -45,7 +45,7 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 | True when leaving the vehicle
 |-
 | Total Size:
-| 11 bytes
+| colspan="4" | 11 bytes
 |}
 
 == Changed Packets ==
@@ -66,7 +66,7 @@ Food saturation acts as a food "overcharge". Food values will not decrease while
 | Example
 | Notes
 |-
-| 0x08
+| rowspan="3" | 0x08
 | Health
 | '''float'''
 | '''20.0'''
@@ -83,7 +83,7 @@ Food saturation acts as a food "overcharge". Food values will not decrease while
 | Seems to vary from 0.0 to 5.0 in integer increments
 |-
 | Total Size:
-| 11 bytes
+| colspan="4" | 11 bytes
 |}
 
 {{anchor|0x13}}
@@ -102,7 +102,7 @@ The client will send this with Action ID = 3 when "Leave Bed" is clicked.
 | Example
 | Notes
 |-
-| 0x13
+| rowspan="3" | 0x13
 | EID
 | int
 | <code>55534</code>
@@ -119,7 +119,7 @@ The client will send this with Action ID = 3 when "Leave Bed" is clicked.
 | Something to do with horses. Ranged from 0 -> 90
 |-
 | Total Size:
-| 10 bytes
+| colspan="4" | 10 bytes
 |}
 
 Action ID can be one of the following values:
@@ -159,7 +159,7 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 | Example
 | Notes
 |-
-| 0x27
+| rowspan="3" | 0x27
 | Entity ID
 | int
 | <code>1298</code>
@@ -176,7 +176,7 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 | If set to true, leashes the entity to the vehicle
 |-
 | Total Size:
-| 10 bytes
+| colspan="4" | 10 bytes
 |}
 
 {{anchor|0xCA}}
