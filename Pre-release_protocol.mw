@@ -198,11 +198,11 @@ The vanilla client sends this packet when the player starts/stops flying with th
 | Example
 | Notes
 |-
-| class="col0 centeralign" rowspan=4 | 0xCA
+| rowspan="3" | 0xCA
 | Flags
 | byte
 | 5
-| 
+|
 |-
 | Flying speed
 | '''float'''
@@ -215,7 +215,7 @@ The vanilla client sends this packet when the player starts/stops flying with th
 | previous integer value divided by 250
 |-
 | Total Size:
-| 10 bytes
+| colspan="4" | 10 bytes
 |}
 
 == Removed Packets ==
