@@ -162,7 +162,7 @@ A couple things for contributors:
 | [http://en.wikipedia.org/wiki/Erlang Erlang]
 | not decided yet
 | {{no|1.4.7}}
-| {{planned|custom (Mnesia)}}
+| {{yes|custom (Mnesia)}}
 | {{no}}
 | {{no}}
 | {{planned|Players}}
