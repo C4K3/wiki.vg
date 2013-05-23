@@ -21,7 +21,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | TBD
 | {{yes}}
 | {{no}}
-| {{yes|1.5}}
+| {{yes|1.5.2}}
 |-
 ! [https://github.com/lukleh/TwistedBot TwistedBot]
 | bot and proxy, up to date information in readme on github
@@ -30,7 +30,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{BSD}}
 | {{no}}
 | {{no}}
-| {{yes|1.5}}
+| {{yes|1.5.2}}
 |-
 ! [https://github.com/nickelpro/spock SpockBot]
 | SMP Bot framework, based on BarneyGale's protocol implementation
@@ -39,7 +39,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{yes|1.5}}
+| {{yes|1.5.2}}
 |-
 ! [https://github.com/umby24/Minebot C# Minebot]
 | Work in progress standalone bot
@@ -48,7 +48,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|{{GPLv3}}? No mention of license in source}}
 | {{yes}}
 | {{no}}
-| {{yes|1.5}}
+| {{yes|1.5.2}}
 |-
 ! [https://github.com/superjoe30/mineflayer mineflayer]
 | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
@@ -57,34 +57,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{yes|1.5}}
-|-
-! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client&nbsp;2]
-| Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
-| [https://twitter.com/shoghicp shoghicp]
-| {{PHP}}
-| {{WTFPL}}
-| {{no}}
-| {{unknown|Convert Map to PNG}}
-| {{supports|1.4.7}}
-|-
-! [https://github.com/SpoutDev/Spout Spout] (with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
-| Open source, multi-threaded voxel game framework and platform that opens the doors for infinite possibilities. Features infinite height worlds, infinite content, advanced modeling support, and more!
-| [http://www.spout.org Spout LLC] and community
-| {{Java}}
-| [http://spout.in/licensev1 Spout License v1]
-| {{yes}}
-| {{yes|Yes, using [http://www.lwjgl.org LWJGL]}}
-| {{supports|1.4.7}}
-|-
-! [https://github.com/Dav1dde/BraLa BraLa]
-| Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
-| Dav1d
-| {{D}}
-| {{GPLv3}}
-| {{yes}}
-| {{yes}}
-| {{supports|1.4.6}}
+| {{yes|1.5.2}}
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
@@ -93,7 +66,34 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{Apache}}
 | {{yes}}
 | {{no}}
-| {{yes|1.5}}
+| {{yes|1.5.2}}
+|-
+! [https://github.com/SpoutDev/Spout Spout] (with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
+| Open source, multi-threaded voxel game framework and platform that opens the doors for infinite possibilities. Features infinite height worlds, infinite content, advanced modeling support, and more!
+| [http://www.spout.org Spout LLC] and community
+| {{Java}}
+| [http://spout.in/licensev1 Spout License v1]
+| {{yes}}
+| {{yes|Yes, using [http://www.lwjgl.org LWJGL]}}
+| {{yes|1.5.2}}
+|-
+! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client&nbsp;2]
+| Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
+| [https://twitter.com/shoghicp shoghicp]
+| {{PHP}}
+| {{WTFPL}}
+| {{no}}
+| {{unknown|Convert Map to PNG}}
+| {{supports|1.5.1}}
+|-
+! [https://github.com/Dav1dde/BraLa BraLa]
+| Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
+| Dav1d
+| {{D}}
+| {{GPLv3}}
+| {{yes}}
+| {{yes}}
+| {{no|1.4.6}}
 |-
 ! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
@@ -102,7 +102,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{GPLv2}}
 | {{no}}
 | {{yes}}
-| {{supports|1.3.2}}
+| {{no|1.3.2}}
 |-
 ! [http://www.planetminecraft.com/project/new-c-driven-minecraft-client-461392/ Revolutional RedStone]
 | Partial Redstone support
@@ -111,7 +111,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{Unknown}}
 | {{yes}}
 | {{yes}}
-| {{supports|1.3.2}}
+| {{no|1.3.2}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client Minecraft PHP Client]
 | "- Superseded by Minecraft PHP Client 2 -" It can move and do other things. [http://shoghicp.wordpress.com/2012/04/08/minecraft-php-client/ Spanish Website]
@@ -120,7 +120,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{LGPL}}
 | {{yes|Yes, but only linux}}
 | {{no}}
-| {{supports|1.2.5}}
+| {{no|1.2.5}}
 |-
 ! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
 | Work in progress SMP (might add SSP) client.
@@ -129,7 +129,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{GPLv3}}
 | {{yes}}
 | {{yes|Yes, using [http://en.wikipedia.org/wiki/Microsoft_XNA XNA]}}
-| {{supports|1.2.5}}
+| {{no|1.2.5}}
 |-
 ! [https://github.com/axus/libmc--c mc--c]
 | Draw the map.  Can't talk or move.
@@ -138,7 +138,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{LGPL}}
 | {{no}}
 | {{yes}}
-| {{supports|1.1}}
+| {{no|1.1}}
 |-
 ! [https://github.com/espes/esbot esbot]
 | dependency gathering and other awesomeness
@@ -147,7 +147,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{GPLv3}}
 | {{no}}
 | {{no}}
-| {{supports|Beta 1.8.1}}
+| {{no|Beta 1.8.1}}
 |-
 ! [http://hg.sitedethib.com/mcclient/ mcclient]
 | Work in progress SMP client
@@ -156,7 +156,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{GPLv3}}
 | {{no}}
 | {{yes}}
-| {{supports|Beta 1.7.2}}
+| {{no|Beta 1.7.2}}
 |-
 ! [https://github.com/jrupac/minecraft-opengl minecraft-opengl]
 | Draw the map, move around, break stuff, gather stuff, etc.; doesn't appear to have networking
@@ -165,7 +165,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{all rights reserved}}
 | {{no}}
 | {{yes}}
-| {{supports|Beta 1.6.6}}
+| {{no|Beta 1.6.6}}
 |-
 ! [https://github.com/aniero/golem golem]
 | ruby 1.9/eventmachine client, acts as a standalone bot or transparent proxy
@@ -174,7 +174,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{supports|Beta 1.4}}
+| {{no|Beta 1.4}}
 |-|}
 
 [[Category:Minecraft Modern]]
