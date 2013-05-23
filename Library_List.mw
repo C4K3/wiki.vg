@@ -21,77 +21,77 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | [https://github.com/superjoe30 superjoe]
 | [http://nodejs.org/ node.js]
 | {{BSD}}
-| {{yes|1.5}}
+| {{yes|1.5.2}}
 |-
 ! [https://github.com/dkkline/McClientLib McClientLib]
 | Python MineCraft client protocol.
 | [https://github.com/dkkline Jeppe Klitgaard (Dkkline)]
 | {{Python}}
 | {{MIT}}
-| {{yes|1.5}}
+| {{yes|1.5.2}}
 |-
 ! [https://github.com/pdelvo/Pdelvo.Minecraft Pdelvos Protocol Implementation]
 | .NET client/server protocol library with support for several versions.
 | pdelvo
 | {{C sharp}}
 | {{MIT}}
-| {{supports|1.4.7}}
+| {{yes|1.5.2}}
 |-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client 2]
 | PHP client and protocol library. With events, actions and API
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{WTFPL}}
-| {{supports|1.4.7}}
-|-
-! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
-|
-| ags131, electronicboy
-| {{C sharp}}
-| {{unknown}}
-| {{supports|1.4.2}}
+| {{supports|1.5.1}}
 |-
 ! [http://github.com/Steveice10/mc-protocol-lib mc-protocol-lib]
 | Java implementation of the Minecraft protocol.
 | Steveice10
 | {{Java}}
 | {{MIT}}
-| {{supports|1.3.2}}
+| {{supports|1.5.1}}
+|-
+! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
+|
+| ags131, electronicboy
+| {{C sharp}}
+| {{unknown}}
+| {{no|1.4.4}}
 |-
 ! [https://github.com/deoxxa/libmcnet libmcnet]
 | Event based, zero-copy, portable Minecraft network protocol parser
 | deoxxa
 | {{C}}
 | {{BSD}}
-| {{supports|1.3.2}}
+| {{no|1.4}}
 |-
 ! [https://github.com/deoxxa/node-mcnet node-mcnet]
 | Node.JS bindings to [https://github.com/deoxxa/libmcnet libmcnet]
 | deoxxa
 | {{JavaScript}}, [http://nodejs.org/ node.js]
 | {{BSD}}
-| {{supports|1.3.2}}
+| {{no|1.3.2}}
 |-
 ! [https://github.com/Maincraft/MCPackets MCPackets]
 | Java Minecraft protocol library
 | main()
 | {{Java}}
 | {{unknown}}
-| {{supports|1.2.5}}
+| {{no|1.2.5}}
 |-
 ! [https://github.com/axus/libmc--c libmc--c]
 | World representation data structures and OpenGL drawing functions.
 | axus
 | {{C++}}, {{OpenGL}}
 | {{GPLv3}}
-| {{supports|1.1}}
+| {{no|1.1}}
 |-
 ! [https://github.com/mave/mcproxy mcproxy]
 | Minecraft Proxy (and bot) framework in C++
 | mave
 | {{C++}}
 | {{GPLv3}}
-| {{supports|1.1}}
+| {{no|1.1}}
 |-
 ! [https://github.com/fragmer/fNbt fNbt]
 | Minecraft Proxy (and bot) framework in C++
