@@ -116,7 +116,7 @@ A couple things for contributors:
 | Corbin Simpson
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
-| {{yes|1.5}}
+| {{supports|1.5}}
 | {{yes|Alpha, Beta, Anvil}}
 | {{yes}}
 | {{yes}}
@@ -131,7 +131,7 @@ A couple things for contributors:
 | ementalo, smjert
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | {{unknown|unknown}}
-| {{yes|1.5}}
+| {{supports|1.5}}
 | {{yes|Custom}}
 | {{no}}
 | {{no}}
@@ -146,7 +146,7 @@ A couple things for contributors:
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{yes|1.5}}
+| {{supports|1.5}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -161,7 +161,7 @@ A couple things for contributors:
 | Apiocera, clonejo
 | [http://en.wikipedia.org/wiki/Erlang Erlang]
 | not decided yet
-| {{supports|1.4.7}}
+| {{no|1.4.7}}
 | {{planned|custom (Mnesia)}}
 | {{no}}
 | {{no}}
@@ -176,7 +176,7 @@ A couple things for contributors:
 | Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
 | [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{supports|1.4.7}}
+| {{no|1.4.7}}
 | {{yes|Custom}}
 | {{planned}}
 | {{no}}
