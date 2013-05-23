@@ -16,9 +16,9 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.5.2-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{yes|#61}} - 1.5.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
 |-
-| [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{no|#60}} - 1.5 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
+| [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{supports|#60}} - 1.5 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
 |-
-| [https://github.com/superjoe30/mcserve mcserve] || gives you an "online mode whitelist" (or blacklist) plus realtime web interface || {{no|#60}} - 1.5 || node.js || Windows, Mac, & Linux || [[user:Superjoe|superjoe]] || {{yes|Active}}
+| [https://github.com/superjoe30/mcserve mcserve] || gives you an "online mode whitelist" (or blacklist) plus realtime web interface || {{supports|#60}} - 1.5 || node.js || Windows, Mac, & Linux || [[user:Superjoe|superjoe]] || {{yes|Active}}
 |-
 | [https://github.com/bencvt/McPacketSniffer McPacketSniffer] || A Minecraft client mod that logs packets to text files || {{no|#47}} - 1.4.4 || Java || Windows, Mac, & Linux || [[User:Benc|bencvt]] || {{yes|Active}}
 |-
@@ -28,6 +28,8 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/Maincraft/MCProxy MCProxy] || A java minecraft-proxy that can load plugins. || {{no|#29}} - 1.2.5 || Java ||   || Maincraft || {{no|Inactive}}
 |-
+| [https://github.com/Nadrin/mcproxy mcproxy] || A modular client and server-side network protocol proxy || {{no|#29}} - 1.2.5 || C ||   || Nadrin || {{no|Inactive}}
+|-
 | [https://github.com/ScottBrooks/minecraft-dissector WiresharkDissector] || A wireshark dissector for the Minecraft protocol || {{no|#28}} - 1.2 || C ||   || ScottBrooks || {{no|Inactive}}
 |-
 | [http://github.com/aniero/golem golem] || Ruby 1.9 client, acts as a standalone bot or transparent proxy || {{no|#10}} - 1.4b || Ruby ||   || aniero || {{no|Inactive}}
@@ -35,8 +37,6 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 | [https://github.com/ReDucTor/mineproxy Mineproxy] || mineproxy || {{unknown|}} || C & C++ ||   || ReDucTor || {{no|Inactive}}
 |-
 | [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || {{unknown|}} || Haskell ||   || glguy || {{no|Inactive}}
-|-
-| [https://github.com/Nadrin/mcproxy mcproxy] || A modular client and server-side network protocol proxy || {{no|#29}} - 1.2.5 || C ||   || Nadrin || {{no|Inactive}}
 |}
 
 [[Category:Minecraft Modern]]
