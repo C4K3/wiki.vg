@@ -160,7 +160,7 @@ A couple things for contributors:
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
 | Apiocera, clonejo
 | [http://en.wikipedia.org/wiki/Erlang Erlang]
-| not decided yet
+| [http://www.gnu.org/licenses/gpl-3.0.en.html GPLv3]
 | {{no|1.4.7}}
 | {{yes|custom (Mnesia)}}
 | {{no}}
