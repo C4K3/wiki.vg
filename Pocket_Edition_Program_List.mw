@@ -13,12 +13,12 @@ List of Minecraft PE Clients, Servers, Libraries, Wrappers and Tools.
 !Last Version Supported
 |-
 ! [http://www.pocketmine.net/ PocketMine-MP]
-| Server with Plugin API, maps and more
+| Server with Plugin API, multiworlds and more
 | Server
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | {{LGPL}}
-| Stable Alpha_1.2.2, Dev Alpha_1.3dev
+| Stable Alpha_1.3, Dev Alpha_1.3.1dev
 | {{windows}}{{linux}}{{mac}}
 | {{yes|v0.6.1 alpha}}
 |-
