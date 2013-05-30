@@ -92,6 +92,26 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 
 == Changed Packets ==
 
+{{anchor|0x03}}
+=== Chat Message (0x03) ===
+
+''Client to Server''
+
+Unchanged
+
+''Server to Client''
+
+The chat string must now be a valid JSON object:
+
+    {"translate":"chat.type.announcement","using":["Server","hi"]}
+
+Where translate is one of the following:
+
+    chat.type.admin: [%s: %s]
+    chat.type.announcement: [%s] %s
+    chat.type.emote: * %s %s
+    chat.type.text: <%s> %s
+
 {{anchor|0x08}}
 === Update Health (0x08) ===
 ''Server to Client''
