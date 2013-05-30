@@ -104,6 +104,7 @@ Unchanged
 The chat string must now be a valid JSON object:
 
     {"translate":"chat.type.announcement","using":["Server","hi"]}
+    {"color":"gray","italic":true,"translate":"chat.type.admin","using":["Server",{"translate":"commands.save.success"}]}
 
 Where translate is one of the following:
 
@@ -113,6 +114,7 @@ Where translate is one of the following:
     chat.type.text: <%s> %s
 
 {{anchor|0x08}}
+
 === Update Health (0x08) ===
 ''Server to Client''
 
