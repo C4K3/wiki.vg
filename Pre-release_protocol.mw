@@ -4,11 +4,11 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 == Protocol Version ==
 
-As of 13w17a the protocol version is 64.
+As of 13w22a the protocol version is 67.
 
 == New Packets ==
 
-{{anchor|0xC8}}
+{{anchor|0x1B}}
 === Steer Vehicle (0x1B) ===
 ''Client to Server''
 
@@ -46,6 +46,48 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 |-
 | Total Size:
 | colspan="4" | 11 bytes
+|}
+
+{{anchor|0x2C}}
+=== Entity Properties (0x2C) ===
+''Server to Client''
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="6" | 0x2C
+| EntityID
+| int
+| 195
+| ?
+|-
+| Propert Count
+| int
+| 3
+| Number of string/data pairs that follow. The remaining fields here are repeated this number of times.
+|-
+| Key
+| string16
+| "generic.Maxhealth"
+| 
+|-
+| Unknown
+| float?
+| ...
+| ?
+|-
+| Unknown
+| float?
+| 
+| ?
+|-
+| Total Size:
+| colspan="4" | ? bytes
 |}
 
 == Changed Packets ==
