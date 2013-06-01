@@ -132,6 +132,11 @@ These entities are generally unaffected by potion effects, so it doesn't matter 
 
 This item stack will be a FIREWORK with the effects stored in its additional NBT data (meta item in Bukkit).
 
+==== Index 9, byte: Hide potion effects ====
+
+1 when a potion effect applied is given by a beacon. 0 when there are no beacon effects applied.
+It makes the potion particles less obtrusive.
+
 === Index 12, int: Animals ===
 
 0 for ordinary animals.
@@ -327,7 +332,11 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 ==== Ender Dragon ====
 
-* Index '''16''' (short): Health. Full health = <code>200</code>
+* Index '''16''' (int): Health. Full health = <code>200</code>
+
+==== Wither ====
+
+* Index '''16''' (int): Health. Full health = <code>300</code>
 
 ==== Pig ====
 
@@ -397,6 +406,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 * Index '''17''' (string): Name of player that tamed wolf.
 * Index '''18''' (int): Health. Values from 8 to 0
 * Index '''19''' (byte): Unknown, either 0 or 1
+* Index '''20''' (byte): Color of the collar. (look up)
 
 {| class="wikitable"
 |- class="row0"
@@ -431,6 +441,22 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 ==== Iron Golem ====
 
 * Index '''16''' (byte): 0 or 1. Indicates whether the iron golem was spawned by natural means (0) or by a player constructing it (1).
+
+==== Bat ====
+
+* Index '''16''' (byte): 0 or 1. Indicates if the bat is flying (1) or is hanging off a block (0)
+
+==== Pig Zombie / Zombie ====
+
+* Index '''12''' (byte): 1 if it is a baby. 0 when it is an adult
+
+==== Zombie ====
+
+* Index '''13''' (byte): 1 if it is a villager. 0 if it is a normal zombie
+
+==== Skeleton / Wither skeleton ====
+
+* Index '''13''' (byte): 1 If it is a wither skeleton, 0 if it is a normal skeleton
 
 == Objects ==
 
@@ -543,7 +569,7 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 
 ==== Arrow ====
 
-* Index '''16''' (byte): Unknown, either 0 or 1
+* Index '''16''' (byte): 1 if the arrow should be effected by gravity. 0 if the arrow is stuck in a block
 
 ==== Minecart ====
 
