@@ -16,7 +16,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/sadimusi/mc3p sadimusi/mc3p] || A 1.5.2-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{yes|#61}} - 1.5.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
 |-
-| [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{supports|#60}} - 1.5 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
+| [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{yes|#61}} - 1.5.2 || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
 |-
 | [https://github.com/superjoe30/mcserve mcserve] || gives you an "online mode whitelist" (or blacklist) plus realtime web interface || {{supports|#60}} - 1.5 || node.js || Windows, Mac, & Linux || [[user:Superjoe|superjoe]] || {{yes|Active}}
 |-
