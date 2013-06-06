@@ -2,7 +2,7 @@ Minecraft supports querying the MOTD, player count, max players and server versi
 
 == Client -> Server ==
 
-The client initiates a TCP connection to the minecraft server on the standard port. Instead of doing auth and logging in (as detailed in [[Protocol Encryption]]), it sends the two byte sequence <code>FE 01</code>. This is a [[Protocol#Server_List_Ping_.280xFE.29|0xFE server list ping]] packet. If the second byte (the 0x01) is missing, the server waits about 1000ms then replies with the Server -> Client format used in 1.3 and earlier.
+The client initiates a TCP connection to the minecraft server on the standard port. Instead of doing auth and logging in (as detailed in [[Protocol Encryption]]), it sends the two byte sequence <code>FE 01</code>. This is a [[Protocol#Server_List_Ping_.280xFE.29|0xFE server list ping]] packet. If the second byte (the 0x01) is missing, the server waits about 1000ms then replies with the [[#Server_-.3E_Client_format_used_in_1.3_and_earlier|Server -> Client format used in 1.3 and earlier]].
 
 == Server -> Client ==
 
@@ -27,9 +27,9 @@ The entire packet looks something like this:
     0000030: 7400 2000 5300 6500 7200 7600 6500 7200  t. .S.e.r.v.e.r.
     0000040: 0000 3000 0000 3200 30                   ..0...2.0
 
-== Server -> Client (old format) ==
+== Server -> Client format used in 1.3 and earlier ==
 
-The packet-structure is the same. Only the content of the big-endian UCS-2 string is different.
+The packet-structure is the same as above. Only the content of the big-endian UCS-2 string is different.
 
 This one contains 3 fields delimited by <code>§</code>:
 
