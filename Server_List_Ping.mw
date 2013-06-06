@@ -27,7 +27,26 @@ The entire packet looks something like this:
     0000030: 7400 2000 5300 6500 7200 7600 6500 7200  t. .S.e.r.v.e.r.
     0000040: 0000 3000 0000 3200 30                   ..0...2.0
 
-=== Sample code ===
+== Server -> Client (old format) ==
+
+The packet-structure is the same. Only the content of the big-endian UCS-2 string is different.
+
+This one contains 3 fields delimited by <code>§</code>:
+
+# Message of the day (e.g. <code>A Minecraft Server</code>)
+# Current player count
+# Max players
+
+The entire packet looks something like this:
+
+                    <---> first character
+    0000000: ff00 1700 4100 2000 4d00 6900 6e00 6500  ....A. .M.i.n.e.
+    0000010: 6300 7200 6100 6600 7400 2000 5300 6500  c.r.a.f.t. .S.e.
+    0000020: 7200 7600 6500 7200 a700 3000 a700 3100  r.v.e.r.§.0.§.1.
+    0000030: 30                                       0
+
+
+== Sample code ==
 
 * [https://gist.github.com/1209061 Python]
 * [http://forums.bukkit.org/threads/solved-minecraft-server-list-ping-php-script-for-1-4.108096/#post-1395553 PHP]
