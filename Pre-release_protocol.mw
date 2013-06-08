@@ -66,7 +66,7 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 | 195
 | ?
 |-
-| Propert Count
+| Properties Count
 | int
 | 3
 | Number of string/data pairs that follow. The remaining fields here are repeated this number of times.
