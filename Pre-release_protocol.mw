@@ -60,7 +60,7 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 | Example
 | Notes
 |-
-| rowspan="6" | 0x2C
+| rowspan="4" | 0x2C
 | EntityID
 | int
 | 195
