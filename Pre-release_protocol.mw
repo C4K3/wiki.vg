@@ -85,6 +85,58 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 | colspan="4" | ? bytes
 |}
 
+Known values:
+{| class="wikitable"
+|-
+| Key 
+| Default 
+| Min 
+| Max
+| Label
+|-
+| generic.maxHealth
+| 20.0
+| 0.0
+| Double.MaxValue
+| Max Health
+|-
+| generic.followRange
+| 32.0
+| 0.0
+| 2048.0
+| Follow Range
+|-
+| generic.knockbackResistance
+| 0.0
+| 0.0
+| 1.0
+| Knockback Resistance
+|-
+| generic.movementSpeed
+| 0.699999988079071
+| 0.0
+| Double.MaxValue
+| Movement Speed
+|-
+| generic.attackDamage
+| 2.0
+| 0.0
+| Double.MaxValue
+| 
+|-
+| horse.jumpStrength
+| 0.7
+| 0.0
+| 2.0
+| Jump Strength
+|-
+| zombie.spawnReinforcements
+| 0.0
+| 0.0
+| 1.0
+| Spawn Reinforcements Chance
+|}
+
 == Changed Packets ==
 
 {{anchor|0x03}}
