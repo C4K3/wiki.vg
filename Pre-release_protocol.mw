@@ -100,6 +100,7 @@ The chat string must now be a valid JSON object:
 
     {"translate":"chat.type.announcement","using":["Server","hi"]}
     {"color":"gray","italic":true,"translate":"chat.type.admin","using":["Server",{"translate":"commands.save.success"}]}
+    {"text":"§aOld style chat"}
 
 Where translate is one of the following:
 
