@@ -76,15 +76,10 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 | "generic.Maxhealth"
 | 
 |-
-| Unknown
-| float?
-| ...
-| ?
-|-
-| Unknown
-| float?
+| Value
+| double
+| 20.0
 | 
-| ?
 |-
 | Total Size:
 | colspan="4" | ? bytes
