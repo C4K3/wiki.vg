@@ -77,6 +77,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes|Yes, using [http://www.lwjgl.org LWJGL]}}
 | {{yes|1.5.2}}
 |-
+! [https://github.com/Dav1dde/BraLa BraLa]
+| Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
+| Dav1d
+| {{D}}
+| {{GPLv3}}
+| {{yes}}
+| {{yes}}
+| {{yes|1.5.2}}
+|-
 ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client&nbsp;2]
 | Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
 | [https://twitter.com/shoghicp shoghicp]
@@ -85,15 +94,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{unknown|Convert Map to PNG}}
 | {{supports|1.5.1}}
-|-
-! [https://github.com/Dav1dde/BraLa BraLa]
-| Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
-| Dav1d
-| {{D}}
-| {{GPLv3}}
-| {{yes}}
-| {{yes}}
-| {{no|1.4.6}}
 |-
 ! [https://github.com/Charged/Miners Charged Miners]
 | Minecraft Viewer, can connect to classic servers.
