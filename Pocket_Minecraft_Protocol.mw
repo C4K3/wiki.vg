@@ -635,7 +635,8 @@ Multiple Data Encapsulation packets could be present in one packet. If you want 
 
 === Raw Information ===
 * Generated using [https://gist.github.com/4678643 this parser]
-* [http://pastie.org/5981487 0.6.0 protocol]
+* [https://gist.github.com/shoghicp/5717436 0.7.0 & 0.7.1 protocol #11]
+* [https://gist.github.com/shoghicp/5601589 0.6.0 & 0.6.1 protocol #9]
 * [http://pastie.org/5981489 0.5.0 protocol]
 * [http://pastie.org/5981490 0.4.0 protocol]
 
