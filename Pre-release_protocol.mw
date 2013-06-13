@@ -4,12 +4,15 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 == Protocol Version ==
 
-Protocol versions:
- 13w16a - 62
- 13w18b - 65
- 13w22a - 67
- 13w23b - 68
- 13w24a - 69
+13w24a: Protocol version is now 69.
+
+13w23b: Protocol version is now 68.
+
+13w22a: Protocol version is now 67.
+
+13w18b: Protocol version is now 65.
+
+13w16a: Protocol version is now 62.
 
 == New Packets ==
 
