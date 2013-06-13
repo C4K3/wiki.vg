@@ -136,24 +136,26 @@ Response:
  Response not yet documented
 
 
-=== POST /server/whitelist/{username} ===
+=== POST /server/{id}/whitelist/{username} ===
 
 Add username to whitelist (Not complete)
 
 Request Parameters:
 
+*id: Pulled from serverId on /server/list
 *username: Username of player to add to the whitelist
 Response:
 
  Response not yet documented
 
 
-=== DELETE /server/whitelist/{username} ===
+=== DELETE /server/{id}/whitelist/{username} ===
 
 Delete username from whitelist (Not complete)
 
 Request Parameters:
 
+*id: Pulled from serverId on /server/list
 *username: Username of player to delete from the whitelist
 Response:
 
