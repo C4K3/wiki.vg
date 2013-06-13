@@ -136,7 +136,7 @@ Response:
  Response not yet documented
 
 
-=== PUT /server/whitelist/{username} ===
+=== POST /server/whitelist/{username} ===
 
 Add username to whitelist (Not complete)
 
