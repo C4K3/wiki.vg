@@ -1,5 +1,7 @@
 Endpoint: https://peoapi.minecraft.net
 
+TODO: Add about authenticating
+
 === GET /server/list ===
 
 List servers that user own or has been invited to
