@@ -1,6 +1,38 @@
-Endpoint: https://peoapi.minecraft.net
+
 
 TODO: Add about authenticating
+
+== Authentication ==
+
+Endpoint: https://account.mojang.com
+
+Steps to Login
+*Pull authenticityToken from /m/login?app=mcpe
+*POST to /m/login
+*Client is redirected to /m/launch
+
+=== POST /m/login ===
+
+Player Login
+
+Parameters sent in body
+
+Request Parameters:
+
+*authenticityToken: Pulled from /m/login?app=mcpe
+*email: Email of user
+*password: Password of user
+
+Pull mojangSessionId from the PLAY_SESSION cookie, and use that as the sid cookie in peoapi.minecraft.net requests
+
+Cookies needed for peoapi.minecraft.net requests:
+
+*sid: Pulled from mojangSessionId
+*gameversion: Version of the game the requests are coming from
+
+== Endpoints ==
+
+Endpoint: https://peoapi.minecraft.net
 
 === GET /server/list ===
 
@@ -17,7 +49,6 @@ Response Parameters:
 *type: Type of server, can be creative or survival
 *playerNames: Usernames of players currently playing on the server
 *invited: Usernames of players who are invited to the server
-
 
 Response:
 
