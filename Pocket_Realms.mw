@@ -1,0 +1,167 @@
+Endpoint: https://peoapi.minecraft.net
+
+=== GET /server/list ===
+
+List servers that user own or has been invited to
+
+Response Parameters:
+
+*serverId: Id of server
+*name: Server Title
+*open: Whether server is joinable
+*ownerName: Name of server owner
+*myWorld: Whether the server belongs to the current user
+*maxNrPlayers: Max number of players
+*type: Type of server, can be creative or survival
+*playerNames: Usernames of players currently playing on the server
+*invited: Usernames of players who are invited to the server
+
+
+Response:
+
+ [{
+ 
+    "serverId":1,
+    "name":"Steve's Server",
+    "open":true,
+    "ownerName":"Steve",
+    "myWorld":true,
+    "maxNrPlayers":10,
+    "type":"survival",
+    "playerNames":["Steve", "Stevie"],
+    "invited":["Steve", "Stevie"]
+ 
+ }]
+
+
+=== GET /server/{id}/join ===
+
+Join a server
+
+Request Parameters:
+
+*id: Pulled from serverId on /server/list
+
+Response Paramenters:
+
+*ip: IP of server
+*port: Port of server
+*key: Exact use unknown, maybe server password?
+Response:
+
+ {
+    "ip":"87.169.167.12",
+    "port":21647,
+    "key":"/6UAOMG6Q/EIjHxLa87un5l=="
+ }
+
+
+=== POST /server/create?name={server_name}&type={type}&seed={seed} ===
+
+Create a server. (Not complete)
+
+Request Parameters:
+
+*server_name: Title of server
+*type: Type of server, can be creative or survival
+*seed: Seed for server
+Response:
+
+ Response not yet documented
+
+
+=== PUT /server/{id}/name/{server_name} ===
+
+Change name of server (Not complete)
+
+Request Parameters:
+
+*id: Pulled from serverId on /server/list
+*server_name: Title of server
+Response:
+
+ Response not yet documented
+
+
+=== PUT /server/{id}/open ===
+
+Open server (Not complete)
+
+Request Parameters:
+
+*id: Pulled from serverId on /server/list
+Response:
+
+ Response not yet documented
+
+
+=== PUT /server/{id}/close ===
+
+Close server (Not complete)
+
+Request Parameters:
+
+*id: Pulled from serverId on /server/list
+Response:
+
+ Response not yet documented
+
+
+=== PUT /server/whitelist/{username} ===
+
+Add username to whitelist (Not complete)
+
+Request Parameters:
+
+*username: Username of player to add to the whitelist
+Response:
+
+ Response not yet documented
+
+
+=== DELETE /server/whitelist/{username} ===
+
+Delete username from whitelist (Not complete)
+
+Request Parameters:
+
+*username: Username of player to delete from the whitelist
+Response:
+
+ Response not yet documented
+
+
+=== POST /server/heartbeat?nplayers={num_players} ===
+
+Exact use unknown (Not complete) (Most likely a POST)
+
+Request Parameters:
+
+*num_players: Number of players currently on server?
+Response:
+
+ Response not yet documented
+
+
+=== GET /auth/validate-player/{unknown_string}/{unknown_string} ===
+
+Check whether username is authorized? (Not complete)
+
+Request Parameters:
+
+*unknown_string: One of the values could be a username?
+Response:
+ Response not yet documented
+
+
+=== GET /info/status ===
+
+Determines whether server creation is allowed
+
+Response Parameters:
+
+*buyServerEnabled: Whether server buying is enabled?
+*createServerEnabled: Whether server creation is enabled?
+Response:
+
+ {"buyServerEnabled":false,"createServerEnabled":false}
