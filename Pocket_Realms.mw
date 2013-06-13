@@ -34,7 +34,7 @@ Response:
  }]
 
 
-=== GET /server/{id}/join ===
+=== POST /server/{id}/join ===
 
 Join a server
 
