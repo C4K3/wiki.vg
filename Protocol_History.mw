@@ -1,15 +1,17 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
 === 1.5.x ===
-13w24a: Protocol version is now 69.
+13w24a: Protocol version is now 69. Change functioning: 04-Time Update
 
 13w23b: Protocol version is now 68.
 
-13w22a: Protocol version is now 67.
+13w22a: Protocol version is now 67. New packet: 2C-Entity Properties; Change packets: 03-Chat Message
 
 13w18b: Protocol version is now 65.
 
-13w16a: Protocol version is now 62.
+13w16b: Protocol version is now 63. New packet: 1B-Steer Vehicle
+
+13w16a: Protocol version is now 62. New packet: 27-Attach Entity; Change packets: 08-Update Health, 13-Entity Action, CA-Player Abilities
 
 13w09c: Protocol version is now 60.
 
