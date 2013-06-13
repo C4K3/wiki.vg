@@ -164,6 +164,41 @@ Where translate is one of the following:
 
 {{anchor|0x08}}
 
+=== Time Update (0x04) ===
+''Server to Client''
+
+Time is based on ticks, where 20 ticks happen every second. There are 24000 ticks in a day, making Minecraft days exactly 20 minutes long.
+
+The time of day is based on the timestamp modulo 24000. 0 is sunrise, 6000 is noon, 12000 is sunset, and 18000 is midnight.
+
+The default SMP server increments the time by <code>20</code> every second.
+
+{| class="wikitable"
+|-
+! | Packet ID
+! | Field Name
+! | Field Type
+! | Example
+! | Notes
+|-
+| rowspan="2" | 0x04
+| Age of the world
+| long
+| 45464654
+| In ticks; not changed by server commands
+|-
+| Time of Day
+| long
+| 21321
+| The world (or region) time, in ticks. '''If negative the sun will stop moving at the Math.abs of the time.'''
+|-
+! | Total Size:
+| colspan="4" | 17 Bytes
+|}
+
+{{anchor|0x05}}
+
+
 === Update Health (0x08) ===
 ''Server to Client''
 
