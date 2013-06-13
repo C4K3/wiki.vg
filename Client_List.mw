@@ -175,6 +175,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no}}
 | {{no|Beta 1.4}}
+|-
+! [https://code.google.com/p/mc-bot mcbot]
+| Minecraft NPC emulator
+| Shagrat
+| {{Delphi}}
+| {{Unknown}}
+| {{yes}}
+| {{Yes, Debug 2.5 D}}
+| {{1.2.0-1.5.2-13w24a}}
 |-|}
 
 [[Category:Minecraft Modern]]
