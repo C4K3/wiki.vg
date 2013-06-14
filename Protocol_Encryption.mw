@@ -19,6 +19,14 @@ As of 12w17a, minecraft implements SSL-like encryption.
 #'''S->C''' 0x01 login
 #see [[Protocol FAQ]] to get information about what happens next.
 
+==Server ID String==
+
+The server ID string is a randomly-generated string of characters with a maximum length of 20 code points (the client disconnects with an exception if the length is longer than 20).
+
+The client appears to arrive at incorrect hashes if the server ID string contains certain unprintable characters, so for consistent results only characters with code points in the range U+0021-U+007E (inclusive) should be sent.  This range corresponds to all of ASCII with the exception of the space character (U+0020) and all control characters (U+0000-U+001F, U+007F).
+
+The client appears to arrive at incorrect hashes if the server ID string is too short.  15 to 20 (inclusive) length strings have been observed from the Notchian server and confirmed to work as of 1.5.2.
+
 == Key Exchange ==
 
 The server generates a 1024-bit RSA keypair on startup. The key, when packed into a 0xFD packet, is in ASN.1 format as defined by x.509.
