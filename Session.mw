@@ -371,6 +371,7 @@ See [[Protocol Encryption]] for details on encrypting connections.
 # Client generates a symmetric key.
 # Client sends a HTTP request to 
 #:<pre>http://session.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
+#:Note: Case-corrected username is used here, not the Mojang account username.
 #:If the response is '''OK''' then continue, otherwise stop
 # Client sends [[Protocol#0xFC|0xFC encryption response]] - client encrypts shared secret and verification token with the server's public key
 # Server checks validity and sends [[Protocol#0xFC|0xFC encryption response]] with two empty arrays
