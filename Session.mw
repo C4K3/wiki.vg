@@ -14,7 +14,7 @@ The current launcher version is "13" (for new launcher it's "14"), sending a val
   1343825972000:deprecated:SirCmpwn:7ae9007b9909de05ea58e94199a33b30c310c69c:dba0c48e1c584963b9e93a038a66bb98
 #'''current version''' of the game files (not the launcher itself). This is a unix timestamp which the launcher compares to the ~/.minecraft/bin/version file.
 #Previously contained a '''download ticket''' for requesting new versions of minecraft.jar from the server. Now contains only "deprecated".
-#'''case-correct username'''.
+#'''case-correct username'''. For mojang accounts, the user's actual username is returned here instead of the email used to log in.
 #'''sessionId''' - a unique ID for your current session.
 #'''UID''' - currently unused, introduced near August 8th, 2012. Grum says this is the unique ID for the user, potentially for changing Minecraft names in future.
 
