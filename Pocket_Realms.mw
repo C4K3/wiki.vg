@@ -75,7 +75,7 @@ Response Paramenters:
 
 *ip: IP of server
 *port: Port of server
-*key: Exact use unknown, maybe server password?
+*key: Key used to encrypt the data received on the server (AES-128 ECB)
 Response:
 
  {
@@ -177,6 +177,8 @@ Response:
 === GET /auth/validate-player/{unknown_string}/{unknown_string} ===
 
 Check whether username is authorized? (Not complete)
+
+Needs the cookie '''key'''
 
 Request Parameters:
 
