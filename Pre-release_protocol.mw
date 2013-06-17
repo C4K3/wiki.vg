@@ -176,8 +176,7 @@ Where translate is one of the following:
     chat.type.emote: * %s %s
     chat.type.text: <%s> %s
 
-{{anchor|0x08}}
-
+{{anchor|0x04}}
 === Time Update (0x04) ===
 ''Server to Client''
 
@@ -210,9 +209,7 @@ The default SMP server increments the time by <code>20</code> every second.
 | colspan="4" | 17 Bytes
 |}
 
-{{anchor|0x05}}
-
-
+{{anchor|0x08}}
 === Update Health (0x08) ===
 ''Server to Client''
 
@@ -341,6 +338,7 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 | colspan="4" | 10 bytes
 |}
 
+{{anchor|0xC8}}
 === Increment Statistic (0xC8) ===
 ''Server to Client''
 
