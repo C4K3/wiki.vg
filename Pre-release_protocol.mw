@@ -4,21 +4,21 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 == Protocol Version ==
 
-13w25a: Protocol version is now 71
+13w25a: Protocol version is now 71. Changed packet: [[Pre-release_protocol#0xC8|Increment Statistic (0xC8)]]
 
 13w24b: Protocol version is now 70
 
-13w24a: Protocol version is now 69. Change functioning: 04-Time Update
+13w24a: Protocol version is now 69. Changed functionality: [[Pre-release_protocol#0x04|Time Update (0x04)]]
 
 13w23b: Protocol version is now 68.
 
-13w22a: Protocol version is now 67. New packet: 2C-Entity Properties; Change packets: 03-Chat Message
+13w22a: Protocol version is now 67. New packet: [[Pre-release_protocol#0x2C|Entity Properties (0x2C)]]; Changed packets: [[Pre-release_protocol#0x03|Chat Message (0x03)]]
 
 13w18b: Protocol version is now 65.
 
-13w16b: Protocol version is now 63. New packet: 1B-Steer Vehicle
+13w16b: Protocol version is now 63. New packet: [[Pre-release_protocol#0x1B|Steer Vehicle (0x1B)]]
 
-13w16a: Protocol version is now 62. New packet: 27-Attach Entity; Change packets: 08-Update Health, 13-Entity Action, CA-Player Abilities
+13w16a: Protocol version is now 62. Changed packets: [[Pre-release_protocol#0x08|Update Health (0x08)]], [[Pre-release_protocol#0x17|Entity Action (0x17)]], [[Pre-release_protocol#0x27|Attach Entity (0x27)]], [[Pre-release_protocol#0xCA|Player Abilities (0xCA)]]
 
 == New Packets ==
 
