@@ -4,6 +4,8 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 == Protocol Version ==
 
+13w25a: Protocol version is now 71
+
 13w24b: Protocol version is now 70
 
 13w24a: Protocol version is now 69. Change functioning: 04-Time Update
@@ -337,6 +339,32 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 |-
 | Total Size:
 | colspan="4" | 10 bytes
+|}
+
+=== Increment Statistic (0xC8) ===
+''Server to Client''
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="2" | 0xC8
+| Statistic ID
+| int
+| 1003
+| The ID of the statistic. See [http://www.minecraftforum.net/viewtopic.php?f=1020&t=295360 List of statistics].
+|-
+| Amount
+| '''int'''
+| 1
+| The amount to increment the statistic.
+|-
+| Total Size:
+| colspan="4" | 9 bytes
 |}
 
 {{anchor|0xCA}}
