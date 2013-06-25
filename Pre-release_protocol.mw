@@ -4,6 +4,8 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 == Protocol Version ==
 
+1.6: Protocol version is now 72. Changed Open Window packet, added two inventory types
+
 13w25a: Protocol version is now 71. Changed packet: [[Pre-release_protocol#0xC8|Increment Statistic (0xC8)]]
 
 13w24b: Protocol version is now 70
@@ -339,6 +341,56 @@ This packet is sent when a player has been attached to an entity (e.g. Minecart)
 | Total Size:
 | colspan="4" | 10 bytes
 |}
+
+=== Open Window (0x64) ===
+''Server to Client''
+
+This is sent to the client when it should open an inventory, such as a chest, workbench, or furnace. This message is not sent anywhere for clients opening their own inventory.
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="5" | 0x64
+| Window id
+| byte
+| 123
+| A unique id number for the window to be displayed.  Notchian server implementation is a counter, starting at 1.
+|-
+| Inventory Type
+| byte
+| 2
+| The window type to use for display.  Check below
+|-
+| Window title
+| string
+| <code>Chest</code>
+| The title of the window.
+|-
+| Number of Slots
+| byte
+| 3
+| Number of slots in the window (excluding the number of slots in the player inventory).
+|-
+| Use provided window title
+| boolean
+| 1
+| If false, the client will look up a string like "window.minecart". If true, the client uses what the server provides.
+|-
+| Unknown
+| int
+| 0
+| Only sent when window type is equal to 11
+|-
+| Total Size:
+| colspan="4" | 8 bytes + length of string
+|}
+
+See [[Inventory#Windows|inventory windows]] for further information.
 
 {{anchor|0xC8}}
 === Increment Statistic (0xC8) ===
