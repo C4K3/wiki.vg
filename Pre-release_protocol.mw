@@ -466,7 +466,10 @@ The client ignores the walking speed and flying speed fields. Send an 0x2C packe
 
 == Changed Data Types ==
 
--None-
+New inventory types:
+
+* 10: Dropper
+* 11: Horses, donkeys
 
 == Protocol History ==
 
