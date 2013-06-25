@@ -406,7 +406,7 @@ The vanilla client sends this packet when the player starts/stops flying with th
 | colspan="4" | 10 bytes
 |}
 
-* The client ignores the walking speed and flying speed fields. Send an 0x2C packet as well.
+The client ignores the walking speed and flying speed fields. Send an 0x2C packet as well.
 
 == Removed Packets ==
 
