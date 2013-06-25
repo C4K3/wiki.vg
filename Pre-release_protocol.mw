@@ -66,6 +66,8 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 === Entity Properties (0x2C) ===
 ''Server to Client''
 
+'''Note''': The server sends this packet to inform the user of its movement speed. Users move far too fast when this packet is not sent.
+
 {| class="wikitable"
 |-
 | Packet ID
