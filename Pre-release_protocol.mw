@@ -392,12 +392,12 @@ The vanilla client sends this packet when the player starts/stops flying with th
 | 5
 |
 |-
-| Flying speed
+| Flying speed*
 | '''float'''
 | '''0.05'''
 | previous integer value divided by 250
 |-
-| Walking speed
+| Walking speed*
 | '''float'''
 | '''0.1'''
 | previous integer value divided by 250
@@ -405,6 +405,8 @@ The vanilla client sends this packet when the player starts/stops flying with th
 | Total Size:
 | colspan="4" | 10 bytes
 |}
+
+* The client ignores the walking speed and flying speed fields. Send an 0x2C packet as well.
 
 == Removed Packets ==
 
