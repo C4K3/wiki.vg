@@ -4,7 +4,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 == Protocol Version ==
 
-1.6.1: Protocol version is now 73. Changes unknown
+1.6.1: Protocol version is now 73. Packet 0xFA is sent after packet 0xFE with additional data
 
 1.6: Protocol version is now 72. Changed Open Window packet, added two inventory types
 
