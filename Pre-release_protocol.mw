@@ -92,7 +92,7 @@ Horses listen to all directions, boats and minecarts only listen to the positive
 | Number of string/data pairs that follow. The remaining fields here are repeated this number of times.
 |-
 | Key
-| string16
+| string
 | "generic.Maxhealth"
 | 
 |-
