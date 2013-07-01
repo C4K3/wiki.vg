@@ -1,5 +1,10 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 1.6.x ===
+1.6.1: Protocol version is now 73. Packet 0xFA is sent after packet 0xFE with additional data
+
+1.6: Protocol version is now 72. Changed Open Window packet, added two inventory types
+
 === 1.5.x ===
 13w25a: Protocol version is now 71. Changed packet: Increment Statistic (0xC8)
 
