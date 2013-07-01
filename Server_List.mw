@@ -52,6 +52,21 @@ A couple things for contributors:
 | [http://forum.mc-server.org/showthread.php?tid=499 Link]
 | {{yes|Active}}
 |-
+! [https://github.com/fador/mineserver/ Mineserver]
+| Fador, Psoden, deoxxa
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+| {{yes|1.5.2}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{unknown}}
+| {{yes|C++}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| [https://github.com/fador/mineserver/#features Link]
+| {{yes|Active}}
+|-
 ! [http://www.hcraft.org/ hCraft]
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
@@ -140,21 +155,6 @@ A couple things for contributors:
 | {{yes|C#}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | {{unknown}}
-| {{yes|Active}}
-|-
-! [https://github.com/fador/mineserver/ Mineserver]
-| Fador, Psoden, deoxxa
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{supports|1.5}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{unknown}}
-| {{yes|C++}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| [https://github.com/fador/mineserver/#features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
