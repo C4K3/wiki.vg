@@ -15,7 +15,7 @@ The client initiates a TCP connection to the minecraft server on the standard po
 # <code>XX</code> - protocol version - currently 73 (decimal)
 # <code>XX XX</code> - length of following string, in characters, as a big-endian short
 # <code>XX XX ...</code> - hostname the client is connecting to, as a big-endian UCS-2 string
-# <code>XX XX</code> - port the client is connecting to, as a big-endian short.
+# <code>XX XX XX XX</code> - port the client is connecting to, as a big-endian int.
 
 === Server -> Client ===
 
