@@ -192,4 +192,8 @@ This page lists the protocol version numbers used in the various MC releases. Of
 | class="col0 centeralign" | 72
 | class="col1 centeralign" | 13w26a, '''1.6'''
 | class="col2 centeralign" |
+|- class="row49"
+| class="col0 centeralign" | '''73'''
+| class="col1 centeralign" | '''1.6.1'''
+| class="col2 centeralign" | 
 |}
