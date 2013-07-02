@@ -19,6 +19,13 @@ The client initiates a TCP connection to the minecraft server on the standard po
 
 All [[Data_Types|data types]] are big-endian.
 
+Packet dump:
+
+    0000000: fe01 fa00 0b00 4d00 4300 7c00 5000 6900  ......M.C.|.P.i.
+    0000010: 6e00 6700 4800 6f00 7300 7400 1949 0009  n.g.H.o.s.t..I..
+    0000020: 006c 006f 0063 0061 006c 0068 006f 0073  .l.o.c.a.l.h.o.s
+    0000030: 0074 0000 63dd                           .t..c.
+
 === Server -> Client ===
 
 The server responds with a [[Protocol#Disconnect.2FKick_.280xFF.29|0xFF kick]] packet. The packet begins with a single byte identifier <code>ff</code>, then a two-byte big endian short giving the length of the proceeding string in characters. You can actually ignore the length because the server closes the connection after the response is sent.
