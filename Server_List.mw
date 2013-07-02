@@ -26,7 +26,7 @@ A couple things for contributors:
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{snapshot|13w16a}}
+| {{yes|1.6.1}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -41,7 +41,7 @@ A couple things for contributors:
 | FakeTruth, xoft, luksor, keyboard
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Apache 2.0
-| {{yes|1.5.2}}
+| {{no|1.5.2}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -56,7 +56,7 @@ A couple things for contributors:
 | Fador, Psoden, deoxxa
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{yes|1.5.2}}
+| {{no|1.5.2}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -71,7 +71,7 @@ A couple things for contributors:
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{yes|1.5.2}}
+| {{no|1.5.2}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
 | {{yes}}
@@ -86,7 +86,7 @@ A couple things for contributors:
 | Thinkofdeath
 | [http://golang.org/ Go]
 | [http://www.gnu.org/licenses/gpl-3.0.html GNU GPL]
-| {{yes|1.5.2}}
+| {{no|1.5.2}}
 | {{yes|Anvil}}
 | {{no}}
 | {{no}}
@@ -101,7 +101,7 @@ A couple things for contributors:
 | [http://www.spout.org/ Spout LLC] and community
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://spout.in/licensev1 Spout License v1]
-| {{yes|1.5.2}}
+| {{no|1.5.2}}
 | {{yes|Custom}}
 | {{yes}}
 | {{planned|Partial}}
@@ -131,7 +131,7 @@ A couple things for contributors:
 | Corbin Simpson
 | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
 | MIT/X11
-| {{supports|1.5}}
+| {{no|1.5}}
 | {{yes|Alpha, Beta, Anvil}}
 | {{yes}}
 | {{yes}}
@@ -146,7 +146,7 @@ A couple things for contributors:
 | ementalo, smjert
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | {{unknown|unknown}}
-| {{supports|1.5}}
+| {{no|1.5}}
 | {{yes|Custom}}
 | {{no}}
 | {{no}}
