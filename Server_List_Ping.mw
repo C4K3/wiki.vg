@@ -1,6 +1,6 @@
 Minecraft supports querying the MOTD, player count, max players and server version via the usual port. Unlike [[Query]], the server list ping interface is always enabled.
 
-== 1.6 - ==
+== 1.6 ==
 
 === Client -> Server ===
 
