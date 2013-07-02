@@ -17,7 +17,7 @@ The client initiates a TCP connection to the minecraft server on the standard po
 # <code>...</code> - hostname the client is connecting to, encoded the same way as "MC|PingHost"
 # <code>XX XX XX XX</code> - port the client is connecting to, as an int.
 
-All data types are big-endian.
+All [[Data_Types|data types]] are big-endian.
 
 === Server -> Client ===
 
