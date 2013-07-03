@@ -404,7 +404,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
 
 * <div class="li">Index '''16''' (byte): Flags (see below).
 * Index '''17''' (string): Name of player that tamed wolf.
-* Index '''18''' (int): Health. Values from 8 to 0
+* Index '''18''' (float): Health. Values from 8 to 0
 * Index '''19''' (byte): Unknown, either 0 or 1
 * Index '''20''' (byte): Color of the collar. (look up)
 
