@@ -71,3 +71,4 @@ Code exists in the notchian server to split large responses (>4096 bytes) into m
 * https://bitbucket.org/jyc/rcon.js (RingoJS, synchronous, BSD-licensed)
 * https://bitbucket.org/jyc/rcon (PHP, synchronous, BSD-licensed)
 * https://github.com/A2PLab/minelib (basic, Scala)
+* https://github.com/tiiffi/mcrcon (C, synchronous, zlib/libpng License)
