@@ -55,7 +55,7 @@ Prior to the Minecraft 1.6, the client -> server operation is much simpler, and 
 
 == Beta 1.8 - 1.3 ==
 
-Prior to Minecraft 1.6, the client only sends <code>FE</code>. 
+Prior to Minecraft 1.4, the client only sends <code>FE</code>. 
 
 Additionally, the response from the server only contains 3 fields delimited by <code>§</code>:
 
