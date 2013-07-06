@@ -1,17 +1,118 @@
-This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.6.1, protocol 73) to the current pre-release. Note that this page contains bleeding-edge information that may not be completely or correctly documented.
+This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently 1.6.2, protocol 74) to the current pre-release. Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 He who wishes to commandeer the merging of this into [[Protocol]] when an update is made must be sure to respect any changes that may have occured to the respective packets there.
 
 == Protocol History ==
 None
 
 == Protocol Version ==
-1.6.1 (73)
+1.6.2 (74)
 
 == New Packets ==
 None
 
 == Changed Packets ==
-None
+
+{{anchor|0x2C}}
+=== Entity Properties (0x2C) ===
+''Server to Client''
+
+'''Note''': The server sends this packet to inform the user of its movement speed. Users move far too fast when this packet is not sent.
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="6" | 0x2C
+| EntityID
+| int
+| 195
+| ?
+|-
+| Properties Count
+| int
+| 3
+| Number of string/data (including these lists) pairs that follow. The remaining fields here are repeated this number of times.
+|-
+| Key
+| string16
+| "generic.Maxhealth"
+| 
+|-
+| Value
+| double
+| 20.0
+| 
+|-
+| ListLength
+| short
+| 1
+| Number of list elements that follow.
+|-
+| ListElement
+| {long, long, double, byte}
+| 
+|
+|-
+| Total Size:
+| colspan="4" | ? bytes
+|}
+
+Known values:
+{| class="wikitable"
+|-
+| Key 
+| Default 
+| Min 
+| Max
+| Label
+|-
+| generic.maxHealth
+| 20.0
+| 0.0
+| Double.MaxValue
+| Max Health
+|-
+| generic.followRange
+| 32.0
+| 0.0
+| 2048.0
+| Follow Range
+|-
+| generic.knockbackResistance
+| 0.0
+| 0.0
+| 1.0
+| Knockback Resistance
+|-
+| generic.movementSpeed
+| 0.699999988079071
+| 0.0
+| Double.MaxValue
+| Movement Speed
+|-
+| generic.attackDamage
+| 2.0
+| 0.0
+| Double.MaxValue
+| 
+|-
+| horse.jumpStrength
+| 0.7
+| 0.0
+| 2.0
+| Jump Strength
+|-
+| zombie.spawnReinforcements
+| 0.0
+| 0.0
+| 1.0
+| Spawn Reinforcements Chance
+|}
+
 
 == Removed Packets ==
 None
