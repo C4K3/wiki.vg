@@ -8,7 +8,44 @@ None
 1.6.2 (74)
 
 == New Packets ==
-None
+{{anchor|0x85}}
+=== Sign Placement? (0x85) ===
+''Server to Client''
+
+Sent on placement of sign. Initial byte seems to always be 0.
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="4" | 0x85
+| Unknown
+| byte
+| <code>0</code>
+| Unknown, always seems to be 0.
+|-
+| X
+| int
+| <code>70</code>
+| X in block coordinates
+|-
+| Y
+| int
+| <code>70</code>
+| Y in block coordinates
+|-
+| Z
+| int
+| <code>-46</code>
+| Z in block coordinates
+|-
+| Total Size:
+| colspan="4" | 14 bytes
+|}
 
 == Changed Packets ==
 
