@@ -30,8 +30,8 @@ The recommended login sequence looks like this, where C is the client and S is t
 #'''S->C''' : Sends chunks and entities
 #'''S->C''' : Sends spawn position
 #'''S->C''' : Sends inventory [Need to verify this since inventory changed] (beta 1.1_02: looks like Window items with type=0, then a Set slot with window id = -1 and slot = -1)
-#'''S->C''' : Tell the client they're ready to spawn by sending a position + look packet. '''Note''': The stance and Y should be swapped when the server sends it to the client (See [[protocol#player_position_look_0x0d|Protocol Page]])!
-#'''C->S''' : Sends a position + look packet to confirm the spawn position, with the stance and Y swapped back to the correct positions
+#'''S->C''' : Tell the client they're ready to spawn by sending a position + look packet.
+#'''C->S''' : Sends a position + look packet to confirm the spawn position
 </blockquote>
 
 ===I think I've done everything right, but…===
