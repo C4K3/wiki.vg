@@ -20,7 +20,7 @@ Returns the skin for a given username. Case-sensitive, returns an HTTP 404 error
 Returns the skin for a given username. Case-sensitive, returns an HTTP 404 error if the user does not have a cape.
 
  <nowiki>http://www.minecraft.net/heartbeat.jsp?port=27015&users=0&max=0&name=blah&public=false&version=7&salt=1234123412341234</nowiki>
-This is used to create the classic server list. It is documented properly on [[Classid Protocol]]
+This is used to create the classic server list. It is documented properly on [[Classic Protocol]]
 
  <nowiki>http://launch.minecraft.net/test.html</nowiki>
 A test page that Mojang asked people to use as they worked on a new launcher for Minecraft. Runs a few processes in the browser, then starts a new version of the launcher, which will be downloaded to /.minecraft/launcher as launcher.jar (only known difference between this launcher and the normal one - this launcher has the new logo)
