@@ -59,27 +59,6 @@ Packet dump:
     0000020: 006c 006f 0063 0061 006c 0068 006f 0073  .l.o.c.a.l.h.o.s
     0000030: 0074 0000 63dd                           .t..c.
 
-The Minecraft Server will answer with a [http://wiki.vg/Protocol#Disconnect.2FKick_.280xFF.29 Disconnect Packet] with the Following Content:
-
-    <code>§1\0{0}\0{1}\0{2}\0{3}\0{4}</code>
-Filled with the following data:
-
-{| class="wikitable"
-|-
-| Protocol Version
-|-
-| Version String
-|-
-| Message Of The Day
-|-
-| Used Slots
-|-
-| Max Slots
-|}
-
-Example:
-    <code>§1\051\01.4.7\0A Minecraft Server\00\020</code>
-
 === Server -> Client ===
 
 The server responds with a [[Protocol#Disconnect.2FKick_.280xFF.29|0xFF kick]] packet. The packet begins with a single byte identifier <code>ff</code>, then a two-byte big endian short giving the length of the proceeding string in characters. You can actually ignore the length because the server closes the connection after the response is sent.
