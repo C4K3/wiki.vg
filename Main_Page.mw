@@ -1,5 +1,11 @@
 __NOTOC____NOEDITSECTION__
-== Minecraft Modern ==
+{{Box|
+BORDER = #9999FF|
+BACKGROUND = #99CCFF|
+WIDTH = 100%|
+ICON = |
+HEADING = Minecraft Modern |
+CONTENT =  
 [[File:Banner beta.png|link=Category:Minecraft Modern]]
 
 Minecraft Modern is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play. Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
@@ -29,8 +35,15 @@ There are ongoing efforts to keep reverse engineered documentation updated, but 
 * [[Chat|How Chat Works]]
 
 For more info, check out [[:Category:Minecraft Modern|Minecraft Modern]].
+}}
 
-== Minecraft Classic ==
+{{Box|
+BORDER = #9999FF|
+BACKGROUND = #99CCFF|
+WIDTH = 100%|
+ICON = |
+HEADING = Minecraft Classic |
+CONTENT =  
 [[File:Banner classic.png|link=Category:Minecraft Classic]]
 
 Minecraft Classic is the original version of Minecraft, available for free to the public. It's still available off of the main website today and is still played by many people, with an active development community. As it's been around since 2010, and because it's so simplistic, there are many, many programs made to work with Classic - there are over '''18+''' servers alone, written in everything from C++ to PureBasic to Perl. It's highly recommend if you're planning to do a development project at this point to instead look into the Minecraft Modern specifications.
@@ -55,8 +68,15 @@ Useful information & links
 * [[Classic Wrapper List|Wrappers]] - mods that override features in the client or server.
 
 For more info, check out [[:Category:Minecraft Classic|Minecraft Classic]].
+}}
 
-== Minecraft Pocket Edition ==
+{{Box|
+BORDER = #9999FF|
+BACKGROUND = #99CCFF|
+WIDTH = 100%|
+ICON = |
+HEADING = Minecraft Pocket Edition |
+CONTENT =  
 [[File:Banner pocket.png|link=Category:Pocket Minecraft]]
 
 Pocket Minecraft is the version of Minecraft for portable systems such as Android or iOS devices. It currently has very little documentation.
@@ -74,9 +94,4 @@ Useful information & links
 
 For more info, check out [[:Category:Pocket Minecraft|Pocket Minecraft]].
 
-== Other Locally Hosted Resources ==
-If you need hosting or mirroring, drop the [[User:Kev009|hostmaster]] a note.
-* [http://mc.kev009.com/libevent/ libevent2 doxygen, up to date]
-* [http://mc.kev009.com/nbt/ NBT test files (archived)]
-* [[Craftd:Main_Page|craftd Minecraft Server]]
-* [[Realcraft:Main_Page|Realcraft Minecraft Server]]
+}}
