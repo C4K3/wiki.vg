@@ -84,6 +84,10 @@ Furthermore, the downloaded files are all verified via MD5 which is sent via ETa
 
 Further resources are stored in /MinecraftResources. Loading /MinecraftResources provides an XML formatted list of resources, some of which are downloaded by Minecraft and not the launcher.
 
+== Updating 1.6 ==
+
+With the new launcher updating happens by downloading information from  https://s3.amazonaws.com/Minecraft.Download/versions/versions.json and https://s3.amazonaws.com/Minecraft.Download/versions/1.6.2/1.6.2.json
+
 == Keep-alive ==
 
 Every 6000 ticks, the client sends an HTTPS request to
