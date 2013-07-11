@@ -20,6 +20,52 @@ The current launcher version is "13" (for new launcher it's "14"), sending a val
 
 If the request is missing a parameter, the server will return "Bad response". If the login information is incorrect, the server will return "Bad login". If the login information is correct but the account isn't premium, the server will return "User not premium". If your minecraft.net account has been migrated to a Mojang account but you're logging in with your minecraft.net username the server will return "Acount migrated, use e-mail".
 
+== Login 1.6 ==
+
+In minecraft 1.6 there is a new launcher, which uses a different method of authenticating users:
+
+The client authenticates by doing:
+
+  POST https://authserver.mojang.com/authenticate
+with (json encoded)
+    {
+     "agent":{"name":"Minecraft","version":1},
+     "username":"account@mailserver.com",
+     "password":"xxxxxxx",
+     "clientToken":"dddddddd-aaaa-bbbb-cccc-111111111111"
+    }
+
+The authserver responds with:
+
+    {
+     "accessToken":"99999999999999999999999999999999",
+     "clientToken":"dddddddd-aaaa-bbbb-cccc-111111111111",
+     "availableProfiles":[ {"id":"55555555555555555555555555555555","name":"MOJANGNAME"} ],
+     "selectedProfile":{"id":"55555555555555555555555555555555","name":"MOJANGNAME"}
+    }
+
+then the client checks on mcoapi with:
+
+  GET https://mcoapi.minecraft.net/mco/available
+with this cookie
+  Cookie: sid=token:99999999999999999999999999999999:55555555555555555555555555555555;user=MOJANGNAME;version=1.6.2
+
+
+When connecting to a server, the client first establishes an encrypted session with the server, then does:
+
+
+  GET http://session.minecraft.net/game/joinserver.jsp?
+    user=MOJANGNAME&
+    sessionId=token%3A99999999999999999999999999999999%3A55555555555555555555555555555555&
+    serverId=-6666666666666666666666666666666666666666
+
+
+the server verifies if the user did call joinserver by doing:
+
+  GET http://session.minecraft.net/game/checkserver.jsp?
+    user=MOJANGNAME&
+    serverId=-6666666666666666666666666666666666666666
+
 == Updating ==
 
 To update, the launcher downloads files from 
