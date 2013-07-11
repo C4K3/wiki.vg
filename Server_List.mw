@@ -22,11 +22,26 @@ A couple things for contributors:
 !style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
+! [https://github.com/JoeDoyle23/BurningPig BurningPig]
+| Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
+| [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{yes|1.6.2}}
+| {{yes|Custom}}
+| {{planned}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Async Networking}}
+| {{no}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| [https://github.com/JoeDoyle23/BurningPig#current-features Link]
+| {{yes|Active}}
+|-
 ! [http://www.mc-server.org MCServer]
 | FakeTruth, xoft, luksor, keyboard
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Apache 2.0
-| {{yes|1.6.1}}
+| {{yes|1.6.2}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -37,11 +52,26 @@ A couple things for contributors:
 | [http://forum.mc-server.org/showthread.php?tid=499 Link]
 | {{yes|Active}}
 |-
+! [https://github.com/thinkofdeath/netherrack Netherrack]
+| Thinkofdeath
+| [http://golang.org/ Go]
+| [http://www.gnu.org/licenses/gpl-3.0.html GNU GPL]
+| {{yes|1.6.2}}
+| {{yes|Anvil}}
+| {{no}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Goroutines}}
+| {{no}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{no}}
+| {{yes|Active}}
+|-
 ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.6.1}}
+| {{no|1.6.1}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -80,21 +110,6 @@ A couple things for contributors:
 | {{yes|C++}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | [https://github.com/fador/mineserver/#features Link]
-| {{yes|Active}}
-|-
-! [https://github.com/thinkofdeath/netherrack Netherrack]
-| Thinkofdeath
-| [http://golang.org/ Go]
-| [http://www.gnu.org/licenses/gpl-3.0.html GNU GPL]
-| {{no|1.5.2}}
-| {{yes|Anvil}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Goroutines}}
-| {{no}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{no}}
 | {{yes|Active}}
 |-
 ! [http://nessus.lv/nessusms NessusMS]
@@ -155,21 +170,6 @@ A couple things for contributors:
 | {{yes|C#}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | {{unknown}}
-| {{yes|Active}}
-|-
-! [https://github.com/JoeDoyle23/BurningPig BurningPig]
-| Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
-| [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{no|1.4.7}}
-| {{yes|Custom}}
-| {{planned}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Async Networking}}
-| {{no}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| [https://github.com/JoeDoyle23/BurningPig#current-features Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
