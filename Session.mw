@@ -24,7 +24,8 @@ If the request is missing a parameter, the server will return "Bad response". If
 
 In minecraft 1.6 there is a new launcher, which uses a different method of authenticating users:
 
-The client authenticates by doing:
+first the status of the mojang network is checked by looking at http://status.mojang.com/check
+then updates are downloaded, then the client authenticates by doing:
 
   POST https://authserver.mojang.com/authenticate
 with (json encoded)
