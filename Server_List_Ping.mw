@@ -4,53 +4,20 @@ Minecraft supports querying the MOTD, player count, max players and server versi
 
 === Client -> Server ===
 
-The client initiates a TCP connection to the minecraft server on the standard port. Instead of doing auth and logging in (as detailed in [[Protocol Encryption]]), it sends a 0xFE packet to the server
+The client initiates a TCP connection to the minecraft server on the standard port. Instead of doing auth and logging in (as detailed in [[Protocol Encryption]]), it sends the following data, expressed in hexadecimal:
 
-{| class="wikitable"
-|-
-| Packet ID
-| Field Name
-| Field Type
-| Example
-| Notes
-|-
-| rowspan="1" | 0xFE
-| Magic
-| byte
-| <code>1</code>
-| always <code>1</code>
-|-
-| Total Size:
-| colspan="4" | 2 bytes
-|}
+# <code>FE</code> - packet identifier for a [[Protocol#0xFE|server list ping]]
+# <code>01</code> - server list ping's payload (always 1)
+# <code>FA</code> - packet identifier for a [[Protocol#0xFA|plugin message]]
+# <code>00 0B</code> - length of following string, in characters, as a short (always 11)
+# <code>00 4D 00 43 00 7C 00 50 00 69 00 6E 00 67 00 48 00 6F 00 73 00 74</code> - the string "MC|PingHost" encoded as a big-endian [http://en.wikipedia.org/wiki/UTF-16/UCS-2 UCS-2] string
+# <code>XX XX</code> - length of the rest of the data, as a short. Compute as <code>7 + 2*len(hostname)</code>
+# <code>XX</code> - protocol version - currently 74 (decimal)
+# <code>XX XX</code> - length of following string, in characters, as a short
+# <code>...</code> - hostname the client is connecting to, encoded the same way as "MC|PingHost"
+# <code>XX XX XX XX</code> - port the client is connecting to, as an int.
 
-Followed by a [http://wiki.vg/Protocol#Plugin_Message_.280xFA.29 Plugin Message Packet] with the Channel set to "MC|PingHost" and the following Payload (which can be parsed the same way as a packets get parsed, but without a packet id)
-
-{| class="wikitable"
-|-
-| Field Name
-| Field Type
-| Example
-| Notes
-|-
-| Protocol Version
-| byte
-| <code>73</code>
-| 
-|-
-| Hostname
-| string
-| <code>127.0.0.1</code>
-| 
-|-
-| Port
-| int
-| <code>25565</code>
-| 
-|-
-| Total Size:
-| colspan="3" | 7 bytes + length of string * 2
-|}
+All [[Data_Types|data types]] are big-endian.
 
 Packet dump:
 
