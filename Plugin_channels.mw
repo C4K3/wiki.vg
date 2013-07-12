@@ -55,9 +55,15 @@ The list of trades a villager NPC is offering.
 
 === <code>MC|TrSel</code> ===
 ''Client to server''
-−	
+	
 When a player selects a specific trade offered by a villager NPC.
 It contains a single int id corresponding to the selected slot int the players current (trading) inventory.
+
+=== <code>MC|PingHost</code> ===
+''Client to server''
+
+Sent after a Server list ping. More information on [[Server List Ping]] 
+
 
 == Notable community plugin channels ==
 Channels listed in this section are not Mojang-sanctioned. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
