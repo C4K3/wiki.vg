@@ -1,0 +1,21 @@
+== Who ==
+<code>#mcdevs</code> is a loose group of developers working on projects that are directly or indirectly related to the popular indie hit, [http://minecraft.net Minecraft].
+
+There is no process to join <code>#mcdevs</code> nor any official member list. There are no responsibilities so long as you follow the [[/rules|community rules]].
+Individuals who have been around for an extended period of time and have proven to be mature and helpful are identified by voice (<code>+Vv</code>) in the IRC
+channel.
+
+== Where ==
+<code>#mcdevs</code> gathers in the IRC channel <code>#mcdevs</code> on [http://irc.freenode.net irc.freenode.net]. Please follow the [[/rules|channel rules]].
+We have a core group of about 100 members and rarely need to ban people. Please don't be the exception.
+
+== Projects ==
+
+; wiki.vg
+:   One of the core projects of <code>#mcdevs</code> is [http://wiki.vg wiki.vg], the primary development wiki for [http://minecraft.net Minecraft] and the home of the Minecraft
+:    protocol specifications.
+
+; b.wiki.vg
+:   [http://b.wiki.vg Burger], is set of tools for disassembling the minecraft binaries and producing a JSON description of items, entities, packets,
+:    and other internels useful to developers. [http://b.wiki.vg Burger] makes these available automatically and supports a `diff` between two different
+:    versions.
