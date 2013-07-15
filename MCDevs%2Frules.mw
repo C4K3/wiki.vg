@@ -18,10 +18,10 @@ to enforce these rules. Please do not become the exception.
 == Exploits ==
 
 Occasionally, exploits are found in the Minecraft protocol, client,
-game server, or authentication servers. Discussion of these exploits **is**
-allowed in the channel **only** when they cannot be used to access player data
-(such as an SQL injection on the user database). It is **encouraged** to work
-together to come up with reproducable steps that can be given to Mojang,
+game server, or authentication servers. Discussion of these exploits '''is'''
+allowed in the channel '''only''' when they cannot be used to access player data
+(such as an SQL injection on the user database). It is '''encouraged''' to work
+together to come up with reproducible steps that can be given to Mojang,
 and to come up with a solution and to discuss them from a technical
 prospective. If you are ever found to have used them to attack others
 without their permission you will be immediately banned.
