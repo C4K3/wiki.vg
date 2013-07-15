@@ -310,3 +310,7 @@ Every 15 minutes, minecraft sends a HTTP POST request giving stats. This can be 
 | {{yes}}
 | <code>3</code>
 |}
+
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Modern]]
