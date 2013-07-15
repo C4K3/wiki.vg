@@ -41,7 +41,7 @@ Whenever a Mojang service requires a session ID, you can simply combine a valid 
 
 === Authenticate ===
 
-This method is used whenever a user tries to log in using his password.
+Authenticates a user using his password.
 
 ==== Endpoint ====
   /authenticate
@@ -88,7 +88,7 @@ Currently each account will only have one single profile, multiple profiles per 
 
 === Refresh ===
 
-This method is used to refresh an expired but valid <code>accessToken</code>. It can be uses to keep a user logged in between gaming sessions and is preferred over storing the user's password in a file (see [[lastlogin]]). 
+Refreshes an expired but valid <code>accessToken</code>. It can be uses to keep a user logged in between gaming sessions and is preferred over storing the user's password in a file (see [[lastlogin]]). 
 
 ==== Endpoint ====
   /refresh
@@ -116,6 +116,22 @@ Note: The provided <code>accessToken</code> gets invalidated.
  }
 </syntaxhighlight>
 
+=== Validate ===
+
+Checks if an <code>accessToken</code> is valid.
+
+==== Endpoint ====
+  /validate
+
+==== Payload ====
+<syntaxhighlight lang="javascript">
+{
+  "accessToken": "valid accessToken",
+}
+</syntaxhighlight>
+
+==== Response ====
+Unlike most other methods this one will return an empty payload if successful.
 
 == Joining a Server ==
 
