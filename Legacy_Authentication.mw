@@ -1,4 +1,7 @@
 '''This system was used by Minecraft versions prior to 1.6 and might be discontinued at any moment without warning.'''
+
+For the currently used authentication system see [[Authentication]].
+
 == Login ==
 
 To log the player in, the official launcher sends an HTTPS POST (GET appears to suffice as well) request to:
