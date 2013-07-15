@@ -24,3 +24,6 @@ If the request is missing a parameter, the server will return "Bad response". If
 Every 6000 ticks, the client sends an HTTPS request to
 <pre>https://login.minecraft.net/session?name=<username>&session=<session id></pre>
 The client discards the server's response.
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Modern]]
