@@ -1,71 +1,89 @@
 The minecraft client and server communicate with minecraft.net to validate player sessions. This page describes some of the operations.
 
-== Login ==
+== Authentication ==
 
-To log the player in, the official launcher sends an HTTPS POST (GET appears to suffice as well) request to:
-<pre>https://login.minecraft.net</pre>
-with the postdata:
-  ?user=<username>&password=<password>&version=<launcher version>
-and a "application/x-www-form-urlencoded" Content-Type header.
+Minecraft 1.6 introduced a new authentication scheme called Yggdrasil which completely replaces the [[#Outdated authentication system|previous authentication system]].
 
-After migrating to Mojang accounts, email address is used instead of username, but the procedure stays the same.
+=== Request format ===
 
-The current launcher version is "13" (for new launcher it's "14"), sending a value lower than 12 will cause the server to return "Old version", however you can send any large number and it will return as expected. If the login succeeded, it will return 5 ':' delimited values.
-  1343825972000:deprecated:SirCmpwn:7ae9007b9909de05ea58e94199a33b30c310c69c:dba0c48e1c584963b9e93a038a66bb98
-#'''current version''' of the game files (not the launcher itself). This is a unix timestamp which the launcher compares to the ~/.minecraft/bin/version file.
-#Previously contained a '''download ticket''' for requesting new versions of minecraft.jar from the server. Now contains only "deprecated".
-#'''case-correct username'''. For mojang accounts, the user's actual username is returned here instead of the email used to log in.
-#'''sessionId''' - a unique ID for your current session.
-#'''UID''' - currently unused, introduced near August 8th, 2012. Grum says this is the unique ID for the user, potentially for changing Minecraft names in future.
+All requests to Yggdrasil are made to the following server:
 
-If the request is missing a parameter, the server will return "Bad response". If the login information is incorrect, the server will return "Bad login". If the login information is correct but the account isn't premium, the server will return "User not premium". If your minecraft.net account has been migrated to a Mojang account but you're logging in with your minecraft.net username the server will return "Acount migrated, use e-mail".
+  https://authserver.mojang.com
 
-== Login 1.6 ==
+Further, they are expected to fulfill the following rules:
 
-In minecraft 1.6 there is a new launcher, which uses a different method of authenticating users:
+* Are <code>POST</code> requests
+* Have the <code>Content-Type</code> header set to <code>application/json</code>
+* Contain a [http://json.org JSON]-encoded dictionary as payload
 
-first the status of the mojang network is checked by looking at http://status.mojang.com/check
-then updates are downloaded, then the client authenticates by doing:
+If a request was successful the server will respond with:
 
-  POST https://authserver.mojang.com/authenticate
-with (json encoded)
+* Status code <code>200</code>
+* A [http://json.org JSON]-encoded dictionary according to the specifications below
+
+If however a request fails, the server will respond with:
+
+* An appropriate, non-200 [http://en.wikipedia.org/wiki/List_of_HTTP_status_codes HTTP status code]
+* A [http://json.org JSON]-encoded dictionary following this format:
+<syntaxhighlight lang="javascript">
+{
+  "error": "Short description of the error",
+  "errorMessage": "Longer description which can be shown to the user",
+  "cause": "Cause of the error"        // optional
+}
+</syntaxhighlight>
+
+
+=== Session ID ===
+Whenever a Mojang service requires a session ID, you can simply combine a valid <code>accessToken</code> with a profile identifier as follows:
+
+  accessToken:profileID
+
+=== Authenticate ===
+This method is used whenever a user tries to log in using his password.
+
+==== Endpoint ====
+  /authenticate
+
+==== Payload ====
+<syntaxhighlight lang="javascript">
+{
+  "agent": {
+    "name": "Minecraft",                 // So far this is the only encountered value
+    "version": 1                         // This number might be increased
+                                         // by the vanilla client in the future
+  },
+  "username": "mojang account name",     // Can be an email address or player name for
+                                         // unmigrated accounts
+  "password": "mojang account password",
+  "clientToken": "client identifier"     // optional
+}
+</syntaxhighlight>
+
+The <code>clientToken</code> should be a randomly generated identifier and must identical for each request.
+In case it is omitted the server will generate a random token based on Java's [http://docs.oracle.com/javase/7/docs/api/java/util/UUID.html#toString() UUID.toString()] which should then be stored by the client.
+
+==== Response ====
+<syntaxhighlight lang="javascript">
+{
+  "accessToken": "random access token",  // hexadecimal
+  "clientToken": "client identifier",    // identical to the one received
+  "availableProfiles": [
     {
-     "agent":{"name":"Minecraft","version":1},
-     "username":"account@mailserver.com",
-     "password":"xxxxxxx",
-     "clientToken":"dddddddd-aaaa-bbbb-cccc-111111111111"
+      "id": "profile identifier",        // hexadecimal
+      "name": "player name"
     }
+  ],
+  "selectedProfile": {
+    "id": "profile identifier",
+    "name": "player name"
+  }
+ }
+</syntaxhighlight>
+'''Note:''' If a user wishes to stay logged in on his computer you are strongly advised to store the received <code>accessToken</code> instead of the password itself.
 
-The authserver responds with:
+Currently each account will only have one single profile, multiple profiles per account are however planned in the future.
 
-    {
-     "accessToken":"99999999999999999999999999999999",
-     "clientToken":"dddddddd-aaaa-bbbb-cccc-111111111111",
-     "availableProfiles":[ {"id":"55555555555555555555555555555555","name":"MOJANGNAME"} ],
-     "selectedProfile":{"id":"55555555555555555555555555555555","name":"MOJANGNAME"}
-    }
-
-then the client checks on mcoapi with:
-
-  GET https://mcoapi.minecraft.net/mco/available
-with this cookie
-  Cookie: sid=token:99999999999999999999999999999999:55555555555555555555555555555555;user=MOJANGNAME;version=1.6.2
-
-
-When connecting to a server, the client first establishes an encrypted session with the server, then does:
-
-
-  GET http://session.minecraft.net/game/joinserver.jsp?
-    user=MOJANGNAME&
-    sessionId=token%3A99999999999999999999999999999999%3A55555555555555555555555555555555&
-    serverId=-6666666666666666666666666666666666666666
-
-
-the server verifies if the user did call joinserver by doing:
-
-  GET http://session.minecraft.net/game/checkserver.jsp?
-    user=MOJANGNAME&
-    serverId=-6666666666666666666666666666666666666666
 
 == Updating ==
 
@@ -85,15 +103,10 @@ Furthermore, the downloaded files are all verified via MD5 which is sent via ETa
 
 Further resources are stored in /MinecraftResources. Loading /MinecraftResources provides an XML formatted list of resources, some of which are downloaded by Minecraft and not the launcher.
 
-== Updating 1.6 ==
+=== Updating 1.6 ===
 
 With the new launcher updating happens by downloading information from  https://s3.amazonaws.com/Minecraft.Download/versions/versions.json and https://s3.amazonaws.com/Minecraft.Download/versions/1.6.2/1.6.2.json
 
-== Keep-alive ==
-
-Every 6000 ticks, the client sends an HTTPS request to
-<pre>https://login.minecraft.net/session?name=<username>&session=<session id></pre>
-The client discards the server's response.
 
 == Snoop ==
 
@@ -421,8 +434,8 @@ See [[Protocol Encryption]] for details on encrypting connections.
 # Client receives an [[Protocol#0xFD|0xFD encryption request]] with the server's public key and four verification bytes.
 # Client generates a symmetric key.
 # Client sends a HTTP request to 
-#:<pre>http://session.minecraft.net/game/joinserver.jsp?user=<username>&sessionId=<session id>&serverId=<server hash></pre>
-#:Note: Case-corrected username is used here, not the Mojang account username.
+#:<pre>http://session.minecraft.net/game/joinserver.jsp?user=<player name>&sessionId=<session id>&serverId=<server hash></pre>
+#:Note: See the [[#Session ID|Session ID]] section on how the <code>&lt;session id&gt;</code> is generated.
 #:If the response is '''OK''' then continue, otherwise stop
 # Client sends [[Protocol#0xFC|0xFC encryption response]] - client encrypts shared secret and verification token with the server's public key
 # Server checks validity and sends [[Protocol#0xFC|0xFC encryption response]] with two empty arrays
@@ -447,6 +460,36 @@ See [[Protocol Encryption]] for details on encrypting connections.
 # Server receives [[Protocol#0xCD|0xCD client status]] with a payload of , indicating "ready to spawn"
 # Server sends [[Protocol#0x01|0x01 login]]
 # ... send map chunks, etc...
+
+
+== Outdated authentication system ==
+This system was used by Minecraft versions prior to 1.6 and might be discontinued at any moment without warning.
+
+=== Login ===
+
+To log the player in, the official launcher sends an HTTPS POST (GET appears to suffice as well) request to:
+<pre>https://login.minecraft.net</pre>
+with the postdata:
+  ?user=<username>&password=<password>&version=<launcher version>
+and a "application/x-www-form-urlencoded" Content-Type header.
+
+After migrating to Mojang accounts, email address is used instead of username, but the procedure stays the same.
+
+The current launcher version is "13" (for new launcher it's "14"), sending a value lower than 12 will cause the server to return "Old version", however you can send any large number and it will return as expected. If the login succeeded, it will return 5 ':' delimited values.
+  1343825972000:deprecated:SirCmpwn:7ae9007b9909de05ea58e94199a33b30c310c69c:dba0c48e1c584963b9e93a038a66bb98
+#'''current version''' of the game files (not the launcher itself). This is a unix timestamp which the launcher compares to the ~/.minecraft/bin/version file.
+#Previously contained a '''download ticket''' for requesting new versions of minecraft.jar from the server. Now contains only "deprecated".
+#'''case-correct username'''. For mojang accounts, the user's actual username is returned here instead of the email used to log in.
+#'''sessionId''' - a unique ID for your current session.
+#'''UID''' - currently unused, introduced near August 8th, 2012. Grum says this is the unique ID for the user, potentially for changing Minecraft names in future.
+
+If the request is missing a parameter, the server will return "Bad response". If the login information is incorrect, the server will return "Bad login". If the login information is correct but the account isn't premium, the server will return "User not premium". If your minecraft.net account has been migrated to a Mojang account but you're logging in with your minecraft.net username the server will return "Acount migrated, use e-mail".
+
+=== Keep-alive ===
+
+Every 6000 ticks, the client sends an HTTPS request to
+<pre>https://login.minecraft.net/session?name=<username>&session=<session id></pre>
+The client discards the server's response.
 
 
 [[Category:Protocol Details]]
