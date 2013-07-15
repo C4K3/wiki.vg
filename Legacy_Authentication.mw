@@ -1,0 +1,26 @@
+'''This system was used by Minecraft versions prior to 1.6 and might be discontinued at any moment without warning.'''
+== Login ==
+
+To log the player in, the official launcher sends an HTTPS POST (GET appears to suffice as well) request to:
+<pre>https://login.minecraft.net</pre>
+with the postdata:
+  ?user=<username>&password=<password>&version=<launcher version>
+and a "application/x-www-form-urlencoded" Content-Type header.
+
+After migrating to Mojang accounts, email address is used instead of username, but the procedure stays the same.
+
+The current launcher version is "13" (for new launcher it's "14"), sending a value lower than 12 will cause the server to return "Old version", however you can send any large number and it will return as expected. If the login succeeded, it will return 5 ':' delimited values.
+  1343825972000:deprecated:SirCmpwn:7ae9007b9909de05ea58e94199a33b30c310c69c:dba0c48e1c584963b9e93a038a66bb98
+#'''current version''' of the game files (not the launcher itself). This is a unix timestamp which the launcher compares to the ~/.minecraft/bin/version file.
+#Previously contained a '''download ticket''' for requesting new versions of minecraft.jar from the server. Now contains only "deprecated".
+#'''case-correct username'''. For mojang accounts, the user's actual username is returned here instead of the email used to log in.
+#'''sessionId''' - a unique ID for your current session.
+#'''UID''' - currently unused, introduced near August 8th, 2012. Grum says this is the unique ID for the user, potentially for changing Minecraft names in future.
+
+If the request is missing a parameter, the server will return "Bad response". If the login information is incorrect, the server will return "Bad login". If the login information is correct but the account isn't premium, the server will return "User not premium". If your minecraft.net account has been migrated to a Mojang account but you're logging in with your minecraft.net username the server will return "Acount migrated, use e-mail".
+
+== Keep-alive ==
+
+Every 6000 ticks, the client sends an HTTPS request to
+<pre>https://login.minecraft.net/session?name=<username>&session=<session id></pre>
+The client discards the server's response.
