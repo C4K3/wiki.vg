@@ -37,7 +37,7 @@ If however a request fails, the server will respond with:
 === Session ID ===
 Whenever a Mojang service requires a session ID, you can simply combine a valid <code>accessToken</code> with a profile identifier as follows:
 
-  accessToken:profileID
+  token:<accessToken>:<profile ID>
 
 === Authenticate ===
 This method is used whenever a user tries to log in using his password.
