@@ -1,0 +1,33 @@
+== Game ==
+All available version of the game itself are listed on
+  http://s3.amazonaws.com/Minecraft.Download/versions/versions.json
+
+The jar file for a specific version is located at
+  http://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.jar
+
+Some information on how to properly run said jar are available at
+  http://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.json
+
+== Libraries ==
+The libraries which can be used for all minecraft versions and are downloaded by the launcher are located at
+  http://s3.amazonaws.com/MinecraftDownload/
+
+The following files are downloaded from this location:
+
+* <code>lwjgl.jar</code>
+* <code>jinput.jar</code>
+* <code>lwjgl_util.jar</code>
+* <code>minecraft.jar</code>
+* <code><operating system>_natives.jar.lzma</code>
+
+The latter is available for the following operating systems:
+* <code>windows</code>
+* <code>linux</code>
+* <code>macosx</code>
+* <code>solaris</code>
+
+== Resources == 
+The game itself downloads further resources from
+  http://s3.amazonaws.com/MinecraftResources/
+
+A list of all available resources is available as an XML file at the address above.
