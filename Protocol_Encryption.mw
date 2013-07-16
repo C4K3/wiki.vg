@@ -74,7 +74,7 @@ After generating the shared secret, the client generates the following hash:
  sha1(simon) :  88e16a1019277b15d58faf0541e11910eb756f6
 
 The resulting hash is then sent via an HTTP GET request to
- <nowiki>http://session.minecraft.net/game/joinserver.jsp?user=</nowiki>''username''&sessionId=''[[Session#Login|user_session]]''&serverId=''hash''
+ <nowiki>http://session.minecraft.net/game/joinserver.jsp?user=</nowiki>''username''&sessionId=''[[Authentication#Session_ID|user_session]]''&serverId=''hash''
 If it returns '''OK''' then continue, otherwise stop
 
 === Server ===
