@@ -33,11 +33,54 @@ If however a request fails, the server will respond with:
 }
 </syntaxhighlight>
 
+
+=== Errors ===
+These are some of the errors that can be encountered:
+{| class="wikitable"
+|-
+! Error
+! Cause
+! Error message
+! Notes
+|-
+| <code>Method Not Allowed</code>
+|
+| The method specified in the request is not allowed for the resource identified by the request URI
+| Something other than a POST request was received.
+|-
+| <code>Not Found</code>
+|
+| The server has not found anything matching the request URI
+| Non-existing endpoint was called.
+|-
+| <code>ForbiddenOperationException</code>
+| <code>UserMigratedException</code>
+| Invalid credentials. Account migrated, use e-mail as username.
+| 
+|-
+| <code>ForbiddenOperationException</code>
+| 
+| Invalid credentials. Invalid username or password.
+| 
+|-
+| <code>ForbiddenOperationException</code>
+| 
+| Invalid token.
+| <code>accessToken</code> was invalid.
+|-
+| <code>IllegalArgumentException</code>
+| 
+| Access token already has a profile assigned.
+| Selecting profiles isn't implemented yet.
+|}
+
+
 === Session ID ===
 
 Whenever a Mojang service requires a session ID, you can simply combine a valid <code>accessToken</code> with a profile identifier as follows:
 
   token:<accessToken>:<profile ID>
+
 
 === Authenticate ===
 
@@ -64,7 +107,6 @@ Authenticates a user using his password.
 The <code>clientToken</code> should be a randomly generated identifier and must be identical for each request.
 In case it is omitted the server will generate a random token based on Java's [http://docs.oracle.com/javase/7/docs/api/java/util/UUID.html#toString() UUID.toString()] which should then be stored by the client. This will however also invalidate all previously acquired <code>accessToken</code>s for this user across all clients.
 
-
 ==== Response ====
 <syntaxhighlight lang="javascript">
 {
@@ -86,6 +128,7 @@ In case it is omitted the server will generate a random token based on Java's [h
 
 Currently each account will only have one single profile, multiple profiles per account are however planned in the future.
 
+
 === Refresh ===
 
 Refreshes a valid <code>accessToken</code>. It can be uses to keep a user logged in between gaming sessions and is preferred over storing the user's password in a file (see [[lastlogin]]). 
@@ -99,6 +142,10 @@ Refreshes a valid <code>accessToken</code>. It can be uses to keep a user logged
   "accessToken": "valid accessToken",
   "clientToken": "client identifier"     // This needs to be identical to the one used
                                          // to obtain the accessToken in the first place
+  "selectedProfile": {                   // optional; sending it will result in an error
+    "id": "profile identifier",          // hexadecimal
+    "name": "player name"
+  }
 }
 </syntaxhighlight>
 
@@ -113,8 +160,9 @@ Note: The provided <code>accessToken</code> gets invalidated.
     "id": "profile identifier",          // hexadecimal
     "name": "player name"
   }
- }
+}
 </syntaxhighlight>
+
 
 === Validate ===
 
