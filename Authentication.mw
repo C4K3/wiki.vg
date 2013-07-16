@@ -80,7 +80,7 @@ In case it is omitted the server will generate a random token based on Java's [h
     "id": "profile identifier",
     "name": "player name"
   }
- }
+}
 </syntaxhighlight>
 '''Note:''' If a user wishes to stay logged in on his computer you are strongly advised to store the received <code>accessToken</code> instead of the password itself.
 
@@ -88,7 +88,7 @@ Currently each account will only have one single profile, multiple profiles per 
 
 === Refresh ===
 
-Refreshes an expired but valid <code>accessToken</code>. It can be uses to keep a user logged in between gaming sessions and is preferred over storing the user's password in a file (see [[lastlogin]]). 
+Refreshes a valid <code>accessToken</code>. It can be uses to keep a user logged in between gaming sessions and is preferred over storing the user's password in a file (see [[lastlogin]]). 
 
 ==== Endpoint ====
   /refresh
