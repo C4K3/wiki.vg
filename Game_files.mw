@@ -5,7 +5,7 @@ All available version of the game itself are listed on
 The jar file for a specific version is located at
   http://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.jar
 
-Some information on how to properly run said jar are available at
+Some information on how to properly run said jar is available at
   http://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.json
 
 == Libraries ==
