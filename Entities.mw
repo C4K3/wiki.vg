@@ -1,5 +1,271 @@
 
-== Entity Metadata Format ==
+== Mobs ==
+
+Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
+
+{| class="wikitable"
+|- 
+! Type
+! Name
+! x, z
+! y
+|-
+| 50
+| Creeper
+| 0.6
+| 1.8
+|-
+| 51
+| Skeleton
+| 0.6
+| 1.8
+|- 
+| 52
+| Spider
+| 1.4
+| 0.9
+|- 
+| 53
+| Giant Zombie
+| 3.6
+| 10.8
+|- 
+| 54
+| Zombie
+| 0.6
+| 1.8
+|- 
+| 55
+| Slime
+| 0.6 * size
+| 0.6 * size
+|- 
+| 56
+| Ghast
+| 4
+| 4
+|- 
+| 57
+| Zombie Pigman
+| 0.6
+| 1.8
+|- 
+| 58
+| Enderman
+| 
+| 
+|- 
+| 59
+| Cave Spider
+| 
+| 
+|- 
+| 60
+| Silverfish
+| 
+| 
+|- 
+| 61
+| Blaze
+| 
+| 
+|- 
+| 62
+| Magma Cube
+| 0.6 * size
+| 0.6 * size
+|- 
+| 63
+| Ender Dragon
+| 
+| 
+|- 
+| 64
+| Wither
+| 
+| 
+|- 
+| 65
+| Bat
+| 
+| 
+|- 
+| 66
+| Witch
+| 
+| 
+|- 
+| 90
+| Pig
+| 0.9
+| 0.9
+|- 
+| 91
+| Sheep
+| 0.6
+| 1.3
+|- 
+| 92
+| Cow
+| 0.9
+| 1.3
+|- 
+| 93
+| Chicken
+| 0.3
+| 0.4
+|- 
+| 94
+| Squid
+| 0.95
+| 0.95
+|- 
+| 95
+| Wolf
+| 0.6
+| 1.8
+|- 
+| 96
+| Mooshroom
+| 
+| 
+|- 
+| 97
+| Snowman
+| 
+| 
+|- 
+| 98
+| Ocelot
+| 
+| 
+|- 
+| 99
+| Iron Golem
+| 
+| 
+|-
+| 100
+| Horse
+|
+|
+|- 
+| 120
+| Villager
+| 
+| 
+|}
+
+== Objects ==
+
+Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Object Data]] for more details.
+
+{| class="wikitable"
+|- 
+! ID
+! Name
+! x, z
+! y
+|- 
+| 1
+| Boat
+| 1.5
+| 0.6
+|- 
+| 2
+| Item Stack ([[Slot]])
+| 0.5
+| 0.5
+|- 
+| 10
+| Minecart
+| 0.98
+| 0.7
+|- 
+| 11
+| Minecart (storage)
+| 0.98
+| 0.7
+|- 
+| 12
+| Minecart (powered)
+| 0.98
+| 0.7
+|- 
+| 50
+| Activated TNT
+| 0.98
+| 0.98
+|- 
+| 51
+| EnderCrystal
+| 1.25?
+| 2.25?
+|- 
+| 60
+| Arrow (projectile)
+| 0.5
+| 0.5
+|- 
+| 61
+| Snowball (projectile)
+| 0.25
+| 0.25
+|- 
+| 62
+| Egg (projectile)
+| 0.25
+| 0.25
+|- 
+| 65
+| Thrown Enderpearl
+| 
+| 
+|- 
+| 66
+| Wither Skull
+| 
+| 
+|- 
+| 70
+| Falling Objects
+| 0.98
+| 0.98
+|- 
+| 71
+| Item frames
+| ?
+| ?
+|- 
+| 72
+| Eye of Ender
+| 
+| 
+|- 
+| 73
+| Thrown Potion
+| 
+| 
+|- 
+| 74
+| Falling Dragon Egg
+| 0.98
+| 0.98
+|- 
+| 75
+| Thrown Exp Bottle
+| 
+| 
+|- 
+| 90
+| Fishing Float
+| 0.25?
+| 0.25?
+|}
+
+== Entity Metadata ==
+
+=== Entity Metadata Format ===
 
 Note that entity metadata is a totally distinct concept from block metadata. All entities '''must''' send at least one item of metadata, in most cases this will be the health item.
 
@@ -18,25 +284,25 @@ To parse, repeat the following procedure:
 ! Meaning
 |- 
 | 0
-| byte
+| Byte
 |-
 | 1
-| short
+| Short
 |-
 | 2
-| int
+| Int
 |-
 | 3
-| float<sup>*</sup>
+| Float
 |-
 | 4
-| string16
+| String16
 |-
 | 5
-| [[Slot Data|slot]]
+| [[Slot Data|Slot]]
 |-
-| 6
-| int, int, int (x, y, z)
+| 6<sup>*</sup>
+| Int, Int, Int (x, y, z)
 |}
 
 <nowiki>*</nowiki>Not currently used
@@ -66,543 +332,736 @@ do {
 } while (true);
 </source>
 
-== Common Metadata ==
 
-=== Index 0, byte: Flags ===
-
-All mobs, objects and players send metadata with index <code>0</code>. The value is a byte representing 8 boolean flags:
+=== Entity ===
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Bit index
-! class="col1" | Bit mask
-! class="col2" | Meaning
-|- class="row1"
-| class="col0" | 0
-| class="col1" | 0x01
-| class="col2" | Entity on fire
-|- class="row2"
-| class="col0" | 1
-| class="col1" | 0x02
-| class="col2" | Entity crouched
-|- class="row3"
-| class="col0" | 2
-| class="col1" | 0x04
-| class="col2" | Entity riding
-|- class="row4"
-| class="col0" | 3
-| class="col1" | 0x08
-| class="col2" | Sprinting
-|- class="row4"
-| class="col0" | 4
-| class="col1" | 0x10
-| class="col2" | Eating/Drinking/Blocking (any right click action?)
-|- class="row5"
-| class="col0" | 5
-| class="col1" | 0x20
-| class="col2" | Invisible
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="2" | Meaning
+|-
+| rowspan="6" | 0
+| rowspan="6" | Byte
+! Bit Mask !! Meaning
+|-
+| 0x01 || On Fire
+|- 
+| 0x02 || Crouched
+|-
+| 0x08 || Sprinting
+|-
+| 0x10 || Eating/Drinking/Blocking
+|-
+| 0x20 || Invisible
+|-
+| 1
+| Short
+| colspan="2" | Air
 |}
 
-=== Index 1, short: Drowning counter ===
-
-Initialized to <code>300</code> on entity spawn. When underwater, this is decremented by 3 every tick (and sent S->C with [[Protocol#0x28|Entity Metadata (0x28)]]). If the value dips below -19, an [[Protocol#0x26|Entity Status (0x26)]] is sent (i.e. the entity is hurt) and counter is reset to 0.
-
-Seems to be sent for *at least* all mobs. Not sure about players.
-
-=== Index 6, float: Health ===
-
-The health of a living entity.
-
-=== Index 7, int: Potion effects ===
-
-Players and most (all?) mobs send metadata with index <code>8</code>. This specifies the colour of the bubbling effects around the player.
-
-The value is an int, that should be decomposed into four bytes, representing <code>0x00RRGGBB</code>
-
-If the value is 0, no potion effects currently apply to the entity.
-
-=== Index 8, slot: Firework type ===
-
-Firework entities send a metadata with the item stack used to launch itself with index <code>8</code>, not to be confused with the potion effect metadata above. 
-These entities are generally unaffected by potion effects, so it doesn't matter that they reuse the same index.
-
-This item stack will be a FIREWORK with the effects stored in its additional NBT data (meta item in Bukkit).
-
-==== Index 8, byte: Hide potion effects ====
-
-1 when a potion effect applied is given by a beacon. 0 when there are no beacon effects applied.
-It makes the potion particles less obtrusive.
-
-=== Index 10, string: Name ===
-
-The string to display on the nameplate, if shown.
-
-=== Index 11, byte: Show name ===
-
-If 1, the nameplate will be displayed over the entity.
-
-=== Index 12, int: Animals ===
-
-0 for ordinary animals.
-
-Baby animals have the value -23999. This corresponds to the number of ticks in a minecraft day, which is how long it takes for a baby animal to "grow up". It is therefore considered likely that this field determines the size of the animal, and that Entity Metadata will update it as the animal grows.
-
-When an animal becomes a parent this value is set to 6000 and is then decreased over time. Probably a countdown until they can have a new baby.
-
-== Mobs ==
-
-Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]
+=== Living Entity ===
+<sup>Extends [[#Entity|Entity]]</sup>
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Type
-! class="col1" | Name
-! class="col2" | x, z
-! class="col3" | y
-|- class="row1"
-| class="col0" | 50
-| class="col1" | Creeper
-| class="col2" | 0.6
-| class="col3" | 1.8
-|- class="row2"
-| class="col0" | 51
-| class="col1" | Skeleton
-| class="col2" | 0.6
-| class="col3" | 1.8
-|- class="row3"
-| class="col0" | 52
-| class="col1" | Spider
-| class="col2" | 1.4
-| class="col3" | 0.9
-|- class="row4"
-| class="col0" | 53
-| class="col1" | Giant Zombie
-| class="col2" | 3.6
-| class="col3" | 10.8
-|- class="row5"
-| class="col0" | 54
-| class="col1" | Zombie
-| class="col2" | 0.6
-| class="col3" | 1.8
-|- class="row6"
-| class="col0" | 55
-| class="col1" | Slime
-| class="col2" | 0.6 * size
-| class="col3" | 0.6 * size
-|- class="row7"
-| class="col0" | 56
-| class="col1" | Ghast
-| class="col2" | 4
-| class="col3" | 4
-|- class="row8"
-| class="col0" | 57
-| class="col1" | Zombie Pigman
-| class="col2" | 0.6
-| class="col3" | 1.8
-|- class="row9"
-| class="col0" | 58
-| class="col1" | Enderman
-| class="col2" | 
-| class="col3" | 
-|- class="row10"
-| class="col0" | 59
-| class="col1" | Cave Spider
-| class="col2" | 
-| class="col3" | 
-|- class="row11"
-| class="col0" | 60
-| class="col1" | Silverfish
-| class="col2" | 
-| class="col3" | 
-|- class="row12"
-| class="col0" | 61
-| class="col1" | Blaze
-| class="col2" | 
-| class="col3" | 
-|- class="row13"
-| class="col0" | 62
-| class="col1" | Magma Cube
-| class="col2" | 0.6 * size
-| class="col3" | 0.6 * size
-|- class="row14"
-| class="col0" | 63
-| class="col1" | Ender Dragon
-| class="col2" | 
-| class="col3" | 
-|- class="row14"
-| class="col0" | 64
-| class="col1" | Wither
-| class="col2" | 
-| class="col3" | 
-|- class="row15"
-| class="col0" | 65
-| class="col1" | Bat
-| class="col2" | 
-| class="col3" | 
-|- class="row16"
-| class="col0" | 66
-| class="col1" | Witch
-| class="col2" | 
-| class="col3" | 
-|- class="row17"
-| class="col0" | 90
-| class="col1" | Pig
-| class="col2" | 0.9
-| class="col3" | 0.9
-|- class="row18"
-| class="col0" | 91
-| class="col1" | Sheep
-| class="col2" | 0.6
-| class="col3" | 1.3
-|- class="row19"
-| class="col0" | 92
-| class="col1" | Cow
-| class="col2" | 0.9
-| class="col3" | 1.3
-|- class="row20"
-| class="col0" | 93
-| class="col1" | Chicken
-| class="col2" | 0.3
-| class="col3" | 0.4
-|- class="row21"
-| class="col0" | 94
-| class="col1" | Squid
-| class="col2" | 0.95
-| class="col3" | 0.95
-|- class="row22"
-| class="col0" | 95
-| class="col1" | Wolf
-| class="col2" | 0.6
-| class="col3" | 1.8
-|- class="row23"
-| class="col0" | 96
-| class="col1" | Mooshroom
-| class="col2" | 
-| class="col3" | 
-|- class="row24"
-| class="col0" | 97
-| class="col1" | Snowman
-| class="col2" | 
-| class="col3" | 
-|- class="row25"
-| class="col0" | 98
-| class="col1" | Ocelot
-| class="col2" | 
-| class="col3" | 
-|- class="row26"
-| class="col0" | 99
-| class="col1" | Iron Golem
-| class="col2" | 
-| class="col3" | 
-|- class="row27"
-| class="col0" | 120
-| class="col1" | Villager
-| class="col2" | 
-| class="col3" | 
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 6
+| Float
+| Health
+|-
+| 7
+| Int
+| Potion Effect Color
+|-
+| 8
+| Byte
+| Is Potion Effect Ambient
+|-
+| 9
+| Byte
+| Number of Arrows in Entity
+|-
+| 10
+| String
+| Name Tag
+|-
+| 11
+| Byte
+| Always Show Name Tag
 |}
 
-=== Extra Metadata ===
-
-==== Player ====
-
-* Index '''9''' (byte): Number of arrows sticking into the player
-* Index '''18''' (byte): Score of a player (Probably be the scoreboard displayed on death)
-
-==== Creeper ====
-
-* Index '''16''' (byte): Status. Depends on the fuse, values from -1 to 1
-* Index '''17''' (byte): Charged. <code>1</code> if the creeper has been hit by lightning, <code>0</code> otherwise.
-
-==== Spider / Cave Spider ====
-
-* Index '''16''' (byte): Unknown, Values 0 and 1. Possibly aggression.
-
-==== Slime / Magma Cube ====
-
-* Index '''16''' (byte): Size. Randomly-generated. <code>0</code>, <code>1</code>, <code>2</code> or <code>4</code>.
-
-==== Ghast ====
-
-* Index '''16''' (byte): Aggression. <code>1</code> for aggressive (red eyes), <code>0</code> otherwise.
-
-==== Enderman ====
-
-* Index '''16''' (byte): Item in hand
-* Index '''17''' (byte): Item metadata
-* Index '''18''' (byte): Aggression. <code>1</code> for aggressive, <code>0</code> otherwise.
-
-==== Blaze ====
-
-* Index '''16''' (byte): Attacking. <code>1</code> sets the blaze on fire, and shortly after it will attack. <code>0</code>  signals the end of the attack.#
-
-==== Ender Dragon ====
-
-* Index '''16''' (int): Health. Full health = <code>200</code>
-
-==== Wither ====
-
-* Index '''16''' (int): Health. Full health = <code>300</code>
-
-==== Pig ====
-
-* Index '''16''' (byte): Saddled. <code>1</code> if the pig is wearing a saddle, <code>0</code> otherwise.
-
-==== Sheep ====
-
-* Index '''16''' (byte): bit 0x10 indicates shearedness. bits 0x0F indicate color (see below).
+=== Ageable ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Index
-! class="col1" | Wool Color
-|- class="row1"
-| class="col0" | 0
-| class="col1" | White
-|- class="row2"
-| class="col0" | 1
-| class="col1" | Orange
-|- class="row3"
-| class="col0" | 2
-| class="col1" | Magenta
-|- class="row4"
-| class="col0" | 3
-| class="col1" | Light Blue
-|- class="row5"
-| class="col0" | 4
-| class="col1" | Yellow
-|- class="row6"
-| class="col0" | 5
-| class="col1" | Lime
-|- class="row7"
-| class="col0" | 6
-| class="col1" | Pink
-|- class="row8"
-| class="col0" | 7
-| class="col1" | Gray
-|- class="row9"
-| class="col0" | 8
-| class="col1" | Silver
-|- class="row10"
-| class="col0" | 9
-| class="col1" | Cyan
-|- class="row11"
-| class="col0" | 10
-| class="col1" | Purple
-|- class="row12"
-| class="col0" | 11
-| class="col1" | Blue
-|- class="row13"
-| class="col0" | 12
-| class="col1" | Brown
-|- class="row14"
-| class="col0" | 13
-| class="col1" | Green
-|- class="row15"
-| class="col0" | 14
-| class="col1" | Red
-|- class="row16"
-| class="col0" | 15
-| class="col1" | Black
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 12
+| Int
+| Entity's Age (Negative = Child)
 |}
 
-==== Wolf ====
-
-* <div class="li">Index '''16''' (byte): Flags (see below).
-* Index '''17''' (string): Name of player that tamed wolf.
-* Index '''18''' (float): Health. Values from 8 to 0
-* Index '''19''' (byte): Unknown, either 0 or 1
-* Index '''20''' (byte): Color of the collar. (look up)
+=== Horse ===
+<sup>Extends [[#Ageable|Ageable]]</sup>
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Bit index
-! class="col1" | Bit mask
-! class="col2" | Meaning
-|- class="row1"
-| class="col0" | 0
-| class="col1" | 0x01
-| class="col2" | Sitting down
-|- class="row2"
-| class="col0" | 1
-| class="col1" | 0x02
-| class="col2" | Aggressive (red eyes)
-|- class="row3"
-| class="col0" | 2
-| class="col1" | 0x04
-| class="col2" | Tamed
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="3" | Meaning
+|-
+| rowspan="8" | 16
+| rowspan="8" | Int
+! Bit Mask 
+! colspan="2" | Meaning
+|-
+| 0x02 
+| colspan="2" | Is Tame
+|-
+| 0x04 
+| colspan="2" | Has Saddle
+|-
+| 0x08 
+| colspan="2" | Has Chest
+|-
+| 0x10 
+| colspan="2" | Is bred
+|-
+| 0x20 
+| colspan="2" | Is Eating
+|-
+| 0x40 
+| colspan="2" | Is Rearing
+|-
+| 0x80 
+| colspan="2" | Mouth Open
+|-
+| rowspan="6" | 19
+| rowspan="6" | Byte
+! Value 
+! colspan="2" | Type
+|-
+| 0 
+| colspan="2" | Horse
+|-
+| 1 
+| colspan="2" | Donkey
+|-
+| 2 
+| colspan="2" | Mule
+|-
+| 3 
+| colspan="2" | Zombie
+|-
+| 4 
+| colspan="2" | Skeleton
+|-
+| rowspan="15" | 20
+| rowspan="15" | Int
+!Bit Mask 
+! colspan="2" | Meaning
+|-
+| rowspan="8" | 0x00FF
+! Value !! Color
+|-
+| 0 || White
+|-
+| 1 || Creamy
+|-
+| 2 || Chestnut
+|-
+| 3 || Brown
+|-
+| 4 || Black
+|-
+| 5 || Gray
+|-
+| 6 || Dark Down
+|-
+| rowspan="6" | 0xFF00
+! Value !! Style
+|-
+| 0 || None
+|-
+| 1 || White
+|-
+| 2 || Whitefield
+|-
+| 3 || White Dots
+|-
+| 4 || Black Dots
+|-
+| 21
+| String
+| colspan="3" | Owner Name
+|-
+| rowspan="5" | 22 
+| rowspan="5" | Int
+! Value 
+! colspan="2" | Type
+|-
+| 0 
+| colspan="2" | No Armor
+|-
+| 1 
+| colspan="2" | Iron Armor
+|-
+| 2 
+| colspan="2" | Gold Armor
+|-
+| 3 
+| colspan="2" | Diamond Armor
 |}
 
-==== Ocelot ====
-
-* Index '''16''' (byte): Flags. Same as Wolf but without the Agressive flag.
-* Index '''17''' (string): Name of player that tamed the ocelot.
-* Index '''18''' (byte): Skin: 0 - ocelot, 3 - tamed cat, probably 1 and 2 too.
-
-
-==== Villager ====
-* Index '''12''' (int): Same as index 12 of Animals, except that when the baby villager becomes a parent, no countdown starts.
-* Index '''16''' (int): Profession of villager, as according to [http://www.minecraftwiki.net/wiki/Villager#Professions this].
-
-==== Iron Golem ====
-
-* Index '''16''' (byte): 0 or 1. Indicates whether the iron golem was spawned by natural means (0) or by a player constructing it (1).
-
-==== Bat ====
-
-* Index '''16''' (byte): 0 or 1. Indicates if the bat is flying (1) or is hanging off a block (0)
-
-==== Pig Zombie / Zombie ====
-
-* Index '''12''' (byte): 1 if it is a baby. 0 when it is an adult
-
-==== Zombie ====
-
-* Index '''13''' (byte): 1 if it is a villager. 0 if it is a normal zombie
-
-==== Skeleton / Wither skeleton ====
-
-* Index '''13''' (byte): 1 If it is a wither skeleton, 0 if it is a normal skeleton
-
-== Objects ==
-
-Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Object Data]] for more details.
+=== Bat ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | ID
-! class="col1" | Name
-! class="col2" | x, z
-! class="col3" | y
-|- class="row1"
-| class="col0" | 1
-| class="col1" | Boat
-| class="col2" | 1.5
-| class="col3" | 0.6
-|- class="row1"
-| class="col0" | 2
-| class="col1" | Item Stack ([[Slot]])
-| class="col2" | 0.5
-| class="col3" | 0.5
-|- class="row2"
-| class="col0" | 10
-| class="col1" | Minecart
-| class="col2" | 0.98
-| class="col3" | 0.7
-|- class="row3"
-| class="col0" | 11
-| class="col1" | Minecart (storage)
-| class="col2" | 0.98
-| class="col3" | 0.7
-|- class="row4"
-| class="col0" | 12
-| class="col1" | Minecart (powered)
-| class="col2" | 0.98
-| class="col3" | 0.7
-|- class="row5"
-| class="col0" | 50
-| class="col1" | Activated TNT
-| class="col2" | 0.98
-| class="col3" | 0.98
-|- class="row6"
-| class="col0" | 51
-| class="col1" | EnderCrystal
-| class="col2" | 1.25?
-| class="col3" | 2.25?
-|- class="row7"
-| class="col0" | 60
-| class="col1" | Arrow (projectile)
-| class="col2" | 0.5
-| class="col3" | 0.5
-|- class="row8"
-| class="col0" | 61
-| class="col1" | Snowball (projectile)
-| class="col2" | 0.25
-| class="col3" | 0.25
-|- class="row9"
-| class="col0" | 62
-| class="col1" | Egg (projectile)
-| class="col2" | 0.25
-| class="col3" | 0.25
-|- class="row10"
-| class="col0" | 65
-| class="col1" | Thrown Enderpearl
-| class="col2" | 
-| class="col3" | 
-|- class="row11"
-| class="col0" | 66
-| class="col1" | Wither Skull
-| class="col2" | 
-| class="col3" | 
-|- class="row12"
-| class="col0" | 70
-| class="col1" | Falling Objects
-| class="col2" | 0.98
-| class="col3" | 0.98
-|- class="row12"
-| class="col0" | 71
-| class="col1" | Item frames
-| class="col2" | ?
-| class="col3" | ?
-|- class="row13"
-| class="col0" | 72
-| class="col1" | Eye of Ender
-| class="col2" | 
-| class="col3" | 
-|- class="row14"
-| class="col0" | 73
-| class="col1" | Thrown Potion
-| class="col2" | 
-| class="col3" | 
-|- class="row15"
-| class="col0" | 74
-| class="col1" | Falling Dragon Egg
-| class="col2" | 0.98
-| class="col3" | 0.98
-|- class="row16"
-| class="col0" | 75
-| class="col1" | Thrown Exp Bottle
-| class="col2" | 
-| class="col3" | 
-|- class="row17"
-| class="col0" | 90
-| class="col1" | Fishing Float
-| class="col2" | 0.25?
-| class="col3" | 0.25?
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte 
+| Is Hanging
 |}
 
-=== Extra metadata ===
 
-==== Arrow ====
+=== Tameable ===
+<sup>Extends [[#Ageable|Ageable]]</sup>
 
-* Index '''16''' (byte): 1 if the arrow should be effected by gravity. 0 if the arrow is stuck in a block
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="2"| Meaning
+|-
+| rowspan="3" | 16 
+| rowspan="3" | Byte
+! Bit Mask !! Meaning
+|-
+| 0x01 || Is Sitting
+|-
+| 0x04 || Is Tame
+|-
+| 17
+| String
+| colspan="2" | Owner Name
+|}
 
-==== Minecart ====
 
-* Index '''16''' (byte): Bitfield for flags, but the only known value is 1 if the minecart is powered and has fuel. 
-* Index '''17''' (int): Minecart shaking (When punched). Initialized to 0. Higher number gives a higher shaking.
-* Index '''18''' (int): Unknown. Initialized to 1
-* Index '''19''' (int): Damage taken. The cart breaks when this is over 40.
-* Index '''20''' (int): Block ID and metadata (upper 16 bits: metadata; lower 16: block ID)
-* Index '''21''' (int): Block Y position (default: 6)
-* Index '''22''' (byte): Show block (1: true; 0: false)
+=== Ocelot ===
+<sup>Extends [[#Tameable|Tameable]]</sup>
 
-==== Boat ====
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 18
+| Byte
+| Ocelot Type
+|}
 
-* Index '''17''' (int): Time since last hit
-* Index '''18''' (int): "Forward direction". Initialized to 1.
-* Index '''19''' (int): Damage taken.
 
-==== Item Stack ([[Slot]]) ====
+=== Wolf ===
+<sup>Extends [[#Tameable|Tameable]]</sup>
 
-* Index '''10''' (slot): Item stack ([[Slot]])
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="2"| Meaning
+|-
+| rowspan="3" | 16
+| rowspan="3" | Byte
+!Bit Mask !! Meaning
+|-
+| colspan="2" | Flags from Tameable
+|-
+| 0x02 || Is Angry
+|-
+| 18
+| Float
+| colspan="2" | Health
+|-
+| 19
+| Byte
+| colspan="2" | Begging
+|-
+| 20
+| Byte
+| colspan="2" | Collar Color
+|}
 
-==== Item Frame ====
 
-* Index '''2''' (slot): Item stack ([[Slot]])
-* Index '''3''' (byte): Orientation (0-3, increments of 90 degrees)
+=== Pig ===
+<sup>Extends [[#Ageable|Ageable]]</sup>
 
-== Other ==
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| Has Saddle
+|}
 
-Players are spawned via [[Protocol#0x14|0x14 Named Entity Spawn]]. They have dimensions 0.6 * 1.8.
 
-Paintings are spawned via [[Protocol#0x19|0x19 Entity: Painting]]. Their dimensions depend on their type.
+=== Sheep ===
+<sup>Extends [[#Ageable|Ageable]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="3"| Meaning
+|-
+| rowspan="19" | 16
+| rowspan="19" | Byte
+! Bit Mask 
+! colspan="2" | Meaning
+|-
+| rowspan="17" | 0x0F
+! Value !! Color
+|-
+| 0 || White
+|-
+| 1 || Orange
+|-
+| 2 || Magenta
+|-
+| 3 || Light Blue
+|-
+| 4 || Yellow
+|-
+| 5 || Lime
+|-
+| 6 || Pink
+|-
+| 7 || Gray
+|-
+| 8 || Silver
+|-
+| 9 || Cyan
+|-
+| 10 || Purple
+|-
+| 11 || Blue
+|-
+| 12 || Brown
+|-
+| 13 || Green
+|-
+| 14 || Red
+|-
+| 15 || Black
+|-
+| 0x10 
+| colspan="2" | Is Sheared
+|}
+
+
+=== Villager ===
+<sup>Extends [[#Ageable|Ageable]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="2" | Meaning
+|-
+| rowspan="6" | 16
+| rowspan="6" | Int
+! Value !! Profession 
+|-
+| 0 || Farmer
+|-
+| 1 || Librarian 
+|-
+| 2 || Priest
+|-
+| 3 || Blacksmith
+|-
+| 4 || Butcher
+|}
+
+
+=== Enderman ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| Carried Block
+|-
+| 17
+| Byte
+| Carried Block Data
+|-
+| 18
+| Byte
+| Is Screaming
+|}
+
+
+=== Zombie ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 12
+| Byte
+| Is Child
+|-
+| 13
+| Byte
+| Is Villager
+|-
+| 14
+| Byte
+| Is Converting
+|}
+
+=== Zombie Pigman ===
+<sup>Extends [[#Zombie|Zombie]]</sup>
+
+
+=== Blaze ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16 
+| Byte
+| On Fire
+|}
+
+
+
+=== Spider ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| Climbing
+|}
+
+
+=== Cave Spider ===
+<sup>Extends [[#Spider|Spider]]</sup>
+
+
+=== Creeper ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| State (-1 = Idle, 1 = Fuse)
+|-
+| 17
+| Byte
+| Is Powered
+|}
+
+
+=== Ghast ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| Is Attacking
+|}
+
+
+=== Slime ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| Size
+|}
+
+
+=== Magma Cube ===
+<sup>Extends [[#Slime|Slime]]</sup>
+
+
+=== Skeleton ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="2" | Meaning
+|-
+| rowspan="3" | 13
+| rowspan="3" | Byte
+! Value !! Meaning
+|-
+| 0 || Normal
+|-
+| 1 || Wither
+|}
+
+
+=== Witch ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px"| Meaning
+|-
+| 21
+| Byte
+| Is Agressive
+|}
+
+
+=== Iron Golem ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px"| Meaning
+|-
+| 16
+| Byte
+| Is Player Created
+|}
+
+
+=== Wither ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px"| Meaning
+|-
+| 17
+| Int
+| Watched Target
+|-
+| 18
+| Int
+| Watched Target
+|-
+| 19
+| Int
+| Watched Target
+|-
+| 20
+| Int
+| Invulnerable Time
+|}
+
+
+=== Boat ===
+<sup>Extends [[#Entity|Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px"| Meaning
+|-
+| 17
+| Int
+| Time Since Hit
+|-
+| 18
+| Int
+| Forward Direction
+|-
+| 19
+| Float
+| Damage Taken
+|}
+
+
+=== Minecart ===
+<sup>Extends [[#Entity|Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="2" | Meaning
+|-
+| 17 
+| Int
+| colspan="2" | Shaking Power
+|-
+| 18
+| Int
+| colspan="2" | Shaking Direction
+|- 
+| 19
+| Float
+| colspan="2" | Damage Taken
+|-
+| rowspan="3" | 20
+| rowspan="3" | Int
+! Bit Mask !! Meaning
+|-
+| 0x00FF || Block Id
+|-
+| 0xFF00 || Block Data
+|-
+| 21 
+| Int
+| colspan="2" | Block Y Position
+|-
+| 22
+| Byte
+| colspan="2" | Show Block
+|} 
+
+
+=== Furnace Minecart ===
+<sup>Extends [[#Minecart|Minecart]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| Is Powered
+|}
+
+
+=== Item ===
+<sup>Extends [[#Entity|Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 10
+| Slot
+| Item
+|}
+
+
+=== Arrow ===
+<sup>Extends [[#Entity|Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| Is Critical
+|}
+
+
+=== Firework ===
+<sup>Extends [[#Entity|Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 8
+| Slot
+| Firework Info
+|}
+
+
+=== Item Frame ===
+<sup>Extends [[#Entity|Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 2
+| Slot 
+| Item
+|-
+| 3
+| Byte
+| Rotation
+|}
+
+
+=== Ender Crystal ===
+<sup>Extends [[#Entity|Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 8
+| Int
+| Health
+|}
