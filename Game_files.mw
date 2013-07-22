@@ -39,16 +39,27 @@ Example:
 }
 </syntaxhighlight>
 
-The <code>name</code> key is used to determine the url from which to download the library from. The format of this string is <code><package>:<name>:<version></code> and can be turned into a path by replacing the periods in the package name with forward slashes and formatting a string with the template: <code><package>/<name>/<version>/<name>-<version>.jar</code>.
+The <code>name</code> key is used to determine the url from which to download the library from. The format of this string is
+ <package>:<name>:<version>
+The corresponding URL would look like this:
+ <package>/<name>/<version>/<name>-<version>.jar
+where <code>path</code> is the result of replacing all the periods in <code>package</code> with slashes.
 
-The <code>natives</code> key provides a string for each specific platform to be inserted between the .jar and the <version> of the filename, resulting in a filename with the format: <code><name>-<version>-<native-string>.jar</code>. This is applied to any file with the <code>natives</code> key.
+
+The <code>natives</code> key provides a string for each specific platform to be inserted between the .jar and the <version> of the filename, resulting in a filename with the format:
+ <name>-<version>-<native-string>.jar</code>
+This is applied to any file with the <code>natives</code> key.
+
 
 The <code>extract</code> key provides rules for the extraction of the file.
 
+
 The <code>rules</code> key is used to determine which platforms to download the file to. When the <code>action</code> is <code>allow</code>, the file will be downloaded to the platform stated in <code>os</code>. When the <code>action</code> is <code>disallow</code>, the file will not be downloaded to the platform stated in <code>os</code>. If there is no <code>os</code> key, the rule is default for non-specified platforms.
 
-In the example above, on an OSX platform, the full download path would be <code>https://s3.amazonaws.com/Minecraft.Download/libraries/org/lwjgl/lwjgl/lwjgl-platform/2.9.1-nightly-20130708-debug3/lwjgl-platform-2.9.1-nightly-20130708-debug3-natives-osx.jar</code>, the file would be extracted but the <code>META-INF</code> file would not be. Additionally, the file would only be downloaded if the computer was running OSX 10.5.
 
+In the example above, on an OS X platform, the full download path would be
+ https://s3.amazonaws.com/Minecraft.Download/libraries/org/lwjgl/lwjgl/lwjgl-platform/2.9.1-nightly-20130708-debug3/lwjgl-platform-2.9.1-nightly-20130708-debug3-natives-osx.jar</code>
+The file would be extracted but the <code>META-INF</code> file would not be. Additionally, the file would only be downloaded if the computer was running OS X 10.5.
 
 == Assets == 
 The game itself downloads further resources from
