@@ -23,6 +23,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{BSD}}
 | {{yes|1.6.2}}
 |-
+! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
+|
+| ags131, electronicboy
+| {{C sharp}}
+| {{unknown}}
+| {{yes|1.6.2 (Partial)}}
+|-
 ! [https://github.com/dkkline/McClientLib McClientLib]
 | Python MineCraft client protocol.
 | [https://github.com/dkkline Jeppe Klitgaard (Dkkline)]
@@ -50,13 +57,6 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{Java}}
 | {{MIT}}
 | {{no|1.5.1}}
-|-
-! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
-|
-| ags131, electronicboy
-| {{C sharp}}
-| {{unknown}}
-| {{no|1.4.4}}
 |-
 ! [https://github.com/deoxxa/libmcnet libmcnet]
 | Event based, zero-copy, portable Minecraft network protocol parser
