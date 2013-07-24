@@ -47,7 +47,7 @@ where <code>path</code> is the result of replacing all the periods in <code>pack
 
 
 The <code>natives</code> key provides a string for each specific platform to be inserted between the .jar and the <version> of the filename, resulting in a filename with the format:
- <name>-<version>-<native-string>.jar</code>
+ <name>-<version>-<native-string>.jar
 This is applied to any file with the <code>natives</code> key.
 
 
