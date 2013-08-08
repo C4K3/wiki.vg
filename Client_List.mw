@@ -39,7 +39,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{yes|1.5.2}}
+| {{yes|1.6.2 (on exp branch)}}
 |-
 ! [https://github.com/umby24/Minebot C# Minebot]
 | Work in progress standalone bot
