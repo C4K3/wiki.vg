@@ -58,6 +58,39 @@ It has been determined that PM uses RakNet for its networking library, [http://w
 
 All packets start with a single byte that identifies the packet type, the rest of the packet follows it.
 
+{{anchor|0x01}}
+=== ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01) ===
+
+''Client to Broadcast''
+
+
+'''RakNet Packet'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x01
+| class="col1 centeralign" | Ping ID
+| class="col2 centeralign" | int64
+| class="col3 centeralign" | <code>0x00000000003c6d0d</code>
+| class="col4" | Time since start in Milliseconds
+|- class="row2"
+| class="col0 centeralign" | MAGIC
+| class="col1 centeralign" | MAGIC
+| class="col2 centeralign" | 
+| class="col3" |
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 25 Bytes
+|}
+
+Clients start out by sending this packet to the IP broadcast address on port 19132 repeatedly (approx once per second) when joining a server was chosen on the main screen, and stops when the user selects a server (or leaves the screen). The ping ID from the client increases over time, and appears to be the number of milliseconds since the client program was started (might be used to measure server response latency).
+
 {{anchor|0x02}}
 === ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x02) ===
 
@@ -89,8 +122,7 @@ All packets start with a single byte that identifies the packet type, the rest o
 | class="col1 rightalign" colspan="4" | 25 Bytes
 |}
 
-Clients start out by sending this packet to the IP broadcast address on port 19132 repeatedly (approx once per second) when joining a server was chosen on the main screen, and stops when the user selects a server (or leaves the screen). The ping ID from the client increases over time, and appears to be the number of milliseconds since the client program was started (might be used to measure server response latency).
-
+Same as [[#0x01|ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01)]], but with the Packet ID changed.
 
 {{anchor|0x05}}
 === ID_OPEN_CONNECTION_REQUEST_1 (0x05) ===
