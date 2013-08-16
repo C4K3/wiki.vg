@@ -13,7 +13,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 !Last Version Supported
 |-
 ! [http://www.pocketmine.net/ PocketMine-MP]
-| Server with Plugin API, multiworlds and more
+| Server with Plugin API, MultiWorlds and more
 | Server
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
@@ -30,17 +30,16 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | Unknown
 | Allows seeing sent/received packets through a web interface
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.7.2 alpha}}
+| {{yes|v0.7.3 alpha}}
 |-
-! [https://gist.github.com/4678643 Protocol Comparator]
-| Script that parses .lst files generated from the libminecraftpe.so to obtain information about the protocol, and comparate versions.
-| Parser/Comparator
+! [https://github.com/shoghicp/PocketBurger PocketBurger]
+| Extracts information from the Minecraft: PE binary about the protocol + more. Compatible with Burger, Hamburglar and BurgerVitrine
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | 
-| Generates JSON/HTML output
+| Generates JSON output, compatible with Burger
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.7.2 alpha}}
+| {{yes|v0.7.3 alpha}}
 |-
 |}
 
