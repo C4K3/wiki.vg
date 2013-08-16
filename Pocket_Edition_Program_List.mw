@@ -34,6 +34,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 |-
 ! [https://github.com/shoghicp/PocketBurger PocketBurger]
 | Extracts information from the Minecraft: PE binary about the protocol + more. Compatible with Burger, Hamburglar and BurgerVitrine
+| Utility
 | [https://twitter.com/shoghicp shoghicp]
 | {{PHP}}
 | No restrictions
