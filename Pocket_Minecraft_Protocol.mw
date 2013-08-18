@@ -149,7 +149,7 @@ Same as [[#0x01|ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01)]], but with the Packet
 | class="col0 centeralign" | Protocol Version
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>5</code>
-| class="col3" | Currently 5
+| class="col3" | Check the Data Packet section for the current version
 |- class="row2"
 | class="col0 centeralign" | Null Payload
 | class="col1 centeralign" | many 0x00 bytes
@@ -661,956 +661,1616 @@ Multiple Data Encapsulation packets could be present in one packet. If you want 
 |}
 
 
-{{anchor|Data_Packet}}
-
 == Data Packets ==
 
-=== Raw Information ===
-* Generated using [https://gist.github.com/4678643 this parser]
-* [https://gist.github.com/shoghicp/5717436 0.7.0 & 0.7.1 protocol #11]
-* [https://gist.github.com/shoghicp/5601589 0.6.0 & 0.6.1 protocol #9]
-* [http://pastie.org/5981489 0.5.0 protocol]
-* [http://pastie.org/5981490 0.4.0 protocol]
+This information has been generated using [https://github.com/PocketMine/PocketBurger PocketBurger], then edited manually.
 
-
-=== Data ID List ===
-The Minecraft ID is the first byte of the data got in Custom Packets and parsing them.
-All packets are found by using the tutorial posted by Jocopa3 found [http://www.minecraftforum.net/topic/1446513-mcpeserver-and-server-modding-api-in-development/page__st__100#entry18330091 here].
-{| class="wikitable"
-|- class="row0"
-| class="col1" | Minecraft ID
-| class="col2" | Packet Name
-|- class="row1"
-| class="col0 centeralign" | 0x82
-| class="col1 centeralign" | LoginPacket
-|- class="row2"
-| class="col0 centeralign" | 0x83
-| class="col1 centeralign" | LoginStatusPacket
-|- class="row3"
-| class="col0 centeralign" | 0x84
-| class="col1 centeralign" | ReadyPacket
-|- class="row4"
-| class="col0 centeralign" | 0x85
-| class="col1 centeralign" | MessagePacket
-|- class="row5"
-| class="col0 centeralign" | 0x86
-| class="col1 centeralign" | SetTimePacket
-|- class="row6"
-| class="col0 centeralign" | 0x87
-| class="col1 centeralign" | StartGamePacket
-|- class="row7"
-| class="col0 centeralign" | 0x88
-| class="col1 centeralign" | AddMobPacket
-|- class="row8"
-| class="col0 centeralign" | 0x89
-| class="col1 centeralign" | AddPlayerPacket
-|- class="row9"
-| class="col0 centeralign" | 0x8A
-| class="col1 centeralign" | RemovePlayerPacket
-|- class="row10"
-| class="col0 centeralign" | 0x8C
-| class="col1 centeralign" | AddEntityPacket
-|- class="row11"
-| class="col0 centeralign" | 0x8D
-| class="col1 centeralign" | RemoveEntityPacket
-|- class="row12"
-| class="col0 centeralign" | 0x8E
-| class="col1 centeralign" | AddItemEntityPacket
-|- class="row13"
-| class="col0 centeralign" | 0x8F
-| class="col1 centeralign" | TakeItemEntityPacket
-|- class="row14"
-| class="col0 centeralign" | 0x90
-| class="col1 centeralign" | MoveEntityPacket
-|- class="row15"
-| class="col0 centeralign" | 0x93
-| class="col1 centeralign" | MoveEntityPacket_PosRot
-|- class="row16"
-| class="col0 centeralign" | 0x94
-| class="col1 centeralign" | MovePlayerPacket
-|- class="row17"
-| class="col0 centeralign" | 0x95
-| class="col1 centeralign" | PlaceBlockPacket
-|- class="row18"
-| class="col0 centeralign" | 0x96
-| class="col1 centeralign" | RemoveBlockPacket
-|- class="row19"
-| class="col0 centeralign" | 0x97
-| class="col1 centeralign" | UpdateBlockPacket
-|- class="row20"
-| class="col0 centeralign" | 0x98
-| class="col1 centeralign" | AddPaintingPacket
-|- class="row21"
-| class="col0 centeralign" | 0x99
-| class="col1 centeralign" | ExplodePacket
-|- class="row22"
-| class="col0 centeralign" | 0x9A
-| class="col1 centeralign" | LevelEventPacket
-|- class="row23"
-| class="col0 centeralign" | 0x9B
-| class="col1 centeralign" | TileEventPacket
-|- class="row24"
-| class="col0 centeralign" | 0x9C
-| class="col1 centeralign" | EntityEventPacket
-|- class="row25"
-| class="col0 centeralign" | 0x9D
-| class="col1 centeralign" | RequestChunkPacket
-|- class="row26"
-| class="col0 centeralign" | 0x9E
-| class="col1 centeralign" | ChunkDataPacket
-|- class="row27"
-| class="col0 centeralign" | 0x9F
-| class="col1 centeralign" | PlayerEquipmentPacket
-|- class="row28"
-| class="col0 centeralign" | 0xA0
-| class="col1 centeralign" | Interactpacket
-|- class="row29"
-| class="col0 centeralign" | 0xA1
-| class="col1 centeralign" | UseItemPacket
-|- class="row30"
-| class="col0 centeralign" | 0xA2
-| class="col1 centeralign" | PlayerActionPacket
-|- class="row31"
-| class="col0 centeralign" | 0xA3
-| class="col1 centeralign" | SetEntityDataPacket
-|- class="row32"
-| class="col0 centeralign" | 0xA4
-| class="col1 centeralign" | SetEntityMotionPacket
-|- class="row33"
-| class="col0 centeralign" | 0xA5
-| class="col1 centeralign" | SetHealthPacket
-|- class="row34"
-| class="col0 centeralign" | 0xA6
-| class="col1 centeralign" | SetSpawnPositionPacket
-|- class="row35"
-| class="col0 centeralign" | 0xA7
-| class="col1 centeralign" | AnimatePacket
-|- class="row36"
-| class="col0 centeralign" | 0xA8
-| class="col1 centeralign" | RespawnPacket
-|- class="row37"
-| class="col0 centeralign" | 0xA9
-| class="col1 centeralign" | Packet::Packet(void) †
-|- class="row38"
-| class="col0 centeralign" | 0xAA
-| class="col1 centeralign" | DropItemPacket
-|- class="row39"
-| class="col0 centeralign" | 0xAB
-| class="col1 centeralign" | ContainerOpenPacket
-|- class="row40"
-| class="col0 centeralign" | 0xAC
-| class="col1 centeralign" | ContainerClosePacket
-|- class="row41"
-| class="col0 centeralign" | 0xAD
-| class="col1 centeralign" | ContainerSetSlotPacket
-|- class="row42"
-| class="col0 centeralign" | 0xAE
-| class="col1 centeralign" | ContainerSetDataPacket
-|- class="row43"
-| class="col0 centeralign" | 0xAF
-| class="col1 centeralign" | ContainerSetContentPacket
-|- class="row44"
-| class="col0 centeralign" | 0xB0
-| class="col1 centeralign" | ContainerAckPacket
-|- class="row45"
-| class="col0 centeralign" | 0xB1
-| class="col1 centeralign" | ChatPacket
-|- class="row46"
-| class="col0 centeralign" | 0xB2
-| class="col1 centeralign" | SignUpdatePacket
-|- class="row47"
-| class="col0 centeralign" | 0xB3
-| class="col1 centeralign" | AdventureSettingsPacket
-|- class="row48"
-| class="col0 centeralign" colspan="3" | Total: 47 Packets
-|}
-† Packet exists but the Assembly shows no further code for it (Blank Packet?).
-
-=== ClientConnect (0x09) ===
-''Client to Server''
-
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x09</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Client ID
-| class="col1 centeralign" | 8 bytes
-| class="col2 centeralign" | <code>0xffffffffb287d2a5</code>
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | 5 bytes
-| class="col2 centeralign" | <code>0x0000000000</code>
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Session
-| class="col1 centeralign" | 4 bytes
-| class="col2 centeralign" | <code>0x000002fc</code>
-| class="col3" |
-|- class="row4"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 18 Bytes
-|}
-
-
-=== Disconnect (0x15) ===
-''Two-Ways''
-
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x15</code>
-| class="col3" |
-|- class="row2"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 1 byte
-|}
+'''Minecraft: Pocket Edition v0.7.3, protocol #11'''
 
 === LoginPacket (0x82) ===
-''Client to Server''
+
+''Server to Client''
 
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x82</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Name length
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>0x0006</code>
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Name
-| class="col1 centeralign" | string
-| class="col2 centeralign" | Stevie
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x00000007</code>
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x00000007</code>
-| class="col3" |
-|- class="row8"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 11 Bytes + Name length
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="5" | 0x82
+| a
+| string8
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+| d
+| int
+| 
+|-
+| e
+| string8
+| 
+|-
+
 |}
 
 === LoginStatusPacket (0x83) ===
-''Server to Client''
+
+''Client to Server''
 
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x83</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Status
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x00000000</code>
-| class="col3" |
-|- class="row3"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 5 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0x83
+| a
+| int
+| 
+|-
+
 |}
 
 === ReadyPacket (0x84) ===
+
+''Server to Client''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0x84
+| bits[8](a)
+| byte[]
+| 
+|-
+
+|}
+
+=== MessagePacket (0x85) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0x85
+| a
+| string8
+| 
+|-
+
+|}
+
+=== SetTimePacket (0x86) ===
+
 ''Client to Server''
 
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x84</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Byte
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x01</code>
-| class="col3" |
-|- class="row3"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 2 Bytes
-|}
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0x86
+| a
+| int
+| 
+|-
 
+|}
 
 === StartGamePacket (0x87) ===
-''Server to Client''
+
+''Client to Server''
 
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x87</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Seed
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x00000194</code>
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Unknown
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x00000000</code>
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Gamemode
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x00000001</code>
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x00000017</code>
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | float
-| class="col2 centeralign" | <code>0x43008000</code>
-| class="col3" |
-|- class="row7"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | float
-| class="col2 centeralign" | <code>0x42820000</code>
-| class="col3" |
-|- class="row8"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | float
-| class="col2 centeralign" | <code>0x43008000</code>
-| class="col3" |
-|- class="row9"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 29 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="7" | 0x87
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+| d
+| int
+| 
+|-
+| e
+| float
+| 
+|-
+| f
+| float
+| 
+|-
+| g
+| float
+| 
+|-
+
 |}
 
-=== AddEntityPacket (0x8C) ===
-''Server to Client''
+=== AddMobPacket (0x88) ===
+
+''Client to Server''
 
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x8C</code>
-| class="col3 centeralign" |
-|- class="row2"
-| class="col0 centeralign" | Bytes
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 
-| class="col3 centeralign" | 
-|- class="row3"
-| class="col0 centeralign" | Integer
-| class="col1 centeralign" | integer
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Bytes
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row7"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row8"
-| class="col0 centeralign" | Integer
-| class="col1 centeralign" | integer
-| class="col2 centeralign" | 
-| class="col3" centeralign" | World?
-|- class="row9"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" centeralign" | Motion?
-|- class="row10"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
-| class="col2" |
-| class="col3" centeralign" | Motion?
-|- class="row11"
-| class="col0 centeralign" | Short
-| class="col1 centeralign" | short
-| class="col2" |
-| class="col3" centeralign" | Motion?
-|- class="row12"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | ? Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="8" | 0x88
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| float
+| 
+|-
+| d
+| float
+| 
+|-
+| e
+| float
+| 
+|-
+| f.degreesToChar()
+| byte
+| 
+|-
+| g.degreesToChar()
+| byte
+| 
+|-
+| Metadata(h)
+| byte[]
+| 
+|-
+
 |}
 
-=== AddItemEntityPacket (0x8E) ===
-''Server to Client''
+=== AddPlayerPacket (0x89) ===
+
+''Client to Server''
 
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x8E</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Entity ID?
-| class="col1 centeralign" | integer
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Item ID
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Stack Size
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | Item Data
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row7"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3 centeralign" | 
-|- class="row8"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3 centeralign" | 
-|- class="row9"
-| class="col0 centeralign" | Yaw
-| class="col1 centeralign" | byte
-| class="col2" |
-| class="col3 centeralign" |
-|- class="row10"
-| class="col0 centeralign" | Pitch
-| class="col1 centeralign" | byte
-| class="col2" |
-| class="col3 centeralign" |
-|- class="row11"
-| class="col0 centeralign" | Roll
-| class="col1 centeralign" | byte
-| class="col2" |
-| class="col3 centeralign" |
-|- class="row12"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 25 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="11" | 0x89
+| (unsigned) a
+| long
+| 
+|-
+| b
+| string8
+| 
+|-
+| c
+| int
+| 
+|-
+| d
+| float
+| 
+|-
+| e
+| float
+| 
+|-
+| f
+| float
+| 
+|-
+| g.degreesToChar()
+| byte
+| 
+|-
+| h.degreesToChar()
+| byte
+| 
+|-
+| i
+| short
+| 
+|-
+| j
+| short
+| 
+|-
+| Metadata(k)
+| byte[]
+| 
+|-
+
 |}
 
-=== TakeItemEntityPacket (0x8F) ===
+=== RemovePlayerPacket (0x8a) ===
+
+''Client to Server''
+
+
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x8F</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Collector Entity ID?
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Item Entity ID?
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="2" | 0x8a
+| a
+| int
+| 
+|-
+| (unsigned) b
+| long
+| 
+|-
+
+|}
+
+=== AddEntityPacket (0x8c) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="9" | 0x8c
+| a
+| int
+| 
+|-
+| (unsigned) b
+| byte
+| 
+|-
+| c
+| float
+| 
+|-
+| d
+| float
+| 
+|-
+| e
+| float
+| 
+|-
+| f
+| int
+| 
+|-
+| g.clamp()
+| short
+| 
+|-
+| h
+| short
+| 
+|-
+| i
+| short
+| 
+|-
+
+|}
+
+=== RemoveEntityPacket (0x8d) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0x8d
+| a
+| int
+| 
+|-
+
+|}
+
+=== AddItemEntityPacket (0x8e) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="10" | 0x8e
+| a
+| int
+| 
+|-
+| b
+| short
+| 
+|-
+| (unsigned) c
+| byte
+| 
+|-
+| d
+| short
+| 
+|-
+| e
+| float
+| 
+|-
+| f
+| float
+| 
+|-
+| g
+| float
+| 
+|-
+| h
+| byte
+| 
+|-
+| i
+| byte
+| 
+|-
+| j
+| byte
+| 
+|-
+
+|}
+
+=== TakeItemEntityPacket (0x8f) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="2" | 0x8f
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+
+|}
+
+=== MoveEntityPacket (0x90) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="0" | 0x90
+
 |}
 
 === MoveEntityPacket_PosRot (0x93) ===
+
+''None''
+
+
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row3"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x93</code>
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0x0000</code>
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row7"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row8"
-| class="col0 centeralign" | Yaw
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row9"
-| class="col0 centeralign" | Pitch
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row10"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 25 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="6" | 0x93
+| a
+| int
+| 
+|-
+| b
+| float
+| 
+|-
+| c
+| float
+| 
+|-
+| d
+| float
+| 
+|-
+| e
+| float
+| 
+|-
+| f
+| float
+| 
+|-
+
 |}
 
 === MovePlayerPacket (0x94) ===
-''Two-Ways''
+
+''Two-Way''
+
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row3"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x94</code>
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row7"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row8"
-| class="col0 centeralign" | Yaw
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row9"
-| class="col0 centeralign" | Pitch
-| class="col1 centeralign" | float
-| class="col2 centeralign" |
-| class="col3" |
-|- class="row10"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 31 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="6" | 0x94
+| a
+| int
+| 
+|-
+| b
+| float
+| 
+|-
+| c
+| float
+| 
+|-
+| d
+| float
+| 
+|-
+| e
+| float
+| 
+|-
+| f
+| float
+| 
+|-
+
 |}
 
-The client sends position updates through this packet.
-You can also teleport the client by sending this packet.
-
 === PlaceBlockPacket (0x95) ===
+
+''None''
+
+
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x95</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | float
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | Block ID
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row7"
-| class="col0 centeralign" | Meta
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row8"
-| class="col0 centeralign" | Face
-| class="col1 centeralign" | Byte
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row9"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 16 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="7" | 0x95
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+| (unsigned) d
+| byte
+| 
+|-
+| (unsigned) e
+| byte
+| 
+|-
+| (unsigned) f
+| byte
+| 
+|-
+| (unsigned) g
+| byte
+| 
+|-
+
 |}
 
 === RemoveBlockPacket (0x96) ===
+
+''Server to Client''
+
+
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x96</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | Y
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row6"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 14 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="4" | 0x96
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+| (unsigned) d
+| byte
+| 
+|-
+
 |}
 
-=== TileEventPacket (0x9B) ===
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9B</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row7"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 21 Bytes
-|}
+=== UpdateBlockPacket (0x97) ===
 
-=== EntityEventPacket (0x9C) ===
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9C</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Int
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 Bytes
-|}
-
-=== RequestChunkPacket (0x9D) ===
 ''Client to Server''
 
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9D</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="5" | 0x97
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| (unsigned) c
+| byte
+| 
+|-
+| (unsigned) d
+| byte
+| 
+|-
+| (unsigned) e
+| byte
+| 
+|-
+
 |}
 
-=== ChunkDataPacket (0x9E) ===
+=== AddPaintingPacket (0x98) ===
+
+''Client to Server''
+
+
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9E</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | X
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Z
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Chunk Data payload
-| class="col1 centeralign" | bytes
-| class="col2 centeralign" | <code>0x10080808...</code>
-| class="col3" |
-|- class="row5"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 9 Bytes + payload
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="6" | 0x98
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+| d
+| int
+| 
+|-
+| e
+| int
+| 
+|-
+| f
+| string8
+| 
+|-
+
 |}
 
-=== PlayerEquipmentPacket (0x9F) ===
+=== ExplodePacket (0x99) ===
+
+''Client to Server''
+
+
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x9F</code>
-| class="col3" |
-|- class="row2"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | <code>0</code>
-| class="col3" |
-|- class="row3"
-| class="col0 centeralign" | Block/Item ID
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>0x0144</code>
-| class="col3" |
-|- class="row4"
-| class="col0 centeralign" | Block/Item metadata
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>0x0001</code>
-| class="col3" | See below
-|- class="row5"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 15 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="8" | 0x99
+| a
+| float
+| 
+|-
+| b
+| float
+| 
+|-
+| c
+| float
+| 
+|-
+| d
+| float
+| 
+|-
+| e
+| int
+| 
+|-
+| f
+| byte
+| 
+|-
+| g
+| byte
+| 
+|-
+| h
+| byte
+| 
+|-
+
 |}
 
-=== SetEntityMotionPacket (0xA4) ===
+=== LevelEventPacket (0x9a) ===
+
+''Client to Server''
+
+
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0xA4</code>
-| class="col3" |
-|- class="row5"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int32
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row6"
-| class="col0 centeralign" | X Motion
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row7"
-| class="col0 centeralign" | Y Motion
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row8"
-| class="col0 centeralign" | Z Motion
-| class="col1 centeralign" | short
-| class="col2 centeralign" | 
-| class="col3" |
-|- class="row9"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 11 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="5" | 0x9a
+| a
+| short
+| 
+|-
+| b
+| short
+| 
+|-
+| c
+| short
+| 
+|-
+| d
+| short
+| 
+|-
+| e
+| int
+| 
+|-
+
 |}
 
-=== SetHealthPacket (0xA5) ===
+=== TileEventPacket (0x9b) ===
+
+''Client to Server''
+
+
 {| class="wikitable"
-|- class="row0"
-| class="col0" | Field Name
-| class="col1" | Field Type
-| class="col2" | Example
-| class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Minecraft ID
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0xA5</code>
-| class="col3 centeralign" | 
-|- class="row2"
-| class="col0 centeralign" | Health
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code>0x14</code>
-| class="col3" |
-|- class="row3"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 2 Bytes
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="5" | 0x9b
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+| d
+| int
+| 
+|-
+| e
+| int
+| 
+|-
+
 |}
 
-== Packet Dumps ==
-Due to the lack of information about the protocol, packet dumps are welcome. You can also post here pcap files of Client <-> Server sessions
+=== EntityEventPacket (0x9c) ===
 
-* [https://gist.github.com/3928612 Partial Custom Client server connection]
-* [https://gist.github.com/3928624 Partial Custom Server client info + connection]
-* [http://www.cloudshark.org/captures/5e9ee11bb05a Full Client / Server Communication]. PCAP, including server search. [http://www.mediafire.com/?768jwkj3orkp7tt download]
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="2" | 0x9c
+| a
+| int
+| 
+|-
+| (unsigned) b
+| byte
+| 
+|-
+
+|}
+
+=== RequestChunkPacket (0x9d) ===
+
+''Server to Client''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="2" | 0x9d
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+
+|}
+
+=== ChunkDataPacket (0x9e) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="5" | 0x9e
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| (unsigned) c
+| byte
+| 
+|-
+| d
+| byte[]
+| 
+|-
+| e
+| byte[]
+| 
+|-
+
+|}
+
+=== PlayerEquipmentPacket (0x9f) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="4" | 0x9f
+| a
+| int
+| 
+|-
+| (unsigned) b
+| short
+| 
+|-
+| (unsigned) c
+| short
+| 
+|-
+| d
+| byte
+| 
+|-
+
+|}
+
+=== PlayerArmorEquipmentPacket (0xa0) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="5" | 0xa0
+| a
+| int
+| 
+|-
+| b
+| byte
+| 
+|-
+| c
+| byte
+| 
+|-
+| d
+| byte
+| 
+|-
+| e
+| byte
+| 
+|-
+
+|}
+
+=== InteractPacket (0xa1) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="3" | 0xa1
+| bits[8](a)
+| byte[]
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+
+|}
+
+=== UseItemPacket (0xa2) ===
+
+''Server to Client''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="13" | 0xa2
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+| d
+| int
+| 
+|-
+| bits[16](e).reverseBytes()
+| byte[]
+| 
+|-
+| (unsigned) f
+| byte
+| 
+|-
+| g
+| int
+| 
+|-
+| h
+| float
+| 
+|-
+| i
+| float
+| 
+|-
+| j
+| float
+| 
+|-
+| k
+| float
+| 
+|-
+| l
+| float
+| 
+|-
+| m
+| float
+| 
+|-
+
+|}
+
+=== PlayerActionPacket (0xa3) ===
+
+''Server to Client''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="6" | 0xa3
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| int
+| 
+|-
+| d
+| int
+| 
+|-
+| e
+| int
+| 
+|-
+| f
+| int
+| 
+|-
+
+|}
+
+=== HurtArmorPacket (0xa5) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0xa5
+| a
+| byte
+| 
+|-
+
+|}
+
+=== SetEntityDataPacket (0xa6) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="2" | 0xa6
+| a
+| int
+| 
+|-
+| Metadata(b)
+| byte[]
+| 
+|-
+
+|}
+
+=== SetEntityMotionPacket (0xa7) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="5" | 0xa7
+| (unsigned) a.clamp()
+| byte
+| 
+|-
+| b
+| int
+| 
+|-
+| c
+| short
+| 
+|-
+| d
+| short
+| 
+|-
+| e
+| short
+| 
+|-
+
+|}
+
+=== SetRidingPacket (0xa8) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="2" | 0xa8
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+
+|}
+
+=== SetHealthPacket (0xa9) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0xa9
+| a
+| byte
+| 
+|-
+
+|}
+
+=== SetSpawnPositionPacket (0xaa) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="3" | 0xaa
+| a
+| int
+| 
+|-
+| b
+| int
+| 
+|-
+| (unsigned) c
+| byte
+| 
+|-
+
+|}
+
+=== AnimatePacket (0xab) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="2" | 0xab
+| bits[8](a)
+| byte[]
+| 
+|-
+| b
+| int
+| 
+|-
+
+|}
+
+=== RespawnPacket (0xac) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="4" | 0xac
+| a
+| int
+| 
+|-
+| b
+| float
+| 
+|-
+| c
+| float
+| 
+|-
+| d
+| float
+| 
+|-
+
+|}
+
+=== SendInventoryPacket (0xad) ===
+
+''None''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="5" | 0xad
+| a
+| int
+| 
+|-
+| (unsigned) b
+| byte
+| 
+|-
+| c
+| short
+| 
+|-
+| Item(d)
+| byte[]
+| 
+|-
+| Item(e)
+| byte[]
+| 
+|-
+
+|}
+
+=== DropItemPacket (0xae) ===
+
+''Server to Client''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="3" | 0xae
+| a
+| int
+| 
+|-
+| (unsigned) b
+| byte
+| 
+|-
+| Item(c)
+| byte[]
+| 
+|-
+
+|}
+
+=== ContainerOpenPacket (0xaf) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="4" | 0xaf
+| (unsigned) a
+| byte
+| 
+|-
+| (unsigned) b
+| byte
+| 
+|-
+| (unsigned) c
+| byte
+| 
+|-
+| d
+| string8
+| 
+|-
+
+|}
+
+=== ContainerClosePacket (0xb0) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0xb0
+| (unsigned) a
+| byte
+| 
+|-
+
+|}
+
+=== ContainerSetSlotPacket (0xb1) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="3" | 0xb1
+| bits[8](a)
+| byte[]
+| 
+|-
+| bits[16](b).reverseBytes()
+| byte[]
+| 
+|-
+| Item(c)
+| byte[]
+| 
+|-
+
+|}
+
+=== ContainerSetDataPacket (0xb2) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="3" | 0xb2
+| (unsigned) a
+| byte
+| 
+|-
+| b
+| short
+| 
+|-
+| c
+| short
+| 
+|-
+
+|}
+
+=== ContainerSetContentPacket (0xb3) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="3" | 0xb3
+| (unsigned) a
+| byte
+| 
+|-
+| b
+| short
+| 
+|-
+| Item(c)
+| byte[]
+| 
+|-
+
+|}
+
+=== ContainerAckPacket (0xb4) ===
+
+''None''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="2" | 0xb4
+| (unsigned) a
+| byte
+| 
+|-
+| b
+| short
+| 
+|-
+
+|}
+
+=== ChatPacket (0xb5) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0xb5
+| a
+| string8
+| 
+|-
+
+|}
+
+=== SignUpdatePacket (0xb6) ===
+
+''Two-Way''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="4" | 0xb6
+| a
+| short
+| 
+|-
+| (unsigned) b
+| byte
+| 
+|-
+| c
+| short
+| 
+|-
+| d
+| string8
+| 
+|-
+
+|}
+
+=== AdventureSettingsPacket (0xb7) ===
+
+''Client to Server''
+
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Notes
+|-
+| rowspan="1" | 0xb7
+| bits[32](a).reverseBytes()
+| byte[]
+| 
+|-
+
+|}
+
 
 
 [[Category:Pocket Minecraft]]
