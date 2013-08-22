@@ -90,9 +90,10 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
-===SetAvailableBlocks packet===
-:Used to update the player's block-selection screen "B" and should be sent during the LoginSequence
-:<h4>SetAvailableBlocks packet</h4>
+===SetUnavailableBlocks packet===
+:Used to update the client's block-selection screen "B" and should be sent during the LoginSequence.
+:The packet sends a byte array containing a list of block ideas which the client is not allowed to use
+:<h4>SetUnavailableBlocks packet</h4>
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
