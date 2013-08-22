@@ -217,13 +217,23 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 | 0.25
 | 0.25
 |- 
+| 63
+| FireBall (ghast projectile)
+| 
+| 
+|- 
+| 64
+| FireCharge (blaze projectile)
+| 
+| 
+|- 
 | 65
 | Thrown Enderpearl
 | 
 | 
 |- 
 | 66
-| Wither Skull
+| Wither Skull (projectile)
 | 
 | 
 |- 
