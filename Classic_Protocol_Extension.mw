@@ -90,6 +90,28 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
+===SetAvailableBlocks packet===
+:Used to update the player's block-selection screen "B" and should be sent during the LoginSequence
+:<h4>SetAvailableBlocks packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" | 0x16
+| class="col1 centeralign" | Blocks
+| class="col2 centeralign" | byte[]
+| class="col3 centeralign" | 1, 25, 42
+| class="col4" |
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | I don't know
+|}
+
 ===HeldBlock===
 :Provides a way for the client to notify the server about the blocktype that it is currently holding, and for the server to change the currently-held block type.   
 :'''Motivation''': This allows server to know which block player is holding, for example for drawing commands, without needing to wait for the player's click. it also allows for features like [http://www.fcraft.net/wiki//Spectate /Spectate] to show what block a spectated player is holding.
