@@ -93,10 +93,13 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
-===SetUnavailableBlocks packet===
-:Used to update the client's block-selection screen "B" and should be sent during the LoginSequence.
-:The packet sends a byte array containing a list of block IDs which the client is not allowed to use
-:<h4>SetUnavailableBlocks packet</h4>
+===CustomBlocks===
+:Used to add support for custom block types. Custom block IDs start at 50 (0x32). New block types will be added in batches, a few at a time. Both client and server declare which batch they support, and use the lower of the two versions. Claiming to supporting a batch implies fully implementing all the batches that came before it. If either server or client do not support this extension, only the standard 50 block types should be used.
+'''Motivation''': Adding new visually distinct blocks, to enhance Classic players' experience.
+'''Client behavior''': Client must expect a ''CustomBlockSupportLevel'' packet immediately after receiving a handshake from the server. It should then send its own ''CustomBlockSupportLevel'' packet, containing its actual support level. Client must then use the lower of the two levels in operation. Client must not send any block types that are not defined by the current support level.
+'''Server behavior''': Server must send a ''CustomBlockSupportLevel'' packet immediately after sending a handshake to the client. It should then wait to receive a ''CustomBlockSupportLevel'' packet from the client before sending anything else. Server must then use the lower of the two levels in operation. If this level is lower than the server's, it has to filter data sent to the client, to make sure that the client never receives any block types that it does not support. Each level will define what substitutions to use.
+
+:<h4>CustomBlockSupportLevel packet</h4>
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
@@ -108,14 +111,16 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |- class="row1"
 | class="col0 centeralign" | 0x13
 (19)
-| class="col1 centeralign" | Blocks
-| class="col2 centeralign" | byte[]
-| class="col3 centeralign" | 1, 25, 42
+| class="col1 centeralign" | SupportLevel
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 1
 | class="col4" |
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | I don't know
+| class="col1 rightalign" colspan="4" | 2
 |}
+
+TODO: Block type list and substitution list coming soon.
 
 ===HeldBlock===
 :Provides a way for the client to notify the server about the blocktype that it is currently holding, and for the server to change the currently-held block type.   
