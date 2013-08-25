@@ -766,7 +766,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0x85
-| a
+| message
 | string8
 | 
 |-
