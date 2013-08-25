@@ -705,7 +705,7 @@ This information has been generated using [https://github.com/PocketMine/PocketB
 
 === LoginStatusPacket (0x83) ===
 
-''Client to Server''
+''Server to Client''
 
 
 {| class="wikitable"
@@ -716,12 +716,22 @@ This information has been generated using [https://github.com/PocketMine/PocketB
 | Notes
 |-
 | rowspan="1" | 0x83
-| a
+| Status
 | int
 | 
 |-
 
 |}
+
+The three type of status are:
+
+0: Everything is good.
+
+1: If the server is outdated.
+ 
+2. If the game is outdated. 
+
+If everything is good you need to send the StartGamePacket
 
 === ReadyPacket (0x84) ===
 
