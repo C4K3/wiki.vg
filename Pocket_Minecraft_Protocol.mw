@@ -680,23 +680,23 @@ This information has been generated using [https://github.com/PocketMine/PocketB
 | Notes
 |-
 | rowspan="5" | 0x82
-| a
+| Username
 | string8
 | 
 |-
-| b
+| Protocol #1
 | int
 | 
 |-
-| c
+| Protocol #2
 | int
 | 
 |-
-| d
+| ClientID
 | int
 | 
 |-
-| e
+| Realms Data
 | string8
 | 
 |-
