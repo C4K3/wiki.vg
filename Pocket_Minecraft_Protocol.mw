@@ -746,8 +746,8 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0x84
-| bits[8](a)
-| byte[]
+| bits[8] Status
+| byte
 | 
 |-
 
@@ -766,7 +766,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0x85
-| message
+| Message
 | string8
 | 
 |-
@@ -786,7 +786,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0x86
-| a
+| Time
 | int
 | 
 |-
@@ -806,31 +806,31 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="7" | 0x87
-| a
+| level seed
 | int
 | 
 |-
-| b
+| Unknown
 | int
 | 
 |-
-| c
+| Gamemode
 | int
 | 
 |-
-| d
+| Entity ID
 | int
 | 
 |-
-| e
+| X
 | float
 | 
 |-
-| f
+| Y
 | float
 | 
 |-
-| g
+| Z
 | float
 | 
 |-
@@ -850,35 +850,35 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="8" | 0x88
-| a
+| Entity ID
 | int
 | 
 |-
-| b
+| Type
 | int
 | 
 |-
-| c
+| X
 | float
 | 
 |-
-| d
+| Y
 | float
 | 
 |-
-| e
+| Z
 | float
 | 
 |-
-| f.degreesToChar()
+| yaw
 | byte
 | 
 |-
-| g.degreesToChar()
+| pitch
 | byte
 | 
 |-
-| Metadata(h)
+| Metadata
 | byte[]
 | 
 |-
@@ -898,47 +898,47 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="11" | 0x89
-| (unsigned) a
+| (unsigned) Client ID
 | long
 | 
 |-
-| b
+| Username
 | string8
 | 
 |-
-| c
+| Entity ID
 | int
 | 
 |-
-| d
+| X
 | float
 | 
 |-
-| e
+| Y
 | float
 | 
 |-
-| f
+| Z
 | float
 | 
 |-
-| g.degreesToChar()
+| Yaw
 | byte
 | 
 |-
-| h.degreesToChar()
+| Pitch
 | byte
 | 
 |-
-| i
+| Unknown
 | short
 | 
 |-
-| j
+| Unknown
 | short
 | 
 |-
-| Metadata(k)
+| Metadata
 | byte[]
 | 
 |-
@@ -958,11 +958,11 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="2" | 0x8a
-| a
+| entity ID
 | int
 | 
 |-
-| (unsigned) b
+| (unsigned) Client ID
 | long
 | 
 |-
@@ -982,39 +982,39 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="9" | 0x8c
-| a
+| Entity ID
 | int
 | 
 |-
-| (unsigned) b
+| Type
 | byte
 | 
 |-
-| c
+| X
 | float
 | 
 |-
-| d
+| Y
 | float
 | 
 |-
-| e
+| Z
 | float
 | 
 |-
-| f
+| Did?
 | int
-| 
+| If this int > 0 you can send the next parameter
 |-
-| g.clamp()
+| SpeedX
 | short
 | 
 |-
-| h
+| SpeedY
 | short
 | 
 |-
-| i
+| SpeedZ
 | short
 | 
 |-
@@ -1034,7 +1034,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0x8d
-| a
+| Entity ID
 | int
 | 
 |-
@@ -1054,43 +1054,43 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="10" | 0x8e
-| a
+| Enity ID
 | int
 | 
 |-
-| b
+| Block
 | short
 | 
 |-
-| (unsigned) c
+| Stack
 | byte
 | 
 |-
-| d
+| Meta
 | short
 | 
 |-
-| e
+| X
 | float
 | 
 |-
-| f
+| Y
 | float
 | 
 |-
-| g
+| Z
 | float
 | 
 |-
-| h
+| Yaw
 | byte
 | 
 |-
-| i
+| Pitch
 | byte
 | 
 |-
-| j
+| Roll
 | byte
 | 
 |-
@@ -1110,11 +1110,11 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="2" | 0x8f
-| a
+| Target
 | int
 | 
 |-
-| b
+| Entity ID
 | int
 | 
 |-
@@ -1134,6 +1134,22 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="0" | 0x90
+| Entity ID
+| int
+|
+|-
+| X
+| float
+|
+|-
+| Y
+| float
+|
+|-
+| Z
+| float
+|
+|-
 
 |}
 
@@ -1150,27 +1166,27 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="6" | 0x93
-| a
+| Entity ID
 | int
 | 
 |-
-| b
+| X
 | float
 | 
 |-
-| c
+| Y
 | float
 | 
 |-
-| d
+| Z
 | float
 | 
 |-
-| e
+| Yaw
 | float
 | 
 |-
-| f
+| Pitch
 | float
 | 
 |-
@@ -1190,27 +1206,27 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="6" | 0x94
-| a
+| Entity ID
 | int
 | 
 |-
-| b
+| X
 | float
 | 
 |-
-| c
+| Y
 | float
 | 
 |-
-| d
+| Z
 | float
 | 
 |-
-| e
+| Yaw
 | float
 | 
 |-
-| f
+| Pitch
 | float
 | 
 |-
@@ -1219,7 +1235,7 @@ If everything is good you need to send the StartGamePacket
 
 === PlaceBlockPacket (0x95) ===
 
-''None''
+''Two-Way''
 
 
 {| class="wikitable"
@@ -1230,31 +1246,31 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="7" | 0x95
-| a
+| Entity iD
 | int
 | 
 |-
-| b
+| X
 | int
 | 
 |-
-| c
+| Z
 | int
 | 
 |-
-| (unsigned) d
+| Y
 | byte
 | 
 |-
-| (unsigned) e
+| Block
 | byte
 | 
 |-
-| (unsigned) f
+| Meta
 | byte
 | 
 |-
-| (unsigned) g
+| Face
 | byte
 | 
 |-
@@ -1274,19 +1290,19 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="4" | 0x96
-| a
+| Entity ID
 | int
 | 
 |-
-| b
+| X
 | int
 | 
 |-
-| c
+| Z
 | int
 | 
 |-
-| (unsigned) d
+| Y
 | byte
 | 
 |-
@@ -1306,25 +1322,29 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="5" | 0x97
-| a
+| Entiy ID
 | int
 | 
 |-
-| b
+| X
 | int
 | 
 |-
-| (unsigned) c
+| Z
+| int
+| 
+|-
+| Y
 | byte
 | 
 |-
-| (unsigned) d
+| Block
 | byte
 | 
 |-
-| (unsigned) e
+| Meta
 | byte
-| 
+|
 |-
 
 |}
@@ -1342,27 +1362,27 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="6" | 0x98
-| a
+| Entity ID
 | int
 | 
 |-
-| b
+| X
 | int
 | 
 |-
-| c
+| Y
 | int
 | 
 |-
-| d
+| Z
 | int
 | 
 |-
-| e
+| Direction
 | int
 | 
 |-
-| f
+| Title
 | string8
 | 
 |-
@@ -1382,35 +1402,35 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="8" | 0x99
-| a
+| X
 | float
 | 
 |-
-| b
+| Y
 | float
 | 
 |-
-| c
+| Z
 | float
 | 
 |-
-| d
+| Radius
 | float
 | 
 |-
-| e
+| Count
 | int
 | 
 |-
-| f
+| Records
 | byte
 | 
 |-
-| g
+| Counts?
 | byte
 | 
 |-
-| h
+| Records?
 | byte
 | 
 |-
@@ -1430,23 +1450,23 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="5" | 0x9a
-| a
+| Unknown?
 | short
 | 
 |-
-| b
+| Unknown?
 | short
 | 
 |-
-| c
+| Unknown?
 | short
 | 
 |-
-| d
+| Unknown?
 | short
 | 
 |-
-| e
+| Unknown?
 | int
 | 
 |-
@@ -1466,23 +1486,23 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="5" | 0x9b
-| a
+| X
 | int
 | 
 |-
-| b
+| Y
 | int
 | 
 |-
-| c
+| Z
 | int
 | 
 |-
-| d
+| Case 1
 | int
 | 
 |-
-| e
+| Case 2
 | int
 | 
 |-
@@ -1502,11 +1522,11 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="2" | 0x9c
-| a
+| Entity ID
 | int
 | 
 |-
-| (unsigned) b
+| Event
 | byte
 | 
 |-
@@ -1526,11 +1546,11 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="2" | 0x9d
-| a
+| X
 | int
 | 
 |-
-| b
+| Z
 | int
 | 
 |-
@@ -1550,23 +1570,22 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="5" | 0x9e
-| a
+| X
 | int
 | 
 |-
-| b
+| Z
 | int
 | 
-|-
-| (unsigned) c
+|-Data?
 | byte
 | 
 |-
-| d
+| Data?
 | byte[]
 | 
 |-
-| e
+| Data?
 | byte[]
 | 
 |-
@@ -1586,19 +1605,19 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="4" | 0x9f
-| a
+| Entity ID
 | int
 | 
 |-
-| (unsigned) b
+| Block
 | short
 | 
 |-
-| (unsigned) c
+| Meta
 | short
 | 
 |-
-| d
+| Slot
 | byte
 | 
 |-
@@ -1618,23 +1637,23 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="5" | 0xa0
-| a
+| Entity ID
 | int
 | 
 |-
-| b
+| Slot 1
 | byte
 | 
 |-
-| c
+| Slot 2
 | byte
 | 
 |-
-| d
+| Slot 3
 | byte
 | 
 |-
-| e
+| Slot 4
 | byte
 | 
 |-
@@ -1654,15 +1673,15 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="3" | 0xa1
-| bits[8](a)
+| Action
 | byte[]
 | 
 |-
-| b
+| entity ID
 | int
 | 
 |-
-| c
+| Target
 | int
 | 
 |-
@@ -1682,55 +1701,55 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="13" | 0xa2
-| a
+| X
 | int
 | 
 |-
-| b
+| Y
 | int
 | 
 |-
-| c
+| Z
 | int
 | 
 |-
-| d
+| Face
 | int
 | 
 |-
-| bits[16](e).reverseBytes()
+| Block
 | byte[]
 | 
 |-
-| (unsigned) f
+| Meta
 | byte
 | 
 |-
-| g
+| Entity ID
 | int
 | 
 |-
-| h
+| Fx
 | float
 | 
 |-
-| i
+| Fy
 | float
 | 
 |-
-| j
+| Fz
 | float
 | 
 |-
-| k
+| PosX
 | float
 | 
 |-
-| l
+| PosY
 | float
 | 
 |-
-| m
+| PosZ
 | float
 | 
 |-
@@ -1750,27 +1769,27 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="6" | 0xa3
-| a
+| Action
 | int
 | 
 |-
-| b
+| X
 | int
 | 
 |-
-| c
+| Y
 | int
 | 
 |-
-| d
+| Z
 | int
 | 
 |-
-| e
+| Face
 | int
 | 
 |-
-| f
+| Entity ID
 | int
 | 
 |-
@@ -1790,7 +1809,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0xa5
-| a
+| Health
 | byte
 | 
 |-
@@ -1810,11 +1829,11 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="2" | 0xa6
-| a
+| Entity ID
 | int
 | 
 |-
-| Metadata(b)
+| Metadata
 | byte[]
 | 
 |-
@@ -1834,23 +1853,23 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="5" | 0xa7
-| (unsigned) a.clamp()
+| Unknown?
 | byte
 | 
 |-
-| b
+| Entity ID
 | int
 | 
 |-
-| c
+| X
 | short
 | 
 |-
-| d
+| Y
 | short
 | 
 |-
-| e
+| Z
 | short
 | 
 |-
@@ -1894,7 +1913,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0xa9
-| a
+| Health
 | byte
 | 
 |-
@@ -1914,15 +1933,15 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="3" | 0xaa
-| a
+| X
 | int
 | 
 |-
-| b
+| Z
 | int
 | 
 |-
-| (unsigned) c
+| Y
 | byte
 | 
 |-
@@ -1942,11 +1961,11 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="2" | 0xab
-| bits[8](a)
-| byte[]
+| Action
+| byte
 | 
 |-
-| b
+| Entity ID
 | int
 | 
 |-
@@ -1966,19 +1985,19 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="4" | 0xac
-| a
+| Entity ID
 | int
 | 
 |-
-| b
+| X
 | float
 | 
 |-
-| c
+| Y
 | float
 | 
 |-
-| d
+| Z
 | float
 | 
 |-
@@ -1998,23 +2017,23 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="5" | 0xad
-| a
+| Entity ID
 | int
 | 
 |-
-| (unsigned) b
+| Windows ID
 | byte
 | 
 |-
-| c
+| Count
 | short
 | 
 |-
-| Item(d)
+| Slots
 | byte[]
 | 
 |-
-| Item(e)
+| Items
 | byte[]
 | 
 |-
@@ -2034,19 +2053,28 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="3" | 0xae
-| a
+| Entity ID
 | int
 | 
 |-
-| (unsigned) b
+| Unknown?
 | byte
 | 
 |-
-| Item(c)
-| byte[]
+| Block
+| short
 | 
 |-
-
+|-
+| Stack
+| byte
+|
+|-
+| Meta
+| short
+| 
+|-
+ 
 |}
 
 === ContainerOpenPacket (0xaf) ===
@@ -2062,19 +2090,19 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="4" | 0xaf
-| (unsigned) a
+| Window ID
 | byte
 | 
 |-
-| (unsigned) b
+| Type
 | byte
 | 
 |-
-| (unsigned) c
+| Slot
 | byte
 | 
 |-
-| d
+| Title
 | string8
 | 
 |-
@@ -2094,7 +2122,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0xb0
-| (unsigned) a
+| Window ID
 | byte
 | 
 |-
@@ -2114,16 +2142,24 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="3" | 0xb1
-| bits[8](a)
-| byte[]
+| Window ID
+| byte
 | 
 |-
-| bits[16](b).reverseBytes()
-| byte[]
+| Slot
+| short
 | 
 |-
-| Item(c)
-| byte[]
+| Block
+| short
+| 
+|-
+| Stack
+| byte
+| 
+|-
+| Meta
+| short
 | 
 |-
 
@@ -2142,15 +2178,15 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="3" | 0xb2
-| (unsigned) a
+| Window ID
 | byte
 | 
 |-
-| b
+| Property
 | short
 | 
 |-
-| c
+| Value
 | short
 | 
 |-
@@ -2170,15 +2206,15 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="3" | 0xb3
-| (unsigned) a
+| Window ID
 | byte
 | 
 |-
-| b
+| Count
 | short
 | 
 |-
-| Item(c)
+| Items
 | byte[]
 | 
 |-
@@ -2198,11 +2234,11 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="2" | 0xb4
-| (unsigned) a
+| Window ID
 | byte
 | 
 |-
-| b
+| Unknown?
 | short
 | 
 |-
@@ -2222,7 +2258,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0xb5
-| a
+| Message
 | string8
 | 
 |-
@@ -2242,19 +2278,19 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="4" | 0xb6
-| a
+| X
 | short
 | 
 |-
-| (unsigned) b
+| Y
 | byte
 | 
 |-
-| c
+| Z
 | short
 | 
 |-
-| d
+| Lines
 | string8
 | 
 |-
@@ -2274,7 +2310,7 @@ If everything is good you need to send the StartGamePacket
 | Notes
 |-
 | rowspan="1" | 0xb7
-| bits[32](a).reverseBytes()
+| Flags
 | byte[]
 | 
 |-
