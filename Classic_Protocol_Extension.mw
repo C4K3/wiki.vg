@@ -120,7 +120,8 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col1 rightalign" colspan="4" | 2
 |}
 
-:<h4>Support Level 1</h4>
+:<h4>Blocks in support level 1</h4>
+:Note that servers/clients must implement ALL 16 of these to claim support.
 {| class="wikitable"
 !Block name
 !Block ID
