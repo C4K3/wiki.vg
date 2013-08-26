@@ -59,7 +59,7 @@ Characters in the Basic Multilingual Plane (U+0000 through U+FFFF inclusive) are
 
 Characters in the other Unicode planes (U+10000 through U+10FFFF inclusive) are encoded as two 16 bit code units (a high/low "surrogate pair").
 
-Therefore, the length in bytes of a string may be obtained by multiplying the number of code points by two, and the opposite operation may be performed by dividing by two.
+Therefore, the length in bytes of a string may be obtained by multiplying the number of code units by two, and the opposite operation may be performed by dividing by two.
 
 However, since UTF-16 is variable-length, the number of code units is totally unrelated to the number of code points (i.e. "characters"), and you will actually have to decode the string to obtain this information.
 
