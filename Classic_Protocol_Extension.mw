@@ -176,6 +176,36 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |0x3B (59)
 |Cyan
 |0x1c (28)
+|-
+|'''Ice'''
+|0x3C (60)
+|Glass
+|0x14 (20)
+|-
+|'''CeramicTile'''
+|0x3D (61)
+|Iron
+|0x2a (42)
+|-
+|'''Magma'''
+|0x3E (62)
+|Obsidian
+|0x31 (49)
+|-
+|'''Pillar'''
+|0x3F (63)
+|White
+|0x24 (36)
+|-
+|'''Crate'''
+|0x40 (64)
+|WoodenPlanks
+|0x05 (5)
+|-
+|'''StoneBrick'''
+|0x41 (65)
+|Stone
+|0x01 (1)
 |}
 
 ===HeldBlock===
