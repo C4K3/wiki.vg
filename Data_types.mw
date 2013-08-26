@@ -49,7 +49,21 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 ! class="col0 centeralign" | string
 | class="col1 centeralign" | ≥ 2 <br />≤ 240
 | class="col2" | N/A
-| class="col3" | [http://en.wikipedia.org/wiki/UTF-16 UTF-16] big-endian string prefixed by a short containing the length of the string in [http://en.wikipedia.org/wiki/Code_unit code units] (as a UTF-16 code unit is 2 bytes, multiply the length by two to get the length in bytes). UTF-16 is a variable-width encoding so each [http://en.wikipedia.org/wiki/Code_point code point] may be 1 or 2 code units.  Accordingly the specified length (in code units) does not necessarily map onto the logical length of the string (in code points).
+| class="col3" | [http://en.wikipedia.org/wiki/UTF-16 UTF-16] big-endian string prefixed by a short containing the length of the string in code units.
+
+UTF-16 is a variable-length encoding, which means that a single Unicode code point (what most programmers think of as a "character") may be encoded by a variable number of code units.
+
+UTF-16 encodes code points as either one or two 16 bit code units.
+
+Characters in the Basic Multilingual Plane (U+0000 through U+FFFF inclusive) are encoded as one 16 bit code unit.
+
+Characters in the other Unicode planes (U+10000 through U+10FFFF inclusive) are encoded as two 16 bit code units (a high/low "surrogate pair").
+
+Therefore, the length in bytes of a string may be obtained by multiplying the number of code points by two, and the opposite operation may be performed by dividing by two.
+
+However, since UTF-16 is variable-length, the number of code units is totally unrelated to the number of code points (i.e. "characters"), and you will actually have to decode the string to obtain this information.
+
+It was historically believed that the Minecraft protocol used the fixed-width encoding UCS-2, however this has since been proven to be incorrect.
 |- class="row9"
 ! class="col0 centeralign" | metadata
 | class="col1 centeralign" | Varies
