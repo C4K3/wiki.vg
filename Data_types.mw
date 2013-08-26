@@ -49,7 +49,7 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 ! class="col0 centeralign" | string
 | class="col1 centeralign" | ≥ 2 <br />≤ 240
 | class="col2" | N/A
-| class="col3" | [http://en.wikipedia.org/wiki/UTF-16/UCS-2 UCS-2] big-endian string prefixed by a short containing the length of the string in [http://en.wikipedia.org/wiki/Code_point code points]. UCS-2 is a fixed-width encoding with each code point represented by a 16-bit code unit.  As it is limited to 16 bits it can only represent code points in the [https://en.wikipedia.org/wiki/Plane_(Unicode)#Basic_Multilingual_Plane Basic Multilangual Plane] (U+0000 through U+FFFF inclusive).
+| class="col3" | [http://en.wikipedia.org/wiki/UTF-16 UTF-16] big-endian string prefixed by a short containing the length of the string in [http://en.wikipedia.org/wiki/Code_unit code units] (as a UTF-16 code unit is 2 bytes, multiply the length by two to get the length in bytes). UTF-16 is a variable-width encoding so each [http://en.wikipedia.org/wiki/Code_point code point] may be 1 or 2 code units.  Accordingly the specified length (in code units) does not necessarily map onto the logical length of the string (in code points).
 |- class="row9"
 ! class="col0 centeralign" | metadata
 | class="col1 centeralign" | Varies
