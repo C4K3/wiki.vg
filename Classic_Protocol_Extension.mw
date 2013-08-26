@@ -120,7 +120,63 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col1 rightalign" colspan="4" | 2
 |}
 
-TODO: Block type list and substitution list coming soon.
+:<h4>Support Level 1</h4>
+{| class="wikitable"
+!Block name
+!Block ID
+!Fallback name
+!Fallback ID
+|-
+|'''CobblestoneSlab'''
+|0x32 (50)
+|Slab
+|0x2C (44)
+|-
+|'''SpiderWeb'''
+|0x33 (51)
+|TDB
+|TBD
+|-
+|'''SmoothSandstone'''
+|0x34 (52)
+|Sand
+|0x0C (12)
+|-
+|'''Snow'''
+|0x35 (53)
+|TBD
+|TBD
+|-
+|'''Fire'''
+|0x36 (54)
+|Lava
+|0x0A (10)
+|-
+|'''LightPinkWool'''
+|0x37 (55)
+|Pink
+|0x21 (33)
+|-
+|'''ForestGreenWool'''
+|0x38 (56)
+|Green
+|0x19 (25)
+|-
+|'''BrownWool'''
+|0x39 (57)
+|Dirt
+|0x03 (3)
+|-
+|'''DeepBlue'''
+|0x3A (58)
+|Blue
+|0x1d (29)
+|-
+|'''Turquoise'''
+|0x3B (59)
+|Cyan
+|0x1c (28)
+|}
 
 ===HeldBlock===
 :Provides a way for the client to notify the server about the blocktype that it is currently holding, and for the server to change the currently-held block type.   
