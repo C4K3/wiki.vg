@@ -68,7 +68,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 
 ==Extensions==
 ===ClickDistance===
-:Used to extend or restrict the distance at which client may click blocks, controlled by the server. Click range is given in player-space units (32 units per block).
+:Used to extend or restrict the distance at which client may click blocks, controlled by the server. Click range is given in player-space units (32 units per block). In ClassiCube, the default range is 5.0F.
 :'''Motivation''': This extension allows trusted players to have a wider or virtually-unlimited reach. It may simplify operation of certain bots. Restricting the reach may allow new games/mini-games.
 :'''Client Behavior''': Upon receiving a '''SetClickDistance''' packet, client should immediately apply the change. Distance should persist between worlds/maps.
 :'''Server Behavior''': Server should send '''SetClickDistance''' packet when the server connects, or whenever their permitted click distance changes. Server should allow for some margin-of-error (+/- 1 block) when enforcing click distance restrictions.
