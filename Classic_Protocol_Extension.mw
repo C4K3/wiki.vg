@@ -135,8 +135,8 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |-
 |'''SpiderWeb'''
 |0x33 (51)
-|TDB
-|TBD
+|Sapling
+|0x06 (6)
 |-
 |'''SmoothSandstone'''
 |0x34 (52)
