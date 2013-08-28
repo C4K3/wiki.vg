@@ -33,19 +33,28 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
 | class="col1 centeralign" | 8
 | class="col2" | -9223372036854775808 to 9223372036854775807
 | class="col3" | Signed, two's complement
-|- class="row6"
+|- class="row8"
+! class="col0 centeralign" | 128-bit integer
+| class="col1 centeralign" | 16
+| class="col2" | 0 to 340282366920938463463374607431768211455
+| class="col3" | Unsigned, two's complement
+
+Used in [http://wiki.vg/Protocol#Entity_Properties_.280x2C.29 0x2C] to transmit UUIDs.
+
+The vanilla Minecraft server internally sends this as two longs.
+|- class="row7"
 ! class="col0 centeralign" | float
 | class="col1 centeralign" | 4
 | class="col2" |
 See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
 | class="col3" | Single-precision 32-bit IEEE 754 floating point
-|- class="row7"
+|- class="row8"
 ! class="col0 centeralign" | double
 | class="col1 centeralign" | 8
 | class="col2" |
 See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
 | class="col3" | Double-precision 64-bit IEEE 754 floating point
-|- class="row8"
+|- class="row9"
 ! class="col0 centeralign" | string
 | class="col1 centeralign" | ≥ 2 <br />≤ 240
 | class="col2" | N/A
