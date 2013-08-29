@@ -250,11 +250,8 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 
 ===TextHotKey===
 :This extension allows the server to define "hotkeys" for certain commands.
-
 :'''Motivation''': To speed up and simplify access to commonly-used commands and command macros by providing server-defined client-side hotkeys.
-
 :'''Client behavior:''' Client should not try to persist previously-defined hotkeys between sessions. When a defined hotkey is activated by the user, client should open up a text prompt and type in contents of the ''Action'' field. A newline character (<code>\n</code>) in the ''Action'' field indicates that whatever is currently typed-in should be sent to the server. If ''Action'' does not end with a newline, text prompt should be left open, for the user to complete. Client may provide a way for the user to see a list of currently-defined hotkeys, and a way to notify the user when a hotkey was activated.
-
 :'''Server behavior:''' The server should send a definition of each hotkey ('''SetTextHotKey''' packet) once per connection.
 
 :<h4>SetTextHotKey packet</h4>
@@ -559,6 +556,45 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
+===BlockPermissions===
+:This extension allows the server to instruct the player that certain block types are allowed/disallowed to be placed or deleted.
+:'''Motivation''': To prevent players from inadvertently placing or removing prohibited block types (e.g. water, lava, grass, admincrete), before it even reaches the server.
+:'''Client behavior:''' Client must be ready to receive ''SetBlockPermission'' packet after map load (''MapEnd'' packet). Permission changes should take effect as soon as packet is received. Admincrete (solid block) permissions set by ''SetBlockPermission'' must always override permission set by ''Handshake'' packet. Permissions must persist between map changes. Client should prevent placement of block types prohibited from placement (by graying out or hiding blocks in block-selection screen, or any other effective means). Client should prevent player from deleting block types prohibited from being deleted. 
+:'''Server behavior:''' Server may send ''SetBlockPermission'' packets any time after map load (''MapEnd'' packet). Any block type except ''Air'' (0) may be specified, including custom blocks (if ''CustomBlocks'' is mutually supported). Server must not assume that client is compliant/obedient, and server must still verify each ''SetBlock'' packet coming from the client. What to do with non-compliant clients is up to you.
+
+:<h4>SetBlockPermission packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x22
+(28)
+| class="col1 centeralign" | Block
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>8</code>
+| class="col4" | Block's numeric ID (anything between 1 and max defined block).
+|- class="row2"
+| class="col1 centeralign" | AllowPlacement
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4" | 0 = Prohibited
+1 = Allowed
+|- class="row2"
+| class="col1 centeralign" | AllowDeletion
+| class="col2 centeralign" | int
+| class="col3 centeralign" | <code>0</code>
+| class="col4" | 0 = Prohibited
+1 = Allowed
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 4 bytes
 |}
 
 ===OnScreenMenu===
