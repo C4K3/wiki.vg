@@ -279,7 +279,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col1 centeralign" | KeyCode
 | class="col2 centeralign" | int
 | class="col3 centeralign" | <code>113</code>
-| class="col4" | [http://wiki.libsdl.org/moin.cgi/SDLKeycodeLookup SDL keycode] of the key
+| class="col4" | [http://www.minecraftwiki.net/wiki/Key_Codes LWJGL keycode] of the key
 |- class="row3"
 | class="col1 centeralign" | KeyMods
 | class="col2 centeralign" | byte
