@@ -295,7 +295,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |}
 
 ===ExtPlayerList===
-:This extension augments the [[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]] packet to provide more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display.
+:This extension aims to provide more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. It also separates tracking of in-game entities (spawned player models) and names on the player list. ExtAddPlayerName/ExtRemovePlayerName packets are used to manage names on the player list, and ExtAddEntity/DespawnPlayer packets are used to manage in-game entities.
 
 :'''Motivation''': Allows listing and autocompleting names of players on worlds/maps other than client's own, organizing player names into groups, and making the player tab-list easier to read.
 
