@@ -349,7 +349,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
 | class="col4" | Rank of a player within the group.
-a lower number means higher rank.
+A lower number means higher rank.
 |- class="row6"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 195 bytes
