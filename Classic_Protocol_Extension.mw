@@ -295,20 +295,20 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |}
 
 ===ExtPlayerList===
-:This extension aims to provide more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. It also separates tracking of in-game entities (spawned player models) and names on the player list. ExtAddPlayerName/ExtRemovePlayerName packets are used to manage names on the player list, and ExtAddEntity/DespawnPlayer packets are used to manage in-game entities.
-
-:'''Motivation''': Allows listing and autocompleting names of players on worlds/maps other than client's own, organizing player names into groups, and making the player tab-list easier to read.
+:'''Motivation''': This extension aims to provide more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. It also separates tracking of in-game entities (spawned player models) and names on the player list. ExtAddPlayerName/ExtRemovePlayerName packets take over managing the player names list (tab-list), and ExtAddEntity/DespawnPlayer packets are used only to manage in-game entities.
 
 :<h4>Client Behavior</h4>
-:When '''ExtAddPlayerName''' packet is received for an unrecognized ''PlayerID'', a new entry must be added to the autocompletion list and player tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''PlayerID'', client must update its ''ListName'', ''GroupName'', and ''GroupRank''. Lists must persist when client changes worlds/maps.
+:When '''ExtAddPlayerName''' packet is received for an unrecognized ''NameID'', a new entry must be added to the autocompletion list and tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''NameID'', client must update its ''ListName'', ''GroupName'', and ''GroupRank''. Name list must persist when client changes worlds/maps.
 
-:Player names should be grouped by ''GroupName'' in the player tab-list. Players within a ''GroupName'' should be sorted by ''GroupRank'' (in ascending order). Players with the same ''GroupName'' and ''GroupRank'' should be sorted alphabetically by ''ListName''. Color codes should be either drawn or stripped in ''ListName'', ''GroupName'', and ''InGameName''.
+:Names on the tab-list should be grouped by ''GroupName'' in the player tab-list. Names within a ''GroupName'' should be sorted by ''GroupRank'' (in ascending order). Names with the same ''GroupName'' and ''GroupRank'' should be sorted alphabetically by ''ListName''.
 
-:When an '''ExtAddEntity''' packet is received, it must be treated as the [[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]] packet. ''InGameName'' should be shown above the player's heads in-game. Skin should be loaded using the given ''SkinName'' for a player name. When client receives '''ExtAddEntity''' packet for an already-spawned player, a duplicate entity must not be spawned and existing entity's position should not be changed. Instead their ''InGameName'' and ''SkinName'' should be updated. If a negative ID is given for '''ExtAddEntity''', client must update player's own spawn point, ''InGameName'', and ''SkinName''. The client must ignore regular '''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''' packets, if any are received.
+:When an '''ExtAddEntity''' packet is received, it must be treated as the '''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''' packet. ''InGameName'' should be shown above the player's heads in-game. Skin should be loaded using the given ''SkinName'' for a player name. When client receives '''ExtAddEntity''' packet for an already-spawned player, a duplicate entity must not be spawned and existing entity's position should not be changed. Instead their ''InGameName'' and ''SkinName'' should be updated. If a negative ID is given for '''ExtAddEntity''', client must update player's own spawn point, ''InGameName'', and ''SkinName''. The client must ignore regular '''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''' packets, if any are received. Name list should not be affected by '''ExtAddEntity'''.
 
-:When a standard '''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''' packet is received, player model should be removed from a world, but player name should stay on the autocompletion list and tab-list until '''ExtRemovePlayerName''' packet is received for the ''PlayerID''.
+:Color codes may be either drawn or stripped from ''ListName'', ''GroupName'', and ''InGameName''.
 
-:When '''ExtRemovePlayerName''' packet is received for a recognized ''PlayerID'', they should be removed from autocompletion list and player tab-list. If ExtAddEntity packet was used to spawn a player with the same ID, it should be despawned (treated as [[Classic_Protocol#Server_.E2.86.92_Client_packets|Despawn Player]] packet). When '''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''' or '''ExtRemovePlayerName''' packet is received for a negative or unrecognized ''PlayerID'', no action should be taken.
+:When a standard '''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''' packet is received for a recognized ''EntityID'', player model should be removed from a world. Name list should not be affected by '''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]'''.
+
+:When '''ExtRemovePlayerName''' packet is received for a recognized ''NameID'', they should be removed from autocompletion list and tab-list. When '''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''' or '''ExtRemovePlayerName''' packet is received for a negative or unrecognized ''PlayerID'', no action should be taken.
 
 :<h4>Server Behavior</h4>
 :When a new player connects to the server, '''ExtAddPlayerName''' must be sent. ''GroupName'' and ''GroupRank'' can be used in any way, for example to group players by map/world or rank/class/faction. Server must use '''ExtAddEntity''' in place of standard '''SpawnPlayer''' packet. Server should re-send '''ExtAddPlayerName''' packet, using the identical ''PlayerID'', when player's ''ListName'', ''GroupName'', or ''GroupRank'' change. Server must reliably send an '''ExtRemovePlayerName''' when the player disconnects. Color codes are permitted in ''ListName'', ''GroupName'', and ''InGameName''.
@@ -325,20 +325,21 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |- class="row1"
 | class="col0 centeralign" rowspan="5" | 0x16
 (22)
-| class="col1 centeralign" | PlayerID
-| class="col2 centeralign" | byte
+| class="col1 centeralign" | NameID
+| class="col2 centeralign" | short
 | class="col3 centeralign" | <code>5</code>
-| class="col4" | Between 0 and 127
+| class="col4" | Between 0 and 255
 |- class="row2"
 | class="col1 centeralign" | PlayerName
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>Notch</code>
-| class="col4" | Player name used for autocompletion
+| class="col4" | Player name used for autocompletion.
+May be left empty (exclude from autocompletion).
 |- class="row3"
 | class="col1 centeralign" | ListName
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>&c[Op]Notch</code>
-| class="col4" |
+| class="col4" |Name displayed in the in-game list.
 |- class="row4"
 | class="col1 centeralign" | GroupName
 | class="col2 centeralign" | string
@@ -352,7 +353,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 A lower number means higher rank.
 |- class="row6"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 195 bytes
+| class="col1 rightalign" colspan="4" | 196 bytes
 |}
 
 :<h4>ExtAddEntity Packet</h4>
@@ -367,7 +368,7 @@ A lower number means higher rank.
 |- class="row1"
 | class="col0 centeralign" rowspan="3" | 0x17
 (23)
-| class="col1 centeralign" | PlayerID
+| class="col1 centeralign" | EntityID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>5</code>
 | class="col4" | Between 0 and 127
@@ -399,13 +400,14 @@ A lower number means higher rank.
 |- class="row1"
 | class="col0 centeralign" | 0x18
 (24)
-| class="col1 centeralign" | PlayerID
-| class="col2 centeralign" | byte
+| class="col1 centeralign" | NameID
+| class="col2 centeralign" | short
 | class="col3 centeralign" | <code>5</code>
-| class="col4" | Matches PlayerID of the ExtAddPlayerName packet
+| class="col4" | Between 0 and 255
+Matches NameID of the ExtAddPlayerName packet
 |- class="row2"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 2 bytes
+| class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
 ===EnvColors===
