@@ -351,7 +351,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col4" | Rank of a player within the group.
 |- class="row6"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 193 bytes
+| class="col1 rightalign" colspan="4" | 195 bytes
 |}
 
 :<h4>ExtAddEntity Packet</h4>
