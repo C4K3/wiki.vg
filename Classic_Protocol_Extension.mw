@@ -295,14 +295,14 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |}
 
 ===ExtPlayerList===
-:This extension augments the [[Classic_Protocol#Server_.E2.86.92_Client_packets|Spawn Player]] packet to support more players and provide more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. It also turns PlayerID byte from a signed to an unsigned, allowing up to 250 players/entities to be uniquely numbered on one map). IDs 0-254 should be used to identify other players. ID 255 ("-1" signed) should still refer to "self."
+:This extension augments the [[Classic_Protocol#Server_.E2.86.92_Client_packets|Spawn Player]] packet to provide more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display.
 
 :'''Motivation''': Allows listing and autocompleting names of players on worlds/maps other than client's own, organizing player names into groups, and making the player tab-list easier to read.
 
 :<h4>Client Behavior</h4>
-:When '''ExtAddPlayerName''' packet is received for an unrecognized ''PlayerID'', a new entry should be added to the autocompletion list and player tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''PlayerID'', client should just update ''ListName'', ''GroupName'', and ''GroupRank''.
+:When '''ExtAddPlayerName''' packet is received for an unrecognized ''PlayerID'', a new entry must be added to the autocompletion list and player tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''PlayerID'', client must update its ''ListName'', ''GroupName'', and ''GroupRank''.
 
-:Player names should be grouped by ''GroupName'' in the player tab-list. Players within a ''GroupName'' should be sorted by ''GroupRank'' (in ascending order). Players within the same ''GroupName'' and ''GroupRank'' should be sorted alphabetically by ''ListName''. Color codes should be either drawn or stripped in ''ListName'', ''GroupName'', and ''InGameName''. Lists should persist when client changes worlds/maps.
+:Player names should be grouped by ''GroupName'' in the player tab-list. Players within a ''GroupName'' should be sorted by ''GroupRank'' (in ascending order). Players with the same ''GroupName'' and ''GroupRank'' should be sorted alphabetically by ''ListName''. Color codes should be either drawn or stripped in ''ListName'', ''GroupName'', and ''InGameName''. Lists should persist when client changes worlds/maps.
 
 :When an '''ExtAddEntity''' packet is received, it should be treated as the [[Classic_Protocol#Server_.E2.86.92_Client_packets|Spawn Player]] packet. ''InGameName'' should be shown above the player's heads in-game. Skin should be loaded from minecraft.net using the given ''SkinName'' for a player name. Client should still be ready to treat [[Classic_Protocol#Server_.E2.86.92_Client_packets|Spawn Player]] packets normally. When client receives '''ExtAddEntity''' packet for an already-spawned player, their ''InGameName'' and ''SkinName'' should be updated.
 
@@ -326,9 +326,9 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col0 centeralign" rowspan="5" | 0x16
 (22)
 | class="col1 centeralign" | PlayerID
-| class="col2 centeralign" | unsigned byte
+| class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>5</code>
-| class="col4" | Between 0 and 254
+| class="col4" | Between 0 and 127
 |- class="row2"
 | class="col1 centeralign" | PlayerName
 | class="col2 centeralign" | string
@@ -367,9 +367,9 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col0 centeralign" rowspan="3" | 0x17
 (23)
 | class="col1 centeralign" | PlayerID
-| class="col2 centeralign" | unsigned byte
+| class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>5</code>
-| class="col4" | Between 0 and 249
+| class="col4" | Between 0 and 127
 |- class="row2"
 | class="col1 centeralign" | InGameName
 | class="col2 centeralign" | string
