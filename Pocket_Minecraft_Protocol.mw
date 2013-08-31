@@ -2052,7 +2052,7 @@ If everything is good you need to send the StartGamePacket
 | Field Type
 | Notes
 |-
-| rowspan="3" | 0xae
+| rowspan="5" | 0xae
 | Entity ID
 | int
 | 
