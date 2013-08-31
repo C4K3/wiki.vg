@@ -2065,7 +2065,6 @@ If everything is good you need to send the StartGamePacket
 | short
 | 
 |-
-|-
 | Stack
 | byte
 |
