@@ -2140,7 +2140,7 @@ If everything is good you need to send the StartGamePacket
 | Field Type
 | Notes
 |-
-| rowspan="3" | 0xb1
+| rowspan="5" | 0xb1
 | Window ID
 | byte
 | 
