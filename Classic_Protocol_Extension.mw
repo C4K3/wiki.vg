@@ -295,7 +295,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |}
 
 ===ExtPlayerList===
-:'''Motivation''': This extension aims to provide more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. It also separates tracking of in-game entities (spawned player models) and names on the player list. ExtAddPlayerName/ExtRemovePlayerName packets take over managing the player names list (tab-list), and ExtAddEntity/DespawnPlayer packets are used only to manage in-game entities.
+:'''Motivation''': Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. ExtAddPlayerName/ExtRemovePlayerName packets take over managing the player names list (tab-list), and ExtAddEntity/DespawnPlayer packets are used only to manage in-game entities.
 
 :<h4>Client Behavior</h4>
 :When '''ExtAddPlayerName''' packet is received for an unrecognized ''NameID'', a new entry must be added to the autocompletion list and tab-list. When receiving '''ExtAddPlayerName''' packet for an already-listed ''NameID'', client must update its ''ListName'', ''GroupName'', and ''GroupRank''. Name list must persist when client changes worlds/maps.
