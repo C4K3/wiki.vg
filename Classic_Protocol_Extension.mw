@@ -99,7 +99,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 :'''Client behavior''': Client must expect a ''CustomBlockSupportLevel'' packet from a compatible server immediately after sending the last ''ExtEntry'' packet. It should then reply with its own ''CustomBlockSupportLevel'' packet, containing its actual support level. Client must then use the lower of the two levels in operation. Client must not send any block types that are not defined by the current support level. Client should expect ''Heartbeat'' packet only AFTER sending its ''CustomBlockSupportLevel'' packet.
 :'''Server behavior''': Server must send a ''CustomBlockSupportLevel'' packet to compatible clients immediately after receiving the last ''ExtEntry'' packet from the client. It should then wait to receive a ''CustomBlockSupportLevel'' packet from the client before sending the ''Handshake''. Server must then use the lower of the two levels in operation. If this level is lower than the server's, it has to filter data sent to the client, to make sure that the client never receives any block types that it does not support. Each level will define what substitutions to use.
 
-:<h4>CustomBlockSupportLevel packet</h4>
+====CustomBlockSupportLevel packet====
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
@@ -120,7 +120,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 | class="col1 rightalign" colspan="4" | 2
 |}
 
-:<h4>Blocks in support level 1</h4>
+====Blocks in support level 1====
 :Client must be able to receive/render all 16 custom blocks to claim support. Server must be able to receive/store all 16 custom blocks to claim support.
 {| class="wikitable"
 !Block name
@@ -133,12 +133,12 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |Slab
 |0x2C (44)
 |-
-|'''SpiderWeb'''
+|'''Rope'''
 |0x33 (51)
-|Sapling
-|0x06 (6)
+|BrownMushroom
+|0x27 (39)
 |-
-|'''SmoothSandstone'''
+|'''Sandstone'''
 |0x34 (52)
 |Sand
 |0x0C (12)
