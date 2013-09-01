@@ -459,7 +459,7 @@ Matches NameID of the ExtAddPlayerName packet
 
 ===SelectionCuboid===
 :
-:'''Motivation''': To allow the server to highlight parts of a world (e.g. for zoning). To allow players to preview draw commands, such as cuboids.
+:'''Motivation''': Allows the server to highlight parts of a world. Applications include zoning, previewing draw command size, previewing undo commands.
 :'''Client behavior''':
 :'''Server behavior''':
 
