@@ -629,3 +629,44 @@ Matches NameID of the ExtAddPlayerName packet
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 67 bytes
 |}
+
+:<h4>Available models</h4>
+:Client can render any or none of the below, but it is down to the client to handle what can and cannot be rendered if the packet is recieved
+:{| class="wikitable"
+!Model Name
+!Model String
+|-
+|'''Chicken'''
+|<code>chicken</code>
+|-
+|'''Block Model'''
+|<code>A valid block ID as string</code>
+|-
+|'''Creeper'''
+|<code>creeper</code>
+|-
+|'''Crocodile'''
+|<code>croc</code>
+|-
+|'''Humanoid'''
+|<code>humanoid</code> (or an invalid model name)
+|-
+|'''Pig'''
+|<code>pig</code>
+|-
+|'''Printer'''
+|<code>printer</code>
+|-
+|'''Sheep'''
+|<code>sheep</code>
+|-
+|'''Skeleton Archer'''
+|<code>skeleton</code>
+|-
+|'''Spider'''
+|<code>spider</code>
+|-
+|'''Zombie'''
+|<code>zombie</code>
+|-
+|}
