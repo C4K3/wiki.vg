@@ -591,7 +591,7 @@ Matches NameID of the ExtAddPlayerName packet
 1 = Allowed
 |- class="row2"
 | class="col1 centeralign" | AllowDeletion
-| class="col2 centeralign" | int
+| class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
 | class="col4" | 0 = Prohibited
 1 = Allowed
