@@ -640,7 +640,7 @@ Matches NameID of the ExtAddPlayerName packet
 |<code>chicken</code>
 |-
 |'''Block Model'''
-|<code>A valid block ID as string</code>
+|A valid block ID as a string
 |-
 |'''Creeper'''
 |<code>creeper</code>
