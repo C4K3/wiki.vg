@@ -617,8 +617,8 @@ Matches NameID of the ExtAddPlayerName packet
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x10
-(17)
+| class="col0 centeralign" rowspan="2" | 0x1D
+(29)
 | class="col0 centeralign" | PlayerID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | 5
