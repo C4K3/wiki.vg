@@ -601,9 +601,8 @@ Matches NameID of the ExtAddPlayerName packet
 |}
 
 ===ChangeModel===
-'''Client behavior''': The client will receive a PlayerID and a string value containing the model name. The client will then change the model of the player whose ID is the same as the received player ID packet. The model name will be parsed by the model manager and the model changed in game. If the model does not exists in the model manager or is 0-length, change the model back to humanoid. Alternatively, you can send the client an int converted to a string which represents a valid Block ID.
-
-'''Server behavior''': The server will send a PlayerID and then a ModelName to the client for a desired player. The model name must exist in the client and not be 0-length or default (humanoid) will be used instead. 
+:'''Client behavior''': The client will receive a ''EntityID'' and a string value containing the model name. The client will then change the model of the player whose ID is the same as the received '''AddEntity''' or '''ExtAddEntity''' packet. The model name will be parsed by the model manager and the model changed in game. If the model does not exists in the model manager or is 0-length, change the model back to humanoid. Alternatively, you can send the client an int converted to a string which represents a valid Block ID.
+:'''Server behavior''': The server will send a ''EntityID'' and then a ''ModelName'' to the client for a desired player. The model name must exist in the client and not be 0-length or default (humanoid) will be used instead. 
 
 :<h4>ChangeModel Packet</h4>
 :{| class="wikitable"
@@ -616,10 +615,10 @@ Matches NameID of the ExtAddPlayerName packet
 |- class="row1"
 | class="col0 centeralign" rowspan="2" | 0x1D
 (29)
-| class="col0 centeralign" | PlayerID
+| class="col0 centeralign" | EntityID
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | 5
-| class="col3" | Between 0 and 255
+| class="col3" | Between 0 and 127
 |- class="row2"
 | class="col1 centeralign" | ModelName
 | class="col2 centeralign" | string
