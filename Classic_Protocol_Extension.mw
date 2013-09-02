@@ -600,7 +600,7 @@ Matches NameID of the ExtAddPlayerName packet
 | class="col1 rightalign" colspan="4" | 4 bytes
 |}
 
-===Change Model===
+===ChangeModel===
 '''Client behavior''': The client will receive a PlayerID and a string value containing the model name. The client will then change the model of the player whose ID is the same as the received player ID packet. The model name will be parsed by the model manager and the model changed in game. If the model does not exists in the model manager or is 0-length, change the model back to humanoid.
 
 '''Server behavior''': The server will send a PlayerID and then a ModelName to the client for a desired player. The model name must exist in the client and not be 0-length or default (humanoid) will be used instead. 
