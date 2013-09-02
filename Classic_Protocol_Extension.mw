@@ -624,7 +624,7 @@ Matches NameID of the ExtAddPlayerName packet
 | class="col1 centeralign" | ModelName
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>spider</code>
-| class="col4" | The name of the model to be used OR a valid Block-ID.
+| class="col4" | The name of the model to be used OR a valid Block ID as a string.
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 67 bytes
