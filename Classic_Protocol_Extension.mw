@@ -533,8 +533,8 @@ Matches NameID of the ExtAddPlayerName packet
 | class="col1 centeralign" | Opacity
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>255</code>
-| class="col4" | 0x00 = fully transparent
-0xFF = fully opaque
+| class="col4" | 0 = fully transparent
+255 = fully opaque
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 82 bytes
