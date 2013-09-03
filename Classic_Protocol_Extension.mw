@@ -516,22 +516,22 @@ Matches NameID of the ExtAddPlayerName packet
 | class="col4" | Z coordinate of the ending point
 |- class="row9"
 | class="col1 centeralign" | Red
-| class="col2 centeralign" | Integer
+| class="col2 centeralign" | short
 | class="col3 centeralign" | <code>255</code>
 | class="col4" |
 |- class="row10"
 | class="col1 centeralign" | Green
-| class="col2 centeralign" | Integer
+| class="col2 centeralign" | short
 | class="col3 centeralign" | <code>34</code>
 | class="col4" |
 |- class="row11"
 | class="col1 centeralign" | Blue
-| class="col2 centeralign" | Integer
+| class="col2 centeralign" | short
 | class="col3 centeralign" | <code>128</code>
 | class="col4" |
 |- class="row12"
 | class="col1 centeralign" | Opacity
-| class="col2 centeralign" | Integer
+| class="col2 centeralign" | short
 | class="col3 centeralign" | <code>255</code>
 | class="col4" | 0x00 = fully transparent
 0xFF = fully opaque
