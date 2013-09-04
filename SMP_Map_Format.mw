@@ -40,7 +40,7 @@ The packet contains important metadata which you'll need to pull out. In the cas
 * Chunk Z
 * Primary Bitmask
 * Add Bitmask
-* Ground-up contiguous (only in 0x33 - assumed true in 0x38)
+* Ground-up continuous (only in 0x33 - assumed true in 0x38)
 * Skylight (only in 0x38 - assumed true in 0x33)
 
 === Data ===
