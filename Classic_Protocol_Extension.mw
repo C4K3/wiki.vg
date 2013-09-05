@@ -454,7 +454,7 @@ Matches NameID of the ExtAddPlayerName packet
 | class="col4" |
 |- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 5 bytes
+| class="col1 rightalign" colspan="4" | 8 bytes
 |}
 
 ===SelectionCuboid===
