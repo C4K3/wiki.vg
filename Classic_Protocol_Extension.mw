@@ -626,7 +626,7 @@ Matches NameID of the ExtAddPlayerName packet
 | class="col4" | The name of the model to be used OR a valid Block ID as a string.
 |- class="row3"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 67 bytes
+| class="col1 rightalign" colspan="4" | 66 bytes
 |}
 
 :<h4>Available models</h4>
