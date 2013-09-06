@@ -3,6 +3,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 == Protocol History ==
 13w36a - Added sound category byte to 0x3E
+- Changed 0xC8 to a string:int map
 
 == Protocol Version ==
 75
@@ -80,6 +81,42 @@ PLAYERS: 7
 | Total Size:
 | colspan="4" | 21 bytes + length of string
 |}
+
+=== Increment Statistic (0xC8) ===
+''Server to Client''
+
+{| class="wikitable"
+|-
+| Packet ID
+| colspan="2" | Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="3" | 0xC8
+| colspan="2" | Count
+| int
+| 5
+| Number of entrys
+|-
+| Entry
+| Statistic's name
+| string
+| 
+| 
+|-
+| Entry
+| Amount
+| int
+| 5
+| The amount to increase by
+|-
+| Total Size:
+| colspan="5" | 9 bytes
+|}
+
+{{anchor|0xC9}}
+
 
 == Removed Packets ==
 None
