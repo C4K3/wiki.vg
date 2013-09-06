@@ -2,16 +2,84 @@ This page documents the changes from the [[Protocol|last stable Minecraft releas
 He who wishes to commandeer the merging of this into [[Protocol]] when an update is made must be sure to respect any changes that may have occured to the respective packets there.
 
 == Protocol History ==
-None
+13w36a - Added sound category byte to 0x3E
 
 == Protocol Version ==
-None
+75
 
 == New Packets ==
 None
 
 == Changed Packets ==
-None
+=== Named Sound Effect (0x3E) ===
+''Server to client''
+
+Used to play a sound effect on the client.
+
+All known sound effect names can be seen [https://github.com/SirCmpwn/Craft.Net/blob/master/source/Craft.Net.Common/SoundEffect.cs here].
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="7" | 0x3E
+| Sound name
+| string
+| step.grass
+| 250
+|-
+| Effect position X
+| int
+| 250
+| effect X multiplied by 8
+|-
+| Effect position Y
+| int
+| 250
+| effect Y multiplied by 8
+|-
+| Effect position Z
+| int
+| 250
+| effect Z multiplied by 8
+|-
+| Volume
+| float
+| 9
+| 1 is 100%, can be more
+|-
+| Pitch
+| byte
+| 1
+| 63 is 100%, can be more
+|-
+| Sound Category
+| Unsigned byte
+| 6
+| Possible values:
+MASTER: 0
+
+MUSIC: 1
+
+RECORDS: 2
+
+WEATHER: 3
+
+BLOCKS: 4
+
+MOBS: 5
+
+ANIMALS: 6
+
+PLAYERS: 7
+|-
+| Total Size:
+| colspan="4" | 21 bytes + length of string
+|}
 
 == Removed Packets ==
 None
