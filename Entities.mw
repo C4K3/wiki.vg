@@ -273,6 +273,8 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 | 0.25
 |}
 
+Since Release 1.6, all minecarts are spawned with object type 10 and their visual is then sent via the [[http://wiki.vg/Entities#Minecart|Entity Metadata]] packet
+
 == Entity Metadata ==
 
 === Entity Metadata Format ===
