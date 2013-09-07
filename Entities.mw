@@ -219,23 +219,23 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 |- 
 | 63
 | FireBall (ghast projectile)
-| 
-| 
+| 1.0
+| 1.0
 |- 
 | 64
 | FireCharge (blaze projectile)
-| 
-| 
+| 0.3125
+| 0.3125
 |- 
 | 65
 | Thrown Enderpearl
-| 
-| 
+| 0.25
+| 0.25
 |- 
 | 66
 | Wither Skull (projectile)
-| 
-| 
+| 0.3125
+| 0.3125
 |- 
 | 70
 | Falling Objects
@@ -244,18 +244,18 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 |- 
 | 71
 | Item frames
-| ?
-| ?
+| varies
+| varies
 |- 
 | 72
 | Eye of Ender
-| 
-| 
+| 0.25
+| 0.25
 |- 
 | 73
 | Thrown Potion
-| 
-| 
+| 0.25
+| 0.25
 |- 
 | 74
 | Falling Dragon Egg
@@ -264,13 +264,13 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 |- 
 | 75
 | Thrown Exp Bottle
-| 
-| 
+| 0.25
+| 0.25
 |- 
 | 90
 | Fishing Float
-| 0.25?
-| 0.25?
+| 0.25
+| 0.25
 |}
 
 == Entity Metadata ==
