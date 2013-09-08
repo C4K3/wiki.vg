@@ -90,3 +90,28 @@ This includes ghast fireballs, arrows, and fishhooks (probably more).
 |}
 
 For more information on potion data values, see [http://www.minecraftwiki.net/wiki/Data_values#Potions].
+
+=== Minecarts ===
+
+The int value itself specifies the minecart's functionality:
+
+{| class="wikitable"
+|- class="row0"
+! class="col0" | Value
+! class="col1" | Minecart functionality
+|- class="row1"
+| class="col0 centeralign" | 0
+| class="col1 centeralign" | Empty (ride-able) minecart
+|- class="row2"
+| class="col0 centeralign" | 1
+| class="col1 centeralign" | Chest minecart
+|- class="row3"
+| class="col0 centeralign" | 2
+| class="col1 centeralign" | Furnace (powered) minecart
+|- class="row4"
+| class="col0 centeralign" | 3
+| class="col1 centeralign" | TNT minecart
+|- class="row5"
+| class="col0 centeralign" | 5
+| class="col1 centeralign" | Hopper minecart
+|}
