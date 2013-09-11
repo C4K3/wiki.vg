@@ -122,6 +122,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 
 :<h4>Blocks in support level 1</h4>
 :Client must be able to receive/render all 16 custom blocks to claim support. Server must be able to receive/store all 16 custom blocks to claim support.
+[[File:CPE_CustomBlocks_Level1.png]]
 :{| class="wikitable"
 !Block name
 !Block ID
