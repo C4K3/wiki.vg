@@ -4,9 +4,11 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 == Protocol History ==
 13w36a - Added sound category byte to 0x3E
 - Changed 0xC8 to a string:int map
+13w37b - 
 
 == Protocol Version ==
-75
+13w37b - 76
+13w36a - 75
 
 == New Packets ==
 None
