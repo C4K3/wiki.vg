@@ -121,5 +121,11 @@ PLAYERS: 7
 == Removed Packets ==
 None
 
-== Changed Data Types ==
-None
+== Plugin Channels ==
+
+=== MC|RPack ===
+{| class="wikitable"
+! Field Name !! Field Type !! Example !! Notes
+|-
+| Resource pack URL || UTF8 string || http://example.com/pack.zip || 
+|}
