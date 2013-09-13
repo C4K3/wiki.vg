@@ -14,6 +14,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 None
 
 == Changed Packets ==
+{{anchor|0x3E}}
 === Named Sound Effect (0x3E) ===
 ''Server to client''
 
@@ -84,6 +85,7 @@ PLAYERS: 7
 | colspan="4" | 21 bytes + length of string
 |}
 
+{{anchor|0xC8}}
 === Increment Statistic (0xC8) ===
 ''Server to Client''
 
@@ -116,8 +118,6 @@ PLAYERS: 7
 | Total Size:
 | colspan="5" | 9 bytes
 |}
-
-{{anchor|0xC9}}
 
 
 == Removed Packets ==
