@@ -28,6 +28,101 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 None
 
 == Changed Packets ==
+{{anchor|0x03}}
+=== Chat Message (0x03) ===
+
+The message from the server to the client can currently handle
+* A normal string that doesn't begin with ", { or [
+* A JSON string
+* A JSON array
+* A JSON object
+
+The JSON format works as follows (minus the //comments):
+    {
+        // Plain text
+        "text": "Hello world",
+        //or
+        // Translatable string
+        "translate": "multiplayer.player.joined",
+        "with": [
+            //This can be replaced another json object allowing the parts
+            //to be styled/translated seperately
+            "thinkofdeath",
+        ],
+        //Items in the extra section will be appended to the message.
+        //They can strings or json objects. If included the array must 
+        //not be empty
+        "extra": [
+            "Testing",
+            {"translate":"demo.day.2"}
+        ],
+        //Controls whether the text is bold or not. Default false
+        "bold":true,
+        //Controls whether the text is italic or not. Default false
+        "italic":false,
+        //Controls whether the text is underlined or not. Default false
+        "underlined": false, 
+        //Controls whether the text is striked out or not. Default false
+        "strikethrough": false,
+        //Controls whether the text is randomised constantly or not. Default false
+        "obfuscated": false,
+        //Controls the color of the text
+        //Supported 'colors':
+        // * black
+        // * dark_blue
+        // * dark_green
+        // * dark_aqua
+        // * dark_red
+        // * dark_purple
+        // * gold
+        // * gray
+        // * dark_gray
+        // * blue
+        // * green
+        // * aqua
+        // * red
+        // * light_purple
+        // * yellow
+        // * white
+        // * obfuscated
+        // * bold
+        // * strikethrough
+        // * underline
+        // * italic
+        // * reset
+        "color":"red",
+        //Executes the action once the text is clicked
+        "clickEvent":{
+            //The action to execute
+            //Supported actions:
+            // * open_url
+            // * open_file
+            // * run_command
+            // * suggest_command
+            "action":"run_command",
+            //The value to run the action with
+            //open_url: Url to open
+            //open_file: File to open
+            //run_command: Command to execute
+            //suggest_command: Text to place in the player's text box
+            "value": "/time set day",
+        },
+        //Displays the action apon hovering over the text
+        "hoverEvent": {
+            //The action to execute
+            //Supported actions
+            // * show_text
+            // * show_achievement
+            // * show_item
+            "action":"show_text",
+            //The value to the action with
+            //show_text: Text to display can be a JSON object
+            //show_achievement: Name of the achievemnt to display e.g: "achievement.openInventory"
+            //show_item: JSON version of the item, must be quoted. e.g: "{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"
+            "value": "Hello",
+        },
+    }
+
 {{anchor|0x3E}}
 === Named Sound Effect (0x3E) ===
 ''Server to client''
@@ -132,7 +227,6 @@ PLAYERS: 7
 | Total Size:
 | colspan="5" | 9 bytes
 |}
-
 
 == Removed Packets ==
 None
