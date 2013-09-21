@@ -22,21 +22,6 @@ A couple things for contributors:
 !style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
-! [https://github.com/JoeDoyle23/BurningPig BurningPig]
-| Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
-| [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.6.2}}
-| {{yes|Custom}}
-| {{planned}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Async Networking}}
-| {{no}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| [https://github.com/JoeDoyle23/BurningPig#current-features Link]
-| {{yes|Active}}
-|-
 ! [http://www.hcraft.org/ hCraft]
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
@@ -56,7 +41,7 @@ A couple things for contributors:
 | FakeTruth, xoft, [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Apache 2.0
-| {{yes|1.6.2}}
+| {{yes|1.6.4}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -67,11 +52,26 @@ A couple things for contributors:
 | [http://forum.mc-server.org/showthread.php?tid=499 Link]
 | {{yes|Active}}
 |-
+! [https://github.com/JoeDoyle23/BurningPig BurningPig]
+| Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
+| [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{no|1.6.2}}
+| {{yes|Custom}}
+| {{planned}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Async Networking}}
+| {{no}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| [https://github.com/JoeDoyle23/BurningPig#current-features Link]
+| {{yes|Active}}
+|-
 ! [https://github.com/thinkofdeath/netherrack Netherrack]
 | Thinkofdeath
 | [http://golang.org/ Go]
 | [http://www.gnu.org/licenses/gpl-3.0.html GNU GPL]
-| {{yes|1.6.2}}
+| {{no|1.6.2}}
 | {{yes|Anvil}}
 | {{no}}
 | {{no}}
@@ -87,7 +87,7 @@ A couple things for contributors:
 | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
 | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.6.2}}
+| {{no|1.6.2}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
