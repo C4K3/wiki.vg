@@ -32,6 +32,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{yes|1.6.2}}
 |-
+! [https://github.com/superjoe30/mineflayer mineflayer]
+| Create Minecraft bots with a powerful, stable, and high level JavaScript API.
+| [https://github.com/superjoe30 superjoe30]
+| [http://nodejs.org/ node.js]
+| {{MIT}}
+| {{no}}
+| {{no}}
+| {{yes|1.6.2}}
+|-
 ! [https://github.com/nickelpro/spock SpockBot]
 | SMP Bot framework, based on BarneyGale's protocol implementation
 | nickelpro
@@ -56,15 +65,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{C sharp}}
 | {{unknown|{{GPLv3}}? No mention of license in source}}
 | {{yes}}
-| {{no}}
-| {{supports|1.5.2}}
-|-
-! [https://github.com/superjoe30/mineflayer mineflayer]
-| Create Minecraft bots with a powerful, stable, and high level JavaScript API.
-| [https://github.com/superjoe30 superjoe30]
-| [http://nodejs.org/ node.js]
-| {{MIT}}
-| {{no}}
 | {{no}}
 | {{supports|1.5.2}}
 |-
