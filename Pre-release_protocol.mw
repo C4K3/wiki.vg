@@ -228,6 +228,30 @@ PLAYERS: 7
 | colspan="5" | 9 bytes
 |}
 
+{{anchor|0xCD}}
+=== Client Statuses (0xCD) ===
+''Client to server''
+
+Sent when the client is ready to complete login and when the client is ready to respawn after death.
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="1" | 0xCD
+| Payload
+| byte
+| 0
+| Bit field. 0: Initial spawn, 1: Respawn after death, '''2: Request statistics'''
+|-
+| Total Size:
+| colspan="5" | 2 bytes
+|}
+
 == Removed Packets ==
 None
 
