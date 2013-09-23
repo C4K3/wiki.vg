@@ -71,7 +71,7 @@ These are some of the errors that can be encountered:
 | <code>Unsupported Media Type</code>
 | 
 | The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method
-|
+| Data was not submitted as application/json
 |}
 
 == Session ID ==
