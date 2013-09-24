@@ -1,3 +1,35 @@
-'''hCraft''' is a custom Minecraft server (currently implementing the 39th protocol revision, 1.3.2).
+{{Box|
+BORDER = #E80E27|
+BACKGROUND = #D60F52|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Introduction''' |
+CONTENT =
+[[Image:HCraft-overhang.png|thumb|border|right|top|400px|hCraft's "overhang" world generator]]
+'''hCraft''' is a custom server written in C++ by BizarreCake, currently implementing the 78th version of the protocol (1.6.4).
 
-More information will be posted soon.
+Although hCraft is designed at its core to become a general purpose server, it is currently leaning towards classic/creative functionality.
+Inspired by many classic custom servers, such as: WoM 2009, the new WoM (WoM Realms), D3, MCSharp/MCZall/MCLawl, and fCraft.
+
+hCraft's website can be found at: [http://www.hCraft.org/ www.hCraft.org] (It may be outdated at times) <br />
+Source code can be found at [http://www.github.com/BizarreCake/hCraft github].
+}}
+
+{{Box|
+BORDER = #6689F2|
+BACKGROUND = #3465F7|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Multiworld''' |
+CONTENT =
+[[Image:HCraft-multiworld.png|thumb|border|right|top|400px|A 32x32 flatgrass world.]]
+[[Image:HCraft-super-overhang.png|thumb|border|right|top|400px|The "Super Overhang" world generator]]
+hCraft has been designed to be a fully multiworld server from the grounds up.
+Players can create worlds, switch between them at any time, backup them, restore them from backups, regenerate, resize, etc...
+
+Every world has its own world generator, provider (determines the format from which the world is loaded/saved to) and physics threads (up to 24).
+
+And just like the good ol' classic days, worlds can have a finite size and have that awesome border (although they can be infinite as well).
+
+
+}}
