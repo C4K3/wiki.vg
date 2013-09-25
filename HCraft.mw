@@ -163,3 +163,32 @@ Thus, to change someone's rank to, say, Builder + Member, one would type:
 : ''/rank someone123 @Builder;Member''
 
 }}
+
+{{Box|
+BORDER = #B22222|
+BACKGROUND = #8B0000|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Moderation''' |
+CONTENT =
+hCraft has a handful of commands to deal with pesky players:
+; /kick [-m <kick msg>] <player> [reason]
+: Kicks the specified player, and logs the given reason (or "No reason specified", if not present). Optionally shows the kicked player <kick msg> if specified.
+; /mute <player> <time>
+: Mutes the specified player for the given amount of time. (examples of <time>: 5, 10s, 8m, 3h20s, 2d5m, etc...)
+; /unmute <player>
+: Unmutes the specified player.
+; /ban [-i] <player/ip>
+: If the -i option is not present, issues a regular ban on the specified name; otherwise, issue an IP ban.
+; /unban [-i] <player/ip>
+: Unbans the specified player (or IP address, if -i is present).
+; /status <player>
+: Displays all kinds of information about <player>. Such as their IP address, blocks destroyed, first login, etc...
+
+Handling griefers is pretty easy, hCraft also offers the following command:
+; /whodid
+: Displays the selected block's modification history (who destroyed/created it, when, what type it was before it got destroyed, etc...)
+; /undo <player> <time>
+: Undoes all block modification made by the specified player in the past <time> (<time>'s format is the same one used by ''/mute'')
+
+}}
