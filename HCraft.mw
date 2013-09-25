@@ -27,7 +27,8 @@ WIDTH = 100%|
 ICON = |
 HEADING = '''Multiworld''' |
 CONTENT =
-[[Image:HCraft-multiworld.png|thumb|border|right|top|400px|A 32x32 flatgrass world.]]
+[[Image:HCraft-multiworld.png|thumb|border|right|top|300px|A 32x32 flatgrass world.]]
+[[Image:HCraft-super-overhang.png|thumb|border|right|top|300px|The "experiment" world generator (super overhang biome)]]
 hCraft has been designed to be a fully multiworld server from the grounds up.
 Players can create worlds, switch between them at any time, backup them, restore them from backups, regenerate, resize, etc...
 
