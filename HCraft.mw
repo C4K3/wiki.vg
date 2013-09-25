@@ -125,5 +125,41 @@ These commands include:
 * '''/sphere [-f] <block> [radius]'''
 * '''/circle [-f] <block> [plane] [radius]'''
 * '''/ellipse [-f] <block> [plane] [a] [b]'''
+* '''/line [-c] <block>'''
+* '''/bezier <block> <cp>'''
+* '''/curve <block>'''
+
+}}
+
+{{Box|
+BORDER = #4AE859|
+BACKGROUND = #57BF11|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Ranks''' |
+CONTENT =
+Groups (we will get to ranks in a moment) in hCraft are fully customizable, and can be changed by modifying the ''ranks.cfg'' file.
+When the server is first created, there will be ten initial groups (in descending order):
+# '''<span style="color:#FFAA00">Owner</span>'''
+# '''<span style="color:#FFFF55">Executive</span>'''
+# '''<span style="color:#AA0000">Admin</span>'''
+# '''<span style="color:#FF5555">Moderator</span>'''
+# '''<span style="color:#00AAAA">Architect</span>'''
+# '''<span style="color:#55FFFF">Designer</span>'''
+# '''<span style="color:#00AA00">Builder</span>'''
+# '''<span style="color:#55FF55">Member</span>'''
+# '''<span style="color:#AAAAAA">Guest</span>''' ''(default rank)''
+# '''<span style="color:#555555">Spectator</span>'''
+Again, these are fully customizable, and can be changed.
+
+Ranks, are essentially a collection of groups, out of which one group is defined to be the main one.
+To change someone's rank in-game, one should use the '''/rank''' command:
+; /rank <player> <rank>
+: Changes <player>'s rank to <rank>
+The rank should be in the following form:
+: <group1>;<group2>;...;<groupN>
+Unless a @ is prepended to a group's name, the first group will be set as the main one.
+Thus, to change someone's rank to, say, Builder + Member, one would type:
+: ''/rank someone123 @Builder;Member''
 
 }}
