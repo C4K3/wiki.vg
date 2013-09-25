@@ -45,6 +45,14 @@ Some world-related commands:
 : Unloads the world <world name>. The -a option will remove the world from the "autoload" list.
 ; /goto <world name>
 : Teleports the player into the specified world.
+; /world regenerate <generator>
+: Changes the world's generator, and completely overwrites all chunks.
+; /world resize <width> <depth>
+: Resizes the world (this preserves all existing chunks)
+; /world backup
+: Stores a backup of the world.
+; /world restore <num>
+: Restores backup number <num>.
 }}
 
 {{Box|
