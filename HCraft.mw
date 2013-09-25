@@ -8,7 +8,7 @@ CONTENT =
 [[Image:HCraft-overhang.png|thumb|border|right|top|300px|hCraft's "overhang" world generator]]
 '''hCraft''' is a custom server written in C++ by BizarreCake, currently implementing the 78th version of the protocol (1.6.4).
 
-Although hCraft is designed to become a general purpose server, it is currently leaning towards classic/creative functionality.
+Although hCraft is designed to become a general purpose server, it is currently leaning towards implementing mostly classic/creative functionality.
 Inspired by many classic custom servers, such as: WoM 2009, the new WoM (WoM Realms), D3, MCSharp/MCZall/MCLawl, and fCraft.
 
 hCraft uses MySQL for most of its needs.
