@@ -186,7 +186,7 @@ hCraft has a handful of commands to deal with pesky players:
 ; /status <player>
 : Displays all kinds of information about <player>. Such as their IP address, blocks destroyed, first login, etc...
 
-Handling griefers is pretty easy, hCraft also offers the following command:
+Handling griefers is pretty easy, hCraft also offers the following commands:
 ; /whodid
 : Displays the selected block's modification history (who destroyed/created it, when, what type it was before it got destroyed, etc...)
 ; /undo <player> <time>
