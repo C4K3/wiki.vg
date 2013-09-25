@@ -59,6 +59,7 @@ Initially, all worlds share a single block physics thread spawned by the server 
 
 hCraft supports various ''custom blocks'' - regular blocks that have a special behaviour associated with them. Internally, they are usually assigned a custom ID (starting at 2000), and are converted transparently to the right type of blocks when sent to the player. Currently implemented custom blocks include: activewater (the type of water that existed in classic Minecraft), Langton's ant, sharks, fireworks, etc...
 
+Custom block behaviour can be also attached to regular blocks, using the '''/bt''' (block type) and '''/bp''' (block physics) commands.  It is possible to convert any selected blocks into ''doors'' (that is, classic MCSharp/MCZall doors) just by selecting a bunch of blocks and typing ''/bt door''.
 
 World physics can be stopped, paused, and resumed at any time using the '''/physics''' command.
 }}
