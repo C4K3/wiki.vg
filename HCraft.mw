@@ -99,7 +99,7 @@ Selection manipulation is mostly done using only one command, the '''/select''' 
 
 Once the selection(s) have been created, the user may then continue to manipulate them using several commands, some include:
 ; /fill [-r 0-100] [-f <max>] <block>
-: Fills all visible selection with the specified block.
+: Fills all visible selections with the specified block.
 ; /fill <old> <new>
 : Like the regular fill (accepts the same options too), but instead replaces blocks of type <old> with <new>.
 ; /bt <type>
