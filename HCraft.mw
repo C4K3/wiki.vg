@@ -63,3 +63,49 @@ Custom block behaviour can be also attached to regular blocks, using the '''/bt'
 
 World physics can be stopped, paused, and resumed at any time using the '''/physics''' command.
 }}
+
+{{Box|
+BORDER = #72F29B|
+BACKGROUND = #16F2CA|
+WIDTH = 100%|
+ICON = |
+HEADING = '''Building and selections''' |
+CONTENT =
+[[Image:HCraft-selections1.png|thumb|border|right|top|250px|An empty cuboid selection]]
+[[Image:HCraft-selections2.png|thumb|border|right|top|250px|The same selection after being filled with obsidian]]
+[[Image:HCraft-selections3.png|thumb|border|right|top|250px|Empty spheroid selection]]
+[[Image:HCraft-selections4.png|thumb|border|right|top|250px|Same selection filled with red wool]]
+
+Very similiar to ''action blocks'' in MinerCPP, and selections in WorldEdit (except that selections in hCraft are visible).
+
+Selection manipulation is mostly done using only one command, the '''/select''' command, or just '''/s''' for short, here are some things that you can do:
+; /s new [@<name>] <cuboid/sphere>
+: Creates a new selection of the specified type, optionally assigning it the given name.
+; /s 1/2/3/...
+: Sets the selected point to the player's current location.
+; /s show/hide <@name>/all/visible/hidden
+: Shows or hides the specified selection(s).
+; /s move x/y/z/xy/xz/yz/xyz <num>
+: Moves all visible selection <num> blocks in the specified direction(s).
+; /s contract/expand x/y/z/xy/... <num>
+: Expands or contracts all visible selections <num> blocks in the given direction(s).
+; /s delete <@name>
+: Removes the specified selection.
+; /s clear
+: Clears all selections
+; /s all [but/except] <block types....>
+: Very powerful command! Filters the specified blocks from all visible selections and creates a new composite selection containing only the selected blocks.
+: Examples: ''/s all but air'', ''/s all grass stone wood''.
+
+Once the selection(s) have been created, the user may then continue to manipulate them using several commands, some include:
+; /fill [-r 0-100] [-f <max>] <block>
+: Fills all visible selection with the specified block.
+; /fill <old> <new>
+: Like the regular fill (accepts the same options too), but instead replaces blocks of type <old> with <new>.
+; /bt <type>
+: Converts all non-air blocks in all visible selections to the specified block type.
+; /bp <type> <physics>
+: Applies custom block physics to all blocks of type <type>.
+
+
+}}
