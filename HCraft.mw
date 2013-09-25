@@ -107,5 +107,13 @@ Once the selection(s) have been created, the user may then continue to manipulat
 ; /bp <type> <physics>
 : Applies custom block physics to all blocks of type <type>.
 
+----
+Aside from selections, there is another way to fill world regions with some block - the same way it has been done in most classic custom servers.
+Instead of creating selections and marking the points using ''/s 1'' and ''/s 2'', the second type of building commands require the user to mark the blocks by either placing or destroying a block. <br />
+These commands include:
+* '''/cuboid''' or just '''/c'''
+* '''/sphere [-f] <block> [radius]'''
+* '''/circle [-f] <block> [plane] [radius]'''
+* '''/ellipse [-f] <block> [plane] [a] [b]'''
 
 }}
