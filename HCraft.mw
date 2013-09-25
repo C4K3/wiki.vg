@@ -11,6 +11,8 @@ CONTENT =
 Although hCraft is designed to become a general purpose server, it is currently leaning towards classic/creative functionality.
 Inspired by many classic custom servers, such as: WoM 2009, the new WoM (WoM Realms), D3, MCSharp/MCZall/MCLawl, and fCraft.
 
+hCraft uses MySQL for most of its needs.
+
 ===== Links: =====
 :Website: [http://www.hCraft.org/ www.hCraft.org] (Outdated at times) <br />
 :Source code: [http://www.github.com/BizarreCake/hCraft www.github.com/BizarreCake/hCraft].
