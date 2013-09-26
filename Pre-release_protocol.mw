@@ -295,10 +295,10 @@ The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only
 | 0
 |
 |-
-| Game mode?
+| Value
 | '''float'''
 | 0
-| Used only when reason = 3. 0 is survival, 1 is creative.
+| Depends on reason
 |-
 | Total Size:
 | colspan="4" | 3 bytes
@@ -310,7 +310,7 @@ The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only
 |-
 ! Code
 ! Effect
-! Text
+! Notes
 |-
 | 0
 | Invalid Bed
@@ -318,23 +318,23 @@ The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only
 |-
 | 1
 | Begin raining
-| null
+| 
 |-
 | 2
 | End raining
-| null
+| 
 |-
 | 3
 | Change game mode
-| gameMode.changed
+| "gameMode.changed" 0 - Survival, 1 - Creative, 2 - Adventure 
 |-
 | 4
 | Enter credits
 |
 |-
 | 5
-| Something to do with demo?
-|
+| Demo messages
+| 0 - Show welcome to demo screen, 101 - Tell movement controls, 102 - Tell jump control, 103 - Tell inventory control
 |-
 | 6
 | 
