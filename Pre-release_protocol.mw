@@ -342,7 +342,7 @@ The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only
 |-
 | 7
 | Fade value
-| The current darkness value. 1 = Dark, 0 = Bright
+| The current darkness value. 1 = Dark, 0 = Bright, Setting the value higher causes the game to change color and freeze
 |-
 | 8
 | Fade time
