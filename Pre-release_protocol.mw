@@ -13,7 +13,11 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 13w38a/b/c -
 
+13w39a - UUIDs added to spawn named entity, game state 'gamemode' byte -> float
+
 == Protocol Version ==
+13w39a - 80
+
 13w38a/b/c - 79
 
 1.6.4 - 78
@@ -123,6 +127,79 @@ The JSON format works as follows (minus the //comments):
         },
     }
 
+{{anchor|0x14}}
+=== Spawn Named Entity (0x14) ===
+''Server to Client''
+
+The only named entities (at the moment) are players (either real or NPC/Bot). This packet is sent by the server when a player comes into visible range, '''not''' when a player joins.
+
+Servers can, however, safely spawn player entities for players not in visible range. The client appears to handle it correctly.
+
+At one point, the Notchian client was not okay with receiving player entity packets, including 0x14, that refer to its own username or Entity ID; and would teleport to the absolute origin of the map and fall through the Void any time it received them. However, in more recent versions, it appears to handle them correctly, by spawning a new entity as directed (though future packets referring to the entity ID may be handled incorrectly).
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="9" | 0x14
+| Entity ID
+| int
+| <code>94453</code>
+| Player ID
+|-
+| Player Name
+| string
+| <code>Twdtwd</code>
+| Max length of 16
+|-
+| '''Player UUID'''
+| string
+| <code></code>
+| 
+|-
+| X
+| int
+| <code>784</code>
+| Player X as a [[Data_Types#Fixed-point_numbers|fixed-point number]]
+|-
+| Y
+| int
+| <code>2131</code>
+| Player Y as [[Data_Types#Fixed-point_numbers|fixed-point number]]
+|-
+| Z
+| int
+| <code>-752</code>
+| Player Z as [[Data_Types#Fixed-point_numbers|fixed-point number]]
+|-
+| Yaw
+| byte
+| <code>0</code>
+| Player rotation as a packed byte
+|-
+| Pitch
+| byte
+| <code>0</code>
+| Player rotation as a packed byte
+|-
+| Current Item
+| short
+| <code>0</code>
+| The item the player is currently holding. Note that this should be 0 for "no item", unlike -1 used in other packets. A negative value crashes clients.
+|-
+| Metadata
+| [[Entities#Entity_Metadata_Format|Metadata]]
+| <code></code>
+| The 1.3 client crashes on packets with no metadata, but the server can send any metadata key of 0, 1 or 8 and the client is fine.
+|-
+| Total Size:
+| colspan="4" | 24 bytes + length of strings + metadata (at least 1)
+|}
+
 {{anchor|0x3E}}
 === Named Sound Effect (0x3E) ===
 ''Server to client''
@@ -192,6 +269,67 @@ PLAYERS: 7
 |-
 | Total Size:
 | colspan="4" | 21 bytes + length of string
+|}
+
+
+{{anchor|0x46}}
+=== Change Game State (0x46) ===
+''Server to Client''
+
+This packet appeared with protocol version 10. Currently, it appears when a bed can't be used as a spawn point and when the rain state changes.  it could have additional uses in the future.
+
+The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only the codes for 1 and 2 are null.
+
+{| class="wikitable"
+|-
+| Packet ID
+| Field Name
+| Field Type
+| Example
+| Notes
+|-
+| rowspan="2" | 0x46
+| Reason
+| byte
+| 0
+|
+|-
+| Game mode?
+| '''float'''
+| 0
+| Used only when reason = 3. 0 is survival, 1 is creative.
+|-
+| Total Size:
+| colspan="4" | 3 bytes
+|}
+
+'''Reason codes'''
+
+{| class="wikitable"
+|-
+! Code
+! Effect
+! Text
+|-
+| 0
+| Invalid Bed
+| "tile.bed.notValid"
+|-
+| 1
+| Begin raining
+| null
+|-
+| 2
+| End raining
+| null
+|-
+| 3
+| Change game mode
+| gameMode.changed
+|-
+| 4
+| Enter credits
+|
 |}
 
 {{anchor|0xC8}}
