@@ -337,7 +337,7 @@ The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only
 | 0 - Show welcome to demo screen, 101 - Tell movement controls, 102 - Tell jump control, 103 - Tell inventory control
 |-
 | 6
-| 
+| Bow hit sound
 |
 |-
 | 7
