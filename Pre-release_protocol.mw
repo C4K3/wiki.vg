@@ -341,12 +341,12 @@ The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only
 |
 |-
 | 7
-| 
-|
+| Fade value
+| The current darkness value. 1 = Dark, 0 = Bright
 |-
 | 8
-| 
-|
+| Fade time
+| Time in ticks for the sky to fade
 |}
 
 {{anchor|0xC8}}
