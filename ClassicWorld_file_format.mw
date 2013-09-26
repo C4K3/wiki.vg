@@ -1,5 +1,8 @@
 '''ClassicWorld World Format''' is a level format devised by [[User:Tyteen4a03|tyteen4a03]] with input from [[User:F|fragmer]] for all Classic Custom Servers to use. Originally designed for [https://github.com/tyteen4a03/cloudBox cloudBox], it is designed in order for every servers that implement [[Classic Protocol Extension]] to also be able to share world formats. This will allow server owners to switch solutions easily according to their needs, and ensure that CPE is well-implemented in all servers.
 
-== Implementation ==
+== Specification ==
 
-The current implementation for the world format can be found [https://github.com/tyteen4a03/cloudBox/blob/master/docs/worldFormat here]. The section about CPE can be found [https://github.com/tyteen4a03/cloudBox/blob/master/docs/worldFormat-CPE here].
+The current specfication for the world format can be found [https://github.com/tyteen4a03/cloudBox/blob/master/docs/worldFormat here]. The section about CPE can be found [https://github.com/tyteen4a03/cloudBox/blob/master/docs/worldFormat-CPE here].
+
+== Support ==
+These custom servers plan to add support for CPE: [http://github.com/tyteen4a03/cloudBox cloudBox], [http://www.fcraft.net/ fCraft], [http://femto.fcraft.net/ FemtoCraft]
