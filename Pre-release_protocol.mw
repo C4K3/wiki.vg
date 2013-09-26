@@ -151,15 +151,15 @@ At one point, the Notchian client was not okay with receiving player entity pack
 | <code>94453</code>
 | Player ID
 |-
-| Player Name
-| string
-| <code>Twdtwd</code>
-| Max length of 16
-|-
 | '''Player UUID'''
 | string
 | <code></code>
 | 
+|-
+| Player Name
+| string
+| <code>Twdtwd</code>
+| Max length of 16
 |-
 | X
 | int
@@ -201,6 +201,7 @@ At one point, the Notchian client was not okay with receiving player entity pack
 |}
 
 {{anchor|0x3E}}
+
 === Named Sound Effect (0x3E) ===
 ''Server to client''
 
