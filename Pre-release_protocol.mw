@@ -331,9 +331,26 @@ The class has an array of strings linked to reason codes 0, 1, 2, and 3 but only
 | 4
 | Enter credits
 |
+|-
+| 5
+| Something to do with demo?
+|
+|-
+| 6
+| 
+|
+|-
+| 7
+| 
+|
+|-
+| 8
+| 
+|
 |}
 
 {{anchor|0xC8}}
+
 === Increment Statistic (0xC8) ===
 ''Server to Client''
 
