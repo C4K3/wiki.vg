@@ -13,10 +13,10 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 13w38a/b/c -
 
-13w39a - UUIDs added to spawn named entity, game state 'gamemode' byte -> float
+13w39a/b - UUIDs added to spawn named entity, game state 'gamemode' byte -> float
 
 == Protocol Version ==
-13w39a - 80
+13w39a/b - 80
 
 13w38a/b/c - 79
 
