@@ -77,7 +77,7 @@ Every packet starts with a byte representing the Packet ID.
 ! Notes
 |-
 |rowspan=5| 0x00
-|rowspan=5| Handshake
+|rowspan=5| Player Identification
 | Packet ID || Byte
 |rowspan=5| Sent by a player joining a server with relevant information.  Current protocol version is 0x07.
 |-
