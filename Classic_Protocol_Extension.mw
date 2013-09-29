@@ -673,7 +673,7 @@ Matches NameID of the ExtAddPlayerName packet
 
 ===EnvMapAppearance===
 :This extension allows the server to specify custom terrain textures, and tweak appearance of map edges.
-:'''Motivation''': TODO
+:'''Motivation''': To provide more ways to customize map appearance, including functionality that's currently provided by [http://files.worldofminecraft.com/texturing/ World of Minecraft's scheme].
 :'''Client behavior:''' TBD
 :'''Server behavior:''' TBD
 
