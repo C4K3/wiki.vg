@@ -460,8 +460,9 @@ Matches NameID of the ExtAddPlayerName packet
 
 ===SelectionCuboid===
 :'''Motivation''': Allows the server to highlight parts of a world. Applications include zoning, previewing draw commands, previewing undo commands.
-:'''Client behavior''': Client should be ready to receive '''MakeSelection''' packets any time after [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize packet]]. {''StartX'',''StartY'',''StartZ''} are coordinates of the block inside the selection that is closest to the map origin. {''EndX'',''EndY'',''EndZ''} are coordinates of the block inside the selection that is furthest from the map origin. Therefore, the resulting selection has dimensions {''EndX''-''StartX''+1, ''EndY''-''StartY''+1, ''EndZ''-''StartZ''+1). When map changes (i.e. when [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize packet]] is received), all existing selections should be removed. '''RemoveSelection''' packets that refer to non-existent ''SelectionID''s should be ignored.
-:'''Server behavior''': All given coordinates must be contained within the map.
+:'''Coordinates''': {''StartX'',''StartY'',''StartZ''} are coordinates of the block inside the selection that is closest to the map origin. {''EndX'',''EndY'',''EndZ''} are coordinates of the block inside the selection that is furthest from the map origin. Therefore, the resulting selection has dimensions {''EndX''-''StartX''+1, ''EndY''-''StartY''+1, ''EndZ''-''StartZ''+1).
+:'''Client behavior''': Client should be ready to receive '''MakeSelection''' packets any time after [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize packet]]. Supporting ''Opacity'' is optional: the client may opt to provide fixed opacity instead. Selections that extend outside the map may be either ignored or clipped to fit. Selections with inconsistent coordinates (e.g. where ''StartX''<''EndX'') may either be ignored or re-ordered. Out-of-range values for ''Red'', ''Green'', ''Blue'', and ''Opacity'' should be clipped to fit the valid range. When map changes (i.e. when [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize packet]] is received), all existing selections should be removed. '''RemoveSelection''' packets that refer to non-existent ''SelectionID''s should be ignored.
+:'''Server behavior''': All given coordinates must be contained within the map. End coordinates should be higher or equal than start coordinates.
 
 :<h4>MakeSelection packet</h4>
 :''Server to Client''
@@ -518,17 +519,17 @@ Matches NameID of the ExtAddPlayerName packet
 | class="col1 centeralign" | Red
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>255</code>
-| class="col4" |
+| class="col4" |Between 0 and 255.
 |- class="row10"
 | class="col1 centeralign" | Green
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>34</code>
-| class="col4" |
+| class="col4" |Between 0 and 255.
 |- class="row11"
 | class="col1 centeralign" | Blue
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>128</code>
-| class="col4" |
+| class="col4" |Between 0 and 255.
 |- class="row12"
 | class="col1 centeralign" | Opacity
 | class="col2 centeralign" | short
