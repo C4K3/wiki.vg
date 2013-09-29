@@ -460,8 +460,8 @@ Matches NameID of the ExtAddPlayerName packet
 
 ===SelectionCuboid===
 :'''Motivation''': Allows the server to highlight parts of a world. Applications include zoning, previewing draw commands, previewing undo commands.
-:'''Client behavior''': When map changes (i.e. when [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize packet]] is received), all existing selections should be removed.
-:'''Server behavior''':
+:'''Client behavior''': Client should be ready to receive '''MakeSelection''' packets any time after [[http://wiki.vg/Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize packet]]. {''StartX'',''StartY'',''StartZ''} are coordinates of the block inside the selection that is closest to the map origin. {''EndX'',''EndY'',''EndZ''} are coordinates of the block inside the selection that is furthest from the map origin. Therefore, the resulting selection has dimensions {''EndX''-''StartX''+1, ''EndY''-''StartY''+1, ''EndZ''-''StartZ''+1). When map changes (i.e. when [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize packet]] is received), all existing selections should be removed. '''RemoveSelection''' packets that refer to non-existent ''SelectionID''s should be ignored.
+:'''Server behavior''': All given coordinates must be contained within the map.
 
 :<h4>MakeSelection packet</h4>
 :''Server to Client''
