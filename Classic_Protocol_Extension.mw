@@ -459,9 +459,8 @@ Matches NameID of the ExtAddPlayerName packet
 |}
 
 ===SelectionCuboid===
-:
-:'''Motivation''': Allows the server to highlight parts of a world. Applications include zoning, previewing draw command size, previewing undo commands.
-:'''Client behavior''':
+:'''Motivation''': Allows the server to highlight parts of a world. Applications include zoning, previewing draw commands, previewing undo commands.
+:'''Client behavior''': When map changes (i.e. when [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize packet]] is received), all existing selections should be removed.
 :'''Server behavior''':
 
 :<h4>MakeSelection packet</h4>
