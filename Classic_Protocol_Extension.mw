@@ -16,6 +16,8 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 
 '''Server behavior''': All standard/non-extended clients pad this packet with <code>0x00</code>, so extended servers can easily notice extended clients. All standard/non-extended servers will ignore the modified padding byte, preserving compatibility. When the server sees that padding byte is <code>0x42</code>, it must immediately reply with an '''''ExtInfo''''' packet, followed by zero or more '''''ExtEntry''''' packets, and await a response ('''''ExtInfo''''' packet) from the client. Client will respond with one '''''ExtInfo''''' and zero or more '''''ExtEntry''''' packets. Server must then compare its locally-supported set of extensions with the list of extensions provided by the client, and find an intersection of these sets. These are the mutually-supported extensions. After receiving the last of '''''ExtEntry''''' packets, server should activate all mutually-supported extensions and resume normal login procedure.
 
+'''Note''': Do not make any assumptions about supported functionality based on the ''AppName'' field. It's for logging purposes only.
+
 :<h4>ExtInfo Packet</h4>
 :{| class="wikitable"
 |- class="row0"
