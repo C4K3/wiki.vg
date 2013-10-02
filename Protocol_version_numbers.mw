@@ -4,6 +4,10 @@ This page lists the protocol version numbers used in the various MC releases. Of
 | class="col0" | Version number
 | class="col1" | Release name
 | class="col4" | Notes
+|- class="row51"
+| class="col0 centeralign" | '''79'''
+| class="col1 centeralign" | '''1.6.4'''
+| class="col2 centeralign" |
 |- class="row50"
 | class="col0 centeralign" | '''74'''
 | class="col1 centeralign" | '''1.6.2'''
