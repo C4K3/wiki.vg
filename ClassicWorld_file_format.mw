@@ -62,7 +62,7 @@ The purpose of the ''Fallback'' array is to allow servers with lower ''SupportLe
 
 ===EnvColors===
  TAG_Compound("EnvColors"): 6 entries {
-   TAG_Int("ExtensionVersion"): 1
+   TAG_Int("ExtensionVersion")
    TAG_Compound("Sky"): 3 entries {
      TAG_Short("R")
      TAG_Short("G")
@@ -88,6 +88,15 @@ The purpose of the ''Fallback'' array is to allow servers with lower ''SupportLe
      TAG_Short("G")
      TAG_Short("B")
    }
+ }
+
+===EnvMapAppearance===
+ TAG_Compound("EnvMapAppearance"): 5 entries {
+   TAG_Int("ExtensionVersion")
+   TAG_String("TextureURL")
+   TAG_Byte("SideBlock")
+   TAG_Byte("EdgeBlock")
+   TAG_Short("SideLevel")
  }
 
 == Support ==
