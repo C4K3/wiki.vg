@@ -95,8 +95,8 @@ In the common case of 1 byte or 1 integer being attached to every block/coordina
 When more fixed-length data is needed, use one or more List tags, each of the same length and order as BlockArray.
 
 When a variable amount of information is needed to be stored for every block/coordinate, use a List of Compound tags. Again, same length and order as BlockArray should be used.
- TAG_Compound("(SomeSoftware)") {
-   TAG_Compound("(SomeGroup)") {
+ TAG_Compound("SomeSoftware") {
+   TAG_Compound("SomeGroup") {
      TAG_Byte_Array("OneByteForEveryBlock")
      TAG_Int_Array("OneIntForEveryBlock")
      TAG_List("CustomDataForEveryBlock")
