@@ -2,7 +2,7 @@
 
 ==Specification==
 ===Basic structure===
-All tags are required, unless noted otherwise.
+All tags are required, unless noted otherwise. Also note that ordering of named tags cannot always be guaranteed in NBT libraries. Therefore, when reading files, do not assume a specific order of named tags within a compound tag. However, when writing files, do try to stick to this order if possible.
  TAG_Compound("ClassicWorld"): 14 entries {
    TAG_Byte("LevelVersion")
    TAG_String("Name")
@@ -47,13 +47,13 @@ All tags are required, unless noted otherwise.
 **'''Z''' is the second horizontal component of player's position.
 **'''H''' is the heading (yew) component of player's orientation.
 **'''P''' is the pitch component of player's orientation.
-*'''BlockArray''' contains the actual block data, 1 byte per block. Same packing order as in [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk packets]].
 *'''''CreatedBy''''' identifies the creator of this map. Optional compound.
 **'''''Username''''' is the name of a player.
 **'''''Service''''' can be "Minecraft" (for Minecraft.net usernames) or "ClassiCube" (for ClassiCube.net usernames).
 *'''''MapGenerator''''' contains information related to map generation. Optional compound.
 **'''''Software''''' is the name of software that originally generated this map (e.g. "cloudBox" or "fCraft").
 **'''''MapGeneratorName''''' is the name of a specific generation method used by the software (e.g. "Realistic" or "Flat").
+*'''BlockArray''' contains the actual block data, 1 byte per block. Same packing order as in [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk packets]].
 *'''Metadata''' contains all kinds of software- and plugin-specific data.
 
 ===Metadata structure===
