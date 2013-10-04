@@ -44,8 +44,8 @@ The ''Metadata'' compound tag must contain zero or more named Compound tags, eac
      (implementation-specific contents)
    }
  }
-==Client Protocol Extension metadata==
-Metadata name "<code>CPE</code>" is reserved for [[Client Protocol Extension]] data, and has standardized contents. Any or all of the below sections may be present, each corresponding to a CPE extension. Each section contains an Int tag named ''ExtensionVersion''.
+==Classic Protocol Extension metadata==
+Metadata name "<code>CPE</code>" is reserved for [[Classic Protocol Extension]] data, and has standardized contents. Any or all of the below sections may be present, each corresponding to a CPE extension. Each section contains an Int tag named ''ExtensionVersion''.
 ===ClickDistance===
  TAG_Compound("ClickDistance"): 2 entries {
    TAG_Int("ExtensionVersion")
