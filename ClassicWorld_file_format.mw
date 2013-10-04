@@ -80,8 +80,8 @@ For metadata that does not refer to specific blocks, any tag structure within a 
 
 ====Sparse metadata for some blocks/coordinates====
 For metadata that refers to several specific blocks/coordinates, ClassicWorld format suggests the following format.
- TAG_Compound("(SomeSoftware)") {
-   TAG_Compound("(SomeGroup)") {
+ TAG_Compound("SomeSoftware") {
+   TAG_Compound("SomeGroup") {
      TAG_Int_Array("BlockIndices")
      TAG_List("BlockMetadata") {}
    }
