@@ -1,8 +1,94 @@
 '''ClassicWorld World Format''' is a level format devised by [[User:Tyteen4a03|tyteen4a03]] with input from [[User:F|fragmer]] for all Classic Custom Servers to use. Originally designed for [https://github.com/tyteen4a03/cloudBox cloudBox], it is designed in order for every servers that implement [[Classic Protocol Extension]] to also be able to share world formats. This will allow server owners to switch solutions easily according to their needs, and ensure that CPE features will be well-implemented in all server softwares.
 
-== Specification ==
+==Specification==
+===Basic Structure===
+ TAG_Compound("ClassicWorld"): 13 entries {
+   TAG_Byte("LevelVersion")
+   TAG_Byte_Array("WorldName")
+   TAG_Short("X")
+   TAG_Short("Y")
+   TAG_Short("Z")
+   TAG_Compound("CreatedBy"): 2 entries {
+     TAG_String("Service")
+     TAG_String("Username")
+   }
+   TAG_Compound("MapGenerator"): 2 entries {
+     TAG_String("Software")
+     TAG_String("MapGeneratorName")
+   }
+   TAG_Long("TimeCreated")
+   TAG_Long("LastAccessed")
+   TAG_Long("LastModified")
+   TAG_Compound("Spawn"): 5 entries {
+     TAG_Short("X")
+     TAG_Short("Y")
+     TAG_Short("Z")
+     TAG_Byte("H")
+     TAG_Byte("P")
+   }
+   TAG_Byte_Array("BlockArray")
+   TAG_Compound("Metadata") {}
+ }
+===Metadata entry===
+The ''Metadata'' compound tag must contain zero or more named Compound tags, each named after a specific software that produced them. Each of those compound tags should contain zero or more named Compound. The contents of those tags are implementation-specific.
+ TAG_Compound("(SomeSoftware)") {
+   TAG_Compound("(OneSection)") {
+     (implementation-specific contents)
+   }
+   TAG_Compound("(AnotherSection)") {
+     (implementation-specific contents)
+   }
+ }
+ TAG_Compound("(OtherSoftware)") {
+   TAG_Compound("(Section)") {
+     (implementation-specific contents)
+   }
+ }
+==Client Protocol Extension metadata==
+Metadata name "<code>CPE</code>" is reserved for [[Client Protocol Extension]] data, and has standardized contents. Any or all of the below sections may be present, each corresponding to a CPE extension. Each section contains an Int tag named ''ExtensionVersion''.
+===ClickDistance===
+ TAG_Compound("ClickDistance"): 2 entries {
+   TAG_Int("ExtensionVersion")
+   TAG_Short("Distance")
+ }
 
-The current specfication for the world format can be found [https://github.com/tyteen4a03/cloudBox/blob/master/docs/worldFormat here]. The section about CPE can be found [https://github.com/tyteen4a03/cloudBox/blob/master/docs/worldFormat-CPE here].
+===CustomBlocks===
+ TAG_Compound("CustomBlocks"): 3 entries {
+   TAG_Int("ExtensionVersion")
+   TAG_Short("SupportLevel")
+   TAG_Byte_Array("Fallback"): [256 bytes]
+ }
+The purpose of the ''Fallback'' array is to allow servers with lower ''SupportLevel'' to load maps created by servers with higher ''SupportLevel''. In such cases, any unsupported block IDs can be substituted using ''Fallback'' mapping. For instance, when a [hypothetical] block ID <code>200</code> is encountered, loading software should substitute it with the value of Fallback[200].
+
+===EnvColors===
+ TAG_Compound("EnvColors"): 6 entries {
+   TAG_Int("ExtensionVersion"): 1
+   TAG_Compound("Sky"): 3 entries {
+     TAG_Short("R")
+     TAG_Short("G")
+     TAG_Short("B")
+   }
+   TAG_Compound("Cloud"): 3 entries {
+     TAG_Short("R")
+     TAG_Short("G")
+     TAG_Short("B")
+   }
+   TAG_Compound("Fog"): 3 entries {
+     TAG_Short("R")
+     TAG_Short("G")
+     TAG_Short("B")
+   }
+   TAG_Compound("Ambient"): 3 entries {
+     TAG_Short("R")
+     TAG_Short("G")
+     TAG_Short("B")
+   }
+   TAG_Compound("Sunlight"): 3 entries {
+     TAG_Short("R")
+     TAG_Short("G")
+     TAG_Short("B")
+   }
+ }
 
 == Support ==
 These custom servers plan to add support for CW World Format: [http://github.com/tyteen4a03/cloudBox cloudBox], [http://www.fcraft.net/ fCraft]
