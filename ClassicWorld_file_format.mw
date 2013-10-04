@@ -107,12 +107,14 @@ When a variable amount of information is needed to be stored for every block/coo
 Metadata name "<code>CPE</code>" is reserved for [[Classic Protocol Extension]] data, and has standardized contents. Any or all of the below sections may be present, each corresponding to a CPE extension. Each group contains an Int tag named ''ExtensionVersion''.
 
 ===ClickDistance===
+Stores world-specific setting for [[Classic_Protocol_Extension#ClickDistance|ClickDistance]] extension. Note that '''Distance''' should be in player-position units (32 units per block).
  TAG_Compound("ClickDistance"): 2 entries {
    TAG_Int("ExtensionVersion")
    TAG_Short("Distance")
  }
 
 ===CustomBlocks===
+Stores world-specific setting for [[Classic_Protocol_Extension#CustomBlocks|CustomBlocks]] extension.
  TAG_Compound("CustomBlocks"): 3 entries {
    TAG_Int("ExtensionVersion")
    TAG_Short("SupportLevel")
@@ -121,6 +123,7 @@ Metadata name "<code>CPE</code>" is reserved for [[Classic Protocol Extension]] 
 The purpose of the ''Fallback'' array is to allow servers with lower ''SupportLevel'' to load maps created by servers with higher ''SupportLevel''. In such cases, any unsupported block IDs can be substituted using ''Fallback'' mapping. For instance, when a [hypothetical] block ID <code>200</code> is encountered, loading software should substitute it with the value of Fallback[200].
 
 ===EnvColors===
+Stores world-specific setting for [[Classic_Protocol_Extension#EnvColors|EnvColors]] extension. Color variables that are simply set to "default" (-1,-1,-1) may be omitted.
  TAG_Compound("EnvColors"): 6 entries {
    TAG_Int("ExtensionVersion")
    TAG_Compound("Sky"): 3 entries {
@@ -151,6 +154,7 @@ The purpose of the ''Fallback'' array is to allow servers with lower ''SupportLe
  }
 
 ===EnvMapAppearance===
+Stores world-specific setting for [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance]] extension.
  TAG_Compound("EnvMapAppearance"): 5 entries {
    TAG_Int("ExtensionVersion")
    TAG_String("TextureURL")
