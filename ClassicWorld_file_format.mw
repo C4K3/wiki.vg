@@ -2,9 +2,10 @@
 
 ==Specification==
 ===Basic Structure===
- TAG_Compound("ClassicWorld"): 13 entries {
+ TAG_Compound("ClassicWorld"): 14 entries {
    TAG_Byte("LevelVersion")
-   TAG_Byte_Array("WorldName")
+   TAG_String("Name")
+   TAG_Byte_Array("GUID")
    TAG_Short("X")
    TAG_Short("Y")
    TAG_Short("Z")
@@ -29,6 +30,7 @@
    TAG_Byte_Array("BlockArray")
    TAG_Compound("Metadata") {}
  }
+
 ===Metadata entry===
 The ''Metadata'' compound tag must contain zero or more named Compound tags, each named after a specific software that produced them. Each of those compound tags should contain zero or more named Compound. The contents of those tags are implementation-specific.
  TAG_Compound("(SomeSoftware)") {
