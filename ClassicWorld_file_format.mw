@@ -71,8 +71,35 @@ The ''Metadata'' compound tag must contain zero or more named compound tags, eac
    }
  }
 
+===Metadata implementation notes===
+====Sparse metadata for some blocks/coordinates====
+For metadata that refers to several specific blocks/coordinates, ClassicWorld format suggests the following format.
+ TAG_Compound("(SomeSoftware)") {
+   TAG_Compound("(SomeGroup)") {
+     TAG_Int_Array("BlockIndices")
+     TAG_List("BlockMetadata") {}
+   }
+ }
+:*'''BlockIndices''' is an array of block indices, each referring to a position in the BlockArray.
+:*'''BlockMetadata''' is a list of unnamed tags, of the same length and order as BlockIndices. Each tag in BlockMetadata refers to a coordinate in BlockIndices.
+
+====Data for every block/coordinate====
+In the common case of 1 byte or 1 integer being attached to every block/coordinate on the map, simply use a ByteArray/IntArray tag of the same length and order as BlockArray.
+
+When more fixed-length data is needed, use one or more List tags, each of the same length and order as BlockArray.
+
+When a variable amount of information is needed to be stored for every block/coordinate, use a List of Compound tags. Again, same length and order as BlockArray should be used.
+ TAG_Compound("(SomeSoftware)") {
+   TAG_Compound("(SomeGroup)") {
+     TAG_Byte_Array("OneByteForEveryBlock")
+     TAG_Int_Array("OneIntForEveryBlock")
+     TAG_List("CustomDataForEveryBlock")
+   }
+ }
+
 ==Classic Protocol Extension metadata==
 Metadata name "<code>CPE</code>" is reserved for [[Classic Protocol Extension]] data, and has standardized contents. Any or all of the below sections may be present, each corresponding to a CPE extension. Each group contains an Int tag named ''ExtensionVersion''.
+
 ===ClickDistance===
  TAG_Compound("ClickDistance"): 2 entries {
    TAG_Int("ExtensionVersion")
@@ -126,5 +153,5 @@ The purpose of the ''Fallback'' array is to allow servers with lower ''SupportLe
    TAG_Short("SideLevel")
  }
 
-== Support ==
+==Support==
 These custom servers plan to add support for CW World Format: [http://github.com/tyteen4a03/cloudBox cloudBox], [http://www.fcraft.net/ fCraft]
