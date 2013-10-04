@@ -80,7 +80,7 @@ The '''Metadata''' compound tag must contain zero or more named compound tags, e
 ====Non-spatial metadata====
 For metadata that does not refer to specific blocks, any tag structure within a group tag is fine.
 
-====Sparse spatial metadata (data for some blocks/coordinates)====
+====Sparse spatial metadata (some blocks/coordinates)====
 For metadata that refers to a few specific blocks/coordinates, ClassicWorld format suggests the following format.
  TAG_Compound("SomeSoftware") {
    TAG_Compound("SomeGroup") {
