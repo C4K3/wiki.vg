@@ -38,15 +38,9 @@ All tags are required, unless noted otherwise.
 *'''X''' is the width (first horizontal dimension) of the map.
 *'''Y''' is the height (vertical dimension) of the map.
 *'''Z''' is the length (second horizontal dimension) of the map.
-*'''CreatedBy''' identifies the creator of this map. Optional compound.
-**'''Username''' is the name of a player.
-**'''Service''' can be "Minecraft" (for Minecraft.net usernames) or "ClassiCube" (for ClassiCube.net usernames).
-*'''MapGenerator''' contains information related to map generation. Optional compound.
-**'''Software''' is the name of software that originally generated this map (e.g. "cloudBox" or "fCraft").
-**'''MapGeneratorName''' is the name of a specific generation method used by the software (e.g. "Realistic" or "Flat").
-*'''TimeCreated''' is a UTC Unix timestamp that's set when the map is originally generated. Optional.
-*'''LastModified''' is a UTC Unix timestamp that's set when the map's blocks are modified. Changes to spawn point or metadata should not affect this date. Optional.
-*'''LastAccessed''' is a UTC Unix timestamp that's set when the map is accessed by any player. Optional.
+*'''TimeCreated''' is a UTC Unix timestamp that's set when the map is originally generated.
+*'''''LastModified''''' is a UTC Unix timestamp that's set when the map's blocks are modified. Changes to spawn point or metadata should not affect this date. Optional.
+*'''''LastAccessed''''' is a UTC Unix timestamp that's set when the map is accessed by any player. Optional.
 *'''Spawn''' compound tag defines the point where players spawn on the map. All coordinates are in player-position units (32 units per block).
 **'''X''' is the first horizontal component of player's position.
 **'''Y''' is the vertical component of player's position.
@@ -54,6 +48,12 @@ All tags are required, unless noted otherwise.
 **'''H''' is the heading (yew) component of player's orientation.
 **'''P''' is the pitch component of player's orientation.
 *'''BlockArray''' contains the actual block data, 1 byte per block. Same packing order as in [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk packets]].
+*'''''CreatedBy''''' identifies the creator of this map. Optional compound.
+**'''''Username''''' is the name of a player.
+**'''''Service''''' can be "Minecraft" (for Minecraft.net usernames) or "ClassiCube" (for ClassiCube.net usernames).
+*'''''MapGenerator''''' contains information related to map generation. Optional compound.
+**'''''Software''''' is the name of software that originally generated this map (e.g. "cloudBox" or "fCraft").
+**'''''MapGeneratorName''''' is the name of a specific generation method used by the software (e.g. "Realistic" or "Flat").
 *'''Metadata''' contains all kinds of software- and plugin-specific data.
 
 ===Metadata structure===
