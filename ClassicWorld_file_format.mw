@@ -33,7 +33,7 @@
 ====Notes====
 *'''LevelVersion''' is a constant, currently at <code>1</code>
 *'''Name''' should be limited to 64 characters in length, and contain only characters that can be displayed in Minecraft.
-*'''UUID''' is a unique 128-bit identifier for this map (for example a GUID), saved as a 16-byte array. Must be set when the map is originally generated, and must be preserved intact when loading/saving worlds.
+*'''UUID''' is a unique 128-bit identifier for this map (for example a GUID), saved as a 16-byte array. Must be set when the map is originally generated, and must be preserved intact when loading/saving worlds. UUID stands for [http://en.wikipedia.org/wiki/Universally_unique_identifier Universally Unique Identifier].
 *'''X''' is the width (first horizontal dimension) of the map.
 *'''Y''' is the height (vertical dimension) of the map.
 *'''Z''' is the length (second horizontal dimension) of the map.
