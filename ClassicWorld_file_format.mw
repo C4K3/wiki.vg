@@ -4,7 +4,7 @@
 ===Basic structure===
 All tags are required, unless noted otherwise. Also note that ordering of named tags cannot always be guaranteed in NBT libraries. Therefore, when reading files, do not assume a specific order of named tags within a compound tag. However, when writing files, do try to stick to this order if possible.
  TAG_Compound("ClassicWorld"): 14 entries {
-   TAG_Byte("LevelVersion")
+   TAG_Byte("FormatVersion")
    TAG_String("Name")
    TAG_Byte_Array("UUID")
    TAG_Short("X")
@@ -32,7 +32,7 @@ All tags are required, unless noted otherwise. Also note that ordering of named 
    TAG_Compound("Metadata") {}
  }
 
-*'''LevelVersion''' is a constant, currently at <code>1</code>
+*'''FormatVersion''' is a constant, currently at <code>1</code>
 *'''Name''' should be limited to 64 characters in length, and contain only characters that can be displayed in Minecraft.
 *'''UUID''' is a unique 128-bit identifier for this map (for example a GUID), saved as a 16-byte array. Must be set when the map is originally generated, and must be preserved intact when loading/saving worlds. UUID stands for [http://en.wikipedia.org/wiki/Universally_unique_identifier Universally Unique Identifier].
 *'''X''' is the width (first horizontal dimension) of the map.
