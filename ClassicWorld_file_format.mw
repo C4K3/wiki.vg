@@ -1,7 +1,7 @@
 '''ClassicWorld''' is a level format devised by [[User:Tyteen4a03|tyteen4a03]] with input from [[User:F|fragmer]] for use by custom Minecraft Classic servers. Originally designed for [https://github.com/tyteen4a03/cloudBox cloudBox], it is extensible enough to be used by any server. Metadata allows to attach software-specific data, and to easily share [[Classic Protocol Extension]] settings.
 
 ==Specification==
-===Basic Structure===
+===Basic structure===
  TAG_Compound("ClassicWorld"): 14 entries {
    TAG_Byte("LevelVersion")
    TAG_String("Name")
