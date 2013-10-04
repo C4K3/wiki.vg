@@ -120,7 +120,7 @@ Stores world-specific setting for [[Classic_Protocol_Extension#CustomBlocks|Cust
    TAG_Short("SupportLevel")
    TAG_Byte_Array("Fallback"): [256 bytes]
  }
-The purpose of the ''Fallback'' array is to allow servers with lower ''SupportLevel'' to load maps created by servers with higher ''SupportLevel''. In such cases, any unsupported block IDs can be substituted using ''Fallback'' mapping. For instance, when a [hypothetical] block ID <code>200</code> is encountered, loading software should substitute it with the value of Fallback[200].
+The purpose of the ''Fallback'' array is to allow servers with lower ''SupportLevel'' to load maps created by servers with higher ''SupportLevel''. In such cases, any unsupported block IDs can be substituted using ''Fallback'' mapping. For instance, when a [hypothetical] block ID <code>200</code> is encountered, loading software should substitute it with the value of <code>Fallback[200]</code>.
 
 ===EnvColors===
 Stores world-specific setting for [[Classic_Protocol_Extension#EnvColors|EnvColors]] extension. Color variables that are simply set to "default" (-1,-1,-1) may be omitted.
