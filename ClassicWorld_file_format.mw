@@ -91,7 +91,7 @@ For metadata that refers to a few specific blocks/coordinates, ClassicWorld form
 :*'''BlockIndices''' is an array of block indices, each referring to a position in the BlockArray.
 :*'''BlockMetadata''' is a list of unnamed tags, of the same length and order as BlockIndices. Each tag in BlockMetadata refers to a coordinate in BlockIndices.
 
-====Data for every block/coordinate====
+====Spatial metadata (every block/coordinate)====
 In the common case of 1 byte or 1 integer being attached to every block/coordinate on the map, simply use a ByteArray/IntArray tag of the same length and order as BlockArray.
 
 When more fixed-length data is needed, use one or more List tags, each of the same length and order as BlockArray.
