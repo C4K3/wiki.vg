@@ -74,7 +74,10 @@ The ''Metadata'' compound tag must contain zero or more named compound tags, eac
    }
  }
 
-===Metadata implementation notes===
+===Metadata implementation suggestions===
+====Non-spatial metadata===
+For metadata that does not refer to specific blocks, any tag structure within a group tag is fine.
+
 ====Sparse metadata for some blocks/coordinates====
 For metadata that refers to several specific blocks/coordinates, ClassicWorld format suggests the following format.
  TAG_Compound("(SomeSoftware)") {
