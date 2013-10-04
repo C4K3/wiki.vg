@@ -5,7 +5,7 @@
  TAG_Compound("ClassicWorld"): 14 entries {
    TAG_Byte("LevelVersion")
    TAG_String("Name")
-   TAG_Byte_Array("GUID")
+   TAG_Byte_Array("UUID")
    TAG_Short("X")
    TAG_Short("Y")
    TAG_Short("Z")
@@ -30,6 +30,23 @@
    TAG_Byte_Array("BlockArray")
    TAG_Compound("Metadata") {}
  }
+====Notes====
+*'''LevelVersion''' is a constant, currently at <code>1</code>
+*'''Name''' should be limited to 64 characters in length, and contain only characters that can be displayed in Minecraft.
+*'''UUID''' is a unique 128-bit identifier for this map (for example a GUID), saved as a 16-byte array.
+*'''X''' is the width (first horizontal dimension) of the map.
+*'''Y''' is the height (vertical dimension) of the map.
+*'''Z''' is the length (second horizontal dimension) of the map.
+*'''CreatedBy''' is an ''optional'' tag that identifies the creator of this map.
+**'''Username''' is the name of a player.
+**'''Service''' can be "Minecraft" (for Minecraft.net usernames) or "ClassiCube" (for ClassiCube.net usernames).
+*'''MapGenerator''' is an ''optional'' tag that contains information related to map generation.
+**'''Software''' is the name of software that originally generated this map (e.g. "cloudBox" or "fCraft").
+**'''MapGeneratorName''' is the name of a specific generation method used by the software (e.g. "Realistic" or "Flat").
+*'''TimeCreated''' is a UTC Unix timestamp that's set when the map is originally generated.
+*'''LastModified''' is a UTC Unix timestamp that's set when the map's blocks are modified. Changes to spawn point or metadata should not affect this date.
+*'''LastAccessed''' is an ''optional'' tag. It's a UTC Unix timestamp that's set when the map is accessed by any player.
+''TODO''
 
 ===Metadata entry===
 The ''Metadata'' compound tag must contain zero or more named Compound tags, each named after a specific software that produced them. Each of those compound tags should contain zero or more named Compound. The contents of those tags are implementation-specific.
@@ -46,6 +63,7 @@ The ''Metadata'' compound tag must contain zero or more named Compound tags, eac
      (implementation-specific contents)
    }
  }
+
 ==Classic Protocol Extension metadata==
 Metadata name "<code>CPE</code>" is reserved for [[Classic Protocol Extension]] data, and has standardized contents. Any or all of the below sections may be present, each corresponding to a CPE extension. Each section contains an Int tag named ''ExtensionVersion''.
 ===ClickDistance===
