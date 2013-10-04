@@ -59,16 +59,16 @@ All tags are required, unless noted otherwise. Also note that ordering of named 
 ===Metadata structure===
 The '''Metadata''' compound tag must contain zero or more named compound tags, each named after a specific software that produced them. Each of those compound tags should contain zero or more named compound tags, one for each logical grouping (e.g. for each plugin or subsystem). An example metadata tag, with two softwares and 3 groups, is shown here:
  TAG_Compound("Metadata") {
-   TAG_Compound("(SomeSoftware)") {
-     TAG_Compound("(OneGroup)") {
+   TAG_Compound("SomeSoftware") {
+     TAG_Compound("OneGroup") {
        ...implementation-specific contents...
      }
-     TAG_Compound("(AnotherGroup)") {
+     TAG_Compound("AnotherGroup") {
        ...implementation-specific contents...
      }
    }
-   TAG_Compound("(OtherSoftware)") {
-     TAG_Compound("(Group)") {
+   TAG_Compound("OtherSoftware") {
+     TAG_Compound("Group") {
        ...implementation-specific contents...
      }
    }
