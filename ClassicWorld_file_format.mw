@@ -2,6 +2,7 @@
 
 ==Specification==
 ===Basic structure===
+All tags are required, unless noted otherwise.
  TAG_Compound("ClassicWorld"): 14 entries {
    TAG_Byte("LevelVersion")
    TAG_String("Name")
@@ -30,8 +31,7 @@
    TAG_Byte_Array("BlockArray")
    TAG_Compound("Metadata") {}
  }
-====Notes====
-All tags are required, unless noted otherwise.
+
 *'''LevelVersion''' is a constant, currently at <code>1</code>
 *'''Name''' should be limited to 64 characters in length, and contain only characters that can be displayed in Minecraft.
 *'''UUID''' is a unique 128-bit identifier for this map (for example a GUID), saved as a 16-byte array. Must be set when the map is originally generated, and must be preserved intact when loading/saving worlds. UUID stands for [http://en.wikipedia.org/wiki/Universally_unique_identifier Universally Unique Identifier].
