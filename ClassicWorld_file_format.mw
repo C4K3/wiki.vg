@@ -75,7 +75,7 @@ The ''Metadata'' compound tag must contain zero or more named compound tags, eac
  }
 
 ===Metadata implementation suggestions===
-====Non-spatial metadata===
+====Non-spatial metadata====
 For metadata that does not refer to specific blocks, any tag structure within a group tag is fine.
 
 ====Sparse metadata for some blocks/coordinates====
