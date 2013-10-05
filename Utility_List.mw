@@ -14,7 +14,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{yes|#79}} - 13w38c || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
 |-
-| [https://github.com/sadimusi/mc4p mc4p] || A 1.6.2-compatible fork of [https://github.com/mmcgill/mc3p m3cp] || {{no|#74}} - 1.6.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
+| [https://github.com/sadimusi/mc4p mc4p] || A 1.6.2-compatible fork of [https://github.com/mmcgill/mc3p mc3p] || {{no|#74}} - 1.6.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
 |-
 | [https://code.google.com/p/mc-server/source/browse/#svn%2Ftrunk%2FTools%2FProtoProxy ProtoProxy] || A subproject of [https://code.google.com/p/mc-server/ MCServer], protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parsing basic packets. || {{no|#74}} - 1.6.2 || C++ || Windows || [[user:xoft|xoft]] || {{yes|Active}}
 |-
@@ -22,7 +22,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/bencvt/McPacketSniffer McPacketSniffer] || A Minecraft client mod that logs packets to text files || {{no|#47}} - 1.4.4 || Java || Windows, Mac, & Linux || [[User:Benc|bencvt]] || {{yes|Active}}
 |-
-| [https://github.com/mmcgill/mc3p m3cp] || Actively maintained Python Minecraft proxy with plugin support. || {{no|#29}} - 1.2.5 || Python || Windows, Mac, & Linux || mmcgill || {{no|Inactive}}
+| [https://github.com/mmcgill/mc3p mc3p] || Python Minecraft proxy with plugin support. || {{no|#29}} - 1.2.5 || Python || Windows, Mac, & Linux || mmcgill || {{no|Inactive}}
 |-
 | [http://code.google.com/p/netminecraftmapviewer/ NetMinecraftMapViewer] || Map viewer showing entity locations and special blocks via TCP proxy || {{no|#29}} - 1.2.5 || C# ||   ||   || {{no|Inactive}}
 |-
