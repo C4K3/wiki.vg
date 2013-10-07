@@ -694,8 +694,8 @@ do {
 ! style="width: 75px" | Type
 ! style="width: 250px" colspan="2" | Meaning
 |-
-| rowspan="6" | 13
-| rowspan="6" | Byte
+| rowspan="6" | 16
+| rowspan="6" | Int
 ! Value !! Profession 
 |-
 | 0 || Farmer
