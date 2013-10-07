@@ -965,7 +965,7 @@ do {
 |- 
 | 19
 | Float
-| colspan="2" | Damage Taken
+| colspan="2" | Damage Taken / Shaking Multiplier
 |-
 | rowspan="3" | 20
 | rowspan="3" | Int
