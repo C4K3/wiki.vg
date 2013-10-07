@@ -40,7 +40,7 @@ All tags are required, unless noted otherwise. Also note that ordering of named 
 *'''X''' is the width (first horizontal dimension) of the map.
 *'''Y''' is the height (vertical dimension) of the map.
 *'''Z''' is the length (second horizontal dimension) of the map.
-*'''TimeCreated''' is a UTC Unix timestamp that's set when the map is originally generated. Optional.
+*'''''TimeCreated''''' is a UTC Unix timestamp that's set when the map is originally generated. Optional.
 *'''''LastModified''''' is a UTC Unix timestamp that's set when the map's blocks are modified. Changes to spawn point or metadata should not affect this date. Optional.
 *'''''LastAccessed''''' is a UTC Unix timestamp that's set when the map is accessed by any player. Optional.
 *'''Spawn''' compound tag defines the point where players spawn on the map. All coordinates are in player-position units (32 units per block).
