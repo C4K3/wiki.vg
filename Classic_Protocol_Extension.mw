@@ -212,6 +212,8 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |0x01 (1)
 |}
 
+Block IDs for future CPE levels are guaranteed to be assigned monotonically, incrementally, and permanently.
+
 ===HeldBlock===
 :Provides a way for the client to notify the server about the blocktype that it is currently holding, and for the server to change the currently-held block type.   
 :'''Motivation''': This allows server to know which block player is holding, for example for drawing commands, without needing to wait for the player's click. it also allows for features like [http://www.fcraft.net/wiki//Spectate /Spectate] to show what block a spectated player is holding.
