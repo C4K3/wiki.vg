@@ -212,7 +212,7 @@ These custom clients plan to add support for CPE: [http://charged-miners.com/ Ch
 |0x01 (1)
 |}
 
-Block IDs for future CPE levels are guaranteed to be assigned monotonically, incrementally, and permanently.
+Block IDs for future support levels are guaranteed to be assigned monotonically, incrementally, and permanently.
 
 ===HeldBlock===
 :Provides a way for the client to notify the server about the blocktype that it is currently holding, and for the server to change the currently-held block type.   
