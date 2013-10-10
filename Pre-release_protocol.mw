@@ -1133,7 +1133,7 @@ Values: The enchantment's level.
 |}
 
 {| class="wikitable"
-| Packet ID !! Field Name !! Field Type !! Notes
+! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan="4" | 0x37
 | Item Type || Short || Type of item being modified
@@ -1151,6 +1151,81 @@ If the first byte of the array is 0, the next two bytes are X start and Y start 
 If the first byte of the array is 1, the rest of the bytes are in groups of three: (data, x, y). The lower half of the data is the type (always 0 under vanilla) and the upper half is the direction.
 
 If the first byte of the array is 2, the second byte is the map scale.
+
+==== Update Block Entity ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="6" | 0x38
+| X || Int ||
+|-
+| Y || Short ||
+|-
+| Z || Int ||
+|-
+| Action || Byte || The type of update to perform
+|-
+| Data length || Short || Varies
+|-
+| NBT Data || Byte Array || Present if data length > 0. Compressed with [[wikipedia:Gzip|gzip]]. Varies
+|}
+
+'''Actions'''
+
+* '''1''': Set mob displayed inside a mob spawner. Custom 1 contains the [[Entities#Mobs|mob type]]
+
+==== Tile Editor Open ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="4" | 0x39
+| Tile Entity Id || Byte || Always seems to be 0 (TileEntitySign)
+|-
+| X || Int || X in block coordinates
+|-
+| Y || Int || Y in block coordinates
+|-
+| Z || Int || Z in block coordinates
+|}
+
+==== Statistics ====
+{| class="wikitable"
+! Packet ID
+! colspan="2" | Field Name
+! Field Type !! Notes
+|-
+| rowspan="3" | 0x3A
+| colspan="2" | Count || Int || Number of entrys
+|-
+| rowspan=2 | Entry 
+| Statistic's name || String || 
+|-
+| Amount || Int || The amount to increase by
+|}
+
+==== Player List Item ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x3B
+| Player name || String || Supports chat colouring, limited to 16 characters.
+|-
+| Online || Bool || If false, the client will remove the user from the list.
+|-
+| Ping || Short || Ping, presumably in ms.
+|}
+
+==== Player Abilities ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x3C
+| Flags || Byte ||
+|-
+| Flying speed || Float|| previous integer value divided by 250
+|-
+| Walking speed || Float || previous integer value divided by 250
+|}
 
 == Status ==
 
