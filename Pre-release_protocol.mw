@@ -313,6 +313,103 @@ Animation can be one of the following values:
 | Metadata || [[Entities#Entity_Metadata_Format|Metadata]] || The client will crash if no metadata is sent
 |}
 
+==== Collect Item ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x10
+| Collected Entity ID || Int ||
+|- 
+| Collector Entity ID || Int ||
+|}
+
+==== Spawn Object ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=8| 0x11
+| Entity ID || Int || Entity ID of the object
+|-
+| Type || Byte || The of object (See [[Entities#Objects|Objects]]
+|-
+| X || Int || X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Y || Int || Y position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Z || Int || Z position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Pitch || Byte || The pitch in steps of 2p/256
+|-
+| Yaw || Byte || The yaw in steps of 2p/256
+|-
+| Data || [[Object_Data|Object Data]] ||
+|}
+
+==== Spawn Mob ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=12 | 0x12
+| Entity ID || Int || Entity's ID
+|-
+| Type || Unsigned Byte || The type of mob. See [[Entities#Mobs|Mobs]]
+|-
+| X || Int || X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Y || Int || Y position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Z || Int || Z position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Pitch || Byte || The pitch in steps of 2p/256
+|-
+| Head Pitch || Byte || The pitch in steps of 2p/256
+|-
+| Yaw || Byte || The yaw in steps of 2p/256
+|-
+| Velocity X || Short ||
+|-
+| Velocity Y || Short ||
+|-
+| Velocity Z || Short ||
+|-
+| Metadata || [[Entities#Entity_Metadata_Format|Metadata]] ||
+|}
+
+==== Spawn Painting ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=6 | 0x13
+| Entity ID || Int || Entity's ID
+|-
+| Title || String || Name of the painting. Max length 13
+|-
+| X || Int || Center X coordinate
+|-
+| Y || Int || Center Y coordinate
+|-
+| Z || Int || Center Z coordinate
+|-
+| Direction || Int || Direction the painting faces (0 -z, 1 -x, 2 +z, 3 +x)
+|}
+}
+
+==== Spawn Experience Orb ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x14
+| Entity ID || Int || Entity's ID
+|-
+| X || Int || X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Y || Int || Y position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Z || Int || Z position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Count || Short || The amount of experience this orb will reward once collected
+|}
+
 == Status ==
 
 == Login ==
