@@ -411,6 +411,43 @@ Animation can be one of the following values:
 
 == Status ==
 
+=== Serverbound ===
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x00 || || ||
+|}
+
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x01 
+| || Long ||
+|}
+
+=== Clientbound ===
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x00 
+| || String ||
+|}
+
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x01 
+| || Long ||
+|}
+
 == Login ==
 
 == Plugin Channels ==
