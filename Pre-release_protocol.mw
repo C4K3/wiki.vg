@@ -450,6 +450,71 @@ Animation can be one of the following values:
 
 == Login ==
 
+=== Clientbound ===
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x00
+| || String ||
+|}
+
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x01 
+| || String ||
+|-
+| Length || Short ||
+|-
+| || Byte array ||
+|-
+| Length || Short ||
+|-
+| || Byte array ||
+|- 
+|}
+
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x02
+| UUID || String ||
+|-
+| Name || String ||
+|}
+
+
+=== Serverbound ===
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x00
+| Name || String ||
+|}
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=4 | 0x01 
+| Length || Short ||
+|-
+| || Byte array ||
+|-
+| Length || Short ||
+|-
+| || Byte array ||
+|- 
+|}
+
 == Plugin Channels ==
 
 === MC|RPack ===
