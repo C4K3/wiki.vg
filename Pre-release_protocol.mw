@@ -1732,12 +1732,24 @@ Chat flags has several values packed into one byte.
 
 '''Colors Enabled:''' Bit 3.  0: Disabled.  1: Enabled.
 
-==== ? ====
+==== Clickable Action ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=1 | 0x16
-| || Byte ||
+| Action ID || Byte || See below
+|}
+
+Action ID values:
+{| class="wikitable"
+|-
+! Action ID !! Name
+|-
+| 0 || Perform respawn
+|-
+| 1 || Request stats
+|-
+| 2 || Open inventory achievement
 |}
 
 ==== ? ====
