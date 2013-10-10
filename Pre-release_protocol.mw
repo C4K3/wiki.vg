@@ -1322,6 +1322,8 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 | Reason || String || Displayed to the client when the connection terminates
 |}
 
+=== Serverbound ===
+
 == Status ==
 
 === Clientbound ===
