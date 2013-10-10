@@ -423,7 +423,7 @@ Animation can be one of the following values:
 | Velocity Z || Short || Velocity on the Z axis
 |}
 
-==== Destroy Entities====
+==== Destroy Entitie s====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
@@ -431,6 +431,165 @@ Animation can be one of the following values:
 | Count || Byte || Length of following array
 |-
 | Entity IDs || Array of Int || The list of entities of destroy 
+|}
+
+==== Entity ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x17
+| Entity ID || Int || Entity's ID
+|}
+
+==== Entity Relative Move ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=4| 0x18
+| Entity ID || Int || Entity's ID
+|-
+| DX || Byte || Change in X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|-
+| DY || Byte || Change in Y position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|-
+| DZ || Byte || Change in Z position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|}
+
+==== Entity Look ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3 | 0x19
+| Entity ID || Int || Entity's ID
+|-
+| Yaw || Byte || The X Axis rotation as a fraction of 360
+|-
+| Pitch || Byte || The Y Axis rotation as a fraction of 360
+|}
+
+==== Entity Look and Relative Move ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=6 | 0x1A
+| Entity ID || Int || Entity's ID
+|-
+| DX || Byte || Change in X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|-
+| DY || Byte || Change in Y position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|-
+| DZ || Byte || Change in Z position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|-
+| Yaw || Byte || The X Axis rotation as a fraction of 360
+|-
+| Pitch || Byte || The Y Axis rotation as a fraction of 360
+|}
+
+==== Entity Teleport ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=6 | 0x1B
+| Entity ID || Int || Entity's ID
+|-
+| X || Byte || X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|-
+| Y || Byte || Y position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|-
+| Z || Byte || Z position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+|-
+| Yaw || Byte || The X Axis rotation as a fraction of 360
+|-
+| Pitch || Byte || The Y Axis rotation as a fraction of 360
+|}
+
+==== Entity Head Look ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x1C
+| Entity ID || Int || Entity's ID
+|-
+| Head Yaw || Byte || Head yaw in steps of 2p/256
+|}
+
+==== Entity Status ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x1D
+| Entity ID || Int || Entity's ID
+|-
+| Entity Status || Byte || See below
+|}
+
+{| class="wikitable"
+|-
+! Entity Status !! Meaning
+|-
+| 2 || Entity hurt
+|-
+| 3 || Entity dead
+|-
+| 6 || Wolf taming
+|-
+| 7 || Wolf tamed
+|-
+| 8 || Wolf shaking water off itself
+|-
+| 9 || (of self) Eating accepted by server
+|-
+| 10 || Sheep eating grass
+|-
+| 11 || Iron Golem handing over a rose
+|-
+| 12 || Spawn "heart" particles near a villager
+|-
+| 13 || Spawn particles indicating that a villager is angry and seeking revenge
+|-
+| 14 || Spawn happy particles near a villager
+|-
+| 15 || Spawn a "magic" particle near the Witch
+|-
+| 16 || Zombie converting into a villager by shaking violently (unused in recent update)
+|-
+| 17 || A firework exploding
+|}
+
+==== Attach Entity ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3 | 0x1E
+| Entity ID || Int || Entity's ID
+|-
+| Vehicle ID || Int || Vechicle's Entity ID
+|-
+| Leash || Bool || If true leashes the entity to the vehicle
+|}
+
+==== Attach Entity ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x1F
+| Entity ID || Int || Entity's ID
+|-
+| Metadata || [[Entities#Entity_Metadata_Format|Metadata]] || 
+|}
+
+==== Entity Effect ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=4 | 0x20
+| Entity ID || Int || Entity's ID
+|-
+| Effect ID || Byte || See [[http://www.minecraftwiki.net/wiki/Potion_effect#Parameters]]
+|-
+| Amplifier || Byte || 
+|-
+| Duration || Short ||
 |}
 
 == Status ==
