@@ -292,7 +292,6 @@ Animation can be one of the following values:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=10 | 0x0F
-|-
 | Entity ID || Int || Player's Entity ID
 |-
 | Player UUID || String || Player's UUID
@@ -309,7 +308,7 @@ Animation can be one of the following values:
 |-
 | Pitch || Byte || Player rotation as a packet byte
 |-
-| Current Item || Short | The item the player is currently holding. Note that this should be 0 for "no item", unlike -1 used in other packets. A negative value crashes clients.
+| Current Item || Short || The item the player is currently holding. Note that this should be 0 for "no item", unlike -1 used in other packets. A negative value crashes clients.
 |-
 | Metadata || [[Entities#Entity_Metadata_Format|Metadata]] || The client will crash if no metadata is sent
 |}
