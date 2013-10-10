@@ -411,13 +411,14 @@ Animation can be one of the following values:
 
 == Status ==
 
-=== Serverbound ===
+=== Clientbound ===
 
 ==== ? ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=1 | 0x00 || || ||
+| rowspan=1 | 0x00 
+| || String ||
 |}
 
 
@@ -429,14 +430,13 @@ Animation can be one of the following values:
 | || Long ||
 |}
 
-=== Clientbound ===
+=== Serverbound ===
 
 ==== ? ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=1 | 0x00 
-| || String ||
+| rowspan=1 | 0x00 || || ||
 |}
 
 
