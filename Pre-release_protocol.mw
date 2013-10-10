@@ -1752,17 +1752,19 @@ Action ID values:
 | 2 || Open inventory achievement
 |}
 
-==== ? ====
+==== Plugin Message ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=3 | 0x17
-| || String ||
+| rowspan="3" | 0x42
+| Channel || String || Name of the "channel" used to send the data.
 |-
-| Length || Short ||
+| Length || Short || Length of the following byte array
 |-
-| || Array of Bytes ||
+| Data || Byte Array || Any data.
 |}
+
+More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plugin-channels-messaging/
 
 == Status ==
 
