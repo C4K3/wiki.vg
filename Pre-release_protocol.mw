@@ -943,7 +943,7 @@ PLAYERS: 7
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="9" | 0x3F
+| rowspan="9" | 0x2D
 | Particle name || String || The name of the particle to create. A list can be found [https://gist.github.com/thinkofdeath/5110835 here]
 |-
 | X || Float || X position of the particle
@@ -967,7 +967,7 @@ PLAYERS: 7
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="2" | 0x2D
+| rowspan="2" | 0x2E
 | Reason || Byte ||
 |-
 | Value || Float || Depends on reason
@@ -1001,7 +1001,7 @@ PLAYERS: 7
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="5" | 0x2E
+| rowspan="5" | 0x2F
 | Entity ID || Int || The entity ID of the thunderbolt
 |-
 | Type || Byte || The global entity type, currently always 1 for thunderbolt.
@@ -1017,7 +1017,7 @@ PLAYERS: 7
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="6" | 0x2F
+| rowspan="6" | 0x30
 | Window id || Byte || A unique id number for the window to be displayed.  Notchian server implementation is a counter, starting at 1.
 |-
 | Inventory Type || Byte || The window type to use for display.  Check below
@@ -1032,6 +1032,125 @@ PLAYERS: 7
 |}
 
 See [[Inventory#Windows|inventory windows]] for further information.
+
+==== Close Window ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| 0x31
+| Window id || byte || This is the id of the window that was closed. 0 for inventory.
+|}
+
+==== Set Slot ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x32
+| Window ID || Byte
+| The window which is being updated. 0 for player inventory. Note that all known window types include the player inventory. This packet will only be sent for the currently opened window while the player is performing actions, even if it affects the player inventory. After the window is closed, a number of these packets are sent to update the player's inventory window (0).
+|-
+| Slot || Short || The slot that should be updated
+|-
+| Slot data || [[Slot_Data|Slot]] ||
+|}
+
+==== Window Items ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x33
+| Window ID || Byte || The id of window which items are being sent for. 0 for player inventory.
+|-
+| Count || Short || The number of slots (see below)
+|-
+| Slot data || Array of [[Slot_Data|Slot]]s ||
+|}
+
+See [[Inventory#Windows|inventory windows]] for further information about how slots are indexed.
+
+==== Window Property ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x34
+| Window ID || Byte || The id of the window.
+|-
+| Property || Short || Which property should be updated.
+|-
+| Value || Short || The new value for the property.
+|}
+
+'''Furnace'''
+
+Properties:
+
+* 0: Progress arrow
+* 1: Fire icon (fuel)
+
+Values:
+
+* 0-200 for progress arrow
+* 0-200 for fuel indicator
+
+Ranges are presumably in in-game ticks
+
+'''Enchantment Table'''
+
+Properties: 0, 1 or 2 depending on the "enchantment slot" being given.
+
+Values: The enchantment's level.
+
+==== Confirm Transaction  ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x35
+| Window ID || Byte || The id of the window that the action occurred in.
+|-
+| Action number || Short || Every action that is to be accepted has a unique number. This field corresponds to that number.
+|-
+| Accepted || Bool || Whether the action was accepted.
+|}
+
+==== Update Sign ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="7" | 0x36
+| X || Int || Block X Coordinate
+|-
+| Y || Short || Block Y Coordinate
+|-
+| Z || Int || Block Z Coordinate
+|-
+| Line 1 || String || First line of text in the sign
+|-
+| Line 2 || String || Second line of text in the sign
+|-
+| Line 3 || String || Third line of text in the sign
+|-
+| Line 4 || String || Fourth line of text in the sign
+|}
+
+{| class="wikitable"
+| Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="4" | 0x37
+| Item Type || Short || Type of item being modified
+|-
+| Item ID || Short || The ID (damage value) of the item being modified
+|-
+| Text length || Short || Length of following byte array
+|-
+| Data || Byte Array || Array data
+|}
+
+'''Maps'''
+If the first byte of the array is 0, the next two bytes are X start and Y start and the rest of the bytes are the colors in that column.
+
+If the first byte of the array is 1, the rest of the bytes are in groups of three: (data, x, y). The lower half of the data is the type (always 0 under vanilla) and the upper half is the direction.
+
+If the first byte of the array is 2, the second byte is the map scale.
 
 == Status ==
 
