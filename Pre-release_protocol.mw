@@ -48,16 +48,19 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 VarInt - 
 
+String - UTF-8 String
+
 == Handshaking ==
 
-''Serverbound''
+=== Serverbound ===
+
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=4 | 0x00
 | || VarInt ||
 |-
-| || UTF-8 String ||
+| || String ||
 |- 
 | || VarInt ||
 |-
@@ -65,6 +68,55 @@ VarInt -
 |}
 
 == Play ==
+
+=== Clientbound ===
+
+==== Keep Alive ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x00
+| Keep Alive ID || Int ||
+|}
+
+
+==== Join Game ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=7 | 0x01
+| Entity ID || Int || The player's Entity ID
+|-
+| Level type || String || level-type in server.properties
+|-
+| Gamemode || Byte || 0: survival, 1: creative, 2: adventure. Bit 3 (0x8) is the hardcore flag
+|-
+| Dimension || Byte || -1: nether, 0: overworld, 1: end
+|-
+| Difficulty || Unsigned Byte || 0 thru 3 for Peaceful, Easy, Normal, Hard
+|- 
+| || Byte ||
+|-
+| Max Players || Byte || Used by the client to draw the player list
+|}
+
+==== Chat Message ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x02
+| JSON Data || String || https://gist.github.com/thinkofdeath/e882ce057ed83bac0a1c
+|}
+
+==== Time Update ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x03
+| Age of the world || Long || In ticks; not changed by server commands
+|-
+| Time of day || Long || The world (or region) time, in ticks. If negative the sun will stop moving at the Math.abs of the time
+|}
 
 == Status ==
 
