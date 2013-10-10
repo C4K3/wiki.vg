@@ -409,6 +409,30 @@ Animation can be one of the following values:
 | Count || Short || The amount of experience this orb will reward once collected
 |}
 
+==== Entity Velocity ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=4 | 0x15
+| Entity ID || Int || Entity's ID
+|-
+| Velocity X || Short || Velocity on the X axis
+|-
+| Velocity Y || Short || Velocity on the Y axis
+|-
+| Velocity Z || Short || Velocity on the Z axis
+|}
+
+==== Destroy Entities====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x16
+| Count || Byte || Length of following array
+|-
+| Entity IDs || Array of Int || The list of entities of destroy 
+|}
+
 == Status ==
 
 === Clientbound ===
