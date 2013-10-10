@@ -44,6 +44,32 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 | Data || ||
 |}
 
+== Data Types ==
+
+VarInt - 
+
+== Handshaking ==
+
+''Serverbound''
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=4 | 0x00
+| || VarInt ||
+|-
+| || UTF-8 String ||
+|- 
+| || VarInt ||
+|-
+| || VarInt ||
+|}
+
+== Play ==
+
+== Status ==
+
+== Login ==
+
 == Plugin Channels ==
 
 === MC|RPack ===
