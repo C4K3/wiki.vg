@@ -59,7 +59,7 @@ String - UTF-8 String prefixed with a VarInt
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=4 | 0x00
-| Unknown || VarInt || Always 0
+| Protocol Version || VarInt ||
 |-
 | Server Address (hostname or IP) || String || localhost
 |- 
