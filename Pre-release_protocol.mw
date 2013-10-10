@@ -118,6 +118,58 @@ String - UTF-8 String
 | Time of day || Long || The world (or region) time, in ticks. If negative the sun will stop moving at the Math.abs of the time
 |}
 
+==== Entity Equipment ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3 | 0x04
+| EntityID || Int || Entity's ID
+|-
+| Slot || Short || Equipment slot: 0=held, 1-4=armor slot (1 - boots, 2 - leggings, 3 - chestplate, 4 - helmet)
+|-
+| Item || [[Slot_Data|Slot]] || Item in slot format
+|}
+
+==== Spawn Position ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3 | 0x05
+| X || Int || Spawn X in block coordinates
+|-
+| Y || Int || Spawn Y in block coordinates
+|-
+| Z || Int || Spawn | in block coordinates
+|}
+
+==== Update Health ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3 | 0x06
+| Health || Float || 0 or less = dead, 20 = full HP
+|-
+| Food || Short || 0 - 20
+|- 
+| Food Saturation || Float || Seems to vary from 0.0 to 5.0 in integer increments
+|}
+
+==== Respawn ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x07
+| Dimension || Int || -1: The Nether, 0: The Overworld, 1: The End
+|-
+| Difficulty || Byte || 0 thru 3 for Peaceful, Easy, Normal, Hard.
+|-
+| Gamemode || Byte || 0: survival, 1: creative, 2: adventure. The hardcore flag is not included
+|- 
+| World Height|| Short || Defaults to 256
+|-
+| Level Type || String || 
+|}
+
 == Status ==
 
 == Login ==
