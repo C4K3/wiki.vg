@@ -724,6 +724,315 @@ Known key values:
 | F0 00 00 00 || 4 bits || X co-ordinate, relative to chunk
 |}
 
+==== Block Change ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x26
+| X || Int || Block X Coordinate
+|-
+| Y || Byte || Block Y Coordinate
+|-
+| Z || Int || Block Z Coordinate
+|-
+| Block Type || Short || The new block type for the block
+|-
+| Block Data || Byte || The new data for the block
+|}
+
+==== Block Action ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=6 | 0x27
+| X || Int || Block X Coordinate
+|-
+| Y || Byte || Block Y Coordinate
+|-
+| Z || Int || Block Z Coordinate
+|-
+| Byte 1 || Byte || Varies depending on block - see [[Block_Actions]]
+|-
+| Byte 2 || Byte || Varies depending on block - see [[Block_Actions]]
+|-
+| Block Type || Short || The block type for the block
+|}
+
+==== Block Action ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x28
+| Entity ID || Int || Entity's ID
+|-
+| X || Int || rowspan=3 | Block Position
+|-
+| Y || Int
+|-
+| Z || Int
+|-
+| Destroy Stage || Byte || 0 - 9
+|}
+
+==== Map Chunk Bulk ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x29
+| Chunk column count || Short || The number of chunk in this packet
+|-
+| Data length || Int || The size of the data field
+|-
+| Sky light sent || Bool || Whether or not the chunk data contains a light nibble array. This is true in the main world, false in the end + nether
+|-
+| Data || Byte Array || Compressed chunk data
+|-
+| Meta information || Meta || See below 
+|}
+
+'''Meta'''
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+|Chunk X || Int || The X Coordinate of the chunk
+|-
+|Chunk Z || Int || The Z Coordinate of the chunk
+|-
+|Primary bitmap || Unsigned Short || A bitmap which specifies which sections are not empty in this chunk
+|-
+|Add bitmap || Unsigned Short || A bitmap which specifies which sections need add information because of very high block ids. not yet used
+|}
+
+==== Explosion ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="9" | 0x2A
+| X || Double ||
+|-
+| Y || Double ||
+|-
+| Z || Double ||
+|-
+| Radius || Float || Currently unused in the client
+|-
+| Record count || Int || This is the count, not the size. The size is 3 times this value.
+|-
+| Records || (Byte, Byte, Byte) × count || Each record is 3 signed bytes long, each bytes are the XYZ (respectively) offsets of affected blocks.
+|-
+| Player Motion X || Float || X velocity of the player being pushed by the explosion
+|-
+| Player Motion Y || Float || Y velocity of the player being pushed by the explosion
+|-
+| Player Motion Z || Float || Z velocity of the player being pushed by the explosion
+|}
+
+==== Effect ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="6" | 0x2B
+| Effect ID || Int || The ID of the effect, see below.
+|-
+| X || Int || The X location of the effect multiplied by 8
+|-
+| Y || Byte || The Y location of the effect multiplied by 8
+|-
+| Z || Int || The Z location of the effect multiplied by 8
+|-
+| Data || Int || Extra data for certain effects, see below.
+|-
+| Disable relative volume || Bool || See above
+|}
+
+'''Sound''':
+
+*1000: <code>random.click</code>
+*1001: <code>random.click</code>
+*1002: <code>random.bow</code>
+*1003: <code>random.door_open</code> or <code>random.door_close</code> (50/50 chance)
+*1004: <code>random.fizz</code>
+*1005: Play a music disc. '''Data''': [http://www.minecraftwiki.net/wiki/Music_Discs Record ID]
+*''(1006 not assigned)''
+*1007: <code>mob.ghast.charge</code>
+*1008: <code>mob.ghast.fireball</code>
+*1009: <code>mob.ghast.fireball</code>, but with a lower volume.
+*1010: <code>mob.zombie.wood</code>
+*1011: <code>mob.zombie.metal</code>
+*1012: <code>mob.zombie.woodbreak</code>
+*1013: <code>mob.wither.spawn</code>
+*1014: <code>mob.wither.shoot</code>
+*1015: <code>mob.bat.takeoff</code>
+*1016: <code>mob.zombie.infect</code>
+*1017: <code>mob.zombie.unfect</code>
+*1018: <code>mob.enderdragon.end</code>
+*1020: <code>random.anvil_break</code>
+*1021: <code>random.anvil_use</code>
+*1022: <code>random.anvil_land</code>
+
+'''Particle''':
+
+*2000: Spawns 10 smoke particles, e.g. from a fire. '''Data''': direction, see below
+*2001: Block break. '''Data''': [http://www.minecraftwiki.net/wiki/Data_values Block ID]
+*2002: Splash potion. Particle effect + glass break sound. '''Data''': [http://www.lb-stuff.com/Minecraft/PotionDataValues1.9pre3.txt Potion ID]
+*2003: Eye of ender entity break animation - particles and sound
+*2004: Mob spawn particle effect: smoke + flames
+*2005: Spawn "happy villager" effect (hearts).
+
+Smoke directions:
+
+{| class="wikitable"
+! ID !! Direction
+|-
+| 0 || South - East
+|-
+| 1 || South
+|-
+| 2 || South - West
+|-
+| 3 || East
+|-
+| 4 || (Up or middle ?)
+|-
+| 5 || West
+|-
+| 6 || North - East
+|-
+| 7 || North
+|-
+| 8 || North - West
+|}
+
+==== Sound Effect ====
+
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="7" | 0x2C
+| Sound name || String || 
+|-
+| Effect position X || Int || Effect X multiplied by 8
+|-
+| Effect position Y || Int || Effect Y multiplied by 8
+|-
+| Effect position Z || Int || Effect Z multiplied by 8
+|-
+| Volume || Float || 1 is 100%, can be more
+|-
+| Pitch || Byte || 63 is 100%, can be more
+|-
+| Sound Category || Unsigned Byte || Possible values:
+MASTER: 0
+
+MUSIC: 1
+
+RECORDS: 2
+
+WEATHER: 3
+
+BLOCKS: 4
+
+MOBS: 5
+
+ANIMALS: 6
+
+PLAYERS: 7
+|}
+
+==== Particle ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="9" | 0x3F
+| Particle name || String || The name of the particle to create. A list can be found [https://gist.github.com/thinkofdeath/5110835 here]
+|-
+| X || Float || X position of the particle
+|-
+| Y || Float || Y position of the particle
+|-
+| Z || Float || Z position of the particle
+|-
+| Offset X || Float || This is added to the X position after being multiplied by random.nextGaussian() 
+|-
+| Offset Y || Float || This is added to the Y position after being multiplied by random.nextGaussian() 
+|-
+| Offset Z || Float || This is added to the Z position after being multiplied by random.nextGaussian() 
+|-
+| Particle speed || Float || The speed of each particle
+|-
+| Number of particles || Int || The number of particles to create
+|}
+
+==== Change Game State ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="2" | 0x2D
+| Reason || Byte ||
+|-
+| Value || Float || Depends on reason
+|}
+
+'''Reason codes'''
+
+{| class="wikitable"
+! Code !! Effect !! Notes
+|-
+| 0 || Invalid Bed || "tile.bed.notValid"
+|-
+| 1 || Begin raining || 
+|-
+| 2 || End raining || 
+|-
+| 3 || Change game mode || "gameMode.changed" 0 - Survival, 1 - Creative, 2 - Adventure 
+|-
+| 4 || Enter credits ||
+|-
+| 5 || Demo messages || 0 - Show welcome to demo screen, 101 - Tell movement controls, 102 - Tell jump control, 103 - Tell inventory control
+|- 
+| 6 | Bow hit sound ||
+|-
+| 7 || Fade value || The current darkness value. 1 = Dark, 0 = Bright, Setting the value higher causes the game to change color and freeze
+|-
+| 8 || Fade time || Time in ticks for the sky to fade
+|}
+
+==== Spawn Global Entity ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="5" | 0x2E
+| Entity ID || Int || The entity ID of the thunderbolt
+|-
+| Type || Byte || The global entity type, currently always 1 for thunderbolt.
+|-
+| X || Int || Thunderbolt X a [[Data_Types#Fixed-point_numbers|fixed-point number]]
+|-
+| Y || Int || Thunderbolt Y a [[Data_Types#Fixed-point_numbers|fixed-point number]]
+|-
+| Z || Int || Thunderbolt Z a [[Data_Types#Fixed-point_numbers|fixed-point number]]
+|}
+
+==== Open Window ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="6" | 0x2F
+| Window id || Byte || A unique id number for the window to be displayed.  Notchian server implementation is a counter, starting at 1.
+|-
+| Inventory Type || Byte || The window type to use for display.  Check below
+|-
+| Window title || String || The title of the window.
+|-
+| Number of Slots || Byte || Number of slots in the window (excluding the number of slots in the player inventory).
+|-
+| Use provided window title || Bool || If false, the client will look up a string like "window.minecart". If true, the client uses what the server provides.
+|-
+| Entity ID || Int || EntityHorse's entityId. Only sent when window type is equal to 11 (AnimalChest).
+|}
+
+See [[Inventory#Windows|inventory windows]] for further information.
+
 == Status ==
 
 === Clientbound ===
