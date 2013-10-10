@@ -592,6 +592,138 @@ Animation can be one of the following values:
 | Duration || Short ||
 |}
 
+==== Remove Entity Effect ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x21
+| Entity ID || Int || Entity's ID
+|-
+| Effect ID || Byte ||
+|}
+
+==== Set Experience ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3 | 0x22
+| Experience bar || Float || Between 0 and 1
+|-
+| Level || Short ||
+|-
+| Total Experience || Short ||
+|}
+
+==== Entity Properties ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3 | 0x23
+| Entity ID || Int | Entity's ID
+|-
+| Count || Int || Length of following array
+|-
+| Properties || Array of Property Data ||
+|}
+
+'''Property Data''' structure:
+{| class="wikitable"
+|-
+! Field Name !! Field Type !! Notes
+|-
+| Key || String || 
+|-
+| Value || Double || 
+|-
+| List Length || Short || Number of list elements that follow.
+|-
+| Modifiers || Array of Modifier Data || http://www.minecraftwiki.net/wiki/Attribute#Modifiers
+|}
+
+Known key values:
+{| class="wikitable"
+|-
+! Key !! Default !! Min !! Max !! Label
+|-
+| generic.maxHealth || 20.0 || 0.0 || Double.MaxValue || Max Health
+|-
+| generic.followRange || 32.0 || 0.0 || 2048.0 || Follow Range
+|-
+| generic.knockbackResistance || 0.0 || 0.0 || 1.0 || Knockback Resistance
+|-
+| generic.movementSpeed || 0.699999988079071 || 0.0 || Double.MaxValue || Movement Speed
+|-
+| generic.attackDamage || 2.0 || 0.0 || Double.MaxValue || 
+|-
+| horse.jumpStrength || 0.7 || 0.0 || 2.0 || Jump Strength
+|-
+| zombie.spawnReinforcements || 0.0 || 0.0 || 1.0 || Spawn Reinforcements Chance
+|}
+
+'''Modifier Data''' structure:
+{| class="wikitable"
+|-
+! Field Name !! Field Type !! Notes
+|-
+| UUID || 128-bit integer ||
+|-
+| Amount || Double ||
+|-
+| Operation || Byte ||
+|}
+
+==== Chunk Data ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=7 | 0x24
+| Chunk X || Int || Chunk X coordinate
+|-
+| Chunk Z || Int || Chunk Z coordinate
+|-
+| Ground-Up continuous || Boolean || This is True if the packet represents all sections in this vertical column, where the primary bit map specifies exactly which sections are included, and which are air
+|-
+| Primary bit map || Unsigned Short || Bitmask with 1 for every 16x16x16 section which data follows in the compressed data.
+|-
+| Add bit map || Unsigned Short || Same as above, but this is used exclusively for the 'add' portion of the payload
+|- 
+| Compressed size || Int || Size of compressed chunk data
+|-
+| Compressed data || Byte array || The chunk data is compressed using Zlib Deflate
+|}
+
+==== Multi Block Change ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x25
+| Chunk X || Int || Chunk X coordinate
+|-
+| Chunk Z || Int || Chunk Z Coordinate
+|-
+| Record count || Short || The number of blocks affected
+|-
+| Data size || Int ||  The total size of the data, in bytes. Should always be 4*record count
+|-
+| Records || Array of Records || 
+|}
+
+'''Record'''
+{| class="wikitable"
+|-
+! Bit mask !! Width !! Meaning
+|-
+| 00 00 00 0F || 4 bits || Block metadata
+|-
+| 00 00 FF F0 || 12 bits || Block ID
+|-
+| 00 FF 00 00 || 8 bits || Y co-ordinate
+|-
+| 0F 00 00 00 || 4 bits || Z co-ordinate, relative to chunk
+|-
+| F0 00 00 00 || 4 bits || X co-ordinate, relative to chunk
+|}
+
 == Status ==
 
 === Clientbound ===
