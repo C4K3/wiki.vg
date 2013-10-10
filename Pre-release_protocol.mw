@@ -1756,7 +1756,7 @@ Action ID values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x42
+| rowspan="3" | 0x23
 | Channel || String || Name of the "channel" used to send the data.
 |-
 | Length || Short || Length of the following byte array
