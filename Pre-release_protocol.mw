@@ -1132,6 +1132,7 @@ Values: The enchantment's level.
 | Line 4 || String || Fourth line of text in the sign
 |}
 
+==== Maps ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
@@ -1145,7 +1146,6 @@ Values: The enchantment's level.
 | Data || Byte Array || Array data
 |}
 
-'''Maps'''
 If the first byte of the array is 0, the next two bytes are X start and Y start and the rest of the bytes are the colors in that column.
 
 If the first byte of the array is 1, the rest of the bytes are in groups of three: (data, x, y). The lower half of the data is the type (always 0 under vanilla) and the upper half is the direction.
