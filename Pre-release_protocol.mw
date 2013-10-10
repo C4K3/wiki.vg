@@ -392,7 +392,6 @@ Animation can be one of the following values:
 |-
 | Direction || Int || Direction the painting faces (0 -z, 1 -x, 2 +z, 3 +x)
 |}
-}
 
 ==== Spawn Experience Orb ====
 {| class="wikitable"
