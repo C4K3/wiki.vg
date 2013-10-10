@@ -1227,6 +1227,101 @@ If the first byte of the array is 2, the second byte is the map scale.
 | Walking speed || Float || previous integer value divided by 250
 |}
 
+==== Tab-Complete ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| 0x3D 
+| Text || String ||
+|}
+
+==== Scoreboard Objective ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x3E
+| Objective name || String || An unique name for the objective
+|-
+| Objective value || String || The text to be displayed for the score.
+|-
+| Create/Remove || Byte || 0 to create the scoreboard. 1 to remove the scoreboard. 2 to update the display text. 
+|}
+
+==== Update Score ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="4" | 0x3F
+| Item Name || String || An unique name to be displayed in the list.
+|-
+| Update/Remove || Byte || 0 to create/update an item. 1 to remove an item.
+|-
+| Score Name || String || The unique name for the scoreboard to be updated. Only sent when Update/Remove does not equal 1.
+|-
+| Value || Int || The score to be displayed next to the entry. Only sent when Update/Remove does not equal 1.
+|}
+
+==== Display Scoreboard ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="2" | 0x40
+| Position || Byte || The position of the scoreboard. 0 = list, 1 = sidebar, 2 = belowName.
+|-
+| Score Name || String || The unique name for the scoreboard to be displayed.
+|}
+
+==== Teams ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="8" | 0x41
+| Team Name || String || A unique name for the team. (Shared with scoreboard).
+|-
+| Mode || Byte || If 0 then the team is created. 
+If 1 then the team is removed. 
+
+If 2 the team team information is updated. 
+
+If 3 then new players are added to the team. 
+
+If 4 then players are removed from the team.
+|-
+| Team Display Name || String || Only if Mode = 0 or 2. 
+|-
+| Team Prefix || String || Only if Mode = 0 or 2. Displayed before the players' name that are part of this team. 
+|-
+| Team Suffix || String || Only if Mode = 0 or 2. Displayed after the players' name that are part of this team. 
+|-
+| Friendly fire || Byte || Only if Mode = 0 or 2; 0 for off, 1 for on, 3 for seeing friendly invisibles
+|-
+| Player count || Short || Only if Mode = 0 or 3 or 4. Number of players in the array
+|-
+| Players || Array of strings || Only if Mode = 0 or 3 or 4. Players to be added/remove from the team.
+|}
+
+==== Plugin Message ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x42
+| Channel || String || Name of the "channel" used to send the data.
+|-
+| Length || Short || Length of the following byte array
+|-
+| Data || Byte Array || Any data.
+|}
+
+More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plugin-channels-messaging/
+
+==== Disconnect ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| 0x43
+| Reason || String || Displayed to the client when the connection terminates
+|}
+
 == Status ==
 
 === Clientbound ===
