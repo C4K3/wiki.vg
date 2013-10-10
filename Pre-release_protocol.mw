@@ -1809,14 +1809,13 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 
 === Clientbound ===
 
-==== ? ====
+==== Disconnect ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=1 | 0x00
-| || String ||
+| JSON Data || String ||
 |}
-
 
 ==== ? ====
 {| class="wikitable"
