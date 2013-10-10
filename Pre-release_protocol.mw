@@ -1324,6 +1324,434 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 
 === Serverbound ===
 
+==== Keep Alive ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x00
+| Keep Alive ID || Int ||
+|}
+
+==== Chat Message ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x01
+| JSON Data || String || https://gist.github.com/thinkofdeath/e882ce057ed83bac0a1c
+|}
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x02
+| || Int ||
+|-
+| || Byte ||
+|}
+
+Animation can be one of the following values:
+
+{| class="wikitable"
+! ID !! Animation
+|-
+| 0 || No animation
+|-
+| 1 || Swing arm
+|-
+| 2 || Damage animation
+|-
+| 3 || Leave bed
+|-
+| 5 || Eat food
+|-
+| 6 || Critical effect
+|-
+| 7 || Magic critical effect
+|-
+| 102 || (unknown)
+|-
+| 104 || Crouch
+|-
+| 105 || Uncrouch
+|}
+
+==== Player ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x03
+| On Ground || Bool | True if the client is on the ground, False otherwise
+|}
+
+==== Player Position ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5| 0x04
+| X || Double || Absolute position
+|-
+| Y || Double || Absolute position
+|-
+| Stance || Double || Used to modify the players bounding box when going up stairs, crouching, etc…
+|-
+| Z || Double || Absolute position
+|-
+| On Ground || Bool || True if the client is on the ground, False otherwise
+|}
+
+==== Player Look ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3| 0x05
+| Yaw || Float || Absolute rotation on the X Axis, in degrees
+|-
+| Pitch || Float || Absolute rotation on the Y Axis, in degrees
+|-
+| On Ground || Bool || True if the client is on the ground, False otherwise
+|}
+
+==== Player Position And Look ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=7| 0x06
+| X || Double || Absolute position
+|-
+| Y || Double || Absolute position
+|-
+| Stance || Double || Used to modify the players bounding box when going up stairs, crouching, etc…
+|-
+| Z || Double || Absolute position
+|-
+| Yaw || Float || Absolute rotation on the X Axis, in degrees
+|-
+| Pitch || Float || Absolute rotation on the Y Axis, in degrees
+|-
+| On Ground || Bool || True if the client is on the ground, False otherwise
+|}
+
+==== Use Bed ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x07
+| Entity ID || Int || Player ID
+|-
+| || Byte ||
+|-
+| X || Int || Bed headboard X as block coordinate
+|-
+| Y || Unsigned Byte || Bed headboard Y as block coordinate
+|-
+| Z || Int || Bed headboard Z as block coordinate
+|}
+
+==== Player Block Placement ====
+{| class="wikitable"
+|-
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="8" | 0x08
+| X || Int || Block position
+|-
+| Y || Unsigned Byte || Block position
+|-
+| Z || Int || Block position
+|-
+| Direction || Byte || The offset to use for block/item placement (see below)
+|-
+| Held item || [[Slot_Data|Slot]] ||
+|-
+| Cursor position X || Byte || The position of the crosshair on the block
+|-
+| Cursor position Y || Byte ||
+|-
+| Cursor position Z || Byte ||
+|}
+In normal operation (ie placing a block), this packet is sent once, with the values set normally.
+
+This packet has a special case where X, Y, Z, and Direction are all -1. (Note that Y is unsigned so set to 255.) This special packet indicates that the currently held item for the player should have its state updated such as eating food, shooting bows, using buckets, etc.
+
+In a Notchian Beta client, the block or item ID corresponds to whatever the client is currently holding, and the client sends one of these packets any time a right-click is issued on a surface, so no assumptions can be made about the safety of the ID.  However, with the implementation of server-side inventory, a Notchian server seems to ignore the item ID, instead operating on server-side inventory information and holding selection. The client has been observed (1.2.5 and 1.3.2) to send both real item IDs and -1 in a single session.
+
+Special note on using buckets:  When using buckets, the Notchian client might send two packets:  first a normal and then a special case.  The first normal packet is sent when you're looking at a block (e.g. the water you want to scoop up).  This normal packet does not appear to do anything with a Notchian server.  The second, special case packet appears to perform the action - based on current position/orientation and with a distance check - it appears that buckets can only be used within a radius of 6 units.
+
+==== Held Item Change ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x09
+| Slot || Short || The slot which the player has selected (0-8)
+|}
+
+==== Animation ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x0A
+| Entity ID || Int || Player ID
+|-
+| Animation || Byte || Animation ID
+|}
+
+==== Entity Action ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x0B
+| Entity ID || Int || Player ID
+|-
+| Action ID || Byte || The ID of the action, see below.
+|-
+| Jump Boost || Int || Horse jump boost. Ranged from 0 -> 100.
+|}
+
+Action ID can be one of the following values:
+
+{| class="wikitable"
+! ID !! Action
+|-
+| 1 || Crouch
+|-
+| 2 || Uncrouch
+|-
+| 3 || Leave bed
+|-
+| 4 || Start sprinting
+|-
+| 5 || Stop sprinting
+|}
+
+==== Steer Vehicle ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="4" | 0x0C
+| Sideways || Float || Positive to the left of the player
+|-
+| Forward || Float || Positive forward
+|-
+| Jump || Bool ||
+|-
+| Unmount || Bool || True when leaving the vehicle
+|}
+
+==== Close Window ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| 0x0D
+| Window id || byte || This is the id of the window that was closed. 0 for inventory.
+|}
+
+
+==== Click Window ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="6" | 0x0E
+| Window ID || Byte || The id of the window which was clicked. 0 for player inventory.
+|-
+| Slot || Short || The clicked slot. See below.
+|-
+| Button || Byte || The button used in the click. See below.
+|-
+| Action number || Short || A unique number for the action, used for transaction handling (See the Transaction packet).
+|-
+| Mode || Byte || Inventory operation mode. See below.
+|-
+| Clicked item || [[Slot_Data|Slot]] ||
+|}
+
+See [[Inventory#Windows|inventory windows]] for further information about how slots are indexed.
+
+When right-clicking on a stack of items, half the stack will be picked up and half left in the slot.  If the stack is an odd number, the half left in the slot will be smaller of the amounts.
+
+The Action number is actually a counter, starting at 1.  This number is used by the server as a transaction ID to send back a [[#0x6A|Transaction packet]].
+
+The distinct type of click performed by the client is determined by the combination of the "Mode" and "Button" fields.
+{| class="wikitable"
+! Mode !! Button !! Slot !! Trigger
+|-
+! rowspan="2" | 0
+| 0 || Normal || Left mouse click
+|-
+| 1 || Normal || Right mouse click
+|-
+! rowspan="2" | 1
+| 0 || Normal || Shift + left mouse click
+|-
+| 1 || Normal || Shift + right mouse click ''(Identical behavior)''
+|-
+! rowspan="5" | 2
+| 0 || Normal || Number key 1
+|-
+| 1 || Normal || Number key 2
+|-
+| 2 || Normal || Number key 3
+|-
+| ...
+| ...
+| ...
+|-
+| 8 || Normal || Number key 9
+|-
+! rowspan="1" | 3
+| 2 || Normal || Middle click
+|-
+! rowspan="4" | 4
+| 0 || Normal || Drop key (Q)
+|-
+| 1 || Normal || Ctrl + Drop key (Ctrl-Q)
+|-
+| 0 || -999 || Left click outside inventory holding nothing ''(No-op)''
+|-
+| 1 || -999 || Right click outside inventory holding nothing ''(No-op)''
+|-
+! rowspan="6" | 5
+| 0 || -999 || Starting left mouse drag ''(Or middle mouse)''
+|-
+| 4 || -999 || Starting right mouse drag
+|-
+| 1 || Normal || Add slot for left-mouse drag
+|-
+| 5 || Normal || Add slot for right-mouse drag
+|-
+| 2 || -999 || Ending left mouse drag
+|-
+| 6 || -999 || Ending right mouse drag
+|-
+! 6 
+| 0 || Normal || Double click
+|}
+
+Starting from version 1.5, "painting mode" is available for use in inventory windows. It is done by picking up stack of something (more than 1 items), then holding mouse button (left, right or middle) and dragging holded stack over empty (or same type in case of right button ) slots. In that case client sends the following to server after mouse button release (omitting first pickup packet which is sent as usual):
+
+# packet with mode 5, slot -999 , button (0 for left | 4 for right);
+# packet for every slot painted on, mode is still 5, button (1 | 5);
+# packet with mode 5, slot -999, button (2 | 6);
+
+If any of the painting packets other than the "progress" ones are sent out of order (for example, a start, some slots, then another start; or a left-click in the middle) the painting status will be reset.
+
+==== Confirm Transaction  ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x0F
+| Window ID || Byte || The id of the window that the action occurred in.
+|-
+| Action number || Short || Every action that is to be accepted has a unique number. This field corresponds to that number.
+|-
+| Accepted || Bool || Whether the action was accepted.
+|}
+
+==== Creative Inventory Action ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="2" | 0x10
+| Slot || Short || Inventory slot
+|-
+| Clicked item || [[Slot_Data|Slot]] ||
+|}
+
+==== Enchant Item ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="2" | 0x11
+| Window ID || Byte || The ID sent by [[#0x64|Open Window]]
+|-
+| Enchantment || Byte || The position of the enchantment on the enchantment table window, starting with 0 as the topmost one.
+|}
+
+==== Update Sign ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="7" | 0x12
+| X || Int || Block X Coordinate
+|-
+| Y || Short || Block Y Coordinate
+|-
+| Z || Int || Block Z Coordinate
+|-
+| Line 1 || String || First line of text in the sign
+|-
+| Line 2 || String || Second line of text in the sign
+|-
+| Line 3 || String || Third line of text in the sign
+|-
+| Line 4 || String || Fourth line of text in the sign
+|}
+
+==== Player Abilities ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="3" | 0x13
+| Flags || Byte ||
+|-
+| Flying speed || Float|| previous integer value divided by 250
+|-
+| Walking speed || Float || previous integer value divided by 250
+|}
+
+==== Tab-Complete ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| 0x14 
+| Text || String ||
+|}
+
+
+==== Client Settings ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan="6" | 0x15
+| Locale || String || en_GB
+|-
+| View distance || Byte || 0-3 for 'far', 'normal', 'short', 'tiny'.
+|-
+| Chat flags || Byte || Chat settings. See notes below.
+|-
+| ??? || Bool || ???
+|-
+| Difficulty || Byte || Client-side difficulty from options.txt
+|-
+| Show Cape || Bool || Client-side "show cape" option
+|}
+
+Chat flags has several values packed into one byte.
+
+'''Chat Enabled:''' Bits 0-1. 00: Enabled.  01: Commands only.  10: Hidden.
+
+'''Colors Enabled:''' Bit 3.  0: Disabled.  1: Enabled.
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x16
+| || Byte ||
+|}
+
+==== ? ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3 | 0x17
+| || String ||
+|-
+| Length || Short ||
+|-
+| || Array of Bytes ||
+|}
+
 == Status ==
 
 === Clientbound ===
