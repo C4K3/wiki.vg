@@ -171,6 +171,149 @@ String - UTF-8 String
 | Level Type || String || 
 |}
 
+==== Player ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x08
+| On Ground || Bool | True if the client is on the ground, False otherwise
+|}
+
+==== Player Position ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5| 0x09
+| X || Double || Absolute position
+|-
+| Y || Double || Absolute position
+|-
+| Stance || Double || Used to modify the players bounding box when going up stairs, crouching, etc…
+|-
+| Z || Double || Absolute position
+|-
+| On Ground || Bool || True if the client is on the ground, False otherwise
+|}
+
+==== Player Look ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=3| 0x0A
+| Yaw || Float || Absolute rotation on the X Axis, in degrees
+|-
+| Pitch || Float || Absolute rotation on the Y Axis, in degrees
+|-
+| On Ground || Bool || True if the client is on the ground, False otherwise
+|}
+
+==== Player Position And Look ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=7| 0x0B
+| X || Double || Absolute position
+|-
+| Y || Double || Absolute position
+|-
+| Stance || Double || Used to modify the players bounding box when going up stairs, crouching, etc…
+|-
+| Z || Double || Absolute position
+|-
+| Yaw || Float || Absolute rotation on the X Axis, in degrees
+|-
+| Pitch || Float || Absolute rotation on the Y Axis, in degrees
+|-
+| On Ground || Bool || True if the client is on the ground, False otherwise
+|}
+
+==== Held Item Change ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x0C
+| Slot || Short || The slot which the player has selected (0-8)
+|}
+
+==== Use Bed ==== 
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=5 | 0x0D
+| Entity ID || Int || Player ID
+|-
+| || Byte ||
+|-
+| X || Int || Bed headboard X as block coordinate
+|-
+| Y || Unsigned Byte || Bed headboard Y as block coordinate
+|-
+| Z || Int || Bed headboard Z as block coordinate
+|}
+
+==== Animation ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=2 | 0x0E
+| Entity ID || Int || Player ID
+|-
+| Animation || Byte || Animation ID
+|}
+
+Animation can be one of the following values:
+
+{| class="wikitable"
+! ID !! Animation
+|-
+| 0 || No animation
+|-
+| 1 || Swing arm
+|-
+| 2 || Damage animation
+|-
+| 3 || Leave bed
+|-
+| 5 || Eat food
+|-
+| 6 || Critical effect
+|-
+| 7 || Magic critical effect
+|-
+| 102 || (unknown)
+|-
+| 104 || Crouch
+|-
+| 105 || Uncrouch
+|}
+
+==== Spawn Player ====
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=10 | 0x0F
+|-
+| Entity ID || Int || Player's Entity ID
+|-
+| Player UUID || String || Player's UUID
+|-
+| Player Name || String || Player's Name
+|-
+| X || Int || Player X as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Y || Int || Player X as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Z || Int || Player X as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
+|-
+| Yaw || Byte || Player rotation as a packed byte
+|-
+| Pitch || Byte || Player rotation as a packet byte
+|-
+| Current Item || Short | The item the player is currently holding. Note that this should be 0 for "no item", unlike -1 used in other packets. A negative value crashes clients.
+|-
+| Metadata || [[Entities#Entity_Metadata_Format|Metadata]] || The client will crash if no metadata is sent
+|}
+
 == Status ==
 
 == Login ==
