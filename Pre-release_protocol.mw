@@ -1814,6 +1814,14 @@ The status ping works as follows.
 
 == Login ==
 
+The login process is as follows:
+    C->S : Handshake State=2
+    C->S : Login Start
+    S->C : Encryption Key Request
+    C->S : Encryption Key Response
+    (Auth & enable encryption)
+    S->S : Login Success
+
 === Clientbound ===
 
 ==== Disconnect ====
@@ -1841,7 +1849,7 @@ The status ping works as follows.
 |- 
 |}
 
-==== Login Success?? ====
+==== Login Success ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
@@ -1852,7 +1860,7 @@ The status ping works as follows.
 
 === Serverbound ===
 
-==== Login Initialize?? ====
+==== Login Start  ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
