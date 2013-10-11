@@ -65,7 +65,7 @@ String - UTF-8 String prefixed with a VarInt
 |- 
 | Server Port || VarInt || 25565
 |-
-| Current state || VarInt || 0 for play, 1 for status, 2 for login
+| Current state || VarInt || 1 for login, 2 for status
 |}
 
 == Play ==
