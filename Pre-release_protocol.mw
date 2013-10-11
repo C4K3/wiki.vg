@@ -1732,7 +1732,7 @@ Chat flags has several values packed into one byte.
 
 '''Colors Enabled:''' Bit 3.  0: Disabled.  1: Enabled.
 
-==== Clickable Action ====
+==== Client Status ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
@@ -1745,11 +1745,11 @@ Action ID values:
 |-
 ! Action ID !! Name
 |-
-| 0 || Perform respawn
+| 1 || Perform respawn
 |-
-| 1 || Request stats
+| 2 || Request stats
 |-
-| 2 || Open inventory achievement
+| 3 || Open inventory achievement
 |}
 
 ==== Plugin Message ====
