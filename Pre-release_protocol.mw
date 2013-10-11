@@ -17,8 +17,10 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 
 13w41a - Large protocol work
 
+13w41b - Removed 0x08, 0x09, 0x0A, Removed unused fields from Player Position and Look and Join Game
+
 == Protocol Version ==
-13w41a - 0
+13w41a/b - 0
 
 13w39a/b - 80
 
@@ -64,7 +66,7 @@ This causes the server to switch into the target state.
 |-
 | Server Address (hostname or IP) || String || localhost
 |- 
-| Server Port || VarInt || 25565
+| Server Port || Unsigned Short|| 25565
 |-
 | Current state || VarInt || 1 for status, 2 for login
 |}
@@ -172,52 +174,14 @@ This causes the server to switch into the target state.
 | Level Type || String || 
 |}
 
-==== Player ====
-{| class="wikitable"
-! Packet ID !! Field Name !! Field Type !! Notes
-|-
-| rowspan=1 | 0x08
-| On Ground || Bool | True if the client is on the ground, False otherwise
-|}
-
-==== Player Position ==== 
-{| class="wikitable"
-! Packet ID !! Field Name !! Field Type !! Notes
-|-
-| rowspan=5| 0x09
-| X || Double || Absolute position
-|-
-| Y || Double || Absolute position
-|-
-| Stance || Double || Used to modify the players bounding box when going up stairs, crouching, etc…
-|-
-| Z || Double || Absolute position
-|-
-| On Ground || Bool || True if the client is on the ground, False otherwise
-|}
-
-==== Player Look ==== 
-{| class="wikitable"
-! Packet ID !! Field Name !! Field Type !! Notes
-|-
-| rowspan=3| 0x0A
-| Yaw || Float || Absolute rotation on the X Axis, in degrees
-|-
-| Pitch || Float || Absolute rotation on the Y Axis, in degrees
-|-
-| On Ground || Bool || True if the client is on the ground, False otherwise
-|}
-
 ==== Player Position And Look ==== 
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=7| 0x0B
+| rowspan=6| 0x08
 | X || Double || Absolute position
 |-
 | Y || Double || Absolute position
-|-
-| Stance || Double || Used to modify the players bounding box when going up stairs, crouching, etc…
 |-
 | Z || Double || Absolute position
 |-
@@ -232,7 +196,7 @@ This causes the server to switch into the target state.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=1 | 0x0C
+| rowspan=1 | 0x09
 | Slot || Short || The slot which the player has selected (0-8)
 |}
 
@@ -240,7 +204,7 @@ This causes the server to switch into the target state.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=5 | 0x0D
+| rowspan=5 | 0x0A
 | Entity ID || Int || Player ID
 |-
 | || Byte ||
@@ -256,7 +220,7 @@ This causes the server to switch into the target state.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=2 | 0x0E
+| rowspan=2 | 0x0B
 | Entity ID || Int || Player ID
 |-
 | Animation || Byte || Animation ID
@@ -292,7 +256,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=10 | 0x0F
+| rowspan=10 | 0x0C
 | Entity ID || Int || Player's Entity ID
 |-
 | Player UUID || String || Player's UUID
@@ -318,7 +282,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=2 | 0x10
+| rowspan=2 | 0x0D
 | Collected Entity ID || Int ||
 |- 
 | Collector Entity ID || Int ||
@@ -328,7 +292,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=8| 0x11
+| rowspan=8| 0x0E
 | Entity ID || Int || Entity ID of the object
 |-
 | Type || Byte || The of object (See [[Entities#Objects|Objects]]
@@ -350,7 +314,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=12 | 0x12
+| rowspan=12 | 0x0F
 | Entity ID || Int || Entity's ID
 |-
 | Type || Unsigned Byte || The type of mob. See [[Entities#Mobs|Mobs]]
@@ -380,7 +344,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=6 | 0x13
+| rowspan=6 | 0x10
 | Entity ID || Int || Entity's ID
 |-
 | Title || String || Name of the painting. Max length 13
@@ -398,7 +362,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=5 | 0x14
+| rowspan=5 | 0x11
 | Entity ID || Int || Entity's ID
 |-
 | X || Int || X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]] 
@@ -414,7 +378,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=4 | 0x15
+| rowspan=4 | 0x12
 | Entity ID || Int || Entity's ID
 |-
 | Velocity X || Short || Velocity on the X axis
@@ -428,7 +392,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=2 | 0x16
+| rowspan=2 | 0x13
 | Count || Byte || Length of following array
 |-
 | Entity IDs || Array of Int || The list of entities of destroy 
@@ -438,7 +402,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=1 | 0x17
+| rowspan=1 | 0x14
 | Entity ID || Int || Entity's ID
 |}
 
@@ -446,7 +410,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=4| 0x18
+| rowspan=4| 0x15
 | Entity ID || Int || Entity's ID
 |-
 | DX || Byte || Change in X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
@@ -460,7 +424,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=3 | 0x19
+| rowspan=3 | 0x16
 | Entity ID || Int || Entity's ID
 |-
 | Yaw || Byte || The X Axis rotation as a fraction of 360
@@ -472,7 +436,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=6 | 0x1A
+| rowspan=6 | 0x17
 | Entity ID || Int || Entity's ID
 |-
 | DX || Byte || Change in X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
@@ -490,7 +454,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=6 | 0x1B
+| rowspan=6 | 0x18
 | Entity ID || Int || Entity's ID
 |-
 | X || Byte || X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
@@ -508,7 +472,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=2 | 0x1C
+| rowspan=2 | 0x19
 | Entity ID || Int || Entity's ID
 |-
 | Head Yaw || Byte || Head yaw in steps of 2p/256
@@ -518,7 +482,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=2 | 0x1D
+| rowspan=2 | 0x1A
 | Entity ID || Int || Entity's ID
 |-
 | Entity Status || Byte || See below
@@ -561,7 +525,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=3 | 0x1E
+| rowspan=3 | 0x1B
 | Entity ID || Int || Entity's ID
 |-
 | Vehicle ID || Int || Vechicle's Entity ID
@@ -573,7 +537,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=2 | 0x1F
+| rowspan=2 | 0x1C
 | Entity ID || Int || Entity's ID
 |-
 | Metadata || [[Entities#Entity_Metadata_Format|Metadata]] || 
@@ -583,7 +547,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=4 | 0x20
+| rowspan=4 | 0x1D
 | Entity ID || Int || Entity's ID
 |-
 | Effect ID || Byte || See [[http://www.minecraftwiki.net/wiki/Potion_effect#Parameters]]
@@ -597,7 +561,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=2 | 0x21
+| rowspan=2 | 0x1E
 | Entity ID || Int || Entity's ID
 |-
 | Effect ID || Byte ||
@@ -607,7 +571,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=3 | 0x22
+| rowspan=3 | 0x1F
 | Experience bar || Float || Between 0 and 1
 |-
 | Level || Short ||
@@ -619,7 +583,7 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=3 | 0x23
+| rowspan=3 | 0x20
 | Entity ID || Int | Entity's ID
 |-
 | Count || Int || Length of following array
@@ -677,7 +641,7 @@ Known key values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=7 | 0x24
+| rowspan=7 | 0x21
 | Chunk X || Int || Chunk X coordinate
 |-
 | Chunk Z || Int || Chunk Z coordinate
@@ -697,7 +661,7 @@ Known key values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=5 | 0x25
+| rowspan=5 | 0x22
 | Chunk X || Int || Chunk X coordinate
 |-
 | Chunk Z || Int || Chunk Z Coordinate
@@ -729,7 +693,7 @@ Known key values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=5 | 0x26
+| rowspan=5 | 0x23
 | X || Int || Block X Coordinate
 |-
 | Y || Byte || Block Y Coordinate
@@ -745,7 +709,7 @@ Known key values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=6 | 0x27
+| rowspan=6 | 0x24
 | X || Int || Block X Coordinate
 |-
 | Y || Byte || Block Y Coordinate
@@ -763,7 +727,7 @@ Known key values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=5 | 0x28
+| rowspan=5 | 0x25
 | Entity ID || Int || Entity's ID
 |-
 | X || Int || rowspan=3 | Block Position
@@ -779,7 +743,7 @@ Known key values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=5 | 0x29
+| rowspan=5 | 0x26
 | Chunk column count || Short || The number of chunk in this packet
 |-
 | Data length || Int || The size of the data field
@@ -808,7 +772,7 @@ Known key values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="9" | 0x2A
+| rowspan="9" | 0x27
 | X || Double ||
 |-
 | Y || Double ||
@@ -832,7 +796,7 @@ Known key values:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="6" | 0x2B
+| rowspan="6" | 0x28
 | Effect ID || Int || The ID of the effect, see below.
 |-
 | X || Int || The X location of the effect multiplied by 8
@@ -909,7 +873,7 @@ Smoke directions:
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="7" | 0x2C
+| rowspan="7" | 0x29
 | Sound name || String || 
 |-
 | Effect position X || Int || Effect X multiplied by 8
@@ -944,7 +908,7 @@ PLAYERS: 7
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="9" | 0x2D
+| rowspan="9" | 0x2A
 | Particle name || String || The name of the particle to create. A list can be found [https://gist.github.com/thinkofdeath/5110835 here]
 |-
 | X || Float || X position of the particle
@@ -968,7 +932,7 @@ PLAYERS: 7
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="2" | 0x2E
+| rowspan="2" | 0x2B
 | Reason || Byte ||
 |-
 | Value || Float || Depends on reason
@@ -1002,7 +966,7 @@ PLAYERS: 7
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="5" | 0x2F
+| rowspan="5" | 0x2C
 | Entity ID || Int || The entity ID of the thunderbolt
 |-
 | Type || Byte || The global entity type, currently always 1 for thunderbolt.
@@ -1018,7 +982,7 @@ PLAYERS: 7
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="6" | 0x30
+| rowspan="6" | 0x2D
 | Window id || Byte || A unique id number for the window to be displayed.  Notchian server implementation is a counter, starting at 1.
 |-
 | Inventory Type || Byte || The window type to use for display.  Check below
@@ -1038,7 +1002,7 @@ See [[Inventory#Windows|inventory windows]] for further information.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| 0x31
+| 0x2E
 | Window id || byte || This is the id of the window that was closed. 0 for inventory.
 |}
 
@@ -1046,7 +1010,7 @@ See [[Inventory#Windows|inventory windows]] for further information.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x32
+| rowspan="3" | 0x2F
 | Window ID || Byte
 | The window which is being updated. 0 for player inventory. Note that all known window types include the player inventory. This packet will only be sent for the currently opened window while the player is performing actions, even if it affects the player inventory. After the window is closed, a number of these packets are sent to update the player's inventory window (0).
 |-
@@ -1059,7 +1023,7 @@ See [[Inventory#Windows|inventory windows]] for further information.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x33
+| rowspan="3" | 0x30
 | Window ID || Byte || The id of window which items are being sent for. 0 for player inventory.
 |-
 | Count || Short || The number of slots (see below)
@@ -1073,7 +1037,7 @@ See [[Inventory#Windows|inventory windows]] for further information about how sl
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x34
+| rowspan="3" | 0x31
 | Window ID || Byte || The id of the window.
 |-
 | Property || Short || Which property should be updated.
@@ -1105,7 +1069,7 @@ Values: The enchantment's level.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x35
+| rowspan="3" | 0x32
 | Window ID || Byte || The id of the window that the action occurred in.
 |-
 | Action number || Short || Every action that is to be accepted has a unique number. This field corresponds to that number.
@@ -1117,7 +1081,7 @@ Values: The enchantment's level.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="7" | 0x36
+| rowspan="7" | 0x33
 | X || Int || Block X Coordinate
 |-
 | Y || Short || Block Y Coordinate
@@ -1137,7 +1101,7 @@ Values: The enchantment's level.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="4" | 0x37
+| rowspan="4" | 0x34
 | Item Type || Short || Type of item being modified
 |-
 | Item ID || Short || The ID (damage value) of the item being modified
@@ -1157,7 +1121,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="6" | 0x38
+| rowspan="6" | 0x35
 | X || Int ||
 |-
 | Y || Short ||
@@ -1179,7 +1143,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="4" | 0x39
+| rowspan="4" | 0x36
 | Tile Entity Id || Byte || Always seems to be 0 (TileEntitySign)
 |-
 | X || Int || X in block coordinates
@@ -1195,7 +1159,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 ! colspan="2" | Field Name
 ! Field Type !! Notes
 |-
-| rowspan="3" | 0x3A
+| rowspan="3" | 0x37
 | colspan="2" | Count || Int || Number of entrys
 |-
 | rowspan=2 | Entry 
@@ -1208,7 +1172,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x3B
+| rowspan="3" | 0x38
 | Player name || String || Supports chat colouring, limited to 16 characters.
 |-
 | Online || byte || 1 for true, 0 for false. The client will remove the user from the list if false.
@@ -1220,7 +1184,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x3C
+| rowspan="3" | 0x39
 | Flags || Byte ||
 |-
 | Flying speed || Float|| previous integer value divided by 250
@@ -1232,7 +1196,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| 0x3D 
+| 0x3A 
 | Text || String ||
 |}
 
@@ -1240,7 +1204,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x3E
+| rowspan="3" | 0x3B
 | Objective name || String || An unique name for the objective
 |-
 | Objective value || String || The text to be displayed for the score.
@@ -1252,7 +1216,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="4" | 0x3F
+| rowspan="4" | 0x3C
 | Item Name || String || An unique name to be displayed in the list.
 |-
 | Update/Remove || Byte || 0 to create/update an item. 1 to remove an item.
@@ -1266,7 +1230,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="2" | 0x40
+| rowspan="2" | 0x3D
 | Position || Byte || The position of the scoreboard. 0 = list, 1 = sidebar, 2 = belowName.
 |-
 | Score Name || String || The unique name for the scoreboard to be displayed.
@@ -1276,7 +1240,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="8" | 0x41
+| rowspan="8" | 0x3E
 | Team Name || String || A unique name for the team. (Shared with scoreboard).
 |-
 | Mode || Byte || If 0 then the team is created. 
@@ -1305,7 +1269,7 @@ If 4 then players are removed from the team.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="3" | 0x42
+| rowspan="3" | 0x3F
 | Channel || String || Name of the "channel" used to send the data.
 |-
 | Length || Short || Length of the following byte array
@@ -1319,7 +1283,7 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| 0x43
+| 0x40
 | Reason || String || Displayed to the client when the connection terminates
 |}
 
