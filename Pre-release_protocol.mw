@@ -55,7 +55,7 @@ String - UTF-8 String prefixed with a VarInt
 === Serverbound ===
 
 ==== Handshake ====
-This causes the server to which into the target state.
+This causes the server to switch into the target state.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
