@@ -1834,25 +1834,23 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 |- 
 |}
 
-==== ? ====
+==== Login Success?? ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=2 | 0x02
-| UUID || String ||
-|-
-| Name || String ||
+| || JSON Data || user UUID?
 |}
 
 
 === Serverbound ===
 
-==== ? ====
+==== Login Initialize?? ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=1 | 0x00
-| Name || String ||
+| Name || String || unknown
 |}
 
 ==== Encryption Request ====
