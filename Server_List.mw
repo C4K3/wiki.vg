@@ -186,7 +186,7 @@ A couple things for contributors:
 | {{no}}
 | {{yes|{{linux}}}}
 | [https://github.com/clonejo/mc-erl/#feature-list Link]
-| {{unknown|development dropped}}
+| {{no|development dropped}}
 |-
 ! [https://github.com/deoxxa/jsmc jsmc]
 | Conrad Pankoff ([[User:deoxxa|deoxxa]])
