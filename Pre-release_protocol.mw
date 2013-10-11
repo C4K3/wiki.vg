@@ -424,7 +424,7 @@ Animation can be one of the following values:
 | Velocity Z || Short || Velocity on the Z axis
 |}
 
-==== Destroy Entitie s====
+==== Destroy Entities====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
