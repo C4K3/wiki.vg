@@ -1407,21 +1407,56 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 | On Ground || Bool || True if the client is on the ground, False otherwise
 |}
 
-==== Use Bed ==== 
+==== Player Digging ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=5 | 0x07
-| Entity ID || Int || Player ID
+| rowspan="5" | 0x07
+| Status || Byte || The action the player is taking against the block (see below)
 |-
-| || Byte ||
+| X || Int || Block position
 |-
-| X || Int || Bed headboard X as block coordinate
+| Y || Byte || Block position
 |-
-| Y || Unsigned Byte || Bed headboard Y as block coordinate
+| Z || Int || Block position
 |-
-| Z || Int || Bed headboard Z as block coordinate
+| Face || Byte || The face being hit (see below)
 |}
+
+Status can (currently) be one of six values:
+
+{| class="wikitable"
+! Meaning !! Value
+|-
+| Started digging || <code>0</code>
+|-
+| Cancelled digging || <code>1</code>
+|-
+| Finished digging || <code>2</code>
+|-
+| Drop item stack || <code>3</code>
+|-
+| Drop item || <code>4</code>
+|-
+| Shoot arrow / finish eating || <code>5</code>
+|}
+
+Notchian clients send a 0 (started digging) when they start digging and a 2 (finished digging) once they think they are finished. If digging is aborted, the client simply send a 1 (Cancel digging).
+
+Status code 4 (drop item) is a special case.  In-game, when you use the Drop Item command (keypress 'q'), a dig packet with a status of 4, and all other values set to 0, is sent from client to server. Status code 3 is similar, but drops the entire stack.
+
+Status code 5 (shoot arrow / finish eating) is also a special case. The x, y and z fields are all set to 0 like above, with the exception of the face field, which is set to 255.
+
+The face can be one of six values, representing the face being hit:
+
+{| class="wikitable"
+|-
+| Value || 0 || 1 || 2 || 3 || 4 || 5
+|-
+| Offset || -Y || +Y || -Z || +Z || -X || +X
+|}
+
+In 1.7.3, when a player opens a door with left click the server receives Packet 0xE+start digging and opens the door.
 
 ==== Player Block Placement ====
 {| class="wikitable"
