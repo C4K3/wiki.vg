@@ -1817,7 +1817,7 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 | JSON Data || String ||
 |}
 
-==== Encryption Request ====
+==== Encryption Response ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
@@ -1855,18 +1855,18 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 | Name || String ||
 |}
 
-==== ? ====
+==== Encryption Request ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=4 | 0x01 
-| Length || Short ||
+| Length || Short || length of public key
 |-
-| || Byte array ||
+| || Byte array || public key
 |-
-| Length || Short ||
+| Length || Short || length of verify token
 |-
-| || Byte array ||
+| || Byte array || verify token
 |- 
 |}
 
