@@ -1847,9 +1847,9 @@ The status ping works as follows.
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=2 | 0x02
-| || JSON Data || user UUID?
+| UUID || String ||
+| Username || String ||
 |}
-
 
 === Serverbound ===
 
