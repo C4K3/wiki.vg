@@ -1471,6 +1471,33 @@ Special note on using buckets:  When using buckets, the Notchian client might se
 | Animation || Byte || Animation ID
 |}
 
+
+Animation can be one of the following values:
+
+{| class="wikitable"
+! ID !! Animation
+|-
+| 0 || No animation
+|-
+| 1 || Swing arm
+|-
+| 2 || Damage animation
+|-
+| 3 || Leave bed
+|-
+| 5 || Eat food
+|-
+| 6 || Critical effect
+|-
+| 7 || Magic critical effect
+|-
+| 102 || (unknown)
+|-
+| 104 || Crouch
+|-
+| 105 || Uncrouch
+|}
+
 ==== Entity Action ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
