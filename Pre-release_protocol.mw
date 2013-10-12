@@ -706,13 +706,13 @@ Known key values:
 | rowspan=5 | 0x23
 | X || Int || Block X Coordinate
 |-
-| Y || Byte || Block Y Coordinate
+| Y || Unsigned Byte || Block Y Coordinate
 |-
 | Z || Int || Block Z Coordinate
 |-
-| Block Type || Short || The new block type for the block
+| Block Type || VarInt || The new block type for the block
 |-
-| Block Data || Byte || The new data for the block
+| Block Data || Unsigned Byte || The new data for the block
 |}
 
 ==== Block Action ====
