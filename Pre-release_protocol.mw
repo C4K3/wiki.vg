@@ -208,8 +208,6 @@ This causes the server to switch into the target state.
 | rowspan=5 | 0x0A
 | Entity ID || Int || Player ID
 |-
-| || Byte ||
-|-
 | X || Int || Bed headboard X as block coordinate
 |-
 | Y || Unsigned Byte || Bed headboard Y as block coordinate
