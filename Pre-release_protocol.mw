@@ -23,6 +23,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 * Large protocol rework
 
 === 13w41b === 
+''Note this isn't backwards compatible with 13w41a due to Handshakes's Server Port type change''
 * Removed Player (Clientbound), Player Position (Clientbound), Player Look (Clientbound)
 * Removed Player Position and Look (Clientbound)'s 'Stance'  
 * Removed Join Game's 'N/A' and 'Level Type'
