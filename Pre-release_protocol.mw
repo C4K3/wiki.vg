@@ -894,7 +894,7 @@ Smoke directions:
 |-
 | Volume || Float || 1 is 100%, can be more
 |-
-| Pitch || Byte || 63 is 100%, can be more
+| Pitch || Unsigned Byte || 63 is 100%, can be more
 |-
 | Sound Category || Unsigned Byte || Possible values:
 MASTER: 0
