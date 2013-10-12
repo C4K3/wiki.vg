@@ -1150,7 +1150,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 |-
 | Z || Int ||
 |-
-| Action || Byte || The type of update to perform
+| Action || Unsigned Byte || The type of update to perform
 |-
 | Data length || Short || Varies
 |-
