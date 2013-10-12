@@ -52,6 +52,11 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 * Changed Comfirm Transaction's 'Window ID' type to Unsigned Byte
 * Changed Maps' 'Item Damage' type to VarInt
 * Removed Maps' 'Item Type'
+* Changed Update Block Entity's 'Action' type to Unsigned Byte
+* Block Editor Open -> Sign Editor Open
+* Removed Sign Editor Open's 'Tile Entity Id'
+* Changed Statistics's 'Count' and 'Amount' types to VarInt 
+* Changed Tab-Complete from \x00 String to Array of Strings
 
 == Protocol Version ==
 13w41a/b - 0
