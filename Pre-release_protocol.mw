@@ -1195,7 +1195,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 | rowspan="3" | 0x38
 | Player name || String || Supports chat colouring, limited to 16 characters.
 |-
-| Online || byte || 1 for true, 0 for false. The client will remove the user from the list if false.
+| Online || Bool || The client will remove the user from the list if false.
 |-
 | Ping || Short || Ping, presumably in ms.
 |}
