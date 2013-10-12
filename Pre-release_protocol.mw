@@ -943,7 +943,7 @@ PLAYERS: 7
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan="2" | 0x2B
-| Reason || Byte ||
+| Reason || Unsigned Byte ||
 |-
 | Value || Float || Depends on reason
 |}
