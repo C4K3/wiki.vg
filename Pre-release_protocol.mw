@@ -1034,7 +1034,7 @@ See [[Inventory#Windows|inventory windows]] for further information.
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan="3" | 0x30
-| Window ID || Byte || The id of window which items are being sent for. 0 for player inventory.
+| Window ID || Unsigned Byte || The id of window which items are being sent for. 0 for player inventory.
 |-
 | Count || Short || The number of slots (see below)
 |-
