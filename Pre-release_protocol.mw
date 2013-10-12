@@ -1080,7 +1080,7 @@ Values: The enchantment's level.
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan="3" | 0x32
-| Window ID || Byte || The id of the window that the action occurred in.
+| Window ID || Unsigned Byte || The id of the window that the action occurred in.
 |-
 | Action number || Short || Every action that is to be accepted has a unique number. This field corresponds to that number.
 |-
