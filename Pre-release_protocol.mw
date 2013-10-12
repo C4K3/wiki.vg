@@ -1126,11 +1126,9 @@ Values: The enchantment's level.
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan="4" | 0x34
-| Item Type || Short || Type of item being modified
+| Item Damage || VarInt || The damage value of the map being modified
 |-
-| Item ID || Short || The ID (damage value) of the item being modified
-|-
-| Text length || Short || Length of following byte array
+| Length || Short || Length of following byte array
 |-
 | Data || Byte Array || Array data
 |}
