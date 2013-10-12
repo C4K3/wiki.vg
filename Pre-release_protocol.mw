@@ -344,7 +344,7 @@ Animation can be one of the following values:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=6 | 0x10
-| Entity ID || Int || Entity's ID
+| Entity ID || VarInt || Entity's ID
 |-
 | Title || String || Name of the painting. Max length 13
 |-
