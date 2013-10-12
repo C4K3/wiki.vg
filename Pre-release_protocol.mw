@@ -672,9 +672,9 @@ Known key values:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=5 | 0x22
-| Chunk X || Int || Chunk X coordinate
+| Chunk X || VarInt || Chunk X coordinate
 |-
-| Chunk Z || Int || Chunk Z Coordinate
+| Chunk Z || VarInt || Chunk Z Coordinate
 |-
 | Record count || Short || The number of blocks affected
 |-
