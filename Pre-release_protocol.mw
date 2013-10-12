@@ -993,13 +993,13 @@ PLAYERS: 7
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan="6" | 0x2D
-| Window id || Byte || A unique id number for the window to be displayed.  Notchian server implementation is a counter, starting at 1.
+| Window id || Unsigned Byte || A unique id number for the window to be displayed.  Notchian server implementation is a counter, starting at 1.
 |-
-| Inventory Type || Byte || The window type to use for display.  Check below
+| Inventory Type || Unsigned Byte || The window type to use for display.  Check below
 |-
 | Window title || String || The title of the window.
 |-
-| Number of Slots || Byte || Number of slots in the window (excluding the number of slots in the player inventory).
+| Number of Slots || Unsigned Byte || Number of slots in the window (excluding the number of slots in the player inventory).
 |-
 | Use provided window title || Bool || If false, the client will look up a string like "window.minecart". If true, the client uses what the server provides.
 |-
