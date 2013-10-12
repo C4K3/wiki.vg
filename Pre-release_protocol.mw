@@ -467,11 +467,11 @@ Animation can be one of the following values:
 | rowspan=6 | 0x18
 | Entity ID || Int || Entity's ID
 |-
-| X || Byte || X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+| X || Int || X position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
 |-
-| Y || Byte || Y position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+| Y || Int || Y position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
 |-
-| Z || Byte || Z position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
+| Z || Int || Z position as a [[Data_Types#Fixed-point_numbers|Fixed-Point number]]
 |-
 | Yaw || Byte || The X Axis rotation as a fraction of 360
 |-
