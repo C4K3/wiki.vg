@@ -783,11 +783,11 @@ Known key values:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan="9" | 0x27
-| X || Double ||
+| X || Float ||
 |-
-| Y || Double ||
+| Y || Float ||
 |-
-| Z || Double ||
+| Z || Float ||
 |-
 | Radius || Float || Currently unused in the client
 |-
