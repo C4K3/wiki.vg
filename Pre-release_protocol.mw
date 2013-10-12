@@ -722,15 +722,15 @@ Known key values:
 | rowspan=6 | 0x24
 | X || Int || Block X Coordinate
 |-
-| Y || Byte || Block Y Coordinate
+| Y || Short || Block Y Coordinate
 |-
 | Z || Int || Block Z Coordinate
 |-
-| Byte 1 || Byte || Varies depending on block - see [[Block_Actions]]
+| Byte 1 || Unsigned Byte || Varies depending on block - see [[Block_Actions]]
 |-
-| Byte 2 || Byte || Varies depending on block - see [[Block_Actions]]
+| Byte 2 || Unsigned Byte || Varies depending on block - see [[Block_Actions]]
 |-
-| Block Type || Short || The block type for the block
+| Block Type || VarInt || The block type for the block
 |}
 
 ==== Block Break Animation ====
