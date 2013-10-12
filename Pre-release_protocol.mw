@@ -1180,12 +1180,12 @@ If the first byte of the array is 2, the second byte is the map scale.
 ! Field Type !! Notes
 |-
 | rowspan="3" | 0x37
-| colspan="2" | Count || Int || Number of entrys
+| colspan="2" | Count || VarInt || Number of entrys
 |-
 | rowspan=2 | Entry 
 | Statistic's name || String || 
 |-
-| Amount || Int || The amount to increase by
+| Amount || VarInt || The amount to increase by
 |}
 
 ==== Player List Item ====
