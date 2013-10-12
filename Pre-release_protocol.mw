@@ -314,7 +314,7 @@ Animation can be one of the following values:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=12 | 0x0F
-| Entity ID || Int || Entity's ID
+| Entity ID || VarInt || Entity's ID
 |-
 | Type || Unsigned Byte || The type of mob. See [[Entities#Mobs|Mobs]]
 |-
