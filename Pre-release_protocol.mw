@@ -97,20 +97,16 @@ This causes the server to switch into the target state.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=7 | 0x01
+| rowspan=5 | 0x01
 | Entity ID || Int || The player's Entity ID
 |-
-| Level type || String || level-type in server.properties
-|-
-| Gamemode || Byte || 0: survival, 1: creative, 2: adventure. Bit 3 (0x8) is the hardcore flag
+| Gamemode || Unsigned Byte || 0: survival, 1: creative, 2: adventure. Bit 3 (0x8) is the hardcore flag
 |-
 | Dimension || Byte || -1: nether, 0: overworld, 1: end
 |-
 | Difficulty || Unsigned Byte || 0 thru 3 for Peaceful, Easy, Normal, Hard
-|- 
-| || Byte ||
 |-
-| Max Players || Byte || Used by the client to draw the player list
+| Max Players || Unsigned Byte || Used by the client to draw the player list
 |}
 
 ==== Chat Message ==== 
