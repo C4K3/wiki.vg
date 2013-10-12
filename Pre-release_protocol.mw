@@ -292,7 +292,7 @@ Animation can be one of the following values:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=8| 0x0E
-| Entity ID || Int || Entity ID of the object
+| Entity ID || VarInt || Entity ID of the object
 |-
 | Type || Byte || The of object (See [[Entities#Objects|Objects]]
 |-
