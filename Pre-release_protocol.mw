@@ -25,8 +25,19 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 === 13w41b === 
 * Removed 0x08, 0x09, 0x0A
 * Removed unused field 'Stance' from Player Position and Look (Clientbound)
-* Removed unused fields 'N/A' and 'Level Type' from Join Game (Clientbound)
+* Removed unused fields 'N/A' and 'Level Type' from Join Game
+* Changed 'Gamemode' 'Difficulty' 'Max Players' types to Unsigned Byte
 * Changed Handshake's Server Port VarInt -> Unsigned Short
+* Removed unused fields 'World Height' 'Level Type' from Respawn 
+* Changed Respawn's 'Difficulty' and 'Gamemode' types to Unsigned Byte
+* Changed Held Item Change's 'Slot' type to Byte
+* Removed unknown byte from Use Bed
+* Changed Animation's 'Animation' type to Unsigned Byte
+* Changed Spawn Player's 'Entity ID' type to VarInt
+* Changed Spawn Object's 'Entity ID' type to VarInt
+* Changed Spawn Mob's 'Entity ID' type to VarInt
+* Changed Spawn Painting's 'Entity ID' type to VarInt
+* Changed Spawn Experience Orb's 'Entity ID' type to VarInt
 
 == Protocol Version ==
 13w41a/b - 0
