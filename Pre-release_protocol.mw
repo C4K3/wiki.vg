@@ -1048,7 +1048,7 @@ See [[Inventory#Windows|inventory windows]] for further information about how sl
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan="3" | 0x31
-| Window ID || Byte || The id of the window.
+| Window ID || Unsigned Byte || The id of the window.
 |-
 | Property || Short || Which property should be updated.
 |-
