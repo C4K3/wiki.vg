@@ -1013,7 +1013,7 @@ See [[Inventory#Windows|inventory windows]] for further information.
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | 0x2E
-| Window id || byte || This is the id of the window that was closed. 0 for inventory.
+| Window ID || Unsigned Byte || This is the id of the window that was closed. 0 for inventory.
 |}
 
 ==== Set Slot ====
