@@ -256,7 +256,7 @@ Animation can be one of the following values:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=10 | 0x0C
-| Entity ID || Int || Player's Entity ID
+| Entity ID || VarInt || Player's Entity ID
 |-
 | Player UUID || String || Player's UUID
 |-
