@@ -738,7 +738,7 @@ Known key values:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=5 | 0x25
-| Entity ID || Int || Entity's ID
+| Entity ID || VarInt || Entity's ID
 |-
 | X || Int || rowspan=3 | Block Position
 |-
