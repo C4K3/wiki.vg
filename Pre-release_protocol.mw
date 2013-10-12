@@ -1161,13 +1161,11 @@ If the first byte of the array is 2, the second byte is the map scale.
 
 * '''1''': Set mob displayed inside a mob spawner. Custom 1 contains the [[Entities#Mobs|mob type]]
 
-==== Block Editor Open ====
+==== Sign Editor Open ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan="4" | 0x36
-| Tile Entity Id || Byte || Always seems to be 0 (TileEntitySign)
-|-
+| rowspan="3" | 0x36
 | X || Int || X in block coordinates
 |-
 | Y || Int || Y in block coordinates
