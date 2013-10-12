@@ -222,7 +222,7 @@ This causes the server to switch into the target state.
 | rowspan=2 | 0x0B
 | Entity ID || Int || Player ID
 |-
-| Animation || Byte || Animation ID
+| Animation || Unsigned Byte || Animation ID
 |}
 
 Animation can be one of the following values:
