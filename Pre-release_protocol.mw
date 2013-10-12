@@ -26,6 +26,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 * Removed 0x08, 0x09, 0x0A
 * Removed unused field 'Stance' from Player Position and Look (Clientbound)
 * Removed unused fields 'N/A' and 'Level Type' from Join Game (Clientbound)
+* Changed Handshake's Server Port VarInt -> Unsigned Short
 
 == Protocol Version ==
 13w41a/b - 0
