@@ -1896,7 +1896,7 @@ The login process is as follows:
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=1 | 0x00
-| Name || String || unknown
+| Name || String || 
 |}
 
 ==== Encryption Request ====
