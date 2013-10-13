@@ -81,7 +81,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 {| class="wikitable"
 ! Field Name !! Field Type !! Notes
 |-
-| Length || VarInt ||
+| Length || VarInt || Includes the type
 |-
 | Type || VarInt ||
 |-
