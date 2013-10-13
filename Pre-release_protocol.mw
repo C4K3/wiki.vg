@@ -1885,6 +1885,7 @@ The login process is as follows:
 |-
 | rowspan=2 | 0x02
 | UUID || String ||
+|-
 | Username || String ||
 |}
 
