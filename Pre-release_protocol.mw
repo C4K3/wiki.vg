@@ -94,6 +94,8 @@ VarInt - [http://developers.google.com/protocol-buffers/docs/encoding#varints Pr
 
 String - UTF-8 String prefixed with a VarInt
 
+Metadata - Strings are now UTF-8 too
+
 == Handshaking ==
 
 === Serverbound ===
