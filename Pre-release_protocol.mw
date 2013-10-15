@@ -255,7 +255,7 @@ This causes the server to switch into the target state.
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=2 | 0x0B
-| Entity ID || Int || Player ID
+| Entity ID || VarInt || Player ID
 |-
 | Animation || Unsigned Byte || Animation ID
 |}
