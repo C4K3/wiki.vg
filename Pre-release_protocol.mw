@@ -34,6 +34,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 * Changed Held Item Change's 'Slot' type to Byte
 * Removed Use Bed's 'unknown byte'
 * Changed Animation's 'Animation' type to Unsigned Byte
+* Changed Animation's 'Entity ID' type to VarInt
 * Changed Spawn Player's 'Entity ID' type to VarInt
 * Changed Spawn Object's 'Entity ID' type to VarInt
 * Changed Spawn Mob's 'Entity ID' type to VarInt
