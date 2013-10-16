@@ -1853,7 +1853,7 @@ The login process is as follows:
     S->C : Encryption Key Request
     C->S : Encryption Key Response
     (Auth & enable encryption)
-    S->S : Login Success
+    S->C : Login Success
 
 === Clientbound ===
 
