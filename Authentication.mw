@@ -175,7 +175,44 @@ Checks if an <code>accessToken</code> is valid.
 </syntaxhighlight>
 
 === Response ===
-Unlike most other methods this one will return an empty payload if successful.
+Returns an empty payload if successful.
+
+== Signout ==
+
+Invalidates <code>accessToken</code>s using an account's username and password.
+
+=== Endpoint ===
+  /signout
+
+=== Payload ===
+<syntaxhighlight lang="javascript">
+{
+  "username": "mojang account name",
+  "password": "mojang account password",
+}
+</syntaxhighlight>
+
+=== Response ===
+Returns an empty payload if successful.
+
+== Invalidate ==
+
+Invalidates <code>accessToken</code>s using a client/access token pair.
+
+=== Endpoint ===
+  /invalidate
+
+=== Payload ===
+<syntaxhighlight lang="javascript">
+{
+  "accessToken": "valid accessToken",
+  "clientToken": "client identifier"     // This needs to be identical to the one used
+                                         // to obtain the accessToken in the first place
+}
+</syntaxhighlight>
+
+=== Response ===
+Returns an empty payload if successful.
 
 == Joining a Server ==
 
