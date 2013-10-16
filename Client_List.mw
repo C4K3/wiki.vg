@@ -48,7 +48,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{yes|1.6.2 (on exp branch)}}
+| {{yes|1.6.4 (on exp branch)}}
 |-
 ! [https://github.com/lukleh/TwistedBot TwistedBot]
 | bot and proxy, up to date information in readme on github
@@ -66,7 +66,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{unknown|{{GPLv3}}? No mention of license in source}}
 | {{yes}}
 | {{no}}
-| {{yes|1.6.2}}
+| {{no|1.6.2}}
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
