@@ -6,7 +6,7 @@ As of 12w17a, Minecraft implements SSL-like encryption.
 #'''C->S''' 0x02 handshake
 #'''S->C''' 0xFD encryption request - server sends its server id string, public key, and 4 random bytes
 #Client generates symmetric key (shared secret)
-#Client authenticates via [[Session|session.minecraft.net]].
+#Client authenticates via [[Session|authserver.mojang.com]].
 #Client encrypts these 4 bytes with the servers public key.
 #'''C->S''' 0xFC encryption response - client encrypts shared secret with server's public key and sends along with encrypted 4 bytes
 #Server checks that the encrypted bytes match
