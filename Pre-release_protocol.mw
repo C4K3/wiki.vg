@@ -63,6 +63,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 === 13w42a ===
 * Added 'Level Type' to Join Game
 * Added 'Level Type' to Respawn
+* Removed Sound Effect's 'Sound Category'
 
 == Protocol Version ==
 13w42a - 1
