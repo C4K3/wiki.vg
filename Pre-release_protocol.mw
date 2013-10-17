@@ -61,6 +61,8 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 * Changed Tab-Complete from \x00 String to Array of Strings
 
 === 13w42a ===
+* Added 'Level Type' to Join Game
+* Added 'Level Type' to Respawn
 
 == Protocol Version ==
 13w42a - 1
