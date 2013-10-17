@@ -215,6 +215,8 @@ This causes the server to switch into the target state.
 | Difficulty || Unsigned Byte || 0 thru 3 for Peaceful, Easy, Normal, Hard.
 |-
 | Gamemode || Unsigned Byte || 0: survival, 1: creative, 2: adventure. The hardcore flag is not included
+|-
+| Level Type || String || Same as Join Game
 |}
 
 ==== Player Position And Look ==== 
