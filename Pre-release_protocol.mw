@@ -61,6 +61,8 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 * Changed Tab-Complete from \x00 String to Array of Strings
 
 == Protocol Version ==
+13w42a - 1
+
 13w41b - 0 ''Note this isn't backwards compatible with 13w41a due to Handshakes's Server Port type change''
 
 13w41a - 0
