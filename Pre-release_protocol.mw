@@ -930,23 +930,6 @@ Smoke directions:
 | Volume || Float || 1 is 100%, can be more
 |-
 | Pitch || Unsigned Byte || 63 is 100%, can be more
-|-
-| Sound Category || Unsigned Byte || Possible values:
-MASTER: 0
-
-MUSIC: 1
-
-RECORDS: 2
-
-WEATHER: 3
-
-BLOCKS: 4
-
-MOBS: 5
-
-ANIMALS: 6
-
-PLAYERS: 7
 |}
 
 ==== Particle ====
