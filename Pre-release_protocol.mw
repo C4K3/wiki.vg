@@ -1747,7 +1747,7 @@ If any of the painting packets other than the "progress" ones are sent out of or
 |-
 | Chat flags || Byte || Chat settings. See notes below.
 |-
-| ??? || Bool || ???
+| Unused || Bool || Only observed as true
 |-
 | Difficulty || Byte || Client-side difficulty from options.txt
 |-
