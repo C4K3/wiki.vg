@@ -1865,7 +1865,7 @@ The login process is as follows:
 For unauthenticated and* localhost connections there is no encryption.
 In that case Login Start is directly followed by Login Success.
 
-\*It could be that only one of the two conditions is enough for an unencrypted connection.
+<nowiki>*</nowiki> It could be that only one of the two conditions is enough for an unencrypted connection.
 
 === Clientbound ===
 
