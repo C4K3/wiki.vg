@@ -171,6 +171,7 @@ This causes the server to switch into the target state.
 | rowspan=1 | 0x02
 | JSON Data || String || https://gist.github.com/thinkofdeath/e882ce057ed83bac0a1c
 |}
+{{Warning|Malformed JSON will disconnect the client}}
 
 ==== Time Update ====
 {| class="wikitable"
