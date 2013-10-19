@@ -162,6 +162,7 @@ This causes the server to switch into the target state.
 |-
 | Level Type || String || default, flat, largeBiomes, amplified, default_1_1
 |}
+{{Warning|If the Dimension isn't valid then the client will crash}}
 
 ==== Chat Message ==== 
 {| class="wikitable"
