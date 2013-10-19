@@ -335,7 +335,7 @@ Animation can be one of the following values:
 |-
 | Metadata || [[Entities#Entity_Metadata_Format|Metadata]] || The client will crash if no metadata is sent
 |}
-{{Warning|The client will crash if no metadata is sent}
+{{Warning|The client will crash if no metadata is sent}}
 
 ==== Collect Item ====
 {| class="wikitable"
