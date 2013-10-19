@@ -223,7 +223,7 @@ This causes the server to switch into the target state.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rowspan=3 | 0x07
+| rowspan=4 | 0x07
 | Dimension || Int || -1: The Nether, 0: The Overworld, 1: The End
 |-
 | Difficulty || Unsigned Byte || 0 thru 3 for Peaceful, Easy, Normal, Hard.
@@ -232,6 +232,7 @@ This causes the server to switch into the target state.
 |-
 | Level Type || String || Same as Join Game
 |}
+{{Warning|If the Dimension isn't valid then the client will crash}}
 
 ==== Player Position And Look ==== 
 {| class="wikitable"
