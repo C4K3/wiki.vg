@@ -1862,6 +1862,11 @@ The login process is as follows:
     (Auth & enable encryption)
     S->C : Login Success
 
+For unauthenticated and* localhost connections there is no encryption.
+In that case Login Start is directly followed by Login Success.
+
+\*It could be that only one of the two conditions is enough for an unencrypted connection.
+
 === Clientbound ===
 
 ==== Disconnect ====
@@ -1872,7 +1877,7 @@ The login process is as follows:
 | JSON Data || String ||
 |}
 
-==== Encryption Response ====
+==== Encryption Request ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
@@ -1909,7 +1914,7 @@ The login process is as follows:
 | Name || String || 
 |}
 
-==== Encryption Request ====
+==== Encryption Response ====
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
