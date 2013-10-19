@@ -1905,11 +1905,11 @@ The login process is as follows:
 | rowspan=4 | 0x01 
 | Length || Short || length of public key
 |-
-| || Byte array || public key
+| Public Key || Byte array || 
 |-
 | Length || Short || length of verify token
 |-
-| || Byte array || verify token
+| Verify Token || Byte array ||
 |- 
 |}
 
