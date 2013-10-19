@@ -103,12 +103,15 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 |}
 
 == Data Types ==
-
-VarInt - [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer 32-bit Varint]
-
-String - UTF-8 String prefixed with a VarInt
-
-Metadata - Strings are now UTF-8 too
+{| class="wikitable"
+! Type !! Notes
+|-
+| VarInt || [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer 32-bit Varint]
+|-
+| String || UTF-8 String prefixed with a VarInt
+|-
+|Metadata || Strings are now UTF-8 too
+|}
 
 == Handshaking ==
 
