@@ -1380,7 +1380,7 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 |-
 | Z || Double || Absolute position
 |-
-| On Ground || Bool || True if the client is on the ground, False otherwise
+| On Ground || Unsigned byte || True (1) if the client is on the ground, False (0) otherwise
 |}
 
 ==== Player Look ==== 
