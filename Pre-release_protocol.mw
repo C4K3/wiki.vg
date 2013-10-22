@@ -1242,7 +1242,7 @@ If the first byte of the array is 2, the second byte is the map scale.
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
-| rospan=2| 0x3A 
+| rowspan=2| 0x3A 
 | Count || VarInt || Number of following strings
 |-
 | Match || String || Possible Tab-Complete
