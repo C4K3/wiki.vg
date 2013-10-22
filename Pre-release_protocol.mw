@@ -1269,9 +1269,9 @@ If the first byte of the array is 2, the second byte is the map scale.
 |-
 | Update/Remove || Byte || 0 to create/update an item. 1 to remove an item.
 |-
-| Score Name || String || The unique name for the scoreboard to be updated. Only sent when Update/Remove does not equal 1.
+| Score Name || String || The unique name for the scoreboard to be updated.
 |-
-| Value || Int || The score to be displayed next to the entry. Only sent when Update/Remove does not equal 1.
+| Value || Int || The score to be displayed next to the entry.
 |}
 
 ==== Display Scoreboard ====
