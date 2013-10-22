@@ -73,6 +73,8 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 {| class="wikitable"
 ! Version(s) !! Protocol Version 
 |-
+| 1.7 Pre || 3
+|-
 | 13w43a || 2
 |-
 | 13w42a/b || 1 
