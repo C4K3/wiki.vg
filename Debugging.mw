@@ -1,0 +1,52 @@
+Minecraft's client can log every packet which can be helpful for debugging servers.
+
+    -Dlog4j.configurationFile=fullpathtoconfigfile.xml
+
+where the config file should contain
+<pre>
+<nowiki>
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="net.minecraft,com.mojang">
+    <Appenders>
+        <Console name="SysOut" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
+        </Console>
+        <Queue name="ServerGuiConsole">
+            <PatternLayout pattern="[%d{HH:mm:ss} %level]: %msg%n" />
+        </Queue>
+        <RollingRandomAccessFile name="File" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <OnStartupTriggeringPolicy />
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <filters>
+                <MarkerFilter marker="NETWORK_PACKETS" onMatch="ACCEPT" onMismatch="NEUTRAL" />
+            </filters>
+            <AppenderRef ref="SysOut"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="ServerGuiConsole"/>
+        </Root>
+    </Loggers> 
+</Configuration>
+</nowiki>
+</pre>
+
+this will display packets in the launcher's console like so:
+<pre>
+Client> [22:56:42] [Netty Client IO #5/DEBUG]: OUT: [PLAY:3] iq[]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:21] gw[id=1907, xa=4, ya=0, za=3]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1907, rot=-28]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:21] gw[id=1903, xa=11, ya=0, za=0]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:22] gy[id=1580, yRot=-49, xRot=0]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1580, rot=-49]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:18] hl[id=1025, x=0.00, y=-0.08, z=-0.01]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:21] gw[id=1025, xa=-5, ya=0, za=-2]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1340, rot=85]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1809, rot=-66]
+Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1471, rot=-103]
+</pre>
