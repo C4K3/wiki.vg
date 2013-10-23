@@ -94,7 +94,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{no|1.1}}
 |-
 ! [https://github.com/fragmer/fNbt fNbt]
-| Minecraft Proxy (and bot) framework in C++
+| Reading/writing NBT files and streams, for .NET
 | fragmer (Scootabyte)
 | {{C#}}
 | {{BSD}}
