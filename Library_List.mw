@@ -94,9 +94,9 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{no|1.1}}
 |-
 ! [https://github.com/fragmer/fNbt fNbt]
-| Reading/writing NBT files and streams, for .NET
+| Reading, writing, and manipulating NBT files and streams, for .NET
 | fragmer (Scootabyte)
-| {{C#}}
+| {{C sharp}}
 | {{BSD}}
 | n/a
 |-
