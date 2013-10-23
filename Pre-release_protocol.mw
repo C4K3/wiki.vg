@@ -1794,11 +1794,11 @@ Action ID values:
 |-
 ! Action ID !! Name
 |-
-| 1 || Perform respawn
+| 0 || Perform respawn
 |-
-| 2 || Request stats
+| 1 || Request stats
 |-
-| 3 || Open inventory achievement
+| 2 || Open inventory achievement
 |}
 
 ==== Plugin Message ====
