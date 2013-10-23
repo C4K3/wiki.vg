@@ -1866,8 +1866,9 @@ The login process is as follows:
     C->S : Handshake State=2
     C->S : Login Start
     S->C : Encryption Key Request
+    (Client Auth)
     C->S : Encryption Key Response
-    (Auth & enable encryption)
+    (Server Auth, Both enable encryption)
     S->C : Login Success
 
 For unauthenticated and* localhost connections there is no encryption.
