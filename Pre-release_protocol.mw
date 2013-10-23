@@ -297,19 +297,17 @@ Animation can be one of the following values:
 {| class="wikitable"
 ! ID !! Animation
 |-
-| 0 || No animation
+| 0 || Swing arm
 |-
-| 1 || Swing arm
+| 1 || Damage animation
 |-
-| 2 || Damage animation
+| 2 || Leave bed
 |-
-| 3 || Leave bed
+| 3 || Eat food
 |-
-| 5 || Eat food
+| 4 || Critical effect
 |-
-| 6 || Critical effect
-|-
-| 7 || Magic critical effect
+| 5 || Magic critical effect
 |-
 | 102 || (unknown)
 |-
