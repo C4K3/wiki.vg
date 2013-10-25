@@ -42,11 +42,11 @@ This payload is simply a set of bytes corresponding to an ItemStack. It is seria
 
 When a player uses an anvil to name an item. The payload is just a string: the item's new name.
 
-=== <code>MC|TPack</code> ===
+=== <code>MC|RPack</code> ===
 ''Server to client''
 
-Remote texture packs.
-This contains a string representing the url to get the texture pack from, followed by null (\00) and then '16', all in ASCII.
+Remote resource packs.
+This contains a string representing the url to get the resource pack from.
 
 ===  <code>MC|TrList</code> ===
 ''Server to client''
