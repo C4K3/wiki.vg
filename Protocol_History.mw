@@ -1,5 +1,80 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+
+=== 1.7.2 ===
+* Changed Multi Block Change's 'X' and 'Z' to Int
+
+=== 1.7.1 ===
+
+=== 1.7 ===
+
+=== 13w43a ===
+
+=== 13w42b ===
+
+=== 13w42a ===
+* Added 'Level Type' to Join Game
+* Added 'Level Type' to Respawn
+* Removed Sound Effect's 'Sound Category'
+
+=== 13w41b === 
+{{Warning|Note this isn't backwards compatible with 13w41a due to Handshakes's Server Port type change}}
+* Removed Player (Clientbound), Player Position (Clientbound), Player Look (Clientbound)
+* Removed Player Position and Look (Clientbound)'s 'Stance'  
+* Removed Join Game's 'N/A' and 'Level Type'
+* Changed Join Game's 'Gamemode' 'Difficulty' 'Max Players' types to Unsigned Byte
+* Changed Handshake's 'Server Port' type to Unsigned Short
+* Removed Respawn's 'World Height' 'Level Type' 
+* Changed Respawn's 'Difficulty' and 'Gamemode' types to Unsigned Byte
+* Changed Held Item Change's 'Slot' type to Byte
+* Removed Use Bed's 'unknown byte'
+* Changed Animation's 'Animation' type to Unsigned Byte
+* Changed Animation's 'Entity ID' type to VarInt
+* Changed Spawn Player's 'Entity ID' type to VarInt
+* Changed Spawn Object's 'Entity ID' type to VarInt
+* Changed Spawn Mob's 'Entity ID' type to VarInt
+* Changed Spawn Painting's 'Entity ID' type to VarInt
+* Changed Spawn Experience Orb's 'Entity ID' type to VarInt
+* Changed Multi Block Change's 'Chunk X' and 'Chunk Z' types to VarInt
+* Changed Block Change's 'Block Type' type to VarInt
+* Changed Block Action's 'Block Type' type to VarInt
+* Changed Block Break Animation's 'Entity ID' type to VarInt
+* Changed Explosion's 'X' 'Y' and 'Z' types to Float
+* Changed Change Game State's 'Reason' type to Unsigned Byte
+* Changed Spawn Global Entity's 'Entity ID' type to VarInt
+* Changed Close Window's 'Window ID' type to Unsigned Byte
+* Changed Set Slot's 'Window ID' type to Unsigned Byte
+* Changed Window Items's 'Window ID' type to Unsigned Byte
+* Changed Window Property's 'Window ID' type to Unsigned Byte
+* Changed Comfirm Transaction's 'Window ID' type to Unsigned Byte
+* Changed Maps' 'Item Damage' type to VarInt
+* Removed Maps' 'Item Type'
+* Changed Update Block Entity's 'Action' type to Unsigned Byte
+* Block Editor Open -> Sign Editor Open
+* Removed Sign Editor Open's 'Tile Entity Id'
+* Changed Statistics's 'Count' and 'Amount' types to VarInt 
+* Changed Tab-Complete from \x00 String to Array of Strings
+
+=== 13w41a === 
+* Large protocol rework
+
+=== 13w39a/b ===
+* UUIDs added to spawn named entity
+* Game state 'gamemode' byte -> float
+
+=== 13w38a/b/c ===
+
+=== 1.6.4 ===
+
+=== 1.6.3 === 
+* Terrain fixes to help moving to 1.7, no packet changes from 1.6.2
+
+=== 13w37b === 
+
+=== 13w36a ===
+* Added sound category byte to 0x3E
+* Changed 0xC8 to a string:int map
+
 === 1.6.x ===
 1.6.1: Protocol version is now 73. Packet 0xFA is sent after packet 0xFE with additional data
 
