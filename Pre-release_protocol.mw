@@ -74,6 +74,7 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 === 1.7.1 ===
 
 === 1.7.2 ===
+* Changed Multi Block Change's 'X' and 'Z' to Int
 
 == Protocol Version ==
 {| class="wikitable"
