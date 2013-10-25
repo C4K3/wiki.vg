@@ -1350,7 +1350,7 @@ More documentation on this: http://dinnerbone.com/blog/2012/01/13/minecraft-plug
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=1 | 0x01
-| JSON Data || String || https://gist.github.com/thinkofdeath/e882ce057ed83bac0a1c
+| Message || String || 
 |}
 
 ==== Use Entity ====
