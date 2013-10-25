@@ -308,7 +308,7 @@ To parse, repeat the following procedure:
 | Float
 |-
 | 4
-| String16
+| UTF-8 String (VarInt prefixed)
 |-
 | 5
 | [[Slot Data|Slot]]
@@ -332,7 +332,7 @@ do {
     if (type == 1) metadata[index] = readShort();
     if (type == 2) metadata[index] = readInt();
     if (type == 3) metadata[index] = readFloat();
-    if (type == 4) metadata[index] = readString16();
+    if (type == 4) metadata[index] = readString();
     if (type == 5) metadata[index] = readSlot();
     if (type == 6) {
         var vector;
@@ -343,7 +343,6 @@ do {
     }
 } while (true);
 </source>
-
 
 === Entity ===
 
