@@ -2,7 +2,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 
 === 1.7.2 ===
-* Changed Multi Block Change's 'X' and 'Z' to Int
+* Changed Multi Block Change's 'X' and 'Z' type to Int
 
 === 1.7.1 ===
 
