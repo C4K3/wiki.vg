@@ -79,6 +79,8 @@ He who wishes to commandeer the merging of this into [[Protocol]] when an update
 {| class="wikitable"
 ! Version(s) !! Protocol Version 
 |-
+| 1.7.2 || 4
+|-
 | 1.7(.1) || 3
 |-
 | 13w43a || 2
