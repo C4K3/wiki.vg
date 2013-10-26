@@ -64,7 +64,7 @@ After generating the shared secret, the client generates the following hash:
  sha1(jeb_)  : -7c9d5b0044c130109a5d7b5fb5c317c02b4e28c1
  sha1(simon) :  88e16a1019277b15d58faf0541e11910eb756f6
 
-The resulting hash is then sent via an HTTP GET request to
+The resulting hash is then sent via an HTTP POST request to
  <nowiki>https://sessionserver.mojang.com/session/minecraft/join</nowiki>
 With the following sent as post data
 <code>
