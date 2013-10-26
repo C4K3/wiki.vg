@@ -9,7 +9,7 @@ Depending on your definition, '''yes'''! All packet types are known and their la
 
 See [[Authentication]] for communication with minecraft.net
 
-{{Warning|The information below is out-of-date and needs updating}} 
+{{Warning|The information below is out-of-date and needs updating for 1.7}} 
 
 <blockquote>
 The recommended login sequence looks like this, where C is the client and S is the server:<br /><br />
