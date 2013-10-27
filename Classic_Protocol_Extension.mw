@@ -1,4 +1,6 @@
-'''Classic Protocol Extension''' (CPE) is a project to augment the Minecraft Classic network protocol. Extensions are designed to keep custom clients and servers compatible to standard/vanilla clients and servers. Standard clients and extended clients can play on the same server at the same time. Extensions are also designed to be modular: clients and servers can choose to implement any subset of extensions, and only mutually-supported extensions will be used.
+'''Classic Protocol Extension''' (CPE) is a project to augment the Minecraft Classic network protocol with new and improved functionality.
+
+Extensions are designed to keep extended clients and servers compatible with standard clients and servers. Standard clients and extended clients can play on the same server side-by-side. Extensions are designed to be modular: custom clients and servers can selectively implement any subset of extensions, and only mutually-supported extensions will be used.
 
 {| class="wikitable" style="margin:10px 10%;border: 1px solid #aaa;border-left:10px solid #f28500;background:#fbfbfb;width:80%;font-size:110%"
 |style="padding:10px"|'''This specification has not yet been finalized, and is subject to change.'''
