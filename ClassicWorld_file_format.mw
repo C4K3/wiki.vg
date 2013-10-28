@@ -56,7 +56,7 @@ All tags are required, unless noted otherwise. Also note that ordering of named 
 **'''''Software''''' is the name of software that originally generated this map (e.g. "cloudBox" or "fCraft").
 **'''''MapGeneratorName''''' is the name of a specific generation method used by the software (e.g. "Realistic" or "Flat").
 *'''BlockArray''' contains the actual block data, 1 byte per block. Same packing order as in [[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk packets]].
-*'''Metadata''' contains all kinds of software- and plugin-specific data.
+*'''Metadata''' contains all kinds of software- and plugin-specific data. Servers should preserve unrecognized metadata from other software, if possible.
 
 ===Metadata structure===
 The '''Metadata''' compound tag must contain zero or more named compound tags, each named after a specific software that produced them. Each of those compound tags should contain zero or more named compound tags, one for each logical grouping (e.g. for each plugin or subsystem). An example metadata tag, with two softwares and 3 groups, is shown here:
