@@ -71,7 +71,7 @@ With the following sent as post data
   {
     "accessToken": "<accessToken>",
     "selectedProfile": "<selectedProfile>",
-    "serverID": "<serverHash>"
+    "serverId": "<serverHash>"
   }
 </code>
 
