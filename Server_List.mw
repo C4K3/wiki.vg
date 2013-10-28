@@ -22,26 +22,11 @@ A couple things for contributors:
 !style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
-! [https://github.com/JoeDoyle23/BurningPig BurningPig]
-| Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
-| [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.6.4}}
-| {{yes|Custom}}
-| {{planned}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Async Networking}}
-| {{no}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| [https://github.com/JoeDoyle23/BurningPig#current-features Link]
-| {{yes|Active}}
-|-
 ! [http://wiki.vg/HCraft hCraft]
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{yes|1.6.4}}
+| {{yes|1.7.2}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
 | {{yes}}
@@ -52,11 +37,26 @@ A couple things for contributors:
 | [https://github.com/BizarreCake/hCraft/#features Link]
 | {{yes|Active}}
 |-
+! [https://github.com/JoeDoyle23/BurningPig BurningPig]
+| Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
+| [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{no|1.6.4}}
+| {{yes|Custom}}
+| {{planned}}
+| {{no}}
+| {{planned|Players}}
+| {{yes|Async Networking}}
+| {{no}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| [https://github.com/JoeDoyle23/BurningPig#current-features Link]
+| {{yes|Active}}
+|-
 ! [http://www.mc-server.org MCServer]
 | FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Apache 2.0
-| {{yes|1.6.4}}
+| {{no|1.6.4}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
