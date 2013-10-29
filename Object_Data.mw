@@ -91,7 +91,7 @@ This includes ghast fireballs, arrows, and fishhooks (probably more).
 
 For more information on potion data values, see [http://www.minecraftwiki.net/wiki/Data_values#Potions].
 
-=== Minecarts ===
+=== Minecarts (id 10)===
 
 The int value itself specifies the minecart's functionality:
 
