@@ -4,6 +4,8 @@ ClassicWorld files should have extension <code>.cw</code>
 
 ==Specification==
 ===Basic structure===
+The map file consists of a GZip-compressed, big-endian [[NBT]] data structure.
+
 All tags are required, unless noted otherwise. Also note that ordering of named tags cannot always be guaranteed in NBT libraries. Therefore, when reading files, do not assume a specific order of named tags within a compound tag. However, when writing files, do try to stick to this order if possible.
  TAG_Compound("ClassicWorld"): 14 entries {
    TAG_Byte("FormatVersion")
