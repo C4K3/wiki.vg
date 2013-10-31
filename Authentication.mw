@@ -124,7 +124,7 @@ In case it is omitted the server will generate a random token based on Java's [h
 </syntaxhighlight>
 '''Note:''' If a user wishes to stay logged in on his computer you are strongly advised to store the received <code>accessToken</code> instead of the password itself.
 
-Currently each account will only have one single profile, multiple profiles per account are however planned in the future.
+Currently each account will only have one single profile, multiple profiles per account are however planned in the future.  If a user attempts to log into a valid Mojang account with no attached Minecraft license, the authentication will be successful, but the response will not contain a "selectedProfile" field, and the "availableProfiles" array will be empty.
 
 == Refresh ==
 
