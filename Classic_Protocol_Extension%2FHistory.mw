@@ -20,3 +20,14 @@
 
 ==25 September 2013==
 * Added details about value ranges for '''''EnvSetColor''''' packet's fields. Added ability to reset colors to defaults by specifying an out-of-range value. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4789&oldid=4764]
+
+==11 September 2013==
+* Added a picture of '''CustomBlocks''' level 1. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=next&oldid=4745]
+
+==3 September 2013==
+* Corrected packet sizes for '''''EnvSetColor''''' and '''''ChangeModel''''' packets. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4744&oldid=4741]
+* Changed '''''EnvSetColor''''' and '''''MakeSelection''''' packets to use <code>short</code> (int16) instead of <code>unsigned byte</code> data types. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4741&oldid=4735]
+
+==2 September 2013==
+* Filled in details for '''ChangeModel''' extension. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4734&oldid=4728]
+* Added '''EnvMapAppearance''' extension. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4735&oldid=4734]
