@@ -1,4 +1,22 @@
 ==31 October 2013==
-* '''EnvMapAppearance''': Restricted the window in which '''''EnvMapAppearance''''' packet may be sent. It is now only allowed at the end of a level transition (between the last LevelDataChunk packet and the LevelFinalize packet). [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=prev&oldid=5112]
+* Restricted the window in which '''''EnvMapAppearance''''' packet may be sent. It is now only allowed at the end of a level transition (between the last LevelDataChunk packet and the LevelFinalize packet). [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=prev&oldid=5112]
 * Added '''EnvWeatherType''' packet and extension. [http://wiki.vg/Classic_Protocol_Extension#EnvWeatherType]
-* Clarified ''Negotiation'' paragraph. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5110&oldid=5108]
+* Clarified '''Negotiation''' section. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5110&oldid=5108]
+
+==27 October 2013==
+* Clarified introduction text. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=prev&oldid=5094]
+
+==9 October 2013==
+* Added a note to '''CustomBlocks''' about future block ID assignment. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4902&oldid=4855]
+
+==30 September 2013==
+* Added a note to '''Negotiation''' about making assumptions based on ''AppName'' [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=next&oldid=4854]
+
+==29 September 2013==
+* Added ability to reset ALL block type permissions using '''SetBlockPermission''' packet with ''BlockType'' set to <code>0</code>. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=prev&oldid=4849]
+* Finished detailed '''EnvMapAppearance''' specification. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4836&oldid=4789]
+* Finished detailed '''SelectionCuboid''' specification. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4844&oldid=4836]
+* Formatting fixes. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4853&oldid=4844]
+
+==25 September 2013==
+* Added details about value ranges for '''''EnvSetColor''''' packet's fields. Added ability to reset colors to defaults by specifying an out-of-range value. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4789&oldid=4764]
