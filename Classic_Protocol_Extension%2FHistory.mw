@@ -1,5 +1,5 @@
 ==31 October 2013==
-* Restricted the window in which '''''EnvMapAppearance''''' packet may be sent. It is now only allowed at the end of a level transition (between the last LevelDataChunk packet and the LevelFinalize packet). [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=prev&oldid=5112]
+* Restricted when '''''EnvMapAppearance''''' packet may be sent. It is now only allowed at the end of a level transition (between the last LevelDataChunk packet and the LevelFinalize packet). [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=prev&oldid=5112]
 * Added '''EnvWeatherType''' packet and extension. [http://wiki.vg/Classic_Protocol_Extension#EnvWeatherType]
 * Clarified '''Negotiation''' section. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5110&oldid=5108]
 
