@@ -731,3 +731,33 @@ Default value is <code>MapDepth/2</code>.
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 69 bytes
 |}
+
+===EnvWeatherType===
+:This extension allows the server to trigger special weather conditions (like rain and snow) on demand.
+:'''Motivation''': To allow the server to give worlds/maps a unique feel with weather effects, e.g. for adventure maps.
+:'''Client behavior''': Client must be able to receive '''''EnvWeather''''' packets at any time after the first '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is received, and apply these changes immediately. If an unrecognized or unsupported ''WeatherType'' field is given, no action is needed.
+:'''Server behavior''': Server may send '''''EnvSetColor''''' packets to connected clients at any time after the first '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is sent.
+
+:<h4>EnvWeatherType Packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x1F
+(31)
+| class="col1 centeralign" | WeatherType
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | Enumeration of weather types
+*0 = sunny
+*1 = raining
+*2 = snowing
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
