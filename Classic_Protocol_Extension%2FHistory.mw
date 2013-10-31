@@ -38,3 +38,6 @@
 ==30 August 2013==
 * Rewrote '''ExtPlayerList''' spec, for clarity. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4712&oldid=4703]
 * Changed '''TextHotKey''' to use [http://www.minecraftwiki.net/wiki/Key_Codes LWJGL keycodes] instead of [http://wiki.libsdl.org/moin.cgi/SDLKeycodeLookup SDL keycodes]. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4703&oldid=4702]
+
+==29 August 2013==
+* Added '''BlockPermissions''' extension. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=4702&oldid=4627]
