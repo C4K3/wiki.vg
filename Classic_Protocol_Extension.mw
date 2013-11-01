@@ -28,7 +28,10 @@ When CPE-capable client connects to a CPE-capable server, a brief negotiation ne
 Server must immediately reply to CPE clients with an '''''ExtInfo''''' packet, followed by zero or more '''''ExtEntry''''' packets, and await a response from the client. Client will respond with one '''''ExtInfo''''' and zero or more '''''ExtEntry''''' packets. Server must then compare its locally-supported set of extensions with the list of extensions provided by the client, and find an intersection of these sets. These are the mutually-supported extensions. After receiving the last of '''''ExtEntry''''' packets, server should activate all mutually-supported extensions and resume normal login procedure. 
 
 '''Note 1''': All standard/non-extended clients use <code>0x00</code> for the padding byte. All standard servers ignore this padding byte. Therefore, this negotiation process does not affect compatibility with standard software.
+
 '''Note 2''': Do not make any assumptions about supported functionality based on the ''AppName'' field of '''''ExtInfo''''' packet. It's for logging purposes only.
+
+'''Note 3''': Do not declare support for an extension until it is FULLY implemented, except for debugging.
 
 :<h4>ExtInfo Packet</h4>
 :{| class="wikitable"
