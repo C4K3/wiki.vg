@@ -74,12 +74,6 @@ These are some of the errors that can be encountered:
 | Data was not submitted as application/json
 |}
 
-== Session ID ==
-
-Whenever a Mojang service requires a session ID, you can simply combine a valid <code>accessToken</code> with the corresponding profile identifier as follows:
-
-  token:<accessToken>:<profile ID>
-
 == Authenticate ==
 
 Authenticates a user using his password.
