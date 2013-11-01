@@ -75,6 +75,14 @@ With the following sent as post data, Content-Type: application/json
   }
 </code>
 
+==== Sample Code ====
+
+Examples of generating Java-style hex digests:
+
+* C#: https://gist.github.com/404223052379e82f91e6
+* node.js: https://gist.github.com/4425843
+* Go: https://gist.github.com/toqueteos/5372776
+
 === Server ===
 
 After decrypting the shared secret in the second Encryption Response, the server generates the login hash as above and sends it to
@@ -83,14 +91,6 @@ After decrypting the shared secret in the second Encryption Response, the server
 The response is a JSON object containing the user's UUID
 
    {"id":"<uuid>"}
-
-=== Sample Code ===
-
-Examples of generating Java-style hex digests:
-
-* C#: https://gist.github.com/404223052379e82f91e6
-* node.js: https://gist.github.com/4425843
-* Go: https://gist.github.com/toqueteos/5372776
 
 == Additional Links ==
 [https://gist.github.com/3900517 Encrypt shared secret using OpenSSL]
