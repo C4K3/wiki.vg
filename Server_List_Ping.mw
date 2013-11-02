@@ -1,5 +1,100 @@
 Minecraft supports querying the MOTD, player count, max players and server version via the usual port. Unlike [[Query]], the server list ping interface is always enabled.
 
+== 1.7 ==
+
+The server ping process changed in 1.7 in a non-backwards compatible way but the 1.7 server does support both (see below)
+
+The packets have a length prefix which is a [https://developers.google.com/protocol-buffers/docs/encoding#varints VarInt] ([https://gist.github.com/thinkofdeath/e975ddee04e9c87faf22 Java example]). The data contained in the next ''length'' bytes is as followed:
+
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Packet ID || VarInt ||
+|-
+| Data || ||
+|}
+
+Where data depends on the packet.
+
+=== Ping Process ===
+
+Firstly a [[Protocol#Handshake|Handshake]] packet must be sent with its state set to 1. The layout of the handshake packet is as followed
+
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=4 | 0x00
+| Protocol Version || VarInt || (4 as of 1.7.2)
+|-
+| Server Address (hostname or IP) || String || A string is a VarInt length followed ''length'' bytes which make an UTF-8 string
+|- 
+| Server Port || Unsigned Short|| A short has 2 byte size. It should be read in Big-endian order
+|-
+| Next state || VarInt || 1 for status
+|}
+
+Followed by a [[Protocol#Request|Status Request]] packet. The request packet has no fields
+
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x00 || || ||
+|}
+
+The server should respond with a [[Protocol#Response|Status Response]] packet
+
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x00 
+| JSON Response || String ||  A string is a VarInt length followed ''length'' bytes which make an UTF-8 string
+|}
+
+The response is a json object which has the following format
+
+<pre>
+{
+	"version": {
+		"name": "1.7.2",
+		"protocol": 4
+	},
+	"players": {
+		"max": 100,
+		"online": 5,
+		"sample":[
+			{"name":"Thinkofdeath", "id":"4566e69fc90748ee8d71d7ba5aa00d20"}
+		]
+	},	
+	"description": {"text":"Hello world"},
+	"favicon": "data:image/png;base64,<data>"
+}
+</pre>
+
+The ''sample'' and ''favicon'' sections are optional.
+
+The ''favicon'' should be a png image that is [http://en.wikipedia.org/wiki/Base64 Base64] encoded and prepended with 'data:image/png;base64,'
+
+The client sends another packet to help calculate the server's latency but if you only wanted the above information you can stop here.
+
+The client will then send a [[Protocol#Ping|Ping]] packet containing the time that the ping was sent.
+
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x01 
+| Time || Long ||
+|}
+
+The server will respond with the same packet and then close the connection
+
+{| class="wikitable"
+! Packet ID !! Field Name !! Field Type !! Notes
+|-
+| rowspan=1 | 0x01 
+| Time || Long ||
+|} 
+
+
 == 1.6 ==
 
 === Client -> Server ===
