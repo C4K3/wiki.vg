@@ -92,8 +92,10 @@ The server will respond with the same packet and then close the connection
 |-
 | rowspan=1 | 0x01 
 | Time || Long ||
-|} 
+|}
 
+=== Examples ===
+[[https://gist.github.com/zh32/7190955 Java]]
 
 == 1.6 ==
 
