@@ -15,11 +15,11 @@ There are ongoing efforts to keep reverse engineered documentation updated, but 
 
 * [[Protocol FAQ]]
 * [[Protocol|Current Protocol Specification]]
+** [[Protocol Encryption]]
+** [[Server_List_Ping|Server list ping]] documentation
 * [[Pre-release protocol|Pre-release Protocol Specificaton]]
-* [[Server_List_Ping|Server list ping]] documentation
 * [[Rcon]] and [[Query]] protocol specifications
 * [[Authentication|Authentication Scheme]]
-* [[Protocol Encryption]]
 * [[Game Files|Location of Game Files]]
 * [[Snoop|Snoop Mechanism]]
 * [[Map Format]] (See also: mirror of the old [[NBT]].txt)
