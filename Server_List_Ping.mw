@@ -169,7 +169,7 @@ The entire packet looks something like this:
     0000030: 30                                       0
 
 
-== Sample code ==
+=== Sample code ===
 
 * [https://gist.github.com/1209061 Python]
 * [https://gist.github.com/6281388 Ruby]
