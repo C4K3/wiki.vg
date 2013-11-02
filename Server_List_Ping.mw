@@ -82,7 +82,7 @@ The client will then send a [[Protocol#Ping|Ping]] packet containing the time th
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=1 | 0x01 
-| Time || Long || A long has 2 byte size. It should be read in Big-endian order
+| Time || Long || A long has 8 byte size. It should be read in Big-endian order
 |}
 
 The server will respond with the same packet and then close the connection
@@ -91,7 +91,7 @@ The server will respond with the same packet and then close the connection
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=1 | 0x01 
-| Time || Long || A long has 2 byte size. It should be read in Big-endian order
+| Time || Long || A long has 8 byte size. It should be read in Big-endian order
 |}
 
 === Examples ===
