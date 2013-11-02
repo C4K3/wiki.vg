@@ -148,6 +148,10 @@ The entire packet looks something like this:
     0000030: 7400 2000 5300 6500 7200 7600 6500 7200  t. .S.e.r.v.e.r.
     0000040: 0000 3000 0000 3200 30                   ..0...2.0
 
+=== Examples ===
+
+* [https://gist.github.com/6281388 Ruby]
+
 == 1.4 - 1.5 ==
 
 Prior to the Minecraft 1.6, the client -> server operation is much simpler, and only sends <code>FE 01</code>, with none of the following data beginning <code>FA ...</code>
