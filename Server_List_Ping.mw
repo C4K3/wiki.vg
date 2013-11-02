@@ -156,6 +156,12 @@ The entire packet looks something like this:
 
 Prior to the Minecraft 1.6, the client -> server operation is much simpler, and only sends <code>FE 01</code>, with none of the following data beginning <code>FA ...</code>
 
+=== Examples ===
+
+* [https://gist.github.com/5795159 PHP]
+* [https://gist.github.com/4574114 Java]
+* [https://gist.github.com/6223787 C#]
+
 == Beta 1.8 - 1.3 ==
 
 Prior to Minecraft 1.4, the client only sends <code>FE</code>. 
@@ -173,10 +179,3 @@ The entire packet looks something like this:
     0000010: 6300 7200 6100 6600 7400 2000 5300 6500  c.r.a.f.t. .S.e.
     0000020: 7200 7600 6500 7200 a700 3000 a700 3100  r.v.e.r.§.0.§.1.
     0000030: 30                                       0
-
-
-=== Sample code ===
-
-* [https://gist.github.com/5795159 PHP]
-* [https://gist.github.com/4574114 Java]
-* [https://gist.github.com/6223787 C#]
