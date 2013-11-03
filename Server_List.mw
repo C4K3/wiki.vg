@@ -240,13 +240,13 @@ A couple things for contributors:
 | {{no|Beta 1.4}}
 | {{planned|Alpha, Beta}}
 | {{no}}
-| {{planned}}
+| {{no}}
 | {{planned|Players, Partial mob support}}
 | {{yes|Threads + Async File IO}}
 | {{yes|.NET Plugins}}
-| {{unknown}}
+| {{Windows}} {{Mac}} {{Linux}}
 | {{no|Unknown}}
-| {{unknown|Rewrite in progress}}
+| {{no|Dropped}}
 |-
 ! [https://github.com/Mineserver/mineserver2 Mineserver 2]
 | deoxxa, [[User:Jailout2000|Jailout2000]]
