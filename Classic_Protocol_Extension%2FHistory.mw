@@ -1,3 +1,6 @@
+==5 November 2013==
+* Restricted ''SideBlock'' and ''EdgeBlock'' fields of '''''EnvMapAppearance''''' packet to solid blocks. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5153&oldid=5126]
+
 ==31 October 2013==
 * Restricted the timeframe when '''''EnvMapAppearance''''' packet may be sent. It is now only allowed at the end of a level transition (between the last LevelDataChunk packet and the LevelFinalize packet). [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=prev&oldid=5112]
 * Added '''EnvWeatherType''' packet and extension. [http://wiki.vg/Classic_Protocol_Extension#EnvWeatherType]
