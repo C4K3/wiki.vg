@@ -557,7 +557,7 @@ Matches NameID of the ExtAddPlayerName packet
 255 = fully opaque
 |- class="row4"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 82 bytes
+| class="col1 rightalign" colspan="4" | 86 bytes
 |}
 
 :<h4>RemoveSelection packet</h4>
