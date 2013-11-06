@@ -1,3 +1,6 @@
+==6 November 2013==
+* Corrected packet size of '''''MakeSelection''''' packet. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5155&oldid=5153]
+
 ==5 November 2013==
 * Restricted ''SideBlock'' and ''EdgeBlock'' fields of '''''EnvMapAppearance''''' packet to solid blocks. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5153&oldid=5126]
 
