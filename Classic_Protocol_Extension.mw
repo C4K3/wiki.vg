@@ -259,7 +259,7 @@ Block IDs for future support levels are guaranteed to be assigned monotonically,
 1 = Prevent player from changing blocktype
 |- class="row3"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 2 bytes
+| class="col1 rightalign" colspan="4" | 3 bytes
 |}
 
 ===EmoteFix===
