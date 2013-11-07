@@ -100,6 +100,146 @@ Announces the server and client implementation name right after a player has log
 == Notable community plugin channels ==
 Channels listed in this section are not Mojang-sanctioned. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
 
+=== <code>BungeeCord</code> ===
+
+Strings in this channel are UTF8 strings prefixed with a short for length.
+
+The first string is the ''SubChannel'' follow by the following depending on the value of ''SubChannel''
+
+==== Forward ====
+
+===== Server -> Bungee =====
+Forwards the bungeecord plugin message to the target server
+
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Target || String || Server name, the value ''ALL'' sends to all servers
+|-
+| Channel || String || Channel name
+|- 
+| Length || Short || Length of the following payload
+|-
+| Payload || Array of bytes ||
+|}
+
+==== Connect ====
+
+===== Server -> Bungee =====
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Target || String || Server name
+|}
+
+==== ConnectOther ====
+
+===== Server -> Bungee =====
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Player Name || String || Target player's name
+|-
+| Target || String || Server name
+|}
+
+==== IP ====
+
+===== Server -> Bungee =====
+Request the bungeecord to send back the player's real ip
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|}
+
+===== Bungee -> Server =====
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Host || String ||
+|-
+| Port || Int ||
+|}
+
+==== PlayerCount ====
+
+===== Server -> Bungee =====
+Request the bungeecord to send back number of players on the target server
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Target || String || Target server, the value ''ALL'' means all servers
+|}
+
+===== Bungee -> Server =====
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Name || String || 
+|-
+| Player count || Int ||
+|}
+
+==== PlayerList ====
+
+===== Server -> Bungee =====
+Request the bungeecord to send back a csv of players on the target server
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Target || String || Target server, the value ''ALL'' means all servers
+|}
+
+===== Bungee -> Server =====
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Name || String || 
+|-
+| Players || String || A comma separated list of player names
+|}
+
+==== GetServers ====
+
+===== Server -> Bungee =====
+Request the bungeecord to send back a csv of all servers
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|}
+
+===== Bungee -> Server =====
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Servers || String || A comma separated list of server names
+|}
+
+==== Message ====
+
+===== Server -> Bungee =====
+
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Player || String ||
+|-
+| Message || String ||
+|}
+
+==== GetServer ====
+
+===== Server -> Bungee =====
+Request the bungeecord to send the player's current server
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|}
+
+===== Bungee -> Server =====
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| Server name || String || 
+|}
+
 === <code>FML</code> ===
 ''Two-way''
 
