@@ -24,7 +24,7 @@ The first byte is ''type'' which is followed by either:
 {| class="wikitable"
 ! Type !! Field Name !! Field Type !! Notes
 |-
-| rowspan=6 | 0x00
+| rowspan=4 | 0x00
 | X || Int || 
 |-
 | Y || Int || 
@@ -39,7 +39,7 @@ or
 {| class="wikitable"
 ! Type !! Field Name !! Field Type !! Notes
 |-
-| rowspan=6 | 0x01
+| rowspan=2 | 0x01
 | Entity ID || Int ||  
 |-
 | Command || String ||
