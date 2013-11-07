@@ -104,7 +104,7 @@ Channels listed in this section are not Mojang-sanctioned. This is just a likely
 
 Strings in this channel are UTF8 strings prefixed with a short for length.
 
-The first string is the ''SubChannel'' follow by the following depending on the value of ''SubChannel''
+The first string is the ''SubChannel'' followed by data depending on the value of ''SubChannel''
 
 ==== Forward ====
 
