@@ -101,7 +101,7 @@ Examples of generating Java-style hex digests:
 
 [http://pastebin.com/MjvR0T98 De/Encrypt data via AES using Crypto++]
 
-[https://github.com/SirCmpwn/Craft.Net/blob/master/Craft.Net/AesStream.cs C# AES/CFB support with bouncy castle on Mono]
+[https://github.com/SirCmpwn/Craft.Net/blob/master/source/Craft.Net.Networking/AesStream.cs C# AES/CFB support with bouncy castle on Mono]
 
 
 [[Category:Protocol Details]]
