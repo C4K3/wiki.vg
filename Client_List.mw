@@ -48,7 +48,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{MIT}}
 | {{no}}
 | {{no}}
-| {{no|1.6.4}}
+| {{yes|1.7.2}}
 |-
 ! [https://github.com/lukleh/TwistedBot TwistedBot]
 | bot and proxy, up to date information in readme on github
