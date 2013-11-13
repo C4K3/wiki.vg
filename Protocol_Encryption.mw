@@ -42,7 +42,7 @@ If you're struggling to import this using a crypto library, you can convert it t
 
 On receipt of a Encryption Request from the server, the client will generate a 16-byte shared secret, to be used with the AES/CFB8 stream cipher. It then encrypts it with the server's public key (PKCS#1 v1.5 padded), and also encrypts the token received in the Encryption Request packet in the same way, then sends both to the server in a Encryption Response packet.
 
-The server decrypts the shared secret and token using its private key, and checks if the token is the same. It then sends a Login Success, and enables  AES/CFB8 encryption. For the Initial Vector (IV) and AES setup, both sides use the secret key. Similarly, the client will also enable encryption upon receipt of Login Success. From this point forward, everything is encrypted.
+The server decrypts the shared secret and token using its private key, and checks if the token is the same. It then sends a Login Success, and enables  AES/CFB8 encryption. For the Initial Vector (IV) and AES setup, both sides use the secret key. Similarly, the client will also enable encryption upon sending Encryption Response. From this point forward, everything is encrypted.
 
 == Authentication ==
 
