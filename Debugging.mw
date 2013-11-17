@@ -7,7 +7,7 @@ The <code>-Dlog4j.configurationFile=fullpathtoconfigfile.xml</code> should be pl
 * Before the <code>-jar</code> in the server launch command 
 
 where the config file should contain
-<syntaxhighlight lang="xml" enclose="div">
+<syntaxhighlight lang="xml">
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN" packages="net.minecraft,com.mojang">
     <Appenders>
