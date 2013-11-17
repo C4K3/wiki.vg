@@ -81,8 +81,9 @@ After decrypting the shared secret in the second Encryption Response, the server
  <nowiki>https://sessionserver.mojang.com/session/minecraft/hasJoined?username=</nowiki>''username''&serverId=''hash''
 
 The response is a JSON object containing the user's UUID
-
+<syntaxhighlight lang="javascript">
    {"id":"<uuid>"}
+</syntaxhighlight>
 
 === Sample Code ===
 
