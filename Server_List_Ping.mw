@@ -52,7 +52,7 @@ The server should respond with a [[Protocol#Response|Status Response]] packet
 
 The response is a json object which has the following format
 
-<pre>
+<syntaxhighlight lang="javascript">
 {
 	"version": {
 		"name": "1.7.2",
@@ -68,7 +68,7 @@ The response is a json object which has the following format
 	"description": {"text":"Hello world"},
 	"favicon": "data:image/png;base64,<data>"
 }
-</pre>
+</syntaxhighlight>
 
 The ''sample'' and ''favicon'' sections are optional.
 
