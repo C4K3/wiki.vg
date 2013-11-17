@@ -2,6 +2,10 @@ Minecraft's client and server can log every packet which can be helpful for debu
 
     -Dlog4j.configurationFile=fullpathtoconfigfile.xml
 
+The <code>-Dlog4j.configurationFile=fullpathtoconfigfile.xml</code> should be placed:
+* [[media:ClientDebugging.png|In the JVM Arguments section of the launcher]]
+* Before the <code>-jar</code> in the server launch command 
+
 where the config file should contain
 <pre>
 <nowiki>
