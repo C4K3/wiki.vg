@@ -34,18 +34,18 @@ You need a loop like this:
 
 === Chunk Column Metadata ===
 
-The packet contains important metadata which you'll need to pull out. In the case of 0x38, you'll need to loop over the metadata area. Specifically:
+The packet contains important metadata which you'll need to pull out. In the case of 0x26, you'll need to loop over the metadata area. Specifically:
 
 * Chunk X
 * Chunk Z
 * Primary Bitmask
 * Add Bitmask
-* Ground-up continuous (only in 0x33 - assumed true in 0x38)
-* Skylight (only in 0x38 - assumed true in 0x33)
+* Ground-up continuous (only in 0x21 - assumed true in 0x26)
+* Skylight (only in 0x26 - assumed true in 0x21)
 
 === Data ===
 
-The data is compressed using the deflate() function in zlib. In 0x33, it describes of a single chunk column in the format below. In 0x38, the format below is repeated for each chunk column.
+The data is compressed using the deflate() function in zlib. In 0x21, it describes of a single chunk column in the format below. In 0x26, the format below is repeated for each chunk column.
 
 The format is thus:
 
