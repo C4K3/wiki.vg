@@ -19,7 +19,7 @@ Request Parameters:
 *email: Email of user
 *password: Password of user
 
-Pull mojangSessionId from the PLAY_SESSION cookie, and use that as the sid cookie in peoapi.minecraft.net requests
+Pull mojangSessionId from the PLAY_SESSION cookie, and use that as the sid cookie in peoapi.minecraft.net requests. The mojangSessionId is also returned in a JSON key of sessionID with a request to /m/session
 
 Cookies needed for peoapi.minecraft.net requests:
 
