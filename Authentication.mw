@@ -156,7 +156,7 @@ Note: The provided <code>accessToken</code> gets invalidated.
 
 == Validate ==
 
-Checks if an <code>accessToken</code> is valid.
+Checks if an <code>accessToken</code> is a valid session token with a currently-active session.  Note: this method will not respond successfully to all currently-logged-in sessions, just the most recently-logged-in for each user.  It is intended to be used by servers to validate that a user should be connecting (and reject users who have logged in elsewhere since starting Minecraft), NOT to auth that a particular session token is valid for authentication purposes.  To authenticate a user by session token, use the refresh verb and catch resulting errors.
 
 === Endpoint ===
   /validate
