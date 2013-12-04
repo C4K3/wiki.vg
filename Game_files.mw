@@ -10,7 +10,7 @@ Some information on how to properly run said jar is available at
 
 == Libraries ==
 The libraries which can be used for all minecraft versions and are downloaded by the launcher are located at
-  http://s3.amazonaws.com/MinecraftDownload/
+  https://libraries.minecraft.net/
 
 The json file downloaded above is used in order to determine which libraries to download. Inside the file is a key, <code>libraries</code> which contains information about each library required.
 Example:
@@ -58,12 +58,12 @@ The <code>rules</code> key is used to determine which platforms to download the 
 
 
 In the example above, on an OS X platform, the full download path would be
- https://s3.amazonaws.com/Minecraft.Download/libraries/org/lwjgl/lwjgl/lwjgl-platform/2.9.1-nightly-20130708-debug3/lwjgl-platform-2.9.1-nightly-20130708-debug3-natives-osx.jar
+ https://libraries.minecraft.net/org/lwjgl/lwjgl/lwjgl-platform/2.9.1-nightly-20130708-debug3/lwjgl-platform-2.9.1-nightly-20130708-debug3-natives-osx.jar
 The file would be extracted but the <code>META-INF</code> file would not be. Additionally, the file would only be downloaded if the computer was running OS X 10.5.
 
 == Assets == 
 The game itself downloads further resources from
-  http://s3.amazonaws.com/MinecraftResources/
+ http://resources.download.minecraft.net/
 
 A list of all available resources is available as an XML file at the address above. These files do not have to be downloaded in order for the game to function properly.
 
