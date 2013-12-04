@@ -8,6 +8,8 @@ The jar file for a specific version is located at
 Some information on how to properly run said jar is available at
   http://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.json
 
+{{Warning | As the Minecraft launcher updates the format of the JSON or the requirements to run the client may change. The ''minimumLauncherVersion'' in the <version>.json should be used to detect changes instead of just failing on updates}}
+
 == Libraries ==
 The libraries which can be used for all minecraft versions and are downloaded by the launcher are located at
   https://libraries.minecraft.net/
@@ -65,11 +67,11 @@ The file would be extracted but the <code>META-INF</code> file would not be. Add
 The game itself downloads further resources from
  http://resources.download.minecraft.net/
 
-A list of all available resources is available as an XML file at the address above. These files do not have to be downloaded in order for the game to function properly.
-
 An index is also available at 
  https://s3.amazonaws.com/Minecraft.Download/indexes/<index>.json 
-where index is obtained from the 'assets' field in the versions.json, if this field is missing it defaults to '[https://s3.amazonaws.com/Minecraft.Download/indexes/legacy.json legacy]'. The client currently downloads all resources in the index and stores them in 
+where index is obtained from the 'assets' field in the versions.json, if this field is missing it defaults to '[https://s3.amazonaws.com/Minecraft.Download/indexes/legacy.json legacy]'. The client currently downloads all resources in the index from
+ http://resources.download.minecraft.net/<first 2 hex letters of hash>/<whole hash>
+and stores them in 
  .minecraft/assets/objects/<first 2 hex letters of hash>/<whole hash>
 and a copy is stored in 
  .minecraft/asserts/virtual/legacy/ 
