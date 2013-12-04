@@ -141,7 +141,7 @@ Server must immediately reply to CPE clients with an '''''ExtInfo''''' packet, f
 
 :<h4>Blocks in support level 1</h4>
 :Client must be able to receive/render all 16 custom blocks to claim support. Server must be able to receive/store all 16 custom blocks to claim support.
-[[File:CPE_CustomBlocks_Level1.png]]
+:[[File:CPE_CustomBlocks_Level1.png]]
 :{| class="wikitable"
 !Block name
 !Block ID
@@ -229,7 +229,7 @@ Server must immediately reply to CPE clients with an '''''ExtInfo''''' packet, f
 |0x01 (1)
 |}
 
-Block IDs for future support levels are guaranteed to be assigned monotonically, incrementally, and permanently.
+:Block IDs for future support levels are guaranteed to be assigned monotonically, incrementally, and permanently.
 
 ===HeldBlock===
 :Provides a way for the client to notify the server about the blocktype that it is currently holding, and for the server to change the currently-held block type.   
