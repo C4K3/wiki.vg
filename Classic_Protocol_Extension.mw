@@ -84,7 +84,7 @@ Server must immediately reply to CPE clients with an '''''ExtInfo''''' packet, f
 |}
 
 ==Extensions==
-'''''Note:''''' The section heading is the name of the extension. Packet names are not same as extension names. e.g. the first extension listed here is named "ClickDistance" and not "SetClickDistance".
+'''''Note:''''' The section heading is the name of the extension. Packet names are not same as extension names. For example, the first extension listed here is named "ClickDistance" and not "SetClickDistance".
 
 ===ClickDistance===
 :Used to extend or restrict the distance at which client may click blocks, controlled by the server. Click range is given in player-space units (32 units per block). In Minecraft Classic, the default range is 160.
