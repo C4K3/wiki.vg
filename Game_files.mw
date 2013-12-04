@@ -71,6 +71,8 @@ An index is also available at
  https://s3.amazonaws.com/Minecraft.Download/indexes/<index>.json 
 where index is currently '[https://s3.amazonaws.com/Minecraft.Download/indexes/legacy.json legacy]' but this is expected to change in the future. The client currently downloads all resources in the index and stores them in 
  .minecraft/assets/objects/<first 2 hex letters of hash>/<whole hash>
-
+and a copy is stored in 
+ .minecraft/asserts/virtual/legacy/ 
+in the old format
 
 [[Category:Minecraft Modern]]
