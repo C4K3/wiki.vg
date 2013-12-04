@@ -67,5 +67,10 @@ The game itself downloads further resources from
 
 A list of all available resources is available as an XML file at the address above. These files do not have to be downloaded in order for the game to function properly.
 
+An index is also available at 
+ https://s3.amazonaws.com/Minecraft.Download/indexes/<index>.json 
+where index is currently '[https://s3.amazonaws.com/Minecraft.Download/indexes/legacy.json legacy]' but this is expected to change in the future. The client currently downloads all resources in the index and stores them in 
+ .minecraft/assets/objects/<first 2 hex letters of hash>/<whole hash>
+
 
 [[Category:Minecraft Modern]]
