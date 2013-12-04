@@ -67,7 +67,7 @@ The file would be extracted but the <code>META-INF</code> file would not be. Add
 The game itself downloads further resources from
  http://resources.download.minecraft.net/
 
-An index is also available at 
+An index is available at 
  https://s3.amazonaws.com/Minecraft.Download/indexes/<index>.json 
 where index is obtained from the 'assets' field in the versions.json, if this field is missing it defaults to '[https://s3.amazonaws.com/Minecraft.Download/indexes/legacy.json legacy]'. The client currently downloads all resources in the index from
  http://resources.download.minecraft.net/<first 2 hex letters of hash>/<whole hash>
