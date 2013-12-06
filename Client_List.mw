@@ -46,7 +46,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | nickelpro
 | {{Python}}
 | {{MIT}}
-| {{no}}
+| {{yes}}
 | {{no}}
 | {{yes|1.7.2}}
 |-
