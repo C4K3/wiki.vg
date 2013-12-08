@@ -80,7 +80,7 @@ The int value itself specifies the minecart's functionality:
 | class="col0 centeralign" | Block Type
 | class="col1 centeralign" | int
 | class="col2 centeralign" | <code>12</code>
-| class="col3" | <code>BlockID | (Metadata << 0xC)</code>
+| class="col3" | <code>BlockID | (Metadata << 0x10)</code>
 |}
 
 === Splash Potions (id 73) ===
