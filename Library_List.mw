@@ -100,6 +100,12 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{BSD}}
 | n/a
 |-
+! [https://gist.github.com/Jckf/7872337 Yggdrasil.php]
+| Interfacing with Mojang's Yggdrasil authentication system.
+| [http://www.jckf.no/ Jim C K Flaten (Jckf)]
+| {{PHP}}
+| {{unknown}}
+| n/a
 |}
 
 [[Category:Minecraft Modern]]
