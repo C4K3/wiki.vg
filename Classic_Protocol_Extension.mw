@@ -756,7 +756,7 @@ Default value is <code>MapDepth/2</code>.
 ! class="col4" | Notes
 |- class="row1"
 | class="col0 centeralign" rowspan="4" | 0x1F
-(32)
+(31)
 | class="col1 centeralign" | WeatherType
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
@@ -786,8 +786,8 @@ Default value is <code>MapDepth/2</code>.
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="4" | 0x1F
-(31)
+| class="col0 centeralign" rowspan="4" | 0x20
+(32)
 | class="col1 centeralign" | HaxType
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
