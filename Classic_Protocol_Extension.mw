@@ -770,6 +770,7 @@ Default value is <code>MapDepth/2</code>.
 |}
 
 ===AllowHax===
+{{Warning|This extension is not part of the spec yet &mdash; it is under consideration.}}
 :This extension allows the server to set whether hax should be allowed or not.
 :'''Motivation''': To prevent users from using hacks.
 :'''Client behavior''': Client must be able to receive '''''AllowHax''''' packets at any time after the first '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is received, and apply these changes immediately. If an unrecognized or unsupported ''HaxType'' field is given, no action is needed.
