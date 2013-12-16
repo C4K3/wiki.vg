@@ -777,6 +777,7 @@ Default value is <code>MapDepth/2</code>.
 :'''Server behavior''': Server may send '''''HackControl''''' packets to connected clients at any time after the first '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is sent.
 
 :<h4>HackControl Packet</h4>
+{{Warning|This extension is currently being considered.}}
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
