@@ -771,13 +771,13 @@ Default value is <code>MapDepth/2</code>.
 |}
 
 ===HackControl===
+{{Warning|This extension has just been proposed, and is currently being considered.}}
 :This extension allows the server to control cheats/hacks in the client.
 :'''Motivation''': To allow fine-grained control over cheats/hacks on multi-world servers.
 :'''Client behavior''': Client must be able to receive '''''HackControl''''' packets at any time after the first '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is received, and apply these changes immediately. Unrecognized or unsupported values for any field should be ignored. Clients may approximate ''JumpHeight'' by rounding down to the nearest half-block (i.e. nearest multiple of 16), if needed. If a negative value is given for ''JumpHeight'', client should reset jump height to its default setting (around <code>40</code> in vanilla Minecraft).
 :'''Server behavior''': Server may send '''''HackControl''''' packets to connected clients at any time after the first '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is sent.
 
 :<h4>HackControl Packet</h4>
-{{Warning|This extension is currently being considered.}}
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
@@ -833,3 +833,38 @@ Negative value (e.g. <code>-1</code>) means that the client should use its defau
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 8 bytes
 |}
+
+===MessageTypes===
+{{Warning|This extension has just been proposed, and is currently being considered.}}
+:This extension adds new ways of presenting messages in the client.
+:'''Motivation''': To enhance the display of announcements and status information, and to reduce chat clutter.
+:'''Client behavior''': When this extension is mutually supported, the ''PlayerID'' field of the standard server-to-client [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet should be treated as ''MessageType''. Unrecognized or unsupported values may be ignored (in which case the message should be presented as a regular chat message). When connected to non-supporting servers, this field should be ignored.
+:'''Server behavior''': Server may use the ''PlayerID'' field of the [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet to set a ''MessageType''. For non-supporting clients, this field should always be set to <code>0</code>.
+
+:{| class="wikitable"
+!MessageType
+!Meaning
+!Suggested Implementation
+|-
+|<code>0</code>
+|Chat
+|Normal message, shown in the chat area.
+|-
+|<code>1</code>
+|Status1
+|Shown persistently in the top-left corner of the screen, in regular font.
+|-
+|<code>2</code>
+|Status2
+|Shown persistently just below Status1
+|-
+|<code>3</code>
+|Status3
+|Shown persistently just below Status2
+|-
+|<code>100</code>
+|Announcement
+|Pops up in larger font near the top-center of the screen. Fades out after a few seconds.
+|}
+
+:This extension does not define any new packets.
