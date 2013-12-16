@@ -14,7 +14,7 @@
 !EnvMapAppearance
 !EnvWeatherType
 |-
-![ClassiCube Client http://www.classicube.net/]
+! ]http://www.classicube.net/ ClassiCube Client]
 | {{yes|1}}
 | {{yes|1}} (level 1)
 | {{yes|1}}
@@ -45,7 +45,7 @@
 !EnvMapAppearance
 !EnvWeatherType
 |-
-![FemtoCraft http://femto.fcraft.net]
+! [http://femto.fcraft.net FemtoCraft]
 | {{no}}
 | {{yes|1}} (level 1)
 | {{no}}
