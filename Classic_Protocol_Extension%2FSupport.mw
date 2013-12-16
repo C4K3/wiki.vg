@@ -2,8 +2,8 @@
 {| class="wikitable"
 |
 !ClickDistance
-!CustomBlocks version
-!CustomBlocks support level
+!CustomBlocks<br>version
+!CustomBlocks<br>support level
 !HeldBlock
 !EmoteFix
 !TextHotKey
@@ -32,3 +32,34 @@
 |}
 
 ==Servers==
+{| class="wikitable"
+|
+!ClickDistance
+!CustomBlocks<br>version
+!CustomBlocks<br>support level
+!HeldBlock
+!EmoteFix
+!TextHotKey
+!ExtPlayerList
+!EnvColors
+!SelectionCuboid
+!BlockPermissions
+!ChangeModel
+!EnvMapAppearance
+!EnvWeatherType
+|-
+!FemtoCraft
+| {{no}}
+| {{yes|1}}
+| 1
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{yes|1}}
+| {{no}}
+| {{no}}
+| {{no}}
+|}
