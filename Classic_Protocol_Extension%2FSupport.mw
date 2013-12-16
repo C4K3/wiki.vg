@@ -1,0 +1,32 @@
+==Clients==
+{| class="wikitable"
+|
+!ClickDistance
+!CustomBlocks
+!HeldBlock
+!EmoteFix
+!TextHotKey
+!ExtPlayerList
+!EnvColors
+!SelectionCuboid
+!BlockPermissions
+!ChangeModel
+!EnvMapAppearance
+!EnvWeatherType
+|-
+!ClassiCube.net
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{no}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+|}
+
+==Servers==
