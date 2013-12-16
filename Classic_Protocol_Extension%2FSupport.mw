@@ -2,8 +2,7 @@
 {| class="wikitable"
 |
 !ClickDistance
-!CustomBlocks<br>version
-!CustomBlocks<br>support level
+!CustomBlocks
 !HeldBlock
 !EmoteFix
 !TextHotKey
@@ -17,8 +16,7 @@
 |-
 !ClassiCube.net
 | {{yes|1}}
-| {{yes|1}}
-| 1
+| {{yes|1}} (level 1)
 | {{yes|1}}
 | {{no}}
 | {{yes|1}}
@@ -35,8 +33,7 @@
 {| class="wikitable"
 |
 !ClickDistance
-!CustomBlocks<br>version
-!CustomBlocks<br>support level
+!CustomBlocks
 !HeldBlock
 !EmoteFix
 !TextHotKey
@@ -50,8 +47,7 @@
 |-
 !FemtoCraft
 | {{no}}
-| {{yes|1}}
-| 1
+| {{yes|1}} (level 1)
 | {{no}}
 | {{no}}
 | {{no}}
