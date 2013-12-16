@@ -169,3 +169,5 @@ Stores world-specific setting for [[Classic_Protocol_Extension#EnvMapAppearance|
 
 ==Support==
 These custom servers plan to add support for CW World Format: [http://github.com/tyteen4a03/cloudBox cloudBox], [http://www.fcraft.net/ fCraft]
+
+The [http://www.classicube.net ClassiCube Client] plans on providing support on loading and saving basic tags from the ClassicWorld file format
