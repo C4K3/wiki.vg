@@ -197,6 +197,6 @@ Response Parameters:
 *createServerEnabled: Whether server creation is enabled?
 Response:
 
- {"buyServerEnabled":false,"createServerEnabled":false}
+ {"serviceEnabled": true,"buyServerEnabled":false,"createServerEnabled":false}
 
 [[Category: Pocket Minecraft]]
