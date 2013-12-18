@@ -26,6 +26,10 @@ Cookies needed for peoapi.minecraft.net requests:
 *sid: Pulled from mojangSessionId
 *gameversion: Version of the game the requests are coming from
 
+Response:
+
+Logged in.
+
 == Endpoints ==
 
 Endpoint: https://peoapi.minecraft.net
