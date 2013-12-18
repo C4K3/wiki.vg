@@ -28,7 +28,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
-| {{planned|Soon}}
+| {{planned}}
 |}
 
 ==Servers==
@@ -47,20 +47,6 @@ Number inside green fields indicates the supported extension version. Currently 
 !EnvMapAppearance
 !EnvWeatherType
 |-
-! [http://femto.fcraft.net FemtoCraft]
-| {{no}}
-| {{yes|1}} (level 1)
-| {{no}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{yes|1}}
-| {{no}}
-| {{no}}
-| {{no}}
-|-
 ! [http://umby.d3s.co/CCD3/ D3]
 | {{yes|1}}
 | {{yes|1}} (level 1)
@@ -74,4 +60,32 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{no}}
 | {{yes|1}}
+|-
+! [http://fcraft.net fCraft]
+| {{no}}
+| {{planned}} (level 1)
+| {{planned}}
+| {{no}}
+| {{no}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{no}}
+| {{planned}}
+| {{planned}}
+|-
+! [http://femto.fcraft.net FemtoCraft]
+| {{no}}
+| {{yes|1}} (level 1)
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{yes|1}}
+| {{no}}
+| {{no}}
+| {{no}}
 |}
