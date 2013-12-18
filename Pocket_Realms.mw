@@ -45,6 +45,7 @@ Response Parameters:
 *type: Type of server, can be creative or survival
 *playerNames: Usernames of players currently playing on the server
 *invited: Usernames of players who are invited to the server
+*daysLeft: Unknown use
 
 Response:
 
@@ -58,7 +59,8 @@ Response:
     "maxNrPlayers":10,
     "type":"survival",
     "playerNames":["Steve", "Stevie"],
-    "invited":["Steve", "Stevie"]
+    "invited":["Steve", "Stevie"],
+    "daysLeft": 0
  
  }]
 
