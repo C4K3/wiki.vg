@@ -1,9 +1,11 @@
+This page was last updated for Realms version 0.7.6 and will likely not be accurate for future Minecraft PE versions.
+
 == Authentication ==
 
 Endpoint: https://account.mojang.com
 
 Steps to Login
-*Pull authenticityToken from /m/login?app=mcpe
+*Pull authenticityToken from /m/login?app=mcpe&version=0.7.6
 *POST to /m/login
 *Client is redirected to /m/launch
 
@@ -15,7 +17,7 @@ Parameters sent in body
 
 Request Parameters:
 
-*authenticityToken: Pulled from /m/login?app=mcpe
+*authenticityToken: Pulled from /m/login?app=mcpe&version=0.7.6
 *email: Email of user
 *password: Password of user
 
