@@ -852,7 +852,7 @@ Negative value (e.g. <code>-1</code>) means that the client should use its defau
 |-
 |<code>1</code>
 |Status1
-|Shown persistently in the top-left corner of the screen, in regular font.
+|Shown persistently in the top-right corner of the screen, in regular font.
 |-
 |<code>2</code>
 |Status2
@@ -861,6 +861,22 @@ Negative value (e.g. <code>-1</code>) means that the client should use its defau
 |<code>3</code>
 |Status3
 |Shown persistently just below Status2
+|-
+|<code>11</code>
+|BottomRight1
+|Shown persistently in the bottom-right corner of the screen, in regular font.
+|-
+|<code>12</code>
+|BottomRight2
+|Shown persistently just above BottomRight1
+|-
+|<code>13</code>
+|BottomRight3
+|Shown persistently just above BottomRight2
+|-
+|<code>21</code>
+|TopLeft
+|Shown persistently in the top-left corner of the screen, in regular font.
 |-
 |<code>100</code>
 |Announcement
