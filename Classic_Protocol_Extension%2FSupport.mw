@@ -15,6 +15,8 @@ Number inside green fields indicates the supported extension version. Currently 
 !ChangeModel
 !EnvMapAppearance
 !EnvWeatherType
+!HackControl
+!MessageType
 |-
 ! [http://www.classicube.net/ ClassiCube Client]
 | {{yes|1}}
@@ -28,6 +30,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
+| {{planned}}
+| {{planned}}
 | {{planned}}
 |}
 
@@ -60,6 +64,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{no}}
 | {{yes|1}}
+| {{no}}
+| {{no}}
 |-
 ! [http://fcraft.net fCraft]
 | {{no}}
@@ -72,6 +78,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{planned}}
 | {{planned}}
 | {{no}}
+| {{planned}}
+| {{planned}}
 | {{planned}}
 | {{planned}}
 |-
@@ -87,5 +95,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{no}}
 | {{no}}
+| {{no}}
+| {{planned}}
 | {{no}}
 |}
