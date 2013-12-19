@@ -839,7 +839,7 @@ Negative value (e.g. <code>-1</code>) means that the client should use its defau
 [[Image:CPE-MessageTypes.png|right|700px|Examples of all possible MessageTypes.]]
 :This extension adds new ways of presenting messages in the client.
 :'''Motivation''': To enhance the display of announcements and status information, and to reduce chat clutter.
-:'''Client behavior''': When this extension is mutually supported, the ''PlayerID'' field of the standard server-to-client [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet should be treated as ''MessageType''. Unrecognized or unsupported values may be ignored (in which case the message should be presented as a regular chat message). When connected to non-supporting servers, this field should be ignored.
+:'''Client behavior''': When this extension is mutually supported, the ''PlayerID'' field of the standard server-to-client [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet should be treated as a ''MessageType'' code. Unrecognized or unsupported codes may be ignored (in which case the message should be presented as a regular chat message). When connected to non-supporting servers, this field should be ignored.
 :'''Server behavior''': Server may use the ''PlayerID'' field of the [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet to set a ''MessageType''. For non-supporting clients, this field should always be set to <code>0</code>.
 
 :{| class="wikitable"
