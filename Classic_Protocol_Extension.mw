@@ -771,7 +771,6 @@ Default value is <code>MapDepth/2</code>.
 |}
 
 ===HackControl===
-{{Warning|This extension has just been proposed, and is currently being considered.}}
 :This extension allows the server to control cheats/hacks in the client.
 :'''Motivation''': To allow fine-grained control over cheats/hacks on multi-world servers.
 :'''Client behavior''': Client must be able to receive '''''HackControl''''' packets at any time after the first '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is received, and apply these changes immediately. Unrecognized or unsupported values for any field should be ignored. Clients may approximate ''JumpHeight'' by rounding down to the nearest half-block (i.e. nearest multiple of 16), if needed. If a negative value is given for ''JumpHeight'', client should reset jump height to its default setting (around <code>40</code> in vanilla Minecraft).
@@ -835,7 +834,6 @@ Negative value (e.g. <code>-1</code>) means that the client should use its defau
 |}
 
 ===MessageTypes===
-{{Warning|This extension has just been proposed, and is currently being considered.}}
 [[Image:CPE-MessageTypes.png|right|700px|Examples of all possible MessageTypes.]]
 :This extension adds new ways of presenting messages in the client.
 :'''Motivation''': To enhance the display of announcements and status information, and to reduce chat clutter.
