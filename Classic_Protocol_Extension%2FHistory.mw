@@ -1,3 +1,12 @@
+==19 December 2013==
+* Added several more '''''MessageType''''' codes, and added a screenshot to show them in action. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5300&oldid=5286]
+
+==16 December 2013==
+* Added '''''HackControl''''' and '''''MessageType''''' extension proposals. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5284&oldid=5228]
+
+==8 December 2013==
+* Clarified extension names vs packet names. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5228&oldid=5159]
+
 ==6 November 2013==
 * Corrected listed size of '''''MakeSelection''''' and '''''HoldThis''''' packets. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5157&oldid=5153]
 
