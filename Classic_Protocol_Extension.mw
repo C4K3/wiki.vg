@@ -884,6 +884,6 @@ Negative value (e.g. <code>-1</code>) means that the client should use its defau
 
 :This extension does not define any new packets.
 
-===RedirectOnConnect===
-:This extension allows servers to redirect clients to another server, causing the client to connect to the redirected server instead. This extension is currently under proposal.
+===RedirectClient===
+:This extension allows servers to redirect clients to another server, causing the client to connect to the new server instead. This extension is currently under proposal.
 :'''Motivation''': To allow enterprise-level servers to balance the player count on its server clusters as necessary.
