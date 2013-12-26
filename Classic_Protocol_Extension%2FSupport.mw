@@ -67,7 +67,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{no}}
 | {{yes|1}}
 | {{no}}
-| {{no}}
+| {{yes|1}}
 |-
 ! [http://fcraft.net fCraft]
 | {{no}}
