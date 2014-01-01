@@ -30,12 +30,12 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{unknown}}
 | {{no|1.6.2 (Partial)}}
 |-
-! [http://github.com/Steveice10/mc-protocol-lib mc-protocol-lib]
+! [http://github.com/Steveice10/MCProtocolLib MCProtocolLib]
 | Java implementation of the Minecraft protocol.
 | Steveice10
 | {{Java}}
 | {{MIT}}
-| {{no|1.6.2}}
+| {{yes|1.7.4}}
 |-
 ! [https://github.com/dkkline/McClientLib McClientLib]
 | Python MineCraft client protocol.
