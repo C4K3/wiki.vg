@@ -823,6 +823,13 @@ Default value is <code>MapDepth/2</code>.
 *0 = Disallow third-person view (only first-person view allowed).
 *1 = Allow third-person view.
 |-
+| class="col1 centeralign" | WeatherControl
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4" |
+*0 = Disallow changing the weather
+*1 = Allow changing the weather.
+|-
 | class="col1 centeralign" | JumpHeight
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>40</code>
