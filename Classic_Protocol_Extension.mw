@@ -786,7 +786,7 @@ Default value is <code>MapDepth/2</code>.
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="6" | 0x20
+| class="col0 centeralign" rowspan="7" | 0x20
 (32)
 | class="col1 centeralign" | Flying
 | class="col2 centeralign" | byte
