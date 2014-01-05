@@ -52,7 +52,7 @@ All tags are required, unless noted otherwise. Also note that ordering of named 
 **'''H''' is the heading (yew) component of player's orientation.
 **'''P''' is the pitch component of player's orientation.
 *'''''CreatedBy''''' identifies the creator of this map. Optional compound.
-**'''''Username''''' is the name of a player.
+**'''''Username''''' is the name of a player. A valid username is expected, and editors should to their best of their ability ensure that it is so at the time of editing.
 **'''''Service''''' can be "Minecraft" (for Minecraft.net usernames) or "ClassiCube" (for ClassiCube.net usernames).
 *'''''MapGenerator''''' contains information related to map generation. Optional compound.
 **'''''Software''''' is the name of software that originally generated this map (e.g. "cloudBox" or "fCraft").
