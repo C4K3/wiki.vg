@@ -242,7 +242,7 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
 |- class="row7"
 | class="col0 centeralign" | '''29'''
 | class="col1 centeralign" | '''1.2.4''', '''1.2.5'''
-| class="col2 centeralign" |
+| class="col2 centeralign" | [[http://wiki.vg/index.php?title=Protocol&oldid=932 page]]
 | class="col3 centeralign" | This protocol has no encryption and a different handshake layout than the previous ones.
 |- class="row6"
 | class="col0 centeralign" | '''28'''
