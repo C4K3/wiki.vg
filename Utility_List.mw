@@ -14,6 +14,8 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/mc-server/MCServer/tree/master/Tools/ProtoProxy ProtoProxy] || A subproject of [https://github.com/mc-server/MCServer MCServer], protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parsing basic packets. || {{yes|#4}} - 1.7.4 || C++ || Windows || [[user:xoft|xoft]] || {{yes|Active}}
 |-
+| [https://github.com/Yogu/minecraft-proxy minecraft-proxy] || A proxy that prints out server and client packets in JSON format. Does not support encryption.|| {{yes|#4}} - 1.7.4 || node.js ||  Windows, Mac, & Linux  || [[user:Yogu|Yogu]] || {{yes|Active}}
+|-
 | [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{no|#79}} - 13w38c || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
 |-
 | [https://github.com/sadimusi/mc4p mc4p] || A 1.6.2-compatible fork of [https://github.com/mmcgill/mc3p mc3p] || {{no|#74}} - 1.6.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
