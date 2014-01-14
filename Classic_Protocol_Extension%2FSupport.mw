@@ -112,8 +112,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{planned}}
 | {{planned}}
 | {{planned}}
-| {{yes}}
-| {{yes}}
+| {{yes|1}}
+| {{yes|1}}
 | {{planned}}
 | {{no}}
 |}
