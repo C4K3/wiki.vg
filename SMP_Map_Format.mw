@@ -4,8 +4,8 @@ This page gives an overview of the SMP map format used in the [[Protocol|protoco
 
 Two packets use this format:
 
-* [[Protocol#0x33|0x33 chunk data]] - single column - used when player movement requires new chunks to be loaded. Also used to unload chunks.
-* [[Protocol#0x38|0x38 map chunk bulk]] - multiple columns - used when first spawning into a world and when player is teleported.
+* [[Protocol#Chunk_Data|0x21 chunk data]] - single column - used when player movement requires new chunks to be loaded. Also used to unload chunks.
+* [[Protocol#Map_Chunk_Bulk|0x26 map chunk bulk]] - multiple columns - used when first spawning into a world and when player is teleported.
 
 == Concepts ==
 
