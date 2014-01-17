@@ -45,7 +45,7 @@ The packet contains important metadata which you'll need to pull out. In the cas
 
 === Data ===
 
-The data is compressed using the deflate() function in zlib. In 0x33, it describes of a single chunk column in the format below. In 0x38, the format below is repeated for each chunk column.
+The data is compressed using the deflate() function in zlib. In 0x21, it describes of a single chunk column in the format below. In 0x26, the format below is repeated for each chunk column.
 
 The format is thus:
 
