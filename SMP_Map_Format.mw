@@ -66,5 +66,4 @@ The 'biome' array is always 256 bytes when sent. Values above 22 will cause the 
 
 == Implementations ==
 
-* [https://github.com/SirCmpwn/Craft.Net/blob/master/Craft.Net.Server/ChunkHelper.cs C#, 1.4.6]
 * [https://github.com/barneygale/smpmap Python, 1.4]
