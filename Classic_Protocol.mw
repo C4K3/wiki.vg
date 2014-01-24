@@ -97,7 +97,7 @@ Block type is always the type player is holding, (even when deleting).
 
 Client assumes that this command packet always succeeds, and so draws the new block immediately. To disallow block creation, server must send back Set Block packet with the old block type.
 
-The XYZ coordinates of the block are just integers representing the coordinate of the block. (As opposed to player coordinates where the lower 5 bits are fractional coordinates)
+The XYZ coordinates of the block are just shorts representing the coordinate of the block. (As opposed to player coordinates where the lower 5 bits are fractional coordinates)
 |-
 | X || Short
 |-
@@ -131,7 +131,7 @@ The XYZ coordinates of the block are just integers representing the coordinate o
 | Packet ID || Byte
 |rowspan=3| Contain chat messages sent by player. (See [[Chat|How chat works]])
 |-
-| Unused, maybe message color || Byte (0xFF)
+| Unused || Byte (0xFF)
 |-
 | Message || String
 |}
@@ -170,7 +170,7 @@ The XYZ coordinates of the block are just integers representing the coordinate o
 |rowspan=4| 0x03
 |rowspan=4| Level Data Chunk
 | Packet ID || Byte
-|rowspan=4| Contains a chunk of gzipped map (not level.dat file). After decompression the map consists of a int(4 bytes) containing number of blocks + raw map array. (chunk is up to 1024 bytes, padded with 0x00s if less).
+|rowspan=4| Contains a chunk of gzipped map (not level.dat file). After decompression the map consists of a big-endian int(4 bytes) containing the number of blocks, followed by a raw map array. (chunk is up to 1024 bytes, padded with 0x00s if less).
 |-
 | Chunk Length || Short
 |-
@@ -205,7 +205,7 @@ The XYZ coordinates of the block are just integers representing the coordinate o
 |rowspan=8| 0x07
 |rowspan=8| Spawn Player
 | Packet ID || Byte
-|rowspan=8| Sent to indicate where a new player is spawning in the world.  Position and orientation are encoded the same as for packet 0x08 below.
+|rowspan=8| Sent to indicate where a new player is spawning in the world.  Position and orientation are encoded the same as for packet 0x08 below. PlayerID -1 (255 unsigned) indicates the player's self. This will set the player's spawn point.
 |-
 | Player ID || SByte
 |-
@@ -312,7 +312,7 @@ Not required for server operation.
 |rowspan=2| 0x0f
 |rowspan=2| Update user type
 | Packet ID || Byte
-|rowspan=2| Sent when a player is opped/deopped
+|rowspan=2| Sent when a player is opped/deopped. User type is 0x64 for op, 0x00 for normal user.
 |-
 | User type || Byte
 |-
