@@ -47,6 +47,9 @@ The corresponding URL would look like this:
  <package>/<name>/<version>/<name>-<version>.jar
 where <code>path</code> is the result of replacing all the periods in <code>package</code> with slashes.
 
+It also download a hash, in sha1, the url is:
+ <package>/<name>/<version>/<name>-<version>.jar.sha1
+
 
 The <code>natives</code> key provides a string for each specific platform to be inserted between the .jar and the <version> of the filename, resulting in a filename with the format:
  <name>-<version>-<native-string>.jar
