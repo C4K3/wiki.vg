@@ -16,7 +16,7 @@ Custom servers that plan to add support: [http://800craft.net/ 800Craft], [http:
 
 Custom clients that already support CPE: [http://classicube.net ClassiCube Client]
 
-Custom clients that plan to add support: [http://charged-miners.com/ Charged Miners], [http://github.com/Steveice10/OpenClassic/ OpenClassic]
+Custom clients that plan to add support: [http://charged-miners.com/ Charged Miners]
 
 ==Negotiation==
 When CPE-capable client connects to a CPE-capable server, a brief negotiation needs to happen before any extensions are used. Client and server declare their capabilities and determine which extensions are mutually supported. '''All CPE-capable software is required to support this.'''
