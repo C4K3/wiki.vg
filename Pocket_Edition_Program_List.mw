@@ -13,14 +13,14 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 !Last Version Supported
 |-
 ! [http://www.pocketmine.net/ PocketMine-MP]
-| Server with Plugin API, MultiWorlds and more
+| Server with Plugin API, Multiworlds and more
 | Server
-| [https://twitter.com/shoghicp shoghicp]
+| [https://twitter.com/PocketMine PocketMine Team]
 | {{PHP}}
 | {{LGPL}}
-| Stable Alpha_1.3.3, Dev Alpha_1.3.4dev
+| Stable Alpha_1.3.11, Dev Alpha_1.3.12dev
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.7.2 alpha}}
+| {{yes|v0.8.1 alpha}}
 |-
 ! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
 | UDP proxy for MCPE Servers, allowing joining Online Servers from your local network. Dumps packets
@@ -30,7 +30,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | Unknown
 | Allows seeing sent/received packets through a web interface
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.7.3 alpha}}
+| {{yes}}
 |-
 ! [https://github.com/PocketMine/PocketBurger PocketBurger]
 | Extracts information from the Minecraft: PE binary about the protocol + more. Compatible with Burger, Hamburglar and BurgerVitrine
@@ -40,7 +40,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | No restrictions
 | Generates JSON output, compatible with Burger
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.7.3 alpha}}
+| {{yes|v0.8.1 alpha}}
 |-
 |}
 
