@@ -719,7 +719,7 @@ do {
 ! style="width: 250px" | Meaning
 |-
 | 16
-| Byte
+| Short
 | Carried Block
 |-
 | 17
@@ -730,7 +730,6 @@ do {
 | Byte
 | Is Screaming
 |}
-
 
 === Zombie ===
 <sup>Extends [[#Living Entity|Living Entity]]</sup>
