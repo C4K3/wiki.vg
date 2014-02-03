@@ -84,8 +84,8 @@ Authenticates a user using his password.
 === Payload ===
 <syntaxhighlight lang="javascript">
 {
-  "agent": {                             // optional
-    "name": "Minecraft",                 // So far this is the only encountered value
+  "agent": {                             // defaults to Minecraft
+    "name": "Minecraft",                 // For Mojang's other game Scrolls, "Scrolls" should be used
     "version": 1                         // This number might be increased
                                          // by the vanilla client in the future
   },
