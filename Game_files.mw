@@ -72,7 +72,7 @@ The game itself downloads further resources from
 
 An index is available at 
  https://s3.amazonaws.com/Minecraft.Download/indexes/<index>.json 
-where index is obtained from the 'assets' field in the versions.json, if this field is missing it defaults to '[https://s3.amazonaws.com/Minecraft.Download/indexes/legacy.json legacy]'. The client currently downloads all resources in the index from
+where index is obtained from the 'assets' field in the versions.json, if this field is missing it defaults to '[https://s3.amazonaws.com/Minecraft.Download/indexes/legacy.json legacy]'. Each resource in the file has a name (the field name of the resource object), a SHA1 hash, and a file size.  The client currently downloads all resources in the index from
  http://resources.download.minecraft.net/<first 2 hex letters of hash>/<whole hash>
 and stores them in 
  .minecraft/assets/objects/<first 2 hex letters of hash>/<whole hash>
