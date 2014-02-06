@@ -15,9 +15,9 @@ This list encapsulates all characters that are in the fonts file. Characters out
 
 == Font ==
 
-Minecraft loads its font from <code>font/default.png</code> in <code>minecraft.jar</code>. Glyphs 0-255 are given, each in an 8x8 area. 
+Minecraft has two fonts types: Default (<code>default.png</code>) and Unicode(<code>glyph_XX.png</code>). Default will fallback on unicode characters if they are not provided (default only has the first 256 glyphs). The minecraft client calculates the widths of the default font type on startup whilst the sizes of the unicode type are provided in <code>glyph_sizes.bin</code>. Each byte in <code>glyph_sizes.bin</code> contains the start and end position of each character, the top nibble (0xF0) is the start position and the bottom nibble (0x0F) is the end position (relative to the characters position in the font sheet). 
 
-Minecraft also provides other font pages, as <code>font/glyph_XX.png</code>, where XX is the hex representation of the first byte of the UTF-16 character. The archive also provides <code>font/glyph_sizes.bin</code>. Glyphs are in-order, a byte a piece. The glyph's width can be ascertained from the expression <code>(byte & 0x0F - byte >> 4)</code>. However, the sizes for the first 256 glyphs are *not* correct and the minecraft client generates them on startup.
+Example: https://gist.github.com/TkTech/dff9bbe54c9a074612e1
 
 == Control Sequences ==
 
