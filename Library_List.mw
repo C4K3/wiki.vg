@@ -106,6 +106,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{PHP}}
 | {{unknown}}
 | n/a
+|-
+! [https://github.com/umby24/libMC.NET libMC.Net]
+| .NET Minecraft interaction library
+| [http://umby.d3s.co/ umby24]
+| {{C sharp}}
+| {{MIT}}
+| {{yes|1.7.4}}
 |}
 
 [[Category:Minecraft Modern]]
