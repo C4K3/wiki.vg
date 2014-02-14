@@ -102,18 +102,18 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{no}}
 |-
 ! [http://github.com/LeChosenOne/LegendCraft LegendCraft]
-| {{yes}}
+| {{yes|1}}
 | {{yes|1}} (level 1)
 | {{planned}}
-| {{planned}}
 | {{no}}
-| {{planned}}
-| {{yes|1}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{yes|1}}
-| {{yes|1}}
-| {{planned}}
 | {{no}}
+| {{yes|1}}
+| {{yes|1}}
+| {{planned}}
+| {{planned}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{planned}}
+| {{planned}}
 |}
