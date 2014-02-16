@@ -52,6 +52,21 @@ A couple things for contributors:
 | [http://forum.mc-server.org/showthread.php?tid=499 Link]
 | {{yes|Active}}
 |-
+! [https://github.com/SpaceManiac/Glowstone Glowstone]
+| SpaceManiac
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{yes|1.7.4}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{planned|Players}}
+| {{yes|Threads/Events}}
+| {{yes|Java ([http://bukkit.org/ Bukkit])}}
+| {{yes|{{windows}}{{linux}}{{mac}}}}
+| {{no|No list}}
+| {{yes|Active}}
+|-
 ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
 | Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
 | [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
