@@ -151,6 +151,7 @@ The entire packet looks something like this:
 === Examples ===
 
 * [https://gist.github.com/6281388 Ruby]
+* [https://github.com/winny-/mcstat PHP]
 
 == 1.4 - 1.5 ==
 
