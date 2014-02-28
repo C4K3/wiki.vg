@@ -1,3 +1,6 @@
+==28 February 2014==
+* Small addition stating the use of the ''EntityID'' byte of '''''ChangeModel''''' having to do with the players own model. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5455&oldid=5443]
+
 ==19 December 2013==
 * Added several more '''''MessageType''''' codes, and added a screenshot to show them in action. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5300&oldid=5286]
 
