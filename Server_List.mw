@@ -110,7 +110,7 @@ A couple things for contributors:
 | {{yes|C#}}
 | {{yes|{{windows}}{{linux}}{{mac}}}}
 | [https://github.com/SirCmpwn/PartyCraft#features Link]
-| {{yes|Active}}
+| {{unknown|on hiatus since August 2013}}
 |-
 ! [https://github.com/fador/mineserver/ Mineserver]
 | Fador, Psoden, deoxxa
@@ -140,7 +140,7 @@ A couple things for contributors:
 | {{planned}}
 | {{yes|{{linux}}}}
 | [http://nessus.lv/nessusms Link]
-| {{yes|Active}}
+| {{unknown|on hiatus since June 2013}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
 | [http://www.spout.org/ Spout LLC] and community
@@ -185,7 +185,7 @@ A couple things for contributors:
 | {{yes|C#}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | {{unknown}}
-| {{yes|Active}}
+| {{unknown|on hiatus since August 2013}}
 |-
 ! [https://github.com/clonejo/mc-erl/ mc-erl]
 | Apiocera, clonejo
@@ -200,7 +200,7 @@ A couple things for contributors:
 | {{no}}
 | {{yes|{{linux}}}}
 | [https://github.com/clonejo/mc-erl/#feature-list Link]
-| {{no|development dropped}}
+| {{unknown|somewhat active}}
 |-
 ! [https://github.com/deoxxa/jsmc jsmc]
 | Conrad Pankoff ([[User:deoxxa|deoxxa]])
@@ -215,7 +215,7 @@ A couple things for contributors:
 | {{yes|JavaScript}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | [https://github.com/deoxxa/jsmc#features Link]
-| {{yes|Active}}
+| {{unknown|on hiatus since January 2013}}
 |-
 ! [https://github.com/sprenger120/FastCraft FastCraft]
 | [http://mc.kev009.com/User:sprenger120 sprenger120]
@@ -230,7 +230,7 @@ A couple things for contributors:
 | {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
 | {{unknown}}
 | {{no|Unknown}}
-| {{yes|Active}}
+| {{unknown|on hiatus since February 2013}}
 |-
 ! [[Realcraft:Main_Page|Realcraft]]
 | [[User:Jailout2000|Jailout2000]]
