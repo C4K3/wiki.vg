@@ -23,7 +23,7 @@ The recommended login sequence looks like this, where C is the client and S is t
 #(Server Auth, Both enable encryption)
 #'''S->C''' : Login Success
 #'''S->C''' : Join Game
-#'''S->C''' : Spawn Position (Not necessarily where the client will spawn on login)
+#'''S->C''' : Spawn Position ("Home" spawn, not where the client will spawn on login)
 #'''S->C''' : Player Abilities
 #'''S->C''' : Tell the client they're ready to spawn by sending a position + look packet.
 #'''C->S''' : Sends a position + look packet to confirm the spawn position
