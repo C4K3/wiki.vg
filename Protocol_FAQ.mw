@@ -9,26 +9,19 @@ Depending on your definition, '''yes'''! All packet types are known and their la
 
 See [[Authentication]] for communication with minecraft.net
 
-{{Warning|The information below is out-of-date and needs updating for 1.7}} 
+{{Warning|Information might not be totally up to date}} 
 
 <blockquote>
 The recommended login sequence looks like this, where C is the client and S is the server:<br /><br />
 
 #Client connects to server
-#'''C->S''' 0x02 handshake
-#'''S->C''' 0xFD encryption request - server sends its public key and 4 random bytes
-#Client generates symmetric key (shared secret)
-#Client authenticates via session.minecraft.net
-#Client encrypts these 4 bytes with the servers public key.
-#'''C->S''' 0xFC encryption response - client encrypts shared secret with server's public key and sends along with encrypted 4 bytes
-#Server checks that the encrypted bytes match
-#Server decrypts shared secret with its private key
-#Server checks player authenticity via session.minecraft.net
-#'''S->C''' 0xFC encryption response - empty payload meaning two zero length byte arrays and two zero shorts
-#Server enables AES stream encryption
-#Client enables AES stream encryption
-#'''C->S''' 0xCD - Payload of 0 (byte)
-#'''S->C''' : Either kicks (invalid login) or sends a login response
+#'''C->S''' : Handshake State=2
+#'''C->S''' : Login Start
+#'''S->C''' : Encryption Key Request
+#(Client Auth)
+#'''C->S''' : Encryption Key Response
+#(Server Auth, Both enable encryption)
+#'''S->C''' : Login Success
 #'''S->C''' : Sends chunks and entities
 #'''S->C''' : Sends spawn position
 #'''S->C''' : Sends inventory [Need to verify this since inventory changed] (beta 1.1_02: looks like Window items with type=0, then a Set slot with window id = -1 and slot = -1)
