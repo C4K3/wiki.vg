@@ -22,11 +22,12 @@ The recommended login sequence looks like this, where C is the client and S is t
 #'''C->S''' : Encryption Key Response
 #(Server Auth, Both enable encryption)
 #'''S->C''' : Login Success
-#'''S->C''' : Sends chunks and entities
-#'''S->C''' : Sends spawn position
-#'''S->C''' : Sends inventory [Need to verify this since inventory changed] (beta 1.1_02: looks like Window items with type=0, then a Set slot with window id = -1 and slot = -1)
+#'''S->C''' : Join Game
+#'''S->C''' : Spawn Position
+#'''S->C''' : Player Abilities
 #'''S->C''' : Tell the client they're ready to spawn by sending a position + look packet.
 #'''C->S''' : Sends a position + look packet to confirm the spawn position
+#'''S->C''' : Inventory, Map Chunk Bulk, Entities, etc
 </blockquote>
 
 ===I think I've done everything right, but…===
