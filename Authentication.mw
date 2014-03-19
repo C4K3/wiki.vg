@@ -225,3 +225,33 @@ This will return the player's username plus any additional information about the
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
+
+=== Payload ===
+<syntaxhighlight lang="javascript">
+{
+    "id":"profile identifier",
+    "name":"player name",
+    "properties":[ 
+	{
+	    "name":"dunno",
+	    "value":"base64 string",
+	    "signature":"not base64?"
+	}
+    ]
+}
+</syntaxhighlight>
+
+"value" base64 string decoded:
+<syntaxhighlight lang="javascript">
+{
+    "timestamp":"some numbers",
+    "profileId":"profile identifier",
+    "profileName":"player name",
+    "isPublic":"true or false",
+    "textures":{
+	"SKIN":{
+	"url":"player skin URL"
+        }
+    }
+}
+</syntaxhighlight>
