@@ -226,7 +226,7 @@ This will return the player's username plus any additional information about the
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
 
-=== Payload ===
+=== Response ===
 <syntaxhighlight lang="javascript">
 {
     "id":"profile identifier",
