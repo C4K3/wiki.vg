@@ -41,11 +41,11 @@ A couple things for contributors:
 | kangarko
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | Unknown
-| {{wip|1.6.4}}
-| {{wip|McRegion}}
-| {{wip}}
-| {{wip}}
-| {{wip|Players}}
+| {{no|1.6.4}}
+| {{yes|McRegion}}
+| {{no}}
+| {{no}}
+| {{yes|Players, Mobs (no AI yet)}}
 | {{yes|Threads}}
 | {{yes|Java ([http://bukkit.org/ Bukkit])}}
 | {{yes|{{windows}}{{linux}}{{mac}}}}
