@@ -37,6 +37,21 @@ A couple things for contributors:
 | [https://github.com/BizarreCake/hCraft/#features Link]
 | {{yes|Active}}
 |-
+! [https://github.com/kangarko/Rush Rush]
+| kangarko
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| Unknown
+| {{wip|1.6.4}}
+| {{wip|McRegion}}
+| {{wip}}
+| {{wip}}
+| {{wip|Players}}
+| {{yes|Threads}}
+| {{yes|Java ([http://bukkit.org/ Bukkit])}}
+| {{yes|{{windows}}{{linux}}{{mac}}}}
+| {{no|No list}}
+| {{yes|Active}}
+|-
 ! [http://www.mc-server.org MCServer]
 | FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
