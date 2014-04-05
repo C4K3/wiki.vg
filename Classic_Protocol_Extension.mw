@@ -4,7 +4,7 @@ Extensions are designed to keep extended clients and servers compatible with sta
 
 {| class="wikitable" style="margin:10px 10%;border: 1px solid #aaa;border-left:10px solid #f28500;background:#fbfbfb;width:80%;font-size:110%"
 |style="padding:10px"|'''This specification has not yet been finalized, and is subject to change.'''
-Last revision: 28 February 2014.
+Last revision: 5 April 2014.
 See [[Classic Protocol Extension/History|the history subpage]] for a chronology of changes.
 |}
 
@@ -573,7 +573,7 @@ Matches NameID of the ExtAddPlayerName packet
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" | 0x21
+| class="col0 centeralign" | 0x1B
 (27)
 | class="col1 centeralign" | SelectionID
 | class="col2 centeralign" | byte
@@ -600,7 +600,7 @@ Matches NameID of the ExtAddPlayerName packet
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="4" | 0x22
+| class="col0 centeralign" rowspan="4" | 0x1C
 (28)
 | class="col1 centeralign" | BlockType
 | class="col2 centeralign" | byte
