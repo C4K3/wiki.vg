@@ -1,5 +1,6 @@
 ==5 April 2014==
 * Corrected hexadecimal packet IDs for MakeSelection, RemoveSelection, and SetBlockPermission. Decimal IDs (26-28) were correct all along, bug hex IDs were incorrect. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5492&oldid=5457]
+* Correct the ''TopLeft'' '''''MessageType''''' being shown in Wiki even though they are no longer in the client code. Updated MessageType screenshot.
 
 ==28 February 2014==
 * Small addition stating the use of the ''EntityID'' byte of '''''ChangeModel''''' having to do with the players own model. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5455&oldid=5443]
