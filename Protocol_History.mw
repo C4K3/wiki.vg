@@ -1,5 +1,12 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 1.7.6 ===
+
+* UUIDs now include the '-'s
+* Added new fields to Spawn Player
+
+=== 1.7.5 ===
+
 === 1.7.4 ===
 
 === 1.7.3 ===
