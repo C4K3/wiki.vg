@@ -9,10 +9,15 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
 | class="col1" | Release name
 | class="col2" | Last known documentation
 | class="col3" | Notes
-|- class="row51"
+|- class="row1"
+| class="col0 centeralign" | '''5'''
+| class="col1 centeralign" | '''1.7.6''', '''1.7.7''', '''1.7.8''', '''1.7.9'''
+| class="col2" | current
+| class="col3 centeralign" |
+|- class="row2"
 | class="col0 centeralign" | '''4'''
-| class="col1 centeralign" | '''1.7.1''', '''1.7.2''', '''1.7.4'''
-| class="col2" | [[http://wiki.vg/index.php?title=Protocol&oldid=5332 page]]
+| class="col1 centeralign" | '''1.7.1''', '''1.7.2''', '''1.7.4''', '''1.7.5'''
+| class="col2" | [[http://wiki.vg/index.php?title=Protocol&oldid=5486 page]]
 | class="col3 centeralign" |
 |}
 
