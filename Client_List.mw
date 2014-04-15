@@ -68,6 +68,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no}}
 | {{no|1.6.4}}
 |-
+! [https://github.com/woder/torchbot TorchBot]
+| Work in progress standalone bot written from scratch in java, currently supports key features of game(movement, chat, world handling) and plugin system!
+| woder22
+| {{Java}}
+| {{GPLv3}}
+| {{yes}}
+| {{no}}
+| {{yes|1.7.2}}
+|-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
 | Ammar Askar, resba
