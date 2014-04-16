@@ -121,6 +121,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{MIT}}
 | {{yes|1.7.4}}
 |-
+! [https://github.com/Evil-Co/NBT-Lib NBT-Lib]
+| Allows reading, writing and modification of NBT files and streams.
+| [http://www.evil-co.org Evil-Co]
+| {{Java}}
+| {{Apache}}
+| n/a
+|-
 |}
 
 [[Category:Minecraft Modern]]
