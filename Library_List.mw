@@ -119,7 +119,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | [https://github.com/Aragas Aragas (Aragasas)]
 | {{C sharp}}
 | {{MIT}}
-| {{yes|1.7.4}}
+| {{yes|1.7.9}}
 |-
 ! [https://github.com/Evil-Co/NBT-Lib NBT-Lib]
 | Allows reading, writing and modification of NBT files and streams.
