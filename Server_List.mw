@@ -22,11 +22,26 @@ A couple things for contributors:
 !style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
+! [http://www.mc-server.org MCServer]
+| FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Apache 2.0
+| {{yes|1.7.9 (#5)}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Threads}}
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
+| [http://forum.mc-server.org/showthread.php?tid=499 Link]
+| {{yes|Active}}
+|-
 ! [https://github.com/SpaceManiac/Glowstone Glowstone]
 | SpaceManiac
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.7.4}}
+| {{no|1.7.4 (#4)}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -41,7 +56,7 @@ A couple things for contributors:
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{yes|1.7.4}}
+| {{no|1.7.4 (#4)}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
 | {{yes}}
@@ -52,26 +67,11 @@ A couple things for contributors:
 | [https://github.com/BizarreCake/hCraft/#features Link]
 | {{yes|Active}}
 |-
-! [http://www.mc-server.org MCServer]
-| FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Apache 2.0
-| {{yes|1.7.4}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
-| [http://forum.mc-server.org/showthread.php?tid=499 Link]
-| {{yes|Active}}
-|-
 ! [https://github.com/thinkofdeath/netherrack Netherrack]
 | Thinkofdeath
 | [http://golang.org/ Go]
 |  Apache v2
-| {{yes|1.7.4}}
+| {{no|1.7.4 (#4)}}
 | {{planned|Custom}}
 | {{no}}
 | {{no}}
