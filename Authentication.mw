@@ -1,4 +1,4 @@
-Minecraft 1.6 introduced a new authentication scheme called Yggdrasil which completely replaces the [[Legacy_Authentication|previous authentication system]]. Mojang's other game, Scrolls, uses this method of authentication as well.
+Minecraft 1.6 introduced a new authentication scheme called Yggdrasil which completely replaces the [[Legacy_Authentication|previous authentication system]]. Mojang's other game, Scrolls, uses this method of authentication as well.  Mojang has said that this Authentication system should be used by everyone for custom logins[https://twitter.com/KrisJelbring/status/453573406341206016], but credentials should never be collected from users[https://twitter.com/KrisJelbring/status/461390585086361600].
 
 == Request format ==
 
