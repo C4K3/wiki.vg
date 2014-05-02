@@ -68,6 +68,11 @@ These are some of the errors that can be encountered:
 | Access token already has a profile assigned.
 | Selecting profiles isn't implemented yet.
 |-
+| <code>IllegalArgumentException</code>
+| 
+| credentials can not be null.
+| Username/password was not submitted.
+|-
 | <code>Unsupported Media Type</code>
 | 
 | The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method
