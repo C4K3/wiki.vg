@@ -103,6 +103,7 @@ The server will respond with the same packet and then close the connection
 
 * [https://gist.github.com/zh32/7190955 Java]
 * [https://gist.github.com/1209061 Python]
+* [https://github.com/winny-/mcstat PHP]
 
 == 1.6 ==
 
