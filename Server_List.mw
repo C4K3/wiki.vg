@@ -52,6 +52,21 @@ A couple things for contributors:
 | {{no|No list}}
 | {{yes|Active}}
 |-
+! [https://github.com/kangarko/Rush Rush]
+| kangarko
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| Unknown
+| {{no|1.7.9 AND 1.7.2 AND 1.6.4}}
+| {{yes|McRegion}}
+| {{no}}
+| {{no}}
+| {{yes|Players, Mobs (no AI yet)}}
+| {{yes|Threads}}
+| {{yes|Java ([http://bukkit.org/ Bukkit])}}
+| {{yes|{{windows}}{{linux}}{{mac}}}}
+| {{no|No list}}
+| {{yes|Active}}
+|-
 ! [http://wiki.vg/HCraft hCraft]
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
@@ -95,21 +110,6 @@ A couple things for contributors:
 | {{no}}
 | {{yes|{{linux}}{{windows}}{{mac}}}}
 | [https://github.com/JoeDoyle23/BurningPig#current-features Link]
-| {{yes|Active}}
-|-
-! [https://github.com/kangarko/Rush Rush]
-| kangarko
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| Unknown
-| {{no|1.6.4}}
-| {{yes|McRegion}}
-| {{no}}
-| {{no}}
-| {{yes|Players, Mobs (no AI yet)}}
-| {{yes|Threads}}
-| {{yes|Java ([http://bukkit.org/ Bukkit])}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
-| {{no|No list}}
 | {{yes|Active}}
 |-
 ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
