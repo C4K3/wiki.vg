@@ -260,3 +260,39 @@ This will return the player's username plus any additional information about the
     }
 }
 </syntaxhighlight>
+
+
+== Players profiles by names ==
+
+  https://api.mojang.com/profiles/minecraft
+
+Where 'minecraft' - agent name
+
+This will return players profiles.
+
+
+[[Category:Protocol Details]]
+[[Category:Minecraft Modern]]
+
+=== Payload ===
+We need to send array of profiles nicknames.
+For example:
+<syntaxhighlight lang="javascript">
+[
+    "maksimkurb",
+    "nonExistsPlayer" //Test for non-exists player
+]
+</syntaxhighlight>
+
+=== Response ===
+<syntaxhighlight lang="javascript">
+[
+    {
+        "id": "0d252b7218b648bfb86c2ae476954d32",    //Profile uuid
+        "name": "maksimkurb",                        //Profile nickname
+        "legacy": true,                              //Profile not migrated to mojang.com?  (Only appears, when true)
+        "demo": true                                 //Game wasn't bought                   (Only appears, when true)
+    }
+    // How we can see, this url return only information about real (exists) profiles.
+]
+</syntaxhighlight>
