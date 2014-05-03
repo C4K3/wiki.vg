@@ -60,8 +60,8 @@ A couple things for contributors:
 | {{yes|McRegion}}
 | {{no}}
 | {{no}}
-| {{yes|Players, Mobs (no AI yet)}}
-| {{yes|I don't know, it works!}}
+| {{yes|Players, Mobs (no AI)}}
+| {{yes|Threads}}
 | {{yes|Java ([http://bukkit.org/ Bukkit])}}
 | {{yes|{{windows}}{{linux}}{{mac}}}}
 | [https://github.com/kangarko/Rush/blob/Minecraft-1.6-1.7/Features.md Link]
