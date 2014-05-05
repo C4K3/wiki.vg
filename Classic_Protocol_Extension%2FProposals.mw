@@ -1,1 +1,10 @@
-Feel free to post your extension proposals here. Please use [[Classic_Protocol_Extension#Extensions|existing extensions]] as your template. Please sign your proposal by ending it with <code><nowiki>~~~~</nowiki></code>.
+Feel free to post your extension proposals here. Please use [[Classic_Protocol_Extension#Extensions|existing extensions]] as your guide to formatting. Please sign your proposal by ending it with <code><nowiki>~~~~</nowiki></code>. Write your comments
+=Template=
+<pre><nowiki>===ExtensionName===
+:Brief summary of the extension.
+:'''Motivation''': Explain why this is needed or how it is useful.
+:'''Client Behavior''': Detailed description of all new behavior that game clients need to implement in order to support this extension. Consider interaction with other extensions.
+:'''Server Behavior''': Detailed description of all new behavior that game servers need to implement in order to support this extension. Consider interaction with other extensions.
+:(packet definitions go here)
+:(remarks and comments go here)
+:Proposed by ~~~~</nowiki></pre>
