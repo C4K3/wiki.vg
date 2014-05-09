@@ -255,12 +255,14 @@ This will return the player's username plus any additional information about the
     "isPublic":"true or false",
     "textures":{
 	"SKIN":{
-	"url":"player skin URL"
+	    "url":"player skin URL"
+        }
+        "CAPE":{
+	    "url":"player cape URL"
         }
     }
 }
 </syntaxhighlight>
-
 
 == Players profiles by names ==
 
