@@ -9,3 +9,40 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :(Packet definitions, remarks, illustrations, and data tables go here)
 :(Comments go here, please sign them)
 </nowiki></pre>
+
+===ClientRedirection===
+:Proposed by [[User:Sysr q|Sysr q]] ([[User talk:Sysr q|talk]]) 10:17, 12 May 2014 (UTC)
+:This extension allows servers to give clients a ''redirection'' to a separate, possibly "private" server.
+:'''Motivation''': Allowing servers to redirect clients would be useful in several cases. Allowing a singular "hub" server to redirect players to various external (but related) servers depending on the gamemode they wish to play would allow tightly integrated networks. If servers are using an external "balancer" or some sort of Minecraft-aware proxy, the server could signal the proxy move its connection on the client's behalf to another server.
+:'''Client Behavior''': Clients should be ready to receive a '''''ClientRedirection''''' packet any time after they receive a '''''LevelFinalize''''' packet. When clients receive a '''''ClientRedirection''''' packet, they should prompt the user with a message indicating the server they're being redirected too, and allow the user to continue or quit. Non-player clients (e.g., proxies) have the option of silently reconnecting on the client's behalf. Clients should then open a new connection to the newly redirected server, and begin standard negotiation protocol.
+:'''Server Behavior''': Servers should only send a '''''ClientRedirection''''' packet after the they have sent a '''''LevelFinalize''''' packet. They should ensure the new server the client is being redirected to exists, and preferably is online and available.
+:<h4>ClientRedirection packet</h4>
+:''Server to client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x??
+(??)
+| class="col1 centeralign" | Address
+| class="col2 centeralign" | string
+| class="col3 centeralign" | mc.example.org
+| class="col4 centeralign" | Can be an IP address (IPv4/IPv6) or a hostname.
+|- class="row2"
+| class="col1 centeralign" | Port
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 25565
+| class="col4 centeralign" |
+|- class="row3"
+| class="col1 centeralign" | Name
+| class="col2 centeralign" | string
+| class="col3 centeralign" | Joe Blogg's Freebuild
+| class="col4 centeralign" | ''(optional)'' User-friendly name to be displayed in user prompt.
+|- class="row4"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 133 bytes
+|}
