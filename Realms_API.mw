@@ -22,6 +22,7 @@ Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
 Connection: keep-alive
 </pre>
 
+sid is String like: token:<accessToken>:<uuid>
 
 == Endpoints: ==
 === GET /mco/available ===
