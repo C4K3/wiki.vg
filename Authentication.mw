@@ -240,7 +240,7 @@ This will return the player's username plus any additional information about the
 	{
 	    "name":"dunno",
 	    "value":"base64 string",
-	    "signature":"not base64?"
+	    "signature":"base64 string; signed data using Yggdrasil's private key"
 	}
     ]
 }
