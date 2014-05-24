@@ -59,7 +59,7 @@ A couple things for contributors:
 | {{yes|[https://github.com/kangarko/Rush/tree/Minecraft-1.6-1.7#Compatibility Multiple]}}
 | {{yes|McRegion}}
 | {{no}}
-| {{planned}Partial}
+| {{planned|Partial}}
 | {{yes|Players, Mobs (test AI)}}
 | {{yes|Threads}}
 | {{yes|Java ([http://bukkit.org/ Bukkit])}}
