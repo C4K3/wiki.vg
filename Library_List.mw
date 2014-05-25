@@ -14,7 +14,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | Drew DeVault (SirCmpwn)
 | {{C sharp}}
 | {{MIT}}
-| {{snapshot|13w38c}}
+| {{yes|1.7.5}}
 |-
 ! [https://github.com/superjoe30/node-minecraft-protocol node-minecraft-protocol]
 | npm install minecraft-protocol
