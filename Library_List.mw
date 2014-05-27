@@ -9,6 +9,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 !License
 !Last Version Supported
 |-
+! [https://github.com/M4GV5/Yggdrasil.NET/graphs/traffic Yggdrasil.NET]
+| .NET Minecraft Userinformation and Login API
+| M4GNV5
+| {{C sharp}}
+| {{BSD}}
+| n/a
+|-
 ! [https://github.com/SirCmpwn/Craft.Net Craft.Net]
 | .NET Minecraft client, server, and data manipulation library
 | Drew DeVault (SirCmpwn)
