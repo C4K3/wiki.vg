@@ -17,13 +17,13 @@ Comments (<code>//</code>) are not valid json and shouldn't be sent, they are on
          "thinkofdeath"
      ],
      //or
-     // Displays the player's value for a scoreboard objective
+     // Displays the player's value for a scoreboard objective (1.8+)
      "score": {
          "name": "<playername>", // * for current player
          "objective": "<objectivename>"
      },
      //or
-     // A standard minecraft selector, eg: @p, @a, @e, @r
+     // A standard minecraft selector, eg: @p, @a, @e, @r (1.8+)
      "selector": "",
      //
      //Items in the extra section will be appended to the message.
