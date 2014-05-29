@@ -75,6 +75,8 @@ The response is a json object which has the following format
 }
 </syntaxhighlight>
 
+The ''description'' field has the same format as [[Chat]]
+
 The ''sample'' and ''favicon'' sections are optional.
 
 The ''favicon'' should be a png image that is [http://en.wikipedia.org/wiki/Base64 Base64] encoded and prepended with 'data:image/png;base64,'
