@@ -16,6 +16,16 @@ Comments (<code>//</code>) are not valid json and shouldn't be sent, they are on
          //to be styled/translated seperately
          "thinkofdeath"
      ],
+     //or
+     // Displays the player's value for a scoreboard objective
+     "score": {
+         "name": "<playername>", // * for current player
+         "objective": "<objectivename>"
+     },
+     //or
+     // A standard minecraft selector, eg: @p, @a, @e, @r
+     "selector": "",
+     //
      //Items in the extra section will be appended to the message.
      //They can strings or json objects. If included the array must 
      //not be empty
@@ -89,12 +99,7 @@ Comments (<code>//</code>) are not valid json and shouldn't be sent, they are on
          "value": "Hello"
      },
      // Inserts the text into the chat on shift click (1.8+)
-     "insertion": "Hello world",
-     // Displays the player's value for a scoreboard objective
-     "score": {
-         "name": "<playername>", // * for current player
-         "objective": "<objectivename>"
-     }     
+     "insertion": "Hello world"   
  }
 </syntaxhighlight>
 
