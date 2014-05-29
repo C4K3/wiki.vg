@@ -1,25 +1,97 @@
-Minecraft supports two-way chat communication via the [[Protocol#Chat_Message_.280x03.29|0x03 chat message]] packet.
+Minecraft supports two-way chat communication via the [[Protocol#Chat_Message]] packet
 
-== Character Set ==
+== Current system (JSON Chat) ==
 
-Minecraft loads its internal 8-bit character set from <code>fonts.txt</code> in <code>minecraft.jar</code>. Ignoring the first line then stripping newlines, the file lists characters 32-255 in order. It follows ASCII for values under 0x80.
+<syntaxhighlight lang="javascript">
+ {
+     // Plain text
+     "text": "Hello world",
+     //or
+     // Translatable string
+     "translate": "multiplayer.player.joined",
+     "with": [
+         //This can be replaced another json object allowing the parts
+         //to be styled/translated seperately
+         "thinkofdeath"
+     ],
+     //Items in the extra section will be appended to the message.
+     //They can strings or json objects. If included the array must 
+     //not be empty
+     "extra": [
+         "Testing",
+         {"translate":"demo.day.2"}
+     ],
+     //Controls whether the text is bold or not. Default false
+     "bold":true,
+     //Controls whether the text is italic or not. Default false
+     "italic":false,
+     //Controls whether the text is underlined or not. Default false
+     "underlined": false, 
+     //Controls whether the text is striked out or not. Default false
+     "strikethrough": false,
+     //Controls whether the text is randomised constantly or not. Default false
+     "obfuscated": false,
+     //Controls the color of the text
+     //Supported 'colors':
+     // * black
+     // * dark_blue
+     // * dark_green
+     // * dark_aqua
+     // * dark_red
+     // * dark_purple
+     // * gold
+     // * gray
+     // * dark_gray
+     // * blue
+     // * green
+     // * aqua
+     // * red
+     // * light_purple
+     // * yellow
+     // * white
+     // * obfuscated
+     // * bold
+     // * strikethrough
+     // * underline
+     // * italic
+     // * reset
+     "color":"red",
+     //Executes the action once the text is clicked
+     "clickEvent":{
+         //The action to execute
+         //Supported actions:
+         // * open_url
+         // * open_file
+         // * run_command
+         // * suggest_command
+         "action":"run_command",
+         //The value to run the action with
+         //open_url: Url to open
+         //open_file: File to open
+         //run_command: Command to execute
+         //suggest_command: Text to place in the player's text box
+         "value": "/time set day"
+     },
+     //Displays the action upon hovering over the text
+     "hoverEvent": {
+         //The action to execute
+         //Supported actions
+         // * show_text
+         // * show_achievement
+         // * show_item
+         "action":"show_text",
+         //The value to the action with
+         //show_text: Text to display can be a JSON object
+         //show_achievement: Name of the achievemnt to display e.g: "achievement.openInventory"
+         //show_item: JSON version of the item, must be quoted. e.g: "{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"
+         "value": "Hello"
+     }
+ }
+</syntaxhighlight>
 
-The character set is as follows:
-<blockquote>
-<code>
-" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_'abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»"
-</code>
-</blockquote>
+== Old system ==
 
-This list encapsulates all characters that are in the fonts file. Characters outside of this are acceptable, but are rendered differently.
-
-== Font ==
-
-Minecraft has two fonts types: Default (<code>default.png</code>) and Unicode(<code>glyph_XX.png</code>). Default will fallback on unicode characters if they are not provided (default only has the first 256 glyphs). The minecraft client calculates the widths of the default font type on startup whilst the sizes of the unicode type are provided in <code>glyph_sizes.bin</code>. Each byte in <code>glyph_sizes.bin</code> contains the start and end position of each character, the top nibble (0xF0) is the start position and the bottom nibble (0x0F) is the end position (relative to the characters position in the font sheet). 
-
-Example: https://gist.github.com/TkTech/dff9bbe54c9a074612e1
-
-== Control Sequences ==
+=== Control Sequences ===
 
 The client treats certain two-character sequences specially. The first character must be:
 
@@ -30,7 +102,7 @@ The following character indicates a certain colour or formatting to apply to the
 
 The Notchian client expects that an escape code in a chat message will be followed by at least one character, and will otherwise crash with a StringIndexOutOfBoundsException. The workaround for servers is to never end a message with a color control character.
 
-=== Colors ===
+==== Colors ====
 
 These correspond very roughly to the colors available in ANSI terminals.
 
@@ -105,7 +177,7 @@ e.g.: <code>This is white, but §4this is dark red</code>
 | f || White || 255 || 255 || 255 || 63 || 63 || 63 || #ffffff
 |}
 
-=== Styles ===
+==== Styles ====
 
 Like the color codes above, style escape codes are created by combining § (U+00A7) with one of the following characters. Style codes can be combined (except for "r") to enable multiple effects at once. Using any color codes will reset the current style back to plain (unknown if this is a bug or intended behavior). The "r" plain style code will also reset the current chat color back to white (may also be a bug). The "k" random style code is used for the "§kFUNKY LOL" message in /title/splashes.txt inside minecraft.jar.
 
@@ -127,6 +199,12 @@ Like the color codes above, style escape codes are created by combining § (U+00
 |-
 | [[File:plain_chat.png]] || r || Plain White
 |}
+
+== Font ==
+
+Minecraft has two fonts types: Default (<code>default.png</code>) and Unicode(<code>glyph_XX.png</code>). Default will fallback on unicode characters if they are not provided (default only has the first 256 glyphs). The minecraft client calculates the widths of the default font type on startup whilst the sizes of the unicode type are provided in <code>glyph_sizes.bin</code>. Each byte in <code>glyph_sizes.bin</code> contains the start and end position of each character, the top nibble (0xF0) is the start position and the bottom nibble (0x0F) is the end position (relative to the characters position in the font sheet). 
+
+Example: https://gist.github.com/TkTech/dff9bbe54c9a074612e1
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
