@@ -104,7 +104,7 @@ e.g.: <code>This is white, but §4this is dark red</code>
 | bgcolor=#FFFFFF |
 | f || White || 255 || 255 || 255 || 63 || 63 || 63 || #ffffff
 |}
-More: http://minecraftcolorcode.com/
+
 === Styles ===
 
 Like the color codes above, style escape codes are created by combining § (U+00A7) with one of the following characters. Style codes can be combined (except for "r") to enable multiple effects at once. Using any color codes will reset the current style back to plain (unknown if this is a bug or intended behavior). The "r" plain style code will also reset the current chat color back to white (may also be a bug). The "k" random style code is used for the "§kFUNKY LOL" message in /title/splashes.txt inside minecraft.jar.
