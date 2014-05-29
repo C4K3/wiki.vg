@@ -113,13 +113,13 @@ In case it is omitted the server will generate a random token based on Java's [h
     {
       "id": "profile identifier",        // hexadecimal
       "name": "player name",
-      "legacy": "true or false"          // In practice, this field only appears in the response if true.  Default to false.
+      "legacy": true or false          // In practice, this field only appears in the response if true.  Default to false.
     }
   ],
   "selectedProfile": {                   // only present if the agent field was received
     "id": "profile identifier",
     "name": "player name",
-    "legacy": "true or false"
+    "legacy": true or false
   }
 }
 </syntaxhighlight>
