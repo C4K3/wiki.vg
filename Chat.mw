@@ -2,6 +2,8 @@ Minecraft supports two-way chat communication via the [[Protocol#Chat_Message]] 
 
 == Current system (JSON Chat) ==
 
+Comments (<code>//</code>) are not valid json and shouldn't be sent, they are only here to explain the format
+
 <syntaxhighlight lang="javascript">
  {
      // Plain text
@@ -85,7 +87,14 @@ Minecraft supports two-way chat communication via the [[Protocol#Chat_Message]] 
          //show_achievement: Name of the achievemnt to display e.g: "achievement.openInventory"
          //show_item: JSON version of the item, must be quoted. e.g: "{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"
          "value": "Hello"
-     }
+     },
+     // Inserts the text into the chat on shift click (1.8+)
+     "insertion": "Hello world",
+     // Displays the player's value for a scoreboard objective
+     "score": {
+         "name": "<playername>", // * for current player
+         "objective": "<objectivename>"
+     }     
  }
 </syntaxhighlight>
 
