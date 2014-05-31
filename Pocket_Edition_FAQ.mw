@@ -5,7 +5,7 @@
  B = Broadcast
 
 === Server searching ===
-#'''C->B''' <code>0x02</code> ID_UNCONNECTED_PING_OPEN_CONNECTIONS
+#'''C->B''' <code>0x01</code> ID_UNCONNECTED_PING_OPEN_CONNECTIONS
 #'''S->C''' <code>0x1C</code> ID_UNCONNECTED_PONG
 
 === Connecting a server ===
