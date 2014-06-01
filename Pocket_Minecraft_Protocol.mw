@@ -669,7 +669,7 @@ This information has been generated using [https://github.com/PocketMine/PocketB
 
 === LoginPacket (0x82) ===
 
-''Server to Client''
+''Client to Server''
 
 
 {| class="wikitable"
