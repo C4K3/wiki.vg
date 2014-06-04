@@ -18,7 +18,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :'''Server Behavior''': Server must ignore sending the same url multiple times. Server can not send quick loops of sound due to network speed and client crash possibility. It's better to load all of required sounds after map load for better performance. Server must not send high sized file cause of time and speed it takes for download. Files type must be in .WAV, otherwise they're ignored.
 :<h4>LoadSound packet</h4>
 :''Server to client''
-{| class="wikitable"
+:{| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
 ! class="col1" | Field Name
@@ -43,7 +43,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 |}
 :<h4>PlaySound packet</h4>
 :''Server to client''
-{| class="wikitable"
+:{| class="wikitable"
 |- class="row0"
 ! class="col0" | Packet ID
 ! class="col1" | Field Name
