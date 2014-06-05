@@ -96,7 +96,7 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 
 ''Client to Broadcast''
 
-
+'''NOTE: THIS PACKET APPEARS TO BE UNUSED. Use a 0x01 packet instead'''
 '''RakNet Packet'''
 
 {| class="wikitable"
@@ -125,6 +125,7 @@ Clients start out by sending this packet to the IP broadcast address on port 191
 Same as [[#0x01|ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01)]], but with the Packet ID changed.
 
 {{anchor|0x05}}
+
 === ID_OPEN_CONNECTION_REQUEST_1 (0x05) ===
 
 ''Client to Server''
