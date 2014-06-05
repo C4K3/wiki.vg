@@ -147,7 +147,7 @@ Same as [[#0x01|ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01)]], but with the Packet
 | class="col3 centeralign" | 
 | class="col4" | 
 |- class="row2"
-| class="col0 centeralign" | Protocol Version
+| class="col0 centeralign" | RakNet Protocol Version
 | class="col1 centeralign" | byte
 | class="col2 centeralign" | <code>5</code>
 | class="col3" | Check the Data Packet section for the current version
