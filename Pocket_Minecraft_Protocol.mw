@@ -667,6 +667,7 @@ Multiple Data Encapsulation packets could be present in one packet. If you want 
 This information has been generated using [https://github.com/PocketMine/PocketBurger PocketBurger], then edited manually.
 
 '''Minecraft: Pocket Edition v0.7.3, protocol #11'''
+
 '''RakNet Protocol version #5'''
 === LoginPacket (0x82) ===
 
