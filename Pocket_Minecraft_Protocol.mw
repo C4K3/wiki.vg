@@ -350,8 +350,10 @@ Sent from server in response to packet 0x07.
 | class="col1 rightalign" colspan="4" | 26 Bytes
 |}
 
+Sent when the server doesn't support the RakNet protocol specified in 0x05.
 
 {{anchor|0x1C}}
+
 === ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C) ===
 
 ''Server to Client''
