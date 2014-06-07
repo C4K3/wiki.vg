@@ -157,6 +157,21 @@ A couple things for contributors:
 | [http://nessus.lv/nessusms Link]
 | {{unknown|on hiatus since June 2013}}
 |-
+| [https://github.com/cnlohr/avrcraft AVRCraft]
+| [[User:CNLohr|CNLohr]]
+| [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{yes|1.7.9 (#5)}}
+| {{no|User}}
+| {{no}}
+| {{no}}
+| {{planned|Partial}}
+| {{yes|Poll}}
+| {{No}}
+| {{Yes|{{linux}} [http://www.nongnu.org/avr-libc/ avr] [https://openwrt.org/ openwrt] }}
+| {{Yes| <16kB}}
+| {{Yes|Active June 1, 2014}}
+|-
 ! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
 | [http://www.spout.org/ Spout LLC] and community
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
