@@ -163,7 +163,7 @@ Same as [[#0x01|ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01)]], but with the Packet
 If the version is different than yours, reply with a 
 [[#0x1A|ID_INCOMPATIBLE_PROTOCOL_VERSION (0x1A)]]
 
-Sent from client after it receives packet 0x1d. The client will repeatedly send this with reducing sizes until it successfully receives a reply. Observed behaviour is that the client will send packets ~0.5s apart in the following way, until it gets a 0x06 response packet, or reaches the end of these:
+Sent from the client after the player taps on the server in the world list The client will repeatedly send this with reducing sizes until it successfully receives a reply. Observed behaviour is that the client will send packets ~0.5s apart in the following way, until it gets a 0x06 response packet, or reaches the end of these:
 * 4 packets of Null Payload length of 1447
 * 4 packets of Null Payload length of 1155
 * 5 packets of Null Payload length of 531
