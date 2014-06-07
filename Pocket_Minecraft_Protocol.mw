@@ -391,7 +391,7 @@ Sent when the server doesn't support the RakNet protocol specified in 0x05.
 | class="col3" |
 |- class="row6"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 46 Bytes + Server name length
+| class="col1 rightalign" colspan="4" | 35 Bytes + Server name length
 |}
 
 Server sends this packet in response to a 0x01 packet.
