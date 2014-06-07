@@ -406,6 +406,8 @@ In order for the server to show up in the world list, the server name must have 
 
 '''RakNet Packet'''
 
+'''THIS PACKET IS UNUSED, Use a 0x1c packet instead.'''
+
 {| class="wikitable"
 |- class="row0"
 | class="col0" | Packet ID
@@ -440,7 +442,6 @@ In order for the server to show up in the world list, the server name must have 
 |}
 
 Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version to send a 0x1D or a 0x1C
-
 
 === Custom Packet (0x80-0x8F) ===
 
