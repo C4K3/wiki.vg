@@ -14,8 +14,8 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :Proposed by !!!WARLOCK!!!
 :This extension allows server to play custom sound and musics on client.
 :'''Motivation''': Servers can play custom musics or sound effects just in time or when something changes. Useful for gamemodes such as zombie survival, Servers can play zombie moaning sound while zombies are close to players. Player join and leave sounds, Kill streak sounds for games such as CTF, Radio and DJ class for players and sound effects for explosions and player deaths.
-:'''Client Behavior''': Client must download and load, or load the sound directly from the URL with the ID. Client must be able to download any time after MapFinalize has sent. If the URL is empty then the Client must unload the sound with that ID. Client must unload the sound and load a new one if there's a sound with existing ID. Client must be able to play the sound right after receiving the PlaySound packet. The last playing sound can not be ignored or stopped when a new sound is going to be played. Files type must be in .WAV, otherwise they're ignored. Client must ignore downloading the existing files from Server if they're saved in drive.
-:'''Server Behavior''': Server must ignore sending the same url multiple times. Server can not send quick loops of sound due to network speed and client crash possibility. It's better to load all of required sounds after map load for better performance. Server must not send high sized file cause of time and speed it takes for download. Files type must be in .WAV, otherwise they're ignored.
+:'''Client Behavior''': Client must download and load, or load the sound directly from the URL with the ID. Client must be able to download any time after MapFinalize has sent. If the URL is empty then the Client must unload the sound with that ID. Client must unload the sound and load a new one if there's a sound with existing ID. Client must be able to play the sound right after receiving the PlaySound packet. The last playing sound can not be ignored or stopped when a new sound is going to be played. Files type must be in .WAV, otherwise they're ignored. Client must ignore downloading the existing files from Server if they're saved in drive. Client must not change the volume of all environments (Place/Destroy, Walk sounds) on SetVolume packet. Client must change a local variable for volume of next playing sound on SetVolume packet.
+:'''Server Behavior''': Server must ignore sending the same url multiple times. Server can not send quick loops of sound due to network speed and client crash possibility. It's better to load all of required sounds after map load for better performance. Server must not send high sized file cause of time and speed it takes for download. Files type must be in .WAV, otherwise they're ignored. Server can change the volume before playing a sound. For a better networking, It's suggested to not send PlaySound instead of changing volume to zero.
 :<h4>LoadSound packet</h4>
 :''Server to client''
 :{| class="wikitable"
@@ -61,6 +61,27 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
 |}
+:<h4>SetVolume packet</h4>
+:''Server to client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x??
+(??)
+| class="col1 centeralign" | Percent
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 87
+| class="col4 centeralign" | Set the next playing sound(s) volume to a Percentage.
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+
 ===ClientRedirection===
 :Proposed by [[User:Sysr q|Sysr q]] ([[User talk:Sysr q|talk]]) 10:17, 12 May 2014 (UTC)
 :This extension allows servers to give clients a ''redirection'' to a separate, possibly "private" server.
