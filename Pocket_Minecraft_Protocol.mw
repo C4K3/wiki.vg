@@ -740,7 +740,7 @@ If everything is good you need to send the StartGamePacket
 
 === ReadyPacket (0x84) ===
 
-''Server to Client''
+''Client to Server''
 
 
 {| class="wikitable"
