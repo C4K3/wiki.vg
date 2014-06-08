@@ -69,6 +69,11 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 | class="col1 centeralign" | Varies
 | class="col2" | See [[Entities#Entity_Metadata_Format|this]]
 | class="Col3" | 
+|- 
+! class="centeralign" | Slot Data
+| class="centeralign" | Varies
+| See [[Slot_Data|slot data]]
+|
 |}
 
 === Fixed-point numbers ===
