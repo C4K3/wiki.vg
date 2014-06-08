@@ -472,7 +472,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 
 |- class="row3"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 6 Bytes + payload
+| class="col1 rightalign" colspan="4" | 4 Bytes + payload
 |}
 
 The receiver will use the Packet number in the 0xC0 packet and send it back.
