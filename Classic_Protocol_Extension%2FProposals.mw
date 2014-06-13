@@ -9,7 +9,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :(Packet definitions, remarks, illustrations, and data tables go here)
 :(Comments go here, please sign them)
 </nowiki></pre>
-
+=Proposals=
 ===PlaySound===
 :Proposed by !!!WARLOCK!!!
 :This extension allows server to play custom sound and musics on client.
