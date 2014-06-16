@@ -22,20 +22,20 @@ A couple things for contributors:
 !style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
-! [http://www.mc-server.org MCServer]
-| FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Apache 2.0
+| [https://github.com/cnlohr/avrcraft AVRCraft]
+| [[User:CNLohr|CNLohr]]
+| [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
 | {{yes|1.7.9 (#5)}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
-| [http://forum.mc-server.org/showthread.php?tid=499 Link]
-| {{yes|Active}}
+| {{no|User}}
+| {{no}}
+| {{no}}
+| {{planned|Partial}}
+| {{yes|Poll}}
+| {{No}}
+| {{Yes|{{linux}} [http://www.nongnu.org/avr-libc/ avr] [https://openwrt.org/ openwrt] }}
+| {{Yes| <16kB}}
+| {{Yes|Active June 1, 2014}}
 |-
 ! [https://github.com/SpaceManiac/Glowstone Glowstone]
 | SpaceManiac
@@ -52,6 +52,36 @@ A couple things for contributors:
 | [https://github.com/SpaceManiac/Glowstone#features Link]
 | {{yes|Active}}
 |-
+! [http://wiki.vg/HCraft hCraft]
+| BizarreCake
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| [http://gplv3.fsf.org/ GPLv3]
+| {{yes|1.7.9 (#5)}}
+| {{yes|Custom (HWv1)}}
+| {{yes}}
+| {{yes}}
+| {{planned|Players}}
+| {{yes|Threads/Events}}
+| {{no}}
+| {{yes|{{linux}}}}
+| [https://github.com/BizarreCake/hCraft/#features Link]
+| {{yes|Active}}
+|-
+! [http://www.mc-server.org MCServer]
+| FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Apache 2.0
+| {{yes|1.7.9 (#5)}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Threads}}
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
+| [http://forum.mc-server.org/showthread.php?tid=499 Link]
+| {{yes|Active}}
+|-
 ! [https://github.com/kangarko/Rush Rush]
 | [SK] kangarko
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -66,36 +96,6 @@ A couple things for contributors:
 | {{yes|{{windows}}{{linux}}{{mac}}}}
 | [https://github.com/kangarko/Rush/blob/Minecraft-1.6-1.7/Features.md Link]
 | {{yes|Active}}
-|-
-| [https://github.com/cnlohr/avrcraft AVRCraft]
-| [[User:CNLohr|CNLohr]]
-| [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.7.9 (#5)}}
-| {{no|User}}
-| {{no}}
-| {{no}}
-| {{planned|Partial}}
-| {{yes|Poll}}
-| {{No}}
-| {{Yes|{{linux}} [http://www.nongnu.org/avr-libc/ avr] [https://openwrt.org/ openwrt] }}
-| {{Yes| <16kB}}
-| {{Yes|Active June 1, 2014}}
-|-
-! [http://wiki.vg/HCraft hCraft]
-| BizarreCake
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://gplv3.fsf.org/ GPLv3]
-| {{no|1.7.4 (#4)}}
-| {{yes|Custom (HWv1)}}
-| {{yes}}
-| {{yes}}
-| {{planned|Players}}
-| {{yes|Threads/Events}}
-| {{no}}
-| {{yes|{{linux}}}}
-| [https://github.com/BizarreCake/hCraft/#features Link]
-| {{no|Inctive}}
 |-
 ! [https://github.com/thinkofdeath/netherrack Netherrack]
 | Thinkofdeath
