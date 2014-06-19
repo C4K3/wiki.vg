@@ -11,7 +11,7 @@ As of 12w17a, Minecraft implements SSL-like encryption.
 #see [[Protocol FAQ]] to get information about what happens next.
 
 ==Server ID String==
-'''Update (1.7.x):''' the server ID is now sent as an empty string. Hashes also utilize the public key, so they will still be correct.
+'''Update (1.7.x):''' The server ID is now sent as an empty string. Hashes also utilize the public key, so they will still be correct.
 
 '''Pre-1.7.x:'''
 The server ID string is a randomly-generated string of characters with a maximum length of 20 code points (the client disconnects with an exception if the length is longer than 20).
