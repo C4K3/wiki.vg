@@ -55,8 +55,8 @@ The response is a json object which has the following format
 <syntaxhighlight lang="javascript">
 {
 	"version": {
-		"name": "1.7.2",
-		"protocol": 4
+		"name": "1.7.9",
+		"protocol": 5
 	},
 	"players": {
 		"max": 100,
