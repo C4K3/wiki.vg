@@ -135,6 +135,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{Apache}}
 | n/a
 |-
+! [https://github.com/DarkStorm652/DarkBot DarkBot]
+| Minecraft client, automation (AI) platform, and modular protocol library
+| [https://github.com/DarkStorm652 DarkStorm]
+| {{Java}}
+| {{BSD}}
+| {{yes|1.5.2-1.7.9}}
+|-
 |}
 
 [[Category:Minecraft Modern]]
