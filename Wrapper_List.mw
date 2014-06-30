@@ -15,7 +15,12 @@ These are wrappers for the vanilla Minecraft client.
 !style="width: 120px" | Scripting
 !style="width: 120px" | Development Status
 |-
-|colspan="6" | There are no client wrappers at this time
+! [https://bitbucket.org/DarkStorm_/darkmod DarkMod] ([https://bitbucket.org/DarkStorm_/darkmodlauncher Launcher])
+| [https://github.com/DarkStorm652 DarkStorm]
+| {{Java}}
+| {{BSD}}
+| {{yes|Java Archives}}
+| {{no|Inactive (Alpha 1.2.6 - Current 1.6.4)}}
 |}
 
 == Server Wrappers ==
