@@ -24,7 +24,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{no|1.6.2}}
 |-
 ! [https://github.com/DarkStorm652/DarkBot DarkBot]
-| Bot framework with an easy-to-use (though undocumented) API, full world representation, path finding, AI via tasks (mining, farming, combat, etc.),  and modular protocol handling for support of several MC versions
+| Bot framework with an easy-to-use API, full world representation, path finding, AI via tasks (mining, farming, combat, etc.),  and modular protocol handling
 | [https://github.com/DarkStorm652 DarkStorm]
 | {{Java}}
 | {{Simplified BSD}}
