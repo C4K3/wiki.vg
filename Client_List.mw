@@ -23,6 +23,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{no|1.6.2}}
 |-
+! [https://github.com/DarkStorm652/DarkBot DarkBot]
+| Bot framework with an easy-to-use (though undocumented) API, full world representation, path finding, AI via tasks (mining, farming, combat, etc.),  and modular protocol handling for support of several MC versions
+| [https://github.com/DarkStorm652 DarkStorm]
+| {{Java}}
+| {{Simplified BSD}}
+| {{yes}}
+| {{no}}
+| {{yes|1.5.2-1.7.9}}
+|-
 ! [https://github.com/DavidEGrayson/redstone-bot2 redstone-bot2]
 | Wheat farming, supersonic flying speed, general awareness of world, but no documentation.
 | DavidEGrayson
