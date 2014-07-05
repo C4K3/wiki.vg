@@ -1,64 +1,181 @@
-The Minecraft Realms API is the api endpoint used to control worlds hosted by Mojang's Minecraft Realms service.
+The Minecraft Realms API is the API endpoint used to control worlds hosted by Mojang's Minecraft Realms service. This is a paid service provided to abstract managing a Minecraft server. More information on this can be found at https://minecraft.net/realms.
 
-The API endpoint for Desktop Edition is located at https://mcoapi.minecraft.net .
+The API endpoint for the Desktop Edition is located at https://mcoapi.minecraft.net. This is where all requests, as listed on this page, should be sent to.
 
-There is also an endpoint for Pocket Edition in development, located at https://peoapi.minecraft.net. It is being documentated on [[Pocket Realms]]
+There is also an endpoint for Pocket Edition in development, located at https://peoapi.minecraft.net. It is being documented at [[Pocket Realms]]
 
 [[Category:Minecraft Modern]]
 
 == Sessions ==
 Session identification is stored in a pair of cookies sent with the header of every request.
-sid is the session ID of the currently logged in user (see [[Authentication]])
-user is the case-correct? username of the current user.
-An example session is shown below:
-<pre>
-GET /mco/available HTTP/1.1
-Cookie: sid=-000000000000000000;user=Herobrine
-Cache-Control: no-cache
-Pragma: no-cache
-User-Agent: Java/1.6.0_27
-Host: mcoapi.minecraft.net
-Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
-Connection: keep-alive
-</pre>
+The only required header within a request is having this cookie set.
 
-sid is String like: token:<accessToken>:<uuid>
+ {| class="wikitable"
+! Key !! Value
+|- 
+| sid || This is the current session ID of the logged in user. This follows the format of:
+ token:<accessToken>:<player UUID>
+|-
+| user || This is the username of the logged in user. This value is case sensitive.
+|-
+| version || The version of the Minecraft instance running.
+|}
 
-== Endpoints: ==
-=== GET /mco/available ===
+An example request:
+ GET /mco/available HTTP/1.1
+ Cookie: sid=<token>;user=Herobrine;version=1.7.9
+ Cache-Control: no-cache
+ Pragma: no-cache
+ User-Agent: Java/1.6.0_27
+ Host: mcoapi.minecraft.net
+ Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+ Connection: keep-alive
+
+== Notes ==
+As per standard HTTP, a GET request has no parameters, and a POST request can potentially contain content (Note, several POST requests below has empty content).
+
+== Defining a server ==
+For most endpoints requiring a server, it is returned in a JSON object format, containing the following values:
+ {| class="wikitable"
+! Key !! Value !! Value Type
+|-
+| id || The ID of the server. Must be unique || Integer
+|-
+| remoteSubscriptionId || Unknown, perhaps linked to transaction? Seems to work if same as 'id' || String
+|- 
+| name || The name of the server || String
+|-
+| motd || The MOTD of the server. Doesn't support color. || String
+|-
+| state || The status of the server. Can be one of the following: ADMIN_LOCK, CLOSED, OPEN, UNINITIALIZED || String
+|-
+| owner || The owner of the server. If this is equal to the previewing players username, the configure button will be accessible. || String
+|-
+| players || A array of currently connected players? || JSON Array, with string values
+|-
+| daysLeft || The amount of days left for the subscription || Integer
+|-
+| ip || The IP address of the Realms server. In the format of [IP]:[Port] || String
+|-
+| expired || Whether the subscription has expired || Boolean
+|-
+| minigame || Whether the server is a minigame server || Boolean
+|-
+| difficulty || The difficulty of the server. 0 is peaceful, 1 is easy, and so on. || Integer
+|-
+| gameMode || The gamemode of the server. 0 is survival, 1 is creative, and 2 is adventure || Integer
+|}
+
+== Endpoints ==
+
+=== GET requests ===
+
+==== GET /mco/available ====
 
 Returns whether the user can access the Minecraft Realms service.
-
-Parameters: none
+This request does not require a Cookie token to be sent.
 
 Returns: plain text; only observed value is
- false
+ true
+Prior to Realms release, this returned false.
 
-=== GET /worlds ===
+==== GET /mco/client/outdated ====
 
-Return a list of servers that the user owns/is invited to?
-Returns: a JSON object with one array.
- {"servers":[]}
+Returns whether the clients version is up to date with Realms. This is checked against the Cookie token.
 
-=== GET /worlds/locations ===
+Returns: Boolean value, if the client is outdated, it returns true, else, it returns false.
 
-Returns a list of datacenters with server space available.
+==== GET /worlds ====
 
-Returns: a JSON object with currently available locations.
- {"locations":[{"locationId":"3","locationName":"London"},{"locationId":"6","locationName":"Los Angeles - California"}],"suggestion":{"locationId":"3","locationName":"London"}}
+Return a list of servers that the user is invited to or owns.
 
-=== GET /worlds/$ID ===
+Returns: a JSON object with one array. Each element within the array represents a server.
 
-Gets world info? For example, worlds/1 returns:
+ {| class="wikitable"
+! Key !! Value !! Value Type
+|-
+| servers || A array of servers || JSON array of Servers
+|}
 
- Not owner
+Example:
+ 
+ {"worlds": [
+    {"id": 1,
+    "remoteSubscriptionId": "1",
+    "name": "A Test Server",
+    "players": ["Notch"],
+    "motd": "This is a testing server!",
+    "state": "OPEN",
+    "owner": "j_selby",
+    "daysLeft": 30,
+    "ip": "localhost:25565",
+    "expired": false,
+    "minigame": false}, ...
+ ]}
 
-=== GET /worlds/$ID/join ===
+==== GET /worlds/$ID ====
 
-Joins a world?
+Returns a single server listing about a server.
+If a server doesn't exist/you do not have currently have access to it, the server will return a 403 error, with no content.
 
- World '1' not found!
+Returns: a JSON encoded Server, as above.
 
-=== POST /worlds/$NAME/$LOCATION ===
+==== GET /worlds/$ID/join ====
+Requires TOS to be agreed to (as below).
 
-Creates a world?
+Used to get the IP address for a server.
+
+If a server doesn't exist/you do not have currently have access to it, the server will return a 404 error, with no content.
+
+Returns:
+ {| class="wikitable"
+! Key !! Value !! Value Type
+|-
+| address || The address of a server, encoded as [IP]:[Port] || String
+|}
+
+==== GET /ops/$ID ====
+Returns a list of operators for this server. You must own this server to view this.
+
+Returns:
+ {| class="wikitable"
+! Key !! Value !! Value Type
+|-
+| ops || A array of player names || JSON array of Strings
+|}
+
+==== GET /subscriptions/$ID ====
+Returns the current life of a server subscription.
+
+Returns:
+ {| class="wikitable"
+! Key !! Value !! Value Type
+|-
+| startDate || A millisecond value. This is measured from January 1, 1970. || Long
+|-
+| daysLeft || The amount of days left within this subscription || Integer
+|-
+| subscriptionType || The kind of subscription this user has. This has been seen to be NORMAL or RECURRING. || String
+|}
+
+==== GET /mco/buy ====
+Displays a status message to the user, along with a link to the Mojang website.
+
+Returns:
+ {| class="wikitable"
+! Key !! Value !! Value Type
+|-
+| statusMessage || The message displayed to the user || String
+|-
+| buyLink || A URL to the purchase website. Optional. If not provided, no link is shown || String
+|}
+
+==== GET /invites/count/pending ====
+Returns the amount of invites the player currently has waiting.
+
+Returns: Integer value
+
+=== POST requests ===
+
+==== POST /mco/tos/agreed ====
+To join Realms servers, you must agree to the TOS. Sending a blank POST request to this endpoint will set this flag.
