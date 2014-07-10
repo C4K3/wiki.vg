@@ -140,7 +140,7 @@ Returns a list of backups for the world.
 
 If a server doesn't exist/you do not have currently have access to it, the server will return a 403 error, with no content.
 
-Returns: a JSON encoded list of backups.
+Returns: a JSON encoded list of backups for the specified world ID
 
 ==== GET /ops/$ID ====
 Returns a list of operators for this server. You must own this server to view this.
