@@ -14,7 +14,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/mc-server/MCServer/tree/master/Tools/ProtoProxy ProtoProxy] || A subproject of [https://github.com/mc-server/MCServer MCServer], protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parsing basic packets. || {{yes|#4}} - 1.7.4 || C++ || Windows, Mac, Linux || [[user:xoft|xoft]] || {{yes|Active}}
 |-
-| [https://github.com/Yogu/minecraft-sniffer minecraft-sniffer] || A proxy that prints out server and client packets in JSON format. Does not support encryption.|| {{yes|#4}} - 1.7.4 || node.js ||  Windows, Mac, & Linux  || [[user:Yogu|Yogu]] || {{yes|Active}}
+| [https://github.com/Yogu/minecraft-sniffer minecraft-sniffer] || A proxy that prints out server and client packets in JSON format. Does not support encryption.|| {{yes|#4}} - 1.7.10 || node.js ||  Windows, Mac, & Linux  || [[user:Yogu|Yogu]] || {{yes|Active}}
 |-
 | [https://github.com/DarkStorm652/DarkBot DarkBot] || Minecraft client, automation (AI) platform, and modular protocol library. Can play Minecraft on its own (on any 1.5.2+ server). || {{yes|#5}} - 1.7.9<br />(and #4, #61, #74, #78) || Java ||  Windows, Mac, & Linux  || [[user:DarkStorm|DarkStorm]] || {{yes|Active}}
 |-
