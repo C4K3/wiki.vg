@@ -419,6 +419,28 @@ do {
 | Entity's Age (Negative = Child)
 |}
 
+=== Human ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 16
+| Byte
+| Unknown bit field
+|-
+| 17
+| Float
+| Absorption Hearts
+|-
+| 18
+| Int
+| Score
+|}
+
 === Horse ===
 <sup>Extends [[#Ageable|Ageable]]</sup>
 
