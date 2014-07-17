@@ -1,4 +1,8 @@
 
+== Notes ==
+
+All public APIs are rate limited so you are expected to cache the results. This is currently set at 6000 per 10 minutes but this may change
+
 == Username -> UUID ==
 
   https://api.mojang.com/users/profiles/minecraft/<username>
