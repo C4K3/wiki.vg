@@ -54,16 +54,16 @@ Where 'minecraft' - agent name
 This will return players profiles.
 
 === Payload ===
-We need to send array of profiles nicknames.
-For example:
+
 <syntaxhighlight lang="javascript">
 [
     "maksimkurb",
-    "nonExistsPlayer" //Test for non-exists player
+    "nonExistingPlayer" //Test for non-existing player
 ]
 </syntaxhighlight>
 
 === Response ===
+
 <syntaxhighlight lang="javascript">
 [
     {
@@ -72,10 +72,9 @@ For example:
         "legacy": true,                              //Profile not migrated to mojang.com?  (Only appears, when true)
         "demo": true                                 //Game wasn't bought                   (Only appears, when true)
     }
-    // How we can see, this url return only information about real (exists) profiles.
+    // This will return only information about real (existing) profiles.
 ]
 </syntaxhighlight>
-
 
 == Player Public Skin Information ==
 
