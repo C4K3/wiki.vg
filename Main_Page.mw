@@ -20,7 +20,7 @@ There are ongoing efforts to keep reverse engineered documentation updated, but 
 ** [[Protocol_version_numbers|Protocol version numbers]]
 * [[Pre-release protocol|Pre-release Protocol Specificaton]]
 * [[Authentication|Authentication Scheme]]
-* [[Mojang_API]]
+* [[Mojang_API|Mojang API]]
 * [[Game Files|Location of Game Files]]
 * [[Map Format]] (See also: mirror of the old [[NBT]].txt)
 * [[Snoop|Snoop Mechanism]]
