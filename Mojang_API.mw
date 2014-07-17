@@ -7,7 +7,7 @@ All public APIs are rate limited so you are expected to cache the results. This 
 
   https://api.mojang.com/users/profiles/minecraft/<username>
 
-This will turn the player's username and uuid
+This will return the player's current username and uuid
 
 === Response ===
 <syntaxhighlight lang="javascript">
@@ -21,7 +21,7 @@ This will turn the player's username and uuid
 
   https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp>
 
-This will turn the player's username and uuid at the timestamp provided
+This will return the player's username that they had at the timestamp provided and their uuid
 
 === Response ===
 <syntaxhighlight lang="javascript">
@@ -35,6 +35,8 @@ This will turn the player's username and uuid at the timestamp provided
 
    https://api.mojang.com/user/profiles/<uuid>/names
 
+Returns all the usernames this user has used in the past and the one they are using currently
+
 === Response ===
 <syntaxhighlight lang="javascript">
 [
@@ -43,7 +45,7 @@ This will turn the player's username and uuid at the timestamp provided
 </syntaxhighlight>
 
 
-== Player Information ==
+== Player Public Skin Information ==
 
   https://sessionserver.mojang.com/session/minecraft/profile/<uuid>
 
