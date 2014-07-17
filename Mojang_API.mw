@@ -96,7 +96,7 @@ This will return the player's username plus any additional information about the
 	{
 	    "name":"dunno",
 	    "value":"base64 string",
-	    "signature":"base64 string; signed data using Yggdrasil's private key"
+	    "signature":"base64 string; signed data using Yggdrasil's private key" // Only provided if ?unsigned=false is appended to url
 	}
     ]
 }
