@@ -21,7 +21,8 @@ This will return the player's current username and uuid
 
   https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp>
 
-This will return the player's username that they had at the timestamp provided and their uuid
+This will return the player's username that they had at the timestamp provided and their uuid. 
+The timestamp is a unix timestamp
 
 === Response ===
 <syntaxhighlight lang="javascript">
