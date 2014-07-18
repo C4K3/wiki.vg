@@ -57,6 +57,7 @@ It also download a hash, in sha1, the url is:
 The <code>natives</code> key provides a string for each specific platform to be inserted between the .jar and the <version> of the filename, resulting in a filename with the format:
  <name>-<version>-<native-string>.jar
 This is applied to any file with the <code>natives</code> key.
+The natives string may contain <code>${arch}</code>, which should be replaced with <code>32</code> or <code>64</code>.
 
 
 The <code>extract</code> key provides rules for the extraction of the file.
