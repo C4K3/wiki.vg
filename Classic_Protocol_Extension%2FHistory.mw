@@ -1,3 +1,6 @@
+==18 July 2014==
+* '''''SetBlockPermissions''''' packet: Values for ''AllowPlacement'' and ''AllowDeletion'' that are our-of-range (neither 0 nor 1) now mean "allow." Previously the meaning was undefined. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5936&oldid=5933]
+
 ==6 April 2014==
 * Removed the ''TopLeft'' '''''MessageType''''' and updated the screenshot. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5496&oldid=5492]
 
