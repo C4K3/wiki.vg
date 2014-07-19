@@ -590,7 +590,7 @@ Matches NameID of the ExtAddPlayerName packet
 ===BlockPermissions===
 :This extension allows the server to instruct the player that certain block types are allowed/disallowed to be placed or deleted.
 :'''Motivation''': To prevent players from inadvertently placing or removing prohibited block types (e.g. water, lava, grass, admincrete), before it even reaches the server.
-:'''Client behavior:''' Client should prevent placement of prohibited block types (by graying out or hiding blocks in block-selection screen, or any other effective means). Client should prevent player from deleting prohibited block types. Client must be ready to receive '''''SetBlockPermission''''' packet after map load ('''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packet). Permission changes should take effect as soon as packet is received. Admincrete (solid block) permissions set by '''''SetBlockPermission''''' must always override permission set by '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|ServerIdentification]]''''' and '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|UpdateUserType]]''''' packets. If ''BlockType'' is set to <code>0</code>, given permissions should affect ALL block types at once, overriding permissions set by any earlier packets. Permissions must persist between map changes. Client may optionally warn the player attempting to place/delete prohibited blocks via sound effect, visual effect, chat message, etc. 
+:'''Client behavior:''' Client should prevent placement of prohibited block types (by graying out or hiding blocks in block-selection screen, or any other effective means). Client should prevent player from deleting prohibited block types. Client must be ready to receive '''''SetBlockPermission''''' packet after map load ('''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packet). Permission changes should take effect as soon as packet is received. Admincrete (solid block) permissions set by '''''SetBlockPermission''''' must always override permission set by '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|ServerIdentification]]''''' and '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|UpdateUserType]]''''' packets. If ''BlockType'' is set to <code>0</code>, given permissions should affect ALL block types at once, overriding permissions set by any earlier packets. Permissions must persist between map changes. Client may optionally warn the player attempting to place/delete prohibited blocks via sound effect, visual effect, chat message, etc.
 :'''Server behavior:''' Server may send '''''SetBlockPermission''''' packets any time after map load ('''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packet). Any valid block ID may be specified for ''BlockType'', including custom blocks (if [[#CustomBlocks|CustomBlocks extension]] is mutually supported). ''BlockType'' may be set to <code>0</code> to set permissions for ALL block types at once. Server must not assume that client is compliant/obedient, and server must still verify each '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SetBlock]]''''' packet coming from the client. What to do with non-complying clients (kick or warn) is up to you.
 
 :<h4>SetBlockPermission packet</h4>
@@ -614,13 +614,13 @@ Matches NameID of the ExtAddPlayerName packet
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
 | class="col4" | 0 = Prohibited
-1 = Allowed
+1 or any other value = Allowed
 |- class="row2"
 | class="col1 centeralign" | AllowDeletion
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
 | class="col4" | 0 = Prohibited
-1 = Allowed
+1 or any other value = Allowed
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 4 bytes
