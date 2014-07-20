@@ -426,19 +426,21 @@ do {
 |-
 ! style="width: 75px" | Index
 ! style="width: 75px" | Type
-! style="width: 250px" | Meaning
+! style="width: 250px" colspan="2" | Meaning
 |-
-| 16
-| Byte
-| Unknown bit field
+| rowspan="2" | 16
+| rowspan="2" | Byte
+! Bit Mask !! Meaning
 |-
+| 0x02 || Hide Cape
+|- 
 | 17
 | Float
-| Absorption Hearts
-|-
+| colspan="2" | Absorption Hearts
+|- 
 | 18
 | Int
-| Score
+| colspan="2" | Score
 |}
 
 === Horse ===
