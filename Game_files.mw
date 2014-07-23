@@ -45,14 +45,15 @@ Example:
 </syntaxhighlight>
 
 The <code>name</code> key is used to determine the url from which to download the library from. The format of this string is
- <package>:<name>:<version>
+ https://libraries.minecraft.net/<path>:<name>:<version>
 The corresponding URL would look like this:
- <package>/<name>/<version>/<name>-<version>.jar
+ https://libraries.minecraft.net/<path>/<name>/<version>/<name>-<version>.jar
 where <code>path</code> is the result of replacing all the periods in <code>package</code> with slashes.
 
 It also download a hash, in sha1, the url is:
- <package>/<name>/<version>/<name>-<version>.jar.sha1
+ https://libraries.minecraft.net/<path>/<name>/<version>/<name>-<version>.jar.sha1
 
+{{Warning | http://libraries.minecraft.net/ will NOT work - you must use https}}
 
 The <code>natives</code> key provides a string for each specific platform to be inserted between the .jar and the <version> of the filename, resulting in a filename with the format:
  <name>-<version>-<native-string>.jar
