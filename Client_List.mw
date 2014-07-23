@@ -84,7 +84,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{GPLv3}}
 | {{yes}}
 | {{no}}
-| {{yes|1.7.2}}
+| {{yes|1.7.9}}
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Work in progress client, displays chat at the moment
