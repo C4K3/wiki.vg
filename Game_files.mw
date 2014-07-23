@@ -81,7 +81,7 @@ where index is obtained from the 'assets' field in the versions.json, if this fi
 and stores them in 
  .minecraft/assets/objects/<first 2 hex letters of hash>/<whole hash>
 and a copy is stored in 
- .minecraft/asserts/virtual/legacy/ 
+ .minecraft/assets/virtual/legacy/ 
 in the old format for versions that don't support the new system (1.7.2 and below)
 
 [[Category:Minecraft Modern]]
