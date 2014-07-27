@@ -2,27 +2,15 @@
 == Notes ==
 
 All public APIs are rate limited so you are expected to cache the results. This is currently set at 600 per 10 minutes but this may change
+For some parts of the API, demo account are sometimes included, sometimes not. Mojang keeps changing this.
 
-== Username -> UUID ==
+== Username -> Profile at time ==
 
-  https://api.mojang.com/users/profiles/minecraft/<username>
+  GET https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp>
 
-This will return the player's current username and uuid
-
-=== Response ===
-<syntaxhighlight lang="javascript">
-{
-  "id": "7125ba8b1c864508b92bb5c042ccfe2b",
-  "name": "KrisJelbring"
-}
-</syntaxhighlight>
-
-== Username -> UUID at time ==
-
-  https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp>
-
-This will return the player's username that they had at the timestamp provided and their uuid. 
-The timestamp is a unix timestamp
+This will return the uuid of the name at the timestamp provided.
+* The timestamp is a unix timestamp
+* When the <code>at</code> parameter is not sent, the current time is used
 
 === Response ===
 <syntaxhighlight lang="javascript">
@@ -32,7 +20,12 @@ The timestamp is a unix timestamp
 }
 </syntaxhighlight>
 
-== UUID -> All current/previous names ==
+* <code>name</code> is case-corrected
+* <code>legacy</code> only appears when true (not migrated to mojang account)
+* <code>demo</code> only appears when true (account unpaid)
+
+
+== UUID -> Name history ==
 
    https://api.mojang.com/user/profiles/<uuid>/names
 
@@ -45,13 +38,15 @@ Returns all the usernames this user has used in the past and the one they are us
 ]
 </syntaxhighlight>
 
-== Players profiles by names ==
+
+
+== Playernames -> UUIDs ==
 
   https://api.mojang.com/profiles/minecraft
 
 Where 'minecraft' - agent name
 
-This will return players profiles.
+This will return player UUIDS and some extras.
 
 === Payload ===
 
@@ -67,22 +62,30 @@ This will return players profiles.
 <syntaxhighlight lang="javascript">
 [
     {
-        "id": "0d252b7218b648bfb86c2ae476954d32",    //Profile uuid
-        "name": "maksimkurb",                        //Profile nickname
-        "legacy": true,                              //Profile not migrated to mojang.com?  (Only appears, when true)
-        "demo": true                                 //Game wasn't bought                   (Only appears, when true)
+        "id": "0d252b7218b648bfb86c2ae476954d32",
+        "name": "maksimkurb",
+        "legacy": true,
+        "demo": true
     }
-    // This will return only information about real (existing) profiles.
 ]
 </syntaxhighlight>
 
-== Player Public Skin Information ==
+* name is case-corrected
+* legacy only appears when true (profile not migrated to mojang.com)
+* demo only appears when true (account unpaid)
+* IllegalArgumentException is returned when any of the usernames is null or ""
+* The <code>Content-Type</code> HTTP header must be <code>application/json</code>
+* You cannot request more than 100 names per request
+
+
+
+== uuid -> Profile + Skin/Cape ==
 
   https://sessionserver.mojang.com/session/minecraft/profile/<uuid>
 
 This will return the player's username plus any additional information about them (e.g. skins). Example: https://sessionserver.mojang.com/session/minecraft/profile/4566e69fc90748ee8d71d7ba5aa00d20
 
-This has a much stricter rate limit, once a minute per a uuid
+This has a much stricter rate limit: You can request the same profile once per minute.
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
@@ -90,35 +93,37 @@ This has a much stricter rate limit, once a minute per a uuid
 === Response ===
 <syntaxhighlight lang="javascript">
 {
-    "id":"profile identifier",
-    "name":"player name",
-    "properties":[ 
-	{
-	    "name":"textures",
-	    "value":"base64 string",
-	    "signature":"base64 string; signed data using Yggdrasil's private key" // Only provided if ?unsigned=false is appended to url
-	}
+    "id": "<profile identifier>",
+    "name": "<player name>",
+    "properties": [ 
+        {
+            "name": "textures",
+            "value": "<base64 string>",
+            "signature": "<base64 string; signed data using Yggdrasil's private key>" // Only provided if ?unsigned=false is appended to url
+        }
     ]
 }
 </syntaxhighlight>
 
-"value" base64 string decoded:
+The "value" base64 string for the "textures" object decoded:
 <syntaxhighlight lang="javascript">
 {
-    "timestamp":"some numbers",
-    "profileId":"profile identifier",
-    "profileName":"player name",
-    "isPublic":"true or false",
-    "textures":{
-	"SKIN":{
-	    "url":"player skin URL"
-        }
-        "CAPE":{
-	    "url":"player cape URL"
+    "timestamp": "<unix time in ms>",
+    "profileId": "<profile uuid>",
+    "profileName": "<player name>",
+    "isPublic": "<true or false>",
+    "textures": {
+        "SKIN": {
+            "url": "<player skin URL>"
+        },
+        "CAPE": {
+            "url": "<player cape URL>"
         }
     }
 }
 </syntaxhighlight>
+
+* timestamp sometimes in the past (probably due to cached results?)
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
