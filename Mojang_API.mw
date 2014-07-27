@@ -9,7 +9,6 @@ For some parts of the API, demo account are sometimes included, sometimes not. M
   GET https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp>
 
 This will return the uuid of the name at the timestamp provided.
-* The timestamp is optional to return the current username
 * The timestamp is a unix timestamp
 * When the <code>at</code> parameter is not sent, the current time is used
 
