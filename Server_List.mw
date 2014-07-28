@@ -26,7 +26,7 @@ A couple things for contributors:
 | [[User:CNLohr|CNLohr]]
 | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.7.9 (#5)}}
+| {{yes|1.7.10 (#5)}}
 | {{no|User}}
 | {{no}}
 | {{no}}
@@ -41,7 +41,7 @@ A couple things for contributors:
 | SpaceManiac
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.7.9 (#5)}}
+| {{yes|1.7.10 (#5)}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -56,7 +56,7 @@ A couple things for contributors:
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{yes|1.7.9 (#5)}}
+| {{yes|1.7.10 (#5)}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
 | {{yes}}
@@ -71,7 +71,7 @@ A couple things for contributors:
 | FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | Apache 2.0
-| {{yes|1.7.9 (#5)}}
+| {{yes|1.7.10 (#5)}}
 | {{yes|Anvil}}
 | {{yes}}
 | {{yes}}
@@ -86,7 +86,7 @@ A couple things for contributors:
 | [SK] kangarko
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
 | Open source
-| {{yes|[https://github.com/kangarko/Rush/tree/Minecraft-1.6-1.7#Compatibility Multiple]}}
+| {{yes|1.7.10 (#5)}}
 | {{yes|McRegion}}
 | {{no}}
 | {{planned|Partial}}
