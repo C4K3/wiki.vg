@@ -42,7 +42,7 @@ Returns all the usernames this user has used in the past and the one they are us
 
 == Playernames -> UUIDs ==
 
-  https://api.mojang.com/profiles/minecraft
+  POST https://api.mojang.com/profiles/minecraft
 
 Where 'minecraft' - agent name
 
@@ -76,8 +76,6 @@ This will return player UUIDS and some extras.
 * IllegalArgumentException is returned when any of the usernames is null or ""
 * The <code>Content-Type</code> HTTP header must be <code>application/json</code>
 * You cannot request more than 100 names per request
-
-
 
 == uuid -> Profile + Skin/Cape ==
 
