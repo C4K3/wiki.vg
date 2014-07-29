@@ -77,7 +77,7 @@ This will return player UUIDS and some extras.
 * The <code>Content-Type</code> HTTP header must be <code>application/json</code>
 * You cannot request more than 100 names per request
 
-== uuid -> Profile + Skin/Cape ==
+== UUID -> Profile + Skin/Cape ==
 
   https://sessionserver.mojang.com/session/minecraft/profile/<uuid>
 
@@ -122,7 +122,6 @@ The "value" base64 string for the "textures" object decoded:
 </syntaxhighlight>
 
 * timestamp sometimes in the past (probably due to cached results?)
-
 
 == Examples ==
 
