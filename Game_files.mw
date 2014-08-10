@@ -45,13 +45,13 @@ Example:
 </syntaxhighlight>
 
 The <code>name</code> key is used to determine the url from which to download the library from. The format of this string is
- https://libraries.minecraft.net/<path>:<name>:<version>
+ <package>:<name>:<version>
 The corresponding URL would look like this:
- https://libraries.minecraft.net/<path>/<name>/<version>/<name>-<version>.jar
+ https://libraries.minecraft.net/<package>/name>/<version>/<name>-<version>.jar
 where <code>path</code> is the result of replacing all the periods in <code>package</code> with slashes.
 
 It also download a hash, in sha1, the url is:
- https://libraries.minecraft.net/<path>/<name>/<version>/<name>-<version>.jar.sha1
+ https://libraries.minecraft.net/<package>/<name>/<version>/<name>-<version>.jar.sha1
 
 {{Warning | http://libraries.minecraft.net/ will NOT work - you must use https}}
 
