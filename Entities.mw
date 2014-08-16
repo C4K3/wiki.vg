@@ -278,6 +278,11 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 | 0.25
 |- 
 | 76
+| Firework Rocket
+| 0.25
+| 0.25
+|- 
+| 77
 | Leash Knot
 | 0.5
 | 0.5
