@@ -267,6 +267,11 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 | 0.25
 | 0.25
 |- 
+| 76
+| Leash Knot
+| 0.5
+| 0.5
+|- 
 | 90
 | Fishing Float
 | 0.25
