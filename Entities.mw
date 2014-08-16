@@ -62,23 +62,23 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 58
 | Enderman
-| 
-| 
+| 0.6
+| 2.9
 |- 
 | 59
 | Cave Spider
-| 
-| 
+| 0.7
+| 0.5
 |- 
 | 60
 | Silverfish
-| 
-| 
+| 0.3
+| 0.7
 |- 
 | 61
 | Blaze
-| 
-| 
+| 0.6
+| 1.8
 |- 
 | 62
 | Magma Cube
@@ -87,23 +87,23 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 63
 | Ender Dragon
-| 
-| 
+| 16.0
+| 8.0
 |- 
 | 64
 | Wither
-| 
-| 
+| 0.9
+| 4.0
 |- 
 | 65
 | Bat
-| 
-| 
+| 0.5
+| 0.9
 |- 
 | 66
 | Witch
-| 
-| 
+| 0.6
+| 1.8
 |- 
 | 90
 | Pig
@@ -112,7 +112,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 91
 | Sheep
-| 0.6
+| 0.9
 | 1.3
 |- 
 | 92
@@ -123,7 +123,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 | 93
 | Chicken
 | 0.3
-| 0.4
+| 0.7
 |- 
 | 94
 | Squid
@@ -133,37 +133,37 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 | 95
 | Wolf
 | 0.6
-| 1.8
+| 0.8
 |- 
 | 96
 | Mooshroom
-| 
-| 
+| 0.9
+| 1.3
 |- 
 | 97
 | Snowman
-| 
-| 
+| 0.4
+| 1.8
 |- 
 | 98
 | Ocelot
-| 
-| 
+| 0.6
+| 0.8
 |- 
 | 99
 | Iron Golem
-| 
-| 
+| 1.4
+| 2.9
 |-
 | 100
 | Horse
-|
-|
+| 1.4
+| 1.6
 |- 
 | 120
 | Villager
-| 
-| 
+| 0.6
+| 1.8
 |}
 
 == Objects ==
