@@ -235,3 +235,5 @@ If your health updates come much slower than on the notchian client, make sure y
 * ForceField: Automatically swing everyone who is within 4 block of the player, killing them if pvp is enabled.
 * No swing: Don't send swing packets. They aren't needed to dig or place blocks
 * Spider: Climb every block as if there was a ladder in front of it
+* Walk on water: Set all water blocks as solid
+* Disable fall damage: Toggle the isOnGround field in your mob's entity update each tick.
