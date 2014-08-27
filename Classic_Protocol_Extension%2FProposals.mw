@@ -182,6 +182,6 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :Proposed by Rayne
 :This extension gives support for extra blocks 
 :'''Motivation''': The motivation of this extension is to give the server a use of "extra building material". For example extra wool for a pixel art, or an medieval themed map which both classic/cpe blocks and extra blocks
-:'''Client Behavior''': First of all the client sends the <a href="http://wiki.vg/CPE#CustomBlockSupportLevel_packet">CustomBlocks</a> packet with support level 2. Then the client will define block all possible block ids and link them to a position to the terrain.png (Preferably the id + 1). 
-:'''Server Behavior''': The server will receive the custom blocks packet version 2 and start allowing use of the extra blocks. The textures of these blocks can be changed by simply using the <a href="http://wiki.vg/CPE#EnvSetMapAppearance_packet">EnvSetMapAppearance</a> packet.
+:'''Client Behavior''': First of all the client sends the CustomBlocks packet with support level 2. Then the client will define block all possible block ids and link them to a position to the terrain.png (Preferably the id + 1). 
+:'''Server Behavior''': The server will receive the custom blocks packet version 2 and start allowing use of the extra blocks. The textures of these blocks can be changed by simply using the EnvSetMapAppearance packet.
 :No new packets are defined
