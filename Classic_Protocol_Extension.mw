@@ -323,6 +323,9 @@ Server must immediately reply to CPE clients with an '''''ExtInfo''''' packet, f
 ===ExtPlayerList===
 :'''Motivation''': Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. '''''ExtAddPlayerName'''''/'''''ExtRemovePlayerName''''' packets take over managing the player names list (tab-list), and '''''ExtAddEntity'''''/'''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' packets are used only to manage in-game entities.
 
+<div class="toccolours mw-collapsible mw-collapsed">
+====Version 1====
+<div class="mw-collapsible-content">
 :<h4>Client Behavior</h4>
 :When '''''ExtAddPlayerName''''' packet is received for an unrecognized ''NameID'', a new entry must be added to the autocompletion list and tab-list. When receiving '''''ExtAddPlayerName''''' packet for an already-listed ''NameID'', client must update its ''ListName'', ''GroupName'', and ''GroupRank''. Name list must persist when client changes worlds/maps.
 
@@ -435,6 +438,9 @@ Matches NameID of the ExtAddPlayerName packet
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
+</div>
+</div>
+====Version 2====
 
 ===EnvColors===
 :This extension allows server to alter some of the colors used by the client in environment rendering.
