@@ -194,7 +194,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :No new packets are defined, but treatment of [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet is altered.
 ===ColorCodeControl===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 22:00, 28 August 2014 (UTC)
-:Gives servers option to allow players to type in color codes, and a way to render <code>&</code> character in chat.
+:Gives servers an option to allow players to type in color codes, and a way to render <code>&</code> character in chat.
 :'''Motivation''': Allow players to type in color codes and to use & in chat.
 :'''Client Behavior''': When this extension is mutually supported, treat character sequence <code>&&</code> as meaning "draw an <code>&</code> character", without modifying current color. Do not allow <code>&</code> to be typed or pasted into chat unless '''''ColorCodeControl''''' packet has been received with ''AllowColorCodes'' set to <code>1</code>.
 :'''Server Behavior''': When this extension is mutually supported, server may send '''''ColorCodeControl''''' packet to allow client to type or paste color codes. Server should treat <code>&&</code> as described above.
