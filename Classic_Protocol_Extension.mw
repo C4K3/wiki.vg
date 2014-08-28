@@ -481,7 +481,7 @@ Version 2 of this extension replaces '''''ExtAddEntity''''' packet with '''''Ext
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>Notch</code>
 | class="col4" | Player name used for autocompletion.
-May be left empty (exclude from autocompletion).
+May be left empty (to exclude from autocompletion).
 |- class="row3"
 | class="col1 centeralign" | ListName
 | class="col2 centeralign" | string
@@ -491,13 +491,13 @@ May be left empty (exclude from autocompletion).
 | class="col1 centeralign" | GroupName
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>Staff</code>
-| class="col4" |
+| class="col4" |May be left blank.
 |- class="row5"
 | class="col1 centeralign" | GroupRank
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
 | class="col4" | Rank of a player within the group.
-A lower number means higher rank.
+Lower-number ranks are listed before higher-number ranks.
 |- class="row6"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 196 bytes
