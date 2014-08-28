@@ -229,4 +229,4 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :** '''Cons''': Less space-efficient than UTF-8; does not cover all of Unicode.
 :* Expand charset to full Unicode with UTF-8 encoding.
 :** '''Pros''': Space-efficient; covers all of Unicode.
-:** '''Cons''': Harder to work with strings; harder to find fonts; third-party libraries likely needed; full support nearly impossible.
+:** '''Cons''': Harder to work with strings; harder to find fonts; third-party libraries likely needed; full support nearly impossible; no native Windows/C# support.
