@@ -442,7 +442,6 @@ Matches NameID of the ExtAddPlayerName packet
 </div>
 
 ====Version 2====
-<div class="mw-collapsible-content">
 Version 2 of this extension replaces '''''ExtAddEntity''''' packet with '''''ExtAddEntity2''''', allows using full URLs for ''SkinName'', and clarifies interaction with [[#ChangeModel|'''ChangeModel''']] extension.
 
 :<h5>Client Behavior</h5>
