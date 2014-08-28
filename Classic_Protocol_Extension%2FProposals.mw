@@ -212,8 +212,8 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="col1 centeralign" | AllowColorCodes
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 0
-| class="col4 centeralign" | 0 = allow
-1 = disallow
+| class="col4 centeralign" | 0 = disallow
+1 = allow
 |- class="row2"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 2 bytes
