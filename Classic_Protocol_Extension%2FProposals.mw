@@ -224,7 +224,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :* Expand charset to 256 characters using Latin1 or Win-1252.
 :** '''Pros''': Easiest to implement; no new packets needed; no new font renderer needed.
 :** '''Cons''': Still only 256 characters.
-:* Expand charset to Unicode [[http://en.wikipedia.org/wiki/Basic_Multilingual_Plane#Basic_Multilingual_Plane|Basic Multilingual Plane]] with UCS-2 fixed-length encoding.
+:* Expand charset to Unicode [http://en.wikipedia.org/wiki/Basic_Multilingual_Plane#Basic_Multilingual_Plane|Basic Multilingual Plane] (65k most common characters) with UCS-2 fixed-length encoding.
 :** '''Pros''': Easy to work with strings; native support on Windows; not too hard to find a font that covers all characters.
 :** '''Cons''': Less space-efficient than UTF-8; does not cover all of Unicode.
 :* Expand charset to full Unicode with UTF-8 encoding.
