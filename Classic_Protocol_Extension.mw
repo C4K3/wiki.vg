@@ -448,7 +448,7 @@ Matches NameID of the ExtAddPlayerName packet
 
 :Names on the tab-list should be grouped by ''GroupName'' in the player tab-list. Names within a ''GroupName'' should be sorted by ''GroupRank'' (in ascending order). Names with the same ''GroupName'' and ''GroupRank'' should be sorted alphabetically by ''ListName''.
 
-:When an '''''ExtAddEntity''''' packet is received, it must be treated as the '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packet. ''InGameName'' should be shown above the player's heads in-game. Skin should be loaded using the given ''SkinName'' for a player name. When client receives '''''ExtAddEntity''''' packet for an already-spawned player, a duplicate entity must not be spawned and existing entity's position should not be changed. Instead their ''InGameName'' and ''SkinName'' should be updated. If a negative ID is given for '''''ExtAddEntity''''', client must update player's own spawn point, ''InGameName'', and ''SkinName''. The client must ignore regular '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packets, if any are received. Name list should not be affected by '''''ExtAddEntity'''''.
+:When an '''''ExtAddEntity2''''' packet is received, it must be treated as the '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packet. ''InGameName'' should be shown above the player's heads in-game. Skin should be loaded using the given ''SkinName'' for a player name. When client receives '''''ExtAddEntity2''''' packet for an already-spawned player, a duplicate entity must not be spawned and existing entity's position should not be changed. Instead their ''InGameName'' and ''SkinName'' should be updated. If a negative ID is given for '''''ExtAddEntity2''''', client must update player's own spawn point, ''InGameName'', and ''SkinName''. The client must ignore regular '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packets, if any are received. Name list should not be affected by '''''ExtAddEntity2'''''.
 
 :Color codes may be either drawn or stripped from ''ListName'', ''GroupName'', and ''InGameName''.
 
@@ -457,7 +457,7 @@ Matches NameID of the ExtAddPlayerName packet
 :When '''''ExtRemovePlayerName''''' packet is received for a recognized ''NameID'', they should be removed from autocompletion list and tab-list. When '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' or '''''ExtRemovePlayerName''''' packet is received for a negative or unrecognized ''PlayerID'', no action should be taken.
 
 :<h5>Server Behavior</h5>
-:When a new player connects to the server, '''''ExtAddPlayerName''''' must be sent. ''GroupName'' and ''GroupRank'' can be used in any way, for example to group players by map/world or rank/class/faction. Server must use '''''ExtAddEntity''''' in place of standard '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packet. Server should re-send '''''ExtAddPlayerName''''' packet, using the identical ''PlayerID'', when player's ''ListName'', ''GroupName'', or ''GroupRank'' change. Server must reliably send an '''''ExtRemovePlayerName''''' when the player disconnects. Color codes are permitted in ''ListName'', ''GroupName'', and ''InGameName''.
+:When a new player connects to the server, '''''ExtAddPlayerName''''' must be sent. ''GroupName'' and ''GroupRank'' can be used in any way, for example to group players by map/world or rank/class/faction. Server must use '''''ExtAddEntity2''''' in place of standard '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packet. Server should re-send '''''ExtAddPlayerName''''' packet, using the identical ''PlayerID'', when player's ''ListName'', ''GroupName'', or ''GroupRank'' change. Server must reliably send an '''''ExtRemovePlayerName''''' when the player disconnects. Color codes are permitted in ''ListName'', ''GroupName'', and ''InGameName''.
 
 :<h5>ExtAddPlayerName Packet</h5>
 :''Server to Client''
@@ -502,7 +502,7 @@ A lower number means higher rank.
 | class="col1 rightalign" colspan="4" | 196 bytes
 |}
 
-:<h5>ExtAddEntity Packet</h5>
+:<h5>ExtAddEntity2 Packet</h5>
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
@@ -512,8 +512,8 @@ A lower number means higher rank.
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="8" | 0x17
-(23)
+| class="col0 centeralign" rowspan="8" | 0x21
+(33)
 | class="col1 centeralign" | EntityID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>5</code>
