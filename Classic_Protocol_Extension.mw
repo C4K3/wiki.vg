@@ -326,7 +326,7 @@ Server must immediately reply to CPE clients with an '''''ExtInfo''''' packet, f
 <div class="toccolours mw-collapsible mw-collapsed">
 ====Version 1 (Deprecated since 28 August 2014)====
 <div class="mw-collapsible-content">
-:=====Client Behavior=====
+:<h5>Client Behavior</h5>
 :When '''''ExtAddPlayerName''''' packet is received for an unrecognized ''NameID'', a new entry must be added to the autocompletion list and tab-list. When receiving '''''ExtAddPlayerName''''' packet for an already-listed ''NameID'', client must update its ''ListName'', ''GroupName'', and ''GroupRank''. Name list must persist when client changes worlds/maps.
 
 :Names on the tab-list should be grouped by ''GroupName'' in the player tab-list. Names within a ''GroupName'' should be sorted by ''GroupRank'' (in ascending order). Names with the same ''GroupName'' and ''GroupRank'' should be sorted alphabetically by ''ListName''.
@@ -339,10 +339,10 @@ Server must immediately reply to CPE clients with an '''''ExtInfo''''' packet, f
 
 :When '''''ExtRemovePlayerName''''' packet is received for a recognized ''NameID'', they should be removed from autocompletion list and tab-list. When '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' or '''''ExtRemovePlayerName''''' packet is received for a negative or unrecognized ''PlayerID'', no action should be taken.
 
-:=====Server Behavior=====
+:<h5>Server Behavior</h5>
 :When a new player connects to the server, '''''ExtAddPlayerName''''' must be sent. ''GroupName'' and ''GroupRank'' can be used in any way, for example to group players by map/world or rank/class/faction. Server must use '''''ExtAddEntity''''' in place of standard '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packet. Server should re-send '''''ExtAddPlayerName''''' packet, using the identical ''PlayerID'', when player's ''ListName'', ''GroupName'', or ''GroupRank'' change. Server must reliably send an '''''ExtRemovePlayerName''''' when the player disconnects. Color codes are permitted in ''ListName'', ''GroupName'', and ''InGameName''.
 
-:=====ExtAddPlayerName Packet=====
+:<h5>ExtAddPlayerName Packet</h5>
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
@@ -385,7 +385,7 @@ A lower number means higher rank.
 | class="col1 rightalign" colspan="4" | 196 bytes
 |}
 
-:=====ExtAddEntity Packet=====
+:<h5>ExtAddEntity Packet</h5>
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
@@ -417,7 +417,7 @@ A lower number means higher rank.
 
 |}
 
-:=====ExtRemovePlayerName Packet=====
+:<h5>ExtRemovePlayerName Packet</h5>
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
@@ -440,6 +440,7 @@ Matches NameID of the ExtAddPlayerName packet
 |}
 </div>
 </div>
+
 ====Version 2====
 
 ===EnvColors===
