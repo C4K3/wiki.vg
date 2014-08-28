@@ -7,6 +7,9 @@ Extensions are designed to keep extended clients and servers compatible with sta
 Last revision: 6 April 2014.
 See [[Classic Protocol Extension/History|the history subpage]] for a chronology of changes.
 |}
+{| class="wikitable" style="margin:10px 10%;border: 1px solid #aaa;border-left:10px solid #3dc238;background:#fbfbfb;width:80%;font-size:110%"
+|style="padding:10px"|'''Do you have an idea for an extension? Please post it on the [[Classic_Protocol_Extension/Proposals|Proposals]] subpage.'''
+|}
 
 ==Support==
 :''See [[Classic Protocol Extension/Support|support subpage]] for a detailed table.''
