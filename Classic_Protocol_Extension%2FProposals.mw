@@ -221,26 +221,26 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 ===UnicodeChat===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 22:48, 28 August 2014 (UTC)
 :Expands character encoding beyond ASCII. There are three ways to go about this:
-:* Expand charset to 256 characters using '''[http://en.wikipedia.org/wiki/Windows-1252 Win-1252]'''.
-:** <span style="color:#060">'''Pro'''</span>: Easiest to implement in clients (few changes to FontRenderer needed) and servers (no multibyte character support needed).
-:** <span style="color:#060">'''Pro'''</span>: No new packets needed.
-:** <span style="color:#060">'''Pro'''</span>: Easy to create custom fonts.
-:** <span style="color:#060">'''Pro'''</span>: Low resource use (low RAM and VRAM use, no additional CPU use, small font file).
-:** <span style="color:#c00">'''Con'''</span>: Still only 256 characters. Only covers Latin-derived (English and Western/Central European) languages and common symbols.
-:* Expand charset to Unicode [http://en.wikipedia.org/wiki/Basic_Multilingual_Plane#Basic_Multilingual_Plane Basic Multilingual Plane] (BMP) with '''UCS-2''' fixed-length encoding.
-:** <span style="color:#060">'''Pro'''</span>: Lots of characters (~65k) covering most languages and symbols.
-:** <span style="color:#060">'''Pro'''</span>: Not too hard to implement (characters still fixed-width, native support in WinAPI / Java / C#).
-:** <span style="color:#060">'''Pro'''</span>: Free fonts available that covers all characters.
-:** <span style="color:#c00">'''Con'''</span>: New renderer (possibly third-party library) needed for rendering.
-:** <span style="color:#c00">'''Con'''</span>: Higher resource use (higher RAM and VRAM use, more CPU use, large font file).
-:** <span style="color:#c00">'''Con'''</span>: Very hard to create custom fonts.
-:** <span style="color:#c00">'''Con'''</span>: Still does not cover all characters.
-:* Expand charset to full Unicode with '''UTF-8''' encoding. Includes all the supplemental Unicode planes.
-:** <span style="color:#060">'''Pro'''</span>: Theoretically covers all languages and symbols.
-:** <span style="color:#c00">'''Con'''</span>: Does not ''actually'' cover all languages and symbols due to non-existence of 100% fonts.
-:** <span style="color:#c00">'''Con'''</span>: Hard to find free fonts that extend beyond the BMP.
-:** <span style="color:#c00">'''Con'''</span>: Harder to work with strings (due to variable-width characters).
-:** <span style="color:#c00">'''Con'''</span>: Third-party library needed for rendering.
-:** <span style="color:#c00">'''Con'''</span>: Highest resource use (highest RAM and VRAM use, most CPU use, largest font files).
-:** <span style="color:#c00">'''Con'''</span>: Harder to implement (no native support in WinAPI / Java / C#).
-:** <span style="color:#c00">'''Con'''</span>: Impossible to create custom fonts.
+:# Expand charset to 256 characters using '''[http://en.wikipedia.org/wiki/Windows-1252 Win-1252]'''.
+:#* <span style="color:#060">'''Pro'''</span>: Easiest to implement in clients (few changes to FontRenderer needed) and servers (no multibyte character support needed).
+:#* <span style="color:#060">'''Pro'''</span>: No new packets needed.
+:#* <span style="color:#060">'''Pro'''</span>: Easy to create custom fonts.
+:#* <span style="color:#060">'''Pro'''</span>: Low resource use (low RAM and VRAM use, no additional CPU use, small font file).
+:#* <span style="color:#c00">'''Con'''</span>: Still only 256 characters. Only covers Latin-derived (English and Western/Central European) languages and common symbols.
+:# Expand charset to Unicode [http://en.wikipedia.org/wiki/Basic_Multilingual_Plane#Basic_Multilingual_Plane Basic Multilingual Plane] (BMP) with '''UCS-2''' fixed-length encoding.
+:#* <span style="color:#060">'''Pro'''</span>: Lots of characters (~65k) covering most languages and symbols.
+:#* <span style="color:#060">'''Pro'''</span>: Not too hard to implement (characters still fixed-width, native support in WinAPI / Java / C#).
+:#* <span style="color:#060">'''Pro'''</span>: Free fonts available that covers all characters.
+:#* <span style="color:#c00">'''Con'''</span>: New renderer (possibly third-party library) needed for rendering.
+:#* <span style="color:#c00">'''Con'''</span>: Higher resource use (higher RAM and VRAM use, more CPU use, large font file).
+:#* <span style="color:#c00">'''Con'''</span>: Very hard to create custom fonts.
+:#* <span style="color:#c00">'''Con'''</span>: Still does not cover all characters.
+:# Expand charset to full Unicode with '''UTF-8''' encoding. Includes all the supplemental Unicode planes.
+:#* <span style="color:#060">'''Pro'''</span>: Theoretically covers all languages and symbols.
+:#* <span style="color:#c00">'''Con'''</span>: Does not ''actually'' cover all languages and symbols due to non-existence of 100% fonts.
+:#* <span style="color:#c00">'''Con'''</span>: Hard to find free fonts that extend beyond the BMP.
+:#* <span style="color:#c00">'''Con'''</span>: Harder to work with strings (due to variable-width characters).
+:#* <span style="color:#c00">'''Con'''</span>: Third-party library needed for rendering.
+:#* <span style="color:#c00">'''Con'''</span>: Highest resource use (highest RAM and VRAM use, most CPU use, largest font files).
+:#* <span style="color:#c00">'''Con'''</span>: Harder to implement (no native support in WinAPI / Java / C#).
+:#* <span style="color:#c00">'''Con'''</span>: Impossible to create custom fonts.
