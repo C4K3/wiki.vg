@@ -221,7 +221,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 ===UnicodeChat===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 22:48, 28 August 2014 (UTC)
 :Expands character encoding beyond ASCII. There are three ways to go about this:
-:* Expand charset to 256 characters using '''Latin1 or Win-1252'''.
+:* Expand charset to 256 characters using '''[http://en.wikipedia.org/wiki/Windows-1252 Win-1252]'''.
 :** <span style="color:#060">'''Pro'''</span>: Easiest to implement in clients (few changes to FontRenderer needed) and servers (no multibyte character support needed).
 :** <span style="color:#060">'''Pro'''</span>: No new packets needed.
 :** <span style="color:#060">'''Pro'''</span>: Easy to create custom fonts.
