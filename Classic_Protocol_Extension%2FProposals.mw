@@ -247,3 +247,35 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :#* <span style="color:#c00">'''Con'''</span>: Harder to implement (no native support in WinAPI / Java / C#).
 :#* <span style="color:#c00">'''Con'''</span>: Impossible to create custom fonts.
 :#* <span style="color:#c00">'''Con'''</span>: Very hard for servers to maintain compatibility with legacy clients.
+
+===ColorControl===
+:Proposed by !!!WARLOCK!!!
+:Changes the color alpha (A) of Messagetypes to a custom number.
+:'''Motivation''': Allows servers to make gradient/glass like text messages at Message Type's IDs.
+:'''Client Behavior''': If this packet is received, Client should directly change the alpha color of the specified chat message into a custom number. If the default message ID `0` is received, client should be changing the alpha code of the all incoming and received chat lines into the specified number. The alpha code remains until the client disconnects from the server, and should be functional with all incoming and already received messages. Client should be able to receive this message after the Initial map load.
+:'''Server Behavior''': Server can send this packet to clients right after client finished loading the initial map. Message type can be any of stated/defined numbers on the packet (Message Type).
+<h4>ColorControl packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x??
+(??)
+| class="col1 centeralign" | Message Type
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 11
+| class="col4 centeralign" | Message Type ID.
+|- class="row2"
+| class="col1 centeralign" | Alpha Code
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 154
+| class="col4 centeralign" | Alpha code of color (From 0 - 255).
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes
+|}
