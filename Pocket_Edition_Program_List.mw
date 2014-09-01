@@ -18,9 +18,9 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | [https://twitter.com/PocketMine PocketMine Team]
 | {{PHP}}
 | {{LGPL}}
-| Stable Alpha_1.3.11, Dev Alpha_1.3.12dev
+| Alpha_1.4 beta6
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.8.1 alpha}}
+| {{yes|v0.9.5 alpha}}
 |-
 ! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
 | UDP proxy for MCPE Servers, allowing joining Online Servers from your local network. Dumps packets
