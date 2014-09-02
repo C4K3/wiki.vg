@@ -39,7 +39,7 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
 | class="col2" | 0 to 340282366920938463463374607431768211455
 | class="col3" | Unsigned, two's complement
 
-Used in [http://wiki.vg/Protocol#Entity_Properties_.280x2C.29 0x2C] to transmit UUIDs.
+Used in [http://wiki.vg/Protocol#Spawn Global Entity 0x2C] to transmit UUIDs.
 
 The vanilla Minecraft server internally sends this as two longs.
 |- class="row7"
