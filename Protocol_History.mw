@@ -1,5 +1,208 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+
+=== 1.8 ===
+
+=== 1.8-pre3 ===
+
+=== 1.8-pre2 ===
+
+=== 1.8-pre1 ===
+
+* New metadata type, 7, 12 bytes(3 floats?), used on armor stand
+
+=== 14w34a/b/c/d ===
+
+=== 14w33a/b/c ===
+
+* Added new fields to Tab-Complete (Serverbound)
+
+=== 14w32a/b/c/d ===
+
+* Added new Update Entity NBT packet
+* Added three new fields to Use Entity
+
+=== 14w31a ===
+
+* The length prefix on the payload of Plugin Message has been removed (Both ways)
+* Added new Resource Pack Send packet 
+* Added new Resource Pack Status packet
+* Added VarLong data type
+* Changed a few fields in World Border to VarLong
+* Changed the type of Keep Alive ID from Int to VarInt (Clientbound)
+
+=== 14w30c ===
+
+=== 14w30a/b ===
+
+=== 14w29a ===
+
+* Fix the length prefix of Plugin Message so that its a Varint instead of an unsigned short
+* Added "Reduced Debug Info" boolean to Join Game
+* Added "Long Distance" boolean to Particle
+
+=== 14w28b ===
+
+* Uncompressed NBT
+* Added Display name fields to Player List Item
+* New 'Player List Header/Footer' packet
+
+=== 14w28a ===
+
+* Changed Chunk packets to remove compression
+* Added packets to toggle compression/set threshold
+* Allowed compression for the whole protocol
+* Changed the Maps packet
+
+=== 14w27a/b ===
+
+=== 14w26c ===
+
+* Changed Multi Block Change to using packed block ids
+* Changed Block Change to using packed block ids
+
+=== 14w26b ===
+
+* Bug fix
+
+=== 14w26a ===
+
+* Changed chunk sending
+
+=== 14w25b ===
+
+* Added boolean field to all entity movement packets
+
+=== 14w25a ===
+
+* Update Sign now uses [[Chat]]
+
+=== 14w21a ===
+
+* All byte arrays have VarInt length prefixes instead of short
+* Spawn Player changes
+* Player list item changes
+
+=== 14w20a ===
+
+* Added new packet 'Title'
+
+=== 14w19a ===
+
+* Changed the Particle's 'Particle Name' to an int
+* Added a new field to Particle
+* Rewrote Player List Item
+* Added SET_WARNING_TIME and SET_WARNING_BLOCKS to World Border
+* Added new serverbound packet Spectate
+
+=== 14w18b ===
+* Bugfix
+
+=== 14w18a ===
+* Added 'INITIALIZE' action to World Border
+
+=== 14w17a ===
+* Increased the max payload size of 'Plugin Message' from 32767 to 1048576 (Broken because of incorrect data type)
+* Added new packet 'World Border'
+
+=== 14w11a ===
+* UUIDs now include the '-'s
+
+=== 14w08a ===
+* Added new field 'Type' to Scoreboard Objective
+
+=== 14w07a ===
+* Added two new fields to Teams
+
+=== 14w06a ===
+
+==== Clientbound ====
+* Added new field 'Hide Particles' to Entity Effect
+
+==== Serverbound ====
+* Removed 'HeadY' from Player Position
+* Removed 'HeadY' from Player Position And Look
+
+=== 14w05a ===
+
+==== Clientbound ====
+* New packet 'Camera'
+
+=== 14w04b ===
+
+* Spawn Painting now uses the 'Position' data type
+* Changed Spawn Painting's Direction type to Unsigned Byte
+
+=== 14w04a ===
+
+* Encoding for 'Position' changed
+==== Clientbound ====
+* Changed Entity Equipment's EntityId type to VarInt
+* Changed Update Health's Food type to VarInt
+* Changed Use Bed's EntityId type to VarInt
+* Added new fields to Spawn Player
+* Changed Collect Item's EntityId(s) types to VarInt
+* Changed Entity Velocity's EntityId type to VarInt
+* Changed Destroy Entities' Length type to VarInt
+* Changed Destroy Entities' EntityIds type to VarInt array
+* Changed Entity's EntityId type to VarInt
+* Changed Entity Relative Move's EntityId type to VarInt
+* Changed Entity Look's EntityId type to VarInt
+* Changed Entity Look and Relative Move's EntityId type to VarInt
+* Changed Entity Teleport's EntityId type to VarInt
+* Changed Entity Head Look's EntityId type to VarInt
+* Changed Entity Metadata's EntityId type to Varint
+* Changed Entity Effect's EntityId type to VarInt
+* Changed Entity Effect's Duration type to VarInt
+* Changed Remove Entity Effect's EntityId type to VarInt
+* Changed Set Experience's Level type to VarInt
+* Changed Set Experience's Total Experience type to VarInt
+* Changed Entity Properties's EntityId type to VarInt
+* Changed Entity Properties's List Length type to VarInt
+* Changed Player List Item's Ping type to VarInt
+* Changed Update Score's Value type to VarInt
+* Changed Teams' Player count type to VarInt
+* New packet 'Combat Event'
+==== Serverbound ====
+* Changed Keep Alive's Keep Alive ID type to VarInt
+* Changed Use Entity's Target type to VarInt
+* Changed Use Entity's Mouse type to Unsigned Byte
+* Removed everything from Animation
+* Changed Entity Action's EntityId type to VarInt
+* Changed Entity Action's Action ID type to Unsigned Byte
+* Changed Entity Action's Values
+* Changed Entity Action's Jump Boast type to VarInt
+* Merged Steer Vehicle's Jump and Unmount into a Bit Field 
+* Changed Client Status's Action ID type to Unsigned Byte
+
+=== 14w03a ===
+
+* New data type 'Position'
+==== Clientbound ====
+* Spawn Position now uses the 'Position' data type
+* Use Bed now uses the 'Position' data type
+* Block Change now uses the 'Position' data type
+* Block Action now uses the 'Position' data type
+* Block Break Animation now uses the 'Position' data type
+* Effect now uses the 'Position' data type
+* Sign Update now uses the 'Position' data type
+* Update Block Entity now uses the 'Position' data type
+* Sign Editor Open nows uses the 'Position' data type
+==== Serverbound ====
+* Player Digging now uses the 'Position' data type
+* Player Block Placement now uses the 'Position' data type
+* Update Sign now uses the 'Position' data type
+* Client Settings 'show cape' type changed from boolean to unsigned byte
+
+=== 14w02a ===
+
+* Added 'Position' to Chat Message Clientbound
+* Remove Player Position And Look's 'OnGround' clientbound
+* Added 'Flags' to Player Position And Look clientbound
+* Changed Open Inventory's 'Inventory Type' type from byte to string
+* Added Server Difficulty
+* Removed Client Settings' 'Difficulty'
+
 === 1.7.6 ===
 
 * UUIDs now include the '-'s
