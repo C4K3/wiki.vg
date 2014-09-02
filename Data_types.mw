@@ -60,10 +60,15 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 | class="col2" | N/A
 | class="col3" | UTF-8 String length prefixed with a VarInt
 |- 
-! class="centeralign" | varInt
+! class="centeralign" | VarInt
 | class="centeralign" | Varies
 | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer 32-bit Varint]
 |
+|-
+! VarLong
+| Varies
+| 
+| Like VarInt but for java longs
 |- class="row9"
 ! class="col0 centeralign" | metadata
 | class="col1 centeralign" | Varies
@@ -74,7 +79,31 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 | class="centeralign" | Varies
 | See [[Slot_Data|slot data]]
 |
+|-
+! Position 
+| 8
+| 
+| See below
+|-
+! UUID
+| 16
+|
+| Encoded as two longs this.writeLong(uuid.getMostSignificantBits()); this.writeLong(uuid.getLeastSignificantBits());
 |}
+
+=== Position ===
+
+Encoded as followed:
+
+  (x & 0x3FFFFFF) << 38 | (y & 0xFFF) << 26 | (z & 0x3FFFFFF)
+ 
+
+And decoded as:
+
+  long val; // Encoded value
+  x = val >> 38;
+  y = val << 26 >> 52
+  z = val << 38 >> 38
 
 === Fixed-point numbers ===
 
