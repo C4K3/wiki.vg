@@ -335,6 +335,9 @@ To parse, repeat the following procedure:
 |-
 | 6<sup>*</sup>
 | Int, Int, Int (x, y, z)
+|-
+| 7
+| Float, Float, Float (pitch, yaw, roll)
 |}
 
 <nowiki>*</nowiki>Not currently used
@@ -360,6 +363,13 @@ do {
         vector.y = readInt();
         vector.z = readInt();
         metadata[index] = vector;
+    }
+    if (type == 7) {
+        var rotation;
+        rotation.pitch = readFloat();
+        rotation.yaw = readFloat();
+        rotation.roll = readFloat();
+        metadata[index] = rotation;
     }
 } while (true);
 </source>
