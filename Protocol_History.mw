@@ -9,7 +9,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 1.8-pre1 ===
 
-* New metadata type, 7, 12 bytes(3 floats?), used on armor stand
+* New metadata type, 7 (Rotation), 12 bytes (3 floats, Pitch, Yaw, and Roll), used on armor stand
 
 === 14w34a/b/c/d ===
 
