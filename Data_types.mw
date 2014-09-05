@@ -107,7 +107,7 @@ And decoded as:
 
 === Fixed-point numbers ===
 
-Some fields may be stored as [https://en.wikipedia.org/wiki/Fixed-point_arithmetic fixed-point numbers], where a certain number of bits represents the signed integer part (number to the left of the decimal point) and the rest represents the fractional part (to the right). Floating points (float and double9, in contrast, keep the number itself (mantissa) in one chunk, while the location of the decimal point (exponent) is stored beside it. 
+Some fields may be stored as [https://en.wikipedia.org/wiki/Fixed-point_arithmetic fixed-point numbers], where a certain number of bits represents the signed integer part (number to the left of the decimal point) and the rest represents the fractional part (to the right). Floating points (float and double), in contrast, keep the number itself (mantissa) in one chunk, while the location of the decimal point (exponent) is stored beside it. 
 
 Essentially, while fixed-point numbers have lower range than floating points, their fractional precision is greater for higher values. This makes them ideal for representing global coordinates of an entity in Minecraft, as it's more important to store the integer part accurately than position them more precisely within a single block (or meter). 
 
