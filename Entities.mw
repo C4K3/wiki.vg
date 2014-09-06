@@ -464,19 +464,16 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 ! style="width: 75px" | Type
 ! style="width: 250px" colspan="2" | Meaning
 |-
-| rowspan="2" | 16
-| rowspan="2" | Byte
+| rowspan="4" | 16
+| rowspan="4" | Byte
 ! Bit Mask !! Meaning
 |-
 | 0x01 || Small Armorstand
 |-
-| colspan="2" 
 | 0x02 || Has Gravity
 |-
-| colspan="2"
 | 0x04 || Has Arms
 |-
-| colspan="2"
 | 0x08 || Has Baseplate
 |}
 
