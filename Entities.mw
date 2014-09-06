@@ -478,27 +478,27 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |-
 | 11
 | Head position
-| colspawn="2" | Given in pitch, yaw, roll (type 7)
+| colspan="2" | Given in pitch, yaw, roll (type 7)
 |-
 | 12
 | Body position
-| colspawn="2" | Given in pitch, yaw, roll (type 7)
+| colspan="2" | Given in pitch, yaw, roll (type 7)
 |-
 | 13
 | Left Arm position
-| colspawn="2" | Given in pitch, yaw, roll (type 7)
+| colspan="2" | Given in pitch, yaw, roll (type 7)
 |-
 | 14
 | Right Arm position
-| colspawn="2" | Given in pitch, yaw, roll (type 7)
+| colspan="2" | Given in pitch, yaw, roll (type 7)
 |-
 | 15
 | Left Leg position
-| colspawn="2" | Given in pitch, yaw, roll (type 7)
+| colspan="2" | Given in pitch, yaw, roll (type 7)
 |-
 | 16
 | Right Leg position
-| colspawn="2" | Given in pitch, yaw, roll (type 7)
+| colspan="2" | Given in pitch, yaw, roll (type 7)
 |}
 
 === Human ===
