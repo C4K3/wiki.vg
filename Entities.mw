@@ -416,6 +416,14 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 ! style="width: 75px" | Type
 ! style="width: 250px" | Meaning
 |-
+| 2
+| String
+| Name Tag
+|-
+| 3
+| Byte
+| Always Show Name Tag
+|-
 | 6
 | Float
 | Health
@@ -431,14 +439,6 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | 9
 | Byte
 | Number of Arrows in Entity
-|-
-| 10
-| String
-| Name Tag
-|-
-| 11
-| Byte
-| Always Show Name Tag
 |}
 
 === Ageable ===
