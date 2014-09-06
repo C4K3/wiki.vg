@@ -477,28 +477,28 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | 0x08 || Has Baseplate
 |-
 | 11
-| Head position
-| colspan="2" | Given in pitch, yaw, roll (type 7)
+| Float, Float, Float (pitch, yaw, roll)
+| colspan="2" | Head position
 |-
 | 12
-| Body position
-| colspan="2" | Given in pitch, yaw, roll (type 7)
+| Float, Float, Float (pitch, yaw, roll)
+| colspan="2" | Body position
 |-
 | 13
-| Left Arm position
-| colspan="2" | Given in pitch, yaw, roll (type 7)
+| Float, Float, Float (pitch, yaw, roll)
+| colspan="2" | Left Arm position
 |-
 | 14
-| Right Arm position
-| colspan="2" | Given in pitch, yaw, roll (type 7)
+| Float, Float, Float (pitch, yaw, roll)
+| colspan="2" | Right Arm position
 |-
 | 15
-| Left Leg position
-| colspan="2" | Given in pitch, yaw, roll (type 7)
+| Float, Float, Float (pitch, yaw, roll)
+| colspan="2" | Left Leg position
 |-
 | 16
-| Right Leg position
-| colspan="2" | Given in pitch, yaw, roll (type 7)
+| Float, Float, Float (pitch, yaw, roll)
+| colspan="2" | Right Leg position
 |}
 
 === Human ===
