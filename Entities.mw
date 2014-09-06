@@ -464,7 +464,7 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 ! style="width: 75px" | Type
 ! style="width: 250px" colspan="2" | Meaning
 |-
-| rowspan="5" | 16
+| rowspan="5" | 10
 | rowspan="5" | Byte
 ! Bit Mask !! Meaning
 |-
@@ -475,6 +475,30 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | 0x04 || Has Arms
 |-
 | 0x08 || Has Baseplate
+|-
+| 11
+| Head position
+| Given in pitch, yaw, roll (type 7)
+|-
+| 12
+| Body position
+| Given in pitch, yaw, roll (type 7)
+|-
+| 13
+| Left Arm position
+| Given in pitch, yaw, roll (type 7)
+|-
+| 14
+| Right Arm position
+| Given in pitch, yaw, roll (type 7)
+|-
+| 15
+| Left Leg position
+| Given in pitch, yaw, roll (type 7)
+|-
+| 16
+| Right Leg position
+| Given in pitch, yaw, roll (type 7)
 |}
 
 === Human ===
