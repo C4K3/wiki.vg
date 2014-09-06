@@ -470,10 +470,13 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |-
 | 0x01 || Small Armorstand
 |-
+| colspan="2" 
 | 0x02 || Has Gravity
 |-
+| colspan="2"
 | 0x04 || Has Arms
 |-
+| colspan="2"
 | 0x08 || Has Baseplate
 |}
 
