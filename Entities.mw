@@ -469,10 +469,12 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 ! Bit Mask !! Meaning
 |-
 | 0x01 || Small Armorstand
+|-
 | 0x02 || Has Gravity
+|-
 | 0x04 || Has Arms
+|-
 | 0x08 || Has Baseplate
-|- 
 |}
 
 
