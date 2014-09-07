@@ -49,6 +49,13 @@ These are wrappers for the vanilla Minecraft server.
 | {{yes|Java Archives}}
 | {{yes|Active}}
 |-
+! [https://github.com/forairan/RTBukkit RTBukkit]
+| [https://github.com/forairan Forairan]
+| [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
+| [http://www.gnu.org/copyleft/gpl.html GPLv3]
+| {{planned|Java Archives (Bukkit API) - early development}}
+| {{yes|Active}}
+|-
 ! [http://canarymod.net/ CanaryMod]
 | [http://canarymod.net/team CanaryMod Team]
 | [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
