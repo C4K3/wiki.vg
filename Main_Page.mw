@@ -10,6 +10,13 @@ CONTENT =
 
 Minecraft Modern is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play. Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
 
+=== Links ===
+There are ongoing issues related to CraftBukkit / Spigot making them temporary unavailable. This includes both compiled downloads and sources, from their official sites. However, they are still available on following pages:
+
+* [https://bitbucket.org/kangarko/craftbukkit CraftBukkit Source]
+* [https://bitbucket.org/kangarko/spigot Spigot Source]
+* [http://spigotmc.info/ Precompiled files]
+
 === Documentation ===
 There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be up to date'''.
 
