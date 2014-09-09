@@ -750,6 +750,19 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | Has Saddle
 |}
 
+=== Rabbit ===
+<sup>Extends [[#Ageable|Ageable]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
+|-
+| 18
+| Byte
+| Rabbit Type
+|}
 
 === Sheep ===
 <sup>Extends [[#Ageable|Ageable]]</sup>
