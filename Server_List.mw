@@ -37,6 +37,21 @@ A couple things for contributors:
 | [https://github.com/SpaceManiac/Glowstone#features Link]
 | {{yes|Active}}
 |-
+! [https://github.com/kangarko/Rush Rush]
+| [SK] kangarko
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| Open source
+| {{yes|1.6.4 to 1.8}}
+| {{yes|McRegion}}
+| {{no}}
+| {{planned|Partial}}
+| {{yes|Players, Mobs (test AI)}}
+| {{yes|Threads}}
+| {{yes|Java ([http://bukkit.org/ Bukkit])}}
+| {{yes|{{windows}}{{linux}}{{mac}}}}
+| [https://github.com/kangarko/Rush/blob/master/Features.md Link]
+| {{yes|Active}}
+|-
 | [https://github.com/cnlohr/avrcraft AVRCraft]
 | [[User:CNLohr|CNLohr]]
 | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
@@ -80,21 +95,6 @@ A couple things for contributors:
 | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
 | {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
 | [http://forum.mc-server.org/showthread.php?tid=499 Link]
-| {{yes|Active}}
-|-
-! [https://github.com/kangarko/Rush Rush]
-| [SK] kangarko
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| Open source
-| {{yes|1.7.10 (#5)}}
-| {{yes|McRegion}}
-| {{no}}
-| {{planned|Partial}}
-| {{yes|Players, Mobs (test AI)}}
-| {{yes|Threads}}
-| {{yes|Java ([http://bukkit.org/ Bukkit])}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
-| [https://github.com/kangarko/Rush/blob/Minecraft-1.6-1.7/Features.md Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/thinkofdeath/netherrack Netherrack]
