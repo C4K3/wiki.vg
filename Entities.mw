@@ -454,6 +454,10 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | 9
 | Byte
 | Number of Arrows in Entity
+|-
+| 15
+| Byte
+| Whether the entity has no ai.
 |}
 
 === Ageable ===
