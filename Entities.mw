@@ -1196,7 +1196,7 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |-
 | 9
 | Byte
-| Rotation * 2
+| Rotation
 |}
 
 
