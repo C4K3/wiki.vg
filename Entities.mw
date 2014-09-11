@@ -1190,13 +1190,13 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 ! style="width: 75px" | Type
 ! style="width: 250px" | Meaning
 |-
-| 2
+| 8
 | Slot 
 | Item
 |-
-| 3
+| 9
 | Byte
-| Rotation
+| Rotation * 2
 |}
 
 
