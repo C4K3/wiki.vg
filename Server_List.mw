@@ -71,7 +71,7 @@ A couple things for contributors:
 | [[User:CNLohr|CNLohr]]
 | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.7.10 (#5)}}
+| {{no|1.7.10 (#5)}}
 | {{no|User}}
 | {{no}}
 | {{no}}
@@ -86,7 +86,7 @@ A couple things for contributors:
 | BizarreCake
 | [http://en.wikipedia.org/wiki/C%2B%2B C++]
 | [http://gplv3.fsf.org/ GPLv3]
-| {{yes|1.7.10 (#5)}}
+| {{no|1.7.10 (#5)}}
 | {{yes|Custom (HWv1)}}
 | {{yes}}
 | {{yes}}
