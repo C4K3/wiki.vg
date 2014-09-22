@@ -37,6 +37,21 @@ A couple things for contributors:
 | [https://github.com/SpaceManiac/Glowstone#features Link]
 | {{yes|Active}}
 |-
+! [http://www.mc-server.org MCServer]
+| FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
+| [http://en.wikipedia.org/wiki/C%2B%2B C++]
+| Apache 2.0
+| {{yes|1.8 (#47)}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{yes|Players, Mobs}}
+| {{yes|Threads}}
+| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+| {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
+| [http://forum.mc-server.org/showthread.php?tid=499 Link]
+| {{yes|Active}}
+|-
 ! [https://github.com/kangarko/Rush Rush]
 | [SK] kangarko
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -80,21 +95,6 @@ A couple things for contributors:
 | {{no}}
 | {{yes|{{linux}}}}
 | [https://github.com/BizarreCake/hCraft/#features Link]
-| {{yes|Active}}
-|-
-! [http://www.mc-server.org MCServer]
-| FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Apache 2.0
-| {{yes|1.7.10 (#5)}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
-| [http://forum.mc-server.org/showthread.php?tid=499 Link]
 | {{yes|Active}}
 |-
 ! [https://github.com/thinkofdeath/netherrack Netherrack]
