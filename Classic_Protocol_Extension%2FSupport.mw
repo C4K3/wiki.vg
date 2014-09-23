@@ -118,20 +118,20 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 |-
 ! [http://gemscraftmc.webs.com/ GemsCraft]
-| {{no}}
+| {{Planned}}
 | {{yes|1}} (level 1)
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
+| {{no}}
 | {{yes|1}}
-| {{planned}}
 | {{no}}
 | {{no}}
 | {{no}}
 | {{no}}
-| {{yes|1}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
+| {{no}}
 |-
 ! [https://github.com/123DMWM/ProCraft ProCraft]
 | {{yes|1}}
