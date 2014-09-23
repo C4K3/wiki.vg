@@ -90,6 +90,7 @@ The response is a JSON object containing the user's UUID and skin blob
        {
          "name": "textures",
          "value": "<base64 string>"
+       }
     ]
   }
 </syntaxhighlight>
