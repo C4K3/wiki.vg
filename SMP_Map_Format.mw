@@ -9,8 +9,6 @@ Two packets use this format:
 
 == Concepts ==
 
-{{Warning|Information out of date as of 1.8}} 
-
 === Storage ===
 * Chunk Data: an array, either 2048 or 4096 bytes
 * Chunk: a 16x16x16 area, logically made up of multiple Chunk Data arrays, storing things like block ids and skylight
@@ -23,42 +21,36 @@ You will sometimes get a blob of data and a bitmask. Each bit in the 16-bit shor
 
 You need a loop like this:
 
-<code>
-    chunks = array[16];
-    for (i=0; i<16; i++) {
-        if (bitmask & (1 << i)) {
-            //read a chunk data array
-        }
-    }
-</code>
+ chunks = array[16];
+ for (i=0; i<16; i++) {
+     if (bitmask & (1 << i)) {
+         // read a chunk data array
+     }
+ }
 
 == Format ==
 
 === Chunk Column Metadata ===
 
-The packet contains important metadata which you'll need to pull out. In the case of 0x38, you'll need to loop over the metadata area. Specifically:
+The packet contains important metadata which you'll need to pull out. For bulk packets, you'll need to loop over the metadata area. Specifically:
 
 * Chunk X
 * Chunk Z
-* Primary Bitmask
-* Add Bitmask
-* Ground-up continuous (only in 0x21 - assumed true in 0x26)
-* Skylight (only in 0x26 - assumed true in 0x21)
+* Section Bitmask
+* Continuous? (only in 0x21 - assumed true in 0x26)
+* Skylight? (only in 0x26 - only if overworld in 0x21)
 
 === Data ===
 
-The data is compressed using the deflate() function in zlib. In 0x21, it describes of a single chunk column in the format below. In 0x26, the format below is repeated for each chunk column.
+In 0x21 the data describes of a single chunk column in the format below. In 0x26, the format below is repeated for each chunk column.
 
-The format is thus:
+* Repeat for each chunk specified in the section bitmask:
+** Block types, two bytes per block (LE, type = x >> 4, meta = x & 15)
+** Block light, half byte per block
+** If skylight: Sky light array, half byte per block
+* If continuous: biome array, byte per XZ coordinate, 256 bytes total.
 
-* Block type array - whole byte per block
-* Block metadata array - half byte per block
-* Block light array - half byte per block
-* Sky light array - half byte per block - only if 'skylight' is true
-* Add array  - half byte per block - uses secondary bitmask
-* Biome array - whole byte per XZ coordinate, 256 bytes total, only sent if 'ground up continuous' is true
-  
-Each section (except for biome) contains packed chunk data for zero or more 16x16x16 chunks. You need to refer to the primary bitmask for the chunk column to see which chunks are sent, or the add bitmask for 'add' data, which is Mojang's means of provided Block IDs past 256. In vanilla minecraft, you can expect this to always be zero.
+Each section (except for biome) contains packed chunk data for zero or more 16x16x16 chunks. You need to refer to the primary bitmask for the chunk column to see which chunks are sent.
 
 Chunks are sent bottom-to-top, i.e. the first chunk, if sent, extends from Y=0 to Y=15. Blocks are ordered Y, Z, X, i.e. the 'X' coordinate changes fastest.
 
@@ -68,4 +60,5 @@ The 'biome' array is always 256 bytes when sent. Values above 22 will cause the 
 
 == Implementations ==
 
+* [https://github.com/GlowstoneMC/Glowstone/blob/d3ed79ea7d284df1d2cd1945bf53d5652962a34f/src/main/java/net/glowstone/GlowChunk.java#L640 Java, 1.8]
 * [https://github.com/barneygale/smpmap Python, 1.4]
