@@ -9,7 +9,9 @@ Please note that even where packet field names are written in this page, these a
 
 It has been determined that PM uses RakNet for its networking library, [http://www.jenkinssoftware.com/raknet/manual/networkmessages.html some documentation that seems relevant].
 
-The [[Pocket_Editon_Login]] is documented on elsewhere on the wiki.
+
+The [[Pocket_Editon_Login|login sequence]] is not covered by this page.
+
 
 == Terminology ==
 
