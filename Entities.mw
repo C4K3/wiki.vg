@@ -529,6 +529,10 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 ! style="width: 75px" | Type
 ! style="width: 250px" colspan="2" | Meaning
 |-
+| 10
+| Unsigned Byte
+| Skin flags
+|-
 | rowspan="2" | 16
 | rowspan="2" | Byte
 ! Bit Mask !! Meaning
