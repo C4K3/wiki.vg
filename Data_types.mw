@@ -103,7 +103,7 @@ And decoded as:
   long val; // Encoded value
   x = val >> 38;
   y = (val >> 26) & 0xFFF
-  z = (val << 38) >> 38
+  z = val << 38 >> 38
 
 === Fixed-point numbers ===
 
