@@ -18,7 +18,7 @@
 #'''C->S''' <code>0x82</code> DATA Login (sends username)
 #'''S->C''' <code>0x83</code> DATA LoginStatus
 #'''S->C''' <code>0x87</code> DATA StartGame (send seed and spawn position)
-#'''C''' ''Generates base map with seed''
+#'''S->C''' ''Sends chunks to client''
 #'''C->S''' <code>0x84</code> DATA Ready (client spawns)
 
 [[Category:Pocket Minecraft]]
