@@ -95,15 +95,15 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 
 Encoded as followed:
 
-  (x & 0x3FFFFFF) << 38 | (y & 0xFFF) << 26 | (z & 0x3FFFFFF)
+  ((x & 0x3FFFFFF) << 38) | ((y & 0xFFF) << 26) | (z & 0x3FFFFFF)
  
 
 And decoded as:
 
   long val; // Encoded value
   x = val >> 38;
-  y = val << 26 >> 52
-  z = val << 38 >> 38
+  y = (val >> 26) & 0xFFF
+  z = (val << 38) >> 38
 
 === Fixed-point numbers ===
 
