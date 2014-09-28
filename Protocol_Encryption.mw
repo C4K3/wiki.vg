@@ -99,10 +99,10 @@ The response is a JSON object containing the user's UUID and skin blob
 
 Examples of generating Java-style hex digests:
 
-* C#: https://gist.github.com/404223052379e82f91e6
-* node.js: https://gist.github.com/4425843
-* Go: https://gist.github.com/toqueteos/5372776
-* Java: http://pastebin.com/0N399QJ6
+* C#: http://git.io/kO6Ejg
+* node.js: http://git.io/v2ue_A
+* Go: http://git.io/-5ORag
+* Java: http://git.io/7nLXYg
 
 == Additional Links ==
 [https://gist.github.com/3900517 Encrypt shared secret using OpenSSL]
