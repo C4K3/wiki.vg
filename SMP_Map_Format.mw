@@ -13,7 +13,7 @@ Two packets use this format:
 * Chunk Data: an array, either 2048 or 4096 bytes
 * Chunk: a 16x16x16 area, logically made up of multiple Chunk Data arrays, storing things like block ids and skylight
 * Chunk Column: 16 chunks aligned vertically (totalling 16x256x16). Chunks can be uninitialised (e.g. set to <code>null</code>)
-* World: a bunch of chunk columns
+* World: a collection of chunk columns
 
 === Bitmasks ===
 
