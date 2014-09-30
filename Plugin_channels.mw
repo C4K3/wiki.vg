@@ -1,4 +1,4 @@
-'''Plugin channels''' are implemented using [[Protocol#0xFA|packet 0xFA]], allowing client mods and server plugins to communicate without cluttering up chat. [http://dinnerbone.com/blog/2012/01/13/minecraft-plugin-channels-messaging/ This post by Dinnerbone] is a good introduction and basic documentation.
+'''Plugin channels''' allow client mods and server plugins to communicate without cluttering up chat. [http://dinnerbone.com/blog/2012/01/13/minecraft-plugin-channels-messaging/ This post by Dinnerbone] is a good introduction and basic documentation.
 {{anchor|Internal}}
 == Reserved channels ==
 === <code>REGISTER</code> ===
