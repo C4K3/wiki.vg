@@ -153,6 +153,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}} (level 1)
 | {{yes|1}}
+| {{no}}
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
@@ -163,6 +164,21 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
+|-
+! [https://github.com/umby24/Hypercube Hypercube]
+| {{planned}}
+| {{yes|1}} (level 1)
+| {{yes|1}}
+| {{yes|1}}
+| {{planned}}
+| {{yes|1}}
+| {{planned}}
+| {{planned}}
+| {{yes|1}}
+| {{planned}}
+| {{yes|1}}
+| {{yes|1}}
+| {{planned}}
 | {{yes|1}}
 |-
 |}
