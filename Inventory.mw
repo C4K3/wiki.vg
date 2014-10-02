@@ -197,8 +197,6 @@ This is the window that is opened when the player right-clicks on a dispenser.
 
 === Enchantment Table ===
 
-Note, this window incorrectly reports its number of slots as 9. It should be 1.
-
 {| class="wikitable"
 |- class="row0"
 ! class="col0" | Slot range
@@ -207,10 +205,13 @@ Note, this window incorrectly reports its number of slots as 9. It should be 1.
 | class="col0" | 0
 | class="col1" | enchantment slot
 |- class="row2"
-| class="col0" | 1-27
+| class="col0" | 1
+| class="col1" | lapis slot
+|- class="row3
+| class="col0" | 2-28
 | class="col1" | main inventory
-|- class="row3"
-| class="col0" | 28-36
+|- class="row4"
+| class="col0" | 29-37
 | class="col1" | held items
 |}
 
