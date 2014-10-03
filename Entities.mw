@@ -10,11 +10,6 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 ! x, z
 ! y
 |-
-| 30
-| ArmorStand
-| N/A
-| N/A
-|-
 | 48
 | Mob
 | N/A
@@ -306,6 +301,11 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 | Leash Knot
 | 0.5
 | 0.5
+|-
+| 78
+| ArmorStand
+| N/A
+| N/A
 |- 
 | 90
 | Fishing Float
