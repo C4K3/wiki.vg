@@ -304,8 +304,8 @@ Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Objec
 |-
 | 78
 | ArmorStand
-| N/A
-| N/A
+| 0.5
+| 2.0
 |- 
 | 90
 | Fishing Float
