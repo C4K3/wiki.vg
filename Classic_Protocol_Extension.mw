@@ -446,9 +446,6 @@ Matches NameID of the ExtAddPlayerName packet
 
 ====Version 2====
 Version 2 of this extension replaces '''''ExtAddEntity''''' packet with '''''ExtAddEntity2''''', allows using full URLs for ''SkinName'', and clarifies interaction with [[#ChangeModel|'''ChangeModel''']] extension.
-{| class="wikitable" style="margin:10px 10%;border: 1px solid #aaa;border-left:10px solid #f28500;background:#fbfbfb;width:80%;font-size:110%"
-|style="padding:10px"|'''ExtPlayerList version 2''' specification is currently being finalized and is subject to change.'''
-|}
 :<h5>Client Behavior</h5>
 :When '''''ExtAddPlayerName''''' packet is received for an unrecognized ''NameID'', a new name must be added to the player-name list. When receiving '''''ExtAddPlayerName''''' packet for an already-listed ''NameID'', client must update its ''ListName'', ''GroupName'', and ''GroupRank''. Player-name list must persist when client changes worlds/maps.
 
