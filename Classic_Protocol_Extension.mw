@@ -568,12 +568,12 @@ Lower-number ranks are listed before higher-number ranks.
 |- class="row7"
 | class="col1 centeralign" | SpawnYaw
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>3</code>
+| class="col3 centeralign" | <code>4</code>
 | class="col4" | Orientation (left-right) at the entity's spawn location.
 |- class="row8"
 | class="col1 centeralign" | SpawnPitch
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>3</code>
+| class="col3 centeralign" | <code>5</code>
 | class="col4" | Orientation (up-down) at the entity's spawn location.
 |- class="row9"
 ! class="col0" | Total Size:
