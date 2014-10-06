@@ -465,7 +465,7 @@ Version 2 of this extension replaces '''''ExtAddEntity''''' packet with '''''Ext
 :<h5>Server Behavior</h5>
 {| class="wikitable" style="float:right"
 !Event
-!Packet
+!Packet to send
 |-
 |Player connects to server
 |'''''ExtAddPlayerName'''''
