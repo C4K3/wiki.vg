@@ -463,7 +463,7 @@ Version 2 of this extension replaces '''''ExtAddEntity''''' packet with '''''Ext
 :In-game entities must never be affected by '''''ExtAddPlayerName''''' or '''''ExtRemovePlayerName''''' packets. Player name list must never be affected by '''''ExtAddEntity2''''' or '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' packets.
 
 :<h5>Server Behavior</h5>
-{| class="wikitable"
+{| class="wikitable" style="float:right"
 !Event
 !Packet
 |-
