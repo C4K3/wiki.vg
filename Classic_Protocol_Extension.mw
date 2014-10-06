@@ -324,7 +324,7 @@ Server must immediately reply to CPE clients with an '''''ExtInfo''''' packet, f
 |}
 
 ===ExtPlayerList===
-:'''Motivation''': Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. '''''ExtAddPlayerName'''''/'''''ExtRemovePlayerName''''' packets take over managing the player names list (tab-list), and '''''ExtAddEntity'''''/'''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' packets are used only to manage in-game entities.
+:'''Motivation''': Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. '''''ExtAddPlayerName'''''/'''''ExtRemovePlayerName''''' packets take over managing the player names list (tab-list), and '''''ExtAddEntity2'''''/'''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' packets are used only to manage in-game entities.
 
 <div class="toccolours mw-collapsible mw-collapsed">
 ====Version 1 (Deprecated since 28 August 2014)====
