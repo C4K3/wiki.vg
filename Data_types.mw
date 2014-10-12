@@ -93,6 +93,12 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 
 === Position ===
 
+64-bit long split in to three parts
+
+x: 24 MSBs
+z: 24 LSBs
+y: 12 bits between them
+
 Encoded as followed:
 
   ((x & 0x3FFFFFF) << 38) | ((y & 0xFFF) << 26) | (z & 0x3FFFFFF)
