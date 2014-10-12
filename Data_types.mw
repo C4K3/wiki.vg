@@ -96,7 +96,9 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 64-bit long split in to three parts
 
 x: 24 MSBs
+
 z: 24 LSBs
+
 y: 12 bits between them
 
 Encoded as followed:
