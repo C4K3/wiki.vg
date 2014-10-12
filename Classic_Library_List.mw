@@ -1,20 +1,25 @@
 {{navboxclassic}}<br />
 This is a rather incomplete list of Minecraft Classic related libraries currently in development.
 
-{| class="wikitable" style="width: auto; text-align: center;"
+{| class="wikitable sortable" style="width: auto; text-align: center;"
 |-style="background:#eee"
-!style="width: 72px" | Name
+!Name
+!class="unsortable"|Description
 !Author(s)
-!style="width: 128px" | Language
-!style="width: 128px" | License
-| Features
+!Language
+!License
 |-
 ! [http://sourceforge.net/projects/libminecraft/ LibMinecraft]
-| Yuri Sevatz
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| GPLv3
 | Classic Client API, Remote Connections, Map/Player/Entity Tracking, Session Abstraction
+| Yuri Sevatz
+| {{C++}}
+| {{GPLv3}}
 |-
+! [https://github.com/Aragas/MineLib.Network MineLib.Network]
+| .NET Minecraft network client interaction library. (Online mode and chunks WIP)
+| [https://github.com/Aragas Aragas (Aragasas)]
+| {{C sharp}}
+| {{MIT}}
 |}
 
 [[Category:Minecraft Classic]]
