@@ -59,6 +59,7 @@ Minecraft Classic is the original version of Minecraft, available for free to th
 === Documentation ===
 As there is no longer any work being done on classic, the documentation for it is stable. If you create something that works with it, it probably always will.
 * [[Classic Protocol|Protocol Specification]]
+* [[Classic Protocol Extension|Extension Protocol Specification]]
 * [[Classic DAT Format|Server Map Format (.dat)]]
 * [[MCLevel Format|Saved Level Format (.mclevel)]]
 
