@@ -99,7 +99,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | Advanced minecraft bot system - Multi-server, API, Plugin system etc
 | Encorn
 | {{Java}}
-| {{GPLv3}}
+| {{MIT}}
 | {{yes}}
 | {{no}}
 | {{yes|1.8}}
