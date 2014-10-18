@@ -101,7 +101,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{Java}}
 | {{MIT}}
 | {{yes}}
-| only using Bundle plugin
+| Yes, using Bundle plugin
 | {{yes|1.8}}
 |-
 ! [https://github.com/SpoutDev/Spout Spout] (with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
