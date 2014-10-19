@@ -36,19 +36,19 @@ Number inside green fields indicates the supported extension version. Currently 
 |-
 ! [http://github.com/xtreme8000/Mineshaft Mineshaft]
 | {{planned}}
-| {{yes}}
-| {{yes}}
+| {{yes|1}} (level 1)
+| {{yes|1}}
 | {{no}}
 | {{no}}
 | {{planned}}
-| {{yes}}
-| {{yes}}
+| {{yes|1}}
+| {{yes|1}}
 | {{planned}}
 | {{planned}}
-| {{yes}}
+| {{yes|1}}
 | {{planned}}
 | {{no}}
-| {{yes}}
+| {{yes|1}}
 |}
 
 ==Servers==
