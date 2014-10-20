@@ -32,7 +32,7 @@ In the event of an auth failure (i.e. your login is incorrect, or you're trying 
 |-
 | Type
 | int
-| <code>3</code> for login, <code>2</code> to run a command
+| <code>3</code> for login, <code>2</code> to run a command, <code>0</code> for a multi-packet response
 |-
 | Payload
 | byte[]
