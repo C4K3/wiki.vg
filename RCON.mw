@@ -55,7 +55,11 @@ If the server returns a packet with the same request ID, auth was successful (no
 
 Outgoing payload should be the command to run, e.g. <code>time set 0</code>
 
+=== 0: Command response ===
+
 Incoming payload is the output of the command, though many commands return nothing, and there's no way of detecting unknown commands.
+
+The output of the command may be split over multiple packets, each containing 4096 bytes (less for the last packet). Each packet contains part of the payload (and the two-byte padding). The last packet sent is the end of the output.
 
 == Implementation details ==
 
