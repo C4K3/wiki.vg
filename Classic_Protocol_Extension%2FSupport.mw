@@ -136,7 +136,7 @@ Number inside green fields indicates the supported extension version. Currently 
 ! [http://gemscraftmc.weebly.com/ GemsCraft]
 | {{yes|1}}
 | {{yes|1}} (level 1)
-| {{planned}}
+| {{yes|1}}
 | {{no}}
 | {{no}}
 | {{no}}
@@ -147,7 +147,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{no}}
 | {{no}}
 | {{no}}
-| {{Planned}}
+| {{yes|1}}
 |-
 ! [https://github.com/123DMWM/ProCraft ProCraft]
 | {{yes|1}}
