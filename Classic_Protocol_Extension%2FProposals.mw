@@ -238,7 +238,17 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 :#* <span style="color:#c00">'''Con'''</span>: Still does not cover all characters.
 :#* <span style="color:#c00">'''Con'''</span>: Hard for servers to maintain compatibility with legacy clients.
 :#* <span style="color:#c00">'''Con'''</span>: Always uses 2 bytes per character for transmission (twice as much as ASCII/CP-1252).
-:# Expand charset to full Unicode with '''UTF-8''' encoding. Includes all the supplemental Unicode planes.
+:# Expand charset to Unicode [http://en.wikipedia.org/wiki/Basic_Multilingual_Plane#Basic_Multilingual_Plane Basic Multilingual Plane] (BMP) with '''UTF-8''' variable-length encoding.
+:#* <span style="color:#060">'''Pro'''</span>: Lots of characters (~65k) covering most languages and symbols.
+:#* <span style="color:#060">'''Pro'''</span>: Not too hard to implement (characters can be freely converted to/from UCS-2, which is natively support in WinAPI / Java / C#).
+:#* <span style="color:#060">'''Pro'''</span>: Free fonts available that covers all characters.
+:#* <span style="color:#060">'''Pro'''</span>: Uses 1 byte per character for transmission, most of the time.
+:#* <span style="color:#c00">'''Con'''</span>: New renderer (possibly third-party library) needed for rendering.
+:#* <span style="color:#c00">'''Con'''</span>: Higher resource use (higher RAM and VRAM use, more CPU use, large font file).
+:#* <span style="color:#c00">'''Con'''</span>: Very hard to create custom fonts.
+:#* <span style="color:#c00">'''Con'''</span>: Still does not cover all characters.
+:#* <span style="color:#c00">'''Con'''</span>: Hard for servers to maintain compatibility with legacy clients.
+:# Expand charset to full Unicode with '''UTF-8''' variable-length encoding. Includes all the supplemental Unicode planes.
 :#* <span style="color:#060">'''Pro'''</span>: Widely used in other software.
 :#* <span style="color:#060">'''Pro'''</span>: Theoretically covers all languages and symbols.
 :#* <span style="color:#060">'''Pro'''</span>: Uses 1 byte per character for transmission, most of the time.
