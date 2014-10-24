@@ -178,13 +178,14 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 66 bytes
 |}
-===Custom Blocks v2===
-:Proposed by Rayne
-:This extension gives support for extra blocks 
-:'''Motivation''': The motivation of this extension is to give the server a use of "extra building material". For example extra wool for a pixel art, or an medieval themed map which both classic/cpe blocks and extra blocks
-:'''Client Behavior''': First of all the client sends the CustomBlocks packet with support level 2. Then the client will define block all possible block ids and link them to a position to the terrain.png (Preferably the id + 1). 
-:'''Server Behavior''': The server will receive the custom blocks packet version 2 and start allowing use of the extra blocks. The textures of these blocks can be changed by simply using the EnvSetMapAppearance packet.
-:No new packets are defined
+===Custom Block===
+:Proposed by Rayne and Hetal on behalf of the MCForge team
+:This extension allows support for custom blocks
+:'''Motivation''': The motivation of this extension is to give the server a reliable way to add blocks into the client without actually modifying the client.
+:'''Client Behavior''': First of all the client sends the CustomBlock packet consisting of the block Id, a texture URL, a bool stating if it is a liquid, and a bool stating if it is solid. Then the client will define block all possible block ids and link them to a position to the terrain.png (Preferably the id + 1). Then the client will add the block with the specified information and will texture the block with the texture URL. The texture image file will be the same as the previous texture template except that it will consist of only one block so we do not have to redefine the textures of other blocks.
+:'''Server Behavior''': The server will receive the Custom Block packet and start allowing use of the extra blocks. The textures of these blocks can be changed by simply using the EnvSetMapAppearance packet or removing then adding the block again with a different texture.
+:2 new packets will be introduced. ADD_CUSTOM_BLOCK composes of the block Id, a texture URL, a bool stating if it is a liquid, and a bool stating if it is solid. REMOVE_CUSTOM_BLOCK composes of just the block Id.
+
 ===LongerMessages===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 21:43, 28 August 2014 (UTC)
 :This extension allows clients to accept messages longer than 64 characters, and send them to the server in parts.
