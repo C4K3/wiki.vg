@@ -221,10 +221,11 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="col3 centeralign" | <code>Cactus</code>
 | class="col4" | Short, unique, player-friendly name for the block.
 |- class="row4"
-| class="col1 centeralign" | IsSolid
+| class="col1 centeralign" | Solidity
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
-| class="col4" | Whether to enable collision detection for this block (1) or not (0).
+| class="col4" | Specified collision mode for this block type.
+Blocks may be walk-through (0), swim-through (1), or solid (2).
 |- class="row5"
 | class="col1 centeralign" | TopTextureID
 | class="col2 centeralign" | byte
@@ -283,7 +284,6 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 | class="col1 rightalign" colspan="4" | 2 bytes
 |}
 
-:2 new packets will be introduced. ADD_CUSTOM_BLOCK composes of: byte BlockID; byte topTextureId; byte sideTextureId; byte bottomTextureId; [Texture positions on terrain.png] byte breakSound (Any sound in the client's sound enum); byte walkSound (Any sound in the client's sound enum); byte modelType (solidCube(0), transparentCube(1), slab(2), liquid(3), sprite(4)), . REMOVE_CUSTOM_BLOCK composes of just the block Id which is a byte (Also sent before Level Finalize). If the composition is 1, then the player shall be able to swim through the block at the same speed as water. If the composition is 2, the player will not be able to walk through the block (unlike flowers). The server must support both EnvMapAppearance and this extension for the extension to work properly.
 :'''Future References''': The client developers will be able to add more base blocks but then the server developers will have to change their Ids sent if the block is being occupied as a base block. If any of the fields are incorrectly configured, the client shall disconnect with an error message briefly describing why it crashed ("Invalid Custom Block located at Id : ID").
 :'''Example''': Let's say I have a block called bullet being launched from a block (the block launching the bullet is not required for this situation). I could add that block's Id to the client using ADD_CUSTOM_BLOCK by AddCustomBlock((byte)66/*BulletBlockId*/, (byte)2);, and if my textureUrl in the EnvMapAppearance sent afterwards was actually containing a bullet in the correct slot, the block would inherit actual bullet textures making it realistic and yet again fun.
 
