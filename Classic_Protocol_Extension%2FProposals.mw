@@ -189,6 +189,8 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 
 :'''Server Behavior''': Server may send any number of '''''DefineBlock''''' packets when client expects it. Server should only use IDs of currently-defined blocks in block data sent in '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packets, '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SetBlock]]''''' packets, or any other packets that expect block IDs.
 
+:'''Compatibility''': TODO: Define what the server should do for non-supporting clients. Define how the client should store map files with block definitions. Maybe integrate this with ClassicWorld definition?
+
 :<h5>DefineBlock Packet</h5>
 :''Server to Client''
 :{| class="wikitable"
@@ -286,6 +288,8 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 
 :'''Future References''': The client developers will be able to add more base blocks but then the server developers will have to change their Ids sent if the block is being occupied as a base block. If any of the fields are incorrectly configured, the client shall disconnect with an error message briefly describing why it crashed ("Invalid Custom Block located at Id : ID").
 :'''Example''': Let's say I have a block called bullet being launched from a block (the block launching the bullet is not required for this situation). I could add that block's Id to the client using ADD_CUSTOM_BLOCK by AddCustomBlock((byte)66/*BulletBlockId*/, (byte)2);, and if my textureUrl in the EnvMapAppearance sent afterwards was actually containing a bullet in the correct slot, the block would inherit actual bullet textures making it realistic and yet again fun.
+:'''TABLE 1''': TODO: list of tiles already defined in terrain.png, for both standard and CustomBlocks level 1 blocks.
+:'''TABLE 2''': TODO: list of sounds available for footstep and breaking sounds
 
 ===LongerMessages===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 21:43, 28 August 2014 (UTC)
