@@ -147,37 +147,6 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 |}
 :(Comments go here, please sign them)
 
-===CustomWorld===
-:Proposed by Rayne
-:This extension is used to customize the world by allowing the server to assign different textures to mobs and blocks
-:'''Motivation''': The motivation for this extension is to allow the server to create their own custom mobs and blocks without needing to modify the client. This means hosts could improve their minigames by adding skins to easily recognize the two different teams and creating skins to represent different entities in a role-playing server.
-:'''Client Behavior''': The client must receive the URL of the skin and the entity to assign it to, to be ready to download the resource and give the skin to the entity. If the resource isn't found nothing else happens
-:'''Server Behavior''': The server should send a '''valid''' URL which locates the source and the ID of the entity to assign the skin to.
-<h4>SetSkin packet</h4>
-:''Client to Server''
-:{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x??
-(??)
-| class="col1 centeralign" | EntityID
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | 0
-| class="col4 centeralign" | The id of the entity
-|- class="row2"
-| class="col1 centeralign" | SkinURL
-| class="col2 centeralign" | string
-| class="col3 centeralign" | "http://www.example.com/image.png"
-| class="col4 centeralign" | The URL to download the resource from
-|- class="row3"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 66 bytes
-|}
 ===BlockDefinitions===
 :Proposed by Rayne and Hetal on behalf of the MCForge team, with contributions by fragmer.
 :This extension allows servers to define new block types with custom IDs and appearance.
