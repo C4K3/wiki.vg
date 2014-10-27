@@ -139,7 +139,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="centeralign" | Button
 | class="centeralign" | byte
 | class="centeralign" | 0
-| class="centeralign" | 0 = Left click, 1 = Middle click, 2 = Right Click
+| class="centeralign" | 0 = Left click, 1 = Right Click, 2 = Middle click
 |-
 | class="centeralign" | Action
 | class="centeralign" | byte
