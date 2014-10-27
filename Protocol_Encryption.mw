@@ -84,15 +84,17 @@ After decrypting the shared secret in the second Encryption Response, the server
 
 The response is a JSON object containing the user's UUID and skin blob
 <syntaxhighlight lang="javascript">
-  {
-    "id":"<uuid>",
-    "properties":[
-       {
-         "name": "textures",
-         "value": "<base64 string>"
-       }
+{
+    "id": "<profile identifier>",
+    "name": "<player name>",
+    "properties": [ 
+        {
+            "name": "textures",
+            "value": "<base64 string>",
+            "signature": "<base64 string; signed data using Yggdrasil's private key>"
+        }
     ]
-  }
+}
 </syntaxhighlight>
 
 === Sample Code ===
