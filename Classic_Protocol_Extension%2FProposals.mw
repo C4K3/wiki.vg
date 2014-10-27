@@ -145,13 +145,13 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="centeralign" | short
 | class="centeralign" | 0
 | class="centeralign" | Yaw (heading) of the player.
-Same function as ''Yaw'' field of '''''[[http://wiki.vg/Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision.
+Same function as ''Yaw'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision.
 |-
 | class="centeralign" | Pitch
 | class="centeralign" | short
 | class="centeralign" | 0
 | class="centeralign" | Pitch (head angle) of the player.
-Same function as ''Pitch'' field of '''''[[http://wiki.vg/Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision.
+Same function as ''Pitch'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision.
 |-
 ! Total Size:
 | class="col1 rightalign" colspan="4" | 6 bytes
