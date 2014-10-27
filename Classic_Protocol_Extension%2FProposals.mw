@@ -158,7 +158,7 @@ Same function as ''Yaw'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Clien
 | class="centeralign" | Pitch (head angle) of the player.
 Same function as ''Pitch'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision.
 |-
-| class="centeralign" | EntityID
+| class="centeralign" | TargetEntityID
 | class="centeralign" | byte
 | class="centeralign" | 0
 | class="centeralign" | ID of an entity currently targeted by the player, between 0 and 127.
@@ -195,6 +195,8 @@ Any out-of-range value for any of the coordinates means "no block is targeted."
 4. Away from Z-origin
 
 5. Towards Z-origin
+
+Any out-of-range value for ''TargetBlockFace'' "no block is targeted."
 |-
 ! Total Size:
 | class="col1 rightalign" colspan="4" | 15 bytes
