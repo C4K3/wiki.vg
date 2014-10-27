@@ -159,7 +159,7 @@ Same function as ''Yaw'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Clien
 Same function as ''Pitch'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision.
 |-
 ! Total Size:
-| class="col1 rightalign" colspan="4" | 6 bytes
+| class="col1 rightalign" colspan="4" | 7 bytes
 |}
 :(Comments go here, please sign them)
 
