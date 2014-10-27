@@ -141,6 +141,11 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="centeralign" | 0
 | class="centeralign" | 0 = Left click, 1 = Middle click, 2 = Right Click
 |-
+| class="centeralign" | Action
+| class="centeralign" | byte
+| class="centeralign" | 0
+| class="centeralign" | 0 = Pressed, 1 = Released
+|-
 | class="centeralign" | Yaw
 | class="centeralign" | short
 | class="centeralign" | 0
