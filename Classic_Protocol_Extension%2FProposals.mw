@@ -266,7 +266,7 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="9" | ???
+| class="centeralign" rowspan="13" | ???
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
@@ -293,11 +293,6 @@ Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</
 * If ''Solidity'' is set to 2, speed is modified while players is standing on the tile.
 If player is affected by several tiles, the *lowest* of all modifiers is used.
 |-
-| class="centeralign" | Opacity
-| class="centeralign" | byte
-| class="centeralign" | <code>255</code>
-| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque).
-|-
 | class="centeralign" | TopTextureID
 | class="centeralign" | byte
 | class="centeralign" | <code>1</code>
@@ -318,6 +313,35 @@ Can be same as other texture IDs.
 | Refers to a <code>terrain.png</code> tile.
 Between 0 and 255 (unsigned).
 Can be same as other texture IDs.
+|-
+| class="centeralign" | Opacity
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque).
+|-
+| class="centeralign" | FogDensity
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Density of fog while client's camera is inside this liquid.
+Value of <code>0</code> means "do not change fog" -- level's default settings are used.
+Values between 1 and 255 are mapped to OpenGL's GL_FOG_DENSITY value for GL_EXP2 style fog with the following formula:
+GL_FOG_DENSITY = (x+1)/128
+Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code> means 1.0000, and <code>255</code> means 2.0000
+|-
+| class="centeralign" | FogR
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Red component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
+|-
+| class="centeralign" | FogG
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Green component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
+|-
+| class="centeralign" | FogB
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Blue component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
 |-
 | class="centeralign" | WalkSound
 | class="centeralign" | byte
