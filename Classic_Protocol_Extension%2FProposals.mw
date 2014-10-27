@@ -206,7 +206,7 @@ y = 2<sup>(x-128)/64</sup>
 Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</code> to 1.00 ratio (100% speed), and <code>255</code> to 3.96 (396% speed).
 * If ''Solidity'' is set to 0 or 1, speed is modified while player is inside (i.e. colliding with) the block.
 * If ''Solidity'' is set to 2, speed is modified while players is standing on the block.
-If player is affected by several tiles, the *lowest* of all modifiers is used.
+If player is affected by several tiles, the ''lowest'' of all modifiers is used.
 |-
 | class="centeralign" | TopTextureID
 | class="centeralign" | byte
