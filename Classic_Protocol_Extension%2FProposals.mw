@@ -170,38 +170,48 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="9" | ???
+| class="col0 centeralign" rowspan="12" | ???
 | class="col1 centeralign" | BlockID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>128</code>
 | class="col4" | Between 128 and 255 (unsigned).
 |- class="row2"
-| class="col1 centeralign" | Type
+| class="col1 centeralign" | Shape
 | class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>1</code>
-| class="col4" | Type of block:
-#OpaqueCube
-#TransparentCube
+| class="col3 centeralign" | <code>0</code>
+| class="col4" | Shape of the block model:
+#Cube
 #Slab
 #UpsideDownSlab
-#Sprite
-#Liquid
-|- class="row3"
-| class="col1 centeralign" | Name
-| class="col2 centeralign" | String
-| class="col3 centeralign" | <code>Cactus</code>
-| class="col4" | Short, unique, player-friendly name for the block.
-|- class="row4"
-| class="col1 centeralign" | Solidity
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>1</code>
-| class="col4" | Specified collision mode for this block type.
+|-
+| class="centeralign" | Name
+| class="centeralign" | String
+| class="centeralign" | <code>Cactus</code>
+| Short, unique, player-friendly name for the block.
+|- 
+| class="centeralign" | Solidity
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Specified collision mode for this block type.
 Blocks may be walk-through (0), swim-through (1), or solid (2).
-|- class="row5"
-| class="col1 centeralign" | TopTextureID
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>1</code>
-| class="col4" | Refers to a <code>terrain.png</code> tile.
+* Walk-through blocks do not collide with the player, and do not interfere with jumping. Players fall through these blocks.
+* Swim-through blocks allow the player to descend or ascend slowly (at ''WalkSpeed''), as if they were swimming.
+* Solid blocks collide with the player. Players may walk on these.
+|-
+| class="centeralign" | WalkSpeed
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Walk speed modifier, defined relative to regular walk speed. Ratio to normal speed is computed with this formula:
+y = 2<sup>(x-128)/64</sup>
+Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</code> to 1.00 ratio (100% speed), and <code>255</code> to 3.96 (396% speed).
+* If ''Solidity'' is set to 0 or 1, speed is modified while player is inside (i.e. colliding with) the block.
+* If ''Solidity'' is set to 2, speed is modified while players is standing on the block.
+If player is affected by several tiles, the *lowest* of all modifiers is used.
+|-
+| class="centeralign" | TopTextureID
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Refers to a <code>terrain.png</code> tile.
 Between 0 and 255 (unsigned).
 Can be same as other texture IDs.
 |- class="row6"
@@ -211,48 +221,132 @@ Can be same as other texture IDs.
 | class="col4" | Refers to a <code>terrain.png</code> tile.
 Between 0 and 255 (unsigned).
 Can be same as other texture IDs.
-|- class="row7"
-| class="col1 centeralign" | BottomTextureID
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>3</code>
-| class="col4" | Refers to a <code>terrain.png</code> tile.
+|-
+| class="centeralign" | BottomTextureID
+| class="centeralign" | byte
+| class="centeralign" | <code>3</code>
+| Refers to a <code>terrain.png</code> tile.
 Between 0 and 255 (unsigned).
 Can be same as other texture IDs.
-|- class="row8"
-| class="col1 centeralign" | WalkSound
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>0</code>
-| class="col4" | ID of footstep sound that client may play when player "steps" on this block.
+|-
+| class="centeralign" | MaskedTransparency
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Can be <code>0</code> (no masked transparency) or <code>1</code> (masked transparency).
+Blocks with masked transparency enabled use the texture's alpha channel (like leaves).
+|-
+| class="centeralign" | Opacity
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque).
+|-
+| class="centeralign" | WalkSound
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
 Must be one of sound IDs defined in Table #2 '''TODO'''.
-|- class="row9"
-| class="col1 centeralign" | BreakSound
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>0</code>
-| class="col4" | ID of breaking sound that client should play when player breaks this block.
+|-
+| class="centeralign" | BreakSound
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| ID of breaking sound that client should play when player breaks this block.
 Must be one of sound IDs defined in Table #2 '''TODO'''.
-|- class="row10"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 73 bytes
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 73 bytes
+|}
+
+:<h5>DefineLiquid Packet</h5>
+:''Server to Client''
+:{| class="wikitable"
+|-
+! Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" rowspan="9" | ???
+| class="centeralign" | BlockID
+| class="centeralign" | byte
+| class="centeralign" | <code>128</code>
+| Between 128 and 255 (unsigned).
+|-
+| class="centeralign" | Name
+| class="centeralign" | String
+| class="centeralign" | <code>Cactus</code>
+| Short, unique, player-friendly name for the block.
+|-
+| class="centeralign" | Solidity
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Specifies collision mode for this block type.
+Blocks may be walk-through (0), swim-through (1), or solid (2).
+|-
+| class="centeralign" | WalkSpeed
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Walk speed modifier, defined relative to regular walk speed. Ratio to normal speed is computed with this formula:
+y = 2<sup>(x-128)/64</sup>
+Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</code> to 1.00 ratio (100% speed), and <code>255</code> to 3.96 (396% speed).
+* If ''Solidity'' is set to 0 or 1, speed is modified while player is inside (i.e. colliding with) the tile.
+* If ''Solidity'' is set to 2, speed is modified while players is standing on the tile.
+If player is affected by several tiles, the *lowest* of all modifiers is used.
+|-
+| class="centeralign" | Opacity
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque).
+|-
+| class="centeralign" | TopTextureID
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Refers to a <code>terrain.png</code> tile.
+Between 0 and 255 (unsigned).
+Can be same as other texture IDs.
+|-
+| class="centeralign" | SideTextureID
+| class="centeralign" | byte
+| class="centeralign" | <code>2</code>
+| Refers to a <code>terrain.png</code> tile.
+Between 0 and 255 (unsigned).
+Can be same as other texture IDs.
+|-
+| class="centeralign" | BottomTextureID
+| class="centeralign" | byte
+| class="centeralign" | <code>3</code>
+| Refers to a <code>terrain.png</code> tile.
+Between 0 and 255 (unsigned).
+Can be same as other texture IDs.
+|-
+| class="centeralign" | WalkSound
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
+Must be one of sound IDs defined in Table #2 '''TODO'''.
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 73 bytes
 |}
 
 :<h5>RemoveBlockDefinition Packet</h5>
 :''Server to Client''
 :{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" | ???
-| class="col1 centeralign" | BlockID
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>128</code>
-| class="col4" | Between 128 and 255
-|- class="row2"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 2 bytes
+|-
+! Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" | ???
+| class="centeralign" | BlockID
+| class="centeralign" | byte
+| class="centeralign" | <code>128</code>
+| Between 128 and 255
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 2 bytes
 |}
 
 :'''Future References''': The client developers will be able to add more base blocks but then the server developers will have to change their Ids sent if the block is being occupied as a base block. If any of the fields are incorrectly configured, the client shall disconnect with an error message briefly describing why it crashed ("Invalid Custom Block located at Id : ID").
