@@ -135,7 +135,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="4" | ???
+| class="centeralign" rowspan="9" | ???
 | class="centeralign" | Button
 | class="centeralign" | byte
 | class="centeralign" | 0
@@ -150,7 +150,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="centeralign" | short
 | class="centeralign" | 0
 | class="centeralign" | Yaw (heading) of the player.
-Same function as ''Yaw'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision.
+Same function as ''Yaw'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision. 
 |-
 | class="centeralign" | Pitch
 | class="centeralign" | short
@@ -158,10 +158,47 @@ Same function as ''Yaw'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Clien
 | class="centeralign" | Pitch (head angle) of the player.
 Same function as ''Pitch'' field of '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|PositionAndOrientation]]''''' packet, but with more precision.
 |-
+| class="centeralign" | EntityID
+| class="centeralign" | byte
+| class="centeralign" | 0
+| class="centeralign" | ID of an entity currently targeted by the player, between 0 and 127.
+Any out-of-range value means "no entity is targeted."
+|-
+| class="centeralign" | TargetBlockX
+| class="centeralign" | short
+| class="centeralign" | 0
+| class="centeralign" | X coordinate of a targeted block, between 0 and 2048.
+Any out-of-range value for any of the coordinates means "no block is targeted."
+|-
+| class="centeralign" | TargetBlockY
+| class="centeralign" | short
+| class="centeralign" | 0
+| class="centeralign" | Y coordinate of a targeted block, between 0 and 2048.
+|-
+| class="centeralign" | TargetBlockZ
+| class="centeralign" | short
+| class="centeralign" | 0
+| class="centeralign" | Z coordinate of a targeted block, between 0 and 2048.
+|-
+| class="centeralign" | TargetBlockFace
+| class="centeralign" | byte
+| class="centeralign" | 0
+| class="centeralign" | Index of the block face that the player is targeting. Block faces are numbered as follows:
+0. Away from X-origin
+
+1. Towards X-origin
+
+2. Away from Y-origin (up)
+
+3. Towards Y-origin (down)
+
+4. Away from Z-origin
+
+5. Towards Z-origin
+|-
 ! Total Size:
-| class="col1 rightalign" colspan="4" | 7 bytes
+| class="col1 rightalign" colspan="4" | 15 bytes
 |}
-:(Comments go here, please sign them)
 
 ===BlockDefinitions===
 :Proposed by Rayne and Hetal on behalf of the MCForge team, with contributions by fragmer.
