@@ -325,7 +325,9 @@ Can be same as other texture IDs.
 | Density of fog while client's camera is inside this liquid.
 Value of <code>0</code> means "do not change fog" -- level's default settings are used.
 Values between 1 and 255 are mapped to OpenGL's GL_FOG_DENSITY value for GL_EXP2 style fog with the following formula:
+
 GL_FOG_DENSITY = (x+1)/128
+
 Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code> means 1.0000, and <code>255</code> means 2.0000
 |-
 | class="centeralign" | FogR
