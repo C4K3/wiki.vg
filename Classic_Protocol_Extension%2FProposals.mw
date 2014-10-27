@@ -196,7 +196,7 @@ Any out-of-range value for any of the coordinates means "no block is targeted."
 
 5. Towards Z-origin
 
-Any out-of-range value for ''TargetBlockFace'' "no block is targeted."
+Any out-of-range value for ''TargetBlockFace'' mean "no block is targeted."
 |-
 ! Total Size:
 | class="col1 rightalign" colspan="4" | 15 bytes
