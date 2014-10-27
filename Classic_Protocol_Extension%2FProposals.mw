@@ -288,6 +288,7 @@ Blocks may be walk-through (0), swim-through (1), or solid (2).
 | class="centeralign" | <code>1</code>
 | Walk speed modifier, defined relative to regular walk speed. Ratio to normal speed is computed with this formula:
 y = 2<sup>(x-128)/64</sup>
+
 Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</code> to 1.00 ratio (100% speed), and <code>255</code> to 3.96 (396% speed).
 * If ''Solidity'' is set to 0 or 1, speed is modified while player is inside (i.e. colliding with) the tile.
 * If ''Solidity'' is set to 2, speed is modified while players is standing on the tile.
