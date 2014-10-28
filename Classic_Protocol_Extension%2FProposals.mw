@@ -553,9 +553,9 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 | class="col1 centeralign" | Walkthrough
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4" | 0 = Not walk through 
-1 = Walk through
-|- class="rowlast"
+| class="col4" | 0 = Not walkthrough
+1 = Walkthrough
+|- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 87 bytes
 |}
