@@ -1,5 +1,11 @@
+==28 October 2014==
+* Added finalized version of '''''PlayerClick''''' extension. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=6236&oldid=6174]
+
+==6 October 2014==
+* Finalized version 2 of '''''ExtPlayerList''''' extension. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=6167&oldid=6150]
+
 ==28 August 2014==
-* Added a draft of version 2 of '''''ExtPlayerList''''' extension. '''[http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=6027&oldid=6011]
+* Added a draft of version 2 of '''''ExtPlayerList''''' extension. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=6027&oldid=6011]
 
 ==18 July 2014==
 * '''''SetBlockPermissions''''' packet: Values for ''AllowPlacement'' and ''AllowDeletion'' that are our-of-range (neither 0 nor 1) now mean "allow." Previously the meaning was undefined. [http://wiki.vg/index.php?title=Classic_Protocol_Extension&diff=5936&oldid=5933]
