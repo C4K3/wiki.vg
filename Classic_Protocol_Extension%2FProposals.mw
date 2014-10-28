@@ -487,7 +487,7 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="13" | ????
+| class="col0 centeralign" rowspan="13" |0x??
 (??)
 | class="col1 centeralign" | SelectionID
 | class="col2 centeralign" | byte
