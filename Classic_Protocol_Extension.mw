@@ -948,7 +948,7 @@ Negative value (e.g. <code>-1</code>) means that the client should use its defau
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="9" | ???
+| class="centeralign" rowspan="9" | 0x22 (34)
 | class="centeralign" | Button
 | class="centeralign" | byte
 | class="centeralign" | 0
