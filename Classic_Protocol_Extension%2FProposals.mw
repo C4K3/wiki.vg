@@ -121,10 +121,10 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 
 ===PlayerClick===
 :Proposed by umby24
-:This extension is used to alert server owners that a player has clicked on something.
+:This extension is used to alert server owners that a player 
 :'''Motivation''': The motivation for this extension is to allow for the creation of more interactive maps.
-:'''Client Behavior''': Whenever a client clicks on something (right, middle or left click) the client should send a PlayerClicked packet to the server.
-:'''Server Behavior''': Server should be ready to accept PlayerClicked packet at any time after level sending has completed. At which point, handling of this packet is entirely up to the server developer.
+:'''Client Behavior''': When this extension is mutually supported, every mouse-pressed and mouse-released event should be transmitted to the server, as soon as reasonably possible, with a '''''PlayerClicked'''''. High resolution up-to-date ''Yaw'' and ''Pitch'' for the player should be transmitted with every packet. If player is currently targeting another entity/player, ''TargetEntityID'' should be sent. If player is currently targeting a block, ''TargetBlockX'', ''TargetBlockY'', ''TargetBlockZ'', and ''TargetBlockFace'' should be filled. An out-of-range value should be used for these fields when they are not in use. These packets should not be sent during level transitions (after receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' and until receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets).
+:'''Server Behavior''': Server must be ready to accept any number of '''''PlayerClicked''''' packets at any time after level sending has completed. What to do with this information is entirely up to the server.
 <h4>PlayerClicked packet</h4>
 :''Client to Server''
 :{| class="wikitable"
