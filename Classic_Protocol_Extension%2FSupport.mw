@@ -17,6 +17,7 @@ Number inside green fields indicates the supported extension version. Currently 
 !EnvWeatherType
 !HackControl
 !MessageType
+!PlayerClick
 |-
 ! [http://www.classicube.net/ ClassiCube Client]
 | {{yes|1}}
@@ -33,6 +34,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{planned}}
 | {{yes|1}}
+| {{planned}}
 |-
 ! [http://github.com/xtreme8000/Mineshaft Mineshaft]
 | {{planned}}
@@ -49,6 +51,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{planned}}
 | {{no}}
 | {{yes|1}}
+| {{no}}
 |}
 
 ==Servers==
@@ -68,6 +71,7 @@ Number inside green fields indicates the supported extension version. Currently 
 !EnvWeatherType
 !HackControl
 !MessageType
+!PlayerClick
 |-
 ! [http://umby.d3s.co/CCD3/ D3]
 | {{yes|1}}
@@ -84,6 +88,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
+| {{no}}
 |-
 ! [http://fcraft.net fCraft]
 | {{no}}
@@ -100,6 +105,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{planned}}
 | {{planned}}
 | {{planned}}
+| {{no}}
 |-
 ! [http://femto.fcraft.net FemtoCraft]
 | {{no}}
@@ -115,6 +121,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{no}}
 | {{no}}
 | {{planned}}
+| {{no}}
 | {{no}}
 |-
 ! [http://github.com/LeChosenOne/LegendCraft LegendCraft]
@@ -132,6 +139,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
+| {{no}}
 |-
 ! [http://gemscraftmc.weebly.com/ GemsCraft]
 | {{yes|1}}
@@ -148,6 +156,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{no}}
 | {{no}}
 | {{yes|1}}
+| {{no}}
 |-
 ! [https://github.com/123DMWM/ProCraft ProCraft]
 | {{yes|1}}
@@ -156,6 +165,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1 & 2}}
+| {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
@@ -180,6 +190,7 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
+| {{no}}
 |-
 ! [https://github.com/umby24/Hypercube Hypercube]
 | {{planned}}
@@ -196,8 +207,10 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{planned}}
 | {{yes|1}}
+| {{no}}
 |-
 ! [http://powercraftdl.weebly.com/ PowerCraft]
+| {{no}}
 | {{no}}
 | {{no}}
 | {{no}}
