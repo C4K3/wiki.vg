@@ -676,12 +676,14 @@ Matches NameID of the ExtAddPlayerName packet
 
 ===ChangeModel===
 :Allows changing appearance of player models in supporting clients.
-:<h5>Client Behavior</h5>: The client will receive a ''EntityID'' and a string value containing the model name. The client will then change the model of the player whose ID is the same as the received '''''AddEntity''''', '''''ExtAddEntity''''', or '''''ExtAddEntity2''''' packet. The model name will be parsed by the model manager and the model changed in game. If the model does not exists in the model manager or is 0-length, change the model back to humanoid. Alternatively, you can send the client an int converted to a string which represents a valid Block ID. An ''EntityID'' of -1 (255 unsigned) indicates the player's own model.
+:<h5>Client Behavior</h5>
+:The client will receive a ''EntityID'' and a string value containing the model name. The client will then change the model of the player whose ID is the same as the received '''''AddEntity''''', '''''ExtAddEntity''''', or '''''ExtAddEntity2''''' packet. The model name will be parsed by the model manager and the model changed in game. If the model does not exists in the model manager or is 0-length, change the model back to humanoid. Alternatively, you can send the client an int converted to a string which represents a valid Block ID. An ''EntityID'' of -1 (255 unsigned) indicates the player's own model. If model is set to <code>humanoid</code>, player-specific skin should be used. For all other models, default model-specific textures should be used.
 
-:<h5>Server Behavior</h5>: The server will send a ''EntityID'' and then a ''ModelName'' to the client for a desired player. The model name must exist in the client and not be 0-length or default (humanoid) will be used instead.
+<h5>Server Behavior</h5>
+:The server may send a ''EntityID'' and then a ''ModelName'' to the client for a desired entity. The model name must be chosen from the list below. To reset the model to default, server should set ''ModelName'' to <code>humanoid</code> or to an empty string.
 
-:<h5>Model Textures</h5>
-If model is set to <code>humanoid</code>, player skin should be used. For all other models, texture pack's default texture should be used. '''Exception''': if '''ExtPlayerList''' extension is mutually supported: If '''''ExtAddEntity2''''' packet is received with ''SkinName'' set to a full URL, AFTER entity's model has been changed, that texture should be downloaded and used for the currently-set model. Receiving another '''''ChangeModel''''' packet or '''''ExtAddEntity2''''' packet with a blank value should reset the model's texture back to default.
+<h5>Interaction with ExtPlayerList 2</h5>
+If a '''''ExtAddEntity2''''' packet is received for a non-<code>humanoid</code> entity and ''SkinName'' specifies a full URL, that image should be downloaded and used as a texture for the currently model. Receiving another '''''ExtAddEntity2''''' packet should either update this texture (if ''SkinName'' is a full URL) or reset it back to default (if ''SkinName'' is anything else). Receiving another '''''ChangeModel''''' packet with a non-<code>humanoid</code> ''ModelName'' should reset texture back to model-specific default. 
 
 :<h4>ChangeModel Packet</h4>
 :{| class="wikitable"
