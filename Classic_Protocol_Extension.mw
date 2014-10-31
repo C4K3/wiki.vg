@@ -682,8 +682,8 @@ Matches NameID of the ExtAddPlayerName packet
 <h5>Server Behavior</h5>
 :The server may send a ''EntityID'' and then a ''ModelName'' to the client for a desired entity. The model name must be chosen from the list below. To reset the model to default, server should set ''ModelName'' to <code>humanoid</code> or to an empty string.
 
-<h5>Interaction with ExtPlayerList 2</h5>
-If a '''''ExtAddEntity2''''' packet is received for a non-<code>humanoid</code> entity and ''SkinName'' specifies a full URL, that image should be downloaded and used as a texture for the currently model. Receiving another '''''ExtAddEntity2''''' packet should either update this texture (if ''SkinName'' is a full URL) or reset it back to default (if ''SkinName'' is anything else). Receiving another '''''ChangeModel''''' packet with a non-<code>humanoid</code> ''ModelName'' should reset texture back to model-specific default. 
+<h5>Interaction with ExtPlayerList</h5>
+:If a '''''ExtAddEntity2''''' packet is received for a non-<code>humanoid</code> entity and ''SkinName'' specifies a full URL, that image should be downloaded and used as a texture for the currently model. Receiving another '''''ExtAddEntity2''''' packet should either update this texture (if ''SkinName'' is a full URL) or reset it back to default (if ''SkinName'' is anything else). Receiving another '''''ChangeModel''''' packet with a non-<code>humanoid</code> ''ModelName'' should reset texture back to model-specific default. 
 
 :<h4>ChangeModel Packet</h4>
 :{| class="wikitable"
