@@ -985,23 +985,23 @@ Any out-of-range value means "no entity is targeted."
 |-
 | class="centeralign" | TargetBlockX
 | class="centeralign" | short
-| class="centeralign" | 0
+| class="centeralign" | 64
 | class="centeralign" | X coordinate of a targeted block, between 0 and 2048.
 Any out-of-range value for any of the coordinates means "no block is targeted."
 |-
 | class="centeralign" | TargetBlockY
 | class="centeralign" | short
-| class="centeralign" | 0
+| class="centeralign" | 64
 | class="centeralign" | Y coordinate of a targeted block, between 0 and 2048.
 |-
 | class="centeralign" | TargetBlockZ
 | class="centeralign" | short
-| class="centeralign" | 0
+| class="centeralign" | 64
 | class="centeralign" | Z coordinate of a targeted block, between 0 and 2048.
 |-
 | class="centeralign" | TargetBlockFace
 | class="centeralign" | byte
-| class="centeralign" | 0
+| class="centeralign" | 1
 | class="centeralign" | Index of the block face that the player is targeting. Block faces are numbered as follows:
 0. Away from X-origin
 
