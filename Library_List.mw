@@ -142,6 +142,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{BSD}}
 | {{yes|1.5.2-1.7.9}}
 |-
+! [https://bitbucket.org/socolin/nbtfield/ NBTField]
+| Another NBT library in C++
+| [https://bitbucket.org/socolin/ Socolin]
+| {{C++}}
+| {{MIT}}
+| n/a
+|-
 |}
 
 [[Category:Minecraft Modern]]
