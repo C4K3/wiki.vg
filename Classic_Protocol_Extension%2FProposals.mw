@@ -559,3 +559,35 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 87 bytes
 |}
+
+===Player Animation===
+:Proposed by ByteBit
+:Let the player to do certain actions/animations on the client
+:'''Motivation''': Other players will be able to see the block another is holding or whether one placed a block or not. It makes the game's feel more realistic, because blocks don't pop out a no where.
+:'''Client Behavior''': On recieve the client should perform the actions required for the animation.
+:'''Server Behavior''': The server may send the packet if needed any time after the map is send.
+<h4>AnimatePlayer packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0xAC
+(172)
+| class="col1 centeralign" | Animation Type
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 1
+| class="col4 centeralign" | Specifies what animation to perform (0: Hold block; 1: Set block; 2: Destroy block; 3: Player name visibility)
+|- class="row2"
+| class="col1 centeralign" | Additional byte
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 49 (Obsidian)
+| class="col4 centeralign" | Needed for specific animations (Block type for 0,1 and 2; for 3: true(1)/false(0))
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes
+|}
