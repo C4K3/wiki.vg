@@ -60,6 +60,7 @@ The [[Pocket_Editon_Login|login sequence]] is not covered by this page.
 == Packets ==
 
 All packets start with a single byte that identifies the packet type, the rest of the packet follows it.
+Please note that packets 0x09 through 0x13 are not documented.
 
 {{anchor|0x01}}
 === ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01) ===
