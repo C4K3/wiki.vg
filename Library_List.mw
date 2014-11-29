@@ -122,6 +122,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{yes|1.7.4}}
 |-
 ! [https://github.com/Aragas/MineLib.Network MineLib.Network]
+[https://github.com/Aragas/MineLib.Network.Modular MineLib.Network.Modular]
 | .NET Minecraft network client interaction library.
 | [https://github.com/Aragas Aragas (Aragasas)]
 | {{C sharp}}
