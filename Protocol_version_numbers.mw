@@ -223,7 +223,7 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
 | class="col3 centeralign" |
 |- class="row28"
 | class="col0 centeralign" | '''51'''
-| class="col1 centeralign" | '''1.4.6'''
+| class="col1 centeralign" | '''1.4.6''', '''1.4.7'''
 | class="col2 centeralign" | [[http://wiki.vg/index.php?title=Protocol&oldid=1039 page]]
 | class="col3 centeralign" |
 |- class="row26"
@@ -233,7 +233,7 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
 | class="col3 centeralign" |
 |- class="row25"
 | class="col0 centeralign" | '''49'''
-| class="col1 centeralign" | '''1.4.4'''
+| class="col1 centeralign" | '''1.4.4''', '''1.4.5'''
 | class="col2 centeralign" | 
 | class="col3 centeralign" |
 |- class="row24"
