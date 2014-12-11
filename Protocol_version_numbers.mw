@@ -95,7 +95,7 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
 |-
 | 1.7.6/7/8/9/10 || 5 
 |-
-| 1.7.1/2/3/4/5 || 4 || http://wiki.vg/index.php?title=Protocol&oldid=5486 page
+| 1.7.1/2/3/4/5 || 4 || [[http://wiki.vg/index.php?title=Protocol&oldid=5486 page]]
 |}
 
 == Versions before the Netty rewrite (-1.6.4) ==
