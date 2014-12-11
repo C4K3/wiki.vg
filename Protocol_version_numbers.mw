@@ -9,7 +9,7 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
 ! Version number
 ! Last known documentation
 |-
-| 1.8/1.8.1 || 47
+| 1.8/1.8.1 || 47 || [[http://wiki.vg/index.php?title=Protocol&oldid=5486 page]]
 |-
 | 1.8-pre3 || 46
 |-
