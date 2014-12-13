@@ -1,7 +1,7 @@
 == Code Snippets ==
 
-* Yggdrasil Authentication [ Python ]: https://gist.github.com/nickelpro/7015554
-* Minecraft Skin Preview Creation [ Python, PHP ]: http://w.tkte.ch/minecraft/skin_previews
+* Yggdrasil Authentication [ Python3 ]: https://gist.github.com/nickelpro/7015554
+* Minecraft Skin Preview Creation [ Python, PHP ]: <strike>http://w.tkte.ch/minecraft/skin_previews</strike> '''Appears to be down'''
 * zlib chunk decompression [ C ]: http://wiki.vg/Chunk_data_decompressing_%28Zlib%29
 * Java Hex Digest SHA-1 Hash Creation [ C# ]: https://gist.github.com/SirCmpwn/6d78aa1efd40124019ae
 * Slot Data Parsing [ C# ]: https://gist.github.com/SirCmpwn/860056fcc7da1036ebf3
