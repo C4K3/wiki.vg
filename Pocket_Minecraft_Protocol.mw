@@ -451,7 +451,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 
 === Client Connect (0x09) ===
 
-''Client > Server''
+''Client to Server''
 
 '''This is a Data Packet. It is encoded using packet encapsulation (scroll down for more info).'''
 
@@ -463,7 +463,7 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 | class="col3" | Example
 | class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x09
+| class="col0 centeralign" rowspan="3" | 0x09
 | class="col1 centeralign" | clientID
 | class="col2 centeralign" | int64
 | class="col3 centeralign" | <code></code>
@@ -475,11 +475,11 @@ Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Pack
 | class="col3" | A long that is sent back to the client in 0x10.
 |- class="row3"
 | class="col2 centeralign" | unknown
-| class="col1 centeralign" | Byte
+| class="col1 centeralign" | byte
 | class="col2 centeralign" | <code></code>
-| class="col3 centeralign" | Unknown use.
+| class="col3" | Unknown use. Constant value.
 
-|- class="row3"
+|- class="row4"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 18 Bytes
 |}
