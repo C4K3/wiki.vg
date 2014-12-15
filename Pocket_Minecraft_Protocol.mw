@@ -682,6 +682,8 @@ The data array section is unknown, but we do know how to get it right. Below is 
         }
 </code>
 
+A triad is a 3 byte integer.
+
 Credit goes to InusualZ (https://github.com/InusualZ/CraftMine/blob/master/src/Network/Packets/Minecraft/ServerHandshake.cs).
 
 
