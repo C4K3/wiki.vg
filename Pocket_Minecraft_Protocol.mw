@@ -449,41 +449,6 @@ In order for the server to show up in the world list, the server name must have 
 
 Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version to send a 0x1D or a 0x1C
 
-=== Client Connect (0x09) ===
-
-''Client to Server''
-
-'''This is a Data Packet. It is encoded using packet encapsulation (scroll down for more info).'''
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x09
-| class="col1 centeralign" | clientID
-| class="col2 centeralign" | int64
-| class="col3 centeralign" | <code></code>
-| class="col4" | The mojang client's clientID. 
-|- class="row2"
-| class="col2 centeralign" | session
-| class="col1 centeralign" | int64
-| class="col2 centeralign" | <code></code>
-| class="col3" | A long that is sent back to the client in 0x10.
-|- class="row3"
-| class="col2 centeralign" | unknown
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code></code>
-| class="col3" | Unknown use. Constant value.
-
-|- class="row4"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 18 Bytes
-|}
-
 === Custom Packet (0x80-0x8F) ===
 
 ''Two-Way''
@@ -600,6 +565,48 @@ Send these when a packet was lost, or reply to this resending the lost packet.
 
 Sent after a 0x8X. It's used to ACK recieval of packets.
 The second packet number is optional and only there when bool is false.
+
+{{anchor|Encapsulated_Login_packets}}
+
+== Encapsulated Login packets ==
+
+After packets 0x05 through 0x08 are sent, the client will send the first encapsulated packets (0x09 through 0x13). After 0x13 the game begins. You can check the login sequence [[Pocket_Editon_Login|here]].
+
+=== Client Connect (0x09) ===
+
+''Client to Server''
+
+'''This is a Data Packet. It is encoded using packet encapsulation (scroll down for more info).'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x09
+| class="col1 centeralign" | clientID
+| class="col2 centeralign" | int64
+| class="col3 centeralign" | <code></code>
+| class="col4" | The mojang client's clientID. 
+|- class="row2"
+| class="col2 centeralign" | session
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | <code></code>
+| class="col3" | A long that is sent back to the client in 0x10.
+|- class="row3"
+| class="col2 centeralign" | unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code></code>
+| class="col3" | Unknown use. Constant value.
+
+|- class="row4"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 Bytes
+|} 
+
 
 
 {{anchor|Packet_Encapsulation}}
