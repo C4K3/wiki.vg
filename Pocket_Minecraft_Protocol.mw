@@ -57,10 +57,10 @@ The [[Pocket_Editon_Login|login sequence]] is not covered by this page.
 | class="col3" | Prefixed by a short containing the length of the string in characters. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 |}
 
-== Packets ==
+== Login Packets ==
 
 All packets start with a single byte that identifies the packet type, the rest of the packet follows it.
-Please note that packets 0x09 through 0x13 are not documented.
+Please note that packets 0x09 through 0x13 are not documented (yet).
 
 {{anchor|0x01}}
 === ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01) ===
@@ -448,6 +448,41 @@ In order for the server to show up in the world list, the server name must have 
 |}
 
 Same as [[#0x1C|ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)]], but with the Packet ID changed. Depends of the version to send a 0x1D or a 0x1C
+
+=== Client Connect (0x09) ===
+
+''Client > Server''
+
+'''This is a Data Packet. It is encoded using packet encapsulation (scroll down for more info).'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x09
+| class="col1 centeralign" | clientID
+| class="col2 centeralign" | int64
+| class="col3 centeralign" | <code></code>
+| class="col4" | The mojang client's clientID. 
+|- class="row2"
+| class="col2 centeralign" | session
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | <code></code>
+| class="col3" | A long that is sent back to the client in 0x10.
+|- class="row3"
+| class="col2 centeralign" | unknown
+| class="col1 centeralign" | Byte
+| class="col2 centeralign" | <code></code>
+| class="col3 centeralign" | Unknown use.
+
+|- class="row3"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 Bytes
+|}
 
 === Custom Packet (0x80-0x8F) ===
 
