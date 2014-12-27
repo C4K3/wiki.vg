@@ -22,6 +22,21 @@ A couple things for contributors:
 !style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
+! [https://github.com/kennyvv/SharpMC SharpMC]
+| [http://wiki.vg/User:Wuppie Wuppie]
+| [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{yes|1.8 (#47)}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{yes|Threads}}
+| {{planned}}
+| {{yes|{{windows}}{{linux}}{{mac}}}}
+| {{no|Unknown}}
+| {{yes|Active}}
+|-
 ! [https://github.com/SpaceManiac/Glowstone Glowstone]
 | SpaceManiac
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
