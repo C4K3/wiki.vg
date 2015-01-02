@@ -1,0 +1,43 @@
+This is the (unofficial) protocol docs for Minecraft: PE. The protocol currently uses UDP for communication, different from PC (TCP). The usual UDP issues are still here (lost packets, wrong order, etc.), but the protocol solves a few of those problems using special packet encapsulation, based on TCP. The Minecraft: PE client uses RakNet for it's networking library. Even though it uses RakNet, you can still write software without the library.
+
+
+== Data Types ==
+Minecraft packets use different data types to communicate with each other. The documented ones are listed below:
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" |
+! class="col1" | Size
+! class="col2" | Range
+! class="col3" | Notes
+|- class="row1"
+! class="col0 centeralign" | byte
+| class="col1 centeralign" | 1
+| class="col2" | -128 to 127
+| class="col3" | <code></code>
+|- class="row2"
+! class="col0 centeralign" | short
+| class="col1 centeralign" | 2
+| class="col2" | -32768 to 32767
+| class="col3" | <code></code>
+|- class="row3"
+! class="col0 centeralign" | Integer
+| class="col1 centeralign" | 4
+| class="col2" | -2147483648 to 2147483647
+| class="col3" | <code></code>
+|- class="row4"
+! class="col0 centeralign" | Long
+| class="col1 centeralign" | 8
+| class="col2" | 
+| class="col3" | <code></code>
+|- class="row5"
+! class="col0 centeralign" | MAGIC
+| class="col1 centeralign" | 16
+| class="col2" | <code>0x00ffff00fefefefefdfdfdfd12345678</code>
+| class="col3" | always those hex bytes, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
+|- class="row6"
+! class="col0 centeralign" | string
+| class="col1 centeralign" | short + string
+| class="col2" | N/A
+| class="col3" | Prefixed by a short containing the length of the string in characters. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+|}
