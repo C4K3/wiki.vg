@@ -42,11 +42,17 @@ Returns all the usernames this user has used in the past and the one they are us
 === Response ===
 <syntaxhighlight lang="javascript">
 [
-  "KrisJelbring"
+  {
+    "name": "Hkliese"
+  },
+  {
+    "name": "PlasmaPod",
+    "changedToAt": 1414059749000
+  }
 ]
 </syntaxhighlight>
 
-
+The changedToAt field is a UNIX timestamp in milliseconds.
 
 == Playernames -> UUIDs ==
 
