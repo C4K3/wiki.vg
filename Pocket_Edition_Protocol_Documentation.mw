@@ -41,3 +41,8 @@ Minecraft packets use different data types to communicate with each other. The d
 | class="col2" | N/A
 | class="col3" | Prefixed by a short containing the length of the string in characters. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 |}
+
+
+== Reference ==
+
+The latest version of the protocol is not fully documented yet, but an automatically generated specification of many of the packages can be found in the MiNET server code  https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md
