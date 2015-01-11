@@ -12,6 +12,16 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 !Platform
 !Last Version Supported
 |-
+! [http://www.dragonet.org/ Dragonet]
+| A BukkitAPI implementation that supports all Bukkit plugins. Support both Minecraft PC and Minecraft: Pocket Edition. 
+| Server
+| [https://github.com/DragonetMC Dragonet Team]
+| {{Java}}
+| {{LGPL}}
+| pre-release
+| {{windows}}{{linux}}{{mac}}
+| {{yes|v0.9.5 alpha}}
+|-
 ! [http://www.pocketmine.net/ PocketMine-MP]
 | Server with Plugin API, Multiworlds and more
 | Server
