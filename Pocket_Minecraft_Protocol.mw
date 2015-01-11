@@ -566,217 +566,6 @@ Send these when a packet was lost, or reply to this resending the lost packet.
 Sent after a 0x8X. It's used to ACK recieval of packets.
 The second packet number is optional and only there when bool is false.
 
-{{anchor|Encapsulated_Login_packets}}
-
-== Encapsulated Login packets ==
-
-After packets 0x05 through 0x08 are sent, the client will send the first encapsulated packets (0x09 through 0x13). After 0x13 the game begins. You can check the login sequence [[Pocket_Editon_Login|here]].
-
-=== Client Connect (0x09) ===
-
-''Client to Server''
-
-'''This is a Data Packet. It is encoded using packet encapsulation (scroll down for more info).'''
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x09
-| class="col1 centeralign" | clientID
-| class="col2 centeralign" | int64
-| class="col3 centeralign" | <code></code>
-| class="col4" | The mojang client's clientID. 
-|- class="row2"
-| class="col2 centeralign" | session
-| class="col1 centeralign" | int64
-| class="col2 centeralign" | <code></code>
-| class="col3" | A long that is sent back to the client in 0x10.
-|- class="row3"
-| class="col2 centeralign" | unknown
-| class="col1 centeralign" | byte
-| class="col2 centeralign" | <code></code>
-| class="col3" | Unknown use. Constant value.
-
-|- class="row4"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 18 Bytes
-|} 
-
-=== Server Handshake (0x10) ===
-
-''Server to Client''
-
-'''This is a Data Packet. It is encoded using packet encapsulation (scroll down for more info).'''
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="8" | 0x10
-| class="col1 centeralign" | Cookie
-| class="col2 centeralign" | 4 bytes
-| class="col3 centeralign" | <code>043f57fe</code>
-| class="col4" | Unknown use, constant value. 
-|- class="row2"
-| class="col2 centeralign" | Security flags
-| class="col1 centeralign" | 1 byte
-| class="col2 centeralign" | <code>0xcd</code>
-| class="col3" | Unknown use, constant value.
-|- class="row3"
-| class="col2 centeralign" | Server port
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>19132</code>
-| class="col3" | Unknown use.
-|- class="row4"
-| class="col2 centeralign" | Data Array
-| class="col1 centeralign" | 70 bytes
-| class="col2 centeralign" | <code></code>
-| class="col3" | Unknown use, constant value (see below).
-|- class="row5"
-| class="col2 centeralign" | Unknown
-| class="col1 centeralign" | 2 bytes
-| class="col2 centeralign" | <code>0x00 0x00</code>
-| class="col3" | Unknown use, constant value.
-|- class="row6"
-| class="col2 centeralign" | Session
-| class="col1 centeralign" | int64
-| class="col2 centeralign" | <code></code>
-| class="col3" | Session long recieved in 0x09.
-|- class="row7"
-| class="col2 centeralign" | Unknown
-| class="col1 centeralign" | 8 bytes
-| class="col2 centeralign" | <code>0x00, 0x00, 0x00, 0x00, 0x04, 0x44, 0x0b, 0xa9</code>
-| class="col3" | Unknown use, constant value.
-
-|- class="row8"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 96 Bytes
-|}
-
-'''Data Array'''
-
-The data array section is unknown, but we do know how to get it right. Below is some code on how to create the array (C#).
-
-<code>
-
-   public void putDataArray()
-        {
-            byte[] unknown1 = new byte[] { 0xf5, 0xff, 0xff, 0xf5 };
-            byte[] unknown2 = new byte[] { 0xff, 0xff, 0xff, 0xff };
-            this.putTriad(unknown1.Length);
-            this.putBytes(unknown1);
-            for (int i = 0; i < 9; i++)
-            {
-                this.putTriad(unknown2.Length);
-                this.putBytes(unknown2);
-            }
-        }
-</code>
-
-A triad is a 3 byte integer.
-
-Credit goes to InusualZ (https://github.com/InusualZ/CraftMine/blob/master/src/Network/Packets/Minecraft/ServerHandshake.cs).
-
-=== Client Handshake (0x13) ===
-
-''Client to Server''
-
-'''This is a Data Packet. It is encoded using packet encapsulation (scroll down for more info).'''
-
-{| class="wikitable"
-|- class="row0"
-| class="col0" | Packet ID
-| class="col1" | Field Name
-| class="col2" | Field Type
-| class="col3" | Example
-| class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="8" | 0x13
-| class="col1 centeralign" | cookie
-| class="col2 centeralign" | int32
-| class="col3 centeralign" | <code>0x43f57fe</code>
-| class="col4" | Unknown use, same cookie as in 0x10.
-|- class="row2"
-| class="col2 centeralign" | Security flags
-| class="col1 centeralign" | 1 byte
-| class="col2 centeralign" | <code>0xcd</code>
-| class="col3" | Unknown use, constant value.
-|- class="row3"
-| class="col2 centeralign" | Server port
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code>19132</code>
-| class="col3" | Unknown use.
-|- class="row4"
-| class="col2 centeralign" | Data Array 1 Length + Data Array 1
-| class="col1 centeralign" | 1 + ? bytes
-| class="col2 centeralign" | <code></code>
-| class="col3" | Unknown use (see below).
-|- class="row5"
-| class="col2 centeralign" | Data Array 2
-| class="col1 centeralign" | ? bytes
-| class="col2 centeralign" | <code></code>
-| class="col3" | Unknown use, constant value (see below).
-|- class="row6"
-| class="col2 centeralign" | Timestamp
-| class="col1 centeralign" | short
-| class="col2 centeralign" | <code></code>
-| class="col3" | Unknown use.
-|- class="row7"
-| class="col2 centeralign" | session
-| class="col1 centeralign" | int64
-| class="col2 centeralign" | <code></code>
-| class="col3" | Unknown use.
-|- class="row8"
-| class="col2 centeralign" | session2
-| class="col1 centeralign" | int64
-| class="col2 centeralign" | <code></code>
-| class="col3" | Unknown use.
-
-|- class="row9"
-| class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 94 Bytes
-|}
-
-'''Data Arrays'''
-
-''Array 1''
-
-The first array is just a series of bytes, starting with the first byte which has the length of the rest of the array. This can be decoded as follows (Java):
-
-<code>
-
-   buffer.get(new byte[(int) buffer.get()]);
-
-</code>
-
-The buffer variable is really a <code>ByteBuffer</code> object found in the package java.nio.
-
-''Array 2''
-
-The second array is a little more complicated. The first section is a triad (3 bytes) which specifies how many bytes to read next. This is repeated 9 times. An example is below (Java):
-
-<code>
-		for(int i = 0; i < 9; i++){
-
-			int l = NetworkUtils.getTriad(buf);
-
-			buf.get(new byte[l]);
-
-		}
-</code>
-
-Again, the buf object is a <code>ByteBuffer</code> object.
-
-
 {{anchor|Packet_Encapsulation}}
 
 == Packet Encapsulation format ==
@@ -877,6 +666,217 @@ Multiple Data Encapsulation packets could be present in one packet. If you want 
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 12 Bytes + Packet Data length
 |}
+
+
+{{anchor|Encapsulated_Login_packets}}
+
+== Encapsulated Login packets ==
+
+After packets 0x05 through 0x08 are sent, the client will send the first encapsulated packets (0x09 through 0x13). After 0x13 the game begins. You can check the login sequence [[Pocket_Editon_Login|here]].
+
+=== Client Connect (0x09) ===
+
+''Client to Server''
+
+'''This is a Data Packet. It is encoded using [[#Packet_Encapsulation|packet encapsulation format]].'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x09
+| class="col1 centeralign" | clientID
+| class="col2 centeralign" | int64
+| class="col3 centeralign" | <code></code>
+| class="col4" | The mojang client's clientID. 
+|- class="row2"
+| class="col2 centeralign" | session
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | <code></code>
+| class="col3" | A long that is sent back to the client in 0x10.
+|- class="row3"
+| class="col2 centeralign" | unknown
+| class="col1 centeralign" | byte
+| class="col2 centeralign" | <code></code>
+| class="col3" | Unknown use. Constant value.
+
+|- class="row4"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 18 Bytes
+|} 
+
+=== Server Handshake (0x10) ===
+
+''Server to Client''
+
+'''This is a Data Packet. It is encoded using [[#Packet_Encapsulation|packet encapsulation format]]..'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="8" | 0x10
+| class="col1 centeralign" | Cookie
+| class="col2 centeralign" | 4 bytes
+| class="col3 centeralign" | <code>043f57fe</code>
+| class="col4" | Unknown use, constant value. 
+|- class="row2"
+| class="col2 centeralign" | Security flags
+| class="col1 centeralign" | 1 byte
+| class="col2 centeralign" | <code>0xcd</code>
+| class="col3" | Unknown use, constant value.
+|- class="row3"
+| class="col2 centeralign" | Server port
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>19132</code>
+| class="col3" | Unknown use.
+|- class="row4"
+| class="col2 centeralign" | Data Array
+| class="col1 centeralign" | 70 bytes
+| class="col2 centeralign" | <code></code>
+| class="col3" | Unknown use, constant value (see below).
+|- class="row5"
+| class="col2 centeralign" | Unknown
+| class="col1 centeralign" | 2 bytes
+| class="col2 centeralign" | <code>0x00 0x00</code>
+| class="col3" | Unknown use, constant value.
+|- class="row6"
+| class="col2 centeralign" | Session
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | <code></code>
+| class="col3" | Session long recieved in 0x09.
+|- class="row7"
+| class="col2 centeralign" | Unknown
+| class="col1 centeralign" | 8 bytes
+| class="col2 centeralign" | <code>0x00, 0x00, 0x00, 0x00, 0x04, 0x44, 0x0b, 0xa9</code>
+| class="col3" | Unknown use, constant value.
+
+|- class="row8"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 96 Bytes
+|}
+
+'''Data Array'''
+
+The data array section is unknown, but we do know how to get it right. Below is some code on how to create the array (C#).
+
+<code>
+
+   public void putDataArray()
+        {
+            byte[] unknown1 = new byte[] { 0xf5, 0xff, 0xff, 0xf5 };
+            byte[] unknown2 = new byte[] { 0xff, 0xff, 0xff, 0xff };
+            this.putTriad(unknown1.Length);
+            this.putBytes(unknown1);
+            for (int i = 0; i < 9; i++)
+            {
+                this.putTriad(unknown2.Length);
+                this.putBytes(unknown2);
+            }
+        }
+</code>
+
+A triad is a 3 byte integer.
+
+Credit goes to InusualZ (https://github.com/InusualZ/CraftMine/blob/master/src/Network/Packets/Minecraft/ServerHandshake.cs).
+
+=== Client Handshake (0x13) ===
+
+''Client to Server''
+
+'''This is a Data Packet. It is encoded using [[#Packet_Encapsulation|packet encapsulation format]]..'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Field Name
+| class="col2" | Field Type
+| class="col3" | Example
+| class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="8" | 0x13
+| class="col1 centeralign" | cookie
+| class="col2 centeralign" | int32
+| class="col3 centeralign" | <code>0x43f57fe</code>
+| class="col4" | Unknown use, same cookie as in 0x10.
+|- class="row2"
+| class="col2 centeralign" | Security flags
+| class="col1 centeralign" | 1 byte
+| class="col2 centeralign" | <code>0xcd</code>
+| class="col3" | Unknown use, constant value.
+|- class="row3"
+| class="col2 centeralign" | Server port
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code>19132</code>
+| class="col3" | Unknown use.
+|- class="row4"
+| class="col2 centeralign" | Data Array 1 Length + Data Array 1
+| class="col1 centeralign" | 1 + ? bytes
+| class="col2 centeralign" | <code></code>
+| class="col3" | Unknown use (see below).
+|- class="row5"
+| class="col2 centeralign" | Data Array 2
+| class="col1 centeralign" | ? bytes
+| class="col2 centeralign" | <code></code>
+| class="col3" | Unknown use, constant value (see below).
+|- class="row6"
+| class="col2 centeralign" | Timestamp
+| class="col1 centeralign" | short
+| class="col2 centeralign" | <code></code>
+| class="col3" | Unknown use.
+|- class="row7"
+| class="col2 centeralign" | session
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | <code></code>
+| class="col3" | Unknown use.
+|- class="row8"
+| class="col2 centeralign" | session2
+| class="col1 centeralign" | int64
+| class="col2 centeralign" | <code></code>
+| class="col3" | Unknown use.
+
+|- class="row9"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 94 Bytes
+|}
+
+'''Data Arrays'''
+
+''Array 1''
+
+The first array is just a series of bytes, starting with the first byte which has the length of the rest of the array. This can be decoded as follows (Java):
+
+<code>
+
+   buffer.get(new byte[(int) buffer.get()]);
+
+</code>
+
+The buffer variable is really a <code>ByteBuffer</code> object found in the package java.nio.
+
+''Array 2''
+
+The second array is a little more complicated. The first section is a triad (3 bytes) which specifies how many bytes to read next. This is repeated 9 times. An example is below (Java):
+
+<code>
+		for(int i = 0; i < 9; i++){
+
+			int l = NetworkUtils.getTriad(buf);
+
+			buf.get(new byte[l]);
+
+		}
+</code>
+
+Again, the buf object is a <code>ByteBuffer</code> object.
 
 
 == Ping/Pong ==
