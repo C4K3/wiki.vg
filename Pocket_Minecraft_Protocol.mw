@@ -893,7 +893,7 @@ Again, the buf object is a <code>ByteBuffer</code> object.
 
 |- class="row2"
 | class="col0" | Total Size:
-| class="col1 rightalign" colspan="2" | 1 Byte
+| class="col1 rightalign" colspan="2" | 1 Byte}
 
 This appears to be sent whenever the user clicks the "cancel" button when connecting.
 
