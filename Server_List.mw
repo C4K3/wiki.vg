@@ -22,6 +22,21 @@ A couple things for contributors:
 !style="width: 72 px" | Feature list
 !style="width: 120px" | Development Status
 |-
+! [https://www.dragonet.org/ Dragonet]
+| [http://github.com/DragonetMC DragonetTeam]
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| LGPL
+| {{yes|1.8 (#47)}}
+| {{yes|Anvil}}
+| {{yes}}
+| {{yes}}
+| {{planned|Players}}
+| {{yes|Threads/Events}}
+| {{yes|Java ([http://bukkit.org/ Bukkit])}}
+| {{yes|{{windows}}{{linux}}{{mac}}}}
+| [https://github.com/SpaceManiac/Glowstone#features Link]
+| {{yes|Active}}
+|-
 ! [https://github.com/SpaceManiac/Glowstone Glowstone]
 | SpaceManiac
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
