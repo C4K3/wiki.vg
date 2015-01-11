@@ -20,7 +20,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{LGPL}}
 | Support [http://dev.bukkit.org/bukkit-plugins/ Bukkit Plugins], [http://wiki.vg/Category:Minecraft_Modern Minecraft PC], [http://wiki.vg/Category:Pocket_Minecraft Minecraft: Pocket Edition]
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.9.5 alpha}}
+| {{yes|Yes}}
 |-
 ! [http://www.pocketmine.net/ PocketMine-MP]
 | Server with Plugin API, Multiworlds and more
