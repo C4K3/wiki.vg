@@ -877,6 +877,26 @@ The second array is a little more complicated. The first section is a triad (3 b
 Again, the buf object is a <code>ByteBuffer</code> object.
 
 
+=== Client Cancel Connect (0x15) ===
+
+''Client to Server''
+
+'''This is a Data Packet. It is encoded using [[#Packet_Encapsulation|packet encapsulation format]].'''
+
+{| class="wikitable"
+|- class="row0"
+| class="col0" | Packet ID
+| class="col1" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="1" | 0x15
+| class="col1" | Only the packet ID is sent. 
+
+|- class="row2"
+| class="col0" | Total Size:
+| class="col1 rightalign" colspan="2" | 1 Byte
+
+This appears to be sent whenever the user clicks the "cancel" button when connecting.
+
 == Ping/Pong ==
 The client will repeatedly send ping packets to the server each containing an identifier (long). The server then must reply with a pong packet containing the identifier found in the ping. This is observed to happen sometime during the encapsulation login.
 
