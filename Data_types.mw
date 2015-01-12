@@ -58,7 +58,7 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 ! class="col0 centeralign" | string
 | class="col1 centeralign" | ≥ 2 <br />≤ 240
 | class="col2" | N/A
-| class="col3" | UTF-8 String length prefixed with a VarInt
+| class="col3" | UTF-8 String prefixed with its length as a VarInt
 |- 
 ! class="centeralign" | VarInt
 | class="centeralign" | Varies
