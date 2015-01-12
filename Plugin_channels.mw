@@ -65,6 +65,12 @@ This payload is simply a set of bytes corresponding to an ItemStack. It is seria
 When a player signs a book.
 This payload is simply a set of bytes corresponding to an ItemStack. It is serialized / deserialized exactly the same as itemstacks in packets.
 
+=== <code>MC|BOpen</code> ===
+''Server to client''
+
+When a player right clicks with a signed book. This tells the client to open the book GUI.
+This payload is empty.
+
 === <code>MC|ItemName</code> ===
 ''Two-way''
 
