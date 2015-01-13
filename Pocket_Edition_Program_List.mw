@@ -22,6 +22,16 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{windows}}{{linux}}{{mac}}
 | {{yes|v0.10.4 alpha}}
 |-
+! [https://github.com/zhuowei/MCPELauncher BlockLauncher]
+| BlockLauncher is a custom Minecraft PE launcher that wraps around Minecraft PE and provides texture pack and patch loading support.
+| Launcher
+| [https://twitter.com/zhuowei Zhuowei Zhang]
+| {{Java}}
+| Unknown
+| Texture Pack support, Mod PE Scripts & Custom Skins
+| {{Android}}
+| {{yes|0.10.5 alpha}}
+|-
 ! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
 | UDP proxy for MCPE Servers, allowing joining Online Servers from your local network. Dumps packets
 | Proxy
