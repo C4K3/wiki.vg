@@ -18,9 +18,9 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | [https://twitter.com/PocketMine PocketMine Team]
 | {{PHP}}
 | {{LGPL}}
-| Alpha_1.4 beta6
+| Alpha_1.4.1 beta1
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.9.5 alpha}}
+| {{yes|v0.10.4 alpha}}
 |-
 ! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
 | UDP proxy for MCPE Servers, allowing joining Online Servers from your local network. Dumps packets
@@ -30,7 +30,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | Unknown
 | Allows seeing sent/received packets through a web interface
 | {{windows}}{{linux}}{{mac}}
-| {{yes}}
+| {{No}}
 |-
 ! [https://github.com/PocketMine/PocketBurger PocketBurger]
 | Extracts information from the Minecraft: PE binary about the protocol + more. Compatible with Burger, Hamburglar and BurgerVitrine
@@ -40,7 +40,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | No restrictions
 | Generates JSON output, compatible with Burger
 | {{windows}}{{linux}}{{mac}}
-| {{yes|v0.8.1 alpha}}
+| {{No|v0.8.1 alpha}}
 |-
 ! [https://github.com/NiclasOlofsson/MiNET/ MiNET]
 | MCPE server with basic functionality.
@@ -50,7 +50,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{MPL}}
 | Stable but alpha functionality
 | {{windows}}
-| {{yes|alpha}}
+| {{Yes|alpha}}
 |-
 |}
 
