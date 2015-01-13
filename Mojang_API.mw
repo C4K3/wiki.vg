@@ -1,8 +1,8 @@
 
 == Notes ==
 
-All public APIs are rate limited so you are expected to cache the results. This is currently set at 600 per 10 minutes but this may change
-For some parts of the API, demo account are sometimes included, sometimes not. Mojang keeps changing this.
+* All public APIs are rate limited so you are expected to cache the results. This is currently set at 600 requests per 10 minutes but this may change.
+* For some parts of the API, demo accounts are sometimes included, sometimes not. Mojang keeps changing this.
 
 == Username -> Profile at time ==
 
