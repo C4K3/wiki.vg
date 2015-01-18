@@ -28,7 +28,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 | 51
 | Skeleton
 | 0.6
-| 1.8
+| 1.95
 |- 
 | 52
 | Spider
@@ -37,8 +37,8 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 53
 | Giant Zombie
-| 3.6
-| 10.8
+| 0.6 * 6
+| 1.8 * 6
 |- 
 | 54
 | Zombie
@@ -47,8 +47,8 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 55
 | Slime
-| 0.6 * size
-| 0.6 * size
+| 0.51000005 * size
+| 0.51000005 * size
 |- 
 | 56
 | Ghast
@@ -72,8 +72,8 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 60
 | Silverfish
+| 0.4
 | 0.3
-| 0.7
 |- 
 | 61
 | Blaze
@@ -82,8 +82,8 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 62
 | Magma Cube
-| 0.6 * size
-| 0.6 * size
+| 0.51000005 * size
+| 0.51000005 * size
 |- 
 | 63
 | Ender Dragon
@@ -93,7 +93,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 | 64
 | Wither
 | 0.9
-| 4.0
+| 3.5
 |- 
 | 65
 | Bat
@@ -132,7 +132,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 93
 | Chicken
-| 0.3
+| 0.4
 | 0.7
 |- 
 | 94
@@ -152,8 +152,8 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 |- 
 | 97
 | Snowman
-| 0.4
-| 1.8
+| 0.7
+| 1.9
 |- 
 | 98
 | Ocelot
