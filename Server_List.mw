@@ -82,7 +82,7 @@ A couple things for contributors:
 | [https://github.com/kangarko/Rush/blob/master/Features.md Link]
 | {{yes|Active}}
 |-
-! [https://github.com/kennyvv/SharpMC SharpMC]
+! [https://github.com/kennyvv/SharpMC-Rewrite SharpMC]
 | [http://wiki.vg/User:Wuppie Wuppie]
 | [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
 | [http://en.wikipedia.org/wiki/MIT_License MIT]
@@ -94,7 +94,7 @@ A couple things for contributors:
 | {{yes|Threads}}
 | {{planned}}
 | {{yes|{{windows}}{{linux}}{{mac}}}}
-| {{no|Unknown}}
+| {{yes|See github}}
 | {{yes|Active}}
 |-
 ! [https://tridentsdk.net/ TridentSDK]
