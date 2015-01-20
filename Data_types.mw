@@ -4,60 +4,60 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
 
 {| class="wikitable"
  |-
- ! 
- ! Size
- ! Range
+ ! Name
+ ! Size (bytes)
+ ! Encodes
  ! Notes
  |-
  ! bool
  | 1
- | 0 or 1
+ | false or true
  | Value can be either true (<code>0x01</code>) or false (<code>0x00</code>)
  |-
  ! byte
  | 1
  | -128 to 127
- | Signed, two's complement
+ | Signed 8-bit integer, [[wikipedia:Two's complement|two's complement]]
  |-
  ! short
  | 2
  | -32768 to 32767
- | Signed, two's complement
+ | Signed 16-bit integer, two's complement
  |-
  ! int
  | 4
  | -2147483648 to 2147483647
- | Signed, two's complement
+ | Signed 32-bit integer, two's complement
  |-
  ! long
  | 8
  | -9223372036854775808 to 9223372036854775807
- | Signed, two's complement
+ | Signed 64-bit integer, two's complement
  |-
  ! float
  | 4
- | See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
+ | 
  | Single-precision 32-bit IEEE 754 floating point
  |-
  ! double
  | 8
- | See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
+ | 
  | Double-precision 64-bit IEEE 754 floating point
  |-
  ! string
  | ≥ 1 <br />≤ 2147483652
- | N/A
- | UTF-8 string prefixed with its length as a VarInt
+ | A sequence of [[wikipedia:Unicode|Unicode]] code points
+ | [[wikipedia:UTF-8|UTF-8]] string prefixed with its length as a VarInt
  |- 
  ! VarInt
  | ≥ 1 <br />≤ 5
- | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer 32-bit Varint]
- | Signed, two's complement
+ | -2147483648 to 2147483647
+ | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer Varint], encoding a two's complement signed 32-bit integer
  |-
  ! VarLong
  | ≥ 1 <br />≤ 10
- | 
- | Like VarInt but for java longs
+ | -9223372036854775808 to 9223372036854775807
+ | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer Varint], encoding a two's complement signed 64-bit integer
  |-
  ! metadata
  | Varies
@@ -76,7 +76,7 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
  |-
  ! UUID
  | 16
- | 0 to 340282366920938463463374607431768211455
+ | A [[wikipedia:Universally_unique_identifier|UUID]]
  | The vanilla Minecraft server internally sends this as two longs.
 
 <pre>this.writeLong(uuid.getMostSignificantBits());
