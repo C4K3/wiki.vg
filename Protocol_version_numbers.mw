@@ -10,199 +10,199 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
  ! Version number
  ! Last known documentation
  |-
- | 1.8.1
+ | {{Minecraft Wiki|1.8.1}}
  |rowspan="2"| 47
  |rowspan="2"| [http://wiki.vg/index.php?title=Protocol&oldid=5486 page]
  |-
- | 1.8
+ | {{Minecraft Wiki|1.8}}
  |-
- | 1.8-pre3
+ | {{Minecraft Wiki|1.8-pre3}}
  | 46
  | 
  |-
- | 1.8-pre2
+ | {{Minecraft Wiki|1.8-pre2}}
  | 45
  | 
  |-
- | 1.8-pre1
+ | {{Minecraft Wiki|1.8-pre1}}
  | 44
  | 
  |-
- | 14w34d
+ | {{Minecraft Wiki|14w34d}}
  | 43
  | 
  |-
- | 14w34c
+ | {{Minecraft Wiki|14w34c}}
  | 42
  | 
  |-
- | 14w34b
+ | {{Minecraft Wiki|14w34b}}
  | 41
  | 
  |-
- | 14w34a
+ | {{Minecraft Wiki|14w34a}}
  | 40
  | 
  |-
- | 14w33c
+ | {{Minecraft Wiki|14w33c}}
  | 39
  | 
  |-
- | 14w33b
+ | {{Minecraft Wiki|14w33b}}
  | 38
  | 
  |-
- | 14w33a
+ | {{Minecraft Wiki|14w33a}}
  | 37
  | 
  |-
- | 14w32d
+ | {{Minecraft Wiki|14w32d}}
  | 36
  | 
  |-
- | 14w32c
+ | {{Minecraft Wiki|14w32c}}
  | 35
  | 
  |-
- | 14w32b
+ | {{Minecraft Wiki|14w32b}}
  | 34
  | 
  |- 
- | 14w32a
+ | {{Minecraft Wiki|14w32a}}
  | 33
  | 
  |-
- | 14w31a
+ | {{Minecraft Wiki|14w31a}}
  | 32
  | 
  |-
- | 14w30c
+ | {{Minecraft Wiki|14w30c}}
  | 31
  | 
  |-
- | 14w30a
+ | {{Minecraft Wiki|14w30a}}
  | 30
  | 
  |-
- | 14w29a
+ | {{Minecraft Wiki|14w29a}}
  | 29
  | 
  |-
- | 14w28b
+ | {{Minecraft Wiki|14w28b}}
  | 28
  | 
  |-
- | 14w28a
+ | {{Minecraft Wiki|14w28a}}
  | 27
  | 
  |-
- | 14w27b
+ | {{Minecraft Wiki|14w27b}}
  |rowspan="2"| 26
  |rowspan="2"| 
  |-
- | 14w27a
+ | {{Minecraft Wiki|14w27a}}
  |-
- | 14w26c
+ | {{Minecraft Wiki|14w26c}}
  | 25
  | 
  |-
- | 14w26b
+ | {{Minecraft Wiki|14w26b}}
  | 24
  | 
  |-
- | 14w26a
+ | {{Minecraft Wiki|14w26a}}
  | 23
  | 
  |-
- | 14w25b
+ | {{Minecraft Wiki|14w25b}}
  | 22
  | 
  |-
- | 14w25a
+ | {{Minecraft Wiki|14w25a}}
  | 21
  | 
  |-
- | 14w21b
+ | {{Minecraft Wiki|14w21b}}
  | 20
  | 
  |-
- | 14w21a
+ | {{Minecraft Wiki|14w21a}}
  | 19
  | 
  |-
- | 14w20a
+ | {{Minecraft Wiki|14w20a}}
  | 18
  | 
  |-
- | 14w19a
+ | {{Minecraft Wiki|14w19a}}
  | 17
  | 
  |-
- | 14w18b
+ | {{Minecraft Wiki|14w18b}}
  | 16
  | 
  |-
- | 14w17a
+ | {{Minecraft Wiki|14w17a}}
  | 15
  | 
  |-
- | 14w11a
+ | {{Minecraft Wiki|14w11a}}
  | 14
  | 
  |-
- | 14w08a
+ | {{Minecraft Wiki|14w08a}}
  | 12
  | 
  |-
- | 14w07a
+ | {{Minecraft Wiki|14w07a}}
  | 11
  | 
  |-
- | 14w06a
+ | {{Minecraft Wiki|14w06a}}
  | 10
  | 
  |-
- | 14w05a
+ | {{Minecraft Wiki|14w05a}}
  | 9
  | 
  |-
- | 14w04b
+ | {{Minecraft Wiki|14w04b}}
  | 8
  | 
  |-
- | 14w04a
+ | {{Minecraft Wiki|14w04a}}
  | 7
  | 
  |-
- | 14w03a
+ | {{Minecraft Wiki|14w03a}}
  | 6
  | 
  |-
- | 14w02a
+ | {{Minecraft Wiki|14w02a}}
  |rowspan="6"| 5
  |rowspan="6"| 
  |-
- | 1.7.10
+ | {{Minecraft Wiki|1.7.10}}
  |-
- | 1.7.9
+ | {{Minecraft Wiki|1.7.9}}
  |-
- | 1.7.8
+ | {{Minecraft Wiki|1.7.8}}
  |-
- | 1.7.7
+ | {{Minecraft Wiki|1.7.7}}
  |-
- | 1.7.6
+ | {{Minecraft Wiki|1.7.6}}
  |-
- | 1.7.5
+ | {{Minecraft Wiki|1.7.5}}
  |rowspan="5"| 4
  |rowspan="5"| [http://wiki.vg/index.php?title=Protocol&oldid=5486 page]
  |-
- | 1.7.4
+ | {{Minecraft Wiki|1.7.4}}
  |-
- | 1.7.3
+ | {{Minecraft Wiki|1.7.3}}
  |-
- | 1.7.2
+ | {{Minecraft Wiki|1.7.2}}
  |-
- | 1.7.1
+ | {{Minecraft Wiki|1.7.1}}
  |}
 
 == Versions before the Netty rewrite (-1.6.4) ==
