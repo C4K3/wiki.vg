@@ -36,13 +36,13 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
  |-
  ! float
  | 4
+ | [[wikipedia:Single-precision floating-point format|Single-precision 32-bit IEEE 754 floating point]]
  | 
- | Single-precision 32-bit IEEE 754 floating point
  |-
  ! double
  | 8
+ | [[wikipedia:Double-precision floating-point format|Double-precision 64-bit IEEE 754 floating point]]
  | 
- | Double-precision 64-bit IEEE 754 floating point
  |-
  ! string
  | ≥ 1 <br />≤&nbsp;2147483652
