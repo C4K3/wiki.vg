@@ -56,17 +56,17 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 | class="col3" | Double-precision 64-bit IEEE 754 floating point
 |- class="row9"
 ! class="col0 centeralign" | string
-| class="col1 centeralign" | ≥ 2 <br />≤ 240
+| class="col1 centeralign" | ≥ 1 <br />≤ 2147483652
 | class="col2" | N/A
 | class="col3" | UTF-8 String prefixed with its length as a VarInt
 |- 
 ! class="centeralign" | VarInt
-| class="centeralign" | Varies
+| class="centeralign" | ≥ 1 <br />≤ 5
 | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer 32-bit Varint]
 | Signed, two's complement
 |-
 ! VarLong
-| Varies
+| ≥ 1 <br />≤ 10
 | 
 | Like VarInt but for java longs
 |- class="row9"
