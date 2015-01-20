@@ -63,7 +63,7 @@ See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.
 ! class="centeralign" | VarInt
 | class="centeralign" | Varies
 | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer 32-bit Varint]
-|
+| signed, two's complement
 |-
 ! VarLong
 | Varies
