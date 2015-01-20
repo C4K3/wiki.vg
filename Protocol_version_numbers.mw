@@ -10,11 +10,11 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
  ! Version number
  ! Last known documentation
  |-
- | {{Minecraft Wiki|1.8.1}}
+ | '''{{Minecraft Wiki|1.8.1}}'''
  |rowspan="2"| 47
  |rowspan="2"| [http://wiki.vg/index.php?title=Protocol&oldid=5486 page]
  |-
- | {{Minecraft Wiki|1.8}}
+ | '''{{Minecraft Wiki|1.8}}'''
  |-
  | {{Minecraft Wiki|1.8-pre3}}
  | 46
@@ -182,27 +182,27 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
  |rowspan="6"| 5
  |rowspan="6"| 
  |-
- | {{Minecraft Wiki|1.7.10}}
+ | '''{{Minecraft Wiki|1.7.10}}'''
  |-
- | {{Minecraft Wiki|1.7.9}}
+ | '''{{Minecraft Wiki|1.7.9}}'''
  |-
- | {{Minecraft Wiki|1.7.8}}
+ | '''{{Minecraft Wiki|1.7.8}}'''
  |-
- | {{Minecraft Wiki|1.7.7}}
+ | '''{{Minecraft Wiki|1.7.7}}'''
  |-
- | {{Minecraft Wiki|1.7.6}}
+ | '''{{Minecraft Wiki|1.7.6}}'''
  |-
- | {{Minecraft Wiki|1.7.5}}
+ | '''{{Minecraft Wiki|1.7.5}}'''
  |rowspan="5"| 4
  |rowspan="5"| [http://wiki.vg/index.php?title=Protocol&oldid=5486 page]
  |-
- | {{Minecraft Wiki|1.7.4}}
+ | '''{{Minecraft Wiki|1.7.4}}'''
  |-
- | {{Minecraft Wiki|1.7.3}}
+ | {{Minecraft Wiki|1.7.3-pre}}
  |-
- | {{Minecraft Wiki|1.7.2}}
+ | '''{{Minecraft Wiki|1.7.2}}'''
  |-
- | {{Minecraft Wiki|1.7.1}}
+ | {{Minecraft Wiki|1.7.1-pre}}
  |}
 
 == Versions before the Netty rewrite (-1.6.4) ==
