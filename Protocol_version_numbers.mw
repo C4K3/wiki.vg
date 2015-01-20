@@ -3,100 +3,207 @@ This page lists the protocol version numbers used in the various MC releases. Of
 The 1.7 release has seen a complete rewrite of the network protocol (using Netty), including the version numbers. The protocol numbers have been reset. This page contains version numbers for both the pre-Netty and post-Netty protocol versions
 
 == Versions after the Netty rewrite (1.7+) ==
+
 {| class="wikitable"
-|-
-! Release name
-! Version number
-! Last known documentation
-|-
-| 1.8/1.8.1 || 47 || [[http://wiki.vg/index.php?title=Protocol&oldid=5486 page]]
-|-
-| 1.8-pre3 || 46
-|-
-| 1.8-pre2 || 45
-|-
-| 1.8-pre1 || 44
-|-
-| 14w34d || 43
-|-
-| 14w34c || 42
-|-
-| 14w34b || 41
-|-
-| 14w34a || 40
-|-
-| 14w33c || 39
-|-
-| 14w33b || 38
-|-
-| 14w33a || 37
-|-
-| 14w32d || 36
-|-
-| 14w32c || 35
-|-
-| 14w32b || 34
-|- 
-| 14w32a || 33
-|-
-| 14w31a || 32
-|-
-| 14w30c || 31
-|-
-| 14w30a || 30
-|-
-| 14w29a || 29
-|-
-| 14w28b || 28
-|-
-| 14w28a || 27
-|-
-| 14w27a/b || 26
-|-
-| 14w26c || 25
-|-
-| 14w26b || 24
-|-
-| 14w26a || 23
-|-
-| 14w25b || 22
-|-
-| 14w25a || 21
-|-
-| 14w21b || 20
-|-
-| 14w21a || 19
-|-
-| 14w20a || 18
-|-
-| 14w19a || 17
-|-
-| 14w18b || 16
-|-
-| 14w17a || 15
-|-
-| 14w11a || 14
-|-
-| 14w08a || 12
-|-
-| 14w07a || 11
-|-
-| 14w06a || 10
-|-
-| 14w05a || 9
-|-
-| 14w04b || 8
-|-
-| 14w04a || 7
-|-
-| 14w03a || 6
-|-
-| 14w02a || 5
-|-
-| 1.7.6/7/8/9/10 || 5 
-|-
-| 1.7.1/2/3/4/5 || 4 || [[http://wiki.vg/index.php?title=Protocol&oldid=5486 page]]
-|}
+ |-
+ ! Release name
+ ! Version number
+ ! Last known documentation
+ |-
+ | 1.8.1
+ |rowspan="2"| 47
+ |rowspan="2"| [http://wiki.vg/index.php?title=Protocol&oldid=5486 page]
+ |-
+ | 1.8
+ |-
+ | 1.8-pre3
+ | 46
+ | 
+ |-
+ | 1.8-pre2
+ | 45
+ | 
+ |-
+ | 1.8-pre1
+ | 44
+ | 
+ |-
+ | 14w34d
+ | 43
+ | 
+ |-
+ | 14w34c
+ | 42
+ | 
+ |-
+ | 14w34b
+ | 41
+ | 
+ |-
+ | 14w34a
+ | 40
+ | 
+ |-
+ | 14w33c
+ | 39
+ | 
+ |-
+ | 14w33b
+ | 38
+ | 
+ |-
+ | 14w33a
+ | 37
+ | 
+ |-
+ | 14w32d
+ | 36
+ | 
+ |-
+ | 14w32c
+ | 35
+ | 
+ |-
+ | 14w32b
+ | 34
+ | 
+ |- 
+ | 14w32a
+ | 33
+ | 
+ |-
+ | 14w31a
+ | 32
+ | 
+ |-
+ | 14w30c
+ | 31
+ | 
+ |-
+ | 14w30a
+ | 30
+ | 
+ |-
+ | 14w29a
+ | 29
+ | 
+ |-
+ | 14w28b
+ | 28
+ | 
+ |-
+ | 14w28a
+ | 27
+ | 
+ |-
+ | 14w27b
+ |rowspan="2"| 26
+ |rowspan="2"| 
+ |-
+ | 14w27a
+ |-
+ | 14w26c
+ | 25
+ | 
+ |-
+ | 14w26b
+ | 24
+ | 
+ |-
+ | 14w26a
+ | 23
+ | 
+ |-
+ | 14w25b
+ | 22
+ | 
+ |-
+ | 14w25a
+ | 21
+ | 
+ |-
+ | 14w21b
+ | 20
+ | 
+ |-
+ | 14w21a
+ | 19
+ | 
+ |-
+ | 14w20a
+ | 18
+ | 
+ |-
+ | 14w19a
+ | 17
+ | 
+ |-
+ | 14w18b
+ | 16
+ | 
+ |-
+ | 14w17a
+ | 15
+ | 
+ |-
+ | 14w11a
+ | 14
+ | 
+ |-
+ | 14w08a
+ | 12
+ | 
+ |-
+ | 14w07a
+ | 11
+ | 
+ |-
+ | 14w06a
+ | 10
+ | 
+ |-
+ | 14w05a
+ | 9
+ | 
+ |-
+ | 14w04b
+ | 8
+ | 
+ |-
+ | 14w04a
+ | 7
+ | 
+ |-
+ | 14w03a
+ | 6
+ | 
+ |-
+ | 14w02a
+ |rowspan="6"| 5
+ |rowspan="6"| 
+ |-
+ | 1.7.10
+ |-
+ | 1.7.9
+ |-
+ | 1.7.8
+ |-
+ | 1.7.7
+ |-
+ | 1.7.6
+ |-
+ | 1.7.5
+ |rowspan="5"| 4
+ |rowspan="5"| [http://wiki.vg/index.php?title=Protocol&oldid=5486 page]
+ |-
+ | 1.7.4
+ |-
+ | 1.7.3
+ |-
+ | 1.7.2
+ |-
+ | 1.7.1
+ |}
 
 == Versions before the Netty rewrite (-1.6.4) ==
 
