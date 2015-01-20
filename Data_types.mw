@@ -45,7 +45,7 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
  | Double-precision 64-bit IEEE 754 floating point
  |-
  ! string
- | ≥ 1 <br />≤ 2147483652
+ | ≥ 1 <br />≤&nbsp;2147483652
  | A sequence of [[wikipedia:Unicode|Unicode]] code points
  | [[wikipedia:UTF-8|UTF-8]] string prefixed with its length as a VarInt
  |- 
@@ -71,8 +71,8 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
  |-
  ! Position 
  | 8
- | 
- | See below
+ | integer/block position: x (-33554432 to 33554431), y (-2048 to 2047), z (-33554432 to 33554431)
+ | x as a 26-bit integer, followed by y as a 12-bit integer, followed by z as a 26-bit integer (all signed, two's complement). See also [[#Position|the section below]].
  |-
  ! UUID
  | 16
