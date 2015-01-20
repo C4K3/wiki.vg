@@ -3,93 +3,85 @@ All data sent over the network is [http://en.wikipedia.org/wiki/Endianness#Big-e
 Other than 'String' and 'Metadata', which are decoded with a custom function, these data formats are identical to those provided by the Java classes [http://download.oracle.com/javase/1.4.2/docs/api/java/io/DataInputStream.html DataInputStream] and [http://download.oracle.com/javase/1.4.2/docs/api/java/io/DataOutputStream.html DataOutputStream].
 
 {| class="wikitable"
-|- class="row0"
-| class="col0" |
-! class="col1" | Size
-! class="col2" | Range
-! class="col3" | Notes
-|- class="row1"
-! class="col0 centeralign" | bool
-| class="col1 centeralign" | 1
-| class="col2" | 0 or 1
-| class="col3" | Value can be either true (0x01) or false (0x00)
-|- class="row2"
-! class="col0 centeralign" | byte
-| class="col1 centeralign" | 1
-| class="col2" | -128 to 127
-| class="col3" | Signed, two's complement
-|- class="row3"
-! class="col0 centeralign" | short
-| class="col1 centeralign" | 2
-| class="col2" | -32768 to 32767
-| class="col3" | Signed, two's complement
-|- class="row4"
-! class="col0 centeralign" | int
-| class="col1 centeralign" | 4
-| class="col2" | -2147483648 to 2147483647
-| class="col3" | Signed, two's complement
-|- class="row5"
-! class="col0 centeralign" | long
-| class="col1 centeralign" | 8
-| class="col2" | -9223372036854775808 to 9223372036854775807
-| class="col3" | Signed, two's complement
-|- class="row8"
-! class="col0 centeralign" | 128-bit integer
-| class="col1 centeralign" | 16
-| class="col2" | 0 to 340282366920938463463374607431768211455
-| class="col3" | Unsigned, two's complement
+ |-
+ ! 
+ ! Size
+ ! Range
+ ! Notes
+ |-
+ ! bool
+ | 1
+ | 0 or 1
+ | Value can be either true (<code>0x01</code>) or false (<code>0x00</code>)
+ |-
+ ! byte
+ | 1
+ | -128 to 127
+ | Signed, two's complement
+ |-
+ ! short
+ | 2
+ | -32768 to 32767
+ | Signed, two's complement
+ |-
+ ! int
+ | 4
+ | -2147483648 to 2147483647
+ | Signed, two's complement
+ |-
+ ! long
+ | 8
+ | -9223372036854775808 to 9223372036854775807
+ | Signed, two's complement
+ |-
+ ! float
+ | 4
+ | See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
+ | Single-precision 32-bit IEEE 754 floating point
+ |-
+ ! double
+ | 8
+ | See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
+ | Double-precision 64-bit IEEE 754 floating point
+ |-
+ ! string
+ | ≥ 1 <br />≤ 2147483652
+ | N/A
+ | UTF-8 string prefixed with its length as a VarInt
+ |- 
+ ! VarInt
+ | ≥ 1 <br />≤ 5
+ | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer 32-bit Varint]
+ | Signed, two's complement
+ |-
+ ! VarLong
+ | ≥ 1 <br />≤ 10
+ | 
+ | Like VarInt but for java longs
+ |-
+ ! metadata
+ | Varies
+ | See [[Entities#Entity_Metadata_Format|this]]
+ | 
+ |- 
+ ! Slot Data
+ | Varies
+ | See [[Slot_Data|slot data]]
+ | 
+ |-
+ ! Position 
+ | 8
+ | 
+ | See below
+ |-
+ ! UUID
+ | 16
+ | 0 to 340282366920938463463374607431768211455
+ | The vanilla Minecraft server internally sends this as two longs.
 
-Used in [http://wiki.vg/Protocol#Spawn_Global_Entity 0x2C] to transmit UUIDs.
-
-The vanilla Minecraft server internally sends this as two longs.
-|- class="row7"
-! class="col0 centeralign" | float
-| class="col1 centeralign" | 4
-| class="col2" |
-See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
-| class="col3" | Single-precision 32-bit IEEE 754 floating point
-|- class="row8"
-! class="col0 centeralign" | double
-| class="col1 centeralign" | 8
-| class="col2" |
-See [http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2.3 this]
-| class="col3" | Double-precision 64-bit IEEE 754 floating point
-|- class="row9"
-! class="col0 centeralign" | string
-| class="col1 centeralign" | ≥ 1 <br />≤ 2147483652
-| class="col2" | N/A
-| class="col3" | UTF-8 String prefixed with its length as a VarInt
-|- 
-! class="centeralign" | VarInt
-| class="centeralign" | ≥ 1 <br />≤ 5
-| [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer 32-bit Varint]
-| Signed, two's complement
-|-
-! VarLong
-| ≥ 1 <br />≤ 10
-| 
-| Like VarInt but for java longs
-|- class="row9"
-! class="col0 centeralign" | metadata
-| class="col1 centeralign" | Varies
-| class="col2" | See [[Entities#Entity_Metadata_Format|this]]
-| class="Col3" | 
-|- 
-! class="centeralign" | Slot Data
-| class="centeralign" | Varies
-| See [[Slot_Data|slot data]]
-|
-|-
-! Position 
-| 8
-| 
-| See below
-|-
-! UUID
-| 16
-|
-| Encoded as two longs this.writeLong(uuid.getMostSignificantBits()); this.writeLong(uuid.getLeastSignificantBits());
-|}
+<pre>this.writeLong(uuid.getMostSignificantBits());
+this.writeLong(uuid.getLeastSignificantBits());</pre>
+ |}
 
 === Position ===
 
