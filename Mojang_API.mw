@@ -43,10 +43,10 @@ Returns all the usernames this user has used in the past and the one they are us
 <syntaxhighlight lang="javascript">
 [
   {
-    "name": "Hkliese"
+    "name": "Gold"
   },
   {
-    "name": "PlasmaPod",
+    "name": "Diamond",
     "changedToAt": 1414059749000
   }
 ]
