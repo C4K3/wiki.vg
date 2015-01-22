@@ -74,6 +74,11 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
  | -9223372036854775808 to 9223372036854775807
  | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer Varint], encoding a two's complement signed 64-bit integer
  |-
+ ! Chunk
+ | Varies
+ | A vertical chunk column
+ | See [[SMP Map Format#Data]]
+ |-
  ! Metadata
  | Varies
  | See [[Entities#Entity Metadata Format]]
