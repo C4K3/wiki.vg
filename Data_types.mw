@@ -96,8 +96,13 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
  |-
  ! Position 
  | 8
- | integer/block position: x (-33554432 to 33554431), y (-2048 to 2047), z (-33554432 to 33554431)
+ | Integer/block position: x (-33554432 to 33554431), y (-2048 to 2047), z (-33554432 to 33554431)
  | x as a 26-bit integer, followed by y as a 12-bit integer, followed by z as a 26-bit integer (all signed, two's complement). See also [[#Position|the section below]].
+ |-
+ ! Angle
+ | 1
+ | Rotation angle in steps of 1/256 of a full turn
+ | Whether or not this is signed does not matter, since the resulting angles are the same.
  |-
  ! UUID
  | 16
