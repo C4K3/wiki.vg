@@ -117,6 +117,16 @@ Other than 'String' and 'Metadata', which are decoded with a custom function, th
 <pre>this.writeLong(uuid.getMostSignificantBits());
 this.writeLong(uuid.getLeastSignificantBits());</pre>
  |-
+ ! Optional X
+ | 0 or size of X
+ | A field of type X, or nothing
+ | Whether or not the field is present must be known from the context.
+ |-
+ ! Array of X
+ | count times size of X
+ | Zero or more fields of type X
+ | The count must be known from the context.
+ |-
  ! Byte Array
  | Varies
  | Depends on context
