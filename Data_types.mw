@@ -1,4 +1,4 @@
-All data sent over the network is [http://en.wikipedia.org/wiki/Endianness#Big-endian big-endian], that is the bytes are sent from most significant byte to least significant byte. The majority of everyday computers are little-endian, therefore it may be necessary to change the endianness before sending data over the network.
+All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]], that is the bytes are sent from most significant byte to least significant byte. The majority of everyday computers are little-endian, therefore it may be necessary to change the endianness before sending data over the network.
 
 Other than 'String' and 'Metadata', which are decoded with a custom function, these data formats are identical to those provided by the Java classes [http://download.oracle.com/javase/1.4.2/docs/api/java/io/DataInputStream.html DataInputStream] and [http://download.oracle.com/javase/1.4.2/docs/api/java/io/DataOutputStream.html DataOutputStream].
 
