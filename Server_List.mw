@@ -5,352 +5,352 @@ A couple things for contributors:
 * If you haven't committed to your repository in a few months, it will be marked as on hiatus. Don't take it personally; just write more code and update the wiki.
 * Wiki editors rely on README files to gather server features. If you don't have one, you run the risk that they will read your source code to discern what your server can do. This might not be what you wanted. >:3
 
-{| class="wikitable sortable" style="width: auto; text-align: center;"
-|-style="background:#eee"
-!style="min-width: 100px" | Name
-!style="min-width: 120px" | Author(s)
-!style="min-width: 72px" | Language
-!style="min-width: 72px" | License
-!style="width: 72px" | Last Version Supported
-!style="width: 72px" | World Formats
-!style="width: 72px" | Multiworld
-!style="width: 72px" | Physics
-!style="width: 72px" | Entities
-!style="width: 72px" | Concurrency Model
-!style="width: 72px" | Scripting
-!style="width: 72px" | Platform
-!style="width: 72 px" | Feature list
-!style="width: 120px" | Development Status
-|-
-! [https://github.com/DragonetMC/Dragonet Dragonet]
-| [http://github.com/DragonetMC DragonetTeam]
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| LGPL
-| {{yes|1.8 (#47)}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{planned|Players}}
-| {{yes|Threads/Events}}
-| {{yes|Java ([http://bukkit.org/ Bukkit])}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
-| Support Bukkit Plugins, Minecraft PC, Minecraft: Pocket Edition
-| {{yes|Active}}
-|-
-! [https://github.com/SpaceManiac/Glowstone Glowstone]
-| SpaceManiac
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.8 (#47)}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{planned|Players}}
-| {{yes|Threads/Events}}
-| {{yes|Java ([http://bukkit.org/ Bukkit])}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
-| [https://github.com/SpaceManiac/Glowstone#features Link]
-| {{yes|Active}}
-|-
-! [http://www.mc-server.org MCServer]
-| FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| Apache 2.0
-| {{yes|1.8 (#47)}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Threads}}
-| {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
-| {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
-| [http://forum.mc-server.org/showthread.php?tid=499 Link]
-| {{yes|Active}}
-|-
-! [https://github.com/kangarko/Rush Rush]
-| Rush Team
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| Open source
-| {{yes|1.8 (#47)}}
-| {{yes|McRegion}}
-| {{planned}}
-| {{planned|Partial}}
-| {{yes|Players, Mobs (test AI)}}
-| {{yes|Threads}}
-| {{yes|Java ([http://bukkit.org/ Bukkit])}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
-| [https://github.com/kangarko/Rush/blob/master/Features.md Link]
-| {{yes|Active}}
-|-
-! [https://github.com/kennyvv/SharpMC-Rewrite SharpMC]
-| [http://wiki.vg/User:Wuppie Wuppie]
-| [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|1.8 (#47)}}
-| {{yes|Custom}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{yes|Threads}}
-| {{planned}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
-| {{yes|See github}}
-| {{yes|Active}}
-|-
-! [https://github.com/PistonDevelopers/hematite_server Hematite]
-| [http://www.piston.rs/ Piston] developers
-| [http://www.rust-lang.org/ Rust]
-| [[wikipedia:MIT License|MIT]]
-| {{no|1.8.1 Planned}}
-| {{planned|Anvil Planned}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{unknown}}
-| {{unknown}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
-| {{planned|Planning}}
-|-
-! [https://tridentsdk.net/ TridentSDK]
-| TridentSDK Team
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| Open source
-| {{no|1.8 Planned}}
-| {{yes|Anvil}}
-| {{planned}}
-| {{planned}}
-| {{yes|Players, Mobs (test AI)}}
-| {{yes|Threads/Events}}
-| {{yes|Java}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
-| {{no|Unknown}}
-| {{yes|Active}}
-|-
-| [https://github.com/cnlohr/avrcraft AVRCraft]
-| [[User:CNLohr|CNLohr]]
-| [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{no|1.7.10 (#5)}}
-| {{no|User}}
-| {{no}}
-| {{no}}
-| {{planned|Partial}}
-| {{yes|Poll}}
-| {{No}}
-| {{Yes|{{linux}} [http://www.nongnu.org/avr-libc/ avr] [https://openwrt.org/ openwrt] }}
-| {{Yes| <16kB}}
-| {{Yes|Active June 1, 2014}}
-|-
-! [http://wiki.vg/HCraft hCraft]
-| BizarreCake
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://gplv3.fsf.org/ GPLv3]
-| {{no|1.7.10 (#5)}}
-| {{yes|Custom (HWv1)}}
-| {{yes}}
-| {{yes}}
-| {{planned|Players}}
-| {{yes|Threads/Events}}
-| {{no}}
-| {{yes|{{linux}}}}
-| [https://github.com/BizarreCake/hCraft/#features Link]
-| {{yes|Active}}
-|-
-! [https://github.com/thinkofdeath/netherrack Netherrack]
-| Thinkofdeath
-| [http://golang.org/ Go]
-|  Apache v2
-| {{no|1.7.4 (#4)}}
-| {{planned|Custom}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Goroutines}}
-| {{no}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{no}}
-| {{no|Inactive}}
-|-
-! [https://github.com/JoeDoyle23/BurningPig BurningPig]
-| Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
-| [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{no|1.6.4}}
-| {{yes|Custom}}
-| {{planned}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Async Networking}}
-| {{no}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| [https://github.com/JoeDoyle23/BurningPig#current-features Link]
-| {{no|Inctive}}
-|-
-! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
-| Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{no|1.6.2}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes}}
-| {{yes|Async Networking/Logic}}
-| {{yes|C#}}
-| {{yes|{{windows}}{{linux}}{{mac}}}}
-| [https://github.com/SirCmpwn/PartyCraft#features Link]
-| {{unknown|on hiatus since August 2013}}
-|-
-! [https://github.com/fador/mineserver/ Mineserver]
-| Fador, Psoden, deoxxa
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{no|1.5.2}}
-| {{yes|Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{unknown}}
-| {{yes|C++}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| [https://github.com/fador/mineserver/#features Link]
-| {{unknown|on hiatus since November 2013}}
-|-
-! [http://nessus.lv/nessusms NessusMS]
-| [[User:Pbunny|Pbunny]]
-| [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
-| [http://nessus.lv/pbunny-license.txt Pbunny License v1]
-| {{no|1.5.2}}
-| {{yes|Custom}}
-| {{yes}}
-| {{yes}}
-| {{planned|Partial}}
-| {{yes|Async Networking/Posix Threads}}
-| {{planned}}
-| {{yes|{{linux}}}}
-| [http://nessus.lv/nessusms Link]
-| {{unknown|on hiatus since June 2013}}
-|-
-! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
-| [http://www.spout.org/ Spout LLC] and community
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://spout.in/licensev1 Spout License v1]
-| {{no|1.5.2}}
-| {{yes|Custom}}
-| {{yes}}
-| {{planned|Partial}}
-| {{planned|Partial}}
-| {{yes|Parallel Threads}}
-| {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{no|unknown}}
-| {{yes|Active}}
-|-
-! [http://bravoserver.org/ Bravo]
-| Corbin Simpson
-| [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
-| MIT/X11
-| {{no|1.5}}
-| {{yes|Alpha, Beta, Anvil}}
-| {{yes}}
-| {{yes}}
-| {{yes|Players, Mobs}}
-| {{yes|Async I/O, Processes}}
-| {{yes|Python}}
-| {{yes|{{linux}}{{windows}}}}
-| [https://github.com/bravoserver/bravo#features Link]
-| {{yes|Active}}
-|-
-! [http://c-raft.com C#raft]
-| ementalo, smjert
-| [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
-| {{unknown|unknown}}
-| {{no|1.5}}
-| {{yes|Custom}}
-| {{no}}
-| {{no}}
-| {{planned|Player}}
-| {{unknown}}
-| {{yes|C#}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| {{unknown}}
-| {{unknown|on hiatus since August 2013}}
-|-
-! [https://github.com/clonejo/mc-erl/ mc-erl]
-| Apiocera, clonejo
-| [http://en.wikipedia.org/wiki/Erlang_(programming_language) Erlang]
-| [http://www.gnu.org/licenses/gpl-3.0.en.html GPLv3]
-| {{no|1.4.7}}
-| {{yes|custom (Mnesia)}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Erlang processes}}
-| {{no}}
-| {{yes|{{linux}}}}
-| [https://github.com/clonejo/mc-erl/#feature-list Link]
-| {{unknown|somewhat active}}
-|-
-! [https://github.com/deoxxa/jsmc jsmc]
-| Conrad Pankoff ([[User:deoxxa|deoxxa]])
-| [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
-| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{no|1.4.2}}
-| {{no}}
-| {{no}}
-| {{no}}
-| {{planned|Players}}
-| {{yes|Async Networking/Logic}}
-| {{yes|JavaScript}}
-| {{yes|{{linux}}{{windows}}{{mac}}}}
-| [https://github.com/deoxxa/jsmc#features Link]
-| {{unknown|on hiatus since January 2013}}
-|-
-! [https://github.com/sprenger120/FastCraft FastCraft]
-| [http://mc.kev009.com/User:sprenger120 sprenger120]
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
-| {{no|1.3.2}}
-| {{yes|Anvil (read access)}}
-| {{planned}}
-| {{planned}}
-| {{planned|Players, mobs}}
-| {{yes|Threads}}
-| {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
-| {{unknown}}
-| {{no|Unknown}}
-| {{unknown|on hiatus since February 2013}}
-|-
-! [[Realcraft:Main_Page|Realcraft]]
-| [[User:Jailout2000|Jailout2000]]
-| [http://en.wikipedia.org/wiki/Realbasic Realbasic]
-| Closed source
-| {{no|1.3.2}}
-| {{yes|Custom}}
-| {{yes}}
-| {{planned}}
-| {{planned|Players, other entities are WIP}}
-| {{yes|Event-driven}}
-| {{no}}
-| {{yes|{{linux}}{{windows}}}}
-| [http://www.wiki.vg/Realcraft:Features Link]
-| {{no|Inactive}}
-|-
-! [https://github.com/Mineserver/mineserver2 Mineserver 2]
-| deoxxa, [[User:Jailout2000|Jailout2000]]
-| [http://en.wikipedia.org/wiki/C%2B%2B C++]
-| [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
-| {{no|Unknown}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{planned}}
-| {{planned|boost, ZeroMQ}}
-| {{yes|C++}}
-| {{unknown}}
-| {{no|Unknown}}
-| {{unknown|On hiatus since April 2012}}
-|}
+{| class="wikitable sortable" style="text-align: center;"
+ |-
+ ! Name
+ ! Author(s)
+ ! Language
+ ! License
+ ! Last version supported
+ ! World formats
+ ! Multiworld
+ ! Physics
+ ! Entities
+ ! Concurrency model
+ ! Scripting
+ ! Platform
+ ! Feature list
+ ! Development status
+ |-
+ ! [https://github.com/DragonetMC/Dragonet Dragonet]
+ | [http://github.com/DragonetMC DragonetTeam]
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | LGPL
+ | {{yes|1.8 (#47)}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{planned|Players}}
+ | {{yes|Threads/Events}}
+ | {{yes|Java ([http://bukkit.org/ Bukkit])}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | Support Bukkit Plugins, Minecraft PC, Minecraft: Pocket Edition
+ | {{yes|Active}}
+ |-
+ ! [https://github.com/SpaceManiac/Glowstone Glowstone]
+ | SpaceManiac
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | [http://en.wikipedia.org/wiki/MIT_License MIT]
+ | {{yes|1.8 (#47)}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{planned|Players}}
+ | {{yes|Threads/Events}}
+ | {{yes|Java ([http://bukkit.org/ Bukkit])}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | [https://github.com/SpaceManiac/Glowstone#features Link]
+ | {{yes|Active}}
+ |-
+ ! [http://www.mc-server.org MCServer]
+ | FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
+ | [http://en.wikipedia.org/wiki/C%2B%2B C++]
+ | Apache 2.0
+ | {{yes|1.8 (#47)}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players, Mobs}}
+ | {{yes|Threads}}
+ | {{yes|[http://en.wikipedia.org/wiki/Lua Lua]}}
+ | {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
+ | [http://forum.mc-server.org/showthread.php?tid=499 Link]
+ | {{yes|Active}}
+ |-
+ ! [https://github.com/kangarko/Rush Rush]
+ | Rush Team
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | Open source
+ | {{yes|1.8 (#47)}}
+ | {{yes|McRegion}}
+ | {{planned}}
+ | {{planned|Partial}}
+ | {{yes|Players, Mobs (test AI)}}
+ | {{yes|Threads}}
+ | {{yes|Java ([http://bukkit.org/ Bukkit])}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | [https://github.com/kangarko/Rush/blob/master/Features.md Link]
+ | {{yes|Active}}
+ |-
+ ! [https://github.com/kennyvv/SharpMC-Rewrite SharpMC]
+ | [http://wiki.vg/User:Wuppie Wuppie]
+ | [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
+ | [http://en.wikipedia.org/wiki/MIT_License MIT]
+ | {{yes|1.8 (#47)}}
+ | {{yes|Custom}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{yes|Threads}}
+ | {{planned}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{yes|See github}}
+ | {{yes|Active}}
+ |-
+ ! [https://github.com/PistonDevelopers/hematite_server Hematite]
+ | [http://www.piston.rs/ Piston] developers
+ | [http://www.rust-lang.org/ Rust]
+ | [[wikipedia:MIT License|MIT]]
+ | {{no|1.8.1 Planned}}
+ | {{planned|Anvil Planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{unknown}}
+ | {{unknown}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
+ | {{planned|Planning}}
+ |-
+ ! [https://tridentsdk.net/ TridentSDK]
+ | TridentSDK Team
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | Open source
+ | {{no|1.8 Planned}}
+ | {{yes|Anvil}}
+ | {{planned}}
+ | {{planned}}
+ | {{yes|Players, Mobs (test AI)}}
+ | {{yes|Threads/Events}}
+ | {{yes|Java}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{no|Unknown}}
+ | {{yes|Active}}
+ |-
+ | [https://github.com/cnlohr/avrcraft AVRCraft]
+ | [[User:CNLohr|CNLohr]]
+ | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
+ | [http://en.wikipedia.org/wiki/MIT_License MIT]
+ | {{no|1.7.10 (#5)}}
+ | {{no|User}}
+ | {{no}}
+ | {{no}}
+ | {{planned|Partial}}
+ | {{yes|Poll}}
+ | {{No}}
+ | {{Yes|{{linux}} [http://www.nongnu.org/avr-libc/ avr] [https://openwrt.org/ openwrt] }}
+ | {{Yes| <16kB}}
+ | {{Yes|Active June 1, 2014}}
+ |-
+ ! [http://wiki.vg/HCraft hCraft]
+ | BizarreCake
+ | [http://en.wikipedia.org/wiki/C%2B%2B C++]
+ | [http://gplv3.fsf.org/ GPLv3]
+ | {{no|1.7.10 (#5)}}
+ | {{yes|Custom (HWv1)}}
+ | {{yes}}
+ | {{yes}}
+ | {{planned|Players}}
+ | {{yes|Threads/Events}}
+ | {{no}}
+ | {{yes|{{linux}}}}
+ | [https://github.com/BizarreCake/hCraft/#features Link]
+ | {{yes|Active}}
+ |-
+ ! [https://github.com/thinkofdeath/netherrack Netherrack]
+ | Thinkofdeath
+ | [http://golang.org/ Go]
+ |  Apache v2
+ | {{no|1.7.4 (#4)}}
+ | {{planned|Custom}}
+ | {{no}}
+ | {{no}}
+ | {{planned|Players}}
+ | {{yes|Goroutines}}
+ | {{no}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | {{no}}
+ | {{no|Inactive}}
+ |-
+ ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
+ | Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
+ | [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
+ | [http://en.wikipedia.org/wiki/MIT_License MIT]
+ | {{no|1.6.4}}
+ | {{yes|Custom}}
+ | {{planned}}
+ | {{no}}
+ | {{planned|Players}}
+ | {{yes|Async Networking}}
+ | {{no}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | [https://github.com/JoeDoyle23/BurningPig#current-features Link]
+ | {{no|Inctive}}
+ |-
+ ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
+ | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
+ | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+ | [http://en.wikipedia.org/wiki/MIT_License MIT]
+ | {{no|1.6.2}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Async Networking/Logic}}
+ | {{yes|C#}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | [https://github.com/SirCmpwn/PartyCraft#features Link]
+ | {{unknown|on hiatus since August 2013}}
+ |-
+ ! [https://github.com/fador/mineserver/ Mineserver]
+ | Fador, Psoden, deoxxa
+ | [http://en.wikipedia.org/wiki/C%2B%2B C++]
+ | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+ | {{no|1.5.2}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players, Mobs}}
+ | {{unknown}}
+ | {{yes|C++}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | [https://github.com/fador/mineserver/#features Link]
+ | {{unknown|on hiatus since November 2013}}
+ |-
+ ! [http://nessus.lv/nessusms NessusMS]
+ | [[User:Pbunny|Pbunny]]
+ | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
+ | [http://nessus.lv/pbunny-license.txt Pbunny License v1]
+ | {{no|1.5.2}}
+ | {{yes|Custom}}
+ | {{yes}}
+ | {{yes}}
+ | {{planned|Partial}}
+ | {{yes|Async Networking/Posix Threads}}
+ | {{planned}}
+ | {{yes|{{linux}}}}
+ | [http://nessus.lv/nessusms Link]
+ | {{unknown|on hiatus since June 2013}}
+ |-
+ ! [https://github.com/SpoutDev/Spout Spout]<br />(with [https://github.com/VanillaDev/Vanilla Vanilla] plugin)
+ | [http://www.spout.org/ Spout LLC] and community
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | [http://spout.in/licensev1 Spout License v1]
+ | {{no|1.5.2}}
+ | {{yes|Custom}}
+ | {{yes}}
+ | {{planned|Partial}}
+ | {{planned|Partial}}
+ | {{yes|Parallel Threads}}
+ | {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | {{no|unknown}}
+ | {{yes|Active}}
+ |-
+ ! [http://bravoserver.org/ Bravo]
+ | Corbin Simpson
+ | [http://en.wikipedia.org/wiki/Python_%28programming_language%29 Python]
+ | MIT/X11
+ | {{no|1.5}}
+ | {{yes|Alpha, Beta, Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players, Mobs}}
+ | {{yes|Async I/O, Processes}}
+ | {{yes|Python}}
+ | {{yes|{{linux}}{{windows}}}}
+ | [https://github.com/bravoserver/bravo#features Link]
+ | {{yes|Active}}
+ |-
+ ! [http://c-raft.com C#raft]
+ | ementalo, smjert
+ | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
+ | {{unknown|unknown}}
+ | {{no|1.5}}
+ | {{yes|Custom}}
+ | {{no}}
+ | {{no}}
+ | {{planned|Player}}
+ | {{unknown}}
+ | {{yes|C#}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | {{unknown}}
+ | {{unknown|on hiatus since August 2013}}
+ |-
+ ! [https://github.com/clonejo/mc-erl/ mc-erl]
+ | Apiocera, clonejo
+ | [http://en.wikipedia.org/wiki/Erlang_(programming_language) Erlang]
+ | [http://www.gnu.org/licenses/gpl-3.0.en.html GPLv3]
+ | {{no|1.4.7}}
+ | {{yes|custom (Mnesia)}}
+ | {{no}}
+ | {{no}}
+ | {{planned|Players}}
+ | {{yes|Erlang processes}}
+ | {{no}}
+ | {{yes|{{linux}}}}
+ | [https://github.com/clonejo/mc-erl/#feature-list Link]
+ | {{unknown|somewhat active}}
+ |-
+ ! [https://github.com/deoxxa/jsmc jsmc]
+ | Conrad Pankoff ([[User:deoxxa|deoxxa]])
+ | [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
+ | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+ | {{no|1.4.2}}
+ | {{no}}
+ | {{no}}
+ | {{no}}
+ | {{planned|Players}}
+ | {{yes|Async Networking/Logic}}
+ | {{yes|JavaScript}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | [https://github.com/deoxxa/jsmc#features Link]
+ | {{unknown|on hiatus since January 2013}}
+ |-
+ ! [https://github.com/sprenger120/FastCraft FastCraft]
+ | [http://mc.kev009.com/User:sprenger120 sprenger120]
+ | [http://en.wikipedia.org/wiki/C%2B%2B C++]
+ | [http://en.wikipedia.org/wiki/GPL_v3#Version_3 GPLv3]
+ | {{no|1.3.2}}
+ | {{yes|Anvil (read access)}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned|Players, mobs}}
+ | {{yes|Threads}}
+ | {{planned|Planned ([http://en.wikipedia.org/wiki/Lua_(programming_language) Lua])}}
+ | {{unknown}}
+ | {{no|Unknown}}
+ | {{unknown|on hiatus since February 2013}}
+ |-
+ ! [[Realcraft:Main_Page|Realcraft]]
+ | [[User:Jailout2000|Jailout2000]]
+ | [http://en.wikipedia.org/wiki/Realbasic Realbasic]
+ | Closed source
+ | {{no|1.3.2}}
+ | {{yes|Custom}}
+ | {{yes}}
+ | {{planned}}
+ | {{planned|Players, other entities are WIP}}
+ | {{yes|Event-driven}}
+ | {{no}}
+ | {{yes|{{linux}}{{windows}}}}
+ | [http://www.wiki.vg/Realcraft:Features Link]
+ | {{no|Inactive}}
+ |-
+ ! [https://github.com/Mineserver/mineserver2 Mineserver 2]
+ | deoxxa, [[User:Jailout2000|Jailout2000]]
+ | [http://en.wikipedia.org/wiki/C%2B%2B C++]
+ | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+ | {{no|Unknown}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned|boost, ZeroMQ}}
+ | {{yes|C++}}
+ | {{unknown}}
+ | {{no|Unknown}}
+ | {{unknown|On hiatus since April 2012}}
+ |}
 
 [[Category:Minecraft Modern]]
