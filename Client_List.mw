@@ -211,6 +211,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
 | {{yes}}
 | {{Yes|Debug 2.5 D}}
 | {{no|1.2.0-1.5.2}}
-|-|}
+|-
+! [https://github.com/PistonDevelopers/hematite Hematite]
+| {{no|[https://github.com/PistonDevelopers/hematite/pull/174 Doesn't compile]}}
+| [http://www.piston.rs/ Piston] developers
+| [http://www.rust-lang.org/ Rust]
+| {{MIT}}
+| {{unknown}}
+| {{yes}}
+| {{yes|1.8-pre2}}
+|}
 
 [[Category:Minecraft Modern]]
