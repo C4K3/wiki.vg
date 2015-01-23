@@ -97,6 +97,21 @@ A couple things for contributors:
 | {{yes|See github}}
 | {{yes|Active}}
 |-
+! [https://github.com/PistonDevelopers/hematite_server Hematite]
+| [http://www.piston.rs/ Piston] developers
+| [http://www.rust-lang.org/ Rust]
+| [[wikipedia:MIT License|MIT]]
+| {{no|1.8.1 Planned}}
+| {{planned|Anvil Planned}}
+| {{planned}}
+| {{planned}}
+| {{planned}}
+| {{unknown}}
+| {{unknown}}
+| {{yes|{{linux}}{{windows}}{{mac}}}}
+| {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
+| {{planned|Planning}}
+|-
 ! [https://tridentsdk.net/ TridentSDK]
 | TridentSDK Team
 | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
