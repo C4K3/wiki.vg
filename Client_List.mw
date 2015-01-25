@@ -25,11 +25,11 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  |-
  ! [https://github.com/nickelpro/spock SpockBot]
  | SMP Bot framework, based on BarneyGale's protocol implementation
- | nickelpro
+ | [https://github.com/nickelpro nickelpro], [https://github.com/gamingrobot gamingrobot]
  | {{Python}}
  | {{MIT}}
- | {{yes}}
  | {{no}}
+ | {{planned|Planned with plugin}}
  | {{yes|1.8}}
  |-
  ! [https://github.com/woder/torchbot TorchBot]
