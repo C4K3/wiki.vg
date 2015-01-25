@@ -135,7 +135,8 @@ The "value" base64 string for the "textures" object decoded:
 }
 </syntaxhighlight>
 
-* timestamp sometimes in the past (probably due to cached results?)
+* The timestamp is sometimes in the past (probably due to cached results?)
+* The <code>"SKIN"</code> object will have <code>"metadata": {"model": "slim"}</code> if the player model has slim arms (“Alex?” style). For square arms (“Steve?” style), <code>"metadata"</code> will be missing
 
 == Examples ==
 
