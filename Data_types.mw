@@ -133,7 +133,7 @@ this.writeLong(uuid.getLeastSignificantBits());</pre>
 
 === Position ===
 
-64-bit long split in to three parts
+64-bit value split in to three parts
 
 x: 26 MSBs
 
@@ -143,15 +143,14 @@ y: 12 bits between them
 
 Encoded as followed:
 
-  ((x & 0x3FFFFFF) << 38) | ((y & 0xFFF) << 26) | (z & 0x3FFFFFF)
- 
+ ((x & 0x3FFFFFF) << 38) | ((y & 0xFFF) << 26) | (z & 0x3FFFFFF)
 
 And decoded as:
 
-  long val; // Encoded value
-  x = val >> 38;
-  y = (val >> 26) & 0xFFF
-  z = val << 38 >> 38
+ long val; // Encoded value
+ x = val >> 38;
+ y = (val >> 26) & 0xFFF
+ z = val << 38 >> 38
 
 === Fixed-point numbers ===
 
