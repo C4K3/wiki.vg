@@ -23,7 +23,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes|Yes, using Bundle plugin}}
  | {{yes|1.8}}
  |-
- ! [https://github.com/nickelpro/spock SpockBot]
+ ! [https://github.com/nickelpro/spock spock]
  | SMP Bot framework, based on BarneyGale's protocol implementation
  | [https://github.com/nickelpro nickelpro], [https://github.com/gamingrobot gamingrobot]
  | {{Python}}
