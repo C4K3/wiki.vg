@@ -55,11 +55,11 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 ! [https://github.com/NiclasOlofsson/MiNET/ MiNET]
 | MCPE server with basic functionality.
 | Server
-| [https://github.com/NiclasOlofsson Niclas Olofsson]
+| [https://github.com/NiclasOlofsson Niclas Olofsson]<br>[https://github.com/kennyvv kennyvv]
 | {{CSHARP}}
 | {{MPL}}
 | Stable but alpha functionality
-| {{windows}}
+| {{windows}}{{linux}}{{mac}}
 | {{Yes|alpha}}
 |-
 |}
