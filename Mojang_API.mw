@@ -9,10 +9,12 @@
   GET https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp>
 
 This will return the uuid of the name at the timestamp provided.
-* The timestamp is a unix timestamp
+
+* The timestamp is a unix timestamp with milliseconds
 * When the <code>at</code> parameter is not sent, the current time is used
 
 === Response ===
+
 <syntaxhighlight lang="javascript">
 {
   "id": "7125ba8b1c864508b92bb5c042ccfe2b",
@@ -24,8 +26,9 @@ This will return the uuid of the name at the timestamp provided.
 * <code>legacy</code> only appears when true (not migrated to mojang account)
 * <code>demo</code> only appears when true (account unpaid)
 
-If there is no player with the given username an HTTP status code 204 (No Content) is sent without any HTTP body.<br>
+If there is no player with the given username an HTTP status code 204 (No Content) is sent without any HTTP body.<br />
 If the timestamp is not a number, too big or too small the HTTP status code 400 (Bad Request) is sent with an error message looking like this:
+
 <syntaxhighlight lang="javascript">
 {
   "error": "IllegalArgumentException",
