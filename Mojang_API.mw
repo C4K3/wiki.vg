@@ -10,7 +10,7 @@
 
 This will return the uuid of the name at the timestamp provided.
 
-* The timestamp is a unix timestamp with milliseconds
+* The timestamp is a unix timestamp (without milliseconds)
 * When the <code>at</code> parameter is not sent, the current time is used
 
 === Response ===
