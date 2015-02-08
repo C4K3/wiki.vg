@@ -143,13 +143,9 @@ The "value" base64 string for the "textures" object decoded:
 
 == Examples ==
 
-[https://github.com/techkid6/AccountsClientPython Python] | uuids or names to profiles
+[http://mcresolver.0fees.us/lastuser.php PHP] | uuids to names
 
-[https://gist.github.com/jomo/74944770e7647855ac9d Python] | names file to uuids+names file
-
-[https://gist.github.com/ezfe/a71feccd3a837a2592f1 PHP] | uuids to names
-
-[https://github.com/ozzyfant/AccountsClientPHP PHP] uuids to names, names to uuids
+[http://mcresolver.0fees.us/uuid.php PHP] uuids to names, names to uuids
 
 
 [[Category:Protocol Details]]
