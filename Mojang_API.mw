@@ -145,9 +145,9 @@ The "value" base64 string for the "textures" object decoded:
 
 == Examples ==
 
-[http://mcresolver.0fees.us/lastuser.php PHP] | uuids to names
+[http://mcresolver.tk/traceuser.php PHP] | uuids to names
 
-[http://mcresolver.0fees.us/uuid.php PHP] uuids to names, names to uuids
+[http://mcresolver.tk/uuid.php PHP] uuids to names, names to uuids
 
 
 [[Category:Protocol Details]]
