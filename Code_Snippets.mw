@@ -7,3 +7,4 @@
 * Slot Data Parsing [ C# ]: https://gist.github.com/SirCmpwn/860056fcc7da1036ebf3
 * Nibble array storage for chunk metadata, block light, sky light, etc [ C# ]: https://gist.github.com/SirCmpwn/17f848aa8ae87da7427f
 * Minecraft protocol data types [ C# ]: https://gist.github.com/SirCmpwn/f97a066a0f05f750f32e
+* Fluid dynamics simulation (water, lava) [ C# ]: https://github.com/SirCmpwn/TrueCraft/blob/4f66305ad9239477e26e0a23930c881f75c30edb/TrueCraft.Core/Logic/Blocks/FluidBlock.cs
