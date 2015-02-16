@@ -10,7 +10,7 @@
 
 This will return the uuid of the name at the timestamp provided.
 
-<code>?at=0</code> can be used to get the original username, however it only works if the name was changed at least once, or if the account is legacy.
+<code>?at=0</code> can be used to get the UUID of the original user of that username, however it only works if the name was changed at least once, or if the account is legacy.
 
 * The timestamp is a unix timestamp (without milliseconds)
 * When the <code>at</code> parameter is not sent, the current time is used
