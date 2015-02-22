@@ -583,6 +583,11 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 | class="col3 centeralign" | 1
 | class="col4 centeralign" | Specifies what animation to perform (0: Hold block; 1: Set block; 2: Destroy block; 3: Player name visibility)
 |- class="row2"
+| class="col1 centeralign" | Player ID
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | 1
+| class="col4 centeralign" | What player to perform this animation on
+|- class="row3"
 | class="col1 centeralign" | Additional byte
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | 49 (Obsidian)
