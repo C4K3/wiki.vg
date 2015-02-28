@@ -135,11 +135,9 @@ this.writeLong(uuid.getLeastSignificantBits());</pre>
 
 64-bit value split in to three parts
 
-x: 26 MSBs
-
-z: 26 LSBs
-
-y: 12 bits between them
+* x: 26 MSBs
+* z: 26 LSBs
+* y: 12 bits between them
 
 Encoded as followed:
 
@@ -151,6 +149,8 @@ And decoded as:
  x = val >> 38;
  y = (val >> 26) & 0xFFF
  z = val << 38 >> 38
+
+Note: The details of bit shifting are rather language dependent; the above may work in Java but probably won't in other languages without some tweaking.
 
 === Fixed-point numbers ===
 
