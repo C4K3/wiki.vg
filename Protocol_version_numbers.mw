@@ -10,9 +10,13 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
  ! Version number
  ! Last known documentation
  |-
+ | '''{{Minecraft Wiki|1.8.3}}'''
+ |rowspan="4"| 47
+ |rowspan="4"| [http://wiki.vg/index.php?title=Protocol&oldid=6486 page]
+ |-
+ | '''{{Minecraft Wiki|1.8.2}}'''
+ |-
  | '''{{Minecraft Wiki|1.8.1}}'''
- |rowspan="2"| 47
- |rowspan="2"| [http://wiki.vg/index.php?title=Protocol&oldid=5486 page]
  |-
  | '''{{Minecraft Wiki|1.8}}'''
  |-
