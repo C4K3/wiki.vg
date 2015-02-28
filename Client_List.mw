@@ -18,7 +18,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | Advanced minecraft bot system - Multi-server, API, Plugin system etc
  | Encorn
  | {{Java}}
- | {{MIT}}
+ | Closed source, binaries {{MIT}}
  | {{yes}}
  | {{yes|Yes, using Bundle plugin}}
  | {{yes|1.8}}
