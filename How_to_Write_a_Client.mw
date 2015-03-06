@@ -237,3 +237,4 @@ If your health updates come much slower than on the notchian client, make sure y
 * Spider: Climb every block as if there was a ladder in front of it
 * Walk on water: Set all water blocks as solid
 * Disable fall damage: Toggle the isOnGround field in your mob's entity update each tick.
+* Sounder/PlayerFinder: finds players outside of rendering during thunderstorms by getting where lighting sound packets
