@@ -79,8 +79,7 @@ When a player uses an anvil to name an item. The payload is just a string: the i
 === <code>MC|RPack</code> ===
 ''Server to client''
 
-Remote resource packs.
-This contains a string representing the url to get the resource pack from.
+Remote resource packs. This contains a string representing the url to get the resource pack from. This channel has been replaced by the [[Protocol#Resource Pack Send|Resource Pack Send]] ([[Protocol#Play|Play]], 0x48, clientbound) and [[Protocol#Resource Pack Status|Resource Pack Status]] ([[Protocol#Play|Play]], 0x19, serverbound) packets.
 
 ===  <code>MC|TrList</code> ===
 ''Server to client''
