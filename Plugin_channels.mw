@@ -96,7 +96,7 @@ It contains a single int id corresponding to the selected slot int the players c
 === <code>MC|PingHost</code> ===
 ''Client to server''
 
-Sent after a Server list ping. More information on [[Server List Ping]]
+Sent ''after'' a Server list ping in Minecraft 1.6. More information on [[Server List Ping#1.6]]. In 1.7 and above, the [[Protocol#Request|Request]] ([[Protocol#Status|Status]], 0x00, serverbound) packet is instead sent ''before'' the ping.
 
 === <code>MC|Brand</code> ===
 ''Two-way''
