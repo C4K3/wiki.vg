@@ -75,7 +75,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{MIT}}
  | {{no}}
  | {{no}}
- | {{no|1.6.4}}
+ | {{yes|1.8 in progress}}
  |-
  ! [https://github.com/Dav1dde/BraLa BraLa]
  | Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
