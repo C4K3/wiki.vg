@@ -101,13 +101,13 @@ A couple things for contributors:
  | [http://www.piston.rs/ Piston] developers
  | [http://www.rust-lang.org/ Rust]
  | [[wikipedia:MIT License|MIT]]
- | {{no|1.8.1 Planned}}
+ | {{no|1.8.3 Planned}}
  | {{planned|Anvil Planned}}
  | {{planned}}
  | {{planned}}
  | {{planned}}
- | {{unknown}}
- | {{unknown}}
+ | {{yes|Threads}}
+ | {{planned|Rust Planned}}
  | {{yes|{{linux}}{{windows}}{{mac}}}}
  | {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
  | {{planned|Planning}}
