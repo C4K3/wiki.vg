@@ -14,6 +14,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  ! Game Graphics
  ! Last Version Supported
  |-
+ ! [https://github.com/PistonDevelopers/hematite Hematite]
+ | {{no|Doesn't compile}}
+ | [http://www.piston.rs/ Piston] developers
+ | [http://www.rust-lang.org/ Rust]
+ | {{MIT}}
+ | {{unknown}}
+ | {{yes}}
+ | {{yes|1.8.1}}
+ |-
  ! [http://reticle.mc-atlantida.eu/wiki Reticle]
  | Advanced minecraft bot system - Multi-server, API, Plugin system etc
  | Encorn
@@ -41,14 +50,14 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{yes|1.8}}
  |-
- ! [https://github.com/PistonDevelopers/hematite Hematite]
- | {{no|[https://github.com/PistonDevelopers/hematite/pull/174 Doesn't compile]}}
- | [http://www.piston.rs/ Piston] developers
- | [http://www.rust-lang.org/ Rust]
+ ! [https://github.com/superjoe30/mineflayer mineflayer]
+ | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
+ | [https://github.com/superjoe30 superjoe30]
+ | [http://nodejs.org/ node.js]
  | {{MIT}}
- | {{unknown}}
- | {{yes}}
- | {{no|1.8-pre2}}
+ | {{no}}
+ | {{no}}
+ | {{planned|1.8 in progress}}
  |-
  ! [https://github.com/DarkStorm652/DarkBot DarkBot]
  | Bot framework with an easy-to-use API, full world representation, path finding, AI via tasks (mining, farming, combat), and modular protocol handling
@@ -67,15 +76,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{no}}
  | {{no|1.6.4}}
- |-
- ! [https://github.com/superjoe30/mineflayer mineflayer]
- | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
- | [https://github.com/superjoe30 superjoe30]
- | [http://nodejs.org/ node.js]
- | {{MIT}}
- | {{no}}
- | {{no}}
- | {{yes|1.8 in progress}}
  |-
  ! [https://github.com/Dav1dde/BraLa BraLa]
  | Minecraft (S)MP-Client, slogan: "Minecraft on a lower (WTF?) level"
