@@ -50,9 +50,9 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{yes|1.8}}
  |-
- ! [https://github.com/superjoe30/mineflayer mineflayer]
+ ! [https://github.com/andrewrk/mineflayer mineflayer]
  | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
- | [https://github.com/superjoe30 superjoe30]
+ | [https://github.com/andrewrk andrewrk]
  | [http://nodejs.org/ node.js]
  | {{MIT}}
  | {{no}}
