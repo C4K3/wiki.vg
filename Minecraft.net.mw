@@ -30,3 +30,7 @@ This link gives a glimpse at a future feature to Minecraft. This page says that,
 
  <nowiki>https://login.minecraft.net/benchmark.jsp</nowiki>
 Apparently some sort of joke page. It says it is triangulating a satellite and sending benchmark data back to Mojang or whatever, but a look at the source shows it is just an animation. This page no longer functions.
+
+== See also ==
+
+* [[Mojang API]] for newer endpoints located at mojang.com
