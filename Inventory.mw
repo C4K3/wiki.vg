@@ -1,218 +1,212 @@
-== Windows ==
-
-Minecraft displays the player inventory differently, according to how the window was opened. Ranges of slot indices vary in meaning between different "windows". Minecraft indicates which window is being opened according to:
+Minecraft displays the '''player inventory''' differently, according to how the window was opened. Ranges of slot indices vary in meaning between different “windows”. Minecraft indicates which window is being opened according to:
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Inventory Type
-! class="col1" | Description
-! class="col2" | Technical Name
-|- class="row1"
-| class="col0" | 0
-| class="col1" | Chest/Large chest
-| class="col2" | minecraft:chest
-|- class="row2"
-| class="col0" | 1
-| class="col1" | Workbench
-| class="col2" | minecraft:crafting_table
-|- class="row3"
-| class="col0" | 2
-| class="col1" | Furnace
-| class="col2" | minecraft:furnace
-|- class="row4"
-| class="col0" | 3
-| class="col1" | Dispenser
-| class="col2" | minecraft:dispenser
-|- class="row5"
-| class="col0" | 4
-| class="col1" | Enchantment table
-| class="col2" | minecraft:enchanting_table
-|- class="row6"
-| class="col0" | 5
-| class="col1" | Brewing Stand
-| class="col2" | minecraft:brewing_stand
-|- class="row7"
-| class="col0" | 6
-| class="col1" | Npc trade
-| class="col2" | minecraft:villager
-|- class="row8"
-| class="col0" | 7
-| class="col1" | Beacon
-| class="col2" | minecraft:beacon
-|- class="row9"
-| class="col0" | 8
-| class="col1" | Anvil
-| class="col2" | minecraft:anvil
-|- class="row10"
-| class="col0" | 9
-| class="col1" | Hopper
-| class="col2" | minecraft:hopper
-|-
-| 10
-| Dropper
-| minecraft:dropper
-|- 
-| 11
-| Horse
-| EntityHorse
-|}
+ |-
+ ! Inventory type
+ ! Description
+ ! Technical name
+ |-
+ | 0
+ | Chest/Large chest
+ | minecraft:chest
+ |-
+ | 1
+ | Workbench
+ | minecraft:crafting_table
+ |-
+ | 2
+ | Furnace
+ | minecraft:furnace
+ |-
+ | 3
+ | Dispenser
+ | minecraft:dispenser
+ |-
+ | 4
+ | Enchantment table
+ | minecraft:enchanting_table
+ |-
+ | 5
+ | Brewing Stand
+ | minecraft:brewing_stand
+ |-
+ | 6
+ | Npc trade
+ | minecraft:villager
+ |-
+ | 7
+ | Beacon
+ | minecraft:beacon
+ |-
+ | 8
+ | Anvil
+ | minecraft:anvil
+ |-
+ | 9
+ | Hopper
+ | minecraft:hopper
+ |-
+ | 10
+ | Dropper
+ | minecraft:dropper
+ |- 
+ | 11
+ | Horse
+ | EntityHorse
+ |}
 
-The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory. The number of unique slots in the window is in the [[Protocol#Open_window_.280x64.29|Open Window]] message for all window types except the default inventory window, in which the number of unique slots is 9. This means the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots. Slot number -999 is for clicking outside the window.
+The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory. The number of unique slots in the window is in the [[Protocol#Open Window|Open Window]] ([[Protocol#Play|Play]], 0x2d, clientbound) packet for all window types except the default inventory window, in which the number of unique slots is 9. This means the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots. Slot number -999 is used for clicking outside the window.
 
 Rectangular regions are always indexed starting with the upper-left corner and scanning across rows. If a window has a crafting region, the output slot is always slot 0 followed immediately by the input region.
 
-Each window type is described in the following sections. All slot index ranges are inclusive and reflect the indices observed in the Minecraft Beta protocol.
+Each window type is described in the following sections. All slot index ranges are inclusive and reflect the indices observed in the Minecraft protocol.
 
-=== Inventory ===
-
+== Inventory ==
 [[File:Inventory-slots.png|thumb|Inventory slots]]
 
-This is the inventory window that the player can always open, typically by pressing "E" since update 1.4.
-Before you had to press "I".
+This is the inventory window that the player can always open, typically by pressing {{Key|E}} since {{Minecraft Wiki|Beta 1.4}}. Before, you had to press {{Key|I}}.
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Slot range
-! class="col1" | Description
-|- class="row1"
-| class="col0" | 0
-| class="col1" | crafting output
-|- class="row2"
-| class="col0" | 1-4
-| class="col1" | (2x2) crafting input (1 + x + 2 * y)
-|- class="row3"
-| class="col0" | 5-8
-| class="col1" | armor (head, chest, legs, feet)
-|- class="row4"
-| class="col0" | 9-35
-| class="col1" | main inventory
-|- class="row5"
-| class="col0" | 36-44
-| class="col1" | held items
-|}
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | crafting output
+ |-
+ | 1–4
+ | 2×2 crafting input (1 + x + 2 * y)
+ |-
+ | 5–8
+ | armor (head, chest, legs, feet)
+ |-
+ | 9–35
+ | main inventory
+ |-
+ | 36–44
+ | hotbar
+ |}
 
-Note that this is different than inventory items stored in a player.dat file. This may help: [https://gist.github.com/459a1691c3dd751db160 https://gist.github.com/459a1691c3dd751db160]
+Note that this is different from inventory items stored in a player.dat file. This may help: [https://gist.github.com/459a1691c3dd751db160 https://gist.github.com/459a1691c3dd751db160]
 
-=== Crafting window ===
+== Crafting table ==
 
 This is the window that is opened when the player right-clicks on a workbench.
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Slot range
-! class="col1" | Description
-|- class="row1"
-| class="col0" | 0
-| class="col1" | crafting output
-|- class="row2"
-| class="col0" | 1-9
-| class="col1" | (3x3) crafting input (1 + x + 3 * y)
-|- class="row3"
-| class="col0" | 10-36
-| class="col1" | main inventory
-|- class="row4"
-| class="col0" | 37-45
-| class="col1" | held items
-|}
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | crafting output
+ |-
+ | 1–9
+ | 3×3 crafting input (1 + x + 3 * y)
+ |-
+ | 10–36
+ | main inventory
+ |-
+ | 37–45
+ | hotbar
+ |}
 
-=== Chest ===
+== Chest ==
 
 This is the window that is opened when the player right-clicks on a single chest block.
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Slot range
-! class="col1" | Description
-|- class="row1"
-| class="col0" | 0-26
-| class="col1" | chest
-|- class="row2"
-| class="col0" | 27-53
-| class="col1" | main inventory
-|- class="row3"
-| class="col0" | 54-62
-| class="col1" | held items
-|}
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0–26
+ | chest
+ |-
+ | 27–53
+ | main inventory
+ |-
+ | 54–62
+ | hotbar
+ |}
 
-=== Large chest ===
+== Large chest ==
 
 This is the window that is opened when the player right-clicks on a double chest block (two adjacent chest blocks).
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Slot range
-! class="col1" | Description
-|- class="row1"
-| class="col0" | 0-53
-| class="col1" | chest
-|- class="row2"
-| class="col0" | 54-80
-| class="col1" | main inventory
-|- class="row3"
-| class="col0" | 81-89
-| class="col1" | held items
-|}
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0–53
+ | chest
+ |-
+ | 54–80
+ | main inventory
+ |-
+ | 81–89
+ | hotbar
+ |}
 
-=== Furnace ===
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Slot range
-! class="col1" | Description
-|- class="row1"
-| class="col0" | 0
-| class="col1" | above flame
-|- class="row2"
-| class="col0" | 1
-| class="col1" | fuel
-|- class="row3"
-| class="col0" | 2
-| class="col1" | output
-|- class="row4"
-| class="col0" | 3-29
-| class="col1" | main inventory
-|- class="row5"
-| class="col0" | 30-38
-| class="col1" | held items
-|}
-
-=== Dispenser ===
-
-This is the window that is opened when the player right-clicks on a dispenser.
+== Furnace ==
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Slot range
-! class="col1" | Description
-|- class="row1"
-| class="col0" | 0-8
-| class="col1" | 3x3 dispenser contents (x + 3 * y)
-|- class="row2"
-| class="col0" | 9-35
-| class="col1" | main inventory
-|- class="row3"
-| class="col0" | 36-44
-| class="col1" | held items
-|}
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | ingredient
+ |-
+ | 1
+ | fuel
+ |-
+ | 2
+ | output
+ |-
+ | 3–29
+ | main inventory
+ |-
+ | 30–38
+ | hotbar
+ |}
 
-=== Enchantment Table ===
+== Dispenser ==
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Slot range
-! class="col1" | Description
-|- class="row1"
-| class="col0" | 0
-| class="col1" | enchantment slot
-|- class="row2"
-| class="col0" | 1
-| class="col1" | lapis slot
-|- class="row3
-| class="col0" | 2-28
-| class="col1" | main inventory
-|- class="row4"
-| class="col0" | 29-37
-| class="col1" | held items
-|}
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0–8
+ | 3×3 dispenser contents (x + 3 * y)
+ |-
+ | 9–35
+ | main inventory
+ |-
+ | 36-44
+ | hotbar
+ |}
+
+== Enchantment Table ==
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | item to enchant
+ |-
+ | 1
+ | lapis lazuli slot
+ |-
+ | 2–28
+ | main inventory
+ |-
+ | 29–37
+ | hotbar
+ |}
 
 [[Category:Minecraft Modern]]
