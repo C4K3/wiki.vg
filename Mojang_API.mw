@@ -141,8 +141,10 @@ The "value" base64 string for the "textures" object decoded:
 </syntaxhighlight>
 
 * The timestamp is sometimes in the past (probably due to cached results?)
-* The <code>"SKIN"</code> object will have <code>"metadata": {"model": "slim"}</code> if the player model has slim arms (“Alex?” style). For square arms (“Steve?” style), <code>"metadata"</code> will be missing
-* If no custom skin has been set, <code>"SKIN"</code> will be missing. Likewise <code>"CAPE"</code> will be missing if the account has no cape.
+* The <code>"SKIN"</code> object will have <code>"metadata": {"model": "slim"}</code> if the player model has slim arms (“Alex?” style). For square arms (“Steve?” style), <code>"metadata"</code> will be missing.
+* If no custom skin has been set, <code>"SKIN"</code> will be missing. Whether the player has the “Alex?” or “Steve?” skin depends on the Java hash of their UUID. Example implementations:
+** [https://github.com/mapcrafter/mapcrafter-playermarkers/blob/master/playermarkers/player.php#L8-L19 PHP]
+* Likewise <code>"CAPE"</code> will be missing if the account has no cape.
 
 == Examples ==
 
