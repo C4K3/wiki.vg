@@ -158,5 +158,7 @@ The "value" base64 string for the "textures" object decoded:
 
 [https://github.com/ozzyfant/AccountsClientPHP PHP] | uuids to names, names to uuids
 
+[https://github.com/thechunknetwork/mojang-api JavaScript] | uuids or names to profiles with skins, capes and name histories
+
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
