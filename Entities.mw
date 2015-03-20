@@ -183,7 +183,7 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 
 == Objects ==
 
-Objects are spawned via [[Protocol#0x17|0x17 Spawn Object/Vehicle]]. See [[Object Data]] for more details.
+Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Data]] for more details.
 
 {| class="wikitable"
 |- 
