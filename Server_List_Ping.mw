@@ -83,7 +83,7 @@ The ''favicon'' should be a png image that is [http://en.wikipedia.org/wiki/Base
 
 The client sends another packet to help calculate the server's latency but if you only wanted the above information you can stop here.
 
-The client will then send a [[Protocol#Ping|Ping]] packet containing the time that the ping was sent.
+The client will then send a [[Protocol#Ping|Ping]] packet containing the time (uptime of the pc in milliseconds) that the ping was sent.
 
 {| class="wikitable"
 ! Packet ID !! Field Name !! Field Type !! Notes
