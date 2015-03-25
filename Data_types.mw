@@ -145,10 +145,10 @@ Encoded as followed:
 
 And decoded as:
 
- long val; // Encoded value
+ val = read_unsigned_long();
  x = val >> 38;
- y = (val >> 26) & 0xFFF
- z = val << 38 >> 38
+ y = (val >> 26) & 0xFFF;
+ z = val << 38 >> 38;
 
 Note: The details of bit shifting are rather language dependent; the above may work in Java but probably won't in other languages without some tweaking. In particular, you will usually receive positive numbers even if the actual coordinates are negative. This can be fixed by adding something like the following:
 
