@@ -150,7 +150,11 @@ And decoded as:
  y = (val >> 26) & 0xFFF
  z = val << 38 >> 38
 
-Note: The details of bit shifting are rather language dependent; the above may work in Java but probably won't in other languages without some tweaking.
+Note: The details of bit shifting are rather language dependent; the above may work in Java but probably won't in other languages without some tweaking. In particular, you will usually receive positive numbers even if the actual coordinates are negative. This can be fixed by adding something like the following:
+
+ if x >= 2^25 { x -= 2^26 }
+ if y >= 2^11 { y -= 2^12 }
+ if z >= 2^25 { z -= 2^26 }
 
 === Fixed-point numbers ===
 
