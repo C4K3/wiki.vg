@@ -127,20 +127,20 @@ A couple things for contributors:
  | {{no|Unknown}}
  | {{yes|Active}}
  |-
- ! [https://github.com/DimensionsMC Dimensions]
- | [http://jadonfowler.xyz Phasesaber]
+ ! [https://github.com/Dimensions Dimensions]
+ | [https://github.com/phase Phasesaber]
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
  | MIT
- | {{no|1.7-1.8 Planned}}
- | {{planned|Anvil Planned}}
+ | {{yes|1.8}}
+ | {{yes|Anvil Planned}}
  | {{planned}}
- | {{planned}}
- | {{planned}}
+ | {{yes}}
+ | {{yes}}
  | {{yes|Threads}}
  | {{planned|Java, Javascript, Lua, Python, and more.}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
- | [https://github.com/DimensionsMC/Portal#Portal Features]
- | {{yes|Active}}
+ | [https://github.com/Dimensions/Dimensions/blob/master/README.md#what-is-this Features]
+ | {{yes|Very Active}}
  |-
  ! [https://github.com/cnlohr/avrcraft AVRCraft]
  | [[User:CNLohr|CNLohr]]
