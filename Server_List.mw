@@ -142,6 +142,21 @@ A couple things for contributors:
  | [https://github.com/Dimensions/Dimensions/blob/master/README.md#what-is-this Features]
  | {{yes|Very Active}}
  |-
+ ! Spoon
+ | [https://github.com/ilexiconn iLexiconn]
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | [http://en.wikipedia.org/wiki/MIT_License MIT]
+ | {{yes|1.8}}
+ | {{unknown}}
+ | {{unknown}}
+ | {{unknown}}
+ | {{unknown}}
+ | {{unknown}}
+ | {{yes|Java}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{unknown}}
+ | {{yes|Very Active}}
+ |-
  ! [https://github.com/cnlohr/avrcraft AVRCraft]
  | [[User:CNLohr|CNLohr]]
  | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
