@@ -81,7 +81,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | Work in progress standalone bot
  | Umby24
  | {{C sharp}}
- | {{unknown|{{GPLv3}}? No mention of license in source}}
+ | {{MIT}}
  | {{yes}}
  | {{no}}
  | {{no|1.6.4}}
