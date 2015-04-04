@@ -59,6 +59,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{planned|1.8 in progress}}
  |-
+ ! [https://github.com/phase/minekraft minekraft]
+ | Minecraft remade in Kotlin.
+ | [https://github.com/phase Phase]
+ | [https://github.com/jetbrains/kotlin Kotlin]
+ | {{MIT}}
+ | {{planned|Maybe}}
+ | {{planned|OpenGL Planned}}
+ | {{planned|1.8}}
+ |-
  ! [https://github.com/DarkStorm652/DarkBot DarkBot]
  | Bot framework with an easy-to-use API, full world representation, path finding, AI via tasks (mining, farming, combat), and modular protocol handling
  | [https://github.com/DarkStorm652 DarkStorm]
