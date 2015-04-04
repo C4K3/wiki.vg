@@ -60,7 +60,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{planned|1.8 in progress}}
  |-
  ! [https://github.com/phase/minekraft minekraft]
- | Minecraft remade in Kotlin.
+ | Minecraft remade in Kotlin. It will soon have all the features of Minecraft and more.
  | [https://github.com/phase Phase]
  | [https://github.com/jetbrains/kotlin Kotlin]
  | {{MIT}}
