@@ -23,6 +23,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{yes|1.8.1}}
  |-
+ ! [https://github.com/thinkofdeath/steven steven]
+ | Compiles
+ | [https://github.com/thinkofdeath/ Thinkofdeath]
+ | [http://golang.org/ Go]
+ | [http://www.apache.org/licenses/LICENSE-2.0.html Apache V2]
+ | {{yes}}
+ | {{yes}}
+ | {{yes|1.8.3}}
+ |-
  ! [http://reticle.mc-atlantida.eu/wiki Reticle]
  | Advanced minecraft bot system - Multi-server, API, Plugin system etc
  | Encorn
