@@ -42,6 +42,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || {{unknown|}} || Haskell ||   || glguy || {{no|Inactive}}
 |-
-| [https://github.com/CraftDevs/DeobfCraft DeobfCraft] || A utility to let you use Minecraft as a Lib to your own projects with out caring about obfuscation. || {{yes|All Versions}} || Java ||Windows , Mac and Linux || chibill|| {{yes|Active}}|}
+| [https://github.com/CraftDevs/DeobfCraft DeobfCraft] || A utility to let you use Minecraft as a Lib to your own projects with out caring about obfuscation. || {{yes|All Versions}} || Java ||Windows , Mac and Linux || chibill|| {{yes|Active}}
+|}
 
 [[Category:Minecraft Modern]]
