@@ -407,6 +407,8 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | rowspan="6" | Byte
 ! Bit Mask !! Meaning
 |-
+| 0x00 || Normal, deactivates all following
+|-
 | 0x01 || On Fire
 |- 
 | 0x02 || Crouched
