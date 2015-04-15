@@ -1,3 +1,13 @@
+{{Box|
+BORDER = #EA3C53|
+BACKGROUND = #EA3C53|
+WIDTH = 100%|
+ICON = |
+HEADING = Warning! |
+CONTENT =  
+This content may not longer be up to date. Minecraft for the Pi was an experiment that most likely will not be expanded.
+}}
+
 This page documents the [[Minecraft Pi]] API Protocol. The multiplayer protocol for Minecraft Pi is based on [[Pocket_Minecraft_Protocol|Minecraft PE's protocol]].
 
 Parts of this documentation is based on the official Mojang documentation, which were [https://twitter.com/danfrisk/status/286797258048012288 released for free use.] Other parts are based on the Desktop Protocol specification.
