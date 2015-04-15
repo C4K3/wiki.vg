@@ -14,15 +14,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  ! Game Graphics
  ! Last Version Supported
  |-
- ! [https://github.com/PistonDevelopers/hematite Hematite]
- | {{no|Doesn't compile}}
- | [http://www.piston.rs/ Piston] developers
- | [http://www.rust-lang.org/ Rust]
- | {{MIT}}
- | {{unknown}}
- | {{yes}}
- | {{yes|1.8.1}}
- |-
  ! [https://github.com/thinkofdeath/steven steven]
  | Compiles
  | [https://github.com/thinkofdeath/ Thinkofdeath]
@@ -31,6 +22,24 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{yes}}
  | {{yes|1.8.3}}
+ |-
+ ! [https://github.com/andrewrk/mineflayer mineflayer]
+ | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
+ | [https://github.com/andrewrk andrewrk]
+ | [http://nodejs.org/ node.js]
+ | {{MIT}}
+ | {{no}}
+ | {{no}}
+ | {{yes|1.8.3}}
+ |-
+ ! [https://github.com/PistonDevelopers/hematite Hematite]
+ | {{no|Doesn't compile}}
+ | [http://www.piston.rs/ Piston] developers
+ | [http://www.rust-lang.org/ Rust]
+ | {{MIT}}
+ | {{unknown}}
+ | {{yes}}
+ | {{yes|1.8.1}}
  |-
  ! [http://reticle.mc-atlantida.eu/wiki Reticle]
  | Advanced minecraft bot system - Multi-server, API, Plugin system etc
@@ -58,15 +67,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{no}}
  | {{yes|1.8}}
- |-
- ! [https://github.com/andrewrk/mineflayer mineflayer]
- | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
- | [https://github.com/andrewrk andrewrk]
- | [http://nodejs.org/ node.js]
- | {{MIT}}
- | {{no}}
- | {{no}}
- | {{yes|1.8.3}}
  |-
  ! [https://github.com/phase/minekraft minekraft]
  | Minecraft remade in Kotlin. It will soon have all the features of Minecraft and more.
