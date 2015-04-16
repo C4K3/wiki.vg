@@ -32,6 +32,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{yes|1.8.3}}
  |-
+ ! [https://github.com/woder/torchbot TorchBot]
+ | Work in progress standalone bot written from scratch in java, currently supports key features of game(movement, chat, world handling) and plugin system!
+ | woder22
+ | {{Java}}
+ | {{GPLv3}}
+ | {{yes}}
+ | {{no}}
+ | {{yes|1.8.3}}
+ |-
  ! [https://github.com/PistonDevelopers/hematite Hematite]
  | {{no|Doesn't compile}}
  | [http://www.piston.rs/ Piston] developers
@@ -58,15 +67,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{planned|Planned with plugin}}
  | {{yes|1.8}}
- |-
- ! [https://github.com/woder/torchbot TorchBot]
- | Work in progress standalone bot written from scratch in java, currently supports key features of game(movement, chat, world handling) and plugin system!
- | woder22
- | {{Java}}
- | {{GPLv3}}
- | {{yes}}
- | {{no}}
- | {{yes|1.8.3}}
  |-
  ! [https://github.com/phase/minekraft minekraft]
  | Minecraft remade in Kotlin. It will soon have all the features of Minecraft and more.
