@@ -30,6 +30,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{BSD}}
 | {{yes|1.7.10/1.8}}
 |-
+! [https://github.com/ammaraskar/pyCraft pyCraft]
+| Python minecraft client library
+| [http://ammaraskar.com/ Ammar Askar (ammaraskar)], [https://github.com/dkkline Jeppe Klitgaard (Dkkline)]
+| {{Python}}
+| {{Apache}}
+| {{yes|1.8}}
+|-
 ! [https://github.com/ags131/SharpMinecraftLibrary SharpMinecraftLibrary]
 |
 | ags131, electronicboy
@@ -43,13 +50,6 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{Java}}
 | {{MIT}}
 | {{yes|1.7.4-1.8}}
-|-
-! [https://github.com/dkkline/McClientLib McClientLib]
-| Python MineCraft client protocol.
-| [https://github.com/dkkline Jeppe Klitgaard (Dkkline)]
-| {{Python}}
-| {{MIT}}
-| {{no|1.5.2}}
 |-
 ! [https://github.com/pdelvo/Pdelvo.Minecraft Pdelvos Protocol Implementation]
 | .NET client/server protocol library with support for several versions.
