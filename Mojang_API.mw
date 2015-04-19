@@ -12,7 +12,7 @@ This will return the uuid of the name at the timestamp provided.
 
 <code>?at=0</code> can be used to get the UUID of the original user of that username, however it only works if the name was changed at least once, or if the account is legacy.
 
-* The timestamp is a unix timestamp (without milliseconds)
+* The timestamp is a java timestamp (without milliseconds)
 * When the <code>at</code> parameter is not sent, the current time is used
 
 === Response ===
@@ -57,7 +57,7 @@ Returns all the usernames this user has used in the past and the one they are us
 ]
 </syntaxhighlight>
 
-The changedToAt field is a UNIX timestamp in milliseconds.
+The changedToAt field is a Java timestamp in milliseconds.
 
 == Playernames -> UUIDs ==
 
@@ -125,7 +125,7 @@ This has a much stricter rate limit: You can request the same profile once per m
 The "value" base64 string for the "textures" object decoded:
 <syntaxhighlight lang="javascript">
 {
-    "timestamp": "<unix time in ms>",
+    "timestamp": "<java time in ms>",
     "profileId": "<profile uuid>",
     "profileName": "<player name>",
     "isPublic": "<true or false>",
