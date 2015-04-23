@@ -32,7 +32,7 @@ A couple things for contributors:
  | {{yes}}
  | {{planned|Players}}
  | {{yes|Threads/Events}}
- | {{yes|Java ([http://bukkit.org/ Bukkit])}}
+ | {{yes|Java ([http://bukkit.org/ Bukkit]), JavaScript ([https://github.com/DragonetMC/Dragonet/wiki/DragonetAPI-Scripts DAPIS])}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | Support Bukkit/Javascript Plugins, Minecraft PC, Minecraft: Pocket Edition
  | {{yes|Active}}
