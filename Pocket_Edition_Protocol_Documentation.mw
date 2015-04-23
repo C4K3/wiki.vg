@@ -47,7 +47,9 @@ Minecraft packets use different data types to communicate with each other. The d
 RakNet datagram and message header information: http://im/raknet/manual/systemoverview.html
 
 The latest version of the protocol is not fully documented yet, but all of the packets can be found in the [http://dragonet.org Dragonet] server code  https://github.com/DragonetMC/Dragonet/tree/master/src/main/java/org/dragonet/net/packet
+Protocol Version: 23 (MCPE 0.11.0b6)
 
+The older protocol specification(ver <= 0.10.x): 
 There is also an automatically generated specification of many of the packages can be found in the MiNET server code  https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md
 
 The MiNET wiki also contain development notes around some functionality https://github.com/NiclasOlofsson/MiNET/wiki These will be migrated to this wiki in due time.
