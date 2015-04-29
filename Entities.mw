@@ -407,8 +407,6 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | rowspan="6" | Byte
 ! Bit Mask !! Meaning
 |-
-| 0x00 || Normal, deactivates all following
-|-
 | 0x01 || On Fire
 |- 
 | 0x02 || Crouched
@@ -421,7 +419,7 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |-
 | 1
 | Short
-| colspan="2" | Air level
+| colspan="2" | Air
 |}
 
 === Living Entity ===
@@ -495,7 +493,7 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |-
 | 0x04 || Has Arms
 |-
-| 0x08 || Has Baseplate
+| 0x08 || Remove BasePlate
 |-
 | 11
 | Float, Float, Float (pitch, yaw, roll)
