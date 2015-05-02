@@ -87,10 +87,10 @@ A couple things for contributors:
  | [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
  | [http://en.wikipedia.org/wiki/MIT_License MIT]
  | {{yes|1.8 (#47)}}
- | {{yes|Anvil}}
- | {{planned}}
+ | {{yes|Custom (Anvil Support)}}
  | {{planned}}
  | {{planned|Partial}}
+ | {{yes|Players}}
  | {{yes|Threads}}
  | {{planned}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
