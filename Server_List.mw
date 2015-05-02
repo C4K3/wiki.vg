@@ -22,6 +22,21 @@ A couple things for contributors:
  ! Feature list
  ! Development status
  |-
+ ! [https://github.com/BizarreCake/hCraft-2 hCraft 2]
+ | BizarreCake
+ | [http://en.wikipedia.org/wiki/C%2B%2B C++]
+ | [http://gplv3.fsf.org/ GPLv3]
+ | {{yes|1.8 (#47)}}
+ | {{planned|Anvil and custom format planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{yes|Threads/Events}}
+ | {{no}}
+ | {{yes|{{linux}}{{windows}}}}
+ | [https://github.com/BizarreCake/hCraft-2/#features Link]
+ | {{yes|Active}}
+ |-
  ! [https://github.com/DragonetMC/Dragonet Dragonet]
  | [http://github.com/DragonetMC DragonetTeam]
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -155,7 +170,7 @@ A couple things for contributors:
  | {{no}}
  | {{yes|{{linux}}}}
  | [https://github.com/BizarreCake/hCraft/#features Link]
- | {{yes|Active}}
+ | {{no|Inactive}}
  |-
  ! [https://github.com/thinkofdeath/netherrack Netherrack]
  | Thinkofdeath
