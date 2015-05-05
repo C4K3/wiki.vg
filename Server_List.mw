@@ -104,10 +104,10 @@ A couple things for contributors:
  | {{yes|1.8 (#47)}}
  | {{yes|Custom (Anvil Support)}}
  | {{planned}}
- | {{planned|Partial}}
- | {{yes|Players}}
+ | {{yes|Fluids only (right now)}}
+ | {{yes|Players, Items}}
  | {{yes|Threads}}
- | {{planned}}
+ | {{yes|C#}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | {{yes|See github}}
  | {{yes|Active}}
