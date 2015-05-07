@@ -363,7 +363,7 @@ To parse, repeat the following procedure:
 <nowiki>*</nowiki>Not currently used
 
 
-In C-like psuedocode:
+In C-like pseudocode:
 <source lang="c">
 do {
     item = readByte();
