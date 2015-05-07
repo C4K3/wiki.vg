@@ -27,12 +27,12 @@ A couple things for contributors:
  | [http://en.wikipedia.org/wiki/C%2B%2B C++]
  | [http://gplv3.fsf.org/ GPLv3]
  | {{yes|1.8 (#47)}}
- | {{planned|Anvil and custom format planned}}
+ | {{yes|Anvil}}
  | {{planned}}
  | {{planned}}
  | {{planned}}
  | {{yes|Threads/Events}}
- | {{no}}
+ | {{planned|Lua (planned)}}
  | {{yes|{{linux}}{{windows}}}}
  | [https://github.com/BizarreCake/hCraft-2/#features Link]
  | {{yes|Active}}
