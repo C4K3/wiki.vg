@@ -483,8 +483,8 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 ! style="width: 75px" | Type
 ! style="width: 250px" colspan="2" | Meaning
 |-
-| rowspan="5" | 10
-| rowspan="5" | Byte
+| rowspan="6" | 10
+| rowspan="6" | Byte
 ! Bit Mask !! Meaning
 |-
 | 0x01 || Small Armorstand
