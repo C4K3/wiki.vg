@@ -1064,6 +1064,27 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | Invulnerable Time
 |}
 
+=== Guardian ===
+<sup>Extends [[#Living Entity|Living Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" colspan="2" | Meaning
+|-
+| rowspan="3" | 16
+| rowspan="3" | Byte
+! Bit Mask !! Meaning
+|-
+| 0x02 || Is Elderly
+|-
+| 0x04 || Is retracting spikes
+|-
+| 17
+| Int
+| colspan="2" | Target entity id
+|}
 
 === Boat ===
 <sup>Extends [[#Entity|Entity]]</sup>
