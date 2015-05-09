@@ -103,7 +103,7 @@ The server will respond with the same packet and then close the connection
 
 === Examples ===
 
-* [https://gist.github.com/Albioncode/2480d14fbbb33b4bbae3 C#]
+* [https://gist.github.com/Fireflies/2480d14fbbb33b4bbae3 C#]
 * [https://gist.github.com/zh32/7190955 Java]
 * [https://gist.github.com/1209061 Python]
 * [https://github.com/winny-/mcstat PHP]
