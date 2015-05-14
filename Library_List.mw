@@ -23,9 +23,9 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{MIT}}
 | {{yes|1.7/1.8}}
 |-
-! [https://github.com/superjoe30/node-minecraft-protocol node-minecraft-protocol]
+! [https://github.com/PrismarineJS/node-minecraft-protocol node-minecraft-protocol]
 | npm install minecraft-protocol
-| [https://github.com/superjoe30 superjoe]
+| [https://github.com/andrewrk andrewrk]
 | [http://nodejs.org/ node.js]
 | {{BSD}}
 | {{yes|1.7.10/1.8}}
