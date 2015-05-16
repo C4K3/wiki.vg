@@ -52,6 +52,23 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{no}}
 | {{yes|1}}
 | {{planned}}
+|-
+! [https://github.com/UnknownShadow200/ClassicalSharp/ ClassicalSharp]
+| {{yes|1}}
+| {{yes|1}} (level 1)
+| {{yes|1}}
+| {{yes|1}}
+| {{no}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{yes|1}}
+| {{planned}}
+| {{yes|1}}
+| {{yes|1}}
+| {{planned}}
 |}
 
 ==Servers==
