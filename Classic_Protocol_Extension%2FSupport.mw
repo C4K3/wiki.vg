@@ -1,4 +1,4 @@
-Number inside green fields indicates the supported extension version. Currently all extension are at version 1.
+Number inside green fields indicates the supported extension version. Currently all extensions are at version 1, except for ExtPlayerList (which is at version 2).
 
 ==Clients==
 {| class="wikitable"
