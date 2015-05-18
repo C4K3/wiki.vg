@@ -52,6 +52,36 @@ A couple things for contributors:
  | Support Bukkit/Javascript Plugins, Minecraft PC, Minecraft: Pocket Edition
  | {{yes|Active}}
  |-
+ ! [https://github.com/PistonDevelopers/hematite_server Hematite]
+ | [http://www.piston.rs/ Piston] developers
+ | [http://www.rust-lang.org/ Rust]
+ | [[wikipedia:MIT License|MIT]]
+ | {{planned|1.8.3 Planned}}
+ | {{planned|Anvil Planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{yes|Threads}}
+ | {{planned|Rust Planned}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
+ | {{planned|Planning}}
+ |-
+ ! [https://tridentsdk.net/ TridentSDK]
+ | TridentSDK Team
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | [http://www.apache.org/licenses/LICENSE-2.0 Apache 2.0]
+ | {{planned|1.8.3 Planned}}
+ | {{yes|Anvil}}
+ | {{planned}}
+ | {{planned}}
+ | {{yes|Players, Mobs (test AI)}}
+ | {{yes|Threads/Events}}
+ | {{yes|Java}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{no|Unknown}}
+ | {{yes|Active}}
+ |-
  ! [https://github.com/SpaceManiac/Glowstone Glowstone]
  | SpaceManiac
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -82,21 +112,6 @@ A couple things for contributors:
  | [http://forum.mc-server.org/showthread.php?tid=499 Link]
  | {{yes|Active}}
  |-
- ! [https://github.com/kangarko/Rush Rush]
- | Rush Team
- | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
- | Open source
- | {{yes|1.8 (#47)}}
- | {{yes|McRegion}}
- | {{planned}}
- | {{planned|Partial}}
- | {{yes|Players, Mobs (test AI)}}
- | {{yes|Threads}}
- | {{yes|Java ([http://bukkit.org/ Bukkit])}}
- | {{yes|{{windows}}{{linux}}{{mac}}}}
- | [https://github.com/kangarko/Rush/blob/master/Features.md Link]
- | {{yes|Active}}
- |-
  ! [https://github.com/kennyvv/SharpMC SharpMC]
  | [http://wiki.vg/User:Wuppie Wuppie]
  | [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
@@ -112,35 +127,20 @@ A couple things for contributors:
  | {{yes|See github}}
  | {{yes|Active}}
  |-
- ! [https://github.com/PistonDevelopers/hematite_server Hematite]
- | [http://www.piston.rs/ Piston] developers
- | [http://www.rust-lang.org/ Rust]
- | [[wikipedia:MIT License|MIT]]
- | {{no|1.8.3 Planned}}
- | {{planned|Anvil Planned}}
- | {{planned}}
- | {{planned}}
- | {{planned}}
- | {{yes|Threads}}
- | {{planned|Rust Planned}}
- | {{yes|{{linux}}{{windows}}{{mac}}}}
- | {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
- | {{planned|Planning}}
- |-
- ! [https://tridentsdk.net/ TridentSDK]
- | TridentSDK Team
+ ! [https://github.com/kangarko/Rush Rush]
+ | Rush Team
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
- | [http://www.apache.org/licenses/LICENSE-2.0 Apache 2.0]
- | {{no|1.8.3 Planned}}
- | {{yes|Anvil}}
+ | Open source
+ | {{yes|1.8 (#47)}}
+ | {{yes|McRegion}}
  | {{planned}}
- | {{planned}}
+ | {{planned|Partial}}
  | {{yes|Players, Mobs (test AI)}}
- | {{yes|Threads/Events}}
- | {{yes|Java}}
+ | {{yes|Threads}}
+ | {{yes|Java ([http://bukkit.org/ Bukkit])}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
- | {{no|Unknown}}
- | {{yes|Active}}
+ | [https://github.com/kangarko/Rush/blob/master/Features.md Link]
+ | {{no|Inactive}}
  |-
  ! [https://github.com/cnlohr/avrcraft AVRCraft]
  | [[User:CNLohr|CNLohr]]
@@ -155,7 +155,7 @@ A couple things for contributors:
  | {{No}}
  | {{Yes|{{linux}} [http://www.nongnu.org/avr-libc/ avr] [https://openwrt.org/ openwrt] }}
  | {{Yes| <16kB}}
- | {{Yes|Active June 1, 2014}}
+ | {{no|Inactive}}
  |-
  ! [http://wiki.vg/HCraft hCraft]
  | BizarreCake
@@ -200,7 +200,7 @@ A couple things for contributors:
  | {{no}}
  | {{yes|{{linux}}{{windows}}{{mac}}}}
  | [https://github.com/JoeDoyle23/BurningPig#current-features Link]
- | {{no|Inctive}}
+ | {{no|Inactive}}
  |-
  ! [https://github.com/SirCmpwn/PartyCraft PartyCraft]
  | Drew DeVault ([[User:SirCmpwn|SirCmpwn]])
@@ -260,7 +260,7 @@ A couple things for contributors:
  | {{yes|Java ([https://github.com/SpoutDev/SpoutAPI SpoutAPI])}}
  | {{yes|{{linux}}{{windows}}{{mac}}}}
  | {{no|unknown}}
- | {{yes|Active}}
+ | {{no|Inactive}}
  |-
  ! [http://bravoserver.org/ Bravo]
  | Corbin Simpson
@@ -275,7 +275,7 @@ A couple things for contributors:
  | {{yes|Python}}
  | {{yes|{{linux}}{{windows}}}}
  | [https://github.com/bravoserver/bravo#features Link]
- | {{yes|Active}}
+ | {{no|Inactive}}
  |-
  ! [http://c-raft.com C#raft]
  | ementalo, smjert
