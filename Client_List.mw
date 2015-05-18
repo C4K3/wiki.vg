@@ -215,11 +215,11 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  ! [http://truecraft.io TrueCraft]
  | Beta 1.7.3 client for Linux/Mac/Windows
  | SirCmpwn and [https://github.com/SirCmpwn/TrueCraft/graphs/contributors others]
- | {{C#}}
+ | {{C sharp}}
  | {{MIT}}
  | {{yes}}
  | {{yes}}
- | {{planned|Beta 1.7.2}}
+ | {{planned|Beta 1.7.3}}
  |-
  ! [http://hg.sitedethib.com/mcclient/ mcclient]
  | Work in progress SMP client
