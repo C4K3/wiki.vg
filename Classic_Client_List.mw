@@ -18,6 +18,15 @@ This is a rather incomplete list of Minecraft Creative clients currently in deve
 | GPLv2
 | {{no}}
 | Ingame server list, chat & block picker.
-|-|}
+|-
+|-
+! [https://github.com/UnknownShadow200/ClassicalSharp/ ClassicalSharp]
+| UnknownShadow200
+| [http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29 C#]
+| New BSD
+| {{no}}
+| Lightweight, speedhacks, CPE support
+|-
+|}
 
 [[Category:Minecraft Classic]]
