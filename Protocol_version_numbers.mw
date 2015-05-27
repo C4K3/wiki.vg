@@ -1,6 +1,8 @@
 This page lists the protocol version numbers used in the various MC releases. Official releases are marked bold, weekly snapshots are in regular font.
 
-The 1.7 release has seen a complete rewrite of the network protocol (using Netty), including the version numbers. The protocol numbers have been reset. This page contains version numbers for both the pre-Netty and post-Netty protocol versions
+The 1.7 release has seen a complete rewrite of the network protocol (using Netty), including the version numbers. The protocol numbers have been reset. This page contains version numbers for both the pre-Netty and post-Netty protocol versions.
+ 
+A list of packet IDs and names per linked protocol version on this page is available [https://github.com/ammaraskar/MinecraftPacketNames/blob/master/packets.json here.]
 
 == Versions after the Netty rewrite (1.7+) ==
 
