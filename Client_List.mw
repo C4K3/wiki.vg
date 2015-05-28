@@ -75,7 +75,16 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{MIT}}
  | {{planned|Maybe}}
  | {{planned|OpenGL Planned}}
- | {{planned|1.8}}
+ | {{yes|1.8}}
+ |-
+ ! [https://github.com/phase/phasebot PhaseBot]
+ | A bot that can move, interact with blocks, and loads of other things.
+ | [https://github.com/phase Phase]
+ | Java
+ | {{no|No License}}
+ | {{planned|Maybe}}
+ | {{no|Controlled through chat}}
+ | {{yes|1.8}}
  |-
  ! [https://github.com/DarkStorm652/DarkBot DarkBot]
  | Bot framework with an easy-to-use API, full world representation, path finding, AI via tasks (mining, farming, combat), and modular protocol handling
