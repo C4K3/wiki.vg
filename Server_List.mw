@@ -172,21 +172,6 @@ A couple things for contributors:
  | [https://github.com/BizarreCake/hCraft/#features Link]
  | {{no|Inactive}}
  |-
- ! [https://github.com/thinkofdeath/netherrack Netherrack]
- | Thinkofdeath
- | [http://golang.org/ Go]
- |  Apache v2
- | {{no|1.7.4 (#4)}}
- | {{planned|Custom}}
- | {{no}}
- | {{no}}
- | {{planned|Players}}
- | {{yes|Goroutines}}
- | {{no}}
- | {{yes|{{linux}}{{windows}}{{mac}}}}
- | {{no}}
- | {{no|Inactive}}
- |-
  ! [https://github.com/JoeDoyle23/BurningPig BurningPig]
  | Joe Doyle ([[User:JoeDoyle23|JoeDoyle23]])
  | [http://en.wikipedia.org/wiki/Javascript JavaScript<br>(Node.js)]
