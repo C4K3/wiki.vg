@@ -12,9 +12,15 @@ A list of packet IDs and names per linked protocol version on this page is avail
  ! Version number
  ! Last known documentation
  |-
+ | '''{{Minecraft Wiki|1.8.6}}'''
+ |rowspan="7"| 47
+ |rowspan="7"| [http://wiki.vg/index.php?title=Protocol&oldid=6486 page]
+ |-
+ | '''{{Minecraft Wiki|1.8.5}}'''
+ |-
+ | '''{{Minecraft Wiki|1.8.4}}'''
+ |-
  | '''{{Minecraft Wiki|1.8.3}}'''
- |rowspan="4"| 47
- |rowspan="4"| [http://wiki.vg/index.php?title=Protocol&oldid=6486 page]
  |-
  | '''{{Minecraft Wiki|1.8.2}}'''
  |-
