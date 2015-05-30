@@ -37,6 +37,21 @@ A couple things for contributors:
  | [https://github.com/BizarreCake/hCraft-2/#features Link]
  | {{yes|Active}}
  |-
+ ! [https://github.com/quartz-powered/server QuartzPowered]
+ | [https://github.com/quartz-powered/server/graphs/contributors The Quartz Powered Team]
+ | Java
+ | MIT
+ | {{yes|1.8 (#47)}}
+ | {{yes|Anvil}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{unknown}}
+ | {{unknown}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{unknown}}
+ | {{yes|Active}}
+ |-
  ! [https://github.com/DragonetMC/Dragonet Dragonet]
  | [http://github.com/DragonetMC DragonetTeam]
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
