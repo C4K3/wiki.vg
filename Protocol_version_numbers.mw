@@ -4,7 +4,9 @@ The 1.7 release has seen a complete rewrite of the network protocol (using Netty
  
 A list of packet IDs and names per linked protocol version on this page is available [https://github.com/ammaraskar/MinecraftPacketNames/blob/master/packets.json here.]
 
-== Versions after the Netty rewrite (1.7+) ==
+== Versions after the Netty rewrite ==
+
+Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
 
 {| class="wikitable"
  |-
@@ -217,7 +219,9 @@ A list of packet IDs and names per linked protocol version on this page is avail
  | {{Minecraft Wiki|1.7.1-pre}}
  |}
 
-== Versions before the Netty rewrite (-1.6.4) ==
+== Versions before the Netty rewrite ==
+
+Minecraft version 1.6.4 and older used a protocol versioning scheme separate from the current one. As such, the same version number may ambiguously refer to an old version in this list and a new version in the list above.
 
 {| class="wikitable"
  |-
