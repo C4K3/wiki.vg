@@ -54,7 +54,7 @@ All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]]
  |-
  ! String
  | ≥ 1 <br />≤&nbsp;2147483652
- | A sequence of [[wikipedia:Unicode|Unicode]] code points
+ | A sequence of [[wikipedia:Unicode|Unicode]] [http://unicode.org/glossary/#unicode_scalar_value scalar values]
  | [[wikipedia:UTF-8|UTF-8]] string prefixed with its size in bytes as a VarInt
  |-
  ! Chat
