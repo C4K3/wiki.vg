@@ -9,47 +9,47 @@ All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]]
  |-
  ! Boolean
  | 1
- | false or true
- | Value can be either true (<code>0x01</code>) or false (<code>0x00</code>)
+ | Either false or true
+ | True is encoded as <code>0x01</code>, false as <code>0x00</code>.
  |-
  ! Byte
  | 1
- | -128 to 127
+ | An integer between -128 and 127
  | Signed 8-bit integer, [[wikipedia:Two's complement|two's complement]]
  |-
  ! Unsigned Byte
  | 1
- | 0 to 255
+ | An integer between 0 and 255
  | Unsigned 8-bit integer
  |-
  ! Short
  | 2
- | -32768 to 32767
+ | An integer between -32768 and 32767
  | Signed 16-bit integer, two's complement
  |-
  ! Unsigned Short
  | 2
- | 0 to 65535
+ | An integer between 0 and 65535
  | Unsigned 16-bit integer
  |-
  ! Int
  | 4
- | -2147483648 to 2147483647
+ | An integer between -2147483648 and 2147483647
  | Signed 32-bit integer, two's complement
  |-
  ! Long
  | 8
- | -9223372036854775808 to 9223372036854775807
+ | An integer between -9223372036854775808 and 9223372036854775807
  | Signed 64-bit integer, two's complement
  |-
  ! Float
  | 4
- | [[wikipedia:Single-precision floating-point format|Single-precision 32-bit IEEE 754 floating point]]
+ | A [[wikipedia:Single-precision floating-point format|single-precision 32-bit IEEE 754 floating point]]
  | 
  |-
  ! Double
  | 8
- | [[wikipedia:Double-precision floating-point format|Double-precision 64-bit IEEE 754 floating point]]
+ | A [[wikipedia:Double-precision floating-point format|double-precision 64-bit IEEE 754 floating point]]
  | 
  |-
  ! String
@@ -64,12 +64,12 @@ All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]]
  |- 
  ! VarInt
  | ≥ 1 <br />≤ 5
- | -2147483648 to 2147483647
+ | An integer between -2147483648 and 2147483647
  | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer Varint], encoding a two's complement signed 32-bit integer
  |-
  ! VarLong
  | ≥ 1 <br />≤ 10
- | -9223372036854775808 to 9223372036854775807
+ | An integer between -9223372036854775808 and 9223372036854775807
  | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer Varint], encoding a two's complement signed 64-bit integer
  |-
  ! Chunk
@@ -99,12 +99,12 @@ All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]]
  |-
  ! Position 
  | 8
- | Integer/block position: x (-33554432 to 33554431), y (-2048 to 2047), z (-33554432 to 33554431)
+ | An integer/block position: x (-33554432 to 33554431), y (-2048 to 2047), z (-33554432 to 33554431)
  | x as a 26-bit integer, followed by y as a 12-bit integer, followed by z as a 26-bit integer (all signed, two's complement). See also [[#Position|the section below]].
  |-
  ! Angle
  | 1
- | Rotation angle in steps of 1/256 of a full turn
+ | A rotation angle in steps of 1/256 of a full turn
  | Whether or not this is signed does not matter, since the resulting angles are the same.
  |-
  ! UUID
