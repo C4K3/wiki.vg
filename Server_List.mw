@@ -22,34 +22,19 @@ A couple things for contributors:
  ! Feature list
  ! Development status
  |-
- ! [https://github.com/BizarreCake/hCraft-2 hCraft 2]
- | BizarreCake
+ ! [http://www.mc-server.org Cuberite]
+ | FakeTruth, [[User:Xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More]
  | [http://en.wikipedia.org/wiki/C%2B%2B C++]
- | [http://gplv3.fsf.org/ GPLv3]
+ | Apache 2.0
  | {{yes|1.8 (#47)}}
  | {{yes|Anvil}}
- | {{planned}}
- | {{planned}}
- | {{planned}}
- | {{yes|Threads/Events}}
- | {{planned|Lua (planned)}}
- | {{yes|{{linux}}{{windows}}}}
- | [https://github.com/BizarreCake/hCraft-2/#features Link]
- | {{yes|Active}}
- |-
- ! [https://github.com/quartz-powered/server QuartzPowered]
- | [https://github.com/quartz-powered/server/graphs/contributors The Quartz Powered Team]
- | Java
- | MIT
- | {{yes|1.8 (#47)}}
- | {{yes|Anvil}}
- | {{planned}}
- | {{planned}}
- | {{planned}}
- | {{unknown}}
- | {{unknown}}
- | {{yes|{{windows}}{{linux}}{{mac}}}}
- | {{unknown}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players, Mobs}}
+ | {{yes|Threads}}
+ | {{yes|[http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]}}
+ | {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
+ | [http://forum.mc-server.org/showthread.php?tid=499 Link]
  | {{yes|Active}}
  |-
  ! [https://github.com/DragonetMC/Dragonet Dragonet]
@@ -67,36 +52,6 @@ A couple things for contributors:
  | Support Bukkit/Javascript Plugins, Minecraft PC, Minecraft: Pocket Edition
  | {{yes|Active}}
  |-
- ! [https://github.com/PistonDevelopers/hematite_server Hematite]
- | [http://www.piston.rs/ Piston] developers
- | [http://www.rust-lang.org/ Rust]
- | [[wikipedia:MIT License|MIT]]
- | {{planned|1.8.3 Planned}}
- | {{planned|Anvil Planned}}
- | {{planned}}
- | {{planned}}
- | {{planned}}
- | {{yes|Threads}}
- | {{planned|Rust Planned}}
- | {{yes|{{linux}}{{windows}}{{mac}}}}
- | {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
- | {{planned|Planning}}
- |-
- ! [https://tridentsdk.net/ TridentSDK]
- | TridentSDK Team
- | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
- | [http://www.apache.org/licenses/LICENSE-2.0 Apache 2.0]
- | {{planned|1.8.3 Planned}}
- | {{yes|Anvil}}
- | {{planned}}
- | {{planned}}
- | {{yes|Players, Mobs (test AI)}}
- | {{yes|Threads/Events}}
- | {{yes|Java}}
- | {{yes|{{windows}}{{linux}}{{mac}}}}
- | {{no|Unknown}}
- | {{yes|Active}}
- |-
  ! [https://github.com/SpaceManiac/Glowstone Glowstone]
  | SpaceManiac
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -112,34 +67,49 @@ A couple things for contributors:
  | [https://github.com/SpaceManiac/Glowstone#features Link]
  | {{yes|Active}}
  |-
- ! [http://www.mc-server.org MCServer]
- | FakeTruth, [[User:Xoft|xoft]], [https://github.com/mc-server/MCServer/blob/master/CONTRIBUTORS More]
+ ! [https://github.com/BizarreCake/hCraft-2 hCraft 2]
+ | BizarreCake
  | [http://en.wikipedia.org/wiki/C%2B%2B C++]
- | Apache 2.0
+ | [http://gplv3.fsf.org/ GPLv3]
  | {{yes|1.8 (#47)}}
  | {{yes|Anvil}}
- | {{yes}}
- | {{yes}}
- | {{yes|Players, Mobs}}
- | {{yes|Threads}}
- | {{yes|[http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]}}
- | {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
- | [http://forum.mc-server.org/showthread.php?tid=499 Link]
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{yes|Threads/Events}}
+ | {{planned|Lua (planned)}}
+ | {{yes|{{linux}}{{windows}}}}
+ | [https://github.com/BizarreCake/hCraft-2/#features Link]
  | {{yes|Active}}
  |-
- ! [https://github.com/kennyvv/SharpMC SharpMC]
- | [http://wiki.vg/User:Wuppie Wuppie]
- | [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
- | [http://en.wikipedia.org/wiki/MIT_License MIT]
- | {{yes|1.8 (#47)}}
- | {{yes|Custom (Anvil Support)}}
- | {{yes|Yes}}
- | {{yes|Fluids only (right now)}}
- | {{yes|Players, Items}}
+ ! [https://github.com/PistonDevelopers/hematite_server Hematite]
+ | [http://www.piston.rs/ Piston] developers
+ | [http://www.rust-lang.org/ Rust]
+ | [[wikipedia:MIT License|MIT]]
+ | {{planned|1.8.3 Planned}}
+ | {{planned|Anvil Planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
  | {{yes|Threads}}
- | {{yes|C#}}
+ | {{planned|Rust Planned}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
+ | {{planned|Planning}}
+ |-
+ ! [https://github.com/quartz-powered/server QuartzPowered]
+ | [https://github.com/quartz-powered/server/graphs/contributors The Quartz Powered Team]
+ | Java
+ | MIT
+ | {{yes|1.8 (#47)}}
+ | {{yes|Anvil}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{unknown}}
+ | {{unknown}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
- | {{yes|See github}}
+ | {{unknown}}
  | {{yes|Active}}
  |-
  ! [https://github.com/kangarko/Rush Rush]
@@ -156,6 +126,36 @@ A couple things for contributors:
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | [https://github.com/kangarko/Rush/blob/master/Features.md Link]
  | {{no|Inactive}}
+ |-
+ ! [https://github.com/kennyvv/SharpMC SharpMC]
+ | [http://wiki.vg/User:Wuppie Wuppie]
+ | [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
+ | [http://en.wikipedia.org/wiki/MIT_License MIT]
+ | {{yes|1.8 (#47)}}
+ | {{yes|Custom (Anvil Support)}}
+ | {{yes|Yes}}
+ | {{yes|Fluids only (right now)}}
+ | {{yes|Players, Items}}
+ | {{yes|Threads}}
+ | {{yes|C#}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{yes|See github}}
+ | {{yes|Active}}
+ |-
+ ! [https://tridentsdk.net/ TridentSDK]
+ | TridentSDK Team
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | [http://www.apache.org/licenses/LICENSE-2.0 Apache 2.0]
+ | {{planned|1.8.3 Planned}}
+ | {{yes|Anvil}}
+ | {{planned}}
+ | {{planned}}
+ | {{yes|Players, Mobs (test AI)}}
+ | {{yes|Threads/Events}}
+ | {{yes|Java}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{no|Unknown}}
+ | {{yes|Active}}
  |-
  ! [https://github.com/cnlohr/avrcraft AVRCraft]
  | [[User:CNLohr|CNLohr]]
