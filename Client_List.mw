@@ -21,7 +21,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | [http://www.apache.org/licenses/LICENSE-2.0.html Apache V2]
  | {{yes}}
  | {{yes}}
- | {{yes|1.8.6}}
+ | {{yes|1.8.7}}
  |-
  ! [https://github.com/andrewrk/mineflayer mineflayer]
  | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
