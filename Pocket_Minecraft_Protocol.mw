@@ -245,7 +245,7 @@ Sent from server after it receives packet 0x05.
 | class="col0 centeralign" | Security + Cookie
 | class="col1 centeralign" | 1 + 4 bytes
 | class="col2 centeralign" | <code>0x043f57fefd</code>
-| class="col3" | Unused, constant value
+| class="col3" | Unused, '''not''' constant value*, but usually similar to <code>0x043f57fefd</code>
 |- class="row3"
 | class="col0 centeralign" | Server UDP Port
 | class="col1 centeralign" | short
@@ -268,7 +268,7 @@ Sent from server after it receives packet 0x05.
 
 Sent from client in response to packet 0x06.
 
-
+* Instances have been observed where the value <code>0x043f57fefd</code> is not always present, but similar values are sent.
 {{anchor|0x08}}
 === ID_OPEN_CONNECTION_REPLY_2 (0x08) ===
 
