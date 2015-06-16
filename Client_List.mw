@@ -194,7 +194,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{no|1.2.5}}
  |-
- ! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft] ([https://github.com/F16Gaming/Sharpcraft Fork])
+ ! [https://github.com/Vijfhoek/Sharpcraft Sharpcraft]
  | Work in progress SMP (might add SSP) client.
  | [https://github.com/Vijfhoek Vijfhoek] and [https://github.com/F16Gaming F16Gaming]
  | {{C sharp}}
