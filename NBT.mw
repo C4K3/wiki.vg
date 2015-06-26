@@ -37,7 +37,7 @@ Almost every 3rd-party Minecraft application uses NBT on some level. There also 
 * [https://bitbucket.org/zzzeek/nbt2yaml nbt2yaml] (Python), provides command-line editing of NBT via the YAML format, as well as a fast and minimalist NBT parsing/rendering API.
 
 == Specification ==
-The NBT file format is extremely simple, and writing a library capable of reading/writing it is a simple affair, usually taking no more than an hour, depending on your skills and language of choice. There are 11 datatypes supported by this format, and one type used to close compound tags. It is strongly advised to read this entire section (no skimming!) or you '''will''' run into issues.
+The NBT file format is extremely simple, and writing a library capable of reading/writing it is a simple affair. There are 11 datatypes supported by this format, and one type used to close compound tags. It is strongly advised to read this entire section or you may run into issues.
 
 
 {| class="wikitable"
