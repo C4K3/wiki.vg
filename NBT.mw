@@ -25,7 +25,8 @@ There are many, many libraries for manipulating NBT, written in several language
 * [https://github.com/sjmulder/nbt-js Javascript], 
 * [https://github.com/TheFrozenFire/PHP-NBT-Decoder-Encoder PHP],
 * [https://github.com/twoolie/NBT Python],
-* [https://github.com/mental/nbtfile Ruby], 
+* [https://github.com/mental/nbtfile Ruby],
+* [https://github.com/drXor/ScalaNBT Scala], 
 * You get the idea...
 
 Unless you have specific goals or licence requirements, it is ''extremely recommended'' to go with one of the existing libraries.
