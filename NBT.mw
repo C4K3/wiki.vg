@@ -15,6 +15,7 @@ Unfortunately, the NBT files you can encounter as a developer will be stored in 
 * [[wikipedia:Zlib|zlib'd]] (aka DEFLATE with a few bytes extra)
 
 === Libraries ===
+
 There are many, many libraries for manipulating NBT, written in several languages, and often several per language. For example,
 
 * [https://github.com/FliPPeh/cNBT C],
@@ -26,8 +27,9 @@ There are many, many libraries for manipulating NBT, written in several language
 * [https://github.com/TheFrozenFire/PHP-NBT-Decoder-Encoder PHP],
 * [https://github.com/twoolie/NBT Python],
 * [https://github.com/mental/nbtfile Ruby],
+* [https://github.com/PistonDevelopers/hematite_nbt Rust],
 * [https://github.com/drXor/ScalaNBT Scala], 
-* You get the idea...
+* You get the idea…
 
 Unless you have specific goals or licence requirements, it is ''extremely recommended'' to go with one of the existing libraries.
 
