@@ -5,6 +5,7 @@ RCON is a protocol introduced in 1.9pre4 for the purpose of remote administratio
     enable-rcon=true
     rcon.password=<your password>
     rcon.port=<1-65535>
+    broadcast-rcon-to-ops=false
 
 The default port is 25575.
 
