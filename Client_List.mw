@@ -23,6 +23,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{yes|1.8.7}}
  |-
+ ! [https://github.com/SpockBotMC/SpockBot SpockBot]
+ | SMP Bot framework, based on BarneyGale's protocol implementation
+ | [https://github.com/nickelpro nickelpro], [https://github.com/gamingrobot gamingrobot]
+ | {{Python}}
+ | {{MIT}}
+ | {{no}}
+ | {{planned|Planned with plugin}}
+ | {{yes|1.8.7}}
+ |-
  ! [https://github.com/andrewrk/mineflayer mineflayer]
  | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
  | [https://github.com/andrewrk andrewrk]
@@ -58,15 +67,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{yes|Yes, using Bundle plugin}}
  | {{yes|1.8}}
- |-
- ! [https://github.com/SpockBotMC/SpockBot SpockBot]
- | SMP Bot framework, based on BarneyGale's protocol implementation
- | [https://github.com/nickelpro nickelpro], [https://github.com/gamingrobot gamingrobot]
- | {{Python}}
- | {{MIT}}
- | {{no}}
- | {{planned|Planned with plugin}}
- | {{yes|1.8.7}}
  |-
  ! [https://github.com/phase/minekraft minekraft]
  | Minecraft remade in Kotlin. It will soon have all the features of Minecraft and more.
