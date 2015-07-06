@@ -44,12 +44,12 @@ All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]]
  |-
  ! Float
  | 4
- | A [[wikipedia:Single-precision floating-point format|single-precision 32-bit IEEE 754 floating point]]
+ | A [[wikipedia:Single-precision floating-point format|single-precision 32-bit IEEE 754 floating point number]]
  | 
  |-
  ! Double
  | 8
- | A [[wikipedia:Double-precision floating-point format|double-precision 64-bit IEEE 754 floating point]]
+ | A [[wikipedia:Double-precision floating-point format|double-precision 64-bit IEEE 754 floating point number]]
  | 
  |-
  ! String
