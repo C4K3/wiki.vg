@@ -24,7 +24,7 @@ Firstly a [[Protocol#Handshake|Handshake]] packet must be sent with its state se
 ! Packet ID !! Field Name !! Field Type !! Notes
 |-
 | rowspan=4 | 0x00
-| Protocol Version || VarInt || (4 as of 1.7.2)
+| Protocol Version || VarInt || See the [[Protocol version numbers#Versions_after_the_Netty_rewrite|list of Protocol Version Numbers]]
 |-
 | Server Address (hostname or IP) || String || A string is a VarInt length followed ''length'' bytes which make an UTF-8 string
 |- 
