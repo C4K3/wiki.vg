@@ -108,7 +108,7 @@ If the process is continued, the client will now send a [[Protocol#Ping|Ping]] p
  | 0x01
  | Payload
  | Long
- | May be any number. Notchian clients use a seemingly time-based value, details unknown.
+ | May be any number. Notchian clients use a system-dependent time value which is counted in milliseconds.
  |}
 
 === Pong ===
