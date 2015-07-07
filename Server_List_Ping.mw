@@ -1,105 +1,131 @@
-Minecraft supports querying the MOTD, player count, max players and server version via the usual port. Unlike [[Query]], the server list ping interface is always enabled.
+Minecraft supports querying the MOTD, player count, max players and server version via the usual port. Unlike [[Query]], the server list ping interface is always enabled. The server ping process changed in 1.7 in a non-backwards compatible way, but current servers still support both the [[#Current|new]] and [[#1.6|old]] process.
 
-== 1.7 ==
+== Current ==
 
-The server ping process changed in 1.7 in a non-backwards compatible way but the 1.7 server does support both (see below)
+This uses the regular client-server [[protocol]]. For the general packet format, see that article.
 
-The packets have a length prefix which is a [https://developers.google.com/protocol-buffers/docs/encoding#varints VarInt] ([https://gist.github.com/thinkofdeath/e975ddee04e9c87faf22 Java example]). The data contained in the next ''length'' bytes is as followed:
+=== Handshake ===
 
-{| class="wikitable"
-! Field Name !! Field Type !! Notes
-|-
-| Packet ID || VarInt ||
-|-
-| Data || ||
-|}
-
-Where data depends on the packet.
-
-=== Ping Process ===
-
-Firstly a [[Protocol#Handshake|Handshake]] packet must be sent with its state set to 1. The layout of the handshake packet is as followed
+First, the client sends a [[Protocol#Handshake|Handshake]] packet with its state set to 1.
 
 {| class="wikitable"
-! Packet ID !! Field Name !! Field Type !! Notes
-|-
-| rowspan=4 | 0x00
-| Protocol Version || VarInt || See the [[Protocol version numbers#Versions_after_the_Netty_rewrite|list of Protocol Version Numbers]]
-|-
-| Server Address (hostname or IP) || String || A string is a VarInt length followed ''length'' bytes which make an UTF-8 string
-|- 
-| Server Port || Unsigned Short|| A short has 2 byte size. It should be read in Big-endian order
-|-
-| Next state || VarInt || 1 for status
-|}
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="4"| 0x00
+ | Protocol Version
+ | VarInt
+ | See [[protocol version numbers]] (currently 47, but any version number should be accepted)
+ |-
+ | Server Address
+ | String
+ | hostname or IP, e.g. localhost or 127.0.0.1
+ |-
+ | Server Port
+ | Unsigned Short
+ | default is 25565
+ |-
+ | Next state
+ | VarInt
+ | should be 1, for [[Protocol#Status|status]]
+ |}
 
-Followed by a [[Protocol#Request|Status Request]] packet. The request packet has no fields
+=== Request ===
+
+The client follows up with a [[Protocol#Request|Request]] packet. This packet has no fields.
 
 {| class="wikitable"
-! Packet ID !! Field Name !! Field Type !! Notes
-|-
-| rowspan=1 | 0x00 || || ||
-|}
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | 0x00
+ |colspan="3"| ''no fields''
+ |}
 
-The server should respond with a [[Protocol#Response|Status Response]] packet
+=== Response ===
+
+The server should respond with a [[Protocol#Response|Response]] packet.
 
 {| class="wikitable"
-! Packet ID !! Field Name !! Field Type !! Notes
-|-
-| rowspan=1 | 0x00 
-| JSON Response || String ||  A string is a VarInt length followed ''length'' bytes which make an UTF-8 string
-|}
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | 0x00 
+ | JSON Response
+ | String
+ | see below
+ |}
 
-The response is a json object which has the following format
+The JSON Response field is a [[wikipedia:JSON|JSON]] object which has the following format:
 
 <syntaxhighlight lang="javascript">
 {
-	"version": {
-		"name": "1.7.9",
-		"protocol": 5
-	},
-	"players": {
-		"max": 100,
-		"online": 5,
-		"sample": [
-			{
-				"name": "thinkofdeath",
-				"id": "4566e69f-c907-48ee-8d71-d7ba5aa00d20"
-			}
-		]
-	},	
-	"description": {
-		"text": "Hello world"
-	},
-	"favicon": "data:image/png;base64,<data>"
+    "version": {
+        "name": "1.8.7",
+        "protocol": 47
+    },
+    "players": {
+        "max": 100,
+        "online": 5,
+        "sample": [
+            {
+                "name": "thinkofdeath",
+                "id": "4566e69f-c907-48ee-8d71-d7ba5aa00d20"
+            }
+        ]
+    },	
+    "description": {
+        "text": "Hello world"
+    },
+    "favicon": "data:image/png;base64,<data>"
 }
 </syntaxhighlight>
 
-The ''description'' field has the same format as [[Chat]]
+The ''description'' field is a [[Chat]] object.
 
-The ''sample'' and ''favicon'' sections are optional.
+The ''sample'' and ''favicon'' fields are optional.
 
-The ''favicon'' should be a png image that is [http://en.wikipedia.org/wiki/Base64 Base64] encoded and prepended with 'data:image/png;base64,'
+The ''favicon'' should be a [[wikipedia:Portable Network Graphics|PNG]] image that is [[wikipedia:Base64|Base64]] encoded and prepended with <code>data:image/png;base64,</code>.
 
-The client sends another packet to help calculate the server's latency but if you only wanted the above information you can stop here.
+After receiving the Response packet, the client may send the next packet to help calculate the server's latency, or if it is only interested in the above information it can disconnect here.
 
-The client will then send a [[Protocol#Ping|Ping]] packet containing the time (uptime of the pc in milliseconds) that the ping was sent.
+=== Ping ===
 
-{| class="wikitable"
-! Packet ID !! Field Name !! Field Type !! Notes
-|-
-| rowspan=1 | 0x01 
-| Time || Long || A long has 8 byte size. It should be read in Big-endian order
-|}
-
-The server will respond with the same packet and then close the connection
+If the process is continued, the client will now send a [[Protocol#Ping|Ping]] packet containing some payload which is not important.
 
 {| class="wikitable"
-! Packet ID !! Field Name !! Field Type !! Notes
-|-
-| rowspan=1 | 0x01 
-| Time || Long || A long has 8 byte size. It should be read in Big-endian order
-|}
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | 0x01
+ | Payload
+ | Long
+ | May be any number. Notchian clients send the time since epoch in milliseconds.
+ |}
+
+=== Pong ===
+
+The server will respond with the [[Protocol#Pong|Pong]] packet and then close the connection.
+
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | 0x01
+ | Payload
+ | Long
+ | Should be the same as sent by the client
+ |}
 
 === Examples ===
 
@@ -110,61 +136,63 @@ The server will respond with the same packet and then close the connection
 
 == 1.6 ==
 
-=== Client -> Server ===
+This uses a protocol which is compatible with the client-server protocol as it was before the Netty rewrite. Modern servers recognize this protocol by the starting byte of <code>fe</code> instead of the usual <code>00</code>.
 
-The client initiates a TCP connection to the minecraft server on the standard port. Instead of doing auth and logging in (as detailed in [[Protocol Encryption]]), it sends the following data, expressed in hexadecimal:
+=== Client to server ===
 
-# <code>FE</code> - packet identifier for a [[Protocol#0xFE|server list ping]]
-# <code>01</code> - server list ping's payload (always 1)
-# <code>FA</code> - packet identifier for a [[Protocol#0xFA|plugin message]]
-# <code>00 0B</code> - length of following string, in characters, as a short (always 11)
-# <code>00 4D 00 43 00 7C 00 50 00 69 00 6E 00 67 00 48 00 6F 00 73 00 74</code> - the string "MC|PingHost" encoded as a [http://en.wikipedia.org/wiki/UTF-16 UTF-16BE] string
-# <code>XX XX</code> - length of the rest of the data, as a short. Compute as <code>7 + 2*len(hostname)</code>
-# <code>XX</code> - protocol version - currently 74 (decimal)
-# <code>XX XX</code> - length of following string, in characters, as a short
-# <code>...</code> - hostname the client is connecting to, encoded the same way as "MC|PingHost"
-# <code>XX XX XX XX</code> - port the client is connecting to, as an int.
+The client initiates a TCP connection to the server on the standard port. Instead of doing auth and logging in (as detailed in [[Protocol]] and [[Protocol Encryption]]), it sends the following data, expressed in hexadecimal:
 
-All [[Data_Types|data types]] are big-endian.
+# <code>FE</code> — packet identifier for a server list ping
+# <code>01</code> — server list ping's payload (always 1)
+# <code>FA</code> — packet identifier for a plugin message
+# <code>00 0B</code> — length of following string, in characters, as a short (always 11)
+# <code>00 4D 00 43 00 7C 00 50 00 69 00 6E 00 67 00 48 00 6F 00 73 00 74</code> — the string <code>MC|PingHost</code> encoded as a [http://en.wikipedia.org/wiki/UTF-16 UTF-16BE] string
+# <code>XX XX</code> — length of the rest of the data, as a short. Compute as <code>7 + len(hostname)</code>, where <code>len(hostname)</code> is the number of bytes in the UTF-16BE encoded hostname.
+# <code>XX</code> — [[Protocol version numbers#Versions before the Netty rewrite|protocol version]], e.g. <code>4a</code> for the last version (74)
+# <code>XX XX</code> — length of following string, in characters, as a short
+# <code>...</code> — hostname the client is connecting to, encoded as a [http://en.wikipedia.org/wiki/UTF-16 UTF-16BE] string
+# <code>XX XX XX XX</code> — port the client is connecting to, as an int.
 
-Packet dump:
+All data types are big-endian.
 
-    0000000: fe01 fa00 0b00 4d00 4300 7c00 5000 6900  ......M.C.|.P.i.
-    0000010: 6e00 6700 4800 6f00 7300 7400 1949 0009  n.g.H.o.s.t..I..
-    0000020: 006c 006f 0063 0061 006c 0068 006f 0073  .l.o.c.a.l.h.o.s
-    0000030: 0074 0000 63dd                           .t..c.
+Example packet dump:
 
-=== Server -> Client ===
+ 0000000: fe01 fa00 0b00 4d00 4300 7c00 5000 6900  ......M.C.|.P.i.
+ 0000010: 6e00 6700 4800 6f00 7300 7400 1949 0009  n.g.H.o.s.t..I..
+ 0000020: 006c 006f 0063 0061 006c 0068 006f 0073  .l.o.c.a.l.h.o.s
+ 0000030: 0074 0000 63dd                           .t..c.
 
-The server responds with a [[Protocol#Disconnect.2FKick_.280xFF.29|0xFF kick]] packet. The packet begins with a single byte identifier <code>ff</code>, then a two-byte big endian short giving the length of the proceeding string in characters. You can actually ignore the length because the server closes the connection after the response is sent.
+=== Server to client ===
+
+The server responds with a 0xFF kick packet. The packet begins with a single byte identifier <code>ff</code>, then a two-byte big endian short giving the length of the following string in characters. You can actually ignore the length because the server closes the connection after the response is sent.
 
 After the first 3 bytes, the packet is a UTF-16BE string. It begins with two characters: <code>§1</code>, followed by a null character. On the wire these look like <code>00 a7 00 31 00 00</code>.
 
 The remainder is null character (that is <code>00 00</code>) delimited fields:
 
-# Protocol version (e.g. <code>47</code>)
-# Minecraft server version (e.g. <code>1.4.2</code>)
+# Protocol version (e.g. <code>74</code>)
+# Minecraft server version (e.g. <code>1.8.7</code>)
 # Message of the day (e.g. <code>A Minecraft Server</code>)
 # Current player count
 # Max players
 
 The entire packet looks something like this:
 
-                    <---> first character
-    0000000: ff00 2300 a700 3100 0000 3400 3700 0000  ....§.1...4.7...
-    0000010: 3100 2e00 3400 2e00 3200 0000 4100 2000  1...4...2...A. .
-    0000020: 4d00 6900 6e00 6500 6300 7200 6100 6600  M.i.n.e.c.r.a.f.
-    0000030: 7400 2000 5300 6500 7200 7600 6500 7200  t. .S.e.r.v.e.r.
-    0000040: 0000 3000 0000 3200 30                   ..0...2.0
+                 <---> first character
+ 0000000: ff00 2300 a700 3100 0000 3400 3700 0000  ....§.1...4.7...
+ 0000010: 3100 2e00 3400 2e00 3200 0000 4100 2000  1...4...2...A. .
+ 0000020: 4d00 6900 6e00 6500 6300 7200 6100 6600  M.i.n.e.c.r.a.f.
+ 0000030: 7400 2000 5300 6500 7200 7600 6500 7200  t. .S.e.r.v.e.r.
+ 0000040: 0000 3000 0000 3200 30                   ..0...2.0
 
 === Examples ===
 
 * [https://gist.github.com/6281388 Ruby]
 * [https://github.com/winny-/mcstat PHP]
 
-== 1.4 - 1.5 ==
+== 1.4 to 1.5 ==
 
-Prior to the Minecraft 1.6, the client -> server operation is much simpler, and only sends <code>FE 01</code>, with none of the following data beginning <code>FA ...</code>
+Prior to the Minecraft 1.6, the client to server operation is much simpler, and only sends <code>FE 01</code>, with none of the following data.
 
 === Examples ===
 
@@ -172,7 +200,7 @@ Prior to the Minecraft 1.6, the client -> server operation is much simpler, and 
 * [https://gist.github.com/4574114 Java]
 * [https://gist.github.com/6223787 C#]
 
-== Beta 1.8 - 1.3 ==
+== Beta 1.8 to 1.3 ==
 
 Prior to Minecraft 1.4, the client only sends <code>FE</code>. 
 
@@ -184,8 +212,8 @@ Additionally, the response from the server only contains 3 fields delimited by <
 
 The entire packet looks something like this:
 
-                    <---> first character
-    0000000: ff00 1700 4100 2000 4d00 6900 6e00 6500  ....A. .M.i.n.e.
-    0000010: 6300 7200 6100 6600 7400 2000 5300 6500  c.r.a.f.t. .S.e.
-    0000020: 7200 7600 6500 7200 a700 3000 a700 3100  r.v.e.r.§.0.§.1.
-    0000030: 30                                       0
+                 <---> first character
+ 0000000: ff00 1700 4100 2000 4d00 6900 6e00 6500  ....A. .M.i.n.e.
+ 0000010: 6300 7200 6100 6600 7400 2000 5300 6500  c.r.a.f.t. .S.e.
+ 0000020: 7200 7600 6500 7200 a700 3000 a700 3100  r.v.e.r.§.0.§.1.
+ 0000030: 30                                       0
