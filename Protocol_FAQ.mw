@@ -1,26 +1,24 @@
-People very, very often have questions regarding the Minecraft Modern [[Protocol]], so we'll try to address some of the most common ones on this document. If you're still having trouble, join us on IRC, channel #mcdevs on irc.freenode.net.
+People very, very often have questions regarding the Minecraft Modern [[Protocol]], so we'll try to address some of the most common ones on this document. If you're still having trouble, join us on IRC, channel [irc://irc.freenode.net/mcdevs #mcdevs on irc.freenode.net].
 
-===Is the protocol documentation complete?===
-<blockquote>
+== Is the protocol documentation complete? ==
+
 Depending on your definition, '''yes'''! All packet types are known and their layout documented. Some finer details are missing, but everything you need to make functional programs is present. We [[MC-Ver|have a script]] that monitors for new versions of the client and notifies us, allowing us to quickly document new packets.
-</blockquote>
 
-=== What's the normal login sequence for a client? ===
+== What's the normal login sequence for a client? ==
 
 See [[Authentication]] for communication with Mojang's servers.
 
 {{Warning|Information might not be totally up to date}} 
 
-<blockquote>
-The recommended login sequence looks like this, where C is the client and S is the server:<br /><br />
+The recommended login sequence looks like this, where C is the client and S is the server:
 
 # Client connects to server
 # '''C→S''': [[Protocol#Handshake|Handshake]] State=2
 # '''C→S''': [[Protocol#Login Start|Login Start]]
 # '''S→C''': [[Protocol#Encryption Request|Encryption Request]]
-# (Client Auth)
+# Client auth
 # '''C→S''': [[Protocol#Encryption Response|Encryption Response]]
-# (Server Auth, Both enable encryption)
+# Server auth, both enable encryption
 # '''S→C''': [[Protocol#Login Success|Login Success]]
 # '''S→C''': [[Protocol#Join Game|Join Game]]
 # '''S→C''': [[Protocol#Spawn Position|Spawn Position]] (“home” spawn, not where the client will spawn on login)
@@ -28,33 +26,29 @@ The recommended login sequence looks like this, where C is the client and S is t
 # '''S→C''': [[Protocol#Player Position And Look|Player Position And Look]] (tells the client they're ready to spawn)
 # '''C→S''': [[Protocol#Player Position And Look 2|Player Position And Look]] (to confirm the spawn position)
 # '''S→C''': inventory, [[Protocol#Map Chunk Bulk|Map Chunk Bulk]], entities, etc
-</blockquote>
 
-===I think I've done everything right, but…===
+== I think I've done everything right, but… ==
 
-====…my player isn't spawning!====
-<blockquote>
-After sending the common-sense packets ([[protocol#handshake_0x02|Handshake]], [[protocol#login_request_0x01|Login]], [[protocol#player_inventory_0x05|Inventory]], [[protocol#spawn_position_0x06|Compass]] and [[protocol#map_chunk_0x33|Chunks]]) you need to finally send the player their [[protocol#player_position_look_0x0d|initial position]] for them to leave the "Loading Map" screen.
-</blockquote>
+=== …my player isn't spawning! ===
 
-'''Note that if the following steps are taken, a Minecraft client will spawn the player:'''
+After sending the common-sense packets ([[Protocol#Handshake|Handshake]], [[Protocol#Login Start|Login Start]], [[Protocol#Window Items|inventory]], [[Protocol#Spawn Position|compass]], and [[Protocol#Map_ Chunk Bulk|chunks]]), you need to finally send the player their [[Protocol#Player Position And Look|initial position]] for them to leave the “Loading Map” screen.
 
-1) Do Handshake (See [[Protocol_Encryption|Protocol Encryption]])<br />
-2) Send [[protocol#spawn_position_0x06|Spawn Position]] PDU<br />
-3) Send [[protocol#player_position_look_0x0d|Player Position and Look]] PDU<br />
+''Note that if the following steps are taken, a Minecraft client will spawn the player:''
 
-While the above steps are sufficient for Minecraft 1.4.5, it is good form to send PDUs that inform the client about the world around the player before allowing the player to spawn.
+# Do Handshake (see [[Protocol Encryption]])
+# Send [[Protocol#Spawn Position|Spawn Position]] packet
+# Send [[Protocol#Player Position And Look|Player Position And Look]] packet
 
-====…my client isn't receiving complete map chunks!====
+While the above steps are sufficient for Minecraft 1.4.5, it is good form to send packets that inform the client about the world around the player before allowing the player to spawn.
+
+=== …my client isn't receiving complete map chunks! ===
 ''Main article: [[How to Write a Client]]''
-<blockquote>
-The standard Minecraft server sends full chunks only when your client is sending player status update packets (any of [[protocol#Player (0x0A)|Player (0x0A)]] through [[protocol#Player Position & Look (0x0D)|Player Position & Look (0x0D)]]).
-</blockquote>
 
-====…all connecting clients spasm and jerk uncontrollably!====
-<blockquote>
-For newer clients, your server needs to send 49 chunks ahead of time, not just one. Send a 7x7 square of chunks, centered on the connecting client's position, '''before''' spawning them.
-</blockquote>
+The standard Minecraft server sends full chunks only when your client is sending player status update packets (any of [[Protocol#Player|Player (0x03)]] through [[Protocol#Player Position And Look|Player Position And Look (0x06)]]).
+
+=== …all connecting clients spasm and jerk uncontrollably! ===
+
+For newer clients, your server needs to send 49 chunks ahead of time, not just one. Send a 7×7 square of chunks, centered on the connecting client's position, ''before'' spawning them.
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
