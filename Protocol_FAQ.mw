@@ -10,7 +10,7 @@ See [[Authentication]] for communication with Mojang's servers.
 
 {{Warning|Information might not be totally up to date}} 
 
-The recommended login sequence looks like this, where C is the client and S is the server:
+The recommended login sequence looks like this, where '''C''' is the client and '''S''' is the server:
 
 # Client connects to server
 # '''C→S''': [[Protocol#Handshake|Handshake]] State=2
@@ -25,6 +25,7 @@ The recommended login sequence looks like this, where C is the client and S is t
 # '''S→C''': [[Protocol#Player Abilities|Player Abilities]]
 # '''S→C''': [[Protocol#Player Position And Look|Player Position And Look]] (tells the client they're ready to spawn)
 # '''C→S''': [[Protocol#Player Position And Look 2|Player Position And Look]] (to confirm the spawn position)
+# '''C→S''': [[Protocol#Client Status|Client Status]] (sent either before or while receiving chunks, further testing needed)
 # '''S→C''': inventory, [[Protocol#Map Chunk Bulk|Map Chunk Bulk]], entities, etc
 
 == I think I've done everything right, but… ==
