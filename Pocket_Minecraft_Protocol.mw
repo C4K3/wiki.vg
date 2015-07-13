@@ -391,7 +391,7 @@ Sent when the server doesn't support the RakNet protocol specified in 0x05.
 |-class="row4"
 | class="col0 centeralign" | Identifier
 | class="col1 centeralign" | string
-| class="col2 centeralign" | MCCPP;Demo;Steve
+| class="col2 centeralign" | "MCPE;Steve;2 7;0.11.0;0;20"
 | class="col3" |
 |- class="row6"
 | class="col0" | Total Size:
@@ -401,7 +401,8 @@ Sent when the server doesn't support the RakNet protocol specified in 0x05.
 Server sends this packet in response to a 0x01 packet.
 If the Server is invisible, this packet will be sent without username
 
-In order for the server to show up in the world list, the server name must have "MCCPP;MINECON;" in front of it.
+<s>In order for the server to show up in the world list, the server name must have "MCCPP;MINECON;" in front of it.</s>
+<b>Since MCPE 0.11.0, the server name has a different format.</b>
 
 {{anchor|0x1D}}
 
@@ -440,8 +441,8 @@ In order for the server to show up in the world list, the server name must have 
 |- class="row2"
 | class="col0 centeralign" | Data
 | class="col1 centeralign" | string
-| class="col2 centeralign" | <code>MCCPP;Demo;Steve</code>
-| class="col3" | Used to send the username (MCCPP;Demo; + username)
+| class="col2 centeralign" | <code>MCPE;Steve;2 7;0.11.0;0;20</code>
+| class="col3" | Used to send the username, format: MCPE;<Server name>;<Protocol version>;<MCPE Version>;<Players>;<Max Players>
 |- class="row3"
 | class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 35 Bytes + length of string
