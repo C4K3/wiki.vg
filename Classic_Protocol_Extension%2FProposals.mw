@@ -435,7 +435,7 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 :#* <span style="color:#c00">'''Con'''</span>: Harder to work with strings (due to variable-width characters).
 :#* <span style="color:#c00">'''Con'''</span>: Third-party library needed for rendering.
 :#* <span style="color:#c00">'''Con'''</span>: Highest resource use (highest RAM and VRAM use, most CPU use, largest font files).
-:#* <span style="color:#c00">'''Con'''</span>: Somewhat harder to implement (no native support in WinAPI / C#).
+:#* <span style="color:#c00">'''Con'''</span>: Hardest to implement (no native support in WinAPI / C#).
 :#* <span style="color:#c00">'''Con'''</span>: Hard to create custom fonts (unless some fallback rules are implemented).
 :#* <span style="color:#c00">'''Con'''</span>: Hard for servers to maintain compatibility with legacy clients.
 
