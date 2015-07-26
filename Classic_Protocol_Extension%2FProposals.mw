@@ -596,3 +596,56 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
+
+===PlayerHealth===
+:Proposed by [[User:Apotter96|Apotter96]] ([[User talk:Apotter96|talk]]) 02:29, 26 July 2015 (UTC)alex96
+:Gives players life count that is controlled by the server and reflected by the client at the top left of the game screen. The server.
+:'''Motivation''': RPG and Gun games can go more extensive if they wish with lives.
+:'''Client Behavior''': Display player's lives at the top left of screen when the server sends the packet. On player connect, the server needs to tell the client the max amount of lives the player can have, in between 5 and 20. May also dictate how many lives the server is allowed to send. Both need to check with the other end so they can comply together.
+:'''Server Behavior''': At any time the server can send the packet telling the client the amount of lives the player has. Once a player connects, the server needs to tell the client how many lives the player is allowed to have, in between 5 and 20. Both need to check with the other end so they can comply together.
+:<h4>UpdateLives packet</h4>
+:''Server to client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x??
+(??)
+| class="col1 centeralign" | Lives
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 15
+| class="col4 centeralign" | How many lives the player has
+|- class="row2"
+| class="col1 centeralign" | MaxLives
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 15
+| class="col4 centeralign" | The Max amount of lives
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+:<h4>UpdateLives packet</h4>
+:''Client to server''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x??
+(??)
+| class="col1 centeralign" | MaxLives
+| class="col2 centeralign" | int
+| class="col3 centeralign" | 15
+| class="col4 centeralign" | The Max amount of lives
+|- class="row2"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 2 bytes
+|}
+:(Comments go here, please sign them)
