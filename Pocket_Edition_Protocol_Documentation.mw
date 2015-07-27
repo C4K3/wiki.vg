@@ -44,7 +44,7 @@ Minecraft packets use different data types to communicate with each other. The d
 
 == Reference ==
 
-RakNet datagram and message header information: http://im/raknet/manual/systemoverview.html
+RakNet datagram and message header information: http://jenkinssoftware.com/raknet/manual/systemoverview.html
 
 The latest version of the protocol is not fully documented yet, but all of the packets can be found in the [http://dragonet.org Dragonet] server code  https://github.com/DragonetMC/Dragonet/tree/master/src/main/java/org/dragonet/net/packet
 Protocol Version: 23 (MCPE 0.11.0b6)
