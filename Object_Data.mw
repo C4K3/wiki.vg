@@ -1,6 +1,6 @@
 == Object Data ==
 
-In the "Spawn Object/Vehicle" packet, additional metadata about the spawned entity may be provided.  The length and contents of this extra data depend on the type of object being spawned.  No matter what, the server must send at least one integer to the client, although 0 is a valid value.  If a number other than zero is provided (for all entities), the following data is appended to the end of the object data:
+In the "Spawn Object/Vehicle" packet, additional metadata about the spawned entity may be provided.  The length and contents of this extra data depend on the type of object being spawned.  No matter what, the server must send at least one integer to the client, although 0 is a valid value.  If a number other than zero is provided (for all entities), the following data is appended to the end of the object data (as of [[Protocol version numbers|15w31a, protocol 49]] this data is always required):
 
 {| class="wikitable"
 |- class="row0"
