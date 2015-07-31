@@ -14,9 +14,13 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  ! Version number
  ! Last known documentation
  |-
+ | {{Minecraft Wiki|15w31c}}
+ | 51
+ | [http://wiki.vg/index.php?title=Pre-release_protocol&oldid=6774 page]
+ |-
  | {{Minecraft Wiki|15w31b}}
  | 50
- | [http://wiki.vg/index.php?title=Pre-release_protocol&oldid=6746 page]
+ | [http://wiki.vg/index.php?title=Pre-release_protocol&oldid=6746 page] ([[#Note 1|note]])
  |-
  | {{Minecraft Wiki|15w31a}}
  | 49
@@ -230,6 +234,11 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|1.7.1-pre}}
  |}
+
+=== Notes ===
+
+{{Anchor|Note 1}}
+ &lt;Dinnerbone&gt; Protocol itself didn't change in 31c btw, but we added an entity which warrants incompatiblity
 
 == Versions before the Netty rewrite ==
 
