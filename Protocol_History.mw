@@ -1,5 +1,21 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 15w31a/b/c ===
+
+Clientbount:
+* Added new Boss Bar Packet
+* Changed SlotId to Enum HAND or ARMOR Slot in PacketEntityEquipment
+* Removed ItemId of Held Item from PacketSpawnPlayer
+* Added Entity UUID to PacketSpawnObject
+* Added Entity UUID to PacketSpawnMob
+* Removed Update Entity NBT Packet
+Serverbound:
+* Added Enum MAIN_HAND or OFF_HAND in PacketUseEntity
+* Added Enum START_DESTROY_BLOCK, ABORT_DESTROY_BLOCK, STOP_DESTROY_BLOCK, DROP_ALL_ITEMS, DROP_ITEM, RELEASE_USE_ITEM or SWAP_HELD_ITEMS in PacketPlayerDigging
+* Added PacketSwitchHand
+* Changed BlockDirection from int to EnumDirection (X, Y, Z), Block from ItemStack to Enum MAIN_HAND or OFF_HAND in PacketPlayerBlockPlacement
+* Added Enum MAIN_HAND or OFF_HAND to PacketAnimation
+* Added Enum MainHand LEFT or RIGHT to PacketClientSettings
 
 === 1.8 ===
 
