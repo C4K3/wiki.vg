@@ -48,7 +48,7 @@ The client follows up with a [[Protocol#Request|Request]] packet. This packet ha
 
 === Response ===
 
-The server should respond with a [[Protocol#Response|Response]] packet.
+The server should respond with a [[Protocol#Response|Response]] packet. Note that Notchian servers will for unknown reasons wait to receive the following [[Protocol#Ping|Ping]] packet for 30 seconds before timing out and sending Response.
 
 {| class="wikitable"
  ! Packet ID
