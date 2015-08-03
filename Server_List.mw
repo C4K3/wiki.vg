@@ -381,6 +381,21 @@ A couple things for contributors:
  | {{unknown}}
  | {{no|Unknown}}
  | {{unknown|On hiatus since April 2012}}
+ |-
+ ! [https://github.com/Techern/Netherrack Netherrack]
+ | [[User:CruzBishop|Cruz Bishop]], Reserved: Alice Keinz
+ | [http://www.rust-lang.org/ Rust]
+ | [[wikipedia:MIT License|MIT]]
+ | {{planned|Developing for 1.8}}
+ | {{planned|Planned: Anvil and possibly custom}}
+ | {{planned|Planned: Yes}}
+ | {{planned|Planned: Yes, with optional extensions}}
+ | {{planned|Planned: Yes}}
+ | {{planned|Planned: To be determined}}
+ | {{planned|Planned: Rust plugins, Lua scripts}}
+ | {{planned|Planned: Windows and Linux}}
+ | {{no|Not yet}}
+ | {{yes|Active}}
  |}
 
 [[Category:Minecraft Modern]]
