@@ -73,7 +73,7 @@ These are some of the errors that can be encountered:
  |-
  | <code>IllegalArgumentException</code>
  | 
- | credentials can not be null.
+ | credentials is null
  | Username/password was not submitted.
  |-
  | <code>Unsupported Media Type</code>
