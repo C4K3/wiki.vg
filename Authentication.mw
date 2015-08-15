@@ -173,7 +173,11 @@ Note: The provided <code>accessToken</code> gets invalidated.
 
 == Validate ==
 
-Checks if an <code>accessToken</code> is a valid session token with a currently-active session.  Note: this method will not respond successfully to all currently-logged-in sessions, just the most recently-logged-in for each user.  It is intended to be used by servers to validate that a user should be connecting (and reject users who have logged in elsewhere since starting Minecraft), ''not'' to auth that a particular session token is valid for authentication purposes. To authenticate a user by session token, use the refresh verb and catch resulting errors.
+Checks if an <code>accessToken</code> is usable for authentication with a Minecraft server. The Minecraft Launcher (as of version 1.6.13) calls this endpoint on startup to verify that its saved token is still usable, and calls <code>/refresh</code> if this returns an error.
+
+Note that an <code>accessToken</code> may be unusable for authentication with a Minecraft server, but still be good enough for <code>/refresh</code>. This mainly happens when one has used another client (e.g. played Minecraft on another PC with the same account). It seems only the most recently obtained <code>accessToken</code> for a given account can reliably be used for authentication (the next-to-last token also seems to remain valid, but don't rely on it).
+
+<code>/validate</code> may be called with or without a <code>clientToken</code>. If a <code>clientToken</code> is provided, it should match the one used to obtain the <code>accessToken</code>. The Minecraft Launcher does send a <code>clientToken</code> to <code>/validate</code>.
 
 === Endpoint ===
 
@@ -184,12 +188,13 @@ Checks if an <code>accessToken</code> is a valid session token with a currently-
 <syntaxhighlight lang="javascript">
 {
     "accessToken": "valid accessToken"
+    "clientToken": "associated clientToken" // optional, see above
 }
 </syntaxhighlight>
 
 === Response ===
 
-Returns an empty payload if successful.
+Returns an empty payload (<code>204 No Content</code>) if successful, an error JSON with status <code>403 Forbidden</code> otherwise.
 
 == Signout ==
 
