@@ -135,6 +135,8 @@ Currently each account will only have one single profile, multiple profiles per 
 
 Some instances in the wild have been observed of Mojang returning a flat <code>null</code> for failed refresh attempts against legacy accounts. It's not clear what the actual error tied to the null response is and it is extremely rare, but implementations should be wary of null output from the response.
 
+This endpoint is severely rate-limited: multiple <code>/authenticate</code> requests for the same account in a short amount of time (think 3 requests in a few seconds), even with the correct password, will eventually lead to an <code>Invalid credentials.</code> response. This error clears up a few seconds later.
+
 == Refresh ==
 
 Refreshes a valid <code>accessToken</code>. It can be used to keep a user logged in between gaming sessions and is preferred over storing the user's password in a file (see [[lastlogin]]). 
