@@ -63,6 +63,11 @@ These are some of the errors that can be encountered:
  |-
  | <code>ForbiddenOperationException</code>
  | 
+ | Invalid credentials.
+ | Too many login attempts with this username recently (see <code>/authenticate</code>). Note that username and password may still be valid!
+ |-
+ | <code>ForbiddenOperationException</code>
+ | 
  | Invalid token.
  | <code>accessToken</code> was invalid.
  |-
