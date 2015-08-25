@@ -207,6 +207,11 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | 0.25
 | 0.25
 |- 
+| 3
+| Area Effect Cloud
+| ?
+| ?
+|- 
 | 10
 | Minecart
 | 0.98
@@ -267,6 +272,11 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | 0.3125
 | 0.3125
 |- 
+| 67
+| Shulker Bullet
+| 0.3125
+| 0.3125
+|- 
 | 70
 | Falling Objects
 | 0.98
@@ -316,6 +326,21 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | Fishing Float
 | 0.25
 | 0.25
+|- 
+| 91
+| Spectral Arrow
+| 0.5
+| 0.5
+|- 
+| 92
+| Tipped Arrow
+| 0.5
+| 0.5
+|- 
+| 93
+| Dragon Fireball
+| 0.3125
+| 0.3125
 |}
 
 Since Release 1.6, all minecarts are spawned with object type 10 and their functionality is then specified in the [[Object_Data#Minecarts|Object data]] within the packet. Also, their visual appearance may be sent via the [[Entities#Minecart|Entity Metadata]] packet.
