@@ -45,7 +45,9 @@ The packet contains important metadata which you'll need to pull out. For bulk p
 In 0x21 the data describes of a single chunk column in the format below. In 0x26, the format below is repeated for each chunk column.
 
 * Repeat for each chunk specified in the section bitmask:
-** Block types, two bytes per block (LE, type = x >> 4, meta = x & 15)
+** Block types
+*** <= 15w34d: two bytes per block (LE, type = x >> 4, meta = x & 15)
+*** >= 15w35b: a list (varint for size, one varint per entry) of possible block state ids (type = x >> 4, meta = x & 15), and an array of indices pointing to state ids in the list (varint representing the number of bits per block, varint for the raw data array length, one long per data array element)
 ** Block light, half byte per block
 ** If skylight: Sky light array, half byte per block
 * If continuous: biome array, byte per XZ coordinate, 256 bytes total.
