@@ -115,6 +115,11 @@ Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob t
 | 0.85
 | 0.85
 |- 
+| 69
+| Shulker
+| 1
+| 1
+|- 
 | 90
 | Pig
 | 0.9
