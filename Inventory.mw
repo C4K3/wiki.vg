@@ -4,54 +4,67 @@ Minecraft displays the '''player inventory''' differently, according to how the 
  |-
  ! Inventory type
  ! Description
- ! Technical name
+ ! Block ID
+ ! Entity ID
  |-
  | 0
- | Chest/Large chest
+ | {{Minecraft Wiki|Chest}}, large chest, or {{Minecraft Wiki|minecart with chest}}
  | minecraft:chest
+ | MinecartChest
  |-
  | 1
- | Workbench
+ | {{Minecraft Wiki|Crafting table}}
  | minecraft:crafting_table
+ | 
  |-
  | 2
- | Furnace
+ | {{Minecraft Wiki|Furnace}}
  | minecraft:furnace
+ | 
  |-
  | 3
- | Dispenser
+ | {{Minecraft Wiki|Dispenser}}
  | minecraft:dispenser
+ | 
  |-
  | 4
- | Enchantment table
+ | {{Minecraft Wiki|Enchantment table}}
  | minecraft:enchanting_table
+ | 
  |-
  | 5
- | Brewing Stand
+ | {{Minecraft Wiki|Brewing stand}}
  | minecraft:brewing_stand
+ | 
  |-
  | 6
- | Npc trade
- | minecraft:villager
+ | {{Minecraft Wiki|Villager}}
+ | 
+ | Villager
  |-
  | 7
- | Beacon
+ | {{Minecraft Wiki|Beacon}}
  | minecraft:beacon
+ | 
  |-
  | 8
- | Anvil
+ | {{Minecraft Wiki|Anvil}}
  | minecraft:anvil
+ | 
  |-
  | 9
- | Hopper
+ | {{Minecraft Wiki|Hopper}} or {{Minecraft Wiki|minecart with hopper}}
  | minecraft:hopper
+ | MinecartHopper
  |-
  | 10
- | Dropper
+ | {{Minecraft Wiki|Dropper}}
  | minecraft:dropper
+ | 
  |- 
  | 11
- | Horse
+ | {{Minecraft Wiki|Horse|Horse, donkey, or mule}}
+ | 
  | EntityHorse
  |}
 
