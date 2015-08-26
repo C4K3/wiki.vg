@@ -61,6 +61,8 @@ Rectangular regions are always indexed starting with the upper-left corner and s
 
 Each window type is described in the following sections. All slot index ranges are inclusive and reflect the indices observed in the Minecraft protocol.
 
+For the window properties (additional data in each window, e.g. smelting progress or enchantments), refer to the table in the [[Protocol#Window_Property|Window Property]] packet.
+
 == Inventory ==
 [[File:Inventory-slots.png|thumb|Inventory slots]]
 
