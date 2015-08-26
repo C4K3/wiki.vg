@@ -149,6 +149,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{MIT}}
 | n/a
 |-
+! [https://github.com/Kronos666/mclaunch-util-lib mclaunch-util-lib]
+| Yggdrasil library in Java, has handy features for launchers.
+| [https://github.com/Kronos666 Kronos]
+| {{Java}}
+| {{MIT}}
+| n/a
+|-
 |}
 
 [[Category:Minecraft Modern]]
