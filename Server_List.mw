@@ -52,6 +52,21 @@ A couple things for contributors:
  | Support Bukkit/Javascript Plugins, Minecraft PC, Minecraft: Pocket Edition
  | {{yes|Active}}
  |-
+ ! [https://github.com/mhsjlw/flying-squid Flying-squid]
+ | [https://github.com/mhsjlw/flying-squid/graphs/contributors Flying-squid contributors]
+ | [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
+ | MIT
+ | {{yes|1.8 (#47)}}
+ | {{planned}}
+ | {{no}}
+ | {{planned}}
+ | {{planned|Players}}
+ | {{yes|Async Networking}}
+ | {{yes|JavaScript}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | [https://github.com/mhsjlw/flying-squid#features Link]
+ | {{yes|Active}}
+ |-
  ! [https://github.com/SpaceManiac/Glowstone Glowstone]
  | SpaceManiac
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
