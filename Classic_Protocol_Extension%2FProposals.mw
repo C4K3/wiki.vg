@@ -120,7 +120,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 |}
 
 ===BlockDefinitions===
-:Proposed by Rayne and Hetal on behalf of the MCForge team, with contributions by fragmer.
+:Proposed by Hetal, with contributions by fragmer.
 :This extension allows servers to define new block types with custom IDs and appearance.
 :'''Motivation''': To allow defining block types without client modifications. To make full use of custom textures.
 :'''Client Behavior''': This extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]], and must only be enabled if BOTH extensions are mutually supported. Client should be able receive any number of '''''DefineBlock''''' and '''''RemoveBlockDefinition''''' packets during the level loading process (after receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' and until receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets). Client must keep track of all defined blocks between level changes or until they are individually removed with '''''RemoveBlockDefinition'''''.
