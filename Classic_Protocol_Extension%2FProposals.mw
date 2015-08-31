@@ -222,15 +222,8 @@ Blocks with masked transparency enabled use the texture's alpha channel (like le
 | class="centeralign" | <code>0</code>
 | ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
 Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Client/blob/master/src/main/java/com/mojang/minecraft/level/tile/Block.java#L24-L35. The sounds start from 0 (None).
-|-
-| class="centeralign" | BreakSound
-| class="centeralign" | byte
-| class="centeralign" | <code>0</code>
-| ID of breaking sound that client should play when player breaks this block.
-Must be one of sound IDs defined in Table #2 '''TODO'''.
-|-
 ! Total Size:
-| class="rightalign" colspan="4" | 76 bytes
+| class="rightalign" colspan="4" | 75 bytes
 |}
 
 :<h5>DefineLiquid Packet</h5>
