@@ -243,7 +243,7 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="14" | ???
+| class="centeralign" rowspan="14" | 35
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
@@ -335,7 +335,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 Must be one of sound IDs defined in Table #2 '''TODO'''.
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 76 bytes
+| class="rightalign" colspan="4" | 77 bytes
 |}
 
 :<h5>RemoveBlockDefinition Packet</h5>
@@ -348,7 +348,7 @@ Must be one of sound IDs defined in Table #2 '''TODO'''.
 ! Example
 ! Notes
 |-
-| class="centeralign" | ???
+| class="centeralign" | 36
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
