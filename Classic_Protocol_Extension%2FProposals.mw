@@ -353,7 +353,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 |}
 
 :'''Future References''': The client developers will be able to add more base blocks but then the server developers will have to change their Ids sent if the block is being occupied as a base block. If any of the fields are incorrectly configured, the client shall disconnect with an error message briefly describing why it crashed ("Invalid Custom Block located at Id : ID").
-:'''Example''': Let's say I have a block called bullet being launched from a block (the block launching the bullet is not required for this situation). I could add that block's Id to the client using ADD_CUSTOM_BLOCK by AddCustomBlock((byte)66/*BulletBlockId*/, (byte)2);, and if my textureUrl in the EnvMapAppearance sent afterwards was actually containing a bullet in the correct slot, the block would inherit actual bullet textures making it realistic and yet again fun.
+:'''Example''': Let's say I have a block called bullet being launched from a block (the block launching the bullet is not required for this situation). I could add that block's Id to the client using ADD_CUSTOM_BLOCK by AddCustomBlock((byte)128/*BulletBlockId*/, (byte)2);, and if my textureUrl in the EnvMapAppearance sent before/afterwards was actually containing a bullet in the correct slot, the block would inherit actual bullet textures making it realistic and yet again fun.
 :'''TABLE 1''': TODO: list of tiles already defined in terrain.png, for both standard and CustomBlocks level 1 blocks.
 :'''TABLE 2''': TODO: list of sounds available for footstep and breaking sounds
 
