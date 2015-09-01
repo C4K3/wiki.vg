@@ -172,6 +172,21 @@ A couple things for contributors:
  | {{no|Unknown}}
  | {{yes|Active}}
  |-
+ ! [https://github.com/Techern/Netherrack Netherrack]
+ | [[User:CruzBishop|Cruz Bishop]], Alice Keinz
+ | [http://www.rust-lang.org/ Rust]
+ | [[wikipedia:MIT License|MIT]]
+ | {{planned|Developing for 1.8}}
+ | {{planned|Planned: Anvil and possibly custom}}
+ | {{planned|Planned: Yes}}
+ | {{planned|Planned: Yes, with optional extensions}}
+ | {{planned|Planned: Yes}}
+ | {{planned|Planned: To be determined}}
+ | {{planned|Planned: Rust plugins}}
+ | {{yes|{{windows}}{{mac}}{{linux}}}}
+ | {{no|Not yet}}
+ | {{yes|Active}}
+ |-
  ! [https://github.com/cnlohr/avrcraft AVRCraft]
  | [[User:CNLohr|CNLohr]]
  | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
@@ -396,21 +411,6 @@ A couple things for contributors:
  | {{unknown}}
  | {{no|Unknown}}
  | {{unknown|On hiatus since April 2012}}
- |-
- ! [https://github.com/Techern/Netherrack Netherrack]
- | [[User:CruzBishop|Cruz Bishop]], Reserved: Alice Keinz
- | [http://www.rust-lang.org/ Rust]
- | [[wikipedia:MIT License|MIT]]
- | {{planned|Developing for 1.8}}
- | {{planned|Planned: Anvil and possibly custom}}
- | {{planned|Planned: Yes}}
- | {{planned|Planned: Yes, with optional extensions}}
- | {{planned|Planned: Yes}}
- | {{planned|Planned: To be determined}}
- | {{planned|Planned: Rust plugins, Lua scripts}}
- | {{planned|Planned: Windows and Linux}}
- | {{no|Not yet}}
- | {{yes|Active}}
  |}
 
 [[Category:Minecraft Modern]]
