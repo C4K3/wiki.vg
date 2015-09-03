@@ -132,6 +132,7 @@ The server will respond with the [[Protocol#Pong|Pong]] packet and then close th
 * [https://gist.github.com/Fireflies/2480d14fbbb33b4bbae3 C#]
 * [https://gist.github.com/zh32/7190955 Java]
 * [https://gist.github.com/1209061 Python]
+* [https://gist.github.com/ewized/97814f57ac85af7128bf Python3]
 * [https://github.com/winny-/mcstat PHP]
 
 == 1.6 ==
