@@ -16,11 +16,11 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|15w36c}}
  | 69
- | [http://wiki.vg/Pre-release_protocol?oldid=6881 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6881}} page]
  |-
  | {{Minecraft Wiki|15w35e}}
  | 66
- | [http://wiki.vg/Pre-release_protocol?oldid=6851 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6851}} page]
  |-
  | {{Minecraft Wiki|15w35d}}
  | 65
@@ -32,7 +32,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|15w35b}}
  | 63
- | [http://wiki.vg/Pre-release_protocol?oldid=6829 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6829}} page]
  |-
  | {{Minecraft Wiki|15w35a}}
  | 62
@@ -52,23 +52,23 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|15w34a}}
  | 58
- | [http://wiki.vg/Pre-release_protocol?oldid=6809 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6809}} page]
  |-
  | {{Minecraft Wiki|15w33c}}
  | 57
- | [http://wiki.vg/Pre-release_protocol?oldid=6806 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6806}} page]
  |-
  | {{Minecraft Wiki|15w33b}}
  | 56
- | [http://wiki.vg/Pre-release_protocol?oldid=6796 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6796}} page]
  |-
  | {{Minecraft Wiki|15w33a}}
  | 55
- | [http://wiki.vg/Pre-release_protocol?oldid=6790 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6790}} page]
  |-
  | {{Minecraft Wiki|15w32c}}
  | 54
- | [http://wiki.vg/Pre-release_protocol?oldid=6788 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6788}} page]
  |-
  | {{Minecraft Wiki|15w32b}}
  | 53
@@ -76,15 +76,15 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |- 
  | {{Minecraft Wiki|15w32a}}
  | 52
- | [http://wiki.vg/Pre-release_protocol?oldid=6785 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6785}} page]
  |-
  | {{Minecraft Wiki|15w31c}}
  | 51
- | [http://wiki.vg/Pre-release_protocol?oldid=6780 page]
+ | [{{canonicalurl:Pre-release protocol|oldid=6780}} page]
  |-
  | {{Minecraft Wiki|15w31b}}
  | 50
- | [http://wiki.vg/Pre-release_protocol?oldid=6746 page] ([[#Note 1|note]])
+ | [{{canonicalurl:Pre-release protocol|oldid=6746}} page] ([[#Note 1|note]])
  |-
  | {{Minecraft Wiki|15w31a}}
  | 49
@@ -92,7 +92,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | '''{{Minecraft Wiki|1.8.8}}'''
  |rowspan="9"| 47
- |rowspan="9"| [http://wiki.vg/Protocol?oldid=6742 page]
+ |rowspan="9"| [{{canonicalurl:Protocol|oldid=6742}} page]
  |-
  | '''{{Minecraft Wiki|1.8.7}}'''
  |-
@@ -274,7 +274,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|14w02a}}
  |rowspan="6"| 5
- |rowspan="6"| [http://wiki.vg/Protocol?oldid=6003 page]
+ |rowspan="6"| [{{canonicalurl:Protocol|oldid=6003}} page]
  |-
  | '''{{Minecraft Wiki|1.7.10}}'''
  |-
@@ -288,7 +288,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | '''{{Minecraft Wiki|1.7.5}}'''
  |rowspan="5"| 4
- |rowspan="5"| [http://wiki.vg/Protocol?oldid=5486 page]
+ |rowspan="5"| [{{canonicalurl:Protocol|oldid=5486}} page]
  |-
  | '''{{Minecraft Wiki|1.7.4}}'''
  |-
@@ -317,7 +317,7 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|1.6.4}}'''
  | 78
- | [http://wiki.vg/index.php?title=Protocol&oldid=4899 page]
+ | [{{canonicalurl:Protocol|oldid=4899}} page]
  | 
  |-
  | '''{{Minecraft Wiki|1.6.2}}'''
@@ -327,7 +327,7 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|1.6.1}}'''
  | 73
- | [http://wiki.vg/index.php?title=Protocol&oldid=1095 page]
+ | [{{canonicalurl:Protocol|oldid=1095}} page]
  | 
  |-
  | {{Minecraft Wiki|1.6-pre}}
@@ -446,7 +446,7 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|1.4.7}}'''
  |rowspan="2"| 51
- |rowspan="2"| [http://wiki.vg/index.php?title=Protocol&oldid=1039 page]
+ |rowspan="2"| [{{canonicalurl:Protocol|oldid=1039}} page]
  |rowspan="2"| 
  |-
  | '''{{Minecraft Wiki|1.4.6}}'''
@@ -500,7 +500,7 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|1.3.2}}'''
  |rowspan="2"| 39
- |rowspan="2"| [http://wiki.vg/index.php?title=Protocol&oldid=980 page]
+ |rowspan="2"| [{{canonicalurl:Protocol|oldid=980}} page]
  |rowspan="2"| 
  |-
  | '''{{Minecraft Wiki|1.3.1}}'''
@@ -556,7 +556,7 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|1.2.5}}'''
  |rowspan="2"| 29
- |rowspan="2"| [http://wiki.vg/index.php?title=Protocol&oldid=932 page]
+ |rowspan="2"| [{{canonicalurl:Protocol|oldid=932}} page]
  |rowspan="2"| This protocol has no encryption and a different handshake layout than the previous ones.
  |-
  | '''{{Minecraft Wiki|1.2.4}}'''
@@ -592,6 +592,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|1.0.0}}'''
  | 22
- | [http://wiki.vg/index.php?title=Protocol&oldid=689 page]
+ | [{{canonicalurl:Protocol|oldid=689}} page]
  | 
  |}
