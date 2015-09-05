@@ -1,71 +1,45 @@
-Minecraft displays the '''player inventory''' differently, according to how the window was opened. Ranges of slot indices vary in meaning between different “windows”. Minecraft indicates which window is being opened according to:
+Minecraft displays the '''player inventory''' differently, according to how the window was opened. Ranges of slot indices vary in meaning between different “windows”. The [[Protocol#Open Inventory|Open Inventory]] packet indicates which window is being opened according to:
 
 {| class="wikitable"
  |-
- ! Inventory type
+ ! Window Type
  ! Description
- ! Block ID
- ! Entity ID
  |-
- | 0
- | {{Minecraft Wiki|Chest}}, large chest, or {{Minecraft Wiki|minecart with chest}}
  | minecraft:chest
- | MinecartChest
+ | {{Minecraft Wiki|Chest}}, large chest, or {{Minecraft Wiki|minecart with chest}}
  |-
- | 1
- | {{Minecraft Wiki|Crafting table}}
  | minecraft:crafting_table
- | 
+ | {{Minecraft Wiki|Crafting table}}
  |-
- | 2
- | {{Minecraft Wiki|Furnace}}
  | minecraft:furnace
- | 
+ | {{Minecraft Wiki|Furnace}}
  |-
- | 3
- | {{Minecraft Wiki|Dispenser}}
  | minecraft:dispenser
- | 
+ | {{Minecraft Wiki|Dispenser}}
  |-
- | 4
- | {{Minecraft Wiki|Enchantment table}}
  | minecraft:enchanting_table
- | 
+ | {{Minecraft Wiki|Enchantment table}}
  |-
- | 5
- | {{Minecraft Wiki|Brewing stand}}
  | minecraft:brewing_stand
- | 
+ | {{Minecraft Wiki|Brewing stand}}
  |-
- | 6
+ | minecraft:villager
  | {{Minecraft Wiki|Villager}}
- | 
- | Villager
  |-
- | 7
- | {{Minecraft Wiki|Beacon}}
  | minecraft:beacon
- | 
+ | {{Minecraft Wiki|Beacon}}
  |-
- | 8
- | {{Minecraft Wiki|Anvil}}
  | minecraft:anvil
- | 
+ | {{Minecraft Wiki|Anvil}}
  |-
- | 9
- | {{Minecraft Wiki|Hopper}} or {{Minecraft Wiki|minecart with hopper}}
  | minecraft:hopper
- | MinecartHopper
+ | {{Minecraft Wiki|Hopper}} or {{Minecraft Wiki|minecart with hopper}}
  |-
- | 10
- | {{Minecraft Wiki|Dropper}}
  | minecraft:dropper
- | 
+ | {{Minecraft Wiki|Dropper}}
  |- 
- | 11
- | {{Minecraft Wiki|Horse|Horse, donkey, or mule}}
- | 
  | EntityHorse
+ | {{Minecraft Wiki|Horse|Horse, donkey, or mule}}
  |}
 
 The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory. The number of unique slots in the window is in the [[Protocol#Open Window|Open Window]] ([[Protocol#Play|Play]], 0x2d, clientbound) packet for all window types except the default inventory window, in which the number of unique slots is 9 (10 in the [[Pre-release protocol|1.9 snapshots]]). This means the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots. Slot number -999 is used for clicking outside the window.
