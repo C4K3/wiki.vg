@@ -132,29 +132,21 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 
 :'''Compatibility''': TODO: Define what the server should do for non-supporting clients. Define how the client should store map files with block definitions. Maybe integrate this with ClassicWorld definition?
 
-:<h5>DefineBlock Packet</h5>
+
+There are two packets, one for liquids and one for all other blocks. Both packets share a common number of fields initially, and are then followed by several packet specific fields.
+:<h5>Common packet structure</h5>
 :''Server to Client''
 :{| class="wikitable"
 |-
-! Packet ID
 ! Field Name
 ! Field Type
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="13" | 34
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
 | Between 128 and 255 (unsigned).
-|-
-| class="centeralign" | Shape
-| class="centeralign" | byte
-| class="centeralign" | <code>0</code>
-| Shape of the block model:
-#Cube
-#Slab
-#UpsideDownSlab
 |-
 | class="centeralign" | Name
 | class="centeralign" | String
@@ -177,7 +169,7 @@ Blocks may be walk-through (0), swim-through (1), or solid (2).
 y = 2<sup>(x-128)/64</sup>
 Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</code> to 1.00 ratio (100% speed), and <code>255</code> to 3.96 (396% speed).
 * If ''Solidity'' is set to 0 or 1, speed is modified while player is inside (i.e. colliding with) the block.
-* If ''Solidity'' is set to 2, speed is modified while players is standing on the block.
+* If ''Solidity'' is set to 2, speed is modified while player is standing on the block.
 If player is affected by several tiles, the ''lowest'' of all modifiers is used.
 |-
 | class="centeralign" | TopTextureID
@@ -201,12 +193,6 @@ Can be same as other texture IDs.
 Between 0 and 255 (unsigned).
 Can be same as other texture IDs.
 |-
-| class="centeralign" | MaskedTransparency
-| class="centeralign" | byte
-| class="centeralign" | <code>0</code>
-| Can be <code>0</code> (no masked transparency) or <code>1</code> (masked transparency).
-Blocks with masked transparency enabled use the texture's alpha channel (like leaves).
-|-
 | class="centeralign" | Opacity
 | class="centeralign" | byte
 | class="centeralign" | <code>255</code>
@@ -222,9 +208,32 @@ Blocks with masked transparency enabled use the texture's alpha channel (like le
 | class="centeralign" | <code>0</code>
 | ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
 Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Client/blob/master/src/main/java/com/mojang/minecraft/level/tile/Block.java#L24-L35. The sounds start from 0 (None).
+|}
+
+:<h5>DefineBlock Packet</h5>
+:''Server to Client''
+:{| class="wikitable"
+|-
+! Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" rowspan="13" | 34
+| class="centeralign" | Shape
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Shape of the block model: Cube (1), Slab (2), Upside down slab (3)
+|-
+| class="centeralign" | MaskedTransparency
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Can be <code>0</code> (no masked transparency) or <code>1</code> (masked transparency).
+Blocks with masked transparency enabled use the texture's alpha channel (like leaves).
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 75 bytes
+| class="rightalign" colspan="4" | 76 bytes
 |}
 
 :<h5>DefineLiquid Packet</h5>
@@ -237,65 +246,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="14" | 35
-| class="centeralign" | BlockID
-| class="centeralign" | byte
-| class="centeralign" | <code>128</code>
-| Between 128 and 255 (unsigned).
-|-
-| class="centeralign" | Name
-| class="centeralign" | String
-| class="centeralign" | <code>Cactus</code>
-| Short, unique, player-friendly name for the block.
-|-
-| class="centeralign" | Solidity
-| class="centeralign" | byte
-| class="centeralign" | <code>1</code>
-| Specifies collision mode for this block type.
-Blocks may be walk-through (0), swim-through (1), or solid (2).
-|-
-| class="centeralign" | MovementSpeed
-| class="centeralign" | byte
-| class="centeralign" | <code>1</code>
-| Player movement speed modifier, defined relative to regular walk speed. Ratio to normal speed is computed with this formula:
-y = 2<sup>(x-128)/64</sup>
-
-Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</code> to 1.00 ratio (100% speed), and <code>255</code> to 3.96 (396% speed).
-* If ''Solidity'' is set to 0 or 1, speed is modified while player is inside (i.e. colliding with) the tile.
-* If ''Solidity'' is set to 2, speed is modified while players is standing on the tile.
-If player is affected by several tiles, the *lowest* of all modifiers is used.
-|-
-| class="centeralign" | TopTextureID
-| class="centeralign" | byte
-| class="centeralign" | <code>1</code>
-| Refers to a <code>terrain.png</code> tile.
-Between 0 and 255 (unsigned).
-Can be same as other texture IDs.
-|-
-| class="centeralign" | SideTextureID
-| class="centeralign" | byte
-| class="centeralign" | <code>2</code>
-| Refers to a <code>terrain.png</code> tile.
-Between 0 and 255 (unsigned).
-Can be same as other texture IDs.
-|-
-| class="centeralign" | BottomTextureID
-| class="centeralign" | byte
-| class="centeralign" | <code>3</code>
-| Refers to a <code>terrain.png</code> tile.
-Between 0 and 255 (unsigned).
-Can be same as other texture IDs.
-|-
-| class="centeralign" | Opacity
-| class="centeralign" | byte
-| class="centeralign" | <code>255</code>
-| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque).
-|-
-| class="centeralign" | TransmitsLight
-| class="centeralign" | byte
-| class="centeralign" | <code>0</code>
-| Whether this block allows the sunlight to go through, for level-lighting purposes.
-|-
+| class="centeralign" rowspan="13" | 35
 | class="centeralign" | FogDensity
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
@@ -322,14 +273,8 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 | class="centeralign" | <code>255</code>
 | Blue component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
 |-
-| class="centeralign" | WalkSound
-| class="centeralign" | byte
-| class="centeralign" | <code>0</code>
-| ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
-Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Client/blob/master/src/main/java/com/mojang/minecraft/level/tile/Block.java#L24-L35. The sounds start from 0 (None).
-|-
 ! Total Size:
-| class="rightalign" colspan="4" | 77 bytes
+| class="rightalign" colspan="4" | 78 bytes
 |}
 
 :<h5>RemoveBlockDefinition Packet</h5>
