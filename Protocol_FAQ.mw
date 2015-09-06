@@ -2,7 +2,7 @@ People very, very often have questions regarding the Minecraft Modern [[Protocol
 
 == Is the protocol documentation complete? ==
 
-Depending on your definition, '''yes'''! All packet types are known and their layout documented. Some finer details are missing, but everything you need to make functional programs is present. We [[MC-Ver|have a script]] that monitors for new versions of the client and notifies us, allowing us to quickly document new packets.
+Depending on your definition, ''yes''! All packet types are known and their layout documented. Some finer details are missing, but everything you need to make functional programs is present. We also collect information on the [[pre-release protocol]] changes, allowing us to quickly document new releases.
 
 == What's the normal login sequence for a client? ==
 
