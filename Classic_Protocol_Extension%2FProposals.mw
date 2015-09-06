@@ -224,12 +224,12 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 | class="centeralign" | Shape
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Shape of the block model: Cube (1), Slab (2), Upside down slab (3)
+| Shape of the block model: Cube (1), Slab (2), Upside down slab (3), Sprite (4)
 |-
-| class="centeralign" | MaskedTransparency
+| class="centeralign" | BlockDraw
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Can be <code>0</code> (no masked transparency) or <code>1</code> (masked transparency).
+| Can be <code>0</code> (fully opaque), <code>1</code> (transparent), or <code>3</code> (translucent).
 Blocks with masked transparency enabled use the texture's alpha channel (like leaves).
 |-
 ! Total Size:
