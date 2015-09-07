@@ -220,7 +220,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="13" | 34
+| class="centeralign" rowspan="13" | 35
 | class="centeralign" | Shape
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
@@ -245,7 +245,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="13" | 35
+| class="centeralign" rowspan="13" | 36
 | class="centeralign" | FogDensity
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
@@ -286,7 +286,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 ! Example
 ! Notes
 |-
-| class="centeralign" | 36
+| class="centeralign" | 37
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
