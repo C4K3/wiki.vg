@@ -208,11 +208,13 @@ Can be same as other texture IDs.
 | class="centeralign" | <code>0</code>
 | ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
 Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Client/blob/master/src/main/java/com/mojang/minecraft/level/tile/Block.java#L24-L35. The sounds start from 0 (None).
-|
+|-
 | class="centeralign" | FullBright
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Whether or not the block/liquid is lit (such as lava). 0 = No. 1 = Yes.
+| Whether or not the block/liquid is affected by shadows (such as lava).
+* 0 = Affected (darkened when in shadow)
+* 1 = Not affected (always bright).
 |}
 
 :<h5>DefineBlock Packet</h5>
