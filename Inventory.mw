@@ -42,7 +42,13 @@ Minecraft displays the '''player inventory''' differently, according to how the 
  | {{Minecraft Wiki|Horse|Horse, donkey, or mule}}
  |}
 
-The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory. The number of unique slots in the window is in the [[Protocol#Open Window|Open Window]] ([[Protocol#Play|Play]], 0x2d, clientbound) packet for all window types except the default inventory window, in which the number of unique slots is 9 (10 in the [[Pre-release protocol|1.9 snapshots]]). This means the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots. Slot number -999 is used for clicking outside the window.
+The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory.
+
+For all windows, the slot in the upper-left corner of the player's inventory is slot ''n'' where ''n'' is the number of unique slots, and slot number -999 is always used for clicking outside the window.
+
+The number of unique slots in the window is sent in the [[Protocol#Open Window|Open Window]] ([[Protocol#Play|Play]], 0x2d, clientbound) packet for all storage windows (e.g. Chest, Dropper). For non-storage windows (the items get dropped when the window is closed, e.g. Workbench, Anvil), the received number of unique slots is always 0, but it can be looked up by the client from the window type.
+
+The default inventory window, which is never explicitly opened by the server, has 9 unique slots (10 in the [[Pre-release protocol|1.9 snapshots]]).
 
 Rectangular regions are always indexed starting with the upper-left corner and scanning across rows. If a window has a crafting region, the output slot is always slot 0 followed immediately by the input region.
 
