@@ -42,9 +42,10 @@ If the timestamp is not a number, too big or too small the HTTP status code 400 
 
    https://api.mojang.com/user/profiles/<uuid>/names
 
-Returns all the usernames this user has used in the past and the one they are using currently
+Returns all the usernames this user has used in the past and the one they are using currently. The UUID must be given without hyphens.
 
 === Response ===
+
 <syntaxhighlight lang="javascript">
 [
   {
@@ -57,7 +58,7 @@ Returns all the usernames this user has used in the past and the one they are us
 ]
 </syntaxhighlight>
 
-The changedToAt field is a Java timestamp in milliseconds.
+The <code>changedToAt</code> field is a Java timestamp in milliseconds.
 
 == Playernames -> UUIDs ==
 
