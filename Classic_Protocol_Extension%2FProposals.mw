@@ -644,51 +644,43 @@ Default value is <code>MapDepth/2</code>.
 |}
 
 :<h4>Texture pack .zip format</h4>
-:'''Note:''' Clients may choose to ignore optional files. These clients are still considered to be compliant with the specification.
+:'''Note:''' It is up to clients which files (except for terrain.png) they support in a texture pack. These clients are still considered to be compliant with the specification.
 :'''Note:''' Texture packs may also contain other files that are not listed below. If clients recognise these other files, then they may perform whatever is desired with them. Otherwise, clients must ignore these other files.
 :'''Note:''' If a texture pack does not contain a certain texture, clients should continue to use the existing texture from the previous texture pack.
 :'''Note:''' Servers are highly advised to avoid texture pack .zips over 4 MB, as these may be rejected by clients.
 :{| class="wikitable"
 |- class="row0"
 ! class="col0" | File name
-! class="col1" | Optional
 ! class="col2" | Details
 |- class="row1"
 | class="col0 centeralign" | terrain.png
-| class="col1 centeralign" | No
 | class="col2 centeralign" | Texture atlas that contains the textures that are applied to blocks.
+'''Note:''' Clients ''must'' support this texture to be considered compliant with the specification.
 |- class="row2"
 | class="col0 centeralign" | animations.png
-| class="col1 centeralign" | Yes
 | class="col2 centeralign" | Texture atlas that contains the textures used for animations.
 |- class="row3"
 | class="col0 centeralign" | animations.txt
-| class="col1 centeralign" | Yes
-| class="col2 centeralign" | File that specifies how the textures in animations.png should be applied to the terrain.png texture atlas. TODO link to format description.
+| class="col2 centeralign" | File that specifies how the textures in animations.png should be applied to the terrain.png texture atlas.
 |- class="row3"
 | class="col0 centeralign" | char.png
-| class="col1 centeralign" | No
 | class="col2 centeralign" | Default skin for humanoid models.
 |- class="row4"
 | class="col0 centeralign" | clouds.png
-| class="col1 centeralign" | Yes
 | class="col2 centeralign" | Texture applied to clouds rendered by the client.
 |- class="row5"
-| class="col0 leftalign" colspan="3" | ''The following may be utilised by clients if EnvWeatherType is mutually supported:''
+| class="col0 leftalign" colspan="2" | ''The following may be utilised by clients if EnvWeatherType is mutually supported:''
 |- class="row6"
 | class="col0 centeralign" | rain.png
-| class="col1 centeralign" | Yes
 | class="col2 centeralign" | Texture applied to rain rendered by the client.
 |- class="row7"
 | class="col0 centeralign" | snow.png
-| class="col1 centeralign" | Yes
 | class="col2 centeralign" | Texture applied to snow rendered by the client.
 |- class="row8"
-| class="col0 leftalign" colspan="3" | ''The following may be utilised by clients if ChangeModel is mutually supported:''
+| class="col0 leftalign" colspan="2" | ''The following may be utilised by clients if ChangeModel is mutually supported:''
 '''Note:''' The default texture for humanoid models is specified by ''char.png''. Block models use textures from ''terrain.png''.
 |- class="row9"
 | class="col0 centeralign" | x.png
-| class="col1 centeralign" | Yes
 | class="col2 centeralign" | Default texture applied to a model for model string ''x''.
 For example, the Crocodile model has the model string ''croc''. The default texture that would be applied is specified by ''croc.png''. 
 |}
