@@ -594,3 +594,111 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 | class="col1 rightalign" colspan="4" | 2 bytes
 |}
 :(Comments go here, please sign them)
+
+
+===EnvMapAppearance v2===
+:Proposed by UnknownShadow200
+:This extension allows the server to specify custom texture packs, and tweak appearance of map edges.
+:'''Motivation''': To provide more ways to customize map appearance, including functionality that's currently provided by [http://files.worldofminecraft.com/texturing/ World of Minecraft's scheme].
+:'''Client behavior:''' Client must be able to receive '''''EnvSetMapAppearance v2''''' packets any time during level load (after the first '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is received and until the '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packet is received). If the ''TexturePackURL'' field is blank or if the given file could not be loaded for any reason, then the texture pack should be reset to the client's default. If an unsupported block ID is given for ''SideBlock'' or ''EdgeBlock'', it should be ignored. The given ''SideLevel'' value should be adjusted to fit between <code>0</code> and <code>MapDepth</code>, if necessary. Client should keep using these appearance parameters for future maps, unless specified otherwise by the server.
+:'''Server behavior:''' Server may send '''''EnvSetMapAppearance v2''''' packets after the last '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is sent for a level. Server should not use any custom block IDs unless the client declared the appropriate ''CustomBlocks'' support level. To reset the texture pack to the client's default one, server should send an '''''EnvSetMapAppearance v2''''' packet with empty string for ''TexturePackURL''. To reset other fields, server should simply use the default values (listed below).
+:'''Block type restrictions:''' Only solid blocks are allowed to be used for ''SideBlock'' and ''EdgeBlock''. Sprites (Sapling, Dandelion, Rose, BrownMushroom, RedMushroom, Rope, Fire) partial-height blocks (Slab, CobblestoneSlab, Snow), and transparent blocks (Air, Leaves, Glass) cannot be used for those fields.
+
+:<h4>EnvSetMapAppearance v2 packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x1E
+(30)
+| class="col1 centeralign" | TexturePackURL
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>http://example.com/mypack.zip</code>
+| class="col4" | Texture pack's full URL.
+Must be a HTTP/HTTPS URL, in .zip format, and served with <code>application/zip</code> mime type.
+|- class="row2"
+| class="col1 centeralign" | SideBlock
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>7</code>
+| class="col4" | Block ID. Default value is 7 (Admincrete).
+|- class="row3"
+| class="col1 centeralign" | EdgeBlock
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>8</code>
+| class="col4" | Block ID. Default value is 8 (Water).
+|- class="row4"
+| class="col1 centeralign" | SideLevel
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>31</code>
+| class="col4" | Elevation from bottom of the map, in blocks.
+Value should be between <code>0</code> and <code>MapDepth</code>.
+Default value is <code>MapDepth/2</code>.
+|- class="row5"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 69 bytes
+|}
+
+:<h4>Texture pack .zip format</h4>
+:'''Note:''' Clients may choose to ignore optional files. These clients are still considered to be compliant with the specification.
+:'''Note:''' Texture packs may also contain other files that are not listed below. If clients recognise these other files, then they may perform whatever is desired with them. Otherwise, clients must ignore these other files.
+:'''Note:''' If a texture pack does not contain a certain texture, clients should continue to use the existing texture from the previous texture pack.
+:'''Note:''' Servers are highly advised to avoid texture pack .zips over 4 MB, as these may be rejected by clients.
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | File name
+! class="col1" | Optional
+! class="col2" | Details
+|- class="row1"
+| class="col0 centeralign" | terrain.png
+| class="col1 centeralign" | No
+| class="col2 centeralign" | Texture atlas that contains the textures that are applied to blocks.
+|- class="row2"
+| class="col0 centeralign" | animations.png
+| class="col1 centeralign" | Yes
+| class="col2 centeralign" | Texture atlas that contains the textures used for animations.
+|- class="row3"
+| class="col0 centeralign" | animations.txt
+| class="col1 centeralign" | Yes
+| class="col2 centeralign" | File that specifies how the textures in animations.png should be applied to the terrain.png texture atlas. TODO link to format description.
+|- class="row3"
+| class="col0 centeralign" | char.png
+| class="col1 centeralign" | No
+| class="col2 centeralign" | Default skin for humanoid models.
+|- class="row4"
+| class="col0 centeralign" | clouds.png
+| class="col1 centeralign" | Yes
+| class="col2 centeralign" | Texture applied to clouds rendered by the client.
+|- class="row5"
+| class="col0 leftalign" colspan="3" | ''The following may be utilised by clients if EnvWeatherType is mutually supported:''
+|- class="row6"
+| class="col0 centeralign" | rain.png
+| class="col1 centeralign" | Yes
+| class="col2 centeralign" | Texture applied to rain rendered by the client.
+|- class="row7"
+| class="col0 centeralign" | snow.png
+| class="col1 centeralign" | Yes
+| class="col2 centeralign" | Texture applied to snow rendered by the client.
+|- class="row8"
+| class="col0 leftalign" colspan="3" | ''The following may be utilised by clients if ChangeModel is mutually supported:''
+'''Note:''' The default texture for humanoid models is specified by ''char.png''. Block models use textures from ''terrain.png''.
+|- class="row9"
+| class="col0 centeralign" | x.png
+| class="col1 centeralign" | Yes
+| class="col2 centeralign" | Default texture applied to a model for model string ''x''.
+For example, the Crocodile model has the model string ''croc''. The default texture that would be applied is specified by ''croc.png''. 
+|}
+
+:<h4>animations.txt format</h4>
+:{| class="wikitable" style="display:block; max-width:1000px"
+|Each line is in the format: <TileX> <TileY> <FrameX> <FrameY> <Frame size> <Frames count> <Tick delay>
+:- ''TileX'' and ''TileY'' indicate the coordinates of the tile in terrain.png that will be replaced by the animation frames. These range from 0 to 15. (inclusive of 15)
+:- ''FrameX'' and ''FrameY'' indicates the pixel coordinates of the first animation frame in animations.png. The top left pixel coordinate is (0, 0)
+:- ''Frame size'' indicates the size in pixels of an animation frame.
+:- ''Frames count'' indicates the number of used frames.  The first frame is located at (FrameX, FrameY), second frame at (FrameX + FrameSize, FrameY) and so forth.
+:- ''Tick delay'' is the number of ticks a frame doesn't change. For instance, a value of 0 means that the frame would be changed every tick, while a value of 2 would mean 'replace with frame 1, don't change frame, don't change frame, replace with frame 2'.
+|}
