@@ -97,21 +97,6 @@ A couple things for contributors:
  | [https://github.com/GlowstonePlusPlus/GlowstonePlusPlus#features Link]
  | {{yes|Active}}
  |-
- ! [https://github.com/BizarreCake/hCraft-2 hCraft 2]
- | BizarreCake
- | [http://en.wikipedia.org/wiki/C%2B%2B C++]
- | [http://gplv3.fsf.org/ GPLv3]
- | {{yes|1.8 (#47)}}
- | {{yes|Anvil}}
- | {{planned}}
- | {{planned}}
- | {{planned}}
- | {{yes|Threads/Events}}
- | {{planned|Lua (planned)}}
- | {{yes|{{linux}}{{windows}}}}
- | [https://github.com/BizarreCake/hCraft-2/#features Link]
- | {{yes|Active}}
- |-
  ! [https://github.com/PistonDevelopers/hematite_server Hematite]
  | [http://www.piston.rs/ Piston] developers
  | [http://www.rust-lang.org/ Rust]
