@@ -56,6 +56,8 @@ Each window type is described in the following sections. All slot index ranges a
 
 For the window properties (additional data in each window, e.g. smelting progress or enchantments), refer to the table in the [[Protocol#Window_Property|Window Property]] packet.
 
+Using -1 as slot index and as window id will set the cursor item (the stack dragged with the mouse)
+
 == Inventory ==
 [[File:Inventory-slots.png|thumb|Inventory slots]]
 
