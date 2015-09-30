@@ -222,7 +222,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no|Beta 1.8.1}}
  |-
  ! [http://truecraft.io TrueCraft]
- | Beta 1.7.3 client for Linux and occasionally Windows
+ | Beta 1.7.3 client for Linux and Windows (and OS X, somewhat)
  | SirCmpwn and [https://github.com/SirCmpwn/TrueCraft/graphs/contributors others]
  | {{C sharp}}
  | {{MIT}}
