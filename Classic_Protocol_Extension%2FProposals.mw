@@ -254,7 +254,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 | Blue component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 79 bytes
+| class="rightalign" colspan="4" | 80 bytes
 |}
 
 :<h5>RemoveBlockDefinition Packet</h5>
