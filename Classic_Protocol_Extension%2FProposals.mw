@@ -236,7 +236,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 | class="centeralign" | BlockDraw
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Can be <code>0</code> (fully opaque), <code>1</code> (transparent), or <code>1</code> [Transparent, but like leaves. (They are filled in).
+| Can be <code>0</code> (fully opaque), <code>1</code> (transparent), or <code>1</code> [Transparent, but like leaves. (They are filled in)]
 |-
 ! Total Size:
 | class="rightalign" colspan="4" | 76 bytes
