@@ -196,7 +196,7 @@ Can be same as other texture IDs.
 | class="centeralign" | Opacity
 | class="centeralign" | byte
 | class="centeralign" | <code>255</code>
-| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque). A -1 value means to use the texture's alpha channel.
+| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque). A -1 value means to use the texture's alpha channel. [Completely ignore this field if BlockDraw = 0]
 |-
 | class="centeralign" | TransmitsLight
 | class="centeralign" | byte
