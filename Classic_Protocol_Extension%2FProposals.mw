@@ -134,15 +134,17 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 
 
 There are two packets, one for liquids and one for all other blocks. Both packets share a common number of fields initially, and are then followed by several packet specific fields.
-:<h5>Common packet structure</h5>
+:<h5>DefineBlock Packet</h5>
 :''Server to Client''
 :{| class="wikitable"
 |-
+| Packet ID
 ! Field Name
 ! Field Type
 ! Example
 ! Notes
 |-
+| class="centeralign" rowspan="16" | 35
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
@@ -210,19 +212,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 | Whether or not the block/liquid is affected by shadows (such as lava).
 * 0 = Affected (darkened when in shadow)
 * 1 = Not affected (always bright).
-|}
-
-:<h5>DefineBlock Packet</h5>
-:''Server to Client''
-:{| class="wikitable"
 |-
-! Packet ID
-! Field Name
-! Field Type
-! Example
-! Notes
-|-
-| class="centeralign" rowspan="13" | 35
 | class="centeralign" | Shape
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
@@ -237,25 +227,10 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 * 2 = transparent but with no face culling of same neighbours (e.g. like leaves)
 * 3 = translucent, where texture's alpha is blended (e.g. like ice or water)
 |-
-! Total Size:
-| class="rightalign" colspan="4" | 75 bytes
-|}
-
-:<h5>DefineLiquid Packet</h5>
-:''Server to Client''
-:{| class="wikitable"
-|-
-! Packet ID
-! Field Name
-! Field Type
-! Example
-! Notes
-|-
-| class="centeralign" rowspan="13" | 36
 | class="centeralign" | FogDensity
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Density of fog while client's camera is inside this liquid.
+| Density of fog while client's camera is inside this block.
 Value of <code>0</code> means "do not change fog" -- level's default settings are used.
 Values between 1 and 255 are mapped to OpenGL's GL_FOG_DENSITY value for GL_EXP2 style fog with the following formula:
 
@@ -279,7 +254,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 | Blue component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 77 bytes
+| class="rightalign" colspan="4" | 79 bytes
 |}
 
 :<h5>RemoveBlockDefinition Packet</h5>
@@ -292,7 +267,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 ! Example
 ! Notes
 |-
-| class="centeralign" | 37
+| class="centeralign" | 36
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
