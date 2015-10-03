@@ -193,11 +193,6 @@ Can be same as other texture IDs.
 Between 0 and 255 (unsigned).
 Can be same as other texture IDs.
 |-
-| class="centeralign" | Opacity
-| class="centeralign" | byte
-| class="centeralign" | <code>255</code>
-| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque). A -1 value means to use the texture's alpha channel. [Completely ignore this field if BlockDraw = 0]
-|-
 | class="centeralign" | TransmitsLight
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
@@ -236,10 +231,14 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 | class="centeralign" | BlockDraw
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Can be <code>0</code> (fully opaque), <code>1</code> (transparent), or <code>1</code> [Transparent, but like leaves. (They are filled in)]
+| Can be:
+* 0 = fully opaque
+* 1 = transparent (e.g. like glass)
+* 2 = transparent but with no face culling of same neighbours (e.g. like leaves)
+* 3 = translucent, where texture's alpha is blended (e.g. like ice or water)
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 76 bytes
+| class="rightalign" colspan="4" | 75 bytes
 |}
 
 :<h5>DefineLiquid Packet</h5>
@@ -280,7 +279,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 | Blue component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 78 bytes
+| class="rightalign" colspan="4" | 77 bytes
 |}
 
 :<h5>RemoveBlockDefinition Packet</h5>
