@@ -624,6 +624,7 @@ Default value is <code>MapDepth + 2</code>.
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>16</code>
 | class="col4" | The maximum view distance the client is allowed to see, in blocks.
+Default is 0. (Client has no limit on view distance.)
 |- class="row7"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 73 bytes
