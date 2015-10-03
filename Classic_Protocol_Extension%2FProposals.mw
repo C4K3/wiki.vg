@@ -618,7 +618,7 @@ Default value is <code>MapDepth/2</code>.
 | class="col3 centeralign" | <code>31</code>
 | class="col4" | Elevation from bottom of the map, in blocks.
 Value should be between <code>0</code> and <code>MapDepth</code>.
-Default value is <code>MapDepth</code>.
+Default value is <code>MapDepth + 2</code>.
 |- class="row6"
 | class="col1 centeralign" | MaximumViewDistance
 | class="col2 centeralign" | short
