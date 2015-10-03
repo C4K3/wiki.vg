@@ -196,7 +196,7 @@ Can be same as other texture IDs.
 | class="centeralign" | Opacity
 | class="centeralign" | byte
 | class="centeralign" | <code>255</code>
-| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque).
+| Full-tile opacity value. Between 0 (fully transparent) and 255 (fully opaque). A -1 value means to use the texture's alpha channel.
 |-
 | class="centeralign" | TransmitsLight
 | class="centeralign" | byte
@@ -236,7 +236,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 | class="centeralign" | BlockDraw
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Can be <code>0</code> (fully opaque), <code>1</code> (transparent), or <code>3</code> (translucent).
+| Can be <code>0</code> (fully opaque), <code>1</code> (transparent), or <code>1</code> [Transparent, but like leaves. (They are filled in).
 |-
 ! Total Size:
 | class="rightalign" colspan="4" | 76 bytes
