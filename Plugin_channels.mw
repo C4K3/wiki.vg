@@ -15,7 +15,7 @@ Allows the client or server to unregister from one or more custom channels, indi
 As of 1.3, Minecraft itself started using plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>. They are not formally registered using the REGISTER channel. The vanilla Minecraft server will send these packets regardless, and the vanilla client will accept them.
 
 === <code>MC|AdvCdm</code> ===
-''Client -> Server''
+''Client to Server''
 
 Adventure mode command block. 
 
@@ -61,13 +61,42 @@ Two integers corresponding to the 2 effects a user wishes to have active.
 
 When a player edits an unsigned book.
 
-This payload is simply a set of bytes corresponding to an ItemStack. It is serialized / deserialized exactly the same as itemstacks in packets.
+This payload is simply a set of bytes corresponding to an [[Slot Data|Slot]].
+
+The [[NBT]] section of the Slot contains
+<code>
+  TAG_Compound(<nowiki>''</nowiki>): 1 entry
+  {
+    TAG_List('pages'): 2 entries
+    {
+      TAG_String(0): 'Something on Page 1'
+      TAG_String(1): 'Something on Page 2'
+    }
+  }
+</code>
 
 === <code>MC|BSign</code> ===
 ''Client to server''
 
 When a player signs a book.
-This payload is simply a set of bytes corresponding to an ItemStack. It is serialized / deserialized exactly the same as itemstacks in packets.
+
+This payload is simply a set of bytes corresponding to an [[Slot Data|Slot]].
+
+The Item ID in the Slot should be a Written Book
+
+The [[NBT]] section of the Slot contains
+<code>
+  TAG_Compound(<nowiki>''</nowiki>): 1 entry
+  {
+    TAG_String('author'): 'Steve'
+    TAG_String('title'): 'A Wonderful Book'
+    TAG_List('pages'): 2 entries
+    {
+      TAG_String(0): 'Something on Page 1'
+      TAG_String(1): 'Something on Page 2'
+    }
+  }
+</code>
 
 === <code>MC|BOpen</code> ===
 ''Server to client''
