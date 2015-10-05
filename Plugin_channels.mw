@@ -86,7 +86,7 @@ The Item ID in the Slot should be a Written Book
 
 The [[NBT]] section of the Slot contains
 <code>
-  TAG_Compound(<nowiki>''</nowiki>): 3 entry
+  TAG_Compound(<nowiki>''</nowiki>): 3 entires
   {
     TAG_String('author'): 'Steve'
     TAG_String('title'): 'A Wonderful Book'
