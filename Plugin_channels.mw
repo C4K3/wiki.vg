@@ -61,7 +61,7 @@ Two integers corresponding to the 2 effects a user wishes to have active.
 
 When a player edits an unsigned book.
 
-This payload is simply a set of bytes corresponding to an [[Slot Data|Slot]].
+This payload is simply a set of bytes corresponding to a [[Slot Data|Slot]].
 
 The [[NBT]] section of the Slot contains
 <code>
@@ -80,7 +80,7 @@ The [[NBT]] section of the Slot contains
 
 When a player signs a book.
 
-This payload is simply a set of bytes corresponding to an [[Slot Data|Slot]].
+This payload is simply a set of bytes corresponding to a [[Slot Data|Slot]].
 
 The Item ID in the Slot should be a Written Book
 
