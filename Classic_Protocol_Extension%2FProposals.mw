@@ -281,7 +281,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 :'''Example''': Let's say I have a block called bullet being launched from a block (the block launching the bullet is not required for this situation). I could add that block's Id to the client using ADD_CUSTOM_BLOCK by AddCustomBlock((byte)128/*BulletBlockId*/, (byte)2);, and if my textureUrl in the EnvMapAppearance sent before/afterwards was actually containing a bullet in the correct slot, the block would inherit actual bullet textures making it realistic and yet again fun.
 :'''TABLE 1''': TODO: list of tiles already defined in terrain.png, for both standard and CustomBlocks level 1 blocks.
 :'''TABLE 2''': TODO: list of sounds available for footstep and breaking sounds
-
+("Maybe allow this extension to have the ability to redefine blocks that are already defined in standard MC classic protocol and CPE? That would solve the problem defined in '''Future References''' and add more flexibility with the creation of custom blocks. This way, we would not have to agree on which blocks to define for each version of the CustomBlocks extension and instead create our own blocks to fit our specific purposes!" - Cheesse)
 ===LongerMessages===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 21:43, 28 August 2014 (UTC)
 :This extension allows clients to accept messages longer than 64 characters, and send them to the server in parts.
