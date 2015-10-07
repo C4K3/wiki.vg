@@ -681,3 +681,251 @@ For example, the Crocodile model has the model string ''croc''. The default text
 :- ''Frames count'' indicates the number of used frames.  The first frame is located at (FrameX, FrameY), second frame at (FrameX + FrameSize, FrameY) and so forth.
 :- ''Tick delay'' is the number of ticks a frame doesn't change. For instance, a value of 0 means that the frame would be changed every tick, while a value of 2 would mean 'replace with frame 1, don't change frame, don't change frame, replace with frame 2'.
 |}
+
+===ExtPlayerList v3===
+:Proposed by Cheesse
+:This extension builds upon the current version and adds the ability to change the visibility of name tags.
+:'''Motivation''': Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. '''''ExtAddPlayerName'''''/'''''ExtRemovePlayerName''''' packets take over managing the player names list (tab-list), and '''''ExtAddEntity3'''''/'''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' packets are used only to manage in-game entities.Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. '''''ExtAddPlayerName'''''/'''''ExtRemovePlayerName''''' packets take over managing the player names list (tab-list), and '''''ExtAddEntity3'''''/'''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' packets are used only to manage in-game entities.
+:'''Client Behavior''': When '''''ExtAddPlayerName''''' packet is received for an unused ''NameID'', a new name must be added to the player-name list. When receiving '''''ExtAddPlayerName''''' packet for an already-listed ''NameID'', client must update its ''ListName'', ''GroupName'', and ''GroupRank''. Names on the player-name list should be grouped by ''GroupName'' in the player-name list. Names within a ''GroupName'' should be sorted by ''GroupRank'' (in ascending order). Names with the same ''GroupName'' and ''GroupRank'' should be sorted alphabetically by ''ListName''. Color codes may be either drawn or stripped from ''ListName'', ''GroupName'', and ''InGameName''. Player-name list must persist when client changes worlds/maps.
+
+:When an '''''ExtAddEntity3''''' packet is received, it must be treated as the '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packet. A player model must be spawned in-game at the given location, with ''InGameName'' text drawn above it. Skin should be loaded using the given ''SkinName'' for a player name. If ''SkinName'' appears to be a player name, skin should be downloaded from the default skin server. If ''SkinName'' appears to be a full URL to a PNG image (starts with <code>http://</code> or <code>https://</code> and ends with <code>.png</code>) then skin should be downloaded from that URL. If image is correctly sized/proportioned to use as a skin for the current model, it should be used. If a blank or unrecognized value is given for ''SkinName'', or if given image could not be downloaded or used, then the default skin should be used. The client must also set the visibility according to ''NameVisibility''. When client receives '''''ExtAddEntity3''''' packet for an already-spawned player, a duplicate entity must not be spawned and existing entity's position must not be changed. Instead their ''InGameName'',  ''SkinName'' and ''NameVisibility'' must be updated. If a negative ''EntityID'' is given for '''''ExtAddEntity3''''', client must update player's own spawn point, ''InGameName'', and ''SkinName''. The client must ignore regular '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packets, if any are received.
+
+:When a standard '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' packet is received for a recognized ''EntityID'', player model must be removed from a world. When '''''ExtRemovePlayerName''''' packet is received for a recognized ''NameID'', their name must be removed from player-name list. Packets with out-of-range or unrecognized ''NameID''s must be ignored.
+
+:In-game entities must never be affected by '''''ExtAddPlayerName''''' or '''''ExtRemovePlayerName''''' packets. Player name list must never be affected by '''''ExtAddEntity3''''' or '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|DespawnPlayer]]''''' packets.
+:'''Server Behavior''': Unique ''NameID'' between 0 and 255 should be assigned to every online player or every player on a map for each map. When a new player connects to the server or joins a new map, '''''ExtAddPlayerName''''' must be sent. ''GroupName'' and ''GroupRank'' can be used in any way, for example to group players by map/world or rank/class/faction. Server must use '''''ExtAddEntity3''''' in place of standard '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SpawnPlayer]]''''' packet. Server should re-send '''''ExtAddPlayerName''''' packet, using the identical ''NameID'', when player's ''ListName'', ''GroupName'', or ''GroupRank'' change. Server must reliably send an '''''ExtRemovePlayerName''''' packet when the player disconnects. Color codes are permitted in ''ListName'', ''GroupName'', and ''InGameName''.
+
+:''This extension only replaces the ExtAddEntity2 of the ExtPlayerList extension version 2. Thus, only the ExtAddEntity3 packet is shown here.''
+:<h4>ExtAddEntity3 packet</h4>
+:''Server to client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="9" | 0x??
+(??)
+| class="col1 centeralign" | EntityID
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>5</code>
+| class="col4 centeralign" | Between 0 and 127
+|- class="row2"
+| class="col1 centeralign" | InGameName
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>&cNotch</code>
+| class="col4 centeralign" | Player name to be shown in-game hovering above the player.
+|- class="row3"
+| class="col1 centeralign" | SkinName
+| class="col2 centeralign" | string
+| class="col3 centeralign" | <code>Notch</code>
+| class="col4 centeralign" | Name of the skin that should be used by the client. Could also be a URL to a PNG image.
+|- class="row4"
+| class="col1 centeralign" | SpawnX
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>1</code>
+| class="col4" | X coordinate (32 units per block) of entity's spawn location.
+|- class="row5"
+| class="col1 centeralign" | SpawnY
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>2</code>
+| class="col4" | Y coordinate (32 units per block) of entity's spawn location.
+|- class="row6"
+| class="col1 centeralign" | SpawnZ
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>3</code>
+| class="col4" | Z coordinate (32 units per block) of entity's spawn location.
+|- class="row7"
+| class="col1 centeralign" | SpawnYaw
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>4</code>
+| class="col4" | Orientation (left-right) at the entity's spawn location.
+|- class="row8"
+| class="col1 centeralign" | SpawnPitch
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>5</code>
+| class="col4" | Orientation (up-down) at the entity's spawn location.
+|- class="row9"
+| class="col1 centeralign" | NameVisibility
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>6</code>
+| class="col4 centeralign" | Visibility of the InGameName of the entity. Obstacles can be blocks or other entities.
+*0 = (Default) Visible only by hovering the cursor over the entity within view. Ignores any obstacles in the way.
+*1 = Visible only by hovering the cursor over the entity within view. Invisible when obstacles block the entity.
+*2 = Always visible within view (name tag shrinks over distance). Ignores any obstacles in the way.
+*3 = Always visible within view (name tag shrinks over distance). Invisible when obstacles block the entity.
+*4 = Always visible anywhere (name tag does not shrink over distance). Ignores any obstacles in the way.
+*5 = Always visible anywhere (name tag does not shrink over distance). Invisible when obstacles block the entity.
+*6 = Never visible.
+|- class="row10"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 139 bytes
+|}
+:(Comments go here, please sign them)
+
+===HackControl v2===
+:Proposed by Cheesse
+:This extension allows more control over the abilities of players.
+:'''Motivation''': To gain control over the movement and action abilities of players.
+:'''Client Behavior''': Client must be able to receive '''''HackControl2''''' packets at any time and apply the changes defined in the packet immediately. Any value may be given in any field to allow or adjust an ability. If a negative value is given in any field, the client should set that value to its default. If <code>0</code> is given in any field, the client must deactivate that ability and prevent its use by the player unless otherwise stated.
+:'''Server Behavior''': Server may send '''''HackControl2''''' packets to successfully connected clients at any time.
+:<h4>HackControl2 packet</h4>
+:''Server to client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="8" | 0x??
+(??)
+| class="col1 centeralign" | FlySpeed
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | Defines the speed of flight. 
+|- class="row2"
+| class="col1 centeralign" | NoClip
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | 
+*0 = Prevent no-clipping
+*1 = Allow no-clipping
+|- class="row3"
+| class="col1 centeralign" | WalkSpeed
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>64</code>
+| class="col4 centeralign" | Helps define the normal speed of walking. This value is then divided by 12.8 to get the speed in blocks per second (if you actually know the exact speed of the player in vanilla Minecraft classic in player units per second, then replace 12.8 with the result of 64 divided by that exact speed, delete this small message, and change the unit of speed for walking mentioned previously to player units per second). A value of 0 allows the player to travel at any speed and overrides any value set by RunSpeed.
+|- class="row4"
+| class="col1 centeralign" | RunSpeed
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>16</code>
+| class="col4 centeralign" | Helps define the ratio of the running speed to the walking speed. This value is then divided by 32 and added to 1 to get the ratio.
+|- class="row5"
+| class="col1 centeralign" | AllowRespawn
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4 centeralign" | 
+*0 = Prevent respawning
+*1 = Allow respawning
+|- class="row6"
+| class="col1 centeralign" | PointOfView
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | 
+*0 = First-person view
+*1 = Third-person behind view
+*2 = Third-person front view
+|- class="row7"
+| class="col1 centeralign" | JumpHeight
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>40</code>
+| class="col4 centeralign" | Maximum height in player units of the player's normal jump.
+|- class="row8"
+| class="col1 centeralign" | SuperJumpHeight
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>9001</code>
+| class="col4 centeralign" | Maximum height in player units of any other jump abilities the player has, like using speed to get a higher jump. A SuperJumpHeight value of 0 will override any value in JumpHeight.
+|- class="row9"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 11 bytes
+|}
+:(Comments go here, please sign them)
+
+===EnvWeatherType v2===
+:Proposed by Cheesse
+:This extension allows the server to change the weather conditions and amount of fog.
+:'''Motivation''': To allow the server to create a setting, scene or mood on a map; or to limit the players vision for things like smoke bombs in games.
+:'''Client Behavior''': Client must be able to receive '''''EnvSetWeatherType2''''' packets at any time and apply the changes defined in the packet immediately. If an undefined value is used in the ''WeatherType'' field, the client should ignore that value. If a negative value is given in the ''MaxFog'' field, the client should set that value to its own default. The client should make smooth changes between different fog distances.
+:'''Server Behavior''': Server may send '''''EnvSetWeatherType2''''' packets to successfully connected clients at any time.
+:<h4>EnvSetWeatherType2 packet</h4>
+:''Server to client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="2" | 0x??
+(??)
+| class="col1 centeralign" | WeatherType
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | 
+*0 = Sunny
+*1 = Rainy
+*2 = Snowy
+|- class="row2"
+| class="col1 centeralign" | MaxFog
+| class="col2 centeralign" | short
+| class="col3 centeralign" | <code>128</code>
+| class="col4 centeralign" | The distance in blocks of the wall of fog away from the player
+|- class="row3"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 3 bytes
+|}
+:(Comments go here, please sign them)
+
+===MessageTypes v2===
+:Proposed by Cheesse
+:This extension adds new ways of presenting information to the player.
+:'''Motivation''': To allow the server to send messages in different places and for limited times.
+:'''Client Behavior''': Client must interpret the ''PlayerID'' field of the standard [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet as the ''Message Type'' field. Certain values in this field correspond to different locations for messages on the screen. Any undefined values in this field should be ignored and presented as regular chat messages. Without mutual server-client support for this extension, this field should be ignored.
+:'''Server Behavior''': Server may use the ''PlayerID'' field of the [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet to have that message placed at a certain location on the player's screen.
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | MessageType Value
+! class="col1" | Meaning
+! class="col2" | Message Placement
+|- class="row1"
+| class="col0 centeralign" | 0
+| class="col1 centeralign" | Chat
+| class="col2 centeralign" | In the chatbox.
+|- class="row2"
+| class="col0 centeralign" | 1
+| class="col1 centeralign" | Status1
+| class="col2 centeralign" | At the top right of the screen.
+|- class="row3"
+| class="col0 centeralign" | 2
+| class="col1 centeralign" | Status2
+| class="col2 centeralign" | At the top right of the screen below Status1.
+|- class="row4"
+| class="col0 centeralign" | 3
+| class="col1 centeralign" | Status3
+| class="col2 centeralign" | At the top right of the screen below Status2.
+|- class="row5"
+| class="col0 centeralign" | 11
+| class="col1 centeralign" | BottomRight1
+| class="col2 centeralign" | At the bottom right of the screen.
+|- class="row6"
+| class="col0 centeralign" | 12
+| class="col1 centeralign" | BottomRight2
+| class="col2 centeralign" | At the bottom right of the screen above BottomRight1.
+|- class="row7"
+| class="col0 centeralign" | 13
+| class="col1 centeralign" | BottomRight3
+| class="col2 centeralign" | At the bottom right of the screen above BottomRight2.
+|- class="row8"
+| class="col0 centeralign" | 45
+| class="col1 centeralign" | LeftHotbar
+| class="col2 centeralign" | On top of the hotbar aligned to the left.
+|- class="row9"
+| class="col0 centeralign" | 54
+| class="col1 centeralign" | RightHotbar
+| class="col2 centeralign" | On top of the hotbar aligned to the right.
+|- class="row10"
+| class="col0 centeralign" | 100
+| class="col1 centeralign" | BigAnnouncement
+| class="col2 centeralign" | In large font slightly above the center of the screen.
+|- class="row11"
+| class="col0 centeralign" | 200
+| class="col1 centeralign" | SmallAnnouncement
+| class="col2 centeralign" | Near the center of the screen below BigAnnouncement.
+|}
+This extension does not define any new packets.
+:(Comments go here, please sign them)
