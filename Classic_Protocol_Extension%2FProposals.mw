@@ -858,7 +858,7 @@ For example, the Crocodile model has the model string ''croc''. The default text
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x??
+| class="col0 centeralign" rowspan="3" | 0x??
 (??)
 | class="col1 centeralign" | WeatherType
 | class="col2 centeralign" | byte
