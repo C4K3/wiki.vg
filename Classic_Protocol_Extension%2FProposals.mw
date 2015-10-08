@@ -706,7 +706,7 @@ For example, the Crocodile model has the model string ''croc''. The default text
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="9" | 0x??
+| class="col0 centeralign" rowspan="10" | 0x??
 (??)
 | class="col1 centeralign" | EntityID
 | class="col2 centeralign" | byte
