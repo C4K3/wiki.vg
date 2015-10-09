@@ -117,7 +117,7 @@ There are five simple things to remember:
 * Every NBT file will '''always''' begin with a TAG_Compound. No exceptions.
 * Every tag begins with a single byte which is is the <code>Type ID</code> of the following tag.
 * Every tag, except TAG_End, begins with a TAG_String, minus the <code>Type ID</code>. This is the name given to whatever is stored in the tag.
-* The preceding two rules do '''not apply''' to the first level of tags within a <code>TAG_List</code>.
+* The preceding two rules do '''not apply''' to the first level of tags ''within'' a <code>TAG_List</code>.
 
 For example, here's the example layout of a <code>TAG_Short</code> on disk:
 
