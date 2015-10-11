@@ -944,7 +944,7 @@ This extension does not define any new packets.
 
 ===ExtMapInfo===
 :Proposed by Cheesse
-:This extension allows the server to send the client some of the maps metadata and other information
+:This extension allows the server to send the client some of the map's metadata and other information
 :'''Motivation''': To allow clients to save metadata with the maps they choose to save. This extension can also be modified to add more features to maps.
 :'''Client Behavior''': Client must be able to receive '''''FinalMapInfo''''' packets at any time after a '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' packet has been received and before a '''''FinalMapInfo''''' packet has been received. Client should store the values in these fields in memory to be used later. The metadata defined in these fields come from those defined in the ClassicWorld file definitions. Client should ignore any '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets recieved.
 :'''Server Behavior''': Server must send '''''FinalMapInfo''''' packets with the correct values after it has finished sending the client the raw block data after sending a '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' packet. The server should not send this packet at any other time. The server should never send any '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets to the client.
