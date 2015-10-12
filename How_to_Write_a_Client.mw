@@ -190,7 +190,7 @@ If you go with the first option, you must wait until the block has been dug befo
  diamond: 3
  gold: 0
  
- for the following fields, see https://github.com/PrismarineJS/minecraft-data/blob/master/enums/blocks.json
+ for the following fields, see https://github.com/PrismarineJS/minecraft-data/blob/1.8/enums/blocks.json
  Block.hardness
  Block.material
 
