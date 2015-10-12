@@ -140,7 +140,7 @@ If you go with the first option, you must wait until the block has been dug befo
  Block.grass, Block.dirt, Block.sand, Block.gravel, Block.snow, Block.blockSnow, Block.blockClay
  
  
- axe affective against:
+ axe effective against:
  
  Block.planks, Block.bookShelf, Block.wood, Block.crate
  
