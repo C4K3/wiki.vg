@@ -94,6 +94,7 @@ If you do want to be able to abort digging:
 If you go with the first option, you must wait until the block has been dug before you can start digging another block. In older versions of the server (1.4 and previous) you could bypass the time and destroy lots of blocks at once (instant mining) by sending "start digging" and "finish digging" packets without an interval in between.
 
 === How long to wait ===
+The server requires you to wait for a certain amount of time between sending a StartDiggingPacket and a StopDiggingPacket. Below is some old pseudocode; you can find an updated one [https://gist.github.com/phase/85d3081047cbf3d2f5ae here].
 
  20 ticks per second
  
