@@ -200,9 +200,17 @@ The server requires you to wait for a certain amount of time between sending a S
 
 == Inventory and Crafting ==
 
-When you log in, before you get a 0x0D, you will get a 0x68 Window Items with your complete inventory including armor. You will then get a series of 0x67 Set Slot messages repeating the information for each non-empty slot. The slot indexes of these messages are for an inventory window with the crafting zone empty.
+When you log in, before you get a 0x0D, you will get a [[Protocol#Window_Items|Window Items]] with all inventory slots including armor. You will then get a series of [[Protocol#Set_Slot|Set Slot]] repeating the slot information, one for every non-empty slot in the opened window, plus the cursor slot (which is empty by default, but changes when you click on a slot). The slot indexes of these messages are for an inventory window with the crafting zone empty.
 
-TODO: more info.
+By clicking on a block or entity, the client can open a window. After sending the [[Protocol#Player_Block_Placement|Player Block Placement]] or [[Protocol#Use_Entity|Use Entity]] packet, the server responds with [[Protocol#Open_Window|Open Window]], [[Protocol#Window_Items|Window Items]], several [[Protocol#Set_Slot|Set Slot]] (one for every non-empty slot in the opened window, plus the cursor slot), and optionally [[Protocol#Window_Property|Window Property]]. It seems that only the most recently opened window can be interacted with. For more info, look at [[Inventory]].
+
+Clicking happens by sending [[Protocol#Click_Window|Click Window]], which the server will answer with a [[Protocol#Confirm_Transaction|Confirm Transaction]]. If the "Clicked item" is wrong, the click will still be ''executed'' but not ''accepted''.
+
+If the click was not accepted by the server (accepted = false), the client must answer with [[Protocol#Confirm_Transaction_2|Confirm Transaction (serverbound)]] to apologize (like with movement), otherwise the server ignores any successive clicks. Additionally, the server answers erroneous clicks with one [[Protocol#Window_Items|Window Items]] and several [[Protocol#Set_Slot|Set Slot]] as above, to resynchronize the client with the server.
+
+The client has to know all clicking behaviour (including crafting recipes) and change the slots accordingly after each click, because the server does not send any [[Protocol#Set_Slot|Set Slot]], just [[Protocol#Confirm_Transaction|Confirm Transaction]]. But you can cheat and always send the wrong "Clicked item" in [[Protocol#Click_Window|Click Window]] to force the server to send you all slots again while still applying your click.
+
+Crafting is done by placing the correct materials into the crafting grid and clicking on the result slot (always slot nr. 0) to pick up the crafted item. Make sure to correctly update all slots after clicking the result slot, as some recipes (e.g. cake) leave back items in the crafting grid/inventory (e.g. empty buckets).
 
 == Attacking mobs/players ==
 
