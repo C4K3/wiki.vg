@@ -845,7 +845,7 @@ For example, the Crocodile model has the model string ''croc''. The default text
 ===EnvWeatherType v2===
 :Proposed by Cheesse
 :This extension allows the server to change the weather conditions and amount of fog.
-:'''Motivation''': To allow the server to create a setting, scene or mood on a map; or to limit the players vision for things like smoke bombs in games.
+:'''Motivation''': To allow the server to create a setting, scene or mood on a map; or to limit the players vision for things like smoke bombs in games. (Fog/View Distance is placed here because the EnvSetMapAppearance2 packet would be too big to include such a versatile feature.)
 :'''Client Behavior''': Client must be able to receive '''''EnvSetWeatherType2''''' packets at any time and apply the changes defined in the packet immediately. If an undefined value is used in the ''WeatherType'' or ''WeatherStrength'' fields, the client should ignore that value. If a negative value is given in the ''MaxFog'' field, the client should set that value to its own default. The client should make smooth changes between different strengths of weather and fog distances.
 :'''Server Behavior''': Server may send '''''EnvSetWeatherType2''''' packets to successfully connected clients at any time.
 :<h4>EnvSetWeatherType2 packet</h4>
