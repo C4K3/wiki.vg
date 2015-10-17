@@ -826,6 +826,8 @@ For example, the Crocodile model has the model string ''croc''. The default text
 *0 = First-person view
 *1 = Third-person behind view
 *2 = Third-person front view
+
+Setting this field to a defined value will prevent the player from changing their point of view. Setting it to an undefined value will allow the player to switch points of view.
 |- class="row7"
 | class="col1 centeralign" | JumpHeight
 | class="col2 centeralign" | short
