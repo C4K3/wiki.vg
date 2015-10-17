@@ -191,7 +191,7 @@ The server requires you to wait for a certain amount of time between sending a S
  diamond: 3
  gold: 0
  
- for the following fields, see https://github.com/PrismarineJS/minecraft-data/blob/1.8/enums/blocks.json
+ for the following fields, see https://github.com/PrismarineJS/minecraft-data/blob/master/data/1.8/blocks.json
  Block.hardness
  Block.material
 
