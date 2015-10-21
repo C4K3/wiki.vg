@@ -1,0 +1,6 @@
+This tutorial is being created to document what it takes to write a stand-alone server to interact with Notchian clients. The tutorial is incomplete but will be updated whenever more information is discovered.
+
+== Before You Get Started ==
+* Make sure you don't want to fork or join an existing project.
+* Wonder why you want to do this in the first place.
+* Choose a language that has good networking, like Java, C#, or Python. (If you want to be different, choose a faster language like C or Rust!)
