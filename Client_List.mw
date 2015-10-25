@@ -41,6 +41,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{yes|1.8.3}}
  |-
+ ! [https://github.com/ORelio/Minecraft-Console-Client Minecraft Console Client]
+ | Command-line chat client with C# bot support
+ | [https://github.com/ORelio ORelio]
+ | {{C sharp}}
+ | [http://opensource.org/licenses/CDDL-1.0 CDDL-1.0]
+ | {{yes}}
+ | {{no}}
+ | {{yes|1.8.3}}
+ |-
  ! [https://github.com/woder/torchbot TorchBot]
  | Work in progress standalone bot written from scratch in java, currently supports key features of game(movement, chat, world handling) and plugin system!
  | woder22
