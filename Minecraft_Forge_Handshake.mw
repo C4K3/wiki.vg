@@ -1,0 +1,62 @@
+{{Box|
+BORDER = #FFCC00|
+BACKGROUND = #FFFF00|
+WIDTH = 100%|
+ICON = |
+HEADING = Work in progress! |
+CONTENT =  
+This page is a work in progress, and may be missing a lot of information or may contain incorrect information.  Feel free to edit it to add your own information.
+}}
+
+This page will document the changes made in the '''[https://minecraftforge.net/ Minecraft Forge] protocol'''.
+
+Largely based on my own attempts to document the protocol and allow connection to forge servers [https://github.com/ORelio/Minecraft-Console-Client/pull/100 here].
+
+__FORCETOC__ <!-- Force the table of contents; this can be removed once this page is larger -->
+
+== Changes to [[Server List Ping]] ==
+
+When forge is installed, the [[Server List Ping]] changes with an additional <code>modinfo</code>.  Example:
+
+<syntaxhighlight lang="javascript">
+{
+    "description": "A Minecraft Server",
+    "players": {
+        "max": 20,
+        "online": 0
+    },
+    "version": {
+        "name": "1.8",
+        "protocol": 47
+    },
+    "modinfo": {
+        "type": "FML",
+        "modList": [
+            {
+                "modid": "mcp",
+                "version": "9.05"
+            },
+            {
+                "modid": "FML",
+                "version": "8.0.99.99"
+            },
+            {
+                "modid": "Forge",
+                "version": "11.14.3.1512"
+            },
+            {
+                "modid": "rpcraft",
+                "version": "Beta 1.3 - 1.8.0"
+            }
+        ]
+    }
+}
+</syntaxhighlight>
+
+So, to test whether forge is installed, look for the <code>modinfo</code> key and then a <code>type</code> of <code>FML</code>
+
+The <code>modList</code> contains each installed mod's version and ID.
+
+{{warning|The modlist <code>modList</code> has a capital 'L', unlike any other key in the ping result!}}
+
+This is injected in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/patches/minecraft/net/minecraft/network/ServerStatusResponse.java.patch#L45 ServerStatusResponse] by calling [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/internal/FMLNetworkHandler.java#L192-L206 FMLNetworkHandler.enhanceStatusQuery()].
