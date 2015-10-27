@@ -68,3 +68,9 @@ Attempting to connect to a forge server without making any changes results in ge
 If <code>\0FML\0</code> is added to the end of the server's address (again, in the 0x00 handshake packet), the server will not immediately reject you.  However, you still will not complete the connection.
 
 This occurs because Minecraft Forge has an additional set of handshakes (for determining mods and block IDs), that must be completed before the server allows logging in.  I'll explain these later on.
+
+== Forge handshake ==
+
+Forge's handshake occurs in the middle of the [[Protocol FAQ#What's the normal login sequence for a client?|normal login sequence]], right after [[Protocol#Login Success|0x02 Login Success]] is received by the client.
+
+In addition to the [[Debugging|normal packet debugging]] for the server, if <code>-Dfml.debugNetworkHandshake=true</code> is passed to the forge server, some more information about the current handshake status will be outputted.
