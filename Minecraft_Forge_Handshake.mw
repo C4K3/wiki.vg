@@ -72,3 +72,9 @@ This occurs because Minecraft Forge has an additional set of handshakes (for det
 Forge's handshake occurs in the middle of the [[Protocol FAQ#What's the normal login sequence for a client?|normal login sequence]], right after [[Protocol#Login Success|0x02 Login Success]] is received by the client.
 
 In addition to the [[Debugging|normal packet debugging]] for the server, if <code>-Dfml.debugNetworkHandshake=true</code> is passed to the forge server, some more information about the current handshake status will be outputted.
+
+== Definitions ==
+
+Minecraft Forge uses an additional type not covered in [[data types]] for some things -- a varshort.  This is essentially the same as a regular short, except that if the top byte (what is normally sign) is set, it is followed by an additional byte.  This allows forge to retain backwards compatibility but extend the length of certain numbers -- the varshort is only used in places where, in vanilla Minecraft, the sign bit would not have been set.  It is implemented in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/ByteBufUtils.java#L58-L89 ByteBufUtils].
+
+Minecraft Forge also uses what it calls 'discriminator bytes' -- they are used by forge to determine what message is being sent, without using multiple [[plugin channel]]s.  All it is is a single byte at the start of the packet that chooses between sub-packets.  In some cases, these are negative.  (When this happens, remember that they are stored in [[Wikipedia:two's complement|two's complement]] -- <code>-1</code> is <code>255</code>, <code>-2</code> is <code>254</code>, etc.)
