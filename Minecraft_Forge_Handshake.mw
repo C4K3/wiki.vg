@@ -12,8 +12,6 @@ This page will document the changes made in the '''[https://minecraftforge.net/ 
 
 Largely based on my own attempts to document the protocol and allow connection to forge servers [https://github.com/ORelio/Minecraft-Console-Client/pull/100 here].
 
-__FORCETOC__ <!-- Force the table of contents; this can be removed once this page is larger -->
-
 == Changes to [[Server List Ping]] ==
 
 When forge is installed, the [[Server List Ping]] changes with an additional <code>modinfo</code>.  Example:
@@ -67,7 +65,7 @@ Attempting to connect to a forge server without making any changes results in ge
 
 If <code>\0FML\0</code> is added to the end of the server's address (again, in the 0x00 handshake packet), the server will not immediately reject you.  However, you still will not complete the connection.
 
-This occurs because Minecraft Forge has an additional set of handshakes (for determining mods and block IDs), that must be completed before the server allows logging in.  I'll explain these later on.
+This occurs because Minecraft Forge has an additional set of handshakes (for determining mods and block IDs), that must be completed before the server allows logging in.
 
 == Forge handshake ==
 
