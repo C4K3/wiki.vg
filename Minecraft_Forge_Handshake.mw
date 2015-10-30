@@ -115,6 +115,26 @@ Starts the handshake.
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L77-L95 ClientHello] ===
 
+Response from the client to the ServerHello packet.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="6"| <code>FML|HS</code>
+ |rowspan="6"| Client
+ | Discriminator
+ | Byte
+ | Always 1 for ClientHello.
+ |-
+ | FML protocol Version
+ | Byte
+ | Determined from [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/NetworkRegistry.java#L67-L69 NetworkRegistery].  Currently <code>2</code>.
+ |}
+
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L96-L152 ModList] ===
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240 RegistryData] ===
