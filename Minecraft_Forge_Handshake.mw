@@ -219,6 +219,26 @@ The server sends several of this packet, one for each registry.  It'll keep send
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L241-L264 HandshakeAck] ===
 
+Confirms that the client is able to use the settings sent previously.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="6"| <code>FML|HS</code>
+ |rowspan="6"| Both
+ | Discriminator
+ | Byte
+ | Always -1 (255) for HandshakeAck
+ |-
+ | Phase
+ | Byte
+ | The current phase, which is the ordinal (0-indexed) in the [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeClientState.java FMLHandshakeClientState] or [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeServerState.java FMLHandshakeServerState] enums (if the server is sending it, it is in the ServerState enum, and if the client is sending it, it is the ClientState enum).
+ |}
+
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L265-L267 HandshakeReset] ===
 
 {{Need Info|Is this ever actually sent?}}
