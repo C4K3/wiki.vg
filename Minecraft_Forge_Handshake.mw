@@ -220,3 +220,21 @@ The server sends several of this packet, one for each registry.  It'll keep send
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L241-L264 HandshakeAck] ===
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L265-L267 HandshakeReset] ===
+
+{{Need Info|Is this ever actually sent?}}
+
+Causes the client to recomplete the entire handshake from the start.  Does not appear to be sent.  There is no payload beyond the discriminator byte.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="6"| <code>FML|HS</code>
+ |rowspan="6"| Client
+ | Discriminator
+ | Byte
+ | Always -2 (254) for HandshakeReset
+ |}
