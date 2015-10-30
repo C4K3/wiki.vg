@@ -169,6 +169,54 @@ Contains a list of all mods installed on the server or client.  Sent from the cl
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240 RegistryData] ===
 
+{{Need Info|Explain exactly what registries are, and figure out what Substitutions is}}
+
+The server sends several of this packet, one for each registry.  It'll keep sending them until the hasMore value is no longer true.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ !colspan="2"| Field Name
+ !colspan="2"| Field Type
+ ! Notes
+ |-
+ |rowspan="4"| <code>FML|HS</code>
+ |rowspan="4"| Both
+ |colspan="2"| Discriminator
+ |colspan="2"| Byte
+ | Always 3 for RegistryData.
+ |-
+ |colspan="2"| Has more
+ |colspan="2"| Boolean
+ | Marks whether another RegistryData packet will be sent after this.
+ |-
+ |colspan="2"| Name
+ |colspan="2"| String
+ | Name of the registry for this packet
+ |-
+ |colspan="2"| Number of ids
+ |colspan="2"| Varint
+ | Number of ids sent below
+ |-
+ |rowspan="2"| Ids
+ | Name
+ |rowspan="2"| Array
+ | String
+ | Name of the thing
+ |-
+ | Id
+ | Varint
+ | Numerical id of the thing
+ |-
+ |colspan="2"| Number of substitutions
+ |colspan="2"| Varint
+ | Number of substitutions sent below
+ |-
+ |colspan="2"| Substitutions
+ |colspan="2"| Array of strings
+ | Each substitution
+ |}
+
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L241-L264 HandshakeAck] ===
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L265-L267 HandshakeReset] ===
