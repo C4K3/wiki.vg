@@ -125,7 +125,7 @@ Response from the client to the ServerHello packet.
  ! Notes
  |-
  |rowspan="6"| <code>FML|HS</code>
- |rowspan="6"| Client
+ |rowspan="6"| Server
  | Discriminator
  | Byte
  | Always 1 for ClientHello.
