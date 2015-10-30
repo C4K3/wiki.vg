@@ -89,6 +89,30 @@ Discriminator bytes change depending on the channel: 0 for <code>FML|HS</code> m
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L33-L76 ServerHello] ===
 
+Starts the handshake.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="6"| <code>FML|HS</code>
+ |rowspan="6"| Client
+ | Discriminator
+ | Byte
+ | Always 0 for ServerHello
+ |-
+ | FML protocol Version
+ | Byte
+ | Determined from [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/NetworkRegistry.java#L67-L69 NetworkRegistery].  Currently <code>2</code>.
+ |-
+ | Override dimension
+ | Optional Int
+ | Only sent if protocol version is greater than 1.
+ |}
+
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L77-L95 ClientHello] ===
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L96-L152 ModList] ===
