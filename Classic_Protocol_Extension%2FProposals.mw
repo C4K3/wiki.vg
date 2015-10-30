@@ -1028,9 +1028,12 @@ This extension does not define any new packets.
 :Proposed by UnknownShadow200
 :This extension allows clients to draw all characters in code page 437, rather just the 0 to 127 characters.
 :'''Motivation''': To allow players to use more characters for different purposes.
-:'''Client Behavior''': When a chat message packet is received, clients must treat all characters in that message as unsigned bytes that represent indices into code page 437. Clients must be able to render all of the characters in code page 437.
-:'''Server Behavior''': Servers must support being able to send chat message packets which include unsigned byte values ranging from 128 to 255. Ideally, servers should also provide some method of escaping that allows users to enter a token that is then converted into a code page 437 index, but that is not required to claim support for this extension.
-'''Note:''' For clients that don't support this extension, servers must convert unsigned bytes in the 128 to 255 range into a '63'. (i.e. a '?' symbol)
+:'''Client Behavior''': When a message packet is received, clients must treat all characters in that message as unsigned bytes that represent indices into code page 437. Clients must be able to render all of the characters in code page 437.
+:'''Server Behavior''': Servers must support being able to send chat message packets which include unsigned byte values ranging from 128 to 255. Servers must also provide a fallback mechanism for converting unsigned bytes in the 128-255 range into the 0 to 127 range for clients that do not support this extension.
+
+'''Note:''' Ideally, servers should also provide some method of escaping that allows users to enter a token that is then converted into a code page 437 index, but that is not required to claim support for this extension.
+
+'''Note:''' An example fallback mechanism is that a server converts all unsigned bytes in the 128 to 255 range into a '63' (i.e. a '?' symbol), when sending message packets to clients that do not support this extension.
 
 As an example, when "{infinity}" is entered by the player, it becomes a single unsigned byte with a value of '236' after being processed by the server.
 When the chat message packet is later received by the client, it renders the unsigned byte with the value of '236' as ∞.
