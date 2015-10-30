@@ -137,6 +137,36 @@ Response from the client to the ServerHello packet.
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L96-L152 ModList] ===
 
+Contains a list of all mods installed on the server or client.  Sent from the client to the server first, and then the server responds with its mod list.  The server's mod list matches the one sent in the ping.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ !colspan="2"| Field Name
+ !colspan="2"| Field Type
+ ! Notes
+ |-
+ |rowspan="4"| <code>FML|HS</code>
+ |rowspan="4"| Both
+ |colspan="2"| Discriminator
+ |colspan="2"| Byte
+ | Always 2 for ModList
+ |-
+ |colspan="2"| Number of mods
+ |colspan="2"| Varint
+ | Number of mods below
+ |-
+ |rowspan="2"| Mods
+ | Mod name
+ |rowspan="2"| Array
+ | String
+ | Name of the mod
+ |-
+ | Mod version
+ | String
+ | Version of the mod
+ |}
+
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240 RegistryData] ===
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L241-L264 HandshakeAck] ===
