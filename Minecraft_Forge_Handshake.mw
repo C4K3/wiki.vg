@@ -73,6 +73,27 @@ Forge's handshake occurs in the middle of the [[Protocol FAQ#What's the normal l
 
 In addition to the [[Debugging|normal packet debugging]] for the server, if <code>-Dfml.debugNetworkHandshake=true</code> is passed to the forge server, some more information about the current handshake status will be outputted.
 
+{{Need info|Why does it send the CompleteHandshake packet to itself?  How does it keep synchronized (especially near the end with the ACKs)?}}
+
+* '''S→C''': [[Plugin channel#REGISTER|<code>REGISTER</code>]] forge's plugin channels: FML|HS, FML, FML|MP, FML, FORGE (yes, FML is there twice).
+* '''S→C''': A ServerHello packet is sent on <code>FML|HS</code> including the player's dimension (0 if it's the first login)
+* '''C→S''': <code>REGISTER</code> the plugin channels: FML|HS, FML, FML|MP, FML, FORGE.
+* '''C→S''': A ClientHello packet is sent on the <code>FML|HS</code> channel.
+* '''C→S''': A ModList packet is sent.
+* Server checks that the mod list is compatible.  If incompatible, the player is [[Protocol#Disconnect|disconnected]] with an explanatory message.  Otherwise, continue.
+* '''S→C''': A ModList packet is sent.
+* Client checks that the mod list is compatible.  If incompatible, it disconnects.  Otherwise, continue.
+* '''C→S''': A HandshakeAck packet is sent, with the phase being <code>WAITINGSERVERDATA</code> (2).
+* '''S→C''': A series of RegistryData packets is sent, with hasMore being true for all packets except the last.
+* Client reads and stores each RegistryData, continuing reading until hasMore is false.  Once hasMore is false, it checks whether it has all of the needed blocks/items.  If it does not, it disconnects.  Otherwise, continue.
+* '''C→S''': A HandshakeAck packet is sent with phase being <code>WAITINGSERVERCOMPLETE</code> (3).
+* '''S→C''': A HandshakeAck packet is sent with phase being <code>WAITINGCACK</code> (2).
+* '''C→S''': A HandshakeAck packet is sent with phase being <code>PENDINGCOMPLETE</code> (4).
+* '''S→C''': A HandshakeAck packet is sent with phase being <code>COMPLETE</code> (3).
+* The server sends a "CompleteHandshake" packet '''to itself'''.  (Not sure why)
+* '''C→S''': A HandshakeAck packet is sent with phase being <code>COMPLETE</code> (5).
+* The client sends a "CompleteHandshake" packet '''to itself'''.  (Not sure why)
+
 == Definitions ==
 
 Minecraft Forge uses an additional type not covered in [[data types]] for some things -- a varshort.  This is essentially the same as a regular short, except that if the top byte (what is normally sign) is set, it is followed by an additional byte.  This allows forge to retain backwards compatibility but extend the length of certain numbers -- the varshort is only used in places where, in vanilla Minecraft, the sign bit would not have been set.  It is implemented in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/ByteBufUtils.java#L58-L89 ByteBufUtils].
