@@ -73,7 +73,7 @@ Forge's handshake occurs in the middle of the [[Protocol FAQ#What's the normal l
 
 In addition to the [[Debugging|normal packet debugging]] for the server, if <code>-Dfml.debugNetworkHandshake=true</code> is passed to the forge server, some more information about the current handshake status will be outputted.
 
-{{Need info|Why does it send the CompleteHandshake packet to itself?  How does it keep synchronized (especially near the end with the ACKs)?}}
+{{Need Info|Why does it send the CompleteHandshake packet to itself?  How does it keep synchronized (especially near the end with the ACKs)?}}
 
 * '''S→C''': [[Plugin channel#REGISTER|<code>REGISTER</code>]] forge's plugin channels: FML|HS, FML, FML|MP, FML, FORGE (yes, FML is there twice).
 * '''S→C''': A ServerHello packet is sent on <code>FML|HS</code> including the player's dimension (0 if it's the first login)
