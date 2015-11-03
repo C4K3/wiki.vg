@@ -15,6 +15,13 @@ These are wrappers for the vanilla Minecraft client.
 !style="width: 120px" | Scripting
 !style="width: 120px" | Development Status
 |-
+! [https://github.com/Mojang/LegacyLauncher LegacyLauncher / LauncherWrapper]
+| [https://github.com/mojang Mojang], [https://github.com/cpw cpw]
+| {{Java}}
+| {{no|[https://github.com/Mojang/LegacyLauncher/issues/1 None]}}
+| {{yes|Tweak injection}}
+| {{yes|Active (used by vanilla Minecraft for alpha and below)}}
+|-
 ! [https://bitbucket.org/DarkStorm_/darkmod DarkMod] ([https://bitbucket.org/DarkStorm_/darkmodlauncher Launcher])
 | [https://github.com/DarkStorm652 DarkStorm]
 | {{Java}}
