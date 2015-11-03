@@ -22,6 +22,20 @@ These are wrappers for the vanilla Minecraft client.
 | {{yes|Tweak injection}}
 | {{yes|Active (used by vanilla Minecraft for alpha and below)}}
 |-
+! [https://github.com/MinecraftForge/MinecraftForge MinecraftForge]
+| [https://github.com/MinecraftForge MinecraftForge team]
+| {{Java}}
+| [https://github.com/MinecraftForge/MinecraftForge/blob/master/LICENSE-fml.txt GNU LGPL v2.1]?
+| {{yes|Java Archives}}
+| {{yes|Active}}
+|-
+! [http://www.liteloader.com/ LiteLoader]
+| [https://www.assembla.com/profile/Mumfrey Mumfrey]
+| {{Java}}
+| {{no|Unknown}}
+| {{yes|.litemod Java Archives}}
+| {{yes|Active}}
+|-
 ! [https://bitbucket.org/DarkStorm_/darkmod DarkMod] ([https://bitbucket.org/DarkStorm_/darkmodlauncher Launcher])
 | [https://github.com/DarkStorm652 DarkStorm]
 | {{Java}}
