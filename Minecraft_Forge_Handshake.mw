@@ -279,3 +279,63 @@ Causes the client to recomplete the entire handshake from the start.  Does not a
  | Byte
  | Always -2 (254) for HandshakeReset
  |}
+
+== Differences from Forge 1.7.10 ==
+
+Forge for Minecraft 1.8 made some changes from the 1.7.10 version.
+
+The most important thing to keep track of isn't (entirely) a forge change.  In 1.7.10, [http://wiki.vg/index.php?title=Protocol&oldid=6003#Plugin_Message_2 plugin channel packets] are length prefixed, while in 1.8 they are not.  However, forge makes [https://github.com/MinecraftForge/MinecraftForge/blob/605457deecba2144d69113d3c9ce6589021f542b/fml/patches/minecraft/net/minecraft/network/play/server/S3FPacketCustomPayload.java.patch some more changes] to the server to client packet (but not the client to server packet): Rather than using a short for the length, a varshort is used.  Due to the way that varshorts work, this is backwards compatible, but if this is not accounted for you may receive forge packets that seem corrupted as there is an extra byte that appears seemingly randomly.
+
+{{Warning|While it may seem like you can get away with not handling varshorts, on servers with lots of mods (EG FTB), this will appear.}}
+
+Additionally, in 1.7.10 the registries packet is instead "ModIdData":
+
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240 ModIdData] ===
+
+Contains numeric ID mapping for blocks and items.
+
+{{Need Info|Again, what are blockSubstitutions and itemSubstitutions?}}
+
+{| class="wikitable"
+ ! Channel
+ ! Bound to
+ ! rowspan="2"|Name
+ ! rowspan="2"|Type
+ ! Notes
+ |-
+ | colspan="8"|<code>FML|HS</code>
+ | colspan="8"|Client
+ | rowspan="2"|Discriminator
+ | rowspan="2"|Byte
+ | Always 3 for ModIdData
+ |-
+ | rowspan="2"|Mapping length
+ | rowspan="2"|VarInt
+ | Length of the following mapping
+ |-
+ | colspan="2"|Mapping
+ | colspan="2"|Name
+ | Array
+ | String
+ | Name of the block/item.
+ |-
+ | ID
+ | VarInt
+ | Numeric ID of the item.
+ |-
+ | rowspan="2"|Block substitutions length
+ | rowspan="2"|VarInt
+ | Length of the following array
+ |-
+ | rowspan="2"|Block substitutions
+ | rowspan="2"|Array of strings
+ | Block substitutions
+ |-
+ | rowspan="2"|Item substitutions length
+ | rowspan="2"|VarInt
+ | Length of the following array
+ |-
+ | rowspan="2"|Item substitutions
+ | rowspan="2"|Array of strings
+ | Item substitutions
+ |}
