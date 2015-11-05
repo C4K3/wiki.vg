@@ -2,7 +2,7 @@ This tutorial is being created to document what it takes to write a stand-alone 
 
 == Before You Get Started ==
 
-* Make sure you don't want to join or fork an existing project instead.
+* Make sure you don't want to join or fork an [[Client_List|existing project]] instead.
 * Ponder how much work it will be.
 * Download the latest official minecraft server and run it with authentication turned off. Bind it to localhost if you want.
 
