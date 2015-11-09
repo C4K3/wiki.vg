@@ -37,6 +37,21 @@ A couple things for contributors:
  | [http://forum.mc-server.org/showthread.php?tid=499 Link]
  | {{yes|Active}}
  |-
+ ! [http://diorite.org Diorite]
+ | GotoFinal
+ | [https://en.wikipedia.org/wiki/Java_(programming_language) Java 8]
+ | MIT License
+ | {{yes|1.8}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{planned}}
+ | {{yes|Players}}
+ | {{yes|Threads}}
+ | {{yes|Java}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | [http://diorite.org Link]
+ | {{yes|Active}}
+ |-
  ! [https://github.com/DragonetMC/Dragonet Dragonet]
  | [http://github.com/DragonetMC DragonetTeam]
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -411,21 +426,6 @@ A couple things for contributors:
  | {{unknown}}
  | {{no|Unknown}}
  | {{unknown|On hiatus since April 2012}}
- |-
- ! [http://diorite.org Diorite]
- | GotoFinal
- | [https://en.wikipedia.org/wiki/Java_(programming_language) Java 8]
- | MIT License
- | {{yes|1.8}}
- | {{yes|Anvil}}
- | {{yes}}
- | {{planned}}
- | {{yes|Players}}
- | {{yes|Threads}}
- | {{yes|Java}}
- | {{yes|{{windows}}{{linux}}{{mac}}}}
- | [http://diorite.org Link]
- | {{yes|Active}}
  |}
 
 [[Category:Minecraft Modern]]
