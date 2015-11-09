@@ -411,6 +411,21 @@ A couple things for contributors:
  | {{unknown}}
  | {{no|Unknown}}
  | {{unknown|On hiatus since April 2012}}
+ |-
+ ! [http://diorite.org Diorite]
+ | GotoFinal
+ | [https://en.wikipedia.org/wiki/Java_(programming_language) Java 8]
+ | MIT License
+ | {{yes|1.8}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players}}
+ | {{yes|Threads}}
+ | {{yes|Java}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}}
+ | [http://diorite.org Link]
+ | {{yes|Active}}
  |}
 
 [[Category:Minecraft Modern]]
