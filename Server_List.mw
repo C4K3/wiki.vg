@@ -41,12 +41,12 @@ A couple things for contributors:
  | GotoFinal
  | [https://en.wikipedia.org/wiki/Java_(programming_language) Java 8]
  | MIT License
- | {{yes|1.8}}
- | {{yes|Anvil}}
+ | {{planned|Developing for 1.9}}
+ | {{yes|Anvil + Custom}}
  | {{yes}}
  | {{planned}}
- | {{yes|Players}}
- | {{yes|Threads}}
+ | {{yes|Players, Items}}
+ | {{yes|Parallel Threads, Tick regions, Async input (chat, commands, tab)}}
  | {{yes|Java}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | [http://diorite.org Link]
