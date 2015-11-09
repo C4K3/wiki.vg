@@ -47,7 +47,7 @@ A couple things for contributors:
  | {{planned}}
  | {{yes|Players, Items}}
  | {{yes|Parallel Threads, Tick regions, Async input (chat, commands, tab)}}
- | {{yes|Java}}
+ | {{yes|Java + [https://github.com/Panda-Programming-Language Panda]}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | [http://diorite.org Link]
  | {{yes|Active}}
