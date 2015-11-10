@@ -1,0 +1,1 @@
+A very rough FSM giving an overview of the TCP packets sent to and from the client in the Handshake, Status and Login states of the TCP connection. This does not include information about packet data unless necessary for state transition.
