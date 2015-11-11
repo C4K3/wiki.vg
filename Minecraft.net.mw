@@ -17,7 +17,7 @@ This link seems to be called when a server with online-mode=true checks if it sh
 Returns the skin for a given username. Case-sensitive, returns an HTTP 404 error if the skin doesn't exist.
 
  <nowiki>http://skins.minecraft.net/MinecraftCloaks/<USERNAME>.png</nowiki>
-Returns the skin for a given username. Case-sensitive, returns an HTTP 404 error if the user does not have a cape.
+Returns the cape for a given username. Case-sensitive, returns an HTTP 404 error if the user does not have a cape.
 
  <nowiki>http://www.minecraft.net/heartbeat.jsp?port=27015&users=0&max=0&name=blah&public=false&version=7&salt=1234123412341234</nowiki>
 This is used to create the classic server list. It is documented properly on [[Classic Protocol]]
