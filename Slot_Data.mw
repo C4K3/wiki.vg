@@ -25,6 +25,8 @@ The format of this data is as follows:
 
 Each of the inner, untagged COMPOUNDs represents an enchantment, with its ID[http://www.minecraftwiki.net/wiki/Enchantment#Enchantment_Types] and level given as child SHORT elements.
 
+Can someone edit this to explain how the the nbt blob above is converted to the binary in the example below..  How is the length of the blob known, etc?
+
 == Examples ==
 
 <code>
