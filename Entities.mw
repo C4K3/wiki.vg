@@ -450,6 +450,10 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | 1
 | Short
 | colspan="2" | Air
+|-
+| 4
+| Byte
+| colspan="2" | Silent
 |}
 
 === Living Entity ===
