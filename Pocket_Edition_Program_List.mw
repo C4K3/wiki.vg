@@ -62,6 +62,16 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{windows}}{{linux}}{{mac}}
 | {{Yes|alpha}}
 |-
+! [https://github.com/Nukkit/Nukkit/ Nukkit]
+| Nuclear powered MCPE Server, have a pocketmine-like brain and a java-armed strength. Developed for multiplayer survival games.
+| Server
+| [https://github.com/Nukkit/ Nukkit Team from China]
+| {{Java}}
+| {{LGPL}}
+| In developing yet
+| {{windows}}{{linux}}{{mac}}
+| {{Yes|v0.13.0b4 alpha}}
+|-
 |}
 
 [[Category:Pocket Minecraft]]
