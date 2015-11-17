@@ -1,7 +1,7 @@
 
 == Mobs ==
 
-Mobs are spawned via [[Protocol#0x18|0x18 Mob Spawn]]. There are two extra mob types in the code that refer to mobs classes that can never spawn: Mob and Monster (they are always subclasses, aka another more specific type).
+Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]]. There are two extra mob types in the code that refer to mobs classes that can never spawn: Mob and Monster (they are always subclasses, aka another more specific type).
 
 {| class="wikitable"
 |- 
