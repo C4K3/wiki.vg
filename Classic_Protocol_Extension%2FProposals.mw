@@ -216,7 +216,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 | class="centeralign" | Shape
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Shape of the block model: Cube (1), Slab (2), Upside down slab (3), Sprite (4)
+| Shape of the block model: Cube (1), Slab (2), Snow Shape (3), Sprite (4)
 |-
 | class="centeralign" | BlockDraw
 | class="centeralign" | byte
@@ -282,6 +282,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 :'''TABLE 1''': TODO: list of tiles already defined in terrain.png, for both standard and CustomBlocks level 1 blocks.
 :'''TABLE 2''': TODO: list of sounds available for footstep and breaking sounds
 ("Maybe allow this extension to have the ability to redefine blocks that are already defined in standard MC classic protocol and CPE? That would solve the problem defined in '''Future References''' and add more flexibility with the creation of custom blocks. This way, we would not have to agree on which blocks to define for each version of the CustomBlocks extension and instead create our own blocks to fit our specific purposes!" - Cheesse)
+
 ===LongerMessages===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 21:43, 28 August 2014 (UTC)
 :This extension allows clients to accept messages longer than 64 characters, and send them to the server in parts.
