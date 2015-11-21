@@ -69,7 +69,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{Java}}
 | {{LGPL}}
 | In developing yet
-| {{windows}}{{linux}}{{mac}}
+| {{windows}}{{linux}}{{mac}}{{Android}}
 | {{Yes|v0.13.0 alpha}}
 |-
 ! [https://github.com/RedstoneLamp/RedstoneLamp/ RedstoneLamp]
