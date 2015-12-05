@@ -4,6 +4,46 @@
 * All public APIs are rate limited so you are expected to cache the results. This is currently set at 600 requests per 10 minutes but this may change.
 * For some parts of the API, demo accounts are sometimes included, sometimes not. Mojang keeps changing this.
 
+== API Status ==
+
+  GET https://status.mojang.com/check
+
+Returns status of various Mojang services. Possible values are <code>green</code> (no issues), <code>yellow</code> (some issues), <code>red</code> (service unavailable).
+
+=== Response ===
+
+<syntaxhighlight lang="javascript">
+[
+  {
+    "minecraft.net": "yellow"
+  },
+  {
+    "session.minecraft.net": "green"
+  },
+  {
+    "account.mojang.com": "green"
+  },
+  {
+    "auth.mojang.com": "green"
+  },
+  {
+    "skins.minecraft.net": "green"
+  },
+  {
+    "authserver.mojang.com": "green"
+  },
+  {
+    "sessionserver.mojang.com": "yellow"
+  },
+  {
+    "api.mojang.com": "green"
+  },
+  {
+    "textures.minecraft.net": "red"
+  }
+]
+</syntaxhighlight>
+
 == Username -> UUID at time ==
 
   GET https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp>
