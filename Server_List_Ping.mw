@@ -1,4 +1,4 @@
-Minecraft supports querying the MOTD, player count, max players and server version via the usual port. Unlike [[Query]], the server list ping interface is always enabled. The server ping process changed in 1.7 in a non-backwards compatible way, but current servers still support both the [[#Current|new]] and [[#1.6|old]] process.
+'''Server List Ping''' ('''SLP''') is an interface provided by Minecraft servers which supports querying the MOTD, player count, max players and server version via the usual port. SLP is part of the [[Protocol]], so unlike [[Query]], the interface is always enabled. The Notchian client uses this interface to display the multiplayer server list, hence the name. The SLP process changed in {{Minecraft Wiki|1.7}} in a non-backwards compatible way, but current servers still support both the [[#Current|new]] and [[#1.6|old]] process.
 
 == Current ==
 
