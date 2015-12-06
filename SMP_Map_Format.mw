@@ -94,7 +94,7 @@ Chunks are sent bottom-to-top, i.e. the first chunk, if sent, extends from Y=0 t
 -->
 
 
-The 'biome' array is always 256 bytes when sent. Values above 22 will cause the client to crash.
+The 'biome' array is always 256 bytes when sent.
 
 == Implementations ==
 
