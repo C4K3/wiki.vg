@@ -70,11 +70,11 @@ In half-byte arrays, two values are packed into each byte. Even-indexed items ar
  |-
  |Array of block light data
  |Each element is 1/2 byte , corresponds to block type and data position
- | 1 - 15 light level
+ | 0 - 15 light level
  |-
  |Array of skylight data (optional depending)
  |Each element is 1/2 byte, corresponds to block type and data position
- | 1 - 15 light level from sun
+ | 0 - 15 light level from sun
  |-
  | rowspan="2"| Biome ID array, each element a byte (Sent with packet 0x26)
  | rowspan="2"| Corresponds to each z,x value, 256 elements. Comes Last after everything else. (Is not repeated for every chunk column)
