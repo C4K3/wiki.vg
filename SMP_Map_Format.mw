@@ -43,11 +43,13 @@ The packet contains important metadata which you'll need to pull out. For bulk p
 === Data ===
 :''See also: [[Pre-release protocol#Chunk Section]] for the new format in 1.9''
 
-In 0x21 the data describes of a single chunk column in the format below. In 0x26, the format below is repeated for each chunk column.
+*In 0x21 the data describes of a single chunk column in the format below.
+*In 0x26, the format below is repeated for each chunk column.
+**Chunks are sent bottom-to-top, i.e. the first chunk, if sent, extends from Y=0 to Y=15. Blocks are ordered Y, Z, X, i.e. the 'X' coordinate changes fastest.
 
 In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''high bits'', odd-indexed into the ''low bits''.
 
-Chunks are sent bottom-to-top, i.e. the first chunk, if sent, extends from Y=0 to Y=15. Blocks are ordered Y, Z, X, i.e. the 'X' coordinate changes fastest.
+
 
 {| class="wikitable"
  ! Section
