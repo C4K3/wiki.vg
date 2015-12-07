@@ -171,7 +171,6 @@ Java lacks support for fractional integers directly, but you can represent them 
 And back again:
 
   double = (double)abs_int / 32;
-
 <noinclude>
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
