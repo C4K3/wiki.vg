@@ -1,4 +1,4 @@
-<noinclude>This article defines the '''data types''' used in the [[protocol]]. </noinclude>All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]], that is the bytes are sent from most significant byte to least significant byte. The majority of everyday computers are little-endian, therefore it may be necessary to change the endianness before sending data over the network.
+<noinclude>This article defines the '''data types''' used in the [[protocol]]. </noinclude>All data sent over the network (except for VarInt and VarLong) is [[wikipedia:Endianness#Big-endian|big-endian]], that is the bytes are sent from most significant byte to least significant byte. The majority of everyday computers are little-endian, therefore it may be necessary to change the endianness before sending data over the network.
 <noinclude>
 == Definitions ==
 </noinclude>
