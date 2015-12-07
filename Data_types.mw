@@ -1,5 +1,7 @@
-All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]], that is the bytes are sent from most significant byte to least significant byte. The majority of everyday computers are little-endian, therefore it may be necessary to change the endianness before sending data over the network.
-
+<noinclude>This article defines the '''data types''' used in the [[protocol]]. </noinclude>All data sent over the network is [[wikipedia:Endianness#Big-endian|big-endian]], that is the bytes are sent from most significant byte to least significant byte. The majority of everyday computers are little-endian, therefore it may be necessary to change the endianness before sending data over the network.
+<noinclude>
+== Definitions ==
+</noinclude>
 {| class="wikitable"
  |-
  ! Name
@@ -131,7 +133,7 @@ this.writeLong(uuid.getLeastSignificantBits());</pre>
  | This is just a sequence of zero or more bytes, its meaning should be explained somewhere else, e.g. in the packet description. The length must also be known from the context.
  |}
 
-=== Position ===
+<noinclude>== Position ==</noinclude><includeonly>=== Position ===</includeonly>
 
 64-bit value split in to three parts
 
@@ -156,7 +158,7 @@ Note: The details of bit shifting are rather language dependent; the above may w
  if y >= 2^11 { y -= 2^12 }
  if z >= 2^25 { z -= 2^26 }
 
-=== Fixed-point numbers ===
+<noinclude>== Fixed-point numbers ==</noinclude><includeonly>=== Fixed-point numbers ===</includeonly>
 
 Some fields may be stored as [https://en.wikipedia.org/wiki/Fixed-point_arithmetic fixed-point numbers], where a certain number of bits represents the signed integer part (number to the left of the decimal point) and the rest represents the fractional part (to the right). Floating points (float and double), in contrast, keep the number itself (mantissa) in one chunk, while the location of the decimal point (exponent) is stored beside it. 
 
@@ -170,5 +172,6 @@ And back again:
 
   double = (double)abs_int / 32;
 
+<noinclude>
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
