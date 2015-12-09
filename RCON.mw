@@ -1,4 +1,4 @@
-RCON is a protocol introduced in 1.9pre4 for the purpose of remote administration of a server. It's basically a shitty implementation of the Source RCON protocol [http://developer.valvesoftware.com/wiki/Source_RCON_Protocol]
+RCON is a protocol introduced in 1.9pre4 for the purpose of remote administration of a server. It's basically an implementation of the Source RCON protocol for Minecraft [http://developer.valvesoftware.com/wiki/Source_RCON_Protocol]
  
 == Server Config ==
 
