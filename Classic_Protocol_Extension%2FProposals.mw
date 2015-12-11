@@ -283,13 +283,6 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 :'''TABLE 2''': TODO: list of sounds available for footstep and breaking sounds
 ("Maybe allow this extension to have the ability to redefine blocks that are already defined in standard MC classic protocol and CPE? That would solve the problem defined in '''Future References''' and add more flexibility with the creation of custom blocks. This way, we would not have to agree on which blocks to define for each version of the CustomBlocks extension and instead create our own blocks to fit our specific purposes!" - Cheesse)
 
-===LongerMessages===
-:Proposed by [[User:F|F]] ([[User talk:F|talk]]) 21:43, 28 August 2014 (UTC)
-:This extension allows clients to accept messages longer than 64 characters, and send them to the server in parts.
-:'''Motivation''': To allow players to write longer messages!
-:'''Client Behavior''': When a regular-length message is sent, a single [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet is sent, with the unused ''PlayerID'' (aka ''MessageType'') byte set to <code>0</code>. When an extra-long message is sent, multiple [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packets are sent. All packets except the last one should have the unused byte set to <code>1</code>, meaning "this message continues in the next Message packet".
-:'''Server Behavior''': Server should check the unused ''PlayerID'' (aka ''MessageType'') byte of every incoming [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet. If the value is non-zero, it should treat it as a partial message. Partial messages should be stored and prepended to the next message received from this player, until a message with a <code>0</code> byte is received.
-:No new packets are defined, but treatment of [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet is altered.
 ===ColorCodeControl===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 22:00, 28 August 2014 (UTC)
 :Gives servers an option to allow players to type in color codes, and a way to render <code>&</code> character in chat.
@@ -1023,18 +1016,3 @@ This extension does not define any new packets.
 | class="col1 rightalign" colspan="4" | 298 bytes
 |}
 :(Comments go here, please sign them)
-
-
-===FullCP437===
-:Proposed by UnknownShadow200
-:This extension allows players to send and receive chat with all characters in code page 437, rather than just the 0 to 127 characters.
-:'''Motivation''': To allow players to use more characters for different purposes.
-:'''Client Behavior''': When a message packet is received, clients '''must''' treat all characters in that message as unsigned bytes that represent indices into code page 437. Clients may optionally provide a way of directly entering code page 437 characters into chat.
-:'''Server Behavior''': Servers '''must''' support being able to '''send and receive''' chat message packets which include unsigned byte values ranging from 0 to 255. Servers '''must''' also provide a fallback mechanism for converting unsigned bytes in the 128-255 range into the 0 to 127 range for clients that do not support this extension.
-
-'''Note:''' An example fallback mechanism is that a server converts all unsigned bytes in the 128 to 255 range into a '63' (i.e. a '?' symbol), when sending message packets to clients that do not support this extension.
-
-'''Note:''' Ideally, servers should also provide some method of escaping that allows users to enter a token that is then converted into a code page 437 index, but that is not required to claim support for this extension.
-
-As an example of an escaping mechanism, when "{infinity}" is entered by the player, it becomes a single unsigned byte with a value of '236' after being processed by the server.
-When the chat message packet is later received by the client, it renders the unsigned byte with the value of '236' as ∞.
