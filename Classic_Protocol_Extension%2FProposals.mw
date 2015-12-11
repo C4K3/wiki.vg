@@ -1027,12 +1027,10 @@ This extension does not define any new packets.
 
 ===FullCP437===
 :Proposed by UnknownShadow200
-:This extension allows clients to draw all characters in code page 437, rather just the 0 to 127 characters.
+:This extension allows players to send and receive chat with all characters in code page 437, rather than just the 0 to 127 characters.
 :'''Motivation''': To allow players to use more characters for different purposes.
 :'''Client Behavior''': When a message packet is received, clients '''must''' treat all characters in that message as unsigned bytes that represent indices into code page 437. Clients may optionally provide a way of directly entering code page 437 characters into chat.
-:'''Server Behavior''': Servers must support being able to send chat message packets which include unsigned byte values ranging from 128 to 255. Servers '''must''' also provide a fallback mechanism for converting unsigned bytes in the 128-255 range into the 0 to 127 range for clients that do not support this extension.
-
-'''Note''' For servers to claim support for this extension, they '''must''' support being to able to receive all code page 437 indices, not just ASCII ones.
+:'''Server Behavior''': Servers '''must''' support being able to '''send and receive''' chat message packets which include unsigned byte values ranging from 0 to 255. Servers '''must''' also provide a fallback mechanism for converting unsigned bytes in the 128-255 range into the 0 to 127 range for clients that do not support this extension.
 
 '''Note:''' An example fallback mechanism is that a server converts all unsigned bytes in the 128 to 255 range into a '63' (i.e. a '?' symbol), when sending message packets to clients that do not support this extension.
 
