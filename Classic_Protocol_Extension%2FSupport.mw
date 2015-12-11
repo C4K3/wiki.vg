@@ -18,6 +18,8 @@ Number inside green fields indicates the supported extension version. Currently 
 !HackControl
 !MessageType
 !PlayerClick
+!LongerMessages
+!FullCP437
 |-
 ! [http://www.classicube.net/ ClassiCube Client]
 | {{yes|1}}
@@ -35,6 +37,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{planned}}
 | {{yes|1}}
 | {{planned}}
+| {{no}}
+| {{no}}
 |-
 ! [http://github.com/xtreme8000/Mineshaft Mineshaft]
 | {{planned}}
@@ -52,6 +56,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{no}}
 | {{yes|1}}
 | {{planned}}
+| {{no}}
+| {{no}}
 |-
 ! [https://github.com/UnknownShadow200/ClassicalSharp/ ClassicalSharp]
 | {{yes|1}}
@@ -60,6 +66,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|2}}
+| {{yes|1}}
+| {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
