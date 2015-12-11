@@ -1021,4 +1021,22 @@ Any out-of-range value for ''TargetBlockFace'' mean "no block is targeted."
 | class="rightalign" colspan="4" | 15 bytes
 |}
 
+===LongerMessages===
+:This extension allows clients to accept messages longer than 64 characters, and send them to the server in parts.
+:'''Motivation''': To allow players to write longer messages!
+:'''Client Behavior''': When a regular-length message is sent, a single [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet is sent, with the unused ''PlayerID'' (aka ''MessageType'') byte set to <code>0</code>. When an extra-long message is sent, multiple [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packets are sent. All packets except the last one should have the unused byte set to <code>1</code>, meaning "this message continues in the next Message packet".
+:'''Server Behavior''': Server should check the unused ''PlayerID'' (aka ''MessageType'') byte of every incoming [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet. If the value is non-zero, it should treat it as a partial message. Partial messages should be stored and prepended to the next message received from this player, until a message with a <code>0</code> byte is received.
+:No new packets are defined, but treatment of [[Classic_Protocol#Server_.E2.86.92_Client_packets|'''''Message''''']] packet is altered.
+
+===FullCP437===
+:This extension allows players to send and receive chat with all characters in code page 437, rather than just the 0 to 127 characters.
+:'''Motivation''': To allow players to use more characters for different purposes.
+:'''Client Behavior''': When a message packet is received, clients '''must''' treat all characters in that message as unsigned bytes that represent indices into code page 437. Clients may optionally provide a way of directly entering code page 437 characters into chat.
+:'''Server Behavior''': Servers '''must''' support being able to '''send and receive''' chat message packets which include unsigned byte values ranging from 0 to 255. Servers '''must''' also provide a fallback mechanism for converting unsigned bytes in the 128-255 range into the 0 to 127 range for clients that do not support this extension. (e.g converting all unsigned bytes in the 128 to 255 range to a '?' symbol)
+
+'''Note:''' Ideally, servers should also provide some method of escaping that allows users to enter a token that is then converted into a code page 437 index, but that is not required to claim support for this extension.
+
+As an example of an escaping mechanism, when "{infinity}" is entered by the player, it becomes a single unsigned byte with a value of '236' after being processed by the server.
+When the chat message packet is later received by the client, it renders the unsigned byte with the value of '236' as ∞.
+
 [[Category:Minecraft Classic]]
