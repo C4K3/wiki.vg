@@ -120,9 +120,9 @@ In the root directory is a level.dat file.  The structure of that file is this:
 ** NBTString(generatorName)
 ** NBTString(LevelName)
 
-===[playername].dat===
+===[playeruuid].dat===
 
-Each player that has ever connected is given a [playername].dat file.
+Each player that has ever connected is given a [playeruuid].dat file.
 
 * NBTCompound
 ** NBTByte(OnGround)
