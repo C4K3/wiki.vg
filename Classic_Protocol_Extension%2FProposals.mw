@@ -216,7 +216,10 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 | class="centeralign" | Shape
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
-| Shape of the block model: Cube (1), Slab (2), Snow Shape (3), Sprite (4)
+| Shape of the block model:
+* Sprite = 0,
+* Cube with height = 1-16 
+(e.g. slab would have a shape of '8', snow would have '2', dirt would have '16')
 |-
 | class="centeralign" | BlockDraw
 | class="centeralign" | byte
@@ -226,6 +229,7 @@ Must be one of sound IDs defined in https://github.com/andrewphorn/ClassiCube-Cl
 * 1 = transparent (e.g. like glass)
 * 2 = transparent but with no face culling of same neighbours (e.g. like leaves)
 * 3 = translucent, where texture's alpha is blended (e.g. like ice or water)
+* 4 = gas (e.g. like air)
 |-
 | class="centeralign" | FogDensity
 | class="centeralign" | byte
