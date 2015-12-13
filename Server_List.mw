@@ -74,8 +74,8 @@ A couple things for contributors:
  | {{yes|1.8 (#47)}}
  | {{planned}}
  | {{yes}}
- | {{planned}}
- | {{planned|Players}}
+ | {{yes}}
+ | {{planned|Players, Items, Mobs}}
  | {{yes|Async Networking}}
  | {{yes|JavaScript}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
