@@ -1020,3 +1020,42 @@ This extension does not define any new packets.
 | class="col1 rightalign" colspan="4" | 298 bytes
 |}
 :(Comments go here, please sign them)
+
+===BulkBlockUpdate===
+:Proposed by Buzz, UnknownShadow200
+:Allows servers to send a single packet that contains 256 block updates.
+:'''Motivation''': Reduce bandwidth usage and increase responsiveness to clients during times of heavy block updates, e.g. for large cuboids or lava survival servers.
+:'''Client Behavior''': When this extension is mutually supported, treat the packet in the same manner as a list of up to 256 [[Classic_Protocol#Client_.E2.86.92_Server_packets|'''''SetBlock''''']] packets.
+:'''Server Behavior''': When this extension is mutually supported, server may send '''''BlockBulkUpdate''''' packet to the client after the '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packet for the current level has been sent to the client.
+<h4>BulkBlockUpdate packet</h4>
+:''Server to Client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="3" | 0x25
+(37)
+| class="col1 centeralign" | Count
+  
+| class="col2 centeralign" | unsigned byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | The number of block updates used in this packet - 1. (e.g. a value of 0 means 1 block update is used).
+|- class="row2"
+| class="col1 centeralign" | Indices
+| class="col2 centeralign" | byte array[1024]
+| class="col3 centeralign" | [52, 3443]
+| class="col4 centeralign" | A packed list of the indices within the current level of the blocks that are to be updated. 
+Each element is a 32 bit integer in big endian order.
+|- class="row3"
+| class="col1 centeralign" | Blocks
+| class="col2 centeralign" | byte array[256]
+| class="col3 centeralign" | [5, 10]
+| class="col4 centeralign" | A packed list of the new blocks to set at each corresponding index in the indices array.
+|- class="row12"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 1282 bytes
+|}
