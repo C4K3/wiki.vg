@@ -1024,7 +1024,7 @@ This extension does not define any new packets.
 ===BulkBlockUpdate===
 :Proposed by Buzz, UnknownShadow200
 :Allows servers to send a single packet that contains 256 block updates.
-:'''Motivation''': Reduce bandwidth usage and increase responsiveness to clients during times of heavy block updates, e.g. for large cuboids or lava survival servers.
+:'''Motivation''': Reduce bandwidth usage and hence increase responsiveness to clients during times of heavy block updates, e.g. for large cuboids or lava survival servers.
 :'''Client Behavior''': When this extension is mutually supported, treat the packet in the same manner as a list of up to 256 [[Classic_Protocol#Client_.E2.86.92_Server_packets|'''''SetBlock''''']] packets.
 :'''Server Behavior''': When this extension is mutually supported, server may send '''''BlockBulkUpdate''''' packet to the client after the '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packet for the current level has been sent to the client.
 <h4>BulkBlockUpdate packet</h4>
