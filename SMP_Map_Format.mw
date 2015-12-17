@@ -77,7 +77,7 @@ In half-byte arrays, two values are packed into each byte. Even-indexed items ar
  | 0 - 15 light level from sun
  |-
  | rowspan="2"| Biome ID array, each element a byte (Sent with packet 0x26)
- | rowspan="2"| Corresponds to each z,x value, 256 elements. Comes Last after everything else. (Is not repeated for every chunk column)
+ | rowspan="2"| Corresponds to each z,x value, 256 elements
  | rowspan="2"| Biome ID 
  |}
 
