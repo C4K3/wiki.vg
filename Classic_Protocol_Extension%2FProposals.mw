@@ -204,7 +204,7 @@ Can be same as other texture IDs.
 | class="centeralign" | byte
 | class="centeralign" | <code>0</code>
 | ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
-0 = no sound. 1 = powder, 2 = wood, 3 = gravel, 4 = grass, 5 = stone, 6 = metal, 7 = glass, 8 = wool, 9 = sand, 10 = snow.
+0 = no sound, 1 = wood, 2 = gravel, 3 = grass, 4 = stone, 5 = metal, 6 = glass, 7 = wool, 8 = sand, 9 = snow.
 |-
 | class="centeralign" | FullBright
 | class="centeralign" | byte
