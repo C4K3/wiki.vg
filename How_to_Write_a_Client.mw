@@ -1,5 +1,7 @@
 This tutorial is being created to document what it takes to write a stand-alone client to interact with a notchian server. The tutorial is incomplete but will be updated whenever more information is discovered.
 
+'''Note that a lot of the information here is out of date (< Apr 2013). Check [http://wiki.vg/index.php?title=How_to_Write_a_Client&action=history the page history] for what was recently updated.'''
+
 == Before You Get Started ==
 
 * Make sure you don't want to join or fork an [[Client_List|existing project]] instead.
