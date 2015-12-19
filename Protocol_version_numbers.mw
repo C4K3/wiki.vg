@@ -416,6 +416,10 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
 {{Anchor|Note 1}}
  &lt;Dinnerbone&gt; Protocol itself didn't change in 31c btw, but we added an entity which warrants incompatiblity
 
+=== Formats ===
+
+Json: [https://gist.github.com/scholzi100/482f43706c292dbcd5be Gist]
+
 == Versions before the Netty rewrite ==
 
 Minecraft version 1.6.4 and older used a protocol versioning scheme separate from the current one. As such, the same version number may ambiguously refer to an old version in this list and a new version in the list above.
