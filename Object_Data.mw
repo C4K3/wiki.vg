@@ -56,7 +56,7 @@ The int value itself specifies the minecart's functionality:
 | class="col1 centeralign" | Hopper minecart
 |- class="row7"
 | class="col0 centeralign" | 6
-| class="col1 centeralign" | Command Block Minecart
+| class="col1 centeralign" | Command Block minecart
 |}
 
 === Item Frame (id 71) ===
