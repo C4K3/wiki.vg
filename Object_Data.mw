@@ -49,8 +49,14 @@ The int value itself specifies the minecart's functionality:
 | class="col0 centeralign" | 3
 | class="col1 centeralign" | TNT minecart
 |- class="row5"
+| class="col0 centeralign" | 4
+| class="col1 centeralign" | Spawner minecart
+|- class="row6"
 | class="col0 centeralign" | 5
 | class="col1 centeralign" | Hopper minecart
+|- class="row7"
+| class="col0 centeralign" | 6
+| class="col1 centeralign" | Command Block Minecart
 |}
 
 === Item Frame (id 71) ===
