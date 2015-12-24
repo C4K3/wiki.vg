@@ -132,8 +132,6 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 
 :'''Compatibility''': TODO: Define what the server should do for non-supporting clients. Define how the client should store map files with block definitions. Maybe integrate this with ClassicWorld definition?
 
-
-There are two packets, one for liquids and one for all other blocks. Both packets share a common number of fields initially, and are then followed by several packet specific fields.
 :<h5>DefineBlock Packet</h5>
 :''Server to Client''
 :{| class="wikitable"
@@ -284,7 +282,6 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 :'''Future References''': The client developers will be able to add more base blocks but then the server developers will have to change their Ids sent if the block is being occupied as a base block. If any of the fields are incorrectly configured, the client shall disconnect with an error message briefly describing why it crashed ("Invalid Custom Block located at Id : ID").
 :'''Example''': Let's say I have a block called bullet being launched from a block (the block launching the bullet is not required for this situation). I could add that block's Id to the client using ADD_CUSTOM_BLOCK by AddCustomBlock((byte)128/*BulletBlockId*/, (byte)2);, and if my textureUrl in the EnvMapAppearance sent before/afterwards was actually containing a bullet in the correct slot, the block would inherit actual bullet textures making it realistic and yet again fun.
 :'''TABLE 1''': TODO: list of tiles already defined in terrain.png, for both standard and CustomBlocks level 1 blocks.
-:'''TABLE 2''': TODO: list of sounds available for footstep and breaking sounds
 ("Maybe allow this extension to have the ability to redefine blocks that are already defined in standard MC classic protocol and CPE? That would solve the problem defined in '''Future References''' and add more flexibility with the creation of custom blocks. This way, we would not have to agree on which blocks to define for each version of the CustomBlocks extension and instead create our own blocks to fit our specific purposes!" - Cheesse)
 
 ===ColorCodeControl===
@@ -1037,8 +1034,8 @@ This extension does not define any new packets.
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x25
-(37)
+| class="col0 centeralign" rowspan="3" | 0x26
+(38)
 | class="col1 centeralign" | Count
   
 | class="col2 centeralign" | unsigned byte
@@ -1058,4 +1055,68 @@ Each element is a 32 bit integer in big endian order.
 |- class="row12"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 1282 bytes
+|}
+
+
+===BlockDefinitionsExt===
+:Proposed by UnknownShadow200
+:This extension allows servers to define new block types with custom IDs and appearance.
+:'''Motivation''': To allow defining block types that do not have minX/Y/Z values of 0, and maxX/Z values of 1.
+:'''Client Behavior''': This extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]] and '''BlockDefinitions''', and must only be enabled if BOTH extensions are mutually supported. Client should be able receive any number of '''''DefineBlockExt''''' packets during the level loading process (after receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' and until receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets). However, dependent on client, this can be sent after level loading (Some clients might just find it more extensible than others). Client must keep track of all defined blocks between level changes or until they are individually removed with '''''RemoveBlockDefinition'''''.
+:Client must be able to accept and render blocks as specified in '''''DefineBlockExt''''' packets. Clients must accept any valid definitions with ''BlockID'' between 128 and 255, inclusive. If a new definition is accepted for an already-defined ''BlockID'', the old definition should be replaced. 
+
+:'''Texturing''': See BlockDefinitions specification. The MinX/Y/Z and MaxX/Y/Z fields also affect the location within the terrain tile for a given face that the block should sample texels from. (e.g. if minX and minZ was 8, and maxX and maxZ was 16, then for the tile with pixels from (0, 0) to (16, 16), the top face would be drawn with the subset of pixels from (8, 8) to (16, 16))
+
+:'''Server Behavior''': Server may send any number of '''''DefineBlockExt''''' packets when client expects it. Server should only send packets when the extension '''BlockDefinitions''' is also mutually supported. Server should only use IDs of currently-defined blocks in block data sent in '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packets, '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SetBlock]]''''' packets, or any other packets that expect block IDs.
+
+
+This packet is essentially the same as DefineBlock packet, except the 'shape field' is replaced by 6 fields indicating the bounding box of the block.
+Note that this packet does not support sprites, you must send a regular DefineBlock packet for that.
+:<h5>DefineBlockExt Packet</h5>
+:''Server to Client''
+:{| class="wikitable"
+|-
+| Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" rowspan="16" | 37
+| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockID, Name, Solidity, MovementSpeed, TopTextureID, SideTextureID, BottomTextureID, TransmitsLight, WalkSound, FullBright,
+|-
+| class="centeralign" | MinX
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum X coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MinY
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum Y coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MinZ
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum Z coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MaxX
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum X coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="centeralign" | MaxY
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum Y coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="centeralign" | MaxZ
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum Z coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockDraw, FogDensity, FogR, FogG, FogB
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 85 bytes
 |}
