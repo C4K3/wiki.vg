@@ -1,0 +1,3 @@
+Slots in the enchantment table GUI, for use on [[Inventory]].
+
+Created using a simple clientside mode that causes slots to render their IDs.
