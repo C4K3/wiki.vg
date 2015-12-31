@@ -62,8 +62,8 @@ In half-byte arrays, two values are packed into each byte. Even-indexed items ar
  |-
  |Decoded with blockid = block[y][z][x] >> 4; metadata = block[y][z][x] &  15
  |-
- |Varint of bits of light data per block 
- |(8 for both arrays, 4 for just block light, see below)
+ |Varint of bits of data per block 
+ |8 for both arrays, 4 for just block light, 16 for all with biome
  |-
  |Varint of both array's total elements
  |Blocks represented (16*16*16) * number of light arrays  (1 or 2)
