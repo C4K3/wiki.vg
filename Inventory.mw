@@ -60,7 +60,8 @@ For the window properties (additional data in each window, e.g. smelting progres
 
 Using -1 as slot index and as window id will set the cursor item (the stack dragged with the mouse).
 
-== Inventory ==
+== Player Inventory ==
+{{Anchor|Inventory}}
 [[File:Inventory-slots.png|thumb|Inventory slots]]
 
 This is the inventory window that the player can always open, typically by pressing {{Key|E}} since {{Minecraft Wiki|Beta 1.4}}. Before, you had to press {{Key|I}}.
@@ -90,31 +91,6 @@ Note that this is different from inventory items stored in a player.dat file. Th
 
 {{-}}
 
-== Crafting table ==
-[[File:CraftingTable-slots.png|thumb|Crafting table slots]]
-
-This is the window that is opened when the player right-clicks on a workbench.
-
-{| class="wikitable"
- |-
- ! Slot range
- ! Description
- |-
- | 0
- | crafting output
- |-
- | 1–9
- | 3×3 crafting input (1 + x + 3 * y)
- |-
- | 10–36
- | main inventory
- |-
- | 37–45
- | hotbar
- |}
-
-{{-}}
-
 == Chest ==
 [[File:Chest-slots.png|thumb|Chest slots]]
 
@@ -135,9 +111,7 @@ This is the window that is opened when the player right-clicks on a single chest
  | hotbar
  |}
 
-{{-}}
-
-== Large chest ==
+=== Large chest ===
 
 [[File:DoubleChest-slots.png|thumb|Double/large chest slots]]
 
@@ -155,6 +129,33 @@ This is the window that is opened when the player right-clicks on a double chest
  | main inventory
  |-
  | 81–89
+ | hotbar
+ |}
+
+{{warning|Some custom servers will send chest inventories with other sizes, usually ranging from 1 row to 6 rows.  These may be used for custom GUIs.}}
+
+{{-}}
+
+== Crafting table ==
+[[File:CraftingTable-slots.png|thumb|Crafting table slots]]
+
+This is the window that is opened when the player right-clicks on a workbench.
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | crafting output
+ |-
+ | 1–9
+ | 3×3 crafting input (1 + x + 3 * y)
+ |-
+ | 10–36
+ | main inventory
+ |-
+ | 37–45
  | hotbar
  |}
 
