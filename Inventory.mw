@@ -1,5 +1,7 @@
 Minecraft displays the '''player inventory''' differently, according to how the window was opened. Ranges of slot indices vary in meaning between different “windows”. The [[Protocol#Open Inventory|Open Inventory]] packet indicates which window is being opened according to:
 
+<div style="float:right;">__TOC__</div>
+
 {| class="wikitable"
  |-
  ! Window Type
