@@ -86,7 +86,10 @@ This is the inventory window that the player can always open, typically by press
 
 Note that this is different from inventory items stored in a player.dat file. This may help: [https://gist.github.com/459a1691c3dd751db160 https://gist.github.com/459a1691c3dd751db160]
 
+{{-}}
+
 == Crafting table ==
+[[File:CraftingTable-slots.png|thumb|Crafting table slots]]
 
 This is the window that is opened when the player right-clicks on a workbench.
 
@@ -108,7 +111,10 @@ This is the window that is opened when the player right-clicks on a workbench.
  | hotbar
  |}
 
+{{-}}
+
 == Chest ==
+[[File:Chest-slots.png|thumb|Chest slots]]
 
 This is the window that is opened when the player right-clicks on a single chest block.
 
@@ -127,7 +133,11 @@ This is the window that is opened when the player right-clicks on a single chest
  | hotbar
  |}
 
+{{-}}
+
 == Large chest ==
+
+[[File:DoubleChest-slots.png|thumb|Double/large chest slots]]
 
 This is the window that is opened when the player right-clicks on a double chest block (two adjacent chest blocks).
 
@@ -146,7 +156,11 @@ This is the window that is opened when the player right-clicks on a double chest
  | hotbar
  |}
 
+{{-}}
+
 == Furnace ==
+
+[[File:Furnace-slots.png|thumb|Furnace slots]]
 
 {| class="wikitable"
  |-
@@ -169,7 +183,11 @@ This is the window that is opened when the player right-clicks on a double chest
  | hotbar
  |}
 
+{{-}}
+
 == Dispenser ==
+
+[[File:Dispenser-slots.png|thumb|Dispenser/dropper slots]]
 
 {| class="wikitable"
  |-
@@ -186,7 +204,11 @@ This is the window that is opened when the player right-clicks on a double chest
  | hotbar
  |}
 
+{{-}}
+
 == Enchantment Table ==
+
+[[File:EnchantmentTable-slots.png|thumb|Enchantment table slots]]
 
 {| class="wikitable"
  |-
@@ -205,5 +227,7 @@ This is the window that is opened when the player right-clicks on a double chest
  | 29–37
  | hotbar
  |}
+
+{{-}}
 
 [[Category:Minecraft Modern]]
