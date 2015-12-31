@@ -111,9 +111,11 @@ This is the window that is opened when the player right-clicks on a single chest
  | hotbar
  |}
 
-=== Large chest ===
+{{-}}
 
 [[File:DoubleChest-slots.png|thumb|Double/large chest slots]]
+
+=== Large chest ===
 
 This is the window that is opened when the player right-clicks on a double chest block (two adjacent chest blocks).
 
@@ -165,6 +167,8 @@ This is the window that is opened when the player right-clicks on a workbench.
 
 [[File:Furnace-slots.png|thumb|Furnace slots]]
 
+The window that appears when a furnace is right-clicked.
+
 {| class="wikitable"
  |-
  ! Slot range
@@ -193,6 +197,8 @@ This is the window that is opened when the player right-clicks on a workbench.
 
 [[File:Dispenser-slots.png|thumb|Dispenser/dropper slots]]
 
+The inventory that appears when a dispenser or dropper is opened.
+
 {| class="wikitable"
  |-
  ! Slot range
@@ -213,6 +219,8 @@ This is the window that is opened when the player right-clicks on a workbench.
 == Enchantment Table ==
 
 [[File:EnchantmentTable-slots.png|thumb|Enchantment table slots]]
+
+The inventory of an enchantment table.  The enchant buttons trigger a [[Protocol#Enchant item|Enchant item]] packet.
 
 {| class="wikitable"
  |-
@@ -236,7 +244,27 @@ This is the window that is opened when the player right-clicks on a workbench.
 
 == Brewing stand ==
 
-[[File:BrewingStand-slots.png|thumb|Enchantment table slots]]
+[[File:BrewingStand-slots.png|thumb|Brewing stand slots]]
+
+The GUI that appears when a brewing stand is opened.
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0-2
+ | bottles/potions
+ |-
+ | 3
+ | potion ingredient
+ |-
+ | 4-30
+ | main inventory
+ |-
+ | 31-39
+ | hotbar
+ |}
 
 {{-}}
 
@@ -244,11 +272,48 @@ This is the window that is opened when the player right-clicks on a workbench.
 
 [[File:Testificate-slots.png|thumb|Villeger slots]]
 
+The GUI that appears when a villager is right-clicked.  Note that if the villager only requires one item, you can put it in either (or both) slots.
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0-1
+ | input items
+ |-
+ | 2
+ | result
+ |-
+ | 3–29
+ | main inventory
+ |-
+ | 30–38
+ | hotbar
+ |}
+
 {{-}}
 
 == Beacon ==
 
 [[File:Beacon-slots.png|thumb|Beacon slots]]
+
+The window that appears when a beacon is right-clicked.
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | payment item
+ |-
+ | 1–27
+ | main inventory
+ |-
+ | 28–36
+ | hotbar
+ |}
 
 {{-}}
 
@@ -256,11 +321,49 @@ This is the window that is opened when the player right-clicks on a workbench.
 
 [[File:Anvil-slots.png|thumb|Anvil slots]]
 
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | first item
+ |-
+ | 1
+ | second item
+ |-
+ | 2
+ | result
+ |-
+ | 3–29
+ | main inventory
+ |-
+ | 30–38
+ | hotbar
+ |}
+
 {{-}}
 
 == Hopper ==
 
-[[File:BrewingStand-slots.png|thumb|Hopper slots]]
+[[File:Hopper-slots.png|thumb|Hopper slots]]
+
+The window that appears when a hopper or hopper minecart is opened.
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0-4
+ | hopper slots
+ |-
+ | 5–31
+ | main inventory
+ |-
+ | 32–40
+ | hotbar
+ |}
 
 {{-}}
 
@@ -268,11 +371,56 @@ This is the window that is opened when the player right-clicks on a workbench.
 
 [[File:Horse-slots.png|thumb|Horse slots]]
 
+The window for when a tamed horse is right-clicked or the player's inventory is opened while riding a horse.
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | saddle
+ |-
+ | 1
+ | armor
+ |-
+ | 2–28
+ | main inventory
+ |-
+ | 29–37
+ | hotbar
+ |}
+
 {{-}}
 
 == Donkey ==
 
 [[File:Donkey-slots.png|thumb|Donkey slots]]
+
+The inventory that appears when a tamed donkey (or mule?) is right-clicked and has a chest, or when the player's inventory is opened while riding a tamed donkey or mule.
+
+{{warning|There still is an armor slot, even though it cannot be used and is invisible.}}
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | saddle
+ |-
+ | 1
+ | armor
+ |-
+ | 2–16
+ | donkey inventory
+ |-
+ | 17–43
+ | player inventory
+ |-
+ | 44–52
+ | hotbar
+ |}
 
 {{-}}
 
