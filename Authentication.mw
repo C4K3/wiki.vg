@@ -194,7 +194,7 @@ Note that an <code>accessToken</code> may be unusable for authentication with a 
 
 <syntaxhighlight lang="javascript">
 {
-    "accessToken": "valid accessToken"
+    "accessToken": "valid accessToken",
     "clientToken": "associated clientToken" // optional, see above
 }
 </syntaxhighlight>
