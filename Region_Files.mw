@@ -102,4 +102,4 @@ Each chunk has an additional 5-byte header, followed by the actual chunk which i
 | <code>00 00 02 10</code> 
 | <code>02</code> 
 |} 
-There are two possible values for the compression scheme. If it is a <code>1</code>, the following chunk is compressed using [[gzip]]. If it&#039;s a <code>2</code>, the following chunk is compressed with [[zlib]]. In practice, you will only ever encounter chunks compressed using zlib.
+There are two possible values for the compression scheme. If it is a <code>1</code>, the following chunk is compressed using [[wikipedia:gzip|gzip]]. If it's a <code>2</code>, the following chunk is compressed with [[wikipedia:zlib|zlib]]. In practice, you will only ever encounter chunks compressed using zlib.
