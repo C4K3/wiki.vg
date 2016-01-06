@@ -659,7 +659,7 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |-
 | 5 || Gray
 |-
-| 6 || Dark Down
+| 6 || Dark Brown
 |-
 | rowspan="6" | 0xFF00
 ! Value !! Style
