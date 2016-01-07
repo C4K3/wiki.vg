@@ -89,6 +89,11 @@
  | See [[Slot Data]]
  | 
  |-
+ ! Object Data
+ | 4 or 10
+ | See [[Object Data]]
+ | 
+ |-
  ! NBT Tag
  | Varies
  | See [[NBT]]
