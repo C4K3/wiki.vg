@@ -149,6 +149,8 @@ Used by [http://www.minecraftforge.net/forum/index.php Minecraft Forge] to negot
 [https://github.com/MinecraftForge/MinecraftForge/blob/master/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java <code>FML|HS</code>]
 [https://github.com/MinecraftForge/MinecraftForge/blob/master/src/main/java/net/minecraftforge/fml/common/network/internal/FMLNetworkHandler.java <code>FML</code>]
 
+For more information, see [[Minecraft Forge Handshake]].
+
 === <code>ML|OpenTE</code> ===
 ''Server to client''
 
