@@ -1040,7 +1040,6 @@ As an example of an escaping mechanism, when "{infinity}" is entered by the play
 When the chat message packet is later received by the client, it renders the unsigned byte with the value of '236' as ∞.
 
 ===BlockDefinitions===
-:Proposed by Hetal, with contributions by fragmer.
 :This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.
 :'''Motivation''': To allow defining block types without client modifications. To make full use of custom textures.
 :'''Client Behavior''': This extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]], and must only be enabled if BOTH extensions are mutually supported. Client should be able receive any number of '''''DefineBlock''''' and '''''RemoveBlockDefinition''''' packets during the level loading process (after receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' and until receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets). However, dependent on client, this can be sent after level loading (Some clients might just find it more extensible than others). Client must keep track of all defined blocks between level changes or until they are individually removed with '''''RemoveBlockDefinition'''''.
