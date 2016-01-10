@@ -1039,4 +1039,225 @@ Any out-of-range value for ''TargetBlockFace'' mean "no block is targeted."
 As an example of an escaping mechanism, when "{infinity}" is entered by the player, it becomes a single unsigned byte with a value of '236' after being processed by the server.
 When the chat message packet is later received by the client, it renders the unsigned byte with the value of '236' as ∞.
 
+===BlockDefinitions===
+:Proposed by Hetal, with contributions by fragmer.
+:This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.
+:'''Motivation''': To allow defining block types without client modifications. To make full use of custom textures.
+:'''Client Behavior''': This extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]], and must only be enabled if BOTH extensions are mutually supported. Client should be able receive any number of '''''DefineBlock''''' and '''''RemoveBlockDefinition''''' packets during the level loading process (after receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' and until receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets). However, dependent on client, this can be sent after level loading (Some clients might just find it more extensible than others). Client must keep track of all defined blocks between level changes or until they are individually removed with '''''RemoveBlockDefinition'''''.
+:Client must be able to accept and render blocks as specified in '''''DefineBlock''''' packets. Clients must accept any valid definitions with ''BlockID'' between 1 and 254, inclusive. If a new definition is accepted for an already-defined ''BlockID'', the old definition should be replaced. If '''''RemoveBlockDefinition''''' is received for a non-defined ''BlockID'', it should be ignored.
+
+:'''Texturing''': New textures are defined by altering <code>terrain.png</code> and specifying it with '''''[[Classic_Protocol_Extension#EnvSetMapAppearance_packet|EnvSetMapAppearance]]''''' packet. '''''DefineBlock''''' fields ''TopTextureID'', ''SideTextureID'', and ''BottomTextureID'' refer to a tile number within <code>terrain.png</code>. Tiles are numbered 0 (top-left corner) through 255 (bottom-right corner), increasing left-to-right within each row. Refer to [http://123dmwm.tk/ID-Overlay.png this] image for a list of standard tiles, and a graphical list of tile indices.
+
+:'''Server Behavior''': Server may send any number of '''''DefineBlock''''' packets when client expects it. Server should only use IDs of currently-defined blocks in block data sent in '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packets, '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SetBlock]]''''' packets, or any other packets that expect block IDs.
+
+:'''Compatibility''': For non-supporting clients, the server must convert custom block ids into fallback block ids (e.g. 'lamp' fallbacks to lava) that lie within the client's set of supported blocks. (TODO: Define how the client should store map files with block definitions. Maybe integrate this with ClassicWorld definition?) 0 is not allowed to be redefined, nor is 255, as 255 is typically used by servers to indicate 'outside map bounds'. Note that sending a '''''RemoveBlockDefinition''''' packet for a standard tile id '''is not defined''', and may lead to undesired consequences.
+
+:<h5>DefineBlock Packet</h5>
+:''Server to Client''
+:{| class="wikitable"
+|-
+| Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" rowspan="16" | 35
+| class="centeralign" | BlockID
+| class="centeralign" | byte
+| class="centeralign" | <code>128</code>
+| Between 1 and 254 (unsigned).
+|-
+| class="centeralign" | Name
+| class="centeralign" | String
+| class="centeralign" | <code>Cactus</code>
+| Short, unique, player-friendly name for the block.
+|- 
+| class="centeralign" | Solidity
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Specified collision mode for this block type.
+Blocks may be walk-through (0), swim-through (1), or solid (2).
+* Walk-through blocks do not collide with the player, and do not interfere with jumping. Players fall through these blocks.
+* Swim-through blocks allow the player to descend or ascend slowly (at ''WalkSpeed''), as if they were swimming.
+* Solid blocks collide with the player. Players may walk on these.
+|-
+| class="centeralign" | MovementSpeed
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Player movement speed modifier, defined relative to regular walk speed. Ratio to normal speed is computed with this formula:
+y = 2<sup>(x-128)/64</sup>
+Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</code> to 1.00 ratio (100% speed), and <code>255</code> to 3.96 (396% speed).
+* If ''Solidity'' is set to 0 or 1, speed is modified while player is inside (i.e. colliding with) the block.
+* If ''Solidity'' is set to 2, speed is modified while player is standing on the block.
+If player is affected by several tiles, the ''lowest'' of all modifiers is used.
+|-
+| class="centeralign" | TopTextureID
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| Refers to a <code>terrain.png</code> tile.
+Between 0 and 255 (unsigned).
+Can be same as other texture IDs.
+|-
+| class="centeralign" | SideTextureID
+| class="centeralign" | byte
+| class="centeralign" | <code>2</code>
+| Refers to a <code>terrain.png</code> tile.
+Between 0 and 255 (unsigned).
+Can be same as other texture IDs. This is the texture ID used for drawing sprite blocks (Shape is 0).
+|-
+| class="centeralign" | BottomTextureID
+| class="centeralign" | byte
+| class="centeralign" | <code>3</code>
+| Refers to a <code>terrain.png</code> tile.
+Between 0 and 255 (unsigned).
+Can be same as other texture IDs.
+|-
+| class="centeralign" | TransmitsLight
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Whether this block allows the sunlight to go through, for level-lighting purposes.
+|-
+| class="centeralign" | WalkSound
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
+0 = no sound, 1 = wood, 2 = gravel, 3 = grass, 4 = stone, 5 = metal, 6 = glass, 7 = wool, 8 = sand, 9 = snow.
+|-
+| class="centeralign" | FullBright
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Whether or not the block/liquid is affected by shadows (such as lava).
+* 0 = Affected (darkened when in shadow)
+* 1 = Not affected (always bright).
+|-
+| class="centeralign" | Shape
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Shape of the block model:
+* Sprite = 0,
+* Cube with height = 1-16 
+(e.g. slab would have a shape of '8', snow would have '2', dirt would have '16')
+|-
+| class="centeralign" | BlockDraw
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Can be:
+* 0 = fully opaque
+* 1 = transparent (e.g. like glass)
+* 2 = transparent but with no face culling of same neighbours (e.g. like leaves)
+* 3 = translucent, where texture's alpha is blended (e.g. like ice or water)
+* 4 = gas (e.g. like air)
+|-
+| class="centeralign" | FogDensity
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Density of fog while client's camera is inside this block.
+Value of <code>0</code> means "do not change fog" -- level's default settings are used.
+Values between 1 and 255 are mapped to OpenGL's GL_FOG_DENSITY value for GL_EXP2 style fog with the following formula:
+
+GL_FOG_DENSITY = (x+1)/128
+
+Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code> means 1.0000, and <code>255</code> means 2.0000
+|-
+| class="centeralign" | FogR
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Red component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
+|-
+| class="centeralign" | FogG
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Green component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
+|-
+| class="centeralign" | FogB
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Blue component of the aforementioned fog. Only applies if ''FogDensity'' is above <code>0</code>.
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 80 bytes
+|}
+
+:<h5>RemoveBlockDefinition Packet</h5>
+:''Server to Client''
+:{| class="wikitable"
+|-
+! Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" | 36
+| class="centeralign" | BlockID
+| class="centeralign" | byte
+| class="centeralign" | <code>128</code>
+| Between 128 and 255
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 2 bytes
+|}
+
+===BlockDefinitionsExt===
+This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.
+:'''Motivation''': To allow defining custom block types that do not have minX/Y/Z values of 0, and maxX/Z values of 1.
+:'''Client Behavior''': See the '''''BlockDefinitions''''' specification. Additionally, this extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]] and '''BlockDefinitions''', and must only be enabled if BOTH extensions are mutually supported.
+
+:'''Texturing''': See the '''''BlockDefinitions''''' specification. The MinX/Y/Z and MaxX/Y/Z fields also affect the location within the terrain tile for a given face that the block should sample texels from. (e.g. if minX and minZ was 8, and maxX and maxZ was 16, then for the terrain.png tile with pixels from (0, 0) to (16, 16), the top face would be drawn with the subset of pixels from (8, 8) to (16, 16))
+
+:'''Server Behavior''': See the '''''BlockDefinitions''''' specification.
+
+
+This packet is the same as DefineBlock packet, except the 'shape field' is replaced by 6 fields indicating the bounding box of the block in pixel coordinates.
+Note that this packet does not support sprites, you must send a regular '''''DefineBlock''''' packet for that.
+:<h5>DefineBlockExt Packet</h5>
+:''Server to Client''
+:{| class="wikitable"
+|-
+| Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" rowspan="16" | 37
+| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockID, Name, Solidity, MovementSpeed, TopTextureID, SideTextureID, BottomTextureID, TransmitsLight, WalkSound, FullBright
+|-
+| class="centeralign" | MinX
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum X coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MinY
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum Y coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MinZ
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum Z coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MaxX
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum X coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="centeralign" | MaxY
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum Y coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="centeralign" | MaxZ
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum Z coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockDraw, FogDensity, FogR, FogG, FogB
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 85 bytes
+|}
+
 [[Category:Minecraft Classic]]
