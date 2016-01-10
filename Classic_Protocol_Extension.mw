@@ -1199,7 +1199,7 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 |}
 
 ===BlockDefinitionsExt===
-This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.
+:This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.
 :'''Motivation''': To allow defining custom block types that do not have minX/Y/Z values of 0, and maxX/Z values of 1.
 :'''Client Behavior''': See the '''''BlockDefinitions''''' specification. Additionally, this extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]] and '''BlockDefinitions''', and must only be enabled if BOTH extensions are mutually supported.
 
