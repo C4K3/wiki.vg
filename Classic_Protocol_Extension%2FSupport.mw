@@ -20,6 +20,8 @@ Number inside green fields indicates the supported extension version. Currently 
 !PlayerClick
 !LongerMessages
 !FullCP437
+!BlockDefinitions
+!BlockDefinitionsExt
 |-
 ! [http://www.classicube.net/ ClassiCube Client]
 | {{yes|1}}
@@ -37,6 +39,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{planned}}
 | {{yes|1}}
 | {{planned}}
+| {{no}}
+| {{no}}
 | {{no}}
 | {{no}}
 |-
@@ -58,6 +62,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{planned}}
 | {{planned}}
 | {{no}}
+| {{no}}
+| {{no}}
 |-
 ! [https://github.com/UnknownShadow200/ClassicalSharp/ ClassicalSharp]
 | {{yes|1}}
@@ -66,6 +72,8 @@ Number inside green fields indicates the supported extension version. Currently 
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|2}}
+| {{yes|1}}
+| {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
 | {{yes|1}}
