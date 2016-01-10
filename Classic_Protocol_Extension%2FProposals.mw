@@ -938,7 +938,7 @@ Each element is a 32 bit integer in big endian order.
 | class="col4 centeralign" | ASCII character colour code.
 |- class="row12"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 298 bytes
+| class="col1 rightalign" colspan="4" | 6 bytes
 |}
 "''Example:'' Suppose the server sends a '''''SetTextColor''''' packet of color #123456 and color code 0x67(lowercase g). When the client receives a '''''Message''''' packet with the text ''&fFoo&gBar.'', ''Foo'' is drawn using the color #FFFFFF and  ''Bar'' is drawn using the color #123456.
 :(Comments go here, please sign them)
