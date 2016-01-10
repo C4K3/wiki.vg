@@ -121,16 +121,16 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 
 ===BlockDefinitions===
 :Proposed by Hetal, with contributions by fragmer.
-:This extension allows servers to define new block types with custom IDs and appearance.
+:This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.
 :'''Motivation''': To allow defining block types without client modifications. To make full use of custom textures.
 :'''Client Behavior''': This extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]], and must only be enabled if BOTH extensions are mutually supported. Client should be able receive any number of '''''DefineBlock''''' and '''''RemoveBlockDefinition''''' packets during the level loading process (after receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' and until receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets). However, dependent on client, this can be sent after level loading (Some clients might just find it more extensible than others). Client must keep track of all defined blocks between level changes or until they are individually removed with '''''RemoveBlockDefinition'''''.
-:Client must be able to accept and render blocks as specified in '''''DefineBlock''''' packets. Clients must accept any valid definitions with ''BlockID'' between 128 and 255, inclusive. If a new definition is accepted for an already-defined ''BlockID'', the old definition should be replaced. If '''''RemoveBlockDefinition''''' is received for a non-defined ''BlockID'', it should be ignored.
+:Client must be able to accept and render blocks as specified in '''''DefineBlock''''' packets. Clients must accept any valid definitions with ''BlockID'' between 1 and 254, inclusive. If a new definition is accepted for an already-defined ''BlockID'', the old definition should be replaced. If '''''RemoveBlockDefinition''''' is received for a non-defined ''BlockID'', it should be ignored.
 
-:'''Texturing''': New textured are defined by altering <code>terrain.png</code> and specifying it with '''''[[Classic_Protocol_Extension#EnvSetMapAppearance_packet|EnvSetMapAppearance]]''''' packet. '''''DefineBlock''''' fields ''TopTextureID'', ''SideTextureID'', and ''BottomTextureID'' refer to a tile number within <code>terrain.png</code>. Tiles are numbered 0 (top-left corner) through 255 (bottom-right corner), increasing left-to-right within each row. Tiles 0-127 are reserved for standardized blocks. Refer to table 1 for a list of standard tiles ('''TODO'''). Block definitions can use these tiles, but texture makers should be careful not to accidentally overwrite tiles in this range (top half of <code>terrain.png</code>) to avoid changing appearance of standardized blocks that use them. Positions 128-255 (the bottom half of <code>terrain.png</code>) can be textured and used in any way.
+:'''Texturing''': New textures are defined by altering <code>terrain.png</code> and specifying it with '''''[[Classic_Protocol_Extension#EnvSetMapAppearance_packet|EnvSetMapAppearance]]''''' packet. '''''DefineBlock''''' fields ''TopTextureID'', ''SideTextureID'', and ''BottomTextureID'' refer to a tile number within <code>terrain.png</code>. Tiles are numbered 0 (top-left corner) through 255 (bottom-right corner), increasing left-to-right within each row. Refer to [http://123dmwm.tk/ID-Overlay.png this] image for a list of standard tiles, and a graphical list of tile indices.
 
 :'''Server Behavior''': Server may send any number of '''''DefineBlock''''' packets when client expects it. Server should only use IDs of currently-defined blocks in block data sent in '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packets, '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|SetBlock]]''''' packets, or any other packets that expect block IDs.
 
-:'''Compatibility''': TODO: Define what the server should do for non-supporting clients. Define how the client should store map files with block definitions. Maybe integrate this with ClassicWorld definition?
+:'''Compatibility''': For non-supporting clients, the server must convert custom block ids into fallback block ids (e.g. 'lamp' fallbacks to lava) that lie within the client's set of supported blocks. (TODO: Define how the client should store map files with block definitions. Maybe integrate this with ClassicWorld definition?) 0 is not allowed to be redefined, nor is 255, as 255 is typically used by servers to indicate 'outside map bounds'. Note that sending a '''''RemoveBlockDefinition''''' packet for a standard tile id '''is not defined''', and may lead to undesired consequences.
 
 :<h5>DefineBlock Packet</h5>
 :''Server to Client''
@@ -146,7 +146,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
-| Between 128 and 255 (unsigned).
+| Between 1 and 254 (unsigned).
 |-
 | class="centeralign" | Name
 | class="centeralign" | String
@@ -278,11 +278,6 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 ! Total Size:
 | class="rightalign" colspan="4" | 2 bytes
 |}
-
-:'''Future References''': The client developers will be able to add more base blocks but then the server developers will have to change their Ids sent if the block is being occupied as a base block. If any of the fields are incorrectly configured, the client shall disconnect with an error message briefly describing why it crashed ("Invalid Custom Block located at Id : ID").
-:'''Example''': Let's say I have a block called bullet being launched from a block (the block launching the bullet is not required for this situation). I could add that block's Id to the client using ADD_CUSTOM_BLOCK by AddCustomBlock((byte)128/*BulletBlockId*/, (byte)2);, and if my textureUrl in the EnvMapAppearance sent before/afterwards was actually containing a bullet in the correct slot, the block would inherit actual bullet textures making it realistic and yet again fun.
-:'''TABLE 1''': TODO: list of tiles already defined in terrain.png, for both standard and CustomBlocks level 1 blocks.
-("Maybe allow this extension to have the ability to redefine blocks that are already defined in standard MC classic protocol and CPE? That would solve the problem defined in '''Future References''' and add more flexibility with the creation of custom blocks. This way, we would not have to agree on which blocks to define for each version of the CustomBlocks extension and instead create our own blocks to fit our specific purposes!" - Cheesse)
 
 ===ColorCodeControl===
 :Proposed by [[User:F|F]] ([[User talk:F|talk]]) 22:00, 28 August 2014 (UTC)
