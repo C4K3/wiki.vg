@@ -35,15 +35,20 @@ The int value itself specifies the minecart's functionality:
 
 {| class="wikitable"
  |-
- ! Field name
- ! Field type
- ! Example
- ! Notes
+ ! Value
+ ! Orientation
  |-
- | Orientation
- | Int
- | <code>3</code>
- | 0–3: South, West, North, East
+ | 0
+ | South
+ |-
+ | 1
+ | West
+ |-
+ | 2
+ | North
+ |-
+ | 3
+ | East
  |}
 
 == Falling Block (id 70) ==
