@@ -343,7 +343,7 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | 0.3125
 |}
 
-Since Release 1.6, all minecarts are spawned with object type 10 and their functionality is then specified in the [[Object_Data#Minecarts|Object data]] within the packet. Also, their visual appearance may be sent via the [[Protocol#Entity_Metadata|Entity Metadata]] packet.
+Since release {{Minecraft Wiki|1.6}}, all minecarts are spawned with object type 10 and their functionality is then specified in the [[Object Data#Minecarts (id 10)|Data field]] within the packet. Also, their visual appearance may be sent via the [[Protocol#Entity Metadata|Entity Metadata]] packet.
 
 == Entity Metadata ==
 
