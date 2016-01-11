@@ -107,10 +107,7 @@
  ! UUID
  | 16
  | A [[wikipedia:Universally_unique_identifier|UUID]]
- | The vanilla Minecraft server internally sends this as two longs.
-
-<pre>this.writeLong(uuid.getMostSignificantBits());
-this.writeLong(uuid.getLeastSignificantBits());</pre>
+ | 
  |-
  ! Optional X
  | 0 or size of X
