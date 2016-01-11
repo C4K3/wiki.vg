@@ -1,133 +1,110 @@
-== Object Data ==
+This article documents the '''Data''' field in the [[Protocol#Spawn Object|Spawn Object]] packet. The field is of type Int, and the meaning of its contents depend on the type of object being spawned, as defined in the Type field of the same packet, and is documented below.
 
-In the "Spawn Object/Vehicle" packet, additional metadata about the spawned entity may be provided.  The length and contents of this extra data depend on the type of object being spawned.  No matter what, the server must send at least one integer to the client, although 0 is a valid value.  If a number other than zero is provided (for all entities), the following data is appended to the end of the object data (as of [[Protocol version numbers|15w31a, protocol 49]] this data is always required):
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Field Name
-! class="col1" | Field Type
-! class="col2" | Example
-! class="col3" | Notes
-|- class="row2"
-| class="col0 centeralign" | Speed X
-| class="col1 centeralign" | Short
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the object, same units as [[Protocol#Entity Velocity|Entity Velocity]]
-|- class="row2"
-| class="col0 centeralign" | Speed Y
-| class="col1 centeralign" | Short
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the object, same units as [[Protocol#Entity Velocity|Entity Velocity]]
-|- class="row2"
-| class="col0 centeralign" | Speed Z
-| class="col1 centeralign" | Short
-| class="col2 centeralign" | <code>0</code>
-| class="col3" | The speed of the object, same units as [[Protocol#Entity Velocity|Entity Velocity]]
-|}
-
-== Meaning of int field ==
-
-
-=== Minecarts (id 10)===
+== Minecarts (id 10) ==
 
 The int value itself specifies the minecart's functionality:
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Value
-! class="col1" | Minecart functionality
-|- class="row1"
-| class="col0 centeralign" | 0
-| class="col1 centeralign" | Empty (ride-able) minecart
-|- class="row2"
-| class="col0 centeralign" | 1
-| class="col1 centeralign" | Chest minecart
-|- class="row3"
-| class="col0 centeralign" | 2
-| class="col1 centeralign" | Furnace (powered) minecart
-|- class="row4"
-| class="col0 centeralign" | 3
-| class="col1 centeralign" | TNT minecart
-|- class="row5"
-| class="col0 centeralign" | 4
-| class="col1 centeralign" | Spawner minecart
-|- class="row6"
-| class="col0 centeralign" | 5
-| class="col1 centeralign" | Hopper minecart
-|- class="row7"
-| class="col0 centeralign" | 6
-| class="col1 centeralign" | Command Block minecart
-|}
+ |-
+ ! Value
+ ! Minecart functionality
+ |-
+ | 0
+ | Empty (ride-able) minecart
+ |-
+ | 1
+ | Chest minecart
+ |-
+ | 2
+ | Furnace (powered) minecart
+ |-
+ | 3
+ | TNT minecart
+ |-
+ | 4
+ | Spawner minecart
+ |-
+ | 5
+ | Hopper minecart
+ |-
+ | 6
+ | Command Block minecart
+ |}
 
-=== Item Frame (id 71) ===
-
-{| class="wikitable"
-|- class="row0"
-! class="col0" | Field Name
-! class="col1" | Field Type
-! class="col2" | Example
-! class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Orientation
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>3</code>
-| class="col3" | 0-3: South, West, North, East
-|}
-
-=== Falling Block (id 70) ===
+== Item Frame (id 71) ==
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Field Name
-! class="col1" | Field Type
-! class="col2" | Example
-! class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Block Type
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>12</code>
-| class="col3" | <code>BlockID | (Metadata << 0x10)</code>
-|}
+ |-
+ ! Field name
+ ! Field type
+ ! Example
+ ! Notes
+ |-
+ | Orientation
+ | Int
+ | <code>3</code>
+ | 0–3: South, West, North, East
+ |}
 
-=== Splash Potions (id 73) ===
+== Falling Block (id 70) ==
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Field Name
-! class="col1" | Field Type
-! class="col2" | Example
-! class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>64</code>
-| class="col3" | Potion data value
-|}
+ |-
+ ! Field name
+ ! Field type
+ ! Example
+ ! Notes
+ |-
+ | Block type
+ | Int
+ | <code>12</code>
+ | <code>BlockID | (Metadata << 0x10)</code>
+ |}
 
-For more information on potion data values, see [http://www.minecraftwiki.net/wiki/Data_values#Potions].
+== Splash Potions (id 73) ==
 
-=== Fishing Float (id 90) ===
 {| class="wikitable"
-! Field Name !! Field Type !! Example !! Notes
-|-
-| Owner || int ||  || The entity ID of the owner
-|}
+ |-
+ ! Field name
+ ! Field type
+ ! Example
+ ! Notes
+ |-
+ | Entity ID
+ | Int
+ | <code>64</code>
+ | Potion data value
+ |}
 
+For more information on potion data values, see {{Minecraft Wiki|Data values#Potions}}.
 
+== Fishing Float (id 90) ==
 
-=== Projectiles ([[Entities#Objects|Any projectile]])===
+{| class="wikitable"
+ ! Field name
+ ! Field type
+ ! Example
+ ! Notes
+ |-
+ | Owner
+ | Int
+ | 
+ | The entity ID of the owner
+ |}
+
+== Projectiles ([[Entities#Objects|Any projectile]]) ==
 
 This includes ghast fireballs, arrows, and fishhooks (probably more).
 
 {| class="wikitable"
-|- class="row0"
-! class="col0" | Field Name
-! class="col1" | Field Type
-! class="col2" | Example
-! class="col3" | Notes
-|- class="row1"
-| class="col0 centeralign" | Entity ID
-| class="col1 centeralign" | int
-| class="col2 centeralign" | <code>64</code>
-| class="col3" | The entity ID of the thrower
-|}
+ |-
+ ! Field name
+ ! Field type
+ ! Example
+ ! Notes
+ |-
+ | Entity ID
+ | Int
+ | <code>64</code>
+ | The entity ID of the thrower
+ |}
