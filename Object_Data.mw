@@ -1,4 +1,4 @@
-This article documents the '''Data''' field in the [[Protocol#Spawn Object|Spawn Object]] packet. The field is of type Int, and the meaning of its contents depend on the type of object being spawned, as defined in the Type field of the same packet, and is documented below.
+This article documents the '''Data''' field in the [[Protocol#Spawn Object|Spawn Object]] packet. The field is of type Int, and the meaning of its contents depend on the [[Entities#Objects|type of object]] being spawned, as defined in the Type field of the same packet, and is documented below.
 
 == Minecarts (id 10) ==
 
