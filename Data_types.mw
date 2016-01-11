@@ -119,6 +119,11 @@
  | Zero or more fields of type X
  | The count must be known from the context.
  |-
+ ! X Enum
+ | size of X
+ | A specific value from a given list
+ | The list of possible values and how each is encoded as an X must be known from the context.
+ |-
  ! Byte Array
  | Varies
  | Depends on context
