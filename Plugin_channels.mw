@@ -105,7 +105,7 @@ When a player right clicks with a signed book. This tells the client to open the
 This payload is empty.
 
 === <code>MC|ItemName</code> ===
-''Two-way''
+''Client to server''
 
 When a player uses an anvil to name an item. The payload is just a string: the item's new name.
 
