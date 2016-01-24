@@ -1103,7 +1103,7 @@ Can be same as other texture IDs.
 | class="centeralign" | <code>2</code>
 | Refers to a <code>terrain.png</code> tile.
 Between 0 and 255 (unsigned).
-Can be same as other texture IDs. This is the texture ID used for drawing sprite blocks (Shape is 0).
+Can be same as other texture IDs. This is also the texture ID used for drawing sprite blocks (i.e. when Shape is 0).
 |-
 | class="centeralign" | BottomTextureID
 | class="centeralign" | byte
