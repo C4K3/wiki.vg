@@ -127,6 +127,21 @@ A couple things for contributors:
  | {{planned|[https://github.com/PistonDevelopers/hematite_server/issues/3 Discussion]}}
  | {{planned|Planning}}
  |-
+ ! [https://github.com/fador/mineserver/ Mineserver]
+ | Fador, Psoden, deoxxa
+ | [http://en.wikipedia.org/wiki/C%2B%2B C++]
+ | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
+ | {{yes|1.8 (#47)}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players, Mobs}}
+ | {{unknown}}
+ | {{yes|C++}}
+ | {{yes|{{linux}}{{windows}}{{mac}}}}
+ | [https://github.com/fador/mineserver/#features Link]
+ | {{yes|Active}}
+ |-
  ! [https://github.com/quartz-powered/server QuartzPowered]
  | [https://github.com/quartz-powered/server/graphs/contributors The Quartz Powered Team]
  | Java
@@ -261,21 +276,6 @@ A couple things for contributors:
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | [https://github.com/SirCmpwn/PartyCraft#features Link]
  | {{unknown|on hiatus since August 2013}}
- |-
- ! [https://github.com/fador/mineserver/ Mineserver]
- | Fador, Psoden, deoxxa
- | [http://en.wikipedia.org/wiki/C%2B%2B C++]
- | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
- | {{no|1.5.2}}
- | {{yes|Anvil}}
- | {{yes}}
- | {{yes}}
- | {{yes|Players, Mobs}}
- | {{unknown}}
- | {{yes|C++}}
- | {{yes|{{linux}}{{windows}}{{mac}}}}
- | [https://github.com/fador/mineserver/#features Link]
- | {{unknown|on hiatus since November 2013}}
  |-
  ! [http://nessus.lv/nessusms NessusMS]
  | [[User:Pbunny|Pbunny]]
