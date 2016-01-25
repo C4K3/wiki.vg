@@ -5,44 +5,112 @@ WIDTH = 100%|
 ICON = |
 HEADING = Work in progress! |
 CONTENT =  
-This page is a work in progress, and may be missing information.
+This page is a work in progress, and may be missing a lot of information or may contain incorrect information.  Feel free to edit it to add your own information.
 }}
 
-Documentation of the [http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2520465 World Downloader mod]'s plugin channel configuration system.
+This page will document the changes made in the '''[https://minecraftforge.net/ Minecraft Forge] protocol'''.
 
-See [https://github.com/Pokechu22/WorldDownloader/blob/master/src/wdl/WDLPluginChannels.java here].
+Largely based on my own attempts to document the protocol and allow connection to forge servers [https://github.com/ORelio/Minecraft-Console-Client/pull/100 here].
 
-== Note ==
+== Changes to [[Server List Ping]] ==
 
-All types here are as specified by Java's [http://docs.oracle.com/javase/7/docs/api/java/io/DataOutputStream.html <code>DataOutputStream</code>] and can be read using a [http://docs.oracle.com/javase/7/docs/api/java/io/DataInputStream.html <code>DataInputStream</code>], unless otherwise noted.
+When forge is installed, the [[Server List Ping]] changes with an additional <code>modinfo</code>.  Example:
 
-== <code>WDL|INIT</code> ==
+<syntaxhighlight lang="javascript">
+{
+    "description": "A Minecraft Server",
+    "players": {
+        "max": 20,
+        "online": 0
+    },
+    "version": {
+        "name": "1.8",
+        "protocol": 47
+    },
+    "modinfo": {
+        "type": "FML",
+        "modList": [
+            {
+                "modid": "mcp",
+                "version": "9.05"
+            },
+            {
+                "modid": "FML",
+                "version": "8.0.99.99"
+            },
+            {
+                "modid": "Forge",
+                "version": "11.14.3.1512"
+            },
+            {
+                "modid": "rpcraft",
+                "version": "Beta 1.3 - 1.8.0"
+            }
+        ]
+    }
+}
+</syntaxhighlight>
 
-<code>WDL|INIT</code> is sent to show that World Downloader is ready to receive new permissions.  Don't send permissions until this is received - it may still be saving from another part of the map or another sever where it has permission, and revoking permission in the middle is a Bad Thing&trade;.
+So, to test whether forge is installed, look for the <code>modinfo</code> key and then a <code>type</code> of <code>FML</code>
 
-{| class="wikitable"
- ! Bound To
- ! Field Name
- ! Field Type
- ! Notes
- |-
- | rowspan="2" | Server
- | Mod version
- | UTF8 string
- | This is a byte array; the remainder of the packet is this value (there is no length specified).  In some older versions of the mod, this is not present and the length of the packet is 0.
- |}
+The <code>modList</code> contains each installed mod's version and ID.
 
-== <code>WDL|CONTROL</code> ==
+{{warning|The key <code>modList</code> has a capital 'L', unlike any other key in the ping result!}}
 
-This channel is sent from the server to the client to specify various permissions.  It uses a 4-byte integer at the start to indicate a section.  There is no required order, but it is conventional to put them in numerical order.
+This is injected in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/patches/minecraft/net/minecraft/network/ServerStatusResponse.java.patch#L45 ServerStatusResponse] by calling [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/internal/FMLNetworkHandler.java#L192-L206 FMLNetworkHandler.enhanceStatusQuery()].
 
-In all cases unless otherwise indicated, if a packet is not sent its values are treated as 'true'.
+== Connection to a forge server ==
 
-=== Default values ===
+Attempting to connect to a forge server without making any changes results in getting immediately disconnected with the message "<code>This server requires FML/Forge to be installed. Contact your server admin for more details.</code>".  This message is displayed in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/FMLCommonHandler.java#L653-L661 FMLCommonHandler] and is [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/patches/minecraft/net/minecraft/network/handshake/client/C00Handshake.java.patch#L35 injected] in a modified [[Protocol#Handshake|0x00 Handshake packet]].
 
-Specifies the default value used for permissions not sent.
+If <code>\0FML\0</code> is added to the end of the server's address (again, in the 0x00 handshake packet), the server will not immediately reject you.  However, you still will not complete the connection.
 
-Note that sending this packet does not actually ''change'' the value for other packets; it instead specifies an internal fallback.  Thus, this packet can be sent at any time to change this default without needing to resend other packets.
+This occurs because Minecraft Forge has an additional set of handshakes (for determining mods and block IDs), that must be completed before the server allows logging in.
+
+== Forge handshake ==
+
+Forge's handshake occurs in the middle of the [[Protocol FAQ#What's the normal login sequence for a client?|normal login sequence]], right after [[Protocol#Login Success|0x02 Login Success]] is received by the client.
+
+In addition to the [[Debugging|normal packet debugging]] for the server, if <code>-Dfml.debugNetworkHandshake=true</code> is passed to the forge server, some more information about the current handshake status will be outputted.
+
+{{Need Info|Why does it send the CompleteHandshake packet to itself?  How does it keep synchronized (especially near the end with the ACKs)?}}
+
+* '''S→C''': [[Plugin channel#REGISTER|<code>REGISTER</code>]] forge's plugin channels: FML|HS, FML, FML|MP, FML, FORGE (yes, FML is there twice).
+* '''S→C''': A ServerHello packet is sent on <code>FML|HS</code> including the player's dimension (0 if it's the first login)
+* '''C→S''': <code>REGISTER</code> the plugin channels: FML|HS, FML, FML|MP, FML, FORGE.
+* '''C→S''': A ClientHello packet is sent on the <code>FML|HS</code> channel.
+* '''C→S''': A ModList packet is sent.
+* Server checks that the mod list is compatible.  If incompatible, the player is [[Protocol#Disconnect|disconnected]] with an explanatory message.  Otherwise, continue.
+* '''S→C''': A ModList packet is sent.
+* Client checks that the mod list is compatible.  If incompatible, it disconnects.  Otherwise, continue.
+* '''C→S''': A HandshakeAck packet is sent, with the phase being <code>WAITINGSERVERDATA</code> (2).
+* '''S→C''': A series of RegistryData packets is sent, with hasMore being true for all packets except the last.
+* Client reads and stores each RegistryData, continuing reading until hasMore is false.  Once hasMore is false, it checks whether it has all of the needed blocks/items.  If it does not, it disconnects.  Otherwise, continue.
+* '''C→S''': A HandshakeAck packet is sent with phase being <code>WAITINGSERVERCOMPLETE</code> (3).
+* '''S→C''': A HandshakeAck packet is sent with phase being <code>WAITINGCACK</code> (2).
+* '''C→S''': A HandshakeAck packet is sent with phase being <code>PENDINGCOMPLETE</code> (4).
+* '''S→C''': A HandshakeAck packet is sent with phase being <code>COMPLETE</code> (3).
+* The server sends a "CompleteHandshake" packet '''to itself'''.  (Not sure why)
+* '''C→S''': A HandshakeAck packet is sent with phase being <code>COMPLETE</code> (5).
+* The client sends a "CompleteHandshake" packet '''to itself'''.  (Not sure why)
+
+== Definitions ==
+
+Minecraft Forge uses an additional type not covered in [[data types]] for some things -- a varshort.  This is essentially the same as a regular short, except that if the top byte (what is normally sign) is set, it is followed by an additional byte.  This allows forge to retain backwards compatibility but extend the length of certain numbers -- the varshort is only used in places where, in vanilla Minecraft, the sign bit would not have been set.  It is implemented in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/ByteBufUtils.java#L58-L89 ByteBufUtils].
+
+Discriminator bytes are the way that Minecraft Forge allows sending multiple messages on one [[plugin channel]].  They aren't part of the original specification, but a similar concept is used with the [[Plugin channel#MC&#x7c;AdvCdm|<code>MC|AdvCdm</code> plugin channel]] (used for command blocks).  That packet decides whether a block location is being sent or an entity ID (minecart command blocks) is being sent based off of the value of the first byte in the packet.
+
+In the same way, forge uses the first byte of the plugin message to specify which packet to use.  It uses [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/FMLIndexedMessageToMessageCodec.java FMLIndexedMessageToMessageCodec] to automatically switch the value.
+
+Discriminator bytes change depending on the channel: 0 for <code>FML|HS</code> means something different from 0 for <code>FML</code>.
+
+== <code>FML|HS</code> Packet structure ==
+
+<code>FML|HS</code> is used to perform the handshake.  Discriminator bytes are found in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeCodec.java FMLHandshakeCodec].
+
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L33-L76 ServerHello] ===
+
+Starts the handshake.
 
 {| class="wikitable"
  ! Channel
@@ -51,20 +119,24 @@ Note that sending this packet does not actually ''change'' the value for other p
  ! Field Type
  ! Notes
  |-
- | rowspan="2" | <code>WDL|CONTROL</code>
- | rowspan="2" | Client
+ |rowspan="6"| <code>FML|HS</code>
+ |rowspan="6"| Client
  | Discriminator
- | Integer
- | Set to 0 to indicate this packet.
+ | Byte
+ | Always 0 for ServerHello
  |-
- | Default value
- | Boolean
- | True to enable all functions not otherwise specified, false to disable them.
+ | FML protocol Version
+ | Byte
+ | Determined from [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/NetworkRegistry.java#L67-L69 NetworkRegistery].  Currently <code>2</code>.
+ |-
+ | Override dimension
+ | Optional Int
+ | Only sent if protocol version is greater than 1.
  |}
 
-=== Basic data ===
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L77-L95 ClientHello] ===
 
-Sets some of the standard properties.
+Response from the client to the ServerHello packet.
 
 {| class="wikitable"
  ! Channel
@@ -73,97 +145,197 @@ Sets some of the standard properties.
  ! Field Type
  ! Notes
  |-
- | rowspan="7" | <code>WDL|CONTROL</code>
- | rowspan="7" | Client
+ |rowspan="6"| <code>FML|HS</code>
+ |rowspan="6"| Server
  | Discriminator
- | Integer
- | Set to 1 to indicate this packet.
+ | Byte
+ | Always 1 for ClientHello.
  |-
- | General download enabled
- | Boolean
- | True to enable all downloading in all chunks, false to disable it.
- |-
- | Save radius
- | Integer
- | The distance from the player chunks can be saved from.  -1 to allow all distances.  This is a square distance, not a circle or a diamond.  '''Only applies if chunk caching is disabled'''.
- |-
- | Chunk caching enabled
- | Boolean
- | Can chunks be saved as the player moves about.  If false, then they can only save within the area indicated by save radius; if true they can save everywhere.  However, regardless of this value, if general download is disabled, they cannot download.
- |-
- | Entity saving enabled
- | Boolean
- | True to allow the mod to save entities, false to force entities to be removed from the world.  This only applies to chunks that can be saved.
- |-
- | Tile entity saving enabled
- | Boolean
- | True to allow the mod to save tile entities, false to force tile entities to be removed from the world.  This only applies to chunks that can be saved.
- |-
- | Container saving enabled
- | Boolean
- | True to allow the mod to save containers (a subset of tile entities that require manual interaction to be saved, mainly chests).  This only applies if tile entities are allowed to be saved and only applies in chunks that can be saved.
+ | FML protocol Version
+ | Byte
+ | Determined from [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/NetworkRegistry.java#L67-L69 NetworkRegistery].  Currently <code>2</code>.
  |}
 
-=== Entity track distances ===
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L96-L152 ModList] ===
 
-Used to specify any custom entity track distances on the server, because they may change on spigot servers.  More info on why this is needed on [https://github.com/Pokechu22/WorldDownloader/wiki/Entities-GUI#what-are-track-distances the project wiki].
-
-The client is free to ignore these values, and will use sane defaults based off of whether the server's brand includes "spigot" if they are not sent.  However, by default these values are used.
+Contains a list of all mods installed on the server or client.  Sent from the client to the server first, and then the server responds with its mod list.  The server's mod list matches the one sent in the ping.
 
 {| class="wikitable"
  ! Channel
  ! Bound To
- ! colspan="2" | Field Name
- ! colspan="2" | Field Type
+ !colspan="2"| Field Name
+ !colspan="2"| Field Type
  ! Notes
  |-
- | rowspan="4" | <code>WDL|CONTROL</code>
- | rowspan="4" | Client
- | colspan="2" | Discriminator
- | colspan="2" | Integer
- | Set to 2 to indicate this packet.
+ |rowspan="4"| <code>FML|HS</code>
+ |rowspan="4"| Both
+ |colspan="2"| Discriminator
+ |colspan="2"| Byte
+ | Always 2 for ModList
  |-
- | colspan="2" | Number of ranges
- | colspan="2" | Integer
- | Size of the following array.
+ |colspan="2"| Number of mods
+ |colspan="2"| Varint
+ | Number of mods below
  |-
- | rowspan="2" | Values
- | Entity name
- | rowspan="2" | Array
+ |rowspan="2"| Mods
+ | Mod name
+ |rowspan="2"| Array
  | String
- | The name of the entity, as used in the savegame ID.
+ | Name of the mod
  |-
- | Track distance
- | Integer
- | The track distance of the entity, in blocks.
+ | Mod version
+ | String
+ | Version of the mod
  |}
 
-=== Permission request info ===
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240 RegistryData] ===
 
-Information used with permission requests.
+{{Need Info|Explain exactly what registries are, and figure out what Substitutions is}}
+
+The server sends several of this packet, one for each registry.  It'll keep sending them until the hasMore value is no longer true.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ !colspan="2"| Field Name
+ !colspan="2"| Field Type
+ ! Notes
+ |-
+ |rowspan="8"| <code>FML|HS</code>
+ |rowspan="8"| Both
+ |colspan="2"| Discriminator
+ |colspan="2"| Byte
+ | Always 3 for RegistryData.
+ |-
+ |colspan="2"| Has more
+ |colspan="2"| Boolean
+ | Marks whether another RegistryData packet will be sent after this.
+ |-
+ |colspan="2"| Name
+ |colspan="2"| String
+ | Name of the registry for this packet
+ |-
+ |colspan="2"| Number of ids
+ |colspan="2"| Varint
+ | Number of ids sent below
+ |-
+ |rowspan="2"| Ids
+ | Name
+ |rowspan="2"| Array
+ | String
+ | Name of the thing
+ |-
+ | Id
+ | Varint
+ | Numerical id of the thing
+ |-
+ |colspan="2"| Number of substitutions
+ |colspan="2"| Varint
+ | Number of substitutions sent below
+ |-
+ |colspan="2"| Substitutions
+ |colspan="2"| Array of strings
+ | Each substitution
+ |}
+
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L241-L264 HandshakeAck] ===
+
+Confirms that the client is able to use the settings sent previously.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="6"| <code>FML|HS</code>
+ |rowspan="6"| Both
+ | Discriminator
+ | Byte
+ | Always -1 (255) for HandshakeAck
+ |-
+ | Phase
+ | Byte
+ | The current phase, which is the ordinal (0-indexed) in the [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeClientState.java FMLHandshakeClientState] or [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeServerState.java FMLHandshakeServerState] enums (if the server is sending it, it is in the ServerState enum, and if the client is sending it, it is the ClientState enum).
+ |}
+
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L265-L267 HandshakeReset] ===
+
+{{Need Info|Is this ever actually sent?}}
+
+Causes the client to recomplete the entire handshake from the start.  Does not appear to be sent.  There is no payload beyond the discriminator byte.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="6"| <code>FML|HS</code>
+ |rowspan="6"| Client
+ | Discriminator
+ | Byte
+ | Always -2 (254) for HandshakeReset
+ |}
+
+== Differences from Forge 1.7.10 ==
+
+Forge for Minecraft 1.8 made some changes from the 1.7.10 version.
+
+The most important thing to keep track of isn't (entirely) a forge change.  In 1.7.10, [http://wiki.vg/index.php?title=Protocol&oldid=6003#Plugin_Message_2 plugin channel packets] are length prefixed, while in 1.8 they are not.  However, forge makes [https://github.com/MinecraftForge/MinecraftForge/blob/605457deecba2144d69113d3c9ce6589021f542b/fml/patches/minecraft/net/minecraft/network/play/server/S3FPacketCustomPayload.java.patch some more changes] to the server to client packet (but not the client to server packet): Rather than using a short for the length, a varshort is used.  Due to the way that varshorts work, this is backwards compatible, but if this is not accounted for you may receive forge packets that seem corrupted as there is an extra byte that appears seemingly randomly.
+
+{{Warning|While it may seem like you can get away with not handling varshorts, on servers with lots of mods (EG FTB), this will appear.}}
+
+Additionally, in 1.7.10 the registries packet is instead "ModIdData":
+
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240 ModIdData] ===
+
+Contains numeric ID mapping for blocks and items.
+
+{{Need Info|Again, what are blockSubstitutions and itemSubstitutions?}}
 
 {| class="wikitable"
  ! Channel
  ! Bound to
- ! Field Name
- ! Field Type
+ ! colspan="2"|Name
+ ! colspan="2"|Type
  ! Notes
  |-
- | rowspan="3" | <code>WDL|CONTROL</code>
- | rowspan="3" | Client
- | Discriminator
- | Integer
- | Set to 3 to indicate this packet.
+ | rowspan="8"|<code>FML|HS</code>
+ | rowspan="8"|Client
+ | colspan="2"|Discriminator
+ | colspan="2"|Byte
+ | Always 3 for ModIdData
  |-
- | Requests enabled
- | Boolean
- | Whether requests work on this server.  In '''all cases''' this should be true unless you have an out of date plugin... in which case you probably wouldn't be sending this anyways.
+ | colspan="2"|Mapping length
+ | colspan="2"|VarInt
+ | Length of the following mapping
  |-
- | Request message
+ | rowspan="2"|Mapping
+ | Name
+ | rowspan="2"|Array
  | String
- | A message displayed to players on the permissions and permissions request screen.  You can use this to display rules relating to use of the mod, or explain how you want it to be used, or what info to include in the request, etc.
+ | Name of the block/item.
+ |-
+ | ID
+ | VarInt
+ | Numeric ID of the item.
+ |-
+ | colspan="2"|Block substitutions length
+ | colspan="2"|VarInt
+ | Length of the following array
+ |-
+ | colspan="2"|Block substitutions
+ | colspan="2"|Array of strings
+ | Block substitutions
+ |-
+ | colspan="2"|Item substitutions length
+ | colspan="2"|VarInt
+ | Length of the following array
+ |-
+ | colspan="2"|Item substitutions
+ | colspan="2"|Array of strings
+ | Item substitutions
  |}
-
-== <code>WDL|REQUEST</code> ==
-
-Used for permission requests.
