@@ -84,7 +84,7 @@ Sets some of the standard properties.
  | True to enable all downloading in all chunks, false to disable it.
  |-
  | Save radius
- | Boolean
+ | Integer
  | The distance from the player chunks can be saved from.  -1 to allow all distances.  This is a square distance, not a circle or a diamond.  '''Only applies if chunk caching is disabled'''.
  |-
  | Chunk caching enabled
