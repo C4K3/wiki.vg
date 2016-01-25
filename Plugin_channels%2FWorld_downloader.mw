@@ -104,6 +104,66 @@ Sets some of the standard properties.
  | True to allow the mod to save containers (a subset of tile entities that require manual interaction to be saved, mainly chests).  This only applies if tile entities are allowed to be saved and only applies in chunks that can be saved.
  |}
 
+=== Entity track distances ===
+
+Used to specify any custom entity track distances on the server, because they may change on spigot servers.  More info on why this is needed on [https://github.com/Pokechu22/WorldDownloader/wiki/Entities-GUI#what-are-track-distances the project wiki].
+
+The client is free to ignore these values, and will use sane defaults based off of whether the server's brand includes "spigot" if they are not sent.  However, by default these values are used.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! colspan="2" | Field Name
+ ! colspan="2" | Field Type
+ ! Notes
+ |-
+ | rowspan="4" | <code>WDL|CONTROL</code>
+ | rowspan="4" | Client
+ | colspan="2" | Discriminator
+ | colspan="2" | Integer
+ | Set to 2 to indicate this packet.
+ |-
+ | colspan="2" | Number of ranges
+ | colspan="2" | Integer
+ | Size of the following array.
+ |-
+ | rowspan="2" | Values
+ | Entity name
+ | rowspan="2" | Array
+ | String
+ | The name of the entity, as used in the savegame ID.
+ |-
+ | Track distance
+ | Integer
+ | The track distance of the entity, in blocks.
+ |}
+
+=== Permission request info ===
+
+Information used with permission requests.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound to
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | rowspan="3" | <code>WDL|CONTROL</code>
+ | rowspan="3" | Client
+ | Discriminator
+ | Integer
+ | Set to 3 to indicate this packet.
+ |-
+ | Requests enabled
+ | Boolean
+ | Whether requests work on this server.  In '''all cases''' this should be true unless you have an out of date plugin... in which case you probably wouldn't be sending this anyways.
+ |-
+ | Request message
+ | String
+ | A message displayed to players on the permissions and permissions request screen.  You can use this to display rules relating to use of the mod, or explain how you want it to be used, or what info to include in the request, etc.
+ |}
+
 == <code>WDL|REQUEST</code> ==
 
 Used for permission requests.
