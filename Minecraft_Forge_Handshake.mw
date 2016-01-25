@@ -127,7 +127,7 @@ The client is free to ignore these values, and will use sane defaults based off 
  | colspan="2" | Integer
  | Size of the following array.
  |-
- | rowspan="2" | Ranges
+ | rowspan="2" | Values
  | Entity name
  | rowspan="2" | Array
  | String
@@ -136,6 +136,32 @@ The client is free to ignore these values, and will use sane defaults based off 
  | Track distance
  | Integer
  | The track distance of the entity, in blocks.
+ |}
+
+=== Permission request info ===
+
+Information used with permission requests.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound to
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | rowspan="3" | <code>WDL|CONTROL</code>
+ | rowspan="3" | Client
+ | Discriminator
+ | Integer
+ | Set to 3 to indicate this packet.
+ |-
+ | Requests enabled
+ | Boolean
+ | Whether requests work on this server.  In '''all cases''' this should be true unless you have an out of date plugin... in which case you probably wouldn't be sending this anyways.
+ |-
+ | Request message
+ | String
+ | A message displayed to players on the permissions and permissions request screen.  You can use this to display rules relating to use of the mod, or explain how you want it to be used, or what info to include in the request, etc.
  |}
 
 == <code>WDL|REQUEST</code> ==
