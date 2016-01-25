@@ -1,0 +1,33 @@
+{{Box|
+BORDER = #FFCC00|
+BACKGROUND = #FFFF00|
+WIDTH = 100%|
+ICON = |
+HEADING = Work in progress! |
+CONTENT =  
+This page is a work in progress, and may be missing information.
+}}
+
+Documentation of the [http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2520465 World Downloader mod]'s plugin channel configuration system.
+
+See [https://github.com/Pokechu22/WorldDownloader/blob/master/src/wdl/WDLPluginChannels.java here].
+
+== Note ==
+
+All types here are as specified by Java's [http://docs.oracle.com/javase/7/docs/api/java/io/DataOutputStream.html <code>DataOutputStream</code>] and can be read using a [http://docs.oracle.com/javase/7/docs/api/java/io/DataInputStream.html <code>DataInputStream</code>], unless otherwise noted.
+
+== <code>WDL|INIT</code> ==
+
+<code>WDL|INIT</code> is sent to show that World Downloader is ready to receive new permissions.  Don't send permissions until this is received - it may still be saving from another part of the map or another sever where it has permission, and revoking permission in the middle is a Bad Thing&trade;.
+
+{| class="wikitable"
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | rowspan="2" | Server
+ | Mod version
+ | UTF8 string
+ | This is a byte array; the remainder of the packet is this value (there is no length specified).  In some older versions of the mod, this is not present and the length of the packet is 0.
+ |}
