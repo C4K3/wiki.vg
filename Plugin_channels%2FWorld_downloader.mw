@@ -31,3 +31,79 @@ All types here are as specified by Java's [http://docs.oracle.com/javase/7/docs/
  | UTF8 string
  | This is a byte array; the remainder of the packet is this value (there is no length specified).  In some older versions of the mod, this is not present and the length of the packet is 0.
  |}
+
+== <code>WDL|CONTROL</code> ==
+
+This channel is sent from the server to the client to specify various permissions.  It uses a 4-byte integer at the start to indicate a section.  There is no required order, but it is conventional to put them in numerical order.
+
+In all cases unless otherwise indicated, if a packet is not sent its values are treated as 'true'.
+
+=== Default values ===
+
+Specifies the default value used for permissions not sent.
+
+Note that sending this packet does not actually ''change'' the value for other packets; it instead specifies an internal fallback.  Thus, this packet can be sent at any time to change this default without needing to resend other packets.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | rowspan="2" | <code>WDL|CONTROL</code>
+ | rowspan="2" | Client
+ | Discriminator
+ | Integer
+ | Set to 0 to indicate this packet.
+ |-
+ | Default value
+ | Boolean
+ | True to enable all functions not otherwise specified, false to disable them.
+ |}
+
+=== Basic data ===
+
+Sets some of the standard properties.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | rowspan="7" | <code>WDL|CONTROL</code>
+ | rowspan="7" | Client
+ | Discriminator
+ | Integer
+ | Set to 1 to indicate this packet.
+ |-
+ | General download enabled
+ | Boolean
+ | True to enable all downloading in all chunks, false to disable it.
+ |-
+ | Save radius
+ | Boolean
+ | The distance from the player chunks can be saved from.  -1 to allow all distances.  This is a square distance, not a circle or a diamond.  '''Only applies if chunk caching is disabled'''.
+ |-
+ | Chunk caching enabled
+ | Boolean
+ | Can chunks be saved as the player moves about.  If false, then they can only save within the area indicated by save radius; if true they can save everywhere.  However, regardless of this value, if general download is disabled, they cannot download.
+ |-
+ | Entity saving enabled
+ | Boolean
+ | True to allow the mod to save entities, false to force entities to be removed from the world.  This only applies to chunks that can be saved.
+ |-
+ | Tile entity saving enabled
+ | Boolean
+ | True to allow the mod to save tile entities, false to force tile entities to be removed from the world.  This only applies to chunks that can be saved.
+ |-
+ | Container saving enabled
+ | Boolean
+ | True to allow the mod to save containers (a subset of tile entities that require manual interaction to be saved, mainly chests).  This only applies if tile entities are allowed to be saved and only applies in chunks that can be saved.
+ |}
+
+== <code>WDL|REQUEST</code> ==
+
+Used for permission requests.
