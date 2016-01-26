@@ -345,4 +345,40 @@ Sets all of the chunk overrides in a single with a specific tag to a new set.
 
 == <code>WDL|REQUEST</code> ==
 
-Used for permission requests.
+Used for permission requests.  Sent from the client to the server.  On the server, a moderator/admin/whoever can approve or deny the request, and then other messages ([[#WDL.7CCONTROL|<code>WDL|CONTROL</code>]]) are sent to grant such permissions.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! colspan="2" | Field Name
+ ! colspan="2" | Field Type
+ ! Notes
+ |-
+ | rowspan="6" | <code>WDL|REQUEST</code>
+ | rowspan="6" | Server
+ | colspan="2" | Request message
+ | colspan="2" | String
+ | A message explaining the reason for the request to the server owners (user-inputted).  The current version of the mod uses "REQUEST REASON WILL GO HERE" as the message, but it will be more useful in the future.
+ |-
+ | colspan="2" | Number of requests
+ | colspan="2" | Integer
+ | Length of the following array.
+ |-
+ | rowspan="2" | Requests
+ | Requested perm
+ | rowspan="2" | Array
+ | String
+ | Name of the permission (see list below).
+ |-
+ | Requested value
+ | String
+ | String representation of the requested value.
+ |-
+ | colspan="2" | Number of chunk override requests
+ | colspan="2" | Integer
+ | Length of the following array.
+ |-
+ | colspan="2" | Chunk override requests
+ | colspan="2" | Array of [[#Chunk Overrides|Chunk Override]]
+ | Requested overrides.  Note that the 'tag' value is still included but the server is ''allowed'' to discard it (or use it, at its digression).
+ |}
