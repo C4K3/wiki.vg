@@ -16,6 +16,43 @@ See [https://github.com/Pokechu22/WorldDownloader/blob/master/src/wdl/WDLPluginC
 
 All types here are as specified by Java's [http://docs.oracle.com/javase/7/docs/api/java/io/DataOutputStream.html <code>DataOutputStream</code>] and can be read using a [http://docs.oracle.com/javase/7/docs/api/java/io/DataInputStream.html <code>DataInputStream</code>], unless otherwise noted.
 
+
+=== Chunk Overrides ===
+
+Chunk Overrides are areas that the player is allowed to download in even if the rest of the map is restricted.  As the name suggests, it is defined by a chunk's area.
+
+If the start and end x coordinates are the same, the chunk at that position can be saved (they are both inclusive).
+
+Implementations are encouraged to try and merge chunk overrides with the same tag before sending, but this is not required.
+
+A Chunk Override has the following structure:
+
+{| class="wikitable"
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | Tag
+ | String
+ | A string describing this chunk override.  May be empty and does not need to be unique.  For instance, a World Guard region corresponding to the range.
+ |-
+ | x1
+ | Integer
+ | Start x chunk coordinate.  Should not be larger than x2.
+ |-
+ | z1
+ | Integer
+ | Start z chunk coordinate.  Should not be larger than z2.
+ |-
+ | x2
+ | Integer
+ | End x chunk coordinate.  Should not be smaller than x1.
+ |-
+ | z2
+ | Integer
+ | End z chunk coordinate.  Should not be smaller than z1.
+ |}
+
 == <code>WDL|INIT</code> ==
 
 <code>WDL|INIT</code> is sent to show that World Downloader is ready to receive new permissions.  Don't send permissions until this is received - it may still be saving from another part of the map or another sever where it has permission, and revoking permission in the middle is a Bad Thing&trade;.
@@ -162,6 +199,148 @@ Information used with permission requests.
  | Request message
  | String
  | A message displayed to players on the permissions and permissions request screen.  You can use this to display rules relating to use of the mod, or explain how you want it to be used, or what info to include in the request, etc.
+ |}
+
+=== Set chunk overrides ===
+
+Sets the entire set of chunk overrides.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! colspan="2" | Field Name
+ ! colspan="2" | Field Type
+ ! Notes
+ |-
+ | rowspan="5" | <code>WDL|CONTROL</code>
+ | rowspan="5" | Client
+ | colspan="2" | Discriminator
+ | colspan="2" | Integer
+ | Set to 4 to indicate this packet
+ |-
+ | colspan="2" | Number of groups
+ | colspan="2" | Integer
+ | Size of the following array
+ |-
+ | rowspan="3" | Groups
+ | Group name
+ | rowspan="3" | Array
+ | String
+ | The name of this group.  Must be unique.
+ |-
+ | Number of overrides
+ | Integer
+ | Size of the following array
+ |-
+ | Overrides
+ | Array of [[#Chunk Overrides|Chunk Override]]
+ | Each override.  Tags may be different within the list and no order is required.
+ |}
+
+=== Modify group chunk overrides ===
+
+Add chunk overrides to a group or sets chunk overrides in that group.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! colspan="2" | Field Name
+ ! colspan="2" | Field Type
+ ! Notes
+ |-
+ | rowspan="6" | <code>WDL|CONTROL</code>
+ | rowspan="6" | Client
+ | colspan="2" | Discriminator
+ | colspan="2" | Integer
+ | Set to 5 to indicate this packet
+ |-
+ | colspan="2" | Group to edit
+ | colspan="2" | String
+ | Name of the group to edit.
+ |-
+ | colspan="2" | Replace mode
+ | colspan="2" | Boolean
+ | 'true' to set the group to this value and remove its old overrides, 'false' to add these to the existing ones.
+ |-
+ | rowspan="3" | Groups
+ | Group name
+ | rowspan="3" | Array
+ | String
+ | The name of this group.  Must be unique.
+ |-
+ | Number of overrides
+ | Integer
+ | Size of the following array
+ |-
+ | Overrides
+ | Array of Chunk Override
+ | Each override.  Tags may be different within the list and no order is required.
+ |}
+
+=== Remove chunk overrides by tag ===
+
+Removes chunk overrides with the given tag from a specific group.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | rowspan="4" | <code>WDL|REQUEST</code>
+ | rowspan="4" | Client
+ | Discriminator
+ | Integer
+ | Set to 6 to indicate this packet.
+ |-
+ | Group
+ | String
+ | The group to remove ranges from.
+ |-
+ | Number of tags
+ | Integer
+ | Length of the following array.
+ |-
+ | Tags
+ | Array of String
+ | Each tag to remove.
+ |}
+
+=== Set chunk overrides by tag ===
+
+Sets all of the chunk overrides in a single with a specific tag to a new set.
+
+'''Note''': All of the new ranges should have the same tag as the tag that is being replaced.
+
+{| class="wikitable"
+ ! Channel
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | rowspan="5" | <code>WDL|REQUEST</code>
+ | rowspan="5" | Client
+ | Discriminator
+ | Integer
+ | Set to 6 to indicate this packet.
+ |-
+ | Group
+ | String
+ | The group to remove ranges from.
+ |-
+ | Tag
+ | String
+ | The tag to replace
+ |-
+ | Number of new ranges
+ | Integer
+ | Length of the following array.
+ |-
+ | New ranges
+ | Array of Chunk Override
+ | The new ranges
  |}
 
 == <code>WDL|REQUEST</code> ==
