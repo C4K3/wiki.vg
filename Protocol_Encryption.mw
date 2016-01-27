@@ -107,7 +107,6 @@ Examples of generating Java-style hex digests:
 * C#: http://git.io/kO6Ejg
 * node.js: http://git.io/v2ue_A
 * Go: http://git.io/-5ORag
-* Java: http://git.io/7nLXYg
 
 == Additional Links ==
 [https://gist.github.com/3900517 Encrypt shared secret using OpenSSL]
