@@ -382,3 +382,16 @@ Used for permission requests.  Sent from the client to the server.  On the serve
  | colspan="2" | Array of [[#Chunk Overrides|Chunk Override]]
  | Requested overrides.  Note that the 'tag' value is still included but the server is ''allowed'' to discard it (or use it, at its digression).
  |}
+
+
+Valid fields and their values:
+
+ * <code>downloadInGeneral</code>: Whether or not chunks downloading in all terrain is allowed.  <code>true</code> if so, <code>false</code> otherwise.
+ * <code>cacheChunks</code>: Whether chunks can be cached as the player moves about the world.  <code>true</code> if so, <code>false</code> otherwise.
+ * <code>saveRadius</code>: Distance from the player chunks can be saved (in a square).  If -1, all distance is allowed.  Only applies when <code>cacheChunks</code> is not true; if that is true this is ignored and thus in most cases that should be done (since a value of -1 still only allows saving what can be seen).  The value is an integer as a string, potentially negative.
+ * <code>saveEntities</code>: Whether or not entities can be saved.  <code>true</code> if so, <code>false</code> otherwise.
+ * <code>saveTileEntities</code>: Whether tile entities can be saved as the player moves about the world.  <code>true</code> if so, <code>false</code> otherwise.
+ * <code>saveContainers</code>: Whether chests and other tile entities that require manual interaction can be saved as the player moves about the world.  Requires <code>saveTileEntities</code> to also be true.  <code>true</code> if so, <code>false</code> otherwise.
+ * <code>getEntityRanges</code>: Whether entity ranges should be sent to the player.  <code>true</code> if so, <code>false</code> otherwise, but if your server doesn't change entity ranges from the vanilla defaults this doesn't need to be sent.
+
+Not all fields need to be set.  No field should be specified more than once in a packet.  If the field isn't set but was sent on a previous packet, the field should still be unset - clear the last request before adding in the new one (however, if a request was accepted, the requested permissions should '''not''' be cleared).  A packet without any requests should clear the current request list.
