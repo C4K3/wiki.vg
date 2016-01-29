@@ -102,11 +102,12 @@ The response is a JSON object containing the user's UUID and skin blob
 
 === Sample Code ===
 
-Examples of generating Java-style hex digests:
+Examples of generating Minecraft-style hex digests:
 
 * C#: http://git.io/kO6Ejg
 * node.js: http://git.io/v2ue_A
 * Go: http://git.io/-5ORag
+* Java: http://git.io/vzbmS
 
 == Additional Links ==
 [https://gist.github.com/3900517 Encrypt shared secret using OpenSSL]
