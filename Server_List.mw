@@ -217,6 +217,21 @@ A couple things for contributors:
  | {{no|Not yet}}
  | {{yes|Active}}
  |-
+ ! [https://github.com/ModularMC/ModularMC ModularMC]
+ | Caspar Norée Palm
+ | [https://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | [[wikipedia:MIT License|MIT]]
+ | {{yes|1.8 (#47)}}
+ | {{planned|Anvil planned}}
+ | {{planned|Planned}}
+ | {{planned|Planned}}
+ | {{yes|Mobs, players are work in progress}}
+ | {{yes|Executors/Threads}}
+ | {{planned|Planned Java + possible simple textbased scripting}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{yes|[https://github.com/ModularMC/ModularMC/blob/master/FEATURES.md Yes]}}
+ | {{yes|Active}}
+ |-
  ! [https://github.com/cnlohr/avrcraft AVRCraft]
  | [[User:CNLohr|CNLohr]]
  | [http://en.wikipedia.org/wiki/C_%28programming_language%29 C]
