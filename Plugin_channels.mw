@@ -136,7 +136,7 @@ Sent ''after'' a Server list ping in Minecraft 1.6. More information on [[Server
 Announces the server and client implementation name right after a player has logged in. For Minecraft and the standard Minecraft server, this is "vanilla" (encoded as a UTF-8 string).
 
 == Notable community plugin channels ==
-Channels listed in this section are not Mojang-sanctioned. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
+Channels listed in this section are not used by the vanilla Minecraft client or server. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
 
 === <code>BungeeCord</code> ===
 
