@@ -21,8 +21,11 @@ The recommended login sequence looks like this, where '''C''' is the client and 
 # Server auth, both enable encryption
 # '''S→C''': [[Protocol#Login Success|Login Success]]
 # '''S→C''': [[Protocol#Join Game|Join Game]]
+# '''S→C''': [[Protocol#Plugin Message|Plugin Message]]: [[Plugin channel#MC.7CBrand|<code>MC|Brand</code>]] with the server's brand
+# '''S→C''': [[Protocol#Server Difficulty|Server Difficulty]]
 # '''S→C''': [[Protocol#Spawn Position|Spawn Position]] (“home” spawn, not where the client will spawn on login)
 # '''S→C''': [[Protocol#Player Abilities|Player Abilities]]
+# '''C→S''': [[Protocol#Plugin Message 2|Plugin Message]]: [[Plugin channel#MC.7CBrand|<code>MC|Brand</code>]] with the client's brand
 # '''S→C''': [[Protocol#Player Position And Look|Player Position And Look]] (tells the client they're ready to spawn)
 # '''C→S''': [[Protocol#Player Position And Look 2|Player Position And Look]] (to confirm the spawn position)
 # '''C→S''': [[Protocol#Client Status|Client Status]] (sent either before or while receiving chunks, further testing needed, server handles correctly if not sent)
