@@ -288,7 +288,7 @@ Removes chunk overrides with the given tag from a specific group.
  ! Field Type
  ! Notes
  |-
- | rowspan="4" | <code>WDL|REQUEST</code>
+ | rowspan="4" | <code>WDL|CONTROL</code>
  | rowspan="4" | Client
  | Discriminator
  | Integer
@@ -320,7 +320,7 @@ Sets all of the chunk overrides in a single with a specific tag to a new set.
  ! Field Type
  ! Notes
  |-
- | rowspan="5" | <code>WDL|REQUEST</code>
+ | rowspan="5" | <code>WDL|CONTROL</code>
  | rowspan="5" | Client
  | Discriminator
  | Integer
