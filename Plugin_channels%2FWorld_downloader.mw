@@ -55,19 +55,23 @@ A Chunk Override has the following structure:
 
 == <code>WDL|INIT</code> ==
 
-<code>WDL|INIT</code> is sent to show that World Downloader is ready to receive new permissions.  Don't send permissions until this is received - it may still be saving from another part of the map or another sever where it has permission, and revoking permission in the middle is a Bad Thing&trade;.
+<code>WDL|INIT</code> is sent to show that World Downloader is ready to receive new permissions.  Don't send permissions until this is received - it may still be saving from another part of the map or another sever where it has permission, and revoking permission in the middle of (allowed) saving is a Bad Thing&trade;.
 
 {| class="wikitable"
+ ! Channel
  ! Bound To
  ! Field Name
  ! Field Type
  ! Notes
  |-
- | rowspan="2" | Server
+ | rowspan="1" | <code>WDL|INIT</code>
+ | rowspan="1" | Server
  | Mod version
  | UTF8 string
- | This is a byte array; the remainder of the packet is this value (there is no length specified).  In some older versions of the mod, this is not present and the length of the packet is 0.
+ | This is a byte array that takes up the entire length of the packet - there is no length prefixed to it.
  |}
+
+In some earlier versions of the mod there is no version info sent, and the packet length is 0.
 
 == <code>WDL|CONTROL</code> ==
 
