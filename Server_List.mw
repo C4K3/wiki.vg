@@ -87,10 +87,10 @@ A couple things for contributors:
  | [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
  | MIT
  | {{yes|1.8 (#47)}}
- | {{planned}}
+ | {{yes|Anvil}}
  | {{yes}}
  | {{yes}}
- | {{planned|Players, Items, Mobs}}
+ | {{yes|Players, Items, Mobs}}
  | {{yes|Async Networking}}
  | {{yes|JavaScript}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
