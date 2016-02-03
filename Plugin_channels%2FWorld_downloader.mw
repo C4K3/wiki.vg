@@ -328,7 +328,7 @@ Sets all of the chunk overrides in a single with a specific tag to a new set.
  | rowspan="5" | Client
  | Discriminator
  | Integer
- | Set to 6 to indicate this packet.
+ | Set to 7 to indicate this packet.
  |-
  | Group
  | String
