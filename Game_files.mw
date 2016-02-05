@@ -1,18 +1,19 @@
 == Game ==
+
 All available version of the game itself are listed on
-  http://s3.amazonaws.com/Minecraft.Download/versions/versions.json
+: https://launchermeta.mojang.com/mc/game/version_manifest.json
 
-The jar file for a specific version is located at
-  http://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.jar
+The location of the client jar file for a specific version is included in the version manifest above. Alternatively it can also be found at
+: <nowiki>https://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.jar</nowiki>
 
-The server .jar file and its .exe equivalent for a specific version are located at
-  http://s3.amazonaws.com/Minecraft.Download/versions/<version>/minecraft_server.<version>.jar
-  http://s3.amazonaws.com/Minecraft.Download/versions/<version>/minecraft_server.<version>.exe
+The server jar file and its .exe equivalent for a specific version are located at
+: <nowiki>https://s3.amazonaws.com/Minecraft.Download/versions/<version>/minecraft_server.<version>.jar</nowiki>
+: <nowiki>https://s3.amazonaws.com/Minecraft.Download/versions/<version>/minecraft_server.<version>.exe</nowiki>
 
 Some information on how to properly run said jar is available at
-  http://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.json
+: <nowiki>https://s3.amazonaws.com/Minecraft.Download/versions/<version>/<version>.json</nowiki>
 
-{{Warning | As the Minecraft launcher updates the format of the JSON or the requirements to run the client may change. The ''minimumLauncherVersion'' in the <version>.json should be used to detect changes instead of just failing on updates}}
+{{Warning|As the Minecraft launcher updates, the format of the JSON or the requirements to run the client may change. The ''minimumLauncherVersion'' in the <version>.json should be used to detect changes instead of just failing on updates.}}
 
 == Libraries ==
 The libraries which can be used for all minecraft versions and are downloaded by the launcher are located at
