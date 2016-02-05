@@ -565,15 +565,31 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 ! style="width: 75px" | Type
 ! style="width: 250px" colspan="2" | Meaning
 |-
-| 10
-| Unsigned Byte
-| Skin flags
+| rowspan="10" | 10
+| rowspan="10" | Unsigned Byte
+| colspan="2" | Skin flags
 |-
-| rowspan="2" | 16
-| rowspan="2" | Byte
 ! Bit Mask !! Meaning
 |-
-| 0x02 || Hide Cape
+| 0x01 || Cape enabled 
+|-
+| 0x02 || Jacket enabled 
+|-
+| 0x04 || Left Sleeve enabled 
+|-
+| 0x08 || Right Sleeve enabled 
+|-
+| 0x10 || Left Pants Leg enabled 
+|-
+| 0x20 || Right Pants Leg enabled 
+|-
+| 0x40 || Hat enabled 
+|-
+| 0x80 || Unused
+|-
+| 16
+| Byte
+| colspan="2" | Appears to be unused
 |- 
 | 17
 | Float
