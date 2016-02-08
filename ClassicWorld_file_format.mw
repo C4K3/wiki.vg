@@ -173,10 +173,28 @@ Stores world-specific setting for [[Classic_Protocol_Extension#EnvWeatherType|En
    TAG_Byte("WeatherType")
  }
 
+===BlockDefinitions===
+Stores world-specific setting for [[Classic_Protocol_Extension#BlockDefinitions|BlockDefinitions]] and [[Classic_Protocol_Extension#BlockDefinitionsExt|BlockDefinitionsExt]] extensions.
+
+Note: You must treat TAG_Byte/TAG_Byte_Array values as unsigned values.
+
+ TAG_Compound("BlockDefinitions"): 10 entries {
+   TAG_Byte("ID")
+   TAG_String("Name")
+   TAG_Float("Speed")
+   Tag_Byte_Array("Textures") { Top, Bottom, Left, Right, Front, Back }
+   Tag_Byte("TransmitsLight")
+   TAG_Byte("WalkSound")
+   TAG_Byte("Shape")
+   TAG_Byte("BlockDraw")
+   TAG_Byte_Array("Fog") { Density, Red, Green, Blue }
+   TAG_Byte_Array("Coords") { MinX, MinY, MinZ, MaxX, MaxY, MaxZ }
+ }
+
 ==Support==
 These custom servers plan to add support for CW World Format: [http://github.com/tyteen4a03/cloudBox cloudBox], [http://www.fcraft.net/ fCraft]
 
-The [http://www.classicube.net ClassiCube Client] plans on providing support on loading and saving basic tags from the ClassicWorld file format.
+The [http://www.classicube.net ClassiCube] and [https://github.com/UnknownShadow200/ClassicalSharp ClassicalSharp] clients supports loading and saving basic tags from the ClassicWorld file format.
 
 Libraries:
 
