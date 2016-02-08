@@ -179,19 +179,19 @@ Stores world-specific setting for [[Classic_Protocol_Extension#BlockDefinitions|
 
 Note: You must treat TAG_Byte/TAG_Byte_Array values as unsigned values. The ExtensionVersion for the compound tag is currently defined as version 1.
 
-TAG_Compound("BlockDefinitions"): variable number of entries {
- TAG_Int("ExtensionVersion")
- TAG_Compound("Block"): 10 entries {
-   TAG_Byte("ID")
-   TAG_String("Name")
-   TAG_Float("Speed")
-   Tag_Byte_Array("Textures") { Top, Bottom, Left, Right, Front, Back }
-   Tag_Byte("TransmitsLight")
-   TAG_Byte("WalkSound")
-   TAG_Byte("Shape")
-   TAG_Byte("BlockDraw")
-   TAG_Byte_Array("Fog") { Density, Red, Green, Blue }
-   TAG_Byte_Array("Coords") { MinX, MinY, MinZ, MaxX, MaxY, MaxZ }
+ TAG_Compound("BlockDefinitions"): variable number of entries {
+  TAG_Int("ExtensionVersion")
+  TAG_Compound("Block"): 10 entries {
+    TAG_Byte("ID")
+    TAG_String("Name")
+    TAG_Float("Speed")
+    Tag_Byte_Array("Textures") { Top, Bottom, Left, Right, Front, Back }
+    Tag_Byte("TransmitsLight")
+    TAG_Byte("WalkSound")
+    TAG_Byte("Shape")
+    TAG_Byte("BlockDraw")
+    TAG_Byte_Array("Fog") { Density, Red, Green, Blue }
+    TAG_Byte_Array("Coords") { MinX, MinY, MinZ, MaxX, MaxY, MaxZ }
  }
 
 ==Support==
