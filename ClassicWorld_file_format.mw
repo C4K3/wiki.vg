@@ -170,15 +170,17 @@ Stores world-specific setting for [[Classic_Protocol_Extension#EnvMapAppearance|
 ===EnvWeatherType===
 Stores world-specific setting for [[Classic_Protocol_Extension#EnvWeatherType|EnvWeatherType]] extension.
  TAG_Compound("EnvWeatherType"): 1 entry {
+   TAG_Int("ExtensionVersion")
    TAG_Byte("WeatherType")
  }
 
 ===BlockDefinitions===
 Stores world-specific setting for [[Classic_Protocol_Extension#BlockDefinitions|BlockDefinitions]] and [[Classic_Protocol_Extension#BlockDefinitionsExt|BlockDefinitionsExt]] extensions.
 
-Note: You must treat TAG_Byte/TAG_Byte_Array values as unsigned values.
+Note: You must treat TAG_Byte/TAG_Byte_Array values as unsigned values. The ExtensionVersion for the compound tag is currently defined as version 1.
 
  TAG_Compound("BlockDefinitions"): 10 entries {
+   TAG_Int("ExtensionVersion")
    TAG_Byte("ID")
    TAG_String("Name")
    TAG_Float("Speed")
