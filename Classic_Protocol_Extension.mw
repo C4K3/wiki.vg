@@ -1259,4 +1259,53 @@ Note that this packet does not support sprites, you must send a regular '''''Def
 | class="rightalign" colspan="4" | 85 bytes
 |}
 
+===TextColors===
+:This extension allows the server to define custom text colors.
+:'''Motivation''': To allow parts of chat to be more distinctive, allow for more colorful chat, etc.
+:'''Client Behavior''': Client must be able to receive '''''SetTextColor''''' packets at any time. Client must then draw text using the color specified in the packet, when the color code specified by the packet is encountered in any '''''Message''''' packet. 
+:An alpha/opacity of 0 is treated as '''removing''' the custom colour code from the client's list of custom color codes.
+:'''Server Behavior''': Server may send '''''SetTextColor''''' packets at any time.
+:'''Compatibility''': Clients may choose to always draw text fully opaque, even if the custom text colour specifies a non fully-opaque color. These clients shall still be considered as compliant with the specification.
+: The color code in the ''SetTextColor'' must be greater than 0x20(space) and less than 0x7F(delete). Additionally, the color code must not be '&', '%', or in the range 0-9, a-f, or A-F, as they are used by the standard hex color codes.
+:<h4>SetTextColor packet</h4>
+:''Server to client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="11" | 39
+| class="col1 centeralign" | Red
+| class="col2 centeralign" | unsigned byte
+| class="col3 centeralign" | <code>255</code>
+| class="col4 centeralign" | Red component of the text color.
+|- class="row2"
+| class="col1 centeralign" | Green
+| class="col2 centeralign" | unsigned byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | Green component of the text color.
+|- class="row3"
+| class="col1 centeralign" | Blue
+| class="col2 centeralign" | unsigned byte
+| class="col3 centeralign" | <code>127</code>
+| class="col4 centeralign" | Blue component of the text color.
+|- class="row4"
+| class="col1 centeralign" | Alpha
+| class="col2 centeralign" | unsigned byte
+| class="col3 centeralign" | <code>255</code>
+| class="col4 centeralign" | Alpha/Opacity of the text colour, with 255 being fully opaque.
+|- class="row5"
+| class="col1 centeralign" | Code
+| class="col2 centeralign" | unsigned byte
+| class="col3 centeralign" | <code>63</code>
+| class="col4 centeralign" | ASCII character colour code, case sensitive.
+|- class="row12"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 6 bytes
+|}
+''Example:'' Suppose the server sends a '''''SetTextColor''''' packet of color #123456 and color code 'G'. When the client receives a '''''Message''''' packet with the text ''&fFoo&GBar'', ''Foo'' is drawn using the color #FFFFFF and  ''Bar'' is drawn using the color #123456.
+
 [[Category:Minecraft Classic]]
