@@ -175,13 +175,14 @@ Stores world-specific setting for [[Classic_Protocol_Extension#EnvWeatherType|En
  }
 
 ===BlockDefinitions===
-Stores world-specific setting for [[Classic_Protocol_Extension#BlockDefinitions|BlockDefinitions]] and [[Classic_Protocol_Extension#BlockDefinitionsExt|BlockDefinitionsExt]] extensions.
+:Stores world-specific setting for [[Classic_Protocol_Extension#BlockDefinitions|BlockDefinitions]] and [[Classic_Protocol_Extension#BlockDefinitionsExt|BlockDefinitionsExt]] extensions.
 
-Note: You must treat TAG_Byte/TAG_Byte_Array values as unsigned values. The ExtensionVersion for the compound tag is currently defined as version 1.
+:Note: You must treat TAG_Byte/TAG_Byte_Array values as unsigned values. The ExtensionVersion for the compound tag is currently defined as version 1.
+:<ID> in the TAG_Compound is replaced with the numerical value of the block's id in decimal. (e.g. Block20, Block50)
 
  TAG_Compound("BlockDefinitions"): variable number of entries {
   TAG_Int("ExtensionVersion")
-  TAG_Compound("Block"): 10 entries {
+  TAG_Compound("Block<ID>"): 10 entries {
     TAG_Byte("ID")
     TAG_String("Name")
     TAG_Float("Speed")
