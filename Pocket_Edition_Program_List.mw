@@ -19,7 +19,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{PHP}}
 | {{LGPL}}
 | Alpha_1.6dev
-| {{windows}}{{linux}}{{mac}}
+| {{windows}}{{linux}}{{mac}}{{Android}}
 | {{yes|v0.13.1 alpha}}
 |-
 ! [https://github.com/zhuowei/MCPELauncher BlockLauncher]
@@ -69,7 +69,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{Java}}
 | {{LGPL}}
 | Fast and functionful
-| {{windows}}{{linux}}{{mac}}{{Android}}
+| {{windows}}{{linux}}{{mac}}
 | {{Yes|v0.13.1 alpha}}
 |-
 ! [https://github.com/RedstoneLamp/RedstoneLamp/ RedstoneLamp]
