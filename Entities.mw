@@ -529,7 +529,7 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |-
 | 0x08 || Remove BasePlate
 |-
-| 0x16 || Marker (Zero bounding box)
+| 0x10 || Marker (Zero bounding box)
 |-
 | 11
 | Float, Float, Float (pitch, yaw, roll)
