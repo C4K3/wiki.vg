@@ -170,7 +170,7 @@ The XYZ coordinates of the block are just shorts representing the coordinate of 
 |rowspan=4| 0x03
 |rowspan=4| Level Data Chunk
 | Packet ID || Byte
-|rowspan=4| Contains a chunk of gzipped map (not level.dat file). After decompression the map consists of a big-endian int(4 bytes) containing the number of blocks, followed by a raw map array. (chunk is up to 1024 bytes, padded with 0x00s if less).
+|rowspan=4| Contains a chunk of gzipped map (not level.dat file). The decompression must be done on the all the chunks sent in Level Data Chunk packets together, not independently. After decompression the map consists of a big-endian int(4 bytes) containing the number of blocks, followed by a raw map array. (chunk is up to 1024 bytes, padded with 0x00s if less).
 |-
 | Chunk Length || Short
 |-
