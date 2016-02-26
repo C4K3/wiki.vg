@@ -70,7 +70,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{LGPL}}
 | Fast and functionful
 | {{windows}}{{linux}}{{mac}}
-| {{Yes|v0.13.2 alpha}}
+| {{Yes|v0.14.0 alpha}}
 |-
 ! [https://github.com/RedstoneLamp/RedstoneLamp/ RedstoneLamp]
 | A server software written in Java which allows MCPE and MCPC players to play together without mods
