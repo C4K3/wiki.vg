@@ -451,20 +451,6 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | Short
 | colspan="2" | Air
 |-
-| 4
-| Byte
-| colspan="2" | Silent
-|}
-
-=== Living Entity ===
-<sup>Extends [[#Entity|Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
 | 2
 | String
 | Name Tag
@@ -472,6 +458,20 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | 3
 | Byte
 | Always Show Name Tag
+|-
+| 4
+| Byte
+| colspan="2" | Silent
+|}
+
+=== Living Entity Base ===
+<sup>Extends [[#Entity|Entity]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
 |-
 | 6
 | Float
@@ -488,10 +488,20 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 | 9
 | Byte
 | Number of Arrows in Entity
+|}
+
+=== Living Entity ===
+<sup>Extends [[#Living Entity Base|Living Entity Base]]</sup>
+
+{| class="wikitable"
+|-
+! style="width: 75px" | Index
+! style="width: 75px" | Type
+! style="width: 250px" | Meaning
 |-
 | 15
 | Byte
-| Whether the entity has no ai.
+| Whether the entity has its AI disabled.
 |}
 
 === Ageable ===
@@ -509,7 +519,7 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |}
 
 === ArmorStand ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
+<sup>Extends [[#Living Entity Base|Living Entity Base]]</sup>
 
 {| class="wikitable"
 |-
