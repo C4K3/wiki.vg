@@ -7,7 +7,7 @@ This article describes the '''Chunk Section''' format used in the [[Protocol#Chu
 
 == Format ==
 
-A Chunk Section is defined in terms of other [[data types]]:
+A Chunk Section is defined in terms of other [[data types]]. A Chunk Section consists of the following fields:
 
 {| class="wikitable"
  |-
