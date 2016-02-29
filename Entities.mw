@@ -453,11 +453,11 @@ To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
 |-
 | 2
 | String
-| Name Tag
+| colspan="2" | Name Tag
 |-
 | 3
 | Byte
-| Always Show Name Tag
+| colspan="2" | Always Show Name Tag
 |-
 | 4
 | Byte
