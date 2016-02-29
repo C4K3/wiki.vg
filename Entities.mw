@@ -345,9 +345,7 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 
 Since release {{Minecraft Wiki|1.6}}, all minecarts are spawned with object type 10 and their functionality is then specified in the [[Object Data#Minecarts (id 10)|Data field]] within the packet. Also, their visual appearance may be sent via the [[Protocol#Entity Metadata|Entity Metadata]] packet.
 
-== Entity Metadata ==
-
-=== Entity Metadata Format ===
+== Entity Metadata Format ==
 
 Note that entity metadata is a totally distinct concept from block metadata. All entities '''must''' send at least one item of metadata, in most cases this will be the health item.
 
