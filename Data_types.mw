@@ -74,25 +74,25 @@
  | An integer between -9223372036854775808 and 9223372036854775807
  | [http://developers.google.com/protocol-buffers/docs/encoding#varints Protocol Buffer Varint], encoding a two's complement signed 64-bit integer
  |-
- ! Chunk
+ ! Chunk Section
  | Varies
- | A vertical chunk column
- | See [[SMP Map Format#Data]]
+ | A 16×16×16 chunk of blocks
+ | See [[SMP Map Format]]
  |-
- ! Metadata
+ ! Entity Metadata
  | Varies
+ | Miscellaneous information about an entity
  | See [[Entities#Entity Metadata Format]]
- | 
  |- 
  ! Slot
  | Varies
+ | An item stack in an inventory or container
  | See [[Slot Data]]
- | 
  |-
  ! NBT Tag
  | Varies
+ | Depends on context
  | See [[NBT]]
- | 
  |-
  ! Position 
  | 8
