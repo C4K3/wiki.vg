@@ -1,102 +1,54 @@
-This page gives an overview of the SMP map format used in the [[Protocol|protocol]]. 
-
-== Packets ==
-
-Two packets use this format:
-
-* [[Protocol#Chunk_Data|0x21 chunk data]] - single column - used when player movement requires new chunks to be loaded. Also used to unload chunks.
-* [[Protocol#Map_Chunk_Bulk|0x26 map chunk bulk]] - multiple columns - used when first spawning into a world and when player is teleported.
+This article describes the '''Chunk Section''' format used in the [[Protocol#Chunk Data|Chunk Data]] packet ([[Protocol#Play|Play]], 0x20, clientbound).
 
 == Concepts ==
 
-=== Storage ===
-* Chunk Data: an array, either 2048 or 4096 bytes
-* Chunk: a 16x16x16 area, logically made up of multiple Chunk Data arrays, storing things like block ids and skylight
-* Chunk Column: 16 chunks aligned vertically (totalling 16x256x16). Chunks can be uninitialised (e.g. set to <code>null</code>)
-* World: a collection of chunk columns
-
-=== Bitmasks ===
-
-You will sometimes get a blob of data and a bitmask. Each bit in the 16-bit short represents a chunk. The least significant bit represents the chunk from Y=0 to Y=15, and so forth. If it's <code>0</code>, the chunk is entirely air and there's no data to read. 
-
-You need a loop like this:
-
- chunks = array[16];
- for (i=0; i<16; i++) {
-     if (bitmask & (1 << i)) {
-         // read a chunk data array
-     }
- }
+* Chunk Section: a 16×16×16 area, sometimes also called chunk.
+* Chunk Column: 16 chunks aligned vertically (totalling 16×256×16).
 
 == Format ==
 
-=== Chunk Column Metadata ===
-
-The packet contains important metadata which you'll need to pull out. For bulk packets, you'll need to loop over the metadata area. Specifically:
-
-* Chunk X
-* Chunk Z
-* Section Bitmask
-* Continuous? (only in 0x21 - assumed true in 0x26)
-* Skylight? (only in 0x26 - only if overworld in 0x21)
-
-=== Data ===
-:''See also: [[Pre-release protocol#Chunk Section]] for the new format in 1.9''
-
-*In 0x21 the data describes of a single chunk column in the format below.
-*In 0x26, the format below is repeated for each chunk column.
-**Chunks are sent bottom-to-top, i.e. the first chunk, if sent, extends from Y=0 to Y=15. Blocks are ordered Y, Z, X, i.e. the 'X' coordinate changes fastest.
-
-In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''high bits'', odd-indexed into the ''low bits''.
-
-
+A Chunk Section is defined in terms of other [[data types]]:
 
 {| class="wikitable"
- ! Section
- ! Misc
- ! Contains
  |-
- |rowspan="2"|Array of Blocktypes and metadata
- |Encoded with block[y][z][x] = block_id << 4, <nowiki>|</nowiki> meta_data & 15
- |rowspan="2"|Block ID and metadata
+ ! Field Name
+ ! Field Type
+ ! Notes
  |-
- |Decoded with blockid = block[y][z][x] >> 4; metadata = block[y][z][x] &  15
+ | Bits Per Block
+ | Unsigned Byte
+ | How many bits per block in Data Array. If 0, the Palette Length and Palette fields are omitted and the global palette (with 13 bits per block) is used.
  |-
- |Varint of bits of data per block 
- |8 for both arrays, 4 for just block light, 16 for all with biome
+ | Palette Length
+ | Optional VarInt
+ | Length of the following array
  |-
- |Varint of both array's total elements
- |Blocks represented (16*16*16) * number of light arrays  (1 or 2)
+ | Palette
+ | Optional Array of VarInt
+ | Mapping of block state IDs in the global palette to indices of this array
  |-
- |Array of block light data
- |Each element is 1/2 byte , corresponds to block type and data position
- | 0 - 15 light level
+ | Data Array Length
+ | VarInt
+ | Number of bytes in the following array, divided by 8 (given as such because Notchian implements Data Array as an Array of Long)
  |-
- |Array of skylight data (optional depending)
- |Each element is 1/2 byte, corresponds to block type and data position
- | 0 - 15 light level from sun
+ | Data Array
+ | Byte Array
+ | List of 4096 indices pointing to state IDs in the Palette, followed by padding to round the length up to the next multiple of 8 bytes
  |-
- | rowspan="2"| Biome ID array, each element a byte (Sent with packet 0x26)
- | rowspan="2"| Corresponds to each z,x value, 256 elements
- | rowspan="2"| Biome ID 
+ | Block Light
+ | Byte Array
+ | Half byte per block
+ |-
+ | Sky Light
+ | Optional Byte Array
+ | Only if in the Overworld; half byte per block
  |}
 
+Data Array, Block Light, and Sky Light are given for each block with increasing x coordinates, within rows of increasing z coordinates, within layers of increasing y coordinates.
 
+The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>.
 
-<!-- Incase I messed something up, this is what it said before
-
-
-
-* Repeat for each chunk specified in the section bitmask:
-** Block types: two bytes per block (LE, type = x >> 4, meta = x & 15)
-(varint representing the number of bits per block, varint for the raw data array length, one long per data array element)
-** Block light, half byte per block
-** If skylight: Sky light array, half byte per block
-* If continuous: biome array, byte per XZ coordinate, 256 bytes total.
--->
-
-
-The 'biome' array is always 256 bytes when sent.
+In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''high bits'', odd-indexed into the ''low bits''.
 
 == Implementations ==
 
