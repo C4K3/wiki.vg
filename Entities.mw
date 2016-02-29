@@ -347,954 +347,920 @@ Since release {{Minecraft Wiki|1.6}}, all minecarts are spawned with object type
 
 == Entity Metadata Format ==
 
-Note that entity metadata is a totally distinct concept from block metadata. All entities '''must''' send at least one item of metadata, in most cases this will be the health item.
+Note that entity metadata is a totally distinct concept from block metadata. All entities ''must'' send at least one item of metadata, in most cases this will be the health item.
 
-The entity metadata format is quirky dictionary format, where the key and the value's type are packed in a single byte.
-
-To parse, repeat the following procedure:
-
-# Read an unsigned byte
-# If this byte == 127, stop reading
-# Decompose the byte. <br> The bottom 5 bits (0x1F) serve as an identifier (key) for the data to follow. <br> The top 3 bits (0xE0) serve as a type.
-# Read and unpack based on the type (below)
+An Entity Metadata is an array of entries, each of which looks like the following:
 
 {| class="wikitable"
-|- 
-! Type
-! Meaning
-|- 
-| 0
-| Byte
-|-
-| 1
-| Short
-|-
-| 2
-| Int
-|-
-| 3
-| Float
-|-
-| 4
-| UTF-8 String (VarInt prefixed)
-|-
-| 5
-| [[Slot Data|Slot]]
-|-
-| 6<sup>*</sup>
-| Int, Int, Int (x, y, z)
-|-
-| 7
-| Float, Float, Float (pitch, yaw, roll)
-|}
+ ! Name
+ ! Type
+ ! Meaning
+ |-
+ | Index
+ | Unsigned Byte
+ | Unique index key determining the meaning of the following value, see the table below. If this is <code>0xff</code> then the it is the end of the Entity Metadata array and no more is read.
+ |-
+ | Type
+ | Optional Byte Enum
+ | Only if Index is not <code>0xff</code>; the type of the index, see the table below
+ |-
+ | Value
+ | Optional ''value of Type''
+ | Only if Index is not <code>0xff</code>: the value of the metadata field
+ |}
 
-<nowiki>*</nowiki>Not currently used
+{| class="wikitable"
+ ! Value of Type field
+ ! [[Data types|Type]] of Value field
+ ! Notes
+ |-
+ | 0
+ | Byte
+ | 
+ |-
+ | 1
+ | VarInt
+ | 
+ |-
+ | 2
+ | Float
+ | 
+ |-
+ | 3
+ | String
+ | 
+ |-
+ | 4
+ | [[Chat]]
+ | 
+ |-
+ | 5
+ | [[Slot]]
+ | 
+ |-
+ | 6
+ | Boolean
+ | 
+ |-
+ | 7
+ | Vector3F (Array of Float)
+ | 3 elements
+ |-
+ | 8
+ | [[Data Types#Position|Position]]
+ | 
+ |-
+ | 9
+ | OptPosition (Boolean + Optional Position)
+ | Position is present if the Boolean is set to true
+ |-
+ | 10
+ | Direction (VarInt)
+ | ???
+ |-
+ | 11
+ | OptUUID (Boolean + Optional UUID)
+ | UUID is present if the Boolean is set to true
+ |-
+ | 12
+ | BlockID (VarInt)
+ | <code><nowiki>id &lt;&lt; 4 | data</nowiki></code>
+ |}
 
-
-In C-like pseudocode:
-<source lang="c">
-do {
-    item = readByte();
-    if (item == 0x7F) break;
-    var index = item & 0x1F;
-    var type = item >> 5;
-    
-    if (type == 0) metadata[index] = readByte();
-    if (type == 1) metadata[index] = readShort();
-    if (type == 2) metadata[index] = readInt();
-    if (type == 3) metadata[index] = readFloat();
-    if (type == 4) metadata[index] = readString();
-    if (type == 5) metadata[index] = readSlot();
-    if (type == 6) {
-        var vector;
-        vector.x = readInt();
-        vector.y = readInt();
-        vector.z = readInt();
-        metadata[index] = vector;
-    }
-    if (type == 7) {
-        var rotation;
-        rotation.pitch = readFloat();
-        rotation.yaw = readFloat();
-        rotation.roll = readFloat();
-        metadata[index] = rotation;
-    }
-} while (true);
-</source>
-To create the byte, you can use this: (Type << 5 | Index & 0x1F) & 0xFF
+Entity classes also recursively use fields from classes they extend.
 
 === Entity ===
 
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2" | Meaning
-|-
-| rowspan="6" | 0
-| rowspan="6" | Byte
-! Bit Mask !! Meaning
-|-
-| 0x01 || On Fire
-|- 
-| 0x02 || Crouched
-|-
-| 0x08 || Sprinting
-|-
-| 0x10 || Eating/Drinking/Blocking
-|-
-| 0x20 || Invisible
-|-
-| 1
-| Short
-| colspan="2" | Air
-|-
-| 2
-| String
-| colspan="2" | Name Tag
-|-
-| 3
-| Byte
-| colspan="2" | Always Show Name Tag
-|-
-| 4
-| Byte
-| colspan="2" | Silent
-|}
-
-=== Living Entity Base ===
-<sup>Extends [[#Entity|Entity]]</sup>
+The base class.
 
 {| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 6
-| Float
-| Health
-|-
-| 7
-| Int
-| Potion Effect Color
-|-
-| 8
-| Byte
-| Is Potion Effect Ambient
-|-
-| 9
-| Byte
-| Number of Arrows in Entity
-|}
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ |rowspan="8"| 0
+ |rowspan="8"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | On Fire
+ |-
+ | 0x02
+ | Crouched
+ |-
+ | 0x08
+ | Sprinting
+ |-
+ | 0x10
+ | Eating/drinking/blocking
+ |-
+ | 0x20
+ | Invisible
+ |-
+ | 0x40
+ | Glowing effect
+ |-
+ | 0x80
+ | Flying with {{Minecraft Wiki|elytra}}
+ |-
+ | 1
+ | VarInt
+ |colspan="2"| Air
+ |-
+ | 2
+ | String
+ |colspan="2"| Custom name
+ |-
+ | 3
+ | Boolean
+ |colspan="2"| Is custom name visible
+ |-
+ | 4
+ | Boolean
+ |colspan="2"| Is silent
+ |}
 
-=== Living Entity ===
-<sup>Extends [[#Living Entity Base|Living Entity Base]]</sup>
+=== AreaEffectCloud ===
 
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 15
-| Byte
-| Whether the entity has its AI disabled.
-|}
-
-=== Ageable ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 12
-| Byte
-| Entity's Age (Negative = Child)
-|}
-
-=== ArmorStand ===
-<sup>Extends [[#Living Entity Base|Living Entity Base]]</sup>
+Extends [[#Entity|Entity]].
 
 {| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2" | Meaning
-|-
-| rowspan="6" | 10
-| rowspan="6" | Byte
-! Bit Mask !! Meaning
-|-
-| 0x01 || Small Armorstand
-|-
-| 0x02 || Has Gravity
-|-
-| 0x04 || Has Arms
-|-
-| 0x08 || Remove BasePlate
-|-
-| 0x10 || Marker (Zero bounding box)
-|-
-| 11
-| Float, Float, Float (pitch, yaw, roll)
-| colspan="2" | Head position
-|-
-| 12
-| Float, Float, Float (pitch, yaw, roll)
-| colspan="2" | Body position
-|-
-| 13
-| Float, Float, Float (pitch, yaw, roll)
-| colspan="2" | Left Arm position
-|-
-| 14
-| Float, Float, Float (pitch, yaw, roll)
-| colspan="2" | Right Arm position
-|-
-| 15
-| Float, Float, Float (pitch, yaw, roll)
-| colspan="2" | Left Leg position
-|-
-| 16
-| Float, Float, Float (pitch, yaw, roll)
-| colspan="2" | Right Leg position
-|}
-
-=== Human ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2" | Meaning
-|-
-| rowspan="10" | 10
-| rowspan="10" | Unsigned Byte
-| colspan="2" | Skin flags
-|-
-! Bit Mask !! Meaning
-|-
-| 0x01 || Cape enabled 
-|-
-| 0x02 || Jacket enabled 
-|-
-| 0x04 || Left Sleeve enabled 
-|-
-| 0x08 || Right Sleeve enabled 
-|-
-| 0x10 || Left Pants Leg enabled 
-|-
-| 0x20 || Right Pants Leg enabled 
-|-
-| 0x40 || Hat enabled 
-|-
-| 0x80 || Unused
-|-
-| 16
-| Byte
-| colspan="2" | Appears to be unused
-|- 
-| 17
-| Float
-| colspan="2" | Absorption Hearts
-|- 
-| 18
-| Int
-| colspan="2" | Score
-|}
-
-=== Horse ===
-<sup>Extends [[#Ageable|Ageable]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="3" | Meaning
-|-
-| rowspan="8" | 16
-| rowspan="8" | Int
-! Bit Mask 
-! colspan="2" | Meaning
-|-
-| 0x02 
-| colspan="2" | Is Tame
-|-
-| 0x04 
-| colspan="2" | Has Saddle
-|-
-| 0x08 
-| colspan="2" | Has Chest
-|-
-| 0x10 
-| colspan="2" | Is bred
-|-
-| 0x20 
-| colspan="2" | Is Eating
-|-
-| 0x40 
-| colspan="2" | Is Rearing
-|-
-| 0x80 
-| colspan="2" | Mouth Open
-|-
-| rowspan="6" | 19
-| rowspan="6" | Byte
-! Value 
-! colspan="2" | Type
-|-
-| 0 
-| colspan="2" | Horse
-|-
-| 1 
-| colspan="2" | Donkey
-|-
-| 2 
-| colspan="2" | Mule
-|-
-| 3 
-| colspan="2" | Zombie
-|-
-| 4 
-| colspan="2" | Skeleton
-|-
-| rowspan="15" | 20
-| rowspan="15" | Int
-!Bit Mask 
-! colspan="2" | Meaning
-|-
-| rowspan="8" | 0x00FF
-! Value !! Color
-|-
-| 0 || White
-|-
-| 1 || Creamy
-|-
-| 2 || Chestnut
-|-
-| 3 || Brown
-|-
-| 4 || Black
-|-
-| 5 || Gray
-|-
-| 6 || Dark Brown
-|-
-| rowspan="6" | 0xFF00
-! Value !! Style
-|-
-| 0 || None
-|-
-| 1 || White
-|-
-| 2 || Whitefield
-|-
-| 3 || White Dots
-|-
-| 4 || Black Dots
-|-
-| 21
-| String
-| colspan="3" | Owner Name
-|-
-| rowspan="5" | 22 
-| rowspan="5" | Int
-! Value 
-! colspan="2" | Type
-|-
-| 0 
-| colspan="2" | No Armor
-|-
-| 1 
-| colspan="2" | Iron Armor
-|-
-| 2 
-| colspan="2" | Gold Armor
-|-
-| 3 
-| colspan="2" | Diamond Armor
-|}
-
-=== Bat ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Byte 
-| Is Hanging
-|}
-
-
-=== Tameable ===
-<sup>Extends [[#Ageable|Ageable]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2"| Meaning
-|-
-| rowspan="3" | 16 
-| rowspan="3" | Byte
-! Bit Mask !! Meaning
-|-
-| 0x01 || Is Sitting
-|-
-| 0x04 || Is Tame
-|-
-| 17
-| String
-| colspan="2" | Owner Name
-|}
-
-
-=== Ocelot ===
-<sup>Extends [[#Tameable|Tameable]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 18
-| Byte
-| Ocelot Type
-|}
-
-
-=== Wolf ===
-<sup>Extends [[#Tameable|Tameable]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2"| Meaning
-|-
-| rowspan="3" | 16
-| rowspan="3" | Byte
-!Bit Mask !! Meaning
-|-
-| colspan="2" | Flags from Tameable
-|-
-| 0x02 || Is Angry
-|-
-| 18
-| Float
-| colspan="2" | Health
-|-
-| 19
-| Byte
-| colspan="2" | Begging
-|-
-| 20
-| Byte
-| colspan="2" | Collar Color
-|}
-
-
-=== Pig ===
-<sup>Extends [[#Ageable|Ageable]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Byte
-| Has Saddle
-|}
-
-=== Rabbit ===
-<sup>Extends [[#Ageable|Ageable]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 18
-| Byte
-| Rabbit Type
-|}
-
-=== Sheep ===
-<sup>Extends [[#Ageable|Ageable]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="3"| Meaning
-|-
-| rowspan="19" | 16
-| rowspan="19" | Byte
-! Bit Mask 
-! colspan="2" | Meaning
-|-
-| rowspan="17" | 0x0F
-! Value !! Color
-|-
-| 0 || White
-|-
-| 1 || Orange
-|-
-| 2 || Magenta
-|-
-| 3 || Light Blue
-|-
-| 4 || Yellow
-|-
-| 5 || Lime
-|-
-| 6 || Pink
-|-
-| 7 || Gray
-|-
-| 8 || Silver
-|-
-| 9 || Cyan
-|-
-| 10 || Purple
-|-
-| 11 || Blue
-|-
-| 12 || Brown
-|-
-| 13 || Green
-|-
-| 14 || Red
-|-
-| 15 || Black
-|-
-| 0x10 
-| colspan="2" | Is Sheared
-|}
-
-
-=== Villager ===
-<sup>Extends [[#Ageable|Ageable]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2" | Meaning
-|-
-| rowspan="6" | 16
-| rowspan="6" | Int
-! Value !! Profession 
-|-
-| 0 || Farmer
-|-
-| 1 || Librarian 
-|-
-| 2 || Priest
-|-
-| 3 || Blacksmith
-|-
-| 4 || Butcher
-|}
-
-
-=== Enderman ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Short
-| Carried Block
-|-
-| 17
-| Byte
-| Carried Block Data
-|-
-| 18
-| Byte
-| Is Screaming
-|}
-
-=== Zombie ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 12
-| Byte
-| Is Child
-|-
-| 13
-| Byte
-| Is Villager
-|-
-| 14
-| Byte
-| Is Converting
-|}
-
-=== Zombie Pigman ===
-<sup>Extends [[#Zombie|Zombie]]</sup>
-
-
-=== Blaze ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16 
-| Byte
-| On Fire
-|}
-
-
-
-=== Spider ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Byte
-| Climbing
-|}
-
-
-=== Cave Spider ===
-<sup>Extends [[#Spider|Spider]]</sup>
-
-
-=== Creeper ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Byte
-| State (-1 = Idle, 1 = Fuse)
-|-
-| 17
-| Byte
-| Is Powered
-|}
-
-
-=== Ghast ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Byte
-| Is Attacking
-|}
-
-
-=== Slime ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Byte
-| Size
-|}
-
-
-=== Magma Cube ===
-<sup>Extends [[#Slime|Slime]]</sup>
-
-
-=== Skeleton ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2" | Meaning
-|-
-| rowspan="3" | 13
-| rowspan="3" | Byte
-! Value !! Meaning
-|-
-| 0 || Normal
-|-
-| 1 || Wither
-|}
-
-
-=== Witch ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px"| Meaning
-|-
-| 21
-| Byte
-| Is Agressive
-|}
-
-
-=== Iron Golem ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px"| Meaning
-|-
-| 16
-| Byte
-| Is Player Created
-|}
-
-
-=== Wither ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px"| Meaning
-|-
-| 17
-| Int
-| Watched Target
-|-
-| 18
-| Int
-| Watched Target
-|-
-| 19
-| Int
-| Watched Target
-|-
-| 20
-| Int
-| Invulnerable Time
-|}
-
-=== Guardian ===
-<sup>Extends [[#Living Entity|Living Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2" | Meaning
-|-
-| rowspan="3" | 16
-| rowspan="3" | Byte
-! Bit Mask !! Meaning
-|-
-| 0x02 || Is Elderly
-|-
-| 0x04 || Is retracting spikes
-|-
-| 17
-| Int
-| colspan="2" | Target entity id
-|}
-
-=== Boat ===
-<sup>Extends [[#Entity|Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px"| Meaning
-|-
-| 17
-| Int
-| Time Since Hit
-|-
-| 18
-| Int
-| Forward Direction
-|-
-| 19
-| Float
-| Damage Taken
-|}
-
-
-=== Minecart ===
-<sup>Extends [[#Entity|Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" colspan="2" | Meaning
-|-
-| 17 
-| Int
-| colspan="2" | Shaking Power
-|-
-| 18
-| Int
-| colspan="2" | Shaking Direction
-|- 
-| 19
-| Float
-| colspan="2" | Damage Taken / Shaking Multiplier
-|-
-| rowspan="3" | 20
-| rowspan="3" | Int
-! Bit Mask !! Meaning
-|-
-| 0x00FF || Block Id
-|-
-| 0xFF00 || Block Data
-|-
-| 21 
-| Int
-| colspan="2" | Block Y Position
-|-
-| 22
-| Byte
-| colspan="2" | Show Block
-|} 
-
-
-=== Furnace Minecart ===
-<sup>Extends [[#Minecart|Minecart]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Byte
-| Is Powered
-|}
-
-
-=== Item ===
-<sup>Extends [[#Entity|Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 10
-| Slot
-| Item
-|}
-
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | Float
+ |colspan="2"| Radius
+ |-
+ | 6
+ | VarInt
+ |colspan="2"| Color (only for mob spell particle)
+ |-
+ | 7
+ | Boolean
+ |colspan="2"| Ignore radius and show effect as single point, not area
+ |-
+ | 8
+ | VarInt
+ |colspan="2"| Particle ID
+ |}
 
 === Arrow ===
-<sup>Extends [[#Entity|Entity]]</sup>
+
+Extends [[#Entity|Entity]].
 
 {| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 16
-| Byte
-| Is Critical
-|}
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | Byte
+ |colspan="2"| Is critical
+ |}
 
+=== TippedArrow ===
 
-=== Firework ===
-<sup>Extends [[#Entity|Entity]]</sup>
-
-{| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 8
-| Slot
-| Firework Info
-|}
-
-
-=== Item Frame ===
-<sup>Extends [[#Entity|Entity]]</sup>
+Extends [[#Arrow|Arrow]].
 
 {| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 8
-| Slot 
-| Item
-|-
-| 9
-| Byte
-| Rotation
-|}
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 6
+ | VarInt
+ |colspan="2"| Color
+ |}
 
+=== Boat ===
 
-=== Ender Crystal ===
-<sup>Extends [[#Entity|Entity]]</sup>
+Extends [[#Entity|Entity]].
 
 {| class="wikitable"
-|-
-! style="width: 75px" | Index
-! style="width: 75px" | Type
-! style="width: 250px" | Meaning
-|-
-| 8
-| Int
-| Health
-|}
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | VarInt
+ |colspan="2"| Time since last hit
+ |-
+ | 6
+ | VarInt
+ |colspan="2"| Forward direction
+ |-
+ | 7
+ | Float
+ |colspan="2"| Damage taken
+ |-
+ | 8
+ | VarInt
+ |colspan="2"| Type
+ |}
+
+=== EnderCrystal ===
+
+Extends [[#Entity|Entity]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | OptPosition
+ |colspan="2"| Beam target
+ |-
+ | 6
+ | Boolean
+ |colspan="2"| Show bottom
+ |}
+
+=== Fireball ===
+
+Extends [[#Entity|Entity]].
+
+No additional metadata.
+
+=== WitherSkull ===
+
+Extends [[#Fireball|Fireball]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | Boolean
+ |colspan="2"| Invulnerable
+ |}
+
+=== Fireworks ===
+
+Extends [[#Entity|Entity]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | [[Slot]]
+ |colspan="2"| Firework info
+ |}
+
+=== Hanging ===
+
+Extends [[#Entity|Entity]].
+
+No additional metadata.
+
+=== ItemFrame ===
+
+Extends [[#Hanging|Hanging]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | [[Slot]]
+ |colspan="2"| Item
+ |-
+ | 6
+ | VarInt
+ |colspan="2"| Rotation
+ |}
+
+=== Item ===
+
+Extends [[#Entity|Entity]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | [[Slot]]
+ |colspan="2"| Item
+ |}
+
+=== Living ===
+
+Extends [[#Entity|Entity]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | Byte
+ |colspan="2"| ''Unknown (probably indicates which hand is currently used)''
+ |-
+ | 6
+ | Float
+ |colspan="2"| Health
+ |-
+ | 7
+ | VarInt
+ |colspan="2"| Potion effect color
+ |-
+ | 8
+ | Boolean
+ |colspan="2"| Is potion effect ambient
+ |-
+ | 9
+ | VarInt
+ |colspan="2"| Number of arrows in entity
+ |}
+
+=== ArmorStand ===
+
+Extends [[#Living|Living]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 10
+ | Byte
+ |colspan="2"| Status bit mask
+ |-
+ | 11
+ | Vector3F
+ |colspan="2"| Head rotation
+ |-
+ | 12
+ | Vector3F
+ |colspan="2"| Body rotation
+ |-
+ | 13
+ | Vector3F
+ |colspan="2"| Left arm rotation
+ |-
+ | 14
+ | Vector3F
+ |colspan="2"| Right arm rotation
+ |-
+ | 15
+ | Vector3F
+ |colspan="2"| Left leg rotation
+ |-
+ | 16
+ | Vector3F
+ |colspan="2"| Right leg rotation
+ |}
+
+=== Insentient ===
+
+Extends [[#Living|Living]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 10
+ | Byte
+ |colspan="2"| Status bit mask (NoAI, Left handed)
+ |}
+
+=== Ambient ===
+
+Extends [[#Insentient|Insentient]].
+
+No additional metadata.
+
+=== Bat ===
+
+Extends [[#Ambient|Ambient]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Byte
+ |colspan="2"| Is hanging
+ |}
+
+=== Creature ===
+
+Extends [[#Insentient|Insentient]].
+
+No additional metadata.
+
+=== Ageable ===
+
+Extends [[#Creature|Creature]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Boolean
+ |colspan="2"| Is baby
+ |}
+
+=== Animal ===
+
+Extends [[#Ageable|Ageable]].
+
+No additional metadata.
+
+=== Horse ===
+
+Extends [[#Animal|Animal]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 12
+ | Byte
+ |colspan="2"| Status bit mask
+ |-
+ | 13
+ | VarInt
+ |colspan="2"| Type
+ |-
+ | 14
+ | VarInt
+ |colspan="2"| Variant
+ |-
+ | 15
+ | OptUUID
+ |colspan="2"| Owner
+ |-
+ | 16
+ | VarInt
+ |colspan="2"| Armor
+ |}
+
+=== Pig ===
+
+Extends [[#Animal|Animal]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 12
+ | Boolean
+ |colspan="2"| Has saddle
+ |}
+
+=== Rabbit ===
+
+Extends [[#Animal|Animal]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 12
+ | VarInt
+ |colspan="2"| Type
+ |}
+
+=== Sheep ===
+
+Extends [[#Animal|Animal]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 12
+ | Byte
+ |colspan="2"| Status bit mask
+ |}
+
+=== TameableAnimal ===
+
+Extends [[#Animal|Animal]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 12
+ | Byte
+ |colspan="2"| Status bit mask (sitting, tamed)
+ |-
+ | 13
+ | OptUUID
+ |colspan="2"| Owner
+ |}
+
+=== Ocelot ===
+
+Extends [[#TameableAnimal|TameableAnimal]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 14
+ | VarInt
+ |colspan="2"| Type
+ |}
+
+=== Wolf ===
+
+Extends [[#TameableAnimal|TameableAnimal]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 14
+ | Float
+ |colspan="2"| Damage taken (used for tail rotation)
+ |-
+ | 15
+ | Boolean
+ |colspan="2"| Is begging
+ |-
+ | 16
+ | VarInt
+ |colspan="2"| Collar color
+ |}
+
+=== Villager ===
+
+Extends [[#Ageable|Ageable]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 12
+ | VarInt
+ |colspan="2"| ''Unknown''
+ |}
+
+=== Golem ===
+
+Extends [[#Creature|Creature]].
+
+No additional metadata.
+
+=== IronGolem ===
+
+Extends [[#Golem|Golem]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Byte
+ |colspan="2"| Is player-created
+ |}
+
+=== Shulker ===
+
+Extends [[#Golem|Golem]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Direction
+ |colspan="2"| Facing direction
+ |-
+ | 12
+ | OptPosition
+ |colspan="2"| Attachment position
+ |-
+ | 13
+ | Byte
+ |colspan="2"| Shield height
+ |}
+
+=== Monster ===
+
+Extends [[#Creature|Creature]].
+
+No additional metadata.
+
+=== Blaze ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Byte
+ |colspan="2"| Is on fire
+ |}
+
+=== Creeper ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | VarInt
+ |colspan="2"| State (-1 = idle, 1 = fuse)
+ |-
+ | 12
+ | Boolean
+ |colspan="2"| Is {{Minecraft Wiki|Creeper#Charged Creepers|charged}}
+ |-
+ | 13
+ | Boolean
+ |colspan="2"| Is ignited
+ |}
+
+=== Guardian ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Byte
+ |colspan="2"| Status bit mask (elderly, retracting spikes)
+ |-
+ | 12
+ | VarInt
+ |colspan="2"| Target EID
+ |}
+
+=== Skeleton ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | VarInt
+ |colspan="2"| Type
+ |-
+ | 12
+ | Boolean
+ |colspan="2"| ''Unknown (something hand related)''
+ |}
+
+=== Spider ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Byte
+ |colspan="2"| Is climbing
+ |}
+
+=== Witch ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Boolean
+ |colspan="2"| Is aggresive
+ |}
+
+=== Wither ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | VarInt
+ |colspan="2"| First head's target
+ |-
+ | 12
+ | VarInt
+ |colspan="2"| Second head's target
+ |-
+ | 13
+ | VarInt
+ |colspan="2"| Third head's target
+ |-
+ | 14
+ | VarInt
+ |colspan="2"| Invulnerable time
+ |}
+
+=== Zombie ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Boolean
+ |colspan="2"| Is baby
+ |-
+ | 12
+ | VarInt
+ |colspan="2"| Is villager (profession)
+ |-
+ | 13
+ | Boolean
+ |colspan="2"| Is converting
+ |-
+ | 14
+ | Boolean
+ |colspan="2"| Are hands held up
+ |}
+
+=== Enderman ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | BlockID
+ |colspan="2"| Carried block
+ |-
+ | 12
+ | Boolean
+ |colspan="2"| Is screaming
+ |}
+
+=== EnderDragon ===
+
+Extends [[#Insentient|Insentient]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | VarInt
+ |colspan="2"| Dragon phase
+ |}
+
+=== Flying ===
+
+Extends [[#Insentient|Insentient]].
+
+No additional metadata.
+
+=== Ghast ===
+
+Extends [[#Flying|Flying]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Boolean
+ |colspan="2"| Is attacking
+ |}
+
+=== Slime ===
+
+Extends [[#Insentient|Insentient]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | VarInt
+ |colspan="2"| Size
+ |}
+
+=== Minecart ===
+
+Extends [[#Entity|Entity]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | VarInt
+ |colspan="2"| Shaking power
+ |-
+ | 6
+ | VarInt
+ |colspan="2"| Shaking direction
+ |-
+ | 7
+ | Float
+ |colspan="2"| Shaking multiplier
+ |-
+ | 8
+ | VarInt
+ |colspan="2"| Block ID and damage
+ |-
+ | 9
+ | VarInt
+ |colspan="2"| Block Y position
+ |-
+ | 10
+ | Boolean
+ |colspan="2"| Show block
+ |}
+
+=== MinecartCommandBlock ===
+
+Extends [[#Minecart|Minecart]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | String
+ |colspan="2"| Command
+ |-
+ | 12
+ | [[Chat]]
+ |colspan="2"| Last output
+ |}
+
+=== MinecartFurnace ===
+
+Extends [[#Minecart|Minecart]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Boolean
+ |colspan="2"| Is powered
+ |}
+
+=== TNTPrimed ===
+
+Extends [[#Entity|Entity]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | VarInt
+ |colspan="2"| Fuse time
+ |}
