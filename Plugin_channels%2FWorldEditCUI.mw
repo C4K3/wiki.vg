@@ -1,0 +1,57 @@
+[http://www.enginehub.org/worldedit/ WorldEdit] uses [[plugin channel]]s to communicate with the clientside [http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1292886-worldeditcui/ WorldEditCUI] mod to display selections.
+
+This is a (very) rough documentation of those channels that I'll improve.
+
+== Structure ==
+
+All communication is performed over the <code>WECUI</code> plugin channel, and is made up of a single UTF8 string with each value separated by <code>|</code>.  The client, aside from [[Plugin Channel#REGISTER|<code>REGISTER</code>]]ing the channel, must also send an initialization packet.  All other data is sent from the server (on the same channel).
+
+== Version ==
+
+[https://github.com/sk89q/WorldEdit/blob/935de4c93db215d5573916899a5cc8eefe159bab/worldedit-core/src/main/java/com/sk89q/worldedit/LocalSession.java#L776-L784  Parsed in LocalSession.java]
+
+The <code>v</code> packet is sent from the client to the server to tell it that WorldEditCUI is installed.  It has one parameter, the version of WorldEditCUI's protocol (an integer).  This value is used to decide which types of selections can be sent - if a type of selection is not supported it will be sent as a different structure that is known to be supported.
+
+<code>v|(version)</code>
+
+== Shape ==
+
+The <code>s</code> packet does something with shapes.  It has one field, the shape of the selection (?).
+
+<code>s|(shape)</code>
+
+== Point ==
+
+The <code>p</code> packet sets the location of one of the points in the current selection.  It has 5 fields: the id, the block x, y, and z, and the total area.
+
+<code>p|(id)|(x)|(y)|(z)|(area)</code>
+
+== Point 2D ==
+
+The <code>p2</code> packet sets the location of one of the points in the current selection, two-dimensionally.  It has 4 fields: the id, the block x and z, and the total area.
+
+<code>p2|(id)|(x)|(z)|(area)</code>
+
+== Cylinder ==
+
+The <code>cyl</code> packet sets info about a cylindrical selection (?).  It has 5 fields: the x, y, and z of the center and then the radius x and z.
+
+<code>cyl|(x)|(y)|(z)|(radX)|(radZ)</code>
+
+== Ellipsoid Point ==
+
+The <code>e</code> packet does... I don't know.  It has 4 fields: the id, and x, y, and z coordinates.
+
+<code>e|(id)|(x)|(y)|(z)</code>
+
+== Min/Max ==
+
+The <code>mm</code> packet does something else.  It has two fields, the minimum and the maximum.  What these are the minimum and maximum of, I know not.
+
+<code>mm|(min)|(max)</code>
+
+== Polygon ==
+
+The <code>poly</code> packet sets verticies of a polygonal selection.  It has an array of 3 (although it may be possible to add more) values, which seem to be indexes in the points list?
+
+<code>poly|(vertex1)|(vertex2)|(vertex3)</code>
