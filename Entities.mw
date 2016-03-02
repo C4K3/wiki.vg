@@ -681,6 +681,32 @@ Extends [[#Entity|Entity]].
  |colspan="2"| Number of arrows in entity
  |}
 
+=== Player ===
+
+Extends [[#Living|Living]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 10
+ | Float
+ |colspan="2"| Additional Hearts
+ |-
+ | 11
+ | VarInt
+ |colspan="2"| Score
+ |-
+ | 12
+ | Byte
+ |colspan="2"| Skin Flags
+ |-
+ | 13
+ | Byte
+ |colspan="2"| Main hand
+ |}
+
 === ArmorStand ===
 
 Extends [[#Living|Living]].
