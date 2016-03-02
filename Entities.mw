@@ -704,7 +704,7 @@ Extends [[#Living|Living]].
  |-
  | 13
  | Byte
- |colspan="2"| Main hand
+ |colspan="2"| Main hand (0 : Left, 1 : Right)
  |}
 
 === ArmorStand ===
