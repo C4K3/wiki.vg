@@ -1,6 +1,82 @@
-[http://www.enginehub.org/worldedit/ WorldEdit] uses [[plugin channel]]s to communicate with the clientside [http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1292886-worldeditcui/ WorldEditCUI] mod to display selections.
+[http://www.enginehub.org/worldedit/ WorldEdit] uses [[plugin channel]]s to communicate with the clientside [http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1292886-worldeditcui/ WorldEditCUI] mod to display selections.  Client-side source code: https://github.com/Mumfrey/WorldEditCUI/
 
 This is a (very) rough documentation of those channels that I'll improve.
+
+== Selection types ==
+
+There are several types of selections.  Each type has a format used with current versions of WorldEditCUI and a second format used in older versions (usually a cube with similar edges).
+
+=== Cuboid ===
+
+A basic rectangular selection, with minimum and maximum points.
+
+Minimum protocol version: 0
+
+; Current version and legacy versions
+
+Shape ID is <code>cuboid</code>.
+
+If the selection has a position one (left click), it is sent with as a Point with an id of 0.  If the selection has a position two (right click), it is sent with as a Point with an id of 1.
+
+=== Ellipsoid ===
+
+Ellipsoid selections form 3-dimensional ellipses and spheres.  They have a center, and then x, y, and z radii (measured from the center).
+
+Minimum protocol version: 1
+
+; Current version
+
+Shape ID is <code>ellipsoid</code>.
+
+An ellipsoid point with id 0 is sent for the center, and an ellipsoid point with id 1 is sent to set the radii (these are distances, not coordinates).
+
+; Legacy versions
+
+Ellipsoid regions are sent as cuboids with their minimum and maximum positions in legacy versions.
+
+=== Cylinder ===
+
+A vertical cylinder selection.
+
+Minimum protocol version: 1
+
+; Current version
+
+Shape ID is <code>cylinder</code>.
+
+A cylinder packet is sent with the center and radius, and then a min/max packet is sent to set the bottom and top of the selection.
+
+; Legacy versions
+
+Sent as a cuboid with the minumum and maximum positions.
+
+=== 2D Polygon ===
+
+A 2-dimensional, flat polygon.
+
+Minimum protocol version: 0
+
+; Current and legacy versions
+
+Shape ID: <code>polygon2d</code>
+
+For all of the points in the selection, a Point 2D packet is sent with the point's x and z coordinates.  Then, a min/max packet is sent to set the bottom and top of the selection.
+
+=== 3D Polyhedron ===
+
+A 3-dimensional polygonal selection.
+
+Minimum protocol version: 3
+
+; Current version
+
+Shape ID is <code>polyhedron</code>.
+
+For each point in the polyhedrion, a Point packet is sent with the x, y, and z coordinates.  Then, for each triangle in the selection, a Polygon packet is sent with vertecies set to the index of each point that makes up the triangle.
+
+; Legacy versions
+
+Sent as a cuboid with the minumum and maximum positions.
 
 == Structure ==
 
