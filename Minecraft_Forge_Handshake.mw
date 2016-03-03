@@ -188,9 +188,9 @@ Contains a list of all mods installed on the server or client.  Sent from the cl
  | Version of the mod
  |}
 
-=== [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240 RegistryData] ===
+=== [https://github.com/MinecraftForge/MinecraftForge/blob/6e90348dc546164b21735aefd83ed0bac0d8283c/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240 RegistryData] ===
 
-{{Need Info|Explain exactly what registries are, and figure out what Substitutions is}}
+{{Need Info|Explain exactly what registries are, and figure out what Substitutions and Dummies are}}
 
 The server sends several of this packet, one for each registry.  It'll keep sending them until the hasMore value is no longer true.
 
@@ -236,6 +236,14 @@ The server sends several of this packet, one for each registry.  It'll keep send
  |colspan="2"| Substitutions
  |colspan="2"| Array of strings
  | Each substitution
+ |-
+ |colspan="2"| Number of dummies
+ |colspan="2"| Varint
+ | Number of dummies in the array below.  '''May not be present in older versions of forge'''; check if there still is data remaining in the packet before continuing to read data.
+ |-
+ |colspan="2"| Dummies
+ |colspan="2"| Array of strings
+ | Each dummy?
  |}
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L241-L264 HandshakeAck] ===
