@@ -40,6 +40,24 @@ Shape ID is <code>ellipsoid</code>.
 
 An ellipsoid point with id 0 is sent for the center, and an ellipsoid point with id 1 is sent to set the radii (these are distances, not coordinates).
 
+; Current version example
+
+Creates an ellipsoid at 64, 72, 48 with radii of 2, 4, and 8.
+
+<pre>
+s|ellipsoid
+e|0|64|72|48
+e|1|2|4|8
+</pre>
+
+Creates a sphere with a radius of 24 at 128, 128, 128.
+
+<pre>
+s|ellipsoid
+e|0|128|128|128
+e|1|24|24|24
+</pre>
+
 ; Legacy versions
 
 Ellipsoid regions are sent as cuboids with their minimum and maximum positions in legacy versions.
@@ -55,6 +73,16 @@ Minimum protocol version: 1
 Shape ID is <code>cylinder</code>.
 
 A cylinder packet is sent with the center and radius, and then a min/max packet is sent to set the bottom and top of the selection.
+
+; Current version example
+
+Creates a cylinder centered on 24, 24 with radii of 8 and 4 starting at y=32 and ending at y=64.
+
+<pre>
+s|cylinder
+cyl|24|48|24|8|4
+mm|32|64
+</pre>
 
 ; Legacy versions
 
@@ -72,6 +100,19 @@ Shape ID: <code>polygon2d</code>
 
 For all of the points in the selection, a Point 2D packet is sent with the point's x and z coordinates.  Then, a min/max packet is sent to set the bottom and top of the selection.
 
+; Current version example
+
+Creates a rotated square around 0, 0 that starts at y=32 and ends at y=70.
+
+<pre>
+s|polygon2d
+p2|0|0|25|1
+p2|1|25|0|25
+p2|2|0|-25|625
+p2|3|-25|0|1250
+mm|32|70
+</pre>
+
 === 3D Polyhedron ===
 
 A 3-dimensional polygonal selection.
@@ -84,6 +125,21 @@ Shape ID is <code>polyhedron</code>.
 
 For each point in the polyhedron, a Point packet is sent with the x, y, and z coordinates.  Then, for each triangle in the selection, a Polygon packet is sent with vertices set to the index of each point that makes up the triangle.
 
+; Current version example
+
+Creates a [[Wikipedia:tetrahedron|tetrahedron]] around 9, 9, 9.
+
+<pre>
+s|polyhedron
+p|0|8|8|8|1
+p|1|8|8|10|3
+p|2|10|8|9|6
+p|3|9|10|9|10
+poly|0|1|2
+poly|0|1|3
+poly|0|2|3
+poly|1|2|3
+</pre>
 ; Legacy versions
 
 Sent as a cuboid with the minimum and maximum positions.
