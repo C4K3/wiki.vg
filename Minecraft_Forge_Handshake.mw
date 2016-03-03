@@ -75,7 +75,7 @@ In addition to the [[Debugging|normal packet debugging]] for the server, if <cod
 
 {{Need Info|Why does it send the CompleteHandshake packet to itself?  How does it keep synchronized (especially near the end with the ACKs)?}}
 
-* '''S→C''': [[Plugin channel#REGISTER|<code>REGISTER</code>]] forge's plugin channels: FML|HS, FML, FML|MP, FML, FORGE (yes, FML is there twice).
+* '''S→C''': [[Plugin channel#REGISTER|<code>REGISTER</code>]] forge's plugin channels: FML|HS, FML, FML|MP, FML, FORGE (yes, FML is there twice; technically, it does not need to be there twice but that is the way that Forge sends it and sending it that way will act more similar to forge)
 * '''S→C''': A ServerHello packet is sent on <code>FML|HS</code> including the player's dimension (0 if it's the first login)
 * '''C→S''': <code>REGISTER</code> the plugin channels: FML|HS, FML, FML|MP, FML, FORGE.
 * '''C→S''': A ClientHello packet is sent on the <code>FML|HS</code> channel.
