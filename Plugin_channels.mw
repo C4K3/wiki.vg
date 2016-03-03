@@ -119,6 +119,50 @@ Remote resource packs. This contains a string representing the url to get the re
 
 The list of trades a villager NPC is offering.
 
+{| class="wikitable"
+ ! colspan="2" | Field Name
+ ! colspan="2" | Field Type
+ ! Notes
+ |-
+ | colspan="2" | Window ID
+ | colspan="2" | Int
+ | The ID of the window that is open; this is an int rather than a byte.
+ |-
+ | colspan="2" | Size
+ | colspan="2" | Byte
+ | The number of trades in the following array
+ |-
+ | rowspan="7" | Trades
+ | Input item 1
+ | rowspan="7" | Array
+ | Slot
+ | The first item the villager is buying
+ |-
+ | Output item
+ | Slot
+ | The item the villager is selling
+ |-
+ | Has second item
+ | Boolean
+ | Whether there is a second item
+ |-
+ | Input item 2
+ | Optional slot
+ | The second item the villager is buying; only present if they have a second item.
+ |-
+ | Trade disabled
+ | Boolean
+ | True if the trade is disabled; false if the trade is enabled.
+ |-
+ | Number of tool uses
+ | Int
+ | May actually be the number of times this trade has been used; MCP may be misleading me
+ |-
+ | Maximum number of trade uses
+ | Int
+ | Number of times this trade can be used
+ |}
+
 === <code>MC|TrSel</code> ===
 ''Client to server''
 	
