@@ -1,7 +1,7 @@
 This tutorial is being created to document what it takes to write a stand-alone server to interact with Notchian clients. The tutorial is incomplete but will be updated whenever more information is discovered.
 
 == Before You Get Started ==
-* Make sure you don't want to fork or join an [[Server_List|existing project]].
+* Make sure you don't want to fork or join an [[Server List|existing project]].
 * Wonder why you want to do this in the first place.
 * Choose a language that has good networking, like Java, C#, or Python. (If you want to be different, choose a faster language like C or Rust!)
 
@@ -15,15 +15,15 @@ The Minecraft server accepts connections from TCP clients and communicates with 
 Your server needs to accept a Handshake(0x00 with state=1) and a Request packet, which you'll respond with a Response packet including JSON detailing the server. You can read more about this on the [[Server List Ping]] page.
 
 === FSM example of handling new TCP connections ===
-As an example of how to handle new TCP connections we can have a look at this informal [http://en.wikipedia.org/wiki/Finite-state_machine| FSM] to get an example of how one could write the server's states.
+As an example of how to handle new TCP connections we can have a look at this informal [[Wikipedia:Finite-state machine|FSM]] to get an example of how one could write the server's states.
 
-[[File:Server TCP handling HSL.png|800px| FSM showing an example of how to handle new connections]]
+[[File:Server TCP handling HSL.png|800px|FSM showing an example of how to handle new connections]]
 
 To distinguish between FSM-states and the states of the connection, the different connection states has been colour-coded to make it easier to understand the transitions. The given connection states are:
 * Handshake
 * Status
 * Login
 * Play
-* Closed (added for clarity, as [[Protocol#Pong| Pong]] closed the TCP socket)
+* Closed (added for clarity, as [[Protocol#Pong|Pong]] closed the TCP socket)
 
-It should be noted that outgoing packets are not directed towards the ''TCP'' node in the middle. This is just because it made a simpler FSM. There is also a possibility to have the [[Protocol#Set_compression]| Set compression] to be sent after [[Protocol#Login_success]| Login success], but it will have a different packet id because the connection state will be [[Protocol#Play| Play]] instead of [[Protocol#Login| Login]].
+It should be noted that outgoing packets are not directed towards the ''TCP'' node in the middle. This is just because it made a simpler FSM. There is also a possibility to have the [[Protocol#Set_compression|Set compression]] to be sent after [[Protocol#Login_success|Login success]], but it will have a different packet id because the connection state will be [[Protocol#Play|Play]] instead of [[Protocol#Login|Login]].
