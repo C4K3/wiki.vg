@@ -18,6 +18,16 @@ Shape ID is <code>cuboid</code>.
 
 If the selection has a position one (left click), it is sent with as a Point with an id of 0.  If the selection has a position two (right click), it is sent with as a Point with an id of 1.
 
+; Current version example
+
+Creating a cuboid from (9, 25, 32) to (19, 26, 45):
+
+<pre>
+s|cuboid
+p|0|9|25|32|1
+p|1|19|26|45|308
+</pre>
+
 === Ellipsoid ===
 
 Ellipsoid selections form 3-dimensional ellipses and spheres.  They have a center, and then x, y, and z radii (measured from the center).
