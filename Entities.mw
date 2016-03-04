@@ -559,6 +559,14 @@ Extends [[#Entity|Entity]].
  | 8
  | VarInt
  |colspan="2"| Type
+ |-
+ | 9
+ | Boolean
+ |colspan="2"| Unknown (probably something with the paddles)
+ |-
+ | 10
+ | Boolean
+ |colspan="2"| Unknown (probably something with the paddles)
  |}
 
 === EnderCrystal ===
