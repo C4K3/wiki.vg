@@ -1062,7 +1062,7 @@ Extends [[#Monster|Monster]].
  |-
  | 12
  | Boolean
- |colspan="2"| ''Unknown (something hand related)''
+ |colspan="2"| ''Unknown (something melee target related | true if target is select otherwise false)''
  |}
 
 === Spider ===
