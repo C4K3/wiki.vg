@@ -1098,9 +1098,16 @@ Extends [[#Monster|Monster]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 11
- | Byte
- |colspan="2"| Status bit mask (elderly, retracting spikes)
+ |rowspan="3"| 12
+ |rowspan="3"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x04
+ | is elderly
+ |-
+ | 0x10
+ | is retracting spikes
  |-
  | 12
  | VarInt
