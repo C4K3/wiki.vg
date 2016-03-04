@@ -942,7 +942,7 @@ Extends [[#Ageable|Ageable]].
  |-
  | 12
  | VarInt
- |colspan="2"| ''Unknown''
+ |colspan="2"| ''Profession (Type)''
  |}
 
 === Golem ===
