@@ -927,7 +927,7 @@ Extends [[#Animal|Animal]].
  |-
  | 12
  | Byte
- |colspan="2"| Status bit mask
+ |colspan="2"| Status bit mask (color, sheared)
  |}
 
 === TameableAnimal ===
