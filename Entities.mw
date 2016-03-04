@@ -724,9 +724,25 @@ Extends [[#Living|Living]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 10
- | Byte
- |colspan="2"| Status bit mask
+ |rowspan="6"| 10
+ |rowspan="6"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | is Small
+ |-
+ | 0x02
+ | has Gravity
+ |-
+ | 0x04
+ | has Arms
+ |-
+ | 0x08
+ | has BasePlate
+ |-
+ | 0x10
+ | set Marker
  |-
  | 11
  | Vector3F
