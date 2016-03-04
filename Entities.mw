@@ -939,6 +939,17 @@ Extends [[#Animal|Animal]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
+ |rowspan="3"| 12
+ |rowspan="3"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | is sitting
+ |-
+ | 0x04
+ | is tamed
+ |-
  | 12
  | Byte
  |colspan="2"| Status bit mask (sitting, tamed)
