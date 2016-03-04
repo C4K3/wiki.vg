@@ -395,18 +395,14 @@ An Entity Metadata is an array of entries, each of which looks like the followin
  | 
  |-
  | 5
- | Opt[[Slot]]
+ | [[Slot]]
  | 
  |-
  | 6
- | OptBlockID (VarInt)
- | <code><nowiki>id &lt;&lt; 4 | data</nowiki></code>
- |-
- | 5
  | Boolean
  | 
  |-
- | 8
+ | 7
  | Vector3F (Array of Float)
  | 3 elements
  |-
@@ -425,6 +421,10 @@ An Entity Metadata is an array of entries, each of which looks like the followin
  | 11
  | OptUUID (Boolean + Optional UUID)
  | UUID is present if the Boolean is set to true
+ |-
+ | 12
+ | BlockID (VarInt)
+ | <code><nowiki>id &lt;&lt; 4 | data</nowiki></code>
  |}
 
 Entity classes also recursively use fields from classes they extend.
