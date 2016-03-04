@@ -67,6 +67,21 @@ A couple things for contributors:
  | [http://diorite.org Link]
  | {{yes|Active}}
  |-
+ ! [https://github.com/ModularMC/ModularMC ModularMC]
+ | Caspar Norée Palm
+ | [https://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | [[wikipedia:MIT License|MIT]]
+ | {{planned| 1.9 WIP}}
+ | {{planned|Anvil planned}}
+ | {{planned|Planned}}
+ | {{planned|Planned}}
+ | {{yes|Mobs, players are work in progress}}
+ | {{yes|Executors/Threads}}
+ | {{planned|Planned Java + possible simple textbased scripting}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | {{yes|[https://github.com/ModularMC/ModularMC/blob/master/FEATURES.md Yes]}}
+ | {{yes|Active}}
+ |-
  ! [https://github.com/DragonetMC/Dragonet Dragonet]
  | [http://github.com/DragonetMC DragonetTeam]
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
@@ -230,21 +245,6 @@ A couple things for contributors:
  | {{planned|Planned: Rust plugins}}
  | {{yes|{{windows}}{{mac}}{{linux}}}}
  | {{no|Not yet}}
- | {{yes|Active}}
- |-
- ! [https://github.com/ModularMC/ModularMC ModularMC]
- | Caspar Norée Palm
- | [https://en.wikipedia.org/wiki/Java_(programming_language) Java]
- | [[wikipedia:MIT License|MIT]]
- | {{yes|1.8 (#47)}}
- | {{planned|Anvil planned}}
- | {{planned|Planned}}
- | {{planned|Planned}}
- | {{yes|Mobs, players are work in progress}}
- | {{yes|Executors/Threads}}
- | {{planned|Planned Java + possible simple textbased scripting}}
- | {{yes|{{windows}}{{linux}}{{mac}}}}
- | {{yes|[https://github.com/ModularMC/ModularMC/blob/master/FEATURES.md Yes]}}
  | {{yes|Active}}
  |-
  ! [https://github.com/cnlohr/avrcraft AVRCraft]
