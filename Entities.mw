@@ -778,9 +778,16 @@ Extends [[#Living|Living]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 10
- | Byte
- |colspan="2"| Status bit mask (NoAI, Left handed)
+ |rowspan="3"| 10
+ |rowspan="3"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | NoAI
+ |-
+ | 0x02
+ | Left handed
  |}
 
 === Ambient ===
