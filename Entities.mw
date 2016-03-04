@@ -950,10 +950,6 @@ Extends [[#Animal|Animal]].
  | 0x04
  | is tamed
  |-
- | 12
- | Byte
- |colspan="2"| Status bit mask (sitting, tamed)
- |-
  | 13
  | OptUUID
  |colspan="2"| Owner
