@@ -863,13 +863,13 @@ Extends [[#Animal|Animal]].
  | ''Unknown''
  |-
  | 0x20
- | ''Unknown''
+ | eating
  |-
  | 0x40
- | ''Unknown''
+ | put on hind legs
  |-
  | 0x80
- | ''Unknown''
+ | mouth open
  |-
  | 13
  | VarInt
