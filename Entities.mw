@@ -868,7 +868,7 @@ Extends [[#Animal|Animal]].
  | 0x40
  | ''Unknown''
  |-
- | 0x50
+ | 0x80
  | ''Unknown''
  |-
  | 13
