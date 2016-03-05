@@ -1103,11 +1103,11 @@ Extends [[#Monster|Monster]].
  ! Bit mask
  ! Meaning
  |-
+ | 0x02
+ | is retracting spikes
+ |-
  | 0x04
  | is elderly
- |-
- | 0x10
- | is retracting spikes
  |-
  | 12
  | VarInt
