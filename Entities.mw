@@ -739,7 +739,7 @@ Extends [[#Living|Living]].
  | has Arms
  |-
  | 0x08
- | has BasePlate
+ | no BasePlate
  |-
  | 0x10
  | set Marker
