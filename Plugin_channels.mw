@@ -51,6 +51,31 @@ or
 
 depending on the ''mode''
 
+=== <code>MC|AutoCmd</code> ===
+''Client to server''
+
+Sets command block data; this seems to be a newer version of <code>MC|AdvCmd</code> but the older version still works.
+
+{| class="wikitable"
+! Field Name !! Field Type !! Notes
+|-
+| X || Int || 
+|-
+| Y || Int || 
+|-
+| Z || Int || 
+|-
+| Command || String ||
+|-
+| Track output || Boolean || If false, the output of the previous command will not be stored within the command block.
+|-
+| Mode || String enum || One of "SEQUENCE", "AUTO", and "REDSTONE"
+|-
+| Is conditional || Boolean ||
+|-
+| Automatic || Boolean ||
+|}
+
 === <code>MC|Beacon</code> ===
 ''Client to server''
 
@@ -109,12 +134,77 @@ This payload is empty.
 
 When a player uses an anvil to name an item. The payload is just a string: the item's new name.
 
-=== <code>MC|RPack</code> ===
-''Server to client''
+=== <code>MC|Struct</code> ===
+''Client to server''
 
-Remote resource packs. This contains a string representing the url to get the resource pack from. This channel has been replaced by the [[Protocol#Resource Pack Send|Resource Pack Send]] ([[Protocol#Play|Play]], 0x48, clientbound) and [[Protocol#Resource Pack Status|Resource Pack Status]] ([[Protocol#Play|Play]], 0x19, serverbound) packets.
+Does something with the (inaccessible) {{Minecraft Wiki|Structure block}}.
 
-===  <code>MC|TrList</code> ===
+{| class="wikitable"
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | X || Int || Tile entity location
+ |-
+ | Y || Int || Tile entity location
+ |-
+ | Z || Int || Tile entity location
+ |-
+ | Action
+ | Byte
+ | See below
+ |-
+ | Mode
+ | String enum
+ | One of "SAVE", "LOAD", "CORNER", "DATA".
+ |-
+ | Name
+ | String
+ |
+ |-
+ | Position X || Int || ?
+ |-
+ | Position Y || Int || ?
+ |-
+ | Position Z || Int || ?
+ |-
+ | Size X || Int || ?
+ |-
+ | Size Y || Int || ?
+ |-
+ | Size Z || Int || ?x
+ |-
+ | Mirror
+ | String enum
+ | One of "NONE", "LEFT_RIGHT", "FRONT_BACK".
+ |-
+ | Rotation
+ | String enum
+ | One of "NONE", "CLOCKWISE_90", "CLOCKWISE_180", "COUNTERCLOCKWISE_90".
+ |-
+ | Metadata
+ | String
+ | ?
+ |-
+ | Ignore entities
+ | Boolean
+ |
+ |}
+
+Possible modes:
+
+* 2 - Save the structure
+* 3 - Load the structure
+* 4 - Detect size
+
+=== <code>MC|PickItem</code> ===
+''Client to server''
+
+Swaps out an item at the given inventory index(?) with an item on the hotbar.  The server sends back several packets.  TODO: Document them.
+
+Payload is a single varint.
+
+=== <code>MC|TrList</code> ===
 ''Server to client''
 
 The list of trades a villager NPC is offering.
@@ -178,6 +268,11 @@ Sent ''after'' a Server list ping in Minecraft 1.6. More information on [[Server
 ''Two-way''
 
 Announces the server and client implementation name right after a player has logged in. For Minecraft and the standard Minecraft server, this is "vanilla" (encoded as a UTF-8 string).
+
+=== <code>MC|DebugPath</code> ===
+''Server to client''
+
+Never sent, but does something with pathfinding debugging.
 
 == Notable community plugin channels ==
 Channels listed in this section are not used by the vanilla Minecraft client or server. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
