@@ -229,23 +229,3 @@ The server sends [[protocol#0x08|0x08 Health updates]] whenever your health chan
 After you get a death notice, you must still update your position while being dead. (Otherwise your dead body will be visible by notchian clients of the server, and you will be invisible after respawning.) Then, you can send a [[protocol#0xCD|0xCD Client Status]] to respawn. You'll be given a 0x0D with your new position, and possibly other messages.
 
 If your health updates come much slower than on the notchian client, make sure you are sending position updates fast enough.
-
-== Useful client features ==
-
-* Always sneak: You can do it via the Packet 0x13. On notchian clients, crouching reduces your speed and your ability to maneuver while jumping, but the server doesn't restrict it.
-* Fly: Just change the "on-ground" flag and send the server positions in the air. As long as you don't collide with a block, the server will obey.
-* Semi-invulnerability: Don't send position updates, that causes that you'll not recieve health updates and entities will be unable to attack you.
-* Full bright (Night vision): Don't render any lights, just use an ambient term
-* Wallhack+ESP: Disable zbuffer tests for entities. This will make them appear even if they are behind walls. Also you can make some billboard texts showing position, item shown, bigger name.
-* Xray: Treat some blocks as air.
-* Nuker / Instamine: Send lots of "start digging" and "finish digging" packets to surrounding blocks. If done correctly it wil "nuke" an area really fast. Brings a lot of lag to the server. Does not work in 1.4 and next versions.
-* Torch destroy: Search for torches within 4 blocks of the user and send a digg packet for each one. They will get destroyed even if the view line is obstructed.
-* Speedhack: Just move the player faster than vanilla client
-* Cavefinder: Use front face culling and show only stone blocks in contact with air
-* More Reach: Does not work since 1.4, server checks that placed/dug block is near the player
-* ForceField: Automatically swing everyone who is within 4 block of the player, killing them if pvp is enabled.
-* No swing: Don't send swing packets. They aren't needed to dig or place blocks
-* Spider: Climb every block as if there was a ladder in front of it
-* Walk on water: Set all water blocks as solid
-* Disable fall damage: Toggle the isOnGround field in your mob's entity update each tick.
-* Sounder/PlayerFinder: finds players outside of rendering during thunderstorms by getting where lighting sound packets
