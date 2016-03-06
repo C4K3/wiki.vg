@@ -272,7 +272,93 @@ Announces the server and client implementation name right after a player has log
 === <code>MC|DebugPath</code> ===
 ''Server to client''
 
-Never sent, but does something with pathfinding debugging.
+Never sent, but does something with pathfinding debugging.  The client reads the data and stores it, but does not render anything with it.
+
+{|class="wikitable"
+ ! Name
+ ! Type
+ ! Notes
+ |-
+ | ?
+ | Int
+ | 
+ |-
+ | ?
+ | Float
+ | ?
+ |-
+ | Entity
+ | PathEntity
+ | See below
+ |}
+
+PathEntity structure:
+
+{| class="wikitable"
+ ! Name
+ ! Type
+ ! Notes
+ |-
+ | Path index
+ | Int
+ |
+ |-
+ | ?
+ | PathPoint
+ |
+ |-
+
+PathPoint structure:
+
+{| class="wikitable"
+ ! Name
+ ! Type
+ ! Notes
+ |-
+ | ?
+ | Float
+ | 
+ |-
+ | ?
+ | Float
+ | 
+ |-
+ | ?
+ | Float
+ | 
+ |-
+ | Has been visited
+ | Boolean
+ | 
+ |-
+ | Node type
+ | Int enum
+ | See below
+ |-
+ | Distance to target
+ | Float
+ |
+ |}
+
+Values for node type:
+
+ * 0: BLOCKED
+ * 1: OPEN
+ * 2: WALKABLE
+ * 3: TRAPDOOR
+ * 4: FENCE
+ * 5: LAVA
+ * 6: WATER
+ * 7: RAIL
+ * 8: DANGER_FIRE
+ * 9: DAMAGE_FIRE
+ * 10: DANGER_CACTUS
+ * 11: DAMAGE_CACTUS
+ * 12: DANGER_OTHER
+ * 13: DAMAGE_OTHER
+ * 14: DOOR_OPEN
+ * 15: DOOR_WOOD_CLOSED
+ * 16: DOOR_IRON_CLOSED
 
 == Notable community plugin channels ==
 Channels listed in this section are not used by the vanilla Minecraft client or server. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
