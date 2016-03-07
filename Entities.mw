@@ -1098,7 +1098,7 @@ Extends [[#Monster|Monster]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- |rowspan="3"| 12
+ |rowspan="3"| 11
  |rowspan="3"| Byte
  ! Bit mask
  ! Meaning
