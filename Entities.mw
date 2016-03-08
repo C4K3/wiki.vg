@@ -873,11 +873,11 @@ Extends [[#Animal|Animal]].
  |-
  | 13
  | VarInt
- |colspan="2"| Type
+ |colspan="2"| Variant
  |-
  | 14
  | VarInt
- |colspan="2"| Variant
+ |colspan="2"| Color & Style
  |-
  | 15
  | OptUUID
