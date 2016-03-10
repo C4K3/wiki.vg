@@ -146,15 +146,13 @@ Returns: a JSON encoded list of backups for the specified world ID
 
 Get the download URL of the latest backup.
 
-Returns a json response like
+Returns a json response like:
 
-Example:
-
-{
-	"downloadLink": "http://us-west-mcr-worlds.s3.amazonaws.com/83b71x0/mcr_world.tar.gz?AWSAccessKeyId=ADSFASDFADSF&Expires=1457647137&Signature=ADSFASDFASDF",
-	"resourcePackUrl": null,
-	"resourcePackHash": null
-}
+ {
+ 	"downloadLink": "http://us-west-mcr-worlds.s3.amazonaws.com/dfasdfa/mcr_world.tar.gz?AWSAccessKeyId=ADSFASDFADSF&Expires=1457647137&Signature=ADSFASDFASDF",
+ 	"resourcePackUrl": null,
+ 	"resourcePackHash": null
+ }
 
 ==== GET /ops/$ID ====
 Returns a list of operators for this server. You must own this server to view this.
