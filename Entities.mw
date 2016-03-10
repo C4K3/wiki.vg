@@ -1201,7 +1201,7 @@ Extends [[#Monster|Monster]].
  |-
  | 12
  | VarInt
- |colspan="2"| Is villager (profession)
+ |colspan="2"| Is villager (0 for zombie, profession+1 for villagers)
  |-
  | 13
  | Boolean
