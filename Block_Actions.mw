@@ -77,6 +77,6 @@ Not used, always 1.
 
 === Byte 2 ===
 
-New state of the chest: 0 for closed, 1 for open.
+Number of players who have the chest open.  If 0, the chest is closed; if 1 or more the chest is open.
 
 [[Category:Minecraft Modern]]
