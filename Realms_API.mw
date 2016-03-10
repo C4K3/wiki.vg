@@ -142,11 +142,19 @@ If a server doesn't exist/you do not have currently have access to it, the serve
 
 Returns: a JSON encoded list of backups for the specified world ID
 
-==== GET /worlds/$ID/backups/download ====
+==== GET /worlds/$ID/slot/$WORLD(1-4)/download ====
 
 Get the download URL of the latest backup.
 
-Returns: an S3 link like http://eu-mcr-worlds.s3.amazonaws.com/abcdef/mcr_world_1.tar.gz?AWSAccessKeyId=AKIAJV3ELJDUWQCNERXQ&Expires=1443580650&Signature=foobar (that should be valid for ~30 minutes)
+Returns a json response like
+
+Example:
+
+{
+	"downloadLink": "http://us-west-mcr-worlds.s3.amazonaws.com/83b71x0/mcr_world.tar.gz?AWSAccessKeyId=ADSFASDFADSF&Expires=1457647137&Signature=ADSFASDFASDF",
+	"resourcePackUrl": null,
+	"resourcePackHash": null
+}
 
 ==== GET /ops/$ID ====
 Returns a list of operators for this server. You must own this server to view this.
