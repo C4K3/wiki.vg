@@ -480,7 +480,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
 
 === Examples ===
 
-Json: [https://gist.github.com/scholzi100/482f43706c292dbcd5be Gist]
+Json: [https://gist.github.com/scholzi100/482f43706c292dbcd5be Gist] or [https://github.com/PrismarineJS/minecraft-data/blob/master/data/common/protocolVersions.json minecraft-data]
 
 == Versions before the Netty rewrite ==
 
