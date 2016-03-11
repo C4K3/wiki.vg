@@ -95,6 +95,8 @@ The ''favicon'' should be a [[wikipedia:Portable Network Graphics|PNG]] image th
 
 After receiving the Response packet, the client may send the next packet to help calculate the server's latency, or if it is only interested in the above information it can disconnect here.
 
+If the client does not receive a properly formatted response, then it will instead attempt a [[Server_List_Ping#1.6|legacy ping]].
+
 === Ping ===
 
 If the process is continued, the client will now send a [[Protocol#Ping|Ping]] packet containing some payload which is not important.
