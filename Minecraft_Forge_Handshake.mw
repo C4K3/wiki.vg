@@ -201,8 +201,8 @@ The server sends several of this packet, one for each registry.  It'll keep send
  !colspan="2"| Field Type
  ! Notes
  |-
- |rowspan="8"| <code>FML|HS</code>
- |rowspan="8"| Both
+ |rowspan="10"| <code>FML|HS</code>
+ |rowspan="10"| Both
  |colspan="2"| Discriminator
  |colspan="2"| Byte
  | Always 3 for RegistryData.
