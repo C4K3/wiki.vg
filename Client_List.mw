@@ -21,7 +21,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | [http://opensource.org/licenses/CDDL-1.0 CDDL-1.0]
  | {{yes}}
  | {{no}}
- | {{yes|1.9.0}}
+ | {{yes|1.9}}
  |-
  ! [https://github.com/thinkofdeath/steven steven]
  | Compiles
@@ -30,7 +30,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | [http://www.apache.org/licenses/LICENSE-2.0.html Apache V2]
  | {{yes}}
  | {{yes}}
- | {{yes|15w32c}}
+ | {{no|15w32c}}
  |-
  ! [https://github.com/SpockBotMC/SpockBot SpockBot]
  | SMP Bot framework, based on BarneyGale's protocol implementation
@@ -39,7 +39,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{MIT}}
  | {{no}}
  | {{planned|Planned with plugin}}
- | {{yes|1.8.7}}
+ | {{no|1.8.7}}
  |-
  ! [https://github.com/andrewrk/mineflayer mineflayer]
  | Create Minecraft bots with a powerful, stable, and high level JavaScript API.
@@ -48,7 +48,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{MIT}}
  | {{no}}
  | {{no}}
- | {{yes|1.8.3}}
+ | {{no|1.8.3}}
  |-
  ! [https://github.com/woder/torchbot TorchBot]
  | Work in progress standalone bot written from scratch in java, currently supports key features of game(movement, chat, world handling) and plugin system!
@@ -57,7 +57,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{GPLv3}}
  | {{yes}}
  | {{no}}
- | {{yes|1.8.3}}
+ | {{no|1.8.3}}
  |-
  ! [https://github.com/PistonDevelopers/hematite Hematite]
  | {{no|Doesn't compile}}
@@ -66,7 +66,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{MIT}}
  | {{unknown}}
  | {{yes}}
- | {{yes|1.8.1}}
+ | {{no|1.8.1}}
  |-
  ! [http://reticle.mc-atlantida.eu/wiki Reticle]
  | Advanced minecraft bot system - Multi-server, API, Plugin system etc
@@ -75,7 +75,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | Closed source, binaries {{MIT}}
  | {{yes}}
  | {{yes|Yes, using Bundle plugin}}
- | {{yes|1.8}}
+ | {{no|1.8}}
  |-
  ! [https://github.com/phase/minekraft minekraft]
  | Minecraft remade in Kotlin. It will soon have all the features of Minecraft and more.
@@ -84,7 +84,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{MIT}}
  | {{planned|Maybe}}
  | {{planned|OpenGL Planned}}
- | {{yes|1.8}}
+ | {{no|1.8}}
  |-
  ! [https://github.com/phase/phasebot PhaseBot]
  | A bot that can move, interact with blocks, and loads of other things.
@@ -93,7 +93,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no|No License}}
  | {{planned|Maybe}}
  | {{no|Controlled through chat}}
- | {{yes|1.8}}
+ | {{no|1.8}}
  |-
  ! [https://github.com/DarkStorm652/DarkBot DarkBot]
  | Bot framework with an easy-to-use API, full world representation, path finding, AI via tasks (mining, farming, combat), and modular protocol handling
@@ -237,7 +237,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{MIT}}
  | {{yes}}
  | {{yes}}
- | {{planned|Beta 1.7.3*}}
+ | {{no|Beta 1.7.3*}}
  |-
  ! [http://hg.sitedethib.com/mcclient/ mcclient]
  | Work in progress SMP client
