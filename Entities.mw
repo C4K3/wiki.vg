@@ -1062,9 +1062,13 @@ Extends [[#Golem|Golem]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 11
- | Byte
- |colspan="2"| ''Unknown'' (probably bitmask)
+ |rowspan="2"| 10
+ |rowspan="2"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x10
+ | has pumpkin hat
  |}
 
 === Shulker ===
