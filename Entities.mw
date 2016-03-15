@@ -1040,6 +1040,20 @@ Extends [[#Golem|Golem]].
  |colspan="2"| Is player-created
  |}
 
+=== Snowman ===
+
+Extends [[#Golem|Golem]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 11
+ | Byte
+ |colspan="2"| ''Unknown'' (probably bitmask)
+ |}
+
 === Shulker ===
 
 Extends [[#Golem|Golem]].
