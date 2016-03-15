@@ -535,6 +535,20 @@ Extends [[#Entity|Entity]].
  |colspan="2"| Particle ID
  |}
 
+=== FishingHook ===
+
+Extends [[#Entity|Entity]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | VarInt
+ |colspan="2"| hooked entity
+ |}
+
 === Arrow ===
 
 Extends [[#Entity|Entity]].
