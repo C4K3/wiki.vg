@@ -505,7 +505,7 @@ Extends [[#Entity|Entity]].
  !style="width: 250px;" colspan="2"| Meaning
  |-
  | 5
- | OptPosition
+ | [[Data Types#Position|Position]]
  |colspan="2"| spawn position
  |}
 
