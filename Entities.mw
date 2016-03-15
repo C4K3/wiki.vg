@@ -481,7 +481,6 @@ The base class.
  |colspan="2"| Is silent
  |}
 
-
 === Potion ===
 
 Extends [[#Entity|Entity]].
@@ -494,6 +493,20 @@ Extends [[#Entity|Entity]].
  | 5
  | [[Slot]]
  |colspan="2"| Potion which is thrown
+ |}
+
+=== FallingBlock ===
+
+Extends [[#Entity|Entity]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 5
+ | OptPosition
+ |colspan="2"| spawn position
  |}
 
 === AreaEffectCloud ===
