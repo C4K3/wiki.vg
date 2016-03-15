@@ -52,6 +52,8 @@ In half-byte arrays, two values are packed into each byte. Even-indexed items ar
 
 == Implementations ==
 
+The following implement the ''previous'' format:
+
 * [https://github.com/GlowstoneMC/Glowstone/blob/d3ed79ea7d284df1d2cd1945bf53d5652962a34f/src/main/java/net/glowstone/GlowChunk.java#L640 Java, 1.8]
 * [https://github.com/barneygale/smpmap Python, 1.4]
 * [https://github.com/PrismarineJS/prismarine-chunk Node.js, 1.8]
