@@ -273,7 +273,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | [http://www.gnu.org/copyleft/gpl.html GPLv3]
  | {{yes}}
  | {{yes}}
- | {{unknown}}
+ | {{yes|1.9.1-pre3}}
  |}
 
 * TrueCraft is being actively developed against beta 1.7.3 and intentionally does not support newer versions
