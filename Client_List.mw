@@ -23,15 +23,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{yes|1.9}}
  |-
- ! [https://github.com/JavaProphet/MinecraftClone MinecraftClone]
- | Rendering Client in C
- | [https://github.com/JavaProphet JavaProphet]
- | {{C}}
- | [http://www.gnu.org/copyleft/gpl.html GPLv3]
- | {{yes}}
- | {{yes}}
- | {{yes|1.9.1-pre4}}
- |-
  ! [https://github.com/thinkofdeath/steven steven]
  | Compiles
  | [https://github.com/thinkofdeath/ Thinkofdeath]
@@ -274,6 +265,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{no}}
  | {{no|Beta 1.4}}
+ |-
+ ! [https://github.com/JavaProphet/MinecraftClone MinecraftClone]
+ | Rendering Client in C
+ | [https://github.com/JavaProphet JavaProphet]
+ | {{C}}
+ | [http://www.gnu.org/copyleft/gpl.html GPLv3]
+ | {{yes}}
+ | {{yes}}
+ | {{unknown}}
  |}
 
 * TrueCraft is being actively developed against beta 1.7.3 and intentionally does not support newer versions
