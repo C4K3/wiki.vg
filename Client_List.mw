@@ -32,6 +32,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{no|15w32c}}
  |-
+ ! [https://github.com/PistonDevelopers/hematite Hematite]
+ | Render singleplayer worlds (most blocks supported, no entities)
+ | [http://www.piston.rs/ Piston] developers
+ | [http://www.rust-lang.org/ Rust]
+ | {{MIT}}
+ | {{unknown}}
+ | {{yes}}
+ | {{no|1.8.8}}
+ |-
  ! [https://github.com/SpockBotMC/SpockBot SpockBot]
  | SMP Bot framework, based on BarneyGale's protocol implementation
  | [https://github.com/SpockBotMC/SpockBot/graphs/contributors The SpockBot Project]
@@ -58,15 +67,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{no}}
  | {{no|1.8.3}}
- |-
- ! [https://github.com/PistonDevelopers/hematite Hematite]
- | {{no|Doesn't compile}}
- | [http://www.piston.rs/ Piston] developers
- | [http://www.rust-lang.org/ Rust]
- | {{MIT}}
- | {{unknown}}
- | {{yes}}
- | {{no|1.8.1}}
  |-
  ! [http://reticle.mc-atlantida.eu/wiki Reticle]
  | Advanced minecraft bot system - Multi-server, API, Plugin system etc
