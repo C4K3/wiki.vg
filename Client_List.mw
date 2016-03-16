@@ -23,11 +23,11 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{yes|1.9}}
  |-
- ! [https://github.com/JavaProphet/MinecraftClone-MinecraftClone]
+ ! [https://github.com/JavaProphet/MinecraftClone MinecraftClone]
  | Rendering Client in C
  | [https://github.com/JavaProphet JavaProphet]
  | {{C}}
- | [http://www.gnu.org/copyleft/gpl.html - GPLv3]
+ | [http://www.gnu.org/copyleft/gpl.html GPLv3]
  | {{yes}}
  | {{yes}}
  | {{yes|1.9.1-pre4}}
