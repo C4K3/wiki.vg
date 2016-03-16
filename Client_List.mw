@@ -14,6 +14,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  ! Game Graphics
  ! Last Version Supported
  |-
+ ! [https://github.com/JavaProphet/MinecraftClone MinecraftClone]
+ | Rendering Client in C
+ | [https://github.com/JavaProphet JavaProphet]
+ | {{C}}
+ | [http://www.gnu.org/copyleft/gpl.html GPLv3]
+ | {{yes}}
+ | {{yes}}
+ | {{yes|1.9.1-pre3}}
+ |-
  ! [https://github.com/ORelio/Minecraft-Console-Client Minecraft Console Client]
  | Command-line chat client with C# bot support
  | [https://github.com/ORelio ORelio]
@@ -265,15 +274,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{no}}
  | {{no|Beta 1.4}}
- |-
- ! [https://github.com/JavaProphet/MinecraftClone MinecraftClone]
- | Rendering Client in C
- | [https://github.com/JavaProphet JavaProphet]
- | {{C}}
- | [http://www.gnu.org/copyleft/gpl.html GPLv3]
- | {{yes}}
- | {{yes}}
- | {{yes|1.9.1-pre3}}
  |}
 
 * TrueCraft is being actively developed against beta 1.7.3 and intentionally does not support newer versions
