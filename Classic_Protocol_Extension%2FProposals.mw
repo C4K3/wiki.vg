@@ -852,3 +852,58 @@ This extension does not define any new packets.
 | class="col1 rightalign" colspan="4" | 298 bytes
 |}
 :(Comments go here, please sign them)
+
+===BlockDefinitionsExt v2===
+:Proposed by UnknownShadow200
+:This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.
+:'''Motivation''': To allow defining independent textures for the four horizontal side textures of a block.
+:'''Client Behavior''': See the '''''BlockDefinitionsExt''''' specification.
+:'''Texturing''': See the '''''BlockDefinitionsExt''''' specification.
+:'''Server Behavior''': See the '''''BlockDefinitionsExt''''' specification.
+
+
+This packet is the same as DefineBlockExt packet, except the 'side texture' is replaced by 4 fields indicating the individual textures for each horizontal side face.
+Note that this packet does not support sprites, you must send a regular '''''DefineBlock''''' packet for that.
+:<h5>DefineBlockExt Packet</h5>
+:''Server to Client''
+:{| class="wikitable"
+|-
+| Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" rowspan="16" | 37
+| class="leftalign" colspan="4" | Following fields from DefineBlockExt packet: BlockID, Name, Solidity, MovementSpeed, TopTextureID 
+|-
+| class="centeralign" | LeftTextureId
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+|Refers to a terrain.png tile.
+Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the X = 0 face.
+|-
+| class="centeralign" | RightTextureId
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+|Refers to a terrain.png tile.
+Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the X = 1 face.
+|-
+| class="centeralign" | FrontTextureId
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+|Refers to a terrain.png tile.
+Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the Z = 0 face.
+|-
+| class="centeralign" | BackTextureId
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+|Refers to a terrain.png tile.
+Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the Z = 1 face.
+|-
+| class="leftalign" colspan="4" | Following fields from DefineBlockExt packet: BottomTextureID, TransmitsLight, WalkSound, FullBright, MinX/Y/Z, MaxX/Y/Z, BlockDraw, FogDensity, FogR, FogG, FogB
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 88 bytes
+|}
+:(Comments go here, please sign them)
