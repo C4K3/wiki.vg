@@ -1,16 +1,6 @@
-{{Box|
-BORDER = #FFCC00|
-BACKGROUND = #FFFF00|
-WIDTH = 100%|
-ICON = |
-HEADING = Work in progress! |
-CONTENT =  
-This page is a work in progress, and may be missing a lot of information or may contain incorrect information.  Feel free to edit it to add your own information.
-}}
+This page documents the current '''[https://minecraftforge.net/ Minecraft Forge] protocol''', including how to connect to servers running Minecraft Forge and what changes it makes to the vanilla protocol, for Minecraft 1.7.10, 1.8, and 1.9.
 
-This page will document the changes made in the '''[https://minecraftforge.net/ Minecraft Forge] protocol'''.
-
-Largely based on my own attempts to document the protocol and allow connection to forge servers [https://github.com/ORelio/Minecraft-Console-Client/pull/100 here].
+Largely based off of [https://github.com/ORelio/Minecraft-Console-Client/pull/100 Pokechu22's work on getting Minecraft Console Client to connect to Forge servers].
 
 == Changes to [[Server List Ping]] ==
 
