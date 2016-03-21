@@ -190,6 +190,22 @@ The "value" base64 string for the "textures" object decoded:
 ** [https://gist.github.com/jomo/9968b8d572c38e1b1f4c#file-main-java-L4-L11 Java] (includes sample UUIDs)
 * Likewise <code>"CAPE"</code> will be missing if the account has no cape.
 
+== Change Skin ==
+   PUT https://api.mojang.com/user/profile/<uuid>/skin
+
+This will set the skin for the selected profile.
+
+=== Response ===
+''Testing needs to be done, I believe an empty payload is returned if successful''
+=== Headers ===
+ Authorization: Bearer <access token>
+=== Payload ===
+<syntaxhighlight lang="javascript">
+{
+    "model":"<alex/steve>"
+}
+</syntaxhighlight>
+With the file of the skin attached as part of the PUT request.
 == Examples ==
 
 [https://github.com/PhilipRasmussen/minecraft/tree/master/profile Go] | uuids or names to profiles with skins, capes and name histories
