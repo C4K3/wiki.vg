@@ -267,7 +267,11 @@ Sent ''after'' a Server list ping in Minecraft 1.6. More information on [[Server
 === <code>MC|Brand</code> ===
 ''Two-way''
 
-Announces the server and client implementation name right after a player has logged in. For Minecraft and the standard Minecraft server, this is "vanilla" (encoded as a UTF-8 string).
+Announces the server and client implementation name right after a player has logged in. For the Notchain client and server server, this is "vanilla" (encoded as a [[Data Types|protocol string]]: a UTF-8 string with the length prefixed as a VarInt).
+
+These brands are used in crash reports and a few other locations; it's recommended that custom clients and servers use changed brands for the purpose of identification (for the Notchian client, the class used to get the brand is one of the few non-obfuscated classes).  The brand is not processed in any other way, and Notchian clients will connect to servers with changed brands with no issue (the brand is not used to validate).
+
+Some modified clients and servers will not send this packet (or will take longer to send it than normal), so it is important to not crash if the brand has not been sent.
 
 === <code>MC|DebugPath</code> ===
 ''Server to client''
