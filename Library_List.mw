@@ -156,19 +156,25 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | {{MIT}}
 | n/a
 |-
-! [https://github.com/TheShark34/OpenLauncherLib/ OpenLauncherLib]
+! [https://github.com/Litarvan/OpenLauncherLib/ OpenLauncherLib]
 | Minecraft launching library written from scratch
-| [https://github.com/TheShark34/ Adrien Navratil (TheShark34)]
+| [https://github.com/Litarvan/ Adrien "Litarvan" Navratil]
 | {{Java}}
-| {{LGPL}}
-| {{yes|1.0.0-1.8.8}}
+| {{LGPLv3}}
+| {{yes|1.0.0-1.9.1}}
+! [https://github.com/Litarvan/S-Update/ S-Update]
+| Powerful and simple Java update system, with Minecraft support. Works with a PHP Server
+| [https://github.com/Litarvan/ Adrien "Litarvan" Navratil]
+| {{Java}}
+| {{LGPLv3}}
+| {{yes|1.0.0-1.9.1}}
 |-
-! [https://github.com/TheShark34/OpenAuth/ OpenAuth]
-| Yggdrasil library, with possibility to give an other authentication server, it also has its proper auth server.
-| [https://github.com/TheShark34/ Adrien Navratil (TheShark34)]
+! [https://github.com/Litarvan/OpenAuth/ OpenAuth]
+| Yggdrasil library, with possibility to give an other authentication server, it also has its own auth server.
+| [https://github.com/Litarvan/ Adrien "Litarvan" Navratil]
 | {{Java}}
-| {{LGPL}}
-| {{yes|1.0.0-1.8.8}}
+| {{LGPLv3}}
+| {{yes|1.0.0-1.9.1}}
 |-
 |}
 
