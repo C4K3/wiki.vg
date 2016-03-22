@@ -311,6 +311,7 @@ PathEntity structure:
  | PathPoint
  |
  |-
+ |}
 
 PathPoint structure:
 
