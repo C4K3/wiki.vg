@@ -14,42 +14,44 @@ Allows the client or server to unregister from one or more custom channels, indi
 == Channels internal to Minecraft ==
 As of 1.3, Minecraft itself started using plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>. They are not formally registered using the REGISTER channel. The vanilla Minecraft server will send these packets regardless, and the vanilla client will accept them.
 
-=== <code>MC|AdvCdm</code> ===
-''Client to Server''
+=== <code>MC|AdvCmd</code> ===
+''Client to server''
 
-Adventure mode command block. 
+Sets the contents of a command block or command block Minecart.  The Notchain client only uses this for command block minecarts and uses [[#MC|AutoCmd]] for blocks, but the Notchian server still accepts it for either.
 
-The first byte is ''type'' which is followed by either:
+In 1.8 and earlier the name of this channel was incorrectly spelled as <code>MC|AdvCdm</code>.  This was fixed in snapshot {{Minecraft Wiki|15w34a}}.
 
-{| class="wikitable"
-! Type !! Field Name !! Field Type !! Notes
-|-
-| rowspan=5 | 0x00
-| X || Int || 
-|-
-| Y || Int || 
-|-
-| Z || Int || 
-|-
-| Command || String ||
-|-
-| Track Output || Boolean ||
-|}
+The packet starts with a single byte, which determines the type of thing being edited (block or minecart).  If it is 0, then it is a block and the location is 3 ints; if it is 1, then it is a minecart and the location is the entity's EID as an int.
 
-or
+; type = 0
 
 {| class="wikitable"
-! Type !! Field Name !! Field Type !! Notes
-|-
-| rowspan=5 | 0x01
-| Entity ID || Int ||  
-|-
-| Command || String ||
-|-
-| Track Output || Boolean ||
-|}
+ ! Type !! Field Name !! Field Type !! Notes
+ |-
+ | rowspan=6 | 0x00
+ | X || Int || 
+ |-
+ | Y || Int || 
+ |-
+ | Z || Int || 
+ |-
+ | Command || String ||
+ |-
+ | Track Output || Boolean ||
+ |}
 
-depending on the ''mode''
+; type = 1
+
+{| class="wikitable"
+ ! Type !! Field Name !! Field Type !! Notes
+ |-
+ | rowspan=3 | 0x01
+ | Entity ID || Int ||  
+ |-
+ | Command || String ||
+ |-
+ | Track Output || Boolean ||
+ |}
 
 === <code>MC|AutoCmd</code> ===
 ''Client to server''
