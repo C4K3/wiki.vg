@@ -1,5 +1,14 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 15w41a ===
+
+* Added an unused <code>CM|DebugPath</code> channel
+
+=== 15w34a ===
+
+* Renamed <code>MC|AdvCdm</code> to <code>MC|AdvCmd</code>
+* Added <code>MC|AutoCmd</code>
+
 === 15w32a ===
 
 * Protocol Version is now 52
