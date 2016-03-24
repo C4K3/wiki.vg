@@ -56,7 +56,7 @@ The packet starts with a single byte, which determines the type of thing being e
 === <code>MC|AutoCmd</code> ===
 ''Client to server''
 
-Sets command block data; this seems to be a newer version of <code>MC|AdvCmd</code> but the older version still works.
+Sets command block contents.  This can only be used to edit command blocks; command block minecarts cannot be used with it.  To edit a command block minecart, use [[#MC.7CAdvCmd|<code>MC|AdvCmd</code>]].
 
 {| class="wikitable"
 ! Field Name !! Field Type !! Notes
