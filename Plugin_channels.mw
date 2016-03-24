@@ -15,9 +15,9 @@ Allows the client or server to unregister from one or more custom channels, indi
 As of 1.3, Minecraft itself started using plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>. They are not formally registered using the REGISTER channel. The vanilla Minecraft server will send these packets regardless, and the vanilla client will accept them.
 
 === <code>MC|AdvCmd</code> ===
-''Client to server''
+{{anchor|MC.7CAdvCdm}}''Client to server''
 
-Sets the contents of a command block or command block Minecart.  The Notchain client only uses this for command block minecarts and uses [[#MC|AutoCmd]] for blocks, but the Notchian server still accepts it for either.
+Sets the contents of a command block or command block Minecart.  The Notchain client only uses this for command block minecarts and uses [[#MC.7CAutoCmd|<code>MC|AutoCmd</code>]] for blocks, but the Notchian server still accepts it for either.
 
 In 1.8 and earlier the name of this channel was incorrectly spelled as <code>MC|AdvCdm</code>.  This was fixed in snapshot {{Minecraft Wiki|15w34a}}.
 
