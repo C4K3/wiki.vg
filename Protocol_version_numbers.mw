@@ -493,6 +493,22 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  ! Last known documentation
  ! Notes
  |-
+ | {{Minecraft Wiki|13w39b}}
+ |rowspan="2"| 80
+ |rowspan="2"| [{{canonicalurl:Pre-release protocol|oldid=4825}} page]
+ |rowspan="2"|
+ |-
+ | {{Minecraft Wiki|13w39a}}
+ |-
+ | {{Minecraft Wiki|13w28c}}
+ |rowspan="3"| 79
+ |rowspan="3"| 
+ |rowspan="3"| 
+ |-
+ | {{Minecraft Wiki|13w28b}}
+ |-
+ | {{Minecraft Wiki|13w28a}}
+ |-
  | '''{{Minecraft Wiki|1.6.4}}'''
  | 78
  | [{{canonicalurl:Protocol|oldid=4899}} page]
