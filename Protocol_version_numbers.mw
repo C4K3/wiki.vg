@@ -471,12 +471,32 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  | '''{{Minecraft Wiki|1.7.2}}'''
  |-
  | {{Minecraft Wiki|1.7.1-pre}}
+ |-
+ | {{Minecraft Wiki|15w43a}}
+ | 2
+ | 
+ |-
+ | {{Minecraft Wiki|15w42b}}
+ | rowspan="2" | 1
+ | rowspan="2" | [{{canonicalurl:Pre-release protocol|5042}} page]
+ |-
+ | {{Minecraft Wiki|15w42a}}
+ |-
+ | {{Minecraft Wiki|15w41b}}
+ | 0
+ | [{{canonicalurl:Pre-release protocol|5007}} page] ([[#Note 2|note]])
+ |-
+ | {{Minecraft Wiki|15w41a}}
+ | 0
+ | [{{canonicalurl:Pre-release protocol|oldid=4957}} page]
  |}
 
 === Notes ===
 
-{{Anchor|Note 1}}
- &lt;Dinnerbone&gt; Protocol itself didn't change in 31c btw, but we added an entity which warrants incompatiblity
+<ol>
+<li id="Note 1"><pre>&lt;Dinnerbone&gt; Protocol itself didn't change in 31c btw, but we added an entity which warrants incompatibility</pre></li>
+<li id="Note 2">Despite having the same ID, 15w41a and 15w41b are incompatible.</li>
+</ol>
 
 === Examples ===
 
