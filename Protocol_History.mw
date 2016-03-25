@@ -2,7 +2,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 15w41a ===
 
-* Added an unused <code>CM|DebugPath</code> channel
+* Added an unused <code>MC|DebugPath</code> channel
 
 === 15w34a ===
 
@@ -17,7 +17,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 * Protocol Version is now 51
 
-==== Clientbount ====
+==== Clientbound ====
 * Added new Boss Bar Packet
 * Changed SlotId to Enum SlotType in PacketEntityEquipment
 * Removed ItemId of Held Item from PacketSpawnPlayer
