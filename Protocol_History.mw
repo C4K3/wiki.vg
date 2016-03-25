@@ -13,9 +13,20 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 * Protocol Version is now 52
 
-=== 15w31a/b/c ===
+=== 15w31c ===
 
 * Protocol Version is now 51
+* Added <code>DragonFireball</code> entity
+
+=== 15w31b ===
+
+* Protocol Version is now 50
+
+'''No other changes'''
+
+=== 15w31a ===
+
+* Protocol Version is now 49
 
 ==== Clientbound ====
 * Added new Boss Bar Packet
