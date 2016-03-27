@@ -75,7 +75,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{GPLv3}}
  | {{yes}}
  | {{no}}
- | {{no|1.8.3}}
+ | {{yes|1.9}}
  |-
  ! [http://reticle.mc-atlantida.eu/wiki Reticle]
  | Advanced minecraft bot system - Multi-server, API, Plugin system etc
