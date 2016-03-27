@@ -63,7 +63,7 @@ The int value itself specifies the minecart's functionality:
  | Block type
  | Int
  | <code>12</code>
- | <code>BlockID | (Metadata << 0x12)</code>
+ | <code>BlockID | (Metadata << 12)</code>
  |}
 
 == Splash Potions (id 73) ==
