@@ -12,7 +12,7 @@ Allows the client or server to register for one or more custom channels, indicat
 Allows the client or server to unregister from one or more custom channels, indicating that the receiving end should stop sending data on those channels. Payload is a null-separated list of strings. This is only useful if plugins are disabled/unloaded while the client is connected.
 
 == Channels internal to Minecraft ==
-As of 1.3, Minecraft itself started using plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>. They are not formally registered using the REGISTER channel. The vanilla Minecraft server will send these packets regardless, and the vanilla client will accept them.
+Since 1.3, Minecraft itself uses several plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>. They are '''not''' formally registered using the REGISTER channel. The vanilla Minecraft server will send these packets regardless, and the vanilla client will accept them.
 
 === <code>MC|AdvCmd</code> ===
 {{anchor|MC.7CAdvCdm}}''Client to server''
@@ -78,11 +78,6 @@ Sets command block contents.  This can only be used to edit command blocks; comm
 | Automatic || Boolean ||
 |}
 
-=== <code>MC|Beacon</code> ===
-''Client to server''
-
-Two integers corresponding to the 2 effects a user wishes to have active.
-
 === <code>MC|BEdit</code> ===
 ''Client to server''
 
@@ -101,6 +96,12 @@ The [[NBT]] section of the Slot contains
     }
   }
 </code>
+
+=== <code>MC|BOpen</code> ===
+''Server to client''
+
+When a player right clicks with a signed book. This tells the client to open the book GUI.
+This payload is empty.
 
 === <code>MC|BSign</code> ===
 ''Client to server''
@@ -125,146 +126,10 @@ The [[NBT]] section of the Slot contains
   }
 </code>
 
-=== <code>MC|BOpen</code> ===
-''Server to client''
-
-When a player right clicks with a signed book. This tells the client to open the book GUI.
-This payload is empty.
-
-=== <code>MC|ItemName</code> ===
+=== <code>MC|Beacon</code> ===
 ''Client to server''
 
-When a player uses an anvil to name an item. The payload is just a string: the item's new name.
-
-=== <code>MC|Struct</code> ===
-''Client to server''
-
-Does something with the (inaccessible) {{Minecraft Wiki|Structure block}}.
-
-{| class="wikitable"
- ! Field Name
- ! Field Type
- ! Notes
- |-
- | X || Int || Tile entity location
- |-
- | Y || Int || Tile entity location
- |-
- | Z || Int || Tile entity location
- |-
- | Action
- | Byte
- | See below
- |-
- | Mode
- | String enum
- | One of "SAVE", "LOAD", "CORNER", "DATA".
- |-
- | Name
- | String
- |
- |-
- | Position X || Int || ?
- |-
- | Position Y || Int || ?
- |-
- | Position Z || Int || ?
- |-
- | Size X || Int || ?
- |-
- | Size Y || Int || ?
- |-
- | Size Z || Int || ?x
- |-
- | Mirror
- | String enum
- | One of "NONE", "LEFT_RIGHT", "FRONT_BACK".
- |-
- | Rotation
- | String enum
- | One of "NONE", "CLOCKWISE_90", "CLOCKWISE_180", "COUNTERCLOCKWISE_90".
- |-
- | Metadata
- | String
- | ?
- |-
- | Ignore entities
- | Boolean
- |
- |}
-
-Possible modes:
-
-* 2 - Save the structure
-* 3 - Load the structure
-* 4 - Detect size
-
-=== <code>MC|PickItem</code> ===
-''Client to server''
-
-Swaps out an item at the given inventory index(?) with an item on the hotbar.  The server sends back several packets.  TODO: Document them.
-
-Payload is a single varint.
-
-=== <code>MC|TrList</code> ===
-''Server to client''
-
-The list of trades a villager NPC is offering.
-
-{| class="wikitable"
- ! colspan="2" | Field Name
- ! colspan="2" | Field Type
- ! Notes
- |-
- | colspan="2" | Window ID
- | colspan="2" | Int
- | The ID of the window that is open; this is an int rather than a byte.
- |-
- | colspan="2" | Size
- | colspan="2" | Byte
- | The number of trades in the following array
- |-
- | rowspan="7" | Trades
- | Input item 1
- | rowspan="7" | Array
- | Slot
- | The first item the villager is buying
- |-
- | Output item
- | Slot
- | The item the villager is selling
- |-
- | Has second item
- | Boolean
- | Whether there is a second item
- |-
- | Input item 2
- | Optional slot
- | The second item the villager is buying; only present if they have a second item.
- |-
- | Trade disabled
- | Boolean
- | True if the trade is disabled; false if the trade is enabled.
- |-
- | Number of tool uses
- | Int
- | May actually be the number of times this trade has been used; MCP may be misleading me
- |-
- | Maximum number of trade uses
- | Int
- | Number of times this trade can be used
- |}
-
-=== <code>MC|TrSel</code> ===
-''Client to server''
-	
-When a player selects a specific trade offered by a villager NPC.
-It contains a single int id corresponding to the selected slot int the players current (trading) inventory.
-
-=== <code>MC|PingHost</code> ===
-''Client to server''
-
-Sent ''after'' a Server list ping in Minecraft 1.6. More information on [[Server List Ping#1.6]]. In 1.7 and above, the [[Protocol#Request|Request]] ([[Protocol#Status|Status]], 0x00, serverbound) packet is instead sent ''before'' the ping.
+Two integers corresponding to the 2 effects a user wishes to have active.
 
 === <code>MC|Brand</code> ===
 ''Two-way''
@@ -366,6 +231,143 @@ Values for node type:
 * 14: DOOR_OPEN
 * 15: DOOR_WOOD_CLOSED
 * 16: DOOR_IRON_CLOSED
+
+=== <code>MC|ItemName</code> ===
+''Client to server''
+
+When a player uses an anvil to name an item. The payload is just a string: the item's new name.
+
+=== <code>MC|PickItem</code> ===
+''Client to server''
+
+Swaps out an item at the given inventory index(?) with an item on the hotbar.  The server sends back several packets.  TODO: Document them.
+
+Payload is a single varint.
+
+=== <code>MC|PingHost</code> ===
+''Client to server''
+
+Sent ''after'' a Server list ping in Minecraft 1.6. More information on [[Server List Ping#1.6]]. In 1.7 and above, the [[Protocol#Request|Request]] ([[Protocol#Status|Status]], 0x00, serverbound) packet is instead sent ''before'' the ping.
+
+{{Warning|Since this plugin channel is only sent for the legacy server list ping, it uses the older packet structure.}}}
+
+=== <code>MC|Struct</code> ===
+''Client to server''
+
+Does something with the (inaccessible) {{Minecraft Wiki|Structure block}}.
+
+{| class="wikitable"
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | X || Int || Tile entity location
+ |-
+ | Y || Int || Tile entity location
+ |-
+ | Z || Int || Tile entity location
+ |-
+ | Action
+ | Byte
+ | See below
+ |-
+ | Mode
+ | String enum
+ | One of "SAVE", "LOAD", "CORNER", "DATA".
+ |-
+ | Name
+ | String
+ |
+ |-
+ | Position X || Int || ?
+ |-
+ | Position Y || Int || ?
+ |-
+ | Position Z || Int || ?
+ |-
+ | Size X || Int || ?
+ |-
+ | Size Y || Int || ?
+ |-
+ | Size Z || Int || ?x
+ |-
+ | Mirror
+ | String enum
+ | One of "NONE", "LEFT_RIGHT", "FRONT_BACK".
+ |-
+ | Rotation
+ | String enum
+ | One of "NONE", "CLOCKWISE_90", "CLOCKWISE_180", "COUNTERCLOCKWISE_90".
+ |-
+ | Metadata
+ | String
+ | ?
+ |-
+ | Ignore entities
+ | Boolean
+ |
+ |}
+
+Possible modes:
+
+* 2 - Save the structure
+* 3 - Load the structure
+* 4 - Detect size
+
+=== <code>MC|TrList</code> ===
+''Server to client''
+
+The list of trades a villager NPC is offering.
+
+{| class="wikitable"
+ ! colspan="2" | Field Name
+ ! colspan="2" | Field Type
+ ! Notes
+ |-
+ | colspan="2" | Window ID
+ | colspan="2" | Int
+ | The ID of the window that is open; this is an int rather than a byte.
+ |-
+ | colspan="2" | Size
+ | colspan="2" | Byte
+ | The number of trades in the following array
+ |-
+ | rowspan="7" | Trades
+ | Input item 1
+ | rowspan="7" | Array
+ | Slot
+ | The first item the villager is buying
+ |-
+ | Output item
+ | Slot
+ | The item the villager is selling
+ |-
+ | Has second item
+ | Boolean
+ | Whether there is a second item
+ |-
+ | Input item 2
+ | Optional slot
+ | The second item the villager is buying; only present if they have a second item.
+ |-
+ | Trade disabled
+ | Boolean
+ | True if the trade is disabled; false if the trade is enabled.
+ |-
+ | Number of tool uses
+ | Int
+ | May actually be the number of times this trade has been used; MCP may be misleading me
+ |-
+ | Maximum number of trade uses
+ | Int
+ | Number of times this trade can be used
+ |}
+
+=== <code>MC|TrSel</code> ===
+''Client to server''
+
+When a player selects a specific trade offered by a villager NPC.
+It contains a single int id corresponding to the selected slot int the players current (trading) inventory.
 
 == Notable community plugin channels ==
 Channels listed in this section are not used by the vanilla Minecraft client or server. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
