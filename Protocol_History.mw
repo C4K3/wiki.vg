@@ -4,14 +4,59 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 * Added an unused <code>MC|DebugPath</code> channel
 
+=== 15w35a ===
+* Protocol version 62
+* Added some new packet 0x22 with an unknown use
+* Changed ID of multi-block change from 0x22 to 0x23
+* Changed ID of block change from 0x23 to 0x24
+* Changed ID of block action from 0x24 to 0x25
+* Changed ID of block break animation from 0x25 to 0x26
+* Removed Map Chunk Bulk (0x26)
+* Added some new packet with ID 0x26
+
+=== 15w34d ===
+* Protocol version 61
+
+=== 15w34c ===
+* Protocol version 60
+* Changed primary bit mask in Chunk Data (0x21) from a short to a VarInt
+* Significantly reworked Map Chunk Bulk (0x26)
+* Added packet 0x4A (?)
+
+=== 15w34b ===
+* Protocol version 59
+* Added assume command boolean to Tab Complete (0x15), before the existing "has position" boolean.
+
 === 15w34a ===
 
-* Renamed <code>MC|AdvCdm</code> to <code>MC|AdvCmd</code>
-* Added <code>MC|AutoCmd</code>
+* Protocol version 58
+* Added tracking position boolean to Map (0x34)
+* Renamed <code>MC|AdvCdm</code> plugin channel to <code>MC|AdvCmd</code>
+* Added <code>MC|AutoCmd</code> plugin channel
+
+=== 15w33c ===
+
+* Protocol version 57
+
+=== 15w33b ===
+
+* Protocol version 56
+
+=== 15w33a ===
+
+* Protocol version 55
+
+=== 15w32c ===
+
+* Protocol version 54
+
+=== 15w32b ===
+
+* Protocol version 53
 
 === 15w32a ===
 
-* Protocol Version is now 52
+* Protocol version 52
 
 === 15w31c ===
 
@@ -22,27 +67,54 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 * Protocol Version is now 50
 
-'''No other changes'''
-
 === 15w31a ===
 
 * Protocol Version is now 49
 
 ==== Clientbound ====
-* Added new Boss Bar Packet
-* Changed SlotId to Enum SlotType in PacketEntityEquipment
-* Removed ItemId of Held Item from PacketSpawnPlayer
-* Added Entity UUID to PacketSpawnObject
-* Added Entity UUID to PacketSpawnMob
-* Removed Update Entity NBT Packet
+* Changed Slot Id from a short to a VarInt enum in Entity Equipment (0x04)
+* Removed Current Item short from Spawn Player (0x0C)
+* Added Entity UUID after entity ID to Spawn Object (0x0E)
+* Spawn Object always sends velocity, even if data is 0
+* Added Entity UUID after entity ID to Spawn Mob (0x0F)
+* Removed Update Entity NBT Packet (0x49)
+* Added Boss Bar packet (0x49)
 
 ==== Serverbound ====
-* Added Enum HandType in PacketUseEntity
-* Added Enum Action in PacketPlayerDigging
-* Added PacketSwitchHand
-* Changed BlockDirection from int to EnumDirection, Block from ItemStack to Enum HandType in PacketPlayerBlockPlacement
-* Added Enum HandType to PacketAnimation
-* Added Enum MainHandLocation to PacketClientSettings
+* Added VarInt enum for selected hand in Use Entity (0x02); only sent if type is interact or interact at
+* Added swap item in hand (6) as a status for Player Digging
+* Added Use Item (0x08) packet with a VarInt enum for the selected hand
+* Changed ID of Player Block Placement from 0x08 to 0x09
+* Face for Player Block Placement is now a VarInt enum instead of a byte
+* Replaced held item (slot) with VarInt enum selected hand in Player Block Placement
+* Changed ID of Held Item Change from 0x09 to 0x0A
+* Changed ID of Animation from 0x0A to 0x0B
+* Added VarInt Enum selected hand to Animation
+* Changed ID of Entity Action from 0x0B to 0x0C
+* Removed Open inventory (6) from valid values for Entity Action's Action enum
+* Changed ID of Steer Vehicle from 0x0C to 0x0D
+* Changed ID of Close Window from 0x0D to 0x0E
+* Changed ID of Click Window from 0x0E to 0x0F
+* Changed ID of Confirm Transaction from 0x0F to 0x10
+* Changed ID of Creative Inventory Action from 0x10 to 0x11
+* Changed ID of Enchant Item from 0x11 to 0x12
+* Changed ID of Update Sign from 0x12 to 0x13
+* Changed ID of Player Abilities from 0x13 to 0x14
+* Changed ID of Tab Complete from 0x14 to 0x15
+* Changed ID of Client Settings from 0x15 to 0x16
+* Added VarInt enum main hand to Client Settings
+* Changed ID of Client Status from 0x16 to 0x17
+* Client Status is now used to signify that the client has opened its inventory, rather than to just award the "Taking Inventory" achievement
+* Changed ID of Plugin Message from 0x17 to 0x18
+* Changed ID of Spectate from 0x18 to 0x19
+* Changed ID of Resource Pack Status from 0x19 to 0x1A
+
+== 15w14a ==
+
+''Note: 15w14a was a joke snapshot, and its changes were not moved into the following snapshots''
+
+* Protocol version 48
+* Added a new packet with ID 0x4A, that has a single VarInt as its payload.  Use unknown.
 
 === 1.8 ===
 
