@@ -1,27 +1,381 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
-=== 15w41a ===
+=== 16w04a ===
 
+* Steer boat (0x11) now uses 2 booleans instead of 2 floats for its payload
+
+=== 15w47c ===
+* Protocol version 89
+
+=== 15w47b ===
+* Protocol version 88
+
+=== 15w47a ===
+* Protocol version 87
+
+=== 15w46a ===
+* Protocol version 86
+
+==== Clientbound ====
+* Removed Set Compression (0x1E) during play.  Its login varient should be used instead.
+* Changed ID of Change Game State from 0x1F to 0x1E
+* Changed ID of Keep Alive from 0x20 to 0x1F
+* Changed ID of Chunk Data from 0x21 to 0x20
+* Changed ID of Effect from 0x22 to 0x21
+* Changed ID of Particle from 0x23 to 0x22
+* Changed ID of Join Game from 0x24 to 0x23
+* Changed ID of Map from 0x25 to 0x24
+* Changed ID of Entity Relative Move from 0x26 to 0x25
+* Changed ID of Entity Look and Relative Move from 0x27 to 0x26
+* Changed ID of Entity Look from 0x28 to 0x27
+* Changed ID of Entity from 0x29 to 0x28
+* Changed ID of Vehicle Move from 0x2A to 0x29
+* Changed ID of Open Sign Editor from 0x2B to 0x2A
+* Changed ID of Player Abilities from 0x2C to 0x2B
+* Changed ID of Combat Event from 0x2D to 0x2C
+* Changed ID of Player List Item from 0x2E to 0x2D
+* Changed ID of Player Position and Look from 0x2F to 0x2E
+* Changed ID of Use Bed from 0x30 to 0x2F
+* Changed ID of Destroy Entities from 0x31 to 0x30
+* Changed ID of Remove Entity Effect from 0x32 to 0x31
+* Changed ID of Resource Pack Send from 0x33 to 0x32
+* Changed ID of Respawn from 0x34 to 0x33
+* Changed ID of Entity Head Look from 0x35 to 0x34
+* Changed ID of World Border from 0x36 to 0x35
+* Changed ID of Camera from 0x37 to 0x36
+* Changed ID of Held Item Change from 0x38 to 0x37
+* Changed ID of Display Scoreboard from 0x39 to 0x38
+* Changed ID of Entity Metadata from 0x3A to 0x39
+* Changed ID of Attach Entity from 0x3B to 0x3A
+* Changed ID of Entity Velocity from 0x3C to 0x3B
+* Changed ID of Entity Equipment from 0x3D to 0x3C
+* Changed ID of Set Experience from 0x3E to 0x3D
+* Changed ID of Update Health from 0x3F to 0x3E
+* Changed ID of Scoreboard Objective from 0x40 to 0x3F
+* Changed ID of Set Passangers from 0x41 to 0x40
+* Changed ID of Teams from 0x42 to 0x41
+* Changed ID of Update Score from 0x43 to 0x42
+* Changed ID of Spawn Position from 0x44 to 0x43
+* Changed ID of Time Update from 0x45 to 0x44
+* Changed ID of Title from 0x46 to 0x45
+* Changed ID of Update Sign from 0x47 to 0x46
+* Changed ID of Sound Effect from 0x48 to 0x47
+* Changed ID of Player List Header and Footer from 0x49 to 0x48
+* Changed ID of Collect Item from 0x4A to 0x49
+* Changed ID of Entity Teleport from 0x4B to 0x4A
+* Changed ID of Entity Properties from 0x4C to 0x4B
+* Changed ID of Entity Effect from 0x4D to 0x4C
+
+=== 15w45a ===
+* Protocol version 85
+
+=== 15w44b ===
+* Protocol version 84
+
+=== 15w44a ===
+* Protocol version 83
+* Click Window (0x07)'s mode field is now a VarInt enum instead of a byte enum
+
+=== 15w43c ===
+* Protocol version 82
+
+=== 15w43b ===
+* Protocol version 81
+
+=== 15w43a ===
+* Protocol version 80
+
+==== Clientbound ====
+* Changed ID of Named Sound Effect (previously refered to as Sound Effect) from 0x23 to 0x19
+* Changed ID of Disconnect from 0x19 to 0x1A
+* Changed ID of Entity Status from 0x1A to 0x1B
+* Changed ID of Explosion from 0x1B to 0x1C
+* Changed ID of Unload Chunk from 0x1C to 0x1D
+* Changed ID of Set Compression from 0x1D to 0x1E
+* Changed ID of Set Game State from 0x1E to 0x1F
+* Changed ID of Keep Alive from 0x1F to 0x20
+* Changed ID of Chunk Data from 0x20 to 0x21
+* Changed ID of Effect from 0x21 to 0x22
+* Changed ID of Particle from 0x22 to 0x23
+* Changed ID of Vehicle Move from 0x4C to 0x2A
+* Changed ID of Open Sign Editor from 0x2A to 0x2B
+* Changed ID of Player Abilities from 0x2B to 0x2C
+* Changed ID of Combat Event from 0x2C to 0x2D
+* Changed ID of Player List Item from 0x2D to 0x2E
+* Changed ID of Player Position and Look from 0x2E to 0x2F
+* Changed ID of Use Bed from 0x2F to 0x30
+* Changed ID of Destroy Entities from 0x30 to 0x31
+* Changed ID of Remove Entity Effect from 0x31 to 0x32
+* Changed ID of Resource Pack Send from 0x32 to 0x33
+* Changed ID of Respawn from 0x33 to 0x34
+* Changed ID of Entity Head Look from 0x34 to 0x35
+* Changed ID of World Border from 0x35 to 0x36
+* Changed ID of Camera from 0x36 to 0x37
+* Changed ID of Held Item Change from 0x37 to 0x38
+* Changed ID of Display Scoreboard from 0x38 to 0x39
+* Changed ID of Entity Metadata from 0x39 to 0x3A
+* Changed ID of Set Passangers from 0x3A to 0x41
+* Changed ID of Teams from 0x41 to 0x42
+* Changed ID of Update Score from 0x42 to 0x43
+* Changed ID of Spawn Position from 0x43 to 0x44
+* Changed ID of Time Update from 0x44 to 0x45
+* Changed ID of Title from 0x45 to 0x46
+* Changed ID of Update Sign from 0x46 to 0x47
+* Added Sound Event (numeric ID) with ID 0x48.  Structure is VarInt for the ID; x, y, and z as ints; volume as float; and pitch as a byte.
+* Changed ID of Player List Header and Footer from 0x47 to 0x49
+* Changed ID of Collect Item from 0x48 to 0x4A
+* Changed ID of Entity Teleport from 0x49 to 0x4B
+* Changed ID of Entity Properties from 0x4A to 0x4C
+* Changed ID of Entity Effect from 0x4B to 0x4D
+
+==== Serverbound ====
+* Changed ID of Teleport Confirm from 0x1D to 0x00
+* Changed ID of Tab Complete from 0x00 to 0x01
+* Changed ID of Chat Message from 0x01 to 0x02
+* Changed ID of Client Status from 0x02 to 0x03
+* Changed ID of Client Settings from 0x03 to 0x04
+* Changed ID of Confirm Transaction from 0x04 to 0x05
+* Changed ID of Enchant Item from 0x05 to 0x06
+* Changed ID of Click Window from 0x06 to 0x07
+* Changed ID of Close Window from 0x07 to 0x08
+* Changed ID of Plugin Message from 0x08 to 0x09
+* Changed ID of Use Entity from 0x09 to 0x0A
+* Changed ID of Keep Alive from 0x0A to 0x0B
+* Changed ID of Vehicle Move from 0x0B to 0x10
+* Changed ID of Steer Boat from 0x1C to 0x11
+* Changed ID of Player Abilities from 0x10 to 0x12
+* Changed ID of Player Digging from 0x11 to 0x13
+* Changed ID of Entity Action from 0x12 to 0x14
+* Changed ID of Steer Vehicle from 0x13 to 0x15
+* Changed ID of Resource Pack Status from 0x14 to 0x16
+* Changed ID of Held Item Change from 0x15 to 0x17
+* Changed ID of Creative Inventory Action from 0x16 to 0x18
+* Changed ID of Update Sign from 0x17 to 0x19
+* Changed ID of Animation from 0x18 to 0x1A
+* Changed ID of Spectate from 0x19 to 0x1B
+* Changed ID of Player Block Placement from 0x1A to 0x1C
+* Changed ID of Use Item from 0x1B to 0x1D
+
+=== 15w42a ===
+* Protocol version 79
+* Added Teleport ID VarInt field to Player Position and Look (0x2E - clientbound)
+* Added Teleport Confirm (0x1D - serverbound) packet, with a single VarInt for the teleport ID
+
+=== 15w41b ===
+* Protocol version 78
+
+=== 15w41a ===
+* Protocol version 77
 * Added an unused <code>MC|DebugPath</code> channel
+
+==== Clientbound ====
+* Added Set Passengers (0x3A)
+* Changed ID of Attach Entity from 0x3A to 0x3B
+* Removed "Leash" boolean from Attach Entity - Attach entity is now used only for leashing and Set Passengers is used in all other cases.
+* Changed ID of Entity Velocity from 0x3B to 0x3C
+* Changed ID of Entity Equipment from 0x3C to 0x3D
+* Changed ID of Set Experience from 0x3D to 0x3E
+* Changed ID of Update Health from 0x3E to 0x3F
+* Changed ID of Scoreboard Objectives from 0x3F to 0x40
+* Changed ID of Teams from 0x40 to 0x41
+* Changed ID of Update Score from 0x41 to 0x42
+* Changed ID of Spawn Position from 0x42 to 0x43
+* Changed ID of Time Update from 0x43 to 0x44
+* Changed ID of Title from 0x44 to 0x45
+* Changed ID of Update Sign from 0x45 to 0x46
+* Changed ID of Player List header and footer from 0x46 to 0x47
+* Changed ID of Collect Item from 0x47 to 0x48
+* Changed ID of Entity Teleport from 0x48 to 0x49
+* Changed ID of Entity Properties from 0x49 to 0x4A
+* Changed ID of Entity Effect from 0x4A to 0x4B
+
+==== Serverbound ====
+* Added Vehicle Move (0x0B).  Its structure is 3 doubles (coordinates) and then 2 floats (yaw and pitch).
+* Changed ID of Player Position from 0x0B to 0x0C
+* Changed ID of Player Position and Look from 0x0C to 0x0D
+* Changed ID of Player Look from 0x0D to 0x0E
+* Changed ID of Player from 0x0E to 0x0F
+* Changed ID of Player Abilities from 0x0F to 0x10
+* Changed ID of Player Digging from 0x10 to 0x11
+* Changed ID of Entity Action from 0x11 to 0x12
+* Changed ID of Steer Vehicle from 0x12 to 0x13
+* Changed ID of Resource Pack Status from 0x13 to 0x14
+* Changed ID of Held Item Change from 0x14 to 0x15
+* Changed ID of Creative Inventory Action from 0x15 to 0x16
+* Changed ID of Update Sign from 0x16 to 0x17
+* Changed ID of Animation from 0x17 to 0x18
+* Changed ID of Spectate from 0x18 to 0x19
+* Changed ID of Player Block Placement from 0x19 to 0x1A
+* Changed ID of Use Item from 0x1A to 0x1B
+* Added Steer Boat packet (0x1C), with 2 floats as a payload.
+
+=== 15w40b ===
+* Protocol version 76
+
+=== 15w40a ===
+* Protocol version 75
+
+=== 15w39a/b/c ===
+* Protocol version 74
+* Changed the hitboxes of several entities
+
+=== 15w38b ===
+* Protocol version 73
+
+=== 15w38a ===
+* Protocol version 72
+
+=== 15w37a ===
+* Protocol version 71
+
+=== 15w36d ===
+* Protocol version 70
+* Changed Primary Bit Mask in Chunk Data (0x20) from an Int to a VarInt (was an unsigned short in 1.8)
+
+=== 15w36c ===
+* Protocol version 69
+
+=== 15w36b ===
+* Protocol version 68
+
+=== 15w36a ===
+* Protocol version 67
+* Nearly all packets had their ID changed in this version
+
+==== Clientbound ====
+
+* Changed ID of Keep Alive from 0x00 to 0x1F
+* Changed ID of Join Game from 0x01 to 0x24
+* Changed ID of Chat Message from 0x02 to 0x0F
+* Changed ID of Time Update from 0x03 to 0x43
+* Changed ID of Entity Equipment from 0x04 to 0x3C
+* Changed ID of Spawn Position from 0x05 to 0x42
+* Changed ID of Update Health from 0x06 to 0x3E
+* Changed ID of Respawn from 0x07 to 0x33
+* Changed ID of Player Position And Look from 0x08 to 0x2E
+* Changed ID of Held Item Change from 0x09 to 0x37
+* Changed ID of Use Bed from 0x0A to 0x2F
+* Changed ID of Animation from 0x0B to 0x06
+* Changed ID of Spawn Player from 0x0C to 0x05
+* Changed ID of Collect Item from 0x0D to 0x47
+* Changed ID of Spawn Mob from 0x0F to 0x03
+* Changed ID of Spawn Painting from 0x10 to 0x04
+* Changed ID of Spawn Experience Orb from 0x11 to 0x01
+* Changed ID of Entity Velocity from 0x12 to 0x3B
+* Changed ID of Destroy Entities from 0x13 to 0x30
+* Changed ID of Entity from 0x14 to 0x29
+* Changed ID of Entity Relative Move from 0x15 to 0x26
+* Changed ID of Entity Look from 0x16 to 0x28
+* Changed ID of Entity Look And Relative Move from 0x17 to 0x27
+* Changed ID of Entity Teleport from 0x18 to 0x48
+* Changed ID of Entity Head Look from 0x19 to 0x34
+* Changed ID of Attach Entity from 0x1B to 0x3A
+* Changed ID of Entity Metadata from 0x1C to 0x39
+* Changed ID of Entity Effect from 0x1D to 0x4A
+* Changed ID of Remove Entity Effect from 0x1E to 0x31
+* Changed ID of Set Experience from 0x1F to 0x3D
+* Changed ID of Entity Properties from 0x20 to 0x49
+* Changed ID of Chunk Data from 0x21 to 0x20
+* Changed ID of Unload Chunk from 0x22 to 0x1C
+* Changed ID of Multi Block Change from 0x23 to 0x10
+* Changed ID of Block Change from 0x24 to 0x0B
+* Changed ID of Block Action from 0x25 to 0x0A
+* Changed ID of Block Break Animation from 0x26 to 0x08
+* Changed ID of Explosion from 0x27 to 0x1B
+* Changed ID of Effect from 0x28 to 0x21
+* Changed ID of Sound Effect from 0x29 to 0x23
+* Changed ID of Particle from 0x2A to 0x22
+* Changed ID of Change Game State from 0x2B to 0x1E
+* Changed ID of Spawn Global Entity from 0x2C to 0x02
+* Changed ID of Open Window from 0x2D to 0x13
+* Changed ID of Close Window from 0x2E to 0x12
+* Changed ID of Set Slot from 0x2F to 0x16
+* Changed ID of Window Items from 0x30 to 0x14
+* Changed ID of Window Property from 0x31 to 0x15
+* Changed ID of Confirm Transaction from 0x32 to 0x11
+* Changed ID of Update Sign from 0x33 to 0x45
+* Changed ID of Map from 0x34 to 0x25
+* Changed ID of Update Block Entity from 0x35 to 0x09
+* Changed ID of Open Sign Editor from 0x36 to 0x2A
+* Changed ID of Statistics from 0x37 to 0x07
+* Changed ID of Player List Item from 0x38 to 0x2D
+* Changed ID of Player Abilities from 0x39 to 0x2B
+* Changed ID of Tab-Complete from 0x3A to 0x0E
+* Changed ID of Scoreboard Objective from 0x3B to 0x3F
+* Changed ID of Update Score from 0x3C to 0x41
+* Changed ID of Display Scoreboard from 0x3D to 0x38
+* Changed ID of Teams from 0x3E to 0x40
+* Changed ID of Plugin Message from 0x3F to 0x18
+* Changed ID of Disconnect from 0x40 to 0x19
+* Changed ID of Server Difficulty from 0x41 to 0x0D
+* Changed ID of Combat Event from 0x42 to 0x2C
+* Changed ID of Camera from 0x43 to 0x36
+* Changed ID of World Border from 0x44 to 0x35
+* Changed ID of Title from 0x45 to 0x44
+* Changed ID of Set Compression from 0x46 to 0x1D
+* Changed ID of Player List Header And Footer from 0x47 to 0x46
+* Changed ID of Resource Pack Send from 0x48 to 0x32
+* Changed ID of Boss Bar from 0x49 to 0x0C
+* Changed ID of Set Cooldown from 0x0A to 0x17
+
+==== Serverbound ====
+
+* Changed ID of Keep Alive from 0x00 to 0x0A
+* Changed ID of Use Entity from 0x02 to 0x09
+* Changed ID of Player from 0x03 to 0x0E
+* Changed ID of Player Position from 0x04 to 0x0B
+* Changed ID of Player Look from 0x05 to 0x0D
+* Changed ID of Player Position And Look from 0x06 to 0x0C
+* Changed ID of Player Digging from 0x07 to 0x10
+* Changed ID of Use Item from 0x08 to 0x1A
+* Changed ID of Player Block Placement from 0x09 to 0x19
+* Changed ID of Held Item Change from 0x0A to 0x14
+* Changed ID of Animation from 0x0B to 0x17
+* Changed ID of Entity Action from 0x0C to 0x11
+* Changed ID of Steer Vehicle from 0x0D to 0x12
+* Changed ID of Close Window from 0x0E to 0x07
+* Changed ID of Click Window from 0x0F to 0x06
+* Changed ID of Confirm Transaction from 0x10 to 0x04
+* Changed ID of Creative Inventory Action from 0x11 to 0x15
+* Changed ID of Enchant Item from 0x12 to 0x05
+* Changed ID of Update Sign from 0x13 to 0x16
+* Changed ID of Player Abilities from 0x14 to 0x0F
+* Changed ID of Tab-Complete from 0x15 to 0x00
+* Changed ID of Client Settings from 0x16 to 0x03
+* Changed ID of Client Status from 0x17 to 0x02
+* Changed ID of Plugin Message from 0x18 to 0x08
+* Changed ID of Resource Pack Status from 0x19 to 0x13
+
+=== 15w35e ===
+* Protocol version 66
+
+=== 15w35d ===
+* Protocol version 65
+
+=== 15w35c ===
+* Protocol version 64
+
+=== 15w35b ===
+* Protocol version 63
 
 === 15w35a ===
 * Protocol version 62
-* Added some new packet 0x22 with an unknown use
+* Added Unload Chunk packet (0x22), with two ints for the chunk x and z coordinates.
 * Changed ID of multi-block change from 0x22 to 0x23
 * Changed ID of block change from 0x23 to 0x24
 * Changed ID of block action from 0x24 to 0x25
 * Changed ID of block break animation from 0x25 to 0x26
 * Removed Map Chunk Bulk (0x26)
-* Added some new packet with ID 0x26
+* Changed Update Sign (0x13 - serverbound) from being 4 chat components to 4 Strings.  The serverbound packet still uses chat components.
 
 === 15w34d ===
 * Protocol version 61
 
 === 15w34c ===
 * Protocol version 60
-* Changed primary bit mask in Chunk Data (0x21) from a short to a VarInt
+* Changed primary bit mask in Chunk Data (0x21) from a short to an Int
 * Significantly reworked Map Chunk Bulk (0x26)
-* Added packet 0x4A (?)
+* Added Set Cooldown (0x4A)
 
 === 15w34b ===
 * Protocol version 59
@@ -31,8 +385,6 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 * Protocol version 58
 * Added tracking position boolean to Map (0x34)
-* Renamed <code>MC|AdvCdm</code> plugin channel to <code>MC|AdvCmd</code>
-* Added <code>MC|AutoCmd</code> plugin channel
 
 === 15w33c ===
 
@@ -115,7 +467,6 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 * Protocol version 48
 * Added a new packet with ID 0x4A, that has a single VarInt as its payload.  Use unknown.
-
 === 1.8 ===
 
 === 1.8-pre3 ===
