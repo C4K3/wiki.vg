@@ -12,7 +12,7 @@ Returns status of various Mojang services. Possible values are <code>green</code
 
 === Response ===
 
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 [
   {
     "minecraft.net": "yellow"
@@ -57,7 +57,7 @@ This will return the uuid of the name at the timestamp provided.
 
 === Response ===
 
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 {
   "id": "7125ba8b1c864508b92bb5c042ccfe2b",
   "name": "KrisJelbring"
@@ -71,7 +71,7 @@ This will return the uuid of the name at the timestamp provided.
 If there is no player with the given username an HTTP status code 204 (No Content) is sent without any HTTP body.<br />
 If the timestamp is not a number, too big or too small the HTTP status code 400 (Bad Request) is sent with an error message looking like this:
 
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 {
   "error": "IllegalArgumentException",
   "errorMessage": "Invalid timestamp."
@@ -86,7 +86,7 @@ Returns all the usernames this user has used in the past and the one they are us
 
 === Response ===
 
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 [
   {
     "name": "Gold"
@@ -110,7 +110,7 @@ This will return player UUIDS and some extras.
 
 === Payload ===
 
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 [
     "maksimkurb",
     "nonExistingPlayer" //Test for non-existing player
@@ -119,7 +119,7 @@ This will return player UUIDS and some extras.
 
 === Response ===
 
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 [
     {
         "id": "0d252b7218b648bfb86c2ae476954d32",
@@ -149,7 +149,7 @@ This has a much stricter rate limit: You can request the same profile once per m
 [[Category:Minecraft Modern]]
 
 === Response ===
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 {
     "id": "<profile identifier>",
     "name": "<player name>",
@@ -164,7 +164,7 @@ This has a much stricter rate limit: You can request the same profile once per m
 </syntaxhighlight>
 
 The "value" base64 string for the "textures" object decoded:
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 {
     "timestamp": "<java time in ms>",
     "profileId": "<profile uuid>",
@@ -200,7 +200,7 @@ This will set the skin for the selected profile.
 === Headers ===
  Authorization: Bearer <access token>
 === Payload ===
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 {
     "model":"<alex/steve>"
 }
@@ -213,10 +213,10 @@ With the file of the skin attached as part of the PUT request.
 Returns information on the logged in Mojang account.
 
 === Response ===
-<syntaxhighlight lang="javascript">
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
 {
     "id": "<Account Identifier?>",
-    "email": "<Email attached to account">",
+    "email": "<Email attached to account>",
     "username": "<Username of account, with migrated accounts this is the same as email>",
     "registerIp": "<IP used to register account>",
     "registeredAt": <Epoch timestamp in ms of date the Mojang account was registered>,
