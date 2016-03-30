@@ -28,7 +28,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 16w06a ===
 * Protocol version 100
 * Changed fixed-point ints for x, y, and z coordinates to doubles in Spawn Object (0x00), Spawn Experience Orb (0x01), Spawn Global Entity (0x02), Spawn Mob (0x03), Spawn Player (0x05), and Entity Teleport (0x4A).
-* Changed byte-based fixed deltas measured in 32dths of a block to short-based fixed deltas measured as <code>(currentX * 32 - prevX * 32) * 128</code> in Entity Relative Move (0x25) and Entity Look And Relative Move (0x26).  As such, these packets are used for movements of at max 8 blocks instead of at max 4 blocks.
+* Changed byte-based fixed deltas measured in 32ndths of a block to short-based fixed deltas measured as <code>(currentX * 32 - prevX * 32) * 128</code> in Entity Relative Move (0x25) and Entity Look And Relative Move (0x26).  As such, these packets are used for movements of at max 8 blocks instead of at max 4 blocks.
 
 === 16w05b ===
 * Protocol version 99
