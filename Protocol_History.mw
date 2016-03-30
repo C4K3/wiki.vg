@@ -1,8 +1,68 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
-=== 16w04a ===
+=== 1.9.1-pre2 and 1.9.1-pre3 ===
+* Protocol version 108
+* Changed dimension in Join Game from a byte enum to an int enum ('''''not''' VarInt''), to the benefit of Minecraft Forge
 
-* Steer boat (0x11) now uses 2 booleans instead of 2 floats for its payload
+=== 1.9 and 1.9.1-pre1 ===
+* Protocol version 107
+
+=== 1.9-pre4 ===
+* Protocol version 106
+
+=== 1.9-pre3 ===
+* Protocol version 105
+
+=== 1.9-pre2 ===
+* Protocol version 104
+
+=== 1.9-pre1 ===
+* Protocol version 103
+
+=== 16w07b ===
+* Protocol version 102
+
+=== 16w07a ===
+* Protocol version 101
+
+=== 16w06a ===
+* Protocol version 100
+* Changed fixed-point ints for x, y, and z coordinates to doubles in Spawn Object (0x00), Spawn Experience Orb (0x01), Spawn Global Entity (0x02), Spawn Mob (0x03), Spawn Player (0x05), and Entity Teleport (0x4A).
+* Changed byte-based fixed deltas measured in 32dths of a block to short-based fixed deltas measured as <code>(currentX * 32 - prevX * 32) * 128</code> in Entity Relative Move (0x25) and Entity Look And Relative Move (0x26).  As such, these packets are used for movements of at max 8 blocks instead of at max 4 blocks.
+
+=== 16w05b ===
+* Protocol version 99
+
+=== 16w05a ===
+* Protocol version 98
+
+=== 16w04a ===
+* Protocol version 97
+* Changed floats in Steer Boat (0x11) to booleans
+
+=== 16w03a ===
+* Protocol version 96
+
+=== 16w02a ===
+* Protocol version 95
+* Added a UUID to Spawn Painting (0x04) after entity ID
+* Added VarInt enum category to Named Sound Effect (0x19)
+* Added VarInt enum category to Sound Effect (0x47)
+
+=== 15w51b ===
+* Protocol version 94
+
+=== 15w51a ===
+* Protocol version 93
+
+=== 15w50a ===
+* Protocol version 92
+
+=== 15w49b ===
+* Protocol version 91
+
+=== 15w49a ===
+* Protocol version 90
 
 === 15w47c ===
 * Protocol version 89
