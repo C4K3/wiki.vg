@@ -206,6 +206,37 @@ This will set the skin for the selected profile.
 }
 </syntaxhighlight>
 With the file of the skin attached as part of the PUT request.
+
+== User Info ==
+   GET https://api.mojang.com/user
+
+Returns information on the logged in Mojang account.
+
+=== Response ===
+<syntaxhighlight lang="javascript">
+{
+    "id": "<Account Identifier?>",
+    "email": "<Email attached to account">",
+    "username": "<Username of account, with migrated accounts this is the same as email>",
+    "registerIp": "<IP used to register account>",
+    "registeredAt": <Epoch timestamp in ms of date the Mojang account was registered>,
+    "passwordChangedAt": <Epoch timestamp of time password was last changed>,
+    "dateOfBirth":  <Epoch timestamp of date of birth for this Mojang Account>,
+    "deleted": <Unknown, probably whether account has been deleted or not>,
+    "blocked": <Unknown, probably whether account has been blocked or not>,
+    "secured": <Whether security questions are enabled on this Mojang Account>,
+    "migrated": <Whether the account has been migrated, if the account was made after Mojang Accounts were mandatory for new accounts this is set to false>,
+    "emailVerified": <Whether the email attached to the account is verified>,
+    "legacyUser": <Whether the account is a legacy user?>,
+    "verifiedByParent": <Whether the account has been verified by parent, is set to false if no parent verification was needed>,
+    "fullName": "<Full name attached to Mojang account, can be an empty string>",
+    "fromMigratedUser": <Not sure, probably related to migrated?>,
+    "hashed": <Unsure, seems to be set to false?>
+}
+</syntaxhighlight>
+
+=== Headers ===
+ Authorization: Bearer <access token>
 == Examples ==
 
 [https://github.com/PhilipRasmussen/minecraft/tree/master/profile Go] | uuids or names to profiles with skins, capes and name histories
