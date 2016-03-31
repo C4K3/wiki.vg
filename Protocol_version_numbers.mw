@@ -13,16 +13,18 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  ! Release name
  ! Version number
  ! Last known documentation
-|-
- | {{Minecraft Wiki|1.9.2}}
- |109
+ |-
+ | '''{{Minecraft Wiki|1.9.2}}'''
+ | 109
  |
  |-
- | {{Minecraft Wiki|1.9.1}}
- |rowspan="4"| 108
- |rowspan="4"| [{{canonicalurl:Pre-release protocol|oldid=7552}} page]
+ | {{Minecraft Wiki|1.RV-pre1}}
+ | 108
+ | ([[#Note 3|note]])
  |-
- | {{Minecraft Wiki|1.RV}}
+ | '''{{Minecraft Wiki|1.9.1}}'''
+ |rowspan="3"| 108
+ |rowspan="3"| [{{canonicalurl:Pre-release protocol|oldid=7552}} page]
  |-
  | {{Minecraft Wiki|1.9.1-pre3}}
  |-
@@ -492,7 +494,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|15w41b}}
  | 0
- | [{{canonicalurl:Pre-release protocol|5007}} page] ([[#Note 2|note]])
+ | [{{canonicalurl:Pre-release protocol|oldid=5007}} page] ([[#Note 2|note]])
  |-
  | {{Minecraft Wiki|15w41a}}
  | 0
@@ -504,6 +506,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
 <ol>
 <li id="Note 1"><pre>&lt;Dinnerbone&gt; Protocol itself didn't change in 31c btw, but we added an entity which warrants incompatibility</pre></li>
 <li id="Note 2">Despite having the same ID, 15w41a and 15w41b are incompatible.</li>
+<li id="Note 3">Although it has the same ID as 1.9.1, 1.RV-Pre1 has need blocks and items that cannot be used on 1.9.1 servers.</li>
 </ol>
 
 === Examples ===
