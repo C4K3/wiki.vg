@@ -506,7 +506,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
 <ol>
 <li id="Note 1"><pre>&lt;Dinnerbone&gt; Protocol itself didn't change in 31c btw, but we added an entity which warrants incompatibility</pre></li>
 <li id="Note 2">Despite having the same ID, 15w41a and 15w41b are incompatible.</li>
-<li id="Note 3">Although it has the same ID as 1.9.1, 1.RV-Pre1 has need blocks and items that cannot be used on 1.9.1 servers.</li>
+<li id="Note 3">Although it has the same ID as 1.9.1, the April Fools version 1.RV-Pre1 has new blocks and items that cannot be used on 1.9.1 servers.</li>
 </ol>
 
 === Examples ===
