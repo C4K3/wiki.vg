@@ -1205,7 +1205,7 @@ Extends [[#Monster|Monster]].
  |-
  | 12
  | Boolean
- |colspan="2"| ''Unknown (something melee target related | true if target is select otherwise false)''
+ |colspan="2"| Is swinging arms (Used to animate arms for melee attacks; only used when the skeleton does not have a bow in its hand)
  |}
 
 === Spider ===
