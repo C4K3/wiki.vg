@@ -997,8 +997,8 @@ Extends [[#Animal|Animal]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- |rowspan="3"| 12
- |rowspan="3"| Byte
+ |rowspan="4"| 12
+ |rowspan="4"| Byte
  ! Bit mask
  ! Meaning
  |-
