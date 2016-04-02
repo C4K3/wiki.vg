@@ -16,9 +16,9 @@ We have a core group of about 100 members and rarely need to ban people. Please 
 :    protocol specifications.
 
 ; b.wiki.vg
-:   [http://b.wiki.vg Burger], is set of tools for disassembling the minecraft binaries and producing a JSON description of items, entities, packets,
+:   [http://b.wiki.vg Burger] is set of tools for disassembling the minecraft binaries and producing a JSON description of items, entities, packets,
 :    and other internels useful to developers. [http://b.wiki.vg Burger] makes these available automatically and supports a `diff` between two different
-:    versions.
+:    versions.  Burger [https://github.com/mcdevs/Burger is open-source].
 
 == Subpages ==
 {{Special:PrefixIndex/MCDevs/}}
