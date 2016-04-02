@@ -900,10 +900,13 @@ Extends [[#Animal|Animal]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- |rowspan="8"| 12
- |rowspan="8"| Byte
+ |rowspan="9"| 12
+ |rowspan="9"| Byte
  ! Bit mask
  ! Meaning
+ |-
+ | 0x01
+ | ''Unused''
  |-
  | 0x02
  | Is Tame
