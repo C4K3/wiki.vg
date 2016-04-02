@@ -457,8 +457,81 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 15w33c ===
 
-* Protocol version 57
-* Changed entity metadata format
+<ul>
+<li>Protocol version 57</li>
+<li>Changed entity metadata format from a single byte for both type and index to several bytes:
+{| class="wikitable"
+ ! Name
+ ! Type
+ ! Meaning
+ |-
+ | Index
+ | Unsigned Byte
+ | Unique index key determining the meaning of the following value, see the table below. If this is <code>0xff</code> then the it is the end of the Entity Metadata array and no more is read.
+ |-
+ | Type
+ | Optional Byte Enum
+ | Only if Index is not <code>0xff</code>; the type of the index, see the table below
+ |-
+ | Value
+ | Optional ''value of Type''
+ | Only if Index is not <code>0xff</code>: the value of the metadata field
+ |}</li>
+<li>Remapped metadata types.  These types match the final version except that BlockID is missing.
+{| class="wikitable"
+ ! Value of Type field
+ ! [[Data types|Type]] of Value field
+ ! Notes
+ |-
+ | 0
+ | Byte
+ | 
+ |-
+ | 1
+ | VarInt
+ | 
+ |-
+ | 2
+ | Float
+ | 
+ |-
+ | 3
+ | String
+ | 
+ |-
+ | 4
+ | [[Chat]]
+ | 
+ |-
+ | 5
+ | [[Slot]]
+ | 
+ |-
+ | 6
+ | Boolean
+ | 
+ |-
+ | 7
+ | Vector3F (Array of Float)
+ | 3 elements
+ |-
+ | 8
+ | [[Data Types#Position|Position]]
+ | 
+ |-
+ | 9
+ | OptPosition (Boolean + Optional Position)
+ | Position is present if the Boolean is set to true
+ |-
+ | 10
+ | Direction (VarInt)
+ | ???
+ |-
+ | 11
+ | OptUUID (Boolean + Optional UUID)
+ | UUID is present if the Boolean is set to true
+ |}
+</ul>
 
 === 15w33b ===
 
