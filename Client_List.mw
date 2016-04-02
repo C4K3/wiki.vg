@@ -21,7 +21,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | [http://www.gnu.org/copyleft/gpl.html GPLv3]
  | {{yes}}
  | {{yes}}
- | {{yes|1.9.1-pre3}}
+ | {{yes|1.9.2}}
  |-
  ! [https://github.com/ORelio/Minecraft-Console-Client Minecraft Console Client]
  | Command-line chat client with C# bot support
@@ -75,7 +75,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{GPLv3}}
  | {{yes}}
  | {{no}}
- | {{yes|1.9}}
+ | {{no|1.8.3}}
  |-
  ! [http://reticle.mc-atlantida.eu/wiki Reticle]
  | Advanced minecraft bot system - Multi-server, API, Plugin system etc
