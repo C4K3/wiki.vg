@@ -558,9 +558,13 @@ Extends [[#Entity|Entity]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 5
- | Byte
- |colspan="2"| Is critical
+ | rowspan="2" | 5
+ | rowspan="2" | Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | Is critical
  |}
 
 === TippedArrow ===
