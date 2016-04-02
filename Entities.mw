@@ -1003,10 +1003,13 @@ Extends [[#Animal|Animal]].
  ! Meaning
  |-
  | 0x01
- | is sitting
+ | Is sitting
+ |-
+ | 0x02
+ | Is angry (only used with wolves)
  |-
  | 0x04
- | is tamed
+ | Is tamed
  |-
  | 13
  | OptUUID
