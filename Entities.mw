@@ -918,7 +918,7 @@ Extends [[#Animal|Animal]].
  | Has Chest
  |-
  | 0x10
- | Is breeding
+ | Is Bred (not used on the Notchian server; controlled via the unused Bred NBT flag)
  |-
  | 0x20
  | Is eating
