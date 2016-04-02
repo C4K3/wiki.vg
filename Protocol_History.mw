@@ -458,6 +458,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 15w33c ===
 
 * Protocol version 57
+* Changed entity metadata format
 
 === 15w33b ===
 
