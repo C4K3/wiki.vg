@@ -1,10 +1,10 @@
-Minecraft's client and server can log every packet which can be helpful for debugging servers.
+Minecraft's client and server can log every packet which can be helpful for debugging.  It can also log a large amount of other information should it be necessary, beyond what is normally found in the logs.
 
     -Dlog4j.configurationFile=fullpathtoconfigfile.xml
 
 The <code>-Dlog4j.configurationFile=fullpathtoconfigfile.xml</code> should be placed:
 * [[media:ClientDebugging.png|In the JVM Arguments section of the launcher]]
-* Before the <code>-jar</code> in the server launch command 
+* Before the <code>-jar</code> in the server launch command
 
 where the config file should contain
 <syntaxhighlight lang="xml">
@@ -38,17 +38,47 @@ where the config file should contain
 </Configuration>
 </syntaxhighlight>
 
-this will display packets in the launcher's console like so:
+Doing this will display some packet information in the console.  Unfortunately after the netty rewrite (1.7), only packet names and IDs are shown; packet content is no longer given.  Nevertheless, this information still can be useful.
+
 <pre>
-Client> [22:56:42] [Netty Client IO #5/DEBUG]: OUT: [PLAY:3] iq[]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:21] gw[id=1907, xa=4, ya=0, za=3]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1907, rot=-28]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:21] gw[id=1903, xa=11, ya=0, za=0]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:22] gy[id=1580, yRot=-49, xRot=0]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1580, rot=-49]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:18] hl[id=1025, x=0.00, y=-0.08, z=-0.01]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:21] gw[id=1025, xa=-5, ya=0, za=-2]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1340, rot=85]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1809, rot=-66]
-Client> [22:56:42] [Netty Client IO #5/DEBUG]:  IN: [PLAY:25] hg[id=1471, rot=-103]
+[08:21:44] [Netty Client IO #0/DEBUG]: OUT: [HANDSHAKING:0] jd
+[08:21:44] [Netty Client IO #0/DEBUG]: OUT: [STATUS:0] jw
+[08:21:44] [Netty Client IO #0/DEBUG]:  IN: [STATUS:0] js
+[08:21:44] [Netty Client IO #0/DEBUG]: OUT: [STATUS:1] jv
+[08:21:44] [Netty Client IO #0/DEBUG]:  IN: [STATUS:1] jr
+[08:21:52] [Netty Client IO #1/DEBUG]: OUT: [HANDSHAKING:0] jd
+[08:21:52] [Netty Client IO #1/DEBUG]: OUT: [LOGIN:0] jm
+[08:21:52] [Netty Client IO #1/DEBUG]:  IN: [LOGIN:1] ji
 </pre>
+
+Minecraft can do even more logging should you need it, if you allow it to log all sections.
+
+<syntaxhighlight lang="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="net.minecraft,com.mojang">
+    <Appenders>
+        <Console name="SysOut" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
+        </Console>
+        <Queue name="ServerGuiConsole">
+            <PatternLayout pattern="[%d{HH:mm:ss} %level]: %msg%n" />
+        </Queue>
+        <RollingRandomAccessFile name="File" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <OnStartupTriggeringPolicy />
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="SysOut"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="ServerGuiConsole"/>
+        </Root>
+    </Loggers> 
+</Configuration>
+</syntaxhighlight>
+
+This will give you information about networking, sounds, authentication, and several other categories.
