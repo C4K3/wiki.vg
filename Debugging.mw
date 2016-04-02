@@ -40,6 +40,8 @@ where the config file should contain
 
 Doing this will display some packet information in the console.  Unfortunately after the netty rewrite (1.7), only packet names and IDs are shown; packet content is no longer given.  Nevertheless, this information still can be useful.
 
+{{warning|Packet IDs are shown in decimal in logs; they are not in hexadecimal.}}
+
 <pre>
 [08:21:44] [Netty Client IO #0/DEBUG]: OUT: [HANDSHAKING:0] jd
 [08:21:44] [Netty Client IO #0/DEBUG]: OUT: [STATUS:0] jw
