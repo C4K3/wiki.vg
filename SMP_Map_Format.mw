@@ -48,7 +48,7 @@ Data Array, Block Light, and Sky Light are given for each block with increasing 
 
 The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>.
 
-In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''high bits'', odd-indexed into the ''low bits''.
+In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''low bits'', odd-indexed into the ''high bits''.
 
 == Implementations ==
 
