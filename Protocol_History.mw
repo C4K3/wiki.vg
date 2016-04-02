@@ -512,8 +512,8 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
  | 
  |-
  | 7
- | Vector3F (Array of Float)
- | 3 elements
+ | Rotation
+ | 3 floats: rotation on x, rotation on y, rotation on z 
  |-
  | 8
  | [[Data Types#Position|Position]]
