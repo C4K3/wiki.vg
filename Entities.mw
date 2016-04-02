@@ -906,25 +906,25 @@ Extends [[#Animal|Animal]].
  ! Meaning
  |-
  | 0x02
- | is Tame
+ | Is Tame
  |-
  | 0x04
- | ''Unknown''
+ | Is saddled
  |-
  | 0x08
- | has Chest
+ | Has Chest
  |-
  | 0x10
- | ''Unknown''
+ | Is breading
  |-
  | 0x20
- | eating
+ | Is eating
  |-
  | 0x40
- | put on hind legs
+ | Is rearing (on hind legs)
  |-
  | 0x80
- | mouth open
+ | Is mouth open
  |-
  | 13
  | VarInt
