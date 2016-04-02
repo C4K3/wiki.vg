@@ -503,7 +503,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 ==== Serverbound ====
 * Added VarInt enum for selected hand in Use Entity (0x02); only sent if type is interact or interact at
-* Added swap item in hand (6) as a status for Player Digging
+* Added swap item in hand (6) as a status for Player Digging (0x07)
 * Added Use Item (0x08) packet with a VarInt enum for the selected hand
 * Changed ID of Player Block Placement from 0x08 to 0x09
 * Face for Player Block Placement is now a VarInt enum instead of a byte
