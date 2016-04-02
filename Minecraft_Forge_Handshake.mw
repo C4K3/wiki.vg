@@ -47,7 +47,7 @@ The <code>modList</code> contains each installed mod's version and ID.
 
 {{warning|The key <code>modList</code> has a capital 'L', unlike any other key in the ping result!}}
 
-This is injected in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/patches/minecraft/net/minecraft/network/ServerStatusResponse.java.patch#L45 ServerStatusResponse] by calling [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/internal/FMLNetworkHandler.java#L192-L206 FMLNetworkHandler.enhanceStatusQuery()].
+This is injected in [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/patches/minecraft/net/minecraft/network/ServerStatusResponse.java.patch#L45 ServerStatusResponse] by calling [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/internal/FMLNetworkHandler.java#L197-L211 FMLNetworkHandler.enhanceStatusQuery()].
 
 == Connection to a forge server ==
 
