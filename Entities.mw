@@ -403,8 +403,8 @@ An Entity Metadata is an array of entries, each of which looks like the followin
  | 
  |-
  | 7
- | Vector3F (Array of Float)
- | 3 elements
+ | Rotation
+ | 3 floats: rotation on x, rotation on y, rotation on z
  |-
  | 8
  | [[Data Types#Position|Position]]
@@ -787,27 +787,27 @@ Extends [[#Living|Living]].
  | set Marker
  |-
  | 11
- | Vector3F
+ | Rotation
  |colspan="2"| Head rotation
  |-
  | 12
- | Vector3F
+ | Rotation
  |colspan="2"| Body rotation
  |-
  | 13
- | Vector3F
+ | Rotation
  |colspan="2"| Left arm rotation
  |-
  | 14
- | Vector3F
+ | Rotation
  |colspan="2"| Right arm rotation
  |-
  | 15
- | Vector3F
+ | Rotation
  |colspan="2"| Left leg rotation
  |-
  | 16
- | Vector3F
+ | Rotation
  |colspan="2"| Right leg rotation
  |}
 
