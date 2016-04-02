@@ -1,6 +1,15 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
-=== 1.9.1-pre2 and 1.9.1-pre3 ===
+=== 1.9.2 ===
+* Protocol version 109
+* Protocol version ''probably'' was incremented to force Realms users to update due to [https://bugs.mojang.com/browse/MC-100283 a bug that broke Realms].
+
+=== 1.RV-Pre1 ===
+* Another april fools snapshot; changes from it were not kept in the next release.
+* Added several items and blocks
+* Did '''not''' change the protocol version, so it is able to connect to 1.9.1 servers.
+
+=== 1.9.1-pre2, 1.9.1-pre3, 1.9.1 ===
 * Protocol version 108
 * Changed dimension in Join Game from a byte enum to an int enum ('''''not''' VarInt''), to the benefit of Minecraft Forge
 
