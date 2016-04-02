@@ -310,6 +310,8 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 === 15w36a ===
 * Protocol version 67
 * Nearly all packets had their ID changed in this version
+* Added a new Metadata type, Block ID (0x12), which is a VarInt: <code>id << 4 | data</code>
+* Endermen now use Block ID for their held item, rather than two Metadata ints
 
 ==== Clientbound ====
 
