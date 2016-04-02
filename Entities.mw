@@ -714,9 +714,18 @@ Extends [[#Entity|Entity]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 5
- | Byte
- |colspan="2"| ''Unknown (probably indicates which hand is currently used)''
+ |rowspan="4"| 5
+ |rowspan="4"| Byte
+ |colspan="2"| Likely used to limit placing blocks from both hands at the same time.
+ |-
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | Is hand active
+ |-
+ | 0x02
+ | Active hand (0 = main hand, 1 = offhand)
  |-
  | 6
  | Float
