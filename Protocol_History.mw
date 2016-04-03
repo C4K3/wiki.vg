@@ -329,6 +329,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Changed ID of Animation from 0x0B to 0x06
 * Changed ID of Spawn Player from 0x0C to 0x05
 * Changed ID of Collect Item from 0x0D to 0x47
+* Changed ID of Spawn Object from 0x0E to 0x00
 * Changed ID of Spawn Mob from 0x0F to 0x03
 * Changed ID of Spawn Painting from 0x10 to 0x04
 * Changed ID of Spawn Experience Orb from 0x11 to 0x01
