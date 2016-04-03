@@ -860,9 +860,13 @@ Extends [[#Ambient|Ambient]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 11
- | Byte
- |colspan="2"| Is hanging
+ | rowspan="2"| 11
+ | rowspan="2"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | Is hanging
  |}
 
 === Creature ===
