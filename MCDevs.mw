@@ -11,14 +11,11 @@ We have a core group of about 100 members and rarely need to ban people. Please 
 
 == Projects ==
 
-; wiki.vg
-:   One of the core projects of <code>#mcdevs</code> is [http://wiki.vg wiki.vg], the primary development wiki for [http://minecraft.net Minecraft] and the home of the Minecraft
-:    protocol specifications.
+;wiki.vg
+: One of the core projects of <code>#mcdevs</code> is [http://wiki.vg/ wiki.vg], the primary development wiki for [http://minecraft.net/ Minecraft] and the home of the Minecraft protocol specifications.
 
-; b.wiki.vg
-:   [http://b.wiki.vg Burger] is set of tools for disassembling the minecraft binaries and producing a JSON description of items, entities, packets,
-:    and other internels useful to developers. [http://b.wiki.vg Burger] makes these available automatically and supports a `diff` between two different
-:    versions.  Burger [https://github.com/mcdevs/Burger is open-source].
+;b.wiki.vg
+: [http://b.wiki.vg/ Burger] is a set of tools for disassembling the Minecraft binaries and producing a JSON description of items, entities, packets, and other internals useful to developers. Burger makes these available automatically and supports a “diff” between two different versions. Burger [https://github.com/mcdevs/Burger is open-source].
 
 == Subpages ==
 {{Special:PrefixIndex/MCDevs/}}
