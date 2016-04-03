@@ -438,6 +438,7 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 * Changed ID of block break animation from 0x25 to 0x26
 * Removed Map Chunk Bulk (0x26)
 * Changed Update Sign (0x13 - serverbound) from being 4 chat components to 4 Strings.  The serverbound packet still uses chat components.
+* Changed the Boolean metadata for whether a zombie is a zombie villager to a VarInt which is 0 for normal zombie or Profession + 1 for a zombie villager
 
 === 15w34d ===
 * Protocol version 61
