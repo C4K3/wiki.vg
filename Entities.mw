@@ -1067,7 +1067,7 @@ Extends [[#Ageable|Ageable]].
  |-
  | 12
  | VarInt
- |colspan="2"| Profession (Type)
+ |colspan="2"| Profession (Farmer = 0, Librarian = 1, Priest = 2, Blacksmith = 3, Butcher = 4)
  |}
 
 === Golem ===
