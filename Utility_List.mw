@@ -12,19 +12,19 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 ! scope="col" | Author
 ! scope="col" | Development Status
 |-
-| [https://github.com/DarkStorm652/DarkBot DarkBot] || Minecraft client, automation (AI) platform, and modular protocol library. Can play Minecraft on its own (on any 1.5.2+ server). || {{yes|#5}} - 1.7.9<br />(and #4, #61, #74, #78) || Java ||  Windows, Mac, & Linux  || [[user:DarkStorm|DarkStorm]] || {{yes|Active}}
+| [https://github.com/cuberite/cuberite/tree/master/Tools/ProtoProxy ProtoProxy] || A subproject of [https://github.com/cuberite/cuberite Cuberite], protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parsing basic packets. || {{planned|#47}} - 1.8.9 || C++ || Windows, Mac, Linux || FakeTruth, [[User:xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More] || {{yes|Active}}
 |-
-| [https://github.com/Yogu/minecraft-sniffer minecraft-sniffer] || A proxy that prints out server and client packets in JSON format. Does not support encryption.|| {{yes|#5}} - 1.7.10 || node.js ||  Windows, Mac, & Linux  || [[user:Yogu|Yogu]] || {{yes|Active}}
+| [https://github.com/DarkStorm652/DarkBot DarkBot] || Minecraft client, automation (AI) platform, and modular protocol library. Can play Minecraft on its own (on any 1.5.2+ server). || {{no|#5}} - 1.7.9<br />(and #4, #61, #74, #78) || Java ||  Windows, Mac, & Linux  || [[user:DarkStorm|DarkStorm]] || {{no|Inactive}}
 |-
-| [https://github.com/mc-server/MCServer/tree/master/Tools/ProtoProxy ProtoProxy] || A subproject of [https://github.com/mc-server/MCServer MCServer], protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parsing basic packets. || {{yes|#5}} - 1.7.10 || C++ || Windows, Mac, Linux || [[user:xoft|xoft]] || {{yes|Active}}
+| [https://github.com/Yogu/minecraft-sniffer minecraft-sniffer] || A proxy that prints out server and client packets in JSON format. Does not support encryption.|| {{no|#5}} - 1.7.10 || node.js ||  Windows, Mac, & Linux  || [[user:Yogu|Yogu]] || {{no|Inactive}}
 |-
-| [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{no|#79}} - 13w38c || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{yes|Active}}
+| [https://github.com/SirCmpwn/SMProxy SMProxy] || SMProxy is a powerful debugging tool for Minecraft that can be used to log and manipulate communication between a server and client. || {{no|#79}} - 13w38c || C# || Windows, Mac, & Linux || [[User:SirCmpwn|SirCmpwn]] || {{no|Inactive}}
 |-
-| [https://github.com/sadimusi/mc4p mc4p] || A 1.6.2-compatible fork of [https://github.com/mmcgill/mc3p mc3p] || {{no|#74}} - 1.6.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{yes|Active}}
+| [https://github.com/sadimusi/mc4p mc4p] || A 1.6.2-compatible fork of [https://github.com/mmcgill/mc3p mc3p] || {{no|#74}} - 1.6.2 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{No|Inactive}}
 |-
-| [https://github.com/superjoe30/mcserve mcserve] || gives you an "online mode whitelist" (or blacklist) plus realtime web interface || {{no|#60}} - 1.5 || node.js || Windows, Mac, & Linux || [[user:Superjoe|superjoe]] || {{yes|Active}}
+| [https://github.com/superjoe30/mcserve mcserve] || gives you an "online mode whitelist" (or blacklist) plus realtime web interface || {{no|#60}} - 1.5 || node.js || Windows, Mac, & Linux || [[user:Superjoe|superjoe]] || {{no|Inactive}}
 |-
-| [https://github.com/bencvt/McPacketSniffer McPacketSniffer] || A Minecraft client mod that logs packets to text files || {{no|#47}} - 1.4.4 || Java || Windows, Mac, & Linux || [[User:Benc|bencvt]] || {{yes|Active}}
+| [https://github.com/bencvt/McPacketSniffer McPacketSniffer] || A Minecraft client mod that logs packets to text files || {{no|#47}} - 1.4.4 || Java || Windows, Mac, & Linux || [[User:Benc|bencvt]] || {{no|Inactive}}
 |-
 | [https://github.com/mmcgill/mc3p mc3p] || Python Minecraft proxy with plugin support. || {{no|#29}} - 1.2.5 || Python || Windows, Mac, & Linux || mmcgill || {{no|Inactive}}
 |-
@@ -42,7 +42,7 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 |-
 | [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || {{unknown|}} || Haskell ||   || glguy || {{no|Inactive}}
 |-
-| [https://github.com/CraftDevs/DeobfCraft DeobfCraft] || A utility to let you use Minecraft as a Lib to your own projects with out caring about obfuscation. || {{yes|All Versions}} || Java ||Windows , Mac and Linux || chibill|| {{yes|Active}}
+| [https://github.com/CraftDevs/DeobfCraft DeobfCraft] || A utility to let you use Minecraft as a Lib to your own projects with out caring about obfuscation. || {{yes|All Versions with MCP mappings}} || Java ||Windows , Mac and Linux || chibill|| {{yes|Active}}
 |}
 
 [[Category:Minecraft Modern]]
