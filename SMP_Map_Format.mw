@@ -1,3 +1,5 @@
+{{Warning2|<big><big>'''This information, particularly about the palette and when it can be omitted, is incorrect.  The article will be corrected as this format is researched and reverse-engineered.  Sorry for any inconvenience.'''</big></big>  --[[User:Pokechu22|Pokechu22]] ([[User talk:Pokechu22|talk]]) 01:46, 5 April 2016 (UTC)}}
+
 This article describes the '''Chunk Section''' format used in the [[Protocol#Chunk Data|Chunk Data]] packet ([[Protocol#Play|Play]], 0x20, clientbound).
 
 == Concepts ==
