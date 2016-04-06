@@ -255,7 +255,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{MIT}}
  | {{yes}}
  | {{yes}}
- | {{no|Beta 1.7.3*}}
+ | {{planned|Beta 1.7.3*}}<!-- Dear future editor: quit changing this -->
  |-
  ! [http://hg.sitedethib.com/mcclient/ mcclient]
  | Work in progress SMP client
