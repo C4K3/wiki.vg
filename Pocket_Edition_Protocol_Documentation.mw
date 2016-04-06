@@ -1,5 +1,5 @@
 This is the (unofficial) protocol docs for Minecraft: PE. The protocol currently uses UDP for communication, different from PC (TCP). The usual UDP issues are still here (lost packets, wrong order, etc.), but the protocol solves a few of those problems using special packet encapsulation, based on TCP. The Minecraft: PE client uses RakNet for it's networking library. Even though it uses RakNet, you can still write software without the library.
-
+Currently, the game's default port is 19132. It is recommended to use this when possible because processes such as server discovering will not work otherwise.
 
 == Data Types ==
 Minecraft packets use different data types to communicate with each other. The documented ones are listed below:
@@ -21,12 +21,12 @@ Minecraft packets use different data types to communicate with each other. The d
 | class="col2" | -32768 to 32767
 | class="col3" | <code></code>
 |- class="row3"
-! class="col0 centeralign" | Integer
+! class="col0 centeralign" | int
 | class="col1 centeralign" | 4
 | class="col2" | -2147483648 to 2147483647
 | class="col3" | <code></code>
 |- class="row4"
-! class="col0 centeralign" | Long
+! class="col0 centeralign" | long
 | class="col1 centeralign" | 8
 | class="col2" | 
 | class="col3" | <code></code>
@@ -37,12 +37,16 @@ Minecraft packets use different data types to communicate with each other. The d
 | class="col3" | always those hex bytes, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
 |- class="row6"
 ! class="col0 centeralign" | string
-| class="col1 centeralign" | short + string
+| class="col1 centeralign" | unsigned short + string
 | class="col2" | N/A
 | class="col3" | Prefixed by a short containing the length of the string in characters. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 |}
 
-== Reference ==
+== Packet format ==
+All packet's in Minecraft: Pocket Edition start with their ID, which is an unsigned byte. If you are using a language which does not support unsigned types such as Java, you can do (byte & 0xFF) to get the unsigned version.
+
+
+== References ==
 
 RakNet datagram and message header information: http://jenkinssoftware.com/raknet/manual/systemoverview.html
 
