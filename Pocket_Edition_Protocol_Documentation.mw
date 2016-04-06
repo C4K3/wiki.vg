@@ -1,4 +1,5 @@
-This is the (unofficial) protocol docs for Minecraft: PE. The protocol currently uses UDP for communication, different from PC (TCP). The usual UDP issues are still here (lost packets, wrong order, etc.), but the protocol solves a few of those problems using special packet encapsulation, based on TCP. The Minecraft: PE client uses RakNet for it's networking library. Even though it uses RakNet, you can still write software without the library.
+This is the (unofficial) protocol documentation for {{Minecraft Wiki|Minecraft: Pocket Edition}}. The protocol currently uses [[Wikipedia:UDP|UDP]] for communication, different from PC (which uses [[Wikipedia:TCP|TCP]]). The usual UDP issues are still here (lost packets, wrong order, etc.), but the protocol solves a few of those problems using special packet encapsulation, based on TCP. The Minecraft: PE client uses [http://www.raknet.com/ RakNet] as its networking library. Even though it uses RakNet, you can still write software without the library.
+
 Currently, the game's default port is 19132. It is recommended to use this when possible because processes such as server discovering will not work otherwise.
 
 == Data Types ==
@@ -43,7 +44,7 @@ Minecraft packets use different data types to communicate with each other. The d
 |}
 
 == Packet format ==
-All packet's in Minecraft: Pocket Edition start with their ID, which is an unsigned byte. If you are using a language which does not support unsigned types such as Java, you can do (byte & 0xFF) to get the unsigned version.
+All packets in Minecraft: Pocket Edition start with their ID, which is an unsigned byte. If you are using a language which does not support unsigned types such as Java, you can do (byte & 0xFF) to get the unsigned version.
 
 
 == References ==
