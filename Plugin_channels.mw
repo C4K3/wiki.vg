@@ -134,7 +134,7 @@ Two integers corresponding to the 2 effects a user wishes to have active.
 === <code>MC|Brand</code> ===
 ''Two-way''
 
-Announces the server and client implementation name right after a player has logged in. For the Notchain client and server server, this is "vanilla" (encoded as a [[Data Types|protocol string]]: a UTF-8 string with the length prefixed as a VarInt).
+Announces the server and client implementation name right after a player has logged in. For the Notchian client and server server, this is "vanilla" (encoded as a [[Data Types|protocol string]]: a UTF-8 string with the length prefixed as a VarInt).
 
 These brands are used in crash reports and a few other locations; it's recommended that custom clients and servers use changed brands for the purpose of identification (for the Notchian client, the class used to get the brand is one of the few non-obfuscated classes).  The brand is not processed in any other way, and Notchian clients will connect to servers with changed brands with no issue (the brand is not used to validate).
 
