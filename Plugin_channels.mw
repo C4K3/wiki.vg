@@ -143,6 +143,8 @@ The Notchian server sends a <code>MC|Brand</code> packet right after it sends a 
 === <code>MC|DebugPath</code> ===
 ''Server to client''
 
+[[File:MC-DebugPath_in_16w14a.png|thumb|What appears to be the purpose of <code><nowiki>MC|DebugPath</nowiki></code> as seen in the [http://mojang.com/2016/04/minecraft-snapshot-16w14a/ snapshot 16w14a announcement].  This is ''not'' found in the normal game.]]
+
 Never sent, but does something with pathfinding debugging.  The client reads the data and stores it, but does not render anything with it.
 
 {|class="wikitable"
