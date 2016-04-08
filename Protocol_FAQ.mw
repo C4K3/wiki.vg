@@ -35,7 +35,7 @@ The recommended login sequence looks like this, where '''C''' is the client and 
 
 === …my player isn't spawning! ===
 
-After sending the common-sense packets ([[Protocol#Handshake|Handshake]], [[Protocol#Login Start|Login Start]], [[Protocol#Window Items|inventory]], [[Protocol#Spawn Position|compass]], and [[Protocol#Map_ Chunk Bulk|chunks]]), you need to finally send the player their [[Protocol#Player Position And Look|initial position]] for them to leave the “Loading Map” screen.
+After sending the common-sense packets ([[Protocol#Handshake|Handshake]], [[Protocol#Login Start|Login Start]], [[Protocol#Window Items|inventory]], [[Protocol#Spawn Position|compass]], and [[Protocol#Chunk Data|chunks]]), you need to finally send the player their [[Protocol#Player Position And Look|initial position]] for them to leave the “Loading Map” screen.
 
 ''Note that if the following steps are taken, a Minecraft client will spawn the player:''
 
