@@ -19,23 +19,23 @@ A Chunk Section is defined in terms of other [[data types]]. A Chunk Section con
  |-
  | Bits Per Block
  | Unsigned Byte
- | How many bits per block in Data Array. If 0, the Palette Length and Palette fields are omitted and the global palette (with 13 bits per block) is used.
+ | Determines how many bits are used to encode a block.  Note that the actual value does not always match this value.
  |-
  | Palette Length
- | Optional VarInt
- | Length of the following array
+ | VarInt
+ | Length of the following array.  May be 0.
  |-
  | Palette
- | Optional Array of VarInt
+ | Array of VarInt
  | Mapping of block state IDs in the global palette to indices of this array
  |-
  | Data Array Length
  | VarInt
- | Number of bytes in the following array, divided by 8 (given as such because Notchian implements Data Array as an Array of Long)
+ | Number of bytes in the following array
  |-
  | Data Array
- | Byte Array
- | List of 4096 indices pointing to state IDs in the Palette, followed by padding to round the length up to the next multiple of 8 bytes
+ | Long Array
+ | List of 4096 indices pointing to state IDs in the Palette
  |-
  | Block Light
  | Byte Array
@@ -47,6 +47,13 @@ A Chunk Section is defined in terms of other [[data types]]. A Chunk Section con
  |}
 
 Data Array, Block Light, and Sky Light are given for each block with increasing x coordinates, within rows of increasing z coordinates, within layers of increasing y coordinates.
+
+The format of the palette changes based off of the value of bits per block.
+
+* 0: The palette array has a length of 0, but no actual blocks can be sent since each block is represented by 0 bits.  This generally shouldn't be done as instead the primary bit mask should be used to mark this chunk section as empty.
+* 1 to 4: Blocks are encoded as 4 bits.  The palette array is at max 16 entries long and is used.
+* 5 to 8: Blocks are encoded with the given number of bits.
+* 9 and above: The palette array has a length of 0, and blocks are always represented as 13 bits per block in reference to the global palette.
 
 The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>.
 
