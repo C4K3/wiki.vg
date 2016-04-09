@@ -2,7 +2,7 @@ This is the (unofficial) protocol documentation for {{Minecraft Wiki|Minecraft P
 
 Currently, the game's default port is 19132. It is recommended to use this when possible because processes such as server discovering will not work otherwise.
 
-Some of this work was sponsored by CubeCraft. Big thanks to them.
+''Much of this work was sponsored by CubeCraft. Big thanks to them.''
 
 == Data Types ==
 Minecraft packets use different data types to communicate with each other. The documented ones are listed below:
@@ -252,6 +252,31 @@ The client sends these to the target server with ever decreasing MTU until the s
  | Time
  | long
  | 
+ |}
+
+=== Unconnected Pong ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="4"| 0x1c
+ | Time
+ | long
+ | 
+ |-
+ | Server GUID
+ | long
+ | 
+ |-
+ | Magic
+ | MAGIC
+ | 
+ |-
+ | Server info
+ | string
+ | <code>MCPE;##Name##;##Protocol Version##;;##Online player count##;##Max player count</code>. Protocol version is currently (0.14.0) 45.
  |}
 
 === Frame Set Packet ===
