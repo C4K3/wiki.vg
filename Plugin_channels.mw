@@ -379,13 +379,12 @@ Channels listed in this section are not used by the vanilla Minecraft client or 
 [http://www.spigotmc.org/wiki/bukkit-bungee-plugin-messaging-channel/ See here]
 
 === <code>FML|HS</code>, <code>FML</code> ===
-''Two-way''
+
+{{Main|Minecraft Forge Handshake}}
 
 Used by [http://www.minecraftforge.net/forum/index.php Minecraft Forge] to negotiate required mods, among other things.
 [https://github.com/MinecraftForge/MinecraftForge/blob/master/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java <code>FML|HS</code>]
 [https://github.com/MinecraftForge/MinecraftForge/blob/master/src/main/java/net/minecraftforge/fml/common/network/internal/FMLNetworkHandler.java <code>FML</code>]
-
-For more information, see [[Minecraft Forge Handshake]].
 
 === <code>ML|OpenTE</code> ===
 ''Server to client''
@@ -393,6 +392,6 @@ For more information, see [[Minecraft Forge Handshake]].
 Used by [http://www.minecraftforum.net/topic/75440-modloader/ ModLoader] to support custom GUI windows. Does not use the REGISTER channel.
 
 === <code>WECUI</code> ===
-''Two-way''
+{{Main|/WorldEditCUI}}
 
 Used by the server-side [http://www.enginehub.org/worldedit/ WorldEdit] and the client-side [http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1292886-worldeditcui/ WorldEditCUI] to coordinate selections.
