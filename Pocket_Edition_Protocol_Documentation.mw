@@ -2,7 +2,7 @@ This is the (unofficial) protocol documentation for {{Minecraft Wiki|Minecraft P
 
 Currently, the game's default port is 19132. It is recommended to use this when possible because processes such as server discovering will not work otherwise.
 
-''Much of this work was sponsored by CubeCraft. Big thanks to them.''
+Some of this work was sponsored by CubeCraft. Big thanks to them.
 
 == Data Types ==
 Minecraft packets use different data types to communicate with each other. The documented ones are listed below:
@@ -483,7 +483,7 @@ RakNet reliability and ordering is handled on multiple levels.
 === Frame set reliability ===
 FrameSetPackets carry a unique index. This index may only appear once in a connection (per direction). Getting the same index twice means you have received a duplicate datagram - ignore one.
 
-Upon receiving a frame set, an ACK packet for that frame is sent back. Since the frame index is a sequential counter, you can deduce which frames are missing, for which a NACK packet is sent. For every received frame set, RakNet sends at most one NACK and one ACK.
+Upon receiving a frame set, an ACK packet for that frame set is sent back. Since the frame set index is a sequential counter, you can deduce which frame sets are missing, for which a NACK packet is sent. For every received frame set, RakNet sends at most one NACK and one ACK.
 
 Frame sets consist of frames. Internally, raknet uses a "resend queue" (priority heap / priority queue) of frames it needs to send. This queue is ordered by targeted send time. Whenever possible, raknet takes the top few sendable frames from this resend queue and combines them into a frame set smaller than the MTU. It then moves the ''reliable'' frames further down the queue by setting their resend time to a bunch of milliseconds in the future. ''unreliable'' frames are discarded after being first sent.
 
