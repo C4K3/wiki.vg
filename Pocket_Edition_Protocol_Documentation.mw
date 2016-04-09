@@ -2,6 +2,8 @@ This is the (unofficial) protocol documentation for {{Minecraft Wiki|Minecraft P
 
 Currently, the game's default port is 19132. It is recommended to use this when possible because processes such as server discovering will not work otherwise.
 
+Some of this work was sponsored by CubeCraft. Big thanks to them.
+
 == Data Types ==
 Minecraft packets use different data types to communicate with each other. The documented ones are listed below:
 
@@ -46,11 +48,408 @@ Minecraft packets use different data types to communicate with each other. The d
 | class="col1 centeralign" | unsigned short + string
 | class="col2" | N/A
 | class="col3" | Prefixed by a short containing the length of the string in characters. It appears that only the following ASCII characters can be displayed: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+|- class="row8"
+! class="col0 centeralign" | address
+| class="col1 centeralign" | 7
+| class="col2" | N/A
+| class="col3" | IP Address and port. First byte is the version (0x04), then come the address bytes and finally an unsigned short for the port.
 |}
 
 == Packet format ==
 All packets in Minecraft: Pocket Edition start with their ID, which is an unsigned byte. If you are using a language which does not support unsigned types such as Java, you can do (byte & 0xFF) to get the unsigned version.
 
+== RakNet protocol ==
+
+=== Connected Ping ===
+
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | 0x00
+ | Time
+ | long
+ | 
+ |}
+
+=== Unconnected Ping ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="2"| 0x01, 0x02
+ | Time
+ | long
+ | 
+ |-
+ | GUID
+ | long
+ | 
+ |}
+
+<code>0x02</code> is only replied to if there are open connections to the server.
+
+=== Connected Pong ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="2"| 0x03
+ | Ping Time
+ | long
+ | 
+ |-
+ | Pong Time
+ | long
+ | 
+ |}
+
+=== Offline Connection Request 1 ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="3"| 0x05
+ | Magic
+ | MAGIC
+ | 
+ |-
+ | Protocol version
+ | byte
+ | Currently 7
+ |-
+ | MTU
+ | mtu-46 zero bytes
+ | The MTU sent in the response appears to be somewhere around the size of this padding + 46 (28 udp overhead, 1 packet id, 16 magic, 1 protocol version)
+ |}
+
+The client sends these to the target server with ever decreasing MTU until the server responds. This is used to discover the MTU size for the connection.
+
+=== Offline Connection Response 1 ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="3"| 0x06
+ | Magic
+ | MAGIC
+ | 
+ |-
+ | Server GUID
+ | long
+ | 
+ |-
+ | MTU
+ | short
+ | see Offline Connection Request 1
+ |}
+
+=== Offline Connection Request 2 ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="4"| 0x07
+ | Magic
+ | MAGIC
+ | 
+ |-
+ | Server Address
+ | address
+ | 
+ |-
+ | MTU
+ | short
+ | 
+ |-
+ | Client GUID
+ | long
+ | 
+ |}
+
+=== Offline Connection Response 2 ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="5"| 0x08
+ | Magic
+ | MAGIC
+ | 
+ |-
+ | Server GUID
+ | long
+ | 
+ |-
+ | Client Address
+ | address
+ | 
+ |-
+ | MTU
+ | short
+ | 
+ |-
+ | Encryption enabled?
+ | byte
+ | 0 for disabled.
+ |}
+
+=== Online Connection Request ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="2"| 0x09
+ | GUID
+ | long
+ | 
+ |-
+ | Time
+ | long
+ | 
+ |}
+
+=== Online Connection Request Accepted ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="5"| 0x10
+ | Client address
+ | address
+ | 
+ |-
+ | System index
+ | short
+ | Unknown what this does. 0 works as a value.
+ |-
+ | Internal IDs
+ | 10x address
+ | Unknown what these do. 255.255.255.255:19132 for all of them seems to work, any other address will probably work as well.
+ |-
+ | Request time
+ | long
+ | 
+ |-
+ | Time
+ | long
+ | 
+ |}
+
+=== Frame Set Packet ===
+{| class="wikitable"
+ ! Packet ID
+ !colspan="3"| Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="11"| 0x80..0x8d
+ |colspan="3"| Frame Set index
+ | uint24le
+ | 
+ |-
+ |rowspan="10"| Frames
+ |colspan="2"| Flags
+ | byte
+ | Top 3 bits are reliability type, fourth bit is 1 when the frame is fragmented and part of a compound.
+ |-
+ |colspan="2"| Length IN BITS
+ | short
+ | Length of the body in bits.
+ |-
+ |colspan="2"| Reliable frame index
+ | uint24le
+ | only if reliable
+ |-
+ |colspan="2"| Sequenced frame index
+ | uint24le
+ | only if sequenced
+ |-
+ |rowspan="2"| Order
+ | Ordered frame index
+ | uint24le
+ |rowspan="2"| only if ordered
+ |-
+ | Order channel
+ | byte
+ |-
+ |rowspan="3"| Fragment
+ | Compound size
+ | int
+ |rowspan="3"| only if fragmented
+ |-
+ | Compound ID
+ | short
+ |-
+ | Index
+ | int
+ |-
+ | Body
+ | ceil(length/8) bytes
+ |}
+
+The reliability types are as follows:
+
+{| class="wikitable"
+! style="text-align: center; font-weight: bold;" | ID
+! style="font-weight: bold;" | Name
+! style="text-align: center; font-weight: bold;" | Reliable
+! style="text-align: center; font-weight: bold;" | Ordered
+! style="text-align: center; font-weight: bold;" | Sequenced
+|-
+| style="text-align: center;" | 0
+| unreliable
+| style="text-align: center;" | 
+| style="text-align: center;" | 
+| style="text-align: center;" | 
+|-
+| style="text-align: center;" | 1
+| unreliable sequenced
+| style="text-align: center;" | 
+| style="text-align: center;" | x
+| style="text-align: center;" | x
+|-
+| style="text-align: center;" | 2
+| reliable
+| style="text-align: center;" | x
+| style="text-align: center;" | 
+| style="text-align: center;" | 
+|-
+| style="text-align: center;" | 3
+| reliable ordered
+| style="text-align: center;" | x
+| style="text-align: center;" | x
+| style="text-align: center;" | 
+|-
+| style="text-align: center;" | 4
+| reliable sequenced
+| style="text-align: center;" | x
+| style="text-align: center;" | x
+| style="text-align: center;" | x
+|-
+| style="text-align: center;" | 5
+| unreliable (+ ACK receipt)
+| style="text-align: center;" | 
+| style="text-align: center;" | 
+| style="text-align: center;" | 
+|-
+| style="text-align: center;" | 6
+| reliable (+ ACK receipt)
+| style="text-align: center;" | x
+| style="text-align: center;" | 
+| style="text-align: center;" | 
+|-
+| style="text-align: center;" | 7
+| reliable ordered (+ ACK receipt)
+| style="text-align: center;" | x
+| style="text-align: center;" | x
+| style="text-align: center;" | 
+|}
+
+Sequenced implies ordered.
+
+=== Game Packet ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ | 0x8e
+ | Body
+ | bytes
+ | Single packet of the GAME protocol.
+ |}
+
+=== NACK ===
+{| class="wikitable"
+! style="font-weight: bold;" | Packet ID
+! colspan="3" style="font-weight: bold;" | Field Name
+! style="font-weight: bold;" | Field Type
+! style="font-weight: bold;" | Notes
+|-
+| 0xa0
+| colspan="3" | Record count
+| short
+| 
+|-
+| 
+| rowspan="4" | Record
+| colspan="2" | Is Range?
+| byte
+| 0 for range, 1 for no range
+|-
+| 
+| No Range
+| Index
+| uint24le
+| 
+|-
+| 
+| rowspan="2" | Range
+| Start Index
+| uint24le
+| 
+|-
+| 
+| End Index
+| uint24le
+| 
+|}
+
+=== ACK ===
+{| class="wikitable"
+! style="font-weight: bold;" | Packet ID
+! colspan="3" style="font-weight: bold;" | Field Name
+! style="font-weight: bold;" | Field Type
+! style="font-weight: bold;" | Notes
+|-
+| 0xc0
+| colspan="3" | Record count
+| short
+| 
+|-
+| 
+| rowspan="4" | Record
+| colspan="2" | Is Range?
+| byte
+| 0 for range, 1 for no range
+|-
+| 
+| No Range
+| Index
+| uint24le
+| 
+|-
+| 
+| rowspan="2" | Range
+| Start Index
+| uint24le
+| 
+|-
+| 
+| End Index
+| uint24le
+| 
+|}
 
 == References ==
 
