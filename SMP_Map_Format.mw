@@ -55,7 +55,7 @@ The format of the palette changes based off of the value of bits per block.
 * 5 to 8: Blocks are encoded with the given number of bits.
 * 9 and above: The palette array has a length of 0, and blocks are always represented as 13 bits per block in reference to the global palette.
 
-The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>.
+The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>.  If the damage value is not valid for a block, then the block will be treated as air.
 
 In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''low bits'', odd-indexed into the ''high bits''.
 
