@@ -451,6 +451,37 @@ Sequenced implies ordered.
 | 
 |}
 
+== RakNet Reliability ==
+
+RakNet reliability and ordering is handled on multiple levels.
+
+=== Frame set reliability ===
+FrameSetPackets carry a unique index. This index may only appear once in a connection (per direction). Getting the same index twice means you have received a duplicate datagram - ignore one.
+
+Upon receiving a frame set, an ACK packet for that frame is sent back. Since the frame index is a sequential counter, you can deduce which frames are missing, for which a NACK packet is sent. For every received frame set, RakNet sends at most one NACK and one ACK.
+
+Frame sets consist of frames. Internally, raknet uses a "resend queue" (priority heap / priority queue) of frames it needs to send. This queue is ordered by targeted send time. Whenever possible, raknet takes the top few sendable frames from this resend queue and combines them into a frame set smaller than the MTU. It then moves the ''reliable'' frames further down the queue by setting their resend time to a bunch of milliseconds in the future. ''unreliable'' frames are discarded after being first sent.
+
+When an ACK is received, all frames of the container indices in that ACK packet are removed from the resend queue because they arrived safely on the client and don't need a resend.
+
+When a NACK is received, all frames of the container indices in that NACK packet are moved to the top of the resend queue by setting their targeted resend time to the present or past.
+
+To send a frame, raknet simply adds it to the resend queue with the present as the targeted send time. It is then intermixed with normal resends and other frames for the next frame set packet.
+
+=== Fragmentation ===
+
+Some packets (notably chunks) are larger than the MTU. These are split up into a ''compound''. You need to consider the frame and frame set overhead when fragmenting frames. A fragmented frame contains the ''compound ID'' (reusable when compound is complete), ''compound size'' (in fragments) and ''index'' (0 up to compound size exclusive). All fragments of a compound share the same order and sequencing information, if any. All fragmented frames are also reliable.
+
+=== Order and Sequencing ===
+
+Some frames are ordered or sequenced. For order and sequencing, there exist ''order channels''. These act independently. Since all sequenced reliability types are also ordered, an order channel is present for every ordered or sequenced frame.
+
+''Ordered'' means that frames with higher order indices are ''always'' handled after frames with lower order indices. Higher order index frames are withheld until their lower peers arrive and it's their turn.
+
+''Sequenced'' means that frames with lower sequence indices are ''never'' handled after frames with higher sequence indices. Lower sequence index frames are ''discarded'' if their higher index frames have already been handled.
+
+Sequenced frames also include an order index. It is unknown how the order index influences handling, and this should be researched at some point.
+
 == References ==
 
 RakNet datagram and message header information: http://jenkinssoftware.com/raknet/manual/systemoverview.html
