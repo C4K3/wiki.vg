@@ -259,10 +259,13 @@ The GUI that appears when a brewing stand is opened.
  | 3
  | potion ingredient
  |-
- | 4-30
+ | 4
+ | blaze powder
+ |-
+ | 5-31
  | main inventory
  |-
- | 31-39
+ | 32-40
  | hotbar
  |}
 
