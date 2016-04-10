@@ -302,7 +302,7 @@ The client sends these to the target server with ever decreasing MTU until the s
  |-
  | Server info
  | string
- | <code>MCPE;##Name##;##Protocol Version##;;##Online player count##;##Max player count</code>. Protocol version is currently (0.14.0) 45.
+ | <code>MCPE;##Name##;##Protocol Version##;##Client Version##;##Online player count##;##Max player count##;##stamp##;</code>. Protocol version is currently (0.14.1) 46. Client version can be left empty or be something like '0.14.1'. Stamp is unknown what it does (it's some 64-bit integer), 0 works as a value.
  |}
 
 === Frame Set Packet ===
