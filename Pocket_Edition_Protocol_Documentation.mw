@@ -27,7 +27,7 @@ Minecraft packets use different data types to communicate with each other. The d
 ! class="col0 centeralign" | uint24le
 | class="col1 centeralign" | 3
 | class="col2" | 0 to 16777216
-| class="col3" | <code>Little-Endian 24-bit unsigned integer. Commonly used by RakNet for counters.</code>
+| class="col3" | Little-Endian 24-bit unsigned integer. Commonly used by RakNet for counters.
 |- class="row4"
 ! class="col0 centeralign" | int
 | class="col1 centeralign" | 4
@@ -53,6 +53,32 @@ Minecraft packets use different data types to communicate with each other. The d
 | class="col1 centeralign" | 7
 | class="col2" | N/A
 | class="col3" | IP Address and port. First byte is the version (0x04), then come the address bytes and finally an unsigned short for the port.
+|-
+! NBT
+| N/A
+| N/A
+| NBT data in PE is always ''little-endian''. This includes short, int, long, float, double tags and the length headers for arrays, strings and lists.
+|-
+! Item Stack
+| N/A
+| N/A
+| First short is the item ID. If this is not 0, then follows the item count ubyte. If this is also not 0, then follows the item data short and a ''little-endian'' short denoting the length of the following NBT data, or 0 for no NBT. Then follows an NBT tag described above of that length.
+|-
+! UUID
+| 16
+| 00000000-0000-0000-0000-000000000000 
+to ffffffff-ffff-ffff-ffff-ffffffffffff
+| 
+|-
+! Position
+| 12
+| N/A
+| Three consecutive floats for x, y and z respectively.
+|-
+! Block Position
+| 12
+| N/A
+| Three consecutive ints for x, y and z respectively.
 |}
 
 == Packet format ==
