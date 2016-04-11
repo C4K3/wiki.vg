@@ -2,8 +2,6 @@ This is the (unofficial) protocol documentation for {{Minecraft Wiki|Minecraft P
 
 Currently, the game's default port is 19132. It is recommended to use this when possible because processes such as server discovering will not work otherwise.
 
-Some of this work was sponsored by CubeCraft. Big thanks to them.
-
 == Data Types ==
 Minecraft packets use different data types to communicate with each other. The documented ones are listed below:
 
