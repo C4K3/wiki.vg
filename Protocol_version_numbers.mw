@@ -20,7 +20,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|1.RV-Pre1}}
  | 108
- | ([[#Note 3|note]])
+ | <ref group="note">Although it has the same ID as 1.9.1, the April Fools version 1.RV-Pre1 has new blocks and items that cannot be used on 1.9.1 servers.</ref>
  |-
  | '''{{Minecraft Wiki|1.9.1}}'''
  |rowspan="3"| 108
@@ -262,7 +262,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|15w31b}}
  | 50
- | [{{canonicalurl:Pre-release protocol|oldid=6746}} page] ([[#Note 1|note]])
+ | [{{canonicalurl:Pre-release protocol|oldid=6746}} page]<ref group="note">{{IRC quote|Dinnerbone|Protocol itself didn't change in 31c btw, but we added an entity which warrants incompatibility}}</ref>
  |-
  | {{Minecraft Wiki|15w31a}}
  | 49
@@ -494,7 +494,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | {{Minecraft Wiki|15w41b}}
  | 0
- | [{{canonicalurl:Pre-release protocol|oldid=5007}} page] ([[#Note 2|note]])
+ | [{{canonicalurl:Pre-release protocol|oldid=5007}} page]<ref group="note">Despite having the same ID, 15w41a and 15w41b are incompatible.</ref>
  |-
  | {{Minecraft Wiki|15w41a}}
  | 0
@@ -503,11 +503,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
 
 === Notes ===
 
-<ol>
-<li id="Note 1"><pre>&lt;Dinnerbone&gt; Protocol itself didn't change in 31c btw, but we added an entity which warrants incompatibility</pre></li>
-<li id="Note 2">Despite having the same ID, 15w41a and 15w41b are incompatible.</li>
-<li id="Note 3">Although it has the same ID as 1.9.1, the April Fools version 1.RV-Pre1 has new blocks and items that cannot be used on 1.9.1 servers.</li>
-</ol>
+<references group="note" />
 
 === Examples ===
 
