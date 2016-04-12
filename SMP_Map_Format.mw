@@ -56,6 +56,9 @@ There are several values that can be used for the bits per block value. In most 
 
 The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>. If a block is not found in the global palette (either due to not having a valid damage value or due to not being a valid ID), it will be treated as air.
 
+The data array stores several entries within a single long, and sometimes overlaps one entry between multiple longs.  For a bits per block value of 13, the data is stored such that bits 1 through 13 are the first entry, 14 through 26 are the second, and so on.  Note that bit 1 is the ''least'' significant bit in this case, not the most significant bit.  The same behavior applies when a value stretches between two longs: for instance, block 5 would be bits 53 through 64 of the first long and then bit 65 of the second long.
+
+
 In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''low bits'', odd-indexed into the ''high bits''.
 
 == Implementations ==
