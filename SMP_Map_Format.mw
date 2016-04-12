@@ -31,11 +31,11 @@ A Chunk Section is defined in terms of other [[data types]]. A Chunk Section con
  |-
  | Data Array Length
  | VarInt
- | Number of bytes in the following array
+ | Number of longs in the following array
  |-
  | Data Array
  | Long Array
- | List of 4096 indices pointing to state IDs in the Palette
+ | List of 4096 indices pointing to state IDs in the Palette, compacted
  |-
  | Block Light
  | Byte Array
@@ -79,6 +79,7 @@ For instance, with 13 bits per block, the following 2 longs would represent...
 #Gravel, <span style="border: solid 2px hsl(320, 90%, 60%)">13</span>:<span style="border: solid 2px hsl(320, 90%, 70%)">0</span>
 #Stone, <span style="border: solid 2px rgb(60%, 60%, 60%)">1</span>:<span style="border: solid 2px rgb(70%, 70%, 70%)">0</span> (or potentially emerald ore, <span style="border: solid 2px rgb(60%, 60%, 60%)">129</span>:<span style="border: solid 2px rgb(70%, 70%, 70%)">0</span>)
 
+The data array will never be padded due to the number of blocks being evenly divisible by 64, which is the number of bits in a long.
 
 In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''low bits'', odd-indexed into the ''high bits''.
 
