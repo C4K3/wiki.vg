@@ -1,5 +1,3 @@
-{{Warning2|This information, particularly about the palette and when it can be omitted, is incorrect. The article will be corrected as this format is researched and reverse-engineered. Sorry for any inconvenience.}}
-
 This article describes the '''Chunk Section''' format used in the [[Protocol#Chunk Data|Chunk Data]] packet ([[Protocol#Play|Play]], 0x20, clientbound).
 
 == Concepts ==
