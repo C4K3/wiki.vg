@@ -531,6 +531,10 @@ Some frames are ordered or sequenced. For order and sequencing, there exist ''or
 
 Sequenced frames also include an order index. It is unknown how the order index influences handling, and this should be researched at some point.
 
+== Game Protocol ==
+
+The game protocol is described here: https://confluence.yawk.at/display/PEPROTOCOL
+
 == References ==
 
 RakNet datagram and message header information: http://jenkinssoftware.com/raknet/manual/systemoverview.html
