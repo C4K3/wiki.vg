@@ -33,7 +33,7 @@ A Chunk Section is defined in terms of other [[data types]]. A Chunk Section con
  |-
  | Data Array
  | Long Array
- | List of 4096 indices pointing to state IDs in the Palette, compacted
+ | Compacted list of 4096 indices pointing to state IDs in the Palette
  |-
  | Block Light
  | Byte Array
@@ -44,21 +44,29 @@ A Chunk Section is defined in terms of other [[data types]]. A Chunk Section con
  | Only if in the Overworld; half byte per block
  |}
 
+In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''low bits'', odd-indexed into the ''high bits''.
+
 Data Array, Block Light, and Sky Light are given for each block with increasing x coordinates, within rows of increasing z coordinates, within layers of increasing y coordinates.
 
-There are several values that can be used for the bits per block value. In most cases, invalid values will be treated as if it is a different value when parsed by the Notchian client, meaning that chunk data will be parsed incorrectly if you use an invalid bits per block.  Servers must make sure that the bits per block value is correct.
+The Data Array, although varying in length, will never be padded due to the number of blocks being evenly divisible by 64, which is the number of bits in a long.
 
-* 4: Blocks are encoded as 4 bits. The palette array is used and sent.
+There are several values that can be used for the bits per block value. In most cases, invalid values will be interpreted as a different value when parsed by the Notchian client, meaning that chunk data will be parsed incorrectly if you use an invalid bits per block.  Servers must make sure that the bits per block value is correct.
+
+* up to 4: Blocks are encoded as 4 bits. The palette array is used and sent.
 * 5 to 8: Blocks are encoded with the given number of bits. The palette array is used and sent.
 * 9 and above: Blocks are encoded by their whole ID in the global palette, with bits per block being set as the base 2 logarithm of the number of block states, rounded up. For the current vanilla release, this is 13 bits per block.
 
-The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>. If a block is not found in the global palette (either due to not having a valid damage value or due to not being a valid ID), it will be treated as air.
+The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, Diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>. If a block is not found in the global palette (either due to not having a valid damage value or due to not being a valid ID), it will be treated as air.
 
-If Minecraft Forge is installed and a sufficiently large number of blocks are added, the bits per block value will be increased to compensate for the increased ID count.  This increase can go up to 16 bits per block (for a total of 4096 block IDs; when combined with the 16 damage values, there are 65536 total states).  You can get the number of blocks with the "Number of ids" field found in the [[Minecraft Forge Handshake#RegistryData|RegistryData packet in the Forge Handshake]].
+If Minecraft Forge is installed and a sufficiently large number of blocks are added, the bits per block value for the global palette will be increased to compensate for the increased ID count.  This increase can go up to 16 bits per block (for a total of 4096 block IDs; when combined with the 16 damage values, there are 65536 total states).  You can get the number of blocks with the "Number of ids" field found in the [[Minecraft Forge Handshake#RegistryData|RegistryData packet in the Forge Handshake]].
 
 The data array stores several entries within a single long, and sometimes overlaps one entry between multiple longs.  For a bits per block value of 13, the data is stored such that bits 1 through 13 are the first entry, 14 through 26 are the second, and so on.  Note that bit 1 is the ''least'' significant bit in this case, not the most significant bit.  The same behavior applies when a value stretches between two longs: for instance, block 5 would be bits 53 through 64 of the first long and then bit 65 of the second long.
 
-For instance, with 13 bits per block, the following 2 longs would represent...
+== Example ==
+
+13 bits per block, using the global palette.
+
+The following two longs would represent...
 
 <code>1001880C0060020</code> = 
 <code><span style="border: solid 2px hsl(160, 90%, 60%); border-left-style: dashed">00000001</span><span style="border: solid 2px hsl(160, 90%, 70%)">0000</span><span style="border: solid 2px hsl(120, 90%, 60%)">000000011</span><span style="border: solid 2px hsl(120, 90%, 70%)">0001</span><span style="border: solid 2px hsl(80, 90%, 60%)">000000011</span><span style="border: solid 2px hsl(80, 90%, 70%)">0000</span><span style="border: solid 2px hsl(40, 90%, 60%)">000000011</span><span style="border: solid 2px hsl(50, 90%, 70%)">0000</span><span style="border: solid 2px hsl(0, 90%, 65%)">000000010</span><span style="border: solid 2px hsl(0, 90%, 75%)">0000</span></code><br>
@@ -76,10 +84,6 @@ For instance, with 13 bits per block, the following 2 longs would represent...
 #Gravel, <span style="border: solid 2px hsl(280, 90%, 65%)">13</span>:<span style="border: solid 2px hsl(280, 90%, 75%)">0</span>
 #Gravel, <span style="border: solid 2px hsl(320, 90%, 60%)">13</span>:<span style="border: solid 2px hsl(320, 90%, 70%)">0</span>
 #Stone, <span style="border: solid 2px rgb(60%, 60%, 60%)">1</span>:<span style="border: solid 2px rgb(70%, 70%, 70%)">0</span> (or potentially emerald ore, <span style="border: solid 2px rgb(60%, 60%, 60%)">129</span>:<span style="border: solid 2px rgb(70%, 70%, 70%)">0</span>)
-
-The data array will never be padded due to the number of blocks being evenly divisible by 64, which is the number of bits in a long.
-
-In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''low bits'', odd-indexed into the ''high bits''.
 
 == Implementations ==
 
