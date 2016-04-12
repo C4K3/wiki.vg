@@ -58,6 +58,25 @@ The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data
 
 The data array stores several entries within a single long, and sometimes overlaps one entry between multiple longs.  For a bits per block value of 13, the data is stored such that bits 1 through 13 are the first entry, 14 through 26 are the second, and so on.  Note that bit 1 is the ''least'' significant bit in this case, not the most significant bit.  The same behavior applies when a value stretches between two longs: for instance, block 5 would be bits 53 through 64 of the first long and then bit 65 of the second long.
 
+For instance, with 13 bits per block, the following 2 longs would represent...
+
+<code>1001880C0060020</code> = 
+<code><span style="background-color: hsl(160, 90%, 60%)">00000001</span><span style="background-color: hsl(160, 90%, 70%)">0000</span><span style="background-color: hsl(120, 90%, 60%)">000000011</span><span style="background-color: hsl(120, 90%, 70%)">0001</span><span style="background-color: hsl(80, 90%, 60%)">000000011</span><span style="background-color: hsl(80, 90%, 70%)">0000</span><span style="background-color: hsl(40, 90%, 60%)">000000011</span><span style="background-color: hsl(50, 90%, 70%)">0000</span><span style="background-color: hsl(0, 90%, 60%)">000000010</span><span style="background-color: hsl(, 90%, 70%)">0000</span></code><br>
+<code>200D0068004C020</code> = <code>00000010000<span style="background-color: hsl(320, 90%, 60%)">000001101</span><span style="background-color: hsl(320, 90%, 70%)">0000</span><span style="background-color: hsl(280, 90%, 60%)">000001101</span><span style="background-color: hsl(280, 90%, 70%)">0000</span><span style="background-color: hsl(240, 90%, 60%)">000000001</span><span style="background-color: hsl(240, 90%, 70%)">0011</span><span style="background-color: hsl(200, 90%, 60%)">000000001</span><span style="background-color: hsl(200, 90%, 70%)">0000</span><span style="background-color: hsl(160, 90%, 60%)">0</span></code>
+
+9 blocks, with the start of a 10th (that would be finished in the next long).
+
+#Grass, <span style="background-color: hsl(0, 90%, 60%)">2</span>:<span style="background-color: hsl(0, 90%, 70%)">0</span>
+#Dirt, <span style="background-color: hsl(40, 90%, 60%)">3</span>:<span style="background-color: hsl(40, 90%, 70%)">0</span>
+#Dirt, <span style="background-color: hsl(80, 90%, 60%)">3</span>:<span style="background-color: hsl(80, 90%, 70%)">0</span>
+#Coarse dirt, <span style="background-color: hsl(120, 90%, 60%)">3</span>:<span style="background-color: hsl(120, 90%, 70%)">1</span>
+#Stone, <span style="background-color: hsl(160, 90%, 60%)">1</span>:<span style="background-color: hsl(160, 90%, 70%)">0</span>
+#Stone, <span style="background-color: hsl(200, 90%, 60%)">1</span>:<span style="background-color: hsl(200, 90%, 70%)">0</span>
+#Diorite, <span style="background-color: hsl(240, 90%, 60%)">1</span>:<span style="background-color: hsl(240, 90%, 70%)">3</span>
+#Gravel, <span style="background-color: hsl(280, 90%, 60%)">13</span>:<span style="background-color: hsl(280, 90%, 70%)">0</span>
+#Gravel, <span style="background-color: hsl(320, 90%, 60%)">13</span>:<span style="background-color: hsl(320, 90%, 70%)">0</span>
+#Stone, 1:0 (or potentially emerald ore, 129:0)
+
 
 In half-byte arrays, two values are packed into each byte. Even-indexed items are packed into the ''low bits'', odd-indexed into the ''high bits''.
 
