@@ -244,9 +244,17 @@ When a player uses an anvil to name an item. The payload is just a string: the i
 === <code>MC|PickItem</code> ===
 ''Client to server''
 
-Swaps out an item at the given inventory index(?) with an item on the hotbar.  The server sends back several packets.  TODO: Document them.
+Used to swap out an empty space on the hotbar with the item in the given inventory slot.  The Notchain client uses this for pick block functionality (middle click) to retrieve items from the inventory.
 
-Payload is a single varint.
+Payload is a single varint, which is the slot in the inventory to grab from.
+
+The server will first search the player's hotbar for an empty slot, starting from the current slot and looping around to the slot before it.  If there are no empty slots, it will start a second search from the current slot and find the first slot that does not contain an enchanted item.  If there still are no slots that meet that criteria, then the server will use the currently selected slot.
+
+After finding the appropriate slot, the server swaps the items and then send 3 packets:
+
+* [[Protocol#Set slot|Set Slot]], with window ID set to -2 and slot set to the newly chosen slot and the item set to the item that is now in that slot (which was previously at the slot the client requested)
+* Set Slot, with window ID set to -2 and slot set to the slot the player requested, with the item that is now in that slot and was previously on the hotbar slot
+* [[Protocol#Held_Item_Change_.28clientbound.29|Held Item Change]], with the slot set to the newly chosen slot.
 
 === <code>MC|PingHost</code> ===
 ''Client to server''
