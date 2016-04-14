@@ -86,16 +86,17 @@ When a player edits an unsigned book.
 This payload is simply a set of bytes corresponding to a [[Slot Data|Slot]].
 
 The [[NBT]] section of the Slot contains
-<code>
-  TAG_Compound(<nowiki>''</nowiki>): 1 entry
+
+<pre>
+TAG_Compound(<nowiki>''</nowiki>): 1 entry
+{
+  TAG_List('pages'): 2 entries
   {
-    TAG_List('pages'): 2 entries
-    {
-      TAG_String(0): 'Something on Page 1'
-      TAG_String(1): 'Something on Page 2'
-    }
+    TAG_String(0): 'Something on Page 1'
+    TAG_String(1): 'Something on Page 2'
   }
-</code>
+}
+</pre>
 
 === <code>MC|BOpen</code> ===
 ''Server to client''
