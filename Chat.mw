@@ -1,4 +1,4 @@
-Minecraft supports two-way chat communication via the [[Protocol#Chat_Message]] packet
+Minecraft supports two-way chat communication via the [[Protocol#Chat_Message_.28clientbound.29|Chat Message]] packet.
 
 == Current system (JSON Chat) ==
 
