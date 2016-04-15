@@ -1,16 +1,6 @@
-{{Box|
-BORDER = #FFCC00|
-BACKGROUND = #FFFF00|
-WIDTH = 100%|
-ICON = |
-HEADING = Work in progress! |
-CONTENT =  
-This page is a work in progress, and may be missing information.
-}}
-
 Documentation of the [http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2520465 World Downloader mod]'s plugin channel configuration system.
 
-See [https://github.com/Pokechu22/WorldDownloader/blob/master/src/wdl/WDLPluginChannels.java here].
+Implemented in-mod [https://github.com/Pokechu22/WorldDownloader/blob/master/src/wdl/WDLPluginChannels.java here].  A bukkit implementation is available [https://github.com/Pokechu22/WorldDownloader-Serverside-Companion here].
 
 == Note ==
 
