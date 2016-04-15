@@ -1,39 +1,39 @@
-The '''slot''' data structure is how Minecraft represents an item and its associated data in the [[Protocol|minecraft protocol]]
+The '''Slot''' data structure is how Minecraft represents an item and its associated data in the [[Protocol|Minecraft Protocol]].
 
 == Format ==
 
 The structure consists of at least a short, which gives the item/block ID [http://www.minecraftwiki.net/wiki/Block_ids]. A value of <code>-1</code> signifies that the slot is empty, and no further data follows.
 
-If the block ID is not <code>-1</code>, three more fields follow. These fields are a byte (item count), a short (item damage) and another byte.
+If the block ID is not <code>-1</code>, three more fields follow. These fields are a byte (item count), a short (item damage) and at least another byte.
 
-If the byte is <code>0</code>, there is no NBT data, and no further data follows. Otherwise the byte is the start of the nbt blob
+If the byte is <code>0</code>, there is no NBT data, and no further data follows. Otherwise the byte is the start of an NBT blob of the following format:
 
-The format of this data is as follows:
-
-<code>
-  COMPOUND: <nowiki>''</nowiki>
-    LIST: 'ench'
+<pre>
+  COMPOUND <nowiki>''</nowiki>
+    LIST 'StoredEnchantments'
       COMPOUND
-        SHORT: 'id'
-        SHORT: 'lvl'
+        SHORT 'id'
+        SHORT 'lvl'
       END
       COMPOUND
-        ...etc
+        ...
       END
+      ...
+    END
+    INT 'Unbreakable'
+    ...
   END
-</code>
+</pre>
 
-Each of the inner, untagged COMPOUNDs represents an enchantment, with its ID[http://www.minecraftwiki.net/wiki/Enchantment#Enchantment_Types] and level given as child SHORT elements.
-
-See [[NBT]] for more information about the NBT format.
+See [[NBT]] for more information about the NBT format, and [http://minecraft.gamepedia.com/Player.dat_format#Item_structure here] for the contained information and its format.
 
 == Examples ==
 
-<code>
+<pre>
   ff ff                            | empty slot
   01 16 01 00 00 00                | a diamond pickaxe
   01 16 01 00 00 01 04 CA FE BA BE | a diamond pickaxe with (made-up) NBT data
-</code>
+</pre>
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
