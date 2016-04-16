@@ -84,6 +84,10 @@ All packets in Minecraft: Pocket Edition start with their ID, which is an unsign
 
 == RakNet protocol ==
 
+The source code for the RakNet Library can be found [https://github.com/OculusVR/RakNet here].
+
+Other implementations exist, such as [https://github.com/jython234/JRakLibPlus JRakLibPlus] and [https://github.com/PocketMine/RakLib RakLib].
+
 === Connected Ping ===
 
 {| class="wikitable"
