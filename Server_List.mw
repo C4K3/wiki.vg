@@ -22,6 +22,21 @@ A couple things for contributors:
  ! Feature list
  ! Development status
  |-
+ ! [https://github.com/McEx/McEx McEx] 
+ | hansihe, Gjum
+ | [http://elixir-lang.org/ Elixir]
+ | MIT
+ | {{yes|1.9.2}}
+ | {{planned|Anvil/Custom planned}}
+ | {{planned}}
+ | {{planned}}
+ | {{planned|Players}}
+ | {{yes|Erlang processes}}
+ | {{planned|Elixir/Erlang planned}}
+ | {{yes|{{linux}}}}
+ | [https://github.com/McEx/McEx/blob/master/README.md Link]
+ | {{yes|Active}}
+ |-
  ! [https://github.com/oldmanmike/opensandbox OpenSandbox] 
  | [[User:Oldmanmike|Oldmanmike]]
  | [https://en.wikipedia.org/wiki/Haskell_(programming_language) Haskell]
