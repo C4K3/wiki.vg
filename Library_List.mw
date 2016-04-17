@@ -9,6 +9,13 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 !License
 !Last Version Supported
 |-
+! [https://github.com/McEx/McProtocol McProtocol]
+| Packets, NBT, Login, Proxy
+| hansihe
+| [http://elixir-lang.org/ Elixir]
+| {{MIT}}
+| {{yes|1.9.2}}
+|-
 ! [https://github.com/SirCmpwn/Craft.Net Craft.Net]
 | .NET Minecraft client, server, and data manipulation library
 | Drew DeVault (SirCmpwn)
