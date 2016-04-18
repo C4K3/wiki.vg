@@ -1053,7 +1053,7 @@ Extends [[#TameableAnimal|TameableAnimal]].
  |-
  | 16
  | VarInt
- |colspan="2"| Collar color
+ |colspan="2"| Collar color (values are those {{Minecraft Wiki|Data_values#Dyes|used with dyes}})
  |}
 
 === Villager ===
