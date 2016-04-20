@@ -608,11 +608,11 @@ Extends [[#Entity|Entity]].
  |-
  | 9
  | Boolean
- |colspan="2"| ''Unknown (probably something with the paddles)''
+ |colspan="2"| Right paddle turning
  |-
  | 10
  | Boolean
- |colspan="2"| ''Unknown (probably something with the paddles)''
+ |colspan="2"| Left paddle turning
  |}
 
 === EnderCrystal ===
