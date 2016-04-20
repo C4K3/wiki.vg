@@ -260,9 +260,9 @@ Confirms that the client is able to use the settings sent previously.
 
 === [https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L265-L267 HandshakeReset] ===
 
-{{Need Info|Is this ever actually sent?}}
+Causes the client to recomplete the entire handshake from the start.  There is no payload beyond the discriminator byte.
 
-Causes the client to recomplete the entire handshake from the start.  Does not appear to be sent.  There is no payload beyond the discriminator byte.
+This packet is only used when connecting through a BungeeCord instance; when connecting directly to a Forge server it is never used.
 
 {| class="wikitable"
  ! Channel
