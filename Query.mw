@@ -95,9 +95,7 @@ Send a request with an empty payload.
 
 Dump:
 
-<code>
-  FE FD 09 00 00 00 01
-</code>
+<pre>FE FD 09 00 00 00 01</pre>
     
 === Response ===
 
@@ -126,9 +124,7 @@ In this example, after parsing the string "9513307\0" as an integer and packing 
 
 Dump:
 
-<code>
-  09 00 00 00 01 39 35 31 33 33 30 37 00 | .....9513307.         
-</code>
+<pre>09 00 00 00 01 39 35 31 33 33 30 37 00 | .....9513307.         </pre>
 
 == Expiration of the challenge token ==
 
@@ -175,9 +171,7 @@ Your payload should be your challenge token, packed as an int32.
 
 Dump:
 
-<code>
-  FE FD 00 00 00 00 01 00 91 29 5B
-</code>
+<pre>FE FD 00 00 00 00 01 00 91 29 5B</pre>
 
 === Response ===
 
@@ -226,12 +220,12 @@ Dump:
 
 Dump:
 
-<code>
-  00 00 00 00 01 41 20 4D 69 6E 65 63 72 61 66 74 | .....A Minecraft
-  20 53 65 72 76 65 72 00 53 4D 50 00 77 6F 72 6C |  Server.SMP.worl
-  64 00 32 00 32 30 00 DD 63 31 32 37 2E 30 2E 30 | d.2.20.##127.0.0
-  2E 31 00                                        | .1.
-</code>
+<pre>
+00 00 00 00 01 41 20 4D 69 6E 65 63 72 61 66 74 | .....A Minecraft
+20 53 65 72 76 65 72 00 53 4D 50 00 77 6F 72 6C |  Server.SMP.worl
+64 00 32 00 32 30 00 DD 63 31 32 37 2E 30 2E 30 | d.2.20.##127.0.0
+2E 31 00                                        | .1.
+</pre>
 
 == Full stat ==
 
@@ -269,9 +263,7 @@ The request is the same as in a basic stat, except the payload '''must''' be pad
 
 Dump:
 
-<code>
-  FE FD 00 00 00 00 01 00 91 29 5B 00 00 00 00
-</code>
+<pre>FE FD 00 00 00 00 01 00 91 29 5B 00 00 00 00</pre>
 
 === Response ===
 
@@ -319,22 +311,22 @@ A simple way to parse the payload is to ignore the first 11 bytes, and then spli
 
 Dump:
 
-<code>
-  00 00 00 00 01 73 70 6C 69 74 6E 75 6D 00 80 00 | .....splitnum...
-  68 6F 73 74 6E 61 6D 65 00 41 20 4D 69 6E 65 63 | hostname.A minec
-  72 61 66 74 20 53 65 72 76 65 72 00 67 61 6D 65 | raft Server.game
-  74 79 70 65 00 53 4D 50 00 67 61 6D 65 5F 69 64 | type.SMP.game_id
-  00 4D 49 4E 45 43 52 41 46 54 00 76 65 72 73 69 | .MINECRAFT.versi
-  6F 6E 00 42 65 74 61 20 31 2E 39 20 50 72 65 72 | on.Beta 1.9 Prer
-  65 6C 65 61 73 65 20 34 00 70 6C 75 67 69 6E 73 | elease 4.plugins
-  00 00 6D 61 70 00 77 6F 72 6C 64 00 6E 75 6D 70 | ..map.world.nump
-  6C 61 79 65 72 73 00 32 00 6D 61 78 70 6C 61 79 | layers.2.maxplay
-  65 72 73 00 32 30 00 68 6F 73 74 70 6F 72 74 00 | ers.20.hostport.
-  32 35 35 36 35 00 68 6F 73 74 69 70 00 31 32 37 | 25565.hostip.127
-  2E 30 2E 30 2E 31 00 00 01 70 6C 61 79 65 72 5F | .0.0.1...player_
-  00 00 62 61 72 6E 65 79 67 61 6C 65 00 56 69 76 | ..barneygale.Viv
-  61 6C 61 68 65 6C 76 69 67 00 00                | alahelvig..
-</code>
+<pre>
+00 00 00 00 01 73 70 6C 69 74 6E 75 6D 00 80 00 | .....splitnum...
+68 6F 73 74 6E 61 6D 65 00 41 20 4D 69 6E 65 63 | hostname.A minec
+72 61 66 74 20 53 65 72 76 65 72 00 67 61 6D 65 | raft Server.game
+74 79 70 65 00 53 4D 50 00 67 61 6D 65 5F 69 64 | type.SMP.game_id
+00 4D 49 4E 45 43 52 41 46 54 00 76 65 72 73 69 | .MINECRAFT.versi
+6F 6E 00 42 65 74 61 20 31 2E 39 20 50 72 65 72 | on.Beta 1.9 Prer
+65 6C 65 61 73 65 20 34 00 70 6C 75 67 69 6E 73 | elease 4.plugins
+00 00 6D 61 70 00 77 6F 72 6C 64 00 6E 75 6D 70 | ..map.world.nump
+6C 61 79 65 72 73 00 32 00 6D 61 78 70 6C 61 79 | layers.2.maxplay
+65 72 73 00 32 30 00 68 6F 73 74 70 6F 72 74 00 | ers.20.hostport.
+32 35 35 36 35 00 68 6F 73 74 69 70 00 31 32 37 | 25565.hostip.127
+2E 30 2E 30 2E 31 00 00 01 70 6C 61 79 65 72 5F | .0.0.1...player_
+00 00 62 61 72 6E 65 79 67 61 6C 65 00 56 69 76 | ..barneygale.Viv
+61 6C 61 68 65 6C 76 69 67 00 00                | alahelvig..
+</pre>
 
 ==== K, V section ====
 
