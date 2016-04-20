@@ -262,7 +262,7 @@ Confirms that the client is able to use the settings sent previously.
 
 Causes the client to recomplete the entire handshake from the start.  There is no payload beyond the discriminator byte.
 
-This packet is only used when connecting through a BungeeCord instance; when connecting directly to a Forge server it is never used.
+The normal forge server does not ever use this packet, but it is used [https://github.com/SpigotMC/BungeeCord/blob/aaddc9fcfdcada8d19ab115f2dcc8aed413a9206/proxy/src/main/java/net/md_5/bungee/ServerConnector.java#L126-L138 when connecting through a BungeeCord instance], specifically when transitioning from a vanilla server to a modded one or from a modded server to another modded server.
 
 {| class="wikitable"
  ! Channel
