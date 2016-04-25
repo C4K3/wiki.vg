@@ -987,9 +987,16 @@ Extends [[#Animal|Animal]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 12
- | Byte
- |colspan="2"| Status bit mask (color, sheared)
+ |rowspan="3"| 12
+ |rowspan="3"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x0F
+ | Color (matches {{Minecraft Wiki|Data_values#Dyes|dye damage values}})
+ |-
+ | 0x10
+ | Is sheared
  |}
 
 === TameableAnimal ===
