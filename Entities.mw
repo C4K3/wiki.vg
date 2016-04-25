@@ -1147,7 +1147,11 @@ Extends [[#Monster|Monster]].
  |-
  | 11
  | Byte
- |colspan="2"| Is on fire
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | Is on fire
  |}
 
 === Creeper ===
