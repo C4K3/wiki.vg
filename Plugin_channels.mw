@@ -154,13 +154,13 @@ Never sent, but does something with pathfinding debugging.  The client reads the
  ! Type
  ! Notes
  |-
- | ?
+ | Unknown 1
  | Int
- | 
+ | Used as a key in the mapping that stores this data; might be an entity ID?
  |-
- | ?
+ | Unknown 2
  | Float
- | ?
+ | 
  |-
  | Entity
  | PathEntity
@@ -174,14 +174,37 @@ PathEntity structure:
  ! Type
  ! Notes
  |-
- | Path index
+ | Current path index
  | Int
- |
+ | Index in the points array that the entity is currently targetting
  |-
- | ?
+ | Unknown 1
  | PathPoint
- |
+ | Only 1 point
  |-
+ | Number of points
+ | Int
+ | Length of the following array
+ |-
+ | Points array
+ | Array of PathPoint
+ | The actual points on the path
+ |-
+ | Unknown 2 length
+ | Int
+ | Length of the following array
+ |-
+ | Unknown 2
+ | Array of PathPoint
+ | 
+ |-
+ | Unknown 3 length
+ | Int
+ | Length of the following array
+ |-
+ | Unknown 3
+ | Array of PathPoint
+ | 
  |}
 
 PathPoint structure:
@@ -191,17 +214,17 @@ PathPoint structure:
  ! Type
  ! Notes
  |-
- | ?
+ | Unknown 1
  | Float
- | 
+ | Possibly red value?
  |-
- | ?
+ | Unknown 2
  | Float
- | 
+ | Possibly green value?
  |-
- | ?
+ | Unknown 3
  | Float
- | 
+ | Possibly blue value?
  |-
  | Has been visited
  | Boolean
