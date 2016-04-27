@@ -14,9 +14,13 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  ! Version number
  ! Last known documentation
  |-
+ | {{Minecraft Wiki|1.9.3-pre2}}
+ | 110
+ | 
+ |-
  | {{Minecraft Wiki|1.9.3-pre1}}
- | rowspan="5"| 109
- | rowspan="5"| 
+ |rowspan="5"| 109
+ |rowspan="5"| 
  |-
  | {{Minecraft Wiki|16w15b}}
  |-
