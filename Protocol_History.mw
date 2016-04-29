@@ -2,8 +2,15 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 1.9.3-pre2 ===
 * Protocol version 110
-* Removed Update Sign, Update Block Entity with action 9 should be used
-* Added <code>MC|StopSound</code> channel
+* Chunk Data (0x20) now also sends all tile entities in the chunk (at the end of the packet)
+* Removed Update Sign (clientbound) (0x46); Update Block Entity with action 9 should be used instead
+* Changed ID of Sound Effect from 0x47 to 0x46
+* Changed ID of Player List Header And Footer from 0x48 to 0x47
+* Changed ID of Collect Item from 0x49 to 0x48
+* Changed ID of Entity Teleport from 0x4A to 0x49
+* Changed ID of Entity Properties from 0x4B to 0x4A
+* Changed ID of Entity effect from 0x4C to 0x4B
+* Added <code>MC|StopSound</code> plugin, used with the <code>/stopsound</code> command.
 
 === 1.9.2 ===
 * Protocol version 109
