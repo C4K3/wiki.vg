@@ -39,7 +39,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | [http://opensource.org/licenses/CDDL-1.0 CDDL-1.0]
  | {{yes}}
  | {{no}}
- | {{yes|1.9}}
+ | {{yes|1.9.2}}
  |-
  ! [https://github.com/thinkofname/steven steven]
  | Compiles
