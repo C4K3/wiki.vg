@@ -237,6 +237,48 @@ Returns information on the logged in Mojang account.
 
 === Headers ===
  Authorization: Bearer <access token>
+
+== Blocked Servers ==
+   GET https://sessionserver.mojang.com/blockedservers
+
+Returns a list of SHA1 hashes used to check server addresses against when the client tries to connect.
+Client will also test the address without sub-domains (removing one at a time) after testing the address.
+If the address matches the client will refused to connect citing a network error.
+=== Response ===
+<pre>
+a26f64ba73e751fec1e3c57e04ca184b32f575de
+e5477a2abfba7383cee228af82ad0c2ded388823
+7769862d9ededd5d68dbb3fa0e36eabea693737a
+c78045f5aef524a3f899041269fa9daa3639c8bf
+447985e7ef8477134681d8589961480b171f73dc
+c798f76e83ac9513a16574cb7b52c5cf76ad1bdd
+206cf1a19de370289447c931ab53e1f8e9eaded4
+879f1dea801746b51a2a908b04f7fe6fff5f7a47
+7429bf7ad3c1f20d5443b2159f8c420556a5de6d
+cf883cb0b153f8777fc46bb9f40cd08446043165
+5f2eceb54f642fb5f58abca0b52f7f0349f06cef
+ad9ad38574b4966fa537dd64e82807a185b7185a
+5ff97c1058f402ef8f5bcd310f610bad8ad34460
+a2e2be30dc9be014f171c8a3bbe955e55fd66d87
+5c0394de667213e400dd21ffe4370b05566da22a
+ec43b2d08469e46f465a9acccc78690a316d5ef3
+699994152eacdc9279944c3f1fe0ee7645b605e7
+da9225e1f2baab028e37a1f34441bf18ce01298e
+6d22ec6bc474410014a96712077dd1d4ba42d8d8
+f71d2762d4267cd0b3cefd502e6d6f016625a4b1
+8d278c5485692602e0cc0838373003512f1a7a11
+ff232cafc67eb1a23594a2898fc627c2b1020064
+954aeb4ee90feb42f30de0ec1a0e8685660a7336
+18a825afbbe872f6138d07f16840c312ff971baa
+980343d3239d599ab44f82a5a56b1cfc5d4623d4
+7f97b2029f696caf320acb36ca56546c6860bdd0
+e749acc18647b42cda870d87cb8c47f5b8df8a3c
+b1540c3a84161a990e3347821859da577272479c
+9d1cebe7c9b20bccaee420d31336cb589692aded
+c40f20149f3d694ef47c152f7bc21b1e16ff702d
+8c86c0e833d42efa4a38fad7e5267eb24bc120ed
+</pre>
+
 == Examples ==
 
 [https://github.com/PhilipRasmussen/minecraft/tree/master/profile Go] | uuids or names to profiles with skins, capes and name histories
