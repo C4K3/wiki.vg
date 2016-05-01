@@ -97,9 +97,7 @@ For more information on potion data values, see {{Minecraft Wiki|Data values#Pot
  | The entity ID of the owner
  |}
 
-== Projectiles ([[Entities#Objects|Any projectile]]) ==
-
-This includes ghast fireballs, arrows, and fishhooks (probably more).
+== Arrow (id 60) and Spectral Arrow (id 91) ==
 
 {| class="wikitable"
  |-
@@ -111,7 +109,7 @@ This includes ghast fireballs, arrows, and fishhooks (probably more).
  | Entity ID
  | Int
  | <code>64</code>
- | The entity ID of the thrower
+ | The entity ID of the shooter + 1 (Subtract 1 to get the actual entity ID)
  |}
 
 [[Category:Protocol Details]]
