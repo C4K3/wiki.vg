@@ -66,23 +66,6 @@ The int value itself specifies the minecart's functionality:
  | <code><nowiki>BlockID | (Metadata << 12)</nowiki></code>
  |}
 
-== Splash Potions (id 73) ==
-
-{| class="wikitable"
- |-
- ! Field name
- ! Field type
- ! Example
- ! Notes
- |-
- | Entity ID
- | Int
- | <code>64</code>
- | Potion data value
- |}
-
-For more information on potion data values, see {{Minecraft Wiki|Data values#Potions}}.
-
 == Fishing Float (id 90) ==
 
 {| class="wikitable"
