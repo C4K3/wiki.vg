@@ -245,7 +245,7 @@ Returns a list of SHA1 hashes used to check server addresses against when the cl
 
 Clients check the lowercase name, using the ISO-8859-1 charset, against this list.  They will also attempt to check subdomains, replacing each level with a <code>*</code>.  Specifically, it splits based off of the <code>.</code> in the domain, goes through each section removing one at a time.  For instance, for <code>mc.example.com</code>, it would try <code>mc.example.com</code>, <code>*.example.com</code>, and <code>*.com</code>.  With IP addresses (verified by having 4 split sections, with each section being a valid integer between 0 and 255, inclusive<!-- Decompiles seem to mess this up with an empty if, but there is logic for checking the range -->) substitution starts from the end, so for <code>192.168.0.1</code>, it would try <code>192.168.0.1</code>, <code>192.168.0.*</code>, <code>192.168.*</code>, and <code>192.*</code>.
 
-If the address matches the client will refuse to connect claiming to have a network error.
+This is only used in 1.9.3-pre2; as of 1.9.3-pre3 this list is currently not checked.
 
 === Response ===
 <pre>
@@ -282,7 +282,7 @@ c40f20149f3d694ef47c152f7bc21b1e16ff702d
 8c86c0e833d42efa4a38fad7e5267eb24bc120ed
 </pre>
 
-Some of the hashes have been cracked. They are as follows:
+All of the current hashes have been cracked. They are as follows:
 <pre>
 a26f64ba73e751fec1e3c57e04ca184b32f575de : timelesspvp.net
 e5477a2abfba7383cee228af82ad0c2ded388823 : play.gotpvp.com
@@ -291,13 +291,13 @@ c78045f5aef524a3f899041269fa9daa3639c8bf : hub.endercraft.com
 447985e7ef8477134681d8589961480b171f73dc : ps.endercraft.com
 c798f76e83ac9513a16574cb7b52c5cf76ad1bdd : brawl.com
 206cf1a19de370289447c931ab53e1f8e9eaded4 : mc.minevast.com
-879f1dea801746b51a2a908b04f7fe6fff5f7a47
+879f1dea801746b51a2a908b04f7fe6fff5f7a47 : play.insanenetwork.org
 7429bf7ad3c1f20d5443b2159f8c420556a5de6d : play.insanefactions.org
 cf883cb0b153f8777fc46bb9f40cd08446043165 : insanefactions.org
-5f2eceb54f642fb5f58abca0b52f7f0349f06cef
+5f2eceb54f642fb5f58abca0b52f7f0349f06cef : skygod.us
 ad9ad38574b4966fa537dd64e82807a185b7185a : phoenixnexus.net
 5ff97c1058f402ef8f5bcd310f610bad8ad34460 : play.paradise-mc.net
-a2e2be30dc9be014f171c8a3bbe955e55fd66d87
+a2e2be30dc9be014f171c8a3bbe955e55fd66d87 : play.mineaqua.net
 5c0394de667213e400dd21ffe4370b05566da22a : mc.eldercraft.de
 ec43b2d08469e46f465a9acccc78690a316d5ef3 : play.phanaticmc.com
 699994152eacdc9279944c3f1fe0ee7645b605e7 : ftb.phanaticmc.com
