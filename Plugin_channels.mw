@@ -102,7 +102,8 @@ TAG_Compound(<nowiki>''</nowiki>): 1 entry
 ''Server to client''
 
 When a player right clicks with a signed book. This tells the client to open the book GUI.
-This payload is empty.
+
+The payload is a VarInt enum for the selected hand: 0 for the main hand, 1 for the offhand.
 
 === <code>MC|BSign</code> ===
 ''Client to server''
