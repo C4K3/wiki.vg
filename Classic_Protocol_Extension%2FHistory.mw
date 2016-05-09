@@ -1,3 +1,7 @@
+==9 May 2016‎==
+* Added finalized version 2 of '''EnvMapAppearance''' extension, deprecated version 1.
+* Added finalized version 2 of '''BlockDefinitionsExt''' extension, deprecated version 1.
+
 ==19 March 2016‎==
 * Added finalized version of '''BulkBlockUpdate''' extension.
 
