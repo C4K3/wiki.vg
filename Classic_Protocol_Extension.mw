@@ -1203,12 +1203,17 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 :'''Motivation''': To allow defining custom block types that do not have minX/Y/Z values of 0, and maxX/Z values of 1.
 :'''Client Behavior''': See the '''''BlockDefinitions''''' specification. Additionally, this extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]] and '''BlockDefinitions''', and must only be enabled if BOTH extensions are mutually supported.
 
+====Version 1 (Deprecated since 9 May 2016)====
+:This version of the extension has been deprecated and replaced with version 2. See [[Classic Protocol Extension/Old Extensions|old extensions subpage]].
+
+====Version 2====
+
 :'''Texturing''': See the '''''BlockDefinitions''''' specification. The MinX/Y/Z and MaxX/Y/Z fields also affect the location within the terrain tile for a given face that the block should sample texels from. (e.g. if minX and minZ was 8, and maxX and maxZ was 16, then for the terrain.png tile with pixels from (0, 0) to (16, 16), the top face would be drawn with the subset of pixels from (8, 8) to (16, 16))
 
 :'''Server Behavior''': See the '''''BlockDefinitions''''' specification.
 
 
-This packet is the same as DefineBlock packet, except the 'shape field' is replaced by 6 fields indicating the bounding box of the block in pixel coordinates.
+This packet is the same as DefineBlock packet, except the 'shape field' is replaced by 6 fields indicating the bounding box of the block in pixel coordinates, and the 'side texture' is replaced by 4 fields indicating the individual textures for each horizontal side face.
 Note that this packet does not support sprites, you must send a regular '''''DefineBlock''''' packet for that.
 :<h5>DefineBlockExt Packet</h5>
 :''Server to Client''
@@ -1221,7 +1226,33 @@ Note that this packet does not support sprites, you must send a regular '''''Def
 ! Notes
 |-
 | class="centeralign" rowspan="16" | 37
-| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockID, Name, Solidity, MovementSpeed, TopTextureID, SideTextureID, BottomTextureID, TransmitsLight, WalkSound, FullBright
+| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockID, Name, Solidity, MovementSpeed, TopTextureID
+|-
+| class="centeralign" | LeftTextureId
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+|Refers to a terrain.png tile.
+Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the X = 0 face.
+|-
+| class="centeralign" | RightTextureId
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+|Refers to a terrain.png tile.
+Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the X = 1 face.
+|-
+| class="centeralign" | FrontTextureId
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+|Refers to a terrain.png tile.
+Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the Z = 0 face.
+|-
+| class="centeralign" | BackTextureId
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+|Refers to a terrain.png tile.
+Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the Z = 1 face.
+|-
+| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BottomTextureID, TransmitsLight, WalkSound, FullBright
 |-
 | class="centeralign" | MinX
 | class="centeralign" | byte
@@ -1256,7 +1287,7 @@ Note that this packet does not support sprites, you must send a regular '''''Def
 | class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockDraw, FogDensity, FogR, FogG, FogB
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 85 bytes
+| class="rightalign" colspan="4" | 88 bytes
 |}
 
 ===TextColors===
