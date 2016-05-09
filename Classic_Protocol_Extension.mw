@@ -764,7 +764,7 @@ Matches NameID of the ExtAddPlayerName packet
 :'''Server behavior:''' Server may send '''''EnvSetMapAppearance v2''''' packets after the last '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelDataChunk]]''''' packet is sent for a level. Server should not use any custom block IDs unless the client declared the appropriate ''CustomBlocks'' support level. To reset the texture pack to the client's default one, server should send an '''''EnvSetMapAppearance v2''''' packet with empty string for ''TexturePackURL''. To reset other fields, server should simply use the default values (listed below).
 :'''Block type restrictions:''' Only solid blocks are allowed to be used for ''SideBlock'' and ''EdgeBlock''. Sprites (Sapling, Dandelion, Rose, BrownMushroom, RedMushroom, Rope, Fire) partial-height blocks (Slab, CobblestoneSlab, Snow), and transparent blocks (Air, Leaves, Glass) cannot be used for those fields.
 
-:<h4>EnvSetMapAppearance v2 packet</h4>
+:<h5>EnvSetMapAppearance v2 packet</h5>
 :''Server to Client''
 :{| class="wikitable"
 |- class="row0"
@@ -817,7 +817,7 @@ Default is 0. (Client has no limit on view distance.)
 | class="col1 rightalign" colspan="4" | 73 bytes
 |}
 
-:<h4>Texture pack .zip format</h4>
+:<h5>Texture pack .zip format</h5>
 :'''Note:''' It is up to clients which files (except for terrain.png) they support in a texture pack. These clients are still considered to be compliant with the specification.
 :'''Note:''' Texture packs may also contain other files not listed below. If clients recognise these other files, then they may perform whatever is desired with them.
 :'''Note:''' If a texture pack does not contain a certain texture, clients should continue to use the existing texture from the previous texture pack.
@@ -858,7 +858,7 @@ Default is 0. (Client has no limit on view distance.)
 For example, the Crocodile model has the model string ''croc''. The default texture that would be applied is specified by ''croc.png''. 
 |}
 
-:<h4>animations.txt format</h4>
+:<h5>animations.txt format</h5>
 :{| class="wikitable" style="display:block; max-width:1000px"
 |Each line is in the format: <TileX> <TileY> <FrameX> <FrameY> <Frame size> <Frames count> <Tick delay>
 :- ''TileX'' and ''TileY'' indicate the coordinates of the tile in terrain.png that will be replaced by the animation frames. These range from 0 to 15. (inclusive of 15)
