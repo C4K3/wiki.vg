@@ -114,3 +114,65 @@ Matches NameID of the ExtAddPlayerName packet
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 3 bytes
 |}
+
+===BlockDefinitionsExt===
+====Version 1 (Deprecated since 9 May 2016)====
+:This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.
+:'''Motivation''': To allow defining custom block types that do not have minX/Y/Z values of 0, and maxX/Z values of 1.
+:'''Client Behavior''': See the '''''BlockDefinitions''''' specification. Additionally, this extension depends on [[Classic_Protocol_Extension#EnvMapAppearance|EnvMapAppearance extension]] and '''BlockDefinitions''', and must only be enabled if BOTH extensions are mutually supported.
+
+:'''Texturing''': See the '''''BlockDefinitions''''' specification. The MinX/Y/Z and MaxX/Y/Z fields also affect the location within the terrain tile for a given face that the block should sample texels from. (e.g. if minX and minZ was 8, and maxX and maxZ was 16, then for the terrain.png tile with pixels from (0, 0) to (16, 16), the top face would be drawn with the subset of pixels from (8, 8) to (16, 16))
+
+:'''Server Behavior''': See the '''''BlockDefinitions''''' specification.
+
+
+This packet is the same as DefineBlock packet, except the 'shape field' is replaced by 6 fields indicating the bounding box of the block in pixel coordinates.
+Note that this packet does not support sprites, you must send a regular '''''DefineBlock''''' packet for that.
+:<h5>DefineBlockExt Packet</h5>
+:''Server to Client''
+:{| class="wikitable"
+|-
+| Packet ID
+! Field Name
+! Field Type
+! Example
+! Notes
+|-
+| class="centeralign" rowspan="16" | 37
+| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockID, Name, Solidity, MovementSpeed, TopTextureID, SideTextureID, BottomTextureID, TransmitsLight, WalkSound, FullBright
+|-
+| class="centeralign" | MinX
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum X coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MinY
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum Y coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MinZ
+| class="centeralign" | byte
+| class="centeralign" | <code>0</code>
+| Minimum Z coordinate in pixels. Min allowed is 0, max allowed is 15.
+|-
+| class="centeralign" | MaxX
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum X coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="centeralign" | MaxY
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum Y coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="centeralign" | MaxZ
+| class="centeralign" | byte
+| class="centeralign" | <code>16</code>
+| Maximum Z coordinate in pixels. Min allowed is 1, max allowed is 16.
+|-
+| class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockDraw, FogDensity, FogR, FogG, FogB
+|-
+! Total Size:
+| class="rightalign" colspan="4" | 85 bytes
+|}
