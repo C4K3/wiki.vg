@@ -85,6 +85,9 @@ This is the inventory window that the player can always open, typically by press
  |-
  | 36–44
  | hotbar
+ |-
+ | 45
+ | Offhand slot
  |}
 
 Note that this is different from inventory items stored in a player.dat file. This may help: [https://gist.github.com/459a1691c3dd751db160 https://gist.github.com/459a1691c3dd751db160]
