@@ -137,7 +137,7 @@ This is the window that is opened when the player right-clicks on a double chest
  | hotbar
  |}
 
-{{warning|Some custom servers will send chest inventories with other sizes, usually ranging from 1 row to 6 rows.  These may be used for custom GUIs.}}
+{{warning2|Some custom servers will send chest inventories with other sizes, usually ranging from 1 row to 6 rows.  These may be used for custom GUIs.  It is thus important to correctly use the "Number Of Slots" parameter in the open window packet to determine the number of rows in the chest, rather than hardcoding what constitutes a regular chest or a large chest.}}
 
 {{-}}
 
