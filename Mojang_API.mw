@@ -245,7 +245,7 @@ Returns a list of SHA1 hashes used to check server addresses against when the cl
 
 Clients check the lowercase name, using the ISO-8859-1 charset, against this list.  They will also attempt to check subdomains, replacing each level with a <code>*</code>.  Specifically, it splits based off of the <code>.</code> in the domain, goes through each section removing one at a time.  For instance, for <code>mc.example.com</code>, it would try <code>mc.example.com</code>, <code>*.example.com</code>, and <code>*.com</code>.  With IP addresses (verified by having 4 split sections, with each section being a valid integer between 0 and 255, inclusive<!-- Decompiles seem to mess this up with an empty if, but there is logic for checking the range -->) substitution starts from the end, so for <code>192.168.0.1</code>, it would try <code>192.168.0.1</code>, <code>192.168.0.*</code>, <code>192.168.*</code>, and <code>192.*</code>.
 
-This is only used in 1.9.3-pre2; as of 1.9.3-pre3 this list is currently not checked.
+This check is done by the bootstrap class in netty. The default netty class is overridden by one in the com.mojang:netty dependency loaded by the launcher. This allows it to affect any version that used netty (1.7+)
 
 === Response ===
 <pre>
