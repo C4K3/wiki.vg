@@ -287,6 +287,26 @@ Sent ''after'' a Server list ping in Minecraft 1.6. More information on [[Server
 
 {{Warning|Since this plugin channel is only sent for the legacy server list ping, it uses the older packet structure.}}}
 
+=== <code>MC|StopSound</code> ===
+
+Used to implement {{Minecraft Wiki|Commands#StopSound|the <code>/stopsound</code> command}}.  Stops a sound that is currently playing on the client.
+
+{| class="wikitable"
+ ! Field name
+ ! Field type
+ ! Notes
+ |-
+ | Sound name
+ | String
+ | A [http://pokechu22.github.io/Burger/1.9.html#sounds sound effect name].  If left empty, ''all'' sounds are stopped.
+ |-
+ | Sound category
+ | String
+ | Should be one of the sound categories used in [[Protocol#Named Sound Effect|Named Sound Effect]], but if it's invalid or empty then it is (intentionally) treated as ''all'' sound categories.
+ |}
+
+Emptiness of sound category or sound name can be combined, IE a empty sound name but a set sound category will stop all sounds in the given category.
+
 === <code>MC|Struct</code> ===
 ''Client to server''
 
