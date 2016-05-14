@@ -29,8 +29,8 @@ A couple things for contributors:
  | {{yes|1.9.2}}
  | {{planned|Anvil/Custom planned}}
  | {{planned}}
- | {{planned}}
- | {{planned|Players}}
+ | {{yes|Entities}}
+ | {{yes|Players, Items}}
  | {{yes|Erlang processes}}
  | {{planned|Elixir/Erlang planned}}
  | {{yes|{{linux}}}}
