@@ -87,6 +87,21 @@ Mark, Trever Fischer, Adam Liszka
 | GPLv3
 | {{yes}}
 | {{no}}
+|-
+! [https://github.com/dazed-sheep/dazed-sheep dazed-sheep]
+| mhsjlw
+| [https://en.wikipedia.org/wiki/Node.js Node.js]
+| [https://opensource.org/licenses/MIT MIT]
+| {{yes}}
+| {{yes}}
+|-
+! [https://github.com/meme/certain-elephant certain-elephant]
+| meme
+| [https://en.wikipedia.org/wiki/Erlang_(programming_language) Erlang]
+| [http://unlicense.org/ Unlicense]
+| {{yes}}
+| {{planned}}
+|-
 |}
 
 [[Category:Minecraft Classic]]
