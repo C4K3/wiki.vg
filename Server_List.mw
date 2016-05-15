@@ -56,7 +56,7 @@ A couple things for contributors:
  | FakeTruth, [[User:Xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More]
  | [http://en.wikipedia.org/wiki/C%2B%2B C++]
  | Apache 2.0
- | {{planned|1.8, Developing for 1.9}}
+ | {{yes|1.9.4 through 1.7.2}}
  | {{yes|Anvil}}
  | {{yes}}
  | {{yes}}
