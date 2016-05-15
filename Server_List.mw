@@ -22,6 +22,21 @@ A couple things for contributors:
  ! Feature list
  ! Development status
  |-
+ ! [http://cuberite.org Cuberite]
+ | FakeTruth, [[User:Xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More]
+ | [http://en.wikipedia.org/wiki/C%2B%2B C++]
+ | Apache 2.0
+ | {{yes|1.9.4 through 1.7.2}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players, Mobs}}
+ | {{yes|Threads}}
+ | {{yes|[http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]}}
+ | {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
+ | [https://forum.cuberite.org/thread-499-post-3553.html#pid3553 Link]
+ | {{yes|Active}}
+ |-
  ! [https://github.com/McEx/McEx McEx] 
  | hansihe, Gjum
  | [http://elixir-lang.org/ Elixir]
@@ -51,23 +66,7 @@ A couple things for contributors:
  | {{yes|{{linux}}{{windows}}{{mac}}}}
  | [https://github.com/oldmanmike/opensandbox/blob/master/README.md Link]
  | {{yes|Active}}
- |-
- ! [http://cuberite.org Cuberite]
- | FakeTruth, [[User:Xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More]
- | [http://en.wikipedia.org/wiki/C%2B%2B C++]
- | Apache 2.0
- | {{yes|1.9.4 through 1.7.2}}
- | {{yes|Anvil}}
- | {{yes}}
- | {{yes}}
- | {{yes|Players, Mobs}}
- | {{yes|Threads}}
- | {{yes|[http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua]}}
- | {{yes|{{windows}}{{linux}}{{mac}}<br />{{Android}}}}
- | [https://forum.cuberite.org/thread-499-post-3553.html#pid3553 Link]
- | {{yes|Active}}
- |-
- ! [http://diorite.org Diorite]
+ |- ! [http://diorite.org Diorite]
  | GotoFinal
  | [https://en.wikipedia.org/wiki/Java_(programming_language) Java 8]
  | MIT License
