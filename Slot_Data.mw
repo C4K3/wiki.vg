@@ -2,11 +2,27 @@ The '''Slot''' data structure is how Minecraft represents an item and its associ
 
 == Format ==
 
-The structure consists of at least a short, which gives the {{Minecraft Wiki|Data values#Block IDs|item/block ID}}. A value of <code>-1</code> signifies that the slot is empty, and no further data follows.
-
-If the block ID is not <code>-1</code>, three more fields follow. These fields are a byte (item count), a short (item damage) and at least another byte.
-
-If the byte is <code>0</code>, there is no NBT data, and no further data follows. Otherwise the byte is the start of an NBT blob of the following format:
+{| class="wikitable"
+ ! Name
+ ! Type
+ ! Meaning
+ |-
+ | Block ID
+ | Short
+ | The {{Minecraft Wiki|Data values#Block IDs|item/block ID}}. A value of <code>-1</code> signifies that the slot is empty, and no further data follows.
+ |-
+ | Item Count
+ | Optional Byte
+ | Not present if Block ID is <code>-1</code>.
+ |-
+ | Item Damage
+ | Optional Short
+ | Not present if Block ID is <code>-1</code>.
+ |-
+ | NBT
+ | Optional NBT
+ | Not present if Block ID is <code>-1</code>. If 0, there is no NBT data, and no further data follows. Otherwise the byte is the start of an NBT blob as shown below:
+ |}
 
 <pre>
   COMPOUND <nowiki>''</nowiki>
