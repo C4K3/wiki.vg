@@ -52,6 +52,21 @@ A couple things for contributors:
  | [https://github.com/McEx/McEx/blob/master/README.md Link]
  | {{yes|Active}}
  |-
+ ! [https://github.com/GlowstoneMC/GlowstonePlusPlus Glowstone++]
+ | SpaceManiac, mastercoms, deathcap, jimmikaelkael, [https://github.com/GlowstonePlusPlus/GlowstonePlusPlus/graphs/contributors others]
+ | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+ | [http://en.wikipedia.org/wiki/MIT_License MIT]
+ | {{yes|1.9.2 (#109)}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players, Items, Mobs}}
+ | {{yes|Threads/Events}}
+ | {{yes|Java ([http://bukkit.org/ Bukkit] and [https://spongepowered.org/ Sponge] using [https://github.com/GlowstonePlusPlus/Bukkit2Sponge Bukkit2Sponge])}}
+ | {{yes|{{windows}}{{linux}}{{mac}}}}
+ | [https://github.com/GlowstonePlusPlus/GlowstonePlusPlus#features Link]
+ | {{yes|Active}}
+ |-
  ! [https://github.com/oldmanmike/opensandbox OpenSandbox] 
  | [[User:Oldmanmike|Oldmanmike]]
  | [https://en.wikipedia.org/wiki/Haskell_(programming_language) Haskell]
@@ -140,22 +155,7 @@ A couple things for contributors:
  | {{yes|Java ([http://bukkit.org/ Bukkit])}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | [https://github.com/SpaceManiac/Glowstone#features Link]
- | {{yes|Active}}
- |-
- ! [https://github.com/GlowstonePlusPlus/GlowstonePlusPlus Glowstone++]
- | SpaceManiac, mastercoms, deathcap, jimmikaelkael, [https://github.com/GlowstonePlusPlus/GlowstonePlusPlus/graphs/contributors others]
- | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
- | [http://en.wikipedia.org/wiki/MIT_License MIT]
- | {{yes|1.8.8 (#47)}}
- | {{yes|Anvil}}
- | {{yes}}
- | {{yes}}
- | {{yes|Players, Items, Mobs}}
- | {{yes|Threads/Events}}
- | {{yes|Java ([http://bukkit.org/ Bukkit] and [https://spongepowered.org/ Sponge] using [https://github.com/GlowstonePlusPlus/Bukkit2Sponge Bukkit2Sponge])}}
- | {{yes|{{windows}}{{linux}}{{mac}}}}
- | [https://github.com/GlowstonePlusPlus/GlowstonePlusPlus#features Link]
- | {{yes|Active}}
+ | {{no|On hiatus since Febuary 2015; development moved to Glowstone++}}
  |-
  ! [https://github.com/PistonDevelopers/hematite_server Hematite]
  | [http://www.piston.rs/ Piston] developers
