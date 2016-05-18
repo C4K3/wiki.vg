@@ -21,10 +21,10 @@ A Chunk Section is defined in terms of other [[data types]]. A Chunk Section con
  |-
  | Palette Length
  | VarInt
- | Length of the following array. May be 0.
+ | Length of the following array. May be 0, in which case the following palette is not sent.
  |-
  | Palette
- | Array of VarInt
+ | Optional Array of VarInt
  | Mapping of block state IDs in the global palette to indices of this array
  |-
  | Data Array Length
@@ -52,9 +52,9 @@ The Data Array, although varying in length, will never be padded due to the numb
 
 There are several values that can be used for the bits per block value. In most cases, invalid values will be interpreted as a different value when parsed by the Notchian client, meaning that chunk data will be parsed incorrectly if you use an invalid bits per block.  Servers must make sure that the bits per block value is correct.
 
-* up to 4: Blocks are encoded as 4 bits. The palette array is used and sent.
-* 5 to 8: Blocks are encoded with the given number of bits. The palette array is used and sent.
-* 9 and above: Blocks are encoded by their whole ID in the global palette, with bits per block being set as the base 2 logarithm of the number of block states, rounded up. For the current vanilla release, this is 13 bits per block.
+* up to 4: Blocks are encoded as 4 bits. The palette is used and sent.
+* 5 to 8: Blocks are encoded with the given number of bits. The palette is used and sent.
+* 9 and above: The palette is not sent. Blocks are encoded by their whole ID in the global palette, with bits per block being set as the base 2 logarithm of the number of block states, rounded up. For the current vanilla release, this is 13 bits per block.
 
 The global palette encodes a block as 13 bits. It uses the {{Minecraft Wiki|Data values#Block IDs|block ID}} for the first 9 bits, and the block damage value for the last 4 bits. For example, Diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001 0011</code>. If a block is not found in the global palette (either due to not having a valid damage value or due to not being a valid ID), it will be treated as air.
 
