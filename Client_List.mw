@@ -14,14 +14,14 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  ! Game Graphics
  ! Last Version Supported
  |-
- ! [https://github.com/JavaProphet/MinecraftClone MinecraftClone]
+ ! [https://github.com/JavaProphet/Osmium Osmium]
  | Rendering Client in C
  | [https://github.com/JavaProphet JavaProphet]
  | {{C}}
  | [http://www.gnu.org/copyleft/gpl.html GPLv3]
  | {{yes}}
  | {{yes}}
- | {{yes|1.9.2}}
+ | {{yes|1.9.4}}
  |-
  ! [https://github.com/thinkofname/steven-rust Steven rust]
  | Compiles
