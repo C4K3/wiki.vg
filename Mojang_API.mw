@@ -193,19 +193,26 @@ The "value" base64 string for the "textures" object decoded:
 == Change Skin ==
    PUT https://api.mojang.com/user/profile/<uuid>/skin
 
-This will set the skin for the selected profile.
+This will set the skin for the selected profile. This will also work for legacy accounts.
 
 === Response ===
-''Testing needs to be done, I believe an empty payload is returned if successful''
+Upon error the server will send back a JSON with the error. (Success is a blank payload)
 === Headers ===
  Authorization: Bearer <access token>
 === Payload ===
-<syntaxhighlight lang="javascript" style="overflow-x: scroll">
-{
-    "model":"<alex/steve>"
-}
-</syntaxhighlight>
-With the file of the skin attached as part of the PUT request.
+The payload for this API consists of two url-encoded form fields (conjoined by '&').
+ '''model='''<alex/steve>'''&url='''<skin url>
+=== Example ===
+ curl -H "Authorization: Bearer ''<access token>''" --data-urlencode "model=steve" --data-urlencode "url=http://assets.mojang.com/SkinTemplates/steve.png" https://api.mojang.com/user/profile/''<uuid>''/skin
+
+ POST /user/profile/<uuid>/skin HTTP/1.1
+ Host: api.mojang.com
+ User-Agent: curl/7.49.0
+ Accept: */*
+ Authorization: Bearer <access token>
+ Content-Length: <74>
+ Content-Type: application/x-www-form-urlencoded
+ model=steve&url=http%3A%2F%2Fassets.mojang.com%2FSkinTemplate%2Fsteve.png
 
 == User Info ==
    GET https://api.mojang.com/user
