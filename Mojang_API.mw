@@ -367,6 +367,8 @@ c40f20149f3d694ef47c152f7bc21b1e16ff702d : mc.diacraft.org
 
 [https://gist.github.com/jomo/74944770e7647855ac9d Python] | names file to uuids+names file
 
+[https://github.com/MineTheCube/MojangAPI PHP] | uuids or names to profiles with skins, heads and name histories
+
 [https://gist.github.com/ezfe/a71feccd3a837a2592f1 PHP] | uuids to names
 
 [https://github.com/ozzyfant/AccountsClientPHP PHP] | uuids to names, names to uuids
