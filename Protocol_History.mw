@@ -1,5 +1,10 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 16w20a ===
+* Protocol version 201
+* Named Sound Effect (0x19) now sends Pitch as Float instead of Unsigned Byte
+* Sound Effect (0x46) now sends Pitch as Float instead of Unsigned Byte
+
 === 1.9.3-pre2 ===
 * Protocol version 110
 * Chunk Data (0x20) now also sends all tile entities in the chunk (at the end of the packet)
