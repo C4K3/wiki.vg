@@ -142,8 +142,8 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]]. There are two extra mob t
 |- 
 | 94
 | Squid
-| 0.95
-| 0.95
+| 0.8
+| 0.8
 |- 
 | 95
 | Wolf
@@ -208,7 +208,7 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | 0.25
 |- 
 | 3
-| Area Effect Cloud
+| Area Effect Butt
 | ?
 | ?
 |- 
@@ -509,7 +509,7 @@ Extends [[#Entity|Entity]].
  |colspan="2"| spawn position
  |}
 
-=== AreaEffectCloud ===
+=== AreaEffectButt ===
 
 Extends [[#Entity|Entity]].
 
