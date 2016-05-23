@@ -359,6 +359,33 @@ c40f20149f3d694ef47c152f7bc21b1e16ff702d : mc.diacraft.org
 8c86c0e833d42efa4a38fad7e5267eb24bc120ed : play.menoxia.com
 </pre>
 
+== Statistics ==
+   POST https://api.mojang.com/orders/statistics
+
+Get statistics on the sales of Minecraft.
+
+=== Payload ===
+The payload is a json list of options under the metricKeys key.
+Below is the default list used by https://minecraft.net/en/stats/
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
+{
+    "metricKeys": [
+        "item_sold_minecraft",
+        "prepaid_card_redeemed_minecraft"
+    ]
+}
+</syntaxhighlight>
+
+=== Response ===
+A json object is returned with the total amount of copies sold, the amount of copies sold in the last 24h and how many sales there are per second.
+<syntaxhighlight lang="javascript" style="overflow-x: scroll">
+{
+    "total": integer total amount sold,
+    "last24h": integer total sold in last 24 hours,
+    "saleVelocityPerSeconds": integer average sales per second
+}
+</syntaxhighlight>
+{"total":23472064,"last24h":6094,"saleVelocityPerSeconds":0.07666667}
 == Examples ==
 
 [https://github.com/PhilipRasmussen/minecraft/tree/master/profile Go] | uuids or names to profiles with skins, capes and name histories
