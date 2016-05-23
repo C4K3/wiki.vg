@@ -385,7 +385,6 @@ A json object is returned with the total amount of copies sold, the amount of co
     "saleVelocityPerSeconds": integer average sales per second
 }
 </syntaxhighlight>
-{"total":23472064,"last24h":6094,"saleVelocityPerSeconds":0.07666667}
 == Examples ==
 
 [https://github.com/PhilipRasmussen/minecraft/tree/master/profile Go] | uuids or names to profiles with skins, capes and name histories
