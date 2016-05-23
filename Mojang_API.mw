@@ -376,6 +376,11 @@ Below is the default list used by https://minecraft.net/en/stats/
 }
 </syntaxhighlight>
 
+Valid options (Sales > 0) are:
+    item_sold_minecraft
+    prepaid_card_redeemed_minecraft
+    item_sold_cobalt
+    item_sold_scrolls
 === Response ===
 A json object is returned with the total amount of copies sold, the amount of copies sold in the last 24h and how many sales there are per second.
 <syntaxhighlight lang="javascript" style="overflow-x: scroll">
