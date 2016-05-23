@@ -208,7 +208,7 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | 0.25
 |- 
 | 3
-| Area Effect Butt
+| Area Effect Cloud
 | ?
 | ?
 |- 
@@ -509,7 +509,7 @@ Extends [[#Entity|Entity]].
  |colspan="2"| spawn position
  |}
 
-=== AreaEffectButt ===
+=== AreaEffectCloud ===
 
 Extends [[#Entity|Entity]].
 
