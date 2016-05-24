@@ -111,13 +111,10 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | A length-prefixed array of '''signed''' integers. The prefix is a '''signed''' integer (thus 4 bytes) and indicates the number of 4 byte integers.
 |}
 
-
-There are five simple things to remember:
+There are a couple of simple things to remember:
 * The datatypes representing numbers are in big-endian in the PC version, but Pocket Version is in little-endian. Unless you're using Java, you will most likely have to swap it to little-endian. See [[wikipedia:Endianness|the Wikipedia article on Endianness]].
-* Every NBT file will '''always''' begin with a TAG_Compound. No exceptions.
-* Every tag begins with a single byte which is is the <code>Type ID</code> of the following tag.
-* Every tag, except TAG_End, begins with a TAG_String, minus the <code>Type ID</code>. This is the name given to whatever is stored in the tag.
-* The preceding two rules do '''not apply''' to the first level of tags ''within'' a <code>TAG_List</code>.
+* Every NBT file will '''always''' implicitly be inside a tag compound, and also begin with a TAG_Compound
+* The structure of a NBT file is defined by the TAG_List and TAG_Compound types, as such a tag itself will only contain the payload, but depending on what the tag is contained within may contain additional headers. I.e. if it's inside a Compound, then each tag will begin with the TAG_id, and then a string (the tag's name), and finally the payload. While in a list it will be only the payload, as there is no name and the tag type is given in the beginning of the list.
 
 For example, here's the example layout of a <code>TAG_Short</code> on disk:
 
