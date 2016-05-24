@@ -93,7 +93,7 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 8
 | TAG_String
 | ...
-| A length-prefixed [[wikipedia:UTF-8|UTF-8]] string. The prefix is an '''unsigned''' short (thus 2 bytes)
+| A length-prefixed [[wikipedia:UTF-8|UTF-8]] string. The prefix is an '''unsigned''' short (thus 2 bytes) signifying the length of the string in bytes
 |-
 | 9
 | TAG_List
