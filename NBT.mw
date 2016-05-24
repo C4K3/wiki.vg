@@ -154,6 +154,43 @@ This first example is an uncompressed [[wikipedia:Hello world program|"Hello Wor
   }
 </code>
 
+Here is the example explained:
+{| class="wikitable"
+|-
+| (The entire thing is implicitly inside a compound)
+! Type ID (first element in the implicit compound)
+! Length of name of the root compound
+! Name of the root compound
+! Type ID of first element in root compound
+! Length of name of first element in root
+! Name of first element
+! Length of string
+! String
+! Tag end (of root compound)
+|-
+! Decoded
+| Compound
+| 11
+| ''hello world''
+| String
+| 4
+| ''name''
+| 9
+| ''Bananrama''
+|
+|-
+! On Disk (in hex)
+| <code>0a</code>
+| <code>00 0b</code>
+| <code>68 65 6c 6c 6f 20 77 6f 72 6c 64</code>
+| <code>08</code>
+| <code>00 04</code>
+| <code>6e 6a 6d 65</code>
+| <code>00 09</code>
+| <code>42 61 6e 61 6e 72 61 6d 61</code>
+| <code>00</code>
+|}
+
 ==== bigtest.nbt ====
 This second example is a gzip compressed test of every available tag. If your program can successfully parse this file, then you've done well. Note that the tags under ''TAG_List'' do not have a name, as mentioned above. 
 <code>
