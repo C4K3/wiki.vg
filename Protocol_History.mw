@@ -1,9 +1,17 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 16w21b ===
+* Protocol version 203
+
+=== 16w21a ===
+* Protocol version 202
+* Added "Integrity" (float) and "Seed" (VarLong) fields to the <code>MC|Struct</code> plugin channel
+
 === 16w20a ===
 * Protocol version 201
 * Named Sound Effect (0x19) now sends Pitch as Float instead of Unsigned Byte
 * Sound Effect (0x46) now sends Pitch as Float instead of Unsigned Byte
+* Added "Show Air" and "Show Bounding Box" Boolean fields to the <code>MC|Struct</code> plugin channel
 
 === 1.9.3-pre2 ===
 * Protocol version 110
