@@ -61,7 +61,7 @@ Block light and skylight are very similar to the 1.8 implementation used in the 
 
 === Heightmap ===
 
-The hieghtmap is the mapping between the height of each block in a chunk for retrieveing by x and z you can simply <code>(z &lt;&lt; 4) + x</code> to get the value or set it.
+The heightmap is the mapping between the height of each block in a chunk for retrieveing by x and z you can simply <code>(z &lt;&lt; 4) + x</code> to get the value or set it.
 
 === Biome colors ===
 
