@@ -1,25 +1,74 @@
-== Normal Login Sequence ==
- C = Client
- S = Server
- B = Broadcast
+This article describes the 0.14.3 login sequence in Minecraft: PE
 
-=== Server searching ===
-#'''C->B''' <code>0x01</code> ID_UNCONNECTED_PING_OPEN_CONNECTIONS
-#'''S->C''' <code>0x1C</code> ID_UNCONNECTED_PONG
+The recommended login sequence and ping sequence looks like this, where C is the client and S is the server:
 
-=== Connecting a server ===
-#'''C->S''' <code>0x05</code> ID_OPEN_CONNECTION_REQUEST_1 (different packet sizes until a correct response is sent)
-#'''S->C''' <code>0x06</code> ID_OPEN_CONNECTION_REPLY_1
-#'''C->S''' <code>0x07</code> ID_OPEN_CONNECTION_REQUEST_2
-#'''S->C''' <code>0x08</code> ID_OPEN_CONNECTION_REPLY_2
-#'''C->S''' <code>0x09</code> DATA ClientConnect
-#'''S->C''' <code>0x10</code> DATA ServerHandshake
-#'''C->S''' <code>0x13</code> DATA ClientHandshake
-#'''C->S''' <code>0x82</code> DATA Login (sends username)
-#'''S->C''' <code>0x83</code> DATA LoginStatus
-#'''S->C''' <code>0x87</code> DATA StartGame (send seed and spawn position)
-#'''S->C''' <code>0x86</code> DATA SetTime
-#'''S->C''' ''Sends chunks to client''
-#'''C->S''' <code>0x84</code> DATA Ready (client spawns)
+== Pinging ==
 
-[[Category:Pocket Minecraft]]
+# C-&gt;S <code>0x01</code> ID_UNCONNECTED_PING_OPEN_CONNECTIONS
+# S-&gt;C <code>0x1C</code> ID_UNCONNECTED_PONG
+
+Note that the servername field in the ID_UNCONNECTED_PONG follows a specific format for MCPE as described below:
+
+{| class="wikitable"
+!width="10%"| Field Name
+!width="35%"| Field Value
+!width="53%"| Notes
+|-
+| Prefix
+| MCPE
+|
+
+|-
+| Server Name
+| The MOTD of your server
+| Can also include any MCPE colors
+|-
+| Protocol Number
+| Represented as ‘10 10’ if 10 was the current number
+| Must be the minor major separated by a space
+|-
+| The Text Version
+| A string that is shown to the player, must be MAJOR.MINOR.PATCH
+| The protocol number affects if the client rejects the connection or not, this can have any value
+|-
+| Online Players
+| A number of online players
+|
+
+|-
+| Max Players
+| A number of max players
+|
+
+|}
+
+Each value is separated by a colon.<br />
+An example is: <code>MCPE;A Minecraft: PE Server;70 70;0.14.3;0;20</code>
+
+== Connecting ==
+
+Firstly, you’ll need the RakNet handshake:
+
+# C-&gt;S <code>0x05</code> OPEN_CONNECTION_REQUEST_1
+# S-&gt;C <code>0x06</code> OPEN_CONNECTION_REPLY_1
+# C-&gt;S <code>0x07</code> OPEN_CONNECTION_REQUEST_2
+# S-&gt;C <code>0x08</code> OPEN_CONNECTION_REPLY_2
+# C-&gt;S <code>0x09</code> CLIENT_CONNECT
+# S-&gt;C <code>0x10</code> SERVER_HANDSHAKE
+
+Then you may start pinging the client and get ready for login, once you have finished the RakNet handshake:
+
+# C-&gt;S <code>0x8f</code> GAME_LOGIN
+# S-&gt;C <code>0x90</code> PLAYER_STATUS of 0
+# S-&gt;C <code>0x9d</code> MOVE_PLAYER (note: entity id of -1)
+# S-&gt;C <code>0x95</code> START_GAME (note: entity id of -1)
+# S-&gt;C <code>0xb1</code> SET_SPAWN_POSITION
+# S-&gt;C <code>0x9d</code> MOVE_PLAYER (note: entity id of -1)
+# S-&gt;C <code>0x94</code> SET_TIME
+# S-&gt;C <code>0xbc</code> ADVENTURE_SETTINGS
+# S-&gt;C <code>0xb3</code> RESPAWN
+# C-&gt;S <code>0xc8</code> REQUEST_CHUNK_RADIUS
+# S-&gt;C <code>0xc9</code> CHUNK_RADIUS_UPDATE (optional)
+# S-&gt;C <code>0xbf</code> FULL_CHUNK_DATA (batch packet)
+# S-&gt;C <code>0x90</code> PLAYER_STATUS of 3
+# S-&gt;C <code>0x94</code> SET_TIME
