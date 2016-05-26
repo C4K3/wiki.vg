@@ -335,17 +335,17 @@ Does something with the (inaccessible) {{Minecraft Wiki|Structure block}}.
  | String
  |
  |-
- | Position X || Int || ?
+ | Offset X || Int || 
  |-
- | Position Y || Int || ?
+ | Offset Y || Int || 
  |-
- | Position Z || Int || ?
+ | Offset Z || Int || 
  |-
- | Size X || Int || ?
+ | Size X || Int || 
  |-
- | Size Y || Int || ?
+ | Size Y || Int || 
  |-
- | Size Z || Int || ?x
+ | Size Z || Int || 
  |-
  | Mirror
  | String enum
@@ -357,7 +357,7 @@ Does something with the (inaccessible) {{Minecraft Wiki|Structure block}}.
  |-
  | Metadata
  | String
- | ?
+ | 
  |-
  | Ignore entities
  | Boolean
