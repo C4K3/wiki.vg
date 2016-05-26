@@ -125,7 +125,7 @@ The corresponding byte specifier for the type of chunk are:
 | 0x76 (118 in decimal, ‘v’ ASCII)
 |}
 
-Tile Entity Data and Entity Data are ecoded NBT, the format of Terrain Data is specified above.
+Tile Entity Data and Entity Data are encoded as NBT, the format of Terrain Data is specified above.
 
 == Implementations ==
 
