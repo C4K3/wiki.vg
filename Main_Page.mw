@@ -89,14 +89,14 @@ HEADING = Minecraft Pocket Edition |
 CONTENT =  
 [[File:Banner pocket.png|link=Category:Pocket Minecraft]]
 
-Pocket Minecraft is the version of Minecraft for portable systems such as Android or iOS devices. It currently has very little documentation.
+Minecraft Pocket Edition is the version of Minecraft for portable systems such as Android, iOS or Windows 10 devices.
 
 === Documentation ===
-The documentation for Pocket Minecraft is currently lacking and needs improvement.
+The protocol and map format documentation for Minecraft Pocket Edition.
 * [[Pocket Minecraft Protocol|Old Protocol Specification]] (This protocol information is considered outdated, but still contains useful information)
 * [[Pocket Edition Protocol Documentation|The current Protocol docs]]
 * [[Pocket Edition FAQ|FAQ]]
-* [[Pocket Editon Login|Login Procedure]]
+* [[Pocket Edition Login|Login Procedure]]
 * [[Pocket Realms|Pocket Realms]]
 * [[Pocket Minecraft Map Format|Map Format]]
 
