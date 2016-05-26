@@ -106,7 +106,7 @@ For a nether key it is similar, but with an extra byte after Z Coordinate (alway
 | A byte containing the type of data, see bytes below
 |}
 
-The corrisponding byte specifier for the type of chunk are:
+The corresponding byte specifier for the type of chunk are:
 
 {| class="wikitable"
 ! Field Name
