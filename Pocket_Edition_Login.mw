@@ -1,3 +1,5 @@
+[[Category:Pocket_Minecraft]]
+
 This article describes the 0.14.3 login sequence in Minecraft: PE
 
 The recommended login sequence and ping sequence looks like this, where C is the client and S is the server:
