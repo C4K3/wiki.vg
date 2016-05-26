@@ -154,7 +154,7 @@ Each player that has ever connected is given a [playeruuid].dat file.
 *** NBTDouble
 *** NBTDouble
 *** NBTDouble
-** NBTList(Position)
+** NBTList(Pos)
 *** NBTDouble
 *** NBTDouble
 *** NBTDouble
