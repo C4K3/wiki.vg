@@ -194,7 +194,7 @@ The "value" base64 string for the "textures" object decoded:
 * Likewise <code>"CAPE"</code> will be missing if the account has no cape.
 
 == Change Skin ==
-   POST <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
+ POST <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
 
 This will set the skin for the selected profile, but Mojang's servers will fetch the skin from a URL. This will also work for legacy accounts.
 
@@ -222,7 +222,7 @@ model is an empty string for the default model and "slim" for the slim model
  model=&url=http%3A%2F%2Fassets.mojang.com%2FSkinTemplates%2Fsteve.png
 
 == Upload Skin ==
-   PUT <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
+ PUT <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
 
 This uploads a skin to Mojang's servers. It also sets the users skin. This works on legacy counts as well.
 
@@ -261,6 +261,27 @@ The payload for this API consists of multipart form data. There are two parts (o
  
  '''<image data>'''
  --'''<boundary>'''--
+
+== Reset Skin ==
+ DELETE <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
+
+Resets the users skin to the default one.
+
+=== Response ===
+No response unless error
+
+=== Headers ===
+ Authorization: Bearer '''<access token>'''
+
+=== Example ===
+ curl -X DELETE -H "Authorization: Bearer '''<access token>'''" <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
+
+ DELETE /user/profile/'''<uuid>'''/skin HTTP/1.1
+ Host: api.mojang.com
+ User-Agent: curl/7.46.0
+ Accept: */*
+ Authorization: Bearer '''<access token>'''
+ 
 
 == User Info ==
    GET https://api.mojang.com/user
