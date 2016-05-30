@@ -40,6 +40,9 @@ Returns status of various Mojang services. Possible values are <code>green</code
   },
   {
     "textures.minecraft.net": "red"
+  },
+  {
+    "mojang.com": "green"
   }
 ]
 </syntaxhighlight>
