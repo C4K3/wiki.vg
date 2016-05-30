@@ -194,63 +194,73 @@ The "value" base64 string for the "textures" object decoded:
 * Likewise <code>"CAPE"</code> will be missing if the account has no cape.
 
 == Change Skin ==
-   POST https://api.mojang.com/user/profile/<uuid>/skin
+   POST <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
 
 This will set the skin for the selected profile, but Mojang's servers will fetch the skin from a URL. This will also work for legacy accounts.
 
 === Response ===
 Upon error the server will send back a JSON with the error. (Success is a blank payload)
 === Headers ===
- Authorization: Bearer <access token>
+ Authorization: Bearer '''<access token>'''
+
 === Payload ===
 The payload for this API consists of two url-encoded form fields (conjoined by '&').
- '''model='''<alex/steve>'''&url='''<skin url>
-=== Example ===
- curl -H "Authorization: Bearer ''<access token>''" --data-urlencode "model=steve" --data-urlencode "url=http://assets.mojang.com/SkinTemplates/steve.png" https://api.mojang.com/user/profile/''<uuid>''/skin
+ model='''<""/"slim">'''&url='''<skin url>'''
 
- POST /user/profile/<uuid>/skin HTTP/1.1
+model is an empty string for the default model and "slim" for the slim model
+=== Example ===
+ curl -H "Authorization: Bearer '''<access token>'''" --data-urlencode "model=" --data-urlencode "url=<nowiki>http://assets.mojang.com/SkinTemplates/steve.png</nowiki>" <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
+
+ POST /user/profile/'''<uuid>'''/skin HTTP/1.1
  Host: api.mojang.com
  User-Agent: curl/7.49.0
  Accept: */*
- Authorization: Bearer <access token>
- Content-Length: <74>
+ Authorization: Bearer '''<access token>'''
+ Content-Length: 69
  Content-Type: application/x-www-form-urlencoded
- model=steve&url=http%3A%2F%2Fassets.mojang.com%2FSkinTemplate%2Fsteve.png
+ 
+ model=&url=http%3A%2F%2Fassets.mojang.com%2FSkinTemplates%2Fsteve.png
 
 == Upload Skin ==
-   PUT https://api.mojang.com/user/profile/<uuid>/skin
+   PUT <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
 
 This uploads a skin to Mojang's servers. It also sets the users skin. This works on legacy counts as well.
 
 === Response ===
 No response unless error
 === Headers ===
-Authorization: Bearer <access token>
+ Authorization: Bearer '''<access token>'''
+
 === Payload ===
 The payload for this API consists of multipart form data. There are two parts (order does not matter b/c of boundary):
- model=<steve/alex>
- file=<raw file>
+{| class="wikitable"
+|'''model'''
+|Empty string for the default model and "slim" for the slim model
+|-
+|'''file'''
+|Raw image file data
+|}
 === Example ===
- curl -X PUT -H "Authorization: Bearer <access token>" -F model=steve -F file=@steve.png https://api.mojang.com/user/profile/<uuid>/skin
- PUT /user/profile/<uuid>/skin HTTP/1.1
+ curl -X PUT -H "Authorization: Bearer '''<access token>'''" -F model=alex -F file="@alex.png;type=image/png" <nowiki>https://api.mojang.com/user/profile/</nowiki>'''<uuid>'''/skin
+
+ PUT /user/profile/'''<uuid>'''/skin HTTP/1.1
  Host: api.mojang.com
  User-Agent: curl/7.49.0
  Accept: */*
- Authorization: Bearer <access token>
- Content-Length: <length>
- Content-Type: multipart/form-data; boundary=<boundary>
- <boundary>
+ Authorization: Bearer '''<access token>'''
+ Content-Length: '''<length>'''
+ Content-Type: multipart/form-data; boundary='''<boundary>'''
  
- 
+ --'''<boundary>'''
  Content-Disposition: form-data; name="model"
  
- steve
- <boundary>
- Content-Disposition: form-data; name="file"; filename="steve.png"
- Content-Type=application/octet-stream
+ slim
+ --'''<boundary>'''
+ Content-Disposition: form-data; name="file"; filename="alex.png"
+ Content-Type: image/png
  
- <image data>
- <boundary>
+ '''<image data>'''
+ --'''<boundary>'''--
 
 == User Info ==
    GET https://api.mojang.com/user
