@@ -197,10 +197,10 @@ A couple things for contributors:
  | {{planned}}
  | {{planned}}
  | {{unknown}}
- | {{unknown}}
+ | {{yes|Java}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | {{unknown}}
- | {{yes|Active}}
+ | {{no|Inactive}}
  |-
  ! [https://github.com/kangarko/Rush Rush]
  | Rush Team
