@@ -217,16 +217,6 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | 0.98
 | 0.7
 |- 
-| 11 (unused since 1.6.x)
-| Minecart (storage)
-| 0.98
-| 0.7
-|- 
-| 12 (unused since 1.6.x)
-| Minecart (powered)
-| 0.98
-| 0.7
-|- 
 | 50
 | Activated TNT
 | 0.98
