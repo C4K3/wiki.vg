@@ -228,7 +228,7 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | 2.0
 |- 
 | 60
-| Arrow (projectile)
+| Tipped arrow (projectile; also used for regular arrows)
 | 0.5
 | 0.5
 |- 
@@ -319,11 +319,6 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 |- 
 | 91
 | Spectral Arrow
-| 0.5
-| 0.5
-|- 
-| 92
-| Tipped Arrow
 | 0.5
 | 0.5
 |- 
@@ -543,6 +538,8 @@ Extends [[#Entity|Entity]].
 
 Extends [[#Entity|Entity]].
 
+Abstract base class for [[#TippedArrow|TippedArrow]] (which is used for regular arrows as well as tipped ones) and Spectral Arrow.
+
 {| class="wikitable"
  ! Index
  ! Type
@@ -561,6 +558,8 @@ Extends [[#Entity|Entity]].
 
 Extends [[#Arrow|Arrow]].
 
+Used for both tipped and regular arrows.  If not tipped, then color is set to 0 and no tipped arrow particles are used.
+
 {| class="wikitable"
  ! Index
  ! Type
@@ -568,7 +567,7 @@ Extends [[#Arrow|Arrow]].
  |-
  | 6
  | VarInt
- |colspan="2"| Color
+ |colspan="2"| Color (0 for no particles)
  |}
 
 === Boat ===
