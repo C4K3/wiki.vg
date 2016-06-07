@@ -23,6 +23,7 @@ where the config file should contain
                 <TimeBasedTriggeringPolicy />
                 <OnStartupTriggeringPolicy />
             </Policies>
+            <DefaultRolloverStrategy max="999999"/>
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
@@ -71,6 +72,7 @@ Minecraft can do even more logging should you need it, if you allow it to log al
                 <TimeBasedTriggeringPolicy />
                 <OnStartupTriggeringPolicy />
             </Policies>
+            <DefaultRolloverStrategy max="999999"/>
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
