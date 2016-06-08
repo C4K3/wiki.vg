@@ -1225,7 +1225,7 @@ Extends [[#Monster|Monster]].
  |-
  | 11
  | VarInt
- |colspan="2"| Type (Normal = 0, Wither = 1)
+ |colspan="2"| Type (Normal = 0, Wither = 1, Stray = 2)
  |-
  | 12
  | Boolean
