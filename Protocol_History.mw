@@ -2,6 +2,12 @@ Provided below is a changelog of the server protocol starting on 2010-08-20.  Th
 
 === 1.10 ===
 * Protocol version 210
+
+=== 1.10-pre2 ===
+* Protocol version 205
+
+=== 1.10-pre1 ===
+* Protocol version 204
 * Removed hash field from Resource Pack Status (0x16)
 
 === 16w21b ===
