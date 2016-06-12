@@ -14,7 +14,7 @@ Minecraft packets use different data types to communicate with each other. The d
 |- class="row1"
 ! class="col0 centeralign" | byte
 | class="col1 centeralign" | 1
-| class="col2" | -128 to 127
+| class="col2" | 0 to 255
 | class="col3" | <code></code>
 |- class="row2"
 ! class="col0 centeralign" | short
