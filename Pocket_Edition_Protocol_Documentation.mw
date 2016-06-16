@@ -159,7 +159,7 @@ Other implementations exist, such as [https://github.com/jython234/JRakLibPlus J
  | The MTU sent in the response appears to be somewhere around the size of this padding + 46 (28 udp overhead, 1 packet id, 16 magic, 1 protocol version)
  |}
 
-The client sends these to the target server with ever decreasing MTU until the server responds. This is used to discover the MTU size for the connection.
+The client sends these to the target server with ever decreasing MTU until the server responds. This is used to discover the MTU size for the connection. If the RakNet protocol does not match your own, respond with ID_INCOMPATIBLE_PROTOCOL (0x19)
 
 === Offline Connection Response 1 ===
 {| class="wikitable"
