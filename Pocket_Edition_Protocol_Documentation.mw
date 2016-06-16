@@ -159,7 +159,7 @@ Other implementations exist, such as [https://github.com/jython234/JRakLibPlus J
  | The MTU sent in the response appears to be somewhere around the size of this padding + 46 (28 udp overhead, 1 packet id, 16 magic, 1 protocol version)
  |}
 
-The client sends these to the target server with ever decreasing MTU until the server responds. This is used to discover the MTU size for the connection. If the RakNet protocol does not match your own, respond with ID_INCOMPATIBLE_PROTOCOL (0x19)
+The client sends these to the target server with ever decreasing MTU until the server responds. This is used to discover the MTU size for the connection. If the RakNet protocol does not match your own, respond with the Incompatible protocol packet
 
 === Offline Connection Response 1 ===
 {| class="wikitable"
@@ -282,29 +282,43 @@ The client sends these to the target server with ever decreasing MTU until the s
  | 
  |}
 
-=== Unconnected Pong ===
+=== Incompatible protocol ===
 {| class="wikitable"
  ! Packet ID
  ! Field Name
  ! Field Type
  ! Notes
  |-
- |rowspan="4"| 0x1c
- | Time
- | long
- | 
- |-
- | Server GUID
- | long
+ |rowspan="4"| 0x19
+ | Protocol
+ | byte
  | 
  |-
  | Magic
  | MAGIC
  | 
  |-
- | Server info
- | string
- | <code>MCPE;##Name##;##Protocol Version##;##Client Version##;##Online player count##;##Max player count##;##Server GUID##;</code>. Protocol version is currently (0.14.1) 46. Client version can be left empty or be something like '0.14.1'. Server GUID is a 64-bit unsigned integer, 0 works as a value. Example: <code>MCPE;kitty;46;0.14.1;1;5;18446744071609048444;</code>
+ | Server GUID
+ | long
+ | 
+ |-
+ |}
+
+=== Unconnected Ping ===
+{| class="wikitable"
+ ! Packet ID
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="2"| 0x01, 0x02
+ | Time
+ | long
+ | 
+ |-
+ | GUID
+ | long
+ | 
  |}
 
 === Frame Set Packet ===
