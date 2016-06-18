@@ -52,8 +52,8 @@ A couple things for contributors:
  | [https://github.com/McEx/McEx/blob/master/README.md Link]
  | {{yes|Active}}
  |-
- ! [https://github.com/GlowstoneMC/GlowstonePlusPlus Glowstone++]
- | SpaceManiac, mastercoms, deathcap, jimmikaelkael, [https://github.com/GlowstonePlusPlus/GlowstonePlusPlus/graphs/contributors others]
+ ! [https://github.com/GlowstoneMC/Glowstone Glowstone]
+ | SpaceManiac, mastercoms, deathcap, jimmikaelkael, [https://github.com/GlowstoneMC/Glowstone/graphs/contributors others]
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
  | [http://en.wikipedia.org/wiki/MIT_License MIT]
  | {{yes|1.9 - 1.9.4}}
@@ -64,7 +64,7 @@ A couple things for contributors:
  | {{yes|Threads/Events}}
  | {{yes|Java ([http://bukkit.org/ Bukkit] and [https://spongepowered.org/ Sponge] using [https://github.com/GlowstonePlusPlus/Bukkit2Sponge Bukkit2Sponge])}}
  | {{yes|{{windows}}{{linux}}{{mac}}}}
- | [https://github.com/GlowstonePlusPlus/GlowstonePlusPlus#features Link]
+ | [https://github.com/GlowstoneMC/Glowstone#features Link]
  | {{yes|Active}}
  |-
  ! [https://github.com/oldmanmike/opensandbox OpenSandbox] 
@@ -141,21 +141,6 @@ A couple things for contributors:
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | [https://github.com/mhsjlw/flying-squid#features Link]
  | {{yes|Active}}
- |-
- ! [https://github.com/GlowstoneMC/Glowstone Glowstone]
- | SpaceManiac
- | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
- | [http://en.wikipedia.org/wiki/MIT_License MIT]
- | {{yes|1.8 (#47)}}
- | {{yes|Anvil}}
- | {{yes}}
- | {{yes}}
- | {{planned|Players}}
- | {{yes|Threads/Events}}
- | {{yes|Java ([http://bukkit.org/ Bukkit])}}
- | {{yes|{{windows}}{{linux}}{{mac}}}}
- | [https://github.com/SpaceManiac/Glowstone#features Link]
- | {{no|On hiatus since Febuary 2015; development moved to Glowstone++}}
  |-
  ! [https://github.com/PistonDevelopers/hematite_server Hematite]
  | [http://www.piston.rs/ Piston] developers
