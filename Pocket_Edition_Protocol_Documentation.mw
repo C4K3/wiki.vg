@@ -551,11 +551,12 @@ Sequenced frames also include an order index. It is unknown how the order index 
 
 == Game Protocol ==
 
-The game protocol is described here: https://confluence.yawk.at/display/PEPROTOCOL and an autoatically generated version for 0.15 is also available in from MiNET at https://github.com/NiclasOlofsson/MiNET/blob/realms/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md
+The game protocol is described here: https://confluence.yawk.at/display/PEPROTOCOL and an autoatically generated version for 0.15 is also available in from MiNET at https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md
 
 == References ==
 
 * RakNet datagram and message header information: http://jenkinssoftware.com/raknet/manual/systemoverview.html
 * Packets can be found in the [http://dragonet.org Dragonet] server code  https://github.com/DragonetMC/Dragonet/tree/master/src/main/java/org/dragonet/net/packet
-* There is also an automatically generated specification of many of the packages can be found in the MiNET server code  https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md * The MiNET wiki also contain development notes around some functionality https://github.com/NiclasOlofsson/MiNET/wiki These will be migrated to this wiki in due time.
+* There is also an automatically generated specification of many of the packages can be found in the MiNET server code  https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md 
+* The MiNET wiki also contain development notes around some functionality https://github.com/NiclasOlofsson/MiNET/wiki These will be migrated to this wiki in due time.
 * https://confluence.yawk.at/display/PEPROTOCOL
