@@ -53,7 +53,7 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 0 
 | TAG_End  
 | 0  
-| This tag serves no purpose but to signify the end of an open TAG_Compound. In most libraries, this type is abstracted away and never seen. TAG_End is not named.
+| Signifies the end of a TAG_Compound. It is only ever used inside a TAG_Compound, and is not named despite being in a TAG_Compound
 |-
 | 1
 | TAG_Byte
