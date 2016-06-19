@@ -88,17 +88,17 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 7
 | TAG_Byte_Array
 | ...
-| A length-prefixed array of '''signed''' bytes. The prefix is a '''signed''' integer (thus 4 bytes) in '''little-endian'''
+| A length-prefixed array of '''signed''' bytes. The prefix is a '''signed''' integer (thus 4 bytes)
 |-
 | 8
 | TAG_String
 | ...
-| A length-prefixed [[wikipedia:UTF-8|UTF-8]] string. The prefix is an '''unsigned''' short (thus 2 bytes) in '''little-endian''' signifying the length of the string in bytes
+| A length-prefixed [[wikipedia:UTF-8|UTF-8]] string. The prefix is an '''unsigned''' short (thus 2 bytes) signifying the length of the string in bytes
 |-
 | 9
 | TAG_List
 | ...
-| A list of '''nameless''' tags, all of the same type. The list is prefixed with the <code>Type ID</code> of the items it contains (thus 1 byte), and the length of the list as a '''signed''' integer (a further 4 bytes) in '''little-endian'''
+| A list of '''nameless''' tags, all of the same type. The list is prefixed with the <code>Type ID</code> of the items it contains (thus 1 byte), and the length of the list as a '''signed''' integer (a further 4 bytes)
 |-
 | 10
 | TAG_Compound
