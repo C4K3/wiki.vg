@@ -1,5 +1,11 @@
 Provided below is a changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 1.10.2 ===
+* It is again no longer required to send block entities in [[Protocol#Chunk Data|Chunk Data]].
+
+=== 1.10.1 ===
+* Clients will now crash if a block entity is not sent in [[Protocol#Chunk Data|Chunk Data]], meaning that they cannot be delayed to accommodate servers still using [[Protocol#Update Block Entity|Update Block Entity]] ([https://bugs.mojang.com/browse/MC-103978 MC-103978]).
+
 === 1.10 ===
 * Protocol version 210
 
