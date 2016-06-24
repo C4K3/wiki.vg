@@ -32,7 +32,7 @@ A Chunk Section is defined in terms of other [[data types]]. A Chunk Section con
  | Number of longs in the following array
  |-
  | Data Array
- | Long Array
+ | Array of Long
  | Compacted list of 4096 indices pointing to state IDs in the Palette
  |-
  | Block Light
