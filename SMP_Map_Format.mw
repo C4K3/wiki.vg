@@ -88,7 +88,7 @@ The following two longs would represent...
 == Implementations ==
 
 * [https://github.com/Steveice10/MCProtocolLib/blob/4ed72deb75f2acb0a81d641717b7b8074730f701/src/main/java/org/spacehq/mc/protocol/data/game/chunk/BlockStorage.java#L42 Java, 1.9]
-* [https://github.com/Gjum/SpockBot/blob/9597fe9/spockbot/plugins/tools/smpmap.py#L143-L175 Python, 1.9]
+* [https://github.com/SpockBotMC/SpockBot/blob/1.9-update/spockbot/plugins/tools/smpmap.py#L144-L183 Python, 1.9]
 * [https://github.com/JavaProphet/MinecraftClone/blob/fdd61b9/MinecraftClone/src/ingame.c#L512-L632 C, 1.9]
 
 The following implement the [http://wiki.vg/index.php?title=SMP_Map_Format&oldid=7164 previous] (before 1.9) format:
