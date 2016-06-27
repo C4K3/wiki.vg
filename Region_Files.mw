@@ -43,6 +43,16 @@ The region <code>X</code> and <code>Z</code> can be found simply by dividing the
  
 So, this chunk would reside in <code>r.2.-2.mcr</code>.
 
+Here&#039;s an example in java, where given a chunk at &lt;-152, 15&gt;:
+
+<pre>int x = -152;
+int z = 15;
+String regionFileName = "r." + (int) Math.floor(x / 32) + "." + (int) Math.floor(z / 32) + ".mcr";</pre>
+
+So, this chunk would reside in <code>r.-4.0.mcr</code>.
+
+Simple to use tool made in Java is available for download [http://www.mediafire.com/download/mb2cfs8iae977hn/MC_Region_Calculator.jar here].
+
 === Structure ===
   
 Every region file begins with two 4KiB tables (each compose of 1024 4-byte integers), with the first table containing the location of each chunk, and the second table the last-modified timestamp of that chunk.
