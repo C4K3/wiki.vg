@@ -51,7 +51,7 @@ String regionFileName = "r." + (int) Math.floor(x / 32) + "." + (int) Math.floor
 
 So, this chunk would reside in <code>r.-4.0.mcr</code>.
 
-Simple to use tool made in Java is available for download [http://www.mediafire.com/download/mb2cfs8iae977hn/MC_Region_Calculator.jar here].
+Simple to use tool for calcualting region filenames made in java is available for download [http://www.mediafire.com/download/mb2cfs8iae977hn/MC_Region_Calculator.jar here].
 
 === Structure ===
   
