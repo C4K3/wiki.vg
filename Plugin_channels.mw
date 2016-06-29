@@ -320,9 +320,10 @@ Used to implement {{Minecraft Wiki|Commands#StopSound|the <code>/stopsound</code
 Emptiness of sound category or sound name can be combined, IE a empty sound name but a set sound category will stop all sounds in the given category.
 
 === <code>MC|Struct</code> ===
+
 ''Client to server''
 
-Does something with the (inaccessible) {{Minecraft Wiki|Structure block}}.
+Sets information about the {{Minecraft Wiki|Structure block}}.
 
 {| class="wikitable"
  ! Field Name
@@ -347,17 +348,23 @@ Does something with the (inaccessible) {{Minecraft Wiki|Structure block}}.
  | String
  |
  |-
- | Offset X || Int || 
+ | Offset X || Int
+ | Between -32 and 32
  |-
- | Offset Y || Int || 
+ | Offset Y || Int
+ | Between -32 and 32
  |-
- | Offset Z || Int || 
+ | Offset Z || Int
+ | Between -32 and 32
  |-
- | Size X || Int || 
+ | Size X || Int
+ | Between 0 and 32
  |-
- | Size Y || Int || 
+ | Size Y || Int
+ | Between 0 and 32
  |-
- | Size Z || Int || 
+ | Size Z || Int
+ | Between 0 and 32
  |-
  | Mirror
  | String enum
@@ -373,6 +380,22 @@ Does something with the (inaccessible) {{Minecraft Wiki|Structure block}}.
  |-
  | Ignore entities
  | Boolean
+ |
+ |-
+ | Show air
+ | Boolean
+ |  
+ |-
+ | Show bounding box
+ | Boolean
+ | 
+ |-
+ | Integrity
+ | Float
+ | Between 0 and 1
+ |-
+ |Seed
+ |VarLong
  |
  |}
 
