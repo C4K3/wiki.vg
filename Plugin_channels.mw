@@ -179,9 +179,9 @@ PathEntity structure:
  | Int
  | Index in the points array that the entity is currently targeting.  That point is rendered red; the others are rendered blue.
  |-
- | Unknown 1
+ | Target
  | PathPoint
- | Green cube, possibly the target?
+ | Rendered as a green cube
  |-
  | Number of points
  | Int
@@ -191,19 +191,19 @@ PathEntity structure:
  | Array of PathPoint
  | The actual points on the path
  |-
- | Unknown 2 length
+ | Open set length
  | Int
  | Length of the following array
  |-
- | Unknown 2
+ | Open set
  | Array of PathPoint
  | Displayed in blue
  |-
- | Unknown 3 length
+ | Closed set length
  | Int
  | Length of the following array
  |-
- | Unknown 3
+ | Closed set
  | Array of PathPoint
  | Displayed in red
  |}
@@ -227,15 +227,15 @@ PathPoint structure:
  | Int
  |
  |-
- | Unknown 1
+ | Distance from origin
  | Float
  | 
  |-
- | Unknown 2
+ | Cost
  | Float
  | 
  |-
- | Unknown 3
+ | Cost malus
  | Float
  | Number that is rendered
  |-
