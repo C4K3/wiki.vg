@@ -780,10 +780,10 @@ Note: This is not the same as FullBright, which ignores sunlight and shadow colo
 | Whether or not the block is randomly offset.
 * 0 = Not offset (No change).
 * 1 = Randomly offset on the X and Z axis from -3/16 to 3/16.
-* 2 = Randomly offset on the Y axis from -3/16 to 0.
-* 3 = Randomly offset on the Y axis from -3/16 to 3/16.
-* 4 = Randomly offset on the X and Z axis from -3/16 to 3/16 and randomly offset on the Y axis from -3/16 to 0.
+* 2 = Randomly offset on the Y axis from -3/16 to 3/16.
+* 3 = Randomly offset on the Y axis from -3/16 to 0.
 * 4 = Randomly offset on the X and Z axis from -3/16 to 3/16 and randomly offset on the Y axis from -3/16 to 3/16.
+* 5 = Randomly offset on the X and Z axis from -3/16 to 3/16 and randomly offset on the Y axis from -3/16 to 0.
 Note: This only effects blocks which have the "Shape" as 0 (sprite) or when Shape is 1 (block) and BlockDraw as 2 (Like leaves)
 |-
 | class="centeralign" | FatSprite
