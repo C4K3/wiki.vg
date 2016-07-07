@@ -770,8 +770,8 @@ This extension does not define any new packets.
 | class="centeralign" | byte
 | class="centeralign" | <code>1</code>
 | Whether or not the block/liquid is shaded to be darker on the bottom and side faces.
-* 0 = Shaded (The sides and bottom are darkened)
-* 1 = Not shaded (All sides use the brightness that would normally be used on the top face only).
+* 0 = Not shaded (All sides use the brightness that would normally be used on the top face only).
+* 1 = Shaded (The sides and bottom are darkened)
 Note: This is not the same as FullBright, which ignores sunlight and shadow color. A block that is not shaded will still use the sunlight or shadow color.
 |-
 | class="centeralign" | RandomOffset
