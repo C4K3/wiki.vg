@@ -21,14 +21,14 @@ These are wrappers for the vanilla Minecraft Classic client.
 | oyasunadev
 | [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
 | [http://creativecommons.org/licenses/by-nc-sa/3.0/ CC BY-NC-SA 3.0]
-| {{yes|Active}}
+| {{no|Inactive (since 2012)}}
 | Minecraft Classic in a window. Use cheats such as fly, speed, noclip, and xray. Take screenshots, save levels, and play in fullscreen. Cheats API for developers.
 |-
 ! [http://github.com/OpenClassic/OpenClassic OpenClassic]
 | Steveice10
 | [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
 | [http://www.opensource.org/licenses/mit-license.php MIT]
-| {{yes|Active}}
+| {{no|Inactive (since 2014)}}
 | Modification of Minecraft Classic to include more features and a plugin API.
 |}
 
