@@ -87,7 +87,7 @@ Every packet starts with a byte representing the Packet ID.
 |-
 | Verification key || String
 |-
-| Unused || Byte
+| Unused || Byte (0x00)
 |-
 |rowspan=6| 0x05
 |rowspan=6| Set Block
