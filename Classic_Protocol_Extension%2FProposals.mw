@@ -765,7 +765,7 @@ This extension does not define any new packets.
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="7" | ??
+| class="centeralign" rowspan="8" | ??
 | class="centeralign" | Shaded
 | class="centeralign" | byte
 | class="centeralign" | <code>1</code>
