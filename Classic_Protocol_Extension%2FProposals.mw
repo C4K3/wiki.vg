@@ -820,6 +820,11 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="centeralign" | <code>FlowerPot</code>
 | The name of the model the block uses. For future block models.
 |-
+| class="centeralign" | HexColor
+| class="centeralign" | string
+| class="centeralign" | <code>7FC9A3</code>
+| The color that the block is multiplied by.
+|-
 ! Total Size:
 | class="rightalign" colspan="4" | 70 bytes
 |}
