@@ -798,8 +798,8 @@ Extends [[#Living|Living]].
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- |rowspan="6"| 11
- |rowspan="6"| Byte
+ |rowspan="5"| 11
+ |rowspan="5"| Byte
  ! Bit mask
  ! Meaning
  |-
