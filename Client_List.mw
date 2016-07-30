@@ -183,7 +183,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{Apache}}
  | {{yes}}
  | {{no}}
- | {{no|1.5.2}}
+ | {{yes|1.10}}
  |-
  ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client&nbsp;2]
  | Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
