@@ -81,6 +81,16 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | Complete with Async and JavaScript plugins
 | {{windows}}{{linux}}{{mac}}
 | {{Yes|v0.14.3}}
+|-
+! [https://github.com/minecrafter/voxelwind Voxelwind]
+| A sane, performant, scalable MCPE server in Java
+| Server
+| [https://github.com/minecrafter minecrafter] / [https://twitter.com/ModifyFunction @ModifyFunction]
+| Java
+| {{MIT}}
+| Incomplete, enough functionality to spawn into a blank world for now.
+| {{windows}}{{linux}}{{mac}}
+| {{Yes|v0.15.4}}
 |}
 
 [[Category:Pocket Minecraft]]
