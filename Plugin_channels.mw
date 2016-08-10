@@ -141,7 +141,7 @@ Announces the server and client implementation name right after a player has log
 
 These brands are used in crash reports and a few other locations; it's recommended that custom clients and servers use changed brands for the purpose of identification (for the Notchian client, the class used to get the brand is one of the few non-obfuscated classes).  The brand is not processed in any other way, and Notchian clients will connect to servers with changed brands with no issue (the brand is not used to validate).
 
-The Notchian server sends a <code>MC|Brand</code> packet right after it sends a [[#Join_Game|Join Game]] packet, and the Notchian client sends it right after receiving a Join Game packet.  However, some modified clients and servers will not send this packet (or will take longer to send it than normal), so it is important to not crash if the brand has not been sent.  Additionally, the brand may change at any time (for instance, if connected through a BungeeCord instance, you may switch from a server with one brand to a server with another brand without receiving a Join Game packet).
+The Notchian server sends a <code>MC|Brand</code> packet right after it sends a [[Protocol#Join_Game|Join Game]] packet, and the Notchian client sends it right after receiving a Join Game packet.  However, some modified clients and servers will not send this packet (or will take longer to send it than normal), so it is important to not crash if the brand has not been sent.  Additionally, the brand may change at any time (for instance, if connected through a BungeeCord instance, you may switch from a server with one brand to a server with another brand without receiving a Join Game packet).
 
 === <code>MC|DebugPath</code> ===
 ''Server to client''
