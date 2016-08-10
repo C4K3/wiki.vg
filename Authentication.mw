@@ -107,7 +107,8 @@ Authenticates a user using their password.
     "username": "mojang account name",      // Can be an email address or player name for
                                             // unmigrated accounts
     "password": "mojang account password",
-    "clientToken": "client identifier"      // optional
+    "clientToken": "client identifier",     // optional
+    "requestUser": true                     // optional; default: false; true adds the user object to the response
 }
 </syntaxhighlight>
 
@@ -117,19 +118,33 @@ The <code>clientToken</code> should be a randomly generated identifier and must 
 
 <syntaxhighlight lang="javascript">
 {
-    "accessToken": "random access token",  // hexadecimal
-    "clientToken": "client identifier",    // identical to the one received
-    "availableProfiles": [                 // only present if the agent field was received
+    "accessToken": "random access token",      // hexadecimal
+    "clientToken": "client identifier",        // identical to the one received
+    "availableProfiles": [                     // only present if the agent field was received
         {
-            "id": "profile identifier",    // hexadecimal
+            "id": "profile identifier",        // hexadecimal
             "name": "player name",
-            "legacy": true or false        // In practice, this field only appears in the response if true. Default to false.
+            "legacy": true or false            // In practice, this field only appears in the response if true. Default to false.
         }
     ],
-    "selectedProfile": {                   // only present if the agent field was received
+    "selectedProfile": {                       // only present if the agent field was received
         "id": "profile identifier",
         "name": "player name",
         "legacy": true or false
+    },
+    "user": {                                  // only present if requestUser was true in the request payload
+        "id": "user identifier",               // hexadecimal
+        "properties": [
+            {
+                "name": "preferredLanguage",   // might not be present for all accounts
+                "value": "en"                  // ISO 639-1?
+            },
+            {
+                "name": "twitch_access_token", // only present if a twitch account is associated (see https://account.mojang.com/me/settings)
+                "value": "twitch oauth token"  // OAuth 2.0 Token; alphanumerical; e.g. https://api.twitch.tv/kraken?oauth_token=[...]
+                                               // the Twitch API is documented here: https://github.com/justintv/Twitch-API
+            }
+        ]
     }
 }
 </syntaxhighlight>
@@ -159,7 +174,8 @@ Refreshes a valid <code>accessToken</code>. It can be used to keep a user logged
     "selectedProfile": {                 // optional; sending it will result in an error
         "id": "profile identifier",      // hexadecimal
         "name": "player name"
-    }
+    },
+    "requestUser": true                  // optional; default: false; true adds the user object to the response
 }
 </syntaxhighlight>
 
@@ -169,11 +185,25 @@ Note: The provided <code>accessToken</code> gets invalidated.
 
 <syntaxhighlight lang="javascript">
 {
-    "accessToken": "random access token",  // hexadecimal
-    "clientToken": "client identifier",    // identical to the one received
+    "accessToken": "random access token",      // hexadecimal
+    "clientToken": "client identifier",        // identical to the one received
     "selectedProfile": {
-        "id": "profile identifier",        // hexadecimal
+        "id": "profile identifier",            // hexadecimal
         "name": "player name"
+    },
+    "user": {                                  // only present if requestUser was true in the request payload
+        "id": "user identifier",               // hexadecimal
+        "properties": [
+            {
+                "name": "preferredLanguage",   // might not be present for all accounts
+                "value": "en"                  // ISO 639-1?
+            },
+            {
+                "name": "twitch_access_token", // only present if a twitch account is associated (see https://account.mojang.com/me/settings)
+                "value": "twitch oauth token"  // OAuth 2.0 Token; alphanumerical; e.g. https://api.twitch.tv/kraken?oauth_token=[...]
+                                               // the Twitch API is documented here: https://github.com/justintv/Twitch-API
+            }
+        ]
     }
 }
 </syntaxhighlight>
