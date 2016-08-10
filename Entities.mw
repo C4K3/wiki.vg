@@ -951,11 +951,11 @@ Extends [[#Animal|Animal]].
  |-
  | 14
  | VarInt
- |colspan="2"| Variant
+ |colspan="2"| Type
  |-
  | 15
  | VarInt
- |colspan="2"| Color & Style
+ |colspan="2"| Variant (Color & Style)
  |-
  | 16
  | OptUUID
