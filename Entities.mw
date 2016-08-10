@@ -409,7 +409,7 @@ An Entity Metadata is an array of entries, each of which looks like the followin
  |-
  | 12
  | OptBlockID (VarInt)
- | <code>0 for absent otherwise, <nowiki>id &lt;&lt; 4 | data</nowiki></code>
+ | 0 for absent otherwise, <code><nowiki>id &lt;&lt; 4 | data</nowiki></code>
  |}
 
 Entity classes also recursively use fields from classes they extend.
