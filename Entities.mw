@@ -1354,7 +1354,7 @@ Extends [[#Monster|Monster]].
  !style="width: 250px;" colspan="2"| Meaning
  |-
  | 12
- | BlockID
+ | Opt BlockID
  |colspan="2"| Carried block
  |-
  | 13
