@@ -28,6 +28,7 @@ The recommended login sequence looks like this, where '''C''' is the client and 
 # '''C→S''': [[Protocol#Plugin Message (serverbound)|Plugin Message]]: [[Plugin channel#MC.7CBrand|<code>MC|Brand</code>]] with the client's brand
 # '''C→S''': [[Protocol#Client Settings|Client Settings]]
 # '''S→C''': [[Protocol#Player Position And Look (clientbound)|Player Position And Look]] (tells the client they're ready to spawn)
+# '''C→S''': [[Protocol#Teleport Confirm|Teleport Confirm]]
 # '''C→S''': [[Protocol#Player Position And Look (serverbound)|Player Position And Look]] (to confirm the spawn position)
 # '''C→S''': [[Protocol#Client Status|Client Status]] (sent either before or while receiving chunks, further testing needed, server handles correctly if not sent)
 # '''S→C''': inventory, [[Protocol#Map Chunk Bulk|Map Chunk Bulk]], entities, etc
