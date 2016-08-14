@@ -79,7 +79,7 @@ With the following sent as post data, Content-Type: application/json
   }
 </syntaxhighlight>
 
-The fields <accessToken> and <selectedProfile> where received by the client received during [[Authentication#Authenticate|authentication]].
+The fields <accessToken> and <selectedProfile> where received by the client during [[Authentication#Authenticate|authentication]].
 
 === Server ===
 
