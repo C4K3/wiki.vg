@@ -81,7 +81,7 @@ With the following sent as post data, Content-Type: application/json
 
 === Server ===
 
-After decrypting the shared secret in the second Encryption Response, the server generates the login hash as above and sends it to
+After decrypting the shared secret in the second Encryption Response, the server generates the login hash as above and sends a HTTP GET to
  <nowiki>https://sessionserver.mojang.com/session/minecraft/hasJoined?username=</nowiki>''username''&serverId=''hash''
 (Case sensitive username, must match the client's username!)
 
