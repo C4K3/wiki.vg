@@ -100,6 +100,9 @@ The response is a JSON object containing the user's UUID and skin blob
 }
 </syntaxhighlight>
 
+The "id" and "name" fields are then sent back to the client using a Login Success packet. The profile id in the json response has format
+"11111111222233334444555555555555" which needs to be changed into format "11111111-2222-3333-4444-555555555555" before sending it back to the client.
+
 === Sample Code ===
 
 Examples of generating Minecraft-style hex digests:
