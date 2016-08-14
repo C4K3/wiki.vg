@@ -88,7 +88,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | [https://github.com/minecrafter minecrafter] / [https://twitter.com/ModifyFunction @ModifyFunction]
 | Java
 | {{MIT}}
-| Incomplete, enough functionality to spawn into a blank world for now.
+| Incomplete. Flatworld and basic entity support.
 | {{windows}}{{linux}}{{mac}}
 | {{Yes|v0.15.4}}
 |}
