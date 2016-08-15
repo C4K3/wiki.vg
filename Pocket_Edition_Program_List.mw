@@ -20,7 +20,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{LGPL}}
 | Alpha_1.6dev
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.13.1 alpha}}
+| {{yes|v0.15.3 alpha}}
 |-
 ! [https://github.com/zhuowei/MCPELauncher BlockLauncher]
 | BlockLauncher is a custom Minecraft PE launcher that wraps around Minecraft PE and provides texture pack and patch loading support.
