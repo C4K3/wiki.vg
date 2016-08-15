@@ -1025,7 +1025,8 @@ Negative value (e.g. <code>-1</code>) means that the client should use its defau
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="9" | 0x22 (34)
+| class="centeralign" rowspan="9" | 0x22
+(34)
 | class="centeralign" | Button
 | class="centeralign" | byte
 | class="centeralign" | 0
@@ -1132,7 +1133,8 @@ When the chat message packet is later received by the client, it renders the uns
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="16" | 35
+| class="centeralign" rowspan="16" | 0x23
+(35)
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
@@ -1259,7 +1261,8 @@ Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code>
 ! Example
 ! Notes
 |-
-| class="centeralign" | 36
+| class="centeralign" | 0x24
+(36)
 | class="centeralign" | BlockID
 | class="centeralign" | byte
 | class="centeralign" | <code>128</code>
@@ -1296,7 +1299,8 @@ Note that this packet does not support sprites, you must send a regular '''''Def
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="16" | 37
+| class="centeralign" rowspan="16" | 0x25
+(37)
 | class="leftalign" colspan="4" | Following fields from DefineBlock packet: BlockID, Name, Solidity, MovementSpeed, TopTextureID
 |-
 | class="centeralign" | LeftTextureId
@@ -1379,7 +1383,8 @@ Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the text
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="11" | 39
+| class="col0 centeralign" rowspan="11" | 0x27
+(39)
 | class="col1 centeralign" | Red
 | class="col2 centeralign" | unsigned byte
 | class="col3 centeralign" | <code>255</code>
