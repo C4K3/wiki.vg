@@ -61,13 +61,13 @@ For newer clients, your server needs to send 49 chunks ahead of time, not just o
 
 == How do I open/save a command block? ==
 
-The process to actually open the command block window clientside is somewhat complex; the client actually uses the [[Protocol#Update Block Entity|Update Block Entity]] packet to open it.
+The process to actually open the command block window clientside is somewhat complex; the client actually uses the [[Protocol#Update Block Entity|Update Block Entity (0x09)]] packet to open it.
 
-First, the client must have at least an {{Minecraft Wiki|Server.properties#op-permission-level|OP permission level}} of 2, or else the client will refuse to open the command block.  (The op permission level is set with the [[Entity Status|Protocol#Entity Status]] packet)
+First, the client must have at least an {{Minecraft Wiki|Server.properties#op-permission-level|OP permission level}} of 2, or else the client will refuse to open the command block.  (The op permission level is set with the [[Protocol#Entity Status|Entity Status]] packet)
 
 To actually open the command block:
 
-# '''C'''→'''S''': [[Protocol#Player Block Placement|Player Block Placement]], with the position being the command block that was right-clicked.
-# '''S'''→'''C''': [[Protocol#Update Block Entity|Update Block Entity]], with the NBT of the command block.
+# '''C'''→'''S''': [[Protocol#Player Block Placement|Player Block Placement (0x1C)]], with the position being the command block that was right-clicked.
+# '''S'''→'''C''': [[Protocol#Update Block Entity|Update Block Entity (0x09)]], with the NBT of the command block.
 
 And to save it, use the [[Plugin channels#MC.7CAutoCmd|<code>MC|AutoCmd</code> plugin channel]].
