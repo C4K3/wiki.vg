@@ -57,6 +57,7 @@ Firstly, you’ll need the RakNet handshake:
 # S-&gt;C <code>0x08</code> OPEN_CONNECTION_REPLY_2
 # C-&gt;S <code>0x09</code> CLIENT_CONNECT
 # S-&gt;C <code>0x10</code> SERVER_HANDSHAKE
+# C-&gt;S <code>0x13</code> CLIENT_HANDSHAKE
 
 Then you may start pinging the client and get ready for login, once you have finished the RakNet handshake:
 
