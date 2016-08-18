@@ -119,7 +119,7 @@ Other implementations exist, such as [https://github.com/jython234/JRakLibPlus J
  | 
  |}
 
-<code>0x02</code> is only replied to if there are open connections to the server.
+<code>0x02</code> is only replied to if there are open connections to the server. '''Note:''' as of 0.15.6 it seems that the game refreshes it's LAN world list every 4-5 seconds, however it seems the game will still ping in 1 second intervals.
 
 === Connected Pong ===
 {| class="wikitable"
