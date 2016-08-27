@@ -30,7 +30,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | Unknown
 | Texture Pack support, Mod PE Scripts & Custom Skins
 | {{Android}}
-| {{yes|0.13.1 alpha}}
+| {{yes|v0.15.x alpha}}
 |-
 ! [https://github.com/brandon15811/Minecraft-PE-Proxy Minecraft-PE-Proxy]
 | UDP proxy for MCPE Servers, allowing joining Online Servers from your local network. Dumps packets
@@ -69,8 +69,8 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{Java}}
 | {{LGPL}}
 | Fast and functionful
-| {{windows}}{{linux}}{{mac}}
-| {{Yes|v0.14.0 alpha}}
+| {{windows}}{{linux}}{{mac}}{{android}}
+| {{Yes|v0.15.6 alpha}}
 |-
 ! [https://github.com/numerous-alpaca/numerous-alpaca numerous-alpaca]
 | A Minecraft: PE Server in JavaScript
@@ -91,6 +91,36 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | Incomplete. Flatworld and basic entity support.
 | {{windows}}{{linux}}{{mac}}
 | {{Yes|v0.15.4}}
+|-
+! [https://github.com/PrismarineMC/Prismarine/ Prismarine]
+| Server with Plugin API, Multiworlds, commands like PC, nether, redstone, mob AIs and more
+| Server
+| [https://github.com/PrismarineMC Prismarine Team]
+| {{PHP}}
+| {{LGPL}}
+| Fast and functionful, commands like PC, nether, mob AIs
+| {{windows}}{{linux}}{{mac}}{{Android}}
+| {{yes|v0.15.x alpha}}
+|-
+! [https://github.com/iTXTech/Nemisys/ Nemisys]
+| Proxy to create multiserver network.
+| Proxy
+| [http://itxtech.org/ iTX Technologies]
+| {{Java}}
+| {{LGPL}}
+| Fast and stable, can teleport between the servers
+| {{windows}}{{linux}}{{mac}}{{Android}}
+| {{yes|v0.15.x alpha}}
+|-
+! [http://itxtech.org/ Genisys]
+| Server with Plugin API, Multiworlds, commands like PC, nether, mob AIs and more
+| Server
+| [http://itxtech.org/ iTX Technologies]
+| {{PHP}}
+| {{LGPL}}
+| Commands, nether, mobs AI, redstone
+| {{windows}}{{linux}}{{mac}}{{Android}}
+| {{yes|v0.15.x alpha}}
 |}
 
 [[Category:Pocket Minecraft]]
