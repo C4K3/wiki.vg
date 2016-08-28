@@ -12,6 +12,10 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 ! scope="col" | Author
 ! scope="col" | Development Status
 |-
+| [https://github.com/chibill/JarFingerPrinter JarFingerPrinter] || A single program to finger print minecraft jars. || {{yes|Supports any jar.}} || Python||Windows , Mac and Linux || chibill|| {{yes|Active}}
+|-
+| [https://github.com/Matsv/Paaas PAaaS] || Protocol Analysis as a Service, Web interface for Burger and other tools || {{yes|#302}} - Latest snapshot to 1.8 || Java ||Windows , Mac and Linux || Matsv & _MylesC|| {{yes|Active}}
+|-
 | [https://github.com/sadimusi/mc4p/tree/2.0 mc4p] || A continuation of [https://github.com/mmcgill/mc3p mc3p] || {{yes|#109}} - 1.9.1 || Python || Windows, Mac, & Linux || [[User:sadimusi|sadimusi]] || {{Yes|Active}}
 |-
 | [https://github.com/cuberite/cuberite/tree/master/Tools/ProtoProxy ProtoProxy] || A subproject of [https://github.com/cuberite/cuberite Cuberite], protocol proxy performing a man-in-the-middle attack on the protocol encryption, and parsing basic packets. || {{planned|#47}} - 1.8.9 || C++ || Windows, Mac, Linux || FakeTruth, [[User:xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More] || {{yes|Active}}
@@ -41,8 +45,6 @@ A list of tools to help out your Minecraft development.<br style="clear:both;" /
 | [https://github.com/ReDucTor/mineproxy Mineproxy] || mineproxy || {{unknown|}} || C & C++ ||   || ReDucTor || {{no|Inactive}}
 |-
 | [https://github.com/glguy/minecraft-proxy minecraft-proxy] || A Minecraft protocol proxy || {{unknown|}} || Haskell ||   || glguy || {{no|Inactive}}
-|-
-| [https://github.com/chibill/JarFingerPrinter JarFingerPrinter] || A single program to finger print minecraft jars. || {{yes|Supports any jar.}} || Python ||Windows , Mac and Linux || chibill|| {{yes|Active}}
 |}
 
 [[Category:Minecraft Modern]]
