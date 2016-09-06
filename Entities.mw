@@ -1303,15 +1303,15 @@ Extends [[#Monster|Monster]].
  |-
  | 12
  | VarInt
- |colspan="2"| First head's target
+ |colspan="2"| Center head's target (entity ID, or 0 if no target)
  |-
  | 13
  | VarInt
- |colspan="2"| Second head's target
+ |colspan="2"| Left(?) head's target (entity ID, or 0 if no target)
  |-
  | 14
  | VarInt
- |colspan="2"| Third head's target
+ |colspan="2"| Right(?) head's target (entity ID, or 0 if no target)
  |-
  | 15
  | VarInt
