@@ -543,7 +543,7 @@ Extends [[#Entity|Entity]].
  |-
  | 6
  | VarInt
- |colspan="2"| hooked entity id
+ |colspan="2"| Hooked entity id + 1, or 0 if there is no hooked entity
  |}
 
 === Arrow ===
