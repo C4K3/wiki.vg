@@ -840,6 +840,8 @@ Extends [[#Living|Living]].
  |colspan="2"| Right leg rotation
  |}
 
+Note that armor stands with the [[#Entity|invisible flag from the base entity class]] set also cannot be attacked or damaged, except for by the void.
+
 === Insentient ===
 
 Extends [[#Living|Living]].
