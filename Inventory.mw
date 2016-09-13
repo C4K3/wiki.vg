@@ -137,7 +137,7 @@ This is the window that is opened when the player right-clicks on a double chest
  | hotbar
  |}
 
-{{warning2|Some custom servers will send chest inventories with other sizes, usually ranging from 1 row to 6 rows.  These may be used for custom GUIs.  It is thus important to correctly use the "Number Of Slots" parameter in the open window packet to determine the number of rows in the chest, rather than hardcoding what constitutes a regular chest or a large chest.}}
+{{warning2|It is possible to receive different "Number Of Slots" parameters than those two.  In vanilla, using /setblock four times around a chest and then opening the middle chest will open a window with 5*27 chest slots.  Some custom servers will send chest inventories with other sizes, usually ranging from 1 row to 6 rows.  These may be used for custom GUIs.  It is thus important to correctly use the "Number Of Slots" parameter in the open window packet to determine the number of rows in the chest, rather than hardcoding what constitutes a regular chest or a large chest.}}
 
 {{-}}
 
