@@ -918,20 +918,271 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | 
  | 
  |-
- | {{Minecraft Wiki|12w01-05a}}
- | 24
- | 
- | 
+ | {{Minecraft Wiki|12w05a}}
+ |rowspan=4|24
+ |rowspan=4| 
+ |rowspan=4|
+ |-
+ | {{Minecraft Wiki|12w04a}}
+ |-
+ | {{Minecraft Wiki|12w03a}}
+ |-
+ | {{Minecraft Wiki|12w02a}}
  |-
  | '''{{Minecraft Wiki|1.1}}'''
- | 23
+ | rowspan="6"|23
+ | rowspan="6"|
+ | rowspan="6"|
+ |-
+ | {{Minecraft Wiki|12w01a}}?
+ |-
+ | {{Minecraft Wiki|12w50a}}
+ |-
+ | {{Minecraft Wiki|12w49a}}
+ |-
+ | {{Minecraft Wiki|12w48a}}
+ |-
+ | {{Minecraft Wiki|12w47a}}
+ |-
+ | '''{{Minecraft Wiki|1.0.1}}'''?
+ |rowspan=5|22
+ |rowspan=5|[{{canonicalurl:Protocol|oldid=689}} page]
+ |rowspan=5|
+ |-
+ | '''{{Minecraft Wiki|1.0.0}}'''
+ |-
+ | {{Minecraft Wiki|1.0.0-RC2}}
+ |-
+ | {{Minecraft Wiki|1.0.0-RC1}}
+ |-
+ | {{Minecraft Wiki|Beta 1.9-pre6}}
+ |-
+ | {{Minecraft Wiki|Beta 1.9-pre5}}
+ | {{Unknown|Unknown (21?)}}
  | 
  | 
  |-
- | '''{{Minecraft Wiki|1.0.0}}'''
- | 22
- | [{{canonicalurl:Protocol|oldid=689}} page]
- |
+ | {{Minecraft Wiki|Beta 1.9-pre4}}
+ | 20
+ | 
+ | 
+ |-
+ | {{Minecraft Wiki|Beta 1.9-pre3}}
+ |rowspan="2"|19
+ |rowspan="2"|
+ |rowspan="2"|
+ |-
+ | {{Minecraft Wiki|Beta 1.9-pre2}}
+ |-
+ | {{Minecraft Wiki|Beta 1.9-pre1}}
+ | 18
+ | 
+ | 
+ |-
+ | '''{{Minecraft Wiki|Beta 1.8.1}}'''?
+ |rowspan="2"|17
+ |rowspan="2"| 
+ |rowspan="2"|
+ |-
+ | '''{{Minecraft Wiki|Beta 1.8}}'''
+ |-
+ | {{Minecraft Wiki|Beta 1.8-pre2}}
+ | 16
+ | 
+ | 
+ |-
+ | {{Minecraft Wiki|Beta 1.8-pre1}}
+ | 15
+ | 
+ | 
+ |-
+ | '''{{Minecraft Wiki|Beta 1.7.3}}'''?
+ |rowspan="4"|14
+ |rowspan="4"|
+ |rowspan="4"|
+ |-
+ | '''{{Minecraft Wiki|1.7.2}}'''
+ |-
+ | '''{{Minecraft Wiki|1.7.1}}'''
+ |-
+ | '''{{Minecraft Wiki|1.7}}'''
+ |-
+ | '''{{Minecraft Wiki|Beta 1.6.6}}'''?
+ |rowspan="8"|13
+ |rowspan="8"|
+ |rowspan="8"|
+ |-
+ | '''{{Minecraft Wiki|Beta 1.6.5}}'''?
+ |-
+ | '''{{Minecraft Wiki|Beta 1.6.4}}'''?
+ |-
+ | '''{{Minecraft Wiki|Beta 1.6.3}}'''?
+ |-
+ | '''{{Minecraft Wiki|Beta 1.6.2}}'''?
+ |-
+ | '''{{Minecraft Wiki|Beta 1.6.1}}'''?
+ |-
+ | '''{{Minecraft Wiki|Beta 1.6}}'''
+ |-
+ | {{Minecraft Wiki|User:St3in3rS/Beta 1.6 Test Build 3|Beta 1.6 Test Build 3}}??
+ |-
+ | '''{{Minecraft Wiki|Beta 1.5_01}}'''?
+ | 12?
+ |-
+ | '''{{Minecraft Wiki|Beta 1.5}}'''
+ | 11
+ | 
+ | 
+ |-
+ | '''{{Minecraft Wiki|Beta 1.4_01}}'''?
+ |rowspan="2"|10
+ |rowspan="2"|
+ |rowspan="2"|
+ |-
+ | '''{{Minecraft Wiki|Beta 1.4}}'''
+ |-
+ | '''{{Minecraft Wiki|Beta 1.3_01}}'''?
+ |rowspan="2" {{Unknown|Unknown (9?)}}
+ |rowspan="2"|
+ |rowspan="2"|
+ |-
+ | '''{{Minecraft Wiki|Beta 1.3}}'''?
+ |-
+ | '''{{Minecraft Wiki|Beta 1.2_02}}'''?
+ |rowspan="3"|8
+ |rowspan="3"|
+ |rowspan="3"|
+ |-
+ | '''{{Minecraft Wiki|Beta 1.2_01}}'''?
+ |-
+ | '''{{Minecraft Wiki|Beta 1.2}}'''
+ |-
+ | '''{{Minecraft Wiki|Beta 1.1_02}}'''
+ |rowspan="3" {{Unknown}}
+ |rowspan="3"|
+ |rowspan="3"|
+ |-
+ | '''{{Minecraft Wiki|Beta 1.1_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Beta 1.1}}'''
+ |-
+ | '''{{Minecraft Wiki|Beta 1.0_02}}'''
+ |rowspan="3" {{Unknown}}
+ |rowspan="3"|
+ |rowspan="3"|
+ |-
+ | '''{{Minecraft Wiki|Beta 1.0_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Beta 1.0}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.6}}'''
+ |rowspan="15" {{Unknown}}
+ |rowspan="15"|
+ |rowspan="15"|
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.5}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.4_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.4}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.3_04}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.3_02}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.3_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.3}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.2}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.1_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.1}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.0_02}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.0_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2.0}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.2}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.1.2_01}}'''
+ |rowspan="5" {{Unknown}}
+ |rowspan="5"|
+ |rowspan="5"|
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.1.2}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.1.1}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.1.0}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.1}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.9}}'''
+ |rowspan="30" {{Unknown}}
+ |rowspan="30"|
+ |rowspan="30"|
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.8_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.8}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.7}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.6_03}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.6_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.6}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.5_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.5}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.4}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.3}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.2_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.1_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.17_04}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.17_03}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.17}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.16_02}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.16_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.16}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.15}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.14_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.14}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.13_02}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.13_01}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.13}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.12}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.11}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.10}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.1}}'''
+ |-
+ | '''{{Minecraft Wiki|Alpha 1.0.0}}'''
  |-
  | {{Minecraft Wiki|Classic|0.30c}}
  | 7
