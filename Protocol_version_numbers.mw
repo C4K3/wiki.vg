@@ -596,18 +596,15 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  ! Release name
  ! Version number
  ! Last known documentation
- ! Notes
  |-
  | {{Minecraft Wiki|13w39b}}
  |rowspan="2"| 80
  |rowspan="2"| [{{canonicalurl:Pre-release protocol|oldid=4825}} page]
- |rowspan="2"|
  |-
  | {{Minecraft Wiki|13w39a}}
  |-
  | {{Minecraft Wiki|13w38c}}
  |rowspan="3"| 79
- |rowspan="3"| 
  |rowspan="3"| 
  |-
  | {{Minecraft Wiki|13w38b}}
@@ -617,47 +614,39 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | '''{{Minecraft Wiki|1.6.4}}'''
  | 78
  | [{{canonicalurl:Protocol|oldid=4899}} page]
- | 
  |-
  | '''{{Minecraft Wiki|1.6.3}}'''
  | 77
- | 
  | 
  |-
  | {{Minecraft Wiki|13w37b}}
  |rowspan="2"| 76
  |rowspan="2"| 
- |rowspan="2"|
  |-
  | {{Minecraft Wiki|13w37a}}
  |-
  | {{Minecraft Wiki|13w36b}}
  |rowspan="2"| 75
  |rowspan="2"| 
- |rowspan="2"|
  |-
  | {{Minecraft Wiki|13w36a}}
  |-
  | '''{{Minecraft Wiki|1.6.2}}'''
  | 74
  | 
- | 
  |-
  | '''{{Minecraft Wiki|1.6.1}}'''
  | 73
  | [{{canonicalurl:Protocol|oldid=1095}} page]
- | 
  |-
  | {{Minecraft Wiki|1.6-pre}}
  |rowspan="2"| 72
- |rowspan="2"| 
  |rowspan="2"| 
  |-
  | {{Minecraft Wiki|13w26a}}
  |-
  | {{Minecraft Wiki|13w25c}}
  |rowspan="3"| 71
- |rowspan="3"| 
  |rowspan="3"| 
  |-
  | {{Minecraft Wiki|13w25b}}
@@ -667,21 +656,17 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|13w24b}}
  | 70
  | 
- | 
  |-
  | {{Minecraft Wiki|13w24a}}
  | 69
- | 
  | 
  |-
  | {{Minecraft Wiki|13w23b}}
  | 68
  | 
- | 
  |-
  | {{Minecraft Wiki|13w23a}}
  |rowspan="4"| 67
- |rowspan="4"| 
  |rowspan="4"| 
  |-
  | {{Minecraft Wiki|13w22a}}
@@ -693,36 +678,29 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|13w19a}}
  | 66
  | 
- | 
  |-
  | {{Minecraft Wiki|13w18a}}
  | 65
- | 
  | 
  |-
  | {{Minecraft Wiki|13w17a}}
  | 64
  | 
- | 
  |-
  | {{Minecraft Wiki|13w16b}}
  | 63
- | 
  | 
  |-
  | {{Minecraft Wiki|13w16a}}
  | 62
  | 
- | 
  |-
  | '''{{Minecraft Wiki|1.5.2}}'''
  | 61
  | 
- | 
  |-
  | '''{{Minecraft Wiki|1.5.1}}'''
  |rowspan="2"| 60
- |rowspan="2"| 
  |rowspan="2"| 
  |-
  | '''{{Minecraft Wiki|1.5}}'''
@@ -730,58 +708,47 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|13w09b}}
  | 59
  | 
- | 
  |-
  | {{Minecraft Wiki|13w06a}}
  | 58
- | 
  | 
  |-
  | {{Minecraft Wiki|13w05b}}
  | 57
  | 
- | 
  |-
  | {{Minecraft Wiki|13w05a}}
  | 56
- | 
  | 
  |-
  | {{Minecraft Wiki|13w04a}}
  | 55
  | 
- | 
  |-
  | {{Minecraft Wiki|13w03a}}
  | 54
- | 
  | 
  |-
  | {{Minecraft Wiki|13w02a}}
  | 53
  | 
- | 
  |-
  | {{Minecraft Wiki|13w01a}}
  | 52
- | 
  | 
  |-
  | '''{{Minecraft Wiki|1.4.7}}'''
  |rowspan="2"| 51
  |rowspan="2"| [{{canonicalurl:Protocol|oldid=1039}} page]
- |rowspan="2"| 
  |-
  | '''{{Minecraft Wiki|1.4.6}}'''
  |-
  | {{Minecraft Wiki|12w49a}}
  | 50
  | 
- | 
  |-
  | '''{{Minecraft Wiki|1.4.5}}'''
  |rowspan="2"| 49
- |rowspan="2"| 
  |rowspan="2"| 
  |-
  | '''{{Minecraft Wiki|1.4.4}}'''
@@ -789,26 +756,21 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|1.4.3-pre}}
  | 48
  | 
- | 
  |-
  | '''{{Minecraft Wiki|1.4.2}}'''
  | 47
- | 
  | 
  |-
  | {{Minecraft Wiki|12w41a}}
  | 46
  | 
- | 
  |-
  | {{Minecraft Wiki|12w40a}}
  | 45
  | 
- | 
  |-
  | {{Minecraft Wiki|12w39b}}
  |rowspan="4"| 43
- |rowspan="4"|
  |rowspan="4"|
  |-
  | {{Minecraft Wiki|12w39a}}
@@ -820,7 +782,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|12w37a}}
  |rowspan="3"| 42
  |rowspan="3"|
- |rowspan="3"|
  |-
  | {{Minecraft Wiki|12w36a}}
  |-
@@ -829,28 +790,23 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|12w34a}}
  | 41
  | 
- | 
  |-
  | {{Minecraft Wiki|12w32a}}
  | 40
- | 
  | 
  |-
  | '''{{Minecraft Wiki|1.3.2}}'''
  |rowspan="2"| 39
  |rowspan="2"| [{{canonicalurl:Protocol|oldid=980}} page]
- |rowspan="2"| 
  |-
  | '''{{Minecraft Wiki|1.3.1}}'''
  |-
  | {{Minecraft Wiki|12w27a}}
  | 38
  | 
- | 
  |-
  | {{Minecraft Wiki|12w26a}}
  |rowspan="2"| 37
- |rowspan="2"| 
  |rowspan="2"| 
  |-
  | {{Minecraft Wiki|12w25a}}
@@ -858,26 +814,21 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|12w24a}}
  | 36
  | 
- | 
  |-
  | {{Minecraft Wiki|12w23a}}
  | 35
- | 
  | 
  |-
  | {{Minecraft Wiki|12w22a}}
  | 34
  | 
- | 
  |-
  | {{Minecraft Wiki|12w21ab}}
  | 33
  | 
- | 
  |-
  | {{Minecraft Wiki|12w19a}}
  |rowspan="2"| 32
- |rowspan="2"| 
  |rowspan="2"| 
  |-
  | {{Minecraft Wiki|12w18a}}
@@ -885,23 +836,19 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|12w17a}}
  | 31
  | 
- | 
  |-
  | {{Minecraft Wiki|12w16a}}
  | 30
  | 
- | 
  |-
  | '''{{Minecraft Wiki|1.2.5}}'''
  |rowspan="2"| 29
- |rowspan="2"| [{{canonicalurl:Protocol|oldid=932}} page]
- |rowspan="2"| This protocol has no encryption and a different handshake layout than the previous ones.
+ |rowspan="2"| [{{canonicalurl:Protocol|oldid=932}} page]<ref group="old note">This protocol has no encryption and a different handshake layout than the previous ones.</ref>
  |-
  | '''{{Minecraft Wiki|1.2.4}}'''
  |-
  | '''{{Minecraft Wiki|1.2.3}}'''
  |rowspan="3"| 28
- |rowspan="3"| 
  |rowspan="3"| 
  |-
  | '''{{Minecraft Wiki|1.2.2}}'''
@@ -911,16 +858,13 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|12w07a}}
  | 27
  | 
- | 
  |-
  | {{Minecraft Wiki|12w06a}}
  | 25
  | 
- | 
  |-
  | {{Minecraft Wiki|12w05a}}
  |rowspan=4|24
- |rowspan=4| 
  |rowspan=4|
  |-
  | {{Minecraft Wiki|12w04a}}
@@ -931,7 +875,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|1.1}}'''
  | rowspan="6"|23
- | rowspan="6"|
  | rowspan="6"|
  |-
  | {{Minecraft Wiki|12w01a}}?
@@ -947,7 +890,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | '''{{Minecraft Wiki|1.0.1}}'''?
  |rowspan=5|22
  |rowspan=5|[{{canonicalurl:Protocol|oldid=689}} page]
- |rowspan=5|
  |-
  | '''{{Minecraft Wiki|1.0.0}}'''
  |-
@@ -960,16 +902,13 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|Beta 1.9-pre5}}
  | {{Unknown|Unknown (21?)}}
  | 
- | 
  |-
  | {{Minecraft Wiki|Beta 1.9-pre4}}
  | 20
  | 
- | 
  |-
  | {{Minecraft Wiki|Beta 1.9-pre3}}
  |rowspan="2"|19
- |rowspan="2"|
  |rowspan="2"|
  |-
  | {{Minecraft Wiki|Beta 1.9-pre2}}
@@ -977,28 +916,23 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|Beta 1.9-pre1}}
  | 18
  | 
- | 
  |-
  | '''{{Minecraft Wiki|Beta 1.8.1}}'''?
  |rowspan="2"|17
  |rowspan="2"| 
- |rowspan="2"|
  |-
  | '''{{Minecraft Wiki|Beta 1.8}}'''
  |-
  | {{Minecraft Wiki|Beta 1.8-pre2}}
  | 16
  | 
- | 
  |-
  | {{Minecraft Wiki|Beta 1.8-pre1}}
  | 15
  | 
- | 
  |-
  | '''{{Minecraft Wiki|Beta 1.7.3}}'''?
  |rowspan="4"|14
- |rowspan="4"|
  |rowspan="4"|
  |-
  | '''{{Minecraft Wiki|1.7.2}}'''
@@ -1008,9 +942,8 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | '''{{Minecraft Wiki|1.7}}'''
  |-
  | '''{{Minecraft Wiki|Beta 1.6.6}}'''?
- |rowspan="8"|13
- |rowspan="8"|
- |rowspan="8"|
+ |rowspan="7"|13
+ |rowspan="7"|
  |-
  | '''{{Minecraft Wiki|Beta 1.6.5}}'''?
  |-
@@ -1024,19 +957,20 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|Beta 1.6}}'''
  |-
- | {{Minecraft Wiki|User:St3in3rS/Beta 1.6 Test Build 3|Beta 1.6 Test Build 3}}??
+ | {{Minecraft Wiki|User:St3in3rS/Beta 1.6 Test Build 3|Beta 1.6 Test Build 3}}
+ | {{Unknown}}
+ |
  |-
- | '''{{Minecraft Wiki|Beta 1.5_01}}'''?
- | 12?
+ | '''{{Minecraft Wiki|Beta 1.5_01}}'''
+ | {{Unknown|Unknown (11? 12?)}}
+ |
  |-
  | '''{{Minecraft Wiki|Beta 1.5}}'''
  | 11
  | 
- | 
  |-
  | '''{{Minecraft Wiki|Beta 1.4_01}}'''?
  |rowspan="2"|10
- |rowspan="2"|
  |rowspan="2"|
  |-
  | '''{{Minecraft Wiki|Beta 1.4}}'''
@@ -1044,13 +978,11 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | '''{{Minecraft Wiki|Beta 1.3_01}}'''?
  |rowspan="2" {{Unknown|Unknown (9?)}}
  |rowspan="2"|
- |rowspan="2"|
  |-
  | '''{{Minecraft Wiki|Beta 1.3}}'''?
  |-
  | '''{{Minecraft Wiki|Beta 1.2_02}}'''?
  |rowspan="3"|8
- |rowspan="3"|
  |rowspan="3"|
  |-
  | '''{{Minecraft Wiki|Beta 1.2_01}}'''?
@@ -1060,7 +992,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | '''{{Minecraft Wiki|Beta 1.1_02}}'''
  |rowspan="3" {{Unknown}}
  |rowspan="3"|
- |rowspan="3"|
  |-
  | '''{{Minecraft Wiki|Beta 1.1_01}}'''
  |-
@@ -1069,7 +1000,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | '''{{Minecraft Wiki|Beta 1.0_02}}'''
  |rowspan="3" {{Unknown}}
  |rowspan="3"|
- |rowspan="3"|
  |-
  | '''{{Minecraft Wiki|Beta 1.0_01}}'''
  |-
@@ -1077,7 +1007,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|Alpha 1.2.6}}'''
  |rowspan="15" {{Unknown}}
- |rowspan="15"|
  |rowspan="15"|
  |-
  | '''{{Minecraft Wiki|Alpha 1.2.5}}'''
@@ -1111,7 +1040,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | '''{{Minecraft Wiki|Alpha 1.1.2_01}}'''
  |rowspan="5" {{Unknown}}
  |rowspan="5"|
- |rowspan="5"|
  |-
  | '''{{Minecraft Wiki|Alpha 1.1.2}}'''
  |-
@@ -1123,7 +1051,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|Alpha 1.0.9}}'''
  |rowspan="30" {{Unknown}}
- |rowspan="30"|
  |rowspan="30"|
  |-
  | '''{{Minecraft Wiki|Alpha 1.0.8_01}}'''
@@ -1187,10 +1114,10 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|Classic|0.30c}}
  | 7
  | [[Classic Protocol|page]]
- | 
  |-
  | 0.0.23a_01
  | 6
  | 
- | 
  |}
+
+<references group="old note" />
