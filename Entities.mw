@@ -1439,12 +1439,22 @@ Extends [[#Entity|Entity]].
  |-
  | 10
  | VarInt
- |colspan="2"| Block Y position
+ |colspan="2"| Block Y position (in 16ths of a block)
  |-
  | 11
  | Boolean
- |colspan="2"| Show block
+ |colspan="2"| Show custom block
  |}
+
+If show custom block is false, then each type of Minecart will render its own type of block with its own properties.  Note that one does ''not'' need to send these values for the metadata fields, as the client will automatically select them if show custom block is false.  They are only provided for reference to help with swapping out other blocks.
+
+* Rideable Minecarts contain air (0:0) and have a y position of 6
+* Chest Minecarts contain chests facing north (54:0) and have a y position of 8
+* Furnace Minecarts contain a normal furnace facing north when unpowered (61:0) and a lit furnace facing north when powered (62:0) and have a y position of 6 in both cases
+* Hopper Minecarts contain a hopper (154:0) and have a y position of 1
+* TNT Minecarts contain TNT (46:0) and have a y position of 6
+* Command block minecarts contain a Command Block (137:0) and have a y position of 6
+* Spawner Minecarts contain a spawner (52:0) and have a y position of 6
 
 === MinecartCommandBlock ===
 
