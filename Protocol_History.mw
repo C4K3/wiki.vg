@@ -14,6 +14,10 @@ Provided below is a (potentially incomplete) changelog of the server protocol st
 :* VindicationIllager (<code>minecraft:vindication_illager</code>), #36.  One metadata field, a Byte of unknown purposes.
 :* Llama (<code>minecraft:llama</code>), #103.  3 integer varint fields.
 * Added a new metadata field to shulkers.
+* Added new icons to maps:
+:* 8 - far away player
+:* 9 - Mansion
+:* 10 - Temple
 
 === 16w38a ===
 * Protocol version 306
