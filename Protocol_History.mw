@@ -1,5 +1,9 @@
 Provided below is a (potentially incomplete) changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 16w39c ===
+* Protocol version 309
+* Changed cursor position values in Player Block Placement (0x1C) from ints ranging from 0 to 15 to floats ranging from 0 to 1.
+
 === 16w39b ===
 * Protocol version 308
 * Llamas now have a height of 1.87 instead of 1.97
