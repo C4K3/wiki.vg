@@ -214,8 +214,8 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 |- 
 | 3
 | Area Effect Cloud
-| ?
-| ?
+| 2.0 * Radius
+| 0.5
 |- 
 | 10
 | Minecart
