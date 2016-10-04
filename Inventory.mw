@@ -397,13 +397,19 @@ The window for when a tamed horse is right-clicked or the player's inventory is 
  | hotbar
  |}
 
+<gallery>
+File:Horse-slots.png|Horse slots
+File:Skeleton-horse-slots.png|Skeleton horse slots
+File:Skeleton-horse-slots.png|Zombie horse slots
+</gallery>
+
 {{-}}
 
 == Donkey ==
 
 [[File:Donkey-slots.png|thumb|Donkey slots]]
 
-The inventory that appears when a tamed donkey (or mule?) is right-clicked and has a chest, or when the player's inventory is opened while riding a tamed donkey or mule.
+The inventory that appears when a tamed donkey (or mule?) is right-clicked, or when the player's inventory is opened while riding a tamed donkey or mule.
 
 {{warning|There still is an armor slot, even though it cannot be used and is invisible.}}
 
@@ -421,12 +427,19 @@ The inventory that appears when a tamed donkey (or mule?) is right-clicked and h
  | 2–16
  | donkey inventory
  |-
- | 17–43
+ | 17–43 (2-28 if unchested)
  | player inventory
  |-
- | 44–52
+ | 44–52 (29-37 if unchested)
  | hotbar
  |}
+
+<gallery>
+File:Donkey-unchested-slots.png|Unchested donkey
+File:Donkey-chested-slots.png|Chested donkey
+File:Mule-unchested-slots.png|Unchested mule
+File:Mule-chested-slots.png|Chested mule
+</gallery>
 
 {{-}}
 
