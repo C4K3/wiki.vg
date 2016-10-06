@@ -168,7 +168,7 @@ The client sends these to the target server with ever decreasing MTU until the s
  ! Field Type
  ! Notes
  |-
- |rowspan="3"| 0x06
+ |rowspan="4"| 0x06
  | Magic
  | MAGIC
  | 
@@ -176,6 +176,11 @@ The client sends these to the target server with ever decreasing MTU until the s
  | Server GUID
  | long
  | 
+ |-
+ | Use security
+ | boolean
+ | Make sure this is false, it is vital for the login sequence to continue!
+ |
  |-
  | MTU
  | short
