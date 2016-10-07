@@ -7,6 +7,9 @@ Minecraft displays the '''player inventory''' differently, according to how the 
  ! Window Type
  ! Description
  |-
+ | minecraft:container
+ | Fallback for unknown types; also used for {{Minecraft Wiki|Ender chest}}s.  Behaves the same as minecraft:chest.
+ |-
  | minecraft:chest
  | {{Minecraft Wiki|Chest}}, large chest, or {{Minecraft Wiki|minecart with chest}}
  |-
