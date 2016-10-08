@@ -1,5 +1,5 @@
-RCON is a protocol introduced in 1.9pre4 for the purpose of remote administration of a server. It's basically an implementation of the Source RCON protocol for Minecraft [http://developer.valvesoftware.com/wiki/Source_RCON_Protocol]
- 
+'''RCON''' is a protocol that allows server administrators to remotely execute {{Minecraft Wiki|Commands|Minecraft commands}}. Introduced in 1.9pre4, it's basically an implementation of the [http://developer.valvesoftware.com/wiki/Source_RCON_Protocol Source RCON protocol] for Minecraft.
+
 == Server Config ==
 
     enable-rcon=true
@@ -11,38 +11,36 @@ The default port is 25575.
 
 == Packet Format ==
 
-Integers are little-endian, in contrast with the [[Protocol|Beta protocol]].
+Integers are little-endian, in contrast with the [[Protocol|Minecraft protocol]].
 
-Responses are sent back with the same Request ID that you send. 
-
-In the event of an auth failure (i.e. your login is incorrect, or you're trying to send commands without first logging in), request ID will be set to <code>-1</code>
+Responses are sent back with the same Request ID that you send. In the event of an auth failure (i.e. your login is incorrect, or you're trying to send commands without first logging in), request ID will be set to <code>-1</code>.
 
 {| class="wikitable"
-|-
-! Field name
-! Field Type
-! Notes
-|- 
-| Length
-| int
-| Length of ''remainder'' of packet
-|-
-| Request ID
-| int
-| Client-generated ID
-|-
-| Type
-| int
-| <code>3</code> for login, <code>2</code> to run a command, <code>0</code> for a multi-packet response
-|-
-| Payload
-| byte[]
-| ASCII text
-|-
-| 2-byte pad
-| byte, byte
-| Two null bytes
-|}
+ |-
+ ! Field name
+ ! Field type
+ ! Notes
+ |- 
+ | Length
+ | int
+ | Length of ''remainder'' of packet
+ |-
+ | Request ID
+ | int
+ | Client-generated ID
+ |-
+ | Type
+ | int
+ | <code>3</code> for login, <code>2</code> to run a command, <code>0</code> for a multi-packet response
+ |-
+ | Payload
+ | byte[]
+ | ASCII text
+ |-
+ | 2-byte pad
+ | byte, byte
+ | Two null bytes
+ |}
 
 == Packets ==
 
@@ -50,7 +48,7 @@ In the event of an auth failure (i.e. your login is incorrect, or you're trying 
 
 Outgoing payload: password. 
 
-If the server returns a packet with the same request ID, auth was successful (note: packet type is 2, not 3). If you get an request ID of -1, auth failed (wrong password).
+If the server returns a packet with the same request ID, auth was successful (note: packet type is 2, not 3). If you get a request ID of -1, auth failed (wrong password).
 
 === 2: Command ===
 
