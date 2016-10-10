@@ -470,9 +470,15 @@ The base class.
  |colspan="2"| No gravity
  |}
 
-=== Potion ===
+=== Projectile ===
 
 Extends [[#Entity|Entity]].
+
+No additional metadata.
+
+=== Potion ===
+
+Extends [[#Projectile|Projectile]].
 
 {| class="wikitable"
  ! Index
