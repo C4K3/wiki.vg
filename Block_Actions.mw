@@ -2,11 +2,11 @@ These block actions are used in the [[Protocol#Block Action|Block Action]] packe
 
 == Note Block ==
 
-It shows the note particle being emitted from the block as well as playing the tone.
+Displays a colored note particle and plays the appropriate note sound effect.
 
-=== Byte 1 ===
+=== Action IDs ===
 
-Instrument type.
+The action ID is used to determine the instrument to play.
 
 {| class="wikitable"
  |-
@@ -14,34 +14,38 @@ Instrument type.
  ! Type Name
  |-
  | 0
- | Harp
+ | Harp (any material)
  |-
  | 1
- | Double Bass
+ | Bass Drum (stone)
  |-
  | 2
- | Snare Drum
+ | Snare Drum (sand)
  |-
  | 3
- | Clicks/Sticks
+ | Clicks/Sticks (glass)
  |-
  | 4
- | Bass Drum
+ | Bass guitar (wood)
  |}
 
-=== Byte 2 ===
+=== Action param ===
 
-The pitch of the note (between 0–24 inclusive where 0 is the lowest and 24 is the highest). More information about how the pitch values correspond to notes in real life are available at {{Minecraft Wiki|Note Block}} on the Minecraft wiki.
+The pitch of the note (between 0–24 inclusive where 0 is the lowest and 24 is the highest). More information about how the pitch values correspond to notes in real life and how they correspond to pitch scaling on the sound effects can be found in the {{Minecraft Wiki|Note Block}} article on the Minecraft wiki.
 
 == Piston ==
 
-=== Byte 1 ===
+Extends or retracts the piston.  Always used on the piston base (either sticky or regular), never on the head.  Also plays the extending/retracting sound.
 
-The state the piston changes to: 0 for pushing, 1 for pulling.
+{{Need Info|It's unclear what blocks and tile entities the client needs to create, and which ones the server creates.  From a rough glance, it seems like the server changes the piston base block, but the client needs to create the piston head, create the block 36es, and create the piston moving tile entities.  As such, the server needs to make the same assumptions as the client, or else ghost blocks may occur.}}
 
-=== Byte 2 ===
+=== Action IDs ===
 
-Direction.
+'''0''' to extend the piston, '''1''' to retract it.
+
+=== Action param ===
+
+The direction the piston is facing (which is a metadata field on the piston).  This is only used when the piston is retracting to generate the nearest block 36; all other parts appear ignore this parameter and use the piston's actual metadata field.
 
 {| class="wikitable"
  |-
@@ -69,14 +73,46 @@ Direction.
 
 == Chest ==
 
-Animates the chest's lid opening. Note that the notchian server will send this every 3s even if the state hasn't changed.
+=== Action IDs ===
 
-=== Byte 1 ===
+There is only one action, with ID '''1'''.  It is used to update the number of players who are looking in the chest, which in turn is used to update lid animation.
 
-Not used, always 1.
+For ender chests, this is resent every 80 ticks (4 seconds) even if the value hasn't changed.  For regular chests, it seems to be recalculated every 200 ticks, but not resent until a player opens/closes it.
 
-=== Byte 2 ===
+=== Action param ===
 
-Number of players who have the chest open.  If 0, the chest is closed; if 1 or more the chest is open.
+When the action ID is 1, this is the number of players who have the chest open.  If 0, then the chest is closed; if 1 or more the chest is open.
+
+== Beacon ==
+
+=== Action IDs ===
+
+There is only one action, with ID '''1'''.  It is used to tell the client to recalculate the beacon beam.  This happens whenever the beacon base receives a block update.  Additionally, whenever a stained glass block or stained glass pane is placed above a beacon that can see the sky.  The client goes through all blocks above the beacon, disabling/enabling the beam if it is covered and recoloring the beam if it passes through glass or stained glass.
+
+Note that the beacon beam is also recomputed every 80 ticks (4 seconds), but no block action occurs when that happens.  The block action allows placing of a beacon and recoloring of the beam to potentially be instant, but does not make all other changes to the beam instant.
+
+=== Action param ===
+
+Ignored.
+
+== Spawner ==
+
+=== Action ID ===
+
+There is only one action, with ID '''1''', which resets the delay in the spawner to the minimum spawn delay.
+
+=== Action param ===
+
+Ignored.
+
+== End gateway ==
+
+=== Action ID ===
+
+There is only one action, with ID '''1''', which triggers the {{Minecraft Wiki|End Gateway (block)#Beam|yellow beam}} emitted by the end gateway when an entity passes through it.
+
+=== Action param ===
+
+Ignored.
 
 [[Category:Minecraft Modern]]
