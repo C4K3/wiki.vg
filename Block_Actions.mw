@@ -1,4 +1,47 @@
-These block actions are used in the [[Protocol#Block Action|Block Action]] packet.
+These block actions are used in the [[Protocol#Block Action|Block Action]] packet.  Depending on the block, different action IDs mean different things: __NOTOC__
+
+{| class="wikitable"
+ ! Block
+ ! ID
+ ! Section
+ |-
+ | {{Minecraft Wiki|Note Block}}
+ | 25
+ | [[#Note Block|Note Block]]
+ |-
+ | {{Minecraft Wiki|Piston}}
+ | 33
+ |rowspan="2"| [[#Piston|Piston]]
+ |-
+ | {{Minecraft Wiki|Sticky Piston}}
+ | 29
+ |-
+ | {{Minecraft Wiki|Chest}}
+ | 54
+ |rowspan="2"| [[#Chest|Chest]]
+ |-
+ | {{Minecraft Wiki|Trapped Chest}}
+ | 146
+ |-
+ | {{Minecraft Wiki|Ender Chest}}
+ | 130
+ | [[#Ender Chest|Ender Chest]]
+ |-
+ | {{Minecraft Wiki|Beacon}}
+ | 138
+ | [[#Beacon|Beacon]]
+ |-
+ | {{Minecraft Wiki|Mob Spawner}}
+ | 52
+ | [[#Spawner|Spawner]]
+ |-
+ | {{Minecraft Wiki|End Gateway}}
+ | 209
+ | [[#End Gateway|End Gateway]]
+ |-
+ |colspan="2"| Anything else
+ | Ignored
+ |}
 
 == Note Block ==
 
@@ -77,7 +120,17 @@ The direction the piston is facing (which is a metadata field on the piston).  T
 
 There is only one action, with ID '''1'''.  It is used to update the number of players who are looking in the chest, which in turn is used to update lid animation.
 
-For ender chests, this is resent every 80 ticks (4 seconds) even if the value hasn't changed.  For regular chests, it seems to be recalculated every 200 ticks, but not resent until a player opens/closes it.
+This value seems to be recalculated every 200 ticks, but isn't resent until a player closes/reopens.
+
+=== Action param ===
+
+When the action ID is 1, this is the number of players who have the chest open.  If 0, then the chest is closed; if 1 or more the chest is open.
+
+== Ender chest ==
+
+=== Action IDs ===
+
+There is only one action, with ID '''1'''.  It is used to update the number of players who are looking in the ender chest, which in turn is used to update lid animation.  This is recalculated and resent every 80 ticks (4 seconds), even if the value hasn't changed.
 
 === Action param ===
 
