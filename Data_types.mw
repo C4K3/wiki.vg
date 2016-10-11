@@ -107,7 +107,7 @@
  ! UUID
  | 16
  | A [[wikipedia:Universally_unique_identifier|UUID]]
- | Encoded as an unsigned 64-bit integer
+ | Encoded as an unsigned 128-bit integer (or two unsigned 64-bit integers: the most significant 64 bits and then the least significant 64 bits)
  |-
  ! Optional X
  | 0 or size of X
