@@ -1225,6 +1225,18 @@ Extends [[#Monster|Monster]].
  |colspan="2"| Is ignited
  |}
 
+=== Endermite ===
+
+Extends [[#Monster|Monster]].
+
+No additional metadata.
+
+=== Giant Zombie ===
+
+Extends [[#Monster|Monster]].
+
+No additional metadata.
+
 === Guardian ===
 
 Extends [[#Monster|Monster]].
@@ -1249,6 +1261,12 @@ Extends [[#Monster|Monster]].
  | VarInt
  |colspan="2"| Target EID
  |}
+
+=== Silverfish ===
+
+Extends [[#Monster|Monster]].
+
+No additional metadata.
 
 === Skeleton ===
 
