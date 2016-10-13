@@ -29,6 +29,8 @@ Provided below is a (potentially incomplete) changelog of the server protocol st
 
 === 16w36a ===
 * Protocol version 305
+* Inserted action "set action bar" (id 2) to [[Protocol#Title]] (0x45)
+:* Shifted the following actions: "set times and display" changed from 2 to 3, "hide" changed from 3 to 4, "reset" changed from 4 to 5"
 
 === 16w35a ===
 * Protocol version 304
