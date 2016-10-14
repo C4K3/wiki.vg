@@ -147,12 +147,12 @@ There are two defacto example files used for testing your implementation (<code>
 ==== test.nbt ====
 This first example is an uncompressed [[wikipedia:Hello world program|"Hello World"]] NBT example. Should you parse it correctly, you will get a structure similar to the following:
 
-<code>
+<pre>
   TAG_Compound('hello world'): 1 entry
   {
     TAG_String('name'): 'Bananrama'
   }
-</code>
+</pre>
 
 Here is the example explained:
 {| class="wikitable"
@@ -193,7 +193,7 @@ Here is the example explained:
 
 ==== bigtest.nbt ====
 This second example is a gzip compressed test of every available tag. If your program can successfully parse this file, then you've done well. Note that the tags under ''TAG_List'' do not have a name, as mentioned above. 
-<code>
+<pre>
   TAG_Compound('Level'): 11 entries
   {
     TAG_Compound('nested compound test'): 2 entries
@@ -239,11 +239,11 @@ This second example is a gzip compressed test of every available tag. If your pr
     TAG_Byte_Array('byteArrayTest (the first 1000 values of (n*n*255+n*7)%100, starting with n=0 (0, 62, 34, 16, 8, ...))'): [1000 bytes]
     TAG_Short('shortTest'): 32767
   }
-</code>
+</pre>
 
 ==== servers.dat ====
 The ''servers.dat'' file contains a list of multiplayer servers you've added to the game. To mix things up a bit, this file will always be uncompressed. Below is an example of the structure seen in ''servers.dat''.
-<code>
+<pre>
   TAG_Compound(<nowiki>''</nowiki>): 1 entry
   {
     TAG_List('servers'): 2 entries
@@ -264,11 +264,11 @@ The ''servers.dat'' file contains a list of multiplayer servers you've added to 
       }
     }
   }
-</code>
+</pre>
 
 ==== level.dat ====
 This final example is of a single player ''level.dat'', which is compressed using gzip. Notice the player's inventory and general world details such as spawn position, world name, and the game seed.
-<code>
+<pre>
   TAG_Compound(<nowiki>''</nowiki>): 1 entry
   {
     TAG_Compound('Data'): 17 entries
@@ -431,7 +431,7 @@ This final example is of a single player ''level.dat'', which is compressed usin
       TAG_String('LevelName'): 'Sandstone Test World'
     }
   }
-</code>
+</pre>
 
 ==== Download ====
 * [https://raw.github.com/Dav1dde/nbd/master/test/hello_world.nbt test.nbt/hello_world.nbt] (uncompressed),
