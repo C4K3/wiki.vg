@@ -1076,7 +1076,7 @@ Extends [[#TameableAnimal|TameableAnimal]].
  |-
  | 15
  | VarInt
- |colspan="2"| Type
+ |colspan="2"| Type (0 = untamed, 1 = tuxedo, 2 = tabby, 3 = siamese).  Used to render regardless as to whether it is tamed or not.
  |}
 
 === Wolf ===
