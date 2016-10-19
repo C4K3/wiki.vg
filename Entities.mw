@@ -1,3 +1,4 @@
+Various '''Entities''' have different metadata fields and status codes.
 
 == Mobs ==
 
@@ -470,6 +471,11 @@ The base class.
  |colspan="2"| No gravity
  |}
 
+Statuses:
+
+;21
+:Plays the guardian sound effect from this entity (works with any entity)
+
 === Projectile ===
 
 Extends [[#Entity|Entity]].
@@ -552,6 +558,10 @@ Extends [[#Entity|Entity]].
  |colspan="2"| Hooked entity id + 1, or 0 if there is no hooked entity
  |}
 
+Statuses:
+;31
+:If the caught entity is the connected player, then cause them to be pulled toward the caster of the fishing rod.
+
 === Arrow ===
 
 Extends [[#Entity|Entity]].
@@ -587,6 +597,10 @@ Used for both tipped and regular arrows.  If not tipped, then color is set to 0 
  | VarInt
  |colspan="2"| Color (0 for no particles)
  |}
+
+Statuses:
+;0
+:Spawns tipped arrow particle effects, if the color is greater than 0.
 
 === Boat ===
 
@@ -674,6 +688,11 @@ Extends [[#Entity|Entity]].
  |colspan="2"| Firework info
  |}
 
+Statuses:
+
+;17
+:Triggers the firework explosion effect (based off of the firework info metadata)
+
 === Hanging ===
 
 Extends [[#Entity|Entity]].
@@ -751,6 +770,19 @@ Extends [[#Entity|Entity]].
  |colspan="2"| Number of arrows in entity
  |}
 
+Statuses:
+
+;2
+:Plays the hurt animation and hurt sound
+;3
+:Plays the death sound and death animation
+;29
+:Plays the shield block sound
+;30
+:Plays the shield break sound
+;33
+:Plays the thorns sound in addition to playing the hurt animation and hurt sound
+ 
 === Player ===
 
 Extends [[#Living|Living]].
@@ -794,6 +826,25 @@ Extends [[#Living|Living]].
  | Byte
  |colspan="2"| Main hand (0 : Left, 1 : Right)
  |}
+
+Statuses:
+
+;9
+:Marks item use as finished (finished eating, finished drinking, etc)
+;22
+:Enables reduced {{Minecraft Wiki|Debug Screen|debug screen}} information
+;23
+:Disables reduced {{Minecraft Wiki|Debug Screen|debug screen}} information
+;24
+:Set {{Minecraft Wiki|Server.properties#op-permission-level|op permission level}} to 0
+;25
+:Set {{Minecraft Wiki|Server.properties#op-permission-level|op permission level}} to 1
+;26
+:Set {{Minecraft Wiki|Server.properties#op-permission-level|op permission level}} to 2
+;27
+:Set {{Minecraft Wiki|Server.properties#op-permission-level|op permission level}} to 3
+;28
+:Set {{Minecraft Wiki|Server.properties#op-permission-level|op permission level}} to 4
 
 === ArmorStand ===
 
@@ -848,6 +899,11 @@ Extends [[#Living|Living]].
 
 Note that armor stands with the [[#Entity|invisible flag from the base entity class]] set also cannot be attacked or damaged, except for by the void.
 
+Statuses:
+
+;32
+:Plays the hit sound, and resets a hit cooldown.
+
 === Insentient ===
 
 Extends [[#Living|Living]].
@@ -868,6 +924,13 @@ Extends [[#Living|Living]].
  | 0x02
  | Left handed
  |}
+
+Statuses:
+;20
+:Spawn explosion particle.  Used when:
+:*A silverfish enters a block
+:*A silverfish exits a block
+:*A mob spawner (or minecart mob spawner) spawns an entity (only with entities that support this status)
 
 === Ambient ===
 
@@ -892,6 +955,22 @@ Extends [[#Ambient|Ambient]].
  | 0x01
  | Is hanging
  |}
+
+=== WaterMob ===
+
+Extends [[#Insentient|Insentient]].
+
+No additional metadata.
+
+=== Squid ===
+
+Extends [[#WaterMob|WaterMob]]
+
+No additional metadata.
+
+Statuses:
+;19
+:Resets the squid's rotation to 0 radians.  Occurs whenever the server calculates that the squid has rotated more than 2 pi radians.
 
 === Creature ===
 
@@ -918,6 +997,11 @@ Extends [[#Creature|Creature]].
 Extends [[#Ageable|Ageable]].
 
 No additional metadata.
+
+Statuses:
+
+;18
+:Spawn "love mode" heart particles
 
 === Horse ===
 
@@ -974,6 +1058,12 @@ Extends [[#Animal|Animal]].
  |colspan="2"| Armor
  |}
 
+Statuses:
+;6
+:Spawn smoke particles (taming failed)
+;7
+:Spawn heart particles (taming succeeded)
+
 === Pig ===
 
 Extends [[#Animal|Animal]].
@@ -1016,6 +1106,11 @@ Extends [[#Animal|Animal]].
  |colspan="2"| Standing up
  |}
 
+Statuses:
+
+;1
+:Causes the rabbit to use its rotated jumping animation, and displays jumping particles.
+
 === Sheep ===
 
 Extends [[#Animal|Animal]].
@@ -1036,6 +1131,10 @@ Extends [[#Animal|Animal]].
  | 0x10
  | Is sheared
  |}
+
+Statuses:
+;10
+:Causes the sheep to play the eating grass animation for the next 40 ticks
 
 === TameableAnimal ===
 
@@ -1064,6 +1163,12 @@ Extends [[#Animal|Animal]].
  | OptUUID
  |colspan="2"| Owner
  |}
+
+Statuses:
+;6
+:Spawn smoke particles (taming failed)
+;7
+:Spawn heart particles (taming succeeded)
 
 === Ocelot ===
 
@@ -1101,6 +1206,10 @@ Extends [[#TameableAnimal|TameableAnimal]].
  |colspan="2"| Collar color (values are those {{Minecraft Wiki|Data_values#Dyes|used with dyes}})
  |}
 
+Statuses:
+;8
+:Play wolf shaking water animation
+
 === Villager ===
 
 Extends [[#Ageable|Ageable]].
@@ -1114,6 +1223,14 @@ Extends [[#Ageable|Ageable]].
  | VarInt
  |colspan="2"| Profession (Farmer = 0, Librarian = 1, Priest = 2, Blacksmith = 3, Butcher = 4)
  |}
+
+Statuses:
+;12
+:Spawn villager mating heart particles
+;13
+:Spawn villager angry particles
+;14
+:Spawn villager happy particles
 
 === Golem ===
 
@@ -1138,6 +1255,13 @@ Extends [[#Golem|Golem]].
  | 0x01
  | Is player-created
  |}
+
+Statuses:
+
+;4
+:Plays attack animation and attack sound
+;11
+:Causes golem to hold out a <s>rose</s> poppy for 400 ticks (20 seconds)
 
 === Snowman ===
 
@@ -1318,6 +1442,11 @@ Extends [[#Monster|Monster]].
  |colspan="2"| Is aggresive
  |}
 
+Statues:
+
+;15
+:Spawns between 10 and 45 <code>witchMagic</code> particles.  This status has a .075% chance of happening each tick.
+
 === Wither ===
 
 Extends [[#Monster|Monster]].
@@ -1369,6 +1498,11 @@ Extends [[#Monster|Monster]].
  | Boolean
  |colspan="2"| Are hands held up
  |}
+
+Statuses:
+
+;16
+:Plays the zombie cure finished sound effect (unless the entity is silent)
 
 === Enderman ===
 
@@ -1480,6 +1614,66 @@ If show custom block is false, then each type of Minecart will render its own ty
 * Command block minecarts contain a Command Block (137:0) and have a y position of 6
 * Spawner Minecarts contain a spawner (52:0) and have a y position of 6
 
+=== MinecartRideable ===
+
+Extends [[#Minecart|Minecart]].
+
+No additional metadata.
+
+=== MinecartContainer ===
+
+Extends [[#Minecart|Minecart]].
+
+No additional metadata.
+
+=== MinecartHopper ===
+
+Extends [[#MinecartContainer|MinecartContainer]].
+
+No additional metadata.
+
+=== MinecartChest ===
+
+Extends [[#MinecartContainer|MinecartContainer]].
+
+No additional metadata.
+
+=== MinecartFurnace ===
+
+Extends [[#Minecart|Minecart]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 12
+ | Boolean
+ |colspan="2"| Is powered
+ |}
+
+=== MinecartTNT ===
+
+Extends [[#Minecart|Minecart]].
+
+No additional metadata.
+
+Statuses:
+
+;10
+:Causes the TNT to ignite.  Does ''not'' play a sound; the sound must be played separately.
+
+=== MinecartSpawner ===
+
+Extends [[#Minecart|Minecart]].
+
+No additional metadata.
+
+Statuses:
+
+;1
+:Resets the delay of the spawner to 200 ticks (the default minimum value).
+
 === MinecartCommandBlock ===
 
 Extends [[#Minecart|Minecart]].
@@ -1496,20 +1690,6 @@ Extends [[#Minecart|Minecart]].
  | 13
  | [[Chat]]
  |colspan="2"| Last output
- |}
-
-=== MinecartFurnace ===
-
-Extends [[#Minecart|Minecart]].
-
-{| class="wikitable"
- ! Index
- ! Type
- !style="width: 250px;" colspan="2"| Meaning
- |-
- | 12
- | Boolean
- |colspan="2"| Is powered
  |}
 
 === TNTPrimed ===
