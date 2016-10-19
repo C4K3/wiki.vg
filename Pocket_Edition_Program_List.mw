@@ -12,7 +12,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 !Platform
 !Last Version Supported
 |-
-! [http://www.pocketmine.net/ PocketMine-MP]
+! [http://www.pmmp.gq/ PocketMine-MP]
 | Server with Plugin API, Multiworlds and more
 | Server
 | [https://twitter.com/PocketMine PocketMine Team]
@@ -20,7 +20,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{LGPL}}
 | Alpha_1.6dev
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.15.3 alpha}}
+| {{yes|v0.15.10 alpha}}
 |-
 ! [https://github.com/zhuowei/MCPELauncher BlockLauncher]
 | BlockLauncher is a custom Minecraft PE launcher that wraps around Minecraft PE and provides texture pack and patch loading support.
@@ -100,7 +100,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{GPLv3}}
 | 
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.15.4 alpha}}
+| {{yes|v0.15.10 alpha}}
 |-
 ! [https://github.com/iTXTech/Nemisys/ Nemisys]
 | Proxy to create multiserver network.
@@ -110,7 +110,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{GPLv3}}
 | Fast and stable, can teleport between the servers
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.15.4 alpha}}
+| {{yes|v0.15.10 alpha}}
 |-
 ! [http://itxtech.org/ Genisys]
 | PocketMine-based server with extended features
@@ -120,7 +120,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{GPLv3}}
 | Commands, nether, mobs AI, redstone
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.15.4 alpha}}
+| {{yes|v0.15.10 alpha}}
 |}
 
 [[Category:Pocket Minecraft]]
