@@ -26,6 +26,7 @@ Provided below is a (potentially incomplete) changelog of the server protocol st
 === 16w38a ===
 * Protocol version 306
 * Max length for Chat Message (serverbound) (0x02) changed from 100 to 256.
+* Added entity status #34, which causes an iron golem to hide its rose (fixing [https://bugs.mojang.com/browse/MC-101642 MC-101642]).
 
 === 16w36a ===
 * Protocol version 305
