@@ -120,8 +120,8 @@ Other implementations exist, such as [https://github.com/jython234/JRakLibPlus J
  | long
  | 
  |-
- | GUID
- | long
+ | MAGIC
+ | magic
  | 
  |}
 
