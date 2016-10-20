@@ -22,6 +22,7 @@ Provided below is a (potentially incomplete) changelog of the server protocol st
 :* 8 - far away player
 :* 9 - Mansion
 :* 10 - Temple
+* Added entity status #35, which plays the totem of undying animation.
 
 === 16w38a ===
 * Protocol version 306
