@@ -14,6 +14,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  ! Game Graphics
  ! Last Version Supported
  |-
+ ! [https://github.com/ammaraskar/pyCraft pyCraft]
+ | Work in progress client, displays chat at the moment
+ | Ammar Askar, resba
+ | {{Python}}
+ | {{Apache}}
+ | {{yes}}
+ | {{no}}
+ | {{yes|1.10.2 (and 1.11 snapshots)}}
+ |-
  ! [https://github.com/Thinkofname/steven steven]
  | Compiles
  | [https://github.com/Thinkofname/ Thinkofname]
@@ -175,15 +184,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{yes}}
  | {{Yes|Debug 2.5 D}}
  | {{no|1.5.2}}
- |-
- ! [https://github.com/ammaraskar/pyCraft pyCraft]
- | Work in progress client, displays chat at the moment
- | Ammar Askar, resba
- | {{Python}}
- | {{Apache}}
- | {{yes}}
- | {{no}}
- | {{yes|1.10}}
  |-
  ! [https://github.com/shoghicp/Minecraft-PHP-Client-2 Minecraft PHP Client&nbsp;2]
  | Complete rewrite of "Minecraft PHP Client". Has events and actions, and it's modular. Supports online mode and Spoutcraft
