@@ -56,6 +56,10 @@ The standard Minecraft server sends full chunks only when your client is sending
 
 For newer clients, your server needs to send 49 chunks ahead of time, not just one. Send a 7×7 square of chunks, centered on the connecting client's position, ''before'' spawning them.
 
+=== …the client is trying to send an invalid packet that beings with 0xFE01 ===
+
+The client is attempting a [[Server_List_Ping#1.6|legacy ping]], this happens if your server did not respond to the [[Server List Ping]] properly, including if it sent malformed json.
+
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
 
