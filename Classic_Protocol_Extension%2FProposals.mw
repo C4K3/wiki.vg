@@ -805,5 +805,5 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | The color that the block is multiplied by.
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 11 bytes
+| class="rightalign" colspan="4" | 68 bytes
 |}
