@@ -749,7 +749,7 @@ This extension does not define any new packets.
 
 
 ===BlockDefinitionsExt2===
-:Proposed by Goodly (WORK IN PROGRESS AT THE MOMENT)
+:Proposed by Goodly.
 :This extension allows servers to define more properties for the custom blocks provided by BlockDefinitions.
 :'''Motivation''': To allow for better custom blocks to be created.
 :'''Client Behavior''': This extension depends on [[Classic_Protocol_Extension#BlockDefinitions|BlockDefinitions extension]] and [[Classic_Protocol_Extension#BlockDefinitionsExt|BlockDefinitionsExt extension]], and must only be enabled if BOTH extensions are mutually supported. Client should be able receive any number of '''''DefineBlockExt2''''' packets during the level loading process (after receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelInitialize]]''''' and until receiving '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|LevelFinalize]]''''' packets). However, dependent on client, this can be sent after level loading (Some clients might just find it more extensible than others).
