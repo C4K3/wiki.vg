@@ -765,15 +765,6 @@ This extension does not define any new packets.
 ! Example
 ! Notes
 |-
-| class="centeralign" rowspan="8" | ??
-| class="centeralign" | Shaded
-| class="centeralign" | byte
-| class="centeralign" | <code>1</code>
-| Whether or not the block/liquid is shaded to be darker on the bottom and side faces.
-* 0 = Not shaded (All sides use the brightness that would normally be used on the top face only).
-* 1 = Shaded (The sides and bottom are darkened)
-Note: This is not the same as FullBright, which ignores sunlight and shadow color. A block that is not shaded will still use the sunlight or shadow color.
-|-
 | class="centeralign" | RandomOffset
 | class="centeralign" | byte
 | class="centeralign" | <code>1</code>
@@ -808,23 +799,11 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 * 0 = No change from original behavior
 * 1 = The block can be reached through when placing blocks and can be overwritten if a block is placed inside of it. (Similar to liquid)
 |-
-| class="centeralign" | DrawBackface
-| class="centeralign" | byte
-| class="centeralign" | <code>1</code>
-| Whether or not the block/liquid's back face is drawn..
-* 0 = Not drawn.
-* 1 = Backface is drawn.
-|-
-| class="centeralign" | ModelName
-| class="centeralign" | string
-| class="centeralign" | <code>FlowerPot</code>
-| The name of the model the block uses. For future block models.
-|-
 | class="centeralign" | HexColor
 | class="centeralign" | string
 | class="centeralign" | <code>7FC9A3</code>
 | The color that the block is multiplied by.
 |-
 ! Total Size:
-| class="rightalign" colspan="4" | 70 bytes
+| class="rightalign" colspan="4" | 11 bytes
 |}
