@@ -1,15 +1,32 @@
-Minecraft's client and server can log every packet which can be helpful for debugging.  It can also log a large amount of other information should it be necessary, beyond what is normally found in the logs.
+The Notchian client and server (and additionally the launcher) can generate additional log information that what is normally displayed, some of which is extremely helpful for debugging.  This can be done by specifying a custom [http://logging.apache.org/log4j/2.x/manual/configuration.html Log4j configuration] by supplying a <code>-Dlog4j.configurationFile=fullpathtoconfigfile.xml</code> argument to the game:
 
-    -Dlog4j.configurationFile=fullpathtoconfigfile.xml
-
-The <code>-Dlog4j.configurationFile=fullpathtoconfigfile.xml</code> should be placed:
 * [[media:ClientDebugging.png|In the JVM Arguments section of the launcher]]
 * Before the <code>-jar</code> in the server launch command
+* Before the <code>-jar</code> when directly invoking the <code>launcher.jar</code>
 
-where the config file should contain
-<syntaxhighlight lang="xml">
+{{Warning|If the configuration specified with <code>-Dlog4j.configurationFile</code> cannot be found, the default one will silently be used instead.}}
+
+You can get the default configuration for the game by extracting <code>log4j2.xml</code> from the jar you wish to work with.  
+
+== Options ==
+
+The main settings that are worth modifying is the value of <code>level</code> in <code>Root</code>, and the list of <code>filter</code>s.  (SOUNDS, NETWORK, NETWORK_PACKETS, PACKET_SENT, PACKET_RECEIVED)
+
+== Sample configs ==
+
+=== Network packets only ===
+
+''Applies to: vanilla client and server''
+
+Produces logs of all packets sent to and from the server/client, '''and nothing else''' (this also disables logging of normal content, including chat).  Unfortunately, since the Netty rewrite (Minecraft 1.7) only packet IDs and classes are logged, and not their contents; however, this information may still be helpful.
+
+{{warning|Packet IDs are shown in decimal in logs; they are not in hexadecimal.}}
+
+<div class="mw-collapsible mw-collapsed" style="border: 1px solid #aaa;">
+Config:
+<syntaxhighlight lang="xml" class="mw-collapsible-content">
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN" packages="net.minecraft,com.mojang">
+<Configuration status="WARN" packages="com.mojang.util">
     <Appenders>
         <Console name="SysOut" target="SYSTEM_OUT">
             <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
@@ -23,13 +40,13 @@ where the config file should contain
                 <TimeBasedTriggeringPolicy />
                 <OnStartupTriggeringPolicy />
             </Policies>
-            <DefaultRolloverStrategy max="999999"/>
+            <DefaultRolloverStrategy max="1000"/>
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
         <Root level="debug">
             <filters>
-                <MarkerFilter marker="NETWORK_PACKETS" onMatch="ACCEPT" onMismatch="NEUTRAL" />
+                <MarkerFilter marker="NETWORK_PACKETS" onMatch="ACCEPT" onMismatch="DENY" />
             </filters>
             <AppenderRef ref="SysOut"/>
             <AppenderRef ref="File"/>
@@ -38,27 +55,20 @@ where the config file should contain
     </Loggers> 
 </Configuration>
 </syntaxhighlight>
+</div>
 
-Doing this will display some packet information in the console.  Unfortunately after the netty rewrite (1.7), only packet names and IDs are shown; packet content is no longer given.  Nevertheless, this information still can be useful.
+=== All debug information ===
 
-{{warning|Packet IDs are shown in decimal in logs; they are not in hexadecimal.}}
+''Applies to: vanilla client and server''
 
-<pre>
-[08:21:44] [Netty Client IO #0/DEBUG]: OUT: [HANDSHAKING:0] jd
-[08:21:44] [Netty Client IO #0/DEBUG]: OUT: [STATUS:0] jw
-[08:21:44] [Netty Client IO #0/DEBUG]:  IN: [STATUS:0] js
-[08:21:44] [Netty Client IO #0/DEBUG]: OUT: [STATUS:1] jv
-[08:21:44] [Netty Client IO #0/DEBUG]:  IN: [STATUS:1] jr
-[08:21:52] [Netty Client IO #1/DEBUG]: OUT: [HANDSHAKING:0] jd
-[08:21:52] [Netty Client IO #1/DEBUG]: OUT: [LOGIN:0] jm
-[08:21:52] [Netty Client IO #1/DEBUG]:  IN: [LOGIN:1] ji
-</pre>
+You can log even more information if you want.  This will print normal log messages (such as chat), but also network packets, sounds starting/stopping playing (client only), some authentication requests, and other miscellaneous information.
 
-Minecraft can do even more logging should you need it, if you allow it to log all sections.
-
-<syntaxhighlight lang="xml">
+<div class="mw-collapsible mw-collapsed" style="border: 1px solid #aaa;">
+Config:
+<syntaxhighlight lang="xml" class="mw-collapsible-content">
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN" packages="net.minecraft,com.mojang">
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="com.mojang.util">
     <Appenders>
         <Console name="SysOut" target="SYSTEM_OUT">
             <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
@@ -72,7 +82,6 @@ Minecraft can do even more logging should you need it, if you allow it to log al
                 <TimeBasedTriggeringPolicy />
                 <OnStartupTriggeringPolicy />
             </Policies>
-            <DefaultRolloverStrategy max="999999"/>
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
@@ -81,8 +90,42 @@ Minecraft can do even more logging should you need it, if you allow it to log al
             <AppenderRef ref="File"/>
             <AppenderRef ref="ServerGuiConsole"/>
         </Root>
-    </Loggers> 
+    </Loggers>
 </Configuration>
 </syntaxhighlight>
+</div>
 
-This will give you information about networking, sounds, authentication, and several other categories.
+=== All debug information on CraftBukkit/Spigot ===
+
+''Applies to: CraftBukkit servers and servers that derive from CraftBukkit''
+
+Because CraftBukkit uses slightly different console output (and has no server GUI), the configuration needs to be slightly tweaked to display correctly.  However, doing this will also display the remapped packet class names.
+
+<div class="mw-collapsible mw-collapsed" style="border: 1px solid #aaa;">
+Config:
+<syntaxhighlight lang="xml" class="mw-collapsible-content">
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="net.minecraft,com.mojang">
+    <Appenders>
+        <Console name="WINDOWS_COMPAT" target="SYSTEM_OUT"></Console>
+        <Queue name="TerminalConsole">
+            <PatternLayout pattern="[%d{HH:mm:ss} %level]: %msg%n" />
+        </Queue>
+        <RollingRandomAccessFile name="File" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <OnStartupTriggeringPolicy />
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="WINDOWS_COMPAT"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="TerminalConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>
+</syntaxhighlight>
+</div>
