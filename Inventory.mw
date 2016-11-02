@@ -53,7 +53,7 @@ For all windows, the slot in the upper-left corner of the player's inventory is 
 
 The number of unique slots in the window is sent in the [[Protocol#Open Window|Open Window]] ([[Protocol#Play|Play]], 0x2d, clientbound) packet for all storage windows (e.g. Chest, Dropper). For non-storage windows (the items get dropped when the window is closed, e.g. Workbench, Anvil), the received number of unique slots is always 0, but it can be looked up by the client from the window type.
 
-The default inventory window, which is never explicitly opened by the server, has 9 unique slots (10 in the [[Pre-release protocol|1.9 snapshots]]).
+The default inventory window, which is never explicitly opened by the server, has 10 unique slots.
 
 Rectangular regions are always indexed starting with the upper-left corner and scanning across rows. If a window has a crafting region, the output slot is always slot 0 followed immediately by the input region.
 
