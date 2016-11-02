@@ -6,11 +6,17 @@ The Notchian client and server (and additionally the launcher) can generate addi
 
 {{Warning|If the configuration specified with <code>-Dlog4j.configurationFile</code> cannot be found, the default one will silently be used instead.}}
 
-You can get the default configuration for the game by extracting <code>log4j2.xml</code> from the jar you wish to work with.  
+You can get the default configuration for the game by extracting <code>log4j2.xml</code> from the jar you wish to work with.
 
 == Options ==
 
-The main settings that are worth modifying is the value of <code>level</code> in <code>Root</code>, and the list of <code>filter</code>s.  (SOUNDS, NETWORK, NETWORK_PACKETS, PACKET_SENT, PACKET_RECEIVED)
+There are only a few options that have useful behaviors within the log4j configuration.
+
+The main one is <code>level</code> in <code><nowiki><Root></nowiki></code>.  Normally, this is set to <code>info</code>, but it accepts <code>trace</code>, <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>, <code>all</code>, and <code>off</code>.  The lowest level that is actually used by Minecraft is <code>debug</code>, so that one should be used for maximum additional information.
+
+The other major option is the list of <code><nowiki><filter></nowiki></code>s.  By default, the game filters out information regarding packets with a <code><nowiki><filter></nowiki></code> that rejects all log messages marked with <code>NETWORK_PACKETS</code>.  You can instead make it so that the filter only accepts <code>NETWORK_PACKETS</code> and rejects everything else, or alternatively you can remove the <code><nowiki><filter></nowiki></code> entirely so that all messages are displayed.  Beyond just <code>NETWORK_PACKETS</code>, there are a few other log markers: <code>SOUNDS</code>, <code>NETWORK</code>, <code>PACKET_SENT</code>, and <code>PACKET_RECEIVED</code>.  <code>NETWORK</code> and <code>NETWORK_PACKETS</code> behave identically; <code>PACKET_SENT</code> and <code>PACKET_RECEIVED</code> can be used to show only one set of the packets; and <code>SOUNDS</code> can be used to emit information about when a sound channel starts and stops (mostly only useful when diagnosing issues where a sound seems to be playing twice).
+
+One other note: by default, log4j overwrites old logs if there are more than 7 for a day (see [https://bugs.mojang.com/browse/MC-100524 MC-100524]).  You can disable this "feature" by adding a <code><nowiki><DefaultRolloverStrategy max="1000"/></nowiki></code> to the <code><nowiki><RollingRandomAccessFile></nowiki></code>, which makes the maximum 1000 files in a day (which is much less likely to be hit - 1000 is used over something larger because at larger numbers there starts to be a performance hit).
 
 == Sample configs ==
 
@@ -82,6 +88,7 @@ Config:
                 <TimeBasedTriggeringPolicy />
                 <OnStartupTriggeringPolicy />
             </Policies>
+            <DefaultRolloverStrategy max="1000"/>
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
@@ -117,6 +124,7 @@ Config:
                 <TimeBasedTriggeringPolicy />
                 <OnStartupTriggeringPolicy />
             </Policies>
+            <DefaultRolloverStrategy max="1000"/>
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
@@ -128,4 +136,38 @@ Config:
     </Loggers>
 </Configuration>
 </syntaxhighlight>
+</div>
+
+=== Launcher session information ===
+
+''Applies to: Launcher.jar''
+
+By enabling debug launching on the launcher jar, you can view connections to the [[Mojang API]] - helpful if you want to see a sample connection to each endpoint for your own account.
+
+Note that this configuration ''may'' not work if you invoke the normal launcher EXE/JAR - instead, use it on the <code>launcher.jar</code> located in <code>%appdata%\.minecraft</code>.
+
+<div class="mw-collapsible mw-collapsed" style="border: 1px solid #aaa;">
+Config:
+<syntaxhighlight lang="xml" class="mw-collapsible-content">
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="com.mojang">
+    <Appenders>
+        <Console name="SysOut" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss} %level]: %msg%n" />
+        </Console>
+        <Queue name="DevelopmentConsole">
+            <PatternLayout pattern="[%d{HH:mm:ss} %level]: %msg%n" />
+        </Queue>
+        <Async name="Async">
+            <AppenderRef ref="SysOut"/>
+            <AppenderRef ref="DevelopmentConsole"/>
+        </Async>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Async"/>
+        </Root>
+    </Loggers>
+</Configuration>
+
 </div>
