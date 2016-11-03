@@ -203,9 +203,9 @@ public static void writeVarLong(long value) {
 }
 </syntaxhighlight>
 
-{{Warning2|Note that Minecraft's VarInts are not encoded using Protocol Buffers; it's just that the format is somewhat similar.  If you try to use Protocol Buffers Varints with Minecraft's VarInts, you'll get incorrect results.  The major differences:
-*Minecraft's VarInts are all signed, but use the encoding normally used for unsigned Varints (not the ZigZag encoding).  Thus, negative values always use the maximum number of bytes.
-*Minecraft's VarInts are never be longer than 5 bytes and its VarLongs will never be longer than 10 bytes, while both sizes of Protocol Buffer Varints cap at 10 bytes (even if it's an int32) - this difference can be seen when encoding -1.}}
+{{Warning2|Note that Minecraft's VarInts are not encoded using Protocol Buffers; it's just similar.  If you try to use Protocol Buffers Varints with Minecraft's VarInts, you'll get incorrect results in some cases.  The major differences:
+*Minecraft's VarInts are all signed, but do not use the ZigZag encoding.  Protocol buffers have 3 types of Varints: <code>uint32</code> (normal encoding, unsigned), <code>sint32</code> (ZigZag encoding, signed), and <code>int32</code> (normal encoding, signed).  Minecraft's are the <code>int32</code> variety.  Because Minecraft uses the normal encoding instead of ZigZag encoding, negative values always use the maximum number of bytes.
+*Minecraft's VarInts are never be longer than 5 bytes and its VarLongs will never be longer than 10 bytes, while Protocol Buffer Varints will always use 10 bytes when encoding negative numbers, even if it's an <code>int32</code>.}}
 
 Sample VarInts:
 
