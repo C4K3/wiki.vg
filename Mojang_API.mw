@@ -107,8 +107,6 @@ The <code>changedToAt</code> field is a Java timestamp in milliseconds.
 
   POST https://api.mojang.com/profiles/minecraft
 
-Where 'minecraft' - agent name
-
 This will return player UUIDS and some extras.
 
 === Payload ===
