@@ -857,9 +857,11 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | 34
  | 
  |-
- | {{Minecraft Wiki|12w21ab}}
- | 33
- | 
+ | {{Minecraft Wiki|12w21b}}
+ |rowspan="2"| 33
+ |rowspan="2"| 
+ |-
+ | {{Minecraft Wiki|12w21a}}
  |-
  | {{Minecraft Wiki|12w19a}}
  |rowspan="2"| 32
@@ -969,11 +971,11 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |rowspan="4"|14
  |rowspan="4"|
  |-
- | '''{{Minecraft Wiki|1.7.2}}'''
+ | '''{{Minecraft Wiki|Beta 1.7.2}}'''
  |-
- | '''{{Minecraft Wiki|1.7.1}}'''
+ | '''{{Minecraft Wiki|Beta 1.7.1}}'''
  |-
- | '''{{Minecraft Wiki|1.7}}'''
+ | '''{{Minecraft Wiki|Beta 1.7}}'''
  |-
  | '''{{Minecraft Wiki|Beta 1.6.6}}'''?
  |rowspan="7"|13
