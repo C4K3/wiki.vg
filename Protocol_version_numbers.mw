@@ -910,12 +910,16 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | {{Minecraft Wiki|12w02a}}
  |-
  | '''{{Minecraft Wiki|1.1}}'''
- | rowspan="6"|23
- | rowspan="6"|
+ | 23
+ |
  |-
- | {{Minecraft Wiki|12w01a}}?
+ | {{Minecraft Wiki|12w01a}}
+ | {{Unknown|Unknown (23?)}}
+ | 
  |-
  | {{Minecraft Wiki|11w50a}}
+ | rowspan="4"|23
+ | rowspan="4"|
  |-
  | {{Minecraft Wiki|11w49a}}
  |-
@@ -923,11 +927,13 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | {{Minecraft Wiki|11w47a}}
  |-
- | '''{{Minecraft Wiki|1.0.1}}'''?
- |rowspan=5|22
- |rowspan=5|[{{canonicalurl:Protocol|oldid=689}} page]
+ | '''{{Minecraft Wiki|1.0.1}}'''
+ | {{Unknown|Unknown (22?)
+ | 
  |-
  | '''{{Minecraft Wiki|1.0.0}}'''
+ |rowspan=4|22
+ |rowspan=4|[{{canonicalurl:Protocol|oldid=689}} page]
  |-
  | {{Minecraft Wiki|1.0.0-RC2}}
  |-
@@ -1026,12 +1032,16 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  | '''{{Minecraft Wiki|Beta 1.1_02}}'''
  |-
  | '''{{Minecraft Wiki|Beta 1.1_01}}'''
- |rowspan="5"| 7
- |rowspan="5"|
+ | 7
+ |
  |-
- | '''{{Minecraft Wiki|Beta 1.1}}'''?
+ | '''{{Minecraft Wiki|Beta 1.1}}'''
+ | {{Unknown|Unknown (7?)}}
+ |
  |-
  | '''{{Minecraft Wiki|Beta 1.0_02}}'''
+ |rowspan="3"| 7
+ |rowspan="3"|
  |-
  | '''{{Minecraft Wiki|Beta 1.0_01}}'''
  |-
