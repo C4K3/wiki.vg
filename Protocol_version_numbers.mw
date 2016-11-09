@@ -1085,10 +1085,6 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |-
  | '''{{Minecraft Wiki|Alpha 1.2.0}}'''
  |-
- | '''{{Minecraft Wiki|Alpha 1.2}}'''
- | {{Unknown|Does this even exist?}}
- |
- |-
  | '''{{Minecraft Wiki|Alpha 1.1.2_01}}'''
  |rowspan="2"| 2
  |rowspan="2"|
@@ -1100,11 +1096,7 @@ Minecraft version 1.6.4 and older used a protocol versioning scheme separate fro
  |
  |-
  | '''{{Minecraft Wiki|Alpha 1.1.0}}'''
- |rowspan="1"| 2
- |
- |-
- | '''{{Minecraft Wiki|Alpha 1.1}}'''
- | {{Unknown|Does this even exist?}}
+ | 2
  |
  |-
  | '''{{Minecraft Wiki|Alpha 1.0.17_04}}'''
