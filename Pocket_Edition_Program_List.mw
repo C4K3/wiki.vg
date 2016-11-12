@@ -20,7 +20,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{LGPL}}
 | Alpha_1.6dev
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.15.10 alpha}}
+| {{yes|v0.16.0 alpha}}
 |-
 ! [https://github.com/zhuowei/MCPELauncher BlockLauncher]
 | BlockLauncher is a custom Minecraft PE launcher that wraps around Minecraft PE and provides texture pack and patch loading support.
@@ -70,7 +70,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{LGPL}}
 | Fast and functionful
 | {{windows}}{{linux}}{{mac}}{{android}}
-| {{Yes|v0.15.6 alpha}}
+| {{Yes|v0.16.0 alpha}}
 |-
 ! [https://github.com/numerous-alpaca/numerous-alpaca numerous-alpaca]
 | A Minecraft: PE Server in JavaScript
@@ -80,17 +80,17 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{MIT}}
 | Complete with Async and JavaScript plugins
 | {{windows}}{{linux}}{{mac}}
-| {{Yes|v0.14.3}}
+| {{no|v0.14.3}}
 |-
 ! [https://github.com/minecrafter/voxelwind Voxelwind]
 | A sane high-performance Minecraft: Pocket Edition server (in development)
 | Server
 | [https://github.com/minecrafter minecrafter] / [https://twitter.com/ModifyFunction @ModifyFunction]
-| Java
+| {{Java}}
 | {{MIT}}
 | Incomplete. Flatworld and basic entity support.
 | {{windows}}{{linux}}{{mac}}
-| {{Yes|v0.15.4}}
+| {{Yes|v0.16.0}}
 |-
 ! [https://github.com/ClearSkyTeam/ClearSky/ ClearSky]
 | PocketMine-MP based server software designed for performance
@@ -100,7 +100,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{GPLv3}}
 | 
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.15.10 alpha}}
+| {{yes|v0.16.0 alpha}}
 |-
 ! [https://github.com/iTXTech/Nemisys/ Nemisys]
 | Proxy to create multiserver network.
@@ -110,7 +110,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{GPLv3}}
 | Fast and stable, can teleport between the servers
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.15.10 alpha}}
+| {{yes|v0.16.0 alpha}}
 |-
 ! [http://itxtech.org/ Genisys]
 | PocketMine-based server with extended features
@@ -120,7 +120,7 @@ List of Minecraft: PE Clients, Servers, Libraries, Wrappers and Tools.
 | {{GPLv3}}
 | Commands, nether, mobs AI, redstone
 | {{windows}}{{linux}}{{mac}}{{Android}}
-| {{yes|v0.15.10 alpha}}
+| {{yes|v0.16.0 alpha}}
 |}
 
 [[Category:Pocket Minecraft]]
