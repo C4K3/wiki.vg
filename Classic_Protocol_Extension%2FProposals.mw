@@ -804,6 +804,14 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="centeralign" | <code>7FC9A3</code>
 | The color that the block is multiplied by.
 |-
+| class="centeralign" | LiquidType
+| class="centeralign" | byte
+| class="centeralign" | <code>1</code>
+| The type of liquid physics for the block. For true lava and water variations.
+* 0 = No change from original behavior
+* 1 = Block behaves like water and uses water offset
+* 2 = Block behaves like lava and uses lava offset
+|-
 ! Total Size:
-| class="rightalign" colspan="4" | 68 bytes
+| class="rightalign" colspan="4" | 69 bytes
 |}
