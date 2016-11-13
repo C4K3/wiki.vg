@@ -799,10 +799,20 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 * 0 = No change from original behavior
 * 1 = The block can be reached through when placing blocks and can be overwritten if a block is placed inside of it. (Similar to liquid)
 |-
-| class="centeralign" | HexColor
-| class="centeralign" | string
-| class="centeralign" | <code>7FC9A3</code>
-| The color that the block is multiplied by.
+| class="centeralign" | Red
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Red component that the block is multiplied by.
+|-
+| class="centeralign" | Green
+| class="centeralign" | byte
+| class="centeralign" | <code>109</code>
+| Green component that the block is multiplied by.
+|-
+| class="centeralign" | Blue
+| class="centeralign" | byte
+| class="centeralign" | <code>255</code>
+| Blue component that the block is multiplied by.
 |-
 ! Total Size:
 | class="rightalign" colspan="4" | 69 bytes
