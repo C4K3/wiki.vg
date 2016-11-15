@@ -1418,7 +1418,7 @@ Used to play a sound effect on the client. Custom sounds may be added by resourc
  |rowspan="7"| Client
  | Sound Name
  | String
- | All sound effect names as of 1.10.0 can be seen [http://pokechu22.github.io/Burger/1.10.html#sounds here].
+ | All sound effect names as of 1.11.0 can be seen [http://pokechu22.github.io/Burger/1.11.html#sounds here].
  |-
  | Sound Category
  | VarInt Enum
@@ -3655,7 +3655,7 @@ This packet is used to play a number of hardcoded sound events. For custom sound
  |rowspan="7"| Client
  | Sound ID
  | VarInt
- | ID of hardcoded sound event ([http://pokechu22.github.io/Burger/1.10.html#sounds events] as of 1.10.0)
+ | ID of hardcoded sound event ([http://pokechu22.github.io/Burger/1.11.html#sounds events] as of 1.11.0)
  |-
  | Sound Category
  | VarInt Enum
