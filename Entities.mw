@@ -273,6 +273,11 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | 0.3125
 | 0.3125
 |- 
+| 68
+| Llama spit
+| 0.25
+| 0.25
+|- 
 | 70
 | Falling Objects
 | 0.98
@@ -312,6 +317,11 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 | ArmorStand
 | 0.5
 | 2.0
+|-
+| 79
+| Evocation Fangs
+| 0.8
+| 0.5
 |- 
 | 90
 | Fishing Hook
