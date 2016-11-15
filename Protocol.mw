@@ -340,7 +340,7 @@ Sent by the server when a mob entity is spawned.
  | 
  |-
  | Type
- | Unsigned Byte
+ | VarInt
  | The type of mob. See [[Entities#Mobs]]
  |-
  | X
