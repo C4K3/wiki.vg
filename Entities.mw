@@ -1440,6 +1440,8 @@ Statuses:
 :Plays attack animation and attack sound
 ;11
 :Causes golem to hold out a <s>rose</s> poppy for 400 ticks (20 seconds)
+;34
+:Puts away golem's poppy
 
 === Snowman ===
 
