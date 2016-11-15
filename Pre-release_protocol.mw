@@ -14,6 +14,17 @@ No changes so far.
 
 No changes so far.
 
+<!-- 
+{| class="wikitable"
+ ! ID
+ ! Packet name
+ !colspan="2"| Documentation
+ |-
+!colspan="4"| Handshaking serverbound
+{{PacketList|0x00|Handshake}}
+ |}
+-->
+
 == New/modified data types ==
 
 No changes so far.
@@ -33,6 +44,41 @@ No changes so far.
 === Serverbound ===
 
 No changes so far.
+
+<!-- Version number will change meaning that this needs to be uncommented
+
+==== Handshake ====
+
+This causes the server to switch into the target state.
+
+{| class="wikitable"
+ ! Packet ID
+ ! State
+ ! Bound To
+ ! Field Name
+ ! Field Type
+ ! Notes
+ |-
+ |rowspan="4"| 0x00
+ |rowspan="4"| Handshaking
+ |rowspan="4"| Server
+ | Protocol Version
+ | VarInt
+ | See [[protocol version numbers]] (currently {{change|315|316}})
+ |-
+ | Server Address
+ | String
+ | Hostname or IP, e.g. localhost or 127.0.0.1, that was used to connect.  The Notchian server does not use this information.
+ |- 
+ | Server Port
+ | Unsigned Short
+ | Default is 25565.  The Notchian server does not use this information.
+ |-
+ | Next State
+ | VarInt Enum
+ | 1 for [[#Status|status]], 2 for [[#Login|login]]
+ |}
+-->
 
 == Status ==
 
