@@ -3719,9 +3719,9 @@ Sent by the server when someone picks up an item lying on the ground — its sol
  ! Field Type
  ! Notes
  |-
- |rowspan="2"| 0x48
- |rowspan="2"| Play
- |rowspan="2"| Client
+ |rowspan="3"| 0x48
+ |rowspan="3"| Play
+ |rowspan="3"| Client
  | Collected Entity ID
  | VarInt
  | 
