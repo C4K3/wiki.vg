@@ -43,17 +43,7 @@ No changes so far
 
 == Block Actions ==
 
-=== Shulker Box ===
-
-Animates the shulker box's shell opening.
-
-==== Action IDs ====
-
-There is only one action: 1, which updates the number of players who are looking in the shulker box.
-
-==== Action param ====
-
-If the action is 1, updates the number of players who have the shulker box open.  If 0, the shulker box enters its closing animation; if 1, the shulker box enters its opening animation.
+No change so far. 
 
 [[Category:Minecraft Modern]]
 
