@@ -798,6 +798,7 @@ Sets tile entity associated with the block at the given location.
 * '''7''': Set the data for a Structure tile entity
 * '''8''': Set the destination for a end gateway
 * '''9''': Set the text on a sign
+* '''10''': Declare a shulker box (unclear if there is any actual data)
 
 ==== Block Action ====
 
