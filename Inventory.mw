@@ -47,7 +47,7 @@ Minecraft displays the '''player inventory''' differently, according to how the 
  | {{Minecraft Wiki|Shulker box}}
  |- 
  | EntityHorse
- | {{Minecraft Wiki|Horse|Horse, donkey, or mule}}
+ | {{Minecraft Wiki|Horse|Horse, donkey, mule}} or {{Minecraft Wiki|Llama}}
  |}
 
 The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory.
@@ -378,6 +378,69 @@ The window that appears when a hopper or hopper minecart is opened.
  |}
 
 {{-}}
+
+== Shulker box ==
+<!-- Yes, this image doesn't exist yet; I'll add it later. -->
+[[File:Shulker-box-slots.png|thumb|Shulker box slots]]
+
+This is the window that is opened when the player right-clicks on a shulker box chest.
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0–26
+ | box slots
+ |-
+ | 27–53
+ | main inventory
+ |-
+ | 54–62
+ | hotbar
+ |}
+
+{{-}}
+
+== Llama ==
+<!-- Again, this image doesn't exist yet -->
+[[File:Llama-strength5-slots.png|thumb|Llama slots]]
+
+The inventory that appears when a tamed llama is right-clicked and has a chest, or when the player's inventory is opened while riding a tamed llama.  Depending on the value of the strength field, the number of chest rows may vary (max is 5, so 15 slots).
+
+{{warning|There still is a saddle slot, even though it cannot be used and is invisible.}}
+
+{{warning|Slot positions within the llama inventory vary - slot 2 may be at (1,0) or at (0,1) depending on the number of columns.}}
+
+{| class="wikitable"
+ |-
+ ! Slot range
+ ! Description
+ |-
+ | 0
+ | saddle
+ |-
+ | 1
+ | carpet
+ |-
+ | 2-(2+3*Strength)
+ | llama inventory
+ |-
+ | (2+3*Strength)+1-(2+3*Strength)+27
+ | player inventory
+ |-
+ | (2+3*Strength)+28-(2+3*Strength)+35
+ | hotbar
+ |}
+
+<gallery>
+File:Llama-unchested-slots.png|Unchested llama
+File:Llama-strength1-slots.png|Llama with strength 1
+File:Llama-strength2-slots.png|Llama with strength 2
+File:Llama-strength3-slots.png|Llama with strength 3
+File:Llama-strength4-slots.png|Llama with strength 4
+File:Llama-strength5-slots.png|Llama with strength 5
+</gallery>
 
 == Horse ==
 
