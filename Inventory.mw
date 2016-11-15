@@ -380,7 +380,6 @@ The window that appears when a hopper or hopper minecart is opened.
 {{-}}
 
 == Shulker box ==
-<!-- Yes, this image doesn't exist yet; I'll add it later. -->
 [[File:Shulker-box-slots.png|thumb|Shulker box slots]]
 
 This is the window that is opened when the player right-clicks on a shulker box chest.
@@ -403,7 +402,6 @@ This is the window that is opened when the player right-clicks on a shulker box 
 {{-}}
 
 == Llama ==
-<!-- Again, this image doesn't exist yet -->
 [[File:Llama-strength5-slots.png|thumb|Llama slots]]
 
 The inventory that appears when a tamed llama is right-clicked and has a chest, or when the player's inventory is opened while riding a tamed llama.  Depending on the value of the strength field, the number of chest rows may vary (max is 5, so 15 slots).
