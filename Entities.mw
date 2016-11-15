@@ -970,6 +970,8 @@ Statuses:
 :Set {{Minecraft Wiki|Server.properties#op-permission-level|op permission level}} to 3
 ;28
 :Set {{Minecraft Wiki|Server.properties#op-permission-level|op permission level}} to 4
+;35
+:Plays the Totem of Undying animation
 
 === ArmorStand ===
 
