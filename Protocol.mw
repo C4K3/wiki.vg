@@ -3581,9 +3581,9 @@ The default SMP server increments the time by <code>20</code> every second.
  ! Field Type
  ! Notes
  |-
- |rowspan="9"| 0x45
- |rowspan="9"| Play
- |rowspan="9"| Client
+ |rowspan="10"| 0x45
+ |rowspan="10"| Play
+ |rowspan="10"| Client
  |colspan="2"| Action
  | VarInt Enum
  | 
@@ -3602,8 +3602,13 @@ The default SMP server increments the time by <code>20</code> every second.
  | Subtitle Text
  | [[Chat]]
  | 
+ |- 
+ | 2: set action bar
+ | Action bar text
+ | [[Chat]]
+ | Behaves the same as with position 2 in [[#Chat Message (clientbound)|Chat Message (clientbound)]]
  |-
- |rowspan="3"| 2: set times and display
+ |rowspan="3"| 3: set times and display
  | Fade In
  | Int
  | Ticks to spend fading in
@@ -3616,12 +3621,12 @@ The default SMP server increments the time by <code>20</code> every second.
  | Int
  | Ticks to spend out, not when to start fading out
  |-
- | 3: hide
+ | 4: hide
  | ''no fields''
  | ''no fields''
  | 
  |-
- | 4: reset
+ | 5: reset
  | ''no fields''
  | ''no fields''
  | 
