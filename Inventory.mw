@@ -42,6 +42,9 @@ Minecraft displays the '''player inventory''' differently, according to how the 
  |-
  | minecraft:dropper
  | {{Minecraft Wiki|Dropper}}
+ |-
+ | minecraft:shulker_box
+ | {{Minecraft Wiki|Shulker box}}
  |- 
  | EntityHorse
  | {{Minecraft Wiki|Horse|Horse, donkey, or mule}}
