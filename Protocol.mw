@@ -3729,6 +3729,10 @@ Sent by the server when someone picks up an item lying on the ground — its sol
  | Collector Entity ID
  | VarInt
  | 
+ |- 
+ | Pickup Item Count
+ | VarInt
+ | Seems to be 1 for XP orbs, otherwise the number of items in the stack.
  |}
 
 ==== Entity Teleport ====
