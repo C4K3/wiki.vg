@@ -1,8 +1,8 @@
 Various '''Entities''' have different metadata fields and status codes.
 
-== Mobs ==
+=== Mobs ===
 
-Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]]. There are two extra mob types in the code that refer to mobs classes that can never spawn: Mob and Monster (they are always subclasses, aka another more specific type).
+Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 
 {| class="wikitable"
 |- 
@@ -10,186 +10,301 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]]. There are two extra mob t
 ! Name
 ! x, z
 ! y
-|-
-| 48
-| Mob
-| N/A
-| N/A
-|-
-| 49
-| Monster
-| N/A
-| N/A
+! ID
+|- 
+| 4
+| ElderGuardian
+| 0.85
+| 0.85
+| <code>minecraft:elder_guardian</code>
+|- 
+| 5
+| WitherSkeleton
+| 0.7
+| 2.4
+| <code>minecraft:wither_skeleton</code>
+|- 
+| 6
+| Stray
+| 0.6
+| 1.99
+| <code>minecraft:stray</code>
+|- 
+| 23
+| Husk
+| 0.6
+| 1.95
+| <code>minecraft:husk</code>
+|- 
+| 27
+| ZombieVillager
+| 0.6
+| 1.95
+| <code>minecraft:zombie_villager</code>
+|- 
+| 28
+| SkeletonHorse
+| 1.396484
+| 1.6
+| <code>minecraft:skeleton_horse</code>
+|- 
+| 29
+| ZombieHorse
+| 1.396484
+| 1.6
+| <code>minecraft:zombie_horse</code>
+|- 
+| 31
+| Donkey
+| 1.396484
+| 1.6
+| <code>minecraft:donkey</code>
+|- 
+| 32
+| Mule
+| 1.396484
+| 1.6
+| <code>minecraft:mule</code>
+|- 
+| 33
+| EvocationFangs
+| 0.5
+| 0.8
+| <code>minecraft:evocation_fangs</code>
+|- 
+| 34
+| EvocationIllager
+| 0.6
+| 1.95
+| <code>minecraft:evocation_illager</code>
+|- 
+| 35
+| Vex
+| 0.4
+| 0.8
+| <code>minecraft:vex</code>
+|- 
+| 36
+| VindicationIllager
+| 0.6
+| 1.95
+| <code>minecraft:vindication_illager</code>
 |-
 | 50
 | Creeper
 | 0.6
 | 1.7
+| <code>minecraft:creeper</code>
 |-
 | 51
 | Skeleton
 | 0.6
 | 1.99
+| <code>minecraft:skeleton</code>
 |- 
 | 52
 | Spider
 | 1.4
 | 0.9
+| <code>minecraft:spider</code>
 |- 
 | 53
 | Giant
 | 0.6 * 6
 | 1.8 * 6
+| <code>minecraft:giant</code>
 |- 
 | 54
 | Zombie
 | 0.6
 | 1.8
+| <code>minecraft:zombie</code>
 |- 
 | 55
 | Slime
 | 0.51000005 * size
 | 0.51000005 * size
+| <code>minecraft:slime</code>
 |- 
 | 56
 | Ghast
 | 4
 | 4
+| <code>minecraft:ghast</code>
 |- 
 | 57
-| PigZombie (Zombie Pigman)
+| PigZombie
 | 0.6
 | 1.8
+| <code>minecraft:zombie_pigman</code>
 |- 
 | 58
 | Enderman
 | 0.6
 | 2.9
+| <code>minecraft:enderman</code>
 |- 
 | 59
 | CaveSpider
 | 0.7
 | 0.5
+| <code>minecraft:cave_spider</code>
 |- 
 | 60
 | Silverfish
 | 0.4
 | 0.3
+| <code>minecraft:silverfish</code>
 |- 
 | 61
 | Blaze
 | 0.6
 | 1.8
+| <code>minecraft:blaze</code>
 |- 
 | 62
 | LavaSlime (Magma Cube)
 | 0.51000005 * size
 | 0.51000005 * size
+| <code>minecraft:magma_cube</code>
 |- 
 | 63
 | EnderDragon
 | 16.0
 | 8.0
+| <code>minecraft:ender_dragon</code>
 |- 
 | 64
 | WitherBoss
 | 0.9
 | 3.5
+| <code>minecraft:wither</code>
 |- 
 | 65
 | Bat
 | 0.5
 | 0.9
+| <code>minecraft:bat</code>
 |- 
 | 66
 | Witch
 | 0.6
 | 1.8
+| <code>minecraft:witch</code>
 |- 
 | 67
 | Endermite
 | 0.4
 | 0.3
+| <code>minecraft:endermite</code>
 |- 
 | 68
 | Guardian
 | 0.85
 | 0.85
+| <code>minecraft:guardian</code>
 |- 
 | 69
 | Shulker
 | 1
 | 1
+| <code>minecraft:shulker</code>
 |- 
 | 90
 | Pig
 | 0.9
 | 0.9
+| <code>minecraft:pig</code>
 |- 
 | 91
 | Sheep
 | 0.9
 | 1.3
+| <code>minecraft:sheep</code>
 |- 
 | 92
 | Cow
 | 0.9
 | 1.4
+| <code>minecraft:cow</code>
 |- 
 | 93
 | Chicken
 | 0.4
 | 0.7
+| <code>minecraft:chicken</code>
 |- 
 | 94
 | Squid
 | 0.8
 | 0.8
+| <code>minecraft:squid</code>
 |- 
 | 95
 | Wolf
 | 0.6
 | 0.85
+| <code>minecraft:wolf</code>
 |- 
 | 96
 | MushroomCow (Mooshroom)
 | 0.9
 | 1.3
+| <code>minecraft:mooshroom</code>
 |- 
 | 97
 | SnowMan
 | 0.7
 | 1.9
+| <code>minecraft:snowman</code>
 |- 
 | 98
 | Ozelot (Ocelot)
 | 0.6
 | 0.8
+| <code>minecraft:ocelot</code>
 |- 
 | 99
 | VillagerGolem (Iron Golem)
 | 1.4
 | 2.7
+| <code>minecraft:villager_golem</code>
 |- 
 | 100
 | EntityHorse
-| 1.4
+| 1.396484
 | 1.6
+| <code>minecraft:horse</code>
 |- 
 | 101
 | Rabbit
 | 0.4
 | 0.5
+| <code>minecraft:rabbit</code>
 |- 
 | 102
 | PolarBear
 | 1.3
 | 1.4
+| <code>minecraft:polar_bear</code>
+|- 
+| 103
+| Llama
+| 1.3964844
+| 1.87
+| <code>minecraft:llama</code>
+|- 
+| 104
+| LlamaSpit
+| 0.25
+| 0.25
+| <code>minecraft:llama_spit</code>
 |- 
 | 120
 | Villager
 | 0.6
 | 1.95
+| <code>minecraft:villager</code>
 |}
 
 == Objects ==
