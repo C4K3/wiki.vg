@@ -4004,7 +4004,7 @@ Sent when the user presses ''tab'' while writing text.
 
 ==== Chat Message (serverbound) ====
 
-Used to send a chat message to the server.  The message may not be longer than 100 characters or else the server will kick the client.
+Used to send a chat message to the server.  The message may not be longer than 256 characters or else the server will kick the client.
 
 If the message starts with a <code>/</code>, the server will attempt to interpret it as a command.  Otherwise, the server will broadcast the same chat message to all players on the server (including the player that sent the message), prepended with player's name.  Specifically, it will respond with a translate [[chat]] component, "<code>chat.type.text</code>" with the first parameter set to the display name of the player (including some chat component logic to support clicking the name to send a PM) and the second parameter set to the message.
 
