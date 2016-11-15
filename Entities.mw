@@ -1128,7 +1128,8 @@ Statuses:
 ;18
 :Spawn "love mode" heart particles
 
-=== Horse ===
+
+=== AbstractHorse ===
 
 Extends [[#Animal|Animal]].
 
@@ -1167,27 +1168,79 @@ Extends [[#Animal|Animal]].
  | Is mouth open
  |-
  | 14
- | VarInt
- |colspan="2"| Type
+ | OptUUID
+ |colspan="2"| Owner
+ |}
+
+=== Horse ===
+
+Extends [[#AbstractHorse|AbstractHorse]].
+
+{| class="wikitable" 
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
  |-
  | 15
  | VarInt
  |colspan="2"| Variant (Color & Style)
  |-
  | 16
- | OptUUID
- |colspan="2"| Owner
- |-
- | 17
  | VarInt
  |colspan="2"| Armor
  |}
 
-Statuses:
-;6
-:Spawn smoke particles (taming failed)
-;7
-:Spawn heart particles (taming succeeded)
+=== ZombieHorse ===
+
+Extends [[#AbstractHorse|AbstractHorse]].
+
+=== SkeletonHorse ===
+
+Extends [[#AbstractHorse|AbstractHorse]].
+
+=== ChestedHorse ===
+
+Extends [[#AbstractHorse|AbstractHorse]].
+
+{| class="wikitable" 
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 15
+ | Boolean
+ |colspan="2"| Has Chest
+ |}
+
+=== Donkey ===
+
+Extends [[#ChestedHorse|ChestedHorse]].
+
+=== Llama ===
+
+Extends [[#ChestedHorse|ChestedHorse]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 16
+ | Integer
+ | colspan="2"| Strength (number of columns of 3 slots in the llama's inventory once a chest is equipped)
+ |-
+ | 17
+ | Integer
+ | colspan="2"| Carpet color (a dye color, or -1 if no carpet equipped)
+ |-
+ | 18
+ | Integer
+ | colspan="2"| Variant (0: <code>llama_creamy.png</code>, 1: <code>llama_white.png</code>, 2: <code>llama_brown.png</code>, 3: <code>llama_gray.png</code>)
+ |}
+
+=== Mule ===
+
+Extends [[#ChestedHorse|ChestedHorse]].
 
 === Pig ===
 
@@ -1346,7 +1399,7 @@ Extends [[#Ageable|Ageable]].
  |-
  | 13
  | VarInt
- |colspan="2"| Profession (Farmer = 0, Librarian = 1, Priest = 2, Blacksmith = 3, Butcher = 4)
+ |colspan="2"| Profession (Farmer = 0, Librarian = 1, Priest = 2, Blacksmith = 3, Butcher = 4, Nitwit = 5)
  |}
 
 Statuses:
@@ -1426,6 +1479,10 @@ Extends [[#Golem|Golem]].
  | 14
  | Byte
  |colspan="2"| Shield height
+ |- 
+ | 15
+ | Byte
+ | colspan="2"| Color (dye color, default of purple)
  |}
 
 === Monster ===
@@ -1494,22 +1551,19 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
- |-
- |rowspan="3"| 12
- |rowspan="3"| Byte
- ! Bit mask
- ! Meaning
- |-
- | 0x02
- | is retracting spikes
- |-
- | 0x04
- | is elderly
+ |- 
+ | 12
+ | Boolean
+ |colspan="2"| Is retracting spikes
  |-
  | 13
  | VarInt
  |colspan="2"| Target EID
  |}
+
+=== ElderGuardian ===
+
+Extends [[#Guardian|Guardian]].
 
 === Silverfish ===
 
@@ -1517,7 +1571,7 @@ Extends [[#Monster|Monster]].
 
 No additional metadata.
 
-=== Skeleton ===
+=== EvocationIllager ===
 
 Extends [[#Monster|Monster]].
 
@@ -1527,13 +1581,75 @@ Extends [[#Monster|Monster]].
  !style="width: 250px;" colspan="2"| Meaning
  |-
  | 12
- | VarInt
- |colspan="2"| Type (Normal = 0, Wither = 1, Stray = 2)
- |-
- | 13
- | Boolean
- |colspan="2"| Is swinging arms (Used to animate arms for melee attacks; only used when the skeleton does not have a bow in its hand)
+ | Byte
+ | Unknown (Probably hands up animation)
  |}
+
+=== Vex ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ |rowspan="3"| 12
+ |rowspan="3"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | Is in attack mode
+ |}
+
+=== VindicationIllager ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ |rowspan="3"| 12
+ |rowspan="3"| Byte
+ ! Bit mask
+ ! Meaning
+ |-
+ | 0x01
+ | Has target (aggressive state)
+ |}
+
+=== EvocationFangs ===
+
+Extends [[#Entity|Entity]].
+
+=== AbstractSkeleton ===
+
+Extends [[#Monster|Monster]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |-
+ | 12
+ | Boolean
+ |colspan="2"| Is swinging arms
+ |}
+
+=== Skeleton ===
+
+Extends [[#AbstractSkeleton|AbstractSkeleton]].
+
+=== Wither Skeleton ===
+
+Extends [[#AbstractSkeleton|AbstractSkeleton]].
+
+=== Stray ===
+
+Extends [[#AbstractSkeleton|AbstractSkeleton]].
 
 === Spider ===
 
@@ -1613,13 +1729,9 @@ Extends [[#Monster|Monster]].
  |-
  | 13
  | VarInt
- |colspan="2"| Zombie type (0 for zombie, profession+1 for villagers, 6 for Husk)
+ |colspan="2"| Unused
  |-
  | 14
- | Boolean
- |colspan="2"| Is converting
- |-
- | 15
  | Boolean
  |colspan="2"| Are hands held up
  |}
@@ -1628,6 +1740,28 @@ Statuses:
 
 ;16
 :Plays the zombie cure finished sound effect (unless the entity is silent)
+
+=== Zombie Villager ===
+
+Extends [[#Zombie|Zombie]].
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ |- 
+ | 15
+ | Boolean
+ |colspan="2"| Is converting
+ |- 
+ | 16
+ | VarInt
+ |colspan="2"| Profession
+ |}
+
+=== Husk ===
+
+Extends [[#Zombie|Zombie]].
 
 === Enderman ===
 
@@ -1694,6 +1828,10 @@ Extends [[#Insentient|Insentient]].
  | VarInt
  |colspan="2"| Size
  |}
+
+=== LlamaSpit ===
+
+Extends [[#Entity|Entity]].
 
 === Minecart ===
 
