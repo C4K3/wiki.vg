@@ -1,6 +1,6 @@
 Various '''Entities''' have different metadata fields and status codes.
 
-=== Mobs ===
+== Mobs ==
 
 Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 
