@@ -2335,7 +2335,16 @@ Types are based off of rows and columns in <code>map_icons.png</code>:
  | 6
  | White circle (off-map players)
  |-
- | 7-15
+ | 7
+ | Small white circle (far-off-map players)
+ |-
+ | 8
+ | Mansion
+ |-
+ | 9
+ | Temple
+ |-
+ | 10-15
  | Unused (blue square)
  |}
 
