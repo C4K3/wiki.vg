@@ -5052,16 +5052,16 @@ The Notchian client only uses this to teleport to players, but it appears to acc
  | The hand from which the block is placed; 0: main hand, 1: off hand
  |-
  | Cursor Position X
- | Unsigned Byte
- | The position of the crosshair on the block, from 0 to 15 increasing from west to east
+ | Float
+ | The position of the crosshair on the block, from 0 to 1 increasing from west to east
  |-
  | Cursor Position Y
- | Unsigned Byte
- | The position of the crosshair on the block, from 0 to 15 increasing from bottom to top
+ | Float
+ | The position of the crosshair on the block, from 0 to 1 increasing from bottom to top
  |-
  | Cursor Position Z
- | Unsigned Byte
- | The position of the crosshair on the block, from 0 to 15 increasing from north to south
+ | Float
+ | The position of the crosshair on the block, from 0 to 1 increasing from north to south
  |}
 
 In normal operation (i.e. placing a block), this packet is sent once, with the values set normally.
