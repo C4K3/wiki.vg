@@ -773,7 +773,7 @@ This extension does not define any new packets.
 * 1 = Randomly offset on the X and Z axis from -3/16 to 3/16.
 * 2 = Randomly offset on the Y axis from -3/16 to 3/16.
 * 3 = Randomly offset on the Y axis from -3/16 to 0.
-* 4 = Randomly offset on the X and Z axis from -3/16 to 3/16 and randomly offset on the Y axis from -3/16 to 3/16.
+* 4 = Randomly offset on the X, Y and Z axis from -3/16 to 3/16
 * 5 = Randomly offset on the X and Z axis from -3/16 to 3/16 and randomly offset on the Y axis from -3/16 to 0.
 Note: This only effects blocks which have the "Shape" as 0 (sprite)
 |-
