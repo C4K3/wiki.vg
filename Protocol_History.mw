@@ -1,5 +1,24 @@
 Provided below is a (potentially incomplete) changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 1.11 ===
+* Protocol version 315
+
+=== 1.11-pre1 ===
+* Protocol version 314
+
+=== 16w43a, 16w44a ===
+* Protocol version 313
+
+=== 16w42a ===
+* Protocol version 312
+
+=== 16w41a ===
+* Protocol version 311
+* Llama spit now has an entity ID (<code>minecraft:llama_spit</code>)
+
+=== 16w40a ===
+* Protocol version 310
+
 === 16w39c ===
 * Protocol version 309
 * Changed cursor position values in Player Block Placement (0x1C) from ints ranging from 0 to 15 to floats ranging from 0 to 1.
@@ -23,6 +42,8 @@ Provided below is a (potentially incomplete) changelog of the server protocol st
 :* 9 - Mansion
 :* 10 - Temple
 * Added entity status #35, which plays the totem of undying animation.
+* Added shulker box and llama inventories
+* Added a block action to update shulker box user count
 
 === 16w38a ===
 * Protocol version 306
@@ -42,10 +63,12 @@ Provided below is a (potentially incomplete) changelog of the server protocol st
 
 === 16w32b ===
 * Protocol version 302
+* Added nitwit villager profession (ID 5)
 
 === 16w32a ===
 * Protocol version 301
 * Entity IDs are now in snake_case, are case insensitive, and are namespaced (i.e., prefixed with <code>minecraft:</code>, rather than in CamelCase.
+* Removed entity IDs for <code>Mob</code> (48) and <code>Monster</code> (49)
 * Zombies, skeletons, and horses have been split into their component entities rather than having a <code>Type</code> field (although the Type field still exists on Zombies, it is unused).  Metadata specific to each sub entity was shifted as a result.
 * Added "Pickup Item Count" VarInt to the end of Collect Item (0x48)
 * Changed type from an Unsigned Byte to a VarInt in Spawn Mob (0x03)
