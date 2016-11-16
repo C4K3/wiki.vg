@@ -1586,7 +1586,7 @@ Extends [[#Monster|Monster]].
  |-
  | 12
  | Byte
- | Unknown (Probably hands up animation)
+ | Spell (0: none, 1: summon vex, 2: attack, 3: wololo)
  |}
 
 === Vex ===
