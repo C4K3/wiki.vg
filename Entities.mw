@@ -1174,6 +1174,12 @@ Extends [[#Animal|Animal]].
  |colspan="2"| Owner
  |}
 
+Statuses:
+;6
+:Spawn smoke particles (taming failed)
+;7
+:Spawn heart particles (taming succeeded)
+
 === Horse ===
 
 Extends [[#AbstractHorse|AbstractHorse]].
