@@ -11,17 +11,17 @@ CONTENT =
 Minecraft Modern is the latest (and only updated) version of Minecraft which requires a paid account to download, update and play. Most of the new development projects focus on either creating entirely new programs from scratch that interoperate with Minecraft (such as a bot or server) or modding projects that wrap the client or server and provide bug fixes, new features and enhancements to existing features.
 
 === Documentation ===
-There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be up to date'''.
+There are ongoing efforts to keep reverse engineered documentation updated, but it isn't as easy as it sounds. The protocol generally changes slightly with each release, and both the Client and Server classes get rearranged on each release. Below are links to the current documentation segments, which '''may or may not be completely up to date'''.
 
 * [[Protocol FAQ]]
 * [[Protocol|Current Protocol Specification]]
 ** [[Protocol Encryption]]
-** [[Server_List_Ping|Server list ping]] documentation
-** [[Protocol_version_numbers|Protocol version numbers]]
-** [[Plugin_channel|Plugin channels]]
+** [[Server List Ping]] documentation
+** [[Protocol version numbers]]
+** [[Plugin channels]]
 * [[Pre-release protocol|Pre-release Protocol Specificaton]]
 * [[Authentication|Authentication Scheme]]
-* [[Mojang_API|Mojang API]]
+* [[Mojang API]]
 * [[Game Files|Location of Game Files]]
 * [[Map Format]] (See also: mirror of the old [[NBT]].txt)
 * [[Snoop|Snoop Mechanism]]
@@ -35,8 +35,10 @@ There are ongoing efforts to keep reverse engineered documentation updated, but 
 * [[Library List|Libraries]] - libraries to interface with Minecraft data files or network protocols.
 * [[Utility List|Utilities]] - tools that interface with a client, server, or data files, such as proxies, bots, or inventory editors.
 * [[Wrapper List|Wrappers]] - mods that override features in the client or server
-* [http://b.wiki.vg/ Burger Vitrine] shows differences in data and protocol between arbitrary versions.
-* [[:Code Snippets]]
+* [https://github.com/mcdevs/Burger/ Burger] - a tool that generates information for arbitrary Minecraft versions
+:* [http://b.wiki.vg/ Burger Vitrine] - shows differences in data and protocol between arbitrary versions (prior to 1.7).
+:* [https://matsv.nl/PAaaS/ PAaaS] - shows differences in protocol and sounds for newer versions (1.8 and above)
+* [[Code Snippets]]
 
 === Tutorials & Guides ===
 * [[How to Write a Client]]
