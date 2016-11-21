@@ -4879,6 +4879,8 @@ Open horse inventory is only sent when pressing the inventory key (default: E) w
  | Bit mask. 0x1: jump, 0x2: unmount
  |}
 
+Also known as 'Input' packet.
+
 ==== Resource Pack Status ====
 
 {| class="wikitable"
