@@ -21,7 +21,7 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{Apache}}
  | {{yes}}
  | {{no}}
- | {{yes|1.10.2 (and 1.11 snapshots)}}
+ | {{yes|1.11}}
  |-
  ! [https://github.com/Thinkofname/steven steven]
  | Compiles
