@@ -42,7 +42,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | [http://ammaraskar.com/ Ammar Askar (ammaraskar)], [https://github.com/dkkline Jeppe Klitgaard (Dkkline)]
 | {{Python}}
 | {{Apache}}
-| {{yes|1.10}}
+| {{yes|1.11}}
 |-
 ! [http://github.com/Steveice10/MCProtocolLib MCProtocolLib]
 | Java implementation of the Minecraft protocol.
