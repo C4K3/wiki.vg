@@ -23,15 +23,6 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{yes|1.11}}
  |-
- ! [https://github.com/Thinkofname/steven steven]
- | Compiles
- | [https://github.com/Thinkofname/ Thinkofname]
- | [https://www.rust-lang.org/ Rust]
- | [http://www.apache.org/licenses/LICENSE-2.0.html Apache V2]
- | {{yes}}
- | {{yes}}
- | {{yes|1.10.2}}
- |-
  ! [https://github.com/ORelio/Minecraft-Console-Client Minecraft Console Client]
  | Command-line chat client with C# bot support
  | [https://github.com/ORelio ORelio]
@@ -39,6 +30,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | [http://opensource.org/licenses/CDDL-1.0 CDDL-1.0]
  | {{yes}}
  | {{no}}
+ | {{yes|1.11}}
+ |-
+ ! [https://github.com/Thinkofname/steven steven]
+ | Compiles
+ | [https://github.com/Thinkofname/ Thinkofname]
+ | [https://www.rust-lang.org/ Rust]
+ | [http://www.apache.org/licenses/LICENSE-2.0.html Apache V2]
+ | {{yes}}
+ | {{yes}}
  | {{yes|1.10.2}}
  |-
  ! [https://github.com/JavaProphet/Osmium Osmium]
