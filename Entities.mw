@@ -236,8 +236,8 @@ Additionally, a few other entities (marked in blue) must be spawned in their own
 |- style="background: #ffff88;"
 | 41
 | Boat
-| 1.5
-| 0.6
+| 1.375
+| 0.5625
 | <code>minecraft:boat</code>
 |- style="background: #ffff88;"
 | 42
