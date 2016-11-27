@@ -233,15 +233,13 @@ Sent by the server when a vehicle or other object is created.
  |-
  | Velocity X
  | Short
- | Same units as [[#Entity Velocity|Entity Velocity]].
+ |rowspan="3"| Same units as [[#Entity Velocity|Entity Velocity]].  Always sent, but only used when Data is greater than 0 (except for some entities which always ignore it; see [[Object Data]] for details).
  |-
  | Velocity Y
  | Short
- | Same units as [[#Entity Velocity|Entity Velocity]].
  |-
  | Velocity Z
  | Short
- | Same units as [[#Entity Velocity|Entity Velocity]].
  |}
 
 ==== Spawn Experience Orb ====
