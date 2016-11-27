@@ -4,6 +4,12 @@ Various '''Entities''' have different metadata fields and status codes.
 
 Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 
+{{Warning2|Some entities (marked in yellow) should only be spawned using [[Protocol#Spawn_Object|Spawn Object]] and their [[#Objects|Object ID]].  While they also have an entity ID, this ID is only used internally.  Servers should not attempt to spawn these entities using [[Protocol#Spawn Mob|Spawn Mob]] with that entity ID, although clients should accept such packets if they appear.
+
+Additionally, a few other entities (marked in blue) must be spawned in their own special ways:
+* {{Minecraft Wiki|Painting}}s should be spawned using [[Protocol#Spawn_Painting|Spawn Painting]]
+* XP orbs should be spawned using [[Protocol#Spawn_Experience_Orb|Spawn Experience Orb]].}}
+
 {| class="wikitable"
 |- 
 ! Type
@@ -11,6 +17,24 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 ! x, z
 ! y
 ! ID
+|- style="background: #ffff88;"
+| 1
+| Item
+| 0.25
+| 0.25
+| <code>minecraft:item</code>
+|- style="background: #aaaaff;"
+| 2
+| XPOrb
+| 0.5 (0.25)
+| 0.5 (0.25)
+| <code>minecraft:xp_orb</code>
+|- style="background: #ffff88;"
+| 3
+| AreaEffectCloud
+| 2.0 * Radius
+| 0.5
+| <code>minecraft:area_effect_cloud</code>
 |- 
 | 4
 | ElderGuardian
@@ -29,12 +53,126 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 0.6
 | 1.99
 | <code>minecraft:stray</code>
+|- style="background: #ffff88;"
+| 7
+| ThrownEgg
+| 0.25
+| 0.25
+| <code>minecraft:egg</code>
+|- style="background: #ffff88;"
+| 8
+| LeashKnot
+| 0.3750 (9px)
+| 0.25 (9px)
+| <code>minecraft:leash_knot</code>
+|- style="background: #aaaaff;"
+| 9
+| Painting
+| 0.5
+| 0.5
+| <code>minecraft:painting</code>
+|- style="background: #ffff88;"
+| 10
+| Arrow
+| 0.5
+| 0.5
+| <code>minecraft:arrow</code>
+|- style="background: #ffff88;"
+| 11
+| Snowball
+| 0.25
+| 0.25
+| <code>minecraft:snowball</code>
+|- style="background: #ffff88;"
+| 12
+| Fireball (ghast)
+| 1.0
+| 1.0
+| <code>minecraft:fireball</code>
+|- style="background: #ffff88;"
+| 13
+| SmallFireball (blaze)
+| 0.3125
+| 0.3125
+| <code>minecraft:small_fireball</code>
+|- style="background: #ffff88;"
+| 14
+| ThrownEnderpearl
+| 0.25
+| 0.25
+| <code>minecraft:ender_pearl</code>
+|- style="background: #ffff88;"
+| 15
+| EyeOfEnderSignal
+| 0.25
+| 0.25
+| <code>minecraft:eye_of_ender_signal</code>
+|- style="background: #ffff88;"
+| 16
+| ThrownPotion
+| 0.25
+| 0.25
+| <code>minecraft:potion</code>
+|- style="background: #ffff88;"
+| 17
+| ThrownExpBottle
+| 0.25
+| 0.25
+| <code>minecraft:xp_bottle</code>
+|- style="background: #ffff88;"
+| 18
+| ItemFrame
+| varies
+| varies
+| <code>minecraft:item_frame</code>
+|- style="background: #ffff88;"
+| 19
+| WitherSkull
+| 0.3125
+| 0.3125
+| <code>minecraft:wither_skull</code>
+|- style="background: #ffff88;"
+| 20
+| PrimedTnt
+| 0.98
+| 0.98
+| <code>minecraft:tnt</code>
+|- style="background: #ffff88;"
+| 21
+| FallingSand
+| 0.98
+| 0.98
+| <code>minecraft:falling_block</code>
+|- style="background: #ffff88;"
+| 22
+| FireworksRocketEntity
+| 0.25
+| 0.25
+| <code>minecraft:fireworks_rocket</code>
 |- 
 | 23
 | Husk
 | 0.6
 | 1.95
 | <code>minecraft:husk</code>
+|- style="background: #ffff88;"
+| 24
+| SpectralArrow
+| 0.5
+| 0.5
+| <code>minecraft:spectral_arrow</code>
+|- style="background: #ffff88;"
+| 25
+| ShulkerBullet
+| 0.3125
+| 0.3125
+| <code>minecraft:shulker_bullet</code>
+|- style="background: #ffff88;"
+| 26
+| DragonFireball
+| 1.0
+| 1.0
+| <code>minecraft:dragon_fireball</code>
 |- 
 | 27
 | ZombieVillager
@@ -65,7 +203,7 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 1.396484
 | 1.6
 | <code>minecraft:mule</code>
-|- 
+|- style="background: #ffff88;"
 | 33
 | EvocationFangs
 | 0.5
@@ -89,6 +227,54 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 0.6
 | 1.95
 | <code>minecraft:vindication_illager</code>
+|- style="background: #ffff88;"
+| 40
+| MinecartCommandBlock
+| 0.98
+| 0.7
+| <code>minecraft:commandblock_minecart</code>
+|- style="background: #ffff88;"
+| 41
+| Boat
+| 1.5
+| 0.6
+| <code>minecraft:boat</code>
+|- style="background: #ffff88;"
+| 42
+| MinecartRideable
+| 0.98
+| 0.7
+| <code>minecraft:minecart</code>
+|- style="background: #ffff88;"
+| 43
+| MinecartChest
+| 0.98
+| 0.7
+| <code>minecraft:chest_minecart</code>
+|- style="background: #ffff88;"
+| 44
+| MinecartFurnace
+| 0.98
+| 0.7
+| <code>minecraft:furnace_minecart</code>
+|- style="background: #ffff88;"
+| 45
+| MinecartTNT
+| 0.98
+| 0.7
+| <code>minecraft:tnt_minecart</code>
+|- style="background: #ffff88;"
+| 46
+| MinecartHopper
+| 0.98
+| 0.7
+| <code>minecraft:hopper_minecart</code>
+|- style="background: #ffff88;"
+| 47
+| MinecartSpawner
+| 0.98
+| 0.7
+| <code>minecraft:spawner_minecart</code>
 |-
 | 50
 | Creeper
@@ -271,7 +457,7 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | <code>minecraft:villager_golem</code>
 |- 
 | 100
-| EntityHorse
+| Horse (EntityHorse until 1.11)
 | 1.396484
 | 1.6
 | <code>minecraft:horse</code>
@@ -293,7 +479,7 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 0.9
 | 1.87
 | <code>minecraft:llama</code>
-|- 
+|- style="background: #ffff88;"
 | 104
 | LlamaSpit
 | 0.25
@@ -305,11 +491,19 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 0.6
 | 1.95
 | <code>minecraft:villager</code>
+|- style="background: #ffff88;"
+| 200
+| EnderCrystal
+| 2.0
+| 2.0
+| <code>minecraft:end_crystal</code>
 |}
 
 == Objects ==
 
 Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Data]] for more details.
+
+{{Note|Object IDs and Entity IDs are different.  Most objects also have an entity ID, but should only ever be spawned via [[Protocol#Spawn_Object|Spawn Object]].}}
 
 {| class="wikitable"
 |- 
@@ -425,8 +619,8 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 |- 
 | 77
 | Leash Knot
-| 0.5
-| 0.5
+| 0.3750 (9px)
+| 0.25 (9px)
 |-
 | 78
 | ArmorStand
@@ -435,8 +629,8 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 |-
 | 79
 | Evocation Fangs
-| 0.8
 | 0.5
+| 0.8
 |- 
 | 90
 | Fishing Hook
@@ -450,8 +644,8 @@ Objects are spawned via [[Protocol#Spawn_Object|Spawn Object]]. See [[Object Dat
 |- 
 | 93
 | Dragon Fireball
-| 0.3125
-| 0.3125
+| 1.0
+| 1.0
 |}
 
 Since release {{Minecraft Wiki|1.6}}, all minecarts are spawned with object type 10 and their functionality is then specified in the [[Object Data#Minecarts (id 10)|Data field]] within the packet. Also, their visual appearance may be sent via the [[Protocol#Entity Metadata|Entity Metadata]] packet.
