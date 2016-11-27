@@ -135,7 +135,7 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 57
 | PigZombie
 | 0.6
-| 1.8
+| 1.95
 | <code>minecraft:zombie_pigman</code>
 |- 
 | 58
