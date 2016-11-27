@@ -117,7 +117,7 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 54
 | Zombie
 | 0.6
-| 1.8
+| 1.95
 | <code>minecraft:zombie</code>
 |- 
 | 55
