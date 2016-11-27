@@ -1,5 +1,11 @@
 This article documents the '''Data''' field in the [[Protocol#Spawn Object|Spawn Object]] packet. The field is of type Int, and the meaning of its contents depend on the [[Entities#Objects|type of object]] being spawned, as defined in the Type field of the same packet, and is documented below.
 
+In some cases, the data field has no meaning, but is only used to indicate presence of velocity.  In others, it (and velocity) is always ignored.
+
+== Item (id 2) ==
+
+The int value is ignored, but should be set to <code>1</code> to indicate that velocity is present.
+
 == Minecarts (id 10) ==
 
 The int value itself specifies the minecart's functionality:
@@ -51,6 +57,8 @@ The int value itself specifies the minecart's functionality:
  | East
  |}
 
+Velocity in the packet is always ignored.
+
 == Falling Block (id 70) ==
 
 {| class="wikitable"
@@ -66,6 +74,8 @@ The int value itself specifies the minecart's functionality:
  | <code><nowiki>BlockID | (Metadata << 12)</nowiki></code>
  |}
 
+Velocity in the packet is always ignored.
+
 == Fishing Float (id 90) ==
 
 {| class="wikitable"
@@ -79,6 +89,10 @@ The int value itself specifies the minecart's functionality:
  | 
  | The entity ID of the owner
  |}
+
+Velocity in the packet is ignored, and instead should be inferred from the shooter's position.
+
+{{Need Info|What's the exact algorithm for determining this?}}
 
 == Arrow (id 60) and Spectral Arrow (id 91) ==
 
@@ -94,6 +108,26 @@ The int value itself specifies the minecart's functionality:
  | <code>64</code>
  | The entity ID of the shooter + 1 (Subtract 1 to get the actual entity ID)
  |}
+
+== Llama spit (id 68) ==
+
+Velocity is always used even though the data field is always 0.
+
+== Fireball (id 63), small fireball (id 64), dragon fireball (id 93), and wither skull (id 66) ==
+
+The data field stores the ID of the shooting entity, or 0 if there was no shooting entity.  Velocity is used even if data is set to 0.
+
+== Shulker bullet (id 67) ==
+
+Velocity is always used even though the data field is always 0.
+
+== Potion (id 73) ==
+
+Velocity in the packet is always ignored.
+
+== EXP bottle (id 75) ==
+
+Velocity in the packet is always ignored.
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
