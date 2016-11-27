@@ -249,7 +249,7 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 96
 | MushroomCow (Mooshroom)
 | 0.9
-| 1.3
+| 1.4
 | <code>minecraft:mooshroom</code>
 |- 
 | 97
