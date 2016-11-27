@@ -14,8 +14,8 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 |- 
 | 4
 | ElderGuardian
-| 0.85
-| 0.85
+| 1.9975
+| 1.9975
 | <code>minecraft:elder_guardian</code>
 |- 
 | 5
@@ -261,7 +261,7 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 | 98
 | Ozelot (Ocelot)
 | 0.6
-| 0.8
+| 0.7
 | <code>minecraft:ocelot</code>
 |- 
 | 99
@@ -290,7 +290,7 @@ Mobs are spawned via [[Protocol#Spawn_Mob|Spawn Mob]].
 |- 
 | 103
 | Llama
-| 1.3964844
+| 0.9
 | 1.87
 | <code>minecraft:llama</code>
 |- 
