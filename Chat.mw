@@ -44,7 +44,7 @@ Comments (<code>//</code>) are not valid json and shouldn't be sent, they are on
      //Controls whether the text is randomised constantly or not. Default false
      "obfuscated": false,
      //Controls the color of the text
-     //Supported 'colors':
+     //Supported colors:
      // * black
      // * dark_blue
      // * dark_green
@@ -61,6 +61,7 @@ Comments (<code>//</code>) are not valid json and shouldn't be sent, they are on
      // * light_purple
      // * yellow
      // * white
+     // Additional format names can be used, but the other properties should be preferred:
      // * obfuscated
      // * bold
      // * strikethrough
@@ -76,12 +77,14 @@ Comments (<code>//</code>) are not valid json and shouldn't be sent, they are on
          // * open_file
          // * run_command
          // * suggest_command
+         // * change_page
          "action":"run_command",
          //The value to run the action with
          //open_url: Url to open
-         //open_file: File to open
+         //open_file: File to open (Cannot be used; only allowed when generated clientside in the screenshot message)
          //run_command: Command to execute
          //suggest_command: Text to place in the player's text box
+         //change_page: Page number to change in a written book.  No effect in normal chat.
          "value": "/time set day"
      },
      //Displays the action upon hovering over the text
