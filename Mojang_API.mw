@@ -187,7 +187,7 @@ The "value" base64 string for the "textures" object decoded:
 * If no custom skin has been set, <code>"SKIN"</code> will be missing.<br>Whether the player has the “Alex?” or “Steve?” skin depends on [http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/UUID.java#l394 the Java hashCode] of their UUID. Steve is used for even hashes. Example implementations:
 ** [https://github.com/mapcrafter/mapcrafter-playermarkers/blob/c583dd9157a041a3c9ec5c68244f73b8d01ac37a/playermarkers/player.php#L8-L19 PHP]
 ** [https://github.com/LapisBlue/Lapitar/blob/55ede80ce4ebb5ecc2b968164afb40f61b4cc509/mc/uuid.go#L34-L36 Go]
-** [https://github.com/crafatar/crafatar/blob/9d2fe0c45424de3ebc8e0b10f9446e7d5c3738b2/lib/skins.js#L90-L108 JavaSript] (includes explanation)
+** [https://github.com/crafatar/crafatar/blob/9d2fe0c45424de3ebc8e0b10f9446e7d5c3738b2/lib/skins.js#L90-L108 JavaScript] (includes explanation)
 ** [https://gist.github.com/jomo/9968b8d572c38e1b1f4c#file-main-java-L4-L11 Java] (includes sample UUIDs)
 * Likewise <code>"CAPE"</code> will be missing if the account has no cape.
 
