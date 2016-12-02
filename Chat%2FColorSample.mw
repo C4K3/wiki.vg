@@ -1,0 +1,21 @@
+<includeonly>| style="background-color: #{{{1}}}; border-right: 3px solid #{{{2}}}; border-bottom: 3px solid #{{{2}}}" |</includeonly>
+<noinclude>This template is used to style the sample box in the table of colors.  It takes two params: the main and background color.
+
+Usage:
+
+<pre>
+{|class="wikitable"
+ ! Sample
+ ! ...
+ |-
+{{:Chat/ColorSample|00aa00|002a00}}
+ | ...
+|}</pre>
+
+{|class="wikitable"
+ ! Sample
+ ! ...
+ |-
+{{:Chat/ColorSample|00aa00|002a00}}
+ | ...
+|}</noinclude>
