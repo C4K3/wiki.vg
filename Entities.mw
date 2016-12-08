@@ -1428,15 +1428,15 @@ Extends [[#ChestedHorse|ChestedHorse]].
  !style="width: 250px;" colspan="2"| Meaning
  |-
  | 16
- | Integer
+ | VarInt
  | colspan="2"| Strength (number of columns of 3 slots in the llama's inventory once a chest is equipped)
  |-
  | 17
- | Integer
+ | VarInt
  | colspan="2"| Carpet color (a dye color, or -1 if no carpet equipped)
  |-
  | 18
- | Integer
+ | VarInt
  | colspan="2"| Variant (0: <code>llama_creamy.png</code>, 1: <code>llama_white.png</code>, 2: <code>llama_brown.png</code>, 3: <code>llama_gray.png</code>)
  |}
 
