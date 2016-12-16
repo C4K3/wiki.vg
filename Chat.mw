@@ -297,19 +297,19 @@ The Ascii font supports these characters, with the given indexes in <code>ascii.
  |-
  | <code>\u0207</code> || <code>ȇ</code> || 24 || 8 || 1 || 6
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 25 || 9 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 25 || 9 || 1 || -
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 26 || 10 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 26 || 10 || 1 || -
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 27 || 11 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 27 || 11 || 1 || -
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 28 || 12 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 28 || 12 || 1 || -
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 29 || 13 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 29 || 13 || 1 || -
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 30 || 14 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 30 || 14 || 1 || -
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 31 || 15 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 31 || 15 || 1 || -
  |-
  | <code>\u0020</code> || <code> </code> || 32 || 0 || 2 || 4<ref group="note" name="space" />
  |-
@@ -501,7 +501,7 @@ The Ascii font supports these characters, with the given indexes in <code>ascii.
  |-
  | <code>\u007e</code> || <code>~</code> || 126 || 14 || 7 || 7
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 127 || 15 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 127 || 15 || 7 || -
  |-
  | <code>\u00c7</code> || <code>Ç</code> || 128 || 0 || 8 || 6
  |-
@@ -757,7 +757,7 @@ The Ascii font supports these characters, with the given indexes in <code>ascii.
  |-
  | <code>\u25a0</code> || <code>■</code> || 254 || 14 || 15 || 7
  |-
- | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 255 || 15 || -
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 255 || 15 || 15 || -
  |}
 </div>
 
