@@ -1,110 +1,122 @@
-Minecraft supports two-way chat communication via the [[Protocol#Chat Message (clientbound)|Chat Message]] packet.
+Minecraft supports two-way '''chat''' communication via the [[Protocol#Chat Message (clientbound)|Chat Message]] packet, which support a variety of formatting options.  Note that this system isn't exclusive to the Chat Message packet - it's used in several other places (including written books, death messages, window titles, and the like).
 
 == Current system (JSON Chat) ==
 
-Comments (<code>//</code>) are not valid json and shouldn't be sent, they are only here to explain the format
+Chat data is sent in JSON.  For most situations, the JSON is strictly parsed, but [https://google.github.io/gson/apidocs/com/google/gson/stream/JsonReader.html#setLenient-boolean- lenient JSON parsing] is used for the Disconnect packet and for written book text.
+
+=== Inheritance ===
+
+Each component can have multiple ''siblings''.  Each sibling component inherits properties from the style of its parent, using those styles if they are not defined in the sibling's own style.
+
+For example, in this component:
 
 <syntaxhighlight lang="javascript">
- {
-     // Plain text
-     "text": "Hello world",
-     //or
-     // Translatable string
-     "translate": "multiplayer.player.joined",
-     "with": [
-         //This can be replaced another json object allowing the parts
-         //to be styled/translated seperately
-         "thinkofdeath"
-     ],
-     //or
-     // Displays the player's value for a scoreboard objective (1.8+)
-     "score": {
-         "name": "<playername>", // * for current player
-         "objective": "<objectivename>"
-     },
-     //or
-     // A standard minecraft selector, eg: @p, @a, @e, @r (1.8+)
-     "selector": "",
-     //
-     //Items in the extra section will be appended to the message.
-     //They can strings or json objects. If included the array must 
-     //not be empty
-     "extra": [
-         "Testing",
-         {"translate":"demo.day.2"}
-     ],
-     //Controls whether the text is bold or not. Default false
-     "bold":true,
-     //Controls whether the text is italic or not. Default false
-     "italic":false,
-     //Controls whether the text is underlined or not. Default false
-     "underlined": false, 
-     //Controls whether the text is striked out or not. Default false
-     "strikethrough": false,
-     //Controls whether the text is randomised constantly or not. Default false
-     "obfuscated": false,
-     //Controls the color of the text
-     //Supported colors:
-     // * black
-     // * dark_blue
-     // * dark_green
-     // * dark_aqua
-     // * dark_red
-     // * dark_purple
-     // * gold
-     // * gray
-     // * dark_gray
-     // * blue
-     // * green
-     // * aqua
-     // * red
-     // * light_purple
-     // * yellow
-     // * white
-     // Additional format names can be used, but the other properties should be preferred:
-     // * obfuscated
-     // * bold
-     // * strikethrough
-     // * underline
-     // * italic
-     // * reset
-     "color":"red",
-     //Executes the action once the text is clicked
-     "clickEvent":{
-         //The action to execute
-         //Supported actions:
-         // * open_url
-         // * open_file
-         // * run_command
-         // * suggest_command
-         // * change_page
-         "action":"run_command",
-         //The value to run the action with
-         //open_url: Url to open
-         //open_file: File to open (Cannot be used; only allowed when generated clientside in the screenshot message)
-         //run_command: Command to execute
-         //suggest_command: Text to place in the player's text box
-         //change_page: Page number to change in a written book.  No effect in normal chat.
-         "value": "/time set day"
-     },
-     //Displays the action upon hovering over the text
-     "hoverEvent": {
-         //The action to execute
-         //Supported actions
-         // * show_text
-         // * show_achievement
-         // * show_item
-         "action":"show_text",
-         //The value to the action with
-         //show_text: Text to display can be a JSON object
-         //show_achievement: Name of the achievemnt to display e.g: "achievement.openInventory"
-         //show_item: JSON version of the item, must be quoted. e.g: "{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"
-         "value": "Hello"
-     },
-     // Inserts the text into the chat on shift click (1.8+)
-     "insertion": "Hello world"   
- }
+{
+    "text": "foo",
+    "bold": "true",
+    "extra": [
+    {
+        "text": "bar"
+    },
+    {
+        "text": "baz",
+        "bold": "false"
+    },
+    {
+        "text": "qux",
+        "bold": "true"
+    }]
+}
 </syntaxhighlight>
+
+The text "foo", "bar", and "qux" are all rendered as bold while "baz" is not.
+
+=== Schema ===
+
+Each situation where a component can appear may be either a JSON object (the most common choice), an array, or a JSON primitive (which is converted to a String).
+
+JSON primitives can be used for components, in which case they are implicitly converted into a String component.  Note that it is invalid to have a JSON primitive as the root object, so it is '''not''' valid to merely send the text in quotes.  This shorthand is useful for sibling lists, though.
+
+It is also legal to put a JSON array where a component would go, so long as the array is not empty.  The first component in the array is the parent of all of the following components.  This can produce unusual behavior with style inheritance, but it is still useful shorthand.
+
+The most common type of component is a JSON object; the format is as follows:
+
+==== Shared between all components ====
+
+All component types have certain fields that represent the style.  All of these fields may be skipped, in which case the parent's style will be inherited.
+
+;<code>bold</code>
+:Boolean - if <code>true</code>, the component is emboldened.
+;<code>italic</code>
+:Boolean - if <code>true</code>, the component is italicized.
+;<code>underlined</code>
+:Boolean - if <code>true</code>, the component is underlined.
+;<code>strikethrough</code>
+:Boolean - if <code>true</code>, the component is struck out.
+;<code>obfuscated</code>
+:Boolean - if <code>true</code>, the component randomly switches between characters of the same width.
+;<code>color</code>
+:String - contains the color for the component.  Should be one of the normal [[#Colors|colors]], but can also be a [[#Styles|format code]] (however, the fields relating to styles should be used instead for that purpose).  If not present (or set to <code>reset</code>), then the default color for the text will be used, which varies by the situation (in some cases, it is white; in others, it is black; in still others, it is a shade of gray that isn't normally used on text).
+;<code>insertion</code>
+:String - contains text to insert.  Only used for messages in chat.  When shift is held, clicking the component _inserts_ the given text into the chat box at the cursor (potentially replacing selected text).  Has no effect on other locations at this time.
+;<code>clickEvent</code>
+:JSON object - Defines an event that occurs when this component is clicked.  Contains an <code>action</code> key and a <code>value</code> key.  <code>value</code> is internally handled as a String, although it can be any type of JSON primitive.
+:;<code>open_url</code>
+::Opens the given URL in the default web browser.  Ignored if the player has opted to disable links in chat; may open a GUI prompting the user if the setting for that is enabled.  The link's protocol must be set and must be <code>http</code> or <code>https</code>, for security reasons.
+:;<s><code>open_file</code></s>
+::<strong>Cannot be used within JSON chat</strong>.  Opens a link to any protocol, but cannot be used in JSON chat for security reasons.  Only exists to internally implement links for screenshots.
+:;<code>run_command</code>
+::Runs the given command.  Not required to be a command - clicking this only causes the client to send the given content as a chat message, so if not prefixed with <code>/</code>, they will say the given text instead.  If used in a book GUI, the GUI is closed after clicking.
+:;<code>suggest_command</code>
+::Only usable for messages in chat.  Replaces the content of the chat box with the given text - usually a command, but it is not required to be a command (commands should be prefixed with <code>/</code>).
+:;<code>change_page</code>
+::Only usable within written books.  Changes the page of the book to the given page, starting at 1.  For instance, <code>"value":1</code> switches the book to the first page.  If the page is less than one or beyond the number of pages in the book, the event is ignored.
+;<code>hoverEvent</code>
+:JSON object - Defines an event that occurs when this component hovered over.  Contains an <code>action</code> key and a <code>value</code> key; action is a String and value is a text component.  However, since text components can be serialized as primitives as well as arrays and objects, this can directly be a String.  A list of actions:
+:;<code>show_text</code>
+::The text to display.  Can either be a string directly (<code>"value":"la"</code>) or a full component (<code>"value":{"text":"la","color":"red"}</code>).
+:;<code>show_item</code>
+::The NBT of the item to display, in the JSON-NBT format (as would be used in <code>/give</code>).  Note that this is a String and not a JSON object - it should either be set in a String directly (<code>"value":"{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"</code>) or as text of a component (<code>"value":{"text":"{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"}</code>).  If the item is invalid, "Invalid Item!" will be drawn in red instead.
+:;<code>show_entity</code>
+::A JSON-NBT String describing the entity.  Contains 3 values: <code>id</code>, the entity's UUID (with dashes); <code>type</code> (optional), which contains the resource location for the entity's type (eg <code>minecraft:zombie</code>); and <code>name</code>, which contains the entity's custom name (if present).  Note that this is a String and not a JSON object.  It should be set in a String directly (<code>"value":"{id:7e4a61cc-83fa-4441-a299-bf69786e610a,type:minecraft:zombie,name:Zombie</code>) or as the content of a component.  If the entity is invalid, "Invalid Entity!" will be displayed.  Note that the client does ''not'' need to have the given entity loaded.
+:;<code>show_achievement</code>
+::The ID of an achievement or statistic to display.  Example: <code>"value":"achievement.openInventory"</code>.
+;<code>extra</code>
+:An array of sibling components.  If present, cannot be empty.
+
+Beyond that, there are additional properties.  Attempt to parse as each of the following in the order they are described:
+
+==== String component ====
+
+A String component contains only text.  If the JSON contains a <code>text</code> key, then the component is a String component.  The only content of this component is its text, with no additional processing.
+
+==== Translation component ====
+
+{{Need Info|Is using this with an invalid key intended or deprecated?  Also, what exactly happens on invalid formats?}}
+
+Translates text into the current language.  If the JSON contains a <code>translate</code> key, then the component is a translation component.
+
+Translation supports <code>%s</code> and <code>%%</code> format tokens.  <code>%%</code> is just an escaped percent symbol.  <code>%s</code> marks text to replace using content from the optional <code>with</code> tag.  <code>with</code> is an array of components.
+
+==== Score component ====
+
+Displays a score.  If the JSON contains a <code>score</code> key, then the component is a score component.
+
+The <code>score</code> JSON object contains data about the objective.
+
+When being sent to the client, it must contain <code>name</code>, <code>objective</code>, and <code>value</code> keys.  <code>name</code> is a player username or entity UUID (if it is a player, it is a username); <code>objective</code> is the name of the objective; <code>value</code> is the resolved value of that objective.
+
+When being sent to the server, <code>value</code> is not used.  <code>name</code> can be an entity selector (that selects one entity), or alternatively <code>*</code> which matches the sending player.
+
+==== Selector component ====
+
+Displays the results of an entity selector.  '''Should not be sent to clients'''; only intended for commands and client-to-server actions.  If the component contains a <code>selector</code> key, then it is a selector component.
+
+The server resolves the list selector into a list of entities, each with an appropriate hover event, and joined with commas and "and" (but it lacks a [[wikipedia:serial comma|serial comma]].
+
+=== Examples ===
+
+TODO
 
 == Old system ==
 
@@ -115,9 +127,9 @@ The client treats certain two-character sequences specially. The first character
 *§ (U+00A7) for minecraft
 *& for minecraft classic
 
-The following character indicates a certain colour or formatting to apply to the proceeding text.
+The following character indicates a certain color or formatting to apply to the proceeding text.
 
-The Notchian client expects that an escape code in a chat message will be followed by at least one character, and will otherwise crash with a StringIndexOutOfBoundsException. The workaround for servers is to never end a message with a color control character.
+The Notchian classic client expects that an escape code in a chat message will be followed by at least one character, and will otherwise crash with a StringIndexOutOfBoundsException. The workaround for servers is to never end a message with a color control character.  This is not an issue for the modern Notchian client.
 
 ==== Colors ====
 
@@ -132,66 +144,67 @@ e.g.: <code>This is white, but §4this is dark red</code>
 ! colspan="1"  width="8px"| Sample
 ! colspan="1" | Code
 ! colspan="1" | Common Name
-! colspan="3" | Foreground Color
-! colspan="3" | Background Color
-! colspan="1" | Hexadecimal
+! colspan="1" | Name
+! colspan="4" | Foreground Color
+! colspan="4" | Background Color
 |-
-| || ||
+| colspan="4" | 
 |width="30px"|R
 |width="30px"|G
 |width="30px"|B
+| Hex
 |width="30px"|R
 |width="30px"|G
 |width="30px"|B
-||
+| Hex
 |-
-| bgcolor="black" |
-| 0 || Black || 0 || 0 || 0 || 0 || 0 || 0 || #000000
+{{/ColorSample|000000|000000}}
+| 0 || Black || <code>black</code> || 0 || 0 || 0 || #000000 || 0 || 0 || 0 || #000000
 |-
-| bgcolor=#0000aa |
-| 1 || Dark blue || 0 || 0 || 170 || 0 || 0 || 42 || #0000aa
+{{/ColorSample|0000aa|00002a}}
+| 1 || Dark blue || <code>dark_blue</code> || 0 || 0 || 170 || #0000aa || 0 || 0 || 42 || #00002a
 |-
-| bgcolor=#00aa00 |
-| 2 || Dark green || 0 || 170 || 0 || 0 || 42 || 0 || #00aa00
+{{/ColorSample|00aa00|002a00}}
+| 2 || Dark green || <code>dark_green</code> || 0 || 170 || 0 || #00aa00 || 0 || 42 || 0 || #002a00
 |-
-| bgcolor=#00aaaa |
-| 3 || Dark cyan || 0  || 170 || 170 || 0 || 42 || 42 || #00aaaa
+{{/ColorSample|00aaaa|002a2a}}
+| 3 || Dark cyan || <code>dark_aqua</code> || 0  || 170 || 170 || #00aaaa || 0 || 42 || 42 || #002a2a
 |-
-| bgcolor=#aa0000 |
-| 4 || Dark red || 170 || 0 || 0 || 42 || 0 || 0 || #aa0000
+{{/ColorSample|aa0000|2a0000}}
+| 4 || Dark red || <code>dark_red</code> || 170 || 0 || 0 || #aa0000 || 42 || 0 || 0 || #2a0000
 |-
-| bgcolor=#aa00aa |
-| 5 || Purple || 170 || 0 || 170 || 42 || 0 || 42 || #aa00aa
+{{/ColorSample|aa00aa|2a002a}}
+| 5 || Purple || <code>dark_purple</code> || 170 || 0 || 170 || #aa00aa || 42 || 0 || 42 || #2a002a
 |-
-| bgcolor=#ffaa00 |
-| 6 || Gold || 255 || 170 || 0 || 42 || 42 || 0 || #ffaa00
+{{/ColorSample|ffaa00|2a2a00}}
+| 6 || Gold || <code>gold</code> || 255 || 170 || 0 || #ffaa00 || 42 || 42 || 0 || #2a2a00
 |-
-| bgcolor=#aaaaaa |
-| 7 || Gray || 170 || 170 || 170 || 42 || 42 || 42 || #aaaaaa
+{{/ColorSample|aaaaaa|2a2a2a}}
+| 7 || Gray || <code>gray</code> || 170 || 170 || 170 || #aaaaaa || 42 || 42 || 42 || #2a2a2a
 |-
-| bgcolor=#555555 |
-| 8 || Dark gray || 85 || 85 || 85 || 21 || 21 || 21 || #555555
+{{/ColorSample|555555|151515}}
+| 8 || Dark gray || <code>dark_gray</code> || 85 || 85 || 85 || #555555 || 21 || 21 || 21 || #151515
 |-
-| bgcolor=#5555ff |
-| 9 || Blue || 85 || 85 || 255 || 21 || 21 || 63 || #5555ff
+{{/ColorSample|5555ff|15153f}}
+| 9 || Blue || <code>blue</code> || 85 || 85 || 255 || #5555ff || 21 || 21 || 63 || #15153f
 |-
-| bgcolor=#55ff55 |
-| a || Bright green || 85 || 255 || 85 || 21 || 63 || 21 || #55ff55
+{{/ColorSample|55ff55|153f15}}
+| a || Bright green || <code>green</code> || 85 || 255 || 85 || #55ff55 || 21 || 63 || 21 || #153f15
 |-
-| bgcolor=#55FFFF |
-| b || Cyan || 85 || 255 || 255 || 21 || 63 || 63 || #55ffff
+{{/ColorSample|55ffff|153f3f}}
+| b || Cyan || <code>aqua</code> || 85 || 255 || 255 || #55ffff || 21 || 63 || 63 || #153f3f
 |-
-| bgcolor=#FF5555 |
-| c || Red || 255 || 85 || 85 || 63 || 21 || 21 || #ff5555
+{{/ColorSample|ff5555|3f1515}}
+| c || Red || <code>red</code> || 255 || 85 || 85 || #ff5555 || 63 || 21 || 21 || #3f1515
 |-
-| bgcolor=#FF55FF |
-| d || Pink || 255 || 85 || 255 || 63 || 21 || 63 || #ff55ff
+{{/ColorSample|ff55ff|3f153f}}
+| d || Pink || <code>light_purple</code> || 255 || 85 || 255 || #ff55ff || 63 || 21 || 63 || #3f153f
 |-
-| bgcolor=#FFFF55 |
-| e || Yellow || 255 || 255 || 85 || 63 || 63 || 21 || #ffff55
+{{/ColorSample|ffff55|3f3f15}}
+| e || Yellow || <code>yellow</code> || 255 || 255 || 85 || #ffff55 || 63 || 63 || 21 || #3f3f15
 |-
-| bgcolor=#FFFFFF |
-| f || White || 255 || 255 || 255 || 63 || 63 || 63 || #ffffff
+{{/ColorSample|ffffff|3f3f3f}}
+| f || White || <code>white</code> || 255 || 255 || 255 || #ffffff || 63 || 63 || 63 || #3f3f3f
 |}
 
 ==== Styles ====
@@ -203,25 +216,559 @@ Like the color codes above, style escape codes are created by combining § (U+00
 ! colspan="1" | Sample
 ! colspan="1" | Code
 ! colspan="1" | Style
+! colspan="1" | Name
 |-
-| [[File:random_chat.gif]] || k || Random
+| [[File:random_chat.gif]] || k || Random || <code>obfuscated</code>
 |-
-| [[File:bold_chat.png]] || l || Bold
+| [[File:bold_chat.png]] || l || Bold || <code>bold</code>
 |-
-| [[File:strikethrough_chat.png]] || m || Strikethrough 
+| [[File:strikethrough_chat.png]] || m || Strikethrough || <code>strikethrough</code>
 |-
-| [[File:underlined_chat.png]] || n || Underlined 
+| [[File:underlined_chat.png]] || n || Underlined || <code>underline</code>
 |-
-| [[File:italic_chat.png]] || o || Italic 
+| [[File:italic_chat.png]] || o || Italic || <code>italic</code>
 |-
-| [[File:plain_chat.png]] || r || Plain White
+| [[File:plain_chat.png]] || r || Plain White || <code>reset</code>
 |}
 
 == Font ==
 
-Minecraft has two fonts types: Default (<code>default.png</code>) and Unicode(<code>glyph_XX.png</code>). Default will fallback on unicode characters if they are not provided (default only has the first 256 glyphs). The minecraft client calculates the widths of the default font type on startup whilst the sizes of the unicode type are provided in <code>glyph_sizes.bin</code>. Each byte in <code>glyph_sizes.bin</code> contains the start and end position of each character, the top nibble (0xF0) is the start position and the bottom nibble (0x0F) is the end position (relative to the characters position in the font sheet). 
+Minecraft has two fonts types that can be encountered normally: Ascii (<code>ascii.png</code>) and Unicode (<code>unicode_page_XX.png</code>).  The ascii font will fall back upon unicode characters if they are not provided (see below).  However, use of the Unicode font can be forced for all characters in the language menu.
 
-Example: https://gist.github.com/TkTech/dff9bbe54c9a074612e1
+There is no glyph for the space character.  However, the space character has a width of 4.
+
+Additionally, Minecraft has a [[Wikipedia:Standard Galactic Alphabet|Standard Galactic Alphabet]] font (<code>ascii_sga.png</code>).  This cannot be used in chat, but works much the same as the normal Ascii font in terms of width.  The SGA font only supports lowercase and uppercase letters (the rest of the glyphs are blank), and has the same indexing as the normal ascii font.
+
+The Minecraft client calculates the widths of the default font when the texture is loaded, whilst the sizes of the unicode type are provided in <code>glyph_sizes.bin</code>. Each byte in <code>glyph_sizes.bin</code> contains the start and end position of each character, the top nibble (0xF0) is the start position and the bottom nibble (0x0F) is the end position (relative to the character's position in the font sheet).  Example: https://gist.github.com/TkTech/dff9bbe54c9a074612e1
+
+<div class="mw-collapsible mw-collapsed" style="width: 41em">
+The Ascii font supports these characters, with the given indexes in <code>ascii.png</code>:
+
+{|class="mw-collapsible-content wikitable"
+ ! Codepoint !! Char !! index !! x !! y !! width
+ |-
+ | <code>\u00c0</code> || <code>À</code> || 0 || 0 || 0 || 6
+ |-
+ | <code>\u00c1</code> || <code>Á</code> || 1 || 1 || 0 || 6
+ |-
+ | <code>\u00c2</code> || <code>Â</code> || 2 || 2 || 0 || 6
+ |-
+ | <code>\u00c8</code> || <code>È</code> || 3 || 3 || 0 || 6
+ |-
+ | <code>\u00ca</code> || <code>Ê</code> || 4 || 4 || 0 || 6
+ |-
+ | <code>\u00cb</code> || <code>Ë</code> || 5 || 5 || 0 || 6
+ |-
+ | <code>\u00cd</code> || <code>Í</code> || 6 || 6 || 0 || 4
+ |-
+ | <code>\u00d3</code> || <code>Ó</code> || 7 || 7 || 0 || 6
+ |-
+ | <code>\u00d4</code> || <code>Ô</code> || 8 || 8 || 0 || 6
+ |-
+ | <code>\u00d5</code> || <code>Õ</code> || 9 || 9 || 0 || 6
+ |-
+ | <code>\u00da</code> || <code>Ú</code> || 10 || 10 || 0 || 6
+ |-
+ | <code>\u00df</code> || <code>ß</code> || 11 || 11 || 0 || 6
+ |-
+ | <code>\u00e3</code> || <code>ã</code> || 12 || 12 || 0 || 6
+ |-
+ | <code>\u00f5</code> || <code>õ</code> || 13 || 13 || 0 || 6
+ |-
+ | <code>\u011f</code> || <code>ğ</code> || 14 || 14 || 0 || 6
+ |-
+ | <code>\u0130</code> || <code>İ</code> || 15 || 15 || 0 || 4
+ |-
+ | <code>\u0131</code> || <code>ı</code> || 16 || 0 || 1 || 4
+ |-
+ | <code>\u0152</code> || <code>Œ</code> || 17 || 1 || 1 || 6
+ |-
+ | <code>\u0153</code> || <code>œ</code> || 18 || 2 || 1 || 7
+ |-
+ | <code>\u015e</code> || <code>Ş</code> || 19 || 3 || 1 || 6
+ |-
+ | <code>\u015f</code> || <code>ş</code> || 20 || 4 || 1 || 6
+ |-
+ | <code>\u0174</code> || <code>Ŵ</code> || 21 || 5 || 1 || 6
+ |-
+ | <code>\u0175</code> || <code>ŵ</code> || 22 || 6 || 1 || 6
+ |-
+ | <code>\u017e</code> || <code>ž</code> || 23 || 7 || 1 || 6
+ |-
+ | <code>\u0207</code> || <code>ȇ</code> || 24 || 8 || 1 || 6
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 25 || 9 || -
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 26 || 10 || -
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 27 || 11 || -
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 28 || 12 || -
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 29 || 13 || -
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 30 || 14 || -
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 31 || 15 || -
+ |-
+ | <code>\u0020</code> || <code> </code> || 32 || 0 || 2 || 4<ref group="note" name="space" />
+ |-
+ | <code>\u0021</code> || <code>!</code> || 33 || 1 || 2 || 2
+ |-
+ | <code>\u0022</code> || <code>"</code> || 34 || 2 || 2 || 5
+ |-
+ | <code>\u0023</code> || <code>#</code> || 35 || 3 || 2 || 6
+ |-
+ | <code>\u0024</code> || <code>$</code> || 36 || 4 || 2 || 6
+ |-
+ | <code>\u0025</code> || <code>%</code> || 37 || 5 || 2 || 6
+ |-
+ | <code>\u0026</code> || <code>&</code> || 38 || 6 || 2 || 6
+ |-
+ | <code>\u0027</code> || <code>'</code> || 39 || 7 || 2 || 3
+ |-
+ | <code>\u0028</code> || <code>(</code> || 40 || 8 || 2 || 5
+ |-
+ | <code>\u0029</code> || <code>)</code> || 41 || 9 || 2 || 5
+ |-
+ | <code>\u002a</code> || <code>*</code> || 42 || 10 || 2 || 5
+ |-
+ | <code>\u002b</code> || <code>+</code> || 43 || 11 || 2 || 6
+ |-
+ | <code>\u002c</code> || <code>,</code> || 44 || 12 || 2 || 2
+ |-
+ | <code>\u002d</code> || <code>-</code> || 45 || 13 || 2 || 6
+ |-
+ | <code>\u002e</code> || <code>.</code> || 46 || 14 || 2 || 2
+ |-
+ | <code>\u002f</code> || <code>/</code> || 47 || 15 || 2 || 6
+ |-
+ | <code>\u0030</code> || <code>0</code> || 48 || 0 || 3 || 6
+ |-
+ | <code>\u0031</code> || <code>1</code> || 49 || 1 || 3 || 6
+ |-
+ | <code>\u0032</code> || <code>2</code> || 50 || 2 || 3 || 6
+ |-
+ | <code>\u0033</code> || <code>3</code> || 51 || 3 || 3 || 6
+ |-
+ | <code>\u0034</code> || <code>4</code> || 52 || 4 || 3 || 6
+ |-
+ | <code>\u0035</code> || <code>5</code> || 53 || 5 || 3 || 6
+ |-
+ | <code>\u0036</code> || <code>6</code> || 54 || 6 || 3 || 6
+ |-
+ | <code>\u0037</code> || <code>7</code> || 55 || 7 || 3 || 6
+ |-
+ | <code>\u0038</code> || <code>8</code> || 56 || 8 || 3 || 6
+ |-
+ | <code>\u0039</code> || <code>9</code> || 57 || 9 || 3 || 6
+ |-
+ | <code>\u003a</code> || <code>:</code> || 58 || 10 || 3 || 2
+ |-
+ | <code>\u003b</code> || <code>;</code> || 59 || 11 || 3 || 2
+ |-
+ | <code>\u003c</code> || <code><</code> || 60 || 12 || 3 || 5
+ |-
+ | <code>\u003d</code> || <code>=</code> || 61 || 13 || 3 || 6
+ |-
+ | <code>\u003e</code> || <code>></code> || 62 || 14 || 3 || 5
+ |-
+ | <code>\u003f</code> || <code>?</code> || 63 || 15 || 3 || 6
+ |-
+ | <code>\u0040</code> || <code>@</code> || 64 || 0 || 4 || 7
+ |-
+ | <code>\u0041</code> || <code>A</code> || 65 || 1 || 4 || 6
+ |-
+ | <code>\u0042</code> || <code>B</code> || 66 || 2 || 4 || 6
+ |-
+ | <code>\u0043</code> || <code>C</code> || 67 || 3 || 4 || 6
+ |-
+ | <code>\u0044</code> || <code>D</code> || 68 || 4 || 4 || 6
+ |-
+ | <code>\u0045</code> || <code>E</code> || 69 || 5 || 4 || 6
+ |-
+ | <code>\u0046</code> || <code>F</code> || 70 || 6 || 4 || 6
+ |-
+ | <code>\u0047</code> || <code>G</code> || 71 || 7 || 4 || 6
+ |-
+ | <code>\u0048</code> || <code>H</code> || 72 || 8 || 4 || 6
+ |-
+ | <code>\u0049</code> || <code>I</code> || 73 || 9 || 4 || 4
+ |-
+ | <code>\u004a</code> || <code>J</code> || 74 || 10 || 4 || 6
+ |-
+ | <code>\u004b</code> || <code>K</code> || 75 || 11 || 4 || 6
+ |-
+ | <code>\u004c</code> || <code>L</code> || 76 || 12 || 4 || 6
+ |-
+ | <code>\u004d</code> || <code>M</code> || 77 || 13 || 4 || 6
+ |-
+ | <code>\u004e</code> || <code>N</code> || 78 || 14 || 4 || 6
+ |-
+ | <code>\u004f</code> || <code>O</code> || 79 || 15 || 4 || 6
+ |-
+ | <code>\u0050</code> || <code>P</code> || 80 || 0 || 5 || 6
+ |-
+ | <code>\u0051</code> || <code>Q</code> || 81 || 1 || 5 || 6
+ |-
+ | <code>\u0052</code> || <code>R</code> || 82 || 2 || 5 || 6
+ |-
+ | <code>\u0053</code> || <code>S</code> || 83 || 3 || 5 || 6
+ |-
+ | <code>\u0054</code> || <code>T</code> || 84 || 4 || 5 || 6
+ |-
+ | <code>\u0055</code> || <code>U</code> || 85 || 5 || 5 || 6
+ |-
+ | <code>\u0056</code> || <code>V</code> || 86 || 6 || 5 || 6
+ |-
+ | <code>\u0057</code> || <code>W</code> || 87 || 7 || 5 || 6
+ |-
+ | <code>\u0058</code> || <code>X</code> || 88 || 8 || 5 || 6
+ |-
+ | <code>\u0059</code> || <code>Y</code> || 89 || 9 || 5 || 6
+ |-
+ | <code>\u005a</code> || <code>Z</code> || 90 || 10 || 5 || 6
+ |-
+ | <code>\u005b</code> || <code>[</code> || 91 || 11 || 5 || 4
+ |-
+ | <code>\u005c</code> || <code>\</code> || 92 || 12 || 5 || 6
+ |-
+ | <code>\u005d</code> || <code>]</code> || 93 || 13 || 5 || 4
+ |-
+ | <code>\u005e</code> || <code>^</code> || 94 || 14 || 5 || 6
+ |-
+ | <code>\u005f</code> || <code>_</code> || 95 || 15 || 5 || 6
+ |-
+ | <code>\u0060</code> || <code>`</code> || 96 || 0 || 6 || 3
+ |-
+ | <code>\u0061</code> || <code>a</code> || 97 || 1 || 6 || 6
+ |-
+ | <code>\u0062</code> || <code>b</code> || 98 || 2 || 6 || 6
+ |-
+ | <code>\u0063</code> || <code>c</code> || 99 || 3 || 6 || 6
+ |-
+ | <code>\u0064</code> || <code>d</code> || 100 || 4 || 6 || 6
+ |-
+ | <code>\u0065</code> || <code>e</code> || 101 || 5 || 6 || 6
+ |-
+ | <code>\u0066</code> || <code>f</code> || 102 || 6 || 6 || 5
+ |-
+ | <code>\u0067</code> || <code>g</code> || 103 || 7 || 6 || 6
+ |-
+ | <code>\u0068</code> || <code>h</code> || 104 || 8 || 6 || 6
+ |-
+ | <code>\u0069</code> || <code>i</code> || 105 || 9 || 6 || 2
+ |-
+ | <code>\u006a</code> || <code>j</code> || 106 || 10 || 6 || 6
+ |-
+ | <code>\u006b</code> || <code>k</code> || 107 || 11 || 6 || 5
+ |-
+ | <code>\u006c</code> || <code>l</code> || 108 || 12 || 6 || 3
+ |-
+ | <code>\u006d</code> || <code>m</code> || 109 || 13 || 6 || 6
+ |-
+ | <code>\u006e</code> || <code>n</code> || 110 || 14 || 6 || 6
+ |-
+ | <code>\u006f</code> || <code>o</code> || 111 || 15 || 6 || 6
+ |-
+ | <code>\u0070</code> || <code>p</code> || 112 || 0 || 7 || 6
+ |-
+ | <code>\u0071</code> || <code>q</code> || 113 || 1 || 7 || 6
+ |-
+ | <code>\u0072</code> || <code>r</code> || 114 || 2 || 7 || 6
+ |-
+ | <code>\u0073</code> || <code>s</code> || 115 || 3 || 7 || 6
+ |-
+ | <code>\u0074</code> || <code>t</code> || 116 || 4 || 7 || 4
+ |-
+ | <code>\u0075</code> || <code>u</code> || 117 || 5 || 7 || 6
+ |-
+ | <code>\u0076</code> || <code>v</code> || 118 || 6 || 7 || 6
+ |-
+ | <code>\u0077</code> || <code>w</code> || 119 || 7 || 7 || 6
+ |-
+ | <code>\u0078</code> || <code>x</code> || 120 || 8 || 7 || 6
+ |-
+ | <code>\u0079</code> || <code>y</code> || 121 || 9 || 7 || 6
+ |-
+ | <code>\u007a</code> || <code>z</code> || 122 || 10 || 7 || 6
+ |-
+ | <code>\u007b</code> || <code>{</code> || 123 || 11 || 7 || 5
+ |-
+ | <code>\u007c</code> || <code>|</code> || 124 || 12 || 7 || 2
+ |-
+ | <code>\u007d</code> || <code>}</code> || 125 || 13 || 7 || 5
+ |-
+ | <code>\u007e</code> || <code>~</code> || 126 || 14 || 7 || 7
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 127 || 15 || -
+ |-
+ | <code>\u00c7</code> || <code>Ç</code> || 128 || 0 || 8 || 6
+ |-
+ | <code>\u00fc</code> || <code>ü</code> || 129 || 1 || 8 || 6
+ |-
+ | <code>\u00e9</code> || <code>é</code> || 130 || 2 || 8 || 6
+ |-
+ | <code>\u00e2</code> || <code>â</code> || 131 || 3 || 8 || 6
+ |-
+ | <code>\u00e4</code> || <code>ä</code> || 132 || 4 || 8 || 6
+ |-
+ | <code>\u00e0</code> || <code>à</code> || 133 || 5 || 8 || 6
+ |-
+ | <code>\u00e5</code> || <code>å</code> || 134 || 6 || 8 || 6
+ |-
+ | <code>\u00e7</code> || <code>ç</code> || 135 || 7 || 8 || 6
+ |-
+ | <code>\u00ea</code> || <code>ê</code> || 136 || 8 || 8 || 6
+ |-
+ | <code>\u00eb</code> || <code>ë</code> || 137 || 9 || 8 || 6
+ |-
+ | <code>\u00e8</code> || <code>è</code> || 138 || 10 || 8 || 6
+ |-
+ | <code>\u00ef</code> || <code>ï</code> || 139 || 11 || 8 || 4
+ |-
+ | <code>\u00ee</code> || <code>î</code> || 140 || 12 || 8 || 6
+ |-
+ | <code>\u00ec</code> || <code>ì</code> || 141 || 13 || 8 || 3
+ |-
+ | <code>\u00c4</code> || <code>Ä</code> || 142 || 14 || 8 || 6
+ |-
+ | <code>\u00c5</code> || <code>Å</code> || 143 || 15 || 8 || 6
+ |-
+ | <code>\u00c9</code> || <code>É</code> || 144 || 0 || 9 || 6
+ |-
+ | <code>\u00e6</code> || <code>æ</code> || 145 || 1 || 9 || 6
+ |-
+ | <code>\u00c6</code> || <code>Æ</code> || 146 || 2 || 9 || 6
+ |-
+ | <code>\u00f4</code> || <code>ô</code> || 147 || 3 || 9 || 6
+ |-
+ | <code>\u00f6</code> || <code>ö</code> || 148 || 4 || 9 || 6
+ |-
+ | <code>\u00f2</code> || <code>ò</code> || 149 || 5 || 9 || 6
+ |-
+ | <code>\u00fb</code> || <code>û</code> || 150 || 6 || 9 || 6
+ |-
+ | <code>\u00f9</code> || <code>ù</code> || 151 || 7 || 9 || 6
+ |-
+ | <code>\u00ff</code> || <code>ÿ</code> || 152 || 8 || 9 || 6
+ |-
+ | <code>\u00d6</code> || <code>Ö</code> || 153 || 9 || 9 || 6
+ |-
+ | <code>\u00dc</code> || <code>Ü</code> || 154 || 10 || 9 || 6
+ |-
+ | <code>\u00f8</code> || <code>ø</code> || 155 || 11 || 9 || 6
+ |-
+ | <code>\u00a3</code> || <code>£</code> || 156 || 12 || 9 || 6
+ |-
+ | <code>\u00d8</code> || <code>Ø</code> || 157 || 13 || 9 || 6
+ |-
+ | <code>\u00d7</code> || <code>×</code> || 158 || 14 || 9 || 4
+ |-
+ | <code>\u0192</code> || <code>ƒ</code> || 159 || 15 || 9 || 6
+ |-
+ | <code>\u00e1</code> || <code>á</code> || 160 || 0 || 10 || 6
+ |-
+ | <code>\u00ed</code> || <code>í</code> || 161 || 1 || 10 || 3
+ |-
+ | <code>\u00f3</code> || <code>ó</code> || 162 || 2 || 10 || 6
+ |-
+ | <code>\u00fa</code> || <code>ú</code> || 163 || 3 || 10 || 6
+ |-
+ | <code>\u00f1</code> || <code>ñ</code> || 164 || 4 || 10 || 6
+ |-
+ | <code>\u00d1</code> || <code>Ñ</code> || 165 || 5 || 10 || 6
+ |-
+ | <code>\u00aa</code> || <code>ª</code> || 166 || 6 || 10 || 6
+ |-
+ | <code>\u00ba</code> || <code>º</code> || 167 || 7 || 10 || 6
+ |-
+ | <code>\u00bf</code> || <code>¿</code> || 168 || 8 || 10 || 6
+ |-
+ | <code>\u00ae</code> || <code>®</code> || 169 || 9 || 10 || 7
+ |-
+ | <code>\u00ac</code> || <code>¬</code> || 170 || 10 || 10 || 6
+ |-
+ | <code>\u00bd</code> || <code>½</code> || 171 || 11 || 10 || 6
+ |-
+ | <code>\u00bc</code> || <code>¼</code> || 172 || 12 || 10 || 6
+ |-
+ | <code>\u00a1</code> || <code>¡</code> || 173 || 13 || 10 || 2
+ |-
+ | <code>\u00ab</code> || <code>«</code> || 174 || 14 || 10 || 6
+ |-
+ | <code>\u00bb</code> || <code>»</code> || 175 || 15 || 10 || 6
+ |-
+ | <code>\u2591</code> || <code>░</code> || 176 || 0 || 11 || 8
+ |-
+ | <code>\u2592</code> || <code>▒</code> || 177 || 1 || 11 || 9
+ |-
+ | <code>\u2593</code> || <code>▓</code> || 178 || 2 || 11 || 9
+ |-
+ | <code>\u2502</code> || <code>│</code> || 179 || 3 || 11 || 6
+ |-
+ | <code>\u2524</code> || <code>┤</code> || 180 || 4 || 11 || 6
+ |-
+ | <code>\u2561</code> || <code>╡</code> || 181 || 5 || 11 || 6
+ |-
+ | <code>\u2562</code> || <code>╢</code> || 182 || 6 || 11 || 8
+ |-
+ | <code>\u2556</code> || <code>╖</code> || 183 || 7 || 11 || 8
+ |-
+ | <code>\u2555</code> || <code>╕</code> || 184 || 8 || 11 || 6
+ |-
+ | <code>\u2563</code> || <code>╣</code> || 185 || 9 || 11 || 8
+ |-
+ | <code>\u2551</code> || <code>║</code> || 186 || 10 || 11 || 8
+ |-
+ | <code>\u2557</code> || <code>╗</code> || 187 || 11 || 11 || 8
+ |-
+ | <code>\u255d</code> || <code>╝</code> || 188 || 12 || 11 || 8
+ |-
+ | <code>\u255c</code> || <code>╜</code> || 189 || 13 || 11 || 8
+ |-
+ | <code>\u255b</code> || <code>╛</code> || 190 || 14 || 11 || 6
+ |-
+ | <code>\u2510</code> || <code>┐</code> || 191 || 15 || 11 || 6
+ |-
+ | <code>\u2514</code> || <code>└</code> || 192 || 0 || 12 || 9
+ |-
+ | <code>\u2534</code> || <code>┴</code> || 193 || 1 || 12 || 9
+ |-
+ | <code>\u252c</code> || <code>┬</code> || 194 || 2 || 12 || 9
+ |-
+ | <code>\u251c</code> || <code>├</code> || 195 || 3 || 12 || 9
+ |-
+ | <code>\u2500</code> || <code>─</code> || 196 || 4 || 12 || 9
+ |-
+ | <code>\u253c</code> || <code>┼</code> || 197 || 5 || 12 || 9
+ |-
+ | <code>\u255e</code> || <code>╞</code> || 198 || 6 || 12 || 9
+ |-
+ | <code>\u255f</code> || <code>╟</code> || 199 || 7 || 12 || 9
+ |-
+ | <code>\u255a</code> || <code>╚</code> || 200 || 8 || 12 || 9
+ |-
+ | <code>\u2554</code> || <code>╔</code> || 201 || 9 || 12 || 9
+ |-
+ | <code>\u2569</code> || <code>╩</code> || 202 || 10 || 12 || 9
+ |-
+ | <code>\u2566</code> || <code>╦</code> || 203 || 11 || 12 || 9
+ |-
+ | <code>\u2560</code> || <code>╠</code> || 204 || 12 || 12 || 9
+ |-
+ | <code>\u2550</code> || <code>═</code> || 205 || 13 || 12 || 9
+ |-
+ | <code>\u256c</code> || <code>╬</code> || 206 || 14 || 12 || 9
+ |-
+ | <code>\u2567</code> || <code>╧</code> || 207 || 15 || 12 || 9
+ |-
+ | <code>\u2568</code> || <code>╨</code> || 208 || 0 || 13 || 9
+ |-
+ | <code>\u2564</code> || <code>╤</code> || 209 || 1 || 13 || 9
+ |-
+ | <code>\u2565</code> || <code>╥</code> || 210 || 2 || 13 || 9
+ |-
+ | <code>\u2559</code> || <code>╙</code> || 211 || 3 || 13 || 9
+ |-
+ | <code>\u2558</code> || <code>╘</code> || 212 || 4 || 13 || 9
+ |-
+ | <code>\u2552</code> || <code>╒</code> || 213 || 5 || 13 || 9
+ |-
+ | <code>\u2553</code> || <code>╓</code> || 214 || 6 || 13 || 9
+ |-
+ | <code>\u256b</code> || <code>╫</code> || 215 || 7 || 13 || 9
+ |-
+ | <code>\u256a</code> || <code>╪</code> || 216 || 8 || 13 || 9
+ |-
+ | <code>\u2518</code> || <code>┘</code> || 217 || 9 || 13 || 6
+ |-
+ | <code>\u250c</code> || <code>┌</code> || 218 || 10 || 13 || 9
+ |-
+ | <code>\u2588</code> || <code>█</code> || 219 || 11 || 13 || 9
+ |-
+ | <code>\u2584</code> || <code>▄</code> || 220 || 12 || 13 || 9
+ |-
+ | <code>\u258c</code> || <code>▌</code> || 221 || 13 || 13 || 5
+ |-
+ | <code>\u2590</code> || <code>▐</code> || 222 || 14 || 13 || 9
+ |-
+ | <code>\u2580</code> || <code>▀</code> || 223 || 15 || 13 || 9
+ |-
+ | <code>\u03b1</code> || <code>α</code> || 224 || 0 || 14 || 8
+ |-
+ | <code>\u03b2</code> || <code>β</code> || 225 || 1 || 14 || 7
+ |-
+ | <code>\u0393</code> || <code>Γ</code> || 226 || 2 || 14 || 7
+ |-
+ | <code>\u03c0</code> || <code>π</code> || 227 || 3 || 14 || 8
+ |-
+ | <code>\u03a3</code> || <code>Σ</code> || 228 || 4 || 14 || 7
+ |-
+ | <code>\u03c3</code> || <code>σ</code> || 229 || 5 || 14 || 8
+ |-
+ | <code>\u03bc</code> || <code>μ</code> || 230 || 6 || 14 || 8
+ |-
+ | <code>\u03c4</code> || <code>τ</code> || 231 || 7 || 14 || 8
+ |-
+ | <code>\u03a6</code> || <code>Φ</code> || 232 || 8 || 14 || 7
+ |-
+ | <code>\u0398</code> || <code>Θ</code> || 233 || 9 || 14 || 8
+ |-
+ | <code>\u03a9</code> || <code>Ω</code> || 234 || 10 || 14 || 8
+ |-
+ | <code>\u03b4</code> || <code>δ</code> || 235 || 11 || 14 || 7
+ |-
+ | <code>\u221e</code> || <code>∞</code> || 236 || 12 || 14 || 9
+ |-
+ | <code>\u2205</code> || <code>∅</code> || 237 || 13 || 14 || 9
+ |-
+ | <code>\u2208</code> || <code>∈</code> || 238 || 14 || 14 || 6
+ |-
+ | <code>\u2229</code> || <code>∩</code> || 239 || 15 || 14 || 7
+ |-
+ | <code>\u2261</code> || <code>≡</code> || 240 || 0 || 15 || 7
+ |-
+ | <code>\u00b1</code> || <code>±</code> || 241 || 1 || 15 || 7
+ |-
+ | <code>\u2265</code> || <code>≥</code> || 242 || 2 || 15 || 7
+ |-
+ | <code>\u2264</code> || <code>≤</code> || 243 || 3 || 15 || 7
+ |-
+ | <code>\u2320</code> || <code>⌠</code> || 244 || 4 || 15 || 9
+ |-
+ | <code>\u2321</code> || <code>⌡</code> || 245 || 5 || 15 || 6
+ |-
+ | <code>\u00f7</code> || <code>÷</code> || 246 || 6 || 15 || 7
+ |-
+ | <code>\u2248</code> || <code>≈</code> || 247 || 7 || 15 || 8
+ |-
+ | <code>\u00b0</code> || <code>°</code> || 248 || 8 || 15 || 7
+ |-
+ | <code>\u2219</code> || <code>∙</code> || 249 || 9 || 15 || 6
+ |-
+ | <code>\u00b7</code> || <code>·</code> || 250 || 10 || 15 || 6
+ |-
+ | <code>\u221a</code> || <code>√</code> || 251 || 11 || 15 || 9
+ |-
+ | <code>\u207f</code> || <code>ⁿ</code> || 252 || 12 || 15 || 7
+ |-
+ | <code>\u00b2</code> || <code>²</code> || 253 || 13 || 15 || 6
+ |-
+ | <code>\u25a0</code> || <code>■</code> || 254 || 14 || 15 || 7
+ |-
+ | <code>\u0000</code> || <ref group="note" name="zero" /> || 0 || 255 || 15 || -
+ |}
+</div>
+
+TODO: Expand on shadows/bold/whatever for implementing.
+
+== Notes ==
+
+<references group="note">
+<ref name="zero">This code point isn't supported, and may be replaced with another character in a future version.  <code>\u0000</code> should be directly skipped instead of being rendered with this code point.</ref>
+<ref name="space">The space character is mapped to an index within <code>ascii.png</code>, but the width is hardcoded to 4 and the character at that position is not rendered.</ref>
+</references>
 
 [[Category:Protocol Details]]
 [[Category:Minecraft Modern]]
