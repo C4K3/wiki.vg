@@ -32,30 +32,37 @@ No changes so far.
 
 Extends [[Entities#Entity|Entity]].
 
-{| class="wikitable" style="background-color: #d9ead3;"
+{| class="wikitable"
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 7
- | VarInt
- | Unknown
+ | 6
+ | [[Slot]]
+ |colspan="2"| Firework info
+ |-
+ |style="background-color: #d9ead3;"| 7
+ |style="background-color: #d9ead3;"| VarInt
+ |colspan="2" style="background-color: #d9ead3;"| Unknown
  |}
 
 === Pig ===
 
 Extends [[Entities#Animal|Animal]].
 
-{| class="wikitable" style="background-color: #d9ead3;"
+{| class="wikitable"
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
  |-
- | 14
- | VarInt
- | Unknown
+ | 13
+ | Boolean
+ |colspan="2"| Has saddle
+ |-
+ |style="background-color: #d9ead3;"| 14
+ |style="background-color: #d9ead3;"| VarInt
+ |colspan="2" style="background-color: #d9ead3;"| Unknown
  |}
-
 
 == Block Actions ==
 
