@@ -59,9 +59,9 @@ Extends [[Entities#Animal|Animal]].
  | Boolean
  |colspan="2"| Has saddle
  |-
- | 14
- | VarInt
- |colspan="2" | Total boost time
+ |style="background-color: #d9ead3;"| 14
+ |style="background-color: #d9ead3;"| VarInt
+ |colspan="2" style="background-color: #d9ead3;"| Total boost time
  |}
 
 == Block Actions ==
