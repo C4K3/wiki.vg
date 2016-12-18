@@ -43,7 +43,7 @@ Extends [[Entities#Entity|Entity]].
  |-
  |style="background-color: #d9ead3;"| 7
  |style="background-color: #d9ead3;"| VarInt
- |colspan="2" style="background-color: #d9ead3;"| Unknown
+ |colspan="2" style="background-color: #d9ead3;"| Entity ID of entity which used firework (for elytra boosting)
  |}
 
 === Pig ===
