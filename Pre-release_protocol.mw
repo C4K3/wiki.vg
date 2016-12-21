@@ -1,4 +1,4 @@
-This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently [[Protocol version numbers|1.11, protocol 315]]) to the current pre-release (currently [[Protocol version numbers|1.11.1, protocol 316]]). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
+This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently [[Protocol version numbers|1.11, protocol 315]]) to the current pre-release (currently [[Protocol version numbers|1.11.2, protocol 316]]). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 
 One who wishes to commandeer the merging of this into [[Protocol]] when an update is made must be sure to respect any changes that may have occurred to the respective packets there.
 
