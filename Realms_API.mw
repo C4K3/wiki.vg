@@ -129,7 +129,7 @@ Example:
 ==== GET /worlds/$ID ====
 
 Returns a single server listing about a server.
-If a server doesn't exist/you do not have currently have access to it, the server will return a 403 error, with no content.
+If you are not the owner of the server, the server will return a 403 error, with a JSON encoded error message.
 
 Returns: a JSON encoded Server, as above.
 
