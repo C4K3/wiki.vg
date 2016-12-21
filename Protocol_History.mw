@@ -722,6 +722,13 @@ Provided below is a (potentially incomplete) changelog of the server protocol st
 * Changed ID of Spectate from 0x18 to 0x19
 * Changed ID of Resource Pack Status from 0x19 to 0x1A
 
+==== Entity metadata ====
+
+<strong>There may be other entity metadata changes that were missed in this snapshot</strong>
+
+* Removed the 0x10 (Eating/drinking/blocking) flag from Flags (0?) in Entity.
+* Added Hand States (5?) to Living.
+
 === 15w14a ===
 
 ''Note: 15w14a was a joke snapshot, and its changes were not moved into the following snapshots''
