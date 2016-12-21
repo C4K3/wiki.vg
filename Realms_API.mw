@@ -39,31 +39,44 @@ For most endpoints requiring a server, it is returned in a JSON object format, c
  {| class="wikitable"
 ! Key !! Value !! Value Type
 |-
-| id || The ID of the server. Must be unique || Integer
+| activeSlot || Unknown, seems to always return '1' || Integer
 |-
-| remoteSubscriptionId || Unknown, perhaps linked to transaction? Seems to work if same as 'id' || String
-|- 
-| name || The name of the server || String
-|-
-| motd || The MOTD of the server. Doesn't support color. || String
-|-
-| state || The status of the server. Can be one of the following: ADMIN_LOCK, CLOSED, OPEN, UNINITIALIZED || String
-|-
-| owner || The owner of the server. If this is equal to the previewing players username, the configure button will be accessible. || String
-|-
-| players || A array of currently connected players? || JSON Array, with string values
-|-
-| daysLeft || The amount of days left for the subscription || Integer
-|-
-| ip || The IP address of the Realms server. In the format of [IP]:[Port] || String
+| daysLeft || How many days are left of subscription. Always returns '0' if not owner and returns '-1' if expired || Integer
 |-
 | expired || Whether the subscription has expired || Boolean
 |-
-| minigame || Whether the server is a minigame server || Boolean
+| expiredTrial || Whether the trial subscription has expired || Boolean
 |-
-| difficulty || The difficulty of the server. 0 is peaceful, 1 is easy, and so on. || Integer
+| id || The ID of the server. Must be unique || Integer
 |-
-| gameMode || The gamemode of the server. 0 is survival, 1 is creative, and 2 is adventure || Integer
+| maxPlayers || The max players of the server, always returns '10' || Integer
+|-
+| member || Unknown, possibly returns `true` if OP? || Boolean
+|-
+| minigameId ||Not confirmed, probably unique Id of Minigame map. Returns `null` if not in a minigame || Integer
+|-
+| minigameImage ||Not confirmed, probably base64 encoded or url thumbnail for minigame. Returns `null` if not in a minigame || String
+|-
+| minigameName ||Not confirmed, probably name of minigame that is currently active. Returns `null` if not in a minigame || String
+|-
+| motd || The MOTD of the server. Doesn't support color. || String
+|-
+| name || The name of the server || String
+|-
+| owner || The owner of the server. If this is equal to the previewing players username, the configure button will be accessible. || String
+|-
+| ownerUUID || The unique ID of the owner || String
+|-
+| players || A array of currently connected players? || JSON Array, with string values
+|-
+| remoteSubscriptionId || Unknown, perhaps linked to transaction? Seems to work if same as 'id' || String
+|- 
+| slots || Unknown, returns `null` || Unknown
+|- 
+| state || The status of the server. Can be one of the following: ADMIN_LOCK, CLOSED, OPEN, UNINITIALIZED || String
+|-
+| worldType || Unknown, default is "NORMAL", perhaps linked to minigame? || String
+|- 
 |}
 
 == Endpoints ==
