@@ -145,6 +145,8 @@ Returns:
 ! Key !! Value !! Value Type
 |-
 | address || The address of a server, encoded as [IP]:[Port] || String
+|-
+| pendingUpdate || If the server is waiting to update to a newer version || Boolean
 |}
 
 ==== GET /worlds/$ID/backups ====
