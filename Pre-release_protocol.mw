@@ -36,14 +36,17 @@ Extends [[Entities#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | [[Slot]]
  |colspan="2"| Firework info
+ | Empty
  |-
  |style="background-color: #d9ead3;"| 7
  |style="background-color: #d9ead3;"| VarInt
  |colspan="2" style="background-color: #d9ead3;"| Entity ID of entity which used firework (for elytra boosting)
+ |style="background-color: #d9ead3;"| 0
  |}
 
 === Pig ===
@@ -54,14 +57,17 @@ Extends [[Entities#Animal|Animal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 13
  | Boolean
  |colspan="2"| Has saddle
+ | false
  |-
  |style="background-color: #d9ead3;"| 14
  |style="background-color: #d9ead3;"| VarInt
  |colspan="2" style="background-color: #d9ead3;"| Total boost time
+ |style="background-color: #d9ead3;"| 0
  |}
 
 == Block Actions ==
