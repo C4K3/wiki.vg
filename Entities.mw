@@ -652,9 +652,9 @@ Since release {{Minecraft Wiki|1.6}}, all minecarts are spawned with object type
 
 == Entity Metadata Format ==
 
-Note that entity metadata is a totally distinct concept from block metadata. All entities ''must'' send at least one item of metadata, in most cases this will be the health item.
+Note that entity metadata is a totally distinct concept from block metadata.  It is not required to send all metadata fields, or even any metadata fields, so long as the terminating entry is correctly sent.
 
-An Entity Metadata is an array of entries, each of which looks like the following:
+Entity Metadata is an array of entries, each of which looks like the following:
 
 {| class="wikitable"
  ! Name
@@ -732,7 +732,7 @@ An Entity Metadata is an array of entries, each of which looks like the followin
  | 0 for absent otherwise, <code><nowiki>id &lt;&lt; 4 | data</nowiki></code>
  |}
 
-Entity classes also recursively use fields from classes they extend.
+Entity classes also recursively inherit fields from classes they extend.
 
 === Entity ===
 
@@ -742,11 +742,13 @@ The base class.
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="8"| 0
  |rowspan="8"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="8"| 0
  |-
  | 0x01
  | On Fire
@@ -758,7 +760,7 @@ The base class.
  | Sprinting
  |-
  | 0x10
- | Eating/drinking/blocking
+ | Unused (previously eating/drinking/blocking; use hand state now)
  |-
  | 0x20
  | Invisible
@@ -772,22 +774,27 @@ The base class.
  | 1
  | VarInt
  |colspan="2"| Air
+ | 300
  |-
  | 2
  | String
  |colspan="2"| Custom name
+ | <code></code>
  |-
  | 3
  | Boolean
  |colspan="2"| Is custom name visible
+ | false
  |-
  | 4
  | Boolean
  |colspan="2"| Is silent
+ | false
  |-
  | 5
  | Boolean
  |colspan="2"| No gravity
+ | false
  |}
 
 Statuses:
@@ -811,10 +818,12 @@ Extends [[#Projectile|Projectile]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | [[Slot]]
  |colspan="2"| Potion which is thrown
+ | Empty
  |}
 
 === FallingBlock ===
@@ -825,10 +834,12 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | [[Data Types#Position|Position]]
  |colspan="2"| spawn position
+ | (0, 0, 0)
  |}
 
 === AreaEffectCloud ===
@@ -839,30 +850,37 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | Float
  |colspan="2"| Radius
+ | 0.5
  |-
  | 7
  | VarInt
  |colspan="2"| Color (only for mob spell particle)
+ | 0
  |-
  | 8
  | Boolean
  |colspan="2"| Ignore radius and show effect as single point, not area
+ | false
  |-
  | 9
  | VarInt
  |colspan="2"| Particle ID
+ | 15 (mobSpell)
  |-
  | 10
  | VarInt
  |colspan="2"| Particle parameter 1
+ | 0
  |-
  | 11
  | VarInt
  |colspan="2"| Particle parameter 2
+ | 0
  |}
 
 === FishingHook ===
@@ -873,10 +891,12 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | VarInt
  |colspan="2"| Hooked entity id + 1, or 0 if there is no hooked entity
+ | 0
  |}
 
 Statuses:
@@ -893,11 +913,13 @@ Abstract base class for [[#TippedArrow|TippedArrow]] (which is used for regular 
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | rowspan="2" | 6
  | rowspan="2" | Byte
  ! Bit mask
  ! Meaning
+ | rowspan="2" | 0
  |-
  | 0x01
  | Is critical
@@ -913,10 +935,12 @@ Used for both tipped and regular arrows.  If not tipped, then color is set to 0 
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 7
  | VarInt
  |colspan="2"| Color (0 for no particles)
+ | 0
  |}
 
 Statuses:
@@ -931,30 +955,37 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | VarInt
  |colspan="2"| Time since last hit
+ | 0
  |-
  | 7
  | VarInt
  |colspan="2"| Forward direction
+ | 1
  |-
  | 8
  | Float
  |colspan="2"| Damage taken
+ | 0.0
  |-
  | 9
  | VarInt
  |colspan="2"| Type
+ | 0
  |-
  | 10
  | Boolean
  |colspan="2"| Right paddle turning
+ | false
  |-
  | 11
  | Boolean
  |colspan="2"| Left paddle turning
+ | false
  |}
 
 === EnderCrystal ===
@@ -965,14 +996,17 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | OptPosition
  |colspan="2"| Beam target
+ | Absent
  |-
  | 7
  | Boolean
  |colspan="2"| Show bottom
+ | true
  |}
 
 === Fireball ===
@@ -989,10 +1023,12 @@ Extends [[#Fireball|Fireball]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | Boolean
  |colspan="2"| Invulnerable
+ | false
  |}
 
 === Fireworks ===
@@ -1003,10 +1039,12 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | [[Slot]]
  |colspan="2"| Firework info
+ | empty
  |}
 
 Statuses:
@@ -1028,14 +1066,17 @@ Extends [[#Hanging|Hanging]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | [[Slot]]
  |colspan="2"| Item
+ | Empty
  |-
  | 7
  | VarInt
  |colspan="2"| Rotation
+ | 0
  |}
 
 === Item ===
@@ -1046,10 +1087,12 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | [[Slot]]
  |colspan="2"| Item
+ | Empty
  |}
 
 === Living ===
@@ -1060,10 +1103,12 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="4"| 6
  |rowspan="4"| Byte
- |colspan="2"| Likely used to limit placing blocks from both hands at the same time.
+ |colspan="2"| Hand states, used to trigger blocking/eating/drinking animation.
+ |rowspan="4"| 0
  |-
  ! Bit mask
  ! Meaning
@@ -1077,18 +1122,22 @@ Extends [[#Entity|Entity]].
  | 7
  | Float
  |colspan="2"| Health
+ | 1.0
  |-
  | 8
  | VarInt
  |colspan="2"| Potion effect color (or 0 if there is no effect)
+ | 0
  |-
  | 9
  | Boolean
  |colspan="2"| Is potion effect ambient: reduces the number of particles generated by potions to 1/5 the normal amount
+ | false
  |-
  | 10
  | VarInt
  |colspan="2"| Number of arrows in entity
+ | 0
  |}
 
 Statuses:
@@ -1112,18 +1161,22 @@ Extends [[#Living|Living]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 11
  | Float
  |colspan="2"| Additional Hearts
+ | 0.0
  |-
  | 12
  | VarInt
  |colspan="2"| Score
+ | 0
  |-
  |rowspan="10"| 13
  |rowspan="10"| Byte
  |colspan="2"| The Displayed Skin Parts bit mask that is sent in [[Protocol#Client Settings|Client Settings]]
+ |rowspan="10"| 0
  |-
  ! Bit mask !! Meaning
  |-
@@ -1146,6 +1199,7 @@ Extends [[#Living|Living]].
  | 14
  | Byte
  |colspan="2"| Main hand (0 : Left, 1 : Right)
+ | 1
  |}
 
 Statuses:
@@ -1175,11 +1229,13 @@ Extends [[#Living|Living]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="5"| 11
  |rowspan="5"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="5"| 0
  |-
  | 0x01
  | is Small
@@ -1196,26 +1252,32 @@ Extends [[#Living|Living]].
  | 12
  | Rotation
  |colspan="2"| Head rotation
+ | (0.0, 0.0, 0.0)
  |-
  | 13
  | Rotation
  |colspan="2"| Body rotation
+ | (0.0, 0.0, 0.0)
  |-
  | 14
  | Rotation
  |colspan="2"| Left arm rotation
+ | (-10.0, 0.0, -10.0)
  |-
  | 15
  | Rotation
  |colspan="2"| Right arm rotation
+ | (-15.0, 0.0, 10.0)
  |-
  | 16
  | Rotation
  |colspan="2"| Left leg rotation
+ | (-1.0, 0.0, -1.0)
  |-
  | 17
  | Rotation
  |colspan="2"| Right leg rotation
+ | (1.0, 0.0, 1.0)
  |}
 
 Note that armor stands with the [[#Entity|invisible flag from the base entity class]] set also cannot be attacked or damaged, except for by the void.
@@ -1233,11 +1295,13 @@ Extends [[#Living|Living]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="3"| 11
  |rowspan="3"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="3"| 0
  |-
  | 0x01
  | NoAI
@@ -1267,11 +1331,13 @@ Extends [[#Ambient|Ambient]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | rowspan="2"| 12
  | rowspan="2"| Byte
  ! Bit mask
  ! Meaning
+ | rowspan="2"| 0
  |-
  | 0x01
  | Is hanging
@@ -1307,10 +1373,12 @@ Extends [[#Creature|Creature]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Boolean
  |colspan="2"| Is baby
+ | false
  |}
 
 === Animal ===
@@ -1333,11 +1401,13 @@ Extends [[#Animal|Animal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="9"| 13
  |rowspan="9"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="9"| 0
  |-
  | 0x01
  | ''Unused''
@@ -1366,6 +1436,7 @@ Extends [[#Animal|Animal]].
  | 14
  | OptUUID
  |colspan="2"| Owner
+ | Absent
  |}
 
 Statuses:
@@ -1382,14 +1453,17 @@ Extends [[#AbstractHorse|AbstractHorse]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 15
  | VarInt
  |colspan="2"| Variant (Color & Style)
+ | 0
  |-
  | 16
  | VarInt
- |colspan="2"| Armor
+ |colspan="2"| Armor (0: none, 1: iron, 2: gold, 3: diamond)
+ | 0 (none)
  |}
 
 === ZombieHorse ===
@@ -1408,10 +1482,12 @@ Extends [[#AbstractHorse|AbstractHorse]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 15
  | Boolean
  |colspan="2"| Has Chest
+ | false
  |}
 
 === Donkey ===
@@ -1426,18 +1502,22 @@ Extends [[#ChestedHorse|ChestedHorse]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 16
  | VarInt
  | colspan="2"| Strength (number of columns of 3 slots in the llama's inventory once a chest is equipped)
+ | 0
  |-
  | 17
  | VarInt
  | colspan="2"| Carpet color (a dye color, or -1 if no carpet equipped)
+ | -1
  |-
  | 18
  | VarInt
  | colspan="2"| Variant (0: <code>llama_creamy.png</code>, 1: <code>llama_white.png</code>, 2: <code>llama_brown.png</code>, 3: <code>llama_gray.png</code>)
+ | 0
  |}
 
 === Mule ===
@@ -1452,10 +1532,12 @@ Extends [[#Animal|Animal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 13
  | Boolean
  |colspan="2"| Has saddle
+ | false
  |}
 
 === Rabbit ===
@@ -1466,10 +1548,12 @@ Extends [[#Animal|Animal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 13
  | VarInt
  |colspan="2"| Type
+ | 0
  |}
 
 === Polar Bear ===
@@ -1480,10 +1564,12 @@ Extends [[#Animal|Animal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 13
  | Boolean
  |colspan="2"| Standing up
+ | false
  |}
 
 Statuses:
@@ -1499,11 +1585,13 @@ Extends [[#Animal|Animal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="3"| 13
  |rowspan="3"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="3"| 0
  |-
  | 0x0F
  | Color (matches {{Minecraft Wiki|Data_values#Dyes|dye damage values}})
@@ -1524,11 +1612,13 @@ Extends [[#Animal|Animal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="4"| 13
  |rowspan="4"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="4"| 0
  |-
  | 0x01
  | Is sitting
@@ -1542,6 +1632,7 @@ Extends [[#Animal|Animal]].
  | 14
  | OptUUID
  |colspan="2"| Owner
+ | Absent
  |}
 
 Statuses:
@@ -1558,10 +1649,12 @@ Extends [[#TameableAnimal|TameableAnimal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 15
  | VarInt
  |colspan="2"| Type (0 = untamed, 1 = tuxedo, 2 = tabby, 3 = siamese).  Used to render regardless as to whether it is tamed or not.
+ | 0
  |}
 
 === Wolf ===
@@ -1572,18 +1665,22 @@ Extends [[#TameableAnimal|TameableAnimal]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 15
  | Float
  |colspan="2"| Damage taken (used for tail rotation)
+ | Value of health field (1.0)
  |-
  | 16
  | Boolean
  |colspan="2"| Is begging
+ | false
  |-
  | 17
  | VarInt
  |colspan="2"| Collar color (values are those {{Minecraft Wiki|Data_values#Dyes|used with dyes}})
+ | 14 (Red)
  |}
 
 Statuses:
@@ -1598,10 +1695,12 @@ Extends [[#Ageable|Ageable]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 13
  | VarInt
  |colspan="2"| Profession (Farmer = 0, Librarian = 1, Priest = 2, Blacksmith = 3, Butcher = 4, Nitwit = 5)
+ | 0
  |}
 
 Statuses:
@@ -1626,11 +1725,13 @@ Extends [[#Golem|Golem]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="2"| 12
  |rowspan="2"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="2"| 0
  |-
  | 0x01
  | Is player-created
@@ -1653,11 +1754,13 @@ Extends [[#Golem|Golem]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="2"| 12
  |rowspan="2"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="2"| 0x10
  |-
  | 0x10
  | has no pumpkin hat
@@ -1671,22 +1774,27 @@ Extends [[#Golem|Golem]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Direction
  |colspan="2"| Facing direction
+ | Down (0)
  |-
  | 13
  | OptPosition
  |colspan="2"| Attachment position
+ | Absent
  |-
  | 14
  | Byte
  |colspan="2"| Shield height
+ | 0
  |- 
  | 15
  | Byte
- | colspan="2"| Color (dye color, default of purple)
+ | colspan="2"| Color (dye color)
+ | 10 (purple)
  |}
 
 === Monster ===
@@ -1703,11 +1811,13 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="2"|12
  |rowspan="2"|Byte
  ! Bit mask
  ! Meaning
+ |rowspan="2"|0
  |-
  | 0x01
  | Is on fire
@@ -1721,18 +1831,22 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | VarInt
  |colspan="2"| State (-1 = idle, 1 = fuse)
+ | -1
  |-
  | 13
  | Boolean
  |colspan="2"| Is {{Minecraft Wiki|Creeper#Charged Creepers|charged}}
+ | false
  |-
  | 14
  | Boolean
  |colspan="2"| Is ignited
+ | false
  |}
 
 === Endermite ===
@@ -1755,14 +1869,17 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |- 
  | 12
  | Boolean
  |colspan="2"| Is retracting spikes
+ | false
  |-
  | 13
  | VarInt
  |colspan="2"| Target EID
+ | 0
  |}
 
 === ElderGuardian ===
@@ -1783,10 +1900,12 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Byte
  | Spell (0: none, 1: summon vex, 2: attack, 3: wololo)
+ | 0
  |}
 
 === Vex ===
@@ -1797,11 +1916,13 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
- |rowspan="3"| 12
- |rowspan="3"| Byte
+ |rowspan="2"| 12
+ |rowspan="2"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="2"| 0
  |-
  | 0x01
  | Is in attack mode
@@ -1815,11 +1936,13 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
- |rowspan="3"| 12
- |rowspan="3"| Byte
+ |rowspan="2"| 12
+ |rowspan="2"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="2"| 0
  |-
  | 0x01
  | Has target (aggressive state)
@@ -1837,10 +1960,12 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Boolean
  |colspan="2"| Is swinging arms
+ | false
  |}
 
 === Skeleton ===
@@ -1863,11 +1988,13 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  |rowspan="2"| 12
  |rowspan="2"| Byte
  ! Bit mask
  ! Meaning
+ |rowspan="2"| 0
  |-
  | 0x01
  | Is climbing
@@ -1881,10 +2008,12 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Boolean
- |colspan="2"| Is aggresive
+ |colspan="2"| Is aggressive
+ | false
  |}
 
 Statues:
@@ -1900,22 +2029,27 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | VarInt
  |colspan="2"| Center head's target (entity ID, or 0 if no target)
+ | 0
  |-
  | 13
  | VarInt
  |colspan="2"| Left(?) head's target (entity ID, or 0 if no target)
+ | 0
  |-
  | 14
  | VarInt
  |colspan="2"| Right(?) head's target (entity ID, or 0 if no target)
+ | 0
  |-
  | 15
  | VarInt
  |colspan="2"| Invulnerable time
+ | 0
  |}
 
 === Zombie ===
@@ -1926,18 +2060,22 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Boolean
  |colspan="2"| Is baby
+ | false
  |-
  | 13
  | VarInt
- |colspan="2"| Unused
+ |colspan="2"| Unused (previously type)
+ | 0
  |-
  | 14
  | Boolean
  |colspan="2"| Are hands held up
+ | false
  |}
 
 Statuses:
@@ -1953,14 +2091,17 @@ Extends [[#Zombie|Zombie]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |- 
  | 15
  | Boolean
  |colspan="2"| Is converting
+ | false
  |- 
  | 16
  | VarInt
  |colspan="2"| Profession
+ | 0
  |}
 
 === Husk ===
@@ -1975,14 +2116,17 @@ Extends [[#Monster|Monster]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Opt BlockID
  |colspan="2"| Carried block
+ | Absent
  |-
  | 13
  | Boolean
  |colspan="2"| Is screaming
+ | false
  |}
 
 === EnderDragon ===
@@ -1993,11 +2137,27 @@ Extends [[#Insentient|Insentient]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | VarInt
  |colspan="2"| Dragon phase
+ | 10 (hover)
  |}
+
+Phases (according to {{Minecraft Wiki|Ender Dragon#Data_values|the wiki page on dragon data values}}) are:
+
+* 0: circling
+* 1: strafing (preparing to shoot a fireball)
+* 2: flying to the portal to land (part of transition to landed state)
+* 3: landing on the portal (part of transition to landed state)
+* 4: taking off from the portal (part of transition out of landed state)
+* 5: landed, performing breath attack
+* 6: landed, looking for a player for breath attack
+* 7: landed, roar before beginning breath attack
+* 8: charging player
+* 9: flying to portal to die
+* 10: hovering with no AI (default when using the /summon command).
 
 === Flying ===
 
@@ -2013,10 +2173,12 @@ Extends [[#Flying|Flying]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Boolean
  |colspan="2"| Is attacking
+ | false
  |}
 
 === Slime ===
@@ -2027,10 +2189,12 @@ Extends [[#Insentient|Insentient]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | VarInt
  |colspan="2"| Size
+ | 1
  |}
 
 === LlamaSpit ===
@@ -2045,30 +2209,37 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | VarInt
  |colspan="2"| Shaking power
+ | 0
  |-
  | 7
  | VarInt
  |colspan="2"| Shaking direction
+ | 1
  |-
  | 8
  | Float
  |colspan="2"| Shaking multiplier
+ | 0.0
  |-
  | 9
  | VarInt
- |colspan="2"| Block ID and damage
+ |colspan="2"| Custom block ID and damage
+ | 0
  |-
  | 10
  | VarInt
- |colspan="2"| Block Y position (in 16ths of a block)
+ |colspan="2"| Custom block Y position (in 16ths of a block)
+ | 6
  |-
  | 11
  | Boolean
  |colspan="2"| Show custom block
+ | false
  |}
 
 If show custom block is false, then each type of Minecart will render its own type of block with its own properties.  Note that one does ''not'' need to send these values for the metadata fields, as the client will automatically select them if show custom block is false.  They are only provided for reference to help with swapping out other blocks.
@@ -2113,10 +2284,12 @@ Extends [[#Minecart|Minecart]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | Boolean
  |colspan="2"| Is powered
+ | false
  |}
 
 === MinecartTNT ===
@@ -2149,14 +2322,17 @@ Extends [[#Minecart|Minecart]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 12
  | String
  |colspan="2"| Command
+ | <code></code>
  |-
  | 13
  | [[Chat]]
  |colspan="2"| Last output
+ | <code>{"text":""}</code>
  |}
 
 === TNTPrimed ===
@@ -2167,8 +2343,10 @@ Extends [[#Entity|Entity]].
  ! Index
  ! Type
  !style="width: 250px;" colspan="2"| Meaning
+ ! Default
  |-
  | 6
  | VarInt
  |colspan="2"| Fuse time
+ | 80
  |}
