@@ -22,6 +22,21 @@ A couple things for contributors:
  ! Feature list
  ! Development status
  |-
+ ! [https://github.com/Protryon/Basin Basin]
+ | Protryon/JavaProphet
+ | [https://en.wikipedia.org/wiki/C_(programming_language) C]
+ | [http://www.gnu.org/licenses/gpl-3.0.en.html GPLv3]
+ | {{yes|1.11.2 & 1.11}}
+ | {{yes|Anvil}}
+ | {{yes}}
+ | {{yes}}
+ | {{yes|Players, Items, Mobs}}
+ | {{yes|Threads}}
+ | {{yes|[http://en.wikipedia.org/wiki/Lua_%28programming_language%29 Lua] & [https://en.wikipedia.org/wiki/C_(programming_language) C]}}
+ | {{yes|{{linux}}}}
+ | [https://github.com/Protryon/Basin Link]
+ | {{yes|Active}}
+ |-
  ! [http://cuberite.org Cuberite]
  | FakeTruth, [[User:Xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More]
  | [http://en.wikipedia.org/wiki/C%2B%2B C++]
