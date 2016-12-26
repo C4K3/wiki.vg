@@ -26,7 +26,7 @@ A couple things for contributors:
  | FakeTruth, [[User:Xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More]
  | [http://en.wikipedia.org/wiki/C%2B%2B C++]
  | Apache 2.0
- | {{yes|1.10.x through 1.8.x}}
+ | {{no|1.10.x through 1.8.x}}
  | {{yes|Anvil}}
  | {{yes}}
  | {{yes}}
@@ -41,7 +41,7 @@ A couple things for contributors:
  | hansihe, Gjum
  | [http://elixir-lang.org/ Elixir]
  | MIT
- | {{yes|1.9.2}}
+ | {{no|1.9.2}}
  | {{planned|Anvil/Custom planned}}
  | {{planned}}
  | {{yes|Entities}}
@@ -71,7 +71,7 @@ A couple things for contributors:
  | [[User:Oldmanmike|Oldmanmike]]
  | [https://en.wikipedia.org/wiki/Haskell_(programming_language) Haskell]
  | [http://www.gnu.org/licenses/gpl-3.0.en.html GPLv3]
- | {{planned|Developing for 1.10}}
+ | {{no|Developing for 1.10}}
  | {{planned|Custom Planned}}
  | {{planned}}
  | {{planned}}
@@ -86,7 +86,7 @@ A couple things for contributors:
  | GotoFinal
  | [https://en.wikipedia.org/wiki/Java_(programming_language) Java 8]
  | MIT License
- | {{planned|Developing for 1.9}}
+ | {{no|Developing for 1.9}}
  | {{yes|Anvil + Custom}}
  | {{yes}}
  | {{planned}}
@@ -101,7 +101,7 @@ A couple things for contributors:
  | Caspar Norée Palm
  | [https://en.wikipedia.org/wiki/Java_(programming_language) Java]
  | [[wikipedia:MIT License|MIT]]
- | {{planned| 1.9 WIP}}
+ | {{no| 1.9 WIP}}
  | {{planned|Anvil planned}}
  | {{planned|Planned}}
  | {{planned|Planned}}
@@ -116,7 +116,7 @@ A couple things for contributors:
  | [http://github.com/DragonetMC DragonetTeam]
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
  | LGPL
- | {{yes|MC:PC 1.8.3 (#47) & MC:PE 0.11.0}}
+ | {{no|MC:PC 1.8.3 (#47) & MC:PE 0.11.0}}
  | {{yes|Anvil}}
  | {{yes}}
  | {{yes}}
@@ -131,7 +131,7 @@ A couple things for contributors:
  | [https://github.com/mhsjlw/flying-squid/graphs/contributors Flying-squid contributors]
  | [http://en.wikipedia.org/wiki/Javascript JavaScript (Node.js)]
  | MIT
- | {{yes|1.8 (#47)}}
+ | {{no|1.8 (#47)}}
  | {{yes|Anvil}}
  | {{yes}}
  | {{yes}}
@@ -146,7 +146,7 @@ A couple things for contributors:
  | [http://www.piston.rs/ Piston] developers
  | [http://www.rust-lang.org/ Rust]
  | [[wikipedia:MIT License|MIT]]
- | {{planned|1.8.3 Planned}}
+ | {{no|1.8.3 Planned}}
  | {{planned|Anvil Planned}}
  | {{planned}}
  | {{planned}}
@@ -161,7 +161,7 @@ A couple things for contributors:
  | Fador, Psoden, deoxxa
  | [http://en.wikipedia.org/wiki/C%2B%2B C++]
  | [http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22.29 New BSD License]
- | {{yes|1.8 (#47)}}
+ | {{no|1.8 (#47)}}
  | {{yes|Anvil}}
  | {{yes}}
  | {{yes}}
@@ -176,7 +176,7 @@ A couple things for contributors:
  | [https://github.com/quartz-powered/server/graphs/contributors The Quartz Powered Team]
  | Java
  | MIT
- | {{yes|1.8 (#47)}}
+ | {{no|1.8 (#47)}}
  | {{yes|Anvil}}
  | {{planned}}
  | {{planned}}
@@ -191,7 +191,7 @@ A couple things for contributors:
  | Rush Team
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
  | Open source
- | {{yes|1.8 (#47)}}
+ | {{no|1.8 (#47)}}
  | {{yes|McRegion}}
  | {{planned}}
  | {{planned|Partial}}
@@ -206,7 +206,7 @@ A couple things for contributors:
  | [http://wiki.vg/User:Wuppie Wuppie]
  | [http://en.wikipedia.org/wiki/C#_(programming_language) C#]
  | [http://en.wikipedia.org/wiki/MIT_License MIT]
- | {{yes|15w31c (#51)}}
+ | {{no|15w31c (#51)}}
  | {{yes|Custom (Anvil Support)}}
  | {{yes|Yes}}
  | {{yes|Fluids only (right now)}}
@@ -221,7 +221,7 @@ A couple things for contributors:
  | TridentSDK Team
  | [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
  | [http://www.apache.org/licenses/LICENSE-2.0 Apache 2.0]
- | {{planned|1.8.3 Planned}}
+ | {{no|1.8.3 Planned}}
  | {{yes|Anvil}}
  | {{planned}}
  | {{planned}}
@@ -236,7 +236,7 @@ A couple things for contributors:
  | [[User:CruzBishop|Cruz Bishop]], Alice Keinz
  | [http://www.rust-lang.org/ Rust]
  | [[wikipedia:MIT License|MIT]]
- | {{planned|Developing for 1.8}}
+ | {{no|Developing for 1.8}}
  | {{planned|Planned: Anvil and possibly custom}}
  | {{planned|Planned: Yes}}
  | {{planned|Planned: Yes, with optional extensions}}
@@ -431,7 +431,7 @@ A couple things for contributors:
  | Drew DeVault ([[User:SirCmpwn|SirCmpwn]]), [https://github.com/SirCmpwn/TrueCraft/graphs/contributors more]
  | [http://en.wikipedia.org/wiki/C_Sharp_(programming_language) C#]
  | [http://en.wikipedia.org/wiki/MIT_License MIT]
- | {{planned|b1.7.3}}
+ | {{no|b1.7.3}}
  | {{yes|McRegion}}
  | {{planned}}
  | {{yes}}
