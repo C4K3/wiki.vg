@@ -275,7 +275,17 @@ Values for node type:
 === <code>MC|ItemName</code> ===
 ''Client to server''
 
-When a player uses an anvil to name an item. The payload is just a string: the item's new name.
+Sent as a player is renaming an item in an anvil (each keypress in the anvil UI sends a new <code>MC|ItemName</code> packet).  The payload is optional, and if not sent (IE, the length of the packet is 0 bytes) or if the new name is empty, then the item loses its custom name (this is different from setting the custom name to the normal name of the item).  The item name may be no longer than 30 characters long, and if it is longer than that, then the rename is silently ignored.
+
+{| class="wikitable"
+ ! Field name
+ ! Field type
+ ! Notes
+ |-
+ | Item name
+ | Optional String
+ | The new name of the item
+ |}
 
 === <code>MC|PickItem</code> ===
 ''Client to server''
@@ -310,7 +320,7 @@ Used to implement {{Minecraft Wiki|Commands#StopSound|the <code>/stopsound</code
  |-
  | Sound name
  | String
- | A [http://pokechu22.github.io/Burger/1.9.html#sounds sound effect name].  If left empty, ''all'' sounds are stopped.
+ | A [http://pokechu22.github.io/Burger/1.11.html#sounds sound effect name].  If left empty, ''all'' sounds are stopped.
  |-
  | Sound category
  | String
