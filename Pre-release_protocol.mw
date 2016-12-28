@@ -28,6 +28,28 @@ No changes so far.
 
 === Entity Metadata ===
 
+=== TippedArrow ===
+
+Extends [[#Arrow|Arrow]].
+
+Used for both tipped and regular arrows.  If not tipped, then color is set to 0 and no tipped arrow particles are used.
+
+{| class="wikitable"
+ ! Index
+ ! Type
+ !style="width: 250px;" colspan="2"| Meaning
+ ! Default
+ |-
+ | 7
+ | VarInt
+ |colspan="2"| Color ({{Change|0|-1}} for no particles)
+ | {{Change|0|-1}}
+ |}
+
+Statuses:
+;0
+:Spawns tipped arrow particle effects, if the color is greater than 0.
+
 === Fireworks ===
 
 Extends [[Entities#Entity|Entity]].
@@ -74,7 +96,26 @@ Extends [[Entities#Animal|Animal]].
 
 No changes so far. 
 
-[[Category:Minecraft Modern]]
+== Plugin Channels ==
+
+=== <code>MC|DebugNeighborsUpdate</code> ===
+''Server to client''
+
+{{Change||Never sent, but used to debug block updates.  Does not render without modifying the client.}}
+
+{|class="wikitable" style="background-color: #d9ead3;"
+ ! Name
+ ! Type
+ ! Notes
+ |-
+ | Time
+ | Long
+ | World timestamp at which the update occurred.  200 ticks after this timestamp, the given update stops rendering.
+ |-
+ | Location
+ | Position
+ | Location of the block that updated.
+ |}
 
 == Handshaking ==
 
@@ -137,3 +178,5 @@ No changes so far.
 === Serverbound ===
 
 No changes so far.
+
+[[Category:Minecraft Modern]]
