@@ -1,5 +1,15 @@
 Provided below is a (potentially incomplete) changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 1.11.1, 1.11.2 ===
+* No new protocol version number
+* Added <code>MC|DebugNeighborsUpdate</code> plugin channel
+
+=== 16w50a ===
+
+* Protocol version 316
+* New metadata ints for pigs (#7 - boosted entity ID) and fireworks (#14 - total boost time)
+* Tipped arrow color metadata now uses -1 to indicate that the arrow is not tipped, instead of 0.
+
 === 1.11 ===
 * Protocol version 315
 
