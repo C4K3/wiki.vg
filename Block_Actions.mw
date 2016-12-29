@@ -39,6 +39,10 @@ These block actions are used in the [[Protocol#Block Action|Block Action]] packe
  | 209
  | [[#End Gateway|End Gateway]]
  |-
+ | {{Minecraft Wiki|Shulker Box}}
+ | 219-234
+ | [[#Shulker Box|Shulker Box]]
+ |-
  |colspan="2"| Anything else
  | Ignored
  |}
