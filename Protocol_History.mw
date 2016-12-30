@@ -7,7 +7,7 @@ Provided below is a (potentially incomplete) changelog of the server protocol st
 === 16w50a ===
 
 * Protocol version 316
-* New metadata ints for pigs (#7 - boosted entity ID) and fireworks (#14 - total boost time)
+* New metadata ints for fireworks (#7 - boosted entity ID) and pigs (#14 - total carrot-on-a-stick boost time)
 * Tipped arrow color metadata now uses -1 to indicate that the arrow is not tipped, instead of 0.
 
 === 1.11 ===
