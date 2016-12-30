@@ -88,9 +88,11 @@ Extends [[Entities#Animal|Animal]].
  |-
  |style="background-color: #d9ead3;"| 14
  |style="background-color: #d9ead3;"| VarInt
- |colspan="2" style="background-color: #d9ead3;"| Total boost time
+ |colspan="2" style="background-color: #d9ead3;"| Total time to "boost" with a carrot on a stick for
  |style="background-color: #d9ead3;"| 0
  |}
+
+Whenever a carrot on a stick is used, if the pig is not currently boosting it will start to boost for 140 to 980 (inclusive) ticks.  When boost time is changed, a counter is reset which counts up to the boost time, after which boosting will stop.  The value remains set at its modified value even after boosting is stopped.
 
 == Block Actions ==
 
