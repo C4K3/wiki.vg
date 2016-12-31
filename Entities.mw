@@ -192,6 +192,12 @@ Additionally, a few other entities (marked in blue) must be spawned in their own
 | 1.6
 | <code>minecraft:zombie_horse</code>
 |- 
+| 30
+| ArmorStand
+| 0.5
+| 1.7
+| <code>minecraft:armor_stand</code>
+|- 
 | 31
 | Donkey
 | 1.396484
