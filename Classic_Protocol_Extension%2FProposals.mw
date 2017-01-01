@@ -513,7 +513,7 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="col1 centeralign" | FlySpeed
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Defines the speed of flight in player units per quarter-second. A value of 0 or less means the player is not allowed to fly.
+| class="col4 centeralign" | This value is divided by 25 and multiplied by the default speed of flight to get the custom speed of flight. A value of 255 means there are no restrictions on flight. A value of 0 means flight is not allowed.
 |- class="row2"
 | class="col1 centeralign" | NoClip
 | class="col2 centeralign" | byte
@@ -525,12 +525,12 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 | class="col1 centeralign" | WalkSpeed
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>64</code>
-| class="col4 centeralign" | Defines the normal speed of walking in player units per quarter-second. Any negative value allows the player to travel at any speed and overrides any value set by RunSpeed.
+| class="col4 centeralign" | This value is divided by 25 and multiplied by the default walking speed to get the custom walking speed. A value of 255 means there are no restrictions on walking speed. A value of 0 means the player is not allowed to walk.
 |- class="row4"
 | class="col1 centeralign" | RunSpeed
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>16</code>
-| class="col4 centeralign" | Helps define the ratio of the running speed to the walking speed. This value is then divided by 32 and added to 1 to get the ratio. A value less than or equal to 0 means the player is not allowed to run.
+| class="col4 centeralign" | This sets the speedhacking capabilities of the player. This value is divided by 25, then added to 1, then multiplied by the default walking speed to get the custom running speed. A value of 255 means there are no restrictions on running speed. A value of 0 means the player is not allowed to run.
 |- class="row5"
 | class="col1 centeralign" | AllowRespawn
 | class="col2 centeralign" | byte
@@ -550,17 +550,17 @@ Add your proposal at the end of the page. Please use [[Classic_Protocol_Extensio
 Setting this field to a defined value will prevent the player from changing their point of view. Setting it to an undefined value will allow the player to switch points of view.
 |- class="row7"
 | class="col1 centeralign" | JumpHeight
-| class="col2 centeralign" | short
+| class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>40</code>
-| class="col4 centeralign" | Maximum height in player units of the player's normal jump.
+| class="col4 centeralign" | Maximum height in player units of the player's normal jump. A value of 0 means the player is not allowed to jump. A value of 255 means there are no restrictions on jump height.
 |- class="row8"
 | class="col1 centeralign" | SuperJumpHeight
-| class="col2 centeralign" | short
-| class="col3 centeralign" | <code>9001</code>
-| class="col4 centeralign" | Maximum height in player units of any other jump abilities the player has, like using speed to get a higher jump. A SuperJumpHeight value of 0 means the player is not allowed to superjump. Any negative SuperJumpHeight will override any value in JumpHeight and allow the player to jump to any height.
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>100</code>
+| class="col4 centeralign" | Maximum height in player units of any other jump abilities the player has, like using speed to get a higher jump. A SuperJumpHeight value of 0 means the player is not allowed to superjump. A value of 255 means there are no restrictions on jump height.
 |- class="row9"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 11 bytes
+| class="col1 rightalign" colspan="4" | 9 bytes
 |}
 :(Comments go here, please sign them)
 
