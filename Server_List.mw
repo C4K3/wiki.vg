@@ -41,7 +41,7 @@ A couple things for contributors:
  | FakeTruth, [[User:Xoft|xoft]], [https://github.com/cuberite/cuberite/blob/master/CONTRIBUTORS More]
  | [http://en.wikipedia.org/wiki/C%2B%2B C++]
  | Apache 2.0
- | {{no|1.10.x through 1.8.x}}
+ | {{planned|1.10.x through 1.8.x, 1.11.0 (partial)}}
  | {{yes|Anvil}}
  | {{yes}}
  | {{yes}}
