@@ -4255,8 +4255,7 @@ The distinct type of click performed by the client is determined by the combinat
  !rowspan="1"| 3
  | 2
  | Normal
- | Middle click, only defined for creative players in non-player inventories.  (Note: the vanilla client will still incorrectly send this for non-creative players - see [https://bugs.mojang.com/browse/MC-46584 MC-46584])
- |-
+ | Middle click, only defined for creative players in non-player inventories. |-
  !rowspan="4"| 4
  | 0
  | Normal*
