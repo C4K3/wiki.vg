@@ -4255,7 +4255,7 @@ The distinct type of click performed by the client is determined by the combinat
  !rowspan="1"| 3
  | 2
  | Normal
- | Middle click
+ | Middle click, only defined for creative players in non-player inventories.
  |-
  !rowspan="4"| 4
  | 0
@@ -4277,11 +4277,15 @@ The distinct type of click performed by the client is determined by the combinat
  !rowspan="6"| 5
  | 0
  | -999
- | Starting left mouse drag ''(or middle mouse)''
+ | Starting left mouse drag
  |-
  | 4
  | -999
  | Starting right mouse drag
+ |-
+ | 8
+ | -999
+ | Starting middle mouse drag, only defined for creative players in non-player inventories.
  |-
  | 1
  | Normal
@@ -4291,6 +4295,10 @@ The distinct type of click performed by the client is determined by the combinat
  | Normal
  | Add slot for right-mouse drag
  |-
+ | 9
+ | Normal
+ | Add slot for middle-mouse drag, only defined for creative players in non-player inventories.
+ |-
  | 2
  | -999
  | Ending left mouse drag
@@ -4298,6 +4306,10 @@ The distinct type of click performed by the client is determined by the combinat
  | 6
  | -999
  | Ending right mouse drag
+ |-
+ | 10
+ | -999
+ | Ending middle mouse drag, only defined for creative players in non-player inventories.
  |-
  ! 6
  | 0
