@@ -4274,7 +4274,7 @@ The distinct type of click performed by the client is determined by the combinat
  | -999
  | Right click outside inventory holding nothing ''(no-op)''
  |-
- !rowspan="6"| 5
+ !rowspan="9"| 5
  | 0
  | -999
  | Starting left mouse drag
