@@ -823,9 +823,9 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 :Proposed by Cheesse
 :This extension allows the client to play music and sounds defined by the server. (Currently a work in progress.)
 :'''Motivation''': To create a more stimulating experience by adding custom sounds and music to the game.
-:'''Client Behavior''': The client must be able to receive any packets defined by this extension at any time. It must not play any music unless ordered by the server. The client must distinguish global sounds from level sounds; it must unload and dispose level sounds when changing levels, and it must unload and dispose global sounds when disconnecting. Block loops and ambient noises must be played on a loop. The client should play SFX ordered by the server immediately after receiving a '''''PlaySFX''''' packet.
-:'''Server Behavior''': The server may send any packets defined by this extension at any time, however, it is recommended that the server defines all sounds during the level loading phase. All audio files linked by the server must be in .ogg format. All loops MUST have a length longer than 10 seconds. The server is responsible for not infringing upon copyright laws and licensing.
-:<h4>DefineGlobalMusic packet</h4>
+:'''Client Behavior''': The client must be able to receive any packets defined by this extension at any time. It must not play any music unless ordered by the server. It must dispose of any unloaded custom audio. Block loops and ambient noises must be played on a loop. The client should play SFX ordered by the server immediately after receiving a '''''PlaySFX''''' packet. If the client receives an undefined value for any packet, that packet should be ignored. When a custom audio file is defined within a default slot, the client should return the default audio to that slot.
+:'''Server Behavior''': The server may send any packets defined by this extension at any time, however, it is recommended that the server defines all sounds during the level loading phase. The server must distinguish global audio and level audio. All audio defined only for a specific level must be unloaded by the server upon client leaving the level. All audio files linked by the server must be in .ogg format. All loops MUST have a length longer than 10 seconds. The server is responsible for not infringing upon copyright laws and licensing.
+:<h4>DefineMusic packet</h4>
 :''Server to client''
 :{| class="wikitable"
 |- class="row0"
@@ -840,52 +840,22 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col1 centeralign" | SongCategory  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
-| class="col4 centeralign" | Valid categories are from 0-127. Category 0 is reserved for the default music. Custom music may be defined within Category 0.
+| class="col4 centeralign" | Valid categories are from 0-255. Category 0 is reserved for the default music. Custom music may be defined within Category 0.
 |- class="row2"
 | class="col1 centeralign" | SongID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid IDs are from 0-254. IDs for Category 0 are as follows: 0=calm1, 1=calm2, 2=calm3, 3=hal1, 4=hal2, 5=hal3, 6=hal4.
+| class="col4 centeralign" | Valid IDs are from 0-255. IDs for Category 0 are as follows: 0=calm1, 1=calm2, 2=calm3, 3=hal1, 4=hal2, 5=hal3, 6=hal4. Default music may be redefined by the server.
 |- class="row3"
 | class="col1 centeralign" | SongSource
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>http://www.abc.com/song.ogg</code>
-| class="col4 centeralign" | The location of the music file online. The link must lead to a .ogg file. If this field is blank, the music for the SongID within the SongCategory must be unloaded.
+| class="col4 centeralign" | The location of the music file online. The link must lead to a .ogg file. If this field says "clear", the music of the SongID within the SongCategory must be unloaded. If this field says "clear all", all music defined within the SongCategory must be unloaded. Otherwise, the client should do nothing.
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 67 bytes
 |}
-:<h4>DefineLevelMusic packet</h4>
-:''Server to client''
-:{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x??
-(??)
-| class="col1 centeralign" | SongCategory  
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>128</code>
-| class="col4 centeralign" | Valid categories are from 128-255.
-|- class="row2"
-| class="col1 centeralign" | SongID
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid IDs are from 0-254.
-|- class="row3"
-| class="col1 centeralign" | SongSource
-| class="col2 centeralign" | string
-| class="col3 centeralign" | <code>http://www.abc.com/song.ogg</code>
-| class="col4 centeralign" | The location of the music file online. The link must lead to a .ogg file. If this field is blank, the music for the SongID within the SongCategory must be unloaded.
-|- class="row4"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 67 bytes
-|}
-:<h4>DefineGlobalBlockLoop packet</h4>
+:<h4>DefineBlockLoop packet</h4>
 :''Server to client''
 :{| class="wikitable"
 |- class="row0"
@@ -905,37 +875,12 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col1 centeralign" | LoopSource
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>http://www.abc.com/water.ogg</code>
-| class="col4 centeralign" | The location of the loop file online. The link must lead to a .ogg file. If this field is blank, the loop for the BlockID must be unloaded.
+| class="col4 centeralign" | The location of the loop file online. The link must lead to a .ogg file. If this field says "clear", the audio for the BlockID must be unloaded. Otherwise, the client should do nothing.
 |- class="row3"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 66 bytes
 |}
-:<h4>DefineLevelBlockLoop packet</h4>
-:''Server to client''
-:{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="2" | 0x??
-(??)
-| class="col1 centeralign" | BlockID  
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>10</code>
-| class="col4 centeralign" | BlockID must correspond to a valid block.
-|- class="row2"
-| class="col1 centeralign" | LoopSource
-| class="col2 centeralign" | string
-| class="col3 centeralign" | <code>http://www.abc.com/lava.ogg</code>
-| class="col4 centeralign" | The location of the loop file online. The link must lead to a .ogg file. If this field is blank, the loop for the BlockID must be unloaded.
-|- class="row3"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 66 bytes
-|}
-:<h4>DefineLevelAmbientNoise packet</h4>
+:<h4>DefineAmbientNoise packet</h4>
 :''Server to client''
 :{| class="wikitable"
 |- class="row0"
@@ -947,7 +892,7 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 |- class="row1"
 | class="col0 centeralign" rowspan="8" | 0x??
 (??)
-| class="col1 centeralign" | SoundID  
+| class="col1 centeralign" | AmbientID  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>3</code>
 | class="col4 centeralign" | Valid IDs are from 0-255.
@@ -985,12 +930,13 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col1 centeralign" | LoopSource
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>http://www.abc.com/cavenoise.ogg</code>
-| class="col4 centeralign" | The location of the loop file online. The link must lead to a .ogg file. If this field is blank, the loop for the BlockID must be unloaded.
+| class="col4 centeralign" | The location of the loop file online. The link must lead to a .ogg file. If this field says "clear", the audio for the AmbientID must be unloaded. Otherwise, the client should do nothing.
+
 |- class="row9"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 78 bytes
 |}
-:<h4>DefineGlobalBlockSound packet</h4>
+:<h4>DefineBlockSound packet</h4>
 :''Server to client''
 :{| class="wikitable"
 |- class="row0"
@@ -1002,55 +948,25 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 |- class="row1"
 | class="col0 centeralign" rowspan="3" | 0x??
 (??)
-| class="col1 centeralign" | BlockID  
+| class="col1 centeralign" | BlockCategory  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
-| class="col4 centeralign" | BlockID must correspond to a valid block.
+| class="col4 centeralign" | Valid from 1-255. SoundCategories from 1-(something) are default and cannot be cleared. Sounds within these categories may be redefined by the server.
 |- class="row2"
 | class="col1 centeralign" | SoundID  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid from 0 to 127.
+| class="col4 centeralign" | Valid from 0 to 255.
 |- class="row3"
 | class="col1 centeralign" | SoundSource
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>http://www.abc.com/stone.ogg</code>
-| class="col4 centeralign" | The location of the sound file online. The link must lead to a .ogg file. If this field is blank, the sound for the SoundID must be unloaded.
+| class="col4 centeralign" | The location of the sound file online. The link must lead to a .ogg file. If this field says "clear", the sound of the SoundID within the SoundCategory must be unloaded. If this field says "clear all", all sounds defined within the SoundCategory must be unloaded. Otherwise, the client should do nothing.
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 67 bytes
 |}
-:<h4>DefineLevelBlockSound packet</h4>
-:''Server to client''
-:{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x??
-(??)
-| class="col1 centeralign" | BlockID  
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>1</code>
-| class="col4 centeralign" | BlockID must correspond to a valid block.
-|- class="row2"
-| class="col1 centeralign" | SoundID  
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid from 128 to 255.
-|- class="row3"
-| class="col1 centeralign" | SoundSource
-| class="col2 centeralign" | string
-| class="col3 centeralign" | <code>http://www.abc.com/dirt.ogg</code>
-| class="col4 centeralign" | The location of the sound file online. The link must lead to a .ogg file. If this field is blank, the sound for the SoundID must be unloaded.
-|- class="row4"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 67 bytes
-|}
-:<h4>DefineGlobalBlockChangeSound packet</h4>
+:<h4>DefineBlockChangeSound packet</h4>
 :''Server to client''
 :{| class="wikitable"
 |- class="row0"
@@ -1075,44 +991,12 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col1 centeralign" | SoundSource
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>http://www.abc.com/explosion.ogg</code>
-| class="col4 centeralign" | The location of the sound file online. The link must lead to a .ogg file. If this field is blank, the sound for this specific block change must be unloaded.
-
+| class="col4 centeralign" | The location of the sound file online. The link must lead to a .ogg file. If this field says "clear", the audio for this specific block change must be unloaded. Otherwise, the client should do nothing.
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 67 bytes
 |}
-:<h4>DefineLevelBlockChangeSound packet</h4>
-:''Server to client''
-:{| class="wikitable"
-|- class="row0"
-! class="col0" | Packet ID
-! class="col1" | Field Name
-! class="col2" | Field Type
-! class="col3" | Example
-! class="col4" | Notes
-|- class="row1"
-| class="col0 centeralign" rowspan="3" | 0x??
-(??)
-| class="col1 centeralign" | InitialBlockID  
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>46</code>
-| class="col4 centeralign" | BlockIDs must correspond to a valid block.
-|- class="row2"
-| class="col1 centeralign" | FinalBlockID
-| class="col2 centeralign" | byte
-| class="col3 centeralign" | <code>11</code>
-| class="col4 centeralign" | BlockIDs must correspond to a valid block.
-|- class="row3"
-| class="col1 centeralign" | SoundSource
-| class="col2 centeralign" | string
-| class="col3 centeralign" | <code>http://www.abc.com/explosion.ogg</code>
-| class="col4 centeralign" | The location of the sound file online. The link must lead to a .ogg file. If this field is blank, the sound for this specific block change must be unloaded.
-
-|- class="row4"
-! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 67 bytes
-|}
-:<h4>DefineGlobalSFX packet</h4>
+:<h4>DefineSFX packet</h4>
 :''Server to client''
 :{| class="wikitable"
 |- class="row0"
@@ -1127,22 +1011,22 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col1 centeralign" | SFXCategory  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid categories are from 0-127.
+| class="col4 centeralign" | Valid categories are from 0-255.
 |- class="row2"
 | class="col1 centeralign" | SFXID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid IDs are from 0-254.
+| class="col4 centeralign" | Valid IDs are from 0-255.
 |- class="row3"
 | class="col1 centeralign" | SoundSource
 | class="col2 centeralign" | string
 | class="col3 centeralign" | <code>http://www.abc.com/killstreak.ogg</code>
-| class="col4 centeralign" | The location of the music file online. The link must lead to a .ogg file. If this field is blank, the sound for the SFXID within the SFXCategory must be unloaded.
+| class="col4 centeralign" | The location of the music file online. The link must lead to a .ogg file. If this field says "clear", the sound of the SFXID within the SFXCategory must be unloaded. If this field says "clear all", all sounds defined within the SFXCategory must be unloaded. Otherwise, the client should do nothing.
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 67 bytes
 |}
-:<h4>DefineLevelSFX packet</h4>
+:<h4>DefineMobSound packet</h4>
 :''Server to client''
 :{| class="wikitable"
 |- class="row0"
@@ -1154,20 +1038,20 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 |- class="row1"
 | class="col0 centeralign" rowspan="3" | 0x??
 (??)
-| class="col1 centeralign" | SFXCategory  
+| class="col1 centeralign" | MobCategory  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid categories are from 128-255.
+| class="col4 centeralign" | Valid categories are from 0-255.
 |- class="row2"
-| class="col1 centeralign" | SFXID
+| class="col1 centeralign" | MobSoundID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid IDs are from 0-254.
+| class="col4 centeralign" | Valid IDs are from 0-255.
 |- class="row3"
 | class="col1 centeralign" | SoundSource
 | class="col2 centeralign" | string
-| class="col3 centeralign" | <code>http://www.abc.com/ticktock.ogg</code>
-| class="col4 centeralign" | The location of the music file online. The link must lead to a .ogg file. If this field is blank, the sound for the SFXID within the SFXCategory must be unloaded.
+| class="col3 centeralign" | <code>http://www.abc.com/killstreak.ogg</code>
+| class="col4 centeralign" | The location of the music file online. The link must lead to a .ogg file. If this field says "clear", the sound of the MobSoundID within the MobCategory must be unloaded. If this field says "clear all", all sounds defined within the MobCategory must be unloaded. Otherwise, the client should do nothing.
 |- class="row4"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 67 bytes
@@ -1187,17 +1071,17 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col1 centeralign" | SongCategory  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid categories are from 0-255.
+| class="col4 centeralign" | SongCategory must be defined.
 |- class="row2"
 | class="col1 centeralign" | SongID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid IDs are from 0-254. If this field equals 255, then a SongID will be selected at random by the client.
+| class="col4 centeralign" | SongID must be defined.
 |- class="row3"
 | class="col1 centeralign" | Volume
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>100</code>
-| class="col4 centeralign" | From 0-100, the volume at which to play the music.
+| class="col4 centeralign" | From 0-200, the volume at which to play the music.
 |- class="row4"
 | class="col1 centeralign" | Effects
 | class="col2 centeralign" | byte
@@ -1205,7 +1089,7 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col4 centeralign" | Coming soon.
 |- class="row5"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 4 bytes
+| class="col1 rightalign" colspan="4" | 5 bytes
 |}
 :<h4>PlaySFX packet</h4>
 :''Server to client''
@@ -1222,35 +1106,70 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col1 centeralign" | SFXCategory  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid categories are from 0-255.
+| class="col4 centeralign" | SFXCategory must be defined.
 |- class="row2"
 | class="col1 centeralign" | SFXID
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Valid IDs are from 0-254. If this field equals 255, then an SFXID will be selected at random by the client.
+| class="col4 centeralign" | SFXID must be defined.
 |- class="row3"
 | class="col1 centeralign" | Volume
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>100</code>
-| class="col4 centeralign" | From 0-100, the volume at which to play the music.
+| class="col4 centeralign" | From 0-200, the volume at which to play the sound effect.
 |- class="row4"
 | class="col1 centeralign" | PositionX
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>20</code>
-| class="col4 centeralign" | Defined from 0-2047. If this field equals an undefined value, then the sound will be played within the player's head.
+| class="col4 centeralign" | Defined from 0-2047. If this field equals an undefined value, then the sound will instead be played without any pan effects.
 |- class="row5"
 | class="col1 centeralign" | PositionY
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>20</code>
-| class="col4 centeralign" | Defined from 0-2047. If this field equals an undefined value, then the sound will be played within the player's head.
+| class="col4 centeralign" | Defined from 0-2047. If this field equals an undefined value, then the sound will instead be played without any pan effects.
 |- class="row6"
 | class="col1 centeralign" | PositionZ
 | class="col2 centeralign" | short
 | class="col3 centeralign" | <code>20</code>
-| class="col4 centeralign" | Defined from 0-2047. If this field equals an undefined value, then the sound will be played within the player's head.
+| class="col4 centeralign" | Defined from 0-2047. If this field equals an undefined value, then the sound will instead be played without any pan effects.
 |- class="row7"
 ! class="col0" | Total Size:
 | class="col1 rightalign" colspan="4" | 10 bytes
+|}
+:<h4>PlayMobSound packet</h4>
+:''Server to client''
+:{| class="wikitable"
+|- class="row0"
+! class="col0" | Packet ID
+! class="col1" | Field Name
+! class="col2" | Field Type
+! class="col3" | Example
+! class="col4" | Notes
+|- class="row1"
+| class="col0 centeralign" rowspan="4" | 0x??
+(??)
+| class="col1 centeralign" | MobCategory  
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | MobCategory must be defined.
+|- class="row2"
+| class="col1 centeralign" | MobSoundID
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | MobSoundID must be defined.
+|- class="row3"
+| class="col1 centeralign" | Volume
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>100</code>
+| class="col4 centeralign" | From 0-200, the volume at which to play the sound.
+|- class="row4"
+| class="col1 centeralign" | EntityID
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>1</code>
+| class="col4 centeralign" | From 0-127. Must be defined.
+|- class="row5"
+! class="col0" | Total Size:
+| class="col1 rightalign" colspan="4" | 5 bytes
 |}
 
 :(Comments go here, please sign them)
