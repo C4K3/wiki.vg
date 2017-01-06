@@ -32,6 +32,15 @@ The column ''Game Graphics'' asks if your client displays in-game activity at a 
  | {{no}}
  | {{yes|1.11}}
  |-
+ ! [https://github.com/Litecrafty/Litecraft Litecraft]
+ | Renders models
+ | [https://github.com/Litecrafty/ Litecraft Team]
+ | [https://www.rust-lang.org/ Rust]
+ | [http://www.apache.org/licenses/LICENSE-2.0.html Apache 2.0]
+ | {{planned}}
+ | {{yes}}
+ | {{yes|1.11.2}}
+ |-
  ! [https://github.com/Thinkofname/steven steven]
  | Compiles
  | [https://github.com/Thinkofname/ Thinkofname]
