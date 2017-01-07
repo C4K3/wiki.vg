@@ -48,6 +48,8 @@ The server decrypts the shared secret and token using its private key, and check
 
 The Login Success packet is sent encrypted.
 
+[[File:Icon_exclaim.gif|:!:]] Note that the AES cipher is updated continuously, not finished and restarted every packet.
+
 == Authentication ==
 
 Both server and client need to make a request to sessionserver.mojang.com if the server is in online-mode.
