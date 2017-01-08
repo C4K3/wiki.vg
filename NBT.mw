@@ -38,6 +38,7 @@ Almost every 3rd-party Minecraft application uses NBT on some level. There also 
 * [http://www.minecraftforum.net/topic/6661-nbtedit/ NBTEdit] (C#, Mono-capable), one of the very first NBT editors.
 * [http://gerritg.de/?p=152 NEINedit] (Obj-C), an OS X specific editor.
 * [https://bitbucket.org/zzzeek/nbt2yaml nbt2yaml] (Python), provides command-line editing of NBT via the YAML format, as well as a fast and minimalist NBT parsing/rendering API.
+* [https://github.com/C4K3/nbted nbted] (Rust), provides command-line editing of NBT files via your $EDITOR, as well as pretty printing and reversing
 
 == Specification ==
 The NBT file format is extremely simple, and writing a library capable of reading/writing it is a simple affair. There are 11 datatypes supported by this format, and one type used to close compound tags. It is strongly advised to read this entire section or you may run into issues.
