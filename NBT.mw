@@ -99,7 +99,7 @@ The NBT file format is extremely simple, and writing a library capable of readin
 | 9
 | TAG_List
 | ...
-| A list of '''nameless''' tags, all of the same type. The list is prefixed with the <code>Type ID</code> of the items it contains (thus 1 byte), and the length of the list as a '''signed''' integer (a further 4 bytes)
+| A list of '''nameless''' tags, all of the same type. The list is prefixed with the <code>Type ID</code> of the items it contains (thus 1 byte), and the length of the list as a '''signed''' integer (a further 4 bytes).  If the length of the list is 0 or negative, the type may be 0 (TAG_End) but otherwise it must be any other type.  (The notchian implementation uses TAG_End in that situation, but another reference implementation by Mojang uses 1 instead; parsers should accept any type if the length is <= 0).
 |-
 | 10
 | TAG_Compound
