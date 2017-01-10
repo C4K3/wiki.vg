@@ -67,6 +67,8 @@ All component types have certain fields that represent the style.  All of these 
 ::<strong>Cannot be used within JSON chat</strong>.  Opens a link to any protocol, but cannot be used in JSON chat for security reasons.  Only exists to internally implement links for screenshots.
 :;<code>run_command</code>
 ::Runs the given command.  Not required to be a command - clicking this only causes the client to send the given content as a chat message, so if not prefixed with <code>/</code>, they will say the given text instead.  If used in a book GUI, the GUI is closed after clicking.
+:;<s><code>twitch_user_info</code></s>
+::<strong>No longer supported; cannot be used within JSON chat</strong>.  Only usable in 1.8 and below; twitch support was removed in 1.9.  Additionally, this is only used internally by the client.  On click, opens a twitch user info GUI screen.  Value should be the twitch user name.
 :;<code>suggest_command</code>
 ::Only usable for messages in chat.  Replaces the content of the chat box with the given text - usually a command, but it is not required to be a command (commands should be prefixed with <code>/</code>).
 :;<code>change_page</code>
