@@ -76,7 +76,7 @@ The Minecraft server accepts connections from TCP clients and communicates with 
 
 === With compression ===
 
-Once a [[#Set Compression|Set Compression]] packet is sent, [[wikipedia:Zlib|zlib]] compression is enabled for all following packets. The format of a packet changes slighty to include the size of the uncompressed packet.
+Once a [[#Set Compression|Set Compression]] packet (with a non-negative threshold) is sent, [[wikipedia:Zlib|zlib]] compression is enabled for all following packets. The format of a packet changes slighty to include the size of the uncompressed packet.
 
 {| class=wikitable
  ! Compressed?
@@ -110,7 +110,7 @@ If Data Length is set to zero, then the packet is uncompressed; otherwise it is 
 
 If compressed, the uncompressed length of (Packet ID + Data) must be equal to or over the threshold set in the packet [[#Set Compression 2|Set Compression]] ([[#Login|Login]], 0x03, clientbound), otherwise the receiving party will disconnect.
 
-Compression can be disabled by sending the packet [[#Set Compression 2|Set Compression]] ([[#Login|Login]], 0x03, clientbound) with a Threshold of -1.
+Compression can be disabled by sending the packet [[#Set Compression|Set Compression]] ([[#Login|Login]], 0x03, clientbound) with a negative Threshold, or not sending the Set Compression packet at all.
 
 == Handshaking ==
 
@@ -5191,9 +5191,10 @@ The login process is as follows:
 # Client auth
 # C→S: [[#Encryption Response|Encryption Response]]
 # Server auth, both enable encryption
-# S→C: [[#Login Success|Login Success]] and Set Compression
+# S→C: [[#Set Compression|Set Compression]] (optional)
+# S→C: [[#Login Success|Login Success]]
 
-Login Success and Set Compression can be sent in either order, but anything after Set Compression must use the [[#With_compression|Post Compression packet format]]. The packet ID for Set Compression also depends on the current connection state, and Login Success switches the state to [[#Play|play]], meaning that the correct packet ID must be used depending on the order chosen.
+Set Compression, if present, must be sent before Login Success. Note that anything sent after Set Compression must use the [[#With_compression|Post Compression packet format]].
 
 For unauthenticated and localhost connections (either of the two conditions is enough for an unencrypted connection) there is no encryption. In that case [[#Login Start|Login Start]] is directly followed by [[#Login Success|Login Success]].
 
