@@ -120,6 +120,12 @@ Examples of generating Minecraft-style hex digests:
 * Java: http://git.io/vzbmS
 
 == Additional Links ==
+[https://msdn.microsoft.com/en-us/library/windows/desktop/bb648640(v=vs.85).aspx DER Encoding of ASN.1 Types]
+
+[http://luca.ntop.org/Teaching/Appunti/asn1.html A Layman's Guide to a Subset of ASN.1, BER, and DER]
+
+[https://gist.github.com/Lazersmoke/9947ada8acdd74a8b2e37d77cf1e0fdc Serializing an RSA Key Manually]
+
 [https://gist.github.com/3900517 Encrypt shared secret using OpenSSL]
 
 [http://pastebin.com/8eYyKZn6 Generate RSA-Keys and building the ASN.1v8 structure of the x.509 certificate using Crypto++]
