@@ -76,12 +76,12 @@ With the following sent as post data, Content-Type: application/json
 <syntaxhighlight lang="javascript">
   {
     "accessToken": "<accessToken>",
-    "selectedProfile": "<selectedProfile>",
+    "selectedProfile": "<player's uuid without dashes>",
     "serverId": "<serverHash>"
   }
 </syntaxhighlight>
 
-The fields <accessToken> and <selectedProfile> were received by the client during [[Authentication#Authenticate|authentication]].
+The fields <accessToken> and the player's uuid were received by the client during [[Authentication#Authenticate|authentication]].
 
 If everything goes well, the client will receive a "HTTP/1.1 204 No Content" response.
 
