@@ -58,7 +58,7 @@ All component types have certain fields that represent the style.  All of these 
 ;<code>color</code>
 :String - contains the color for the component.  Should be one of the normal [[#Colors|colors]], but can also be a [[#Styles|format code]] (however, the fields relating to styles should be used instead for that purpose).  If not present (or set to <code>reset</code>), then the default color for the text will be used, which varies by the situation (in some cases, it is white; in others, it is black; in still others, it is a shade of gray that isn't normally used on text).
 ;<code>insertion</code>
-:String - contains text to insert.  Only used for messages in chat.  When shift is held, clicking the component _inserts_ the given text into the chat box at the cursor (potentially replacing selected text).  Has no effect on other locations at this time.
+:String - contains text to insert.  Only used for messages in chat.  When shift is held, clicking the component <em>inserts</em> the given text into the chat box at the cursor (potentially replacing selected text).  Has no effect on other locations at this time.
 ;<code>clickEvent</code>
 :JSON object - Defines an event that occurs when this component is clicked.  Contains an <code>action</code> key and a <code>value</code> key.  <code>value</code> is internally handled as a String, although it can be any type of JSON primitive.
 :;<code>open_url</code>
@@ -80,7 +80,7 @@ All component types have certain fields that represent the style.  All of these 
 :;<code>show_item</code>
 ::The NBT of the item to display, in the JSON-NBT format (as would be used in <code>/give</code>).  Note that this is a String and not a JSON object - it should either be set in a String directly (<code>"value":"{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"</code>) or as text of a component (<code>"value":{"text":"{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"}</code>).  If the item is invalid, "Invalid Item!" will be drawn in red instead.
 :;<code>show_entity</code>
-::A JSON-NBT String describing the entity.  Contains 3 values: <code>id</code>, the entity's UUID (with dashes); <code>type</code> (optional), which contains the resource location for the entity's type (eg <code>minecraft:zombie</code>); and <code>name</code>, which contains the entity's custom name (if present).  Note that this is a String and not a JSON object.  It should be set in a String directly (<code>"value":"{id:7e4a61cc-83fa-4441-a299-bf69786e610a,type:minecraft:zombie,name:Zombie</code>) or as the content of a component.  If the entity is invalid, "Invalid Entity!" will be displayed.  Note that the client does ''not'' need to have the given entity loaded.
+::A JSON-NBT String describing the entity.  Contains 3 values: <code>id</code>, the entity's UUID (with dashes); <code>type</code> (optional), which contains the resource location for the entity's type (eg <code>minecraft:zombie</code>); and <code>name</code>, which contains the entity's custom name (if present).  Note that this is a String and not a JSON object.  It should be set in a String directly (<code>"value":"{id:7e4a61cc-83fa-4441-a299-bf69786e610a,type:minecraft:zombie,name:Zombie}"</code>) or as the content of a component.  If the entity is invalid, "Invalid Entity!" will be displayed.  Note that the client does ''not'' need to have the given entity loaded.
 :;<code>show_achievement</code>
 ::The ID of an achievement or statistic to display.  Example: <code>"value":"achievement.openInventory"</code>.
 ;<code>extra</code>
