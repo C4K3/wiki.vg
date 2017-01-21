@@ -128,7 +128,7 @@ The <code>clientToken</code> should be a randomly generated identifier and must 
         }
     ],
     "selectedProfile": {                       // only present if the agent field was received
-        "id": "profile identifier",
+        "id": "uuid without dashes",
         "name": "player name",
         "legacy": true or false
     },
