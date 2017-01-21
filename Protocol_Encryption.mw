@@ -81,7 +81,7 @@ With the following sent as post data, Content-Type: application/json
   }
 </syntaxhighlight>
 
-The fields <accessToken> and <selectedProfile> where received by the client during [[Authentication#Authenticate|authentication]].
+The fields <accessToken> and <selectedProfile> were received by the client during [[Authentication#Authenticate|authentication]].
 
 If everything goes well, the client will receive a "HTTP/1.1 204 No Content" response.
 
