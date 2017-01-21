@@ -118,7 +118,19 @@ The server resolves the list selector into a list of entities, each with an appr
 
 === Examples ===
 
-TODO
+Here are some examples from the Notchain server for how chat formatting can be used.
+
+TODO - additional examples
+
+==== Standard chat message ====
+
+The normal chat message uses a translation component along with some styling.
+
+<syntaxhighlight lang="javascript">
+{"translate":"chat.type.text","with":[{"text":"Herobrine","clickEvent":{"action":"suggest_command","value":"/msg Herobrine "},"hoverEvent":{"action":"show_entity","value":"{id:f84c6a79-0a4e-45e0-879b-cd49ebd4c4e2,name:Herobrine}"},"insertion":"Herobrine"},{"text":"I don't exist"}]}
+</syntaxhighlight>
+
+The <code>chat.type.text</code> translation key becomes <code><nowiki><%s> %s</nowiki></code>, which is then filled in with the player's name and the actual message.  Note that the player's name has a click event (which inserts text to message the player), a hover event (which shows the entity ID; also note that <code>type</code> is missing), and an insertion (for the player's name).
 
 == Old system ==
 
