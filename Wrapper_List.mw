@@ -56,15 +56,22 @@ These are wrappers for the vanilla Minecraft server.
 !style="width: 120px" | Scripting
 !style="width: 120px" | Development Status
 |-
-! [http://bukkit.org/ Bukkit]
-| [http://forums.bukkit.org/pages/about-us/ Bukkit Team]
+! [http://www.spigotmc.org/ Spigot]
+| [http://www.spigotmc.org/XenStaff/ Spigot Team]
 | [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
 | [http://www.gnu.org/copyleft/gpl.html GPLv3]
 | {{yes|Java Archives}}
-| {{no|Inactive (DMCA'd)}}
+| {{yes|Active}}
 |-
-! [http://www.spigotmc.org/ Spigot]
-| [http://www.spigotmc.org/XenStaff/ Spigot Team]
+! Spoon
+| [https://github.com/ilexiconn iLexiconn]
+| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
+| [http://en.wikipedia.org/wiki/MIT_License MIT]
+| {{yes|Java Archives}}
+| {{yes|Active}}
+|-
+! [http://canarymod.net/ CanaryMod]
+| [http://canarymod.net/team CanaryMod Team]
 | [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
 | [http://www.gnu.org/copyleft/gpl.html GPLv3]
 | {{yes|Java Archives}}
@@ -77,19 +84,12 @@ These are wrappers for the vanilla Minecraft server.
 | {{yes|Java Archives}}
 | {{no|Inactive (Abandoned)}}
 |-
-! [http://canarymod.net/ CanaryMod]
-| [http://canarymod.net/team CanaryMod Team]
+! [http://bukkit.org/ Bukkit]
+| [http://forums.bukkit.org/pages/about-us/ Bukkit Team]
 | [http://en.wikipedia.org/wiki/Java_%28programming_language%29 Java]
 | [http://www.gnu.org/copyleft/gpl.html GPLv3]
 | {{yes|Java Archives}}
-| {{yes|Active}}
-|-
-! Spoon
-| [https://github.com/ilexiconn iLexiconn]
-| [http://en.wikipedia.org/wiki/Java_(programming_language) Java]
-| [http://en.wikipedia.org/wiki/MIT_License MIT]
-| {{yes|Java Archives}}
-| {{yes|Active}}
+| {{no|Inactive (DMCA'd)}}
 |-
 ! [http://www.minecraftforum.net/viewtopic.php?f=1023&t=336496 SimpleServer]
 | [[User:sadimusi|sadimusi]]
