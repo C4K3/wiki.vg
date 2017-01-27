@@ -951,7 +951,7 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col1 centeralign" | BlockCategory  
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>1</code>
-| class="col4 centeralign" | Valid from 1-255. SoundCategories from 1-(something) are default and cannot be cleared. Sounds within these categories may be redefined by the server.
+| class="col4 centeralign" | Valid from 1-255. SoundCategories from 1-9 are default and cannot be cleared. Sounds within these categories may be redefined by the server.
 |- class="row2"
 | class="col1 centeralign" | SoundID  
 | class="col2 centeralign" | byte
@@ -1066,7 +1066,7 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 ! class="col3" | Example
 ! class="col4" | Notes
 |- class="row1"
-| class="col0 centeralign" rowspan="4" | 0x??
+| class="col0 centeralign" rowspan="5" | 0x??
 (??)
 | class="col1 centeralign" | SongCategory  
 | class="col2 centeralign" | byte
@@ -1083,13 +1083,18 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 | class="col3 centeralign" | <code>100</code>
 | class="col4 centeralign" | From 0-200, the volume at which to play the music.
 |- class="row4"
-| class="col1 centeralign" | Effects
+| class="col1 centeralign" | Fade
 | class="col2 centeralign" | byte
 | class="col3 centeralign" | <code>0</code>
-| class="col4 centeralign" | Coming soon.
+| class="col4 centeralign" | This is a bitfield from 0-7 with 7 being the most significant bit. Bits 0-3 are for the period taken for the song to fade in. Valid values for this are from 0-15 seconds. Bits 4-7 are for are for the fade out, and the values for this are from 0-15 seconds.
 |- class="row5"
+| class="col1 centeralign" | Loop
+| class="col2 centeralign" | byte
+| class="col3 centeralign" | <code>0</code>
+| class="col4 centeralign" | From 0-254, the position from the start, in tenths of a second, at which the music should return after the end is reached. If this field is 255, then the song does not loop.
+|- class="row6"
 ! class="col0" | Total Size:
-| class="col1 rightalign" colspan="4" | 5 bytes
+| class="col1 rightalign" colspan="4" | 6 bytes
 |}
 :<h4>PlaySFX packet</h4>
 :''Server to client''
