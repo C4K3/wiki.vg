@@ -1178,3 +1178,14 @@ Note: This only effects blocks which have the "Shape" as 0 (sprite)
 |}
 
 :(Comments go here, please sign them)
+
+===ExtPing===
+:Proposed by Cheesse
+:This extension allows the client to receive ping packets from the server on request, allowing latency to be calculated client-side.
+:'''Motivation''': To determine the time it takes for a player's actions to be received by the server.
+:'''Client Behavior''': The client may send a '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|Ping]]''''' packet at anytime and should start a clock upon doing so. After receiving a '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|Ping]]''''' packet from the server, the client should stop the clock and use the elapsed time to determine latency.
+:'''Server Behavior''': The server must send a '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|Ping]]''''' packet immediately upon receiving one from the client, otherwise, the server should not send any '''''[[Classic_Protocol#Server_.E2.86.92_Client_packets|Ping]]''''' packets.
+
+This extension does not define any new packets.
+
+:(Comments go here, please sign them)
