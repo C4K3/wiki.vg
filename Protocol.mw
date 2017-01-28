@@ -640,7 +640,7 @@ Servers can, however, safely spawn player entities for players not in visible ra
  | 
  |}
 
-When in {{Minecraft Wiki|Serve.properties#online-mode|online mode}}, the UUIDs must be valid and have valid skin blobs.
+When in {{Minecraft Wiki|Server.properties#online-mode|online mode}}, the UUIDs must be valid and have valid skin blobs.
 
 In offline mode, [[Wikipedia:Universally unique identifier#Versions 3 and 5 (namespace name-based)|UUID v3]] is used with the String <code>OfflinePlayer:&lt;player name&gt;</code>, encoded in UTF-8 (and case-sensitive).
 
