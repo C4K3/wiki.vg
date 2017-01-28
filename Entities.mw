@@ -1218,6 +1218,7 @@ Statuses:
 :- Create a 'Infinity Bow' without the first arrow in your inventory constantly changing in quantity.
 :- Create a custom found that is infinite, and prevent the stack quantity from descreasing.
 :- ...
+:Note: This works together with the 'Hand data' so this will have to be updated accordingly to 'finish' the interaction manually.
 ;22
 :Enables reduced {{Minecraft Wiki|Debug Screen|debug screen}} information
 ;23
