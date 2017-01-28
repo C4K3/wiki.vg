@@ -1212,6 +1212,12 @@ Statuses:
 
 ;9
 :Marks item use as finished (finished eating, finished drinking, etc)
+:This status is not required if you want more control on the server side, this basicly finishes the interaction on the client side to decrease the food quantity, arrow quantity, ...
+:But you can trigger these changes manually through other packets or prevent those changes on the client.
+:Examples:
+:- Create a 'Infinity Bow' without the first arrow in your inventory constantly changing in quantity.
+:- Create a custom found that is infinite, and prevent the stack quantity from descreasing.
+:- ...
 ;22
 :Enables reduced {{Minecraft Wiki|Debug Screen|debug screen}} information
 ;23
