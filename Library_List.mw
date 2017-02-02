@@ -35,7 +35,7 @@ This is a rather incomplete list of Minecraft related libraries currently in dev
 | [https://github.com/andrewrk andrewrk]
 | [http://nodejs.org/ node.js]
 | {{BSD}}
-| {{yes|1.7.10, 1.8 and 1.9}}
+| {{yes|1.7.10, 1.8, 1.9, 1.10 and 1.11}}
 |-
 ! [https://github.com/ammaraskar/pyCraft pyCraft]
 | Python minecraft client library
