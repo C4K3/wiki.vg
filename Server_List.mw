@@ -77,7 +77,7 @@ A couple things for contributors:
  | {{yes}}
  | {{yes|Players, Items, Mobs}}
  | {{yes|Threads/Events}}
- | {{yes|Java ([http://bukkit.org/ Bukkit] and [https://spongepowered.org/ Sponge] using [https://github.com/GlowstonePlusPlus/Bukkit2Sponge Bukkit2Sponge])}} + [http://en.wikipedia.org/wiki/Kotlin_(programming_language) Kotlin]
+ | {{yes|Java ([http://bukkit.org/ Bukkit])}} + [http://en.wikipedia.org/wiki/Kotlin_(programming_language) Kotlin]
  | {{yes|{{windows}}{{linux}}{{mac}}}}
  | [https://github.com/GlowstoneMC/Glowstone#features Link]
  | {{yes|Active}}
