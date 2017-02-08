@@ -935,7 +935,7 @@ Abstract base class for [[#TippedArrow|TippedArrow]] (which is used for regular 
 
 Extends [[#Arrow|Arrow]].
 
-Used for both tipped and regular arrows.  If not tipped, then color is set to 0 and no tipped arrow particles are used.
+Used for both tipped and regular arrows.  If not tipped, then color is set to -1 and no tipped arrow particles are used.
 
 {| class="wikitable"
  ! Index
@@ -945,13 +945,13 @@ Used for both tipped and regular arrows.  If not tipped, then color is set to 0 
  |-
  | 7
  | VarInt
- |colspan="2"| Color (0 for no particles)
- | 0
+ |colspan="2"| Color (-1 for no particles)
+ | -1
  |}
 
 Statuses:
 ;0
-:Spawns tipped arrow particle effects, if the color is greater than 0.
+:Spawns tipped arrow particle effects, if the color is not -1.
 
 === Boat ===
 
@@ -1051,6 +1051,11 @@ Extends [[#Entity|Entity]].
  | [[Slot]]
  |colspan="2"| Firework info
  | empty
+ |-
+ | 7
+ | VarInt
+ |colspan="2"| Entity ID of entity which used firework (for elytra boosting)
+ | 0
  |}
 
 Statuses:
@@ -1551,7 +1556,14 @@ Extends [[#Animal|Animal]].
  | Boolean
  |colspan="2"| Has saddle
  | false
+ |-
+ | 14
+ | VarInt
+ | Total time to "boost" with a carrot on a stick for
+ | 0
  |}
+
+Whenever a carrot on a stick is used, if the pig is not currently boosting it will start to boost for 140 to 980 (inclusive) ticks.  When boost time is changed, a counter is reset which counts up to the boost time, after which boosting will stop.  The value remains set at its modified value even after boosting is stopped.
 
 === Rabbit ===
 
@@ -1917,7 +1929,7 @@ Extends [[#Monster|Monster]].
  |-
  | 12
  | Byte
- | Spell (0: none, 1: summon vex, 2: attack, 3: wololo)
+ | colspan="2"| Spell (0: none, 1: summon vex, 2: attack, 3: wololo)
  | 0
  |}
 
