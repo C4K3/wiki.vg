@@ -1,4 +1,4 @@
-This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently [[Protocol version numbers|1.11, protocol 315]]) to the current pre-release (currently [[Protocol version numbers|1.11.2, protocol 316]]). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
+This page documents the changes from the [[Protocol|last stable Minecraft release]] (currently [[Protocol version numbers|1.11.2, protocol 316]]) to the current pre-release (currently [[Protocol version numbers|17w06a, protocol 317]]). Note that this page contains bleeding-edge information that may not be completely or correctly documented.
 
 One who wishes to commandeer the merging of this into [[Protocol]] when an update is made must be sure to respect any changes that may have occurred to the respective packets there.
 
@@ -11,8 +11,6 @@ One who wishes to commandeer the merging of this into [[Protocol]] when an updat
 No changes so far.
 
 === Packets ===
-
-No changes so far.
 
 {| class="wikitable"
  ! ID
@@ -28,71 +26,7 @@ No changes so far.
 
 === Entity Metadata ===
 
-=== TippedArrow ===
-
-Extends [[#Arrow|Arrow]].
-
-Used for both tipped and regular arrows.  If not tipped, then color is set to 0 and no tipped arrow particles are used.
-
-{| class="wikitable"
- ! Index
- ! Type
- !style="width: 250px;" colspan="2"| Meaning
- ! Default
- |-
- | 7
- | VarInt
- |colspan="2"| Color ({{Change|0|-1}} for no particles)
- | {{Change|0|-1}}
- |}
-
-Statuses:
-;0
-:Spawns tipped arrow particle effects, if the color is greater than 0.
-
-=== Fireworks ===
-
-Extends [[Entities#Entity|Entity]].
-
-{| class="wikitable"
- ! Index
- ! Type
- !style="width: 250px;" colspan="2"| Meaning
- ! Default
- |-
- | 6
- | [[Slot]]
- |colspan="2"| Firework info
- | Empty
- |-
- |style="background-color: #d9ead3;"| 7
- |style="background-color: #d9ead3;"| VarInt
- |colspan="2" style="background-color: #d9ead3;"| Entity ID of entity which used firework (for elytra boosting)
- |style="background-color: #d9ead3;"| 0
- |}
-
-=== Pig ===
-
-Extends [[Entities#Animal|Animal]].
-
-{| class="wikitable"
- ! Index
- ! Type
- !style="width: 250px;" colspan="2"| Meaning
- ! Default
- |-
- | 13
- | Boolean
- |colspan="2"| Has saddle
- | false
- |-
- |style="background-color: #d9ead3;"| 14
- |style="background-color: #d9ead3;"| VarInt
- |colspan="2" style="background-color: #d9ead3;"| Total time to "boost" with a carrot on a stick for
- |style="background-color: #d9ead3;"| 0
- |}
-
-Whenever a carrot on a stick is used, if the pig is not currently boosting it will start to boost for 140 to 980 (inclusive) ticks.  When boost time is changed, a counter is reset which counts up to the boost time, after which boosting will stop.  The value remains set at its modified value even after boosting is stopped.
+No changes so far.
 
 == Block Actions ==
 
@@ -100,24 +34,7 @@ No changes so far.
 
 == Plugin Channels ==
 
-=== <code>MC|DebugNeighborsUpdate</code> ===
-''Server to client''
-
-{{Change||Never sent, but used to debug block updates.  Does not render without modifying the client.}}
-
-{|class="wikitable" style="background-color: #d9ead3;"
- ! Name
- ! Type
- ! Notes
- |-
- | Time
- | Long
- | World timestamp at which the update occurred.  200 ticks after this timestamp, the given update stops rendering.
- |-
- | Location
- | Position
- | Location of the block that updated.
- |}
+No changes so far.
 
 == Handshaking ==
 
@@ -146,7 +63,7 @@ This causes the server to switch into the target state.
  |rowspan="4"| Server
  | Protocol Version
  | VarInt
- | See [[protocol version numbers]] (currently {{change|315|316}})
+ | See [[protocol version numbers]] (currently {{change|316|317}})
  |-
  | Server Address
  | String
