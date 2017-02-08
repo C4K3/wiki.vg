@@ -272,6 +272,25 @@ Values for node type:
 * 15: DOOR_WOOD_CLOSED
 * 16: DOOR_IRON_CLOSED
 
+=== <code>MC|DebugNeighborsUpdate</code> ===
+''Server to client''
+
+Never sent, but used to debug block updates.  Does not render without modifying the client.
+
+{|class="wikitable"
+ ! Name
+ ! Type
+ ! Notes
+ |-
+ | Time
+ | Long
+ | World timestamp at which the update occurred.  200 ticks after this timestamp, the given update stops rendering.
+ |-
+ | Location
+ | Position
+ | Location of the block that updated.
+ |}
+
 === <code>MC|ItemName</code> ===
 ''Client to server''
 
