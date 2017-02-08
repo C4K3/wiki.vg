@@ -137,7 +137,7 @@ This causes the server to switch into the target state.
  |rowspan="4"| Server
  | Protocol Version
  | VarInt
- | See [[protocol version numbers]] (currently 315 in Minecraft 1.11)
+ | See [[protocol version numbers]] (currently 316 in Minecraft 1.11.2)
  |-
  | Server Address
  | String
