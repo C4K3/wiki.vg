@@ -1,5 +1,8 @@
 Provided below is a (potentially incomplete) changelog of the server protocol starting on 2010-08-20.  The wiki history feature may also be used to investigate changes.
 
+=== 17w06a ===
+* Protocol version 317
+
 === 1.11.1, 1.11.2 ===
 * No new protocol version number
 * Added <code>MC|DebugNeighborsUpdate</code> plugin channel
