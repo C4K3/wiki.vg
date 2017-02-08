@@ -14,9 +14,13 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  ! Version number
  ! Last known documentation
  |-
+ | {{Minecraft Wiki|17w06a}}
+ | 317
+ | [[Pre-release protocol|page]]
+ |-
  | '''{{Minecraft Wiki|1.11.2}}'''
  |rowspan="3"| 316
- |rowspan="3"| [{{canonicalurl:Pre-release protocol}} page]
+ |rowspan="3"| [[Protocol|page]]
  |-
  | '''{{Minecraft Wiki|1.11.1}}'''
  |-
@@ -24,7 +28,7 @@ Beginning with the 1.7.1 pre-release (and release 1.7.2), versioning was reset.
  |-
  | '''{{Minecraft Wiki|1.11}}'''
  | 315
- | [[Protocol|page]]
+ | [{{canonicalurl:Protocol|oldid=8405}} page]
  |-
  | {{Minecraft Wiki|1.11-pre1}}
  | 314
