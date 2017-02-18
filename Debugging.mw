@@ -1,8 +1,12 @@
-The Notchian client and server (and additionally the launcher) can generate additional log information that what is normally displayed, some of which is extremely helpful for debugging.  This can be done by specifying a custom [http://logging.apache.org/log4j/2.x/manual/configuration.html Log4j configuration] by supplying a <code>-Dlog4j.configurationFile=fullpathtoconfigfile.xml</code> argument to the game:
+The Notchian client and server (and additionally the launcher) can generate additional log information that what is normally displayed, some of which is extremely helpful for debugging.  This can be done by specifying a custom [http://logging.apache.org/log4j/2.x/manual/configuration.html Log4j configuration].
 
-* [[media:ClientDebugging.png|In the JVM Arguments section of the launcher]]
+The native launcher provides a "Log config" section for doing this directly.  For other situations, this can be done by <code>-Dlog4j.configurationFile=fullpathtoconfigfile.xml</code> argument to the game:
+
+* [[media:ClientDebugging.png|In the JVM Arguments section of the Java launcher]]
 * Before the <code>-jar</code> in the server launch command
 * Before the <code>-jar</code> when directly invoking the <code>launcher.jar</code>
+
+When using the native launcher, use the XML variant of the log config and check "Custom log config outputs XML".  This allows the launcher to provide cleaner information in its output.  When using the java launcher, or when launching a server, use the non-XML variant (you don't want XML in the console, and the XML variants don't work with the server GUI).
 
 {{Warning|If the configuration specified with <code>-Dlog4j.configurationFile</code> cannot be found, the default one will silently be used instead.}}
 
@@ -16,7 +20,7 @@ The main one is <code>level</code> in <code><nowiki><Root></nowiki></code>.  Nor
 
 The other major option is the list of <code><nowiki><filter></nowiki></code>s.  By default, the game filters out information regarding packets with a <code><nowiki><filter></nowiki></code> that rejects all log messages marked with <code>NETWORK_PACKETS</code>.  You can instead make it so that the filter only accepts <code>NETWORK_PACKETS</code> and rejects everything else, or alternatively you can remove the <code><nowiki><filter></nowiki></code> entirely so that all messages are displayed.  Beyond just <code>NETWORK_PACKETS</code>, there are a few other log markers: <code>SOUNDS</code>, <code>NETWORK</code>, <code>PACKET_SENT</code>, and <code>PACKET_RECEIVED</code>.  <code>NETWORK</code> and <code>NETWORK_PACKETS</code> behave identically; <code>PACKET_SENT</code> and <code>PACKET_RECEIVED</code> can be used to show only one set of the packets; and <code>SOUNDS</code> can be used to emit information about when a sound channel starts and stops (mostly only useful when diagnosing issues where a sound seems to be playing twice).
 
-One other note: by default, log4j overwrites old logs if there are more than 7 for a day (see [https://bugs.mojang.com/browse/MC-100524 MC-100524]).  You can disable this "feature" by adding a <code><nowiki><DefaultRolloverStrategy max="1000"/></nowiki></code> to the <code><nowiki><RollingRandomAccessFile></nowiki></code>, which makes the maximum 1000 files in a day (which is much less likely to be hit - 1000 is used over something larger because at larger numbers there starts to be a performance hit).
+One other note: by default, log4j overwrites old logs if there are more than 7 for a day (see [https://bugs.mojang.com/browse/MC-100524 MC-100524]).  You can disable this behavior by adding a <code><nowiki><DefaultRolloverStrategy max="1000"/></nowiki></code> to the <code><nowiki><RollingRandomAccessFile></nowiki></code>, which makes the maximum 1000 files in a day (which is much less likely to be hit - 1000 is used over something larger because at larger numbers there starts to be a performance hit).
 
 == Sample configs ==
 
@@ -63,6 +67,37 @@ Config:
 </syntaxhighlight>
 </div>
 
+<div class="mw-collapsible mw-collapsed" style="border: 1px solid #aaa;">
+Config (XML output):
+<syntaxhighlight lang="xml" class="mw-collapsible-content">
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="SysOut" target="SYSTEM_OUT">
+            <XMLLayout />
+        </Console>
+        <RollingRandomAccessFile name="File" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <OnStartupTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="1000"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <filters>
+                <MarkerFilter marker="NETWORK_PACKETS" onMatch="ACCEPT" onMismatch="DENY" />
+            </filters>
+            <AppenderRef ref="SysOut"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers> 
+</Configuration>
+</syntaxhighlight>
+</div>
+
 === All debug information ===
 
 ''Applies to: vanilla client and server''
@@ -95,6 +130,34 @@ Config:
             <AppenderRef ref="SysOut"/>
             <AppenderRef ref="File"/>
             <AppenderRef ref="ServerGuiConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>
+</syntaxhighlight>
+</div>
+
+<div class="mw-collapsible mw-collapsed" style="border: 1px solid #aaa;">
+Config (XML output):
+<syntaxhighlight lang="xml" class="mw-collapsible-content">
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="SysOut" target="SYSTEM_OUT">
+            <XMLLayout />
+        </Console>
+        <RollingRandomAccessFile name="File" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <OnStartupTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="1000"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="SysOut"/>
+            <AppenderRef ref="File"/>
         </Root>
     </Loggers>
 </Configuration>
@@ -141,7 +204,7 @@ Config:
 
 ''Applies to: Launcher.jar''
 
-By enabling debug launching on the launcher jar, you can view connections to the [[Mojang API]] - helpful if you want to see a sample connection to each endpoint for your own account.
+By enabling debug launching on the (Java launcher's) launcher.jar, you can view connections to the [[Mojang API]] - helpful if you want to see a sample connection to each endpoint for your own account.
 
 Note that this configuration ''may'' not work if you invoke the normal launcher EXE/JAR - instead, use it on the <code>launcher.jar</code> located in <code>%appdata%\.minecraft</code>.
 
