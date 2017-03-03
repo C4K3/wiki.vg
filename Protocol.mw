@@ -140,7 +140,7 @@ This causes the server to switch into the target state.
  | See [[protocol version numbers]] (currently 316 in Minecraft 1.11.2)
  |-
  | Server Address
- | String
+ | String (255)
  | Hostname or IP, e.g. localhost or 127.0.0.1, that was used to connect.  The Notchian server does not use this information.
  |- 
  | Server Port
@@ -406,7 +406,7 @@ This packet shows location, name, and type of painting.
  | 
  |-
  | Title
- | String
+ | String (13)
  | Name of the painting. Max length 13
  |-
  | Location
@@ -719,7 +719,7 @@ Animation can be one of the following values:
  |rowspan="2"| Statistic
  | Name
  |rowspan="2"| Array
- | String
+ | String (32767)
  | [https://gist.github.com/thinkofname/a1842c21a0cf2e1fb5e0 https://gist.github.com/thinkofname/a1842c21a0cf2e1fb5e0]
  |-
  | Value
@@ -1024,7 +1024,7 @@ The server responds with a list of auto-completions of the last word sent to it.
  | Number of elements in the following array
  |-
  | Matches
- | Array of String
+ | Array of String (32767)
  | One eligible command, note that each command is sent separately instead of in a single string, hence the need for Count
  |}
 
@@ -1174,7 +1174,7 @@ This is sent to the client when it should open an inventory, such as a chest, wo
  | A unique id number for the window to be displayed. Notchian server implementation is a counter, starting at 1.
  |-
  | Window Type
- | String
+ | String (32)
  | The window type to use for display. See [[Inventory]] for a list.
  |-
  | Window Title
@@ -1388,7 +1388,7 @@ More documentation on this: [http://dinnerbone.com/blog/2012/01/13/minecraft-plu
  ! Field Type
  ! Notes
  |-
- |rowspan="2"| 0x18
+ |rowspan="2"| 0x20
  |rowspan="2"| Play
  |rowspan="2"| Client
  | Channel
@@ -1417,7 +1417,7 @@ Used to play a sound effect on the client. Custom sounds may be added by resourc
  |rowspan="7"| Play
  |rowspan="7"| Client
  | Sound Name
- | String
+ | String (256)
  | All sound effect names as of 1.11.0 can be seen [http://pokechu22.github.io/Burger/1.11.html#sounds here].
  |-
  | Sound Category
@@ -2227,12 +2227,12 @@ See [[Protocol Encryption]] for information on logging in.
  | Was once used by the client to draw the player list, but now is ignored
  |-
  | Level Type
- | String
+ | String Enum (16)
  | default, flat, largeBiomes, amplified, default_1_1
  |-
  | Reduced Debug Info
  | Boolean
- | If true, a Notchian client shows reduced information on the {{Minecraft Wiki|debug screen}}.
+ | If true, a Notchian client shows reduced information on the {{Minecraft Wiki|debug screen}}.  For servers in development, this should almost always be false.
  |}
 
 ==== Map ====
@@ -2674,7 +2674,7 @@ Sent by the server to update the user list (<tab> in the client).
  |-
  |rowspan="10"| 0: add player
  |colspan="2"| Name
- |colspan="2"| String
+ |colspan="2"| String (16)
  | 
  |-
  |colspan="2"| Number Of Properties
@@ -2684,11 +2684,11 @@ Sent by the server to update the user list (<tab> in the client).
  |rowspan="4"| Property
  | Name
  |rowspan="4"| Array
- | String
+ | String (32767)
  | 
  |-
  | Value
- | String
+ | String (32767)
  | 
  |- 
  | Is Signed
@@ -2696,7 +2696,7 @@ Sent by the server to update the user list (<tab> in the client).
  | 
  |-
  | Signature
- | Optional String
+ | Optional String (32767)
  | Only if Is Signed is true
  |-
  |colspan="2"| Gamemode
@@ -2907,11 +2907,11 @@ Sent by the server when a list of entities is to be destroyed on the client.
  |rowspan="2"| Play
  |rowspan="2"| Client
  | URL
- | String
+ | String (32767)
  | The URL to the resource pack.
  |-
  | Hash
- | String
+ | String (40)
  | A 40 character hexadecimal and lowercase [[wikipedia:SHA-1|SHA-1]] hash of the resource pack file. (must be lower case in order to work)<br />If it's not a 40 character hexadecimal string, the client will not use it for hash verification and likely waste bandwidth — but it will still treat it as a unique id
  |}
 
@@ -2943,7 +2943,7 @@ To change the player's dimension (overworld/nether/end), send them a respawn pac
  | 0: survival, 1: creative, 2: adventure, 3: spectator. The hardcore flag is not included
  |-
  | Level Type
- | String
+ | String (16)
  | Same as [[#Join Game|Join Game]]
  |}
 
@@ -3152,7 +3152,7 @@ This is sent to the client when it should display a scoreboard.
  | The position of the scoreboard. 0: list, 1: sidebar, 2: below name.
  |-
  | Score Name
- | String
+ | String (16)
  | The unique name for the scoreboard to be displayed.
  |}
 
@@ -3336,7 +3336,7 @@ This is sent to the client when it should create a new {{Minecraft Wiki|scoreboa
  |rowspan="4"| Play
  |rowspan="4"| Client
  | Objective Name
- | String
+ | String (16)
  | An unique name for the objective
  |-
  | Mode
@@ -3344,11 +3344,11 @@ This is sent to the client when it should create a new {{Minecraft Wiki|scoreboa
  | 0 to create the scoreboard. 1 to remove the scoreboard. 2 to update the display text. 
  |-
  | Objective Value
- | Optional String
+ | Optional String (32)
  | Only if mode is 0 or 2. The text to be displayed for the score
  |-
  | Type
- | Optional String
+ | Optional String (16)
  | Only if mode is 0 or 2. “integer” or “hearts”
  |}
 
@@ -3394,7 +3394,7 @@ Creates and updates teams.
  |rowspan="23"| Play
  |rowspan="23"| Client
  |colspan="2"| Team Name
- | String
+ | String (16)
  | A unique name for the team. (Shared with scoreboard).
  |-
  |colspan="2"| Mode
@@ -3403,15 +3403,15 @@ Creates and updates teams.
  |-
  |rowspan="9"| 0: create team
  | Team Display Name
- | String
+ | String (32)
  | 
  |-
  | Team Prefix
- | String
+ | String (16)
  | Displayed before the names of players that are part of this team
  |-
  | Team Suffix
- | String
+ | String (16)
  | Displayed after the names of players that are part of this team
  |-
  | Friendly Flags
@@ -3419,24 +3419,24 @@ Creates and updates teams.
  | Bit mask. 0x01: Allow friendly fire, 0x02: can see invisible players on same team
  |-
  | Name Tag Visibility
- | String Enum
+ | String Enum (32)
  | <code>always</code>, <code>hideForOtherTeams</code>, <code>hideForOwnTeam</code>, <code>never</code>
  |-
  | Collision Rule
- | String Enum
+ | String Enum (32)
  | <code>always</code>, <code>pushOtherTeams</code>, <code>pushOwnTeam</code>, <code>never</code>
  |-
  | Color
  | Byte
- | Same as [[Chat]] colors
+ | For colors, the same [[Chat]] colors (0-15).  -1 indicates RESET/no color.
  |-
- | Player Count
+ | Entity Count
  | VarInt
  | Number of elements in the following array
  |-
- | Players
- | Array of String
- | Usernames of the players in this team. Maximum 40 characters per entry.
+ | Entities
+ | Array of String (40)
+ | Identifiers for the entities in this team.  For players, this is their username; for other entities, it is their UUID.
  |-
  | 1: remove team
  | ''no fields''
@@ -3445,50 +3445,50 @@ Creates and updates teams.
  |-
  |rowspan="7"| 2: update team info
  | Team Display Name
- | String
+ | String (32)
  | 
  |-
  | Team Prefix
- | String
- | Displayed before the names of players that are part of this team
+ | String (16)
+ | Displayed before the names of entities that are part of this team
  |-
  | Team Suffix
- | String
- | Displayed after the names of players that are part of this team
+ | String (16)
+ | Displayed after the names of entities that are part of this team
  |-
  | Friendly Flags
  | Byte
- | Bit mask. 0x01: Allow friendly fire, 0x02: can see invisible players on same team
+ | Bit mask. 0x01: Allow friendly fire, 0x02: can see invisible entities on same team
  |-
  | Name Tag Visibility
- | String Enum
+ | String Enum (32)
  | <code>always</code>, <code>hideForOtherTeams</code>, <code>hideForOwnTeam</code>, <code>never</code>
  |-
  | Collision Rule
- | String Enum
+ | String Enum (32)
  | <code>always</code>, <code>pushOtherTeams</code>, <code>pushOwnTeam</code>, <code>never</code>
  |-
  | Color
  | Byte
- | Same as [[Chat]] colors
+ | For colors, the same [[Chat]] colors (0-15).  -1 indicates RESET/no color.
  |-
  |rowspan="2"| 3: add players to team
- | Player Count
+ | Entity Count
  | VarInt
  | Number of elements in the following array
  |-
- | Players
- | Array of String
- | Usernames of the added players. Maximum 40 characters per entry.
+ | Entities
+ | Array of String (40)
+ | Identifiers for the entities added.  For players, this is their username; for other entities, it is their UUID.
  |-
  |rowspan="2"| 4: remove players from team
- | Player Count
+ | Entity Count
  | VarInt
  | Number of elements in the following array
  |-
- | Players
- | Array of String
- | Usernames of the removed players. Maximum 40 characters per entry.
+ | Entities
+ | Array of String (40)
+ | Identifiers for the entities removed.  For players, this is their username; for other entities, it is their UUID.
  |}
 
 ==== Update Score ====
@@ -3507,7 +3507,7 @@ This is sent to the client when it should update a scoreboard item.
  |rowspan="4"| Play
  |rowspan="4"| Client
  | Score Name
- | String
+ | String (40)
  | The name of the score to be updated or removed
  |-
  | Action
@@ -3515,7 +3515,7 @@ This is sent to the client when it should update a scoreboard item.
  | 0 to create/update an item. 1 to remove an item.
  |-
  | Objective Name
- | String
+ | String (16)
  | The name of the objective the score belongs to
  |-
  | Value
@@ -3805,7 +3805,7 @@ Sets {{Minecraft Wiki|Attribute|attributes}} on the given entity.
  |rowspan="4"| Property
  | Key
  |rowspan="4"| Array
- | String
+ | String (64)
  | See below
  |-
  | Value
@@ -3986,7 +3986,7 @@ Sent when the user presses ''tab'' while writing text.
  |rowspan="4"| Play
  |rowspan="4"| Server
  | Text
- | String
+ | String (32767)
  | All text behind the cursor (e.g. to the left of the cursor in left-to-right languages like English)
  |-
  | Assume Command
@@ -4020,7 +4020,7 @@ If the message starts with a <code>/</code>, the server will attempt to interpre
  |rowspan="1"| Play
  |rowspan="1"| Server
  | Message
- | String
+ | String (256)
  | The client sends the raw input, not a [[Chat]] component
  |}
 
@@ -4077,7 +4077,7 @@ Sent when the player connects, or when settings are changed.
  |rowspan="6"| Play
  |rowspan="6"| Server
  | Locale
- | String
+ | String (7)
  | e.g. en_GB
  |-
  | View Distance
@@ -4373,7 +4373,7 @@ Note that the length of Data is known only from the packet length, since the pac
  |rowspan="2"| Play
  |rowspan="2"| Server
  | Channel
- | String
+ | String (20)
  | Name of the [[plugin channel]] used to send the data
  |-
  | Data
@@ -4981,19 +4981,19 @@ The server only accepts this packet after [[#Open Sign Editor|Open Sign Editor]]
  | Block Coordinates
  |-
  | Line 1
- | String
+ | String (384)
  | First line of text in the sign
  |-
  | Line 2
- | String
+ | String (384)
  | Second line of text in the sign
  |-
  | Line 3
- | String
+ | String (384)
  | Third line of text in the sign
  |-
  | Line 4
- | String
+ | String (384)
  | Fourth line of text in the sign
  |}
 
@@ -5125,7 +5125,7 @@ Sent when pressing the Use Item key (default: right click) with an item in hand.
  |rowspan="1"| Status
  |rowspan="1"| Client
  | JSON Response
- | String
+ | String (32767)
  | See [[Server List Ping#Response]]
  |}
 
@@ -5236,7 +5236,7 @@ See [[Protocol Encryption]] for details.
  |rowspan="5"| Login
  |rowspan="5"| Client
  | Server ID
- | String
+ | String (20)
  | Appears to be empty
  |-
  | Public Key Length
@@ -5272,11 +5272,11 @@ See [[Protocol Encryption]] for details.
  |rowspan="2"| Login
  |rowspan="2"| Client
  | UUID
- | String
+ | String (36)
  | Unlike in other packets, this field contains the UUID as a string with hyphens.
  |-
  | Username
- | String
+ | String (16)
  | 
  |}
 
@@ -5318,8 +5318,8 @@ Enables compression.  If compression is enabled, all following packets are encod
  |rowspan="1"| Login
  |rowspan="1"| Server
  | Name
- | String
- | Seems to be Player's Username
+ | String (16)
+ | Player's Username
  |}
 
 ==== Encryption Response ====
