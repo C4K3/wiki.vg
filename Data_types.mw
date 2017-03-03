@@ -55,12 +55,12 @@
  | 
  |-
  ! String (n)
- | ≥ 1 <br />≤ (n&times;4) + 5
+ | ≥ 1 <br />≤ (n&times;4) + 3
  | A sequence of [[wikipedia:Unicode|Unicode]] [http://unicode.org/glossary/#unicode_scalar_value scalar values]
- | [[wikipedia:UTF-8|UTF-8]] string prefixed with its size in bytes as a VarInt.  Maximum length of <code>n</code> characters, which varies by context; up to <code>n &times; 4</code> bytes can be used to encode <code>n</code> characters and both of those limits are checked.  Maximum <code>n</code> value is 32767.  The + 5 is due to the size of the VarInt.
+ | [[wikipedia:UTF-8|UTF-8]] string prefixed with its size in bytes as a VarInt.  Maximum length of <code>n</code> characters, which varies by context; up to <code>n &times; 4</code> bytes can be used to encode <code>n</code> characters and both of those limits are checked.  Maximum <code>n</code> value is 32767.  The + 3 is due to the max size of a valid length VarInt.
  |-
  ! Chat
- | ≥ 1 <br />≤ (32767&times;4) + 5
+ | ≥ 1 <br />≤ (32767&times;4) + 3
  | See [[Chat]]
  | Encoded as a String with max length of 32767.
  |- 
