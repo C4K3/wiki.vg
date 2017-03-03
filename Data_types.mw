@@ -54,15 +54,15 @@
  | A [[wikipedia:Double-precision floating-point format|double-precision 64-bit IEEE 754 floating point number]]
  | 
  |-
- ! String
- | ≥ 1 <br />≤&nbsp;2147483652
+ ! String (n)
+ | ≥ 1 <br />≤ n &times; 4
  | A sequence of [[wikipedia:Unicode|Unicode]] [http://unicode.org/glossary/#unicode_scalar_value scalar values]
- | [[wikipedia:UTF-8|UTF-8]] string prefixed with its size in bytes as a VarInt
+ | [[wikipedia:UTF-8|UTF-8]] string prefixed with its size in bytes as a VarInt.  Maximum length of <code>n</code> characters, which varies by context; up to <code>n &times; 4</code> bytes can be used to encode <code>n</code> characters and both of those limits are checked.  Maximum <code>n</code> value is 32767.
  |-
  ! Chat
- | ≥ 1 <br />≤&nbsp;2147483652
+ | ≥ 1 <br />≤ 32767 &times; 4
  | See [[Chat]]
- | Encoded as a String
+ | Encoded as a String with max length of 32767.
  |- 
  ! VarInt
  | ≥ 1 <br />≤ 5
