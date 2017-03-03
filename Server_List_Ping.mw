@@ -87,7 +87,7 @@ The JSON Response field is a [[wikipedia:JSON|JSON]] object which has the follow
 }
 </syntaxhighlight>
 
-The ''description'' field is a [[Chat]] object.
+The ''description'' field is a [[Chat]] object.  Note that the Notchian server has no way of providing actual chat component data; instead section sign-based codes are embedded within the text of text of the object.
 
 The ''sample'' and ''favicon'' fields are optional.
 
