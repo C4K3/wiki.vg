@@ -49,7 +49,7 @@ Returns status of various Mojang services. Possible values are <code>green</code
 
 == Username -> UUID at time ==
 
-  GET https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp>
+  GET <nowiki>https://api.mojang.com/users/profiles/minecraft/<username>?at=<timestamp></nowiki>
 
 This will return the uuid of the name at the timestamp provided.
 
@@ -83,7 +83,7 @@ If the timestamp is not a number, too big or too small the HTTP status code 400 
 
 == UUID -> Name history ==
 
-   https://api.mojang.com/user/profiles/<uuid>/names
+   <nowiki>https://api.mojang.com/user/profiles/<uuid>/names</nowiki>
 
 Returns all the usernames this user has used in the past and the one they are using currently. The UUID must be given without hyphens.
 
@@ -105,7 +105,7 @@ The <code>changedToAt</code> field is a Java timestamp in milliseconds.
 
 == Playernames -> UUIDs ==
 
-  POST https://api.mojang.com/profiles/minecraft
+  POST <nowiki>https://api.mojang.com/profiles/minecraft</nowiki>
 
 This will return player UUIDS and some extras.
 
@@ -140,7 +140,7 @@ This will return player UUIDS and some extras.
 
 == UUID -> Profile + Skin/Cape ==
 
-  https://sessionserver.mojang.com/session/minecraft/profile/<uuid>
+  <nowiki>https://sessionserver.mojang.com/session/minecraft/profile/<uuid></nowiki>
 
 This will return the player's username plus any additional information about them (e.g. skins). Example: https://sessionserver.mojang.com/session/minecraft/profile/4566e69fc90748ee8d71d7ba5aa00d20
 
@@ -282,7 +282,7 @@ No response unless error
  
 
 == User Info ==
-   GET https://api.mojang.com/user
+   GET <nowiki>https://api.mojang.com/user</nowiki>
 
 Returns information on the logged in Mojang account.
 
@@ -410,7 +410,7 @@ b8c876f599dcf5162911bba2d543ccbd23d18ae5:brandonisagainst.health-carereform.com
 </pre>
 
 == Statistics ==
-   POST https://api.mojang.com/orders/statistics
+   POST <nowiki>https://api.mojang.com/orders/statistics</nowiki>
 
 Get statistics on the sales of Minecraft.
 
