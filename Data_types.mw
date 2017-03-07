@@ -39,7 +39,7 @@
  | An integer between -2147483648 and 2147483647
  | Signed 32-bit integer, two's complement
  |-
- ! Long
+ ! Long (Actually a C Long Long)
  | 8
  | An integer between -9223372036854775808 and 9223372036854775807
  | Signed 64-bit integer, two's complement
