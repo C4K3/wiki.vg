@@ -39,10 +39,10 @@
  | An integer between -2147483648 and 2147483647
  | Signed 32-bit integer, two's complement
  |-
- ! Long (Actually a C Long Long)
+ ! Long
  | 8
  | An integer between -9223372036854775808 and 9223372036854775807
- | Signed 64-bit integer, two's complement
+ | Signed 64-bit integer, two's complement (Actually a C Long Long)
  |-
  ! Float
  | 4
