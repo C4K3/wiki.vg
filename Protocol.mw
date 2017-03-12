@@ -1391,8 +1391,8 @@ More documentation on this: [http://dinnerbone.com/blog/2012/01/13/minecraft-plu
  |rowspan="2"| 0x18
  |rowspan="2"| Play
  |rowspan="2"| Client
- | Channel (20)
- | String
+ | Channel
+ | String (20)
  | Name of the [[plugin channel]] used to send the data
  |-
  | Data
