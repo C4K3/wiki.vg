@@ -1559,7 +1559,7 @@ Extends [[#Animal|Animal]].
  |-
  | 14
  | VarInt
- | Total time to "boost" with a carrot on a stick for
+ |colspan="2"| Total time to "boost" with a carrot on a stick for
  | 0
  |}
 
