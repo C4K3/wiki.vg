@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Command Data - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Command_Data","wgTitle":"Command Data","wgCurRevisionId":14033,"wgRevisionId":14033,"wgArticleId":5748,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Command_Data","wgRelevantArticleId":5748,"wgRequestId":"84a0831ee4c87018e0b5419c","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Command_Data rootpage-Command_Data skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Command Data</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Command_Data.html#mw-head">navigation</a>, 					<a href="Command_Data.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>From Minecraft 1.13, the <b>Command Graph</b> data structure defines commands which can be used in chat or in command blocks, and how they're parsed.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Command_Data.html#Graph_Structure"><span class="tocnumber">1</span> <span class="toctext">Graph Structure</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Command_Data.html#Node_Format"><span class="tocnumber">2</span> <span class="toctext">Node Format</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Command_Data.html#Flags"><span class="tocnumber">2.1</span> <span class="toctext">Flags</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Command_Data.html#Parsers"><span class="tocnumber">2.2</span> <span class="toctext">Parsers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="Command_Data.html#Properties"><span class="tocnumber">2.2.1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-4 tocsection-6"><a href="Command_Data.html#brigadier:double"><span class="tocnumber">2.2.1.1</span> <span class="toctext">brigadier:double</span></a></li>
+<li class="toclevel-4 tocsection-7"><a href="Command_Data.html#brigadier:float"><span class="tocnumber">2.2.1.2</span> <span class="toctext">brigadier:float</span></a></li>
+<li class="toclevel-4 tocsection-8"><a href="Command_Data.html#brigadier:integer"><span class="tocnumber">2.2.1.3</span> <span class="toctext">brigadier:integer</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="Command_Data.html#brigadier:string"><span class="tocnumber">2.2.1.4</span> <span class="toctext">brigadier:string</span></a></li>
+<li class="toclevel-4 tocsection-10"><a href="Command_Data.html#minecraft:entity"><span class="tocnumber">2.2.1.5</span> <span class="toctext">minecraft:entity</span></a></li>
+<li class="toclevel-4 tocsection-11"><a href="Command_Data.html#minecraft:score_holder"><span class="tocnumber">2.2.1.6</span> <span class="toctext">minecraft:score_holder</span></a></li>
+<li class="toclevel-4 tocsection-12"><a href="Command_Data.html#minecraft:range"><span class="tocnumber">2.2.1.7</span> <span class="toctext">minecraft:range</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="Command_Data.html#Suggestions_Types"><span class="tocnumber">2.3</span> <span class="toctext">Suggestions Types</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="Command_Data.html#Example_Graphs"><span class="tocnumber">3</span> <span class="toctext">Example Graphs</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Graph_Structure">Graph Structure</span></h2>
+<p>The graph consists of nodes of type <code>root</code>, <code>literal</code> and <code>argument</code>. A node may point to a number child nodes, or redirect to another node, or neither. The root node is nameless, and its children are literal nodes for familiar commands ("msg", "me", etc). 
+</p><p>Nodes are marked as executable if the node stack to this point constitutes a valid command. E.g. this is false for <code>/ban</code> but true for <code>/ban Dinnerbone</code> and <code>/ban Dinnerbone created this crazy format</code>.
+</p><p>When including redirects, this structure is a directed graph that may include cycles (e.g. consider <code>/execute run execute run execute ...</code>). When excluding redirects, the structure no longer contains cycles but may still not be a tree, as a node may have multiple parents.
+</p>
+<h2><span class="mw-headline" id="Node_Format">Node Format</span></h2>
+<table class="wikitable">
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> <a href="Command_Data.html#Flags"> Flags </a>
+</td>
+<td> Byte
+</td>
+<td> See below.
+</td></tr>
+<tr>
+<td> Children count
+</td>
+<td> VarInt
+</td>
+<td> Number of elements in the following array.
+</td></tr>
+<tr>
+<td> Children
+</td>
+<td> Array of VarInt
+</td>
+<td> Array of indices of child nodes.
+</td></tr>
+<tr>
+<td> Redirect node
+</td>
+<td> Optional VarInt
+</td>
+<td> Only if <code>flags &amp; 0x08</code>. Index of redirect node.
+</td></tr>
+<tr>
+<td> Name
+</td>
+<td> Optional String (32767)
+</td>
+<td> Only for <code>argument</code> and <code>literal</code> nodes.
+</td></tr>
+<tr>
+<td> <a href="Command_Data.html#Parsers"> Parser </a>
+</td>
+<td> Optional Identifier
+</td>
+<td> Only for <code>argument</code> nodes.
+</td></tr>
+<tr>
+<td> <a href="Command_Data.html#Properties"> Properties </a>
+</td>
+<td> Optional Varies
+</td>
+<td> Only for <code>argument</code> nodes. Varies by parser.
+</td></tr>
+<tr>
+<td> <a href="Command_Data.html#Suggestions_Types"> Suggestions type </a>
+</td>
+<td> Optional Identifier
+</td>
+<td> Only if <code>flags &amp; 0x10</code>.
+</td></tr></table>
+<h3><span class="mw-headline" id="Flags">Flags</span></h3>
+<table class="wikitable">
+<tr>
+<th> Bit mask
+</th>
+<th> Field Name
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> <code>0x03</code>
+</td>
+<td> Node type
+</td>
+<td> 0: <code>root</code>, 1: <code>literal</code>, 2: <code>argument</code>. 3 is not used.
+</td></tr>
+<tr>
+<td> <code>0x04</code>
+</td>
+<td> Is executable
+</td>
+<td> Set if the node stack to this point constitutes a valid command.
+</td></tr>
+<tr>
+<td> <code>0x08</code>
+</td>
+<td> Has redirect
+</td>
+<td> Set if the node redirects to another node.
+</td></tr>
+<tr>
+<td> <code>0x10</code>
+</td>
+<td> Has suggestions type
+</td>
+<td> Only present for <code>argument</code> nodes.
+</td></tr></table>
+<h3><span class="mw-headline" id="Parsers">Parsers</span></h3>
+<p>Clients are expected to implement all parsers, including properties (if any). If an unknown parser is encountered by a client, unpacking of the <a href="Protocol.html#Declare_Commands" title="Protocol"> Declare Commands </a> packet should stop immediately, as the structure of the remainder of the packet cannot be guessed.
+</p>
+<table class="wikitable">
+<tr>
+<th> Identifier
+</th>
+<th> Properties
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <code>brigadier:bool</code>
+</td>
+<td>
+</td>
+<td> Boolean value (<code>true</code> or <code>false</code>, case-sensitive)
+</td></tr>
+<tr>
+<td> <code>brigadier:double</code>
+</td>
+<td> <a href="Command_Data.html#brigadier:double"> See below </a>
+</td>
+<td> Double
+</td></tr>
+<tr>
+<td> <code>brigadier:float</code>
+</td>
+<td> <a href="Command_Data.html#brigadier:float"> See below </a>
+</td>
+<td> Float
+</td></tr>
+<tr>
+<td> <code>brigadier:integer</code>
+</td>
+<td> <a href="Command_Data.html#brigadier:integer"> See below </a>
+</td>
+<td> Integer
+</td></tr>
+<tr>
+<td> <code>brigadier:string</code>
+</td>
+<td> <a href="Command_Data.html#brigadier:string"> See below </a>
+</td>
+<td> A string
+</td></tr>
+<tr>
+<td> <code>minecraft:entity</code>
+</td>
+<td> <a href="Command_Data.html#minecraft:entity"> See below </a>
+</td>
+<td> A selector, player name, or UUID.
+</td></tr>
+<tr>
+<td> <code>minecraft:game_profile</code>
+</td>
+<td>
+</td>
+<td> A player, online or not.  Can also use a selector, which may match one or more players (but not entities).
+</td></tr>
+<tr>
+<td> <code>minecraft:block_pos</code>
+</td>
+<td>
+</td>
+<td> A location, represented as 3 numbers (which must be integers).  May use relative locations with <code>~</code>.
+</td></tr>
+<tr>
+<td> <code>minecraft:vec3</code>
+</td>
+<td>
+</td>
+<td> A location, represented as 3 numbers (which may have a decimal point, but will be moved to the center of a block if none is specified).  May use relative locations with <code>~</code>.
+</td></tr>
+<tr>
+<td> <code>minecraft:vec2</code>
+</td>
+<td>
+</td>
+<td> A location, represented as 2 numbers (which may have a decimal point, but will be moved to the center of a block if none is specified).  May use relative locations with <code>~</code>.
+</td></tr>
+<tr>
+<td> <code>minecraft:block_state</code>
+</td>
+<td>
+</td>
+<td> A block state, optionally including NBT and state information.
+</td></tr>
+<tr>
+<td> <code>minecraft:block_predicate</code>
+</td>
+<td>
+</td>
+<td> A block, or a block tag.
+</td></tr>
+<tr>
+<td> <code>minecraft:item_stack</code>
+</td>
+<td>
+</td>
+<td> An item, optionally including NBT.
+</td></tr>
+<tr>
+<td> <code>minecraft:item_predicate</code>
+</td>
+<td>
+</td>
+<td> An item, or an item tag.
+</td></tr>
+<tr>
+<td> <code>minecraft:color</code>
+</td>
+<td>
+</td>
+<td> A chat color.  One of the names from <a href="Chat.html#Colors" title="Chat">Chat#Colors</a>, or <code>reset</code>.  Case-insensitive.
+</td></tr>
+<tr>
+<td> <code>minecraft:component</code>
+</td>
+<td>
+</td>
+<td> A JSON <a href="Chat.html" title="Chat">Chat</a> component.
+</td></tr>
+<tr>
+<td> <code>minecraft:message</code>
+</td>
+<td>
+</td>
+<td> A regular message, potentially including selectors.
+</td></tr>
+<tr>
+<td> <code>minecraft:nbt</code>
+</td>
+<td>
+</td>
+<td> An NBT value, parsed using JSON-NBT rules.
+</td></tr>
+<tr>
+<td> <code>minecraft:nbt_path</code>
+</td>
+<td>
+</td>
+<td> A path within an NBT value, allowing for array and member accesses.
+</td></tr>
+<tr>
+<td> <code>minecraft:objective</code>
+</td>
+<td>
+</td>
+<td> A scoreboard objective.
+</td></tr>
+<tr>
+<td> <code>minecraft:objective_criteria</code>
+</td>
+<td>
+</td>
+<td> A single score criterion.
+</td></tr>
+<tr>
+<td> <code>minecraft:operation</code>
+</td>
+<td>
+</td>
+<td> A scoreboard operator.
+</td></tr>
+<tr>
+<td> <code>minecraft:particle</code>
+</td>
+<td>
+</td>
+<td> A particle effect (an identifier with extra information following it for specific particles, mirroring the <a href="Command_Data.html#Particle">Particle</a> packet)
+</td></tr>
+<tr>
+<td> <code>minecraft:rotation</code>
+</td>
+<td>
+</td>
+<td> An angle, represented as 2 numbers (which may have a decimal point, but will be moved to the center of a block if none is specified).  May use relative locations with <code>~</code>.
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <code>minecraft:scoreboard_slot</code>
+</td>
+<td>
+</td>
+<td> A scoreboard display position slot.  <code>list</code>, <code>sidebar</code>, <code>belowName</code>, and <code>sidebar.team.${color}</code> for all chat colors (<code>reset</code> is not included)
+</td></tr>
+<tr>
+<td> <code>minecraft:score_holder</code>
+</td>
+<td> <a href="Command_Data.html#minecraft:score_holder"> See below </a>
+</td>
+<td> Something that can join a team.  Allows selectors and <code>*</code>.
+</td></tr>
+<tr>
+<td> <code>minecraft:swizzle</code>
+</td>
+<td>
+</td>
+<td> A collection of up to 3 axes.
+</td></tr>
+<tr>
+<td> <code>minecraft:team</code>
+</td>
+<td>
+</td>
+<td> The name of a team.  Parsed as an unquoted string.
+</td></tr>
+<tr>
+<td> <code>minecraft:item_slot</code>
+</td>
+<td>
+</td>
+<td> A name for an inventory slot.
+</td></tr>
+<tr>
+<td> <code>minecraft:resource_location</code>
+</td>
+<td>
+</td>
+<td> An Identifier.
+</td></tr>
+<tr>
+<td> <code>minecraft:mob_effect</code>
+</td>
+<td>
+</td>
+<td> A potion effect.
+</td></tr>
+<tr>
+<td> <code>minecraft:function</code>
+</td>
+<td>
+</td>
+<td> A function.
+</td></tr>
+<tr>
+<td> <code>minecraft:entity_anchor</code>
+</td>
+<td>
+</td>
+<td> The entity anchor related to the facing argument in the teleport command, is feet or eyes.
+</td></tr>
+<tr>
+<td> <code>minecraft:range</code>
+</td>
+<td> <a href="Command_Data.html#minecraft:range"> See below </a>
+</td>
+<td> A range of values with a min and a max.
+</td></tr>
+<tr>
+<td> <code>minecraft:item_enchantment</code>
+</td>
+<td>
+</td>
+<td> Represents a item enchantment.
+</td></tr></table>
+<h4><span class="mw-headline" id="Properties">Properties</span></h4>
+<h5><span class="mw-headline" id="brigadier:double"><code>brigadier:double</code></span></h5>
+<p>Specifies min and max values.
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Flags
+</td>
+<td> Byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Min
+</td>
+<td> Optional double
+</td>
+<td> Only if flags &amp; 0x01.  If not specified, defaults to <code>-Double.MAX_VALUE</code> (≈ -1.7976931348623157E307)
+</td></tr>
+<tr>
+<td> Max
+</td>
+<td> Optional double
+</td>
+<td> Only if flags &amp; 0x02.  If not specified, defaults to <code>Double.MAX_VALUE</code> (≈ 1.7976931348623157E307)
+</td></tr></table>
+<h5><span class="mw-headline" id="brigadier:float"><code>brigadier:float</code></span></h5>
+<p>Specifies min and max values.
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Flags
+</td>
+<td> Byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Min
+</td>
+<td> Optional float
+</td>
+<td> Only if flags &amp; 0x01.  If not specified, defaults to <code>-Float.MAX_VALUE</code> (≈ 3.4028235E38)
+</td></tr>
+<tr>
+<td> Max
+</td>
+<td> Optional float
+</td>
+<td> Only if flags &amp; 0x02.  If not specified, defaults to <code>Float.MAX_VALUE</code> (≈ 3.4028235E38)
+</td></tr></table>
+<h5><span class="mw-headline" id="brigadier:integer"><code>brigadier:integer</code></span></h5>
+<p>Specifies min and max values.
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Flags
+</td>
+<td> Byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Min
+</td>
+<td> Optional integer
+</td>
+<td> Only if flags &amp; 0x01.  If not specified, defaults to <code>Integer.MIN_VALUE</code>  (-2147483648)
+</td></tr>
+<tr>
+<td> Max
+</td>
+<td> Optional integer
+</td>
+<td> Only if flags &amp; 0x02.  If not specified, defaults to <code>Integer.MAX_VALUE</code>  (2147483647)
+</td></tr></table>
+<h5><span class="mw-headline" id="brigadier:string"><code>brigadier:string</code></span></h5>
+<p>A VarInt enum.
+</p>
+<table class="wikitable">
+<tr>
+<th> Value
+</th>
+<th> Name
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> <code>SINGLE_WORD</code>
+</td>
+<td> Reads a single word
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> <code>QUOTABLE_PHRASE</code>
+</td>
+<td> If it starts with a <code>"</code>, keeps reading until another <code>"</code> (allowing escaping with <code>\</code>).  Otherwise behaves the same as <code>SINGLE_WORD</code>
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> <code>GREEDY_PHRASE</code>
+</td>
+<td> Reads the rest of the content after the cursor.  Quotes will not be removed.
+</td></tr></table>
+<h5><span class="mw-headline" id="minecraft:entity"><code>minecraft:entity</code></span></h5>
+<p>Has a single flags byte.
+</p>
+<table class="wikitable">
+<tr>
+<th> Bit mask
+</th>
+<th> Meaning
+</th></tr>
+<tr>
+<td> 0x01
+</td>
+<td> If set, only allows a single entity/player
+</td></tr>
+<tr>
+<td> 0x02
+</td>
+<td> If set, only allows players
+</td></tr></table>
+<h5><span class="mw-headline" id="minecraft:score_holder"><code>minecraft:score_holder</code></span></h5>
+<p>Has a single flags byte:
+</p>
+<table class="wikitable">
+<tr>
+<th> Bit mask
+</th>
+<th> Meaning
+</th></tr>
+<tr>
+<td> 0x01
+</td>
+<td> If set, allows multiple.
+</td></tr></table>
+<h5><span class="mw-headline" id="minecraft:range"><code>minecraft:range</code></span></h5>
+<p>A range of values with a min and a max.
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Decimals
+</td>
+<td> Boolean
+</td>
+<td> Whether decimal values are allowed.
+</td></tr></table>
+<h3><span class="mw-headline" id="Suggestions_Types">Suggestions Types</span></h3>
+<table class="wikitable">
+<tr>
+<th> Identifier
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <code>minecraft:ask_server</code>
+</td>
+<td> Sends the <a href="Protocol.html#Tab-Complete_.28serverbound.29" title="Protocol"> Tab-Complete </a> packet to the server to request tab completions.
+</td></tr>
+<tr>
+<td> <code>minecraft:all_recipes</code>
+</td>
+<td> Suggests all the available recipes.
+</td></tr>
+<tr>
+<td> <code>minecraft:available_sounds</code>
+</td>
+<td> Suggests all the available sounds.
+</td></tr>
+<tr>
+<td> <code>minecraft:summonable_entities</code>
+</td>
+<td> Suggests all the summonable entities.
+</td></tr></table>
+<h2><span class="mw-headline" id="Example_Graphs">Example Graphs</span></h2>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:302px;"><a href="./File:Command_graph_18w22c.png.html" class="image"><img alt="" src="images/a/ac/Command_graph_18w22c.png" width="300" height="1989" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Command_graph_18w22c.png.html" class="internal" title="Enlarge"></a></div>Command graph from 18w22c. Executable nodes are shown in green; redirects are dashed.</div></div></div></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20180823003416
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.064 seconds
+Real time usage: 0.087 seconds
+Preprocessor visited node count: 55/1000000
+Preprocessor generated node count: 60/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:5748-0!*!0!!en!5!* and timestamp 20180823003415 and revision id 14033
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Command_Data&amp;oldid=14033">http://wiki.vg/index.php?title=Command_Data&amp;oldid=14033</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Command+Data" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Command+Data" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Command_Data.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Command_Data&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Command_Data.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Command_Data.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Command_Data&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Command_Data&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Command_Data.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Command_Data" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Command_Data" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Command_Data&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Command_Data&amp;oldid=14033" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Command_Data&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 20 June 2018, at 17:43.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":150});});</script>
+	</body>
+</html>

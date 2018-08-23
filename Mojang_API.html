@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Mojang API - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Mojang_API","wgTitle":"Mojang API","wgCurRevisionId":13783,"wgRevisionId":13783,"wgArticleId":997,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Protocol Details","Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Mojang_API","wgRelevantArticleId":997,"wgRequestId":"ecd4bcc0482f7c44646c8fd7","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Mojang_API rootpage-Mojang_API skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Mojang API</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Mojang_API.html#mw-head">navigation</a>, 					<a href="Mojang_API.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Mojang_API.html#Notes"><span class="tocnumber">1</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Mojang_API.html#API_Status"><span class="tocnumber">2</span> <span class="toctext">API Status</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Mojang_API.html#Response"><span class="tocnumber">2.1</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="Mojang_API.html#Username_-.3E_UUID_at_time"><span class="tocnumber">3</span> <span class="toctext">Username -&gt; UUID at time</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="Mojang_API.html#Response_2"><span class="tocnumber">3.1</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="Mojang_API.html#UUID_-.3E_Name_history"><span class="tocnumber">4</span> <span class="toctext">UUID -&gt; Name history</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="Mojang_API.html#Response_3"><span class="tocnumber">4.1</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="Mojang_API.html#Playernames_-.3E_UUIDs"><span class="tocnumber">5</span> <span class="toctext">Playernames -&gt; UUIDs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="Mojang_API.html#Payload"><span class="tocnumber">5.1</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Mojang_API.html#Response_4"><span class="tocnumber">5.2</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="Mojang_API.html#UUID_-.3E_Profile_.2B_Skin.2FCape"><span class="tocnumber">6</span> <span class="toctext">UUID -&gt; Profile + Skin/Cape</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="Mojang_API.html#Response_5"><span class="tocnumber">6.1</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="Mojang_API.html#Change_Skin"><span class="tocnumber">7</span> <span class="toctext">Change Skin</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="Mojang_API.html#Response_6"><span class="tocnumber">7.1</span> <span class="toctext">Response</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="Mojang_API.html#Headers"><span class="tocnumber">7.2</span> <span class="toctext">Headers</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="Mojang_API.html#Payload_2"><span class="tocnumber">7.3</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="Mojang_API.html#Example"><span class="tocnumber">7.4</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="Mojang_API.html#Upload_Skin"><span class="tocnumber">8</span> <span class="toctext">Upload Skin</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="Mojang_API.html#Response_7"><span class="tocnumber">8.1</span> <span class="toctext">Response</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="Mojang_API.html#Headers_2"><span class="tocnumber">8.2</span> <span class="toctext">Headers</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="Mojang_API.html#Payload_3"><span class="tocnumber">8.3</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="Mojang_API.html#Example_2"><span class="tocnumber">8.4</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="Mojang_API.html#Reset_Skin"><span class="tocnumber">9</span> <span class="toctext">Reset Skin</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="Mojang_API.html#Response_8"><span class="tocnumber">9.1</span> <span class="toctext">Response</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="Mojang_API.html#Headers_3"><span class="tocnumber">9.2</span> <span class="toctext">Headers</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="Mojang_API.html#Example_3"><span class="tocnumber">9.3</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="Mojang_API.html#Blocked_Servers"><span class="tocnumber">10</span> <span class="toctext">Blocked Servers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="Mojang_API.html#Response_9"><span class="tocnumber">10.1</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="Mojang_API.html#Statistics"><span class="tocnumber">11</span> <span class="toctext">Statistics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-30"><a href="Mojang_API.html#Payload_4"><span class="tocnumber">11.1</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="Mojang_API.html#Response_10"><span class="tocnumber">11.2</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="Mojang_API.html#Examples"><span class="tocnumber">12</span> <span class="toctext">Examples</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Notes">Notes</span></h2>
+<ul><li> All public APIs are rate limited so you are expected to cache the results. This is currently set at 600 requests per 10 minutes but this may change.</li>
+<li> For some parts of the API, demo accounts are sometimes included, sometimes not. Mojang keeps changing this.</li></ul>
+<h2><span class="mw-headline" id="API_Status">API Status</span></h2>
+<pre> GET <a rel="nofollow" class="external free" href="https://status.mojang.com/check">https://status.mojang.com/check</a>
+</pre>
+<p>Returns status of various Mojang services. Possible values are <code>green</code> (no issues), <code>yellow</code> (some issues), <code>red</code> (service unavailable).
+</p>
+<h3><span class="mw-headline" id="Response">Response</span></h3>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;minecraft.net&quot;</span><span class="o">:</span> <span class="s2">&quot;yellow&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;session.minecraft.net&quot;</span><span class="o">:</span> <span class="s2">&quot;green&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;account.mojang.com&quot;</span><span class="o">:</span> <span class="s2">&quot;green&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;auth.mojang.com&quot;</span><span class="o">:</span> <span class="s2">&quot;green&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;skins.minecraft.net&quot;</span><span class="o">:</span> <span class="s2">&quot;green&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;authserver.mojang.com&quot;</span><span class="o">:</span> <span class="s2">&quot;green&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;sessionserver.mojang.com&quot;</span><span class="o">:</span> <span class="s2">&quot;yellow&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;api.mojang.com&quot;</span><span class="o">:</span> <span class="s2">&quot;green&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;textures.minecraft.net&quot;</span><span class="o">:</span> <span class="s2">&quot;red&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;mojang.com&quot;</span><span class="o">:</span> <span class="s2">&quot;green&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+<h2><span class="mw-headline" id="Username_-.3E_UUID_at_time">Username -&gt; UUID at time</span></h2>
+<pre> GET https://api.mojang.com/users/profiles/minecraft/&lt;username&gt;?at=&lt;timestamp&gt;
+</pre>
+<p>This will return the uuid of the name at the timestamp provided.
+</p><p><code>?at=0</code> can be used to get the UUID of the original user of that username, however it only works if the name was changed at least once, or if the account is legacy.
+</p>
+<ul><li> The timestamp is a <a href="http://en.wikipedia.org/wiki/Unix_time" class="extiw" title="wikipedia:Unix time">UNIX timestamp</a> (without milliseconds)</li>
+<li> When the <code>at</code> parameter is not sent, the current time is used</li></ul>
+<h3><span class="mw-headline" id="Response_2">Response</span></h3>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;7125ba8b1c864508b92bb5c042ccfe2b&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;KrisJelbring&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<ul><li> <code>name</code> is the <b>current name of that uuid</b>, it is <b>not the name requested!</b></li>
+<li> <code>legacy</code> only appears when true (not migrated to mojang account)</li>
+<li> <code>demo</code> only appears when true (account unpaid)</li></ul>
+<p>If there is no player with the given username an HTTP status code 204 (No Content) is sent without any HTTP body.<br />
+If the timestamp is not a number, too big or too small the HTTP status code 400 (Bad Request) is sent with an error message looking like this:
+</p>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+  <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="s2">&quot;IllegalArgumentException&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;errorMessage&quot;</span><span class="o">:</span> <span class="s2">&quot;Invalid timestamp.&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="UUID_-.3E_Name_history">UUID -&gt; Name history</span></h2>
+<pre>  GET https://api.mojang.com/user/profiles/&lt;uuid&gt;/names
+</pre>
+<p>Returns all the usernames this user has used in the past and the one they are using currently. The UUID must be given without hyphens.
+</p>
+<h3><span class="mw-headline" id="Response_3">Response</span></h3>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Gold&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Diamond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;changedToAt&quot;</span><span class="o">:</span> <span class="mi">1414059749000</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+<p>The <code>changedToAt</code> field is a Java timestamp in milliseconds.
+</p>
+<h2><span class="mw-headline" id="Playernames_-.3E_UUIDs">Playernames -&gt; UUIDs</span></h2>
+<pre> POST https://api.mojang.com/profiles/minecraft
+</pre>
+<p>This will return player UUIDS and some extras.
+</p>
+<h3><span class="mw-headline" id="Payload">Payload</span></h3>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">[</span>
+    <span class="s2">&quot;maksimkurb&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nonExistingPlayer&quot;</span> <span class="c1">//Test for non-existing player</span>
+<span class="p">]</span>
+</pre></div>
+<h3><span class="mw-headline" id="Response_4">Response</span></h3>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;0d252b7218b648bfb86c2ae476954d32&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;maksimkurb&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;legacy&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;demo&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+<ul><li> name is case-corrected</li>
+<li> legacy only appears when true (profile not migrated to mojang.com)</li>
+<li> demo only appears when true (account unpaid)</li>
+<li> IllegalArgumentException is returned when any of the usernames is null or ""</li>
+<li> The <code>Content-Type</code> HTTP header must be <code>application/json</code></li>
+<li> You cannot request more than 100 names per request</li></ul>
+<h2><span class="mw-headline" id="UUID_-.3E_Profile_.2B_Skin.2FCape">UUID -&gt; Profile + Skin/Cape</span></h2>
+<pre> https://sessionserver.mojang.com/session/minecraft/profile/&lt;uuid&gt;
+</pre>
+<p>This will return the player's username plus any additional information about them (e.g. skins). Example: <a rel="nofollow" class="external free" href="https://sessionserver.mojang.com/session/minecraft/profile/4566e69fc90748ee8d71d7ba5aa00d20">https://sessionserver.mojang.com/session/minecraft/profile/4566e69fc90748ee8d71d7ba5aa00d20</a>
+</p><p>This has a much stricter rate limit: You can request the same profile once per minute, however you can send as many unique requests as you like.
+</p>
+<h3><span class="mw-headline" id="Response_5">Response</span></h3>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;profile identifier&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;player name&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">[</span> 
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;textures&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;base64 string&gt;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;signature&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;base64 string; signed data using Yggdrasil&#39;s private key&gt;&quot;</span> <span class="c1">// Only provided if ?unsigned=false is appended to url</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<p>The "value" base64 string for the "textures" object decoded:
+</p>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;timestamp&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">java</span> <span class="nx">time</span> <span class="k">in</span> <span class="nx">ms</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;profileId&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;profile uuid&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;profileName&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;player name&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;signatureRequired&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// Only present if ?unsigned=false is appended to url</span>
+    <span class="s2">&quot;textures&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;SKIN&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;player skin URL&gt;&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;CAPE&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;player cape URL&gt;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<ul><li> The timestamp is sometimes in the past (probably due to cached results?)</li>
+<li> The <code>"SKIN"</code> object will have <code>"metadata": {"model": "slim"}</code> if the player model has slim arms (“Alex?” style). For square arms (“Steve?” style), <code>"metadata"</code> will be missing.</li>
+<li> If no custom skin has been set, <code>"SKIN"</code> will be missing.<br />Whether the player has the “Alex?” or “Steve?” skin depends on <a rel="nofollow" class="external text" href="http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/UUID.java#l394">the Java hashCode</a> of their UUID. Steve is used for even hashes. Example implementations:
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/mapcrafter/mapcrafter-playermarkers/blob/c583dd9157a041a3c9ec5c68244f73b8d01ac37a/playermarkers/player.php#L8-L19">PHP</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/LapisBlue/Lapitar/blob/55ede80ce4ebb5ecc2b968164afb40f61b4cc509/mc/uuid.go#L34-L36">Go</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/crafatar/crafatar/blob/9d2fe0c45424de3ebc8e0b10f9446e7d5c3738b2/lib/skins.js#L90-L108">JavaScript</a> (includes explanation)</li>
+<li> <a rel="nofollow" class="external text" href="https://gist.github.com/jomo/9968b8d572c38e1b1f4c#file-main-java-L4-L11">Java</a> (includes sample UUIDs)</li></ul></li>
+<li> Likewise <code>"CAPE"</code> will be missing if the account has no cape.</li></ul>
+<h2><span class="mw-headline" id="Change_Skin">Change Skin</span></h2>
+<pre>POST https://api.mojang.com/user/profile/<b>&lt;uuid&gt;</b>/skin
+</pre>
+<p>This will set the skin for the selected profile, but Mojang's servers will fetch the skin from a URL. This will also work for legacy accounts.
+</p>
+<h3><span class="mw-headline" id="Response_6">Response</span></h3>
+<p>Upon error the server will send back a JSON with the error. (Success is a blank payload)
+</p>
+<h3><span class="mw-headline" id="Headers">Headers</span></h3>
+<pre>Authorization: Bearer <b>&lt;access token&gt;</b>
+</pre>
+<h3><span class="mw-headline" id="Payload_2">Payload</span></h3>
+<p>The payload for this API consists of two url-encoded form fields (conjoined by '&amp;').
+</p>
+<pre>model=<b>&lt;""/"slim"&gt;</b>&amp;url=<b>&lt;skin url&gt;</b>
+</pre>
+<p>model is an empty string for the default model and "slim" for the slim model
+</p>
+<h3><span class="mw-headline" id="Example">Example</span></h3>
+<pre>curl -H "Authorization: Bearer <b>&lt;access token&gt;</b>" --data-urlencode "model=" --data-urlencode "url=http://assets.mojang.com/SkinTemplates/steve.png" https://api.mojang.com/user/profile/<b>&lt;uuid&gt;</b>/skin
+</pre>
+<pre>POST /user/profile/<b>&lt;uuid&gt;</b>/skin HTTP/1.1
+Host: api.mojang.com
+User-Agent: curl/7.49.0
+Accept: */*
+Authorization: Bearer <b>&lt;access token&gt;</b>
+Content-Length: 69
+Content-Type: application/x-www-form-urlencoded
+
+model=&amp;url=http%3A%2F%2Fassets.mojang.com%2FSkinTemplates%2Fsteve.png
+</pre>
+<h2><span class="mw-headline" id="Upload_Skin">Upload Skin</span></h2>
+<pre>PUT https://api.mojang.com/user/profile/<b>&lt;uuid&gt;</b>/skin
+</pre>
+<p>This uploads a skin to Mojang's servers. It also sets the users skin. This works on legacy counts as well.
+</p>
+<h3><span class="mw-headline" id="Response_7">Response</span></h3>
+<p>No response unless error
+</p>
+<h3><span class="mw-headline" id="Headers_2">Headers</span></h3>
+<pre>Authorization: Bearer <b>&lt;access token&gt;</b>
+</pre>
+<h3><span class="mw-headline" id="Payload_3">Payload</span></h3>
+<p>The payload for this API consists of multipart form data. There are two parts (order does not matter b/c of boundary):
+</p>
+<table class="wikitable">
+<tr>
+<td><b>model</b>
+</td>
+<td>Empty string for the default model and "slim" for the slim model
+</td></tr>
+<tr>
+<td><b>file</b>
+</td>
+<td>Raw image file data
+</td></tr></table>
+<h3><span class="mw-headline" id="Example_2">Example</span></h3>
+<pre>curl -X PUT -H "Authorization: Bearer <b>&lt;access token&gt;</b>" -F model=alex -F file="@alex.png;type=image/png" https://api.mojang.com/user/profile/<b>&lt;uuid&gt;</b>/skin
+</pre>
+<pre>PUT /user/profile/<b>&lt;uuid&gt;</b>/skin HTTP/1.1
+Host: api.mojang.com
+User-Agent: curl/7.49.0
+Accept: */*
+Authorization: Bearer <b>&lt;access token&gt;</b>
+Content-Length: <b>&lt;length&gt;</b>
+Content-Type: multipart/form-data; boundary=<b>&lt;boundary&gt;</b>
+
+--<b>&lt;boundary&gt;</b>
+Content-Disposition: form-data; name="model"
+
+slim
+--<b>&lt;boundary&gt;</b>
+Content-Disposition: form-data; name="file"; filename="alex.png"
+Content-Type: image/png
+
+<b>&lt;image data&gt;</b>
+--<b>&lt;boundary&gt;</b>--
+</pre>
+<h2><span class="mw-headline" id="Reset_Skin">Reset Skin</span></h2>
+<pre>DELETE https://api.mojang.com/user/profile/<b>&lt;uuid&gt;</b>/skin
+</pre>
+<p>Resets the users skin to the default one.
+</p>
+<h3><span class="mw-headline" id="Response_8">Response</span></h3>
+<p>No response unless error
+</p>
+<h3><span class="mw-headline" id="Headers_3">Headers</span></h3>
+<pre>Authorization: Bearer <b>&lt;access token&gt;</b>
+</pre>
+<h3><span class="mw-headline" id="Example_3">Example</span></h3>
+<pre>curl -X DELETE -H "Authorization: Bearer <b>&lt;access token&gt;</b>" https://api.mojang.com/user/profile/<b>&lt;uuid&gt;</b>/skin
+</pre>
+<pre>DELETE /user/profile/<b>&lt;uuid&gt;</b>/skin HTTP/1.1
+Host: api.mojang.com
+User-Agent: curl/7.46.0
+Accept: */*
+Authorization: Bearer <b>&lt;access token&gt;</b>
+
+</pre>
+<h2><span class="mw-headline" id="Blocked_Servers">Blocked Servers</span></h2>
+<pre>  GET <a rel="nofollow" class="external free" href="https://sessionserver.mojang.com/blockedservers">https://sessionserver.mojang.com/blockedservers</a>
+</pre>
+<p>Returns a list of SHA1 hashes used to check server addresses against when the client tries to connect.
+</p><p>Clients check the lowercase name, using the ISO-8859-1 charset, against this list.  They will also attempt to check subdomains, replacing each level with a <code>*</code>.  Specifically, it splits based off of the <code>.</code> in the domain, goes through each section removing one at a time.  For instance, for <code>mc.example.com</code>, it would try <code>mc.example.com</code>, <code>*.example.com</code>, and <code>*.com</code>.  With IP addresses (verified by having 4 split sections, with each section being a valid integer between 0 and 255, inclusive) substitution starts from the end, so for <code>192.168.0.1</code>, it would try <code>192.168.0.1</code>, <code>192.168.0.*</code>, <code>192.168.*</code>, and <code>192.*</code>.
+</p><p>This check is done by the bootstrap class in netty. The default netty class is overridden by one in the com.mojang:netty dependency loaded by the launcher. This allows it to affect any version that used netty (1.7+)
+</p>
+<h3><span class="mw-headline" id="Response_9">Response</span></h3>
+<p>A line separated list of all SHA1 hashes.
+</p><p>Some of the current ~1100 hashes have been cracked.
+</p>
+<pre>
+6f2520f8bd70a718c568ab5274c56bdbbfc14ef4:*.minetime.com
+7ea72de5f8e70a2ac45f1aa17d43f0ca3cddeedd:*.trollingbrandon.club
+c005ad34245a8f2105658da2d6d6e8545ef0f0de:*.skygod.us
+c645d6c6430db3069abd291ec13afebdb320714b:*.mineaqua.es
+8bf58811e6ebca16a01b842ff0c012db1171d7d6:*.eulablows.host
+8789800277882d1989d384e7941b6ad3dadab430:*.moredotsmoredots.xyz
+e40c3456fb05687b8eeb17213a47b263d566f179:*.brandonlovescock.bid
+278b24ffff7f9f46cf71212a4c0948d07fb3bc35:*.brandonlovescock.club
+c78697e385bfa58d6bd2a013f543cdfbdc297c4f:*.mineaqua.net
+b13009db1e2fbe05465716f67c8d58b9c0503520:*.endercraft.com
+3e560742576af9413fca72e70f75d7ddc9416020:*.insanefactions.org
+986204c70d368d50ffead9031e86f2b9e70bb6d0:*.playmc.mx
+65ca8860fa8141da805106c0389de9d7c17e39bf:*.howdoiblacklistsrv.host
+dcc1f876e258ac5ecab28244da7a94ed44d4b43f:198.27.77.72
+7dca807cc9484b1eed109c003831faf189b6c8bf:*.brandonlovescock.online
+c6a2203285fb0a475c1cd6ff72527209cc0ccc6e:*.brandonlovescock.press
+e3985eb936d66c9b07aa72c15358f92965b1194e:*.insanenetwork.org
+b140bec2347bfbe6dcae44aa876b9ba5fe66505b:*.phoenixnexus.net
+27ae74becc8cd701b19f25d347faa71084f69acd:*.arkhamnetwork.org
+48f04e89d20b15de115503f22fedfe2cb2d1ab12:brandonisan.unusualperson.com
+9f0f30820cebb01f6c81f0fdafefa0142660d688:*.kidslovemy500dollarranks.club
+cc90e7b39112a48064f430d3a08bbd78a226d670:*.eccgamers.com
+88f155cf583c930ffed0e3e69ebc3a186ea8cbb7:*.fucktheeula.com
+605e6296b8dba9f0e4b8e43269fe5d053b5f4f1b:*.mojangendorsesbrazzers.webcam
+5d2e23d164a43fbfc4e6093074567f39b504ab51:touchmybody.redirectme.net
+f3df314d1f816a8c2185cd7d4bcd73bbcffc4ed8:*.mojangsentamonkeyinto.space
+073ca448ef3d311218d7bd32d6307243ce22e7d0:*.diacraft.org
+33839f4006d6044a3a6675c593fada6a690bb64d:*.diacraft.de
+e2e12f3b7b85eab81c0ee5d2e9e188df583fe281:*.eulablacklist.club
+11a2c115510bfa6cb56bbd18a7259a4420498fd5:*.slaughterhousepvp.com
+75df09492c6c979e2db41116100093bb791b8433:*.timelesspvp.net
+d42339c120bc10a393a0b1d2c6a2e0ed4dbdd61b:*.herowars.org
+4a1b3b860ba0b441fa722bbcba97a614f6af9bb8:justgiveinandblockddnsbitches.ddns.net
+b8c876f599dcf5162911bba2d543ccbd23d18ae5:brandonisagainst.health-carereform.com
+9a9ae8e9d0b6f3bf54c266dcd1e4ec034e13f714:brandonwatchesporn.onthewifi.com
+336e718ffbc705e76b4a72884172c6b95216b57c:canyouwildcardipsplease.gotdns.ch
+27cf97ecf24c92f1fe5c84c5ff654728c3ee37dd:letsplaysome.servecounterstrike.com
+32066aa0c7dc9b097eed5b00c5629ad03f250a2d:mojangbrokeintomy.homesecuritymac.com
+39f4bbfd123a5a5ddbf97489877831c15a70d7f2:*.primemc.org
+f32f824d41aaed334aef248fbe3a0f8ecf4ac1a0:*.meep.in
+c22efe4cf7fb319ca2387bbc930c1fdf77ab72fc:*.itsjerryandharry.com
+cc8e1ae93571d144bf4b37369cb8466093d6db5a:*.thearchon.net
+9c0806e5ffaccb45121e57e4ce88c7bc76e057f1:*.goatpvp.com
+5ca81746337088b7617c851a1376e4f00d921d9e:*.gotpvp.com
+a5944b9707fdb2cc95ed4ef188cf5f3151ac0525:*.guildcraft.org
+</pre>
+<h2><span class="mw-headline" id="Statistics">Statistics</span></h2>
+<pre>  POST https://api.mojang.com/orders/statistics
+</pre>
+<p>Get statistics on the sales of Minecraft.
+</p>
+<h3><span class="mw-headline" id="Payload_4">Payload</span></h3>
+<p>The payload is a json list of options under the metricKeys key.
+You will receive a single object corresponding to the sum of sales of the requested type(s).
+You must request at least one type of sale.
+Below is the default list used by <a rel="nofollow" class="external free" href="https://minecraft.net/en/stats/">https://minecraft.net/en/stats/</a>
+</p>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;metricKeys&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;item_sold_minecraft&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;prepaid_card_redeemed_minecraft&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<p>Valid options are:
+</p>
+<pre>   item_sold_minecraft
+   prepaid_card_redeemed_minecraft
+   item_sold_cobalt
+   item_sold_scrolls
+</pre>
+<h3><span class="mw-headline" id="Response_10">Response</span></h3>
+<p>A json object is returned with the total amount of copies sold, the amount of copies sold in the last 24h and how many sales there are per second.
+</p>
+<div style="overflow-x: scroll" class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;total&quot;</span><span class="o">:</span> <span class="nx">integer</span> <span class="nx">total</span> <span class="nx">amount</span> <span class="nx">sold</span><span class="p">,</span>
+    <span class="s2">&quot;last24h&quot;</span><span class="o">:</span> <span class="nx">integer</span> <span class="nx">total</span> <span class="nx">sold</span> <span class="k">in</span> <span class="nx">last</span> <span class="mi">24</span> <span class="nx">hours</span><span class="p">,</span>
+    <span class="s2">&quot;saleVelocityPerSeconds&quot;</span><span class="o">:</span> <span class="nx">decimal</span> <span class="nx">average</span> <span class="nx">sales</span> <span class="nx">per</span> <span class="nx">second</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<p><a rel="nofollow" class="external text" href="https://github.com/hawezo/MojangSharp">C#</a> | full API wrapper
+</p><p><a rel="nofollow" class="external text" href="https://github.com/PhilipBorgesen/minecraft/tree/master/profile">Go</a> | uuids or names to profiles with skins, capes and name histories
+</p><p><a rel="nofollow" class="external text" href="https://github.com/SynchronousX/mojang-api">Python</a> | full API wrapper
+</p><p><a rel="nofollow" class="external text" href="https://github.com/techkid6/AccountsClientPython">Python</a> | uuids or names to profiles
+</p><p><a rel="nofollow" class="external text" href="https://gist.github.com/jomo/74944770e7647855ac9d">Python</a> | names file to uuids+names file
+</p><p><a rel="nofollow" class="external text" href="https://github.com/MineTheCube/MojangAPI">PHP</a> | uuids or names to profiles with skins, heads and name histories
+</p><p><a rel="nofollow" class="external text" href="https://gist.github.com/ezfe/a71feccd3a837a2592f1">PHP</a> | uuids to names
+</p><p><a rel="nofollow" class="external text" href="https://github.com/ozzyfant/AccountsClientPHP">PHP</a> | uuids to names, names to uuids
+</p><p><a rel="nofollow" class="external text" href="https://github.com/SparklingComet/java-mojang-api">Java</a> | Almost full API Wrapper
+</p><p><a rel="nofollow" class="external text" href="https://github.com/thechunknetwork/mojang-api">JavaScript</a> | uuids or names to profiles with skins, capes and name histories
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823002157
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.067 seconds
+Real time usage: 0.085 seconds
+Preprocessor visited node count: 337/1000000
+Preprocessor generated node count: 598/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:997-0!*!0!!en!*!* and timestamp 20180823002157 and revision id 13783
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Mojang_API&amp;oldid=13783">http://wiki.vg/index.php?title=Mojang_API&amp;oldid=13783</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Protocol_Details.html" title="Category:Protocol Details">Protocol Details</a></li><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Mojang+API" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Mojang+API" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Mojang_API.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Mojang_API.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Mojang_API.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Mojang_API.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Mojang_API&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Mojang_API&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Mojang_API.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Mojang_API" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Mojang_API" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Mojang_API&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Mojang_API&amp;oldid=13783" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Mojang_API&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 14 April 2018, at 13:19.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":202});});</script>
+	</body>
+</html>

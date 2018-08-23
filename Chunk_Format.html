@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Chunk Format - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chunk_Format","wgTitle":"Chunk Format","wgCurRevisionId":14135,"wgRevisionId":14135,"wgArticleId":278,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chunk_Format","wgRelevantArticleId":278,"wgRequestId":"3c38c274e4ac4d367afa7ac0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chunk_Format rootpage-Chunk_Format skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Chunk Format</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Chunk_Format.html#mw-head">navigation</a>, 					<a href="Chunk_Format.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This article describes in additional detail the format of the <a href="Protocol.html#Chunk_Data" title="Protocol">Chunk Data</a> packet.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Chunk_Format.html#Concepts"><span class="tocnumber">1</span> <span class="toctext">Concepts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Chunk_Format.html#Chunks_columns_and_Chunk_sections"><span class="tocnumber">1.1</span> <span class="toctext">Chunks columns and Chunk sections</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Chunk_Format.html#Empty_sections_and_the_primary_bit_mask"><span class="tocnumber">1.2</span> <span class="toctext">Empty sections and the primary bit mask</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Chunk_Format.html#Global_and_section_palettes"><span class="tocnumber">1.3</span> <span class="toctext">Global and section palettes</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Chunk_Format.html#Ground-up_continuous"><span class="tocnumber">1.4</span> <span class="toctext">Ground-up continuous</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Chunk_Format.html#Notes"><span class="tocnumber">1.5</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Chunk_Format.html#Packet_structure"><span class="tocnumber">2</span> <span class="toctext">Packet structure</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Chunk_Format.html#Data_structure"><span class="tocnumber">3</span> <span class="toctext">Data structure</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="Chunk_Format.html#Chunk_Section_structure"><span class="tocnumber">3.1</span> <span class="toctext">Chunk Section structure</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="Chunk_Format.html#Palettes"><span class="tocnumber">3.1.1</span> <span class="toctext">Palettes</span></a>
+<ul>
+<li class="toclevel-4 tocsection-11"><a href="Chunk_Format.html#Indirect"><span class="tocnumber">3.1.1.1</span> <span class="toctext">Indirect</span></a></li>
+<li class="toclevel-4 tocsection-12"><a href="Chunk_Format.html#Direct"><span class="tocnumber">3.1.1.2</span> <span class="toctext">Direct</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-13"><a href="Chunk_Format.html#Compacted_data_array"><span class="tocnumber">3.1.2</span> <span class="toctext">Compacted data array</span></a>
+<ul>
+<li class="toclevel-4 tocsection-14"><a href="Chunk_Format.html#Example"><span class="tocnumber">3.1.2.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="Chunk_Format.html#Biomes"><span class="tocnumber">3.2</span> <span class="toctext">Biomes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="Chunk_Format.html#Tips_and_notes"><span class="tocnumber">4</span> <span class="toctext">Tips and notes</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="Chunk_Format.html#Sample_implementations"><span class="tocnumber">5</span> <span class="toctext">Sample implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="Chunk_Format.html#Shared_code"><span class="tocnumber">5.1</span> <span class="toctext">Shared code</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="Chunk_Format.html#Deserializing"><span class="tocnumber">5.2</span> <span class="toctext">Deserializing</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="Chunk_Format.html#Serializing"><span class="tocnumber">5.3</span> <span class="toctext">Serializing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="Chunk_Format.html#Full_implementations"><span class="tocnumber">6</span> <span class="toctext">Full implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-22"><a href="Chunk_Format.html#Old_format"><span class="tocnumber">6.1</span> <span class="toctext">Old format</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Concepts">Concepts</span></h2>
+<h3><span class="mw-headline" id="Chunks_columns_and_Chunk_sections">Chunks columns and Chunk sections</span></h3>
+<p>You've probably heard the term "chunk" before.  Minecraft uses chunks to store and transfer world data.  However, there are actually 2 different concepts that are both called "chunks" in different contexts: chunk columns and chunk sections.
+</p><p><br />
+<span id="Chunk_column"></span>A <b>chunk column</b> is a 16&#215;256&#215;16 collection of blocks, and is what most players think of when they hear the term "chunk".  However, these are not the smallest unit data is stored in in the game; chunk columns are actually 16 chunk sections aligned vertically.
+</p><p>Chunk columns store biomes, block entities, entities, tick data, and an array of sections.
+</p><p><br />
+<span id="Chunk_section"></span>A <b>chunk section</b> is a 16&#215;16&#215;16 collection of blocks (chunk sections are cubic).  This is the actual area that blocks are stored in, and is often the concept Mojang refers to via "chunk".  Breaking columns into sections wouldn't be useful, except that you don't need to send all chunk sections in a column: If a section is empty, then it doesn't need to be sent (more on this later).
+</p><p>Chunk sections store blocks and light data (both block light and sky light).  Additionally, they can be associated with a <a href="Chunk_Format.html#Section_palette">section palette</a>.  A chunk section can contain at maximum 4096 (16&#215;16&#215;16, or 2<sup>12</sup>) unique IDs (but, it is highly unlikely that such a section will occur in normal circumstances).
+</p><p>Chunk columns and chunk sections are both displayed when chunk border rendering is enabled (<kbd>F3</kbd>+<kbd>G</kbd>).  Chunk columns borders are indicated via the red vertical lines, while chunk sections borders are indicated by the blue lines.
+</p>
+<h3><span class="mw-headline" id="Empty_sections_and_the_primary_bit_mask">Empty sections and the primary bit mask</span></h3>
+<p>As previously mentioned, chunk sections can be <b>empty</b>.  Sections which contain no useful data are treated as empty<sup id="cite_ref-1" class="reference"><a href="Chunk_Format.html#cite_note-1">&#91;concept note 1&#93;</a></sup>, and are not sent to the client, as the client is able to infer the contents<sup id="cite_ref-2" class="reference"><a href="Chunk_Format.html#cite_note-2">&#91;concept note 2&#93;</a></sup>.  For the average world, this means around 60% of the world's data doesn't need to be sent, since it's all air; this is a significant save.
+</p><p>It is important to note that a chunk composed entirely of empty sections is different from an empty (ie, unloaded) chunk column.  When a block is changed in an empty section, the section is created (as all air), and the block is set.  When a block is changed in an empty chunk, the behavior is undefined (but generally, nothing happens).
+</p><p>The <b>primary bit mask</b> simply determines which sections are being sent.  The least significant bit is for the lowest section (y=0 to y=15).  Only 16 bits can be set in it (with the 16th bit controlling the y=240 to y=255 section); sections above y=255 are not valid for the notchian client.  To check whether a section is included, use <span style="white-space:nowrap"><code class="mw-highlight" dir="ltr"><span class="p">((</span><span class="n">mask</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">sectionY</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span></code></span>.
+</p>
+<h3><span class="mw-headline" id="Global_and_section_palettes">Global and section palettes</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:152px;"><a href="./File:Indexed_palette.png.html" class="image"><img alt="" src="images/c/cf/Indexed_palette.png" width="150" height="401" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Indexed_palette.png.html" class="internal" title="Enlarge"></a></div>Illustration of an indexed palette (<a href="http://commons.wikimedia.org/wiki/File:Indexed_palette.png" class="extiw" title="commons:File:Indexed palette.png">Source</a>)</div></div></div>
+<p>Minecraft also uses palettes.  A palette maps numeric IDs to block states.  The concept is more commonly used with colors in an image; Wikipedia's articles on <a href="http://en.wikipedia.org/wiki/Color_look-up_table" class="extiw" title="wikipedia:Color look-up table">color look-up tables</a>, <a href="http://en.wikipedia.org/wiki/Indexed_color" class="extiw" title="wikipedia:Indexed color">indexed colors</a>, and <a href="http://en.wikipedia.org/wiki/Palette_(computing)" class="extiw" title="wikipedia:Palette (computing)">palettes in general</a> may be helpful for fully grokking it.
+</p><p>There are 2 palettes that are used in the game: the global palette and the section palette.
+</p><p><br />
+<span id="Global_palette"></span>The <b>global palette</b> is the standard mapping of IDs to block states.  Currently, it is a combination Block ID and Metadata <span style="white-space:nowrap">(<code class="mw-highlight" dir="ltr"><span class="p">(</span><span class="n">blockId</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">|</span> <span class="n">metadata</span></code>)</span>.  Note that thus, the global palette is not continuous<sup id="cite_ref-3" class="reference"><a href="Chunk_Format.html#cite_note-3">&#91;concept note 3&#93;</a></sup>.  Entries not defined within the global palette are treated as air (even if the block ID itself is known, if the metadata is not known, the state is treated as air).  Note that the global palette is currently represented by 13 bits per entry<sup id="cite_ref-4" class="reference"><a href="Chunk_Format.html#cite_note-4">&#91;concept note 4&#93;</a></sup>, with the <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Data_values%23Block_IDs">block ID</a></span> for the first 9 bits, and the block damage value for the last 4 bits. For example, Diorite (block ID <code>1</code> for <code>minecraft:stone</code> with damage <code>3</code>) would be encoded as <code>000000001&#160;0011</code>. If a block is not found in the global palette (either due to not having a valid damage value or due to not being a valid ID), it will be treated as air.
+</p><p>The basic implementation looks like this:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kt">long</span> <span class="nf">getGlobalPaletteIDFromState</span><span class="o">(</span><span class="n">BlockState</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">isValid</span><span class="o">())</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">getId</span><span class="o">()</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="o">)</span> <span class="o">|</span> <span class="n">state</span><span class="o">.</span><span class="na">getMetadata</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">BlockState</span> <span class="nf">getStateFromGlobalPaletteID</span><span class="o">(</span><span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">blockID</span> <span class="o">=</span> <span class="o">(</span><span class="n">id</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="o">);</span>
+    <span class="kt">byte</span> <span class="n">metadata</span> <span class="o">=</span> <span class="o">(</span><span class="n">id</span> <span class="o">&amp;</span> <span class="mh">0x0F</span><span class="o">);</span>
+    <span class="n">BlockState</span> <span class="n">state</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BlockState</span><span class="o">(</span><span class="n">blockID</span><span class="o">,</span> <span class="n">metadata</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">isValid</span><span class="o">())</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">state</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">BlockState</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>  <span class="c1">// Air</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Don't assume that the global palette will always be like this; keep it in a separate function.  Mojang has stated that they plan to change the global palette to avoid increasing the total size.  Equally so, though, do not hardcode the total size of the palette; keep it in a constant.
+</p>
+</div>
+<p><br />
+<span id="Section_palette"></span>A <b>section palette</b> is used to map IDs within a <a href="Chunk_Format.html#Chunk_section">chunk section</a> to global palette IDs.  Other than skipping empty sections, correct use of the section palette is the biggest place where data can be saved.  Given that most sections contain only a few blocks, using 13 bits to represent a chunk section that is only stone, gravel, and air would be extremely wasteful.  Instead, a list of IDs are sent mapping indexes to global palette IDs (for instance, <code>0x10 0xD0 0x00</code>), and indexes within the section palette are used (so stone would be sent as <code>0</code>, gravel <code>1</code>, and air <code>2</code>)<sup id="cite_ref-5" class="reference"><a href="Chunk_Format.html#cite_note-5">&#91;concept note 5&#93;</a></sup>.  The number of bits per ID in the section palette varies from 4 to 8; if fewer than 4 bits would be needed it's increased to 4<sup id="cite_ref-6" class="reference"><a href="Chunk_Format.html#cite_note-6">&#91;concept note 6&#93;</a></sup> and if more than 8 would be needed, the section palette is not used and instead global palette IDs are used<sup id="cite_ref-7" class="reference"><a href="Chunk_Format.html#cite_note-7">&#91;concept note 7&#93;</a></sup>.
+</p>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Note that the notchian client (and server) store their chunk data within the compacted, paletted format.  Sending non-compacted data not only wastes bandwidth, but also leads to increased memory use clientside; while this is OK for an initial implementation it is strongly encouraged that one compacts the block data as soon as possible.
+</p>
+</div>
+<h3><span class="mw-headline" id="Ground-up_continuous">Ground-up continuous</span></h3>
+<p>The <b>ground-up continuous</b> value (tentative name) is one of the more confusing properties of the chunk data packet, simply because there's no good name for it.  It controls two different behaviors of the chunk data packet, one that most people need, and one that most don't.
+</p><p>When ground-up continuous is set, the chunk data packet is used to create a <i>new</i> chunk.  This includes biome data, and all (non-empty) sections in the chunk.  Sections not specified in the primary bit mask are empty sections.
+</p>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Sending a packet with ground-up continuous enabled over a chunk that already exists will <b>leak memory</b> clientside.
+</p><p>Make sure to unload chunks before overwriting them with the <a href="Protocol.html#Unload_Chunk" title="Protocol">Unload Chunk</a> packet.  That packet can always be sent even on unloaded chunks, so in situations where the chunk might or might not be loaded already, it's valid to send it again (but avoid sending it in excess).
+</p><p>The <code>MultiplayerChunkCache</code> values in F3 show the number of chunks in the client's 2 chunk storage mechanisms; if the numbers aren't equal, you've leaked chunks.
+</p>
+</div>
+<p>When ground-up continuous is not set, then the chunk data packet acts as a large <a href="Protocol.html#Multi_Block_Change" title="Protocol">Multi Block Change</a> packet, changing all of the blocks in the given section at once.  This can have some performance benefits, especially for lighting purposes.  BIome data is <i>not</i> sent when ground-up continuous is not set; that means that biomes can't be changed once a chunk is loaded.  Sections not specified in the primary bit mask are not changed and should be left as-is.
+</p>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> As with <a href="Protocol.html#Multi_Block_Change" title="Protocol">Multi Block Change</a> and <a href="Protocol.html#Block_Change" title="Protocol">Block Change</a>, it is not safe to send this packet in unloaded chunks, as it can corrupt notchian client's shared empty chunk.  Clients should <i>ignore</i> such packets, and servers should not send non-ground-up continuous chunk data packets into unloaded chunks.
+</p>
+</div>
+<h3><span class="mw-headline" id="Notes">Notes</span></h3>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="Chunk_Format.html#cite_ref-1">↑</a></span> <span class="reference-text">Empty is defined by the notchian server as being composed of all air, but this can result in lighting issues (<a rel="nofollow" class="external text" href="https://bugs.mojang.com/browse/MC-80966">MC-80966</a>).  Custom servers should consider defining empty to mean something like "completely air and without lighting data" or "completely air and with no blocks in the neighboring sections that need to be lit by light from this section".</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="Chunk_Format.html#cite_ref-2">↑</a></span> <span class="reference-text">Generally meaning, "it's all air".  Of course, lighting is an issue as with before - the notchian client assumes 0 block light and 15 sky light, even when that's not valid (underground sections shouldn't be skylit, and sections near light sources should be lit).</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="Chunk_Format.html#cite_ref-3">↑</a></span> <span class="reference-text">The global palette is not continuous in more ways than 1.  The more obvious manner is that not all blocks have metadata: for instance, dirt (ID 3) has only 3 states (dirt, coarse dirt, and podzol), so the palette surrounding it is <code>000000011&#160;0000; 000000011&#160;0001; 000000011&#160;0010; 000000100&#160;0000</code>.  The second way is that structure blocks have an ID of 255, even though there is currently no block with ID 254; thus, there is a large gap.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="Chunk_Format.html#cite_ref-4">↑</a></span> <span class="reference-text">The number of bits in the global palette via the ceil of a base-2 logarithm of the highest value in the palette.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="Chunk_Format.html#cite_ref-5">↑</a></span> <span class="reference-text">There is no requirement for IDs in a section palette to be <a href="http://en.wikipedia.org/wiki/Monotonic" class="extiw" title="wikipedia:Monotonic">monotonic</a>; the order within the list is entirely arbitrary and often has to deal with how the palette is built (if it finds a stone block before an air block, stone can come first).  (However, although the order of the section palette entries can be arbitrary, it can theoretically be optimized to ensure the maximum possible GZIP compression.  This optimization offers little to no gain, so generally do not attempt it.)  However, there shouldn't be any gaps in the section palette, as gaps would increase the size of the section palette when it is sent.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="Chunk_Format.html#cite_ref-6">↑</a></span> <span class="reference-text">Most likely, sizes smaller than 4 are not used in the section palette because it would require the palette to be resized several times as it is built in the majority of cases; the processing cost would be higher than the data saved.</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="Chunk_Format.html#cite_ref-7">↑</a></span> <span class="reference-text">Most likely, sizes larger than 8 use the global palette because otherwise, the amount of data used to transmit the palette would exceed the savings that the section palette would grant.</span>
+</li>
+</ol>
+<h2><span class="mw-headline" id="Packet_structure">Packet structure</span></h2>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> State
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="9"> 0x20
+</td>
+<td rowspan="9"> Play
+</td>
+<td rowspan="9"> Client
+</td>
+<td> Chunk X
+</td>
+<td> Int
+</td>
+<td> Chunk coordinate (block coordinate divided by 16, rounded down)
+</td></tr>
+<tr>
+<td> Chunk Z
+</td>
+<td> Int
+</td>
+<td> Chunk coordinate (block coordinate divided by 16, rounded down)
+</td></tr>
+<tr>
+<td> Ground-Up Continuous
+</td>
+<td> Boolean
+</td>
+<td> See <a href="Chunk_Format.html#Ground-up_continuous">§Ground-up continuous</a>
+</td></tr>
+<tr>
+<td> Primary Bit Mask
+</td>
+<td> VarInt
+</td>
+<td> Bitmask with bits set to 1 for every 16×16×16 chunk section whose data is included in Data. The least significant bit represents the chunk section at the bottom of the chunk column (from y=0 to y=15).
+</td></tr>
+<tr>
+<td> Size
+</td>
+<td> VarInt
+</td>
+<td> Size of Data in bytes
+</td></tr>
+<tr>
+<td> Data
+</td>
+<td> Byte array
+</td>
+<td> See <a href="Chunk_Format.html#Data_structure">data structure</a> below
+</td></tr>
+<tr>
+<td> Number of block entities
+</td>
+<td> VarInt
+</td>
+<td> Number of elements in the following array
+</td></tr>
+<tr>
+<td> Block entities
+</td>
+<td> Array of <a href="NBT.html" title="NBT">NBT Tag</a>
+</td>
+<td> All block entities in the chunk.  Use the x, y, and z tags in the NBT to determine their positions.
+</td></tr></table>
+<h2><span class="mw-headline" id="Data_structure">Data structure</span></h2>
+<p>The data section of the packet contains most of the useful data for the chunk.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Data
+</td>
+<td> Array of <a href="Chunk_Format.html#Chunk_Section_structure">Chunk Section</a>
+</td>
+<td> The number of elements in the array is equal to the number of bits set in Primary Bit Mask. Sections are sent bottom-to-top, i.e. the first section, if sent, extends from Y=0 to Y=15.
+</td></tr>
+<tr>
+<td> Biomes
+</td>
+<td> Optional Byte Array
+</td>
+<td> Only sent if Ground-Up Continuous is true; 256 bytes if present
+</td></tr></table>
+<h3><span class="mw-headline" id="Chunk_Section_structure">Chunk Section structure</span></h3>
+<p>A Chunk Section is defined in terms of other <a href="Data_types.html" title="Data types">data types</a>. A Chunk Section consists of the following fields:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Bits Per Block
+</td>
+<td> Unsigned Byte
+</td>
+<td> Determines how many bits are used to encode a block. Note that not all numbers are valid here.
+</td></tr>
+<tr>
+<td> Palette
+</td>
+<td> Varies
+</td>
+<td> See below for the format.
+</td></tr>
+<tr>
+<td> Data Array Length
+</td>
+<td> VarInt
+</td>
+<td> Number of longs in the following array
+</td></tr>
+<tr>
+<td> Data Array
+</td>
+<td> Array of Long
+</td>
+<td> Compacted list of 4096 indices pointing to state IDs in the Palette
+</td></tr>
+<tr>
+<td> Block Light
+</td>
+<td> Byte Array
+</td>
+<td> Half byte per block
+</td></tr>
+<tr>
+<td> Sky Light
+</td>
+<td> Optional Byte Array
+</td>
+<td> Only if in the Overworld; half byte per block
+</td></tr></table>
+<p>Data Array, Block Light, and Sky Light are given for each block with increasing x coordinates, within rows of increasing z coordinates, within layers of increasing y coordinates.  For the half-byte light arrays, even-indexed items (those with an even x coordinate, starting at 0) are packed into the <i>low bits</i>, odd-indexed into the <i>high bits</i>.
+</p>
+<h4><span class="mw-headline" id="Palettes">Palettes</span></h4>
+<p>The bits per block value determines what format is used for the palette. In most cases, invalid values will be interpreted as a different value when parsed by the notchian client, meaning that chunk data will be parsed incorrectly if you use an invalid bits per block.  Servers must make sure that the bits per block value is correct.
+</p>
+<h5><span class="mw-headline" id="Indirect">Indirect</span></h5>
+<p>There are two variants of this:
+</p>
+<ul><li> For bits per block &lt;= 4, 4 bits are used to represent a block.</li>
+<li> For bits per block between 5 and 8, the given value is used.</li></ul>
+<p>This is an actual palette which lists the block states used.  Values in the chunk section's data array are indices into the palette, which in turn gives a proper block state.
+</p><p>The format is as follows:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Palette Length
+</td>
+<td> VarInt
+</td>
+<td> Number of elements in the following array.
+</td></tr>
+<tr>
+<td> Palette
+</td>
+<td> Array of VarInt
+</td>
+<td> Mapping of block state IDs in the global palette to indices of this array
+</td></tr></table>
+<h5><span class="mw-headline" id="Direct">Direct</span></h5>
+<p>This format is used for bits per block values greater than or equal to 9.  The number of bits used to represent a block are the base 2 logarithm of the number of block states, rounded up. For the current vanilla release, this is 13 bits per block.
+</p>
+<dl><dd>The "palette" uses the following format:</dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Dummy Palette Length
+</td>
+<td> VarInt
+</td>
+<td> Should always be 0.  Only exists to mirror the format used elsewhere.
+</td></tr></table></dd></dl>
+<p>If Minecraft Forge is installed and a sufficiently large number of blocks are added, the bits per block value for the global palette will be increased to compensate for the increased ID count.  This increase can go up to 16 bits per block (for a total of 4096 block IDs; when combined with the 16 damage values, there are 65536 total states).  You can get the number of blocks with the "Number of ids" field found in the <a href="Minecraft_Forge_Handshake.html#RegistryData" title="Minecraft Forge Handshake">RegistryData packet in the Forge Handshake</a>.
+</p>
+<h4><span class="mw-headline" id="Compacted_data_array">Compacted data array</span></h4>
+<p>The data array stores several entries within a single long, and sometimes overlaps one entry between multiple longs.  For a bits per block value of 13, the data is stored such that bits 1 through 13 are the first entry, 14 through 26 are the second, and so on.  Note that bit 1 is the <i>least</i> significant bit in this case, not the most significant bit.  The same behavior applies when a value stretches between two longs: for instance, block 5 would be bits 53 through 64 of the first long and then bit 65 of the second long.
+</p><p>The Data Array, although varying in length, will never be padded due to the number of blocks being evenly divisible by 64, which is the number of bits in a long.
+</p>
+<h5><span class="mw-headline" id="Example">Example</span></h5>
+<p>13 bits per block, using the global palette.
+</p><p>The following two longs would represent...
+</p><p><code>1001880C0060020</code> = 
+<code><span style="outline: solid 2px hsl(160, 90%, 60%); outline-left-style: dashed">00000001</span><span style="outline: solid 2px hsl(160, 90%, 70%)">0000</span><span style="outline: solid 2px hsl(120, 90%, 60%)">000000011</span><span style="outline: solid 2px hsl(120, 90%, 70%)">0001</span><span style="outline: solid 2px hsl(80, 90%, 60%)">000000011</span><span style="outline: solid 2px hsl(80, 90%, 70%)">0000</span><span style="outline: solid 2px hsl(40, 90%, 60%)">000000011</span><span style="outline: solid 2px hsl(50, 90%, 70%)">0000</span><span style="outline: solid 2px hsl(0, 90%, 65%)">000000010</span><span style="outline: solid 2px hsl(0, 90%, 75%)">0000</span></code><br />
+<code>200D0068004C020</code> = <code><span style="outline: solid 2px rgb(60%, 60%, 60%); outline-left-style: dashed">0000001</span><span style="outline: solid 2px rgb(70%, 70%, 70%)">0000</span><span style="outline: solid 2px hsl(320, 90%, 60%)">000001101</span><span style="outline: solid 2px hsl(320, 90%, 70%)">0000</span><span style="outline: solid 2px hsl(280, 90%, 60%)">000001101</span><span style="outline: solid 2px hsl(280, 90%, 75%)">0000</span><span style="outline: solid 2px hsl(240, 90%, 65%)">000000001</span><span style="outline: solid 2px hsl(240, 90%, 75%)">0011</span><span style="outline: solid 2px hsl(200, 90%, 65%)">000000001</span><span style="outline: solid 2px hsl(200, 90%, 70%)">0000</span><span style="outline: solid 2px hsl(160, 90%, 60%); outline-right-style: dashed">0</span></code>
+</p><p>9 blocks, with the start of a 10th (that would be finished in the next long).
+</p>
+<ol><li>Grass, <span style="border: solid 2px hsl(0, 90%, 65%)">2</span>:<span style="border: solid 2px hsl(0, 90%, 75%)">0</span></li>
+<li>Dirt, <span style="border: solid 2px hsl(40, 90%, 60%)">3</span>:<span style="border: solid 2px hsl(40, 90%, 70%)">0</span></li>
+<li>Dirt, <span style="border: solid 2px hsl(80, 90%, 60%)">3</span>:<span style="border: solid 2px hsl(80, 90%, 70%)">0</span></li>
+<li>Coarse dirt, <span style="border: solid 2px hsl(120, 90%, 60%)">3</span>:<span style="border: solid 2px hsl(120, 90%, 70%)">1</span></li>
+<li>Stone, <span style="border: solid 2px hsl(160, 90%, 60%)">1</span>:<span style="border: solid 2px hsl(160, 90%, 70%)">0</span></li>
+<li>Stone, <span style="border: solid 2px hsl(200, 90%, 60%)">1</span>:<span style="border: solid 2px hsl(200, 90%, 70%)">0</span></li>
+<li>Diorite, <span style="border: solid 2px hsl(240, 90%, 65%)">1</span>:<span style="border: solid 2px hsl(240, 90%, 75%)">3</span></li>
+<li>Gravel, <span style="border: solid 2px hsl(280, 90%, 65%)">13</span>:<span style="border: solid 2px hsl(280, 90%, 75%)">0</span></li>
+<li>Gravel, <span style="border: solid 2px hsl(320, 90%, 60%)">13</span>:<span style="border: solid 2px hsl(320, 90%, 70%)">0</span></li>
+<li>Stone, <span style="border: solid 2px rgb(60%, 60%, 60%)">1</span>:<span style="border: solid 2px rgb(70%, 70%, 70%)">0</span> (or potentially emerald ore, <span style="border: solid 2px rgb(60%, 60%, 60%)">129</span>:<span style="border: solid 2px rgb(70%, 70%, 70%)">0</span>)</li></ol>
+<h3><span class="mw-headline" id="Biomes">Biomes</span></h3>
+<p>The biomes array is only present when ground-up continuous is set to true.  Biomes cannot be changed unless a chunk is re-sent.
+</p><p>The structure is an array of 256 bytes, each representing a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Biome/ID">Biome ID</a></span> (it is recommended that 127 for "Void" is used if there is no set biome).  The array is indexed by <code>z * 16 | x</code>.
+</p>
+<h2><span class="mw-headline" id="Tips_and_notes">Tips and notes</span></h2>
+<p>There are several things that can make it easier to implement this format.
+</p>
+<ul><li> The <code>13</code> value for full bits per block is likely to change in the future, so it should not be hardcoded (instead, it should either be calculated or left as a constant).</li>
+<li> Servers do <em>not</em> need to implement the palette initially (instead always using 13 bits per block), although it is an important optimization later on.</li>
+<li> The Notchian server implementation does not send values that are out of bounds for the palette.  If such a value is received, the format is being parsed incorrectly.  In particular, if you're reading a number with all bits set (15, 31, etc), then you're probably reading sky light data.</li>
+<li> The number of longs needed for the data array can be calculated as ((16&#215;16&#215;16 blocks)&#215;Bits per block)&#247;64 bits per long (which simplifies to 64&#215;Bits per block).  For instance, 13 bits per block requires 832 longs.</li></ul>
+<p>Also, note that the Notchian client does not render chunks that lack neighbors.  This means that if you only send a fixed set of chunks (and not chunks around the player) then the last chunk will not be seen, although you can still interact with it.  This is intended behavior, so that lighting and connected blocks can be handled correctly.
+</p>
+<h2><span class="mw-headline" id="Sample_implementations">Sample implementations</span></h2>
+<p>How the chunk format can be implemented varies largely by how you want to read/write it.  It is often easier to read/write the data long-by-long instead of pre-create the data to write; however, storing the chunk data arrays in their packed form can be far more efficient memory- and performance-wise.  These implementations are simple versions that can work as a base (especially for dealing with the bit shifting), but are not ideal.
+</p>
+<h3><span class="mw-headline" id="Shared_code">Shared code</span></h3>
+<p>This is some basic pseudocode that shows the various types of palettes.  It does not handle actually populating the palette based on data in a chunk section; handling this is left as for the implementer since there are many ways of doing so.  (This does not apply for the direct version).
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">private</span> <span class="kt">uint</span> <span class="nf">GetGlobalPaletteIDFromState</span><span class="p">(</span><span class="n">BlockState</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// NOTE: This method will change in 1.13</span>
+    <span class="kt">byte</span> <span class="n">metadata</span> <span class="p">=</span> <span class="n">state</span><span class="p">.</span><span class="n">getMetadata</span><span class="p">();</span>
+    <span class="kt">uint</span> <span class="n">id</span> <span class="p">=</span> <span class="n">state</span><span class="p">.</span><span class="n">getBlockId</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">id</span> <span class="p">&lt;&lt;</span> <span class="m">4</span> <span class="p">|</span> <span class="n">metadata</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="n">BlockState</span> <span class="nf">GetStateFromGlobalPaletteID</span><span class="p">(</span><span class="kt">uint</span> <span class="k">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// NOTE: This method will change in 1.13</span>
+    <span class="kt">byte</span> <span class="n">metadata</span> <span class="p">=</span> <span class="n">data</span> <span class="p">&amp;</span> <span class="m">0</span><span class="n">xF</span><span class="p">;</span>
+    <span class="kt">uint</span> <span class="n">id</span> <span class="p">=</span> <span class="n">data</span> <span class="p">&gt;&gt;</span> <span class="m">4</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">BlockState</span><span class="p">.</span><span class="n">ForIDAndMeta</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">metadata</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="n">Palette</span> <span class="p">{</span>
+    <span class="kt">uint</span> <span class="nf">IdForState</span><span class="p">(</span><span class="n">BlockState</span> <span class="n">state</span><span class="p">);</span>
+    <span class="n">BlockState</span> <span class="nf">StateForId</span><span class="p">(</span><span class="kt">uint</span> <span class="n">id</span><span class="p">);</span>
+    <span class="kt">byte</span> <span class="nf">GetBitsPerBlock</span><span class="p">();</span>
+    <span class="k">void</span> <span class="nf">Read</span><span class="p">(</span><span class="n">Buffer</span> <span class="n">data</span><span class="p">);</span>
+    <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="n">Buffer</span> <span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">IndirectPalette</span> <span class="p">:</span> <span class="n">Palette</span> <span class="p">{</span>
+    <span class="n">Map</span><span class="p">&lt;</span><span class="kt">uint</span><span class="p">,</span> <span class="n">BlockState</span><span class="p">&gt;</span> <span class="n">idToState</span><span class="p">;</span>
+    <span class="n">Map</span><span class="p">&lt;</span><span class="kt">uint</span><span class="p">,</span> <span class="n">BlockState</span><span class="p">&gt;</span> <span class="n">stateToId</span><span class="p">;</span>
+    <span class="kt">byte</span> <span class="n">bitsPerBlock</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">IndirectPalette</span><span class="p">(</span><span class="kt">byte</span> <span class="n">palBitsPerBlock</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">bitsPerBlock</span> <span class="p">=</span> <span class="n">palBitsPerBlock</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">uint</span> <span class="nf">IdForState</span><span class="p">(</span><span class="n">BlockState</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">stateToId</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">BlockState</span> <span class="nf">StateForId</span><span class="p">(</span><span class="kt">uint</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">idToState</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">byte</span> <span class="nf">GetBitsPerBlock</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">bitsPerBlock</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Read</span><span class="p">(</span><span class="n">Buffer</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">idToState</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Map</span><span class="p">&lt;&gt;();</span>
+        <span class="n">stateToId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Map</span><span class="p">&lt;&gt;();</span>
+        <span class="c1">// Palette Length</span>
+        <span class="kt">int</span> <span class="n">length</span> <span class="p">=</span> <span class="n">ReadVarInt</span><span class="p">();</span>
+        <span class="c1">// Palette</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">id</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">id</span> <span class="p">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">id</span><span class="p">++)</span> <span class="p">{</span>
+            <span class="kt">uint</span> <span class="n">stateId</span> <span class="p">=</span> <span class="n">ReadVarInt</span><span class="p">();</span>
+            <span class="n">BlockState</span> <span class="n">state</span> <span class="p">=</span> <span class="n">GetStateFromGlobalPaletteID</span><span class="p">(</span><span class="n">stateId</span><span class="p">);</span>
+            <span class="n">idToState</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">state</span><span class="p">);</span>
+            <span class="n">stateToId</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="n">Buffer</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Assert</span><span class="p">(</span><span class="n">idToState</span><span class="p">.</span><span class="n">Size</span><span class="p">()</span> <span class="p">==</span> <span class="n">stateToId</span><span class="p">.</span><span class="n">Size</span><span class="p">());</span> <span class="c1">// both should be equivalent</span>
+        <span class="c1">// Palette Length</span>
+        <span class="n">WriteVarInt</span><span class="p">(</span><span class="n">idToState</span><span class="p">.</span><span class="n">Size</span><span class="p">());</span>
+        <span class="c1">// Palette</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">id</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">id</span> <span class="p">&lt;</span> <span class="n">idToState</span><span class="p">.</span><span class="n">Size</span><span class="p">();</span> <span class="n">id</span><span class="p">++)</span> <span class="p">{</span>
+            <span class="n">BlockState</span> <span class="n">state</span> <span class="p">=</span> <span class="n">idToState</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+            <span class="kt">uint</span> <span class="n">stateId</span> <span class="p">=</span> <span class="n">GetGlobalPaletteIDFromState</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+            <span class="n">WriteVarInt</span><span class="p">(</span><span class="n">stateId</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">DirectPalette</span> <span class="p">:</span> <span class="n">Palette</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">uint</span> <span class="nf">IdForState</span><span class="p">(</span><span class="n">BlockState</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">GetGlobalPaletteIDFromState</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">BlockState</span> <span class="nf">StateForId</span><span class="p">(</span><span class="kt">uint</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">GetStateFromGlobalPaletteID</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">byte</span> <span class="nf">GetBitsPerBlock</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">Ceil</span><span class="p">(</span><span class="n">Log2</span><span class="p">(</span><span class="n">BlockState</span><span class="p">.</span><span class="n">GetTotalNumberOfStates</span><span class="p">));</span> <span class="c1">// currently 13</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Read</span><span class="p">(</span><span class="n">Buffer</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Dummy Palette Length</span>
+        <span class="n">ReadVarInt</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="n">Buffer</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Dummy Palette Length (ignored)</span>
+        <span class="n">ReadVarInt</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="n">Palette</span> <span class="nf">ChoosePalette</span><span class="p">(</span><span class="kt">byte</span> <span class="n">bitsPerBlock</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bitsPerBlock</span> <span class="p">&lt;=</span> <span class="m">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">IndirectPalette</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bitsPerBlock</span> <span class="p">&lt;=</span> <span class="m">8</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">IndirectPalette</span><span class="p">(</span><span class="n">bitsPerBlock</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">DirectPalette</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id="Deserializing">Deserializing</span></h3>
+<p>When deserializing, it is easy to read to a buffer (since length information is present).  A basic example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">public</span> <span class="n">Chunk</span> <span class="nf">ReadChunkDataPacket</span><span class="p">(</span><span class="n">Buffer</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="n">ReadInt</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="n">ReadInt</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">full</span> <span class="p">=</span> <span class="n">ReadBool</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="n">Chunk</span> <span class="n">chunk</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">full</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">chunk</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Chunk</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">chunk</span> <span class="p">=</span> <span class="n">GetExistingChunk</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">mask</span> <span class="p">=</span> <span class="n">ReadVarInt</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="p">=</span> <span class="n">ReadVarInt</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="n">ReadChunkColumn</span><span class="p">(</span><span class="n">chunk</span><span class="p">,</span> <span class="n">full</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="n">ReadByteArray</span><span class="p">(</span><span class="n">size</span><span class="p">));</span>
+
+    <span class="kt">int</span> <span class="n">blockEntityCount</span> <span class="p">=</span> <span class="n">ReadVarInt</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">blockEntityCount</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> <span class="p">{</span>
+        <span class="n">CompoundTag</span> <span class="n">tag</span> <span class="p">=</span> <span class="n">ReadCompoundTag</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+        <span class="n">chunk</span><span class="p">.</span><span class="n">AddBlockEntity</span><span class="p">(</span><span class="n">tag</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">),</span> <span class="n">tag</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">),</span> <span class="n">tag</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="s">&quot;z&quot;</span><span class="p">),</span> <span class="n">tag</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">chunk</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">void</span> <span class="nf">ReadChunkColumn</span><span class="p">(</span><span class="n">Chunk</span> <span class="n">chunk</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">full</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mask</span><span class="p">,</span> <span class="n">Buffer</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">sectionY</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">sectionY</span> <span class="p">&lt;</span> <span class="p">(</span><span class="n">CHUNK_HEIGHT</span> <span class="p">/</span> <span class="n">SECTION_HEIGHT</span><span class="p">);</span> <span class="n">y</span><span class="p">++)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">mask</span> <span class="p">&amp;</span> <span class="p">(</span><span class="m">1</span> <span class="p">&lt;&lt;</span> <span class="n">sectionY</span><span class="p">))</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Is the given bit set in the mask?</span>
+            <span class="kt">byte</span> <span class="n">bitsPerBlock</span> <span class="p">=</span> <span class="n">ReadByte</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+            <span class="n">Palette</span> <span class="n">palette</span> <span class="p">=</span> <span class="n">ChoosePalette</span><span class="p">(</span><span class="n">bitsPerBlock</span><span class="p">);</span>
+            <span class="n">palette</span><span class="p">.</span><span class="n">Read</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+            <span class="c1">// A bitmask that contains bitsPerBlock set bits</span>
+            <span class="kt">uint</span> <span class="n">individualValueMask</span> <span class="p">=</span> <span class="p">(</span><span class="kt">uint</span><span class="p">)((</span><span class="m">1</span> <span class="p">&lt;&lt;</span> <span class="n">bitsPerBlock</span><span class="p">)</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>
+
+            <span class="kt">int</span> <span class="n">dataArrayLength</span> <span class="p">=</span> <span class="n">ReadVarInt</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+            <span class="n">UInt64</span><span class="p">[]</span> <span class="n">dataArray</span> <span class="p">=</span> <span class="n">ReadUInt64Array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dataArrayLength</span><span class="p">);</span>
+
+            <span class="n">ChunkSection</span> <span class="n">section</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ChunkSection</span><span class="p">();</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">y</span> <span class="p">&lt;</span> <span class="n">SECTION_HEIGHT</span><span class="p">;</span> <span class="n">y</span><span class="p">++)</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">z</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">z</span><span class="p">++)</span> <span class="p">{</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">x</span><span class="p">++)</span> <span class="p">{</span>
+                        <span class="kt">int</span> <span class="n">blockNumber</span> <span class="p">=</span> <span class="p">(((</span><span class="n">blockY</span> <span class="p">*</span> <span class="n">SECTION_HEIGHT</span><span class="p">)</span> <span class="p">+</span> <span class="n">blockZ</span><span class="p">)</span> <span class="p">*</span> <span class="n">SECTION_WIDTH</span><span class="p">)</span> <span class="p">+</span> <span class="n">blockX</span><span class="p">;</span>
+                        <span class="kt">int</span> <span class="n">startLong</span> <span class="p">=</span> <span class="p">(</span><span class="n">blockNumber</span> <span class="p">*</span> <span class="n">bitsPerBlock</span><span class="p">)</span> <span class="p">/</span> <span class="m">64</span><span class="p">;</span>
+                        <span class="kt">int</span> <span class="n">startOffset</span> <span class="p">=</span> <span class="p">(</span><span class="n">blockNumber</span> <span class="p">*</span> <span class="n">bitsPerBlock</span><span class="p">)</span> <span class="p">%</span> <span class="m">64</span><span class="p">;</span>
+                        <span class="kt">int</span> <span class="n">endLong</span> <span class="p">=</span> <span class="p">((</span><span class="n">blockNumber</span> <span class="p">+</span> <span class="m">1</span><span class="p">)</span> <span class="p">*</span> <span class="n">bitsPerBlock</span> <span class="p">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">/</span> <span class="m">64</span><span class="p">;</span>
+
+                        <span class="kt">uint</span> <span class="n">data</span><span class="p">;</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">startLong</span> <span class="p">==</span> <span class="n">endLong</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="n">data</span> <span class="p">=</span> <span class="p">(</span><span class="kt">uint</span><span class="p">)(</span><span class="n">dataArray</span><span class="p">[</span><span class="n">startLong</span><span class="p">]</span> <span class="p">&gt;&gt;</span> <span class="n">startOffset</span><span class="p">);</span>
+                        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                            <span class="kt">int</span> <span class="n">endOffset</span> <span class="p">=</span> <span class="m">64</span> <span class="p">-</span> <span class="n">startOffset</span><span class="p">;</span>
+                            <span class="n">blockId</span> <span class="p">=</span> <span class="p">(</span><span class="kt">uint</span><span class="p">)(</span><span class="n">dataArray</span><span class="p">[</span><span class="n">startLong</span><span class="p">]</span> <span class="p">&gt;&gt;</span> <span class="n">startOffset</span> <span class="p">|</span> <span class="n">dataArray</span><span class="p">[</span><span class="n">endLong</span><span class="p">]</span> <span class="p">&lt;&lt;</span> <span class="n">endOffset</span><span class="p">);</span>
+                        <span class="p">}</span>
+                        <span class="n">data</span> <span class="p">&amp;=</span> <span class="n">individualValueMask</span><span class="p">;</span>
+
+                        <span class="c1">// data should always be valid for the palette</span>
+                        <span class="c1">// If you&#39;re reading a power of 2 minus one (15, 31, 63, 127, etc...) that&#39;s out of bounds,</span>
+                        <span class="c1">// you&#39;re probably reading light data instead</span>
+
+                        <span class="n">BlockState</span> <span class="n">state</span> <span class="p">=</span> <span class="n">palette</span><span class="p">.</span><span class="n">StateForId</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+                        <span class="n">section</span><span class="p">.</span><span class="n">SetState</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">state</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">y</span> <span class="p">&lt;</span> <span class="n">SECTION_HEIGHT</span><span class="p">;</span> <span class="n">y</span><span class="p">++)</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">z</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">z</span><span class="p">++)</span> <span class="p">{</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">x</span> <span class="p">+=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c1">// Note: x += 2 above; we read 2 values along x each time</span>
+                        <span class="kt">byte</span> <span class="k">value</span> <span class="p">=</span> <span class="n">ReadByte</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+                        <span class="n">section</span><span class="p">.</span><span class="n">SetBlockLight</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="k">value</span> <span class="p">&amp;</span> <span class="m">0</span><span class="n">xF</span><span class="p">);</span>
+                        <span class="n">section</span><span class="p">.</span><span class="n">SetBlockLight</span><span class="p">(</span><span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">(</span><span class="k">value</span> <span class="p">&gt;&gt;</span> <span class="m">4</span><span class="p">)</span> <span class="p">&amp;</span> <span class="m">0</span><span class="n">xF</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">currentDimension</span><span class="p">.</span><span class="n">HasSkylight</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// IE, current dimension is overworld / 0</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">y</span> <span class="p">&lt;</span> <span class="n">SECTION_HEIGHT</span><span class="p">;</span> <span class="n">y</span><span class="p">++)</span> <span class="p">{</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">z</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">z</span><span class="p">++)</span> <span class="p">{</span>
+                        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">x</span> <span class="p">+=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="c1">// Note: x += 2 above; we read 2 values along x each time</span>
+                            <span class="kt">byte</span> <span class="k">value</span> <span class="p">=</span> <span class="n">ReadByte</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+                            <span class="n">section</span><span class="p">.</span><span class="n">SetSkyLight</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="k">value</span> <span class="p">&amp;</span> <span class="m">0</span><span class="n">xF</span><span class="p">);</span>
+                            <span class="n">section</span><span class="p">.</span><span class="n">SetSkyLight</span><span class="p">(</span><span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">(</span><span class="k">value</span> <span class="p">&gt;&gt;</span> <span class="m">4</span><span class="p">)</span> <span class="p">&amp;</span> <span class="m">0</span><span class="n">xF</span><span class="p">);</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="c1">// May replace an existing section or a null one</span>
+            <span class="n">chunk</span><span class="p">.</span><span class="n">Sections</span><span class="p">[</span><span class="n">SectionY</span><span class="p">]</span> <span class="p">=</span> <span class="n">section</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">z</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">z</span><span class="p">++)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">x</span><span class="p">++)</span> <span class="p">{</span>
+            <span class="n">chunk</span><span class="p">.</span><span class="n">SetBiome</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">ReadByte</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id="Serializing">Serializing</span></h3>
+<p>Serializing the packet is more complicated, because of the palette.  It is easy to implement with the full bits per block value; implementing it with a compacting palette is much harder since algorithms to generate and resize the palette must be written.  As such, this example <strong>does not generate a palette</strong>.  The palette is a good performance improvement (as it can significantly reduce the amount of data sent), but managing that is much harder and there are a variety of ways of implementing it.
+</p><p>Also note that this implementation doesn't handle situations where full is false (ie, making a large change to one section); it's only good for serializing a full chunk.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">WriteChunkDataPacket</span><span class="p">(</span><span class="n">Chunk</span> <span class="n">chunk</span><span class="p">,</span> <span class="n">Buffer</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">WriteInt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">chunk</span><span class="p">.</span><span class="n">GetX</span><span class="p">());</span>
+    <span class="n">WriteInt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">chunk</span><span class="p">.</span><span class="n">GetZ</span><span class="p">());</span>
+    <span class="n">WriteBool</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>  <span class="c1">// Full</span>
+
+    <span class="kt">int</span> <span class="n">mask</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="n">Buffer</span> <span class="n">columnBuffer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Buffer</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">sectionY</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">sectionY</span> <span class="p">&lt;</span> <span class="p">(</span><span class="n">CHUNK_HEIGHT</span> <span class="p">/</span> <span class="n">SECTION_HEIGHT</span><span class="p">);</span> <span class="n">y</span><span class="p">++)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(!</span><span class="n">chunk</span><span class="p">.</span><span class="n">IsSectionEmpty</span><span class="p">(</span><span class="n">sectionY</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">mask</span> <span class="p">|=</span> <span class="p">(</span><span class="m">1</span> <span class="p">&lt;&lt;</span> <span class="n">chunkY</span><span class="p">);</span>  <span class="c1">// Set that bit to true in the mask</span>
+            <span class="n">WriteChunkSection</span><span class="p">(</span><span class="n">chunk</span><span class="p">.</span><span class="n">Sections</span><span class="p">[</span><span class="n">sectionY</span><span class="p">],</span> <span class="n">columnBuffer</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">z</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">z</span><span class="p">++)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">x</span><span class="p">++)</span> <span class="p">{</span>
+            <span class="n">WriteByte</span><span class="p">(</span><span class="n">columnBuffer</span><span class="p">,</span> <span class="n">chunk</span><span class="p">.</span><span class="n">GetBiome</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">));</span>  <span class="c1">// Use 127 for &#39;void&#39; if your server doesn&#39;t support biomes</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">WriteVarInt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">mask</span><span class="p">);</span>
+    <span class="n">WriteVarInt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columnBuffer</span><span class="p">.</span><span class="n">Size</span><span class="p">);</span>
+    <span class="n">WriteByteArray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columnBuffer</span><span class="p">);</span>
+
+    <span class="c1">// If you don&#39;t support block entities yet, use 0</span>
+    <span class="c1">// If you need to implement it by sending block entities later with the update block entity packet,</span>
+    <span class="c1">// do it that way and send 0 as well.  (Note that 1.10.1 (not 1.10 or 1.10.2) will not accept that)</span>
+
+    <span class="n">WriteVarInt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">chunk</span><span class="p">.</span><span class="n">BlockEntities</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">CompoundTag</span> <span class="n">tag</span> <span class="k">in</span> <span class="n">chunk</span><span class="p">.</span><span class="n">BlockEntities</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">WriteCompoundTag</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">tag</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">void</span> <span class="nf">WriteChunkSection</span><span class="p">(</span><span class="n">ChunkSection</span> <span class="n">section</span><span class="p">,</span> <span class="n">Buffer</span> <span class="n">buf</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Palette</span> <span class="n">palette</span> <span class="p">=</span> <span class="n">section</span><span class="p">.</span><span class="n">palette</span><span class="p">;</span>
+    <span class="kt">byte</span> <span class="n">bitsPerBlock</span> <span class="p">=</span> <span class="n">palette</span><span class="p">.</span><span class="n">GetBitsPerBlock</span><span class="p">();</span>
+
+    <span class="n">WriteByte</span><span class="p">(</span><span class="n">bitsPerBlock</span><span class="p">);</span>
+    <span class="n">palette</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">dataLength</span> <span class="p">=</span> <span class="p">(</span><span class="m">16</span><span class="p">*</span><span class="m">16</span><span class="p">*</span><span class="m">16</span><span class="p">)</span> <span class="p">*</span> <span class="n">bitsPerBlock</span> <span class="p">/</span> <span class="m">64</span><span class="p">;</span> <span class="c1">// See tips section for an explanation of this calculation</span>
+    <span class="n">UInt64</span><span class="p">[]</span> <span class="n">data</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UInt64</span><span class="p">[</span><span class="n">dataLength</span><span class="p">];</span>
+
+    <span class="c1">// A bitmask that contains bitsPerBlock set bits</span>
+    <span class="kt">uint</span> <span class="n">individualValueMask</span> <span class="p">=</span> <span class="p">(</span><span class="kt">uint</span><span class="p">)((</span><span class="m">1</span> <span class="p">&lt;&lt;</span> <span class="n">bitsPerBlock</span><span class="p">)</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">y</span> <span class="p">&lt;</span> <span class="n">SECTION_HEIGHT</span><span class="p">;</span> <span class="n">y</span><span class="p">++)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">z</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">z</span><span class="p">++)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">x</span><span class="p">++)</span> <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">blockNumber</span> <span class="p">=</span> <span class="p">(((</span><span class="n">blockY</span> <span class="p">*</span> <span class="n">SECTION_HEIGHT</span><span class="p">)</span> <span class="p">+</span> <span class="n">blockZ</span><span class="p">)</span> <span class="p">*</span> <span class="n">SECTION_WIDTH</span><span class="p">)</span> <span class="p">+</span> <span class="n">blockX</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">startLong</span> <span class="p">=</span> <span class="p">(</span><span class="n">blockNumber</span> <span class="p">*</span> <span class="n">bitsPerBlock</span><span class="p">)</span> <span class="p">/</span> <span class="m">64</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">startOffset</span> <span class="p">=</span> <span class="p">(</span><span class="n">blockNumber</span> <span class="p">*</span> <span class="n">bitsPerBlock</span><span class="p">)</span> <span class="p">%</span> <span class="m">64</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">endLong</span> <span class="p">=</span> <span class="p">((</span><span class="n">blockNumber</span> <span class="p">+</span> <span class="m">1</span><span class="p">)</span> <span class="p">*</span> <span class="n">bitsPerBlock</span> <span class="p">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">/</span> <span class="m">64</span><span class="p">;</span>
+
+                <span class="n">BlockState</span> <span class="n">state</span> <span class="p">=</span> <span class="n">section</span><span class="p">.</span><span class="n">GetState</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+
+                <span class="n">UInt64</span> <span class="k">value</span> <span class="p">=</span> <span class="n">palette</span><span class="p">.</span><span class="n">IdForState</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+                <span class="k">value</span> <span class="p">&amp;=</span> <span class="n">individualValueMask</span><span class="p">;</span>
+
+                <span class="n">data</span><span class="p">[</span><span class="n">startLong</span><span class="p">]</span> <span class="p">|=</span> <span class="p">(</span><span class="n">Value</span> <span class="p">&lt;&lt;</span> <span class="n">startOffset</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">startLong</span> <span class="p">!=</span> <span class="n">endLong</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">endLong</span><span class="p">]</span> <span class="p">=</span> <span class="p">(</span><span class="k">value</span> <span class="p">&gt;&gt;</span> <span class="p">(</span><span class="m">64</span> <span class="p">-</span> <span class="n">startOffset</span><span class="p">));</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">WriteVarInt</span><span class="p">(</span><span class="n">dataLength</span><span class="p">);</span>
+    <span class="n">WriteLongArray</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">y</span> <span class="p">&lt;</span> <span class="n">SECTION_HEIGHT</span><span class="p">;</span> <span class="n">y</span><span class="p">++)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">z</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">z</span><span class="p">++)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">x</span> <span class="p">+=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Note: x += 2 above; we read 2 values along x each time</span>
+                <span class="kt">byte</span> <span class="k">value</span> <span class="p">=</span> <span class="n">section</span><span class="p">.</span><span class="n">GetBlockLight</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="p">|</span> <span class="p">(</span><span class="n">section</span><span class="p">.</span><span class="n">GetBlockLight</span><span class="p">(</span><span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="p">&lt;&lt;</span> <span class="m">4</span><span class="p">);</span>
+                <span class="n">WriteByte</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">currentDimension</span><span class="p">.</span><span class="n">HasSkylight</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// IE, current dimension is overworld / 0</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">y</span> <span class="p">&lt;</span> <span class="n">SECTION_HEIGHT</span><span class="p">;</span> <span class="n">y</span><span class="p">++)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">z</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">z</span><span class="p">++)</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">SECTION_WIDTH</span><span class="p">;</span> <span class="n">x</span> <span class="p">+=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// Note: x += 2 above; we read 2 values along x each time</span>
+                    <span class="kt">byte</span> <span class="k">value</span> <span class="p">=</span> <span class="n">section</span><span class="p">.</span><span class="n">GetSkyLight</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="p">|</span> <span class="p">(</span><span class="n">section</span><span class="p">.</span><span class="n">GetSkyLight</span><span class="p">(</span><span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="p">&lt;&lt;</span> <span class="m">4</span><span class="p">);</span>
+                    <span class="n">WriteByte</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Full_implementations">Full implementations</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/GlowstoneMC/Glowstone/blob/dev/src/main/java/net/glowstone/chunk/ChunkSection.java">Java, 1.12.2, writing only, with palette</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Steveice10/MCProtocolLib/blob/4ed72deb75f2acb0a81d641717b7b8074730f701/src/main/java/org/spacehq/mc/protocol/data/game/chunk/BlockStorage.java#L42">Java, 1.9, both sides</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/barneygale/quarry">Python, 1.7 through 1.13</a>. Read/write, paletted/unpaletted, <a rel="nofollow" class="external text" href="https://github.com/barneygale/quarry/blob/master/quarry/types/buffer/v1_7.py#L403">packets</a>/<a rel="nofollow" class="external text" href="https://github.com/barneygale/quarry/blob/master/quarry/types/chunk.py">arrays</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/SpockBotMC/SpockBot/blob/0535c31/spockbot/plugins/tools/smpmap.py#L144-L183">Python, 1.9, reading only</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Protryon/Osmium/blob/fdd61b9/MinecraftClone/src/ingame.c#L512-L632">C, 1.9, reading only</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Protryon/Basin/blob/master/basin/src/packet.c#L1124">C, 1.11.2, writing only</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/cuberite/cuberite/blob/master/src/Protocol/ChunkDataSerializer.cpp#L190">C++, 1.12.2, writing only</a></li></ul>
+<h3><span class="mw-headline" id="Old_format">Old format</span></h3>
+<p>The following implement the <a rel="nofollow" class="external text" href="http://wiki.vg/index.php?title=SMP_Map_Format&amp;oldid=7164">previous</a> (before 1.9) format:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/GlowstoneMC/Glowstone/blob/d3ed79ea7d284df1d2cd1945bf53d5652962a34f/src/main/java/net/glowstone/GlowChunk.java#L640">Java, 1.8</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/barneygale/smpmap">Python, 1.4</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/PrismarineJS/prismarine-chunk">Node.js, 1.8</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20180823001143
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.196 seconds
+Real time usage: 0.411 seconds
+Preprocessor visited node count: 384/1000000
+Preprocessor generated node count: 866/1000000
+Post‐expand include size: 2603/2097152 bytes
+Template argument size: 1767/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  142.489      1 - -total
+ 12.04%   17.155      2 - Template:Minecraft_Wiki
+  7.56%   10.769      2 - Template:Plainlink
+  7.02%   10.001      4 - Template:Warning2
+  4.62%    6.583      4 - Template:Anchor
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:278-0!*!0!!en!5!* and timestamp 20180823001143 and revision id 14135
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Chunk_Format&amp;oldid=14135">http://wiki.vg/index.php?title=Chunk_Format&amp;oldid=14135</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Chunk+Format" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Chunk+Format" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Chunk_Format.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Chunk_Format.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Chunk_Format.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Chunk_Format.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Chunk_Format&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Chunk_Format&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Chunk_Format.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Chunk_Format" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Chunk_Format" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Chunk_Format&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Chunk_Format&amp;oldid=14135" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Chunk_Format&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 18 July 2018, at 21:35.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":153});});</script>
+	</body>
+</html>

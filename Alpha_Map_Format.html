@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Alpha Map Format - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Alpha_Map_Format","wgTitle":"Alpha Map Format","wgCurRevisionId":1983,"wgRevisionId":1983,"wgArticleId":47,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Beta","File Formats"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Alpha_Map_Format","wgRelevantArticleId":47,"wgRequestId":"de92e29cc825b69048c4cac7","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Alpha_Map_Format rootpage-Alpha_Map_Format skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Alpha Map Format</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Alpha_Map_Format.html#mw-head">navigation</a>, 					<a href="Alpha_Map_Format.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Alpha worlds consist of several files, all held together in one folder under a very rigid directory structure.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Alpha_Map_Format.html#Level"><span class="tocnumber">1</span> <span class="toctext">Level</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Alpha_Map_Format.html#Chunks"><span class="tocnumber">2</span> <span class="toctext">Chunks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Alpha_Map_Format.html#The_Base-36_Algorithm"><span class="tocnumber">2.1</span> <span class="toctext">The Base-36 Algorithm</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="Alpha_Map_Format.html#Players"><span class="tocnumber">3</span> <span class="toctext">Players</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="Alpha_Map_Format.html#Beta_player_files"><span class="tocnumber">3.1</span> <span class="toctext">Beta player files</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Alpha_Map_Format.html#Other_formats"><span class="tocnumber">3.2</span> <span class="toctext">Other formats</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Alpha_Map_Format.html#Map_Generation"><span class="tocnumber">4</span> <span class="toctext">Map Generation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="Alpha_Map_Format.html#Noise"><span class="tocnumber">4.1</span> <span class="toctext">Noise</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Level">Level</span></h1>
+<p>The level is a file called "level.dat" in the root of the world.
+</p>
+<table class="wikitable">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> Data </td>
+<td> Compound </td>
+<td> General level data
+<table class="wikitable">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> RandomSeed </td>
+<td> Long </td>
+<td> The seed of the world, which is used to generate new geometry.
+</td></tr>
+<tr>
+<td> SpawnX </td>
+<td> Int </td>
+<td> The X coordinate of the default spawn point
+</td></tr>
+<tr>
+<td> SpawnY </td>
+<td> Int </td>
+<td> The Y coordinate of the default spawn point
+</td></tr>
+<tr>
+<td> SpawnZ </td>
+<td> Int </td>
+<td> The Z coordinate of the default spawn point
+</td></tr></table>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Chunks">Chunks</span></h1>
+<p>Chunks are stored in folders inside the world corresponding to their coordinates in base-36. The path is "&lt;base-36-x-63&gt;/&lt;base-36-z-63&gt;/c.&lt;base-36-x&gt;.&lt;base-36-z&gt;.dat", where &lt;base-36-x-63&gt; is the base-36 representation of the X coordinate of the chunk AND'd bitwise with 63.
+</p><p>For example, if we have the chunk coordinate (39, -13), we end up with the path 13/1f/c.13.-d.dat
+</p><p>The main world is stored in the root directory of the world. The Nether is stored in the "DIM-1" folder in the root and uses the same chunk folder system.
+</p>
+<h2><span class="mw-headline" id="The_Base-36_Algorithm">The Base-36 Algorithm</span></h2>
+<p>To retrieve the base-36 representation of a number, use the digits "0123456789abcdefghijklmnopqrstuvwxyz", and prefix the result with a hyphen ("-") if the number is negative.
+</p><p>Example code in Python, from <a href="https://wiki.vg/index.php?title=Beta&amp;action=edit&amp;redlink=1" class="new" title="Beta (page does not exist)">Beta</a>:
+</p>
+<pre>def base36(i):
+    """
+    Return the string representation of i in base 36, using lowercase letters.
+    """
+    letters = "0123456789abcdefghijklmnopqrstuvwxyz"
+    if i &lt; 0:
+        i = -i
+        signed = True
+    elif i == 0:
+        return "0"
+    else:
+        signed = False
+    s = ""
+    while i:
+        i, digit = divmod(i, 36)
+        s = letters[digit] + s
+    if signed:
+        s = "-" + s
+    return s
+</pre>
+<p>Example code in C#:
+</p><p><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">Base36Encode</span><span class="p">(</span><span class="kt">long</span> <span class="n">input</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">input</span> <span class="p">==</span> <span class="m">0</span><span class="p">){</span> <span class="k">return</span> <span class="s">&quot;0&quot;</span><span class="p">;</span> <span class="p">}</span>
+	<span class="kt">string</span> <span class="n">chars</span> <span class="p">=</span> <span class="s">&quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">;</span>
+	<span class="kt">bool</span> <span class="n">negative</span> <span class="p">=</span> <span class="p">(</span><span class="n">input</span> <span class="p">&lt;</span> <span class="m">0</span><span class="p">);</span>
+
+	<span class="n">StringBuilder</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">negative</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">input</span> <span class="p">=</span> <span class="p">-</span><span class="n">input</span><span class="p">;</span>
+		<span class="n">sb</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">input</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">sb</span><span class="p">.</span><span class="n">Insert</span><span class="p">((</span><span class="n">negative</span> <span class="p">?</span> <span class="m">1</span> <span class="p">:</span> <span class="m">0</span><span class="p">),</span> <span class="n">chars</span><span class="p">[(</span><span class="kt">int</span><span class="p">)(</span><span class="n">input</span> <span class="p">%</span> <span class="m">36</span><span class="p">)]);</span>
+		<span class="n">input</span> <span class="p">/=</span> <span class="m">36</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">sb</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="Players">Players</span></h1>
+<p>Persistent data for players is stored in a folder called "players". Each player has a file called "&lt;username&gt;.dat".
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Beta_player_files">Beta player files</span></h2>
+<p>Player files are <a href="NBT.html" title="NBT">NBT</a> encoded.
+</p><p>The file starts with a nameless TAG_Compound which contains all other data.
+</p>
+<table class="wikitable">
+<tr>
+<th> Tag Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> SleepTimer </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> Motion </td>
+<td> TAG_List(3 TAG_Double) </td>
+<td>
+</td></tr>
+<tr>
+<td> OnGround </td>
+<td> TAG_Byte </td>
+<td>
+</td></tr>
+<tr>
+<td> HurtTime </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> Health </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> Dimension </td>
+<td> TAG_Int </td>
+<td>
+</td></tr>
+<tr>
+<td> Air </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> Inventory </td>
+<td> TAG_List or TAG_Byte(when empty) </td>
+<td> See Inventory table below
+</td></tr>
+<tr>
+<td> Pos </td>
+<td> TAG_List(3 TAG_Double) </td>
+<td>
+</td></tr>
+<tr>
+<td> AttackTime </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> Sleeping </td>
+<td> TAG_Byte </td>
+<td>
+</td></tr>
+<tr>
+<td> Fire </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> FallDistance </td>
+<td> TAG_Float </td>
+<td>
+</td></tr>
+<tr>
+<td> Rotation </td>
+<td> TAG_List(2 TAG_Float) </td>
+<td>
+</td></tr>
+<tr>
+<td> DeathTime </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> SpawnX </td>
+<td> TAG_Int </td>
+<td> Only present when spawn is set elsewhere
+</td></tr>
+<tr>
+<td> SpawnY </td>
+<td> TAG_Int </td>
+<td> Only present when spawn is set elsewhere
+</td></tr>
+<tr>
+<td> SpawnZ </td>
+<td> TAG_Int </td>
+<td> Only present when spawn is set elsewhere
+</td></tr></table>
+<p><br />
+Inventory items are in the TAG_Compound format with the following tags:
+</p>
+<table class="wikitable">
+<tr>
+<th> Tag Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> Slot </td>
+<td> TAG_byte </td>
+<td>
+</td></tr>
+<tr>
+<td> id </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> Damage </td>
+<td> TAG_Short </td>
+<td>
+</td></tr>
+<tr>
+<td> Count </td>
+<td> TAG_Byte </td>
+<td>
+</td></tr></table>
+<h2><span class="mw-headline" id="Other_formats">Other formats</span></h2>
+<p>The following format is not used in Beta. 
+May be the Alpha format.
+</p>
+<table class="wikitable">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> Pos </td>
+<td> List of 3 doubles </td>
+<td> X, Y, and Z coordinates of the player position, in pixel coordinates
+</td></tr>
+<tr>
+<td> Rotation </td>
+<td> List of 2 doubles </td>
+<td> Yaw and pitch of the player, in degrees
+</td></tr></table>
+<h1><span class="mw-headline" id="Map_Generation">Map Generation</span></h1>
+<p>There are several approaches to map generation.
+</p>
+<h2><span class="mw-headline" id="Noise">Noise</span></h2>
+<p>Two-dimensional noise functions can be used to provide a terrain height at certain coordinates.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180822204232
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.026 seconds
+Real time usage: 0.053 seconds
+Preprocessor visited node count: 40/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:47-0!*!0!!en!*!* and timestamp 20180822204232 and revision id 1983
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Alpha_Map_Format&amp;oldid=1983">http://wiki.vg/index.php?title=Alpha_Map_Format&amp;oldid=1983</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Minecraft_Beta.html" title="Category:Minecraft Beta">Minecraft Beta</a></li><li><a href="https://wiki.vg/index.php?title=Category:File_Formats&amp;action=edit&amp;redlink=1" class="new" title="Category:File Formats (page does not exist)">File Formats</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Alpha+Map+Format" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Alpha+Map+Format" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Alpha_Map_Format.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Alpha_Map_Format.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Alpha_Map_Format.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Alpha_Map_Format.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Alpha_Map_Format&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Alpha_Map_Format&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Alpha_Map_Format.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Alpha_Map_Format" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Alpha_Map_Format" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Alpha_Map_Format&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Alpha_Map_Format&amp;oldid=1983" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Alpha_Map_Format&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 March 2012, at 20:21.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":142});});</script>
+	</body>
+</html>

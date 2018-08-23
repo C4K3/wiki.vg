@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Protocol FAQ - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Protocol_FAQ","wgTitle":"Protocol FAQ","wgCurRevisionId":13327,"wgRevisionId":13327,"wgArticleId":5,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Protocol Details","Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Protocol_FAQ","wgRelevantArticleId":5,"wgRequestId":"fc387acb711f277876b58769","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Protocol_FAQ rootpage-Protocol_FAQ skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Protocol FAQ</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Protocol_FAQ.html#mw-head">navigation</a>, 					<a href="Protocol_FAQ.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>People very, very often have questions regarding the Minecraft Modern <a href="Protocol.html" title="Protocol">Protocol</a>, so we'll try to address some of the most common ones on this document. If you're still having trouble, join us on IRC, channel <a rel="nofollow" class="external text" href="irc://irc.freenode.net/mcdevs">#mcdevs on irc.freenode.net</a>.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Protocol_FAQ.html#Is_the_protocol_documentation_complete.3F"><span class="tocnumber">1</span> <span class="toctext">Is the protocol documentation complete?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Protocol_FAQ.html#What.27s_the_normal_login_sequence_for_a_client.3F"><span class="tocnumber">2</span> <span class="toctext">What's the normal login sequence for a client?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Protocol_FAQ.html#I_think_I.27ve_done_everything_right.2C_but.E2.80.A6"><span class="tocnumber">3</span> <span class="toctext">I think I've done everything right, but…</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Protocol_FAQ.html#.E2.80.A6my_player_isn.27t_spawning.21"><span class="tocnumber">3.1</span> <span class="toctext">…my player isn't spawning!</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Protocol_FAQ.html#.E2.80.A6my_client_isn.27t_receiving_complete_map_chunks.21"><span class="tocnumber">3.2</span> <span class="toctext">…my client isn't receiving complete map chunks!</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Protocol_FAQ.html#.E2.80.A6all_connecting_clients_spasm_and_jerk_uncontrollably.21"><span class="tocnumber">3.3</span> <span class="toctext">…all connecting clients spasm and jerk uncontrollably!</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Protocol_FAQ.html#.E2.80.A6the_client_is_trying_to_send_an_invalid_packet_that_begins_with_0xFE01"><span class="tocnumber">3.4</span> <span class="toctext">…the client is trying to send an invalid packet that begins with 0xFE01</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="Protocol_FAQ.html#How_do_I_open.2Fsave_a_command_block.3F"><span class="tocnumber">4</span> <span class="toctext">How do I open/save a command block?</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Is_the_protocol_documentation_complete.3F">Is the protocol documentation complete?</span></h2>
+<p>Depending on your definition, <i>yes</i>! All packet types are known and their layout documented. Some finer details are missing, but everything you need to make functional programs is present. We also collect information on the <a href="Pre-release_protocol.html" title="Pre-release protocol">pre-release protocol</a> changes, allowing us to quickly document new releases.
+</p>
+<h2><span class="mw-headline" id="What.27s_the_normal_login_sequence_for_a_client.3F">What's the normal login sequence for a client?</span></h2>
+<p>See <a href="Authentication.html" title="Authentication">Authentication</a> for communication with Mojang's servers.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Information might not be totally up to date
+</span> 
+</p><p>The recommended login sequence looks like this, where <b>C</b> is the client and <b>S</b> is the server:
+</p>
+<ol><li> Client connects to server</li>
+<li> <b>C→S</b>: <a href="Protocol.html#Handshake" title="Protocol">Handshake</a> State=2</li>
+<li> <b>C→S</b>: <a href="Protocol.html#Login_Start" title="Protocol">Login Start</a></li>
+<li> <b>S→C</b>: <a href="Protocol.html#Encryption_Request" title="Protocol">Encryption Request</a></li>
+<li> Client auth</li>
+<li> <b>C→S</b>: <a href="Protocol.html#Encryption_Response" title="Protocol">Encryption Response</a></li>
+<li> Server auth, both enable encryption</li>
+<li> <b>S→C</b>: <a href="Protocol.html#Login_Success" title="Protocol">Login Success</a></li>
+<li> <b>S→C</b>: <a href="Protocol.html#Join_Game" title="Protocol">Join Game</a></li>
+<li> <b>S→C</b>: <a href="Protocol.html#Plugin_Message_.28clientbound.29" title="Protocol">Plugin Message</a>: <a href="Plugin_channel.html#MC.7CBrand" class="mw-redirect" title="Plugin channel"><code>MC|Brand</code></a> with the server's brand (Optional)</li>
+<li> <b>S→C</b>: <a href="Protocol.html#Server_Difficulty" title="Protocol">Server Difficulty</a> (Optional)</li>
+<li> <b>S→C</b>: <a href="Protocol.html#Spawn_Position" title="Protocol">Spawn Position</a> (“home” spawn, not where the client will spawn on login)</li>
+<li> <b>S→C</b>: <a href="Protocol.html#Player_Abilities_.28clientbound.29" title="Protocol">Player Abilities</a></li>
+<li> <b>C→S</b>: <a href="Protocol.html#Plugin_Message_.28serverbound.29" title="Protocol">Plugin Message</a>: <a href="Plugin_channel.html#MC.7CBrand" class="mw-redirect" title="Plugin channel"><code>MC|Brand</code></a> with the client's brand (Optional)</li>
+<li> <b>C→S</b>: <a href="Protocol.html#Client_Settings" title="Protocol">Client Settings</a></li>
+<li> <b>S→C</b>: <a href="Protocol.html#Player_Position_And_Look_.28clientbound.29" title="Protocol">Player Position And Look</a> (Required, tells the client they're ready to spawn)</li>
+<li> <b>C→S</b>: <a href="Protocol.html#Teleport_Confirm" title="Protocol">Teleport Confirm</a></li>
+<li> <b>C→S</b>: <a href="Protocol.html#Player_Position_And_Look_.28serverbound.29" title="Protocol">Player Position And Look</a> (to confirm the spawn position)</li>
+<li> <b>C→S</b>: <a href="Protocol.html#Client_Status" title="Protocol">Client Status</a> (sent either before or while receiving chunks, further testing needed, server handles correctly if not sent)</li>
+<li> <b>S→C</b>: inventory, <a href="Protocol.html#Chunk_Data" title="Protocol">Chunk Data</a>, entities, etc</li></ol>
+<h2><span class="mw-headline" id="I_think_I.27ve_done_everything_right.2C_but.E2.80.A6">I think I've done everything right, but…</span></h2>
+<h3><span class="mw-headline" id=".E2.80.A6my_player_isn.27t_spawning.21">…my player isn't spawning!</span></h3>
+<p>After sending the common-sense packets (<a href="Protocol.html#Handshake" title="Protocol">Handshake</a>, <a href="Protocol.html#Login_Start" title="Protocol">Login Start</a>, <a href="Protocol.html#Window_Items" title="Protocol">inventory</a>, <a href="Protocol.html#Spawn_Position" title="Protocol">compass</a>, and <a href="Protocol.html#Chunk_Data" title="Protocol">chunks</a>), you need to finally send the player their <a href="Protocol.html#Player_Position_And_Look" title="Protocol">initial position</a> for them to leave the “Loading Map” screen.
+</p><p><i>Note that if the following steps are taken, a Minecraft client will spawn the player:</i>
+</p>
+<ol><li> Do Handshake (see <a href="Protocol_Encryption.html" title="Protocol Encryption">Protocol Encryption</a>)</li>
+<li> Send <a href="Protocol.html#Spawn_Position" title="Protocol">Spawn Position</a> packet</li>
+<li> Send <a href="Protocol.html#Player_Position_And_Look" title="Protocol">Player Position And Look</a> packet</li></ol>
+<p>While the above steps are sufficient for Minecraft 1.4.5, it is good form to send packets that inform the client about the world around the player before allowing the player to spawn.
+</p>
+<h3><span class="mw-headline" id=".E2.80.A6my_client_isn.27t_receiving_complete_map_chunks.21">…my client isn't receiving complete map chunks!</span></h3>
+<p><i>Main article: <a href="How_to_Write_a_Client.html" title="How to Write a Client">How to Write a Client</a></i>
+</p><p>The standard Minecraft server sends full chunks only when your client is sending player status update packets (any of <a href="Protocol.html#Player" title="Protocol">Player (0x03)</a> through <a href="Protocol.html#Player_Position_And_Look" title="Protocol">Player Position And Look (0x06)</a>).
+</p>
+<h3><span class="mw-headline" id=".E2.80.A6all_connecting_clients_spasm_and_jerk_uncontrollably.21">…all connecting clients spasm and jerk uncontrollably!</span></h3>
+<p>For newer clients, your server needs to send 49 chunks ahead of time, not just one. Send a 7×7 square of chunks, centered on the connecting client's position, <i>before</i> spawning them.
+</p>
+<h3><span class="mw-headline" id=".E2.80.A6the_client_is_trying_to_send_an_invalid_packet_that_begins_with_0xFE01">…the client is trying to send an invalid packet that begins with 0xFE01</span></h3>
+<p>The client is attempting a <a href="Server_List_Ping.html#1.6" title="Server List Ping">legacy ping</a>, this happens if your server did not respond to the <a href="Server_List_Ping.html" title="Server List Ping">Server List Ping</a> properly, including if it sent malformed json.
+</p>
+<h2><span class="mw-headline" id="How_do_I_open.2Fsave_a_command_block.3F">How do I open/save a command block?</span></h2>
+<p>The process to actually open the command block window clientside is somewhat complex; the client actually uses the <a href="Protocol.html#Update_Block_Entity" title="Protocol">Update Block Entity (0x09)</a> packet to open it.
+</p><p>First, the client must have at least an <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Server.properties%23op-permission-level">OP permission level</a></span> of 2, or else the client will refuse to open the command block.  (The op permission level is set with the <a href="Protocol.html#Entity_Status" title="Protocol">Entity Status</a> packet)
+</p><p>To actually open the command block:
+</p>
+<ol><li> <b>C</b>→<b>S</b>: <a href="Protocol.html#Player_Block_Placement" title="Protocol">Player Block Placement (0x1C)</a>, with the position being the command block that was right-clicked.</li>
+<li> <b>S</b>→<b>C</b>: <a href="Protocol.html#Update_Block_Entity" title="Protocol">Update Block Entity (0x09)</a>, with the NBT of the command block.</li></ol>
+<p>And to save it, use the <a href="Plugin_channels.html#MC.7CAutoCmd" title="Plugin channels"><code>MC|AutoCmd</code> plugin channel</a>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823152736
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.054 seconds
+Real time usage: 0.073 seconds
+Preprocessor visited node count: 54/1000000
+Preprocessor generated node count: 174/1000000
+Post‐expand include size: 492/2097152 bytes
+Template argument size: 188/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   17.877      1 - -total
+ 66.47%   11.882      1 - Template:Minecraft_Wiki
+ 34.36%    6.143      1 - Template:Plainlink
+ 30.23%    5.405      1 - Template:Warning
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:5-0!*!0!!en!5!* and timestamp 20180823152736 and revision id 13327
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Protocol_FAQ&amp;oldid=13327">http://wiki.vg/index.php?title=Protocol_FAQ&amp;oldid=13327</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Protocol_Details.html" title="Category:Protocol Details">Protocol Details</a></li><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Protocol+FAQ" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Protocol+FAQ" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Protocol_FAQ.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Protocol_FAQ.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Protocol_FAQ.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Protocol_FAQ.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Protocol_FAQ&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Protocol_FAQ&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Protocol_FAQ.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Protocol_FAQ" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Protocol_FAQ" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Protocol_FAQ&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Protocol_FAQ&amp;oldid=13327" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Protocol_FAQ&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 31 August 2017, at 23:06.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":148});});</script>
+	</body>
+</html>

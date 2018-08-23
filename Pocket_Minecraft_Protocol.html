@@ -1,0 +1,4045 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Pocket Minecraft Protocol - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pocket_Minecraft_Protocol","wgTitle":"Pocket Minecraft Protocol","wgCurRevisionId":13541,"wgRevisionId":13541,"wgArticleId":121,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pocket Minecraft"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pocket_Minecraft_Protocol","wgRelevantArticleId":121,"wgRequestId":"202d43a07e128cdc4fed8514","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pocket_Minecraft_Protocol rootpage-Pocket_Minecraft_Protocol skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Pocket Minecraft Protocol</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Pocket_Minecraft_Protocol.html#mw-head">navigation</a>, 					<a href="Pocket_Minecraft_Protocol.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Unlike the Minecraft protocol, this protocol uses UDP with (so far observed, at least) one message per packet. This makes the protocol easier to work with when it comes to packet serialization, and might offer latency improvements, but will inevitably have the usual UDP issues (packets lost, truncated, duplicated, out-of-order, etc.).
+</p><p><b>As of 0.9.0, clients appear to search for servers on only port 19132.</b>
+</p><p>Clients don't pick any specific port to listen on.
+</p><p><br />
+Please note that even where packet field names are written in this page, these are still largely hypothetical and could well be incorrect guesses. Some packets are fixed to the RakNet protocol, and will be marked as "RakNet Packet", which means that these packets will not change on future versions.
+</p><p>It has been determined that PM uses RakNet for its networking library, <a rel="nofollow" class="external text" href="http://www.jenkinssoftware.com/raknet/manual/networkmessages.html">some documentation that seems relevant</a>.
+</p><p><br />
+The <a href="Pocket_Editon_Login.html" class="mw-redirect" title="Pocket Editon Login">login sequence</a> is not covered by this page.
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Pocket_Minecraft_Protocol.html#Terminology"><span class="tocnumber">1</span> <span class="toctext">Terminology</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Pocket_Minecraft_Protocol.html#Types"><span class="tocnumber">2</span> <span class="toctext">Types</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Pocket_Minecraft_Protocol.html#Login_Packets"><span class="tocnumber">3</span> <span class="toctext">Login Packets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Pocket_Minecraft_Protocol.html#ID_CONNECTED_PING_OPEN_CONNECTIONS_.280x01.29"><span class="tocnumber">3.1</span> <span class="toctext">ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01)</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Pocket_Minecraft_Protocol.html#ID_UNCONNECTED_PING_OPEN_CONNECTIONS_.280x02.29"><span class="tocnumber">3.2</span> <span class="toctext">ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x02)</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Pocket_Minecraft_Protocol.html#ID_OPEN_CONNECTION_REQUEST_1_.280x05.29"><span class="tocnumber">3.3</span> <span class="toctext">ID_OPEN_CONNECTION_REQUEST_1 (0x05)</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Pocket_Minecraft_Protocol.html#ID_OPEN_CONNECTION_REPLY_1_.280x06.29"><span class="tocnumber">3.4</span> <span class="toctext">ID_OPEN_CONNECTION_REPLY_1 (0x06)</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Pocket_Minecraft_Protocol.html#ID_OPEN_CONNECTION_REQUEST_2_.280x07.29"><span class="tocnumber">3.5</span> <span class="toctext">ID_OPEN_CONNECTION_REQUEST_2 (0x07)</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Pocket_Minecraft_Protocol.html#ID_OPEN_CONNECTION_REPLY_2_.280x08.29"><span class="tocnumber">3.6</span> <span class="toctext">ID_OPEN_CONNECTION_REPLY_2 (0x08)</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Pocket_Minecraft_Protocol.html#ID_INCOMPATIBLE_PROTOCOL_VERSION_.280x1A.29"><span class="tocnumber">3.7</span> <span class="toctext">ID_INCOMPATIBLE_PROTOCOL_VERSION (0x1A)</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Pocket_Minecraft_Protocol.html#ID_UNCONNECTED_PING_OPEN_CONNECTIONS_.280x1C.29"><span class="tocnumber">3.8</span> <span class="toctext">ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Pocket_Minecraft_Protocol.html#ID_ADVERTISE_SYSTEM_.280x1D.29"><span class="tocnumber">3.9</span> <span class="toctext">ID_ADVERTISE_SYSTEM (0x1D)</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Pocket_Minecraft_Protocol.html#Custom_Packet_.280x80-0x8F.29"><span class="tocnumber">3.10</span> <span class="toctext">Custom Packet (0x80-0x8F)</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Pocket_Minecraft_Protocol.html#NAK_.280xA0.29"><span class="tocnumber">3.11</span> <span class="toctext">NAK (0xA0)</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="Pocket_Minecraft_Protocol.html#ACK_.280xC0.29"><span class="tocnumber">3.12</span> <span class="toctext">ACK (0xC0)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="Pocket_Minecraft_Protocol.html#Packet_Encapsulation_format"><span class="tocnumber">4</span> <span class="toctext">Packet Encapsulation format</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="Pocket_Minecraft_Protocol.html#0x00"><span class="tocnumber">4.1</span> <span class="toctext">0x00</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="Pocket_Minecraft_Protocol.html#0x40"><span class="tocnumber">4.2</span> <span class="toctext">0x40</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="Pocket_Minecraft_Protocol.html#0x60"><span class="tocnumber">4.3</span> <span class="toctext">0x60</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="Pocket_Minecraft_Protocol.html#Encapsulated_Login_packets"><span class="tocnumber">5</span> <span class="toctext">Encapsulated Login packets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="Pocket_Minecraft_Protocol.html#Client_Connect_.280x09.29"><span class="tocnumber">5.1</span> <span class="toctext">Client Connect (0x09)</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="Pocket_Minecraft_Protocol.html#Server_Handshake_.280x10.29"><span class="tocnumber">5.2</span> <span class="toctext">Server Handshake (0x10)</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="Pocket_Minecraft_Protocol.html#Client_Handshake_.280x13.29"><span class="tocnumber">5.3</span> <span class="toctext">Client Handshake (0x13)</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="Pocket_Minecraft_Protocol.html#Client_Cancel_Connect_.280x15.29"><span class="tocnumber">5.4</span> <span class="toctext">Client Cancel Connect (0x15)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="Pocket_Minecraft_Protocol.html#Ping.2FPong"><span class="tocnumber">6</span> <span class="toctext">Ping/Pong</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="Pocket_Minecraft_Protocol.html#Ping_Packet_.280x00.29"><span class="tocnumber">6.1</span> <span class="toctext">Ping Packet (0x00)</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="Pocket_Minecraft_Protocol.html#Pong_Packet_.280x03.29"><span class="tocnumber">6.2</span> <span class="toctext">Pong Packet (0x03)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="Pocket_Minecraft_Protocol.html#Data_Packets"><span class="tocnumber">7</span> <span class="toctext">Data Packets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="Pocket_Minecraft_Protocol.html#LoginPacket_.280x82.29"><span class="tocnumber">7.1</span> <span class="toctext">LoginPacket (0x82)</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="Pocket_Minecraft_Protocol.html#LoginStatusPacket_.280x83.29"><span class="tocnumber">7.2</span> <span class="toctext">LoginStatusPacket (0x83)</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="Pocket_Minecraft_Protocol.html#ReadyPacket_.280x84.29"><span class="tocnumber">7.3</span> <span class="toctext">ReadyPacket (0x84)</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="Pocket_Minecraft_Protocol.html#MessagePacket_.280x85.29"><span class="tocnumber">7.4</span> <span class="toctext">MessagePacket (0x85)</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="Pocket_Minecraft_Protocol.html#SetTimePacket_.280x86.29"><span class="tocnumber">7.5</span> <span class="toctext">SetTimePacket (0x86)</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="Pocket_Minecraft_Protocol.html#StartGamePacket_.280x87.29"><span class="tocnumber">7.6</span> <span class="toctext">StartGamePacket (0x87)</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="Pocket_Minecraft_Protocol.html#AddMobPacket_.280x88.29"><span class="tocnumber">7.7</span> <span class="toctext">AddMobPacket (0x88)</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="Pocket_Minecraft_Protocol.html#AddPlayerPacket_.280x89.29"><span class="tocnumber">7.8</span> <span class="toctext">AddPlayerPacket (0x89)</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="Pocket_Minecraft_Protocol.html#RemovePlayerPacket_.280x8a.29"><span class="tocnumber">7.9</span> <span class="toctext">RemovePlayerPacket (0x8a)</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="Pocket_Minecraft_Protocol.html#AddEntityPacket_.280x8c.29"><span class="tocnumber">7.10</span> <span class="toctext">AddEntityPacket (0x8c)</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="Pocket_Minecraft_Protocol.html#RemoveEntityPacket_.280x8d.29"><span class="tocnumber">7.11</span> <span class="toctext">RemoveEntityPacket (0x8d)</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="Pocket_Minecraft_Protocol.html#AddItemEntityPacket_.280x8e.29"><span class="tocnumber">7.12</span> <span class="toctext">AddItemEntityPacket (0x8e)</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="Pocket_Minecraft_Protocol.html#TakeItemEntityPacket_.280x8f.29"><span class="tocnumber">7.13</span> <span class="toctext">TakeItemEntityPacket (0x8f)</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="Pocket_Minecraft_Protocol.html#MoveEntityPacket_.280x90.29"><span class="tocnumber">7.14</span> <span class="toctext">MoveEntityPacket (0x90)</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="Pocket_Minecraft_Protocol.html#MoveEntityPacket_PosRot_.280x93.29"><span class="tocnumber">7.15</span> <span class="toctext">MoveEntityPacket_PosRot (0x93)</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="Pocket_Minecraft_Protocol.html#MovePlayerPacket_.280x94.29"><span class="tocnumber">7.16</span> <span class="toctext">MovePlayerPacket (0x94)</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="Pocket_Minecraft_Protocol.html#PlaceBlockPacket_.280x95.29"><span class="tocnumber">7.17</span> <span class="toctext">PlaceBlockPacket (0x95)</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="Pocket_Minecraft_Protocol.html#RemoveBlockPacket_.280x96.29"><span class="tocnumber">7.18</span> <span class="toctext">RemoveBlockPacket (0x96)</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="Pocket_Minecraft_Protocol.html#UpdateBlockPacket_.280x97.29"><span class="tocnumber">7.19</span> <span class="toctext">UpdateBlockPacket (0x97)</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="Pocket_Minecraft_Protocol.html#AddPaintingPacket_.280x98.29"><span class="tocnumber">7.20</span> <span class="toctext">AddPaintingPacket (0x98)</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="Pocket_Minecraft_Protocol.html#ExplodePacket_.280x99.29"><span class="tocnumber">7.21</span> <span class="toctext">ExplodePacket (0x99)</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="Pocket_Minecraft_Protocol.html#LevelEventPacket_.280x9a.29"><span class="tocnumber">7.22</span> <span class="toctext">LevelEventPacket (0x9a)</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="Pocket_Minecraft_Protocol.html#TileEventPacket_.280x9b.29"><span class="tocnumber">7.23</span> <span class="toctext">TileEventPacket (0x9b)</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="Pocket_Minecraft_Protocol.html#EntityEventPacket_.280x9c.29"><span class="tocnumber">7.24</span> <span class="toctext">EntityEventPacket (0x9c)</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="Pocket_Minecraft_Protocol.html#RequestChunkPacket_.280x9d.29"><span class="tocnumber">7.25</span> <span class="toctext">RequestChunkPacket (0x9d)</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="Pocket_Minecraft_Protocol.html#ChunkDataPacket_.280x9e.29"><span class="tocnumber">7.26</span> <span class="toctext">ChunkDataPacket (0x9e)</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="Pocket_Minecraft_Protocol.html#PlayerEquipmentPacket_.280x9f.29"><span class="tocnumber">7.27</span> <span class="toctext">PlayerEquipmentPacket (0x9f)</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="Pocket_Minecraft_Protocol.html#PlayerArmorEquipmentPacket_.280xa0.29"><span class="tocnumber">7.28</span> <span class="toctext">PlayerArmorEquipmentPacket (0xa0)</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="Pocket_Minecraft_Protocol.html#InteractPacket_.280xa1.29"><span class="tocnumber">7.29</span> <span class="toctext">InteractPacket (0xa1)</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="Pocket_Minecraft_Protocol.html#UseItemPacket_.280xa2.29"><span class="tocnumber">7.30</span> <span class="toctext">UseItemPacket (0xa2)</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="Pocket_Minecraft_Protocol.html#PlayerActionPacket_.280xa3.29"><span class="tocnumber">7.31</span> <span class="toctext">PlayerActionPacket (0xa3)</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="Pocket_Minecraft_Protocol.html#HurtArmorPacket_.280xa5.29"><span class="tocnumber">7.32</span> <span class="toctext">HurtArmorPacket (0xa5)</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="Pocket_Minecraft_Protocol.html#SetEntityDataPacket_.280xa6.29"><span class="tocnumber">7.33</span> <span class="toctext">SetEntityDataPacket (0xa6)</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="Pocket_Minecraft_Protocol.html#SetEntityMotionPacket_.280xa7.29"><span class="tocnumber">7.34</span> <span class="toctext">SetEntityMotionPacket (0xa7)</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="Pocket_Minecraft_Protocol.html#SetRidingPacket_.280xa8.29"><span class="tocnumber">7.35</span> <span class="toctext">SetRidingPacket (0xa8)</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="Pocket_Minecraft_Protocol.html#SetHealthPacket_.280xa9.29"><span class="tocnumber">7.36</span> <span class="toctext">SetHealthPacket (0xa9)</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="Pocket_Minecraft_Protocol.html#SetSpawnPositionPacket_.280xaa.29"><span class="tocnumber">7.37</span> <span class="toctext">SetSpawnPositionPacket (0xaa)</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="Pocket_Minecraft_Protocol.html#AnimatePacket_.280xab.29"><span class="tocnumber">7.38</span> <span class="toctext">AnimatePacket (0xab)</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="Pocket_Minecraft_Protocol.html#RespawnPacket_.280xac.29"><span class="tocnumber">7.39</span> <span class="toctext">RespawnPacket (0xac)</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="Pocket_Minecraft_Protocol.html#SendInventoryPacket_.280xad.29"><span class="tocnumber">7.40</span> <span class="toctext">SendInventoryPacket (0xad)</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="Pocket_Minecraft_Protocol.html#DropItemPacket_.280xae.29"><span class="tocnumber">7.41</span> <span class="toctext">DropItemPacket (0xae)</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="Pocket_Minecraft_Protocol.html#ContainerOpenPacket_.280xaf.29"><span class="tocnumber">7.42</span> <span class="toctext">ContainerOpenPacket (0xaf)</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="Pocket_Minecraft_Protocol.html#ContainerClosePacket_.280xb0.29"><span class="tocnumber">7.43</span> <span class="toctext">ContainerClosePacket (0xb0)</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="Pocket_Minecraft_Protocol.html#ContainerSetSlotPacket_.280xb1.29"><span class="tocnumber">7.44</span> <span class="toctext">ContainerSetSlotPacket (0xb1)</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="Pocket_Minecraft_Protocol.html#ContainerSetDataPacket_.280xb2.29"><span class="tocnumber">7.45</span> <span class="toctext">ContainerSetDataPacket (0xb2)</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="Pocket_Minecraft_Protocol.html#ContainerSetContentPacket_.280xb3.29"><span class="tocnumber">7.46</span> <span class="toctext">ContainerSetContentPacket (0xb3)</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="Pocket_Minecraft_Protocol.html#ContainerAckPacket_.280xb4.29"><span class="tocnumber">7.47</span> <span class="toctext">ContainerAckPacket (0xb4)</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="Pocket_Minecraft_Protocol.html#ChatPacket_.280xb5.29"><span class="tocnumber">7.48</span> <span class="toctext">ChatPacket (0xb5)</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="Pocket_Minecraft_Protocol.html#SignUpdatePacket_.280xb6.29"><span class="tocnumber">7.49</span> <span class="toctext">SignUpdatePacket (0xb6)</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="Pocket_Minecraft_Protocol.html#AdventureSettingsPacket_.280xb7.29"><span class="tocnumber">7.50</span> <span class="toctext">AdventureSettingsPacket (0xb7)</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Terminology">Terminology</span></h2>
+<dl><dt>PM</dt>
+<dd>Pocket Minecraft (aka Minecraft PE or Minecraft Pocket Edition)</dd></dl>
+<h2><span class="mw-headline" id="Types">Types</span></h2>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0">
+</td>
+<th class="col1"> Size
+</th>
+<th class="col2"> Range
+</th>
+<th class="col3"> Notes
+</th></tr>
+<tr class="row1">
+<th class="col0 centeralign"> byte
+</th>
+<td class="col1 centeralign"> 1
+</td>
+<td class="col2"> -128 to 127
+</td>
+<td class="col3"> Signed, two's complement
+</td></tr>
+<tr class="row2">
+<th class="col0 centeralign"> short
+</th>
+<td class="col1 centeralign"> 2
+</td>
+<td class="col2"> -32768 to 32767
+</td>
+<td class="col3"> Signed, two's complement
+</td></tr>
+<tr class="row3">
+<th class="col0 centeralign"> int32
+</th>
+<td class="col1 centeralign"> 4
+</td>
+<td class="col2"> -2147483648 to 2147483647
+</td>
+<td class="col3"> Signed, two's complement
+</td></tr>
+<tr class="row4">
+<th class="col0 centeralign"> int64
+</th>
+<td class="col1 centeralign"> 8
+</td>
+<td class="col2">
+</td>
+<td class="col3"> Maybe a double?
+</td></tr>
+<tr class="row5">
+<th class="col0 centeralign"> MAGIC
+</th>
+<td class="col1 centeralign"> 16
+</td>
+<td class="col2"> <code>0x00ffff00fefefefefdfdfdfd12345678</code>
+</td>
+<td class="col3"> always those hex bytes, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
+</td></tr>
+<tr class="row6">
+<th class="col0 centeralign"> string
+</th>
+<td class="col1 centeralign"> = 1
+</td>
+<td class="col2"> N/A
+</td>
+<td class="col3"> Prefixed by a short containing the length of the string in characters. It appears that only the following ASCII characters can be displayed:&#160;!"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+</td></tr></table>
+<h2><span class="mw-headline" id="Login_Packets">Login Packets</span></h2>
+<p>All packets start with a single byte that identifies the packet type, the rest of the packet follows it.
+Please note that packets 0x09 through 0x13 are not documented (yet).
+</p><p><br />
+<span id="0x01"></span>
+</p>
+<h3><span class="mw-headline" id="ID_CONNECTED_PING_OPEN_CONNECTIONS_.280x01.29">ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01)</span></h3>
+<p><i>Client to Broadcast</i>
+</p><p><br />
+<b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x01
+</td>
+<td class="col1 centeralign"> Ping ID
+</td>
+<td class="col2 centeralign"> int64
+</td>
+<td class="col3 centeralign"> <code>0x00000000003c6d0d</code>
+</td>
+<td class="col4"> Time since start in Milliseconds
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> MAGIC
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign">
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row3">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 25 Bytes
+</td></tr></table>
+<p>Clients start out by sending this packet to the IP broadcast address on port 19132 repeatedly (approx once per second) when joining a server was chosen on the main screen, and stops when the user selects a server (or leaves the screen). The ping ID from the client increases over time, and appears to be the number of milliseconds since the client program was started (might be used to measure server response latency).
+</p><p><br />
+<span id="0x02"></span>
+</p>
+<h3><span class="mw-headline" id="ID_UNCONNECTED_PING_OPEN_CONNECTIONS_.280x02.29">ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x02)</span></h3>
+<p><i>Client to Broadcast</i>
+</p><p><b>NOTE: THIS PACKET APPEARS TO BE UNUSED. Use a 0x01 packet instead</b>
+</p><p><b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x02
+</td>
+<td class="col1 centeralign"> Ping ID
+</td>
+<td class="col2 centeralign"> int64
+</td>
+<td class="col3 centeralign"> <code>0x00000000003c6d0d</code>
+</td>
+<td class="col4"> Time since start in Milliseconds
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> MAGIC
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign">
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row3">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 25 Bytes
+</td></tr></table>
+<p>Same as <a href="Pocket_Minecraft_Protocol.html#0x01">ID_CONNECTED_PING_OPEN_CONNECTIONS (0x01)</a>, but with the Packet ID changed.
+</p><p><br />
+<span id="0x05"></span>
+</p>
+<h3><span class="mw-headline" id="ID_OPEN_CONNECTION_REQUEST_1_.280x05.29">ID_OPEN_CONNECTION_REQUEST_1 (0x05)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+<b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x05
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign"> MAGIC
+</td>
+<td class="col3 centeralign">
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> RakNet Protocol Version
+</td>
+<td class="col1 centeralign"> byte
+</td>
+<td class="col2 centeralign"> <code>5</code>
+</td>
+<td class="col3"> Check the Data Packet section for the current version
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Null Payload
+</td>
+<td class="col1 centeralign"> many 0x00 bytes
+</td>
+<td class="col2 centeralign"> <code>0x00 * 1447</code>
+</td>
+<td class="col3"> MTU (Maximum Transport Unit)
+</td></tr>
+<tr class="row4">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 18 Bytes + length of Null Payload
+</td></tr></table>
+<p>If the version is different than yours, reply with a 
+<a href="Pocket_Minecraft_Protocol.html#0x1A">ID_INCOMPATIBLE_PROTOCOL_VERSION (0x1A)</a>
+</p><p>Sent from the client after the player taps on the server in the world list The client will repeatedly send this with reducing sizes until it successfully receives a reply. Observed behaviour is that the client will send packets ~0.5s apart in the following way, until it gets a 0x06 response packet, or reaches the end of these:
+</p>
+<ul><li> 4 packets of Null Payload length of 1447</li>
+<li> 4 packets of Null Payload length of 1155</li>
+<li> 5 packets of Null Payload length of 531</li></ul>
+<p>If the server doesnt't reply the client, the client will display a "Connect Error" window
+</p><p><br />
+</p><p><span id="0x06"></span>
+</p>
+<h3><span class="mw-headline" id="ID_OPEN_CONNECTION_REPLY_1_.280x06.29">ID_OPEN_CONNECTION_REPLY_1 (0x06)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+<b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x06
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign"> MAGIC
+</td>
+<td class="col3 centeralign">
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Server ID
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code>0x00000000372cdc9e</code>
+</td>
+<td class="col3"> This value seems to be constant for an installation of PM, or differs between the demo and full version.
+</td></tr>
+<tr class="row3">
+<td class="col0 centeralign"> Server Security
+</td>
+<td class="col1 centeralign"> byte
+</td>
+<td class="col2 centeralign"> <code>0</code>
+</td>
+<td class="col3"> Always 0
+</td></tr>
+<tr class="row4">
+<td class="col0 centeralign"> MTU Size
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> <code>1447</code>
+</td>
+<td class="col3"> length of 0x05. Used to determine packet loss and max UDP packet size (MTU)
+</td></tr>
+<tr class="row5">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 28 Bytes
+</td></tr></table>
+<p>Sent from server after it receives packet 0x05.
+</p><p><br />
+</p><p><span id="0x07"></span>
+</p>
+<h3><span class="mw-headline" id="ID_OPEN_CONNECTION_REQUEST_2_.280x07.29">ID_OPEN_CONNECTION_REQUEST_2 (0x07)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+<b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="5"> 0x07
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign"> MAGIC
+</td>
+<td class="col3 centeralign">
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Security + Cookie
+</td>
+<td class="col1 centeralign"> 1 + 4 bytes
+</td>
+<td class="col2 centeralign"> <code>0x043f57fefd</code>
+</td>
+<td class="col3"> Unused, <b>not</b> constant value*, but usually similar to <code>0x043f57fefd</code>
+</td></tr>
+<tr class="row3">
+<td class="col0 centeralign"> Server UDP Port
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> <code>19132</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row4">
+<td class="col0 centeralign"> MTU Size
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> <code>1464</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row5">
+<td class="col0 centeralign"> Client ID
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code>0x00000000372cdc9e</code>
+</td>
+<td class="col3"> The Client / Server ID will be the same for a given device
+</td></tr>
+<tr class="row6">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 34 Bytes
+</td></tr></table>
+<p>Sent from client in response to packet 0x06.
+</p>
+<ul><li> Instances have been observed where the value <code>0x043f57fefd</code> is not always present, but similar values are sent.</li></ul>
+<p><span id="0x08"></span>
+</p>
+<h3><span class="mw-headline" id="ID_OPEN_CONNECTION_REPLY_2_.280x08.29">ID_OPEN_CONNECTION_REPLY_2 (0x08)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+<b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="5"> 0x08
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign"> MAGIC
+</td>
+<td class="col3 centeralign">
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Server ID
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code>0x00000000372cdc9e</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row3">
+<td class="col0 centeralign"> Client UDP Port
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> <code>46946</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row4">
+<td class="col0 centeralign"> MTU Size
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> <code>1464</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row5">
+<td class="col0 centeralign"> Security
+</td>
+<td class="col1 centeralign"> byte
+</td>
+<td class="col2 centeralign"> <code>0</code>
+</td>
+<td class="col3"> Always 0
+</td></tr>
+<tr class="row6">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 30 Bytes
+</td></tr></table>
+<p>Sent from server in response to packet 0x07.
+</p><p><br />
+</p><p><span id="0x1A"></span>
+</p>
+<h3><span class="mw-headline" id="ID_INCOMPATIBLE_PROTOCOL_VERSION_.280x1A.29">ID_INCOMPATIBLE_PROTOCOL_VERSION (0x1A)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+<b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x1A
+</td>
+<td class="col1 centeralign"> Protocol Version
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> MAGIC
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign">
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Server ID
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code>0x00000000372cdc9e</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row3">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 26 Bytes
+</td></tr></table>
+<p>Sent when the server doesn't support the RakNet protocol specified in 0x05.
+</p><p><br />
+<span id="0x1C"></span>
+</p>
+<h3><span class="mw-headline" id="ID_UNCONNECTED_PING_OPEN_CONNECTIONS_.280x1C.29">ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+<b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x1C
+</td>
+<td class="col1 centeralign"> Ping ID
+</td>
+<td class="col2 centeralign"> int64
+</td>
+<td class="col3 centeralign"> <code>0x00000000003c6d0d</code>
+</td>
+<td class="col4"> Time since start in Milliseconds
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Server ID
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code>0x00000000372cdc9e</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row3">
+<td class="col0 centeralign"> MAGIC
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign">
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row4">
+<td class="col0 centeralign"> Identifier
+</td>
+<td class="col1 centeralign"> string
+</td>
+<td class="col2 centeralign"> "MCPE;Steve;2 7;0.11.0;0;20"
+</td>
+<td class="col3"> Used to send the username, format: <code>MCPE;&lt;Server name&gt;;&lt;Protocol version&gt;;&lt;MCPE Version&gt;;&lt;Players&gt;;&lt;Max Players&gt;</code>
+</td></tr>
+<tr class="row6">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 35 Bytes + Server name length
+</td></tr></table>
+<p>Server sends this packet in response to a 0x01 packet.
+If the Server is invisible, this packet will be sent without username
+</p><p><s>In order for the server to show up in the world list, the server name must have "MCCPP;MINECON;" in front of it.</s>
+<b>Since MCPE 0.11.0, the server name has a different format.</b>
+</p><p><br />
+<span id="0x1D"></span>
+</p>
+<h3><span class="mw-headline" id="ID_ADVERTISE_SYSTEM_.280x1D.29">ID_ADVERTISE_SYSTEM (0x1D)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+<b>RakNet Packet</b>
+</p><p><b>THIS PACKET IS UNUSED, Use a 0x1c packet instead.</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x1D
+</td>
+<td class="col1 centeralign"> Ping ID
+</td>
+<td class="col2 centeralign"> int64
+</td>
+<td class="col3 centeralign"> <code>0x00000000003c6d0d</code>
+</td>
+<td class="col4"> Time since start in Milliseconds
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Server ID
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code>0x00000000372cdc9e</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row4">
+<td class="col0 centeralign"> MAGIC
+</td>
+<td class="col1 centeralign"> MAGIC
+</td>
+<td class="col2 centeralign">
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Data
+</td>
+<td class="col1 centeralign"> string
+</td>
+<td class="col2 centeralign"> <code>MCPE;Steve;2 7;0.11.0;0;20</code>
+</td>
+<td class="col3"> Used to send the username, format: MCPE;&lt;Server name&gt;;&lt;Protocol version&gt;;&lt;MCPE Version&gt;;&lt;Players&gt;;&lt;Max Players&gt;
+</td></tr>
+<tr class="row3">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 35 Bytes + length of string
+</td></tr></table>
+<p>Same as <a href="Pocket_Minecraft_Protocol.html#0x1C">ID_UNCONNECTED_PING_OPEN_CONNECTIONS (0x1C)</a>, but with the Packet ID changed. Depends of the version to send a 0x1D or a 0x1C
+</p>
+<h3><span class="mw-headline" id="Custom_Packet_.280x80-0x8F.29">Custom Packet (0x80-0x8F)</span></h3>
+<p><i>Two-Way</i>
+</p><p><b>This packet is part of the real Minecraft PE implementation. The structure can change anytime.</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x80-0x8F
+</td>
+<td class="col1 centeralign"> Count
+</td>
+<td class="col2 centeralign"> 3 bytes
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> Increments once every packet.
+</td></tr>
+<tr class="row2">
+<td class="col2 centeralign"> Data payload
+</td>
+<td class="col1 centeralign">
+</td>
+<td class="col2 centeralign"> <code>0x40009000000009...</code>
+</td>
+<td class="col3"> Uses <a href="Pocket_Minecraft_Protocol.html#Packet_Encapsulation">Packet Encapsulation format</a>
+</td></tr>
+<tr class="row3">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 4 Bytes + payload
+</td></tr></table>
+<p>The receiver will use the Packet number in the 0xC0 packet and send it back.
+</p><p><br />
+<span id="0xA0"></span>
+</p>
+<h3><span class="mw-headline" id="NAK_.280xA0.29">NAK (0xA0)</span></h3>
+<p><i>Two-Way</i>
+</p><p><b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0xA0
+</td>
+<td class="col1 centeralign"> Count
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> MinEqualsMax
+</td>
+<td class="col2 centeralign"> boolean
+</td>
+<td class="col3 centeralign"> <code><i>true</i></code>
+</td>
+<td class="col4"> <i>true</i> if the following range contains only one number
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Packet Number (Min)
+</td>
+<td class="col2 centeralign"> 3 bytes
+</td>
+<td class="col3 centeralign"> <code>0x000000</code>
+</td>
+<td class="col4"> Range of packet to resend
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> Packet Number (Max)
+</td>
+<td class="col2 centeralign"> 3 bytes
+</td>
+<td class="col3 centeralign"> <code>0x000004</code>
+</td>
+<td class="col4"> Range of packet to resend (only if <i>false</i>)
+</td></tr>
+<tr class="row5">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 7 or 10 Bytes
+</td></tr></table>
+<p>Send these when a packet was lost, or reply to this resending the lost packet.
+</p>
+<h3><span class="mw-headline" id="ACK_.280xC0.29">ACK (0xC0)</span></h3>
+<p><i>Two-Way</i>
+</p><p><b>RakNet Packet</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0xC0
+</td>
+<td class="col1 centeralign"> Count
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> MinEqualsMax
+</td>
+<td class="col2 centeralign"> boolean
+</td>
+<td class="col3 centeralign"> <code><i>true</i></code>
+</td>
+<td class="col4"> <i>true</i> if the following range contains only one number
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Packet Number (Min)
+</td>
+<td class="col2 centeralign"> 3 bytes
+</td>
+<td class="col3 centeralign"> <code>0x000000</code>
+</td>
+<td class="col4"> Received packet number from field Count in 0x84 and 0x8C
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> Packet Number (Max)
+</td>
+<td class="col2 centeralign"> 3 bytes
+</td>
+<td class="col3 centeralign"> <code>0x000004</code>
+</td>
+<td class="col4"> Received Packet Number (only when <i>false</i>)
+</td></tr>
+<tr class="row5">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 7 or 10 Bytes
+</td></tr></table>
+<p>Sent after a 0x8X. It's used to ACK recieval of packets.
+The second packet number is optional and only there when bool is false.
+</p><p><br />
+<span id="Packet_Encapsulation"></span>
+</p>
+<h2><span class="mw-headline" id="Packet_Encapsulation_format">Packet Encapsulation format</span></h2>
+<p>The payload in 0x80-0x8F packets is encoded using different schemes.
+To decode them, you've to use the Encapsulation ID to check wich type you should use.
+The Encapsulation ID is the first byte of the payload.
+</p><p>Multiple Data Encapsulation packets could be present in one packet. If you want to send data, use 0x00.
+</p><p><code>Length</code> field is in bits, not bytes. To get the length in bytes, use <code>length_in_bytes = length / 8</code>. The <code>length</code> field is <b>excluding</b> the header -- both the 0x8X packet header, as well as the encapsulated packet header.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="0x00">0x00</span></h3>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Encapsulation ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x00
+</td>
+<td class="col1 centeralign"> length
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>0x0090</code>
+</td>
+<td class="col4"> Length of Packet in bits
+</td></tr>
+<tr class="row2">
+<td class="col2 centeralign"> Packet
+</td>
+<td class="col1 centeralign"> Data Packet
+</td>
+<td class="col2 centeralign"> <code>0x09d92145...</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row3">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 3 Bytes + Packet Data length
+</td></tr></table>
+<h3><span class="mw-headline" id="0x40">0x40</span></h3>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Encapsulation ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x40
+</td>
+<td class="col1 centeralign"> length
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>0x0090</code>
+</td>
+<td class="col4"> Length of Packet in bits
+</td></tr>
+<tr class="row2">
+<td class="col2 centeralign"> Count
+</td>
+<td class="col1 centeralign"> 3 bytes
+</td>
+<td class="col2 centeralign"> <code>0x000000</code>
+</td>
+<td class="col3"> Unknown use
+</td></tr>
+<tr class="row3">
+<td class="col2 centeralign"> Packet
+</td>
+<td class="col1 centeralign"> Data Packet
+</td>
+<td class="col2 centeralign"> <code>0x09d92145...</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row4">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 6 Bytes + Packet Data length
+</td></tr></table>
+<h3><span class="mw-headline" id="0x60">0x60</span></h3>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Encapsulation ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x60
+</td>
+<td class="col1 centeralign"> length
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>0x0090</code>
+</td>
+<td class="col4"> Length of Packet in bits
+</td></tr>
+<tr class="row2">
+<td class="col2 centeralign"> Count
+</td>
+<td class="col1 centeralign"> 3 bytes
+</td>
+<td class="col2 centeralign"> <code>0x000000</code>
+</td>
+<td class="col3"> Unknown use
+</td></tr>
+<tr class="row3">
+<td class="col2 centeralign"> Unknown
+</td>
+<td class="col1 centeralign"> 4 bytes
+</td>
+<td class="col2 centeralign"> <code>0x00000000</code>
+</td>
+<td class="col3"> Only sent on first iteration
+</td></tr>
+<tr class="row4">
+<td class="col2 centeralign"> Packet
+</td>
+<td class="col1 centeralign"> Data Packet
+</td>
+<td class="col2 centeralign"> <code>0x09d92145...</code>
+</td>
+<td class="col3">
+</td></tr>
+<tr class="row6">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 12 Bytes + Packet Data length
+</td></tr></table>
+<p><br />
+</p><p><span id="Encapsulated_Login_packets"></span>
+</p>
+<h2><span class="mw-headline" id="Encapsulated_Login_packets">Encapsulated Login packets</span></h2>
+<p>After packets 0x05 through 0x08 are sent, the client will send the first encapsulated packets (0x09 through 0x13). After 0x13 the game begins. You can check the login sequence <a href="Pocket_Editon_Login.html" class="mw-redirect" title="Pocket Editon Login">here</a>.
+</p>
+<h3><span class="mw-headline" id="Client_Connect_.280x09.29">Client Connect (0x09)</span></h3>
+<p><i>Client to Server</i>
+</p><p><b>This is a Data Packet. It is encoded using <a href="Pocket_Minecraft_Protocol.html#Packet_Encapsulation">packet encapsulation format</a>.</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x09
+</td>
+<td class="col1 centeralign"> clientID
+</td>
+<td class="col2 centeralign"> int64
+</td>
+<td class="col3 centeralign"> <code></code>
+</td>
+<td class="col4"> The mojang client's clientID.
+</td></tr>
+<tr class="row2">
+<td class="col2 centeralign"> session
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> A long that is sent back to the client in 0x10.
+</td></tr>
+<tr class="row3">
+<td class="col2 centeralign"> unknown
+</td>
+<td class="col1 centeralign"> byte
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> Unknown use. Constant value.
+</td></tr>
+<tr class="row4">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 18 Bytes
+</td></tr></table>
+<h3><span class="mw-headline" id="Server_Handshake_.280x10.29">Server Handshake (0x10)</span></h3>
+<p><i>Server to Client</i>
+</p><p><b>This is a Data Packet. It is encoded using <a href="Pocket_Minecraft_Protocol.html#Packet_Encapsulation">packet encapsulation format</a>..</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="8"> 0x10
+</td>
+<td class="col1 centeralign"> Cookie
+</td>
+<td class="col2 centeralign"> 4 bytes
+</td>
+<td class="col3 centeralign"> <code>043f57fe</code>
+</td>
+<td class="col4"> Unknown use, constant value.
+</td></tr>
+<tr class="row2">
+<td class="col2 centeralign"> Security flags
+</td>
+<td class="col1 centeralign"> 1 byte
+</td>
+<td class="col2 centeralign"> <code>0xcd</code>
+</td>
+<td class="col3"> Unknown use, constant value.
+</td></tr>
+<tr class="row3">
+<td class="col2 centeralign"> Server port
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> <code>19132</code>
+</td>
+<td class="col3"> Unknown use.
+</td></tr>
+<tr class="row4">
+<td class="col2 centeralign"> Data Array
+</td>
+<td class="col1 centeralign"> 70 bytes
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> Unknown use, constant value (see below).
+</td></tr>
+<tr class="row5">
+<td class="col2 centeralign"> Unknown
+</td>
+<td class="col1 centeralign"> 2 bytes
+</td>
+<td class="col2 centeralign"> <code>0x00 0x00</code>
+</td>
+<td class="col3"> Unknown use, constant value.
+</td></tr>
+<tr class="row6">
+<td class="col2 centeralign"> Session
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> Session long recieved in 0x09.
+</td></tr>
+<tr class="row7">
+<td class="col2 centeralign"> Unknown
+</td>
+<td class="col1 centeralign"> 8 bytes
+</td>
+<td class="col2 centeralign"> <code>0x00, 0x00, 0x00, 0x00, 0x04, 0x44, 0x0b, 0xa9</code>
+</td>
+<td class="col3"> Unknown use, constant value.
+</td></tr>
+<tr class="row8">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 96 Bytes
+</td></tr></table>
+<p><b>Data Array</b>
+</p><p>The data array section is unknown, but we do know how to get it right. Below is some code on how to create the array (C#).
+</p><p><code>
+</p>
+<pre>  public void putDataArray()
+       {
+           byte[] unknown1 = new byte[] { 0xf5, 0xff, 0xff, 0xf5 };
+           byte[] unknown2 = new byte[] { 0xff, 0xff, 0xff, 0xff };
+           this.putTriad(unknown1.Length);
+           this.putBytes(unknown1);
+           for (int i = 0; i &lt; 9; i++)
+           {
+               this.putTriad(unknown2.Length);
+               this.putBytes(unknown2);
+           }
+       }
+</pre>
+<p></code>
+</p><p>A triad is a 3 byte integer.
+</p><p>Credit goes to InusualZ (<a rel="nofollow" class="external free" href="https://github.com/InusualZ/CraftMine/blob/master/src/Network/Packets/Minecraft/ServerHandshake.cs">https://github.com/InusualZ/CraftMine/blob/master/src/Network/Packets/Minecraft/ServerHandshake.cs</a>).
+</p>
+<h3><span class="mw-headline" id="Client_Handshake_.280x13.29">Client Handshake (0x13)</span></h3>
+<p><i>Client to Server</i>
+</p><p><b>This is a Data Packet. It is encoded using <a href="Pocket_Minecraft_Protocol.html#Packet_Encapsulation">packet encapsulation format</a>..</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="8"> 0x13
+</td>
+<td class="col1 centeralign"> cookie
+</td>
+<td class="col2 centeralign"> int32
+</td>
+<td class="col3 centeralign"> <code>0x43f57fe</code>
+</td>
+<td class="col4"> Unknown use, same cookie as in 0x10.
+</td></tr>
+<tr class="row2">
+<td class="col2 centeralign"> Security flags
+</td>
+<td class="col1 centeralign"> 1 byte
+</td>
+<td class="col2 centeralign"> <code>0xcd</code>
+</td>
+<td class="col3"> Unknown use, constant value.
+</td></tr>
+<tr class="row3">
+<td class="col2 centeralign"> Server port
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> <code>19132</code>
+</td>
+<td class="col3"> Unknown use.
+</td></tr>
+<tr class="row4">
+<td class="col2 centeralign"> Data Array 1 Length + Data Array 1
+</td>
+<td class="col1 centeralign"> 1 +&#160;? bytes
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> Unknown use (see below).
+</td></tr>
+<tr class="row5">
+<td class="col2 centeralign"> Data Array 2
+</td>
+<td class="col1 centeralign">&#160;? bytes
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> Unknown use, constant value (see below).
+</td></tr>
+<tr class="row6">
+<td class="col2 centeralign"> Timestamp
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> Unknown use.
+</td></tr>
+<tr class="row7">
+<td class="col2 centeralign"> session
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> Unknown use.
+</td></tr>
+<tr class="row8">
+<td class="col2 centeralign"> session2
+</td>
+<td class="col1 centeralign"> int64
+</td>
+<td class="col2 centeralign"> <code></code>
+</td>
+<td class="col3"> Unknown use.
+</td></tr>
+<tr class="row9">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 94 Bytes
+</td></tr></table>
+<p><b>Data Arrays</b>
+</p><p><i>Array 1</i>
+</p><p>The first array is just a series of bytes, starting with the first byte which has the length of the rest of the array. This can be decoded as follows (Java):
+</p><p><code>
+</p>
+<pre>  buffer.get(new byte[(int) buffer.get()]);
+</pre>
+<p></code>
+</p><p>The buffer variable is really a <code>ByteBuffer</code> object found in the package java.nio.
+</p><p><i>Array 2</i>
+</p><p>The second array is a little more complicated. The first section is a triad (3 bytes) which specifies how many bytes to read next. This is repeated 9 times. An example is below (Java):
+</p><p><code>
+		for(int i = 0; i &lt; 9; i++){
+</p><p>			int l = NetworkUtils.getTriad(buf);
+</p><p>			buf.get(new byte[l]);
+</p><p>		}
+</code>
+</p><p>Again, the buf object is a <code>ByteBuffer</code> object.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Client_Cancel_Connect_.280x15.29">Client Cancel Connect (0x15)</span></h3>
+<p><i>Client to Server</i>
+</p><p><b>This is a Data Packet. It is encoded using <a href="Pocket_Minecraft_Protocol.html#Packet_Encapsulation">packet encapsulation format</a>.</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="1"> 0x15
+</td>
+<td class="col1"> Only the packet ID is sent.
+</td></tr>
+<tr class="row2">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="2"> 1 Byte
+</td></tr></table>
+<p>This appears to be sent whenever the user clicks the "cancel" button when connecting.
+</p>
+<h2><span class="mw-headline" id="Ping.2FPong">Ping/Pong</span></h2>
+<p>The client will repeatedly send ping packets to the server each containing an identifier (long). The server then must reply with a pong packet containing the identifier found in the ping. This is observed to happen sometime during the encapsulation login.
+</p>
+<h3><span class="mw-headline" id="Ping_Packet_.280x00.29">Ping Packet (0x00)</span></h3>
+<p><i>Client to Server</i>
+</p><p><b>This is a Data Packet. It is encoded using packet encapsulation.</b>
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x00
+</td>
+<td class="col1 centeralign"> identifier
+</td>
+<td class="col2 centeralign"> int64
+</td>
+<td class="col3 centeralign"> <code>0000000000000b3d</code>
+</td>
+<td class="col4"> An identifer sent back by a Pong packet (0x03).
+</td></tr>
+<tr class="row2">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 9 Bytes
+</td></tr></table>
+<h3><span class="mw-headline" id="Pong_Packet_.280x03.29">Pong Packet (0x03)</span></h3>
+<p><i>Server to Client</i>
+</p><p><b>This is a Data Packet. It is encoded using packet encapsulation.</b> 
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0"> Packet ID
+</td>
+<td class="col1"> Field Name
+</td>
+<td class="col2"> Field Type
+</td>
+<td class="col3"> Example
+</td>
+<td class="col4"> Notes
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x03
+</td>
+<td class="col1 centeralign"> identifier
+</td>
+<td class="col2 centeralign"> int64
+</td>
+<td class="col3 centeralign"> <code>0000000000000b3d</code>
+</td>
+<td class="col4"> The identifier found in the ping packet (0x00).
+</td></tr>
+<tr class="row2">
+<td class="col0"> Total Size:
+</td>
+<td class="col1 rightalign" colspan="4"> 9 Bytes
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Data_Packets">Data Packets</span></h2>
+<p>This information has been generated using <a rel="nofollow" class="external text" href="https://github.com/PocketMine/PocketBurger">PocketBurger</a>, then edited manually.
+</p><p><b>This information was generated based on:</b>
+</p><p><b>Minecraft: Pocket Edition v0.7.3, protocol #11</b>
+</p><p><b>RakNet Protocol version #5</b>
+</p><p>However, these packets seem to be unchanged since then, and will (most likely) work with the current version.
+</p><p><b>Current Version:</b>
+</p><p><b>Minecraft: Pocket Edition v0.10.4, protocol #20</b>
+</p><p><b>RakNet Protocol version #5</b>
+</p>
+<h3><span class="mw-headline" id="LoginPacket_.280x82.29">LoginPacket (0x82)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0x82
+</td>
+<td> Username
+</td>
+<td> string8
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Protocol #1
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Protocol #2
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ClientID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Realms Data
+</td>
+<td> string8
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="LoginStatusPacket_.280x83.29">LoginStatusPacket (0x83)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0x83
+</td>
+<td> Status
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<p>The three type of status are:
+</p><p>0: Everything is good.
+</p><p>1: If the server is outdated.
+</p><p>2. If the game is outdated. 
+</p><p>If everything is good you need to send StartGamePacket.
+</p>
+<h3><span class="mw-headline" id="ReadyPacket_.280x84.29">ReadyPacket (0x84)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0x84
+</td>
+<td> bits[8] Status
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="MessagePacket_.280x85.29">MessagePacket (0x85)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0x85
+</td>
+<td> Message
+</td>
+<td> string8
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="SetTimePacket_.280x86.29">SetTimePacket (0x86)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0x86
+</td>
+<td> Time
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="StartGamePacket_.280x87.29">StartGamePacket (0x87)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="7"> 0x87
+</td>
+<td> level seed
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Gamemode
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="AddMobPacket_.280x88.29">AddMobPacket (0x88)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="8"> 0x88
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> yaw
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> pitch
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Metadata
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="AddPlayerPacket_.280x89.29">AddPlayerPacket (0x89)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="11"> 0x89
+</td>
+<td> (unsigned) Client ID
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Username
+</td>
+<td> string8
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Yaw
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Pitch
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Metadata
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="RemovePlayerPacket_.280x8a.29">RemovePlayerPacket (0x8a)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="2"> 0x8a
+</td>
+<td> entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> (unsigned) Client ID
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="AddEntityPacket_.280x8c.29">AddEntityPacket (0x8c)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="9"> 0x8c
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Did?
+</td>
+<td> int
+</td>
+<td> If this int &gt; 0 you can send the next parameter
+</td></tr>
+<tr>
+<td> SpeedX
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> SpeedY
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> SpeedZ
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="RemoveEntityPacket_.280x8d.29">RemoveEntityPacket (0x8d)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0x8d
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="AddItemEntityPacket_.280x8e.29">AddItemEntityPacket (0x8e)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="10"> 0x8e
+</td>
+<td> Enity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Block
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Stack
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Meta
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Yaw
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Pitch
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Roll
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="TakeItemEntityPacket_.280x8f.29">TakeItemEntityPacket (0x8f)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="2"> 0x8f
+</td>
+<td> Target
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="MoveEntityPacket_.280x90.29">MoveEntityPacket (0x90)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="4"> 0x90
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="MoveEntityPacket_PosRot_.280x93.29">MoveEntityPacket_PosRot (0x93)</span></h3>
+<p><i>None</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="6"> 0x93
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Yaw
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Pitch
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="MovePlayerPacket_.280x94.29">MovePlayerPacket (0x94)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="6"> 0x94
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Yaw
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Pitch
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="PlaceBlockPacket_.280x95.29">PlaceBlockPacket (0x95)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="7"> 0x95
+</td>
+<td> Entity iD
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Block
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Meta
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Face
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="RemoveBlockPacket_.280x96.29">RemoveBlockPacket (0x96)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="4"> 0x96
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="UpdateBlockPacket_.280x97.29">UpdateBlockPacket (0x97)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0x97
+</td>
+<td> Entiy ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Block
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Meta
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="AddPaintingPacket_.280x98.29">AddPaintingPacket (0x98)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="6"> 0x98
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Direction
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Title
+</td>
+<td> string8
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="ExplodePacket_.280x99.29">ExplodePacket (0x99)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="8"> 0x99
+</td>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Radius
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Count
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Records
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Counts?
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Records?
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="LevelEventPacket_.280x9a.29">LevelEventPacket (0x9a)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0x9a
+</td>
+<td> Unknown?
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown?
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown?
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown?
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown?
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="TileEventPacket_.280x9b.29">TileEventPacket (0x9b)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0x9b
+</td>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Case 1
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Case 2
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="EntityEventPacket_.280x9c.29">EntityEventPacket (0x9c)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="2"> 0x9c
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="RequestChunkPacket_.280x9d.29">RequestChunkPacket (0x9d)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="2"> 0x9d
+</td>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="ChunkDataPacket_.280x9e.29">ChunkDataPacket (0x9e)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0x9e
+</td>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Data?
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Data?
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="PlayerEquipmentPacket_.280x9f.29">PlayerEquipmentPacket (0x9f)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="4"> 0x9f
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Block
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Meta
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Slot
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="PlayerArmorEquipmentPacket_.280xa0.29">PlayerArmorEquipmentPacket (0xa0)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0xa0
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Slot 1
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Slot 2
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Slot 3
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Slot 4
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="InteractPacket_.280xa1.29">InteractPacket (0xa1)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="3"> 0xa1
+</td>
+<td> Action
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+<tr>
+<td> entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Target
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="UseItemPacket_.280xa2.29">UseItemPacket (0xa2)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="13"> 0xa2
+</td>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Face
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Block
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Meta
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Fx
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Fy
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Fz
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> PosX
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> PosY
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> PosZ
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="PlayerActionPacket_.280xa3.29">PlayerActionPacket (0xa3)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="6"> 0xa3
+</td>
+<td> Action
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Face
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="HurtArmorPacket_.280xa5.29">HurtArmorPacket (0xa5)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0xa5
+</td>
+<td> Health
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="SetEntityDataPacket_.280xa6.29">SetEntityDataPacket (0xa6)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="2"> 0xa6
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Metadata
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="SetEntityMotionPacket_.280xa7.29">SetEntityMotionPacket (0xa7)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0xa7
+</td>
+<td> Unknown?
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="SetRidingPacket_.280xa8.29">SetRidingPacket (0xa8)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="2"> 0xa8
+</td>
+<td> a
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> b
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="SetHealthPacket_.280xa9.29">SetHealthPacket (0xa9)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0xa9
+</td>
+<td> Health
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="SetSpawnPositionPacket_.280xaa.29">SetSpawnPositionPacket (0xaa)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="3"> 0xaa
+</td>
+<td> X
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="AnimatePacket_.280xab.29">AnimatePacket (0xab)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="2"> 0xab
+</td>
+<td> Action
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="RespawnPacket_.280xac.29">RespawnPacket (0xac)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="4"> 0xac
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> X
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> float
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="SendInventoryPacket_.280xad.29">SendInventoryPacket (0xad)</span></h3>
+<p><i>None</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0xad
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Windows ID
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Count
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Slots
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Items
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="DropItemPacket_.280xae.29">DropItemPacket (0xae)</span></h3>
+<p><i>Server to Client</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0xae
+</td>
+<td> Entity ID
+</td>
+<td> int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown?
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Block
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Stack
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Meta
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+ 
+</table>
+<h3><span class="mw-headline" id="ContainerOpenPacket_.280xaf.29">ContainerOpenPacket (0xaf)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="4"> 0xaf
+</td>
+<td> Window ID
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Slot
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Title
+</td>
+<td> string8
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="ContainerClosePacket_.280xb0.29">ContainerClosePacket (0xb0)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0xb0
+</td>
+<td> Window ID
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="ContainerSetSlotPacket_.280xb1.29">ContainerSetSlotPacket (0xb1)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="5"> 0xb1
+</td>
+<td> Window ID
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Slot
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Block
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Stack
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Meta
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="ContainerSetDataPacket_.280xb2.29">ContainerSetDataPacket (0xb2)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="3"> 0xb2
+</td>
+<td> Window ID
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Property
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Value
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="ContainerSetContentPacket_.280xb3.29">ContainerSetContentPacket (0xb3)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="3"> 0xb3
+</td>
+<td> Window ID
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Count
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Items
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="ContainerAckPacket_.280xb4.29">ContainerAckPacket (0xb4)</span></h3>
+<p><i>None</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="2"> 0xb4
+</td>
+<td> Window ID
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Unknown?
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="ChatPacket_.280xb5.29">ChatPacket (0xb5)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0xb5
+</td>
+<td> Message
+</td>
+<td> string8
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="SignUpdatePacket_.280xb6.29">SignUpdatePacket (0xb6)</span></h3>
+<p><i>Two-Way</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="4"> 0xb6
+</td>
+<td> X
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Lines
+</td>
+<td> string8
+</td>
+<td>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="AdventureSettingsPacket_.280xb7.29">AdventureSettingsPacket (0xb7)</span></h3>
+<p><i>Client to Server</i>
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<td> Field Name
+</td>
+<td> Field Type
+</td>
+<td> Notes
+</td></tr>
+<tr>
+<td rowspan="1"> 0xb7
+</td>
+<td> Flags
+</td>
+<td> byte[]
+</td>
+<td>
+</td></tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Cached time: 20180823130224
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.319 seconds
+Real time usage: 0.335 seconds
+Preprocessor visited node count: 395/1000000
+Preprocessor generated node count: 564/1000000
+Post‐expand include size: 326/2097152 bytes
+Template argument size: 86/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   13.187      1 - -total
+ 66.94%    8.827     12 - Template:Anchor
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:121-0!*!0!!en!*!* and timestamp 20180823130224 and revision id 13541
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Pocket_Minecraft_Protocol&amp;oldid=13541">http://wiki.vg/index.php?title=Pocket_Minecraft_Protocol&amp;oldid=13541</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Pocket_Minecraft.html" title="Category:Pocket Minecraft">Pocket Minecraft</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Pocket+Minecraft+Protocol" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Pocket+Minecraft+Protocol" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Pocket_Minecraft_Protocol.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Pocket_Minecraft_Protocol.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Pocket_Minecraft_Protocol.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Pocket_Minecraft_Protocol.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Protocol&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Protocol&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Pocket_Minecraft_Protocol.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Pocket_Minecraft_Protocol" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Pocket_Minecraft_Protocol" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Protocol&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Protocol&amp;oldid=13541" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Protocol&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 24 December 2017, at 18:57.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":142});});</script>
+	</body>
+</html>

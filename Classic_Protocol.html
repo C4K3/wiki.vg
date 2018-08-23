@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Classic Protocol - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Classic_Protocol","wgTitle":"Classic Protocol","wgCurRevisionId":13925,"wgRevisionId":13925,"wgArticleId":97,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Classic"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Classic_Protocol","wgRelevantArticleId":97,"wgRequestId":"dc91c38f3943ab1e126e9e10","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Classic_Protocol rootpage-Classic_Protocol skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Classic Protocol</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Classic_Protocol.html#mw-head">navigation</a>, 					<a href="Classic_Protocol.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Documentation on the server protocol used by the <a rel="nofollow" class="external text" href="http://minecraft.net/servers.jsp">Minecraft Classic Creative</a> server.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Classic_Protocol.html#Minecraft.net_Communication"><span class="tocnumber">1</span> <span class="toctext">Minecraft.net Communication</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Classic_Protocol.html#Heartbeats"><span class="tocnumber">1.1</span> <span class="toctext">Heartbeats</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Classic_Protocol.html#User_Authentication"><span class="tocnumber">1.2</span> <span class="toctext">User Authentication</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Classic_Protocol.html#Skins"><span class="tocnumber">1.3</span> <span class="toctext">Skins</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="Classic_Protocol.html#Packet_Protocol"><span class="tocnumber">2</span> <span class="toctext">Packet Protocol</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="Classic_Protocol.html#Protocol_Data_Types"><span class="tocnumber">2.1</span> <span class="toctext">Protocol Data Types</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Classic_Protocol.html#Client_.E2.86.92_Server_packets"><span class="tocnumber">2.2</span> <span class="toctext">Client &#8594; Server packets</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets"><span class="tocnumber">2.3</span> <span class="toctext">Server &#8594; Client packets</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="Classic_Protocol.html#Player_Position"><span class="tocnumber">3</span> <span class="toctext">Player Position</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="Classic_Protocol.html#Fixed_Point"><span class="tocnumber">3.1</span> <span class="toctext">Fixed Point</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Classic_Protocol.html#Standing_On_Things"><span class="tocnumber">3.2</span> <span class="toctext">Standing On Things</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Classic_Protocol.html#Orientation"><span class="tocnumber">3.3</span> <span class="toctext">Orientation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="Classic_Protocol.html#Color_Codes"><span class="tocnumber">4</span> <span class="toctext">Color Codes</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Minecraft.net_Communication">Minecraft.net Communication</span></h2>
+<h3><span class="mw-headline" id="Heartbeats">Heartbeats</span></h3>
+<p>To be able to connect to a server in Minecraft Classic from the Server List, a server must broadcast to minecraft.net a so-called "heartbeat" every few minutes.
+</p><p>The stock server broadcasts this heartbeat every 45 seconds.
+</p><p>A "heartbeat" takes the form of an HTTP request to <a rel="nofollow" class="external free" href="http://www.minecraft.net/heartbeat.jsp">http://www.minecraft.net/heartbeat.jsp</a>.
+After sending a heartbeat, the URL for the server is returned.
+</p><p>It can be a GET or POST request. A table of the required parameters is below:
+</p>
+<table class="wikitable">
+<tr>
+<th>Name </th>
+<th>Details
+</th></tr>
+<tr>
+<td>port </td>
+<td> Port number of the server. This is usually 25565
+</td></tr>
+<tr>
+<td>max </td>
+<td> Maximum number of players on the server
+</td></tr>
+<tr>
+<td>name </td>
+<td> The name of the server
+</td></tr>
+<tr>
+<td>public </td>
+<td> Whether the server is public (i.e. appears in the lobby) or not. Can be <b>True</b> or <b>False</b>, in that capitalisation.
+</td></tr>
+<tr>
+<td>version </td>
+<td> Minecraft version, this should be 7
+</td></tr>
+<tr>
+<td>salt </td>
+<td> A random, 16-character base-62 salt
+</td></tr>
+<tr>
+<td>users </td>
+<td> Number of users connected to the server
+</td></tr></table>
+<p>The simplest way to send a heartbeat is to open a TCP socket to port 80 on minecraft.net, and send the following (with the values changed, obviously):
+</p><p><b>GET /heartbeat.jsp?port=25565&amp;max=32&amp;name=My%20Server&amp;public=True&amp;version=7&amp;salt=wo6kVAHjxoJcInKx&amp;users=0</b>, plus a CRLF(Carriage-return and Line feed).
+</p><p>Make sure any strings, like name, are escaped.
+</p><p>If everything goes well, in the response body you'll receive a URL to the server. Otherwise you'll get a nice HTML error message. There aren't an HTML headers to parse, as the HTTP version is not specified so HTTP/0.9 is used, which does not have headers.
+</p>
+<h3><span class="mw-headline" id="User_Authentication">User Authentication</span></h3>
+<p>The "key" provided when a user joins the server can be compared to the MD5 checksum of the server's "salt" plus the username to verify that the user is logged in to minecraft.net with that username.  This is useful for establishing enough trust of the name provided to ban or op the player by name.
+</p>
+<pre>if( player.key == md5( server.salt + player.name ) ) {
+ // player is logged in via minecraft.net
+} else {
+ // player is forging the username
+}
+</pre>
+<p>Note: This means that you should make sure your "salt" is kept a secret and shared only with heartbeat.jsp.  If your server's "salt" is visible anywhere to users, it is trivial for users to produce valid-looking "key"s without being logged in to minecraft.net.
+</p>
+<h3><span class="mw-headline" id="Skins">Skins</span></h3>
+<p>Skins for a player are downloaded by the client from <b><a rel="nofollow" class="external free" href="http://minecraft.net/skin/skinname.png">http://minecraft.net/skin/skinname.png</a></b>, where skinname is the name of the player. This means that the name for a player can be faked to give a desired skin.
+</p>
+<h2><span class="mw-headline" id="Packet_Protocol">Packet Protocol</span></h2>
+<p>The connection is done over TCP. Every packet starts with a byte representing the Packet ID.
+</p>
+<h3><span class="mw-headline" id="Protocol_Data_Types">Protocol Data Types</span></h3>
+<table class="wikitable">
+<tr>
+<th>Type </th>
+<th> Size [bytes] </th>
+<th> Description
+</th></tr>
+<tr>
+<td>Byte </td>
+<td> 1 </td>
+<td> Single byte integer (0 to 255)
+</td></tr>
+<tr>
+<td>SByte </td>
+<td> 1 </td>
+<td> Single byte signed integer (-128 to 127)
+</td></tr>
+<tr>
+<td>Short </td>
+<td> 2 </td>
+<td> Signed integer, <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Endianness#Endianness_in_networking">network order</a> (-32768 to 32767)
+</td></tr>
+<tr>
+<td>String </td>
+<td> 64 </td>
+<td> US-ASCII/ISO646-US encoded string padded with spaces (0x20)
+</td></tr>
+<tr>
+<td>Byte array </td>
+<td> 1024 </td>
+<td> Binary data padded with null bytes (0x00)
+</td></tr></table>
+<h3><span class="mw-headline" id="Client_.E2.86.92_Server_packets">Client &#8594; Server packets</span></h3>
+<table class="wikitable">
+<tr>
+<th width="64"> Packet ID
+</th>
+<th width="160"> Purpose
+</th>
+<th width="160"> Field Description
+</th>
+<th width="72"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="5"> 0x00
+</td>
+<td rowspan="5"> Player Identification
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="5"> Sent by a player joining a server with relevant information.  Current protocol version is 0x07.
+</td></tr>
+<tr>
+<td> Protocol version </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> Username </td>
+<td> String
+</td></tr>
+<tr>
+<td> Verification key </td>
+<td> String
+</td></tr>
+<tr>
+<td> Unused </td>
+<td> Byte (0x00)
+</td></tr>
+<tr>
+<td rowspan="6"> 0x05
+</td>
+<td rowspan="6"> Set Block
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="6"> Sent when a user changes a block.  The mode field indicates whether a block was created (0x01) or destroyed (0x00).
+<p>Block type is always the type player is holding, (even when deleting).
+</p><p>Client assumes that this command packet always succeeds, and so draws the new block immediately. To disallow block creation, server must send back Set Block packet with the old block type.
+</p><p>The XYZ coordinates of the block are just shorts representing the coordinate of the block. (As opposed to player coordinates where the lower 5 bits are fractional coordinates)
+</p>
+</td></tr>
+<tr>
+<td> X </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Y </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Z </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Mode </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> Block type </td>
+<td> Byte
+</td></tr>
+<tr>
+<td rowspan="7"> 0x08
+</td>
+<td rowspan="7"> Position and Orientation
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="7"> Sent frequently (even while not moving) by the player with the player's current location and orientation. Player ID is always 255, referring to itself. Player coordinates are fixed-point values with the lowest 5 bits representing the fractional position (i.e. divide by 32 to get actual position in terms of block coordinates).  The angle parameters are scaled such that a value of 256 would correspond to 360 degrees.
+</td></tr>
+<tr>
+<td> Player ID </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> X </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Y </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Z </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Yaw (Heading) </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> Pitch </td>
+<td> Byte
+</td></tr>
+<tr>
+<td rowspan="3"> 0x0d
+</td>
+<td rowspan="3"> Message
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="3"> Contain chat messages sent by player. (See <a href="Chat.html" title="Chat">How chat works</a>)
+</td></tr>
+<tr>
+<td> Unused </td>
+<td> Byte (0xFF)
+</td></tr>
+<tr>
+<td> Message </td>
+<td> String
+</td></tr></table>
+<h3><span class="mw-headline" id="Server_.E2.86.92_Client_packets">Server &#8594; Client packets</span></h3>
+<table class="wikitable">
+<tr>
+<th width="64"> Packet ID
+</th>
+<th width="160"> Purpose
+</th>
+<th width="160"> Field Description
+</th>
+<th width="72"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="5"> 0x00
+</td>
+<td rowspan="5"> Server Identification
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="5"> Response to a joining player.  The user type indicates whether a player is an op (0x64) or not (0x00)  Current protocol version is 0x07.
+</td></tr>
+<tr>
+<td> Protocol version </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> Server name </td>
+<td> String
+</td></tr>
+<tr>
+<td> Server MOTD </td>
+<td> String
+</td></tr>
+<tr>
+<td> User type </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> 0x01
+</td>
+<td> Ping
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td> Sent to clients periodically.  The only way a client can disconnect at the moment is to force it closed, which does not let the server know. The ping packet is used to determine if the connection is still open.
+</td></tr>
+<tr>
+<td> 0x02
+</td>
+<td> Level Initialize
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td> Notifies player of incoming level data.
+</td></tr>
+<tr>
+<td rowspan="4"> 0x03
+</td>
+<td rowspan="4"> Level Data Chunk
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="4"> Contains a chunk of gzipped map (not level.dat file). The decompression must be done on the all the chunks sent in Level Data Chunk packets together, not independently. After decompression the map consists of a big-endian int(4 bytes) containing the number of blocks, followed by a raw map array. (chunk is up to 1024 bytes, padded with 0x00s if less).
+</td></tr>
+<tr>
+<td> Chunk Length </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Chunk Data </td>
+<td> Byte Array
+</td></tr>
+<tr>
+<td> Percent Complete </td>
+<td> Byte
+</td></tr>
+<tr>
+<td rowspan="4"> 0x04
+</td>
+<td rowspan="4"> Level Finalize
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="4"> Sent after level data is complete and gives map dimensions. The y coordinate is how tall the map is.
+</td></tr>
+<tr>
+<td> X Size </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Y Size </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Z Size </td>
+<td> Short
+</td></tr>
+<tr>
+<td rowspan="5"> 0x06
+</td>
+<td rowspan="5"> Set Block
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="5"> Sent to indicate a block change by physics or by players.  In the case of a player change, the server will also echo the block change back to the player who initiated it.
+</td></tr>
+<tr>
+<td> X </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Y </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Z </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Block Type </td>
+<td> Byte
+</td></tr>
+<tr>
+<td rowspan="8"> 0x07
+</td>
+<td rowspan="8"> Spawn Player
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="8"> Sent to indicate where a new player is spawning in the world.  Position and orientation are encoded the same as for packet 0x08 below. PlayerID -1 (255 unsigned) indicates the player's self. This will set the player's spawn point.
+</td></tr>
+<tr>
+<td> Player ID </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Player Name </td>
+<td> String
+</td></tr>
+<tr>
+<td> X </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Y </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Z </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Yaw (Heading) </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> Pitch </td>
+<td> Byte
+</td></tr>
+<tr>
+<td rowspan="7"> 0x08
+</td>
+<td rowspan="7"> Position and Orientation (Player Teleport)
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="7"> Sent with changes in player position and rotation. Teleports player it's sent to if player ID &lt; 0 (For sending initial position in map, and /tp)
+</td></tr>
+<tr>
+<td> Player ID </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> X </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Y </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Z </td>
+<td> Short
+</td></tr>
+<tr>
+<td> Yaw (Heading) </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> Pitch </td>
+<td> Byte
+</td></tr>
+<tr>
+<td rowspan="7"> 0x09
+</td>
+<td rowspan="7"> Position and Orientation Update
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="7"> Sent with changes in player position and rotation. Sent when both position and orientation is changed at the same time.
+<p>Not required for server operation.
+</p>
+</td></tr>
+<tr>
+<td> Player ID </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Change in X </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Change in Y </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Change in Z </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Yaw (Heading) </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> Pitch </td>
+<td> Byte
+</td></tr>
+<tr>
+<td rowspan="5"> 0x0a
+</td>
+<td rowspan="5"> Position Update
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="5"> Sent with changes in player position.
+<p>Not required for server operation.
+</p>
+</td></tr>
+<tr>
+<td> Player ID </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Change in X </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Change in Y </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Change in Z </td>
+<td> SByte
+</td></tr>
+<tr>
+<td rowspan="4"> 0x0b
+</td>
+<td rowspan="4"> Orientation Update
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="4"> Sent with changes in player rotation.
+<p>Not required for server operation.
+</p>
+</td></tr>
+<tr>
+<td> Player ID </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Yaw (Heading) </td>
+<td> Byte
+</td></tr>
+<tr>
+<td> Pitch </td>
+<td> Byte
+</td></tr>
+<tr>
+<td rowspan="2"> 0x0c
+</td>
+<td rowspan="2"> Despawn Player
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="2"> Sent when player disconnects.
+</td></tr>
+<tr>
+<td> Player ID </td>
+<td> SByte
+</td></tr>
+<tr>
+<td rowspan="3"> 0x0d
+</td>
+<td rowspan="3"> Message
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="3"> Messages sent by chat or from the console. (See <a href="Chat.html" title="Chat">How chat works</a>)
+</td></tr>
+<tr>
+<td> Player ID </td>
+<td> SByte
+</td></tr>
+<tr>
+<td> Message </td>
+<td> String
+</td></tr>
+<tr>
+<td rowspan="2"> 0x0e
+</td>
+<td rowspan="2"> Disconnect player
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="2"> Sent to a player when they're disconnected from the server.
+<ol><li>"Cheat detected: Distance" - happens not only when setting tile too far away from the player (how far is maximum distance and how it is measured?), but also when player moves and then immediately builds.</li>
+<li>"Cheat detected: Tile type"</li>
+<li>"Cheat detected: Too much clicking!"</li>
+<li>"Cheat detected: Too much lag"</li></ol>
+</td></tr>
+<tr>
+<td> Disconnect reason </td>
+<td> String
+</td></tr>
+<tr>
+<td rowspan="2"> 0x0f
+</td>
+<td rowspan="2"> Update user type
+</td>
+<td> Packet ID </td>
+<td> Byte
+</td>
+<td rowspan="2"> Sent when a player is opped/deopped. User type is 0x64 for op, 0x00 for normal user.
+</td></tr>
+<tr>
+<td> User type </td>
+<td> Byte
+</td></tr>
+</table>
+<h2><span class="mw-headline" id="Player_Position">Player Position</span></h2>
+<h3><span class="mw-headline" id="Fixed_Point">Fixed Point</span></h3>
+<p>Player position is represented via X, Y, and Z fixed-point coordinates.  The fractional portion is 5 bits, so dividing the short integers received in position update packets by 32, you will have floating point coordinates for the player. This position corresponds to the center of the client viewport.
+</p>
+<h3><span class="mw-headline" id="Standing_On_Things">Standing On Things</span></h3>
+<p>The bottom of the player's feet is located 1.59375 (fixed-point: 51) units below the center of the viewport, so to position the player on top of a particular block you could send a teleport (0x08) packet specifying a Y value based on the block position as: (Y x 32 + 51)
+</p>
+<h3><span class="mw-headline" id="Orientation">Orientation</span></h3>
+<p>A yaw value of 0 means the player is facing in the Z=0 (negative Z) direction.  This value increases in a clockwise direction as seen from above.  If we call the negative Z direction "North", then a yaw of 64 means "East", 128 means "South", and 192 means "West".
+</p><p>A pitch value of 0 means level and this value increases in a downward direction.  64 is down, and 192 is up.  Values of 65 to 191 should never occur because the player cannot look further up or down than the 64 → 0, 255 → 192 range. However, the Minecraft Classic client does not ignore invalid values, so it is possible to make players' heads "upside-down".
+</p>
+<h2><span class="mw-headline" id="Color_Codes">Color Codes</span></h2>
+<p>Messages sent from the server to the client can contain color codes, which allow coloring of text for various purposes.
+</p><p>An ampersand followed by a hex digit in the message tells the client to switch colors while displaying text.
+</p><p>Colour coding at the start of the message will only work if the player ID byte is less than 127. If it's 127 or higher, the game automatically adds &amp;e before the message, making it yellow. However, colour codes after the first character still work. If you use an ID below 127, it doesn't add a colour code, so the ones you use will work.
+</p><p>It is important to note that an ampersand at the end of a message that is not followed by a hex digit will crash all clients that receive it, so it is a must to sanitize chat messages received from clients.
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:90px;"><a href="./File:Colors.png.html" class="image"><img alt="" src="images/4/4c/Colors.png" width="88" height="288" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Colors.png.html" class="internal" title="Enlarge"></a></div>Hex digit to color mapping</div></div></div>
+<table class="wikitable" style="text-align:center;" border="1" cellpadding="5">
+
+<tr>
+<th colspan="1" width="8px"> Sample
+</th>
+<th colspan="1"> Code
+</th>
+<th colspan="1"> Common Name
+</th>
+<th colspan="3"> Foreground Color
+</th>
+<th colspan="3"> Background Color
+</th></tr>
+<tr>
+<td> </td>
+<td> </td>
+<td>
+</td>
+<td width="30px">R
+</td>
+<td width="30px">G
+</td>
+<td width="30px">B
+</td>
+<td width="30px">R
+</td>
+<td width="30px">G
+</td>
+<td width="30px">B
+</td></tr>
+<tr>
+<td bgcolor="black">
+</td>
+<td> &amp;0 </td>
+<td> Black </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 0
+</td></tr>
+<tr>
+<td bgcolor="#0000BF">
+</td>
+<td> &amp;1 </td>
+<td> Dark Blue </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 191 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 47
+</td></tr>
+<tr>
+<td bgcolor="#00BF00">
+</td>
+<td> &amp;2 </td>
+<td> Dark Green </td>
+<td> 0 </td>
+<td> 191 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 47 </td>
+<td> 0
+</td></tr>
+<tr>
+<td bgcolor="#00BFBF">
+</td>
+<td> &amp;3 </td>
+<td> Dark Teal </td>
+<td> 0  </td>
+<td> 191 </td>
+<td> 191 </td>
+<td> 0 </td>
+<td> 47 </td>
+<td> 47
+</td></tr>
+<tr>
+<td bgcolor="#BF0000">
+</td>
+<td> &amp;4 </td>
+<td> Dark Red </td>
+<td> 191 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 47 </td>
+<td> 0 </td>
+<td> 0
+</td></tr>
+<tr>
+<td bgcolor="#BF00BF">
+</td>
+<td> &amp;5 </td>
+<td> Purple </td>
+<td> 191 </td>
+<td> 0 </td>
+<td> 191 </td>
+<td> 47 </td>
+<td> 0 </td>
+<td> 47
+</td></tr>
+<tr>
+<td bgcolor="#BFBF00">
+</td>
+<td> &amp;6 </td>
+<td> Gold </td>
+<td> 191 </td>
+<td> 191 </td>
+<td> 0 </td>
+<td> 47 </td>
+<td> 47 </td>
+<td> 0
+</td></tr>
+<tr>
+<td bgcolor="#BFBFBF">
+</td>
+<td> &amp;7 </td>
+<td> Gray </td>
+<td> 191 </td>
+<td> 191 </td>
+<td> 191 </td>
+<td> 47 </td>
+<td> 47 </td>
+<td> 47
+</td></tr>
+<tr>
+<td bgcolor="#404040">
+</td>
+<td> &amp;8 </td>
+<td> Dark Gray </td>
+<td> 64 </td>
+<td> 64 </td>
+<td> 64 </td>
+<td> 16 </td>
+<td> 16 </td>
+<td> 16
+</td></tr>
+<tr>
+<td bgcolor="#4040FF">
+</td>
+<td> &amp;9 </td>
+<td> Blue </td>
+<td> 64 </td>
+<td> 64 </td>
+<td> 255 </td>
+<td> 16 </td>
+<td> 16 </td>
+<td> 63
+</td></tr>
+<tr>
+<td bgcolor="#49FF40">
+</td>
+<td> &amp;a </td>
+<td> Bright Green </td>
+<td> 64 </td>
+<td> 255 </td>
+<td> 64 </td>
+<td> 16 </td>
+<td> 63 </td>
+<td> 16
+</td></tr>
+<tr>
+<td bgcolor="#40FFFF">
+</td>
+<td> &amp;b </td>
+<td> Teal </td>
+<td> 64 </td>
+<td> 255 </td>
+<td> 255 </td>
+<td> 16 </td>
+<td> 63 </td>
+<td> 63
+</td></tr>
+<tr>
+<td bgcolor="#FF4040">
+</td>
+<td> &amp;c </td>
+<td> Red </td>
+<td> 255 </td>
+<td> 64 </td>
+<td> 64 </td>
+<td> 63 </td>
+<td> 16 </td>
+<td> 16
+</td></tr>
+<tr>
+<td bgcolor="#FF40FF">
+</td>
+<td> &amp;d </td>
+<td> Pink </td>
+<td> 255 </td>
+<td> 64 </td>
+<td> 255 </td>
+<td> 63 </td>
+<td> 16 </td>
+<td> 63
+</td></tr>
+<tr>
+<td bgcolor="#FFFF40">
+</td>
+<td> &amp;e </td>
+<td> Yellow </td>
+<td> 255 </td>
+<td> 255 </td>
+<td> 64 </td>
+<td> 63 </td>
+<td> 63 </td>
+<td> 16
+</td></tr>
+<tr>
+<td bgcolor="#FFFFFF">
+</td>
+<td> &amp;f </td>
+<td> White </td>
+<td> 255 </td>
+<td> 255 </td>
+<td> 255 </td>
+<td> 63 </td>
+<td> 63 </td>
+<td> 63
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20180822232842
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.076 seconds
+Real time usage: 0.089 seconds
+Preprocessor visited node count: 51/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:97-0!*!0!!en!5!* and timestamp 20180822232842 and revision id 13925
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Classic_Protocol&amp;oldid=13925">http://wiki.vg/index.php?title=Classic_Protocol&amp;oldid=13925</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Classic.html" title="Category:Minecraft Classic">Minecraft Classic</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Classic+Protocol" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Classic+Protocol" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Classic_Protocol.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Classic_Protocol.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Classic_Protocol.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Classic_Protocol.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Classic_Protocol&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Classic_Protocol&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Classic_Protocol.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Classic_Protocol" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Classic_Protocol" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Classic_Protocol&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Classic_Protocol&amp;oldid=13925" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Classic_Protocol&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 May 2018, at 10:08.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":144});});</script>
+	</body>
+</html>

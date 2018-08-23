@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Realms API - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Realms_API","wgTitle":"Realms API","wgCurRevisionId":13682,"wgRevisionId":13682,"wgArticleId":302,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Realms_API","wgRelevantArticleId":302,"wgRequestId":"a6d9d18a3022756bf4e51e23","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Realms_API rootpage-Realms_API skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Realms API</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Realms_API.html#mw-head">navigation</a>, 					<a href="Realms_API.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> This article is outdated
+</span>
+</p><p>The Minecraft Realms API is the API endpoint used to control worlds hosted by Mojang's Minecraft Realms service. This is a paid service provided to abstract managing a Minecraft server. More information on this can be found at <a rel="nofollow" class="external free" href="https://minecraft.net/realms">https://minecraft.net/realms</a>.
+</p><p>The API endpoint for the Desktop Edition is located at <a rel="nofollow" class="external free" href="https://pc.realms.minecraft.net">https://pc.realms.minecraft.net</a>. This is where all requests, as listed on this page, should be sent to.
+</p><p>There is also an endpoint for Pocket Edition in development, located at <a rel="nofollow" class="external free" href="https://pocket.realms.minecraft.net">https://pocket.realms.minecraft.net</a>. It is being documented at <a href="Pocket_Realms.html" title="Pocket Realms">Pocket Realms</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Realms_API.html#Sessions"><span class="tocnumber">1</span> <span class="toctext">Sessions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Realms_API.html#Notes"><span class="tocnumber">2</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Realms_API.html#Defining_a_server"><span class="tocnumber">3</span> <span class="toctext">Defining a server</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Realms_API.html#Endpoints"><span class="tocnumber">4</span> <span class="toctext">Endpoints</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="Realms_API.html#GET_requests"><span class="tocnumber">4.1</span> <span class="toctext">GET requests</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="Realms_API.html#GET_.2Fmco.2Favailable"><span class="tocnumber">4.1.1</span> <span class="toctext">GET /mco/available</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="Realms_API.html#GET_.2Fmco.2Fclient.2Fcompatible"><span class="tocnumber">4.1.2</span> <span class="toctext">GET /mco/client/compatible</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="Realms_API.html#GET_.2Fworlds"><span class="tocnumber">4.1.3</span> <span class="toctext">GET /worlds</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="Realms_API.html#GET_.2Fworlds.2F.24ID"><span class="tocnumber">4.1.4</span> <span class="toctext">GET /worlds/$ID</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="Realms_API.html#GET_.2Fworlds.2Fv1.2F.24ID.2Fjoin.2Fpc"><span class="tocnumber">4.1.5</span> <span class="toctext">GET /worlds/v1/$ID/join/pc</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="Realms_API.html#GET_.2Fworlds.2F.24ID.2Fbackups"><span class="tocnumber">4.1.6</span> <span class="toctext">GET /worlds/$ID/backups</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="Realms_API.html#GET_.2Fworlds.2F.24ID.2Fslot.2F.24WORLD.281-4.29.2Fdownload"><span class="tocnumber">4.1.7</span> <span class="toctext">GET /worlds/$ID/slot/$WORLD(1-4)/download</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="Realms_API.html#GET_.2Fops.2F.24ID"><span class="tocnumber">4.1.8</span> <span class="toctext">GET /ops/$ID</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="Realms_API.html#GET_.2Fsubscriptions.2F.24ID"><span class="tocnumber">4.1.9</span> <span class="toctext">GET /subscriptions/$ID</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="Realms_API.html#GET_.2Fmco.2Fbuy"><span class="tocnumber">4.1.10</span> <span class="toctext">GET /mco/buy</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="Realms_API.html#GET_.2Finvites.2Fcount.2Fpending"><span class="tocnumber">4.1.11</span> <span class="toctext">GET /invites/count/pending</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="Realms_API.html#POST_requests"><span class="tocnumber">4.2</span> <span class="toctext">POST requests</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="Realms_API.html#POST_.2Fmco.2Ftos.2Fagreed"><span class="tocnumber">4.2.1</span> <span class="toctext">POST /mco/tos/agreed</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Sessions">Sessions</span></h2>
+<p>Session identification is stored in a pair of cookies sent with the header of every request.
+The only required header within a request is having this cookie set.
+</p>
+<table class="wikitable">
+<tr>
+<th> Key </th>
+<th> Value
+</th></tr>
+<tr>
+<td> sid </td>
+<td> This is the current session ID of the logged in user. This follows the format of:
+<pre>token:&lt;accessToken&gt;:&lt;player UUID&gt;
+</pre>
+</td></tr>
+<tr>
+<td> user </td>
+<td> This is the username of the logged in user. This value is case sensitive.
+</td></tr>
+<tr>
+<td> version </td>
+<td> The version of the Minecraft instance running.
+</td></tr></table>
+<p>An example request:
+</p>
+<pre>GET /mco/available HTTP/1.1
+Cookie: sid=&lt;token&gt;;user=Herobrine;version=1.7.9
+Cache-Control: no-cache
+Pragma: no-cache
+User-Agent: Java/1.6.0_27
+Host: pc.realms.minecraft.net
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+</pre>
+<h2><span class="mw-headline" id="Notes">Notes</span></h2>
+<p>As per standard HTTP, a GET request has no parameters, and a POST request can potentially contain content (Note, several POST requests below has empty content).
+</p>
+<h2><span class="mw-headline" id="Defining_a_server">Defining a server</span></h2>
+<p>For most endpoints requiring a server, it is returned in a JSON object format, containing the following values:
+</p>
+<table class="wikitable">
+<tr>
+<th> Key </th>
+<th> Value </th>
+<th> Value Type
+</th></tr>
+<tr>
+<td> id </td>
+<td> The ID of the server. Must be unique </td>
+<td> Integer
+</td></tr>
+<tr>
+<td> remoteSubscriptionId </td>
+<td> Unknown, perhaps linked to transaction? Seems to work if same as 'id' </td>
+<td> String
+</td></tr>
+<tr>
+<td> owner </td>
+<td> The owner of the server. </td>
+<td> String
+</td></tr>
+<tr>
+<td> ownerUUID </td>
+<td> The unique ID of the owner. If this is equal to the previewing players unique ID, the configure button will be accessible. Note that the UUID haven't got hyphens</td>
+<td> String
+</td></tr>
+<tr>
+<td> name </td>
+<td> The name of the server </td>
+<td> String
+</td></tr>
+<tr>
+<td> motd </td>
+<td> The MOTD of the server. Doesn't support color. </td>
+<td> String
+</td></tr>
+<tr>
+<td> state </td>
+<td> The status of the server. Can be one of the following: ADMIN_LOCK, CLOSED, OPEN, UNINITIALIZED </td>
+<td> String
+</td></tr>
+<tr>
+<td> daysLeft </td>
+<td> How many days are left of subscription. Always returns '0' if not owner and returns '-1' if expired </td>
+<td> Integer
+</td></tr>
+<tr>
+<td> expired </td>
+<td> Whether the subscription has expired </td>
+<td> Boolean
+</td></tr>
+<tr>
+<td> expiredTrial </td>
+<td> Whether the trial subscription has expired </td>
+<td> Boolean
+</td></tr>
+<tr>
+<td> worldType </td>
+<td> Type of the world. Can be NORMAL, MINIGAME, ADVENTUREMAP, EXPERIENCE, INSPIRATION)</td>
+<td> String
+</td></tr>
+<tr>
+<td> players </td>
+<td> A array of currently connected players? </td>
+<td> JSON Array, with string values
+</td></tr>
+<tr>
+<td> maxPlayers </td>
+<td> The max players of the server, always returns '10' </td>
+<td> Integer
+</td></tr>
+<tr>
+<td> minigameName </td>
+<td>Name of minigame that is currently active. Returns `null` if not in a minigame </td>
+<td> String
+</td></tr>
+<tr>
+<td> minigameId </td>
+<td>Not confirmed, probably unique Id of Minigame map. Returns `null` if not in a minigame </td>
+<td> Integer
+</td></tr>
+<tr>
+<td> minigameImage </td>
+<td>base64 of the current minigame image in format PNG. Returns `null` if not in a minigame </td>
+<td> String
+</td></tr>
+<tr>
+<td> activeSlot </td>
+<td> Current server world (1-4) </td>
+<td> Integer
+</td></tr>
+<tr>
+<td> slots </td>
+<td> List of worlds slots. Only visible by owner (/worlds/$ID) </td>
+<td> Unknown
+</td></tr>
+<tr>
+<td> member </td>
+<td> Unknown </td>
+<td> Boolean
+</td></tr></table>
+<h2><span class="mw-headline" id="Endpoints">Endpoints</span></h2>
+<h3><span class="mw-headline" id="GET_requests">GET requests</span></h3>
+<h4><span class="mw-headline" id="GET_.2Fmco.2Favailable">GET /mco/available</span></h4>
+<p>Returns whether the user can access the Minecraft Realms service.
+This request does not require a Cookie token to be sent.
+</p><p>Returns: plain text; only observed value is
+</p>
+<pre>true
+</pre>
+<p>Prior to Realms release, this returned false.
+</p><p>If it returns false, this screen appears&#160;: <a rel="nofollow" class="external autonumber" href="http://prntscr.com/ewxutq">[1]</a>.
+</p>
+<h4><span class="mw-headline" id="GET_.2Fmco.2Fclient.2Fcompatible">GET /mco/client/compatible</span></h4>
+<p>Returns whether the clients version is up to date with Realms. This is checked against the Cookie token.
+</p><p>Returns: String, if the client is outdated, it returns OUTDATED, if the client is running a snapshot, it returns OTHER, else it returns COMPATIBLE
+</p>
+<h4><span class="mw-headline" id="GET_.2Fworlds">GET /worlds</span></h4>
+<p>Return a list of servers that the user is invited to or owns.
+</p><p>Returns: a JSON object with one array. Each element within the array represents a server.
+</p>
+<table class="wikitable">
+<tr>
+<th> Key </th>
+<th> Value </th>
+<th> Value Type
+</th></tr>
+<tr>
+<td> servers </td>
+<td> A array of servers </td>
+<td> JSON array of Servers
+</td></tr></table>
+<p>Example:
+</p>
+<pre>{"servers":[{  
+        "id":1,
+        "remoteSubscriptionId":"aaaa0000bbbb1111cccc2222dddd3333",
+        "owner":"j_selby",
+        "ownerUUID":"3333dddd2222cccc1111bbbb0000aaaa",
+        "name":"A Test Server",
+        "motd":"This is a testing server!",
+        "state":"OPEN",
+        "daysLeft":30,
+        "expired":false,
+        "expiredTrial":false,
+        "worldType":"NORMAL",
+        "players":["Notch"],
+        "maxPlayers":10,
+        "minigameName":null,
+        "minigameId":null,
+        "minigameImage":null,
+        "activeSlot":1,
+        "slots":null,
+        "member":false
+     }]
+}
+</pre>
+<h4><span class="mw-headline" id="GET_.2Fworlds.2F.24ID">GET /worlds/$ID</span></h4>
+<p>Returns a single server listing about a server.
+If you are not the owner of the server, the server will return a 403 error, with a JSON encoded error message.
+</p><p>Returns: a JSON encoded Server, as above.
+</p>
+<h4><span class="mw-headline" id="GET_.2Fworlds.2Fv1.2F.24ID.2Fjoin.2Fpc">GET /worlds/v1/$ID/join/pc</span></h4>
+<p>Requires TOS to be agreed to (as below).
+</p><p>Used to get the IP address for a server.
+</p><p>If a server doesn't exist/you do not have currently have access to it, the server will return a 404 error, with no content.
+</p><p>Returns:
+</p>
+<table class="wikitable">
+<tr>
+<th> Key </th>
+<th> Value </th>
+<th> Value Type
+</th></tr>
+<tr>
+<td> address </td>
+<td> The address of a server, encoded as [IP]:[Port] </td>
+<td> String
+</td></tr>
+<tr>
+<td> pendingUpdate </td>
+<td> If the server is waiting to update to a newer version </td>
+<td> Boolean
+</td></tr></table>
+<h4><span class="mw-headline" id="GET_.2Fworlds.2F.24ID.2Fbackups">GET /worlds/$ID/backups</span></h4>
+<p>Returns a list of backups for the world.
+</p><p>If a server doesn't exist/you do not have currently have access to it, the server will return a 403 error, with no content.
+</p><p>Returns: a JSON encoded list of backups for the specified world ID
+</p>
+<h4><span class="mw-headline" id="GET_.2Fworlds.2F.24ID.2Fslot.2F.24WORLD.281-4.29.2Fdownload">GET /worlds/$ID/slot/$WORLD(1-4)/download</span></h4>
+<p>Get the download URL of the latest backup.
+</p><p>Returns a json response like:
+</p>
+<pre>{
+	"downloadLink": "<a rel="nofollow" class="external free" href="http://us-west-mcr-worlds.s3.amazonaws.com/dfasdfa/mcr_world.tar.gz?AWSAccessKeyId=ADSFASDFADSF&amp;Expires=1457647137&amp;Signature=ADSFASDFASDF">http://us-west-mcr-worlds.s3.amazonaws.com/dfasdfa/mcr_world.tar.gz?AWSAccessKeyId=ADSFASDFADSF&amp;Expires=1457647137&amp;Signature=ADSFASDFASDF</a>",
+	"resourcePackUrl": null,
+	"resourcePackHash": null
+}
+</pre>
+<h4><span class="mw-headline" id="GET_.2Fops.2F.24ID">GET /ops/$ID</span></h4>
+<p>Returns a list of operators for this server. You must own this server to view this.
+</p><p>Returns:
+</p>
+<table class="wikitable">
+<tr>
+<th> Key </th>
+<th> Value </th>
+<th> Value Type
+</th></tr>
+<tr>
+<td> ops </td>
+<td> A array of player names </td>
+<td> JSON array of Strings
+</td></tr></table>
+<h4><span class="mw-headline" id="GET_.2Fsubscriptions.2F.24ID">GET /subscriptions/$ID</span></h4>
+<p>Returns the current life of a server subscription.
+</p><p>Returns:
+</p>
+<table class="wikitable">
+<tr>
+<th> Key </th>
+<th> Value </th>
+<th> Value Type
+</th></tr>
+<tr>
+<td> startDate </td>
+<td> A millisecond value. This is measured from January 1, 1970. </td>
+<td> Long
+</td></tr>
+<tr>
+<td> daysLeft </td>
+<td> The amount of days left within this subscription </td>
+<td> Integer
+</td></tr>
+<tr>
+<td> subscriptionType </td>
+<td> The kind of subscription this user has. This has been seen to be NORMAL or RECURRING. </td>
+<td> String
+</td></tr></table>
+<h4><span class="mw-headline" id="GET_.2Fmco.2Fbuy">GET /mco/buy</span></h4>
+<p>Displays a status message to the user, along with a link to the Mojang website.
+</p><p>Returns:
+</p>
+<table class="wikitable">
+<tr>
+<th> Key </th>
+<th> Value </th>
+<th> Value Type
+</th></tr>
+<tr>
+<td> statusMessage </td>
+<td> The message displayed to the user </td>
+<td> String
+</td></tr>
+<tr>
+<td> buyLink </td>
+<td> A URL to the purchase website. Optional. If not provided, no link is shown </td>
+<td> String
+</td></tr></table>
+<h4><span class="mw-headline" id="GET_.2Finvites.2Fcount.2Fpending">GET /invites/count/pending</span></h4>
+<p>Returns the amount of invites the player currently has waiting.
+</p><p>Returns: Integer value
+</p>
+<h3><span class="mw-headline" id="POST_requests">POST requests</span></h3>
+<h4><span class="mw-headline" id="POST_.2Fmco.2Ftos.2Fagreed">POST /mco/tos/agreed</span></h4>
+<p>To join Realms servers, you must agree to the TOS. Sending a blank POST request to this endpoint will set this flag.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823003336
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.048 seconds
+Real time usage: 0.074 seconds
+Preprocessor visited node count: 77/1000000
+Preprocessor generated node count: 102/1000000
+Post‐expand include size: 149/2097152 bytes
+Template argument size: 24/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.702      1 - -total
+100.00%    5.702      1 - Template:Warning
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:302-0!*!0!!en!5!* and timestamp 20180823003336 and revision id 13682
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Realms_API&amp;oldid=13682">http://wiki.vg/index.php?title=Realms_API&amp;oldid=13682</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Realms+API" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Realms+API" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Realms_API.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Realms_API.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Realms_API.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Realms_API.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Realms_API&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Realms_API&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Realms_API.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Realms_API" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Realms_API" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Realms_API&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Realms_API&amp;oldid=13682" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Realms_API&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 5 March 2018, at 15:56.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":238});});</script>
+	</body>
+</html>

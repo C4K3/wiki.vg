@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Object Data - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Object_Data","wgTitle":"Object Data","wgCurRevisionId":8314,"wgRevisionId":8314,"wgArticleId":201,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Need Info","Protocol Details","Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Object_Data","wgRelevantArticleId":201,"wgRequestId":"e25421f61344bc6602ea687f","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Object_Data rootpage-Object_Data skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Object Data</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Object_Data.html#mw-head">navigation</a>, 					<a href="Object_Data.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This article documents the <b>Data</b> field in the <a href="Protocol.html#Spawn_Object" title="Protocol">Spawn Object</a> packet. The field is of type Int, and the meaning of its contents depend on the <a href="Entities.html#Objects" class="mw-redirect" title="Entities">type of object</a> being spawned, as defined in the Type field of the same packet, and is documented below.
+</p><p>In some cases, the data field has no meaning, but is only used to indicate presence of velocity.  In others, it (and velocity) is always ignored.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Object_Data.html#Item_.28id_2.29"><span class="tocnumber">1</span> <span class="toctext">Item (id 2)</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Object_Data.html#Minecarts_.28id_10.29"><span class="tocnumber">2</span> <span class="toctext">Minecarts (id 10)</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Object_Data.html#Item_Frame_.28id_71.29"><span class="tocnumber">3</span> <span class="toctext">Item Frame (id 71)</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Object_Data.html#Falling_Block_.28id_70.29"><span class="tocnumber">4</span> <span class="toctext">Falling Block (id 70)</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Object_Data.html#Fishing_Float_.28id_90.29"><span class="tocnumber">5</span> <span class="toctext">Fishing Float (id 90)</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="Object_Data.html#Arrow_.28id_60.29_and_Spectral_Arrow_.28id_91.29"><span class="tocnumber">6</span> <span class="toctext">Arrow (id 60) and Spectral Arrow (id 91)</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="Object_Data.html#Llama_spit_.28id_68.29"><span class="tocnumber">7</span> <span class="toctext">Llama spit (id 68)</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Object_Data.html#Fireball_.28id_63.29.2C_small_fireball_.28id_64.29.2C_dragon_fireball_.28id_93.29.2C_and_wither_skull_.28id_66.29"><span class="tocnumber">8</span> <span class="toctext">Fireball (id 63), small fireball (id 64), dragon fireball (id 93), and wither skull (id 66)</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Object_Data.html#Shulker_bullet_.28id_67.29"><span class="tocnumber">9</span> <span class="toctext">Shulker bullet (id 67)</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="Object_Data.html#Potion_.28id_73.29"><span class="tocnumber">10</span> <span class="toctext">Potion (id 73)</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="Object_Data.html#EXP_bottle_.28id_75.29"><span class="tocnumber">11</span> <span class="toctext">EXP bottle (id 75)</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Item_.28id_2.29">Item (id 2)</span></h2>
+<p>The int value is ignored, but should be set to <code>1</code> to indicate that velocity is present.
+</p>
+<h2><span class="mw-headline" id="Minecarts_.28id_10.29">Minecarts (id 10)</span></h2>
+<p>The int value itself specifies the minecart's functionality:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Value
+</th>
+<th> Minecart functionality
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> Empty (ride-able) minecart
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> Chest minecart
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> Furnace (powered) minecart
+</td></tr>
+<tr>
+<td> 3
+</td>
+<td> TNT minecart
+</td></tr>
+<tr>
+<td> 4
+</td>
+<td> Spawner minecart
+</td></tr>
+<tr>
+<td> 5
+</td>
+<td> Hopper minecart
+</td></tr>
+<tr>
+<td> 6
+</td>
+<td> Command Block minecart
+</td></tr></table>
+<h2><span class="mw-headline" id="Item_Frame_.28id_71.29">Item Frame (id 71)</span></h2>
+<table class="wikitable">
+
+<tr>
+<th> Value
+</th>
+<th> Orientation
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> South
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> West
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> North
+</td></tr>
+<tr>
+<td> 3
+</td>
+<td> East
+</td></tr></table>
+<p>Velocity in the packet is always ignored.
+</p>
+<h2><span class="mw-headline" id="Falling_Block_.28id_70.29">Falling Block (id 70)</span></h2>
+<table class="wikitable">
+
+<tr>
+<th> Field name
+</th>
+<th> Field type
+</th>
+<th> Example
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Block type
+</td>
+<td> Int
+</td>
+<td> <code>12</code>
+</td>
+<td> <code>BlockID | (Metadata &lt;&lt; 12)</code>
+</td></tr></table>
+<p>Velocity in the packet is always ignored.
+</p>
+<h2><span class="mw-headline" id="Fishing_Float_.28id_90.29">Fishing Float (id 90)</span></h2>
+<table class="wikitable">
+<tr>
+<th> Field name
+</th>
+<th> Field type
+</th>
+<th> Example
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Owner
+</td>
+<td> Int
+</td>
+<td>
+</td>
+<td> The entity ID of the owner
+</td></tr></table>
+<p>Velocity in the packet is ignored, and instead should be inferred from the shooter's position.
+</p>
+<table border="1px" cellpadding="5" cellspacing="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td rowspan="2"> <a href="./File:Huh.png.html" class="image"><img alt="Huh.png" src="images/4/4f/Huh.png" width="40" height="40" /></a></td>
+<td>The following information needs to be added to this page:
+</td></tr>
+<tr>
+<td style="border:1px solid red"> <b>What's the exact algorithm for determining this?</b>
+</td></tr></table>
+<h2><span class="mw-headline" id="Arrow_.28id_60.29_and_Spectral_Arrow_.28id_91.29">Arrow (id 60) and Spectral Arrow (id 91)</span></h2>
+<table class="wikitable">
+
+<tr>
+<th> Field name
+</th>
+<th> Field type
+</th>
+<th> Example
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Entity ID
+</td>
+<td> Int
+</td>
+<td> <code>64</code>
+</td>
+<td> The entity ID of the shooter + 1 (Subtract 1 to get the actual entity ID)
+</td></tr></table>
+<h2><span class="mw-headline" id="Llama_spit_.28id_68.29">Llama spit (id 68)</span></h2>
+<p>Velocity is always used even though the data field is always 0.
+</p>
+<h2><span class="mw-headline" id="Fireball_.28id_63.29.2C_small_fireball_.28id_64.29.2C_dragon_fireball_.28id_93.29.2C_and_wither_skull_.28id_66.29">Fireball (id 63), small fireball (id 64), dragon fireball (id 93), and wither skull (id 66)</span></h2>
+<p>The data field stores the ID of the shooting entity, or 0 if there was no shooting entity.  Velocity is used even if data is set to 0.
+</p>
+<h2><span class="mw-headline" id="Shulker_bullet_.28id_67.29">Shulker bullet (id 67)</span></h2>
+<p>Velocity is always used even though the data field is always 0.
+</p>
+<h2><span class="mw-headline" id="Potion_.28id_73.29">Potion (id 73)</span></h2>
+<p>Velocity in the packet is always ignored.
+</p>
+<h2><span class="mw-headline" id="EXP_bottle_.28id_75.29">EXP bottle (id 75)</span></h2>
+<p>Velocity in the packet is always ignored.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823085206
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.039 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 58/1000000
+Preprocessor generated node count: 101/1000000
+Post‐expand include size: 302/2097152 bytes
+Template argument size: 48/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.442      1 - -total
+100.00%    5.442      1 - Template:Need_Info
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:201-0!*!0!!en!5!* and timestamp 20180823085206 and revision id 8314
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Object_Data&amp;oldid=8314">http://wiki.vg/index.php?title=Object_Data&amp;oldid=8314</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Need_Info.html" title="Category:Need Info">Need Info</a></li><li><a href="./Category:Protocol_Details.html" title="Category:Protocol Details">Protocol Details</a></li><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Object+Data" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Object+Data" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Object_Data.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Object_Data.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Object_Data.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Object_Data.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Object_Data&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Object_Data&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Object_Data.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Object_Data" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Object_Data" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Object_Data&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Object_Data&amp;oldid=8314" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Object_Data&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 November 2016, at 07:48.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":146});});</script>
+	</body>
+</html>

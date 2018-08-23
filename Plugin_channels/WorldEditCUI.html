@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Plugin channels/WorldEditCUI - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Plugin_channels/WorldEditCUI","wgTitle":"Plugin channels/WorldEditCUI","wgCurRevisionId":7713,"wgRevisionId":7713,"wgArticleId":1095,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Plugin_channels/WorldEditCUI","wgRelevantArticleId":1095,"wgRequestId":"4988046ce4f2ba2d2c63154d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Plugin_channels_WorldEditCUI rootpage-Plugin_channels skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Plugin channels/WorldEditCUI</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../Plugin_channels.html" title="Plugin channels">Plugin channels</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="WorldEditCUI.html#mw-head">navigation</a>, 					<a href="WorldEditCUI.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><a rel="nofollow" class="external text" href="http://www.enginehub.org/worldedit/">WorldEdit</a> uses <a href="../Plugin_channel.html" class="mw-redirect" title="Plugin channel">plugin channels</a> to communicate with the clientside <a rel="nofollow" class="external text" href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1292886-worldeditcui/">WorldEditCUI</a> mod to display selections.  Client-side source code: <a rel="nofollow" class="external free" href="https://github.com/Mumfrey/WorldEditCUI/">https://github.com/Mumfrey/WorldEditCUI/</a>
+</p><p>This is a (very) rough documentation of those channels that I'll improve.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="WorldEditCUI.html#Selection_types"><span class="tocnumber">1</span> <span class="toctext">Selection types</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="WorldEditCUI.html#Cuboid"><span class="tocnumber">1.1</span> <span class="toctext">Cuboid</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="WorldEditCUI.html#Ellipsoid"><span class="tocnumber">1.2</span> <span class="toctext">Ellipsoid</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="WorldEditCUI.html#Cylinder"><span class="tocnumber">1.3</span> <span class="toctext">Cylinder</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="WorldEditCUI.html#2D_Polygon"><span class="tocnumber">1.4</span> <span class="toctext">2D Polygon</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="WorldEditCUI.html#3D_Polyhedron"><span class="tocnumber">1.5</span> <span class="toctext">3D Polyhedron</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="WorldEditCUI.html#Packet_structure"><span class="tocnumber">2</span> <span class="toctext">Packet structure</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="WorldEditCUI.html#Version"><span class="tocnumber">2.1</span> <span class="toctext">Version</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="WorldEditCUI.html#Shape"><span class="tocnumber">2.2</span> <span class="toctext">Shape</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="WorldEditCUI.html#Point"><span class="tocnumber">2.3</span> <span class="toctext">Point</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="WorldEditCUI.html#Ellipsoid_Point"><span class="tocnumber">2.4</span> <span class="toctext">Ellipsoid Point</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="WorldEditCUI.html#Point_2D"><span class="tocnumber">2.5</span> <span class="toctext">Point 2D</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="WorldEditCUI.html#Cylinder_2"><span class="tocnumber">2.6</span> <span class="toctext">Cylinder</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="WorldEditCUI.html#Min.2FMax"><span class="tocnumber">2.7</span> <span class="toctext">Min/Max</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="WorldEditCUI.html#Polygon"><span class="tocnumber">2.8</span> <span class="toctext">Polygon</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Selection_types">Selection types</span></h2>
+<p>There are several types of selections.  Each type has a format used with current versions of WorldEditCUI and a second format used in older versions (usually a cube with similar edges).
+</p>
+<h3><span class="mw-headline" id="Cuboid">Cuboid</span></h3>
+<p>A basic rectangular selection, with minimum and maximum points.
+</p><p>Minimum protocol version: 0
+</p>
+<dl><dt> Current version and legacy versions</dt></dl>
+<p>Shape ID is <code>cuboid</code>.
+</p><p>If the selection has a position one (left click), it is sent with as a Point with an id of 0.  If the selection has a position two (right click), it is sent with as a Point with an id of 1.
+</p>
+<dl><dt> Current version example</dt></dl>
+<p>Creating a cuboid from (9, 25, 32) to (19, 26, 45):
+</p>
+<pre>
+s|cuboid
+p|0|9|25|32|1
+p|1|19|26|45|308
+</pre>
+<h3><span class="mw-headline" id="Ellipsoid">Ellipsoid</span></h3>
+<p>Ellipsoid selections form 3-dimensional ellipses and spheres.  They have a center, and then x, y, and z radii (measured from the center).
+</p><p>Minimum protocol version: 1
+</p>
+<dl><dt> Current version</dt></dl>
+<p>Shape ID is <code>ellipsoid</code>.
+</p><p>An ellipsoid point with id 0 is sent for the center, and an ellipsoid point with id 1 is sent to set the radii (these are distances, not coordinates).
+</p>
+<dl><dt> Current version example</dt></dl>
+<p>Creates an ellipsoid at 64, 72, 48 with radii of 2, 4, and 8.
+</p>
+<pre>
+s|ellipsoid
+e|0|64|72|48
+e|1|2|4|8
+</pre>
+<p>Creates a sphere with a radius of 24 at 128, 128, 128.
+</p>
+<pre>
+s|ellipsoid
+e|0|128|128|128
+e|1|24|24|24
+</pre>
+<dl><dt> Legacy versions</dt></dl>
+<p>Ellipsoid regions are sent as cuboids with their minimum and maximum positions in legacy versions.
+</p>
+<h3><span class="mw-headline" id="Cylinder">Cylinder</span></h3>
+<p>A vertical cylinder selection.
+</p><p>Minimum protocol version: 1
+</p>
+<dl><dt> Current version</dt></dl>
+<p>Shape ID is <code>cylinder</code>.
+</p><p>A cylinder packet is sent with the center and radius, and then a min/max packet is sent to set the bottom and top of the selection.
+</p>
+<dl><dt> Current version example</dt></dl>
+<p>Creates a cylinder centered on 24, 24 with radii of 8 and 4 starting at y=32 and ending at y=64.
+</p>
+<pre>
+s|cylinder
+cyl|24|48|24|8|4
+mm|32|64
+</pre>
+<dl><dt> Legacy versions</dt></dl>
+<p>Sent as a cuboid with the minimum and maximum positions.
+</p>
+<h3><span class="mw-headline" id="2D_Polygon">2D Polygon</span></h3>
+<p>A 2-dimensional, flat polygon.
+</p><p>Minimum protocol version: 0
+</p>
+<dl><dt> Current and legacy versions</dt></dl>
+<p>Shape ID: <code>polygon2d</code>
+</p><p>For all of the points in the selection, a Point 2D packet is sent with the point's x and z coordinates.  Then, a min/max packet is sent to set the bottom and top of the selection.
+</p>
+<dl><dt> Current version example</dt></dl>
+<p>Creates a rotated square around 0, 0 that starts at y=32 and ends at y=70.
+</p>
+<pre>
+s|polygon2d
+p2|0|0|25|1
+p2|1|25|0|25
+p2|2|0|-25|625
+p2|3|-25|0|1250
+mm|32|70
+</pre>
+<h3><span class="mw-headline" id="3D_Polyhedron">3D Polyhedron</span></h3>
+<p>A 3-dimensional polygonal selection.
+</p><p>Minimum protocol version: 3
+</p>
+<dl><dt> Current version</dt></dl>
+<p>Shape ID is <code>polyhedron</code>.
+</p><p>For each point in the polyhedron, a Point packet is sent with the x, y, and z coordinates.  Then, for each triangle in the selection, a Polygon packet is sent with vertices set to the index of each point that makes up the triangle.
+</p>
+<dl><dt> Current version example</dt></dl>
+<p>Creates a <a href="http://en.wikipedia.org/wiki/tetrahedron" class="extiw" title="wikipedia:tetrahedron">tetrahedron</a> around 9, 9, 9.
+</p>
+<pre>
+s|polyhedron
+p|0|8|8|8|1
+p|1|8|8|10|3
+p|2|10|8|9|6
+p|3|9|10|9|10
+poly|0|1|2
+poly|0|1|3
+poly|0|2|3
+poly|1|2|3
+</pre>
+<dl><dt> Legacy versions</dt></dl>
+<p>Sent as a cuboid with the minimum and maximum positions.
+</p>
+<h2><span class="mw-headline" id="Packet_structure">Packet structure</span></h2>
+<p>All communication is performed over the <code>WECUI</code> plugin channel.  The content sent on this channel is sent in the form of UTF8 strings, which are not length prefixed and take up the whole channel (length can be determined from the rest of the plugin channel packet's structure).  In other words, the entire payload is a single string.
+</p><p>The content of the String is first an action, followed by a list of parameters separated by <code>|</code>.  To enable this packet, the client must first <a href="https://wiki.vg/index.php?title=Plugin_Channel&amp;action=edit&amp;redlink=1" class="new" title="Plugin Channel (page does not exist)"><code>REGISTER</code></a> the channel and then send a version packet.
+</p>
+<h3><span class="mw-headline" id="Version">Version</span></h3>
+<p><a rel="nofollow" class="external text" href="https://github.com/sk89q/WorldEdit/blob/935de4c93db215d5573916899a5cc8eefe159bab/worldedit-core/src/main/java/com/sk89q/worldedit/LocalSession.java#L776-L784">Parsed in LocalSession.java</a>
+</p><p>The version packet tells the server what types of selections it understands.  The version is a single integer, currently ranging from 0 to 3.  See the list of selection types for what various versions control.
+</p><p><code>v|{version}</code>
+</p><p>Example:
+</p><p><code>v|3</code> tells the server that it is running the latest version.
+</p>
+<h3><span class="mw-headline" id="Shape">Shape</span></h3>
+<p>The <code>s</code> packet tells the client the current selection shape.  The shape is determined from the shape ID of the selection (or its legacy shape ID).  Upon receiving this packet, all other data about the current selection is cleared by the client - the remaining data needs to be resent afterwards.
+</p><p><code>s|{shape}</code>
+</p><p>Example:
+</p><p><code>s|cuboid</code> sets the current shape to cuboid and clears the current points on the selection.
+</p>
+<h3><span class="mw-headline" id="Point">Point</span></h3>
+<p>The <code>p</code> packet sets the location of one of the points in the current selection.  It has 5 fields, the ID, the x, y, and z coordinates, and the total area of the selection.
+</p><p>The significance of each ID is defined by the current selection shape; they may be corners or vertices.
+</p><p><code>p|{id}|{x}|{y}|{z}|{total area}</code>
+</p><p>Example:
+</p><p><code>p|0|4|5|6|1</code> sets the first selection point to 4, 5, 6 in a cuboid selection.
+<code>p|1|9|7|5|10</code> sets the second selection point to 9, 7, 5 in a cuboid selection, and (when following the previous selection) completes a cuboid from 4, 5, 6 to 9, 7, 5.
+</p>
+<h3><span class="mw-headline" id="Ellipsoid_Point">Ellipsoid Point</span></h3>
+<p>The <code>e</code> packet sets information about ellipsoids.  It has 4 fields: the id, and x, y, and z values.  If ID is 0, x, y, and z represent the center of the ellipsoid; if it's 1, x, y, and z are radii.
+</p><p><code>e|{id}|{x}|{y}|{z}</code>
+</p><p>Example:
+</p><p><code>e|0|10|42|30</code> sets the center of the ellipsoid to 10, 42, 30.
+<code>e|1|5|4|3</code> sets the radii to 5, 4, and 3.
+<code>e|1|9|9|9</code> makes the ellipsoid a sphere with radius of 9.
+</p>
+<h3><span class="mw-headline" id="Point_2D">Point 2D</span></h3>
+<p>The <code>p2</code> packet sets the location of one of the points in the current selection, two-dimensionally.  It has 4 fields: the id, the block x and z, and the total area.  This packet is used with polygonal selections, so there is no cap on the maximum ID.
+</p><p><code>p2|{id}|{x}|{z}|{area}</code>
+</p><p>Example:
+</p><p><code>p2|0|4|9|1</code> sets the first point to 4, 9.
+</p>
+<h3><span class="mw-headline" id="Cylinder_2">Cylinder</span></h3>
+<p>The <code>cyl</code> packet sets info about a cylindrical selection.  It has 5 fields: the x, y, and z of the center and then the radius x and z.  The y coordinate is the center of the cylinder; the height is later set with min/max.
+</p><p><code>cyl|{centerX}|{centerY}|{centerZ}|{radX}|{radZ}</code>
+</p><p>Example:
+</p><p><code>cyl|5|10|5|2|2</code> creates a cylinder centered on 5, 10, 5 with a radius of 2.
+</p>
+<h3><span class="mw-headline" id="Min.2FMax">Min/Max</span></h3>
+<p>The <code>mm</code> packet sets minimum and maximum Y coordinates of a 2D selection.  It has two fields, the minimum and the maximum.
+</p><p><code>mm|{min}|{max}</code>
+</p><p>Example:
+</p><p><code>mm|7|20</code> sets the minimum Y coordinate to 7 and the maximum Y coordinate to 20.
+</p>
+<h3><span class="mw-headline" id="Polygon">Polygon</span></h3>
+<p>The <code>poly</code> packet sets polygons in a polyhedral selection.  It has an array of 3 (although it may be possible to add more) values, which are indexes in the points list.  Multiple poly packets do not overwrite the first one but instead add additional polygons.
+</p><p><code>poly|{vertex1}|{vertex2}|{vertex3}</code>
+</p><p>Example:
+</p><p><code>poly|0|1|2</code> creates a triangle with vertices of point 0, point 1, and point 2.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823152817
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.034 seconds
+Real time usage: 0.044 seconds
+Preprocessor visited node count: 113/1000000
+Preprocessor generated node count: 184/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:1095-0!*!0!!en!*!* and timestamp 20180823152817 and revision id 7713
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Plugin_channels/WorldEditCUI&amp;oldid=7713">http://wiki.vg/index.php?title=Plugin_channels/WorldEditCUI&amp;oldid=7713</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Plugin+channels%2FWorldEditCUI" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Plugin+channels%2FWorldEditCUI" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="WorldEditCUI.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Plugin_channels/WorldEditCUI&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="WorldEditCUI.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="WorldEditCUI.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Plugin_channels/WorldEditCUI&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Plugin_channels/WorldEditCUI&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="WorldEditCUI.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Plugin_channels/WorldEditCUI" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Plugin_channels/WorldEditCUI" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Plugin_channels/WorldEditCUI&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Plugin_channels/WorldEditCUI&amp;oldid=7713" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Plugin_channels/WorldEditCUI&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 9 April 2016, at 21:00.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="../wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="../wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="../resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":209});});</script>
+	</body>
+</html>

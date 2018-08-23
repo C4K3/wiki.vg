@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Pocket Minecraft Map Format - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pocket_Minecraft_Map_Format","wgTitle":"Pocket Minecraft Map Format","wgCurRevisionId":7893,"wgRevisionId":7893,"wgArticleId":259,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pocket Minecraft"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pocket_Minecraft_Map_Format","wgRelevantArticleId":259,"wgRequestId":"f39f1cd651f1fcebb9be1d82","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pocket_Minecraft_Map_Format rootpage-Pocket_Minecraft_Map_Format skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Pocket Minecraft Map Format</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Pocket_Minecraft_Map_Format.html#mw-head">navigation</a>, 					<a href="Pocket_Minecraft_Map_Format.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+This article describes the Chunk format used in the Full Chunk Data (0xbf, clientbound).
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Pocket_Minecraft_Map_Format.html#Concepts"><span class="tocnumber">1</span> <span class="toctext">Concepts</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Pocket_Minecraft_Map_Format.html#Format"><span class="tocnumber">2</span> <span class="toctext">Format</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Pocket_Minecraft_Map_Format.html#Blocks"><span class="tocnumber">2.1</span> <span class="toctext">Blocks</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Pocket_Minecraft_Map_Format.html#Skylight.2FBlocklight.2FMetadata"><span class="tocnumber">2.2</span> <span class="toctext">Skylight/Blocklight/Metadata</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Pocket_Minecraft_Map_Format.html#Heightmap"><span class="tocnumber">2.3</span> <span class="toctext">Heightmap</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Pocket_Minecraft_Map_Format.html#Biome_colors"><span class="tocnumber">2.4</span> <span class="toctext">Biome colors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Pocket_Minecraft_Map_Format.html#LevelDB"><span class="tocnumber">3</span> <span class="toctext">LevelDB</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Pocket_Minecraft_Map_Format.html#Implementations"><span class="tocnumber">4</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Pocket_Minecraft_Map_Format.html#Sources"><span class="tocnumber">5</span> <span class="toctext">Sources</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Concepts">Concepts</span></h2>
+<ul><li> Chunk: a 16×128×16 area, sometimes also called chunk section</li></ul>
+<h2><span class="mw-headline" id="Format">Format</span></h2>
+<p>A chunk consists of the following fields (fixed size of 83200 bytes):
+</p>
+<table class="wikitable">
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Blocks
+</td>
+<td> Array of bytes
+</td>
+<td> Always a size of 32,768 bytes
+</td></tr>
+<tr>
+<td> Regular Data
+</td>
+<td> Array of bytes
+</td>
+<td> Always a size of 16,384 bytes
+</td></tr>
+<tr>
+<td> Sky Light
+</td>
+<td> Array of bytes
+</td>
+<td> Always a size of 16,384 bytes, half byte per block
+</td></tr>
+<tr>
+<td> Block Light
+</td>
+<td> Array of bytes
+</td>
+<td> Always a size of 16,384 bytes, half byte per block
+</td></tr>
+<tr>
+<td> Height Map
+</td>
+<td> Array of ints
+</td>
+<td> Always a size of 256 bytes
+</td></tr>
+<tr>
+<td> Biome Colors
+</td>
+<td> Array of ints
+</td>
+<td> Always a size of 1024 bytes
+</td></tr></table>
+<h3><span class="mw-headline" id="Blocks">Blocks</span></h3>
+<p>The following definitions are provided to clarify the mapping between the location of a block within a LevelDB entry containing a chunk of 32,768 blocks and the corresponding location of the block within the entire world:
+</p>
+<ul><li> Let <code>X</code> and <code>Z</code> be the values contained within the LevelDB key.</li>
+<li> Let <code>C[]</code> be a three dimensional array of the chunk of 32,768 blocks contained within the LevelDB entry. The first two indices i and j range from 0 to 15, and the third index y ranges from 0 to 127.</li>
+<li> Let <code>W[]</code> be a three dimensional array of the blocks contained within the entire world.</li></ul>
+<p>For infinite worlds, the first two indices <code>x</code> and <code>z</code> both range over the values of a four byte integer and may be negative as well as positive.
+</p><p>The third index <code>y</code> ranges from 0 to 127 for both old style and infinite worlds.
+</p><p>Assuming the definitions above, the location of a block with a LevelDB entry with key values <code>X</code> and <code>Z</code> maps to the corresponding location of the block within the entire world as follows:
+</p>
+<pre>let x = 16 * X + i
+let z = 16 * Z + j
+C[i, j, y] &lt;-&gt; W[x, z, y]</pre>
+<h3><span class="mw-headline" id="Skylight.2FBlocklight.2FMetadata">Skylight/Blocklight/Metadata</span></h3>
+<p>Block light and skylight are very similar to the 1.8 implementation used in the Minecraft: PC edition of the game. All chunks always have the same value and have a fixed size of 83200, you can index the skylight/blocklight/metadata by block by using <code>(x * 2048) + (z * 128) + y</code> where x, y, z are the coordinates of the block you are trying to retrieve the skylight/blocklight/metadata for.
+</p>
+<h3><span class="mw-headline" id="Heightmap">Heightmap</span></h3>
+<p>The heightmap is the mapping between the height of each block in a chunk for retrieveing by x and z you can simply <code>(z &lt;&lt; 4) + x</code> to get the value or set it.
+</p>
+<h3><span class="mw-headline" id="Biome_colors">Biome colors</span></h3>
+<p>Each block in a single column has a biome id and (unlike the PC version of the game) an r, g, b value associated with it that is used for the client to render the color (more like hue) of the block. For finding/setting the biome id for a column of blocks the key for each column is <code>(z &lt;&lt; 4) + x</code> and the integer that you pack inside the value is <code>(current &amp; 0xFFFFFF) | (biomeId &lt;&lt; 24)</code> where <code>current = biomes[(z &lt;&lt; 4) + x]</code> and <code>biomeId = the id of the biome</code> for getting the id, it is the same but you just reverse it <code>(current &amp; 0xFF000000) &gt;&gt; 24</code> where <code>current = biomes[(z &lt;&lt; 4) + x]</code>. For setting the r, g, b color of each chunk you can do a similar key <code>[(z &lt;&lt; 4) | x]</code> and unpack the r, g, b by <code>color &gt;&gt; 16, (color &gt;&gt; 8) &amp; 0xFF, color &amp; 0xFF</code> and pack it again by getting the correct color <code>(biome[(z &lt;&lt; 4) + x] &amp; 0xFF000000) | ((R &amp; 0xFF) &lt;&lt; 16) | ((G &amp; 0xFF) &lt;&lt; 8) | (B &amp; 0XFF)</code>.
+</p>
+<h2><span class="mw-headline" id="LevelDB">LevelDB</span></h2>
+<p>In the Minecraft: PE application, all chunks are stored in Mojang’s fork of LevelDB (a ZLib compressed LevelDB database) each key follows the same format unless you are using a special key, or a nether key
+</p><p>For an overworld key, it is quite trivial (always 9 bytes long):
+</p>
+<table class="wikitable">
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th></tr>
+<tr>
+<td> X Coordinate
+</td>
+<td> Little-endian int
+</td></tr>
+<tr>
+<td> Z Coordinate
+</td>
+<td> Little-endian int
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> A byte containing the type of data, see bytes below
+</td></tr></table>
+<p>For a nether key it is similar, but with an extra byte after Z Coordinate (always 13 bytes long):
+</p>
+<table class="wikitable">
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th></tr>
+<tr>
+<td> X Coordinate
+</td>
+<td> Little-endian int
+</td></tr>
+<tr>
+<td> Z Coordinate
+</td>
+<td> Little-endian int
+</td></tr>
+<tr>
+<td> Nether specifier
+</td>
+<td> Little-endian int, always a value of 1
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> A byte containing the type of data, see bytes below
+</td></tr></table>
+<p>The corresponding byte specifier for the type of chunk are:
+</p>
+<table class="wikitable">
+<tr>
+<th> Field Name
+</th>
+<th> Field Value
+</th></tr>
+<tr>
+<td> Terrain Data
+</td>
+<td> 0x30 (48 in decimal, ‘0’ ASCII)
+</td></tr>
+<tr>
+<td> Tile Entity Data
+</td>
+<td> 0x31 (49 in decimal, ‘1’ ASCII)
+</td></tr>
+<tr>
+<td> Entity Data
+</td>
+<td> 0x32 (50 in decimal, ‘2’ ASCII)
+</td></tr>
+<tr>
+<td> 1-byte Data
+</td>
+<td> 0x76 (118 in decimal, ‘v’ ASCII)
+</td></tr></table>
+<p>Tile Entity Data and Entity Data are encoded as NBT, the format of Terrain Data is specified above.
+</p>
+<h2><span class="mw-headline" id="Implementations">Implementations</span></h2>
+<ul><li> Mojang’s LevelDB: <a rel="nofollow" class="external free" href="https://github.com/Mojang/leveldb-mcpe">https://github.com/Mojang/leveldb-mcpe</a></li></ul>
+<h2><span class="mw-headline" id="Sources">Sources</span></h2>
+<ul><li> <a rel="nofollow" class="external free" href="http://minecraft.gamepedia.com/Pocket_Edition_level_format">http://minecraft.gamepedia.com/Pocket_Edition_level_format</a></li>
+<li> <a rel="nofollow" class="external free" href="https://github.com/Nukkit/Nukkit/blob/master/src/main/java/cn/nukkit/level/format/generic/BaseFullChunk.java">https://github.com/Nukkit/Nukkit/blob/master/src/main/java/cn/nukkit/level/format/generic/BaseFullChunk.java</a></li>
+<li> <a rel="nofollow" class="external free" href="https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Worlds/ChunkColumn.cs">https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Worlds/ChunkColumn.cs</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20180823103301
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.026 seconds
+Real time usage: 0.104 seconds
+Preprocessor visited node count: 44/1000000
+Preprocessor generated node count: 60/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:259-0!*!*!!en!*!* and timestamp 20180823103301 and revision id 7893
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Pocket_Minecraft_Map_Format&amp;oldid=7893">http://wiki.vg/index.php?title=Pocket_Minecraft_Map_Format&amp;oldid=7893</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Pocket_Minecraft.html" title="Category:Pocket Minecraft">Pocket Minecraft</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Pocket+Minecraft+Map+Format" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Pocket+Minecraft+Map+Format" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Pocket_Minecraft_Map_Format.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Pocket_Minecraft_Map_Format&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Pocket_Minecraft_Map_Format.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Pocket_Minecraft_Map_Format.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Map_Format&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Map_Format&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Pocket_Minecraft_Map_Format.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Pocket_Minecraft_Map_Format" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Pocket_Minecraft_Map_Format" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Map_Format&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Map_Format&amp;oldid=7893" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Pocket_Minecraft_Map_Format&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 26 May 2016, at 21:16.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":291});});</script>
+	</body>
+</html>

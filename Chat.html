@@ -1,0 +1,2913 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Chat - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chat","wgTitle":"Chat","wgCurRevisionId":13165,"wgRevisionId":13165,"wgArticleId":59,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Need Info","Protocol Details","Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chat","wgRelevantArticleId":59,"wgRequestId":"35fdb8e02b9097064dbd0dc0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chat rootpage-Chat skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Chat</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Chat.html#mw-head">navigation</a>, 					<a href="Chat.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Minecraft supports two-way <b>chat</b> communication via the <a href="Protocol.html#Chat_Message_.28clientbound.29" title="Protocol">Chat Message</a> packet, which support a variety of formatting options.  Note that this system isn't exclusive to the Chat Message packet - it's used in several other places (including written books, death messages, window titles, and the like).
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Chat.html#Current_system_.28JSON_Chat.29"><span class="tocnumber">1</span> <span class="toctext">Current system (JSON Chat)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Chat.html#Inheritance"><span class="tocnumber">1.1</span> <span class="toctext">Inheritance</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Chat.html#Schema"><span class="tocnumber">1.2</span> <span class="toctext">Schema</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="Chat.html#Shared_between_all_components"><span class="tocnumber">1.2.1</span> <span class="toctext">Shared between all components</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="Chat.html#String_component"><span class="tocnumber">1.2.2</span> <span class="toctext">String component</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="Chat.html#Translation_component"><span class="tocnumber">1.2.3</span> <span class="toctext">Translation component</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="Chat.html#Keybind_component"><span class="tocnumber">1.2.4</span> <span class="toctext">Keybind component</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="Chat.html#Score_component"><span class="tocnumber">1.2.5</span> <span class="toctext">Score component</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="Chat.html#Selector_component"><span class="tocnumber">1.2.6</span> <span class="toctext">Selector component</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="Chat.html#Examples"><span class="tocnumber">1.3</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="Chat.html#Standard_chat_message"><span class="tocnumber">1.3.1</span> <span class="toctext">Standard chat message</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="Chat.html#Old_system"><span class="tocnumber">2</span> <span class="toctext">Old system</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="Chat.html#Control_Sequences"><span class="tocnumber">2.1</span> <span class="toctext">Control Sequences</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="Chat.html#Colors"><span class="tocnumber">2.1.1</span> <span class="toctext">Colors</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="Chat.html#Styles"><span class="tocnumber">2.1.2</span> <span class="toctext">Styles</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="Chat.html#Processing_chat"><span class="tocnumber">3</span> <span class="toctext">Processing chat</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="Chat.html#Font"><span class="tocnumber">4</span> <span class="toctext">Font</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="Chat.html#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Current_system_.28JSON_Chat.29">Current system (JSON Chat)</span></h2>
+<p>Chat data is sent in JSON.  For most situations, the JSON is strictly parsed, but <a rel="nofollow" class="external text" href="https://google.github.io/gson/apidocs/com/google/gson/stream/JsonReader.html#setLenient-boolean-">lenient JSON parsing</a> is used for the Disconnect packet and for written book text.
+</p>
+<h3><span class="mw-headline" id="Inheritance">Inheritance</span></h3>
+<p>Each component can have multiple <i>siblings</i>.  Each sibling component inherits properties from the style of its parent, using those styles if they are not defined in the sibling's own style.
+</p><p>For example, in this component:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bold&quot;</span><span class="o">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;extra&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;baz&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bold&quot;</span><span class="o">:</span> <span class="s2">&quot;false&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;qux&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bold&quot;</span><span class="o">:</span> <span class="s2">&quot;true&quot;</span>
+    <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+<p>The text "foo", "bar", and "qux" are all rendered as bold while "baz" is not.
+</p>
+<h3><span class="mw-headline" id="Schema">Schema</span></h3>
+<p>Each situation where a component can appear may be either a JSON object (the most common choice), an array, or a JSON primitive (which is converted to a String).
+</p><p>JSON primitives can be used for components, in which case they are implicitly converted into a String component.  Note that it is invalid to have a JSON primitive as the root object, so it is <b>not</b> valid to merely send the text in quotes.  This shorthand is useful for sibling lists, though.
+</p><p>It is also legal to put a JSON array where a component would go, so long as the array is not empty.  The first component in the array is the parent of all of the following components.  This can produce unusual behavior with style inheritance, but it is still useful shorthand.
+</p><p>The most common type of component is a JSON object; the format is as follows:
+</p>
+<h4><span class="mw-headline" id="Shared_between_all_components">Shared between all components</span></h4>
+<p>All component types have certain fields that represent the style.  All of these fields may be skipped, in which case the parent's style will be inherited.
+</p>
+<dl><dt><code>bold</code></dt>
+<dd>Boolean - if <code>true</code>, the component is emboldened.</dd>
+<dt><code>italic</code></dt>
+<dd>Boolean - if <code>true</code>, the component is italicized.</dd>
+<dt><code>underlined</code></dt>
+<dd>Boolean - if <code>true</code>, the component is underlined.</dd>
+<dt><code>strikethrough</code></dt>
+<dd>Boolean - if <code>true</code>, the component is struck out.</dd>
+<dt><code>obfuscated</code></dt>
+<dd>Boolean - if <code>true</code>, the component randomly switches between characters of the same width.</dd>
+<dt><code>color</code></dt>
+<dd>String - contains the color for the component.  Should be one of the normal <a href="Chat.html#Colors">colors</a>, but can also be a <a href="Chat.html#Styles">format code</a> (however, the fields relating to styles should be used instead for that purpose).  If not present (or set to <code>reset</code>), then the default color for the text will be used, which varies by the situation (in some cases, it is white; in others, it is black; in still others, it is a shade of gray that isn't normally used on text).</dd>
+<dt><code>insertion</code></dt>
+<dd>String - contains text to insert.  Only used for messages in chat.  When shift is held, clicking the component <em>inserts</em> the given text into the chat box at the cursor (potentially replacing selected text).  Has no effect on other locations at this time.</dd>
+<dt><code>clickEvent</code></dt>
+<dd>JSON object - Defines an event that occurs when this component is clicked.  Contains an <code>action</code> key and a <code>value</code> key.  <code>value</code> is internally handled as a String, although it can be any type of JSON primitive.
+<dl><dt><code>open_url</code></dt>
+<dd>Opens the given URL in the default web browser.  Ignored if the player has opted to disable links in chat; may open a GUI prompting the user if the setting for that is enabled.  The link's protocol must be set and must be <code>http</code> or <code>https</code>, for security reasons.</dd>
+<dt><s><code>open_file</code></s></dt>
+<dd><strong>Cannot be used within JSON chat</strong>.  Opens a link to any protocol, but cannot be used in JSON chat for security reasons.  Only exists to internally implement links for screenshots.</dd>
+<dt><code>run_command</code></dt>
+<dd>Runs the given command.  Not required to be a command - clicking this only causes the client to send the given content as a chat message, so if not prefixed with <code>/</code>, they will say the given text instead.  If used in a book GUI, the GUI is closed after clicking.</dd>
+<dt><s><code>twitch_user_info</code></s></dt>
+<dd><strong>No longer supported; cannot be used within JSON chat</strong>.  Only usable in 1.8 and below; twitch support was removed in 1.9.  Additionally, this is only used internally by the client.  On click, opens a twitch user info GUI screen.  Value should be the twitch user name.</dd>
+<dt><code>suggest_command</code></dt>
+<dd>Only usable for messages in chat.  Replaces the content of the chat box with the given text - usually a command, but it is not required to be a command (commands should be prefixed with <code>/</code>).</dd>
+<dt><code>change_page</code></dt>
+<dd>Only usable within written books.  Changes the page of the book to the given page, starting at 1.  For instance, <code>"value":1</code> switches the book to the first page.  If the page is less than one or beyond the number of pages in the book, the event is ignored.</dd></dl></dd></dl>
+<dl><dt><code>hoverEvent</code></dt>
+<dd>JSON object - Defines an event that occurs when this component hovered over.  Contains an <code>action</code> key and a <code>value</code> key; action is a String and value is a text component.  However, since text components can be serialized as primitives as well as arrays and objects, this can directly be a String.  A list of actions:
+<dl><dt><code>show_text</code></dt>
+<dd>The text to display.  Can either be a string directly (<code>"value":"la"</code>) or a full component (<code>"value":{"text":"la","color":"red"}</code>).</dd>
+<dt><code>show_item</code></dt>
+<dd>The NBT of the item to display, in the JSON-NBT format (as would be used in <code>/give</code>).  Note that this is a String and not a JSON object - it should either be set in a String directly (<code>"value":"{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"</code>) or as text of a component (<code>"value":{"text":"{id:35,Damage:5,Count:2,tag:{display:{Name:Testing}}}"}</code>).  If the item is invalid, "Invalid Item!" will be drawn in red instead.</dd>
+<dt><code>show_entity</code></dt>
+<dd>A JSON-NBT String describing the entity.  Contains 3 values: <code>id</code>, the entity's UUID (with dashes); <code>type</code> (optional), which contains the resource location for the entity's type (eg <code>minecraft:zombie</code>); and <code>name</code>, which contains the entity's custom name (if present).  Note that this is a String and not a JSON object.  It should be set in a String directly (<code>"value":"{id:7e4a61cc-83fa-4441-a299-bf69786e610a,type:minecraft:zombie,name:Zombie}"</code>) or as the content of a component.  If the entity is invalid, "Invalid Entity!" will be displayed.  Note that the client does <i>not</i> need to have the given entity loaded.</dd>
+<dt><s><code>show_achievement</code></s></dt>
+<dd><strong>No longer supported</strong>.  Since 1.12, this no longer exists; advancements instead simply use <code>show_text</code>.  The ID of an achievement or statistic to display.  Example: <code>"value":"achievement.openInventory"</code>.</dd></dl></dd></dl>
+<dl><dt><code>extra</code></dt>
+<dd>An array of sibling components.  If present, cannot be empty.</dd></dl>
+<p>Beyond that, there are additional properties.  Attempt to parse as each of the following in the order they are described:
+</p>
+<h4><span class="mw-headline" id="String_component">String component</span></h4>
+<p>A String component contains only text.  If the JSON contains a <code>text</code> key, then the component is a String component.  The only content of this component is its text, with no additional processing.
+</p>
+<h4><span class="mw-headline" id="Translation_component">Translation component</span></h4>
+<table border="1px" cellpadding="5" cellspacing="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td rowspan="2"> <a href="./File:Huh.png.html" class="image"><img alt="Huh.png" src="images/4/4f/Huh.png" width="40" height="40" /></a></td>
+<td>The following information needs to be added to this page:
+</td></tr>
+<tr>
+<td style="border:1px solid red"> <b>Is using this with an invalid key intended or deprecated?  Also, what exactly happens on invalid formats?</b>
+</td></tr></table>
+<p>Translates text into the current language.  If the JSON contains a <code>translate</code> key, then the component is a translation component.
+</p><p>Translation supports <code>%s</code> and <code>%%</code> format tokens.  <code>%%</code> is just an escaped percent symbol.  <code>%s</code> marks text to replace using content from the optional <code>with</code> tag.  <code>with</code> is an array of components.
+</p><p>As a special case, if the translation key is <code>chat.type.text</code>, it will be changed to <code>chat.type.text.narrate</code> when passed to narrator (although it will remain as <code>chat.type.text</code> in chat).
+</p>
+<h4><span class="mw-headline" id="Keybind_component">Keybind component</span></h4>
+<p>Displays the client's current keybind for the specified key.  If the component contains a <code>keybind</code> key, then it is a keybind component.  The value is named after the keys in <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Options.txt">options.txt</a></span> (for instance, for <code>key_key.forward</code> in options.txt, <code>key.forward</code> would be used in the component and <kbd>W</kbd> would be displayed).  For keys that are not known, the value provided should be displayed instead (for instance <code>key.invalid</code> would remain as <code>key.invalid</code>).
+</p>
+<h4><span class="mw-headline" id="Score_component">Score component</span></h4>
+<p>Displays a score.  If the JSON contains a <code>score</code> key, then the component is a score component.
+</p><p>The <code>score</code> JSON object contains data about the objective.
+</p><p>When being sent to the client, it must contain <code>name</code>, <code>objective</code>, and <code>value</code> keys.  <code>name</code> is a player username or entity UUID (if it is a player, it is a username); <code>objective</code> is the name of the objective; <code>value</code> is the resolved value of that objective.
+</p><p>When being sent to the server, <code>value</code> is not used.  <code>name</code> can be an entity selector (that selects one entity), or alternatively <code>*</code> which matches the sending player.
+</p>
+<h4><span class="mw-headline" id="Selector_component">Selector component</span></h4>
+<p>Displays the results of an entity selector.  <b>Should not be sent to clients</b>; only intended for commands and client-to-server actions.  If the component contains a <code>selector</code> key, then it is a selector component.
+</p><p>The server resolves the list selector into a list of entities, each with an appropriate hover event, and joined with commas and "and" (but it lacks a <a href="http://en.wikipedia.org/wiki/serial_comma" class="extiw" title="wikipedia:serial comma">serial comma</a>).
+</p>
+<h3><span class="mw-headline" id="Examples">Examples</span></h3>
+<p>Here are some examples from the Notchain server for how chat formatting can be used.
+</p><p>TODO - additional examples
+</p>
+<h4><span class="mw-headline" id="Standard_chat_message">Standard chat message</span></h4>
+<p>The normal chat message uses a translation component along with some styling.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span><span class="s2">&quot;translate&quot;</span><span class="o">:</span><span class="s2">&quot;chat.type.text&quot;</span><span class="p">,</span><span class="s2">&quot;with&quot;</span><span class="o">:</span><span class="p">[{</span><span class="s2">&quot;text&quot;</span><span class="o">:</span><span class="s2">&quot;Herobrine&quot;</span><span class="p">,</span><span class="s2">&quot;clickEvent&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="s2">&quot;suggest_command&quot;</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="s2">&quot;/msg Herobrine &quot;</span><span class="p">},</span><span class="s2">&quot;hoverEvent&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="s2">&quot;show_entity&quot;</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="s2">&quot;{id:f84c6a79-0a4e-45e0-879b-cd49ebd4c4e2,name:Herobrine}&quot;</span><span class="p">},</span><span class="s2">&quot;insertion&quot;</span><span class="o">:</span><span class="s2">&quot;Herobrine&quot;</span><span class="p">},{</span><span class="s2">&quot;text&quot;</span><span class="o">:</span><span class="s2">&quot;I don&#39;t exist&quot;</span><span class="p">}]}</span>
+</pre></div>
+<p>The <code>chat.type.text</code> translation key becomes <code>&lt;%s&gt; %s</code>, which is then filled in with the player's name and the actual message.  Note that the player's name has a click event (which inserts text to message the player), a hover event (which shows the entity ID; also note that <code>type</code> is missing), and an insertion (for the player's name).
+</p>
+<h2><span class="mw-headline" id="Old_system">Old system</span></h2>
+<h3><span class="mw-headline" id="Control_Sequences">Control Sequences</span></h3>
+<p>The client treats certain two-character sequences specially. The first character must be:
+</p>
+<ul><li>§ (U+00A7) for minecraft</li>
+<li>&amp; for minecraft classic</li></ul>
+<p>The following character indicates a certain color or formatting to apply to the proceeding text.
+</p><p>The Notchian classic client expects that an escape code in a chat message will be followed by at least one character, and will otherwise crash with a StringIndexOutOfBoundsException. The workaround for servers is to never end a message with a color control character.  This is not an issue for the modern Notchian client.
+</p>
+<h4><span class="mw-headline" id="Colors">Colors</span></h4>
+<p>These correspond very roughly to the colors available in ANSI terminals.
+</p><p>e.g.: <code>This is white, but §4this is dark red</code>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:90px;"><a href="./File:Colors.png.html" class="image"><img alt="" src="images/4/4c/Colors.png" width="88" height="288" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Colors.png.html" class="internal" title="Enlarge"></a></div>Hex digit to color mapping</div></div></div>
+<table class="wikitable" style="text-align:center;" border="1" cellpadding="5">
+
+<tr>
+<th colspan="1" width="8px"> Sample
+</th>
+<th colspan="1"> Code
+</th>
+<th colspan="1"> Common Name
+</th>
+<th colspan="1"> Name
+</th>
+<th colspan="4"> Foreground Color
+</th>
+<th colspan="4"> Background Color
+</th></tr>
+<tr>
+<td colspan="4">
+</td>
+<td width="30px">R
+</td>
+<td width="30px">G
+</td>
+<td width="30px">B
+</td>
+<td> Hex
+</td>
+<td width="30px">R
+</td>
+<td width="30px">G
+</td>
+<td width="30px">B
+</td>
+<td> Hex
+</td></tr>
+<tr>
+<td style="background-color: #000000; border-right: 3px solid #000000; border-bottom: 3px solid #000000">
+</td>
+<td> 0 </td>
+<td> Black </td>
+<td> <code>black</code> </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> #000000 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> #000000
+</td></tr>
+<tr>
+<td style="background-color: #0000aa; border-right: 3px solid #00002a; border-bottom: 3px solid #00002a">
+</td>
+<td> 1 </td>
+<td> Dark blue </td>
+<td> <code>dark_blue</code> </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 170 </td>
+<td> #0000aa </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 42 </td>
+<td> #00002a
+</td></tr>
+<tr>
+<td style="background-color: #00aa00; border-right: 3px solid #002a00; border-bottom: 3px solid #002a00">
+</td>
+<td> 2 </td>
+<td> Dark green </td>
+<td> <code>dark_green</code> </td>
+<td> 0 </td>
+<td> 170 </td>
+<td> 0 </td>
+<td> #00aa00 </td>
+<td> 0 </td>
+<td> 42 </td>
+<td> 0 </td>
+<td> #002a00
+</td></tr>
+<tr>
+<td style="background-color: #00aaaa; border-right: 3px solid #002a2a; border-bottom: 3px solid #002a2a">
+</td>
+<td> 3 </td>
+<td> Dark cyan </td>
+<td> <code>dark_aqua</code> </td>
+<td> 0  </td>
+<td> 170 </td>
+<td> 170 </td>
+<td> #00aaaa </td>
+<td> 0 </td>
+<td> 42 </td>
+<td> 42 </td>
+<td> #002a2a
+</td></tr>
+<tr>
+<td style="background-color: #aa0000; border-right: 3px solid #2a0000; border-bottom: 3px solid #2a0000">
+</td>
+<td> 4 </td>
+<td> Dark red </td>
+<td> <code>dark_red</code> </td>
+<td> 170 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> #aa0000 </td>
+<td> 42 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> #2a0000
+</td></tr>
+<tr>
+<td style="background-color: #aa00aa; border-right: 3px solid #2a002a; border-bottom: 3px solid #2a002a">
+</td>
+<td> 5 </td>
+<td> Purple </td>
+<td> <code>dark_purple</code> </td>
+<td> 170 </td>
+<td> 0 </td>
+<td> 170 </td>
+<td> #aa00aa </td>
+<td> 42 </td>
+<td> 0 </td>
+<td> 42 </td>
+<td> #2a002a
+</td></tr>
+<tr>
+<td style="background-color: #ffaa00; border-right: 3px solid #2a2a00; border-bottom: 3px solid #2a2a00">
+</td>
+<td> 6 </td>
+<td> Gold </td>
+<td> <code>gold</code> </td>
+<td> 255 </td>
+<td> 170 </td>
+<td> 0 </td>
+<td> #ffaa00 </td>
+<td> 42 </td>
+<td> 42 </td>
+<td> 0 </td>
+<td> #2a2a00
+</td></tr>
+<tr>
+<td style="background-color: #aaaaaa; border-right: 3px solid #2a2a2a; border-bottom: 3px solid #2a2a2a">
+</td>
+<td> 7 </td>
+<td> Gray </td>
+<td> <code>gray</code> </td>
+<td> 170 </td>
+<td> 170 </td>
+<td> 170 </td>
+<td> #aaaaaa </td>
+<td> 42 </td>
+<td> 42 </td>
+<td> 42 </td>
+<td> #2a2a2a
+</td></tr>
+<tr>
+<td style="background-color: #555555; border-right: 3px solid #151515; border-bottom: 3px solid #151515">
+</td>
+<td> 8 </td>
+<td> Dark gray </td>
+<td> <code>dark_gray</code> </td>
+<td> 85 </td>
+<td> 85 </td>
+<td> 85 </td>
+<td> #555555 </td>
+<td> 21 </td>
+<td> 21 </td>
+<td> 21 </td>
+<td> #151515
+</td></tr>
+<tr>
+<td style="background-color: #5555ff; border-right: 3px solid #15153f; border-bottom: 3px solid #15153f">
+</td>
+<td> 9 </td>
+<td> Blue </td>
+<td> <code>blue</code> </td>
+<td> 85 </td>
+<td> 85 </td>
+<td> 255 </td>
+<td> #5555ff </td>
+<td> 21 </td>
+<td> 21 </td>
+<td> 63 </td>
+<td> #15153f
+</td></tr>
+<tr>
+<td style="background-color: #55ff55; border-right: 3px solid #153f15; border-bottom: 3px solid #153f15">
+</td>
+<td> a </td>
+<td> Bright green </td>
+<td> <code>green</code> </td>
+<td> 85 </td>
+<td> 255 </td>
+<td> 85 </td>
+<td> #55ff55 </td>
+<td> 21 </td>
+<td> 63 </td>
+<td> 21 </td>
+<td> #153f15
+</td></tr>
+<tr>
+<td style="background-color: #55ffff; border-right: 3px solid #153f3f; border-bottom: 3px solid #153f3f">
+</td>
+<td> b </td>
+<td> Cyan </td>
+<td> <code>aqua</code> </td>
+<td> 85 </td>
+<td> 255 </td>
+<td> 255 </td>
+<td> #55ffff </td>
+<td> 21 </td>
+<td> 63 </td>
+<td> 63 </td>
+<td> #153f3f
+</td></tr>
+<tr>
+<td style="background-color: #ff5555; border-right: 3px solid #3f1515; border-bottom: 3px solid #3f1515">
+</td>
+<td> c </td>
+<td> Red </td>
+<td> <code>red</code> </td>
+<td> 255 </td>
+<td> 85 </td>
+<td> 85 </td>
+<td> #ff5555 </td>
+<td> 63 </td>
+<td> 21 </td>
+<td> 21 </td>
+<td> #3f1515
+</td></tr>
+<tr>
+<td style="background-color: #ff55ff; border-right: 3px solid #3f153f; border-bottom: 3px solid #3f153f">
+</td>
+<td> d </td>
+<td> Pink </td>
+<td> <code>light_purple</code> </td>
+<td> 255 </td>
+<td> 85 </td>
+<td> 255 </td>
+<td> #ff55ff </td>
+<td> 63 </td>
+<td> 21 </td>
+<td> 63 </td>
+<td> #3f153f
+</td></tr>
+<tr>
+<td style="background-color: #ffff55; border-right: 3px solid #3f3f15; border-bottom: 3px solid #3f3f15">
+</td>
+<td> e </td>
+<td> Yellow </td>
+<td> <code>yellow</code> </td>
+<td> 255 </td>
+<td> 255 </td>
+<td> 85 </td>
+<td> #ffff55 </td>
+<td> 63 </td>
+<td> 63 </td>
+<td> 21 </td>
+<td> #3f3f15
+</td></tr>
+<tr>
+<td style="background-color: #ffffff; border-right: 3px solid #3f3f3f; border-bottom: 3px solid #3f3f3f">
+</td>
+<td> f </td>
+<td> White </td>
+<td> <code>white</code> </td>
+<td> 255 </td>
+<td> 255 </td>
+<td> 255 </td>
+<td> #ffffff </td>
+<td> 63 </td>
+<td> 63 </td>
+<td> 63 </td>
+<td> #3f3f3f
+</td></tr></table>
+<h4><span class="mw-headline" id="Styles">Styles</span></h4>
+<p>Like the color codes above, style escape codes are created by combining § (U+00A7) with one of the following characters. Style codes can be combined (except for "r") to enable multiple effects at once. Using any color codes will reset the current style back to plain (unknown if this is a bug or intended behavior). The "r" plain style code will also reset the current chat color back to white (may also be a bug). The "k" random style code is used for the "§kFUNKY LOL" message in /title/splashes.txt inside minecraft.jar.
+</p>
+<table class="wikitable" style="text-align:center;" border="1" cellpadding="5">
+
+<tr>
+<th colspan="1"> Sample
+</th>
+<th colspan="1"> Code
+</th>
+<th colspan="1"> Style
+</th>
+<th colspan="1"> Name
+</th></tr>
+<tr>
+<td> <a href="./File:Random_chat.gif.html" class="image"><img alt="Random chat.gif" src="images/4/41/Random_chat.gif" width="74" height="20" /></a> </td>
+<td> k </td>
+<td> Random </td>
+<td> <code>obfuscated</code>
+</td></tr>
+<tr>
+<td> <a href="./File:Bold_chat.png.html" class="image"><img alt="Bold chat.png" src="images/e/e4/Bold_chat.png" width="74" height="20" /></a> </td>
+<td> l </td>
+<td> Bold </td>
+<td> <code>bold</code>
+</td></tr>
+<tr>
+<td> <a href="./File:Strikethrough_chat.png.html" class="image"><img alt="Strikethrough chat.png" src="images/9/92/Strikethrough_chat.png" width="74" height="20" /></a> </td>
+<td> m </td>
+<td> Strikethrough </td>
+<td> <code>strikethrough</code>
+</td></tr>
+<tr>
+<td> <a href="./File:Underlined_chat.png.html" class="image"><img alt="Underlined chat.png" src="images/b/bd/Underlined_chat.png" width="74" height="22" /></a> </td>
+<td> n </td>
+<td> Underlined </td>
+<td> <code>underline</code>
+</td></tr>
+<tr>
+<td> <a href="./File:Italic_chat.png.html" class="image"><img alt="Italic chat.png" src="images/c/cc/Italic_chat.png" width="74" height="20" /></a> </td>
+<td> o </td>
+<td> Italic </td>
+<td> <code>italic</code>
+</td></tr>
+<tr>
+<td> <a href="./File:Plain_chat.png.html" class="image"><img alt="Plain chat.png" src="images/0/0e/Plain_chat.png" width="74" height="20" /></a> </td>
+<td> r </td>
+<td> Plain White </td>
+<td> <code>reset</code>
+</td></tr></table>
+<h2><span class="mw-headline" id="Processing_chat">Processing chat</span></h2>
+<p>Actually handling chat between the client and server is slightly more complicated than simply forwarding chat messages to other players.  There's a somewhat complicated interaction regarding the chat settings of each player and whether it is a command or not, which is used to handle the various options in chat settings (specifically, Chat: Shown/Commands Only/Hidden, and the equivalent for narrator).
+</p><p>This is made more complicated by the two different enums, one which represents client settings and the other which represents chat positions.
+</p><p>The client setting (as used in the <a href="Protocol.html#Client_Settings" title="Protocol">Client Settings</a> packet) is what the player chose to have displayed, and affects what types of chat messages the server should send:
+</p>
+<table class="wikitable">
+<tr>
+<th> ID
+</th>
+<th> Name
+</th>
+<th> Meaning
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> Full
+</td>
+<td> The client is willing to accept all chat messages.
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> System
+</td>
+<td> The client is willing to accept messages from commands, but does not want general chat from other players.
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> None
+</td>
+<td> The client does not want any chat at all.  (However, it is still fine with above-hotbar game notices)
+</td></tr></table>
+<p>The message type (as used in the <a href="Protocol.html#Chat_Message_.28clientbound.29" title="Protocol">Chat Message</a> packet) indicates the type of chat message:
+</p>
+<table class="wikitable">
+<tr>
+<th> ID
+</th>
+<th> Name
+</th>
+<th> Meaning
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> Chat
+</td>
+<td> A player-initiated chat message.  Note that the Notchian server does not include message-related commands here (<code>/me</code> and <code>/tell</code>); those go in System.
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> System
+</td>
+<td> Feedback from running a command, such as "Your game mode has been updated to creative."
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> Game info
+</td>
+<td> Game state information that is displayed above the hot bar, such as "You may not rest now, the bed is too far away".
+</td></tr></table>
+<p>Note that it is the server's responsibility to <i>not</i> send packets if the client has the given type disabled.  However, it is the client's responsibility to not send incorrect chat packets.
+</p><p>Here's a matrix comparing what packets the server should send to the client by settings:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th colspan="4"> Message type
+</th></tr>
+<tr>
+<th rowspan="4"> Client setting
+</th>
+<td>
+</td>
+<th> Chat
+</th>
+<th> System
+</th>
+<th> Game info
+</th></tr>
+<tr>
+<th> Full
+</th>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td></tr>
+<tr>
+<th> System
+</th>
+<td style="background:#ff9090; color:black;" class="table-no"> ✘
+</td>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td></tr>
+<tr>
+<th> Hidden
+</th>
+<td style="background:#ff9090; color:black;" class="table-no"> ✘
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> ✘
+</td>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td></tr></table>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> The game info position will not render formatting, due to <a rel="nofollow" class="external text" href="https://bugs.mojang.com/browse/MC-119145">MC-119145</a>.  If you wish to include formatted content in that slot, use the title packet instead of the chat message packet.
+</p>
+</div>
+<p>Here's a matrix comparing what the client may send based off of its chat setting:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th colspan="4"> Inbound message
+</th></tr>
+<tr>
+<th rowspan="4"> Client setting
+</th>
+<td>
+</td>
+<th> Chat message
+</th>
+<th> Command starting with <code>/</code>
+</th></tr>
+<tr>
+<th> Full
+</th>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td></tr>
+<tr>
+<th> System
+</th>
+<td style="background: #ffff90; color: black;" class="table-maybe"> ✘<sup id="cite_ref-1" class="reference"><a href="Chat.html#cite_note-1">&#91;note 1&#93;</a></sup>
+</td>
+<td style="background:#90ff90; color:black;" class="table-yes"> ✔
+</td></tr>
+<tr>
+<th> Hidden
+</th>
+<td style="background:#ff9090; color:black;" class="table-no"> ✘
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> ✘
+</td></tr></table>
+<p>If the client attempts to send a chat message and the server rejects it, the Notchian server will send that client a red <code>chat.cannotSend</code> translation component (which becomes "Cannot send chat message").  Else, if it starts with a <code>/</code>, then the message is processed as a command.  Otherwise, it will broadcast a translate component with <code>chat.type.text</code> (which becomes <code>&lt;%s&gt; %s</code>), with the player's name<sup id="cite_ref-2" class="reference"><a href="Chat.html#cite_note-2">&#91;note 2&#93;</a></sup> (and the appropriate hover events) as the first format parameter and the message as the second parameter.
+</p>
+<h2><span class="mw-headline" id="Font">Font</span></h2>
+<p>Minecraft has two fonts types that can be encountered normally: Ascii (<code>ascii.png</code>) and Unicode (<code>unicode_page_XX.png</code>).  The ascii font will fall back upon unicode characters if they are not provided (see below).  However, use of the Unicode font can be forced for all characters in the language menu.
+</p><p>There is no glyph for the space character.  However, the space character has a width of 4.
+</p><p>Additionally, Minecraft has a <a href="http://en.wikipedia.org/wiki/Standard_Galactic_Alphabet" class="extiw" title="wikipedia:Standard Galactic Alphabet">Standard Galactic Alphabet</a> font (<code>ascii_sga.png</code>).  This cannot be used in chat, but works much the same as the normal Ascii font in terms of width.  The SGA font only supports lowercase and uppercase letters (the rest of the glyphs are blank), and has the same indexing as the normal ascii font.
+</p><p>The Minecraft client calculates the widths of the default font when the texture is loaded, whilst the sizes of the unicode type are provided in <code>glyph_sizes.bin</code>. Each byte in <code>glyph_sizes.bin</code> contains the start and end position of each character, the top nibble (0xF0) is the start position and the bottom nibble (0x0F) is the end position (relative to the character's position in the font sheet).  Example: <a rel="nofollow" class="external free" href="https://gist.github.com/TkTech/dff9bbe54c9a074612e1">https://gist.github.com/TkTech/dff9bbe54c9a074612e1</a>
+</p>
+<div class="mw-collapsible mw-collapsed" style="width: 41em">
+<p>The Ascii font supports these characters, with the given indexes in <code>ascii.png</code>:
+</p>
+<table class="mw-collapsible-content wikitable">
+<tr>
+<th> Codepoint </th>
+<th> Char </th>
+<th> index </th>
+<th> x </th>
+<th> y </th>
+<th> width
+</th></tr>
+<tr>
+<td> <code>\u00c0</code> </td>
+<td> <code>À</code> </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00c1</code> </td>
+<td> <code>Á</code> </td>
+<td> 1 </td>
+<td> 1 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00c2</code> </td>
+<td> <code>Â</code> </td>
+<td> 2 </td>
+<td> 2 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00c8</code> </td>
+<td> <code>È</code> </td>
+<td> 3 </td>
+<td> 3 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00ca</code> </td>
+<td> <code>Ê</code> </td>
+<td> 4 </td>
+<td> 4 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00cb</code> </td>
+<td> <code>Ë</code> </td>
+<td> 5 </td>
+<td> 5 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00cd</code> </td>
+<td> <code>Í</code> </td>
+<td> 6 </td>
+<td> 6 </td>
+<td> 0 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u00d3</code> </td>
+<td> <code>Ó</code> </td>
+<td> 7 </td>
+<td> 7 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00d4</code> </td>
+<td> <code>Ô</code> </td>
+<td> 8 </td>
+<td> 8 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00d5</code> </td>
+<td> <code>Õ</code> </td>
+<td> 9 </td>
+<td> 9 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00da</code> </td>
+<td> <code>Ú</code> </td>
+<td> 10 </td>
+<td> 10 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00df</code> </td>
+<td> <code>ß</code> </td>
+<td> 11 </td>
+<td> 11 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e3</code> </td>
+<td> <code>ã</code> </td>
+<td> 12 </td>
+<td> 12 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00f5</code> </td>
+<td> <code>õ</code> </td>
+<td> 13 </td>
+<td> 13 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u011f</code> </td>
+<td> <code>ğ</code> </td>
+<td> 14 </td>
+<td> 14 </td>
+<td> 0 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0130</code> </td>
+<td> <code>İ</code> </td>
+<td> 15 </td>
+<td> 15 </td>
+<td> 0 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u0131</code> </td>
+<td> <code>ı</code> </td>
+<td> 16 </td>
+<td> 0 </td>
+<td> 1 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u0152</code> </td>
+<td> <code>Œ</code> </td>
+<td> 17 </td>
+<td> 1 </td>
+<td> 1 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0153</code> </td>
+<td> <code>œ</code> </td>
+<td> 18 </td>
+<td> 2 </td>
+<td> 1 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u015e</code> </td>
+<td> <code>Ş</code> </td>
+<td> 19 </td>
+<td> 3 </td>
+<td> 1 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u015f</code> </td>
+<td> <code>ş</code> </td>
+<td> 20 </td>
+<td> 4 </td>
+<td> 1 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0174</code> </td>
+<td> <code>Ŵ</code> </td>
+<td> 21 </td>
+<td> 5 </td>
+<td> 1 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0175</code> </td>
+<td> <code>ŵ</code> </td>
+<td> 22 </td>
+<td> 6 </td>
+<td> 1 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u017e</code> </td>
+<td> <code>ž</code> </td>
+<td> 23 </td>
+<td> 7 </td>
+<td> 1 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0207</code> </td>
+<td> <code>ȇ</code> </td>
+<td> 24 </td>
+<td> 8 </td>
+<td> 1 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-0" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 25 </td>
+<td> 9 </td>
+<td> 1 </td>
+<td> -
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-1" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 26 </td>
+<td> 10 </td>
+<td> 1 </td>
+<td> -
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-2" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 27 </td>
+<td> 11 </td>
+<td> 1 </td>
+<td> -
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-3" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 28 </td>
+<td> 12 </td>
+<td> 1 </td>
+<td> -
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-4" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 29 </td>
+<td> 13 </td>
+<td> 1 </td>
+<td> -
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-5" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 30 </td>
+<td> 14 </td>
+<td> 1 </td>
+<td> -
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-6" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 31 </td>
+<td> 15 </td>
+<td> 1 </td>
+<td> -
+</td></tr>
+<tr>
+<td> <code>\u0020</code> </td>
+<td> <code> </code> </td>
+<td> 32 </td>
+<td> 0 </td>
+<td> 2 </td>
+<td> 4<sup id="cite_ref-space_4-0" class="reference"><a href="Chat.html#cite_note-space-4">&#91;note 4&#93;</a></sup>
+</td></tr>
+<tr>
+<td> <code>\u0021</code> </td>
+<td> <code>!</code> </td>
+<td> 33 </td>
+<td> 1 </td>
+<td> 2 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> <code>\u0022</code> </td>
+<td> <code>"</code> </td>
+<td> 34 </td>
+<td> 2 </td>
+<td> 2 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u0023</code> </td>
+<td> <code>#</code> </td>
+<td> 35 </td>
+<td> 3 </td>
+<td> 2 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0024</code> </td>
+<td> <code>$</code> </td>
+<td> 36 </td>
+<td> 4 </td>
+<td> 2 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0025</code> </td>
+<td> <code>%</code> </td>
+<td> 37 </td>
+<td> 5 </td>
+<td> 2 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0026</code> </td>
+<td> <code>&amp;</code> </td>
+<td> 38 </td>
+<td> 6 </td>
+<td> 2 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0027</code> </td>
+<td> <code>'</code> </td>
+<td> 39 </td>
+<td> 7 </td>
+<td> 2 </td>
+<td> 3
+</td></tr>
+<tr>
+<td> <code>\u0028</code> </td>
+<td> <code>(</code> </td>
+<td> 40 </td>
+<td> 8 </td>
+<td> 2 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u0029</code> </td>
+<td> <code>)</code> </td>
+<td> 41 </td>
+<td> 9 </td>
+<td> 2 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u002a</code> </td>
+<td> <code>*</code> </td>
+<td> 42 </td>
+<td> 10 </td>
+<td> 2 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u002b</code> </td>
+<td> <code>+</code> </td>
+<td> 43 </td>
+<td> 11 </td>
+<td> 2 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u002c</code> </td>
+<td> <code>,</code> </td>
+<td> 44 </td>
+<td> 12 </td>
+<td> 2 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> <code>\u002d</code> </td>
+<td> <code>-</code> </td>
+<td> 45 </td>
+<td> 13 </td>
+<td> 2 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u002e</code> </td>
+<td> <code>.</code> </td>
+<td> 46 </td>
+<td> 14 </td>
+<td> 2 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> <code>\u002f</code> </td>
+<td> <code>/</code> </td>
+<td> 47 </td>
+<td> 15 </td>
+<td> 2 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0030</code> </td>
+<td> <code>0</code> </td>
+<td> 48 </td>
+<td> 0 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0031</code> </td>
+<td> <code>1</code> </td>
+<td> 49 </td>
+<td> 1 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0032</code> </td>
+<td> <code>2</code> </td>
+<td> 50 </td>
+<td> 2 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0033</code> </td>
+<td> <code>3</code> </td>
+<td> 51 </td>
+<td> 3 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0034</code> </td>
+<td> <code>4</code> </td>
+<td> 52 </td>
+<td> 4 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0035</code> </td>
+<td> <code>5</code> </td>
+<td> 53 </td>
+<td> 5 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0036</code> </td>
+<td> <code>6</code> </td>
+<td> 54 </td>
+<td> 6 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0037</code> </td>
+<td> <code>7</code> </td>
+<td> 55 </td>
+<td> 7 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0038</code> </td>
+<td> <code>8</code> </td>
+<td> 56 </td>
+<td> 8 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0039</code> </td>
+<td> <code>9</code> </td>
+<td> 57 </td>
+<td> 9 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u003a</code> </td>
+<td> <code>:</code> </td>
+<td> 58 </td>
+<td> 10 </td>
+<td> 3 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> <code>\u003b</code> </td>
+<td> <code>;</code> </td>
+<td> 59 </td>
+<td> 11 </td>
+<td> 3 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> <code>\u003c</code> </td>
+<td> <code>&lt;</code> </td>
+<td> 60 </td>
+<td> 12 </td>
+<td> 3 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u003d</code> </td>
+<td> <code>=</code> </td>
+<td> 61 </td>
+<td> 13 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u003e</code> </td>
+<td> <code>&gt;</code> </td>
+<td> 62 </td>
+<td> 14 </td>
+<td> 3 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u003f</code> </td>
+<td> <code>?</code> </td>
+<td> 63 </td>
+<td> 15 </td>
+<td> 3 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0040</code> </td>
+<td> <code>@</code> </td>
+<td> 64 </td>
+<td> 0 </td>
+<td> 4 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u0041</code> </td>
+<td> <code>A</code> </td>
+<td> 65 </td>
+<td> 1 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0042</code> </td>
+<td> <code>B</code> </td>
+<td> 66 </td>
+<td> 2 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0043</code> </td>
+<td> <code>C</code> </td>
+<td> 67 </td>
+<td> 3 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0044</code> </td>
+<td> <code>D</code> </td>
+<td> 68 </td>
+<td> 4 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0045</code> </td>
+<td> <code>E</code> </td>
+<td> 69 </td>
+<td> 5 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0046</code> </td>
+<td> <code>F</code> </td>
+<td> 70 </td>
+<td> 6 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0047</code> </td>
+<td> <code>G</code> </td>
+<td> 71 </td>
+<td> 7 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0048</code> </td>
+<td> <code>H</code> </td>
+<td> 72 </td>
+<td> 8 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0049</code> </td>
+<td> <code>I</code> </td>
+<td> 73 </td>
+<td> 9 </td>
+<td> 4 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u004a</code> </td>
+<td> <code>J</code> </td>
+<td> 74 </td>
+<td> 10 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u004b</code> </td>
+<td> <code>K</code> </td>
+<td> 75 </td>
+<td> 11 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u004c</code> </td>
+<td> <code>L</code> </td>
+<td> 76 </td>
+<td> 12 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u004d</code> </td>
+<td> <code>M</code> </td>
+<td> 77 </td>
+<td> 13 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u004e</code> </td>
+<td> <code>N</code> </td>
+<td> 78 </td>
+<td> 14 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u004f</code> </td>
+<td> <code>O</code> </td>
+<td> 79 </td>
+<td> 15 </td>
+<td> 4 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0050</code> </td>
+<td> <code>P</code> </td>
+<td> 80 </td>
+<td> 0 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0051</code> </td>
+<td> <code>Q</code> </td>
+<td> 81 </td>
+<td> 1 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0052</code> </td>
+<td> <code>R</code> </td>
+<td> 82 </td>
+<td> 2 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0053</code> </td>
+<td> <code>S</code> </td>
+<td> 83 </td>
+<td> 3 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0054</code> </td>
+<td> <code>T</code> </td>
+<td> 84 </td>
+<td> 4 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0055</code> </td>
+<td> <code>U</code> </td>
+<td> 85 </td>
+<td> 5 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0056</code> </td>
+<td> <code>V</code> </td>
+<td> 86 </td>
+<td> 6 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0057</code> </td>
+<td> <code>W</code> </td>
+<td> 87 </td>
+<td> 7 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0058</code> </td>
+<td> <code>X</code> </td>
+<td> 88 </td>
+<td> 8 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0059</code> </td>
+<td> <code>Y</code> </td>
+<td> 89 </td>
+<td> 9 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u005a</code> </td>
+<td> <code>Z</code> </td>
+<td> 90 </td>
+<td> 10 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u005b</code> </td>
+<td> <code>[</code> </td>
+<td> 91 </td>
+<td> 11 </td>
+<td> 5 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u005c</code> </td>
+<td> <code>\</code> </td>
+<td> 92 </td>
+<td> 12 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u005d</code> </td>
+<td> <code>]</code> </td>
+<td> 93 </td>
+<td> 13 </td>
+<td> 5 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u005e</code> </td>
+<td> <code>^</code> </td>
+<td> 94 </td>
+<td> 14 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u005f</code> </td>
+<td> <code>_</code> </td>
+<td> 95 </td>
+<td> 15 </td>
+<td> 5 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0060</code> </td>
+<td> <code>`</code> </td>
+<td> 96 </td>
+<td> 0 </td>
+<td> 6 </td>
+<td> 3
+</td></tr>
+<tr>
+<td> <code>\u0061</code> </td>
+<td> <code>a</code> </td>
+<td> 97 </td>
+<td> 1 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0062</code> </td>
+<td> <code>b</code> </td>
+<td> 98 </td>
+<td> 2 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0063</code> </td>
+<td> <code>c</code> </td>
+<td> 99 </td>
+<td> 3 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0064</code> </td>
+<td> <code>d</code> </td>
+<td> 100 </td>
+<td> 4 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0065</code> </td>
+<td> <code>e</code> </td>
+<td> 101 </td>
+<td> 5 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0066</code> </td>
+<td> <code>f</code> </td>
+<td> 102 </td>
+<td> 6 </td>
+<td> 6 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u0067</code> </td>
+<td> <code>g</code> </td>
+<td> 103 </td>
+<td> 7 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0068</code> </td>
+<td> <code>h</code> </td>
+<td> 104 </td>
+<td> 8 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0069</code> </td>
+<td> <code>i</code> </td>
+<td> 105 </td>
+<td> 9 </td>
+<td> 6 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> <code>\u006a</code> </td>
+<td> <code>j</code> </td>
+<td> 106 </td>
+<td> 10 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u006b</code> </td>
+<td> <code>k</code> </td>
+<td> 107 </td>
+<td> 11 </td>
+<td> 6 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u006c</code> </td>
+<td> <code>l</code> </td>
+<td> 108 </td>
+<td> 12 </td>
+<td> 6 </td>
+<td> 3
+</td></tr>
+<tr>
+<td> <code>\u006d</code> </td>
+<td> <code>m</code> </td>
+<td> 109 </td>
+<td> 13 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u006e</code> </td>
+<td> <code>n</code> </td>
+<td> 110 </td>
+<td> 14 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u006f</code> </td>
+<td> <code>o</code> </td>
+<td> 111 </td>
+<td> 15 </td>
+<td> 6 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0070</code> </td>
+<td> <code>p</code> </td>
+<td> 112 </td>
+<td> 0 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0071</code> </td>
+<td> <code>q</code> </td>
+<td> 113 </td>
+<td> 1 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0072</code> </td>
+<td> <code>r</code> </td>
+<td> 114 </td>
+<td> 2 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0073</code> </td>
+<td> <code>s</code> </td>
+<td> 115 </td>
+<td> 3 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0074</code> </td>
+<td> <code>t</code> </td>
+<td> 116 </td>
+<td> 4 </td>
+<td> 7 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u0075</code> </td>
+<td> <code>u</code> </td>
+<td> 117 </td>
+<td> 5 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0076</code> </td>
+<td> <code>v</code> </td>
+<td> 118 </td>
+<td> 6 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0077</code> </td>
+<td> <code>w</code> </td>
+<td> 119 </td>
+<td> 7 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0078</code> </td>
+<td> <code>x</code> </td>
+<td> 120 </td>
+<td> 8 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u0079</code> </td>
+<td> <code>y</code> </td>
+<td> 121 </td>
+<td> 9 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u007a</code> </td>
+<td> <code>z</code> </td>
+<td> 122 </td>
+<td> 10 </td>
+<td> 7 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u007b</code> </td>
+<td> <code>{</code> </td>
+<td> 123 </td>
+<td> 11 </td>
+<td> 7 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u007c</code> </td>
+<td></code> </td>
+<td> 124 </td>
+<td> 12 </td>
+<td> 7 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> <code>\u007d</code> </td>
+<td> <code>}</code> </td>
+<td> 125 </td>
+<td> 13 </td>
+<td> 7 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u007e</code> </td>
+<td> <code>~</code> </td>
+<td> 126 </td>
+<td> 14 </td>
+<td> 7 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-7" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 127 </td>
+<td> 15 </td>
+<td> 7 </td>
+<td> -
+</td></tr>
+<tr>
+<td> <code>\u00c7</code> </td>
+<td> <code>Ç</code> </td>
+<td> 128 </td>
+<td> 0 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00fc</code> </td>
+<td> <code>ü</code> </td>
+<td> 129 </td>
+<td> 1 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e9</code> </td>
+<td> <code>é</code> </td>
+<td> 130 </td>
+<td> 2 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e2</code> </td>
+<td> <code>â</code> </td>
+<td> 131 </td>
+<td> 3 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e4</code> </td>
+<td> <code>ä</code> </td>
+<td> 132 </td>
+<td> 4 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e0</code> </td>
+<td> <code>à</code> </td>
+<td> 133 </td>
+<td> 5 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e5</code> </td>
+<td> <code>å</code> </td>
+<td> 134 </td>
+<td> 6 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e7</code> </td>
+<td> <code>ç</code> </td>
+<td> 135 </td>
+<td> 7 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00ea</code> </td>
+<td> <code>ê</code> </td>
+<td> 136 </td>
+<td> 8 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00eb</code> </td>
+<td> <code>ë</code> </td>
+<td> 137 </td>
+<td> 9 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e8</code> </td>
+<td> <code>è</code> </td>
+<td> 138 </td>
+<td> 10 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00ef</code> </td>
+<td> <code>ï</code> </td>
+<td> 139 </td>
+<td> 11 </td>
+<td> 8 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u00ee</code> </td>
+<td> <code>î</code> </td>
+<td> 140 </td>
+<td> 12 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00ec</code> </td>
+<td> <code>ì</code> </td>
+<td> 141 </td>
+<td> 13 </td>
+<td> 8 </td>
+<td> 3
+</td></tr>
+<tr>
+<td> <code>\u00c4</code> </td>
+<td> <code>Ä</code> </td>
+<td> 142 </td>
+<td> 14 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00c5</code> </td>
+<td> <code>Å</code> </td>
+<td> 143 </td>
+<td> 15 </td>
+<td> 8 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00c9</code> </td>
+<td> <code>É</code> </td>
+<td> 144 </td>
+<td> 0 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e6</code> </td>
+<td> <code>æ</code> </td>
+<td> 145 </td>
+<td> 1 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00c6</code> </td>
+<td> <code>Æ</code> </td>
+<td> 146 </td>
+<td> 2 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00f4</code> </td>
+<td> <code>ô</code> </td>
+<td> 147 </td>
+<td> 3 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00f6</code> </td>
+<td> <code>ö</code> </td>
+<td> 148 </td>
+<td> 4 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00f2</code> </td>
+<td> <code>ò</code> </td>
+<td> 149 </td>
+<td> 5 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00fb</code> </td>
+<td> <code>û</code> </td>
+<td> 150 </td>
+<td> 6 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00f9</code> </td>
+<td> <code>ù</code> </td>
+<td> 151 </td>
+<td> 7 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00ff</code> </td>
+<td> <code>ÿ</code> </td>
+<td> 152 </td>
+<td> 8 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00d6</code> </td>
+<td> <code>Ö</code> </td>
+<td> 153 </td>
+<td> 9 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00dc</code> </td>
+<td> <code>Ü</code> </td>
+<td> 154 </td>
+<td> 10 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00f8</code> </td>
+<td> <code>ø</code> </td>
+<td> 155 </td>
+<td> 11 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00a3</code> </td>
+<td> <code>£</code> </td>
+<td> 156 </td>
+<td> 12 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00d8</code> </td>
+<td> <code>Ø</code> </td>
+<td> 157 </td>
+<td> 13 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00d7</code> </td>
+<td> <code>×</code> </td>
+<td> 158 </td>
+<td> 14 </td>
+<td> 9 </td>
+<td> 4
+</td></tr>
+<tr>
+<td> <code>\u0192</code> </td>
+<td> <code>ƒ</code> </td>
+<td> 159 </td>
+<td> 15 </td>
+<td> 9 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00e1</code> </td>
+<td> <code>á</code> </td>
+<td> 160 </td>
+<td> 0 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00ed</code> </td>
+<td> <code>í</code> </td>
+<td> 161 </td>
+<td> 1 </td>
+<td> 10 </td>
+<td> 3
+</td></tr>
+<tr>
+<td> <code>\u00f3</code> </td>
+<td> <code>ó</code> </td>
+<td> 162 </td>
+<td> 2 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00fa</code> </td>
+<td> <code>ú</code> </td>
+<td> 163 </td>
+<td> 3 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00f1</code> </td>
+<td> <code>ñ</code> </td>
+<td> 164 </td>
+<td> 4 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00d1</code> </td>
+<td> <code>Ñ</code> </td>
+<td> 165 </td>
+<td> 5 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00aa</code> </td>
+<td> <code>ª</code> </td>
+<td> 166 </td>
+<td> 6 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00ba</code> </td>
+<td> <code>º</code> </td>
+<td> 167 </td>
+<td> 7 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00bf</code> </td>
+<td> <code>¿</code> </td>
+<td> 168 </td>
+<td> 8 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00ae</code> </td>
+<td> <code>®</code> </td>
+<td> 169 </td>
+<td> 9 </td>
+<td> 10 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u00ac</code> </td>
+<td> <code>¬</code> </td>
+<td> 170 </td>
+<td> 10 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00bd</code> </td>
+<td> <code>½</code> </td>
+<td> 171 </td>
+<td> 11 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00bc</code> </td>
+<td> <code>¼</code> </td>
+<td> 172 </td>
+<td> 12 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00a1</code> </td>
+<td> <code>¡</code> </td>
+<td> 173 </td>
+<td> 13 </td>
+<td> 10 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> <code>\u00ab</code> </td>
+<td> <code>«</code> </td>
+<td> 174 </td>
+<td> 14 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00bb</code> </td>
+<td> <code>»</code> </td>
+<td> 175 </td>
+<td> 15 </td>
+<td> 10 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u2591</code> </td>
+<td> <code>░</code> </td>
+<td> 176 </td>
+<td> 0 </td>
+<td> 11 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u2592</code> </td>
+<td> <code>▒</code> </td>
+<td> 177 </td>
+<td> 1 </td>
+<td> 11 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2593</code> </td>
+<td> <code>▓</code> </td>
+<td> 178 </td>
+<td> 2 </td>
+<td> 11 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2502</code> </td>
+<td> <code>│</code> </td>
+<td> 179 </td>
+<td> 3 </td>
+<td> 11 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u2524</code> </td>
+<td> <code>┤</code> </td>
+<td> 180 </td>
+<td> 4 </td>
+<td> 11 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u2561</code> </td>
+<td> <code>╡</code> </td>
+<td> 181 </td>
+<td> 5 </td>
+<td> 11 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u2562</code> </td>
+<td> <code>╢</code> </td>
+<td> 182 </td>
+<td> 6 </td>
+<td> 11 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u2556</code> </td>
+<td> <code>╖</code> </td>
+<td> 183 </td>
+<td> 7 </td>
+<td> 11 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u2555</code> </td>
+<td> <code>╕</code> </td>
+<td> 184 </td>
+<td> 8 </td>
+<td> 11 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u2563</code> </td>
+<td> <code>╣</code> </td>
+<td> 185 </td>
+<td> 9 </td>
+<td> 11 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u2551</code> </td>
+<td> <code>║</code> </td>
+<td> 186 </td>
+<td> 10 </td>
+<td> 11 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u2557</code> </td>
+<td> <code>╗</code> </td>
+<td> 187 </td>
+<td> 11 </td>
+<td> 11 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u255d</code> </td>
+<td> <code>╝</code> </td>
+<td> 188 </td>
+<td> 12 </td>
+<td> 11 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u255c</code> </td>
+<td> <code>╜</code> </td>
+<td> 189 </td>
+<td> 13 </td>
+<td> 11 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u255b</code> </td>
+<td> <code>╛</code> </td>
+<td> 190 </td>
+<td> 14 </td>
+<td> 11 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u2510</code> </td>
+<td> <code>┐</code> </td>
+<td> 191 </td>
+<td> 15 </td>
+<td> 11 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u2514</code> </td>
+<td> <code>└</code> </td>
+<td> 192 </td>
+<td> 0 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2534</code> </td>
+<td> <code>┴</code> </td>
+<td> 193 </td>
+<td> 1 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u252c</code> </td>
+<td> <code>┬</code> </td>
+<td> 194 </td>
+<td> 2 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u251c</code> </td>
+<td> <code>├</code> </td>
+<td> 195 </td>
+<td> 3 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2500</code> </td>
+<td> <code>─</code> </td>
+<td> 196 </td>
+<td> 4 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u253c</code> </td>
+<td> <code>┼</code> </td>
+<td> 197 </td>
+<td> 5 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u255e</code> </td>
+<td> <code>╞</code> </td>
+<td> 198 </td>
+<td> 6 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u255f</code> </td>
+<td> <code>╟</code> </td>
+<td> 199 </td>
+<td> 7 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u255a</code> </td>
+<td> <code>╚</code> </td>
+<td> 200 </td>
+<td> 8 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2554</code> </td>
+<td> <code>╔</code> </td>
+<td> 201 </td>
+<td> 9 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2569</code> </td>
+<td> <code>╩</code> </td>
+<td> 202 </td>
+<td> 10 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2566</code> </td>
+<td> <code>╦</code> </td>
+<td> 203 </td>
+<td> 11 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2560</code> </td>
+<td> <code>╠</code> </td>
+<td> 204 </td>
+<td> 12 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2550</code> </td>
+<td> <code>═</code> </td>
+<td> 205 </td>
+<td> 13 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u256c</code> </td>
+<td> <code>╬</code> </td>
+<td> 206 </td>
+<td> 14 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2567</code> </td>
+<td> <code>╧</code> </td>
+<td> 207 </td>
+<td> 15 </td>
+<td> 12 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2568</code> </td>
+<td> <code>╨</code> </td>
+<td> 208 </td>
+<td> 0 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2564</code> </td>
+<td> <code>╤</code> </td>
+<td> 209 </td>
+<td> 1 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2565</code> </td>
+<td> <code>╥</code> </td>
+<td> 210 </td>
+<td> 2 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2559</code> </td>
+<td> <code>╙</code> </td>
+<td> 211 </td>
+<td> 3 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2558</code> </td>
+<td> <code>╘</code> </td>
+<td> 212 </td>
+<td> 4 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2552</code> </td>
+<td> <code>╒</code> </td>
+<td> 213 </td>
+<td> 5 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2553</code> </td>
+<td> <code>╓</code> </td>
+<td> 214 </td>
+<td> 6 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u256b</code> </td>
+<td> <code>╫</code> </td>
+<td> 215 </td>
+<td> 7 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u256a</code> </td>
+<td> <code>╪</code> </td>
+<td> 216 </td>
+<td> 8 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2518</code> </td>
+<td> <code>┘</code> </td>
+<td> 217 </td>
+<td> 9 </td>
+<td> 13 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u250c</code> </td>
+<td> <code>┌</code> </td>
+<td> 218 </td>
+<td> 10 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2588</code> </td>
+<td> <code>█</code> </td>
+<td> 219 </td>
+<td> 11 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2584</code> </td>
+<td> <code>▄</code> </td>
+<td> 220 </td>
+<td> 12 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u258c</code> </td>
+<td> <code>▌</code> </td>
+<td> 221 </td>
+<td> 13 </td>
+<td> 13 </td>
+<td> 5
+</td></tr>
+<tr>
+<td> <code>\u2590</code> </td>
+<td> <code>▐</code> </td>
+<td> 222 </td>
+<td> 14 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2580</code> </td>
+<td> <code>▀</code> </td>
+<td> 223 </td>
+<td> 15 </td>
+<td> 13 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u03b1</code> </td>
+<td> <code>α</code> </td>
+<td> 224 </td>
+<td> 0 </td>
+<td> 14 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u03b2</code> </td>
+<td> <code>β</code> </td>
+<td> 225 </td>
+<td> 1 </td>
+<td> 14 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u0393</code> </td>
+<td> <code>Γ</code> </td>
+<td> 226 </td>
+<td> 2 </td>
+<td> 14 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u03c0</code> </td>
+<td> <code>π</code> </td>
+<td> 227 </td>
+<td> 3 </td>
+<td> 14 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u03a3</code> </td>
+<td> <code>Σ</code> </td>
+<td> 228 </td>
+<td> 4 </td>
+<td> 14 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u03c3</code> </td>
+<td> <code>σ</code> </td>
+<td> 229 </td>
+<td> 5 </td>
+<td> 14 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u03bc</code> </td>
+<td> <code>μ</code> </td>
+<td> 230 </td>
+<td> 6 </td>
+<td> 14 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u03c4</code> </td>
+<td> <code>τ</code> </td>
+<td> 231 </td>
+<td> 7 </td>
+<td> 14 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u03a6</code> </td>
+<td> <code>Φ</code> </td>
+<td> 232 </td>
+<td> 8 </td>
+<td> 14 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u0398</code> </td>
+<td> <code>Θ</code> </td>
+<td> 233 </td>
+<td> 9 </td>
+<td> 14 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u03a9</code> </td>
+<td> <code>Ω</code> </td>
+<td> 234 </td>
+<td> 10 </td>
+<td> 14 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u03b4</code> </td>
+<td> <code>δ</code> </td>
+<td> 235 </td>
+<td> 11 </td>
+<td> 14 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u221e</code> </td>
+<td> <code>∞</code> </td>
+<td> 236 </td>
+<td> 12 </td>
+<td> 14 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2205</code> </td>
+<td> <code>∅</code> </td>
+<td> 237 </td>
+<td> 13 </td>
+<td> 14 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2208</code> </td>
+<td> <code>∈</code> </td>
+<td> 238 </td>
+<td> 14 </td>
+<td> 14 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u2229</code> </td>
+<td> <code>∩</code> </td>
+<td> 239 </td>
+<td> 15 </td>
+<td> 14 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u2261</code> </td>
+<td> <code>≡</code> </td>
+<td> 240 </td>
+<td> 0 </td>
+<td> 15 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u00b1</code> </td>
+<td> <code>±</code> </td>
+<td> 241 </td>
+<td> 1 </td>
+<td> 15 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u2265</code> </td>
+<td> <code>≥</code> </td>
+<td> 242 </td>
+<td> 2 </td>
+<td> 15 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u2264</code> </td>
+<td> <code>≤</code> </td>
+<td> 243 </td>
+<td> 3 </td>
+<td> 15 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u2320</code> </td>
+<td> <code>⌠</code> </td>
+<td> 244 </td>
+<td> 4 </td>
+<td> 15 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u2321</code> </td>
+<td> <code>⌡</code> </td>
+<td> 245 </td>
+<td> 5 </td>
+<td> 15 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00f7</code> </td>
+<td> <code>÷</code> </td>
+<td> 246 </td>
+<td> 6 </td>
+<td> 15 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u2248</code> </td>
+<td> <code>≈</code> </td>
+<td> 247 </td>
+<td> 7 </td>
+<td> 15 </td>
+<td> 8
+</td></tr>
+<tr>
+<td> <code>\u00b0</code> </td>
+<td> <code>°</code> </td>
+<td> 248 </td>
+<td> 8 </td>
+<td> 15 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u2219</code> </td>
+<td> <code>∙</code> </td>
+<td> 249 </td>
+<td> 9 </td>
+<td> 15 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u00b7</code> </td>
+<td> <code>·</code> </td>
+<td> 250 </td>
+<td> 10 </td>
+<td> 15 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u221a</code> </td>
+<td> <code>√</code> </td>
+<td> 251 </td>
+<td> 11 </td>
+<td> 15 </td>
+<td> 9
+</td></tr>
+<tr>
+<td> <code>\u207f</code> </td>
+<td> <code>ⁿ</code> </td>
+<td> 252 </td>
+<td> 12 </td>
+<td> 15 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u00b2</code> </td>
+<td> <code>²</code> </td>
+<td> 253 </td>
+<td> 13 </td>
+<td> 15 </td>
+<td> 6
+</td></tr>
+<tr>
+<td> <code>\u25a0</code> </td>
+<td> <code>■</code> </td>
+<td> 254 </td>
+<td> 14 </td>
+<td> 15 </td>
+<td> 7
+</td></tr>
+<tr>
+<td> <code>\u0000</code> </td>
+<td> <sup id="cite_ref-zero_3-8" class="reference"><a href="Chat.html#cite_note-zero-3">&#91;note 3&#93;</a></sup> </td>
+<td> 255 </td>
+<td> 15 </td>
+<td> 15 </td>
+<td> -
+</td></tr></table>
+</div>
+<table border="1px" cellpadding="5" cellspacing="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td rowspan="2"> <a href="./File:Huh.png.html" class="image"><img alt="Huh.png" src="images/4/4f/Huh.png" width="40" height="40" /></a></td>
+<td>The following information needs to be added to this page:
+</td></tr>
+<tr>
+<td style="border:1px solid red"> <b>Clearer documentation on how rendering works (for instance, shadows)</b>
+</td></tr></table>
+<h2><span class="mw-headline" id="Notes">Notes</span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="Chat.html#cite_ref-1">↑</a></span> <span class="reference-text">This behavior varies.  The Notchian server <em>previously</em> rejected chat messages, but now allows them to go through (sending them to all players, but they're invisible on the sender's side).  Craftbukkit and derivatives continue to reject this.  See <a rel="nofollow" class="external text" href="https://bugs.mojang.com/browse/MC-116824">MC-116824</a> for more information.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="Chat.html#cite_ref-2">↑</a></span> <span class="reference-text">Including scoreboard team colors, although the Notchian server incorrectly uses raw § codes for this (<a rel="nofollow" class="external text" href="https://bugs.mojang.com/browse/MC-112693">MC-112693</a>)</span>
+</li>
+<li id="cite_note-zero-3"><span class="mw-cite-backlink">↑ <sup><a href="Chat.html#cite_ref-zero_3-0">3.0</a></sup> <sup><a href="Chat.html#cite_ref-zero_3-1">3.1</a></sup> <sup><a href="Chat.html#cite_ref-zero_3-2">3.2</a></sup> <sup><a href="Chat.html#cite_ref-zero_3-3">3.3</a></sup> <sup><a href="Chat.html#cite_ref-zero_3-4">3.4</a></sup> <sup><a href="Chat.html#cite_ref-zero_3-5">3.5</a></sup> <sup><a href="Chat.html#cite_ref-zero_3-6">3.6</a></sup> <sup><a href="Chat.html#cite_ref-zero_3-7">3.7</a></sup> <sup><a href="Chat.html#cite_ref-zero_3-8">3.8</a></sup></span> <span class="reference-text">This code point isn't supported, and may be replaced with another character in a future version.  <code>\u0000</code> should be directly skipped instead of being rendered with this code point.</span>
+</li>
+<li id="cite_note-space-4"><span class="mw-cite-backlink"><a href="Chat.html#cite_ref-space_4-0">↑</a></span> <span class="reference-text">The space character is mapped to an index within <code>ascii.png</code>, but the width is hardcoded to 4 and the character at that position is not rendered.</span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20180822210625
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.361 seconds
+Real time usage: 0.435 seconds
+Preprocessor visited node count: 503/1000000
+Preprocessor generated node count: 1440/1000000
+Post‐expand include size: 3896/2097152 bytes
+Template argument size: 836/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  113.184      1 - -total
+ 22.24%   25.169      1 - Template:Maybe
+ 10.71%   12.121     16 - Chat/ColorSample
+ 10.71%   12.117      1 - Template:Minecraft_Wiki
+  6.48%    7.333      9 - Template:Yes
+  5.51%    6.242      5 - Template:No
+  5.51%    6.241      1 - Template:Plainlink
+  5.20%    5.880      2 - Template:Need_Info
+  4.62%    5.233      1 - Template:Warning2
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:59-0!*!0!!en!5!* and timestamp 20180822210625 and revision id 13165
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Chat&amp;oldid=13165">http://wiki.vg/index.php?title=Chat&amp;oldid=13165</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Need_Info.html" title="Category:Need Info">Need Info</a></li><li><a href="./Category:Protocol_Details.html" title="Category:Protocol Details">Protocol Details</a></li><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Chat" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Chat" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Chat.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Chat&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Chat.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Chat.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Chat&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Chat&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Chat.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Chat" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Chat" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Chat&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Chat&amp;oldid=13165" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Chat&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 1 July 2017, at 23:14.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":160});});</script>
+	</body>
+</html>

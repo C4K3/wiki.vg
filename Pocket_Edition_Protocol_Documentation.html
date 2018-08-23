@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Pocket Edition Protocol Documentation - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pocket_Edition_Protocol_Documentation","wgTitle":"Pocket Edition Protocol Documentation","wgCurRevisionId":8228,"wgRevisionId":8228,"wgArticleId":1015,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pocket_Edition_Protocol_Documentation","wgRelevantArticleId":1015,"wgRequestId":"263ebdf04cf8d8272875a855","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pocket_Edition_Protocol_Documentation rootpage-Pocket_Edition_Protocol_Documentation skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Pocket Edition Protocol Documentation</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Pocket_Edition_Protocol_Documentation.html#mw-head">navigation</a>, 					<a href="Pocket_Edition_Protocol_Documentation.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is the (unofficial) protocol documentation for <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Minecraft_Pocket_Edition">Minecraft Pocket Edition</a></span>. The protocol currently uses <a href="http://en.wikipedia.org/wiki/UDP" class="extiw" title="wikipedia:UDP">UDP</a> for communication, different from PC (which uses <a href="http://en.wikipedia.org/wiki/TCP" class="extiw" title="wikipedia:TCP">TCP</a>). The usual UDP issues are still here (lost packets, wrong order, etc.), but the protocol solves a few of those problems using special packet encapsulation, based on TCP. The Minecraft: PE client uses <a rel="nofollow" class="external text" href="http://www.raknet.com/">RakNet</a> as its networking library. Even though it uses RakNet, you can still write software without the library.
+</p><p>Currently, the game's default port is 19132. It is recommended to use this when possible because processes such as server discovering will not work otherwise.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Pocket_Edition_Protocol_Documentation.html#Data_Types"><span class="tocnumber">1</span> <span class="toctext">Data Types</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Pocket_Edition_Protocol_Documentation.html#Packet_format"><span class="tocnumber">2</span> <span class="toctext">Packet format</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Pocket_Edition_Protocol_Documentation.html#RakNet_protocol"><span class="tocnumber">3</span> <span class="toctext">RakNet protocol</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Pocket_Edition_Protocol_Documentation.html#Connected_Ping"><span class="tocnumber">3.1</span> <span class="toctext">Connected Ping</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Pocket_Edition_Protocol_Documentation.html#Unconnected_Ping"><span class="tocnumber">3.2</span> <span class="toctext">Unconnected Ping</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Pocket_Edition_Protocol_Documentation.html#Connected_Pong"><span class="tocnumber">3.3</span> <span class="toctext">Connected Pong</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Pocket_Edition_Protocol_Documentation.html#Offline_Connection_Request_1"><span class="tocnumber">3.4</span> <span class="toctext">Offline Connection Request 1</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Pocket_Edition_Protocol_Documentation.html#Offline_Connection_Response_1"><span class="tocnumber">3.5</span> <span class="toctext">Offline Connection Response 1</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Pocket_Edition_Protocol_Documentation.html#Offline_Connection_Request_2"><span class="tocnumber">3.6</span> <span class="toctext">Offline Connection Request 2</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Pocket_Edition_Protocol_Documentation.html#Offline_Connection_Response_2"><span class="tocnumber">3.7</span> <span class="toctext">Offline Connection Response 2</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Pocket_Edition_Protocol_Documentation.html#Online_Connection_Request"><span class="tocnumber">3.8</span> <span class="toctext">Online Connection Request</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Pocket_Edition_Protocol_Documentation.html#Online_Connection_Request_Accepted"><span class="tocnumber">3.9</span> <span class="toctext">Online Connection Request Accepted</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Pocket_Edition_Protocol_Documentation.html#Incompatible_protocol"><span class="tocnumber">3.10</span> <span class="toctext">Incompatible protocol</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Pocket_Edition_Protocol_Documentation.html#Unconnected_Ping_2"><span class="tocnumber">3.11</span> <span class="toctext">Unconnected Ping</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="Pocket_Edition_Protocol_Documentation.html#Frame_Set_Packet"><span class="tocnumber">3.12</span> <span class="toctext">Frame Set Packet</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="Pocket_Edition_Protocol_Documentation.html#Game_Packet"><span class="tocnumber">3.13</span> <span class="toctext">Game Packet</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="Pocket_Edition_Protocol_Documentation.html#NACK"><span class="tocnumber">3.14</span> <span class="toctext">NACK</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="Pocket_Edition_Protocol_Documentation.html#ACK"><span class="tocnumber">3.15</span> <span class="toctext">ACK</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="Pocket_Edition_Protocol_Documentation.html#RakNet_Reliability"><span class="tocnumber">4</span> <span class="toctext">RakNet Reliability</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="Pocket_Edition_Protocol_Documentation.html#Frame_set_reliability"><span class="tocnumber">4.1</span> <span class="toctext">Frame set reliability</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="Pocket_Edition_Protocol_Documentation.html#Fragmentation"><span class="tocnumber">4.2</span> <span class="toctext">Fragmentation</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="Pocket_Edition_Protocol_Documentation.html#Order_and_Sequencing"><span class="tocnumber">4.3</span> <span class="toctext">Order and Sequencing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="Pocket_Edition_Protocol_Documentation.html#Game_Protocol"><span class="tocnumber">5</span> <span class="toctext">Game Protocol</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="Pocket_Edition_Protocol_Documentation.html#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Data_Types">Data Types</span></h2>
+<p>Minecraft packets use different data types to communicate with each other. The documented ones are listed below:
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0">
+</td>
+<th class="col1"> Size
+</th>
+<th class="col2"> Range
+</th>
+<th class="col3"> Notes
+</th></tr>
+<tr class="row1">
+<th class="col0 centeralign"> byte
+</th>
+<td class="col1 centeralign"> 1
+</td>
+<td class="col2"> 0 to 255
+</td>
+<td class="col3"> <code></code>
+</td></tr>
+<tr class="row2">
+<th class="col0 centeralign"> boolean
+</th>
+<td class="col1 centeralign"> 1
+</td>
+<td class="col2"> 0 or 1
+</td>
+<td class="col3"> <code>A byte treated as a boolean, 0 is false but anything greater than that is true.</code>
+</td>
+<td>
+</td></tr>
+<tr class="row3">
+<th class="col0 centeralign"> short
+</th>
+<td class="col1 centeralign"> 2
+</td>
+<td class="col2"> -32768 to 32767
+</td>
+<td class="col3"> <code></code>
+</td></tr>
+<tr class="row4">
+<th class="col0 centeralign"> uint24le
+</th>
+<td class="col1 centeralign"> 3
+</td>
+<td class="col2"> 0 to 16777216
+</td>
+<td class="col3"> Little-Endian 24-bit unsigned integer. Commonly used by RakNet for counters.
+</td></tr>
+<tr class="row5">
+<th class="col0 centeralign"> int
+</th>
+<td class="col1 centeralign"> 4
+</td>
+<td class="col2"> -2147483648 to 2147483647
+</td>
+<td class="col3"> <code></code>
+</td></tr>
+<tr class="row6">
+<th class="col0 centeralign"> long
+</th>
+<td class="col1 centeralign"> 8
+</td>
+<td class="col2">
+</td>
+<td class="col3"> <code></code>
+</td></tr>
+<tr class="row7">
+<th class="col0 centeralign"> MAGIC
+</th>
+<td class="col1 centeralign"> 16
+</td>
+<td class="col2"> <code>0x00ffff00fefefefefdfdfdfd12345678</code>
+</td>
+<td class="col3"> always those hex bytes, corresponding to RakNet's default OFFLINE_MESSAGE_DATA_ID
+</td></tr>
+<tr class="row8">
+<th class="col0 centeralign"> string
+</th>
+<td class="col1 centeralign"> unsigned short + string
+</td>
+<td class="col2"> N/A
+</td>
+<td class="col3"> Prefixed by a short containing the length of the string in characters. It appears that only the following ASCII characters can be displayed:&#160;!"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+</td></tr>
+<tr class="row9">
+<th class="col0 centeralign"> address
+</th>
+<td class="col1 centeralign"> 7
+</td>
+<td class="col2"> N/A
+</td>
+<td class="col3"> IP Address and port. First byte is the version (0x04), then come the address bytes and finally an unsigned short for the port.
+</td></tr>
+<tr>
+<th> NBT
+</th>
+<td> N/A
+</td>
+<td> N/A
+</td>
+<td> NBT data in PE is always <i>little-endian</i>. This includes short, int, long, float, double tags and the length headers for arrays, strings and lists.
+</td></tr>
+<tr>
+<th> Item Stack
+</th>
+<td> N/A
+</td>
+<td> N/A
+</td>
+<td> First short is the item ID. If this is not 0, then follows the item count ubyte. If this is also not 0, then follows the item data short and a <i>little-endian</i> short denoting the length of the following NBT data, or 0 for no NBT. Then follows an NBT tag described above of that length.
+</td></tr>
+<tr>
+<th> UUID
+</th>
+<td> 16
+</td>
+<td> 00000000-0000-0000-0000-000000000000
+<p>to ffffffff-ffff-ffff-ffff-ffffffffffff
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> Position
+</th>
+<td> 12
+</td>
+<td> N/A
+</td>
+<td> Three consecutive floats for x, y and z respectively.
+</td></tr>
+<tr>
+<th> Block Position
+</th>
+<td> 12
+</td>
+<td> N/A
+</td>
+<td> Three consecutive ints for x, y and z respectively.
+</td></tr></table>
+<h2><span class="mw-headline" id="Packet_format">Packet format</span></h2>
+<p>All packets in Minecraft: Pocket Edition start with their ID, which is an unsigned byte. If you are using a language which does not support unsigned types such as Java, you can do (byte &amp; 0xFF) to get the unsigned version.
+</p>
+<h2><span class="mw-headline" id="RakNet_protocol">RakNet protocol</span></h2>
+<p>The source code for the RakNet Library can be found <a rel="nofollow" class="external text" href="https://github.com/OculusVR/RakNet">here</a>.
+</p><p>Other implementations exist, such as <a rel="nofollow" class="external text" href="https://github.com/jython234/JRakLibPlus">JRakLibPlus</a> and <a rel="nofollow" class="external text" href="https://github.com/PocketMine/RakLib">RakLib</a>.
+</p>
+<h3><span class="mw-headline" id="Connected_Ping">Connected Ping</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> 0x00
+</td>
+<td> Time
+</td>
+<td> long
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="Unconnected_Ping">Unconnected Ping</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="2"> 0x01, 0x02
+</td>
+<td> Time
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+<tr>
+<td> MAGIC
+</td>
+<td> magic
+</td>
+<td>
+</td></tr></table>
+<p><code>0x02</code> is only replied to if there are open connections to the server. <b>Note:</b> as of 0.15.6 it seems that the game refreshes it's LAN world list every 4-5 seconds, however it seems the game will still ping in 1 second intervals.
+</p>
+<h3><span class="mw-headline" id="Connected_Pong">Connected Pong</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="2"> 0x03
+</td>
+<td> Ping Time
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Pong Time
+</td>
+<td> long
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="Offline_Connection_Request_1">Offline Connection Request 1</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="3"> 0x05
+</td>
+<td> Magic
+</td>
+<td> MAGIC
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Protocol version
+</td>
+<td> byte
+</td>
+<td> Currently 7
+</td></tr>
+<tr>
+<td> MTU
+</td>
+<td> mtu-46 zero bytes
+</td>
+<td> The MTU sent in the response appears to be somewhere around the size of this padding + 46 (28 udp overhead, 1 packet id, 16 magic, 1 protocol version)
+</td></tr></table>
+<p>The client sends these to the target server with ever decreasing MTU until the server responds. This is used to discover the MTU size for the connection. If the RakNet protocol does not match your own, respond with the Incompatible protocol packet
+</p>
+<h3><span class="mw-headline" id="Offline_Connection_Response_1">Offline Connection Response 1</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="4"> 0x06
+</td>
+<td> Magic
+</td>
+<td> MAGIC
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Server GUID
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Use security
+</td>
+<td> boolean
+</td>
+<td> Make sure this is false, it is vital for the login sequence to continue!
+</td>
+<td>
+</td></tr>
+<tr>
+<td> MTU
+</td>
+<td> short
+</td>
+<td> see Offline Connection Request 1
+</td></tr></table>
+<h3><span class="mw-headline" id="Offline_Connection_Request_2">Offline Connection Request 2</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="4"> 0x07
+</td>
+<td> Magic
+</td>
+<td> MAGIC
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Server Address
+</td>
+<td> address
+</td>
+<td>
+</td></tr>
+<tr>
+<td> MTU
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Client GUID
+</td>
+<td> long
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="Offline_Connection_Response_2">Offline Connection Response 2</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="5"> 0x08
+</td>
+<td> Magic
+</td>
+<td> MAGIC
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Server GUID
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Client Address
+</td>
+<td> address
+</td>
+<td>
+</td></tr>
+<tr>
+<td> MTU
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Encryption enabled?
+</td>
+<td> byte
+</td>
+<td> 0 for disabled.
+</td></tr></table>
+<h3><span class="mw-headline" id="Online_Connection_Request">Online Connection Request</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="2"> 0x09
+</td>
+<td> GUID
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Time
+</td>
+<td> long
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="Online_Connection_Request_Accepted">Online Connection Request Accepted</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="5"> 0x10
+</td>
+<td> Client address
+</td>
+<td> address
+</td>
+<td>
+</td></tr>
+<tr>
+<td> System index
+</td>
+<td> short
+</td>
+<td> Unknown what this does. 0 works as a value.
+</td></tr>
+<tr>
+<td> Internal IDs
+</td>
+<td> 10x address
+</td>
+<td> Unknown what these do. 255.255.255.255:19132 for all of them seems to work, any other address will probably work as well.
+</td></tr>
+<tr>
+<td> Request time
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Time
+</td>
+<td> long
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="Incompatible_protocol">Incompatible protocol</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="4"> 0x19
+</td>
+<td> Protocol
+</td>
+<td> byte
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Magic
+</td>
+<td> MAGIC
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Server GUID
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+</table>
+<h3><span class="mw-headline" id="Unconnected_Ping_2">Unconnected Ping</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="2"> 0x01, 0x02
+</td>
+<td> Time
+</td>
+<td> long
+</td>
+<td>
+</td></tr>
+<tr>
+<td> GUID
+</td>
+<td> long
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="Frame_Set_Packet">Frame Set Packet</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th colspan="3"> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="11"> 0x80..0x8d
+</td>
+<td colspan="3"> Frame Set index
+</td>
+<td> uint24le
+</td>
+<td>
+</td></tr>
+<tr>
+<td rowspan="10"> Frames
+</td>
+<td colspan="2"> Flags
+</td>
+<td> byte
+</td>
+<td> Top 3 bits are reliability type, fourth bit is 1 when the frame is fragmented and part of a compound.
+</td></tr>
+<tr>
+<td colspan="2"> Length IN BITS
+</td>
+<td> short
+</td>
+<td> Length of the body in bits.
+</td></tr>
+<tr>
+<td colspan="2"> Reliable frame index
+</td>
+<td> uint24le
+</td>
+<td> only if reliable
+</td></tr>
+<tr>
+<td colspan="2"> Sequenced frame index
+</td>
+<td> uint24le
+</td>
+<td> only if sequenced
+</td></tr>
+<tr>
+<td rowspan="2"> Order
+</td>
+<td> Ordered frame index
+</td>
+<td> uint24le
+</td>
+<td rowspan="2"> only if ordered
+</td></tr>
+<tr>
+<td> Order channel
+</td>
+<td> byte
+</td></tr>
+<tr>
+<td rowspan="3"> Fragment
+</td>
+<td> Compound size
+</td>
+<td> int
+</td>
+<td rowspan="3"> only if fragmented
+</td></tr>
+<tr>
+<td> Compound ID
+</td>
+<td> short
+</td></tr>
+<tr>
+<td> Index
+</td>
+<td> int
+</td></tr>
+<tr>
+<td> Body
+</td>
+<td> ceil(length/8) bytes
+</td></tr></table>
+<p>The reliability types are as follows:
+</p>
+<table class="wikitable">
+<tr>
+<th style="text-align: center; font-weight: bold;"> ID
+</th>
+<th style="font-weight: bold;"> Name
+</th>
+<th style="text-align: center; font-weight: bold;"> Reliable
+</th>
+<th style="text-align: center; font-weight: bold;"> Ordered
+</th>
+<th style="text-align: center; font-weight: bold;"> Sequenced
+</th></tr>
+<tr>
+<td style="text-align: center;"> 0
+</td>
+<td> unreliable
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+</td></tr>
+<tr>
+<td style="text-align: center;"> 1
+</td>
+<td> unreliable sequenced
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;"> x
+</td></tr>
+<tr>
+<td style="text-align: center;"> 2
+</td>
+<td> reliable
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+</td></tr>
+<tr>
+<td style="text-align: center;"> 3
+</td>
+<td> reliable ordered
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;">
+</td></tr>
+<tr>
+<td style="text-align: center;"> 4
+</td>
+<td> reliable sequenced
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;"> x
+</td></tr>
+<tr>
+<td style="text-align: center;"> 5
+</td>
+<td> unreliable (+ ACK receipt)
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+</td></tr>
+<tr>
+<td style="text-align: center;"> 6
+</td>
+<td> reliable (+ ACK receipt)
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+</td></tr>
+<tr>
+<td style="text-align: center;"> 7
+</td>
+<td> reliable ordered (+ ACK receipt)
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;"> x
+</td>
+<td style="text-align: center;">
+</td></tr></table>
+<p>Sequenced implies ordered.
+</p>
+<h3><span class="mw-headline" id="Game_Packet">Game Packet</span></h3>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> 0x8e
+</td>
+<td> Body
+</td>
+<td> bytes
+</td>
+<td> Single packet of the GAME protocol.
+</td></tr></table>
+<h3><span class="mw-headline" id="NACK">NACK</span></h3>
+<table class="wikitable">
+<tr>
+<th style="font-weight: bold;"> Packet ID
+</th>
+<th colspan="3" style="font-weight: bold;"> Field Name
+</th>
+<th style="font-weight: bold;"> Field Type
+</th>
+<th style="font-weight: bold;"> Notes
+</th></tr>
+<tr>
+<td> 0xa0
+</td>
+<td colspan="3"> Record count
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td rowspan="4"> Record
+</td>
+<td colspan="2"> Is Range?
+</td>
+<td> byte
+</td>
+<td> 0 for range, 1 for no range
+</td></tr>
+<tr>
+<td>
+</td>
+<td> No Range
+</td>
+<td> Index
+</td>
+<td> uint24le
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td rowspan="2"> Range
+</td>
+<td> Start Index
+</td>
+<td> uint24le
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td> End Index
+</td>
+<td> uint24le
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="ACK">ACK</span></h3>
+<table class="wikitable">
+<tr>
+<th style="font-weight: bold;"> Packet ID
+</th>
+<th colspan="3" style="font-weight: bold;"> Field Name
+</th>
+<th style="font-weight: bold;"> Field Type
+</th>
+<th style="font-weight: bold;"> Notes
+</th></tr>
+<tr>
+<td> 0xc0
+</td>
+<td colspan="3"> Record count
+</td>
+<td> short
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td rowspan="4"> Record
+</td>
+<td colspan="2"> Is Range?
+</td>
+<td> byte
+</td>
+<td> 0 for range, 1 for no range
+</td></tr>
+<tr>
+<td>
+</td>
+<td> No Range
+</td>
+<td> Index
+</td>
+<td> uint24le
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td rowspan="2"> Range
+</td>
+<td> Start Index
+</td>
+<td> uint24le
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td> End Index
+</td>
+<td> uint24le
+</td>
+<td>
+</td></tr></table>
+<h2><span class="mw-headline" id="RakNet_Reliability">RakNet Reliability</span></h2>
+<p>RakNet reliability and ordering is handled on multiple levels.
+</p>
+<h3><span class="mw-headline" id="Frame_set_reliability">Frame set reliability</span></h3>
+<p>FrameSetPackets carry a unique index. This index may only appear once in a connection (per direction). Getting the same index twice means you have received a duplicate datagram - ignore one.
+</p><p>Upon receiving a frame set, an ACK packet for that frame set is sent back. Since the frame set index is a sequential counter, you can deduce which frame sets are missing, for which a NACK packet is sent. For every received frame set, RakNet sends at most one NACK and one ACK.
+</p><p>Frame sets consist of frames. Internally, raknet uses a "resend queue" (priority heap / priority queue) of frames it needs to send. This queue is ordered by targeted send time. Whenever possible, raknet takes the top few sendable frames from this resend queue and combines them into a frame set smaller than the MTU. It then moves the <i>reliable</i> frames further down the queue by setting their resend time to a bunch of milliseconds in the future. <i>unreliable</i> frames are discarded after being first sent.
+</p><p>When an ACK is received, all frames of the container indices in that ACK packet are removed from the resend queue because they arrived safely on the client and don't need a resend.
+</p><p>When a NACK is received, all frames of the container indices in that NACK packet are moved to the top of the resend queue by setting their targeted resend time to the present or past.
+</p><p>To send a frame, raknet simply adds it to the resend queue with the present as the targeted send time. It is then intermixed with normal resends and other frames for the next frame set packet.
+</p>
+<h3><span class="mw-headline" id="Fragmentation">Fragmentation</span></h3>
+<p>Some packets (notably chunks) are larger than the MTU. These are split up into a <i>compound</i>. You need to consider the frame and frame set overhead when fragmenting frames. A fragmented frame contains the <i>compound ID</i> (reusable when compound is complete), <i>compound size</i> (in fragments) and <i>index</i> (0 up to compound size exclusive). All fragments of a compound share the same order and sequencing information, if any. All fragmented frames are also reliable.
+</p>
+<h3><span class="mw-headline" id="Order_and_Sequencing">Order and Sequencing</span></h3>
+<p>Some frames are ordered or sequenced. For order and sequencing, there exist <i>order channels</i>. These act independently. Since all sequenced reliability types are also ordered, an order channel is present for every ordered or sequenced frame.
+</p><p><i>Ordered</i> means that frames with higher order indices are <i>always</i> handled after frames with lower order indices. Higher order index frames are withheld until their lower peers arrive and it's their turn.
+</p><p><i>Sequenced</i> means that frames with lower sequence indices are <i>never</i> handled after frames with higher sequence indices. Lower sequence index frames are <i>discarded</i> if their higher index frames have already been handled.
+</p><p>Sequenced frames also include an order index. It is unknown how the order index influences handling, and this should be researched at some point.
+</p>
+<h2><span class="mw-headline" id="Game_Protocol">Game Protocol</span></h2>
+<p>The game protocol is described here: <a rel="nofollow" class="external free" href="https://confluence.yawk.at/display/PEPROTOCOL">https://confluence.yawk.at/display/PEPROTOCOL</a> and an autoatically generated version for 0.15 is also available in from MiNET at <a rel="nofollow" class="external free" href="https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md">https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md</a>
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<ul><li> RakNet datagram and message header information: <a rel="nofollow" class="external free" href="http://jenkinssoftware.com/raknet/manual/systemoverview.html">http://jenkinssoftware.com/raknet/manual/systemoverview.html</a></li>
+<li> Packets can be found in the <a rel="nofollow" class="external text" href="http://dragonet.org">Dragonet</a> server code  <a rel="nofollow" class="external free" href="https://github.com/DragonetMC/Dragonet/tree/master/src/main/java/org/dragonet/net/packet">https://github.com/DragonetMC/Dragonet/tree/master/src/main/java/org/dragonet/net/packet</a></li>
+<li> There is also an automatically generated specification of many of the packages can be found in the MiNET server code  <a rel="nofollow" class="external free" href="https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md">https://github.com/NiclasOlofsson/MiNET/blob/master/src/MiNET/MiNET/Net/MCPE%20Protocol%20Documentation.md</a> </li>
+<li> The MiNET wiki also contain development notes around some functionality <a rel="nofollow" class="external free" href="https://github.com/NiclasOlofsson/MiNET/wiki">https://github.com/NiclasOlofsson/MiNET/wiki</a> These will be migrated to this wiki in due time.</li>
+<li> <a rel="nofollow" class="external free" href="https://confluence.yawk.at/display/PEPROTOCOL">https://confluence.yawk.at/display/PEPROTOCOL</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20180823083130
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.092 seconds
+Real time usage: 0.183 seconds
+Preprocessor visited node count: 113/1000000
+Preprocessor generated node count: 202/1000000
+Post‐expand include size: 276/2097152 bytes
+Template argument size: 127/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.634      1 - -total
+100.00%   12.634      1 - Template:Minecraft_Wiki
+ 49.98%    6.314      1 - Template:Plainlink
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:1015-0!*!0!!en!*!* and timestamp 20180823083130 and revision id 8228
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Pocket_Edition_Protocol_Documentation&amp;oldid=8228">http://wiki.vg/index.php?title=Pocket_Edition_Protocol_Documentation&amp;oldid=8228</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Pocket+Edition+Protocol+Documentation" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Pocket+Edition+Protocol+Documentation" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Pocket_Edition_Protocol_Documentation.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Pocket_Edition_Protocol_Documentation&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Pocket_Edition_Protocol_Documentation.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Pocket_Edition_Protocol_Documentation.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Pocket_Edition_Protocol_Documentation&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Pocket_Edition_Protocol_Documentation&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Pocket_Edition_Protocol_Documentation.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Pocket_Edition_Protocol_Documentation" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Pocket_Edition_Protocol_Documentation" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Pocket_Edition_Protocol_Documentation&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Pocket_Edition_Protocol_Documentation&amp;oldid=8228" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Pocket_Edition_Protocol_Documentation&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 20 October 2016, at 22:17.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":137});});</script>
+	</body>
+</html>

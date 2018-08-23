@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Authentication(Chinese) - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Authentication(Chinese)","wgTitle":"Authentication(Chinese)","wgCurRevisionId":13260,"wgRevisionId":13260,"wgArticleId":5554,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Protocol Details","Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Authentication(Chinese)","wgRelevantArticleId":5554,"wgRequestId":"a77d60e00a683fdfc8f99d8b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Authentication_Chinese rootpage-Authentication_Chinese skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Authentication(Chinese)</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Authentication(Chinese).html#mw-head">navigation</a>, 					<a href="Authentication(Chinese).html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>(Is being translated into Chinese)
+</p><p>在Minecraft 1.6 中引入了一种名为 <b>Yggdrasil</b> 的新身份验证方案，完全取代了<a href="Legacy_Authentication.html" title="Legacy Authentication">旧版认证系统</a>。Mojang的其他游戏《Scrolls》也使用这种认证方式。 Mojang 表示 <a rel="nofollow" class="external text" href="https://twitter.com/KrisJelbring/status/453573406341206016">此身份验证系统应该被使用在每一个自定义登录上</a>，但 <a rel="nofollow" class="external text" href="https://twitter.com/KrisJelbring/status/461390585086361600">绝不应从用户那里收集证书</a>。
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Authentication(Chinese).html#.E8.AF.B7.E6.B1.82.E6.A0.BC.E5.BC.8F"><span class="tocnumber">1</span> <span class="toctext">请求格式</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Authentication(Chinese).html#.E9.94.99.E8.AF.AF"><span class="tocnumber">2</span> <span class="toctext">错误</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Authentication(Chinese).html#.E8.BA.AB.E4.BB.BD.E9.AA.8C.E8.AF.81"><span class="tocnumber">3</span> <span class="toctext">身份验证</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Authentication(Chinese).html#.E7.AB.AF.E7.82.B9"><span class="tocnumber">3.1</span> <span class="toctext">端点</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Authentication(Chinese).html#.E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7"><span class="tocnumber">3.2</span> <span class="toctext">有效载荷</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Authentication(Chinese).html#.E5.93.8D.E5.BA.94"><span class="tocnumber">3.3</span> <span class="toctext">响应</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Authentication(Chinese).html#.E5.88.B7.E6.96.B0"><span class="tocnumber">4</span> <span class="toctext">刷新</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="Authentication(Chinese).html#.E7.AB.AF.E7.82.B9_2"><span class="tocnumber">4.1</span> <span class="toctext">端点</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Authentication(Chinese).html#.E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7_2"><span class="tocnumber">4.2</span> <span class="toctext">有效载荷</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Authentication(Chinese).html#Response"><span class="tocnumber">4.3</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="Authentication(Chinese).html#.E9.AA.8C.E8.AF.81"><span class="tocnumber">5</span> <span class="toctext">验证</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="Authentication(Chinese).html#.E7.AB.AF.E7.82.B9_3"><span class="tocnumber">5.1</span> <span class="toctext">端点</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Authentication(Chinese).html#.E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7_3"><span class="tocnumber">5.2</span> <span class="toctext">有效载荷</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Authentication(Chinese).html#.E5.93.8D.E5.BA.94_2"><span class="tocnumber">5.3</span> <span class="toctext">响应</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="Authentication(Chinese).html#.E6.B3.A8.E9.94.80"><span class="tocnumber">6</span> <span class="toctext">注销</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="Authentication(Chinese).html#.E7.AB.AF.E7.82.B9_4"><span class="tocnumber">6.1</span> <span class="toctext">端点</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="Authentication(Chinese).html#.E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7_4"><span class="tocnumber">6.2</span> <span class="toctext">有效载荷</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="Authentication(Chinese).html#.E5.93.8D.E5.BA.94_3"><span class="tocnumber">6.3</span> <span class="toctext">响应</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="Authentication(Chinese).html#.E6.97.A0.E6.95.88"><span class="tocnumber">7</span> <span class="toctext">无效</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="Authentication(Chinese).html#.E7.AB.AF.E7.82.B9_5"><span class="tocnumber">7.1</span> <span class="toctext">端点</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="Authentication(Chinese).html#.E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7_5"><span class="tocnumber">7.2</span> <span class="toctext">有效载荷</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="Authentication(Chinese).html#.E5.93.8D.E5.BA.94_4"><span class="tocnumber">7.3</span> <span class="toctext">响应</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="Authentication(Chinese).html#.E5.8A.A0.E5.85.A5.E4.B8.80.E4.B8.AA.E6.9C.8D.E5.8A.A1.E5.99.A8"><span class="tocnumber">8</span> <span class="toctext">加入一个服务器</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".E8.AF.B7.E6.B1.82.E6.A0.BC.E5.BC.8F">请求格式</span></h2>
+<p>所有请求是由以下服务器发往 Yggdrasil：
+</p>
+<pre><a rel="nofollow" class="external free" href="https://authserver.mojang.com">https://authserver.mojang.com</a>
+</pre>
+<p>进一步说，他们预计将满足以下规则：
+</p>
+<ul><li> 是 <code>POST</code> 请求</li>
+<li> Have the <code>Content-Type</code> header set to <code>application/json</code></li>
+<li> Contain a <a href="http://en.wikipedia.org/wiki/JSON" class="extiw" title="wikipedia:JSON">JSON</a>-encoded dictionary as payload</li></ul>
+<p>如果请求成功服务器将响应：
+</p>
+<ul><li> 状态码 <code>200</code></li>
+<li> A <a href="http://en.wikipedia.org/wiki/JSON" class="extiw" title="wikipedia:JSON">JSON</a>-encoded dictionary according to the specifications below</li></ul>
+<p>If however a request fails, the server will respond with:
+</p>
+<ul><li> An appropriate, non-200 <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes" class="extiw" title="wikipedia:List of HTTP status codes">HTTP status code</a></li>
+<li> 一个 <a href="http://en.wikipedia.org/wiki/JSON" class="extiw" title="wikipedia:JSON">JSON</a>-编码字典格式如下:</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="s2">&quot;Short description of the error&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;errorMessage&quot;</span><span class="o">:</span> <span class="s2">&quot;Longer description which can be shown to the user&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cause&quot;</span><span class="o">:</span> <span class="s2">&quot;Cause of the error&quot;</span> <span class="c1">// 可选</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id=".E9.94.99.E8.AF.AF">错误</span></h2>
+<p>这些都是一些可能遇到的错误:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> 错误
+</th>
+<th> 原因
+</th>
+<th> 错误提示
+</th>
+<th> 注释
+</th></tr>
+<tr>
+<td> <code>Method Not Allowed</code>
+</td>
+<td>
+</td>
+<td> 请求中指定的方法是不允许的，因为资源标识来自URI请求。
+</td>
+<td> 收到POST请求以外的数据。
+</td></tr>
+<tr>
+<td> <code>Not Found</code>
+</td>
+<td>
+</td>
+<td> 服务器并没有发现任何匹配此请求的URI。
+</td>
+<td> 被呼叫的端点不存在。
+</td></tr>
+<tr>
+<td> <code>ForbiddenOperationException</code>
+</td>
+<td> <code>UserMigratedException</code>
+</td>
+<td> 无效的证书。帐户迁移,使用电子邮件作为用户名。
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <code>ForbiddenOperationException</code>
+</td>
+<td>
+</td>
+<td> 无效的证书。无效的用户名或密码。
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <code>ForbiddenOperationException</code>
+</td>
+<td>
+</td>
+<td> 无效的证书。
+</td>
+<td> 此用户名近期尝试太多次登录(查看<code>/authenticate</code>)。注意，用户名和密码可能仍然是有效的！
+</td></tr>
+<tr>
+<td> <code>ForbiddenOperationException</code>
+</td>
+<td>
+</td>
+<td> 无效的令牌。
+</td>
+<td> <code>accessToken</code> 是无效的。
+</td></tr>
+<tr>
+<td> <code>IllegalArgumentException</code>
+</td>
+<td>
+</td>
+<td> 访问令牌(Access token)已有一个指定的配置文件。
+</td>
+<td> 选择配置文件还未实现。
+</td></tr>
+<tr>
+<td> <code>IllegalArgumentException</code>
+</td>
+<td>
+</td>
+<td> 证书是空的。
+</td>
+<td> 用户名/密码未提交。
+</td></tr>
+<tr>
+<td> <code>Unsupported Media Type</code>
+</td>
+<td>
+</td>
+<td> 此服务器拒绝服务请求，因为实体请求的格式不受 请求的资源的请求的方法 支持。(翻译水平不足，无法理解请阅读英文原文)
+</td>
+<td> 数据未被应用程序提交/json
+</td></tr></table>
+<h2><span class="mw-headline" id=".E8.BA.AB.E4.BB.BD.E9.AA.8C.E8.AF.81">身份验证</span></h2>
+<p>使用他的密码对用户进行身份验证。
+</p>
+<h3><span class="mw-headline" id=".E7.AB.AF.E7.82.B9">端点</span></h3>
+<pre>/authenticate
+</pre>
+<h3><span class="mw-headline" id=".E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7">有效载荷</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;agent&quot;</span><span class="o">:</span> <span class="p">{</span>                              <span class="c1">// 默认为 Minecraft</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Minecraft&quot;</span><span class="p">,</span>                <span class="c1">// 适用于 Mojang 的其他游戏《Scrolls》， 应使用&quot;Scrolls&quot; </span>
+        <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>                        <span class="c1">// 这个数字可能会增加</span>
+                                            <span class="c1">// 根据将来的客户端改变</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;mojang account name&quot;</span><span class="p">,</span>      <span class="c1">// 可以是一个电子邮件地址或玩家的名字</span>
+                                            <span class="c1">// 对于迁移的帐户</span>
+    <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;mojang account password&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span><span class="p">,</span>     <span class="c1">// 可选</span>
+    <span class="s2">&quot;requestUser&quot;</span><span class="o">:</span> <span class="kc">true</span>                     <span class="c1">// 可选的，默认值：false；true将用户对象添加到响应中</span>
+<span class="p">}</span>
+</pre></div>
+<p>此 <code>clientToken</code> 应该是一个随机生成的标识符并且对于每个请求必须是相同的。在首次运行启动器时生成一个随机的(版本4)UUID 并保存它，在后续请求中重复使用它。假如它丢失了，服务器将基于Java的  <a rel="nofollow" class="external text" href="http://docs.oracle.com/javase/7/docs/api/java/util/UUID.html#toString()"><code>UUID.toString()</code></a>生成一个随机的令牌并应被客户端储存。然而这也将使该用户的所有客户端先前获得的 <code>accessToken</code> 失效。
+</p>
+<h3><span class="mw-headline" id=".E5.93.8D.E5.BA.94">响应</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;random access token&quot;</span><span class="p">,</span>      <span class="c1">// 十六进制</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span><span class="p">,</span>        <span class="c1">// 与接收到的相同</span>
+    <span class="s2">&quot;availableProfiles&quot;</span><span class="o">:</span> <span class="p">[</span>                     <span class="c1">// 只有当代理字段被接收时才存在</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;profile identifier&quot;</span><span class="p">,</span>        <span class="c1">// 十六进制</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;player name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;legacy&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="nx">or</span> <span class="kc">false</span>            <span class="c1">// 实际上， 如果是true，这个字段只出现在响应中。默认为false.</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;selectedProfile&quot;</span><span class="o">:</span> <span class="p">{</span>                       <span class="c1">// 只有当代理字段被接收时才存在</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;uuid without dashes&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;player name&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;legacy&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="nx">or</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>                                  <span class="c1">// 只出现在请求有效载荷中requestUser为真时</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;user identifier&quot;</span><span class="p">,</span>               <span class="c1">// 十六进制</span>
+        <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;preferredLanguage&quot;</span><span class="p">,</span>   <span class="c1">// 可能不适用于所有帐户</span>
+                <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;en&quot;</span>                  <span class="c1">// 使用ISO 639-1标准，中文用zh表示</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;twitch_access_token&quot;</span><span class="p">,</span> <span class="c1">// 只有当一个twitch 帐户被关联时才存在 (查看https://account.mojang.com/me/settings)</span>
+                <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;twitch oauth token&quot;</span>  <span class="c1">// OAuth 2.0 令牌; 字母数字混合; e.g. https://api.twitch.tv/kraken?oauth_token=[...]</span>
+                                               <span class="c1">// 这里记录了Twitch的API: https://github.com/justintv/Twitch-API</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><b>注意：</b> 如果用户希望呆在他们的电脑上登录，强烈建议将接收到的 <code>accessToken</code> 代替密码本身。
+</p><p>目前每个帐户只能拥有一个配置文件，不过在未来的计划中每个账户可以拥有多个配置文件。 如果用户没有附加Minecraft许可证的情况下试图登录到一个有效的Mojang账户，身份验证将会成功，但响应不会包含 <code>selectedProfile</code> 字段，并且 <code>availableProfiles</code> 数组将为空。
+</p><p>在某些情况下，观察到Mojang对遗留帐户的刷新尝试失败时返回一个<code>null</code>。目前还不清楚空响应的实际错误是什么并且非常罕见。但是，实现上应该警惕响应的空输出。
+</p><p>这个端点是频率限制;
+</p>
+<dl><dd> 多个 <code>/authenticate</code> 在很短的时间内对相同账户的请求 (在短时间内考虑 3 个请求)，即使有正确的密码， 最终将导致一个 <code>Invalid credentials.</code> 响应。这一错误在几秒钟后就会消失。</dd></dl>
+<h2><span class="mw-headline" id=".E5.88.B7.E6.96.B0">刷新</span></h2>
+<p>刷新一个有效的 <code>accessToken</code>。 它可以用来让用户在游戏会话之间登录并且优先在文件中存储用户的密码 (查看 <a href="Lastlogin.html" title="Lastlogin">lastlogin</a>). 
+</p>
+<h3><span class="mw-headline" id=".E7.AB.AF.E7.82.B9_2">端点</span></h3>
+<pre>/refresh
+</pre>
+<h3><span class="mw-headline" id=".E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7_2">有效载荷</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;valid accessToken&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span><span class="p">,</span>  <span class="c1">// 这需要与最初获得的accessToken相同</span>
+                                         <span class="c1">//  </span>
+    <span class="s2">&quot;selectedProfile&quot;</span><span class="o">:</span> <span class="p">{</span>                 <span class="c1">// 可选的；发送它将导致错误</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;profile identifier&quot;</span><span class="p">,</span>      <span class="c1">// 十六进制</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;player name&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;requestUser&quot;</span><span class="o">:</span> <span class="kc">true</span>                  <span class="c1">// 可选；默认值：false；true将用户对象添加到响应中</span>
+<span class="p">}</span>
+</pre></div>
+<p>注意： 所提供的 <code>accessToken</code> 无效。
+</p>
+<h3><span class="mw-headline" id="Response">Response</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;random access token&quot;</span><span class="p">,</span>      <span class="c1">// 十六进制</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span><span class="p">,</span>        <span class="c1">// 与接收到的相同</span>
+    <span class="s2">&quot;selectedProfile&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;profile identifier&quot;</span><span class="p">,</span>            <span class="c1">// 十六进制</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;player name&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>                                  <span class="c1">// 只有在请求有效载荷中requestUser为true时才出现</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;user identifier&quot;</span><span class="p">,</span>               <span class="c1">// 十六进制</span>
+        <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;preferredLanguage&quot;</span><span class="p">,</span>   <span class="c1">// 可能不适用于所有帐户</span>
+                <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;en&quot;</span>                  <span class="c1">// ISO 639-1标准，中文使用zh表示</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;twitch_access_token&quot;</span><span class="p">,</span> <span class="c1">// 只有在与twitch帐户相关联时会出现 (查看 https://account.mojang.com/me/settings)</span>
+                <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;twitch oauth token&quot;</span>  <span class="c1">// OAuth 2.0 令牌；字母数字混合；e.g. https://api.twitch.tv/kraken?oauth_token=[...]</span>
+                                               <span class="c1">// 这里记录了Twitch的API: https://github.com/justintv/Twitch-API</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id=".E9.AA.8C.E8.AF.81">验证</span></h2>
+<p>检查 <code>accessToken</code> 是否可以使用Minecraft服务器进行身份验证。Minecraft启动器(从版本1.6.13开始) 在启动时调用此端点，以验证其保存的令牌仍然可用，如果返回错误，则调用 <code>/refresh</code>。
+</p><p>注意，<code>accessToken</code> 可能无法与Minecraft服务器进行身份验证，但是对于 <code>/refresh</code> 来说还是不错的。这主要发生在使用另一个客户端时(e.g. 在另一台电脑上玩Minecraft)。似乎只有最近获得的给定帐户的 <code>accessToken</code>才能被可靠地用于身份验证。(倒数第二的令牌似乎也仍然有效，但是不要依赖它)。
+</p><p>在有或没有 <code>clientToken</code> 的情况下<code>/validate</code> 都可能被调用。 如果提供了
+<code>clientToken</code>，应该匹配一个用于获取 <code>accessToken</code>。Minecraft启动器发送一个<code>clientToken</code> 到 <code>/validate</code>。(翻译水平不足，无法理解请阅读英文原文)
+</p>
+<h3><span class="mw-headline" id=".E7.AB.AF.E7.82.B9_3">端点</span></h3>
+<pre>/validate
+</pre>
+<h3><span class="mw-headline" id=".E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7_3">有效载荷</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;valid accessToken&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;associated clientToken&quot;</span> <span class="c1">// 可选，见上图</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id=".E5.93.8D.E5.BA.94_2">响应</span></h3>
+<p>如果成功，则返回一个空的有效载荷 (<code>204 No Content</code>) ， 否则将显示状态为
+<code>403 Forbidden</code> 的JSON错误。
+</p>
+<h2><span class="mw-headline" id=".E6.B3.A8.E9.94.80">注销</span></h2>
+<p>无效的 <code>accessToken</code> 使用一个帐户的用户名和密码
+</p>
+<h3><span class="mw-headline" id=".E7.AB.AF.E7.82.B9_4">端点</span></h3>
+<pre>/signout
+</pre>
+<h3><span class="mw-headline" id=".E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7_4">有效载荷</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;mojang account name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;mojang account password&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id=".E5.93.8D.E5.BA.94_3">响应</span></h3>
+<p>如果成功返回一个空的有效载荷。
+</p>
+<h2><span class="mw-headline" id=".E6.97.A0.E6.95.88">无效</span></h2>
+<p>无效的 <code>accessToken</code> 使用客户端/访问令牌。
+</p>
+<h3><span class="mw-headline" id=".E7.AB.AF.E7.82.B9_5">端点</span></h3>
+<pre>/invalidate
+</pre>
+<h3><span class="mw-headline" id=".E6.9C.89.E6.95.88.E8.BD.BD.E8.8D.B7_5">有效载荷</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;valid accessToken&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span>   <span class="c1">// 这需要与最初获得的accessToken相同</span>
+                                         <span class="c1">// </span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id=".E5.93.8D.E5.BA.94_4">响应</span></h3>
+<p>如果成功返回一个空的有效载荷。
+</p>
+<h2><span class="mw-headline" id=".E5.8A.A0.E5.85.A5.E4.B8.80.E4.B8.AA.E6.9C.8D.E5.8A.A1.E5.99.A8">加入一个服务器</span></h2>
+<p>查看<a href="Protocol_Encryption.html#Authentication" title="Protocol Encryption">Protocol Encryption#Authentication</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823152759
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.050 seconds
+Real time usage: 0.066 seconds
+Preprocessor visited node count: 163/1000000
+Preprocessor generated node count: 256/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:5554-0!*!0!!en!*!* and timestamp 20180823152759 and revision id 13260
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Authentication(Chinese)&amp;oldid=13260">http://wiki.vg/index.php?title=Authentication(Chinese)&amp;oldid=13260</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Protocol_Details.html" title="Category:Protocol Details">Protocol Details</a></li><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Authentication%28Chinese%29" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Authentication%28Chinese%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Authentication(Chinese).html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Authentication(Chinese)&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Authentication(Chinese).html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Authentication(Chinese).html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Authentication(Chinese)&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Authentication(Chinese)&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Authentication(Chinese).html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Authentication(Chinese)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Authentication(Chinese)" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Authentication(Chinese)&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Authentication(Chinese)&amp;oldid=13260" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Authentication(Chinese)&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 30 July 2017, at 21:24.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":218});});</script>
+	</body>
+</html>

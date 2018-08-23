@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>How to Write a Client - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_Write_a_Client","wgTitle":"How to Write a Client","wgCurRevisionId":8082,"wgRevisionId":8082,"wgArticleId":79,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_Write_a_Client","wgRelevantArticleId":79,"wgRequestId":"90eb1e5423393931f8bf6ee0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-How_to_Write_a_Client rootpage-How_to_Write_a_Client skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">How to Write a Client</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="How_to_Write_a_Client.html#mw-head">navigation</a>, 					<a href="How_to_Write_a_Client.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This tutorial is being created to document what it takes to write a stand-alone client to interact with a notchian server. The tutorial is incomplete but will be updated whenever more information is discovered.
+</p><p><b>Note that a lot of the information here is out of date (&lt; Apr 2013). Check <a rel="nofollow" class="external text" href="http://wiki.vg/index.php?title=How_to_Write_a_Client&amp;action=history">the page history</a> for what was recently updated.</b>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="How_to_Write_a_Client.html#Before_You_Get_Started"><span class="tocnumber">1</span> <span class="toctext">Before You Get Started</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="How_to_Write_a_Client.html#Parsing_the_messages"><span class="tocnumber">2</span> <span class="toctext">Parsing the messages</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="How_to_Write_a_Client.html#Login"><span class="tocnumber">3</span> <span class="toctext">Login</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="How_to_Write_a_Client.html#Getting_the_map_chunks"><span class="tocnumber">4</span> <span class="toctext">Getting the map chunks</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="How_to_Write_a_Client.html#Moving_around"><span class="tocnumber">5</span> <span class="toctext">Moving around</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="How_to_Write_a_Client.html#Allowed_super-human_abilities"><span class="tocnumber">5.1</span> <span class="toctext">Allowed super-human abilities</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="How_to_Write_a_Client.html#Restrictions"><span class="tocnumber">5.2</span> <span class="toctext">Restrictions</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="How_to_Write_a_Client.html#Look_and_Stance"><span class="tocnumber">5.3</span> <span class="toctext">Look and Stance</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="How_to_Write_a_Client.html#Fall_damage"><span class="tocnumber">5.4</span> <span class="toctext">Fall damage</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="How_to_Write_a_Client.html#Testing.2FDebugging"><span class="tocnumber">5.5</span> <span class="toctext">Testing/Debugging</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="How_to_Write_a_Client.html#Digging"><span class="tocnumber">6</span> <span class="toctext">Digging</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="How_to_Write_a_Client.html#How_long_to_wait"><span class="tocnumber">6.1</span> <span class="toctext">How long to wait</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="How_to_Write_a_Client.html#Digging.2FPlacing_Blocks_Behind_Walls"><span class="tocnumber">6.2</span> <span class="toctext">Digging/Placing Blocks Behind Walls</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="How_to_Write_a_Client.html#Inventory_and_Crafting"><span class="tocnumber">7</span> <span class="toctext">Inventory and Crafting</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="How_to_Write_a_Client.html#Attacking_mobs.2Fplayers"><span class="tocnumber">8</span> <span class="toctext">Attacking mobs/players</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="How_to_Write_a_Client.html#Chat"><span class="tocnumber">9</span> <span class="toctext">Chat</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="How_to_Write_a_Client.html#Health_and_Respawning"><span class="tocnumber">10</span> <span class="toctext">Health and Respawning</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Before_You_Get_Started">Before You Get Started</span></h2>
+<ul><li> Make sure you don't want to join or fork an <a href="Client_List.html" title="Client List">existing project</a> instead.</li>
+<li> Ponder how much work it will be.</li>
+<li> Download the latest official minecraft server and run it with authentication turned off. Bind it to localhost if you want.</li></ul>
+<h2><span class="mw-headline" id="Parsing_the_messages">Parsing the messages</span></h2>
+<p><i>Main article: <a href="Protocol.html" title="Protocol">Protocol</a></i>
+</p><p>Your client must be able to <i>handle</i> all the messages, but not necessarily be able to parse all the data. It is possible to skip packets that you're not interested in. Since the length of the packet is transmitted at the beginning of every packet (see <a href="Protocol.html#Packet_format" title="Protocol">Packet Format</a>), your client can simply skip the correct number of bytes to stay in sync. You <i>will</i> need libraries to do encryption (openssl or crypto) and compression (zlib).
+</p>
+<h2><span class="mw-headline" id="Login">Login</span></h2>
+<p>Connect to the server at localhost, port 25565.
+</p><p><i>Main article: <a href="Protocol_FAQ.html" title="Protocol FAQ">Protocol FAQ</a></i>
+</p><p>Paraphrase (with no authentication and no encryption): send a 0x02, get a 0xFD, send a 0xCD, get a 0x01, get a 0x06. Then you'll eventually get a 0x0D, and that's when the game really begins.
+</p><p>Paraphrase (with no authentication): send a 0x02, get a 0xFD, send a 0xFC, get a 0xFC (Then enable AES encrpytion), get a 0x01, get a 0x06. Then you'll eventually get a 0x0D, and that's when the game really begins.
+</p><p>To test if this worked, connect to your localhost server with the notchian client and see if you can see your custom client appear and float in the air.
+</p>
+<h2><span class="mw-headline" id="Getting_the_map_chunks">Getting the map chunks</span></h2>
+<p>Once you get your first 0x0D, you have to convince the server that you deserve to know about all the map chunks that are around you.
+The vanilla client will actually start sending 0x0D packets BEFORE receiving it's first 0x0D packet (while receiving 0x32 prechunks)
+</p>
+<ul><li> Every 50 milliseconds, send one of 0x0A - 0x0D.</li></ul>
+<p>You will get several fragments of chunks at first that are very far away from your location. Ignore these, since the chunks they are in will be loaded fully later. Full chunks load spiraling outward from your location in a circular (not square) pattern, eventually creating a 20x20 square for a total of 400 chunks.
+</p><p>To test if this worked, count the number of 0x33 map chunk messages you get that are full-sized chunks (16,128,16). If you don't get any, or you only get a couple, you probably aren't sending the 0x0A - 0x0D properly.
+</p>
+<h2><span class="mw-headline" id="Moving_around">Moving around</span></h2>
+<p>Send the server updates on your position (0x0A - 0x0D) at every 50 milliseconds. This section was written experimenting with sending only 0x0D messages. You can send position updates slower, but it causes health updates to be slower.
+</p><p>The server will mostly keep quiet about your position, which means that your movements are acceptable. If the server sends you your position, it means you've done something wrong. In this situation, you must apologize by sending back identical data or else the server will begin ignoring any future position updates. The jerking effect that happens in this event can be seen in notchian clients when trying to walk across missing chunks.
+</p><p>The walking animation is automatically displayed in notchian clients when you move around on the ground. There's no walking animation when you move straight up and down though.
+</p>
+<h3><span class="mw-headline" id="Allowed_super-human_abilities">Allowed super-human abilities</span></h3>
+<ul><li> <b>Flying</b> - float and move about in the air. You must set on-ground to false to move vertically. Gravity only exists if you say it exists. If the server has "allow-flight=false" on the configuration, after certain amount of time (5 seconds) the player will be kicked.</li>
+<li> <b>Walking in the air</b> - walk off a cliff with on-ground set to true. The avatar will continue walking as if there were ground bellow him. Maybe the server doesn't even check any correlation between on-ground and proximity to the ground. Again, to do this the server needs to have flight enabled.</li>
+<li><s><b>Moving arbitrarily fast</b> - update your position to move as far as you like with each step to move arbitrarily fast (as long as you have a clear path). Tested up to 1000m in a single step.</s> (this does not work anymore, gives a "Kicked for moving too fast. Hacking?&#160;:(" message.</li></ul>
+<h3><span class="mw-headline" id="Restrictions">Restrictions</span></h3>
+<ul><li> You cannot intersect with solid blocks. Your bounding box is an apothem of 0.3m in the horizontal axises, and 1.74m from your feet to the top of your head.</li>
+<li> You cannot move through walls. If there are solid blocks in your way, you have to move around them no matter how fast you're going.</li></ul>
+<p>If you break any of the above rules, the server will send you your corrected position. Corrected positions preserve your on-ground status, even if you were trying to fall through the top of a solid block. Note that sometimes increasing the rate of position update messages will help the server follow along and not correct your position. 50 milliseconds seems to be a good update interval.
+</p>
+<h3><span class="mw-headline" id="Look_and_Stance">Look and Stance</span></h3>
+<p>Look is defined by yaw and pitch. Providing the yaw component to the server rotates your avatar's head about the vertical-axis. The notion of an avatar's body orientation seems to exist only in clients and updates automatically in notchian clients when players rotate their yaw and move around. Providing the pitch component rotates your avatar's head up and down. There seems to be no limit to the pitch, so providing a pitch of 180 degrees result in your avatar's head appearing upsidedown. See <a href="Protocol.html" title="Protocol">Protocol</a> for how the yaw and pitch values are calibrated.
+</p><p>Modifying your stance seems to have no visible effect. Its purpose is to modify the bounding box (for example, when the player is crouching it bounding box should be shorter)
+</p>
+<h3><span class="mw-headline" id="Fall_damage">Fall damage</span></h3>
+<p>Fall damage happens when on-ground changes from false to true and the fall height is greater than some threshold around 4 meters. Fall height seems to be calculated by the difference between the point where on-ground changed to true and the highest point of the jump/fall/flight while on-ground was false.
+</p><p>You can avoid fall damage if you fly at a slow constant speed (instead of constant acceleration) towards the floor.
+</p>
+<h3><span class="mw-headline" id="Testing.2FDebugging">Testing/Debugging</span></h3>
+<p>To test if moving around is working, watch your avatar move around from a notchian client.
+</p><p>If your avatar remains still despite your position update messages, then maybe you didn't apologize in response to the server correcting your position. Reconnect to give yourself another chance.
+</p><p>If your avatar is invisible to notchian clients despite the server sending you reasonable spawn coordinates, then maybe you died. Watch for 0x08 health updates to verify this cause. Try respawning or deleting the server's player file (world/players/&lt;username&gt;.dat) to recover from this situation.
+</p>
+<h2><span class="mw-headline" id="Digging">Digging</span></h2>
+<p>If you don't want to be able to abort digging:
+</p>
+<ol><li> send a start digging (0) packet and an finish digging (2) packet.</li>
+<li> server sends you an update block telling you of your success or failure after some amount of time has passed.</li></ol>
+<p>If you do want to be able to abort digging:
+</p>
+<ol><li> send a start digging (0).</li>
+<li> wait appropriate amount of time (see below).</li>
+<li> if you haven't aborted yet, send a finish digging (2).</li></ol>
+<p>If you go with the first option, you must wait until the block has been dug before you can start digging another block. In older versions of the server (1.4 and previous) you could bypass the time and destroy lots of blocks at once (instant mining) by sending "start digging" and "finish digging" packets without an interval in between.
+</p>
+<h3><span class="mw-headline" id="How_long_to_wait">How long to wait</span></h3>
+<p>The server requires you to wait for a certain amount of time between sending a StartDiggingPacket and a StopDiggingPacket. Below is some old pseudocode; you can find an updated one <a rel="nofollow" class="external text" href="https://gist.github.com/phase/85d3081047cbf3d2f5ae">here</a>.
+</p>
+<pre>20 ticks per second
+
+sum = 0
+every tick, sum += strengthVsBlock
+when sum &gt;= 1.0, block is broken
+
+function strengthVsBlock(tool, block, underwater, on_ground) {
+    if block.hardness &lt; 0:
+        return 0
+    if not canHarvestBlock(tool, block):
+        return 1.0 / block.hardness / 100
+        
+    mult = 1
+    
+    if tool effective against block:
+        mult *= tool.effectiveness
+    if underwater:
+        mult /= 5
+    if not on_ground:
+        mult /= 5
+    
+    return mult / block.hardness / 30
+}
+
+function canHarvestBlock(block) {
+
+    if block material is not in (rock, iron, snow, snow_block):
+        return true
+    else
+        return whether equipped item can harvest block
+
+}
+
+effectiveness against proper material
+wood: 2.0
+stone: 4.0
+iron: 6.0
+diamond: 8.0
+gold: 12.0
+
+
+Shovel effective against:
+Block.grass, Block.dirt, Block.sand, Block.gravel, Block.snow, Block.blockSnow, Block.blockClay
+
+
+axe effective against:
+
+Block.planks, Block.bookShelf, Block.wood, Block.crate
+
+
+pick effective against:
+            Block.cobblestone, Block.stairDouble, Block.stairSingle, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold, 
+
+            Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.bloodStone, Block.oreLapis, Block.blockLapis
+            
+pick can harvest:
+    switch(harvest level of tool):
+        case 3:
+            obsidian
+        case 2:
+            diamond
+            diamondore
+            gold
+            goldore
+            redstone
+            redstoneglowing
+        case 1:
+            iron
+            ironore
+            lapis
+            lapisore
+            
+    if block.material is rock
+        return true
+    if block.material is iron
+        return true
+    
+    
+    return false
+
+shovel can harvest:
+    both types of snow = true
+    else false
+
+axe can harvest:
+    false
+
+
+harvest level:
+wood: 0
+stone: 1
+iron: 2
+diamond: 3
+gold: 0
+
+for the following fields, see <a rel="nofollow" class="external free" href="https://github.com/PrismarineJS/minecraft-data/blob/master/data/1.8/blocks.json">https://github.com/PrismarineJS/minecraft-data/blob/master/data/1.8/blocks.json</a>
+Block.hardness
+Block.material
+</pre>
+<h3><span class="mw-headline" id="Digging.2FPlacing_Blocks_Behind_Walls">Digging/Placing Blocks Behind Walls</span></h3>
+<ul><li> Neither the Notchian server nor Bukkit check whether you actually have line-of-sight to a block when you dig or place blocks. Thus, if you noclip through a wall and mine the blocks behind it, the server will correct your position and ignore position updates, but still break those blocks which were within four meters of your corrected position. Likewise, any chests, buttons or levers can be used as long as they are within that critical 4-m distance.</li></ul>
+<h2><span class="mw-headline" id="Inventory_and_Crafting">Inventory and Crafting</span></h2>
+<p>When you log in, before you get a 0x0D, you will get a <a href="Protocol.html#Window_Items" title="Protocol">Window Items</a> with all inventory slots including armor. You will then get a series of <a href="Protocol.html#Set_Slot" title="Protocol">Set Slot</a> repeating the slot information, one for every non-empty slot in the opened window, plus the cursor slot (which is empty by default, but changes when you click on a slot). The slot indexes of these messages are for an inventory window with the crafting zone empty.
+</p><p>By clicking on a block or entity, the client can open a window. After sending the <a href="Protocol.html#Player_Block_Placement" title="Protocol">Player Block Placement</a> or <a href="Protocol.html#Use_Entity" title="Protocol">Use Entity</a> packet, the server responds with <a href="Protocol.html#Open_Window" title="Protocol">Open Window</a>, <a href="Protocol.html#Window_Items" title="Protocol">Window Items</a>, several <a href="Protocol.html#Set_Slot" title="Protocol">Set Slot</a> (one for every non-empty slot in the opened window, plus the cursor slot), and optionally <a href="Protocol.html#Window_Property" title="Protocol">Window Property</a>. It seems that only the most recently opened window can be interacted with. For more info, look at <a href="Inventory.html" title="Inventory">Inventory</a>.
+</p><p>Clicking happens by sending <a href="Protocol.html#Click_Window" title="Protocol">Click Window</a>, which the server will answer with a <a href="Protocol.html#Confirm_Transaction" title="Protocol">Confirm Transaction</a>. If the "Clicked item" is wrong, the click will still be <i>executed</i> but not <i>accepted</i>.
+</p><p>If the click was not accepted by the server (accepted = false), the client must answer with <a href="Protocol.html#Confirm_Transaction_2" title="Protocol">Confirm Transaction (serverbound)</a> to apologize (like with movement), otherwise the server ignores any successive clicks. Additionally, the server answers erroneous clicks with one <a href="Protocol.html#Window_Items" title="Protocol">Window Items</a> and several <a href="Protocol.html#Set_Slot" title="Protocol">Set Slot</a> as above, to resynchronize the client with the server.
+</p><p>The client has to know all clicking behaviour (including crafting recipes) and change the slots accordingly after each click, because the server does not send any <a href="Protocol.html#Set_Slot" title="Protocol">Set Slot</a>, just <a href="Protocol.html#Confirm_Transaction" title="Protocol">Confirm Transaction</a>. But you can cheat and always send the wrong "Clicked item" in <a href="Protocol.html#Click_Window" title="Protocol">Click Window</a> to force the server to send you all slots again while still applying your click.
+</p><p>Crafting is done by placing the correct materials into the crafting grid and clicking on the result slot (always slot nr. 0) to pick up the crafted item. Make sure to correctly update all slots after clicking the result slot, as some recipes (e.g. cake) leave back items in the crafting grid/inventory (e.g. empty buckets).
+</p>
+<h2><span class="mw-headline" id="Attacking_mobs.2Fplayers">Attacking mobs/players</span></h2>
+<p>To attack another player or mob, send a 0x07 with the entity's id. The range seems to be limited to 4 meters or so and there must be a clear line of sight. If these conditions are not met, nothings happens. Damage is calculated on the server side.
+</p>
+<h2><span class="mw-headline" id="Chat">Chat</span></h2>
+<p><i>Main article: <a href="Chat.html" title="Chat">Chat</a></i>
+</p>
+<h2><span class="mw-headline" id="Health_and_Respawning">Health and Respawning</span></h2>
+<p>The server sends <a href="Protocol.html#0x08" title="Protocol">0x08 Health updates</a> whenever your health changes. If the server sends a health value less than 1, you are dead. Your avatar will disappear a second or two after dying only if you keep sending position updates (packets 0x0A through 0x0D). The "fall over" animation is not automatic.
+</p><p>After you get a death notice, you must still update your position while being dead. (Otherwise your dead body will be visible by notchian clients of the server, and you will be invisible after respawning.) Then, you can send a <a href="Protocol.html#0xCD" title="Protocol">0xCD Client Status</a> to respawn. You'll be given a 0x0D with your new position, and possibly other messages.
+</p><p>If your health updates come much slower than on the notchian client, make sure you are sending position updates fast enough.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180822224545
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.043 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 67/1000000
+Preprocessor generated node count: 72/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:79-0!*!0!!en!*!* and timestamp 20180822224545 and revision id 8082
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=How_to_Write_a_Client&amp;oldid=8082">http://wiki.vg/index.php?title=How_to_Write_a_Client&amp;oldid=8082</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=How+to+Write+a+Client" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=How+to+Write+a+Client" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="How_to_Write_a_Client.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:How_to_Write_a_Client.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="How_to_Write_a_Client.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="How_to_Write_a_Client.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=How_to_Write_a_Client&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=How_to_Write_a_Client&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="How_to_Write_a_Client.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/How_to_Write_a_Client" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/How_to_Write_a_Client" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=How_to_Write_a_Client&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=How_to_Write_a_Client&amp;oldid=8082" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=How_to_Write_a_Client&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 August 2016, at 09:39.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":239});});</script>
+	</body>
+</html>

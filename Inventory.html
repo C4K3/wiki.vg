@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Inventory - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Inventory","wgTitle":"Inventory","wgCurRevisionId":14093,"wgRevisionId":14093,"wgArticleId":95,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Inventory","wgRelevantArticleId":95,"wgRequestId":"572dd6160ebbd657c360142b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.page.gallery.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.page.gallery.styles%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Inventory rootpage-Inventory skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Inventory</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Inventory.html#mw-head">navigation</a>, 					<a href="Inventory.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Minecraft displays the <b>player inventory</b> differently, according to how the window was opened. Ranges of slot indices vary in meaning between different “windows”. The <a href="Protocol.html#Open_Window" title="Protocol">Open Window</a> packet indicates which window is being opened according to:
+</p>
+<div style="float:right;"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Inventory.html#Player_Inventory"><span class="tocnumber">1</span> <span class="toctext">Player Inventory</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Inventory.html#Chest"><span class="tocnumber">2</span> <span class="toctext">Chest</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Inventory.html#Large_chest"><span class="tocnumber">2.1</span> <span class="toctext">Large chest</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="Inventory.html#Crafting_table"><span class="tocnumber">3</span> <span class="toctext">Crafting table</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Inventory.html#Furnace"><span class="tocnumber">4</span> <span class="toctext">Furnace</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="Inventory.html#Dispenser"><span class="tocnumber">5</span> <span class="toctext">Dispenser</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="Inventory.html#Enchantment_Table"><span class="tocnumber">6</span> <span class="toctext">Enchantment Table</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Inventory.html#Brewing_stand"><span class="tocnumber">7</span> <span class="toctext">Brewing stand</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Inventory.html#Villager_trading"><span class="tocnumber">8</span> <span class="toctext">Villager trading</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="Inventory.html#Beacon"><span class="tocnumber">9</span> <span class="toctext">Beacon</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="Inventory.html#Anvil"><span class="tocnumber">10</span> <span class="toctext">Anvil</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="Inventory.html#Hopper"><span class="tocnumber">11</span> <span class="toctext">Hopper</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="Inventory.html#Shulker_box"><span class="tocnumber">12</span> <span class="toctext">Shulker box</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="Inventory.html#Llama"><span class="tocnumber">13</span> <span class="toctext">Llama</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="Inventory.html#Horse"><span class="tocnumber">14</span> <span class="toctext">Horse</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="Inventory.html#Donkey"><span class="tocnumber">15</span> <span class="toctext">Donkey</span></a></li>
+</ul>
+</div>
+</div>
+<table class="wikitable">
+
+<tr>
+<th> Window Type
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> minecraft:container
+</td>
+<td> Fallback for unknown types; also used for <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Ender_chest">Ender chest</a></span>s.  Behaves the same as minecraft:chest.
+</td></tr>
+<tr>
+<td> minecraft:chest
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Chest">Chest</a></span>, large chest, or <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Minecart_with_chest">minecart with chest</a></span>
+</td></tr>
+<tr>
+<td> minecraft:crafting_table
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Crafting_table">Crafting table</a></span>
+</td></tr>
+<tr>
+<td> minecraft:furnace
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Furnace">Furnace</a></span>
+</td></tr>
+<tr>
+<td> minecraft:dispenser
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Dispenser">Dispenser</a></span>
+</td></tr>
+<tr>
+<td> minecraft:enchanting_table
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Enchantment_table">Enchantment table</a></span>
+</td></tr>
+<tr>
+<td> minecraft:brewing_stand
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Brewing_stand">Brewing stand</a></span>
+</td></tr>
+<tr>
+<td> minecraft:villager
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Villager">Villager</a></span>
+</td></tr>
+<tr>
+<td> minecraft:beacon
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Beacon">Beacon</a></span>
+</td></tr>
+<tr>
+<td> minecraft:anvil
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Anvil">Anvil</a></span>
+</td></tr>
+<tr>
+<td> minecraft:hopper
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Hopper">Hopper</a></span> or <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Minecart_with_hopper">minecart with hopper</a></span>
+</td></tr>
+<tr>
+<td> minecraft:dropper
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Dropper">Dropper</a></span>
+</td></tr>
+<tr>
+<td> minecraft:shulker_box
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Shulker_box">Shulker box</a></span>
+</td></tr>
+<tr>
+<td> EntityHorse
+</td>
+<td> <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Horse">Horse, donkey, mule</a></span> or <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Llama">Llama</a></span>
+</td></tr></table>
+<p>The slot number is calculated starting at 0, counting up through the window's unique slots, and then counting through the players inventory.
+</p><p>For all windows, the slot in the upper-left corner of the player's inventory is slot <i>n</i> where <i>n</i> is the number of unique slots, and slot number -999 is always used for clicking outside the window.
+</p><p>The number of unique slots in the window is sent in the <a href="Protocol.html#Open_Window" title="Protocol">Open Window</a> (<a href="Protocol.html#Play" title="Protocol">Play</a>, 0x2d, clientbound) packet for all storage windows (e.g. Chest, Dropper). For non-storage windows (the items get dropped when the window is closed, e.g. Workbench, Anvil), the received number of unique slots is always 0, but it can be looked up by the client from the window type.
+</p><p>The default inventory window, which is never explicitly opened by the server, has 10 unique slots.
+</p><p>Rectangular regions are always indexed starting with the upper-left corner and scanning across rows. If a window has a crafting region, the output slot is always slot 0 followed immediately by the input region.
+</p><p>Each window type is described in the following sections. All slot index ranges are inclusive and reflect the indices observed in the Minecraft protocol.
+</p><p>For the window properties (additional data in each window, e.g. smelting progress or enchantments), refer to the table in the <a href="Protocol.html#Window_Property" title="Protocol">Window Property</a> packet.
+</p><p>Using -1 as slot index and as window id will set the cursor item (the stack dragged with the mouse).
+</p>
+<h2><span class="mw-headline" id="Player_Inventory">Player Inventory</span></h2>
+<p><span id="Inventory"></span>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Inventory-slots.png.html" class="image"><img alt="" src="images/1/13/Inventory-slots.png" width="300" height="282" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Inventory-slots.png.html" class="internal" title="Enlarge"></a></div>Inventory slots</div></div></div>
+<p>This is the inventory window that the player can always open, typically by pressing <kbd class="key nowrap" style="border: 1px solid #aaa; background-color: #f9f9f9; background-image: linear-gradient(#eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-size: 85%;">E</kbd> since <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Beta_1.4">Beta 1.4</a></span>. Before, you had to press <kbd class="key nowrap" style="border: 1px solid #aaa; background-color: #f9f9f9; background-image: linear-gradient(#eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-size: 85%;">I</kbd>.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> crafting output
+</td></tr>
+<tr>
+<td> 1–4
+</td>
+<td> 2×2 crafting input (1 + x + 2 * y)
+</td></tr>
+<tr>
+<td> 5–8
+</td>
+<td> armor (head, chest, legs, feet)
+</td></tr>
+<tr>
+<td> 9–35
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 36–44
+</td>
+<td> hotbar
+</td></tr>
+<tr>
+<td> 45
+</td>
+<td> Offhand slot
+</td></tr></table>
+<p>Note that this is different from inventory items stored in a player.dat file. This may help: <a rel="nofollow" class="external free" href="https://gist.github.com/459a1691c3dd751db160">https://gist.github.com/459a1691c3dd751db160</a>
+</p>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Chest">Chest</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Chest-slots.png.html" class="image"><img alt="" src="images/1/19/Chest-slots.png" width="300" height="285" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Chest-slots.png.html" class="internal" title="Enlarge"></a></div>Chest slots</div></div></div>
+<p>This is the window that is opened when the player right-clicks on a single chest block.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0–26
+</td>
+<td> chest
+</td></tr>
+<tr>
+<td> 27–53
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 54–62
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="clear:both"></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:DoubleChest-slots.png.html" class="image"><img alt="" src="images/b/bb/DoubleChest-slots.png" width="300" height="377" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:DoubleChest-slots.png.html" class="internal" title="Enlarge"></a></div>Double/large chest slots</div></div></div>
+<h3><span class="mw-headline" id="Large_chest">Large chest</span></h3>
+<p>This is the window that is opened when the player right-clicks on a double chest block (two adjacent chest blocks).
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0–53
+</td>
+<td> chest
+</td></tr>
+<tr>
+<td> 54–80
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 81–89
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> It is possible to receive different "Number Of Slots" parameters than those two.  In vanilla, using /setblock four times around a chest and then opening the middle chest will open a window with 5*27 chest slots.  Some custom servers will send chest inventories with other sizes, usually ranging from 1 row to 6 rows.  These may be used for custom GUIs.  It is thus important to correctly use the "Number Of Slots" parameter in the open window packet to determine the number of rows in the chest, rather than hardcoding what constitutes a regular chest or a large chest.
+</p>
+</div>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Crafting_table">Crafting table</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:CraftingTable-slots.png.html" class="image"><img alt="" src="images/7/7b/CraftingTable-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:CraftingTable-slots.png.html" class="internal" title="Enlarge"></a></div>Crafting table slots</div></div></div>
+<p>This is the window that is opened when the player right-clicks on a workbench.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> crafting output
+</td></tr>
+<tr>
+<td> 1–9
+</td>
+<td> 3×3 crafting input (1 + x + 3 * y)
+</td></tr>
+<tr>
+<td> 10–36
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 37–45
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> If the "Number Of Slots" parameter is not set to 0, the opened window will behave like a container window.
+</p>
+</div>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Furnace">Furnace</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Furnace-slots.png.html" class="image"><img alt="" src="images/b/bd/Furnace-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Furnace-slots.png.html" class="internal" title="Enlarge"></a></div>Furnace slots</div></div></div>
+<p>The window that appears when a furnace is right-clicked.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> ingredient
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> fuel
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> output
+</td></tr>
+<tr>
+<td> 3–29
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 30–38
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> If the "Number Of Slots" parameter is inferior to 3, placing an item in a slot may crash the client.
+</p>
+</div>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Dispenser">Dispenser</span></h2>
+<p><span id="Dropper"></span>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Dispenser-slots.png.html" class="image"><img alt="" src="images/e/e7/Dispenser-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Dispenser-slots.png.html" class="internal" title="Enlarge"></a></div>Dispenser/dropper slots</div></div></div>
+<p>The inventory that appears when a dispenser or dropper is opened.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0–8
+</td>
+<td> 3×3 dispenser contents (x + 3 * y)
+</td></tr>
+<tr>
+<td> 9–35
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 36-44
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> If the "Number Of Slots" parameter is inferior to 9, placing an item in a slot may crash the client.
+</p>
+</div>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Enchantment_Table">Enchantment Table</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:EnchantmentTable-slots.png.html" class="image"><img alt="" src="images/c/c8/EnchantmentTable-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:EnchantmentTable-slots.png.html" class="internal" title="Enlarge"></a></div>Enchantment table slots</div></div></div>
+<p>The inventory of an enchantment table.  The enchant buttons trigger a <a href="Protocol.html#Enchant_item" title="Protocol">Enchant item</a> packet.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> item to enchant
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> lapis lazuli slot
+</td></tr>
+<tr>
+<td> 2–28
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 29–37
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Brewing_stand">Brewing stand</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:BrewingStand-slots.png.html" class="image"><img alt="" src="images/1/1c/BrewingStand-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:BrewingStand-slots.png.html" class="internal" title="Enlarge"></a></div>Brewing stand slots</div></div></div>
+<p>The GUI that appears when a brewing stand is opened.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0-2
+</td>
+<td> bottles/potions
+</td></tr>
+<tr>
+<td> 3
+</td>
+<td> potion ingredient
+</td></tr>
+<tr>
+<td> 4
+</td>
+<td> blaze powder
+</td></tr>
+<tr>
+<td> 5-31
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 32-40
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Villager_trading">Villager trading</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Testificate-slots.png.html" class="image"><img alt="" src="images/e/e2/Testificate-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Testificate-slots.png.html" class="internal" title="Enlarge"></a></div>Villeger slots</div></div></div>
+<p>The GUI that appears when a villager is right-clicked.  Note that if the villager only requires one item, you can put it in either (or both) slots.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0-1
+</td>
+<td> input items
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> result
+</td></tr>
+<tr>
+<td> 3–29
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 30–38
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Beacon">Beacon</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Beacon-slots.png.html" class="image"><img alt="" src="images/3/3f/Beacon-slots.png" width="300" height="286" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Beacon-slots.png.html" class="internal" title="Enlarge"></a></div>Beacon slots</div></div></div>
+<p>The window that appears when a beacon is right-clicked.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> payment item
+</td></tr>
+<tr>
+<td> 1–27
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 28–36
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Anvil">Anvil</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Anvil-slots.png.html" class="image"><img alt="" src="images/4/42/Anvil-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Anvil-slots.png.html" class="internal" title="Enlarge"></a></div>Anvil slots</div></div></div>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> first item
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> second item
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> result
+</td></tr>
+<tr>
+<td> 3–29
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 30–38
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Hopper">Hopper</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Hopper-slots.png.html" class="image"><img alt="" src="images/5/55/Hopper-slots.png" width="300" height="227" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Hopper-slots.png.html" class="internal" title="Enlarge"></a></div>Hopper slots</div></div></div>
+<p>The window that appears when a hopper or hopper minecart is opened.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0-4
+</td>
+<td> hopper slots
+</td></tr>
+<tr>
+<td> 5–31
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 32–40
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Shulker_box">Shulker box</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Shulker-box-slots.png.html" class="image"><img alt="" src="images/1/1b/Shulker-box-slots.png" width="300" height="285" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Shulker-box-slots.png.html" class="internal" title="Enlarge"></a></div>Shulker box slots</div></div></div>
+<p>This is the window that is opened when the player right-clicks on a shulker box chest.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0–26
+</td>
+<td> box slots
+</td></tr>
+<tr>
+<td> 27–53
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 54–62
+</td>
+<td> hotbar
+</td></tr></table>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Llama">Llama</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Llama-strength5-slots.png.html" class="image"><img alt="" src="images/4/4b/Llama-strength5-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Llama-strength5-slots.png.html" class="internal" title="Enlarge"></a></div>Llama slots</div></div></div>
+<p>The inventory that appears when a tamed llama is right-clicked and has a chest, or when the player's inventory is opened while riding a tamed llama.  Depending on the value of the strength field, the number of chest rows may vary (max is 5, so 15 slots).
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> There still is a saddle slot, even though it cannot be used and is invisible.
+</span>
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Slot positions within the llama inventory vary - slot 2 may be at (1,0) or at (0,1) depending on the number of columns.
+</span>
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> saddle
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> carpet
+</td></tr>
+<tr>
+<td> 2-(2+3*Strength)
+</td>
+<td> llama inventory
+</td></tr>
+<tr>
+<td> (2+3*Strength)+1-(2+3*Strength)+27
+</td>
+<td> player inventory
+</td></tr>
+<tr>
+<td> (2+3*Strength)+28-(2+3*Strength)+35
+</td>
+<td> hotbar
+</td></tr></table>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Llama-unchested-slots.png.html" class="image"><img alt="" src="images/1/1f/Llama-unchested-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Unchested llama
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Llama-strength1-slots.png.html" class="image"><img alt="" src="images/6/6f/Llama-strength1-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Llama with strength 1
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Llama-strength2-slots.png.html" class="image"><img alt="" src="images/3/34/Llama-strength2-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Llama with strength 2
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Llama-strength3-slots.png.html" class="image"><img alt="" src="images/5/50/Llama-strength3-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Llama with strength 3
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Llama-strength4-slots.png.html" class="image"><img alt="" src="images/5/5d/Llama-strength4-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Llama with strength 4
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Llama-strength5-slots.png.html" class="image"><img alt="" src="images/4/4b/Llama-strength5-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Llama with strength 5
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span class="mw-headline" id="Horse">Horse</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Horse-slots.png.html" class="image"><img alt="" src="images/a/a3/Horse-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Horse-slots.png.html" class="internal" title="Enlarge"></a></div>Horse slots</div></div></div>
+<p>The window for when a tamed horse is right-clicked or the player's inventory is opened while riding a horse.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> saddle
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> armor
+</td></tr>
+<tr>
+<td> 2–28
+</td>
+<td> main inventory
+</td></tr>
+<tr>
+<td> 29–37
+</td>
+<td> hotbar
+</td></tr></table>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Horse-slots.png.html" class="image"><img alt="" src="images/a/a3/Horse-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Horse slots
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Skeleton-horse-slots.png.html" class="image"><img alt="" src="images/a/a1/Skeleton-horse-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Skeleton horse slots
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Zombie-horse-slots.png.html" class="image"><img alt="" src="images/7/70/Zombie-horse-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Zombie horse slots
+</p>
+			</div>
+		</div></li>
+</ul>
+<div style="clear:both"></div>
+<h2><span class="mw-headline" id="Donkey">Donkey</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:Donkey-slots.png.html" class="image"><img alt="" src="images/7/70/Donkey-slots.png" width="300" height="283" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Donkey-slots.png.html" class="internal" title="Enlarge"></a></div>Donkey slots</div></div></div>
+<p>The inventory that appears when a tamed donkey (or mule?) is right-clicked, or when the player's inventory is opened while riding a tamed donkey or mule.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> There still is an armor slot, even though it cannot be used and is invisible.
+</span>
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Slot range
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> saddle
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> armor
+</td></tr>
+<tr>
+<td> 2–16
+</td>
+<td> donkey inventory
+</td></tr>
+<tr>
+<td> 17–43 (2-28 if unchested)
+</td>
+<td> player inventory
+</td></tr>
+<tr>
+<td> 44–52 (29-37 if unchested)
+</td>
+<td> hotbar
+</td></tr></table>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Donkey-unchested-slots.png.html" class="image"><img alt="" src="images/1/19/Donkey-unchested-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Unchested donkey
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Donkey-chested-slots.png.html" class="image"><img alt="" src="images/c/c2/Donkey-chested-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Chested donkey
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Mule-unchested-slots.png.html" class="image"><img alt="" src="images/5/58/Mule-unchested-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Unchested mule
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:18.5px auto;"><a href="./File:Mule-chested-slots.png.html" class="image"><img alt="" src="images/9/94/Mule-chested-slots.png" width="120" height="113" /></a></div></div>
+			<div class="gallerytext">
+<p>Chested mule
+</p>
+			</div>
+		</div></li>
+</ul>
+<div style="clear:both"></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20180823154840
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.312 seconds
+Real time usage: 0.640 seconds
+Preprocessor visited node count: 557/1000000
+Preprocessor generated node count: 1059/1000000
+Post‐expand include size: 6349/2097152 bytes
+Template argument size: 2456/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  283.832      1 - -total
+ 23.66%   67.147     18 - Template:Minecraft_Wiki
+ 15.82%   44.890     18 - Template:Plainlink
+  4.21%   11.940      3 - Template:Warning
+  3.57%   10.140     15 - Template:-
+  3.55%   10.075      2 - Template:Key
+  2.34%    6.642      2 - Template:Anchor
+  2.14%    6.061      4 - Template:Warning2
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:95-0!*!0!!en!5!* and timestamp 20180823154839 and revision id 14093
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Inventory&amp;oldid=14093">http://wiki.vg/index.php?title=Inventory&amp;oldid=14093</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Inventory" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Inventory" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Inventory.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Inventory&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Inventory.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Inventory.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Inventory&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Inventory&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Inventory.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Inventory" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Inventory" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Inventory&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Inventory&amp;oldid=14093" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Inventory&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 2 July 2018, at 21:14.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":896});});</script>
+	</body>
+</html>

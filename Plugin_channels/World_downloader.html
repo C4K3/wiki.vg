@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Plugin channels/World downloader - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Plugin_channels/World_downloader","wgTitle":"Plugin channels/World downloader","wgCurRevisionId":13417,"wgRevisionId":13417,"wgArticleId":1090,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Plugin_channels/World_downloader","wgRelevantArticleId":1090,"wgRequestId":"1e62360bf2a88ce2fa44d2b4","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Plugin_channels_World_downloader rootpage-Plugin_channels skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Plugin channels/World downloader</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../Plugin_channels.html" title="Plugin channels">Plugin channels</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="World_downloader.html#mw-head">navigation</a>, 					<a href="World_downloader.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Documentation of the <a rel="nofollow" class="external text" href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2520465">World Downloader mod</a>'s plugin channel configuration system.
+</p><p>Implemented in-mod <a rel="nofollow" class="external text" href="https://github.com/Pokechu22/WorldDownloader/blob/v4/src/wdl/WDLPluginChannels.java">here</a>.  A bukkit implementation is available <a rel="nofollow" class="external text" href="https://github.com/Pokechu22/WorldDownloader-Serverside-Companion">here</a>.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="World_downloader.html#A_note_before_implementing_these_channels"><span class="tocnumber">1</span> <span class="toctext">A note before implementing these channels</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="World_downloader.html#Data_types"><span class="tocnumber">2</span> <span class="toctext">Data types</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="World_downloader.html#Chunk_Overrides"><span class="tocnumber">2.1</span> <span class="toctext">Chunk Overrides</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="World_downloader.html#WDL.7CINIT"><span class="tocnumber">3</span> <span class="toctext">WDL|INIT</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="World_downloader.html#WDL.7CCONTROL"><span class="tocnumber">4</span> <span class="toctext">WDL|CONTROL</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="World_downloader.html#Default_values"><span class="tocnumber">4.1</span> <span class="toctext">Default values</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="World_downloader.html#Basic_data"><span class="tocnumber">4.2</span> <span class="toctext">Basic data</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="World_downloader.html#Entity_track_distances"><span class="tocnumber">4.3</span> <span class="toctext">Entity track distances</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="World_downloader.html#Permission_request_info"><span class="tocnumber">4.4</span> <span class="toctext">Permission request info</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="World_downloader.html#Set_chunk_overrides"><span class="tocnumber">4.5</span> <span class="toctext">Set chunk overrides</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="World_downloader.html#Modify_group_chunk_overrides"><span class="tocnumber">4.6</span> <span class="toctext">Modify group chunk overrides</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="World_downloader.html#Remove_chunk_overrides_by_tag"><span class="tocnumber">4.7</span> <span class="toctext">Remove chunk overrides by tag</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="World_downloader.html#Set_chunk_overrides_by_tag"><span class="tocnumber">4.8</span> <span class="toctext">Set chunk overrides by tag</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="World_downloader.html#WDL.7CREQUEST"><span class="tocnumber">5</span> <span class="toctext">WDL|REQUEST</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="A_note_before_implementing_these_channels">A note before implementing these channels</span></h2>
+<p>Please do <i>not</i> misuse these channels, and please <i>do</i> implement the full collection (including permission requests).  They only make sense when used completely.
+</p><p>These channels have been designed in a very deliberate way, so that players should not need to circumvent the system for valid uses of the mod (and yes, there <i>are</i> valid uses (perhaps the majority are, even)... otherwise, these channels wouldn't exist!).  Implementing only a subset and neglecting permission requests means that players need to go through other channels, of which you don't have control over.  Implementing permission requests allows you to set specific <i>policies</i> for use of the mod, something that isn't possible any other way.
+</p><p>These channels act as a guideline that governs how you wish the mod to be used on your server.  Obviously, it can't be a hard rule (that's very much technically impossible), so choose something granular and practical.
+</p>
+<h2><span class="mw-headline" id="Data_types">Data types</span></h2>
+<p>All types here are as specified by Java's <a rel="nofollow" class="external text" href="http://docs.oracle.com/javase/7/docs/api/java/io/DataOutputStream.html"><code>DataOutputStream</code></a> and can be read using a <a rel="nofollow" class="external text" href="http://docs.oracle.com/javase/7/docs/api/java/io/DataInputStream.html"><code>DataInputStream</code></a>, unless otherwise noted.  They do <b>not</b> use the <a href="../Data_types.html" title="Data types">standard protocol data types</a>.  Additionally, the format is not directly compatible with some standard channel implementations - if you use forge or sponge's default indexed codecs, things won't work right (those use 1 byte; this uses 4 bytes).
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Chunk_Overrides">Chunk Overrides</span></h3>
+<p>Chunk Overrides are areas that the player is allowed to download in even if the rest of the map is restricted.  As the name suggests, it is defined by a chunk's area.
+</p><p>If the start and end x coordinates are the same, the chunk at that position can be saved (they are both inclusive).
+</p><p>Implementations are encouraged to try and merge chunk overrides with the same tag before sending, but this is not required.
+</p><p>A Chunk Override has the following structure:
+</p>
+<table class="wikitable">
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Tag
+</td>
+<td> String
+</td>
+<td> A string describing this chunk override.  May be empty and does not need to be unique.  For instance, a World Guard region corresponding to the range.
+</td></tr>
+<tr>
+<td> x1
+</td>
+<td> Integer
+</td>
+<td> Start x chunk coordinate.  Should not be larger than x2.
+</td></tr>
+<tr>
+<td> z1
+</td>
+<td> Integer
+</td>
+<td> Start z chunk coordinate.  Should not be larger than z2.
+</td></tr>
+<tr>
+<td> x2
+</td>
+<td> Integer
+</td>
+<td> End x chunk coordinate.  Should not be smaller than x1.
+</td></tr>
+<tr>
+<td> z2
+</td>
+<td> Integer
+</td>
+<td> End z chunk coordinate.  Should not be smaller than z1.
+</td></tr></table>
+<h2><span class="mw-headline" id="WDL.7CINIT"><code>WDL|INIT</code></span></h2>
+<p><code>WDL|INIT</code> is sent to show that World Downloader is ready to receive new permissions.  Don't send permissions until this is received - it may still be saving from another part of the map or another sever where it has permission, and revoking permission in the middle of (allowed) saving is a Bad Thing&#8482;.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="1"> <code>WDL|INIT</code>
+</td>
+<td rowspan="1"> Server
+</td>
+<td> Content
+</td>
+<td> Byte array
+</td>
+<td> This is a byte array that takes up the entire length of the packet - there is no length prefixed to it.
+</td></tr></table>
+<p>Content is not present on very old versions of the mod.  In all versions where it is present, content is a UTF-8 string.  In older versions, it is a simple version number; in newer versions, it is a JSON blob that contains some information including the version; if it starts with a <code>{</code> then it MUST be a valid JSON blob.  The exact specification for the JSON blob has not been finalized, but it currently contains the following information fields:
+</p>
+<dl><dt><code>Version</code></dt>
+<dd>A version number.</dd>
+<dt><code>State</code></dt>
+<dd>Will include information about why the INIT packet is being sent, however values are unspecified at this time.</dd></dl>
+<p>Additionally there are fields starting with "X-", which are provided for information purposes only.
+</p>
+<dl><dt><code>X-RTFM</code></dt>
+<dd>A link to this documentation.</dd>
+<dt><code>X-UpdateNote</code></dt>
+<dd>Contains information about the state of this system; will include information about when the channels change.  Currently <code style="white-space: pre-wrap">The plugin message system will be changing shortly.  Please stay tuned.</code>.</dd></dl>
+<h2><span class="mw-headline" id="WDL.7CCONTROL"><code>WDL|CONTROL</code></span></h2>
+<p>This channel is sent from the server to the client to specify various permissions.  It uses a 4-byte integer at the start to indicate a section.  There is no required order, but it is conventional to put them in numerical order.
+</p><p>In all cases unless otherwise indicated, if a packet is not sent its values are treated as 'true'.
+</p>
+<h3><span class="mw-headline" id="Default_values">Default values</span></h3>
+<p>Specifies the default value used for permissions not sent.
+</p><p>Note that sending this packet does not actually <i>change</i> the value for other packets; it instead specifies an internal fallback.  Thus, this packet can be sent at any time to change this default without needing to resend other packets.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="2"> <code>WDL|CONTROL</code>
+</td>
+<td rowspan="2"> Client
+</td>
+<td> Discriminator
+</td>
+<td> Integer
+</td>
+<td> Set to 0 to indicate this packet.
+</td></tr>
+<tr>
+<td> Default value
+</td>
+<td> Boolean
+</td>
+<td> True to enable all functions not otherwise specified, false to disable them.
+</td></tr></table>
+<h3><span class="mw-headline" id="Basic_data">Basic data</span></h3>
+<p>Sets some of the standard properties.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="7"> <code>WDL|CONTROL</code>
+</td>
+<td rowspan="7"> Client
+</td>
+<td> Discriminator
+</td>
+<td> Integer
+</td>
+<td> Set to 1 to indicate this packet.
+</td></tr>
+<tr>
+<td> General download enabled
+</td>
+<td> Boolean
+</td>
+<td> True to enable all downloading in all chunks, false to disable it.
+</td></tr>
+<tr>
+<td> Save radius
+</td>
+<td> Integer
+</td>
+<td> The distance from the player chunks can be saved from.  -1 to allow all distances.  This is a square distance, not a circle or a diamond.  <b>Only applies if chunk caching is disabled</b>.
+</td></tr>
+<tr>
+<td> Chunk caching enabled
+</td>
+<td> Boolean
+</td>
+<td> Can chunks be saved as the player moves about.  If false, then they can only save within the area indicated by save radius; if true they can save everywhere.  However, regardless of this value, if general download is disabled, they cannot download.
+</td></tr>
+<tr>
+<td> Entity saving enabled
+</td>
+<td> Boolean
+</td>
+<td> True to allow the mod to save entities, false to force entities to be removed from the world.  This only applies to chunks that can be saved.
+</td></tr>
+<tr>
+<td> Tile entity saving enabled
+</td>
+<td> Boolean
+</td>
+<td> True to allow the mod to save tile entities, false to force tile entities to be removed from the world.  This only applies to chunks that can be saved.
+</td></tr>
+<tr>
+<td> Container saving enabled
+</td>
+<td> Boolean
+</td>
+<td> True to allow the mod to save containers (a subset of tile entities that require manual interaction to be saved, mainly chests).  This only applies if tile entities are allowed to be saved and only applies in chunks that can be saved.
+</td></tr></table>
+<h3><span class="mw-headline" id="Entity_track_distances">Entity track distances</span></h3>
+<p>Used to specify any custom entity track distances on the server, because they may change on spigot servers.  More info on why this is needed on <a rel="nofollow" class="external text" href="https://github.com/Pokechu22/WorldDownloader/wiki/Entities-GUI#what-are-track-distances">the project wiki</a>.
+</p><p>The client is free to ignore these values, and will use sane defaults based off of whether the server's brand includes "spigot" if they are not sent.  However, by default these values are used.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th colspan="2"> Field Name
+</th>
+<th colspan="2"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="4"> <code>WDL|CONTROL</code>
+</td>
+<td rowspan="4"> Client
+</td>
+<td colspan="2"> Discriminator
+</td>
+<td colspan="2"> Integer
+</td>
+<td> Set to 2 to indicate this packet.
+</td></tr>
+<tr>
+<td colspan="2"> Number of ranges
+</td>
+<td colspan="2"> Integer
+</td>
+<td> Size of the following array.
+</td></tr>
+<tr>
+<td rowspan="2"> Values
+</td>
+<td> Entity name
+</td>
+<td rowspan="2"> Array
+</td>
+<td> String
+</td>
+<td> The name of the entity, as used in the savegame ID.
+</td></tr>
+<tr>
+<td> Track distance
+</td>
+<td> Integer
+</td>
+<td> The track distance of the entity, in blocks.
+</td></tr></table>
+<h3><span class="mw-headline" id="Permission_request_info">Permission request info</span></h3>
+<p>Information used with permission requests.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound to
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="3"> <code>WDL|CONTROL</code>
+</td>
+<td rowspan="3"> Client
+</td>
+<td> Discriminator
+</td>
+<td> Integer
+</td>
+<td> Set to 3 to indicate this packet.
+</td></tr>
+<tr>
+<td> Requests enabled
+</td>
+<td> Boolean
+</td>
+<td> Whether requests work on this server.  In <b>all cases</b> this should be true unless you have an out of date plugin... in which case you probably wouldn't be sending this anyways.
+</td></tr>
+<tr>
+<td> Request message
+</td>
+<td> String
+</td>
+<td> A message displayed to players on the permissions and permissions request screen.  You can use this to display rules relating to use of the mod, or explain how you want it to be used, or what info to include in the request, etc.
+</td></tr></table>
+<h3><span class="mw-headline" id="Set_chunk_overrides">Set chunk overrides</span></h3>
+<p>Sets the entire set of chunk overrides.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th colspan="2"> Field Name
+</th>
+<th colspan="2"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="5"> <code>WDL|CONTROL</code>
+</td>
+<td rowspan="5"> Client
+</td>
+<td colspan="2"> Discriminator
+</td>
+<td colspan="2"> Integer
+</td>
+<td> Set to 4 to indicate this packet
+</td></tr>
+<tr>
+<td colspan="2"> Number of groups
+</td>
+<td colspan="2"> Integer
+</td>
+<td> Size of the following array
+</td></tr>
+<tr>
+<td rowspan="3"> Groups
+</td>
+<td> Group name
+</td>
+<td rowspan="3"> Array
+</td>
+<td> String
+</td>
+<td> The name of this group.  Must be unique.
+</td></tr>
+<tr>
+<td> Number of overrides
+</td>
+<td> Integer
+</td>
+<td> Size of the following array
+</td></tr>
+<tr>
+<td> Overrides
+</td>
+<td> Array of <a href="World_downloader.html#Chunk_Overrides">Chunk Override</a>
+</td>
+<td> Each override.  Tags may be different within the list and no order is required.
+</td></tr></table>
+<h3><span class="mw-headline" id="Modify_group_chunk_overrides">Modify group chunk overrides</span></h3>
+<p>Add chunk overrides to a group or sets chunk overrides in that group.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th colspan="2"> Field Name
+</th>
+<th colspan="2"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="6"> <code>WDL|CONTROL</code>
+</td>
+<td rowspan="6"> Client
+</td>
+<td colspan="2"> Discriminator
+</td>
+<td colspan="2"> Integer
+</td>
+<td> Set to 5 to indicate this packet
+</td></tr>
+<tr>
+<td colspan="2"> Group to edit
+</td>
+<td colspan="2"> String
+</td>
+<td> Name of the group to edit.
+</td></tr>
+<tr>
+<td colspan="2"> Replace mode
+</td>
+<td colspan="2"> Boolean
+</td>
+<td> 'true' to set the group to this value and remove its old overrides, 'false' to add these to the existing ones.
+</td></tr>
+<tr>
+<td rowspan="3"> Groups
+</td>
+<td> Group name
+</td>
+<td rowspan="3"> Array
+</td>
+<td> String
+</td>
+<td> The name of this group.  Must be unique.
+</td></tr>
+<tr>
+<td> Number of overrides
+</td>
+<td> Integer
+</td>
+<td> Size of the following array
+</td></tr>
+<tr>
+<td> Overrides
+</td>
+<td> Array of Chunk Override
+</td>
+<td> Each override.  Tags may be different within the list and no order is required.
+</td></tr></table>
+<h3><span class="mw-headline" id="Remove_chunk_overrides_by_tag">Remove chunk overrides by tag</span></h3>
+<p>Removes chunk overrides with the given tag from a specific group.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="4"> <code>WDL|CONTROL</code>
+</td>
+<td rowspan="4"> Client
+</td>
+<td> Discriminator
+</td>
+<td> Integer
+</td>
+<td> Set to 6 to indicate this packet.
+</td></tr>
+<tr>
+<td> Group
+</td>
+<td> String
+</td>
+<td> The group to remove ranges from.
+</td></tr>
+<tr>
+<td> Number of tags
+</td>
+<td> Integer
+</td>
+<td> Length of the following array.
+</td></tr>
+<tr>
+<td> Tags
+</td>
+<td> Array of String
+</td>
+<td> Each tag to remove.
+</td></tr></table>
+<h3><span class="mw-headline" id="Set_chunk_overrides_by_tag">Set chunk overrides by tag</span></h3>
+<p>Sets all of the chunk overrides in a single with a specific tag to a new set.
+</p><p><b>Note</b>: All of the new ranges should have the same tag as the tag that is being replaced.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="5"> <code>WDL|CONTROL</code>
+</td>
+<td rowspan="5"> Client
+</td>
+<td> Discriminator
+</td>
+<td> Integer
+</td>
+<td> Set to 7 to indicate this packet.
+</td></tr>
+<tr>
+<td> Group
+</td>
+<td> String
+</td>
+<td> The group to remove ranges from.
+</td></tr>
+<tr>
+<td> Tag
+</td>
+<td> String
+</td>
+<td> The tag to replace
+</td></tr>
+<tr>
+<td> Number of new ranges
+</td>
+<td> Integer
+</td>
+<td> Length of the following array.
+</td></tr>
+<tr>
+<td> New ranges
+</td>
+<td> Array of Chunk Override
+</td>
+<td> The new ranges
+</td></tr></table>
+<h2><span class="mw-headline" id="WDL.7CREQUEST"><code>WDL|REQUEST</code></span></h2>
+<p>Used for permission requests.  Sent from the client to the server.  On the server, a moderator/admin/whoever can approve or deny the request, and then other messages (<a href="World_downloader.html#WDL.7CCONTROL"><code>WDL|CONTROL</code></a>) are sent to grant such permissions.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th colspan="2"> Field Name
+</th>
+<th colspan="2"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="6"> <code>WDL|REQUEST</code>
+</td>
+<td rowspan="6"> Server
+</td>
+<td colspan="2"> Request message
+</td>
+<td colspan="2"> String
+</td>
+<td> A message explaining the reason for the request to the server owners (user-inputted).  The current version of the mod uses "REQUEST REASON WILL GO HERE" as the message, but it will be more useful in the future.
+</td></tr>
+<tr>
+<td colspan="2"> Number of requests
+</td>
+<td colspan="2"> Integer
+</td>
+<td> Length of the following array.
+</td></tr>
+<tr>
+<td rowspan="2"> Requests
+</td>
+<td> Requested perm
+</td>
+<td rowspan="2"> Array
+</td>
+<td> String
+</td>
+<td> Name of the permission (see list below).
+</td></tr>
+<tr>
+<td> Requested value
+</td>
+<td> String
+</td>
+<td> String representation of the requested value.
+</td></tr>
+<tr>
+<td colspan="2"> Number of chunk override requests
+</td>
+<td colspan="2"> Integer
+</td>
+<td> Length of the following array.
+</td></tr>
+<tr>
+<td colspan="2"> Chunk override requests
+</td>
+<td colspan="2"> Array of <a href="World_downloader.html#Chunk_Overrides">Chunk Override</a>
+</td>
+<td> Requested overrides.  Note that the 'tag' value is still included but the server is <i>allowed</i> to discard it (or use it, at its digression).
+</td></tr></table>
+<p><br />
+Valid fields and their values:
+</p>
+<ul><li> <code>downloadInGeneral</code>: Whether or not chunks downloading in all terrain is allowed.  <code>true</code> if so, <code>false</code> otherwise.</li>
+<li> <code>cacheChunks</code>: Whether chunks can be cached as the player moves about the world.  <code>true</code> if so, <code>false</code> otherwise.</li>
+<li> <code>saveRadius</code>: Distance from the player chunks can be saved (in a square).  If -1, all distance is allowed.  Only applies when <code>cacheChunks</code> is not true; if that is true this is ignored and thus in most cases that should be done (since a value of -1 still only allows saving what can be seen).  The value is an integer as a string, potentially negative.</li>
+<li> <code>saveEntities</code>: Whether or not entities can be saved.  <code>true</code> if so, <code>false</code> otherwise.</li>
+<li> <code>saveTileEntities</code>: Whether tile entities can be saved as the player moves about the world.  <code>true</code> if so, <code>false</code> otherwise.</li>
+<li> <code>saveContainers</code>: Whether chests and other tile entities that require manual interaction can be saved as the player moves about the world.  Requires <code>saveTileEntities</code> to also be true.  <code>true</code> if so, <code>false</code> otherwise.</li>
+<li> <code>getEntityRanges</code>: Whether entity ranges should be sent to the player.  <code>true</code> if so, <code>false</code> otherwise, but if your server doesn't change entity ranges from the vanilla defaults this doesn't need to be sent.</li></ul>
+<p>Not all fields need to be set.  No field should be specified more than once in a packet.  If the field isn't set but was sent on a previous packet, the field should still be unset - clear the last request before adding in the new one (however, if a request was accepted, the requested permissions should <b>not</b> be cleared).  A packet without any requests should clear the current request list.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823003608
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.059 seconds
+Real time usage: 0.069 seconds
+Preprocessor visited node count: 56/1000000
+Preprocessor generated node count: 62/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:1090-0!*!0!!en!*!* and timestamp 20180823003608 and revision id 13417
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Plugin_channels/World_downloader&amp;oldid=13417">http://wiki.vg/index.php?title=Plugin_channels/World_downloader&amp;oldid=13417</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Plugin+channels%2FWorld+downloader" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Plugin+channels%2FWorld+downloader" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="World_downloader.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Plugin_channels/World_downloader&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="World_downloader.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="World_downloader.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Plugin_channels/World_downloader&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Plugin_channels/World_downloader&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="World_downloader.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Plugin_channels/World_downloader" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Plugin_channels/World_downloader" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Plugin_channels/World_downloader&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Plugin_channels/World_downloader&amp;oldid=13417" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Plugin_channels/World_downloader&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 11 November 2017, at 23:23.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="../wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="../wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="../resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":205});});</script>
+	</body>
+</html>

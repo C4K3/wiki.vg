@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Plugin channels - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Plugin_channels","wgTitle":"Plugin channels","wgCurRevisionId":14089,"wgRevisionId":14089,"wgArticleId":211,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Plugin_channels","wgRelevantArticleId":211,"wgRequestId":"ae0b5ca507378057037999bd","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Plugin_channels rootpage-Plugin_channels skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Plugin channels</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Plugin_channels.html#mw-head">navigation</a>, 					<a href="Plugin_channels.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Plugin channels</b> allow client mods and server plugins to communicate without cluttering up chat. <a rel="nofollow" class="external text" href="http://dinnerbone.com/blog/2012/01/13/minecraft-plugin-channels-messaging/">This post by Dinnerbone</a> is a good introduction and basic documentation.
+</p><p><span id="Internal"></span>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Plugin_channels.html#Reserved_channels"><span class="tocnumber">1</span> <span class="toctext">Reserved channels</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Plugin_channels.html#REGISTER"><span class="tocnumber">1.1</span> <span class="toctext">REGISTER</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Plugin_channels.html#UNREGISTER"><span class="tocnumber">1.2</span> <span class="toctext">UNREGISTER</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="Plugin_channels.html#Channels_internal_to_Minecraft"><span class="tocnumber">2</span> <span class="toctext">Channels internal to Minecraft</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="Plugin_channels.html#MC.7CAdvCmd"><span class="tocnumber">2.1</span> <span class="toctext">MC|AdvCmd</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Plugin_channels.html#MC.7CAutoCmd"><span class="tocnumber">2.2</span> <span class="toctext">MC|AutoCmd</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Plugin_channels.html#MC.7CBEdit"><span class="tocnumber">2.3</span> <span class="toctext">MC|BEdit</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Plugin_channels.html#MC.7CBOpen"><span class="tocnumber">2.4</span> <span class="toctext">MC|BOpen</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Plugin_channels.html#MC.7CBSign"><span class="tocnumber">2.5</span> <span class="toctext">MC|BSign</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Plugin_channels.html#MC.7CBeacon"><span class="tocnumber">2.6</span> <span class="toctext">MC|Beacon</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Plugin_channels.html#MC.7CBrand"><span class="tocnumber">2.7</span> <span class="toctext">MC|Brand</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Plugin_channels.html#MC.7CDebugPath"><span class="tocnumber">2.8</span> <span class="toctext">MC|DebugPath</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Plugin_channels.html#MC.7CDebugNeighborsUpdate"><span class="tocnumber">2.9</span> <span class="toctext">MC|DebugNeighborsUpdate</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Plugin_channels.html#MC.7CItemName"><span class="tocnumber">2.10</span> <span class="toctext">MC|ItemName</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="Plugin_channels.html#MC.7CPickItem"><span class="tocnumber">2.11</span> <span class="toctext">MC|PickItem</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="Plugin_channels.html#MC.7CPingHost"><span class="tocnumber">2.12</span> <span class="toctext">MC|PingHost</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="Plugin_channels.html#MC.7CStopSound"><span class="tocnumber">2.13</span> <span class="toctext">MC|StopSound</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="Plugin_channels.html#MC.7CStruct"><span class="tocnumber">2.14</span> <span class="toctext">MC|Struct</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="Plugin_channels.html#MC.7CTrList"><span class="tocnumber">2.15</span> <span class="toctext">MC|TrList</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="Plugin_channels.html#MC.7CTrSel"><span class="tocnumber">2.16</span> <span class="toctext">MC|TrSel</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="Plugin_channels.html#Notable_community_plugin_channels"><span class="tocnumber">3</span> <span class="toctext">Notable community plugin channels</span></a>
+<ul>
+<li class="toclevel-2 tocsection-22"><a href="Plugin_channels.html#BungeeCord"><span class="tocnumber">3.1</span> <span class="toctext">BungeeCord</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="Plugin_channels.html#FML.7CHS.2C_FML"><span class="tocnumber">3.2</span> <span class="toctext">FML|HS, FML</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="Plugin_channels.html#ML.7COpenTE"><span class="tocnumber">3.3</span> <span class="toctext">ML|OpenTE</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="Plugin_channels.html#WECUI"><span class="tocnumber">3.4</span> <span class="toctext">WECUI</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="Plugin_channels.html#WDL.7CINIT.2C_WDL.7CCONTROL.2C_WDL.7CREQUEST"><span class="tocnumber">3.5</span> <span class="toctext">WDL|INIT, WDL|CONTROL, WDL|REQUEST</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Reserved_channels">Reserved channels</span></h2>
+<h3><span class="mw-headline" id="REGISTER"><code>REGISTER</code></span></h3>
+<p><i>Two-way</i>
+</p><p>Allows the client or server to register for one or more custom channels, indicating that data should be sent on those channels if the receiving end supports it too. Payload is a null (<code>0x00</code>) separated list of strings.
+</p>
+<h3><span class="mw-headline" id="UNREGISTER"><code>UNREGISTER</code></span></h3>
+<p><i>Two-way</i>
+</p><p>Allows the client or server to unregister from one or more custom channels, indicating that the receiving end should stop sending data on those channels. Payload is a null-separated list of strings. This is only useful if plugins are disabled/unloaded while the client is connected.
+</p>
+<h2><span class="mw-headline" id="Channels_internal_to_Minecraft">Channels internal to Minecraft</span></h2>
+<p>Since 1.3, Minecraft itself uses several plugin channels to implement new features. These internal channel names are prefixed by <code>MC|</code>. They are <b>not</b> formally registered using the REGISTER channel. The vanilla Minecraft server will send these packets regardless, and the vanilla client will accept them.
+</p>
+<h3><span class="mw-headline" id="MC.7CAdvCmd"><code>MC|AdvCmd</code></span></h3>
+<p><span id="MC.7CAdvCdm"></span><i>Client to server</i>
+</p><p>Sets the contents of a command block or command block Minecart.  The Notchain client only uses this for command block minecarts and uses <a href="Plugin_channels.html#MC.7CAutoCmd"><code>MC|AutoCmd</code></a> for blocks, but the Notchian server still accepts it for either.
+</p><p>In 1.8 and earlier the name of this channel was incorrectly spelled as <code>MC|AdvCdm</code>.  This was fixed in snapshot <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/15w34a">15w34a</a></span>.
+</p><p>The packet starts with a single byte, which determines the type of thing being edited (block or minecart).  If it is 0, then it is a block and the location is 3 ints; if it is 1, then it is a minecart and the location is the entity's EID as an int.
+</p>
+<dl><dt> type = 0</dt></dl>
+<table class="wikitable">
+<tr>
+<th> Type </th>
+<th> Field Name </th>
+<th> Field Type </th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="6"> 0x00
+</td>
+<td> X </td>
+<td> Int </td>
+<td>
+</td></tr>
+<tr>
+<td> Y </td>
+<td> Int </td>
+<td>
+</td></tr>
+<tr>
+<td> Z </td>
+<td> Int </td>
+<td>
+</td></tr>
+<tr>
+<td> Command </td>
+<td> String </td>
+<td>
+</td></tr>
+<tr>
+<td> Track Output </td>
+<td> Boolean </td>
+<td>
+</td></tr></table>
+<dl><dt> type = 1</dt></dl>
+<table class="wikitable">
+<tr>
+<th> Type </th>
+<th> Field Name </th>
+<th> Field Type </th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="3"> 0x01
+</td>
+<td> Entity ID </td>
+<td> Int </td>
+<td>
+</td></tr>
+<tr>
+<td> Command </td>
+<td> String </td>
+<td>
+</td></tr>
+<tr>
+<td> Track Output </td>
+<td> Boolean </td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="MC.7CAutoCmd"><code>MC|AutoCmd</code></span></h3>
+<p><i>Client to server</i>
+</p><p>Sets command block contents.  This can only be used to edit command blocks; command block minecarts cannot be used with it.  To edit a command block minecart, use <a href="Plugin_channels.html#MC.7CAdvCmd"><code>MC|AdvCmd</code></a>.
+</p>
+<table class="wikitable">
+<tr>
+<th> Field Name </th>
+<th> Field Type </th>
+<th> Notes
+</th></tr>
+<tr>
+<td> X </td>
+<td> Int </td>
+<td>
+</td></tr>
+<tr>
+<td> Y </td>
+<td> Int </td>
+<td>
+</td></tr>
+<tr>
+<td> Z </td>
+<td> Int </td>
+<td>
+</td></tr>
+<tr>
+<td> Command </td>
+<td> String </td>
+<td>
+</td></tr>
+<tr>
+<td> Track output </td>
+<td> Boolean </td>
+<td> If false, the output of the previous command will not be stored within the command block.
+</td></tr>
+<tr>
+<td> Mode </td>
+<td> String enum </td>
+<td> One of "SEQUENCE", "AUTO", and "REDSTONE"
+</td></tr>
+<tr>
+<td> Is conditional </td>
+<td> Boolean </td>
+<td>
+</td></tr>
+<tr>
+<td> Automatic </td>
+<td> Boolean </td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="MC.7CBEdit"><code>MC|BEdit</code></span></h3>
+<p><i>Client to server</i>
+</p><p>When a player edits an unsigned book.
+</p><p>This payload is simply a set of bytes corresponding to a <a href="Slot_Data.html" title="Slot Data">Slot</a>.
+</p><p>The <a href="NBT.html" title="NBT">NBT</a> section of the Slot contains
+</p>
+<pre>
+TAG_Compound(''): 1 entry
+{
+  TAG_List('pages'): 2 entries
+  {
+    TAG_String(0): 'Something on Page 1'
+    TAG_String(1): 'Something on Page 2'
+  }
+}
+</pre>
+<h3><span class="mw-headline" id="MC.7CBOpen"><code>MC|BOpen</code></span></h3>
+<p><i>Server to client</i>
+</p><p>When a player right clicks with a signed book. This tells the client to open the book GUI.
+</p><p>The payload is a VarInt enum for the selected hand: 0 for the main hand, 1 for the offhand.
+</p>
+<h3><span class="mw-headline" id="MC.7CBSign"><code>MC|BSign</code></span></h3>
+<p><i>Client to server</i>
+</p><p>When a player signs a book.
+</p><p>This payload is simply a set of bytes corresponding to a <a href="Slot_Data.html" title="Slot Data">Slot</a>.
+</p><p>The Item ID in the Slot should be a Written Book
+</p><p>The <a href="NBT.html" title="NBT">NBT</a> section of the Slot contains
+</p>
+<pre>
+TAG_Compound(''): 3 entires
+{
+  TAG_String('author'): 'Steve'
+  TAG_String('title'): 'A Wonderful Book'
+  TAG_List('pages'): 2 entries
+  {
+    TAG_String(0): 'Something on Page 1'
+    TAG_String(1): 'Something on Page 2'
+  }
+}
+</pre>
+<h3><span class="mw-headline" id="MC.7CBeacon"><code>MC|Beacon</code></span></h3>
+<p><i>Client to server</i>
+</p><p>Two integers corresponding to the 2 effects a user wishes to have active.
+</p>
+<h3><span class="mw-headline" id="MC.7CBrand"><code>MC|Brand</code></span></h3>
+<p><i>Two-way</i>
+</p><p>Announces the server and client implementation name right after a player has logged in. For the Notchian client and server server, this is "vanilla" (which is chosen using the Function <code>net.minecraft.client.ClientBrandRetriever.getClientModName()</code>) (encoded as a <a href="Data_Types.html" class="mw-redirect" title="Data Types">protocol string</a>: a UTF-8 string with the length prefixed as a VarInt).
+</p><p>These brands are used in crash reports and a few other locations; it's recommended that custom clients and servers use changed brands for the purpose of identification (for the Notchian client, the class used to get the brand is one of the few non-obfuscated classes).  The brand is not processed in any other way, and Notchian clients will connect to servers with changed brands with no issue (the brand is not used to validate).
+</p><p>The Notchian server sends a <code>MC|Brand</code> packet right after it sends a <a href="Protocol.html#Join_Game" title="Protocol">Join Game</a> packet, and the Notchian client sends it right after receiving a Join Game packet.  However, some modified clients and servers will not send this packet (or will take longer to send it than normal), so it is important to not crash if the brand has not been sent.  Additionally, the brand may change at any time (for instance, if connected through a BungeeCord instance, you may switch from a server with one brand to a server with another brand without receiving a Join Game packet).
+</p>
+<h3><span class="mw-headline" id="MC.7CDebugPath"><code>MC|DebugPath</code></span></h3>
+<p><i>Server to client</i>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="./File:MC-DebugPath_in_16w14a.png.html" class="image"><img alt="" src="images/d/df/MC-DebugPath_in_16w14a.png" width="300" height="169" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:MC-DebugPath_in_16w14a.png.html" class="internal" title="Enlarge"></a></div>What appears to be the purpose of <code>MC|DebugPath</code> as seen in the <a rel="nofollow" class="external text" href="http://mojang.com/2016/04/minecraft-snapshot-16w14a/">snapshot 16w14a announcement</a>.  This is <i>not</i> found in the normal game.</div></div></div>
+<p>Never sent, but does something with pathfinding debugging.  The client reads the data and stores it, but its renderer cannot be enabled without modifications.
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Unknown 1
+</td>
+<td> Int
+</td>
+<td> Used as a key in the mapping that stores this data; might be an entity ID?
+</td></tr>
+<tr>
+<td> Unknown 2
+</td>
+<td> Float
+</td>
+<td> Appears to be the "radius" of the squares for each pathpoint
+</td></tr>
+<tr>
+<td> Entity
+</td>
+<td> PathEntity
+</td>
+<td> See below
+</td></tr></table>
+<p>PathEntity structure:
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Current path index
+</td>
+<td> Int
+</td>
+<td> Index in the points array that the entity is currently targeting.  That point is rendered red; the others are rendered blue.
+</td></tr>
+<tr>
+<td> Target
+</td>
+<td> PathPoint
+</td>
+<td> Rendered as a green cube
+</td></tr>
+<tr>
+<td> Number of points
+</td>
+<td> Int
+</td>
+<td> Number of elements in the following array
+</td></tr>
+<tr>
+<td> Points array
+</td>
+<td> Array of PathPoint
+</td>
+<td> The actual points on the path
+</td></tr>
+<tr>
+<td> Open set length
+</td>
+<td> Int
+</td>
+<td> Number of elements in the following array
+</td></tr>
+<tr>
+<td> Open set
+</td>
+<td> Array of PathPoint
+</td>
+<td> Displayed in blue
+</td></tr>
+<tr>
+<td> Closed set length
+</td>
+<td> Int
+</td>
+<td> Number of elements in the following array
+</td></tr>
+<tr>
+<td> Closed set
+</td>
+<td> Array of PathPoint
+</td>
+<td> Displayed in red
+</td></tr></table>
+<p>PathPoint structure:
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> X
+</td>
+<td> Int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Y
+</td>
+<td> Int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Z
+</td>
+<td> Int
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Distance from origin
+</td>
+<td> Float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Cost
+</td>
+<td> Float
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Cost malus
+</td>
+<td> Float
+</td>
+<td> Number that is rendered
+</td></tr>
+<tr>
+<td> Has been visited
+</td>
+<td> Boolean
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Node type
+</td>
+<td> Int enum
+</td>
+<td> See below
+</td></tr>
+<tr>
+<td> Distance to target
+</td>
+<td> Float
+</td>
+<td>
+</td></tr></table>
+<p>Values for node type:
+</p>
+<ul><li> 0: BLOCKED</li>
+<li> 1: OPEN</li>
+<li> 2: WALKABLE</li>
+<li> 3: TRAPDOOR</li>
+<li> 4: FENCE</li>
+<li> 5: LAVA</li>
+<li> 6: WATER</li>
+<li> 7: RAIL</li>
+<li> 8: DANGER_FIRE</li>
+<li> 9: DAMAGE_FIRE</li>
+<li> 10: DANGER_CACTUS</li>
+<li> 11: DAMAGE_CACTUS</li>
+<li> 12: DANGER_OTHER</li>
+<li> 13: DAMAGE_OTHER</li>
+<li> 14: DOOR_OPEN</li>
+<li> 15: DOOR_WOOD_CLOSED</li>
+<li> 16: DOOR_IRON_CLOSED</li></ul>
+<h3><span class="mw-headline" id="MC.7CDebugNeighborsUpdate"><code>MC|DebugNeighborsUpdate</code></span></h3>
+<p><i>Server to client</i>
+</p><p>Never sent, but used to debug block updates.  Does not render without modifying the client.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> This channel is invalid, as its name is longer than the max length (23 &gt; 20).
+</span>
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Time
+</td>
+<td> VarLong
+</td>
+<td> World timestamp at which the update occurred.  200 ticks after this timestamp, the given update stops rendering.
+</td></tr>
+<tr>
+<td> Location
+</td>
+<td> Position
+</td>
+<td> Location of the block that updated.
+</td></tr></table>
+<h3><span class="mw-headline" id="MC.7CItemName"><code>MC|ItemName</code></span></h3>
+<p><i>Client to server</i>
+</p><p>Sent as a player is renaming an item in an anvil (each keypress in the anvil UI sends a new <code>MC|ItemName</code> packet).  If the new name is empty, then the item loses its custom name (this is different from setting the custom name to the normal name of the item).  The item name may be no longer than 35 characters, and if it is longer than that, then the rename is silently ignored.
+</p>
+<table class="wikitable">
+<tr>
+<th> Field name
+</th>
+<th> Field type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Item name
+</td>
+<td> String
+</td>
+<td> The new name of the item
+</td></tr></table>
+<h3><span class="mw-headline" id="MC.7CPickItem"><code>MC|PickItem</code></span></h3>
+<p><i>Client to server</i>
+</p><p>Used to swap out an empty space on the hotbar with the item in the given inventory slot.  The Notchain client uses this for pick block functionality (middle click) to retrieve items from the inventory.
+</p><p>Payload is a single varint, which is the slot in the inventory to grab from.
+</p><p>The server will first search the player's hotbar for an empty slot, starting from the current slot and looping around to the slot before it.  If there are no empty slots, it will start a second search from the current slot and find the first slot that does not contain an enchanted item.  If there still are no slots that meet that criteria, then the server will use the currently selected slot.
+</p><p>After finding the appropriate slot, the server swaps the items and then send 3 packets:
+</p>
+<ul><li> <a href="Protocol.html#Set_slot" title="Protocol">Set Slot</a>, with window ID set to -2 and slot set to the newly chosen slot and the item set to the item that is now in that slot (which was previously at the slot the client requested)</li>
+<li> Set Slot, with window ID set to -2 and slot set to the slot the player requested, with the item that is now in that slot and was previously on the hotbar slot</li>
+<li> <a href="Protocol.html#Held_Item_Change_.28clientbound.29" title="Protocol">Held Item Change</a>, with the slot set to the newly chosen slot.</li></ul>
+<h3><span class="mw-headline" id="MC.7CPingHost"><code>MC|PingHost</code></span></h3>
+<p><i>Client to server</i>
+</p><p>Sent <i>after</i> a Server list ping in Minecraft 1.6. More information on <a href="Server_List_Ping.html#1.6" title="Server List Ping">Server List Ping#1.6</a>. In 1.7 and above, the <a href="Protocol.html#Request" title="Protocol">Request</a> (<a href="Protocol.html#Status" title="Protocol">Status</a>, 0x00, serverbound) packet is instead sent <i>before</i> the ping.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Since this plugin channel is only sent for the legacy server list ping, it uses the older packet structure.
+</span>
+</p>
+<h3><span class="mw-headline" id="MC.7CStopSound"><code>MC|StopSound</code></span></h3>
+<p><i>Server to client</i>
+</p><p>Used to implement <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Commands%23StopSound">the <code>/stopsound</code> command</a></span>.  Stops a sound that is currently playing on the client.
+</p>
+<table class="wikitable">
+<tr>
+<th> Field name
+</th>
+<th> Field type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> Sound category
+</td>
+<td> String
+</td>
+<td> Should be one of the sound categories used in <a href="Protocol.html#Named_Sound_Effect" title="Protocol">Named Sound Effect</a>, but if it's invalid or empty then it is (intentionally) treated as <i>all</i> sound categories.
+</td></tr>
+<tr>
+<td> Sound name
+</td>
+<td> String
+</td>
+<td> A <a rel="nofollow" class="external text" href="http://pokechu22.github.io/Burger/1.11.html#sounds">sound effect name</a>.  If left empty, <i>all</i> sounds are stopped.
+</td></tr></table>
+<p>Emptiness of sound category or sound name can be combined, IE a empty sound name but a set sound category will stop all sounds in the given category.
+</p>
+<h3><span class="mw-headline" id="MC.7CStruct"><code>MC|Struct</code></span></h3>
+<p><i>Client to server</i>
+</p><p>Sets information about the <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/Structure_block">Structure block</a></span>.
+</p>
+<table class="wikitable">
+<tr>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> X </td>
+<td> Int </td>
+<td> Tile entity location
+</td></tr>
+<tr>
+<td> Y </td>
+<td> Int </td>
+<td> Tile entity location
+</td></tr>
+<tr>
+<td> Z </td>
+<td> Int </td>
+<td> Tile entity location
+</td></tr>
+<tr>
+<td> Action
+</td>
+<td> Byte
+</td>
+<td> An additional action to perform beyond simply saving the given data; see below
+</td></tr>
+<tr>
+<td> Mode
+</td>
+<td> String enum
+</td>
+<td> One of "SAVE", "LOAD", "CORNER", "DATA".
+</td></tr>
+<tr>
+<td> Name
+</td>
+<td> String
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Offset X </td>
+<td> Int
+</td>
+<td> Between -32 and 32
+</td></tr>
+<tr>
+<td> Offset Y </td>
+<td> Int
+</td>
+<td> Between -32 and 32
+</td></tr>
+<tr>
+<td> Offset Z </td>
+<td> Int
+</td>
+<td> Between -32 and 32
+</td></tr>
+<tr>
+<td> Size X </td>
+<td> Int
+</td>
+<td> Between 0 and 32
+</td></tr>
+<tr>
+<td> Size Y </td>
+<td> Int
+</td>
+<td> Between 0 and 32
+</td></tr>
+<tr>
+<td> Size Z </td>
+<td> Int
+</td>
+<td> Between 0 and 32
+</td></tr>
+<tr>
+<td> Mirror
+</td>
+<td> String enum
+</td>
+<td> One of "NONE", "LEFT_RIGHT", "FRONT_BACK".
+</td></tr>
+<tr>
+<td> Rotation
+</td>
+<td> String enum
+</td>
+<td> One of "NONE", "CLOCKWISE_90", "CLOCKWISE_180", "COUNTERCLOCKWISE_90".
+</td></tr>
+<tr>
+<td> Metadata
+</td>
+<td> String
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Ignore entities
+</td>
+<td> Boolean
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Show air
+</td>
+<td> Boolean
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Show bounding box
+</td>
+<td> Boolean
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Integrity
+</td>
+<td> Float
+</td>
+<td> Between 0 and 1
+</td></tr>
+<tr>
+<td>Seed
+</td>
+<td>VarLong
+</td>
+<td>
+</td></tr></table>
+<p>Possible actions:
+</p>
+<ul><li> 2 - Save the structure</li>
+<li> 3 - Load the structure</li>
+<li> 4 - Detect size</li></ul>
+<p>All other values are ignored.  The Notchian client uses 1 to indicate no special action should be taken (i.e. the done button).
+</p>
+<h3><span class="mw-headline" id="MC.7CTrList"><code>MC|TrList</code></span></h3>
+<p><i>Server to client</i>
+</p><p>The list of trades a villager NPC is offering.
+</p>
+<table class="wikitable">
+<tr>
+<th colspan="2"> Field Name
+</th>
+<th colspan="2"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td colspan="2"> Window ID
+</td>
+<td colspan="2"> Int
+</td>
+<td> The ID of the window that is open; this is an int rather than a byte.
+</td></tr>
+<tr>
+<td colspan="2"> Size
+</td>
+<td colspan="2"> Byte
+</td>
+<td> The number of trades in the following array
+</td></tr>
+<tr>
+<td rowspan="7"> Trades
+</td>
+<td> Input item 1
+</td>
+<td rowspan="7"> Array
+</td>
+<td> Slot
+</td>
+<td> The first item the villager is buying
+</td></tr>
+<tr>
+<td> Output item
+</td>
+<td> Slot
+</td>
+<td> The item the villager is selling
+</td></tr>
+<tr>
+<td> Has second item
+</td>
+<td> Boolean
+</td>
+<td> Whether there is a second item
+</td></tr>
+<tr>
+<td> Input item 2
+</td>
+<td> Optional slot
+</td>
+<td> The second item the villager is buying; only present if they have a second item.
+</td></tr>
+<tr>
+<td> Trade disabled
+</td>
+<td> Boolean
+</td>
+<td> True if the trade is disabled; false if the trade is enabled.
+</td></tr>
+<tr>
+<td> Number of tool uses
+</td>
+<td> Int
+</td>
+<td> May actually be the number of times this trade has been used; MCP may be misleading me
+</td></tr>
+<tr>
+<td> Maximum number of trade uses
+</td>
+<td> Int
+</td>
+<td> Number of times this trade can be used
+</td></tr></table>
+<h3><span class="mw-headline" id="MC.7CTrSel"><code>MC|TrSel</code></span></h3>
+<p><i>Client to server</i>
+</p><p>When a player selects a specific trade offered by a villager NPC.
+It contains a single int id corresponding to the selected slot int the players current (trading) inventory.
+</p>
+<h2><span class="mw-headline" id="Notable_community_plugin_channels">Notable community plugin channels</span></h2>
+<p>Channels listed in this section are not used by the vanilla Minecraft client or server. This is just a likely-incomplete list of channels used by mods/plugins popular within the Minecraft community.
+</p>
+<h3><span class="mw-headline" id="BungeeCord"><code>BungeeCord</code></span></h3>
+<p><a rel="nofollow" class="external text" href="http://www.spigotmc.org/wiki/bukkit-bungee-plugin-messaging-channel/">See here</a>
+</p>
+<h3><span class="mw-headline" id="FML.7CHS.2C_FML"><code>FML|HS</code>, <code>FML</code></span></h3>
+<dl><dd><i>Main article: <a href="Minecraft_Forge_Handshake.html" title="Minecraft Forge Handshake">Minecraft Forge Handshake</a></i></dd></dl>
+<p>Used by <a rel="nofollow" class="external text" href="http://www.minecraftforge.net/forum/index.php">Minecraft Forge</a> to negotiate required mods, among other things.
+<a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/master/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java"><code>FML|HS</code></a>
+<a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/master/src/main/java/net/minecraftforge/fml/common/network/internal/FMLNetworkHandler.java"><code>FML</code></a>
+</p>
+<h3><span class="mw-headline" id="ML.7COpenTE"><code>ML|OpenTE</code></span></h3>
+<p><i>Server to client</i>
+</p><p>Used by <a rel="nofollow" class="external text" href="http://www.minecraftforum.net/topic/75440-modloader/">ModLoader</a> to support custom GUI windows. Does not use the REGISTER channel.
+</p>
+<h3><span class="mw-headline" id="WECUI"><code>WECUI</code></span></h3>
+<dl><dd><i>Main article: <a href="Plugin_channels/WorldEditCUI.html" title="Plugin channels/WorldEditCUI">/WorldEditCUI</a></i></dd></dl>
+<p>Used by the server-side <a rel="nofollow" class="external text" href="http://www.enginehub.org/worldedit/">WorldEdit</a> and the client-side <a rel="nofollow" class="external text" href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1292886-worldeditcui/">WorldEditCUI</a> to coordinate selections.
+</p>
+<h3><span class="mw-headline" id="WDL.7CINIT.2C_WDL.7CCONTROL.2C_WDL.7CREQUEST"><code>WDL|INIT</code>, <code>WDL|CONTROL</code>, <code>WDL|REQUEST</code></span></h3>
+<dl><dd><i>Main article: <a href="Plugin_channels/World_downloader.html" title="Plugin channels/World downloader">/World downloader</a></i></dd></dl>
+<p>Used by the client-side <a rel="nofollow" class="external text" href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2520465">World Downloader mod</a> to get permission information and perform permission requests.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823152740
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.124 seconds
+Real time usage: 0.233 seconds
+Preprocessor visited node count: 228/1000000
+Preprocessor generated node count: 480/1000000
+Post‐expand include size: 1287/2097152 bytes
+Template argument size: 543/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   59.243      1 - -total
+ 34.90%   20.676      3 - Template:Minecraft_Wiki
+ 20.19%   11.964      2 - Template:Anchor
+ 19.91%   11.796      3 - Template:Plainlink
+ 16.31%    9.660      2 - Template:Warning
+ 12.48%    7.395      3 - Template:Main
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:211-0!*!0!!en!5!* and timestamp 20180823152740 and revision id 14089
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Plugin_channels&amp;oldid=14089">http://wiki.vg/index.php?title=Plugin_channels&amp;oldid=14089</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Plugin+channels" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Plugin+channels" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Plugin_channels.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Plugin_channels&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Plugin_channels.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Plugin_channels.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Plugin_channels&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Plugin_channels&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Plugin_channels.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Plugin_channels" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Plugin_channels" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Plugin_channels&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Plugin_channels&amp;oldid=14089" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Plugin_channels&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 2 July 2018, at 14:48.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":217});});</script>
+	</body>
+</html>

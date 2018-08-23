@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Minecraft Pi Protocol - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Minecraft_Pi_Protocol","wgTitle":"Minecraft Pi Protocol","wgCurRevisionId":6578,"wgRevisionId":6578,"wgArticleId":288,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Pi","Pocket Minecraft"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Minecraft_Pi_Protocol","wgRelevantArticleId":288,"wgRequestId":"2cf14d90311c03c27ed9bbaf","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Minecraft_Pi_Protocol rootpage-Minecraft_Pi_Protocol skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Minecraft Pi Protocol</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Minecraft_Pi_Protocol.html#mw-head">navigation</a>, 					<a href="Minecraft_Pi_Protocol.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table width="100%" style="border: 0; background-color: #ffffff" cellpadding="0" cellspacing="3">
+<tr>
+<td style="width: 100%; vertical-align: top; border:1px solid #EA3C53; background-color: #ffffff">
+<div style="background-color:#EA3C53; font-size:1px; height:8px; border-bottom:1px solid #EA3C53;"></div>
+<div style="float:right; margin:7px; margin-top:5px"></div>
+<div style="padding:0.5em 0.3em 0.3em 0.3em; margin:0; text-indent:0.1em; font-weight: bold; border-bottom:1px solid #aaaaaa;">Warning!</div>
+<div style="font-size:100%; padding:3px">
+<table cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td align="left" valign="top" width="100%">
+<p>This content may not longer be up to date. Minecraft for the Pi was an experiment that most likely will not be expanded.
+</p>
+</td></tr></table>
+</div>
+</td></tr></table>
+<p>This page documents the <a href="https://wiki.vg/index.php?title=Minecraft_Pi&amp;action=edit&amp;redlink=1" class="new" title="Minecraft Pi (page does not exist)">Minecraft Pi</a> API Protocol. The multiplayer protocol for Minecraft Pi is based on <a href="Pocket_Minecraft_Protocol.html" title="Pocket Minecraft Protocol">Minecraft PE's protocol</a>.
+</p><p>Parts of this documentation is based on the official Mojang documentation, which were <a rel="nofollow" class="external text" href="https://twitter.com/danfrisk/status/286797258048012288">released for free use.</a> Other parts are based on the Desktop Protocol specification.
+</p><p>The Minecraft Pi client listens to TCP port 4711 by default.
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0">
+</td>
+<td class="col1"> Definition
+</td></tr>
+<tr class="row1">
+<td class="col0 centeralign"> Player
+</td>
+<td class="col1"> When used in the singular, Player always refers to the client connected to the server
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Entity
+</td>
+<td class="col1"> Entity refers to any item, player, or mob in the world. This definition is subject to change as Mojang extends the protocol
+</td></tr>
+<tr class="row3">
+<td class="col0 centeralign"> EID
+</td>
+<td class="col1"> An EID - or Entity ID - is a unique 4-byte integer used to identify a specific entity
+</td></tr>
+<tr class="row4">
+<td class="col0 centeralign"> XYZ
+</td>
+<td class="col1"> In this document, the axis names are the same as those used by the official protocol documentation. Y points upwards, X points South, and Z points West.
+</td></tr></table>
+<p>A command in the Pi protocol consists of an ASCII line terminated with an LF character. The general format of a command is of the form
+</p>
+<pre>package.command(param1,param2,param3)
+</pre>
+<p>Commands are sent by the client to the server. No authentication is required before sending commands.
+</p><p>Some commands may have return values: they are also in ASCII, and terminate with an LF character.
+</p><p>Locations in the Minecraft Pi protocol are relative to the spawn point of the world.
+</p><p>The official Mojang documentation specifies conventions for specifying parameters:
+</p>
+<ul><li>x,y,z -- vector of three integers.</li></ul>
+<ul><li>xf,yf,zf -- vector of three floats.</li></ul>
+<ul><li>blockTypeId -- integer 0-108. 0 is air.</li></ul>
+<ul><li>blockData -- integer 0-15. Block data beyond the type, for example wool color.</li></ul>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Minecraft_Pi_Protocol.html#Packages"><span class="tocnumber">1</span> <span class="toctext">Packages</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Minecraft_Pi_Protocol.html#world_package"><span class="tocnumber">1.1</span> <span class="toctext">world package</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="Minecraft_Pi_Protocol.html#world.getBlock.28x.2Cy.2Cz.29"><span class="tocnumber">1.1.1</span> <span class="toctext">world.getBlock(x,y,z)</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="Minecraft_Pi_Protocol.html#world.getBlockWithData.28x.2Cy.2Cz.29"><span class="tocnumber">1.1.2</span> <span class="toctext">world.getBlockWithData(x,y,z)</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="Minecraft_Pi_Protocol.html#world.setBlock.28x.2Cy.2Cz.2CblockTypeId.2C.5BblockData.5D.29"><span class="tocnumber">1.1.3</span> <span class="toctext">world.setBlock(x,y,z,blockTypeId,[blockData])</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="Minecraft_Pi_Protocol.html#world.setBlocks.28x1.2Cy1.2Cz1.2Cx2.2Cy2.2Cz2.2CblockTypeId.2C.5BblockData.5D.29"><span class="tocnumber">1.1.4</span> <span class="toctext">world.setBlocks(x1,y1,z1,x2,y2,z2,blockTypeId,[blockData])</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="Minecraft_Pi_Protocol.html#world.getHeight.28x.2Cz.29"><span class="tocnumber">1.1.5</span> <span class="toctext">world.getHeight(x,z)</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="Minecraft_Pi_Protocol.html#world.getPlayerIds.28.29"><span class="tocnumber">1.1.6</span> <span class="toctext">world.getPlayerIds()</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="Minecraft_Pi_Protocol.html#world.setting.28key.2Cvalue.29"><span class="tocnumber">1.1.7</span> <span class="toctext">world.setting(key,value)</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="Minecraft_Pi_Protocol.html#world.checkpoint.save.28.29"><span class="tocnumber">1.1.8</span> <span class="toctext">world.checkpoint.save()</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="Minecraft_Pi_Protocol.html#world.checkpoint.restore.28.29"><span class="tocnumber">1.1.9</span> <span class="toctext">world.checkpoint.restore()</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="Minecraft_Pi_Protocol.html#chat_package"><span class="tocnumber">1.2</span> <span class="toctext">chat package</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="Minecraft_Pi_Protocol.html#chat.post.28message.29"><span class="tocnumber">1.2.1</span> <span class="toctext">chat.post(message)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="Minecraft_Pi_Protocol.html#player_package"><span class="tocnumber">1.3</span> <span class="toctext">player package</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="Minecraft_Pi_Protocol.html#player.getTile.28.29"><span class="tocnumber">1.3.1</span> <span class="toctext">player.getTile()</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="Minecraft_Pi_Protocol.html#player.setTile.28x.2Cy.2Cz.29"><span class="tocnumber">1.3.2</span> <span class="toctext">player.setTile(x,y,z)</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="Minecraft_Pi_Protocol.html#player.getPos.28.29"><span class="tocnumber">1.3.3</span> <span class="toctext">player.getPos()</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="Minecraft_Pi_Protocol.html#player.setPos.28xf.2Cyf.2Czf.29"><span class="tocnumber">1.3.4</span> <span class="toctext">player.setPos(xf,yf,zf)</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="Minecraft_Pi_Protocol.html#player.setting.28key.2Cvalue.29"><span class="tocnumber">1.3.5</span> <span class="toctext">player.setting(key,value)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="Minecraft_Pi_Protocol.html#entity_package"><span class="tocnumber">1.4</span> <span class="toctext">entity package</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="Minecraft_Pi_Protocol.html#camera_package"><span class="tocnumber">1.5</span> <span class="toctext">camera package</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="Minecraft_Pi_Protocol.html#events_package"><span class="tocnumber">1.6</span> <span class="toctext">events package</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Packages">Packages</span></h2>
+<h3><span class="mw-headline" id="world_package">world package</span></h3>
+<p>Contains methods that modify the world and terrain.
+</p>
+<h4><span class="mw-headline" id="world.getBlock.28x.2Cy.2Cz.29">world.getBlock(x,y,z)</span></h4>
+<p>Gets the ID of a block in the world.
+</p><p>x, y, z: coordinates of the block relative to spawn
+</p><p><br />
+Returns: an integer of type blockTypeId, corresponding to a block type in Minecraft Pi.
+</p>
+<h4><span class="mw-headline" id="world.getBlockWithData.28x.2Cy.2Cz.29">world.getBlockWithData(x,y,z)</span></h4>
+<p>Gets the ID and Optional Parameter for a block in the world.
+</p><p>x, y, z: coordinates of the block relative to spawn
+</p><p>Returns: a block object corresponding toa  block type in Minecraft Pi.
+</p>
+<h4><span class="mw-headline" id="world.setBlock.28x.2Cy.2Cz.2CblockTypeId.2C.5BblockData.5D.29">world.setBlock(x,y,z,blockTypeId,[blockData])</span></h4>
+<p>Sets the ID of a block in the world. The data parameter is optional.
+</p><p>x, y, z: coordinates of the block relative to spawn
+</p><p>blockTypeId: ID of the block
+</p><p>blockData: metadata of the block
+</p>
+<h4><span class="mw-headline" id="world.setBlocks.28x1.2Cy1.2Cz1.2Cx2.2Cy2.2Cz2.2CblockTypeId.2C.5BblockData.5D.29">world.setBlocks(x1,y1,z1,x2,y2,z2,blockTypeId,[blockData])</span></h4>
+<p>Sets all blocks in a cuboid defined by two points to a speficied type. The blockData parameter is optional.
+</p><p>x1, y1, z1: coordinates of the first selection point relative to spawn
+</p><p>x2, y2, z2: coordinates of the second selection point relative to spawn
+</p><p>blockTypeId: ID of the block
+</p><p>blockData: metadata of the block
+</p>
+<h4><span class="mw-headline" id="world.getHeight.28x.2Cz.29">world.getHeight(x,z)</span></h4>
+<p>Returns the Y coordinate of the last block that isn't solid from top-down.
+</p><p>x, z: coordinates of a column 
+</p><p><br />
+Returns: an integer containing the Y coordinate
+</p>
+<h4><span class="mw-headline" id="world.getPlayerIds.28.29">world.getPlayerIds()</span></h4>
+<p>Gets the Entity IDs of all connected players.
+</p><p><br />
+Returns: A list of Entity IDs, seperated by the character |
+</p>
+<h4><span class="mw-headline" id="world.setting.28key.2Cvalue.29">world.setting(key,value)</span></h4>
+<p>Sets a world parameter (similar to GameRules on the Desktop Edition)
+</p><p>key: the name of the setting:
+</p>
+<ul><li>world_immutable</li>
+<li>nametags_visible</li></ul>
+<p>value: a Boolean value: either 0 or 1
+</p>
+<h4><span class="mw-headline" id="world.checkpoint.save.28.29">world.checkpoint.save()</span></h4>
+<p>Save a checkpoint that can be used for restoring the world.
+</p>
+<h4><span class="mw-headline" id="world.checkpoint.restore.28.29">world.checkpoint.restore()</span></h4>
+<p>Restores the world to the last checkpoint.
+</p>
+<h3><span class="mw-headline" id="chat_package">chat package</span></h3>
+<p>Contains methods to post messages to the chat display.
+</p>
+<h4><span class="mw-headline" id="chat.post.28message.29">chat.post(message)</span></h4>
+<p>message: the message to be sent.
+</p>
+<h3><span class="mw-headline" id="player_package">player package</span></h3>
+<p>Contains methods that modify the host player.
+</p>
+<h4><span class="mw-headline" id="player.getTile.28.29">player.getTile()</span></h4>
+<p>Gets the position of the host player, to the nearest block.
+</p><p><br />
+Returns: The x, y, and z coordinates of the player, separated by commas.
+</p>
+<h4><span class="mw-headline" id="player.setTile.28x.2Cy.2Cz.29">player.setTile(x,y,z)</span></h4>
+<p>Sets the position of the host player to the specified block coordinates.
+</p><p>x, y, z: the coordinates that the player is to be moved to.
+</p>
+<h4><span class="mw-headline" id="player.getPos.28.29">player.getPos()</span></h4>
+<p>Returns the precise position of the host player.
+</p><p><br />
+Returns: the x, y, and z coordinates of the player as floats, separated by commas.
+</p>
+<h4><span class="mw-headline" id="player.setPos.28xf.2Cyf.2Czf.29">player.setPos(xf,yf,zf)</span></h4>
+<p>Sets the position of the host player to the specified coordinates.
+</p><p>xf, yf, zf: the coordinates that the player is to be moved to. Decimals are allowed.
+</p>
+<h4><span class="mw-headline" id="player.setting.28key.2Cvalue.29">player.setting(key,value)</span></h4>
+<p>Sets a property on the host player.
+</p><p>key: the property to be set.
+</p>
+<ul><li>autojump: enable or disable autojump.</li></ul>
+<p>value: a Boolean value: either 1 for on or 0 for off.
+</p>
+<h3><span class="mw-headline" id="entity_package">entity package</span></h3>
+<h3><span class="mw-headline" id="camera_package">camera package</span></h3>
+<h3><span class="mw-headline" id="events_package">events package</span></h3>
+
+<!-- 
+NewPP limit report
+Cached time: 20180822204513
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.039 seconds
+Real time usage: 0.114 seconds
+Preprocessor visited node count: 114/1000000
+Preprocessor generated node count: 214/1000000
+Post‐expand include size: 760/2097152 bytes
+Template argument size: 157/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    8.947      1 - -total
+100.00%    8.947      1 - Template:Box
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:288-0!*!0!!en!*!* and timestamp 20180822204513 and revision id 6578
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Minecraft_Pi_Protocol&amp;oldid=6578">http://wiki.vg/index.php?title=Minecraft_Pi_Protocol&amp;oldid=6578</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://wiki.vg/index.php?title=Category:Minecraft_Pi&amp;action=edit&amp;redlink=1" class="new" title="Category:Minecraft Pi (page does not exist)">Minecraft Pi</a></li><li><a href="./Category:Pocket_Minecraft.html" title="Category:Pocket Minecraft">Pocket Minecraft</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Minecraft+Pi+Protocol" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Minecraft+Pi+Protocol" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Minecraft_Pi_Protocol.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Minecraft_Pi_Protocol&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Minecraft_Pi_Protocol.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Minecraft_Pi_Protocol.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Minecraft_Pi_Protocol&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Minecraft_Pi_Protocol&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Minecraft_Pi_Protocol.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Minecraft_Pi_Protocol" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Minecraft_Pi_Protocol" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Minecraft_Pi_Protocol&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Minecraft_Pi_Protocol&amp;oldid=6578" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Minecraft_Pi_Protocol&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 15 April 2015, at 20:46.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":225});});</script>
+	</body>
+</html>

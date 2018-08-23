@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Minecraft Forge Handshake - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Minecraft_Forge_Handshake","wgTitle":"Minecraft Forge Handshake","wgCurRevisionId":13338,"wgRevisionId":13338,"wgArticleId":1060,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Need Info"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Minecraft_Forge_Handshake","wgRelevantArticleId":1060,"wgRequestId":"cbf22a6077d96730b9cb165c","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Minecraft_Forge_Handshake rootpage-Minecraft_Forge_Handshake skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Minecraft Forge Handshake</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Minecraft_Forge_Handshake.html#mw-head">navigation</a>, 					<a href="Minecraft_Forge_Handshake.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This page documents the current <b><a rel="nofollow" class="external text" href="https://minecraftforge.net/">Minecraft Forge</a> protocol</b>, including how to connect to servers running Minecraft Forge and what changes it makes to the vanilla protocol, for Minecraft 1.7.10, 1.8, and 1.9.
+</p><p>Largely based off of <a rel="nofollow" class="external text" href="https://github.com/ORelio/Minecraft-Console-Client/pull/100">Pokechu22's work on getting Minecraft Console Client to connect to Forge servers</a>.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Minecraft_Forge_Handshake.html#Changes_to_Server_List_Ping"><span class="tocnumber">1</span> <span class="toctext">Changes to Server List Ping</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Minecraft_Forge_Handshake.html#Connection_to_a_forge_server"><span class="tocnumber">2</span> <span class="toctext">Connection to a forge server</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Minecraft_Forge_Handshake.html#Forge_handshake"><span class="tocnumber">3</span> <span class="toctext">Forge handshake</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Minecraft_Forge_Handshake.html#Definitions"><span class="tocnumber">4</span> <span class="toctext">Definitions</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Minecraft_Forge_Handshake.html#FML.7CHS_Packet_structure"><span class="tocnumber">5</span> <span class="toctext">FML|HS Packet structure</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="Minecraft_Forge_Handshake.html#ServerHello"><span class="tocnumber">5.1</span> <span class="toctext">ServerHello</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Minecraft_Forge_Handshake.html#ClientHello"><span class="tocnumber">5.2</span> <span class="toctext">ClientHello</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Minecraft_Forge_Handshake.html#ModList"><span class="tocnumber">5.3</span> <span class="toctext">ModList</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Minecraft_Forge_Handshake.html#RegistryData"><span class="tocnumber">5.4</span> <span class="toctext">RegistryData</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Minecraft_Forge_Handshake.html#HandshakeAck"><span class="tocnumber">5.5</span> <span class="toctext">HandshakeAck</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Minecraft_Forge_Handshake.html#HandshakeReset"><span class="tocnumber">5.6</span> <span class="toctext">HandshakeReset</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="Minecraft_Forge_Handshake.html#FML.7CMP_and_multipart_packets"><span class="tocnumber">6</span> <span class="toctext">FML|MP and multipart packets</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="Minecraft_Forge_Handshake.html#Differences_from_Forge_1.7.10"><span class="tocnumber">7</span> <span class="toctext">Differences from Forge 1.7.10</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="Minecraft_Forge_Handshake.html#ModIdData"><span class="tocnumber">7.1</span> <span class="toctext">ModIdData</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Changes_to_Server_List_Ping">Changes to <a href="Server_List_Ping.html" title="Server List Ping">Server List Ping</a></span></h2>
+<p>When forge is installed, the <a href="Server_List_Ping.html" title="Server List Ping">Server List Ping</a> changes with an additional <code>modinfo</code>.  Example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;A Minecraft Server&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;players&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;max&quot;</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;online&quot;</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;1.8&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;protocol&quot;</span><span class="o">:</span> <span class="mi">47</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;modinfo&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;FML&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modList&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;modid&quot;</span><span class="o">:</span> <span class="s2">&quot;mcp&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;9.05&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;modid&quot;</span><span class="o">:</span> <span class="s2">&quot;FML&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;8.0.99.99&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;modid&quot;</span><span class="o">:</span> <span class="s2">&quot;Forge&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;11.14.3.1512&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;modid&quot;</span><span class="o">:</span> <span class="s2">&quot;rpcraft&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;Beta 1.3 - 1.8.0&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>So, to test whether forge is installed, look for the <code>modinfo</code> key and then a <code>type</code> of <code>FML</code>
+</p><p>The <code>modList</code> contains each installed mod's version and ID.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> The key <code>modList</code> has a capital 'L', unlike any other key in the ping result!
+</span>
+</p><p>This is injected in <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/patches/minecraft/net/minecraft/network/ServerStatusResponse.java.patch#L45">ServerStatusResponse</a> by calling <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/internal/FMLNetworkHandler.java#L197-L211">FMLNetworkHandler.enhanceStatusQuery()</a>.
+</p>
+<h2><span class="mw-headline" id="Connection_to_a_forge_server">Connection to a forge server</span></h2>
+<p>Attempting to connect to a forge server without making any changes results in getting immediately disconnected with the message "<code>This server requires FML/Forge to be installed. Contact your server admin for more details.</code>".  This message is displayed in <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/FMLCommonHandler.java#L653-L661">FMLCommonHandler</a> and is <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/patches/minecraft/net/minecraft/network/handshake/client/C00Handshake.java.patch#L35">injected</a> in a modified <a href="Protocol.html#Handshake" title="Protocol">0x00 Handshake packet</a>.
+</p><p>If <code>\0FML\0</code> is added to the end of the server's address (where <code>\0</code> is a <a href="http://en.wikipedia.org/wiki/null_character" class="extiw" title="wikipedia:null character">Wikipedia:null character</a>) (again, in the 0x00 handshake packet), the server will not immediately reject you.  However, you still will not complete the connection.
+</p><p>This occurs because Minecraft Forge has an additional set of handshakes (for determining mods and block IDs), that must be completed before the server allows logging in.
+</p>
+<h2><span class="mw-headline" id="Forge_handshake">Forge handshake</span></h2>
+<p>Forge's handshake occurs in the middle of the <a href="Protocol_FAQ.html#What.27s_the_normal_login_sequence_for_a_client.3F" title="Protocol FAQ">normal login sequence</a>, right after <a href="Protocol.html#Login_Success" title="Protocol">0x02 Login Success</a> is received by the client.
+</p><p>In addition to the <a href="Debugging.html" title="Debugging">normal packet debugging</a> for the server, if <code>-Dfml.debugNetworkHandshake=true</code> is passed to the forge server, some more information about the current handshake status will be outputted.
+</p>
+<table border="1px" cellpadding="5" cellspacing="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td rowspan="2"> <a href="./File:Huh.png.html" class="image"><img alt="Huh.png" src="images/4/4f/Huh.png" width="40" height="40" /></a></td>
+<td>The following information needs to be added to this page:
+</td></tr>
+<tr>
+<td style="border:1px solid red"> <b>Why does it send the CompleteHandshake packet to itself?  How does it keep synchronized (especially near the end with the ACKs)?</b>
+</td></tr></table>
+<ul><li> <b>S→C</b>: <a href="Plugin_channel.html#REGISTER" class="mw-redirect" title="Plugin channel"><code>REGISTER</code></a> forge's plugin channels: FML|HS, FML, FML|MP, FML, FORGE (yes, FML is there twice; technically, it does not need to be there twice but that is the way that Forge sends it and sending it that way will act more similar to forge)</li>
+<li> <b>S→C</b>: A ServerHello packet is sent on <code>FML|HS</code> including the player's dimension (0 if it's the first login)</li>
+<li> <b>C→S</b>: <code>REGISTER</code> the plugin channels: FML|HS, FML, FML|MP, FML, FORGE.</li>
+<li> <b>C→S</b>: A ClientHello packet is sent on the <code>FML|HS</code> channel.</li>
+<li> <b>C→S</b>: A ModList packet is sent.</li>
+<li> Server checks that the mod list is compatible.  If incompatible, the player is <a href="Protocol.html#Disconnect" title="Protocol">disconnected</a> with an explanatory message.  Otherwise, continue.</li>
+<li> <b>S→C</b>: A ModList packet is sent.</li>
+<li> Client checks that the mod list is compatible.  If incompatible, it disconnects.  Otherwise, continue.</li>
+<li> <b>C→S</b>: A HandshakeAck packet is sent, with the phase being <code>WAITINGSERVERDATA</code> (2).</li>
+<li> <b>S→C</b>: A series of RegistryData packets is sent, with hasMore being true for all packets except the last.</li>
+<li> Client reads and stores each RegistryData, continuing reading until hasMore is false.  Once hasMore is false, it checks whether it has all of the needed blocks/items.  If it does not, it disconnects.  Otherwise, continue.</li>
+<li> <b>C→S</b>: A HandshakeAck packet is sent with phase being <code>WAITINGSERVERCOMPLETE</code> (3).</li>
+<li> <b>S→C</b>: A HandshakeAck packet is sent with phase being <code>WAITINGCACK</code> (2).</li>
+<li> <b>C→S</b>: A HandshakeAck packet is sent with phase being <code>PENDINGCOMPLETE</code> (4).</li>
+<li> <b>S→C</b>: A HandshakeAck packet is sent with phase being <code>COMPLETE</code> (3).</li>
+<li> The server sends a "CompleteHandshake" packet <b>to itself</b>.  (Not sure why)</li>
+<li> <b>C→S</b>: A HandshakeAck packet is sent with phase being <code>COMPLETE</code> (5).</li>
+<li> The client sends a "CompleteHandshake" packet <b>to itself</b>.  (Not sure why)</li></ul>
+<h2><span class="mw-headline" id="Definitions">Definitions</span></h2>
+<p>Minecraft Forge uses an additional type not covered in <a href="Data_types.html" title="Data types">data types</a> for some things -- a varshort.  This is essentially the same as a regular short, except that if the top byte (what is normally sign) is set, it is followed by an additional byte.  This allows forge to retain backwards compatibility but extend the length of certain numbers -- the varshort is only used in places where, in vanilla Minecraft, the sign bit would not have been set.  It is implemented in <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/ByteBufUtils.java#L58-L89">ByteBufUtils</a>.
+</p><p>Discriminator bytes are the way that Minecraft Forge allows sending multiple messages on one <a href="Plugin_channel.html" class="mw-redirect" title="Plugin channel">plugin channel</a>.  They aren't part of the original specification, but a similar concept is used with the <a href="Plugin_channel.html#MC.7CAdvCdm" class="mw-redirect" title="Plugin channel"><code>MC|AdvCdm</code> plugin channel</a> (used for command blocks).  That packet decides whether a block location is being sent or an entity ID (minecart command blocks) is being sent based off of the value of the first byte in the packet.
+</p><p>In the same way, forge uses the first byte of the plugin message to specify which packet to use.  It uses <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/FMLIndexedMessageToMessageCodec.java">FMLIndexedMessageToMessageCodec</a> to automatically switch the value.
+</p><p>Discriminator bytes change depending on the channel: 0 for <code>FML|HS</code> means something different from 0 for <code>FML</code>.
+</p>
+<h2><span class="mw-headline" id="FML.7CHS_Packet_structure"><code>FML|HS</code> Packet structure</span></h2>
+<p><code>FML|HS</code> is used to perform the handshake.  Discriminator bytes are found in <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeCodec.java">FMLHandshakeCodec</a>.
+</p>
+<h3><span class="mw-headline" id="ServerHello"><a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L33-L76">ServerHello</a></span></h3>
+<p>Starts the handshake.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="3"> <code>FML|HS</code>
+</td>
+<td rowspan="3"> Client
+</td>
+<td> Discriminator
+</td>
+<td> Byte
+</td>
+<td> Always 0 for ServerHello
+</td></tr>
+<tr>
+<td> FML protocol Version
+</td>
+<td> Byte
+</td>
+<td> Determined from <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/NetworkRegistry.java#L67-L69">NetworkRegistery</a>.  Currently <code>2</code>.
+</td></tr>
+<tr>
+<td> Override dimension
+</td>
+<td> Optional Int
+</td>
+<td> Only sent if protocol version is greater than 1.
+</td></tr></table>
+<h3><span class="mw-headline" id="ClientHello"><a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L77-L95">ClientHello</a></span></h3>
+<p>Response from the client to the ServerHello packet.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="2"> <code>FML|HS</code>
+</td>
+<td rowspan="2"> Server
+</td>
+<td> Discriminator
+</td>
+<td> Byte
+</td>
+<td> Always 1 for ClientHello.
+</td></tr>
+<tr>
+<td> FML protocol Version
+</td>
+<td> Byte
+</td>
+<td> Determined from <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/NetworkRegistry.java#L67-L69">NetworkRegistery</a>.  Currently <code>2</code>.
+</td></tr></table>
+<h3><span class="mw-headline" id="ModList"><a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L96-L152">ModList</a></span></h3>
+<p>Contains a list of all mods installed on the server or client.  Sent from the client to the server first, and then the server responds with its mod list.  The server's mod list matches the one sent in the ping.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th colspan="2"> Field Name
+</th>
+<th colspan="2"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="4"> <code>FML|HS</code>
+</td>
+<td rowspan="4"> Both
+</td>
+<td colspan="2"> Discriminator
+</td>
+<td colspan="2"> Byte
+</td>
+<td> Always 2 for ModList
+</td></tr>
+<tr>
+<td colspan="2"> Number of mods
+</td>
+<td colspan="2"> Varint
+</td>
+<td> Number of mods below
+</td></tr>
+<tr>
+<td rowspan="2"> Mods
+</td>
+<td> Mod name
+</td>
+<td rowspan="2"> Array
+</td>
+<td> String
+</td>
+<td> Name of the mod
+</td></tr>
+<tr>
+<td> Mod version
+</td>
+<td> String
+</td>
+<td> Version of the mod
+</td></tr></table>
+<h3><span class="mw-headline" id="RegistryData"><a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/6e90348dc546164b21735aefd83ed0bac0d8283c/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240">RegistryData</a></span></h3>
+<table border="1px" cellpadding="5" cellspacing="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td rowspan="2"> <a href="./File:Huh.png.html" class="image"><img alt="Huh.png" src="images/4/4f/Huh.png" width="40" height="40" /></a></td>
+<td>The following information needs to be added to this page:
+</td></tr>
+<tr>
+<td style="border:1px solid red"> <b>Explain exactly what registries are, and figure out what Substitutions and Dummies are</b>
+</td></tr></table>
+<p>The server sends several of this packet, one for each registry.  It'll keep sending them until the hasMore value is no longer true.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th colspan="2"> Field Name
+</th>
+<th colspan="2"> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="10"> <code>FML|HS</code>
+</td>
+<td rowspan="10"> Both
+</td>
+<td colspan="2"> Discriminator
+</td>
+<td colspan="2"> Byte
+</td>
+<td> Always 3 for RegistryData.
+</td></tr>
+<tr>
+<td colspan="2"> Has more
+</td>
+<td colspan="2"> Boolean
+</td>
+<td> Marks whether another RegistryData packet will be sent after this.
+</td></tr>
+<tr>
+<td colspan="2"> Name
+</td>
+<td colspan="2"> String
+</td>
+<td> Name of the registry for this packet
+</td></tr>
+<tr>
+<td colspan="2"> Number of ids
+</td>
+<td colspan="2"> Varint
+</td>
+<td> Number of ids sent below
+</td></tr>
+<tr>
+<td rowspan="2"> Ids
+</td>
+<td> Name
+</td>
+<td rowspan="2"> Array
+</td>
+<td> String
+</td>
+<td> Name of the thing
+</td></tr>
+<tr>
+<td> Id
+</td>
+<td> Varint
+</td>
+<td> Numerical id of the thing
+</td></tr>
+<tr>
+<td colspan="2"> Number of substitutions
+</td>
+<td colspan="2"> Varint
+</td>
+<td> Number of substitutions sent below
+</td></tr>
+<tr>
+<td colspan="2"> Substitutions
+</td>
+<td colspan="2"> Array of strings
+</td>
+<td> Each substitution
+</td></tr>
+<tr>
+<td colspan="2"> Number of dummies
+</td>
+<td colspan="2"> Varint
+</td>
+<td> Number of dummies in the array below.  <b>May not be present in older versions of forge</b>; check if there still is data remaining in the packet before continuing to read data.
+</td></tr>
+<tr>
+<td colspan="2"> Dummies
+</td>
+<td colspan="2"> Array of strings
+</td>
+<td> Each dummy?
+</td></tr></table>
+<h3><span class="mw-headline" id="HandshakeAck"><a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L241-L264">HandshakeAck</a></span></h3>
+<p>Confirms that the client is able to use the settings sent previously.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="2"> <code>FML|HS</code>
+</td>
+<td rowspan="2"> Both
+</td>
+<td> Discriminator
+</td>
+<td> Byte
+</td>
+<td> Always -1 (255) for HandshakeAck
+</td></tr>
+<tr>
+<td> Phase
+</td>
+<td> Byte
+</td>
+<td> The current phase, which is the ordinal (0-indexed) in the <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeClientState.java">FMLHandshakeClientState</a> or <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeServerState.java">FMLHandshakeServerState</a> enums (if the server is sending it, it is in the ServerState enum, and if the client is sending it, it is the ClientState enum).
+</td></tr></table>
+<h3><span class="mw-headline" id="HandshakeReset"><a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L265-L267">HandshakeReset</a></span></h3>
+<p>Causes the client to recomplete the entire handshake from the start.  There is no payload beyond the discriminator byte.
+</p><p>The normal forge server does not ever use this packet, but it is used <a rel="nofollow" class="external text" href="https://github.com/SpigotMC/BungeeCord/blob/aaddc9fcfdcada8d19ab115f2dcc8aed413a9206/proxy/src/main/java/net/md_5/bungee/ServerConnector.java#L126-L138">when connecting through a BungeeCord instance</a>, specifically when transitioning from a vanilla server to a modded one or from a modded server to another modded server.
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="1"> <code>FML|HS</code>
+</td>
+<td rowspan="1"> Client
+</td>
+<td> Discriminator
+</td>
+<td> Byte
+</td>
+<td> Always -2 (254) for HandshakeReset
+</td></tr></table>
+<h2><span class="mw-headline" id="FML.7CMP_and_multipart_packets"><code>FML|MP</code> and multipart packets</span></h2>
+<p>Forge supports splitting large clientbound plugin message packets into smaller multipart packets.  This functionality does not  exist serverbound.  This system is available in all versions. 
+</p><p>This system starts by <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/16bfd8cef1d12ee9ca0de1122addaf9916767ae9/src/main/java/net/minecraftforge/fml/common/network/internal/FMLProxyPacket.java#L164-L167">sending</a> an <code>FML|MP</code> packet to indicate what the actual packet is (note that this is within the plugin message itself):
+</p>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound To
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="3"> <code>FML|MP</code>
+</td>
+<td rowspan="3"> Client
+</td>
+<td> Channel
+</td>
+<td> String (20)
+</td>
+<td> The wrapped channel
+</td></tr>
+<tr>
+<td> Parts
+</td>
+<td> Unsigned byte
+</td>
+<td> Total number of parts (equal to <code>ceil(dataLength / (double)(1048495))</code>
+</td></tr>
+<tr>
+<td> Length
+</td>
+<td> Int
+</td>
+<td> Total length of wrapped data
+</td></tr></table>
+<p>This is <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/16bfd8cef1d12ee9ca0de1122addaf9916767ae9/src/main/java/net/minecraftforge/fml/common/network/internal/FMLProxyPacket.java#L173-L178">followed</a> by a series of additional <code>FML|MP</code> packets which write the payload.  Each packet is prefixed with the part number as an unsigned byte (starting at 0), followed by the rest of the packet containing up to 1048495 bytes of the actual message.  Each packet must be sent in order.
+</p><p>Up to 52424750  bytes (~52 megabytes) may be sent through this system.
+</p>
+<h2><span class="mw-headline" id="Differences_from_Forge_1.7.10">Differences from Forge 1.7.10</span></h2>
+<p>Forge for Minecraft 1.8 made some changes from the 1.7.10 version.
+</p><p>The most important thing to keep track of isn't (entirely) a forge change.  In 1.7.10, <a rel="nofollow" class="external text" href="http://wiki.vg/index.php?title=Protocol&amp;oldid=6003#Plugin_Message_2">plugin channel packets</a> are length prefixed, while in 1.8 they are not.  However, forge makes <a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/605457deecba2144d69113d3c9ce6589021f542b/fml/patches/minecraft/net/minecraft/network/play/server/S3FPacketCustomPayload.java.patch">some more changes</a> to the server to client packet (but not the client to server packet): Rather than using a short for the length, a varshort is used.  Due to the way that varshorts work, this is backwards compatible, but if this is not accounted for you may receive forge packets that seem corrupted as there is an extra byte that appears seemingly randomly.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> While it may seem like you can get away with not handling varshorts, on servers with lots of mods (EG FTB), this will appear.
+</span>
+</p><p>Additionally, in 1.7.10 the registries packet is instead "ModIdData":
+</p>
+<h3><span class="mw-headline" id="ModIdData"><a rel="nofollow" class="external text" href="https://github.com/MinecraftForge/MinecraftForge/blob/ebe9b6d4cbc4a5281c386994f1fbda04df5d2e1f/src/main/java/net/minecraftforge/fml/common/network/handshake/FMLHandshakeMessage.java#L154-L240">ModIdData</a></span></h3>
+<p>Contains numeric ID mapping for blocks and items.
+</p>
+<table border="1px" cellpadding="5" cellspacing="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td rowspan="2"> <a href="./File:Huh.png.html" class="image"><img alt="Huh.png" src="images/4/4f/Huh.png" width="40" height="40" /></a></td>
+<td>The following information needs to be added to this page:
+</td></tr>
+<tr>
+<td style="border:1px solid red"> <b>Again, what are blockSubstitutions and itemSubstitutions?</b>
+</td></tr></table>
+<table class="wikitable">
+<tr>
+<th> Channel
+</th>
+<th> Bound to
+</th>
+<th colspan="2">Name
+</th>
+<th colspan="2">Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="8"><code>FML|HS</code>
+</td>
+<td rowspan="8">Client
+</td>
+<td colspan="2">Discriminator
+</td>
+<td colspan="2">Byte
+</td>
+<td> Always 3 for ModIdData
+</td></tr>
+<tr>
+<td colspan="2">Mapping length
+</td>
+<td colspan="2">VarInt
+</td>
+<td> Length of the following mapping
+</td></tr>
+<tr>
+<td rowspan="2">Mapping
+</td>
+<td> Name
+</td>
+<td rowspan="2">Array
+</td>
+<td> String
+</td>
+<td> Name of the block/item.
+</td></tr>
+<tr>
+<td> ID
+</td>
+<td> VarInt
+</td>
+<td> Numeric ID of the item.
+</td></tr>
+<tr>
+<td colspan="2">Block substitutions length
+</td>
+<td colspan="2">VarInt
+</td>
+<td> Length of the following array
+</td></tr>
+<tr>
+<td colspan="2">Block substitutions
+</td>
+<td colspan="2">Array of strings
+</td>
+<td> Block substitutions
+</td></tr>
+<tr>
+<td colspan="2">Item substitutions length
+</td>
+<td colspan="2">VarInt
+</td>
+<td> Length of the following array
+</td></tr>
+<tr>
+<td colspan="2">Item substitutions
+</td>
+<td colspan="2">Array of strings
+</td>
+<td> Item substitutions
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20180823152816
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.118 seconds
+Real time usage: 0.237 seconds
+Preprocessor visited node count: 102/1000000
+Preprocessor generated node count: 211/1000000
+Post‐expand include size: 1496/2097152 bytes
+Template argument size: 484/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   14.156      1 - -total
+ 43.23%    6.120      3 - Template:Need_Info
+ 42.90%    6.072      2 - Template:Warning
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:1060-0!*!0!!en!5!* and timestamp 20180823152816 and revision id 13338
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Minecraft_Forge_Handshake&amp;oldid=13338">http://wiki.vg/index.php?title=Minecraft_Forge_Handshake&amp;oldid=13338</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Need_Info.html" title="Category:Need Info">Need Info</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Minecraft+Forge+Handshake" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Minecraft+Forge+Handshake" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Minecraft_Forge_Handshake.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Minecraft_Forge_Handshake&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Minecraft_Forge_Handshake.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Minecraft_Forge_Handshake.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Minecraft_Forge_Handshake&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Minecraft_Forge_Handshake&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Minecraft_Forge_Handshake.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Minecraft_Forge_Handshake" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Minecraft_Forge_Handshake" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Minecraft_Forge_Handshake&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Minecraft_Forge_Handshake&amp;oldid=13338" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Minecraft_Forge_Handshake&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 8 September 2017, at 23:17.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":227});});</script>
+	</body>
+</html>

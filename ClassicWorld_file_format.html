@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>ClassicWorld file format - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ClassicWorld_file_format","wgTitle":"ClassicWorld file format","wgCurRevisionId":14137,"wgRevisionId":14137,"wgArticleId":828,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Classic"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"ClassicWorld_file_format","wgRelevantArticleId":828,"wgRequestId":"3afc8f5136d7100be10d6de5","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ClassicWorld_file_format rootpage-ClassicWorld_file_format skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">ClassicWorld file format</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="ClassicWorld_file_format.html#mw-head">navigation</a>, 					<a href="ClassicWorld_file_format.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>ClassicWorld</b> is a level format devised by <a href="https://wiki.vg/index.php?title=User:Tyteen4a03&amp;action=edit&amp;redlink=1" class="new" title="User:Tyteen4a03 (page does not exist)">tyteen4a03</a> with input from <a href="https://wiki.vg/index.php?title=User:F&amp;action=edit&amp;redlink=1" class="new" title="User:F (page does not exist)">fragmer</a> for use by custom Minecraft Classic servers. Originally designed for <a rel="nofollow" class="external text" href="https://github.com/tyteen4a03/cloudBox">cloudBox</a>, it is extensible enough to be used by any server. Metadata allows to attach software-specific data, and to easily share <a href="Classic_Protocol_Extension.html" title="Classic Protocol Extension">Classic Protocol Extension</a> settings.
+</p><p>ClassicWorld files should have extension <code>.cw</code>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="ClassicWorld_file_format.html#Specification"><span class="tocnumber">1</span> <span class="toctext">Specification</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="ClassicWorld_file_format.html#Basic_structure"><span class="tocnumber">1.1</span> <span class="toctext">Basic structure</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="ClassicWorld_file_format.html#Metadata_structure"><span class="tocnumber">1.2</span> <span class="toctext">Metadata structure</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="ClassicWorld_file_format.html#Metadata_implementation_suggestions"><span class="tocnumber">1.3</span> <span class="toctext">Metadata implementation suggestions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="ClassicWorld_file_format.html#Non-spatial_metadata"><span class="tocnumber">1.3.1</span> <span class="toctext">Non-spatial metadata</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="ClassicWorld_file_format.html#Sparse_spatial_metadata_.28some_blocks.2Fcoordinates.29"><span class="tocnumber">1.3.2</span> <span class="toctext">Sparse spatial metadata (some blocks/coordinates)</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="ClassicWorld_file_format.html#Spatial_metadata_.28every_block.2Fcoordinate.29"><span class="tocnumber">1.3.3</span> <span class="toctext">Spatial metadata (every block/coordinate)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="ClassicWorld_file_format.html#Classic_Protocol_Extension_metadata"><span class="tocnumber">2</span> <span class="toctext">Classic Protocol Extension metadata</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="ClassicWorld_file_format.html#ClickDistance"><span class="tocnumber">2.1</span> <span class="toctext">ClickDistance</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="ClassicWorld_file_format.html#CustomBlocks"><span class="tocnumber">2.2</span> <span class="toctext">CustomBlocks</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="ClassicWorld_file_format.html#EnvColors"><span class="tocnumber">2.3</span> <span class="toctext">EnvColors</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="ClassicWorld_file_format.html#EnvMapAppearance"><span class="tocnumber">2.4</span> <span class="toctext">EnvMapAppearance</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="ClassicWorld_file_format.html#EnvWeatherType"><span class="tocnumber">2.5</span> <span class="toctext">EnvWeatherType</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="ClassicWorld_file_format.html#BlockDefinitions"><span class="tocnumber">2.6</span> <span class="toctext">BlockDefinitions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="ClassicWorld_file_format.html#Support"><span class="tocnumber">3</span> <span class="toctext">Support</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Specification">Specification</span></h2>
+<h3><span class="mw-headline" id="Basic_structure">Basic structure</span></h3>
+<p>The map file consists of a GZip-compressed, big-endian <a href="NBT.html" title="NBT">NBT</a> data structure.
+</p><p>All tags are required, unless noted otherwise. Also note that ordering of named tags cannot always be guaranteed in NBT libraries. Therefore, when reading files, do not assume a specific order of named tags within a compound tag. However, when writing files, do try to stick to this order if possible.
+</p>
+<pre>TAG_Compound("ClassicWorld"): 14 entries {
+  TAG_Byte("FormatVersion")
+  TAG_String("Name")
+  TAG_Byte_Array("UUID")
+  TAG_Short("X")
+  TAG_Short("Y")
+  TAG_Short("Z")
+  TAG_Compound("CreatedBy"): 2 entries {
+    TAG_String("Service")
+    TAG_String("Username")
+  }
+  TAG_Compound("MapGenerator"): 2 entries {
+    TAG_String("Software")
+    TAG_String("MapGeneratorName")
+  }
+  TAG_Long("TimeCreated")
+  TAG_Long("LastAccessed")
+  TAG_Long("LastModified")
+  TAG_Compound("Spawn"): 5 entries {
+    TAG_Short("X")
+    TAG_Short("Y")
+    TAG_Short("Z")
+    TAG_Byte("H")
+    TAG_Byte("P")
+  }
+  TAG_Byte_Array("BlockArray")
+  TAG_Compound("Metadata") {}
+}
+</pre>
+<ul><li><b>FormatVersion</b> is a constant, currently at <code>1</code></li>
+<li><b>Name</b> should be limited to 64 characters in length, and contain only characters that can be displayed in Minecraft.</li>
+<li><b>UUID</b> is a unique 128-bit identifier for this map (for example a GUID), saved as a 16-byte array. Must be set when the map is originally generated, and must be preserved intact when loading/saving worlds. UUID stands for <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Universally_unique_identifier">Universally Unique Identifier</a>.</li>
+<li><b>X</b> is the width (first horizontal dimension) of the map.</li>
+<li><b>Y</b> is the height (vertical dimension) of the map.</li>
+<li><b>Z</b> is the length (second horizontal dimension) of the map.</li>
+<li><i><b>TimeCreated</b></i> is a UTC Unix timestamp that's set when the map is originally generated. Optional.</li>
+<li><i><b>LastModified</b></i> is a UTC Unix timestamp that's set when the map's blocks are modified. Changes to spawn point or metadata should not affect this date. Optional.</li>
+<li><i><b>LastAccessed</b></i> is a UTC Unix timestamp that's set when the map is accessed by any player. Optional.</li>
+<li><b>Spawn</b> compound tag defines the point where players spawn on the map. All coordinates are in player-position units (32 units per block).
+<ul><li><b>X</b> is the first horizontal component of player's position.</li>
+<li><b>Y</b> is the vertical component of player's position.</li>
+<li><b>Z</b> is the second horizontal component of player's position.</li>
+<li><b>H</b> is the heading (yaw) component of player's orientation.</li>
+<li><b>P</b> is the pitch component of player's orientation.</li></ul></li>
+<li><i><b>CreatedBy</b></i> identifies the creator of this map. Optional compound.
+<ul><li><i><b>Username</b></i> is the name of a player. A valid username is expected, and editors should to their best of their ability ensure that it is so at the time of editing.</li>
+<li><i><b>Service</b></i> can be "Minecraft" (for Minecraft.net usernames) or "ClassiCube" (for ClassiCube.net usernames).</li></ul></li>
+<li><i><b>MapGenerator</b></i> contains information related to map generation. Optional compound.
+<ul><li><i><b>Software</b></i> is the name of software that originally generated this map (e.g. "cloudBox" or "fCraft").</li>
+<li><i><b>MapGeneratorName</b></i> is the name of a specific generation method used by the software (e.g. "Realistic" or "Flat").</li></ul></li>
+<li><b>BlockArray</b> contains the actual block data, 1 byte per block. Same packing order as in <a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelDataChunk packets</a>.</li>
+<li><b>Metadata</b> contains all kinds of software- and plugin-specific data. Servers should preserve unrecognized metadata from other software, if possible.</li></ul>
+<h3><span class="mw-headline" id="Metadata_structure">Metadata structure</span></h3>
+<p>The <b>Metadata</b> compound tag must contain zero or more named compound tags, each named after a specific software that produced them. Each of those compound tags should contain zero or more named compound tags, one for each logical grouping (e.g. for each plugin or subsystem). An example metadata tag, with two softwares and 3 groups, is shown here:
+</p>
+<pre>TAG_Compound("Metadata") {
+  TAG_Compound("SomeSoftware") {
+    TAG_Compound("OneGroup") {
+      ...implementation-specific contents...
+    }
+    TAG_Compound("AnotherGroup") {
+      ...implementation-specific contents...
+    }
+  }
+  TAG_Compound("OtherSoftware") {
+    TAG_Compound("Group") {
+      ...implementation-specific contents...
+    }
+  }
+}
+</pre>
+<h3><span class="mw-headline" id="Metadata_implementation_suggestions">Metadata implementation suggestions</span></h3>
+<h4><span class="mw-headline" id="Non-spatial_metadata">Non-spatial metadata</span></h4>
+<p>For metadata that does not refer to specific blocks, any tag structure within a group tag is fine.
+</p>
+<h4><span class="mw-headline" id="Sparse_spatial_metadata_.28some_blocks.2Fcoordinates.29">Sparse spatial metadata (some blocks/coordinates)</span></h4>
+<p>For metadata that refers to a few specific blocks/coordinates, ClassicWorld format suggests the following format.
+</p>
+<pre>TAG_Compound("SomeSoftware") {
+  TAG_Compound("SomeGroup") {
+    TAG_Int_Array("BlockIndices")
+    TAG_List("BlockMetadata") {}
+  }
+}
+</pre>
+<dl><dd><ul><li><b>BlockIndices</b> is an array of block indices, each referring to a position in the BlockArray.</li>
+<li><b>BlockMetadata</b> is a list of unnamed tags, of the same length and order as BlockIndices. Each tag in BlockMetadata refers to a coordinate in BlockIndices.</li></ul></dd></dl>
+<h4><span class="mw-headline" id="Spatial_metadata_.28every_block.2Fcoordinate.29">Spatial metadata (every block/coordinate)</span></h4>
+<p>In the common case of 1 byte or 1 integer being attached to every block/coordinate on the map, simply use a ByteArray/IntArray tag of the same length and order as BlockArray.
+</p><p>When more fixed-length data is needed, use one or more List tags, each of the same length and order as BlockArray.
+</p><p>When a variable amount of information is needed to be stored for every block/coordinate, use a List of Compound tags. Again, same length and order as BlockArray should be used.
+</p>
+<pre>TAG_Compound("SomeSoftware") {
+  TAG_Compound("SomeGroup") {
+    TAG_Byte_Array("OneByteForEveryBlock")
+    TAG_Int_Array("OneIntForEveryBlock")
+    TAG_List("CustomDataForEveryBlock")
+  }
+}
+</pre>
+<h2><span class="mw-headline" id="Classic_Protocol_Extension_metadata">Classic Protocol Extension metadata</span></h2>
+<p>Metadata name "<code>CPE</code>" is reserved for <a href="Classic_Protocol_Extension.html" title="Classic Protocol Extension">Classic Protocol Extension</a> data, and has standardized contents. Any or all of the below sections may be present, each corresponding to a CPE extension. Each group contains an Int tag named <i>ExtensionVersion</i>.
+</p>
+<h3><span class="mw-headline" id="ClickDistance">ClickDistance</span></h3>
+<p>Stores world-specific setting for <a href="Classic_Protocol_Extension.html#ClickDistance" title="Classic Protocol Extension">ClickDistance</a> extension. Note that <b>Distance</b> should be in player-position units (32 units per block).
+</p>
+<pre>TAG_Compound("ClickDistance"): 2 entries {
+  TAG_Int("ExtensionVersion")
+  TAG_Short("Distance")
+}
+</pre>
+<h3><span class="mw-headline" id="CustomBlocks">CustomBlocks</span></h3>
+<p>Stores world-specific setting for <a href="Classic_Protocol_Extension.html#CustomBlocks" title="Classic Protocol Extension">CustomBlocks</a> extension.
+</p>
+<pre>TAG_Compound("CustomBlocks"): 3 entries {
+  TAG_Int("ExtensionVersion")
+  TAG_Short("SupportLevel")
+  TAG_Byte_Array("Fallback"): [256 bytes]
+}
+</pre>
+<p>The purpose of the <i>Fallback</i> array is to allow servers with lower <i>SupportLevel</i> to load maps created by servers with higher <i>SupportLevel</i>. In such cases, any unsupported block IDs can be substituted using <i>Fallback</i> mapping. For instance, when a [hypothetical] block ID <code>200</code> is encountered, loading software should substitute it with the value of <code>Fallback[200]</code>.
+</p>
+<h3><span class="mw-headline" id="EnvColors">EnvColors</span></h3>
+<p>Stores world-specific setting for <a href="Classic_Protocol_Extension.html#EnvColors" title="Classic Protocol Extension">EnvColors</a> extension. Color variables that are simply set to "default" (-1,-1,-1) may be omitted.
+</p>
+<pre>TAG_Compound("EnvColors"): 6 entries {
+  TAG_Int("ExtensionVersion")
+  TAG_Compound("Sky"): 3 entries {
+    TAG_Short("R")
+    TAG_Short("G")
+    TAG_Short("B")
+  }
+  TAG_Compound("Cloud"): 3 entries {
+    TAG_Short("R")
+    TAG_Short("G")
+    TAG_Short("B")
+  }
+  TAG_Compound("Fog"): 3 entries {
+    TAG_Short("R")
+    TAG_Short("G")
+    TAG_Short("B")
+  }
+  TAG_Compound("Ambient"): 3 entries {
+    TAG_Short("R")
+    TAG_Short("G")
+    TAG_Short("B")
+  }
+  TAG_Compound("Sunlight"): 3 entries {
+    TAG_Short("R")
+    TAG_Short("G")
+    TAG_Short("B")
+  }
+}
+</pre>
+<h3><span class="mw-headline" id="EnvMapAppearance">EnvMapAppearance</span></h3>
+<p>Stores world-specific setting for <a href="Classic_Protocol_Extension.html#EnvMapAppearance" title="Classic Protocol Extension">EnvMapAppearance</a> extension.
+</p>
+<pre>TAG_Compound("EnvMapAppearance"): 5 entries {
+  TAG_Int("ExtensionVersion")
+  TAG_String("TextureURL")
+  TAG_Byte("SideBlock")
+  TAG_Byte("EdgeBlock")
+  TAG_Short("SideLevel")
+}
+</pre>
+<h3><span class="mw-headline" id="EnvWeatherType">EnvWeatherType</span></h3>
+<p>Stores world-specific setting for <a href="Classic_Protocol_Extension.html#EnvWeatherType" title="Classic Protocol Extension">EnvWeatherType</a> extension.
+</p>
+<pre>TAG_Compound("EnvWeatherType"): 1 entry {
+  TAG_Int("ExtensionVersion")
+  TAG_Byte("WeatherType")
+}
+</pre>
+<h3><span class="mw-headline" id="BlockDefinitions">BlockDefinitions</span></h3>
+<dl><dd>Stores world-specific setting for <a href="Classic_Protocol_Extension.html#BlockDefinitions" title="Classic Protocol Extension">BlockDefinitions</a> and <a href="Classic_Protocol_Extension.html#BlockDefinitionsExt" title="Classic Protocol Extension">BlockDefinitionsExt</a> extensions.</dd></dl>
+<dl><dd>Note: You must treat TAG_Byte/TAG_Byte_Array values as unsigned values. The ExtensionVersion for the compound tag is currently defined as version 1.</dd>
+<dd>&lt;ID&gt; in the TAG_Compound is replaced with the numerical value of the block's id in decimal. (e.g. Block20, Block50)</dd></dl>
+<pre>TAG_Compound("BlockDefinitions"): variable number of entries {
+ TAG_Int("ExtensionVersion")
+ TAG_Compound("Block&lt;ID&gt;"): 10 entries {
+   TAG_Byte("ID")
+   TAG_String("Name")
+   TAG_Float("Speed")
+   Tag_Byte_Array("Textures") { Top, Bottom, Left, Right, Front, Back }
+   Tag_Byte("TransmitsLight")
+   TAG_Byte("WalkSound")
+   TAG_Byte("Shape")
+   TAG_Byte("BlockDraw")
+   TAG_Byte_Array("Fog") { Density, Red, Green, Blue }
+   TAG_Byte_Array("Coords") { MinX, MinY, MinZ, MaxX, MaxY, MaxZ }
+}
+</pre>
+<h2><span class="mw-headline" id="Support">Support</span></h2>
+<p>These custom servers plan to add support for CW World Format: <a rel="nofollow" class="external text" href="http://github.com/tyteen4a03/cloudBox">cloudBox</a>, <a rel="nofollow" class="external text" href="http://www.fcraft.net/">fCraft</a>
+</p><p>The <a rel="nofollow" class="external text" href="http://www.classicube.net">ClassiCube</a> and <a rel="nofollow" class="external text" href="https://github.com/UnknownShadow200/ClassicalSharp">ClassicalSharp</a> clients supports loading and saving basic tags from the ClassicWorld file format.
+</p><p>Libraries:
+</p><p>C#: <a rel="nofollow" class="external text" href="https://github.com/umby24/ClassicWorld.Net">ClassicWorld.Net</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823155005
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.037 seconds
+Real time usage: 0.045 seconds
+Preprocessor visited node count: 59/1000000
+Preprocessor generated node count: 64/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:828-0!*!0!!en!*!* and timestamp 20180823155005 and revision id 14137
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=ClassicWorld_file_format&amp;oldid=14137">http://wiki.vg/index.php?title=ClassicWorld_file_format&amp;oldid=14137</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Classic.html" title="Category:Minecraft Classic">Minecraft Classic</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=ClassicWorld+file+format" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=ClassicWorld+file+format" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="ClassicWorld_file_format.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:ClassicWorld_file_format&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="ClassicWorld_file_format.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="ClassicWorld_file_format.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=ClassicWorld_file_format&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=ClassicWorld_file_format&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="ClassicWorld_file_format.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/ClassicWorld_file_format" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/ClassicWorld_file_format" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=ClassicWorld_file_format&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=ClassicWorld_file_format&amp;oldid=14137" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=ClassicWorld_file_format&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 19 July 2018, at 22:01.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":229});});</script>
+	</body>
+</html>

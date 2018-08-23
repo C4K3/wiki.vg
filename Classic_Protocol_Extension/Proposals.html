@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Classic Protocol Extension/Proposals - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Classic_Protocol_Extension/Proposals","wgTitle":"Classic Protocol Extension/Proposals","wgCurRevisionId":13360,"wgRevisionId":13360,"wgArticleId":852,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Classic_Protocol_Extension/Proposals","wgRelevantArticleId":852,"wgRequestId":"0a20467da9c8feb226af90cc","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Classic_Protocol_Extension_Proposals rootpage-Classic_Protocol_Extension skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Classic Protocol Extension/Proposals</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../Classic_Protocol_Extension.html" title="Classic Protocol Extension">Classic Protocol Extension</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Proposals.html#mw-head">navigation</a>, 					<a href="Proposals.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Proposals.html#Template"><span class="tocnumber">1</span> <span class="toctext">Template</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Proposals.html#Proposals"><span class="tocnumber">2</span> <span class="toctext">Proposals</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Proposals.html#PlaySound"><span class="tocnumber">2.1</span> <span class="toctext">PlaySound</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#LoadSound_packet"><span class="tocnumber">2.1.1</span> <span class="toctext">LoadSound packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#PlaySound_packet"><span class="tocnumber">2.1.2</span> <span class="toctext">PlaySound packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#SetVolume_packet"><span class="tocnumber">2.1.3</span> <span class="toctext">SetVolume packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="Proposals.html#ClientRedirection"><span class="tocnumber">2.2</span> <span class="toctext">ClientRedirection</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#ClientRedirection_packet"><span class="tocnumber">2.2.1</span> <span class="toctext">ClientRedirection packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="Proposals.html#ColorCodeControl"><span class="tocnumber">2.3</span> <span class="toctext">ColorCodeControl</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#ColorCodeControl_packet"><span class="tocnumber">2.3.1</span> <span class="toctext">ColorCodeControl packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="Proposals.html#UnicodeChat"><span class="tocnumber">2.4</span> <span class="toctext">UnicodeChat</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Proposals.html#SelectionCuboid_v2"><span class="tocnumber">2.5</span> <span class="toctext">SelectionCuboid v2</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#MakeSelection_packet_v2"><span class="tocnumber">2.5.1</span> <span class="toctext">MakeSelection packet v2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="Proposals.html#Player_Animation"><span class="tocnumber">2.6</span> <span class="toctext">Player Animation</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#AnimatePlayer_packet"><span class="tocnumber">2.6.1</span> <span class="toctext">AnimatePlayer packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="Proposals.html#PlayerHealth"><span class="tocnumber">2.7</span> <span class="toctext">PlayerHealth</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#UpdateLives_packet"><span class="tocnumber">2.7.1</span> <span class="toctext">UpdateLives packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#UpdateLives_packet_2"><span class="tocnumber">2.7.2</span> <span class="toctext">UpdateLives packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="Proposals.html#ExtPlayerList_v3"><span class="tocnumber">2.8</span> <span class="toctext">ExtPlayerList v3</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#ExtAddEntity3_packet"><span class="tocnumber">2.8.1</span> <span class="toctext">ExtAddEntity3 packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="Proposals.html#HackControl_v2"><span class="tocnumber">2.9</span> <span class="toctext">HackControl v2</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#HackControl2_packet"><span class="tocnumber">2.9.1</span> <span class="toctext">HackControl2 packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="Proposals.html#MessageTypes_v2"><span class="tocnumber">2.10</span> <span class="toctext">MessageTypes v2</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Proposals.html#ExtMapInfo"><span class="tocnumber">2.11</span> <span class="toctext">ExtMapInfo</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#FinalMapInfo_packet"><span class="tocnumber">2.11.1</span> <span class="toctext">FinalMapInfo packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="Proposals.html#BlockDefinitionsExt2"><span class="tocnumber">2.12</span> <span class="toctext">BlockDefinitionsExt2</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#DefineBlockExt2_Packet"><span class="tocnumber">2.12.1</span> <span class="toctext">DefineBlockExt2 Packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="Proposals.html#SoundControl"><span class="tocnumber">2.13</span> <span class="toctext">SoundControl</span></a>
+<ul>
+<li class="toclevel-3"><a href="Proposals.html#DefineMusic_packet"><span class="tocnumber">2.13.1</span> <span class="toctext">DefineMusic packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#DefineBlockSound_packet"><span class="tocnumber">2.13.2</span> <span class="toctext">DefineBlockSound packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#DefineLoop_packet"><span class="tocnumber">2.13.3</span> <span class="toctext">DefineLoop packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#DefineSFX_packet"><span class="tocnumber">2.13.4</span> <span class="toctext">DefineSFX packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#PlayMusic_packet"><span class="tocnumber">2.13.5</span> <span class="toctext">PlayMusic packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#PlayLevelLoopSource_packet"><span class="tocnumber">2.13.6</span> <span class="toctext">PlayLevelLoopSource packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#PlayEntityLoopSource_packet"><span class="tocnumber">2.13.7</span> <span class="toctext">PlayEntityLoopSource packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#PlaySFX_packet"><span class="tocnumber">2.13.8</span> <span class="toctext">PlaySFX packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#PlayLevelSFX_packet"><span class="tocnumber">2.13.9</span> <span class="toctext">PlayLevelSFX packet</span></a></li>
+<li class="toclevel-3"><a href="Proposals.html#PlayEntitySFX_packet"><span class="tocnumber">2.13.10</span> <span class="toctext">PlayEntitySFX packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="Proposals.html#WebSocketsSupport"><span class="tocnumber">2.14</span> <span class="toctext">WebSocketsSupport</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Template">Template</span></h1>
+<p>Add your proposal at the end of the page. Please use <a href="../Classic_Protocol_Extension.html#Extensions" title="Classic Protocol Extension">existing extensions</a> as your guide to formatting. Please sign your proposals and comments by ending it with <code>~~~~</code>.
+</p>
+<pre>===ExtensionName===
+:Proposed by ~~~~
+:Brief summary of the extension.
+:'''Motivation''': Explain why this is needed or how it is useful.
+:'''Client Behavior''': Detailed description of all new behavior that game clients need to implement in order to support this extension. Consider interaction with other extensions.
+:'''Server Behavior''': Detailed description of all new behavior that game servers need to implement in order to support this extension. Consider interaction with other extensions.
+:(Packet definitions, remarks, illustrations, and data tables go here)
+:(Comments go here, please sign them)
+</pre>
+<h1><span class="mw-headline" id="Proposals">Proposals</span></h1>
+<h3><span class="mw-headline" id="PlaySound">PlaySound</span></h3>
+<dl><dd>Proposed by&#160;!!!WARLOCK!!!</dd>
+<dd>This extension allows server to play custom sound and musics on client.</dd>
+<dd><b>Motivation</b>: Servers can play custom musics or sound effects just in time or when something changes. Useful for gamemodes such as zombie survival, Servers can play zombie moaning sound while zombies are close to players. Player join and leave sounds, Kill streak sounds for games such as CTF, Radio and DJ class for players and sound effects for explosions and player deaths.</dd>
+<dd><b>Client Behavior</b>: Client must download and load, or load the sound directly from the URL with the ID. Client must be able to download any time after MapFinalize has sent. If the URL is empty then the Client must unload the sound with that ID. Client must unload the sound and load a new one if there's a sound with existing ID. Client must be able to play the sound right after receiving the PlaySound packet. The last playing sound can not be ignored or stopped when a new sound is going to be played. Files type must be in .WAV, otherwise they're ignored. Client must ignore downloading the existing files from Server if they're saved in drive. Client must not change the volume of all environments (Place/Destroy, Walk sounds) on SetVolume packet. Client must change a local variable for volume of next playing sound on SetVolume packet.</dd>
+<dd><b>Server Behavior</b>: Server must ignore sending the same url multiple times. Server can not send quick loops of sound due to network speed and client crash possibility. It's better to load all of required sounds after map load for better performance. Server must not send high sized file cause of time and speed it takes for download. Files type must be in .WAV, otherwise they're ignored. Server can change the volume before playing a sound. For a better networking, It's suggested to not send PlaySound instead of changing volume to zero.</dd>
+<dd><h4><span class="mw-headline" id="LoadSound_packet">LoadSound packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> ID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 143
+</td>
+<td class="col4 centeralign"> Gives the URL an ID.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> URL
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <a rel="nofollow" class="external free" href="http://site.com/firstblood.wav">http://site.com/firstblood.wav</a>
+</td>
+<td class="col4 centeralign"> Address to a .WAV file, put this empty for unload.
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 66 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="PlaySound_packet">PlaySound packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> ID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 125
+</td>
+<td class="col4 centeralign"> Plays the sound saved as ID.
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 2 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="SetVolume_packet">SetVolume packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> Percent
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 87
+</td>
+<td class="col4 centeralign"> Set the next playing sound(s) volume to a Percentage.
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 2 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="ClientRedirection">ClientRedirection</span></h3>
+<dl><dd>Proposed by <a href="https://wiki.vg/index.php?title=User:Sysr_q&amp;action=edit&amp;redlink=1" class="new" title="User:Sysr q (page does not exist)">Sysr q</a> (<a href="https://wiki.vg/index.php?title=User_talk:Sysr_q&amp;action=edit&amp;redlink=1" class="new" title="User talk:Sysr q (page does not exist)">talk</a>) 10:17, 12 May 2014 (UTC)</dd>
+<dd>This extension allows servers to give clients a <i>redirection</i> to a separate, possibly "private" server.</dd>
+<dd><b>Motivation</b>: Allowing servers to redirect clients would be useful in several cases. Allowing a singular "hub" server to redirect players to various external (but related) servers depending on the gamemode they wish to play would allow tightly integrated networks. If servers are using an external "balancer" or some sort of Minecraft-aware proxy, the server could signal the proxy move its connection on the client's behalf to another server.</dd>
+<dd><b>Client Behavior</b>: Clients should be ready to receive a <i><b>ClientRedirection</b></i> packet any time after they receive a <i><b>LevelFinalize</b></i> packet. When clients receive a <i><b>ClientRedirection</b></i> packet, they should prompt the user with a message indicating the server they're being redirected too, and allow the user to continue or quit. Non-player clients (e.g., proxies) have the option of silently reconnecting on the client's behalf. Clients should then open a new connection to the newly redirected server, and begin standard negotiation protocol.</dd>
+<dd><b>Server Behavior</b>: Servers should only send a <i><b>ClientRedirection</b></i> packet after the they have sent a <i><b>LevelFinalize</b></i> packet. They should ensure the new server the client is being redirected to exists, and preferably is online and available.</dd>
+<dd><h4><span class="mw-headline" id="ClientRedirection_packet">ClientRedirection packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> Address
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> mc.example.org
+</td>
+<td class="col4 centeralign"> Can be an IP address (IPv4/IPv6) or a hostname.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Port
+</td>
+<td class="col2 centeralign"> int
+</td>
+<td class="col3 centeralign"> 25565
+</td>
+<td class="col4 centeralign">
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Name
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> Joe Blogg's Freebuild
+</td>
+<td class="col4 centeralign"> <i>(optional)</i> User-friendly name to be displayed in user prompt.
+</td></tr>
+<tr class="row4">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 133 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="ColorCodeControl">ColorCodeControl</span></h3>
+<dl><dd>Proposed by <a href="https://wiki.vg/index.php?title=User:F&amp;action=edit&amp;redlink=1" class="new" title="User:F (page does not exist)">F</a> (<a href="https://wiki.vg/index.php?title=User_talk:F&amp;action=edit&amp;redlink=1" class="new" title="User talk:F (page does not exist)">talk</a>) 22:00, 28 August 2014 (UTC)</dd>
+<dd>Gives servers an option to allow players to type in color codes, and a way to render <code>&amp;</code> character in chat.</dd>
+<dd><b>Motivation</b>: Allow players to type in color codes and to use &amp; in chat.</dd>
+<dd><b>Client Behavior</b>: When this extension is mutually supported, treat character sequence <code>&amp;&amp;</code> as meaning "draw an <code>&amp;</code> character", without modifying current color. Do not allow <code>&amp;</code> to be typed or pasted into chat unless <i><b>ColorCodeControl</b></i> packet has been received with <i>AllowColorCodes</i> set to <code>1</code>.</dd>
+<dd><b>Server Behavior</b>: When this extension is mutually supported, server may send <i><b>ColorCodeControl</b></i> packet to allow client to type or paste color codes. Server should treat <code>&amp;&amp;</code> as described above.</dd></dl>
+<h4><span class="mw-headline" id="ColorCodeControl_packet">ColorCodeControl packet</span></h4>
+<dl><dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign">&#160;??
+</td>
+<td class="col1 centeralign"> AllowColorCodes
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 0
+</td>
+<td class="col4 centeralign"> 0 = disallow
+<p>1 = allow
+</p>
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 2 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="UnicodeChat">UnicodeChat</span></h3>
+<dl><dd>Proposed by <a href="https://wiki.vg/index.php?title=User:F&amp;action=edit&amp;redlink=1" class="new" title="User:F (page does not exist)">F</a> (<a href="https://wiki.vg/index.php?title=User_talk:F&amp;action=edit&amp;redlink=1" class="new" title="User talk:F (page does not exist)">talk</a>) 22:48, 28 August 2014 (UTC)</dd>
+<dd>Expands character encoding beyond ASCII. There are three ways to go about this:
+<ol><li> Expand charset to 256 characters using <b><a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Windows-1252">Win-1252</a></b>.
+<ul><li> <span style="color:#060"><b>Pro</b></span>: Easiest to implement in clients (few changes to FontRenderer needed) and servers (no multibyte character support needed).</li>
+<li> <span style="color:#060"><b>Pro</b></span>: No new packets needed.</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Easy to create custom fonts.</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Easy for servers to maintain compatibility with legacy clients, since only 128 characters need to be remapped, most of which have decent ASCII matches.</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Low resource use (low RAM and VRAM use, no additional CPU use, small font file).</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Still only 256 characters. Only covers Latin-derived (English and Western/Central European) languages and common symbols.</li></ul></li>
+<li> Expand charset to Unicode <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Basic_Multilingual_Plane#Basic_Multilingual_Plane">Basic Multilingual Plane</a> (BMP) with <b>UCS-2</b> fixed-length encoding.
+<ul><li> <span style="color:#060"><b>Pro</b></span>: Lots of characters (~65k) covering most languages and symbols.</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Not too hard to implement (characters still fixed-width, native support in WinAPI / Java / C#).</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Free fonts available that covers all characters.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: New renderer (possibly third-party library) needed for rendering.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Higher resource use (higher RAM and VRAM use, more CPU use, large font file).</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Very hard to create custom fonts.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Still does not cover all characters.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Hard for servers to maintain compatibility with legacy clients.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Always uses 2 bytes per character for transmission (twice as much as ASCII/CP-1252).</li></ul></li>
+<li> Expand charset to Unicode <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Basic_Multilingual_Plane#Basic_Multilingual_Plane">Basic Multilingual Plane</a> (BMP) with <b>UTF-8</b> variable-length encoding.
+<ul><li> <span style="color:#060"><b>Pro</b></span>: Lots of characters (~65k) covering most languages and symbols.</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Not too hard to implement (characters can be freely converted to/from UCS-2, which is natively support in WinAPI / C#).</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Free fonts available that covers all characters.</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Uses 1 byte per character for transmission, most of the time.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: New renderer (possibly third-party library) needed for rendering.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Higher resource use (higher RAM and VRAM use, more CPU use, large font file).</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Hard to create custom fonts (unless some fallback rules are implemented).</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Still does not cover all characters.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Hard for servers to maintain compatibility with legacy clients.</li></ul></li>
+<li> Expand charset to full Unicode with <b>UTF-8</b> variable-length encoding. Includes all the supplemental Unicode planes.
+<ul><li> <span style="color:#060"><b>Pro</b></span>: Widely used in other software.</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Theoretically covers all languages and symbols.</li>
+<li> <span style="color:#060"><b>Pro</b></span>: Uses 1 byte per character for transmission, most of the time.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Does not <i>actually</i> cover all languages and symbols due to non-existence of 100% fonts.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Hard to find free fonts that extend beyond the BMP.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Harder to work with strings (due to variable-width characters).</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Third-party library needed for rendering.</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Highest resource use (highest RAM and VRAM use, most CPU use, largest font files).</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Hardest to implement (no native support in WinAPI / C#).</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Hard to create custom fonts (unless some fallback rules are implemented).</li>
+<li> <span style="color:#c00"><b>Con</b></span>: Hard for servers to maintain compatibility with legacy clients.</li></ul></li></ol></dd></dl>
+<h3><span class="mw-headline" id="SelectionCuboid_v2">SelectionCuboid v2</span></h3>
+<dl><dd>Proposed by FabTheZen, classic1234 and Rayne</dd>
+<dd><b>Motivation</b>: Allows the server to not only highlight parts of a world, but also determine whether those regions are walk through or not. This could be used to disallow players to walk inside restricted areas or zones which they are not allowed to build in. It could also be used as a jail when accompanied with the '-hax' option.</dd>
+<dd><b>Client behavior</b>: The client must receive the SelectionCuboid extension with version 2. It must also determine whether any selections on the map walk through or not.</dd>
+<dd><b>Server behavior</b>: The server behaves the same way SelectionCuboid v1 does.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="MakeSelection_packet_v2">MakeSelection packet v2</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="13">0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> SelectionID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> Numeric ID of the selection. Between 0 and 127.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Label
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>SomeZone</code>
+</td>
+<td class="col4"> Text label associated with the selection
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> StartX
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4"> X coordinate of the starting point
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> StartY
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>2</code>
+</td>
+<td class="col4"> Y coordinate of the starting point
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> StartZ
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>3</code>
+</td>
+<td class="col4"> Z coordinate of the starting point
+</td></tr>
+<tr class="row6">
+<td class="col1 centeralign"> EndX
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4"> X coordinate of the ending point
+</td></tr>
+<tr class="row7">
+<td class="col1 centeralign"> EndY
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>6</code>
+</td>
+<td class="col4"> Y coordinate of the ending point
+</td></tr>
+<tr class="row8">
+<td class="col1 centeralign"> EndZ
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>7</code>
+</td>
+<td class="col4"> Z coordinate of the ending point
+</td></tr>
+<tr class="row9">
+<td class="col1 centeralign"> Red
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>255</code>
+</td>
+<td class="col4">Between 0 and 255.
+</td></tr>
+<tr class="row10">
+<td class="col1 centeralign"> Green
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>34</code>
+</td>
+<td class="col4">Between 0 and 255.
+</td></tr>
+<tr class="row11">
+<td class="col1 centeralign"> Blue
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>128</code>
+</td>
+<td class="col4">Between 0 and 255.
+</td></tr>
+<tr class="row12">
+<td class="col1 centeralign"> Opacity
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>255</code>
+</td>
+<td class="col4"> 0 = fully transparent
+<p>255 = fully opaque
+</p>
+</td></tr>
+<tr class="row13">
+<td class="col1 centeralign"> Walkthrough
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> 0 = Not walkthrough
+<p>1 = Walkthrough
+</p>
+</td></tr>
+<tr class="row4">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 87 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="Player_Animation">Player Animation</span></h3>
+<dl><dd>Proposed by ByteBit</dd>
+<dd>Let the player to do certain actions/animations on the client</dd>
+<dd><b>Motivation</b>: Other players will be able to see the block another is holding or whether one placed a block or not. It makes the game's feel more realistic, because blocks don't pop out a no where.</dd>
+<dd><b>Client Behavior</b>: On recieve the client should perform the actions required for the animation.</dd>
+<dd><b>Server Behavior</b>: The server may send the packet if needed any time after the map is send.</dd></dl>
+<h4><span class="mw-headline" id="AnimatePlayer_packet">AnimatePlayer packet</span></h4>
+<dl><dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0xAC
+<p>(172)
+</p>
+</td>
+<td class="col1 centeralign"> Animation Type
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 1
+</td>
+<td class="col4 centeralign"> Specifies what animation to perform (0: Hold block; 1: Set block; 2: Destroy block; 3: Player name visibility)
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Player ID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 1
+</td>
+<td class="col4 centeralign"> What player to perform this animation on
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Additional byte
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 49 (Obsidian)
+</td>
+<td class="col4 centeralign"> Needed for specific animations (Block type for 0,1 and 2; for 3: true(1)/false(0))
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 3 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="PlayerHealth">PlayerHealth</span></h3>
+<dl><dd>Proposed by <a href="https://wiki.vg/index.php?title=User:Apotter96&amp;action=edit&amp;redlink=1" class="new" title="User:Apotter96 (page does not exist)">Apotter96</a> (<a href="https://wiki.vg/index.php?title=User_talk:Apotter96&amp;action=edit&amp;redlink=1" class="new" title="User talk:Apotter96 (page does not exist)">talk</a>) 02:29, 26 July 2015 (UTC)alex96</dd>
+<dd>Gives players life count that is controlled by the server and reflected by the client at the top left of the game screen. The server.</dd>
+<dd><b>Motivation</b>: RPG and Gun games can go more extensive if they wish with lives.</dd>
+<dd><b>Client Behavior</b>: Display player's lives at the top left of screen when the server sends the packet. On player connect, the server needs to tell the client the max amount of lives the player can have, in between 5 and 20. May also dictate how many lives the server is allowed to send. Both need to check with the other end so they can comply together.</dd>
+<dd><b>Server Behavior</b>: At any time the server can send the packet telling the client the amount of lives the player has. Once a player connects, the server needs to tell the client how many lives the player is allowed to have, in between 5 and 20. Both need to check with the other end so they can comply together.</dd>
+<dd><h4><span class="mw-headline" id="UpdateLives_packet">UpdateLives packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> Lives
+</td>
+<td class="col2 centeralign"> int
+</td>
+<td class="col3 centeralign"> 15
+</td>
+<td class="col4 centeralign"> How many lives the player has
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> MaxLives
+</td>
+<td class="col2 centeralign"> int
+</td>
+<td class="col3 centeralign"> 15
+</td>
+<td class="col4 centeralign"> The Max amount of lives
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 2 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="UpdateLives_packet_2">UpdateLives packet</span></h4></dd>
+<dd><i>Client to server</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> MaxLives
+</td>
+<td class="col2 centeralign"> int
+</td>
+<td class="col3 centeralign"> 15
+</td>
+<td class="col4 centeralign"> The Max amount of lives
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 2 bytes
+</td></tr></table></dd></dl>
+<dl><dd>(Comments go here, please sign them)</dd></dl>
+<p><br />
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="ExtPlayerList_v3">ExtPlayerList v3</span></h3>
+<dl><dd>Proposed by Cheesse</dd>
+<dd>This extension builds upon the current version and adds the ability to change the visibility of name tags.</dd>
+<dd><b>Motivation</b>: Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. <i><b>ExtAddPlayerName</b></i>/<i><b>ExtRemovePlayerName</b></i> packets take over managing the player names list (tab-list), and <i><b>ExtAddEntity3</b></i>/<i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">DespawnPlayer</a></b></i> packets are used only to manage in-game entities.Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. <i><b>ExtAddPlayerName</b></i>/<i><b>ExtRemovePlayerName</b></i> packets take over managing the player names list (tab-list), and <i><b>ExtAddEntity3</b></i>/<i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">DespawnPlayer</a></b></i> packets are used only to manage in-game entities.</dd>
+<dd><b>Client Behavior</b>: When <i><b>ExtAddPlayerName</b></i> packet is received for an unused <i>NameID</i>, a new name must be added to the player-name list. When receiving <i><b>ExtAddPlayerName</b></i> packet for an already-listed <i>NameID</i>, client must update its <i>ListName</i>, <i>GroupName</i>, and <i>GroupRank</i>. Names on the player-name list should be grouped by <i>GroupName</i> in the player-name list. Names within a <i>GroupName</i> should be sorted by <i>GroupRank</i> (in ascending order). Names with the same <i>GroupName</i> and <i>GroupRank</i> should be sorted alphabetically by <i>ListName</i>. Color codes may be either drawn or stripped from <i>ListName</i>, <i>GroupName</i>, and <i>InGameName</i>. Player-name list must persist when client changes worlds/maps.</dd></dl>
+<dl><dd>When an <i><b>ExtAddEntity3</b></i> packet is received, it must be treated as the <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">SpawnPlayer</a></b></i> packet. A player model must be spawned in-game at the given location, with <i>InGameName</i> text drawn above it. Skin should be loaded using the given <i>SkinName</i> for a player name. If <i>SkinName</i> appears to be a player name, skin should be downloaded from the default skin server. If <i>SkinName</i> appears to be a full URL to a PNG image (starts with <code>http://</code> or <code>https://</code> and ends with <code>.png</code>) then skin should be downloaded from that URL. If image is correctly sized/proportioned to use as a skin for the current model, it should be used. If a blank or unrecognized value is given for <i>SkinName</i>, or if given image could not be downloaded or used, then the default skin should be used. The client must also set the visibility according to <i>NameVisibility</i> and the collision ability of the entity according to <i>CanCollide</i>. When client receives <i><b>ExtAddEntity3</b></i> packet for an already-spawned player, a duplicate entity must not be spawned and existing entity's position must not be changed. Instead their <i>InGameName</i>,  <i>SkinName</i>, <i>NameVisibility</i>, and <i>CanCollide</i> attributes must be updated. If a negative <i>EntityID</i> is given for <i><b>ExtAddEntity3</b></i>, client must update player's own spawn point, <i>InGameName</i>, and <i>SkinName</i>. If any undefined value is given in the <i>NameVisibility</i> or <i>CanCollide</i> fields, the client should ignore these fields. The client must ignore regular <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">SpawnPlayer</a></b></i> packets, if any are received.</dd></dl>
+<dl><dd>When a standard <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">DespawnPlayer</a></b></i> packet is received for a recognized <i>EntityID</i>, player model must be removed from a world. When <i><b>ExtRemovePlayerName</b></i> packet is received for a recognized <i>NameID</i>, their name must be removed from player-name list. Packets with out-of-range or unrecognized <i>NameID</i>s must be ignored.</dd></dl>
+<dl><dd>In-game entities must never be affected by <i><b>ExtAddPlayerName</b></i> or <i><b>ExtRemovePlayerName</b></i> packets. Player name list must never be affected by <i><b>ExtAddEntity3</b></i> or <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">DespawnPlayer</a></b></i> packets.</dd>
+<dd><b>Server Behavior</b>: Unique <i>NameID</i> between 0 and 255 should be assigned to every online player or every player on a map for each map. When a new player connects to the server or joins a new map, <i><b>ExtAddPlayerName</b></i> must be sent. <i>GroupName</i> and <i>GroupRank</i> can be used in any way, for example to group players by map/world or rank/class/faction. Server must use <i><b>ExtAddEntity3</b></i> in place of standard <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">SpawnPlayer</a></b></i> packet. Server should re-send <i><b>ExtAddPlayerName</b></i> packet, using the identical <i>NameID</i>, when player's <i>ListName</i>, <i>GroupName</i>, or <i>GroupRank</i> change. Server must reliably send an <i><b>ExtRemovePlayerName</b></i> packet when the player disconnects. Color codes are permitted in <i>ListName</i>, <i>GroupName</i>, and <i>InGameName</i>.</dd></dl>
+<dl><dd><i>This extension only replaces the ExtAddEntity2 packet of the ExtPlayerList extension version 2. Thus, only the ExtAddEntity3 packet is shown here.</i></dd>
+<dd><h4><span class="mw-headline" id="ExtAddEntity3_packet">ExtAddEntity3 packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="11"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> EntityID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4 centeralign"> Between 0 and 127
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> InGameName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>&amp;cNotch</code>
+</td>
+<td class="col4 centeralign"> Player name to be shown in-game hovering above the player.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> SkinName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>Notch</code>
+</td>
+<td class="col4 centeralign"> Name of the skin that should be used by the client. Could also be a URL to a PNG image.
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> SpawnX
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4 centeralign"> X coordinate (32 units per block) of entity's spawn location.
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> SpawnY
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>2</code>
+</td>
+<td class="col4 centeralign"> Y coordinate (32 units per block) of entity's spawn location.
+</td></tr>
+<tr class="row6">
+<td class="col1 centeralign"> SpawnZ
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>3</code>
+</td>
+<td class="col4"> Z coordinate (32 units per block) of entity's spawn location.
+</td></tr>
+<tr class="row7">
+<td class="col1 centeralign"> SpawnYaw
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>4</code>
+</td>
+<td class="col4 centeralign"> Orientation (left-right) at the entity's spawn location.
+</td></tr>
+<tr class="row8">
+<td class="col1 centeralign"> SpawnPitch
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4"> Orientation (up-down) at the entity's spawn location.
+</td></tr>
+<tr class="row9">
+<td class="col1 centeralign"> NameVisibility
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>6</code>
+</td>
+<td class="col4 centeralign"> Visibility of the InGameName of the entity. Obstacles can be blocks or other entities.
+<ul><li>0 = (Default) Visible only by hovering the cursor over the entity within view. Ignores any obstacles in the way.</li>
+<li>1 = Visible only by hovering the cursor over the entity within view. Invisible when obstacles block the entity.</li>
+<li>2 = Always visible within view (name tag shrinks over distance). Ignores any obstacles in the way.</li>
+<li>3 = Always visible within view (name tag shrinks over distance). Invisible when obstacles block the entity.</li>
+<li>4 = Always visible anywhere (name tag does not shrink over distance). Ignores any obstacles in the way.</li>
+<li>5 = Always visible anywhere (name tag does not shrink over distance). Invisible when obstacles block the entity.</li>
+<li>6 = Never visible.</li></ul>
+</td></tr>
+<tr class="row10">
+<td class="col1 centeralign"> CanCollide
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign">
+<ul><li>0 = (default) Can collide with the player.</li>
+<li>1 = Cannot collide with the player.</li></ul>
+</td></tr>
+<tr class="row11">
+<td class="col1 centeralign"> Opacity
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>255</code>
+</td>
+<td class="col4 centeralign"> From 0-255, the overall opacity of the entity model.
+</td></tr>
+<tr class="row12">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 140 bytes
+</td></tr></table></dd></dl>
+<dl><dd>(Comments go here, please sign them)</dd></dl>
+<h3><span class="mw-headline" id="HackControl_v2">HackControl v2</span></h3>
+<dl><dd>Proposed by Cheesse</dd>
+<dd>This extension allows more control over the abilities of players.</dd>
+<dd><b>Motivation</b>: To gain control over the movement and action abilities of players.</dd>
+<dd><b>Client Behavior</b>: Client must be able to receive <i><b>HackControl2</b></i> packets at any time and apply the changes defined in the packet immediately. Any value may be given in any field to allow or adjust an ability. If a negative value is given in any field, the client should set that value to its default. If <code>0</code> is given in any field, the client must deactivate that ability and prevent its use by the player unless otherwise stated.</dd>
+<dd><b>Server Behavior</b>: Server may send <i><b>HackControl2</b></i> packets to successfully connected clients at any time.</dd>
+<dd><h4><span class="mw-headline" id="HackControl2_packet">HackControl2 packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="8"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> FlySpeed
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> This value is divided by 25 and multiplied by the default speed of flight to get the custom speed of flight. A value of 255 means there are no restrictions on flight. A value of 0 means flight is not allowed.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> NoClip
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign">
+<ul><li>0 = Prevent no-clipping</li>
+<li>1 = Allow no-clipping</li></ul>
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> WalkSpeed
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>64</code>
+</td>
+<td class="col4 centeralign"> This value is divided by 25 and multiplied by the default walking speed to get the custom walking speed. A value of 255 means there are no restrictions on walking speed. A value of 0 means the player is not allowed to walk.
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> RunSpeed
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>16</code>
+</td>
+<td class="col4 centeralign"> This sets the speedhacking capabilities of the player. This value is divided by 25, then added to 1, then multiplied by the default walking speed to get the custom running speed. A value of 255 means there are no restrictions on running speed. A value of 0 means the player is not allowed to run.
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> AllowRespawn
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4 centeralign">
+<ul><li>0 = Prevent respawning</li>
+<li>1 = Allow respawning</li></ul>
+</td></tr>
+<tr class="row6">
+<td class="col1 centeralign"> PointOfView
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign">
+<ul><li>0 = First-person view</li>
+<li>1 = Third-person behind view</li>
+<li>2 = Third-person front view</li></ul>
+<p>Setting this field to a defined value will prevent the player from changing their point of view. Setting it to an undefined value will allow the player to switch points of view.
+</p>
+</td></tr>
+<tr class="row7">
+<td class="col1 centeralign"> JumpHeight
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>40</code>
+</td>
+<td class="col4 centeralign"> Maximum height in player units of the player's normal jump. A value of 0 means the player is not allowed to jump. A value of 255 means there are no restrictions on jump height.
+</td></tr>
+<tr class="row8">
+<td class="col1 centeralign"> SuperJumpHeight
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> Maximum height in player units of any other jump abilities the player has, like using speed to get a higher jump. A SuperJumpHeight value of 0 means the player is not allowed to superjump. A value of 255 means there are no restrictions on jump height.
+</td></tr>
+<tr class="row9">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 9 bytes
+</td></tr></table></dd></dl>
+<dl><dd>(Comments go here, please sign them)</dd></dl>
+<h3><span class="mw-headline" id="MessageTypes_v2">MessageTypes v2</span></h3>
+<dl><dd>Proposed by Cheesse</dd>
+<dd>This extension adds new ways of presenting information to the player.</dd>
+<dd><b>Motivation</b>: To allow the server to send messages in different places and for limited times.</dd>
+<dd><b>Client Behavior</b>: Client must interpret the <i>PlayerID</i> field of the standard <a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol"><i><b>Message</b></i></a> packet as the <i>Message Type</i> field. Certain values in this field correspond to different locations for messages on the screen. Any undefined values in this field should be ignored and presented as regular chat messages. Without mutual server-client support for this extension, this field should be ignored.</dd>
+<dd><b>Server Behavior</b>: Server may use the <i>PlayerID</i> field of the <a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol"><i><b>Message</b></i></a> packet to have that message placed at a certain location on the player's screen.</dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> MessageType Value
+</th>
+<th class="col1"> Meaning
+</th>
+<th class="col2"> Message Placement
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign"> 0
+</td>
+<td class="col1 centeralign"> Chat
+</td>
+<td class="col2 centeralign"> In the chatbox.
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> 1
+</td>
+<td class="col1 centeralign"> Status1
+</td>
+<td class="col2 centeralign"> At the top right of the screen.
+</td></tr>
+<tr class="row3">
+<td class="col0 centeralign"> 2
+</td>
+<td class="col1 centeralign"> Status2
+</td>
+<td class="col2 centeralign"> At the top right of the screen below Status1.
+</td></tr>
+<tr class="row4">
+<td class="col0 centeralign"> 3
+</td>
+<td class="col1 centeralign"> Status3
+</td>
+<td class="col2 centeralign"> At the top right of the screen below Status2.
+</td></tr>
+<tr class="row5">
+<td class="col0 centeralign"> 11
+</td>
+<td class="col1 centeralign"> BottomRight1
+</td>
+<td class="col2 centeralign"> At the bottom right of the screen.
+</td></tr>
+<tr class="row6">
+<td class="col0 centeralign"> 12
+</td>
+<td class="col1 centeralign"> BottomRight2
+</td>
+<td class="col2 centeralign"> At the bottom right of the screen above BottomRight1.
+</td></tr>
+<tr class="row7">
+<td class="col0 centeralign"> 13
+</td>
+<td class="col1 centeralign"> BottomRight3
+</td>
+<td class="col2 centeralign"> At the bottom right of the screen above BottomRight2.
+</td></tr>
+<tr class="row8">
+<td class="col0 centeralign"> 45
+</td>
+<td class="col1 centeralign"> LeftHotbar
+</td>
+<td class="col2 centeralign"> On top of the hotbar aligned to the left.
+</td></tr>
+<tr class="row9">
+<td class="col0 centeralign"> 54
+</td>
+<td class="col1 centeralign"> RightHotbar
+</td>
+<td class="col2 centeralign"> On top of the hotbar aligned to the right.
+</td></tr>
+<tr class="row10">
+<td class="col0 centeralign"> 100
+</td>
+<td class="col1 centeralign"> BigAnnouncement
+</td>
+<td class="col2 centeralign"> In large font slightly above the center of the screen.
+</td></tr>
+<tr class="row11">
+<td class="col0 centeralign"> 200
+</td>
+<td class="col1 centeralign"> SmallAnnouncement
+</td>
+<td class="col2 centeralign"> Near the center of the screen below BigAnnouncement.
+</td></tr></table></dd></dl>
+<p>This extension does not define any new packets.
+</p>
+<dl><dd>(Comments go here, please sign them)</dd></dl>
+<h3><span class="mw-headline" id="ExtMapInfo">ExtMapInfo</span></h3>
+<dl><dd>Proposed by Cheesse</dd>
+<dd>This extension allows the server to send the client some of the map's metadata and other information</dd>
+<dd><b>Motivation</b>: To allow clients to save metadata with the maps they choose to save. This extension can also be modified to add more features to maps.</dd>
+<dd><b>Client Behavior</b>: Client must be able to receive <i><b>FinalMapInfo</b></i> packets at any time after a <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelInitialize</a></b></i> packet has been received and before a <i><b>FinalMapInfo</b></i> packet has been received. Client should store the values in these fields in memory to be used later. The metadata defined in these fields come from those defined in the ClassicWorld file definitions. Client should ignore any <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packets recieved.</dd>
+<dd><b>Server Behavior</b>: Server must send <i><b>FinalMapInfo</b></i> packets with the correct values after it has finished sending the client the raw block data after sending a <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelInitialize</a></b></i> packet. The server should not send this packet at any other time. The server should never send any <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packets to the client.</dd>
+<dd><h4><span class="mw-headline" id="FinalMapInfo_packet">FinalMapInfo packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="11"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> "FormatVersion
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4 centeralign"> The FormatVersion is currently set to 1.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> "MapName"
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>main</code>
+</td>
+<td class="col4 centeralign"> The name of the map.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> "UUID"
+</td>
+<td class="col2 centeralign"> byte array [16]
+</td>
+<td class="col3 centeralign"> <code>abcdefghijklmnop</code>
+</td>
+<td class="col4 centeralign"> The UUID of the map.
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> "XSize"
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>128</code>
+</td>
+<td class="col4 centeralign"> The length of the map in the X dimension.
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> "YSize"
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>128</code>
+</td>
+<td class="col4 centeralign"> The length of the map in the Y dimension.
+</td></tr>
+<tr class="row6">
+<td class="col1 centeralign"> "ZSize"
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>128</code>
+</td>
+<td class="col4 centeralign"> The length of the map in the Z dimension.
+</td></tr>
+<tr class="row7">
+<td class="col1 centeralign"> "CreatedBy"
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>Cheesse</code>
+</td>
+<td class="col4 centeralign"> The name of the author of the map. This should be an existing Classicube username.
+</td></tr>
+<tr class="row8">
+<td class="col1 centeralign"> "MapGenSoftware"
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>Mapbuilder</code>
+</td>
+<td class="col4 centeralign"> The name of the software used to generate the map.
+</td></tr>
+<tr class="row9">
+<td class="col1 centeralign"> "MapGenName"
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>Flat</code>
+</td>
+<td class="col4 centeralign"> The name of the generator function used to generate the map.
+</td></tr>
+<tr class="row10">
+<td class="col1 centeralign"> "TimeCreated"
+</td>
+<td class="col2 centeralign"> long
+</td>
+<td class="col3 centeralign"> <code>1234567890</code>
+</td>
+<td class="col4 centeralign"> The UTC Unix timestamp of the time the map was generated.
+</td></tr>
+<tr class="row11">
+<td class="col1 centeralign"> "TimeLastModified"
+</td>
+<td class="col2 centeralign"> long
+</td>
+<td class="col3 centeralign"> <code>1234567890</code>
+</td>
+<td class="col4 centeralign"> The UTC Unix timestamp of the time the map was last modified.
+</td></tr>
+<tr class="row12">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 298 bytes
+</td></tr></table></dd></dl>
+<dl><dd>(Comments go here, please sign them)</dd></dl>
+<p><br />
+</p><p><br />
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="BlockDefinitionsExt2">BlockDefinitionsExt2</span></h3>
+<dl><dd>Proposed by Goodly.</dd>
+<dd>This extension allows servers to define more properties for the custom blocks provided by BlockDefinitions.</dd>
+<dd><b>Motivation</b>: To allow for better custom blocks to be created.</dd>
+<dd><b>Client Behavior</b>: This extension depends on <a href="../Classic_Protocol_Extension.html#BlockDefinitions" title="Classic Protocol Extension">BlockDefinitions extension</a> and <a href="../Classic_Protocol_Extension.html#BlockDefinitionsExt" title="Classic Protocol Extension">BlockDefinitionsExt extension</a>, and must only be enabled if BOTH extensions are mutually supported. Client should be able receive any number of <i><b>DefineBlockExt2</b></i> packets during the level loading process (after receiving <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelInitialize</a></b></i> and until receiving <i><b><a href="../Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packets). However, dependent on client, this can be sent after level loading (Some clients might just find it more extensible than others).</dd>
+<dd>Client must be able to accept and render blocks as specified in <i><b>DefineBlockExt2</b></i> packets. Clients must accept any valid definitions with <i>BlockID</i> between 1 and 254, inclusive. If a new definition is accepted for an already-defined <i>BlockID</i>, the old definition should be replaced.</dd></dl>
+<dl><dd><h5><span class="mw-headline" id="DefineBlockExt2_Packet">DefineBlockExt2 Packet</span></h5></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Example
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td class="centeralign"> RandomOffset
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>1</code>
+</td>
+<td> Whether or not the block is randomly offset.
+<ul><li> 0 = Not offset (No change).</li>
+<li> 1 = Randomly offset on the X and Z axis from -3/16 to 3/16.</li>
+<li> 2 = Randomly offset on the Y axis from -3/16 to 3/16.</li>
+<li> 3 = Randomly offset on the Y axis from -3/16 to 0.</li>
+<li> 4 = Randomly offset on the X, Y and Z axis from -3/16 to 3/16</li>
+<li> 5 = Randomly offset on the X and Z axis from -3/16 to 3/16 and randomly offset on the Y axis from -3/16 to 0.</li></ul>
+<p>Note: This only effects blocks which have the "Shape" as 0 (sprite)
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> FatSprite
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>1</code>
+</td>
+<td> Whether or not the sprite is stretched closer to the edge of the block, similar to premium.
+<ul><li> 0 = Not fat (No change).</li>
+<li> 1 = The corners of the sprite are stretched from 0.8 to 15.2. (Instead of the original values of 2.50 to 13.5.)</li></ul>
+<p>Note: This only effects blocks which have the "Shape" as 0 (sprite)
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> Selectable
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Whether or not the block/liquid becomes highlighted when pointed at it (Like how liquids are not breakable or selectable by default).
+<ul><li> 0 = Not select-able.</li>
+<li> 1 = Selectable. (No change)</li></ul>
+</td></tr>
+<tr>
+<td class="centeralign"> Replaceable
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>1</code>
+</td>
+<td> Whether or not the client is able to reach through and place blocks inside of the the block/liquid.
+<ul><li> 0 = No change from original behavior</li>
+<li> 1 = The block can be reached through when placing blocks and can be overwritten if a block is placed inside of it. (Similar to liquid)</li></ul>
+</td></tr>
+<tr>
+<td class="centeralign"> Red
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>255</code>
+</td>
+<td> Red component that the block is multiplied by.
+</td></tr>
+<tr>
+<td class="centeralign"> Green
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>109</code>
+</td>
+<td> Green component that the block is multiplied by.
+</td></tr>
+<tr>
+<td class="centeralign"> Blue
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>255</code>
+</td>
+<td> Blue component that the block is multiplied by.
+</td></tr>
+<tr>
+<th> Total Size:
+</th>
+<td class="rightalign" colspan="4"> 8 bytes
+</td></tr></table></dd></dl>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="SoundControl">SoundControl</span></h3>
+<dl><dd>Proposed by Cheesse</dd>
+<dd>This extension allows the client to play music and sounds defined by the server.</dd>
+<dd><b>Motivation</b>: To create a more stimulating experience by adding custom sounds and music to the game.</dd>
+<dd><b>Client Behavior</b>: The client must be able to receive any packets defined by this extension at any time. It must not play any music unless ordered by the server. It must dispose of any unloaded custom audio or store it in an unusable format. Loops must be played on a loop. Defined BlockSounds must be available for use by custom block types, and any local placement or deletion of a block or any local footsteps on that block that uses custom BlockSounds should have the custom sound played simultaneously. Sounds being played by the <i><b>PlayEntityLoopSource</b></i> and <i><b>PlayEntitySFX</b></i> must have their sources move with the entity. The client should play SFX ordered by the server immediately after receiving any <i><b>PlaySFX</b></i>, <i><b>PlayLevelSFX</b></i>, or <i><b>PlayEntitySFX</b></i> packet. If the client receives an undefined value for any packet, that packet should be ignored. When a custom audio file is defined within a default slot, the client should return the default audio to that slot when it becomes undefined.</dd>
+<dd><b>Server Behavior</b>: The server may send any packets defined by this extension at any time, however, it is recommended that the server defines all sounds during the level loading phase. All audio defined only for a specific level must be unloaded by the server upon client leaving the level. Defined custom BlockSounds must be available for use by custom blocks. The <i><b>PlayEntityLoopSource</b></i> and <i><b>PlayEntitySFX</b></i> packets allow servers to attach the source of a sound to an entity. This makes it easier for servers to play "moving" sounds without having to send too much data. All audio files linked by the server must be in .ogg format. All loops MUST have a length longer than 10 seconds. The server is responsible for not infringing upon copyright and licensing.</dd>
+<dd><h4><span class="mw-headline" id="DefineMusic_packet">DefineMusic packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> SongID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> Valid IDs are from 0-255. IDs for default music are as follows: 0=calm1, 1=calm2, 2=calm3, 3=hal1, 4=hal2, 5=hal3, 6=hal4. Default music may be redefined by the server.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> SongSource
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code><a rel="nofollow" class="external free" href="http://www.abc.com/song.ogg">http://www.abc.com/song.ogg</a></code>
+</td>
+<td class="col4 centeralign"> The location of the music file online. The link must lead to a .ogg file. If this field contains only "X" (case-sensitive), the music of the SongID within the SongCategory must be unloaded. If this field contains only "A" (case-sensitive), all music defined within the SongCategory must be unloaded. Otherwise, the client should do nothing.
+</td></tr>
+<tr class="row4">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 66 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="DefineBlockSound_packet">DefineBlockSound packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> BlockSoundID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>8</code>
+</td>
+<td class="col4 centeralign"> This is a bitfield where the 14 most significant bits represent the "block type" (such as wood, metal, grass) and the 2 least significant bits represent IDs for each individual sound (think of the different sounds for stone blocks).
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> BlockSoundSource
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code><a rel="nofollow" class="external free" href="http://www.abc.com/water.ogg">http://www.abc.com/water.ogg</a></code>
+</td>
+<td class="col4 centeralign"> The location of the loop file online. The link must lead to a .ogg file. If this field contains only "X" (case-sensitive), the audio for that specific BlockSoundID must be unloaded. If this field contains only "A" (case-sensitive), all sounds with the same "block type" must be unloaded. Otherwise, the client should do nothing.
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 66 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="DefineLoop_packet">DefineLoop packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> LoopID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>3</code>
+</td>
+<td class="col4 centeralign"> Valid IDs are from 0-255.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> LoopSource
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code><a rel="nofollow" class="external free" href="http://www.abc.com/cavenoise.ogg">http://www.abc.com/cavenoise.ogg</a></code>
+</td>
+<td class="col4 centeralign"> The location of the loop file online. The link must lead to a .ogg file. If this field contains only "X" (case-sensitive), the audio for the LoopID must be unloaded. Otherwise, the client should do nothing.
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 66 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="DefineSFX_packet">DefineSFX packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> SFXID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> Valid IDs are from 0-255.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> SFXSource
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code><a rel="nofollow" class="external free" href="http://www.abc.com/killstreak.ogg">http://www.abc.com/killstreak.ogg</a></code>
+</td>
+<td class="col4 centeralign"> The location of the music file online. The link must lead to a .ogg file. If this field contains only "X", the sound of the SFXID must be unloaded. Otherwise, the client should do nothing.
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 66 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="PlayMusic_packet">PlayMusic packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> SongID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> SongID must be defined.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Volume
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> From 0-200, the volume at which to play the music.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Fade
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> This is a bitfield from 0-7 with 7 being the most significant bit. Bits 0-3 are for the period taken for the song to fade in. Valid values for this are from 0-15 (in seconds). Bits 4-7 are for are for the fade out, and the values for this are from 0-15 (in seconds).
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> Loop
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> From 0-254, the position from the start, in tenths of a second, at which the music should return after the end is reached. If this field is 255, then the song does not loop.
+</td></tr>
+<tr class="row5">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 5 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="PlayLevelLoopSource_packet">PlayLevelLoopSource packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="5"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> LoopID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> LoopID must be previously defined. If a different loop was playing at a position defined by PositionX, -Y, and -Z, then the client must replace that loop with this one.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Volume
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> From 0-200, the volume at which to play the sound effect. If the volume is set to 0, the client must not play any loops at that position, especially if one was playing there before.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> PositionX
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>20</code>
+</td>
+<td class="col4 centeralign"> The X-coordinate of the position of the source of the loop on the level (in player coordinates).
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> PositionY
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>20</code>
+</td>
+<td class="col4 centeralign"> The Y-coordinate of the position of the source of the loop on the level (in player coordinates).
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> PositionZ
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>20</code>
+</td>
+<td class="col4 centeralign"> The Z-coordinate of the position of the source of the loop on the level (in player coordinates).
+</td></tr>
+<tr class="row6">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 9 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="PlayEntityLoopSource_packet">PlayEntityLoopSource packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> LoopID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> LoopID must be previously defined. If a different loop was playing from an entity with ID EntityID, the client must replace that loop with this one.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Volume
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> From 0-200, the volume at which to play the sound effect. If the volume is set to 0, the client must not play any loops from that entity, especially if one was playing there before.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> EntityID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4 centeralign"> The ID of the entity from which the loop should be played.
+</td></tr>
+<tr class="row4">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 4 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="PlaySFX_packet">PlaySFX packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> SFXID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> SFXID must be defined.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Volume
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> From 0-200, the volume at which to play the sound effect.
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 3 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="PlayLevelSFX_packet">PlayLevelSFX packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="5"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> SFXID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> SFXID must be defined.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Volume
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> From 0-200, the volume at which to play the sound effect.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> PositionX
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> The X-coordinate of the position of the source of the loop on the level (in player coordinates).
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> PositionY
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> The Y-coordinate of the position of the source of the loop on the level (in player coordinates).
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> PositionZ
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> The Z-coordinate of the position of the source of the loop on the level (in player coordinates).
+</td></tr>
+<tr class="row6">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 9 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="PlayEntitySFX_packet">PlayEntitySFX packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x??
+<p>(??)
+</p>
+</td>
+<td class="col1 centeralign"> SFXID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> SFXID must be defined.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Volume
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>100</code>
+</td>
+<td class="col4 centeralign"> From 0-200, the volume at which to play the sound effect.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> EntityID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>3</code>
+</td>
+<td class="col4 centeralign"> The ID of the entity from which the sound effect should be played.
+</td></tr>
+<tr class="row4">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 4 bytes
+</td></tr></table></dd></dl>
+<dl><dd>(Comments go here, please sign them)</dd></dl>
+<h3><span class="mw-headline" id="WebSocketsSupport">WebSocketsSupport</span></h3>
+<dl><dd>Proposed by <a href="https://wiki.vg/index.php?title=User:Maxouf0x&amp;action=edit&amp;redlink=1" class="new" title="User:Maxouf0x (page does not exist)">Maxouf0x</a> (<a href="https://wiki.vg/index.php?title=User_talk:Maxouf0x&amp;action=edit&amp;redlink=1" class="new" title="User talk:Maxouf0x (page does not exist)">talk</a>) 06:18, 3 August 2017 (UTC)</dd>
+<dd>Add websocket support to the minecraft classic protocol.</dd>
+<dd><b>Motivation</b>: Make web clients without having to use webtcp.</dd>
+<dd><b>Client Behavior</b>: Clients that use web socket must send a normal HTTP GET request to http://&lt;server IP&gt;:&lt;server port&gt;/connect, When the client recive the redirect, it must open a websocket connection to the recived URL, and continue with the normal protocol, wrapped in a websocket.</dd></dl>
+<p><br />
+</p>
+<dl><dd><b>Server Behavior</b>: Server supporting websockets must check if the client has sent an HTTP GET request before sending the Server Identification package. If the client has sent an HTTP GET request to /connect, the web socket integration is disabled, but implemented, the server must respond with a 503 error code. If the websocket integration is enabled, the server must respond with a 302 code, redirecting to http://&lt;server IP&gt;:&lt;server Port/Other port&gt;/game. When the server recives a websocket connection to http://&lt;server IP&gt;:&lt;server Port/Other port&gt;/game, it must continue with the normal protocol, wrapped in a websocket.</dd></dl>
+<dl><dd>The port used to request /connect is the same as the game port, so that this doesn't break the current heartbeat system.</dd></dl>
+<p>This extension does not define any new packets.
+</p>
+<dl><dd>(Comments go here, please sign them)</dd></dl>
+
+<!-- 
+NewPP limit report
+Cached time: 20180822164052
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.272 seconds
+Real time usage: 0.353 seconds
+Preprocessor visited node count: 115/1000000
+Preprocessor generated node count: 178/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:852-0!*!0!!en!*!* and timestamp 20180822164052 and revision id 13360
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Classic_Protocol_Extension/Proposals&amp;oldid=13360">http://wiki.vg/index.php?title=Classic_Protocol_Extension/Proposals&amp;oldid=13360</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Classic+Protocol+Extension%2FProposals" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Classic+Protocol+Extension%2FProposals" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Proposals.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Classic_Protocol_Extension/Proposals&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Proposals.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Proposals.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension/Proposals&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension/Proposals&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Proposals.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Classic_Protocol_Extension/Proposals" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Classic_Protocol_Extension/Proposals" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension/Proposals&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension/Proposals&amp;oldid=13360" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension/Proposals&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 September 2017, at 18:06.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="../wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="../wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="../resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":213});});</script>
+	</body>
+</html>

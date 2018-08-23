@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Data Generators - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Data_Generators","wgTitle":"Data Generators","wgCurRevisionId":14115,"wgRevisionId":14115,"wgArticleId":5791,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Data_Generators","wgRelevantArticleId":5791,"wgRequestId":"d345fc8fc96b851f39bde6d4","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Data_Generators rootpage-Data_Generators skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Data Generators</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Data_Generators.html#mw-head">navigation</a>, 					<a href="Data_Generators.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Data Generators</b> are a tool added in 1.13 that can export reports about various parts of the game, and additionally are used internally by Mojang to generate various json files.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Data_Generators.html#Command_line"><span class="tocnumber">1</span> <span class="toctext">Command line</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Data_Generators.html#Generators"><span class="tocnumber">2</span> <span class="toctext">Generators</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Data_Generators.html#Blocks_report"><span class="tocnumber">2.1</span> <span class="toctext">Blocks report</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Data_Generators.html#Items_report"><span class="tocnumber">2.2</span> <span class="toctext">Items report</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Data_Generators.html#Commands_report"><span class="tocnumber">2.3</span> <span class="toctext">Commands report</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Data_Generators.html#NBT_converters"><span class="tocnumber">2.4</span> <span class="toctext">NBT converters</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Data_Generators.html#Tag_providers"><span class="tocnumber">2.5</span> <span class="toctext">Tag providers</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Data_Generators.html#Advancement_provider"><span class="tocnumber">2.6</span> <span class="toctext">Advancement provider</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Data_Generators.html#Recipes_provider"><span class="tocnumber">2.7</span> <span class="toctext">Recipes provider</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Command_line">Command line</span></h2>
+<p>The main entry point for data generators is <code>net.minecraft.data.Main</code> instead of <code>net.minecraft.client.main.Main</code> or <code>net.minecraft.server.MinecraftServer</code>.  This is present on both the client and the server, but since the server includes all needed libraries to run it while the client has them in separate jars, it is much easier to use the server.  Since this isn't the main class, the game must be ran using a different command line than normal:
+</p>
+<pre>
+java -cp minecraft_server.jar net.minecraft.data.Main
+</pre>
+<p>There are several arguments:
+</p>
+<dl><dt>--help</dt>
+<dd>Show the help menu (same as running with no arguments)</dd>
+<dt>--input</dt>
+<dd>Specify an input folder for the converters.  Can be specified multiple times, as in <code>--input folder1 --input folder2</code>.</dd>
+<dt>--output</dt>
+<dd>Output folder (defaults to <code>generated</code>)</dd>
+<dt>--client</dt>
+<dt>--dev</dt>
+<dt>--reports</dt>
+<dt>--server</dt>
+<dd>Specifies which generators to run; see the table below.</dd>
+<dt>--all</dt>
+<dd>Same as <code>--client --dev --reports --server</code>.</dd></dl>
+<h2><span class="mw-headline" id="Generators">Generators</span></h2>
+<p>There are several different generators, which are controlled via the arguments above.
+</p>
+<table class="wikitable">
+<tr>
+<th> Name
+</th>
+<th> <code>--client</code>
+</th>
+<th> <code>--dev</code>
+</th>
+<th> <code>--reports</code>
+</th>
+<th> <code>--server</code>
+</th></tr>
+<tr>
+<td> <a href="Data_Generators.html#NBT_converters">SNBT -&gt; NBT</a>
+</td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#Tag_providers">Fluid Tags</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#Tag_providers">Block Tags</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#Tag_providers">Item Tags</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#Recipe_provider">Recipes</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#Advancement_provider">Advancements</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#NBT_converters">NBT to SNBT</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#Blocks_report">Block List</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#Items_report">Item List</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No
+</td></tr>
+<tr>
+<td> <a href="Data_Generators.html#Commands_report">Command List</a>
+</td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No </td>
+<td style="background:#90ff90; color:black;" class="table-yes"> Yes </td>
+<td style="background:#ff9090; color:black;" class="table-no"> No
+</td></tr></table>
+<h3><span class="mw-headline" id="Blocks_report">Blocks report</span></h3>
+<p>A report that contains all block states in the global palette.  Notably, this contains numeric IDs as used on the protocol, so it can be used to get the proper IDs for a version.  The report is saved in <code>reports/blocks.json</code>.
+</p><p>A few sample entries:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+  <span class="nt">&quot;minecraft:air&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;states&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;minecraft:oak_sapling&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;stage&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;1&quot;</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;states&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;stage&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+        <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;stage&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">22</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>The key of the object is the block ID.  Within it, the <code>properties</code> tag contains all properties within the state, where the key within that is the property name and the value is an array of allowed property values.  This tag will not be present if there are no properties.  The <code>states</code> tag is a list of different states for the block.  Within each state, the <code>properties</code> tag maps each property to the value on that state (which, again, will not be present if there are no properties); the <code>id</code> tag gives the numeric state ID (as used over the network); and the <code>default</code> tag indicates if the state is the default one for the block (there should be only one such state).
+</p><p>This report does not contain numeric block IDs, only state IDs.  Block IDs only remain in use on the Block Action packet; they can be inferred by the position in the report.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Due to <a rel="nofollow" class="external text" href="https://bugs.mojang.com/browse/MC-131740">MC-131740</a>, the blocks report will delete its results if run twice in the same location.
+</span>
+</p>
+<h3><span class="mw-headline" id="Items_report">Items report</span></h3>
+<p>The items report contains a list of all items, and their network IDs.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+  <span class="nt">&quot;minecraft:air&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;protocol_id&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;minecraft:stone&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;protocol_id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Note that item IDs are no longer related to block IDs or block state IDs.  They all start out in the same sequence, but some blocks do not have items and items do not include block states (by design).
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Due to <a rel="nofollow" class="external text" href="https://bugs.mojang.com/browse/MC-131740">MC-131740</a>, the items report will delete its results if run twice in the same location.
+</span>
+</p>
+<h3><span class="mw-headline" id="Commands_report">Commands report</span></h3>
+<p>This report contains the <a href="Command_Data.html" title="Command Data">Command Graph</a>.  The format matches information described in that article, except that <code>name</code> is the key for an object, and suggestions are not present in the report.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Due to <a rel="nofollow" class="external text" href="https://bugs.mojang.com/browse/MC-131740">MC-131740</a>, the commands report will delete its results if run twice in the same location.
+</span>
+</p>
+<h3><span class="mw-headline" id="NBT_converters">NBT converters</span></h3>
+<p>There are two NBT-related data generators.  One converts "SNBT" (stringified NBT - the same NBT format used in commands) to <a href="NBT.html" title="NBT">NBT</a>; the other converts NBT into SNBT.  Both look for files of the appropriate extension (<code>.nbt</code> or <code>.snbt</code>) in the input folder(s), and output them at the same relative location in the output folder.
+</p><p><span style="background:#FFF3BD; padding: 1px 5px 3px 5px; border: 1px solid #C4B674;">
+<a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Due to <a rel="nofollow" class="external text" href="https://bugs.mojang.com/browse/MC-131740">MC-131740</a>, the NBT to SNBT converter will delete its results if run twice in the same location.
+</span>
+</p>
+<h3><span class="mw-headline" id="Tag_providers">Tag providers</span></h3>
+<p>The tag providers are used to create tag JSON files based off of data stored in code.  As such, they aren't directly useful to people who are not writing mods.  They can be used by subclassing, overriding the appropriate methods, and changing the data within.
+</p>
+<h3><span class="mw-headline" id="Advancement_provider">Advancement provider</span></h3>
+<p>The advancement provider is used to generate advancement JSON files based off of data stored in code.  It works off of nested consumers, where one layer of consumers contains the actual data (split between the different advancement categories), and that consumer takes a consumer that is actually responsible for saving the advancement.  It can be used by subclassing only.
+</p>
+<h3><span class="mw-headline" id="Recipes_provider">Recipes provider</span></h3>
+<p>The recipe JSON file creates recipes based on data in code.  It can't be used directly.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823003416
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.096 seconds
+Real time usage: 0.115 seconds
+Preprocessor visited node count: 214/1000000
+Preprocessor generated node count: 528/1000000
+Post‐expand include size: 3559/2097152 bytes
+Template argument size: 557/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   35.170      1 - -total
+ 19.89%    6.994     29 - Template:No
+ 17.17%    6.040     11 - Template:Yes
+ 16.82%    5.915      4 - Template:Warning
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:5791-0!*!0!!en!5!* and timestamp 20180823003416 and revision id 14115
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Data_Generators&amp;oldid=14115">http://wiki.vg/index.php?title=Data_Generators&amp;oldid=14115</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Data+Generators" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Data+Generators" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Data_Generators.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Data_Generators&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Data_Generators.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Data_Generators.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Data_Generators&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Data_Generators&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Data_Generators.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Data_Generators" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Data_Generators" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Data_Generators&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Data_Generators&amp;oldid=14115" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Data_Generators&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 14 July 2018, at 19:17.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":146});});</script>
+	</body>
+</html>

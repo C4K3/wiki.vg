@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Data types - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Data_types","wgTitle":"Data types","wgCurRevisionId":14256,"wgRevisionId":14256,"wgArticleId":176,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Protocol Details","Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Data_types","wgRelevantArticleId":176,"wgRequestId":"01d3e626d16355048357b86a","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Data_types rootpage-Data_types skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Data types</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Data_types.html#mw-head">navigation</a>, 					<a href="Data_types.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This article defines the <b>data types</b> used in the <a href="Protocol.html" title="Protocol">protocol</a>. All data sent over the network (except for VarInt and VarLong) is <a href="http://en.wikipedia.org/wiki/Endianness#Big-endian" class="extiw" title="wikipedia:Endianness">big-endian</a>, that is the bytes are sent from most significant byte to least significant byte. The majority of everyday computers are little-endian, therefore it may be necessary to change the endianness before sending data over the network.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Data_types.html#Definitions"><span class="tocnumber">1</span> <span class="toctext">Definitions</span></a></li>
+<li class="toclevel-1"><a href="Data_types.html#Identifier"><span class="tocnumber">2</span> <span class="toctext">Identifier</span></a></li>
+<li class="toclevel-1"><a href="Data_types.html#VarInt_and_VarLong"><span class="tocnumber">3</span> <span class="toctext">VarInt and VarLong</span></a></li>
+<li class="toclevel-1"><a href="Data_types.html#Position"><span class="tocnumber">4</span> <span class="toctext">Position</span></a></li>
+<li class="toclevel-1"><a href="Data_types.html#Fixed-point_numbers"><span class="tocnumber">5</span> <span class="toctext">Fixed-point numbers</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Definitions">Definitions</span></h2>
+<table class="wikitable">
+
+<tr>
+<th> Name
+</th>
+<th> Size (bytes)
+</th>
+<th> Encodes
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<th> Boolean
+</th>
+<td> 1
+</td>
+<td> Either false or true
+</td>
+<td> True is encoded as <code>0x01</code>, false as <code>0x00</code>.
+</td></tr>
+<tr>
+<th> Byte
+</th>
+<td> 1
+</td>
+<td> An integer between -128 and 127
+</td>
+<td> Signed 8-bit integer, <a href="http://en.wikipedia.org/wiki/Two%27s_complement" class="extiw" title="wikipedia:Two's complement">two's complement</a>
+</td></tr>
+<tr>
+<th> Unsigned Byte
+</th>
+<td> 1
+</td>
+<td> An integer between 0 and 255
+</td>
+<td> Unsigned 8-bit integer
+</td></tr>
+<tr>
+<th> Short
+</th>
+<td> 2
+</td>
+<td> An integer between -32768 and 32767
+</td>
+<td> Signed 16-bit integer, two's complement
+</td></tr>
+<tr>
+<th> Unsigned Short
+</th>
+<td> 2
+</td>
+<td> An integer between 0 and 65535
+</td>
+<td> Unsigned 16-bit integer
+</td></tr>
+<tr>
+<th> Int
+</th>
+<td> 4
+</td>
+<td> An integer between -2147483648 and 2147483647
+</td>
+<td> Signed 32-bit integer, two's complement
+</td></tr>
+<tr>
+<th> Long
+</th>
+<td> 8
+</td>
+<td> An integer between -9223372036854775808 and 9223372036854775807
+</td>
+<td> Signed 64-bit integer, two's complement
+</td></tr>
+<tr>
+<th> Float
+</th>
+<td> 4
+</td>
+<td> A <a href="http://en.wikipedia.org/wiki/Single-precision_floating-point_format" class="extiw" title="wikipedia:Single-precision floating-point format">single-precision 32-bit IEEE 754 floating point number</a>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> Double
+</th>
+<td> 8
+</td>
+<td> A <a href="http://en.wikipedia.org/wiki/Double-precision_floating-point_format" class="extiw" title="wikipedia:Double-precision floating-point format">double-precision 64-bit IEEE 754 floating point number</a>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> String (n)
+</th>
+<td> ≥ 1 <br />≤ (n&#215;4) + 3
+</td>
+<td> A sequence of <a href="http://en.wikipedia.org/wiki/Unicode" class="extiw" title="wikipedia:Unicode">Unicode</a> <a rel="nofollow" class="external text" href="http://unicode.org/glossary/#unicode_scalar_value">scalar values</a>
+</td>
+<td> <a href="http://en.wikipedia.org/wiki/UTF-8" class="extiw" title="wikipedia:UTF-8">UTF-8</a> string prefixed with its size in bytes as a VarInt.  Maximum length of <code>n</code> characters, which varies by context; up to <code>n &#215; 4</code> bytes can be used to encode <code>n</code> characters and both of those limits are checked.  Maximum <code>n</code> value is 32767.  The + 3 is due to the max size of a valid length VarInt.
+</td></tr>
+<tr>
+<th> Chat
+</th>
+<td> ≥ 1 <br />≤ (32767&#215;4) + 3
+</td>
+<td> See <a href="Chat.html" title="Chat">Chat</a>
+</td>
+<td> Encoded as a String with max length of 32767.
+</td></tr>
+<tr>
+<th> Identifier
+</th>
+<td> ≥ 1 <br />≤ (32767&#215;4) + 3
+</td>
+<td> See <a href="Data_types.html#Identifier">Identifier</a> below
+</td>
+<td> Encoded as a String with max length of 32767.
+</td></tr>
+<tr>
+<th> VarInt
+</th>
+<td> ≥ 1 <br />≤ 5
+</td>
+<td> An integer between -2147483648 and 2147483647
+</td>
+<td> Variable-length data encoding a two's complement signed 32-bit integer; more info in <a href="Data_types.html#VarInt_and_VarLong">their section</a>
+</td></tr>
+<tr>
+<th> VarLong
+</th>
+<td> ≥ 1 <br />≤ 10
+</td>
+<td> An integer between -9223372036854775808 and 9223372036854775807
+</td>
+<td> Variable-length data encoding a two's complement signed 64-bit integer; more info in <a href="Data_types.html#VarInt_and_VarLong">their section</a>
+</td></tr>
+<tr>
+<th> Entity Metadata
+</th>
+<td> Varies
+</td>
+<td> Miscellaneous information about an entity
+</td>
+<td> See <a href="Entities.html#Entity_Metadata_Format" class="mw-redirect" title="Entities">Entities#Entity Metadata Format</a>
+</td></tr>
+<tr>
+<th> Slot
+</th>
+<td> Varies
+</td>
+<td> An item stack in an inventory or container
+</td>
+<td> See <a href="Slot_Data.html" title="Slot Data">Slot Data</a>
+</td></tr>
+<tr>
+<th> NBT Tag
+</th>
+<td> Varies
+</td>
+<td> Depends on context
+</td>
+<td> See <a href="NBT.html" title="NBT">NBT</a>
+</td></tr>
+<tr>
+<th> Position
+</th>
+<td> 8
+</td>
+<td> An integer/block position: x (-33554432 to 33554431), y (-2048 to 2047), z (-33554432 to 33554431)
+</td>
+<td> x as a 26-bit integer, followed by y as a 12-bit integer, followed by z as a 26-bit integer (all signed, two's complement). See also <a href="Data_types.html#Position">the section below</a>.
+</td></tr>
+<tr>
+<th> Angle
+</th>
+<td> 1
+</td>
+<td> A rotation angle in steps of 1/256 of a full turn
+</td>
+<td> Whether or not this is signed does not matter, since the resulting angles are the same.
+</td></tr>
+<tr>
+<th> UUID
+</th>
+<td> 16
+</td>
+<td> A <a href="http://en.wikipedia.org/wiki/Universally_unique_identifier" class="extiw" title="wikipedia:Universally unique identifier">UUID</a>
+</td>
+<td> Encoded as an unsigned 128-bit integer (or two unsigned 64-bit integers: the most significant 64 bits and then the least significant 64 bits)
+</td></tr>
+<tr>
+<th> Optional X
+</th>
+<td> 0 or size of X
+</td>
+<td> A field of type X, or nothing
+</td>
+<td> Whether or not the field is present must be known from the context.
+</td></tr>
+<tr>
+<th> Array of X
+</th>
+<td> count times size of X
+</td>
+<td> Zero or more fields of type X
+</td>
+<td> The count must be known from the context.
+</td></tr>
+<tr>
+<th> X Enum
+</th>
+<td> size of X
+</td>
+<td> A specific value from a given list
+</td>
+<td> The list of possible values and how each is encoded as an X must be known from the context. An invalid value sent by either side will usually result in the client being disconnected with an error or even crashing.
+</td></tr>
+<tr>
+<th> Byte Array
+</th>
+<td> Varies
+</td>
+<td> Depends on context
+</td>
+<td> This is just a sequence of zero or more bytes, its meaning should be explained somewhere else, e.g. in the packet description. The length must also be known from the context.
+</td></tr></table>
+<h2><span class="mw-headline" id="Identifier">Identifier</span></h2>
+<p>Identifiers are a namespaced location, in the form of <code>minecraft:thing</code>.  If the namespace is not provided, it defaults to <code>minecraft</code> (i.e. <code>thing</code> is <code>minecraft:thing</code>.  Custom content should always be in its own namespace, not the default one.  The namespace should only use the characters <code>01​​234​5​6​78​9abcdefghijklmnopqrstuvwxyz-_</code>; actual names may contain more symbols.  The naming convention is <code>lower_case_with_underscores</code>.  <a rel="nofollow" class="external text" href="https://minecraft.net/en-us/article/minecraft-snapshot-17w43a">More information</a>.
+</p>
+<h2><span class="mw-headline" id="VarInt_and_VarLong">VarInt and VarLong</span></h2>
+<p>Variable-length format such that smaller numbers use fewer bytes.  These are very similar to <a rel="nofollow" class="external text" href="http://developers.google.com/protocol-buffers/docs/encoding#varints">Protocol Buffer Varints</a>: the 7 least significant bits are used to encode the value and the most significant bit indicates whether there's another byte after it for the next part of the number.  The least significant group is written first, followed by each of the more significant groups; thus, VarInts are effectively little endian (however, groups are 7 bits, not 8).
+</p><p>VarInts are never longer than 5 bytes, and VarLongs are never longer than 10 bytes.
+</p><p>Pseudocode to read and write VarInts and VarLongs:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">readVarInt</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">numRead</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">byte</span> <span class="n">read</span><span class="o">;</span>
+    <span class="k">do</span> <span class="o">{</span>
+        <span class="n">read</span> <span class="o">=</span> <span class="n">readByte</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="n">read</span> <span class="o">&amp;</span> <span class="mb">0b01111111</span><span class="o">);</span>
+        <span class="n">result</span> <span class="o">|=</span> <span class="o">(</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="o">(</span><span class="mi">7</span> <span class="o">*</span> <span class="n">numRead</span><span class="o">));</span>
+
+        <span class="n">numRead</span><span class="o">++;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">numRead</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">&quot;VarInt is too big&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">while</span> <span class="o">((</span><span class="n">read</span> <span class="o">&amp;</span> <span class="mb">0b10000000</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">readVarLong</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">numRead</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">long</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">byte</span> <span class="n">read</span><span class="o">;</span>
+    <span class="k">do</span> <span class="o">{</span>
+        <span class="n">read</span> <span class="o">=</span> <span class="n">readByte</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="n">read</span> <span class="o">&amp;</span> <span class="mb">0b01111111</span><span class="o">);</span>
+        <span class="n">result</span> <span class="o">|=</span> <span class="o">(</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="o">(</span><span class="mi">7</span> <span class="o">*</span> <span class="n">numRead</span><span class="o">));</span>
+
+        <span class="n">numRead</span><span class="o">++;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">numRead</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">&quot;VarLong is too big&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">while</span> <span class="o">((</span><span class="n">read</span> <span class="o">&amp;</span> <span class="mb">0b10000000</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">writeVarInt</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">do</span> <span class="o">{</span>
+        <span class="kt">byte</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)(</span><span class="n">value</span> <span class="o">&amp;</span> <span class="mb">0b01111111</span><span class="o">);</span>
+        <span class="c1">// Note: &gt;&gt;&gt; means that the sign bit is shifted with the rest of the number rather than being left alone</span>
+        <span class="n">value</span> <span class="o">&gt;&gt;&gt;=</span> <span class="mi">7</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">temp</span> <span class="o">|=</span> <span class="mb">0b10000000</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">writeByte</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">writeVarLong</span><span class="o">(</span><span class="kt">long</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">do</span> <span class="o">{</span>
+        <span class="kt">byte</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)(</span><span class="n">value</span> <span class="o">&amp;</span> <span class="mb">0b01111111</span><span class="o">);</span>
+        <span class="c1">// Note: &gt;&gt;&gt; means that the sign bit is shifted with the rest of the number rather than being left alone</span>
+        <span class="n">value</span> <span class="o">&gt;&gt;&gt;=</span> <span class="mi">7</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">temp</span> <span class="o">|=</span> <span class="mb">0b10000000</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">writeByte</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+<div style="background:#FFF3BD; padding: 0px 5px 0px 5px; border: 1px solid #C4B674;">
+<p><a href="./File:Warning.png.html" class="image"><img alt="Warning.png" src="images/c/cb/Warning.png" width="14" height="14" /></a> Note that Minecraft's VarInts are not encoded using Protocol Buffers; it's just similar.  If you try to use Protocol Buffers Varints with Minecraft's VarInts, you'll get incorrect results in some cases.  The major differences:
+</p>
+<ul><li>Minecraft's VarInts are all signed, but do not use the ZigZag encoding.  Protocol buffers have 3 types of Varints: <code>uint32</code> (normal encoding, unsigned), <code>sint32</code> (ZigZag encoding, signed), and <code>int32</code> (normal encoding, signed).  Minecraft's are the <code>int32</code> variety.  Because Minecraft uses the normal encoding instead of ZigZag encoding, negative values always use the maximum number of bytes.</li>
+<li>Minecraft's VarInts are never be longer than 5 bytes and its VarLongs will never be longer than 10 bytes, while Protocol Buffer Varints will always use 10 bytes when encoding negative numbers, even if it's an <code>int32</code>.</li></ul>
+</div>
+<p>Sample VarInts:
+</p>
+<table class="wikitable">
+<tr>
+<th> Value </th>
+<th> Hex bytes </th>
+<th> Decimal bytes
+</th></tr>
+<tr>
+<td> 0 </td>
+<td> 0x00 </td>
+<td> 0
+</td></tr>
+<tr>
+<td> 1 </td>
+<td> 0x01 </td>
+<td> 1
+</td></tr>
+<tr>
+<td> 2 </td>
+<td> 0x02 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> 127 </td>
+<td> 0x7f </td>
+<td> 127
+</td></tr>
+<tr>
+<td> 128 </td>
+<td> 0x80 0x01 </td>
+<td> 128 1
+</td></tr>
+<tr>
+<td> 255 </td>
+<td> 0xff 0x01 </td>
+<td> 255 1
+</td></tr>
+<tr>
+<td> 2147483647 </td>
+<td> 0xff 0xff 0xff 0xff 0x07 </td>
+<td> 255 255 255 255 7
+</td></tr>
+<tr>
+<td> -1 </td>
+<td> 0xff 0xff 0xff 0xff 0x0f </td>
+<td> 255 255 255 255 15
+</td></tr>
+<tr>
+<td> -2147483648 </td>
+<td> 0x80 0x80 0x80 0x80 0x08 </td>
+<td> 128 128 128 128 8
+</td></tr></table>
+<p>Sample VarLongs:
+</p>
+<table class="wikitable">
+<tr>
+<th> Value </th>
+<th> Hex bytes </th>
+<th> Decimal bytes
+</th></tr>
+<tr>
+<td> 0 </td>
+<td> 0x00 </td>
+<td> 0
+</td></tr>
+<tr>
+<td> 1 </td>
+<td> 0x01 </td>
+<td> 1
+</td></tr>
+<tr>
+<td> 2 </td>
+<td> 0x02 </td>
+<td> 2
+</td></tr>
+<tr>
+<td> 127 </td>
+<td> 0x7f </td>
+<td> 127
+</td></tr>
+<tr>
+<td> 128 </td>
+<td> 0x80 0x01 </td>
+<td> 128 1
+</td></tr>
+<tr>
+<td> 255 </td>
+<td> 0xff 0x01 </td>
+<td> 255 1
+</td></tr>
+<tr>
+<td> 2147483647 </td>
+<td> 0xff 0xff 0xff 0xff 0x07 </td>
+<td> 255 255 255 255 7
+</td></tr>
+<tr>
+<td> 9223372036854775807 </td>
+<td> 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0x7f </td>
+<td> 255 255 255 255 255 255 255 255 127
+</td></tr>
+<tr>
+<td> -1 </td>
+<td> 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0x01 </td>
+<td> 255 255 255 255 255 255 255 255 255 1
+</td></tr>
+<tr>
+<td> -2147483648 </td>
+<td> 0x80 0x80 0x80 0x80 0xf8 0xff 0xff 0xff 0xff 0x01 </td>
+<td> 128 128 128 128 248 255 255 255 255 1
+</td></tr>
+<tr>
+<td> -9223372036854775808 </td>
+<td> 0x80 0x80 0x80 0x80 0x80 0x80 0x80 0x80 0x80 0x01 </td>
+<td> 128 128 128 128 128 128 128 128 128 1
+</td></tr></table>
+<h2><span class="mw-headline" id="Position">Position</span></h2>
+<p>64-bit value split in to three parts
+</p>
+<ul><li> x: 26 MSBs</li>
+<li> z: 26 LSBs</li>
+<li> y: 12 bits between them</li></ul>
+<p>Encoded as followed:
+</p>
+<pre>((x &amp; 0x3FFFFFF) &lt;&lt; 38) | ((y &amp; 0xFFF) &lt;&lt; 26) | (z &amp; 0x3FFFFFF)
+</pre>
+<p>And decoded as:
+</p>
+<pre>val = read_unsigned_long();
+x = val &gt;&gt; 38;
+y = (val &gt;&gt; 26) &amp; 0xFFF;
+z = val &lt;&lt; 38 &gt;&gt; 38;
+</pre>
+<p>Note: The details of bit shifting are rather language dependent; the above may work in Java but probably won't in other languages without some tweaking. In particular, you will usually receive positive numbers even if the actual coordinates are negative. This can be fixed by adding something like the following:
+</p>
+<pre>if x &gt;= 2^25 { x -= 2^26 }
+if y &gt;= 2^11 { y -= 2^12 }
+if z &gt;= 2^25 { z -= 2^26 }
+</pre>
+<h2><span class="mw-headline" id="Fixed-point_numbers">Fixed-point numbers</span></h2>
+<p>Some fields may be stored as <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Fixed-point_arithmetic">fixed-point numbers</a>, where a certain number of bits represents the signed integer part (number to the left of the decimal point) and the rest represents the fractional part (to the right). Floating points (float and double), in contrast, keep the number itself (mantissa) in one chunk, while the location of the decimal point (exponent) is stored beside it. 
+</p><p>Essentially, while fixed-point numbers have lower range than floating points, their fractional precision is greater for higher values. This makes them ideal for representing global coordinates of an entity in Minecraft, as it's more important to store the integer part accurately than position them more precisely within a single block (or meter). 
+</p><p>Coordinates are often represented as a 32-bit integer, where 5 of the least-significant bits are dedicated to the fractional part, and the rest store the integer part.
+</p><p>Java lacks support for fractional integers directly, but you can represent them as integers. To convert from a double to this integer representation, use the following formulas:
+</p>
+<pre> abs_int = (int) (double * 32.0D);
+</pre>
+<p>And back again:
+</p>
+<pre> double = (double) (abs_int / 32.0D);
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20180823003417
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.071 seconds
+Real time usage: 0.148 seconds
+Preprocessor visited node count: 30/1000000
+Preprocessor generated node count: 198/1000000
+Post‐expand include size: 1018/2097152 bytes
+Template argument size: 895/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    7.251      1 - -total
+100.00%    7.251      1 - Template:Warning2
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:176-0!*!0!!en!5!* and timestamp 20180823003417 and revision id 14256
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Data_types&amp;oldid=14256">http://wiki.vg/index.php?title=Data_types&amp;oldid=14256</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Protocol_Details.html" title="Category:Protocol Details">Protocol Details</a></li><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Data+types" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Data+types" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Data_types.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Data_types.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Data_types.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Data_types.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Data_types&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Data_types&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Data_types.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Data_types" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Data_types" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Data_types&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Data_types&amp;oldid=14256" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Data_types&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 August 2018, at 17:22.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":221});});</script>
+	</body>
+</html>

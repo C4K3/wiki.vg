@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Talk:Protocol - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"Talk","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":1,"wgPageName":"Talk:Protocol","wgTitle":"Protocol","wgCurRevisionId":13323,"wgRevisionId":13323,"wgArticleId":33,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Talk:Protocol","wgRelevantArticleId":33,"wgRequestId":"84327ebf737b5536fe287880","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-1 ns-talk page-Talk_Protocol rootpage-Talk_Protocol skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Talk:Protocol</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="./Talk:Protocol.html#mw-head">navigation</a>, 					<a href="./Talk:Protocol.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./Talk:Protocol.html#zlib_compress_instead_of_deflate.3F_.280x33.29"><span class="tocnumber">1</span> <span class="toctext">zlib compress instead of deflate? (0x33)</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./Talk:Protocol.html#Too_Large.3F"><span class="tocnumber">2</span> <span class="toctext">Too Large?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./Talk:Protocol.html#Player_Position_.280x0B.29_really_absolute_position.3F"><span class="tocnumber">3</span> <span class="toctext">Player Position (0x0B) really absolute position?</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./Talk:Protocol.html#New_Server_Packet_0x1c"><span class="tocnumber">4</span> <span class="toctext">New Server Packet 0x1c</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="./Talk:Protocol.html#New_Client_Packet_0x15"><span class="tocnumber">5</span> <span class="toctext">New Client Packet 0x15</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="./Talk:Protocol.html#Version_4"><span class="tocnumber">6</span> <span class="toctext">Version 4</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="./Talk:Protocol.html#C-.3ES_Block_change_with_direction.3D-1"><span class="tocnumber">7</span> <span class="toctext">C-&gt;S Block change with direction=-1</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="./Talk:Protocol.html#New_packets_introduced_in_SMP_Health_update"><span class="tocnumber">8</span> <span class="toctext">New packets introduced in SMP Health update</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="./Talk:Protocol.html#Complex_entity_packet_.280x3B.29_client-.3Eserver"><span class="tocnumber">9</span> <span class="toctext">Complex entity packet (0x3B) client-&gt;server</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="./Talk:Protocol.html#Nov_30_update"><span class="tocnumber">10</span> <span class="toctext">Nov 30 update</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="./Talk:Protocol.html#Map_chunks_vs._mini_chunks"><span class="tocnumber">11</span> <span class="toctext">Map chunks vs. mini chunks</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="./Talk:Protocol.html#Currently_unlisted_packets."><span class="tocnumber">12</span> <span class="toctext">Currently unlisted packets.</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="./Talk:Protocol.html#beta_update_December_20.2C_2010"><span class="tocnumber">13</span> <span class="toctext">beta update December 20, 2010</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="./Talk:Protocol.html#Why_the_merge.3F"><span class="tocnumber">14</span> <span class="toctext">Why the merge?</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="./Talk:Protocol.html#Y.2FStance"><span class="tocnumber">15</span> <span class="toctext">Y/Stance</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="./Talk:Protocol.html#Connection_.22hash.22_somewhat_misleading.3F"><span class="tocnumber">16</span> <span class="toctext">Connection "hash" somewhat misleading?</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="./Talk:Protocol.html#Beta_1.2_Update"><span class="tocnumber">17</span> <span class="toctext">Beta 1.2 Update</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="./Talk:Protocol.html#Packet_ID_datatype_explanation"><span class="tocnumber">18</span> <span class="toctext">Packet ID datatype explanation</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="./Talk:Protocol.html#Signed.2FUnsigned_Byte_Values"><span class="tocnumber">19</span> <span class="toctext">Signed/Unsigned Byte Values</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="./Talk:Protocol.html#Absolute_integer_relation_to_absolute_position"><span class="tocnumber">20</span> <span class="toctext">Absolute integer relation to absolute position</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="./Talk:Protocol.html#Packet_0xA"><span class="tocnumber">21</span> <span class="toctext">Packet 0xA</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="./Talk:Protocol.html#big_endian_conversion_c.2B.2B"><span class="tocnumber">22</span> <span class="toctext">big endian conversion c++</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="./Talk:Protocol.html#Wolves_metadata"><span class="tocnumber">23</span> <span class="toctext">Wolves metadata</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="./Talk:Protocol.html#Version_11_.28Beta_1.5.29"><span class="tocnumber">24</span> <span class="toctext">Version 11 (Beta 1.5)</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="./Talk:Protocol.html#.2F.2A_Item_data_type_.2A.2F"><span class="tocnumber">25</span> <span class="toctext">/* Item data type */</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="./Talk:Protocol.html#0x01_Login_C-.3ES_.28Version_11.29"><span class="tocnumber">26</span> <span class="toctext">0x01 Login C-&gt;S (Version 11)</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="./Talk:Protocol.html#.2F.2A_Byte-packed_double.3F_.2A.2F"><span class="tocnumber">27</span> <span class="toctext">/* Byte-packed double? */</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="./Talk:Protocol.html#0x32_.28pre-chunk.29_packet_optional.3F"><span class="tocnumber">28</span> <span class="toctext">0x32 (pre-chunk) packet optional?</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="./Talk:Protocol.html#0x18_-_Where_does_the_.27Index.27_come_from.3F_.2B_Metadata_String"><span class="tocnumber">29</span> <span class="toctext">0x18 - Where does the 'Index' come from? + Metadata String</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="./Talk:Protocol.html#0x47_-_Weather.3F"><span class="tocnumber">30</span> <span class="toctext">0x47 - Weather?</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="./Talk:Protocol.html#Map_data_.280x83.29"><span class="tocnumber">31</span> <span class="toctext">Map data (0x83)</span></a></li>
+<li class="toclevel-1 tocsection-32"><a href="./Talk:Protocol.html#Block_Action.3F_.280x3D.29"><span class="tocnumber">32</span> <span class="toctext">Block Action? (0x3D)</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="./Talk:Protocol.html#Unknown_fields_in_0x17_may_be_trajectory."><span class="tocnumber">33</span> <span class="toctext">Unknown fields in 0x17 may be trajectory.</span></a></li>
+<li class="toclevel-1 tocsection-34"><a href="./Talk:Protocol.html#0x3D_packet_specs"><span class="tocnumber">34</span> <span class="toctext">0x3D packet specs</span></a></li>
+<li class="toclevel-1 tocsection-35"><a href="./Talk:Protocol.html#0x6A_-_Inventory_Transaction"><span class="tocnumber">35</span> <span class="toctext">0x6A - Inventory Transaction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-36"><a href="./Talk:Protocol.html#further_observations"><span class="tocnumber">35.1</span> <span class="toctext">further observations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-37"><a href="./Talk:Protocol.html#Decimal_packet_numbers.3F"><span class="tocnumber">36</span> <span class="toctext">Decimal packet numbers?</span></a></li>
+<li class="toclevel-1 tocsection-38"><a href="./Talk:Protocol.html#Entity_Action_.3F.3F.3F_.280x13.29"><span class="tocnumber">37</span> <span class="toctext">Entity Action&#160;??? (0x13)</span></a></li>
+<li class="toclevel-1 tocsection-39"><a href="./Talk:Protocol.html#Piston_Direction"><span class="tocnumber">38</span> <span class="toctext">Piston Direction</span></a></li>
+<li class="toclevel-1 tocsection-40"><a href="./Talk:Protocol.html#Entity_Status_.280x26.29"><span class="tocnumber">39</span> <span class="toctext">Entity Status (0x26)</span></a></li>
+<li class="toclevel-1 tocsection-41"><a href="./Talk:Protocol.html#Yaw_diagram_needs_correcting"><span class="tocnumber">40</span> <span class="toctext">Yaw diagram needs correcting</span></a></li>
+<li class="toclevel-1 tocsection-42"><a href="./Talk:Protocol.html#1.8_Pre-release_changes"><span class="tocnumber">41</span> <span class="toctext">1.8 Pre-release changes</span></a></li>
+<li class="toclevel-1 tocsection-43"><a href="./Talk:Protocol.html#Creative_inventory_action_.280x6B.29"><span class="tocnumber">42</span> <span class="toctext">Creative inventory action (0x6B)</span></a></li>
+<li class="toclevel-1 tocsection-44"><a href="./Talk:Protocol.html#Mob_ID_for_endermen.3F"><span class="tocnumber">43</span> <span class="toctext">Mob ID for endermen?</span></a></li>
+<li class="toclevel-1 tocsection-45"><a href="./Talk:Protocol.html#Add_Object.2FVehicle_correct.3F"><span class="tocnumber">44</span> <span class="toctext">Add Object/Vehicle correct?</span></a></li>
+<li class="toclevel-1 tocsection-46"><a href="./Talk:Protocol.html#0x02_.28Server_to_Client.29.2C_description_misunderstunding"><span class="tocnumber">45</span> <span class="toctext">0x02 (Server to Client), description misunderstunding</span></a></li>
+<li class="toclevel-1 tocsection-47"><a href="./Talk:Protocol.html#Server_poll_not_working_in_1.0.3F"><span class="tocnumber">46</span> <span class="toctext">Server poll not working in 1.0?</span></a></li>
+<li class="toclevel-1 tocsection-48"><a href="./Talk:Protocol.html#More_explanations.21"><span class="tocnumber">47</span> <span class="toctext">More explanations!</span></a></li>
+<li class="toclevel-1 tocsection-49"><a href="./Talk:Protocol.html#World_height_and_indexing_problem"><span class="tocnumber">48</span> <span class="toctext">World height and indexing problem</span></a></li>
+<li class="toclevel-1 tocsection-50"><a href="./Talk:Protocol.html#1.1_changes"><span class="tocnumber">49</span> <span class="toctext">1.1 changes</span></a></li>
+<li class="toclevel-1 tocsection-51"><a href="./Talk:Protocol.html#Packet_directon_changes"><span class="tocnumber">50</span> <span class="toctext">Packet directon changes</span></a></li>
+<li class="toclevel-1 tocsection-52"><a href="./Talk:Protocol.html#Removed_the_last_two_.22this_command_is_not_fully_understood.22"><span class="tocnumber">51</span> <span class="toctext">Removed the last two "this command is not fully understood"</span></a></li>
+<li class="toclevel-1 tocsection-53"><a href="./Talk:Protocol.html#Strange_Packets"><span class="tocnumber">52</span> <span class="toctext">Strange Packets</span></a></li>
+<li class="toclevel-1 tocsection-54"><a href="./Talk:Protocol.html#Packet_0x1E_description"><span class="tocnumber">53</span> <span class="toctext">Packet 0x1E description</span></a></li>
+<li class="toclevel-1 tocsection-55"><a href="./Talk:Protocol.html#Ambiguity_and_Typos.3F"><span class="tocnumber">54</span> <span class="toctext">Ambiguity and Typos?</span></a></li>
+<li class="toclevel-1 tocsection-56"><a href="./Talk:Protocol.html#Why_is_.22float.22_in_0x08_bold.3F"><span class="tocnumber">55</span> <span class="toctext">Why is "float" in 0x08 bold?</span></a></li>
+<li class="toclevel-1 tocsection-57"><a href="./Talk:Protocol.html#Rename_category_to_state"><span class="tocnumber">56</span> <span class="toctext">Rename category to state</span></a></li>
+<li class="toclevel-1 tocsection-58"><a href="./Talk:Protocol.html#String_terminator"><span class="tocnumber">57</span> <span class="toctext">String terminator</span></a></li>
+<li class="toclevel-1 tocsection-59"><a href="./Talk:Protocol.html#What_happends_if_you_don.27t_send_CPacketConfirmTeleport_.2F_what_does_it_do_and_what_are_the_effects_of_sending_it.3F_.28serverbound-related.29"><span class="tocnumber">58</span> <span class="toctext">What happends if you don't send CPacketConfirmTeleport / what does it do and what are the effects of sending it? (serverbound-related)</span></a></li>
+<li class="toclevel-1 tocsection-60"><a href="./Talk:Protocol.html#Click_Window"><span class="tocnumber">59</span> <span class="toctext">Click Window</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="zlib_compress_instead_of_deflate.3F_.280x33.29">zlib compress instead of deflate? (0x33)</span></h2>
+<p>Whilst implementing chunk creation server side in PHP I've found deflate does not work, however the zlib compressed format does.  Can anyone else confirm this? --<a href="https://wiki.vg/index.php?title=User:Ody&amp;action=edit&amp;redlink=1" class="new" title="User:Ody (page does not exist)">ody</a>
+</p><p>I can confirm it uses zlib. I'm using the Ionic Zlib library. Using deflate makes the Minecraft client show the error "Bad compressed data format." <a href="https://wiki.vg/index.php?title=User:DotMaiku&amp;action=edit&amp;redlink=1" class="new" title="User:DotMaiku (page does not exist)">dotMaiku</a> 10:13, 23 October 2011 (MST)
+</p><p>Just strip the first 2 chars... then it works (Java deflate issue) --<a href="https://wiki.vg/index.php?title=User:Shoghicp&amp;action=edit&amp;redlink=1" class="new" title="User:Shoghicp (page does not exist)">Shoghicp</a> 14:21, 12 December 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Too_Large.3F">Too Large?</span></h2>
+<p>MediaWiki gave me a warning about this page being too large for some browsers. Perhaps it should be split in half? --<a href="https://wiki.vg/index.php?title=User:SpaceManiac&amp;action=edit&amp;redlink=1" class="new" title="User:SpaceManiac (page does not exist)">SpaceManiac</a> 00:44, 6 November 2010 (EDT)
+</p><p>Don't hit Edit for the entire page&#160;:P -- <a href="https://wiki.vg/index.php?title=User:Jailout2000&amp;action=edit&amp;redlink=1" class="new" title="User:Jailout2000 (page does not exist)"><span style="color: #0080C0; font-weight: bold;">Jailout2000</span></a> 04:48, 2 January 2012 (MST)
+</p>
+<h2><span class="mw-headline" id="Player_Position_.280x0B.29_really_absolute_position.3F">Player Position (0x0B) really absolute position?</span></h2>
+<p>As of version 1.2.0_02, I was watching the packets my server software was receiving while walking around, and the xyz coordinates of packet type 0x0b appear to correlate 1:1 with where a player is in block coordinates, not pixel coordinates. <a href="https://wiki.vg/index.php?title=User:Yen&amp;action=edit&amp;redlink=1" class="new" title="User:Yen (page does not exist)">Yen</a>
+</p><p>Absolute position position is specified as block coordinates, It appears this has changed before the move, I put in these definitions originally to clarify such things, absolute double's should be block coordinates, with the fraction being the offset in the block. <a href="https://wiki.vg/index.php?title=User:ReDucTor&amp;action=edit&amp;redlink=1" class="new" title="User:ReDucTor (page does not exist)">ReDucTor</a>
+</p><p>So "Absolute" is in meters, but "Absolute integer" is in pixels? Can't we come up with better names? I propose we name coordinates by the size of 1 unit. We change the names like this: Absolute -&gt; meters; Absolute integer -&gt; pixels; Block -&gt; meters; Chunk -&gt; chunks. Currently, the only two "units of measurement" with the same name are in fact different units of measurement. The focus of the current names seems to be the precision of the types, which seems less important to convey to readers than the scale of each unit relative to one another. --<a href="https://wiki.vg/index.php?title=User:Thejoshwolfe&amp;action=edit&amp;redlink=1" class="new" title="User:Thejoshwolfe (page does not exist)">Thejoshwolfe</a> 22:55, 25 January 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="New_Server_Packet_0x1c">New Server Packet 0x1c</span></h2>
+<p>The 11/10/2010 update has a new server to client packet (0x1c) 11 bytes long, the first field appears to be an EID. The packet is sent when a pickup is spawned in the world, either by throwing something, or mining. If the packet is ignored, the pickups never appear on the client. <a href="https://wiki.vg/index.php?title=User:Jorgon3d&amp;action=edit&amp;redlink=1" class="new" title="User:Jorgon3d (page does not exist)">Jorgon3d</a> 20:34, 10 November 2010 (EST)
+</p>
+<h2><span class="mw-headline" id="New_Client_Packet_0x15">New Client Packet 0x15</span></h2>
+<p>The 11/10/2010 update has a new client to server packet (0x15). It appears to be exactly as the Server to Client packet "Pickup Spawn". <a href="https://wiki.vg/index.php?title=User:Jorgon3d&amp;action=edit&amp;redlink=1" class="new" title="User:Jorgon3d (page does not exist)">Jorgon3d</a> 20:34, 10 November 2010 (EST)
+</p>
+<h2><span class="mw-headline" id="Version_4">Version 4</span></h2>
+<p>I've added the new packets from Version 4, and what I believe they match with, if people could please match these with what they see. And a Grammar Nazi fix up my failures. Please join irc.esper.net / #mcc to discuss this new protocol. <a href="https://wiki.vg/index.php?title=User:ReDucTor&amp;action=edit&amp;redlink=1" class="new" title="User:ReDucTor (page does not exist)">ReDucTor</a>
+</p>
+<h2><span class="mw-headline" id="C-.3ES_Block_change_with_direction.3D-1">C-&gt;S Block change with direction=-1</span></h2>
+<p>(Client to server) It appears now after a block change is sent there is another block change that follows this with all values -1 except block id of the change, from what I can determine this causes the players selected inventory to be changed if needed from this   block change. Anyone looked into this? <a href="https://wiki.vg/index.php?title=User:ReDucTor&amp;action=edit&amp;redlink=1" class="new" title="User:ReDucTor (page does not exist)">ReDucTor</a>
+</p>
+<h2><span class="mw-headline" id="New_packets_introduced_in_SMP_Health_update">New packets introduced in SMP Health update</span></h2>
+<p>Looking at the new server JAR I've seen three new packets. IDs are 0x08(&lt;byte&gt;), 0x09(), and 0x26(&lt;int&gt;,&lt;byte&gt;).
+</p><p>0x08 I'm thinking could be the players health update packet, 0x26 perhaps the 'hit entity' packet, 0x09 I'm not sure.
+</p><p>I'll confirm what these packets do tonight when I get back from work.
+</p>
+<dl><dd>The 0x09 packet is for respawning. It is sent in both directions for when the player should respawn. 0x08 is the health, yes. Haven't gotten to 0x26 yet. <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 08:17, 24 November 2010 (EST)</dd></dl>
+<dl><dd>Packet 0x07 from client to server has a new field of 1 byte. Its value is usually 1 which would make your client try to read a 0x01 packet, which includes a string, so that explains why you're getting errors about negative lengths, unicode or simply if the client stops reading more data. <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 10:01, 24 November 2010 (EST)</dd></dl>
+<dl><dd>I believe I found a VERY subtle change that caused my client to crash when proxied through a wrapper that reads and writes packets: The packet for animating (0x12) now supports values other than 0 and 1 (bool): I got 2 for some packets. <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 10:14, 24 November 2010 (EST)</dd></dl>
+<dl><dd>The 0x07 packet has a new bool for attacking_animal. It is 0 when using things vs air or blocks, and 1 when used on zombies, animals, and probably players (haven't tested yet). <a href="https://wiki.vg/index.php?title=User:Benmanns&amp;action=edit&amp;redlink=1" class="new" title="User:Benmanns (page does not exist)">benmanns</a> 10:24, 24 November 2010 (EST)</dd></dl>
+<dl><dd><dl><dd>0x07 is never sent when you hit normal blocks or air. It's for interacting with an entity (thus it also has an entity id). I do get true whenever I hit a mob though, so that part seems correct. <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 10:59, 24 November 2010 (EST)</dd></dl></dd></dl>
+<dl><dd>0x26 appears to be sent when an entity dies. The last byte seems to be 3 most of the time. No idea what that means. My wrapper (<a rel="nofollow" class="external free" href="http://github.com/blixt/pyminecraft">http://github.com/blixt/pyminecraft</a>) is working fine now, but there seems to be a few bugs relating to burning mobs... don't know why. <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 10:59, 24 November 2010 (EST)</dd></dl>
+<dl><dd><dl><dd>Never mind, I was forcing the client to think it was day, so during the night (on the server) the client thought the monsters should burn so they started burning, then the server said they weren't burning so they stopped burning.&#160;:) <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 14:15, 24 November 2010 (EST)</dd></dl></dd></dl>
+<h2><span class="mw-headline" id="Complex_entity_packet_.280x3B.29_client-.3Eserver">Complex entity packet (0x3B) client-&gt;server</span></h2>
+<p>Is this new? Wasn't it only server-&gt;client before? The client is sending 0x3B to the server whenever you put stuff in a chest now, anyways. <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 11:37, 29 November 2010 (EST)
+</p>
+<h2><span class="mw-headline" id="Nov_30_update">Nov 30 update</span></h2>
+<p>Today's update seems to change the following:
+</p>
+<ul><li> The 0x26 packet now sends values other than 3 for the byte field. The value 2 means an entity was hurt. The value 3 means an entity died. The value 4 is sent the moment a creeper starts flashing.</li>
+<li> There is a new packet 0x3C. I haven't investigated this yet but my guess is it's got to do with sound. It appears to be sent when a creeper is about to explode.</li>
+<li> There are a lot of new values for packet 0x12 (animate), such as 104 for crouching, 105 for standing up.</li></ul>
+<p>- <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 17:58, 30 November 2010 (EST)
+</p>
+<dl><dd>Has anyone looked into this? I am starting to suspect that 0x3C is a packet specific to explosions... It seems to have a structure similar to 0x34 / Multi Block Change. – <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 05:12, 1 December 2010 (EST)</dd></dl>
+<dl><dd>The packet structure is like this: double, double, double, float, n = integer, n * 3 bytes. The first three doubles correspond well with X, Y, Z. The float is currently unknown. It was 3.0 for me, might be a radius or something. The list of bytes appears to be a bunch of block offsets, presumably the blocks that were destroyed in the explosion. The range of the values seems to be a bit strange though, I got the X offset as -6 up to 3, which means the explosion wouldn't be centered on the X, Y, Z coordinates. Also, the list seems to include air blocks, which seems a bit unnecessary. More investigation needed. – <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 18:04, 1 December 2010 (EST)</dd></dl>
+<h2><span class="mw-headline" id="Map_chunks_vs._mini_chunks">Map chunks vs. mini chunks</span></h2>
+<p>I'd like to make a distinction between "mini chunks" and "map chunks".  Mini chunks are updates that have the same purpose as "multi block updates".  The X/Y/Z size and position can be anything.  Map chunks are complete 16x128x16 pieces of the map.  Mini-chunk updates can arrive before map chunk updates.
+</p><p>"Prechunk" packet marks where a map chunk will be visible to the client, eventually.  It can come well before the client should draw, though.  My client will only draw a map chunk that has had a full 16x128x16 chunk update (loaded), and a prechunk packet (visible).  Mini-chunks might come before prechunks, and prechunks usually come before map chunks, but both sides have to be flexible.  I *have* seen mini-chunks cross map chunk boundaries, but it might be a bug in my client&#160;;p
+</p><p>Example: 6x4x5 mini-chunk sent for [-1022, 20, 50].  Prechunk sent for [-1024/16, 48/16].  16x128x16 map chunk sent for [-1024, 0, 48], overwriting the mini-chunk.  Now it's drawn, because client has prechunk and full map chunk.  Remember, chunk sizes are encoded as size-1.
+</p>
+<h2><span class="mw-headline" id="Currently_unlisted_packets.">Currently unlisted packets.</span></h2>
+<p>Some packets are listed as only going in one direction, but are actually sent the other too. To my knowledge, these are:
+</p>
+<ul><li>S-&gt;C 0x0a</li>
+<li>S-&gt;C 0x0b</li>
+<li>C-&gt;S 0x3b (mentioned <a href="./Talk:Protocol.html#Complex_entity_packet_.280x3B.29_client-.3Eserver" title="Talk:Protocol">above</a>)</li></ul>
+<p>The packets are identical to their counterparts. <a href="https://wiki.vg/index.php?title=User:Barneygale&amp;action=edit&amp;redlink=1" class="new" title="User:Barneygale (page does not exist)">Barneygale</a> 17:02, 15 December 2010 (EST)
+</p><p><br />
+Were you connecting to a standard server?  I've only received 0xa and 0xb from unofficial servers.
+--<a href="https://wiki.vg/index.php?title=User:Axus&amp;action=edit&amp;redlink=1" class="new" title="User:Axus (page does not exist)">Axus</a> 13:21, 16 December 2010 (EST)
+</p>
+<h2><span class="mw-headline" id="beta_update_December_20.2C_2010">beta update December 20, 2010</span></h2>
+<p>Someone pasted some notes about the protocol changes here:
+<a rel="nofollow" class="external free" href="http://pastebin.com/YfR9XgC2">http://pastebin.com/YfR9XgC2</a>
+</p><p>Question: Does 0x0D Player Position and Look Client-&gt;Server still differ from Server-&gt;Client?
+</p>
+<dl><dd>I haven't seen any differences in how player position works. I've updated my wrapper and server to work with the new protocol and everything seems fine. See this diff for most packet changes: <a rel="nofollow" class="external free" href="https://github.com/blixt/pyminecraft/commit/af4c9f6b9b2387e429fa425dd5061ef01e03c5aa#diff-1">https://github.com/blixt/pyminecraft/commit/af4c9f6b9b2387e429fa425dd5061ef01e03c5aa#diff-1</a> – <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 10:30, 21 December 2010 (EST)</dd></dl>
+<dl><dd>I updated the packets that were missing information, and changed the notion from "inventories" to "windows" as that makes more sense. I also believe that's the term used by Notch when he mentioned his implementation in some blog post. - <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 19:25, 21 December 2010 (EST)</dd></dl>
+<dl><dd><dl><dd>Sorry, the term he used was "popup", not "window". But still, the way the packets work is popup/window-centric, not inventory/container-centric (since every time a popup/window is opened, it gets a new id, the ids are not specific to which container/inventory is opened - except for the player inventory of course). - <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 07:18, 22 December 2010 (EST)</dd></dl></dd></dl>
+<p><b>Note!</b> As of 1.1, the Transaction packet goes in both direction (previously it was only sent by the server). - <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 09:56, 22 December 2010 (EST)
+</p>
+<h2><span class="mw-headline" id="Why_the_merge.3F">Why the merge?</span></h2>
+<p>I noticed the client/server and server/client sections were merged - why was this? It makes it difficult to tell the difference between packet directions when they're unidirectional. --<a href="https://wiki.vg/index.php?title=User:SpaceManiac&amp;action=edit&amp;redlink=1" class="new" title="User:SpaceManiac (page does not exist)">SpaceManiac</a> 13:31, 21 December 2010 (EST)
+</p><p>I don't mind the merge so much (the page is quite a bit shorter), but we should have a list or table of C&lt;-&gt;S mapping.  Having quick access to that makes writing an inbound {client, server} decoder much easier. --<a href="https://wiki.vg/index.php?title=User:Kev009&amp;action=edit&amp;redlink=1" class="new" title="User:Kev009 (page does not exist)">kev009</a>
+</p>
+<dl><dd>Actually, a merge makes sense, since the original Minecraft server itself does not differ between directions when defining its packets (that's why there are two unused fields in each direction for the handshake packet, for example). But yes, a notion on which direction(s) a packet can be sent would make sense, possibly with a simple table for each direction at the top for a quick reference on all packets for one direction. - <a href="https://wiki.vg/index.php?title=User:Blixt&amp;action=edit&amp;redlink=1" class="new" title="User:Blixt (page does not exist)">Blixt</a> 19:23, 21 December 2010 (EST)</dd></dl>
+<h2><span class="mw-headline" id="Y.2FStance">Y/Stance</span></h2>
+<p>Two things.. The "Y" and "Stance" are, for Client-&gt;Server at least, in the same order in both 0B and 0D packets. Perhaps the discrepancy has been fixed in a recent protocol version, but I haven't checked Server-&gt;Client yet.
+</p><p>Also the F3 Coordinate display in Minecraft shows, for Y, what we are calling "Stance" on the page. The server uses "stance" to mean neither coordinate, but in fact the difference between the two, ie, the height of the player. This would make more sense as something to be called "stance" too.
+</p><p>So, I would say the upper of the two coordinates (currently called "stance") should be called "Y", and the lower (currently called "Y") should be "foot height" or something like that. Neither should be called "stance".
+<a href="https://wiki.vg/index.php?title=User:Moo&amp;action=edit&amp;redlink=1" class="new" title="User:Moo (page does not exist)">Moo</a> 10:15, 1 January 2011 (MST)
+</p><p><br />
+</p>
+<dl><dd>I like having "Y" correspond to player's foot position.  What happens if player is standing at Y=127?  Eye height becomes 128.62, which maps out of the normal chunk coordinates.  Items and monsters give Y at their foot position, doing the same with players would be consistent.  --<a href="https://wiki.vg/index.php?title=User:Axus&amp;action=edit&amp;redlink=1" class="new" title="User:Axus (page does not exist)">Axus</a> 07:16, 3 January 2011 (MST)</dd></dl>
+<p><br />
+</p>
+<dl><dd><dl><dd>"What happens if player is standing at Y=127? Eye height becomes 128.62," Minecraft itself shows the player's Y coordinate as 129.62 when as high as can currently be reached. Monsters and items don't have a camera/eye position to account for, so that would probably explain why they use the "foot position". <a href="https://wiki.vg/index.php?title=User:Moo&amp;action=edit&amp;redlink=1" class="new" title="User:Moo (page does not exist)">Moo</a> 16:15, 6 January 2011 (MST)</dd></dl></dd></dl>
+<dl><dd>I agree with <a href="https://wiki.vg/index.php?title=User:Axus&amp;action=edit&amp;redlink=1" class="new" title="User:Axus (page does not exist)">Axus</a> that "Y" should be the foot position to be consistent with mobs and such. But "Stance" is really the wrong name for the field in the Player Position messages. Like <a href="https://wiki.vg/index.php?title=User:Moo&amp;action=edit&amp;redlink=1" class="new" title="User:Moo (page does not exist)">Moo</a> said, the server calls "stance" the difference between the eyes and feet. The fields in the Player Position messages should be "Y" and "Eye Y". Note that Eye Y is NOT the top of the player's bounding box. Players are 1.74 meters tall, and foot-to-eye distance only goes up to 1.65 meters. Also changing your Eye Y does not make you appear to crouch according to my experiments. --<a href="https://wiki.vg/index.php?title=User:Thejoshwolfe&amp;action=edit&amp;redlink=1" class="new" title="User:Thejoshwolfe (page does not exist)">Thejoshwolfe</a> 04:35, 9 February 2011 (MST)</dd></dl>
+<h2><span class="mw-headline" id="Connection_.22hash.22_somewhat_misleading.3F">Connection "hash" somewhat misleading?</span></h2>
+<p>I know some guys who are writing server software for Minecraft, and I know one thing they were confused about was how to generate the connection "hash". Was it an MD5 hash or a SHA1 hash or what? I looked into it for them and discovered that it wasn't actually what we considered a hash at all. Instead, it was a random long in hexadecimal form. Literally. Take a look at this code:
+</p><p>public void a(h paramh) {
+</p>
+<pre> if (this.e.l) {
+   this.i = Long.toHexString(d.nextLong());
+   this.b.a(new h(this.i));
+ } else {
+   this.b.a(new h("-"));
+ }
+</pre>
+<p>}
+</p><p>h turns out to be the handshake packet class. this.b.a() appears to send the client a packet, and this.d (referred to as just d) is a Random object. this.e.l is the variable in the MinecraftServer object that tells whether 'online-mode' is on or off. All I'm asking is for there to be a little clarification on what exactly the connection "hash" is, as not everyone can go trudging through obfuscated code to find how it's  generated. Is it alright for me to do this? <a href="https://wiki.vg/index.php?title=User:AnonymousJohn&amp;action=edit&amp;redlink=1" class="new" title="User:AnonymousJohn (page does not exist)">AnonymousJohn</a> 21:21, 9 January 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Beta_1.2_Update">Beta 1.2 Update</span></h2>
+<p>Lots of "interesting" things.  
+</p><p>The most "interesting" is what looks like "Custom mob data" at the end of Mob Spawn 0x18 and new packet 0x28 (Mob Update?).  The "Custom mob data" is a byte stream with each data type encoded in a byte.  According to <a rel="nofollow" class="external text" href="http://pastebin.com/8fF60ZwQ">pastebin</a>:
+</p><p>The "metadata" byte is split this way:
+</p>
+<ul><li>j: First 3 bits, data type</li>
+<li>k: Last 5 bits, data key</li></ul>
+<p>"j" data type:
+</p>
+<ul><li>0: byte</li>
+<li>1: short</li>
+<li>2: int</li>
+<li>3: float</li>
+<li>4: string (short, bytes)</li>
+<li>5: inventory item (short, byte, short)</li></ul>
+<p>After the "metadata" byte is data of the "data type".
+</p><p>Example:
+</p>
+<ul><li>0x00, 0x00, 0x7F:
+<ul><li>j = 0, k = 0.  Key = 0, byte value = 0x00.</li>
+<li>End of stream marked by 0x7F.</li></ul></li></ul>
+<ul><li>0x00, 0x00, 0x10, 0xFF, 0x7F:
+<ul><li>j = 0, k = 0.  Key = 0, byte value = 0x00.</li>
+<li>j = 0, k = 16.  Key = 16, byte value = 255.</li>
+<li>End of stream marked by 0x7F.</li></ul></li></ul>
+<h2><span class="mw-headline" id="Packet_ID_datatype_explanation">Packet ID datatype explanation</span></h2>
+<p>The page needs to mention what datatype the packet ID is. My experimentation has revealed it to be unsigned char, however I'm not sure
+whether this is correct, and if so, where it should appear on the page. --<a href="https://wiki.vg/index.php?title=User:ElectronicsRules&amp;action=edit&amp;redlink=1" class="new" title="User:ElectronicsRules (page does not exist)">ElectronicsRules</a> 04:40, 17 January 2011 (MST)
+</p><p>OK I added something. --<a href="https://wiki.vg/index.php?title=User:Axus&amp;action=edit&amp;redlink=1" class="new" title="User:Axus (page does not exist)">Axus</a> 05:24, 17 January 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Signed.2FUnsigned_Byte_Values">Signed/Unsigned Byte Values</span></h2>
+<p>Section #SizeX.2C_SizeY.2C_SizeZ in the Map Chunk section says that bytes can be values up to 255. There needs to be clarification when bytes are signed and when they're unsigned. Java's bytes are always signed. --<a href="https://wiki.vg/index.php?title=User:Thejoshwolfe&amp;action=edit&amp;redlink=1" class="new" title="User:Thejoshwolfe (page does not exist)">Thejoshwolfe</a> 20:31, 23 January 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Absolute_integer_relation_to_absolute_position">Absolute integer relation to absolute position</span></h2>
+<p>The formula is currently stated as:
+</p><p>absolute_int = (int)(absolute_double / 32.0);
+</p><p>But in my understanding it should be:
+</p><p>absolute_int = (int)(absolute_double * 32.0);
+</p><p><br />
+I think you're correct.  You have to divide "absolute int" by 32 to get the block position, and "absolute double" is block position with extra precision --<a href="https://wiki.vg/index.php?title=User:Axus&amp;action=edit&amp;redlink=1" class="new" title="User:Axus (page does not exist)">Axus</a> 08:44, 30 January 2011 (MST)
+</p><p>Oops. Good catch. Thanks. --<a href="https://wiki.vg/index.php?title=User:Thejoshwolfe&amp;action=edit&amp;redlink=1" class="new" title="User:Thejoshwolfe (page does not exist)">Thejoshwolfe</a> 16:19, 30 January 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Packet_0xA">Packet 0xA</span></h2>
+<p>I've removed the note about this packet being used for speedhacking detection as it doesn't really make sense considering it is a client-to-server packet. The client is authoritative on movement of the player. Note that the "Player moved wrongly" server console warning is based on movement delta thresholds and not ground/airborne state, which seems to be used exclusively for fall damage application (try forcing the "on ground" state to be True in all c&gt;s player movement packets)
+--<a href="https://wiki.vg/index.php?title=User:Entity&amp;action=edit&amp;redlink=1" class="new" title="User:Entity (page does not exist)">Entity</a> 06:05, 5 February 2011 (MST)
+</p>
+<dl><dd> Forcing 'on ground' state to be True on all c-&gt;s movement does indeed eliminate fall damage.  However, when 'on ground' is forced True, you cannot ride minecarts - I haven't tested this yet for boats.  <a href="https://wiki.vg/index.php?title=User:Coldelectrons&amp;action=edit&amp;redlink=1" class="new" title="User:Coldelectrons (page does not exist)">Coldelectrons</a> 09:00, 1 May 2011 (MST)</dd></dl>
+<h2><span class="mw-headline" id="big_endian_conversion_c.2B.2B">big endian conversion c++</span></h2>
+<p>converting integer types from big endian to little endian and vice versa is rather simple
+</p><p>when using visual studio this might need some adjusting thou
+please make sure you understand this and reimplement it to fit your needs, this is basically just pseudo code that could be compiled with a c++ compiler
+</p>
+<pre>
+#include &lt;endian.h&gt;
+
+int32_t toInt(char* somedata)
+{
+  int32_t result = *((int32_t*)somedata);
+  result = be32toh(result);
+  return result;
+}
+
+//for doubles and floats you need some more pointer magic (I know it's evil)
+
+float toFloat(char* somedata)
+{
+  int32_t result = *((int32_t*)somedata);
+  float* result_pointer = &amp; result;
+  result = be32toh(result);
+  return *result_pointer;
+}
+</pre>
+<p>--<a href="https://wiki.vg/index.php?title=User:Ker&amp;action=edit&amp;redlink=1" class="new" title="User:Ker (page does not exist)">Ker</a> 14:53, 17 February 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Wolves_metadata">Wolves metadata</span></h2>
+<p>I'm handling metadata as explained here <a rel="nofollow" class="external free" href="http://mc.kev009.com/Protocol#Metadata">http://mc.kev009.com/Protocol#Metadata</a>
+When i do <i>byte y = x &gt;&gt; 5;</i> i keep getting -4 for wolves.
+New type of metadata, or is it just my fault? --<a href="https://wiki.vg/index.php?title=User:Ligustah&amp;action=edit&amp;redlink=1" class="new" title="User:Ligustah (page does not exist)">Ligustah</a> 04:18, 1 April 2011 (MST)
+</p><p>Not necessarily wrong, X might really be 0xFFC?????, which would make Y look like "-4".  Need to be checked of course.  --<a href="https://wiki.vg/index.php?title=User:Axus&amp;action=edit&amp;redlink=1" class="new" title="User:Axus (page does not exist)">Axus</a> 08:03, 2 April 2011 (MST)
+</p><p>I did a little more testing:
+<a rel="nofollow" class="external free" href="https://gist.github.com/900428">https://gist.github.com/900428</a> I added metadata packets that i received in different situations. --<a href="https://wiki.vg/index.php?title=User:Ligustah&amp;action=edit&amp;redlink=1" class="new" title="User:Ligustah (page does not exist)">Ligustah</a> 06:35, 3 April 2011 (MST)
+</p><p>The -4 mentioned earlier was actually my bad. I was using a byte to hold my x while it should have been an unsigned byte. I also updated the paste above and added all indices i observed with this packet. --<a href="https://wiki.vg/index.php?title=User:Ligustah&amp;action=edit&amp;redlink=1" class="new" title="User:Ligustah (page does not exist)">Ligustah</a> 08:16, 3 April 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Version_11_.28Beta_1.5.29">Version 11 (Beta 1.5)</span></h2>
+<p>Changes I've noticed so far:
+</p><p>All strings in packets are now 2-byte Big-Endian Unicode. The string length prefix value specifies #of chars not bytes;
+</p><p>Packet 0x64 appears all different. String remains Modified-UTF. That's a big consistency WTF.
+</p><p>Packet 0x66 gained a byte between Action and Item ID
+</p><p>Login 0x01 response from server now appears EID (<i>int</i>) followed by 11 bytes (in my case); Looks like <i>short,string,long,byte</i> and that the second string was dropped. Total packet len 16 + (2 * strSize).
+</p><p>Weather Event Packet 0x47 (71). (<i>int, byte, int, int, int</i>)<br />
+So far this packet has only shown itself for a lightning strike. The value of the <i>byte</i> was then always 1. During all other events (rain start/stop) this packet was nowhere to be seen whether during gameplay or when logging to SMP during a rainstorm. The first <i>int</i> appears to be an <i>Entity ID</i> as it always grew with every new strike. Last 3 <i>int</i>s were the X,Y,Z coords respectively of the strike on the ground. It appears to be only S-&gt;C --<a href="https://wiki.vg/index.php?title=User:Xiix&amp;action=edit&amp;redlink=1" class="new" title="User:Xiix (page does not exist)">xiix</a> 11:19, 20 April 2011 (MST)
+</p><p>Packet 0x46 was also updated.  The packet is the ba class.  I grepped for "new ba" and got 3 hits
+</p><p>The first 2 are in the dg class.  These extends the da class which has code that seems to slowly change the raining state. 
+<code>
+</p>
+<pre>protected void i()
+{
+   boolean bool = v();
+   super.i();
+   
+   if (bool&#160;!= v())
+     if (bool)
+       this.z.f.a(new ba(2));
+     else
+       this.z.f.a(new ba(1));
+}
+</pre>
+<p></code>
+</p><p>The call to v() checks if it is still raining and the call to i() updates the raining counter.
+</p><p>This basically says that if the rain state changes, send a 0x46 packet.
+</p><p>1 = begin raining
+</p><p>2 = end raining
+</p><p>The next hit is in the du class.
+</p><p><code>
+</p>
+<pre> if (this.e.e.v()) {
+   localgj.b(new ba(1));
+ }
+</pre>
+<p></code>
+</p><p>this.e is the MinecraftServer and this.e.e is of type dg.  This says that if it is raining, then send a packet with code 1.  This method seems to be for logging in.
+</p><p>The final hit is in the ep class.
+</p><p><code>
+</p>
+<pre>   if (localaq2&#160;!= null) {
+     localdc.c(localaq2.a + 0.5F, localaq2.b + 0.1F, localaq2.c + 0.5F, 0.0F, 0.0F);
+     localdc.a(localaq1);
+   } else {
+     localdc.a.b(new ba(0));
+   }
+</pre>
+<p></code>
+</p><p>The is probably the bed case.
+</p><p>So, anyway, the possible values would be:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Code
+</th>
+<th> Effect
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> Invalid Bed
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> Begin raining
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> End raining
+</td></tr></table>
+<p>Tested and confirmed --<a href="https://wiki.vg/index.php?title=User:Xiix&amp;action=edit&amp;redlink=1" class="new" title="User:Xiix (page does not exist)">xiix</a> 15:30, 23 April 2011 (MST)
+</p><p>The reason byte is a public variable, so it is possible that the code is set from other places.  However, since the string  array only has 3 values, that suggests that these are the 3 valid values.
+</p><p>Btw, what is the policy on editing the main protocol page itself?
+--<a href="https://wiki.vg/index.php?title=User:Raphfrk&amp;action=edit&amp;redlink=1" class="new" title="User:Raphfrk (page does not exist)">Raphfrk</a> 13:57, 23 April 2011 (MST)
+</p><p>Mystery packet 0xC8 (200). Follows hitting entities (cows and whatnot) or destroying/placing anything else:
+</p>
+<dl><dd><ul><li> <b>bool</b>&#160;: <i>0 entity destroyed; 1 otherwise, even if block is dug out it still exists so maybe that's why this one's always 1</i>;</li>
+<li> <b>byte</b>&#160;: <i>0 entity/block destroyed; 2 block or item placed</i>;</li>
+<li> <b>byte</b>&#160;: <i>???</i>;</li>
+<li> <b>byte</b>&#160;: <i>block/item ID; for entities no clue</i>;</li>
+<li> <b>byte</b>&#160;: <i>for bool=0 changes depending on what you hold, hit strength maybe</i>;</li></ul></dd></dl>
+<p>Sent only <i>Server</i>-&gt;<i>Client</i>.
+</p><p>--<a href="https://wiki.vg/index.php?title=User:Xiix&amp;action=edit&amp;redlink=1" class="new" title="User:Xiix (page does not exist)">xiix</a> 18:20, 19 April 2011 (MST)
+</p>
+<h2><span class="mw-headline" id=".2F.2A_Item_data_type_.2A.2F">/* Item data type */</span></h2>
+<p>In my own code, I've simplified things by treating the 3 items (short, optional byte,short) as an Item.  It makes my packet format definitions far more readable.
+</p><p>Any votes in favor of applying the Item definition to the existing page?
+</p>
+<table class="wikitable">
+
+<tr class="row0">
+<td class="col0">
+</td>
+<th class="col1"> Size
+</th>
+<th class="col2"> Range
+</th>
+<th class="col3"> Notes
+</th></tr>
+<tr class="row1">
+<th class="col0 centeralign"> Item
+</th>
+<td class="col1 centeralign"> 2-5
+</td>
+<td class="col2"> N/A
+</td>
+<td class="col3"> The structure is (short ItemID, [byte Count, short MetaDamage]).  If ItemID == -1, the latter two items are omitted.
+</td></tr></table>
+<p>-- Coldelectrons
+</p><p>Would have been fine but 0x05 does not comply with this. Personally I'd rather deal with no rules than rules that have exceptions to them. --<a href="https://wiki.vg/index.php?title=User:Xiix&amp;action=edit&amp;redlink=1" class="new" title="User:Xiix (page does not exist)">xiix</a> 09:43, 20 April 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="0x01_Login_C-.3ES_.28Version_11.29">0x01 Login C-&gt;S (Version 11)</span></h2>
+<p><b>Since</b> I'm a n00b here I won't edit the wiki itself for the fear of being an idiot, but to whoever did: from my own packet analysis the '<i><b>Client-&gt;Server'</b></i> login 0x01 packet remains unchanged except for the String8-&gt;String16 mod. Either Password (or other text) is still possibly sent (now empty) or it has 2 extra (0,0) bytes for whatever reason after username. So the makeup for my money is <i>int, string16, string16, long, sbyte</i>. The length of the packet remains 18 + len of string16's.
+</p><p><b>Also</b>, re new String16 thing. Maybe this is common knowledge for java folk, but for us MS/.NET dweebs it is important to know that the new string16 is actually UTF-16BE, as UTF-16 (implies UTF-16LE) decode will render gibberish.
+</p><p>--<a href="https://wiki.vg/index.php?title=User:Xiix&amp;action=edit&amp;redlink=1" class="new" title="User:Xiix (page does not exist)">xiix</a> 09:38, 20 April 2011 (MST)
+</p><p>Note that it's actually big-endian UCS-2. Treating it as UTF-16 will likely work most of the time, except for crafted packets or otherwise misbehaving peers.
+</p><p>--<a href="https://wiki.vg/index.php?title=User:Huin&amp;action=edit&amp;redlink=1" class="new" title="User:Huin (page does not exist)">Huin</a> 14:22, 15 May 2011 (MST)
+</p>
+<h2><span class="mw-headline" id=".2F.2A_Byte-packed_double.3F_.2A.2F">/* Byte-packed double? */</span></h2>
+<p>The 3 ints int the weather packet:
+Can someone please explain or link to an explanation of how it is you pack a double-precision floating point (8 bytes) number into an int (4 bytes)?  Bonus points for why you would want to do it that way?
+</p><p>I might be wrong but I don't think it is a packed double in a true packing sense. What you do is in this instance is:<br />
+</p>
+<dl><dd> <b>double = int / 32.0</b> --<a href="https://wiki.vg/index.php?title=User:Xiix&amp;action=edit&amp;redlink=1" class="new" title="User:Xiix (page does not exist)">xiix</a> 08:26, 21 April 2011 (MST)</dd></dl>
+<h2><span class="mw-headline" id="0x32_.28pre-chunk.29_packet_optional.3F">0x32 (pre-chunk) packet optional?</span></h2>
+<p>I've tried sending 0x33 packets without 0x32 packets to a 1.5 Beta client on initial connection - the client simply doesn't like it, and just jiggles up and down and the chunks are not visible.
+</p><p>Sending the same 0x33 packets with 0x32 packets following results in the client falling, but the chunks being completely air-blocks.
+</p><p>The chunks only appear to load correctly if each 0x33 packet is preceded by the corresponding 0x32 packet (even if not immediately preceding).
+</p><p>Any other observations on this matter? It appears to me that the 0x32 packet to initialize the chunk is always required, rather than optional as the current text about packet 0x33 might suggest.
+</p><p>--<a href="https://wiki.vg/index.php?title=User:Huin&amp;action=edit&amp;redlink=1" class="new" title="User:Huin (page does not exist)">Huin</a> 14:19, 15 May 2011 (MST)
+</p><p>It might only matter on chunks close to the player.  I think the "optional" note was more for client writers to allow strange exceptions from Notch's server, than for letting server writers take it easy&#160;;)
+--<a href="https://wiki.vg/index.php?title=User:Axus&amp;action=edit&amp;redlink=1" class="new" title="User:Axus (page does not exist)">Axus</a> 16:03, 16 May 2011 (MST)
+</p><p>Perhaps the times when the notchian server *doesn't* send the 0x32 is when the 0x33 packet is for a subset of the chunk (that is: an already loaded chunk). It would be nice to back this up with evidence of course. --<a href="https://wiki.vg/index.php?title=User:Huin&amp;action=edit&amp;redlink=1" class="new" title="User:Huin (page does not exist)">Huin</a> 14:24, 21 May 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="0x18_-_Where_does_the_.27Index.27_come_from.3F_.2B_Metadata_String">0x18 - Where does the 'Index' come from? + Metadata String</span></h2>
+<p>Can somebody tell me where the index come from? Is this a byte in the metastream or what&#160;?
+</p><p>Additionally there is no information about the width of the string chars in a metastream.
+</p><p>--<a href="https://wiki.vg/index.php?title=User:Chrisliebaer&amp;action=edit&amp;redlink=1" class="new" title="User:Chrisliebaer (page does not exist)">Chrisliebaer</a> 11:39, 22 May 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="0x47_-_Weather.3F">0x47 - Weather?</span></h2>
+<p>22 May 2011 - Just started writing a library to read and write packets.  Tried to follow the spec for 0x47 on the page, and kept getting errors.  Looked at a Wireshark capture, and I see the 0x47 packet as being 8 bytes long (9 with the header).  The first four bytes look to be an int related to location? It was negative in my capture.  The next three bytes were all 0's, then a 0x02.  --<a href="https://wiki.vg/index.php?title=User:Nyasara&amp;action=edit&amp;redlink=1" class="new" title="User:Nyasara (page does not exist)">User:Nyasara</a>
+</p>
+<h2><span class="mw-headline" id="Map_data_.280x83.29">Map data (0x83)</span></h2>
+<p>It seems like there is a new packet 0x83 which I can't figure out. Decompiling it reveals four possible forms: <a rel="nofollow" class="external free" href="http://pastie.org/1975651">http://pastie.org/1975651</a>
+--<a href="https://wiki.vg/index.php?title=User:Sadimusi&amp;action=edit&amp;redlink=1" class="new" title="User:Sadimusi (page does not exist)">Sadimusi</a> 04:10, 26 May 2011 (MST)
+</p><p>I wonder if it handles something related to Nether travel (probably reaching).  
+</p><p>I guess the respawn packet with the new field might be all that was added for handling this.  
+</p><p>Does the Nether have any use for a new world seed?  If not, then I guess adding the Nether didn't require that a "change world seed" packet was created.  If so, that is pretty disappointing.  This would have been a perfect time to add a way to update the client's world seed.
+</p><p>I am going to run a test tonight to see if the client can handle a second login packet after the update.
+</p><p>--<a href="https://wiki.vg/index.php?title=User:Raphfrk&amp;action=edit&amp;redlink=1" class="new" title="User:Raphfrk (page does not exist)">Raphfrk</a> 05:12, 26 May 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Block_Action.3F_.280x3D.29">Block Action? (0x3D)</span></h2>
+<p>This packet is
+</p><p>Int
+Int
+Byte
+Int
+Int
+</p><p>It seems to be related to opening doors
+</p><p>Int: 1003 (constant)
+Int: X position of door
+Byte: Y position of door
+Int: Z position of door
+Int: 0 (constant)
+</p><p>The packet is sent to all players except the player who opens the door.
+--<a href="https://wiki.vg/index.php?title=User:Raphfrk&amp;action=edit&amp;redlink=1" class="new" title="User:Raphfrk (page does not exist)">Raphfrk</a> 11:56, 26 May 2011 (MST)
+</p><p>It is also sent to all near players when a door is opened with a redstone current.
+--<a href="https://wiki.vg/index.php?title=User:Sadimusi&amp;action=edit&amp;redlink=1" class="new" title="User:Sadimusi (page does not exist)">Sadimusi</a> 12:39, 26 May 2011 (MST)
+</p><p><br />
+</p>
+<dl><dd>When a player opens a door with right click, the server receives Packet 0xF (block placement, but opens door)</dd>
+<dd> When a player opens a door with left click, the server receives Packet 0xE+start digging</dd>
+<dd> 1.7.3</dd>
+<dd> <a href="https://wiki.vg/index.php?title=User:Ishinay&amp;action=edit&amp;redlink=1" class="new" title="User:Ishinay (page does not exist)">Ishinay</a> 05:31, 27 August 2011 (MST)</dd></dl>
+<h2><span class="mw-headline" id="Unknown_fields_in_0x17_may_be_trajectory.">Unknown fields in 0x17 may be trajectory.</span></h2>
+<p>Especially as there is no other packet to keep track of a ranged weapons trajectory, I deem it likely that the unknown fields encode the trajectory of the projectile.
+I haven't done any research into this yet, but I consider two methods of encoding likely:
+</p><p>If X, Y and Z mark the original start point of the projectile, the last three fields may hold the initial X, Y and Z velocities of the projectile while the integer field encodes the time the projectile has already travelled on that path.
+</p><p>If X, Y and Z mark the current position of the projectile, the unknown int could instead hold the velocity and the remaining shorts just encode the orientation of the projectile.
+</p><p>Another, though unlikely option would be to encode the coordinates of the trajectories zenith.
+</p><p><a href="https://wiki.vg/index.php?title=User:SlashLife&amp;action=edit&amp;redlink=1" class="new" title="User:SlashLife (page does not exist)">SlashLife</a> 13:58, 28 May 2011 (MST)
+</p><p>The fact that these fields were added with the same update the map item was introduced suggests a connection between those two things. Projectiles were added a long time ago and worked without these fields.
+--<a href="https://wiki.vg/index.php?title=User:Sadimusi&amp;action=edit&amp;redlink=1" class="new" title="User:Sadimusi (page does not exist)">Sadimusi</a> 16:35, 28 May 2011 (MST)
+</p><p><br />
+</p>
+<dl><dd>The "Unknown flag int" actually seems to be the Shooter Entity Id, useful for differenciate the source of the damage. This code exemplifies:</dd></dl>
+<p>
+</p>
+<pre> EntityFireball entityfireball = (EntityFireball) this.tracker;
+ Packet23VehicleSpawn packet23vehiclespawn = new Packet23VehicleSpawn(this.tracker, 63, ((EntityFireball) this.tracker).shooter.id);
+</pre>
+<p>
+</p>
+<dl><dd>The other 3 int are taken from entity speed, so with much probability marks the initial trayectory tangent as a vector.</dd></dl>
+<p>
+</p>
+<pre> double speedX = entity.speedX;
+ double speedY = entity.speedY;
+ double speedZ = entity.speedZ;
+...
+ this.trayectoryX = (int) (speedX * 8000.0D);
+ this.trayectoryY = (int) (speedY * 8000.0D);
+ this.trayectoryZ = (int) (speedZ * 8000.0D);
+</pre>
+<p>
+<a href="https://wiki.vg/index.php?title=User:Ishinay&amp;action=edit&amp;redlink=1" class="new" title="User:Ishinay (page does not exist)">Ishinay</a> 05:14, 27 August 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="0x3D_packet_specs">0x3D packet specs</span></h2>
+<p>Packet 0x3D is used to make effects happen on the client.
+</p><p>Parameters:
+int - identifier for effect (client chooses effect using a switch).
+int - X
+int - Y
+int - Z
+int - extra data value (used for 3 effects).
+</p><p>Possible values:
+1000 - plays the dispenser fire sound.
+1001 - plays the empty dispenser fire sound.
+1002 - plays the projectile fire sound (snowball, egg, bow).
+1003 - plays the (trap)door open/close sound (50/50 chance of either).
+1004 - plays the fire extinguish sound.
+1005 - plays a record sound (using the extra data field as an item ID).
+2000 - spawns a dispenser fire particle (uses the extra data field for direction, possible 9? values).
+2001 - places dig effects on the block at the given location (uses the extra data field as a block ID).
+</p>
+<h2><span class="mw-headline" id="0x6A_-_Inventory_Transaction">0x6A - Inventory Transaction</span></h2>
+<p>The bool in packet 0x6A isn't as simple as 'True if accepted'.  I've been playing with inventory logic a bit, and with Notchian client/server, the 'accepted' bool has no immediately discernible rhyme or reason from the server - simply, if a transaction has been accepted, there is a Transaction packet s-&gt;c, and if not, not. -- <a href="https://wiki.vg/index.php?title=User:Coldelectrons&amp;action=edit&amp;redlink=1" class="new" title="User:Coldelectrons (page does not exist)">Coldelectrons</a> 19:40, 11 June 2011 (MST)
+</p><p>I tend to agree that its effect is non-obvious. I have noted that sending a "false" for that field results in the client replying with a transaction packet with "true". Beats me what it means&#160;:) --<a href="https://wiki.vg/index.php?title=User:Huin&amp;action=edit&amp;redlink=1" class="new" title="User:Huin (page does not exist)">Huin</a> 13:37, 17 June 2011 (MST)
+</p>
+<h4><span class="mw-headline" id="further_observations">further observations</span></h4>
+<ul><li> When a click leaves an inventory slot empty (picking up a whole stack or item), or when the click changes the amount of the stack in the inventory slot (depositing a single item into a stack), or swapping items, the S-&gt;C accepted==False.    </li></ul>
+<ul><li> When a click puts something into an empty slot (a single item or dropping one off of a stack with right-click), the S-&gt;C accepted==True</li></ul>
+<p>These two could probably be simplified to "If the slot is empty when it is clicked, S-&gt;C accepted=True, else it is False".  I haven't observed all conditions in all window types, so some collaboration would be helpful.
+</p>
+<ul><li> When the server sends accepted==False, the client will respond with a transaction packet with the same action number, but with accepted==True</li></ul>
+<ul><li> When the server sends accepted==True, the client does not respond further.</li></ul>
+<p><a href="https://wiki.vg/index.php?title=User:Coldelectrons&amp;action=edit&amp;redlink=1" class="new" title="User:Coldelectrons (page does not exist)">Coldelectrons</a> 15:44, 17 June 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Decimal_packet_numbers.3F">Decimal packet numbers?</span></h2>
+<p>Since the Packet classes in the minecraft source (as decompiled by mcp) are named with Decimal numbers it is kind of a hassle when trying to correlate those classes with this list of packets which only have the packet ID shown in hex. Any chance the decimal number could be included in here? In the section heading preferably so it can be seen in the index.
+</p>
+<h2><span class="mw-headline" id="Entity_Action_.3F.3F.3F_.280x13.29">Entity Action&#160;??? (0x13)</span></h2>
+<p>Seem to be having trouble getting this to work this is sent when someone crouches but it causes a packet error in 1.7.2 was something added? --<a href="https://wiki.vg/index.php?title=User:Faith2712&amp;action=edit&amp;redlink=1" class="new" title="User:Faith2712 (page does not exist)">Faith2712</a> 19:01, 6 July 2011 (MST)
+</p><p>I believe you have to send the crouch in an entitymetadata packet rather than entityaction (apply the crouch flag to the metadata, then send the edited data).
+</p>
+<dl><dd> Sneaking is definitely sent with 0x13 as you can see in this (unobscured) snippet from 1.7.3: <a rel="nofollow" class="external free" href="http://pastie.org/2209271">http://pastie.org/2209271</a> --<a href="https://wiki.vg/index.php?title=User:Sadimusi&amp;action=edit&amp;redlink=1" class="new" title="User:Sadimusi (page does not exist)">Sadimusi</a> 14:15, 13 July 2011 (MST)</dd></dl>
+<dl><dd>&#160;: Faith2712 is definitely correct about it being sent from the server as entitymetadata (0x28). Packet 0x13 is client to server only. </dd>
+<dd>&#160;: The byte array for crouching would be: "0x28, [player id(4 bytes)], 0x00, 0x02, 0x7F". 0x02 can be 0x00 (for no animations), 0x01 (for fire), 0x02 (for crouch), 0x03 (for crouch and fire a same time).</dd>
+<dd>&#160;: --<a href="https://wiki.vg/index.php?title=User:Jasonbay13&amp;action=edit&amp;redlink=1" class="new" title="User:Jasonbay13 (page does not exist)">Jasonbay13</a> 17:01, 11 August 2011 (MST)</dd></dl>
+<h2><span class="mw-headline" id="Piston_Direction">Piston Direction</span></h2>
+<p>Should piston direction 5 not be South? East is in there twice, and south is missed out. I am not certain that it is 5 though, so I have not edited it.
+</p>
+<h2><span class="mw-headline" id="Entity_Status_.280x26.29">Entity Status (0x26)</span></h2>
+<p>I've been looking into bukkit stuff today and I think I know what packet 0x26 is! It is sent any time an entity does some animation, especially I noticed with wolves:
+</p>
+<pre>   	HURT (2),
+   	DEATH (3),
+   	SMOKE (6),
+   	HEARTS (7),
+   	WATER (8),
+</pre>
+<p>This is what I've tested out so far. Smoke, Hearts, and water are mainly for wolfie animations. Note that I got these by testing and looking through the minecraft code. That's allowed, right? So far these are the only ones that are sent by the server.
+--<a href="https://wiki.vg/index.php?title=User:Zonedabone&amp;action=edit&amp;redlink=1" class="new" title="User:Zonedabone (page does not exist)">Zonedabone</a> 18:08, 12 August 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="Yaw_diagram_needs_correcting">Yaw diagram needs correcting</span></h2>
+<p>While I get the impression from Minecraft's code that <i>some</i> people *cough* can't tell up from down, left from right, or South from West, we here should be able to.
+</p><p>The unit circle by the Player Look packet description needs to be changed to reflect what you actually encounter in the game and code.
+</p>
+I have here a modest example: <div class="thumb tright"><div class="thumbinner" style="width:202px;"><a href="./File:Notchian_Coordinate_System.png.html" class="image"><img alt="" src="images/7/70/Notchian_Coordinate_System.png" width="200" height="200" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./File:Notchian_Coordinate_System.png.html" class="internal" title="Enlarge"></a></div>Back Arsewards</div></div></div>
+<p><a href="https://wiki.vg/index.php?title=User:Coldelectrons&amp;action=edit&amp;redlink=1" class="new" title="User:Coldelectrons (page does not exist)">Coldelectrons</a> 14:45, 24 August 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="1.8_Pre-release_changes">1.8 Pre-release changes</span></h2>
+<p>When refreshing the server list, packet 0xfe is sent. Its length is 1 byte.
+The server answers with a Kick(0xff) packet with the motd and player amount in the kick message with the format
+</p><p>Motd§0§20
+</p><p>for a server with 0 players, 20 slots, and motd set to Motd.
+</p><p>--<a href="https://wiki.vg/index.php?title=User:Zhuowei&amp;action=edit&amp;redlink=1" class="new" title="User:Zhuowei (page does not exist)">Zhuowei</a> 17:42, 9 September 2011 (MST)
+</p>
+<dl><dd> Added, thanks&#160;:) <a href="https://wiki.vg/index.php?title=User:Barneygale&amp;action=edit&amp;redlink=1" class="new" title="User:Barneygale (page does not exist)">Barneygale</a> 23:32, 9 September 2011 (MST)</dd></dl>
+<h2><span class="mw-headline" id="Creative_inventory_action_.280x6B.29">Creative inventory action (0x6B)</span></h2>
+<p>Creative inventory action (0x6B) is sent by the client when the user clicks on a quickbar-slot
+</p>
+<h2><span class="mw-headline" id="Mob_ID_for_endermen.3F">Mob ID for endermen?</span></h2>
+<p>I'm pretty sure it's 58, can anyone confirm? <a href="https://wiki.vg/index.php?title=User:Origamiguy&amp;action=edit&amp;redlink=1" class="new" title="User:Origamiguy (page does not exist)">Origamiguy</a> 08:57, 16 September 2011 (MST)
+</p>
+<dl><dd> Yep, 58. The code:</dd>
+<dd> addMapping(net.minecraft.src.EntityEnderman.class, "Enderman", 58);</dd>
+<dd> (the number is the mob ID). --<a href="https://wiki.vg/index.php?title=User:DuckDuckGo&amp;action=edit&amp;redlink=1" class="new" title="User:DuckDuckGo (page does not exist)">DuckDuckGo</a> 13:50, 29 December 2011 (MST)</dd></dl>
+<h2><span class="mw-headline" id="Add_Object.2FVehicle_correct.3F">Add Object/Vehicle correct?</span></h2>
+<p>About a week ago, I tried to figure out the last four fields in the <a href="Protocol.html#Add_Object.2FVehicle_.280x17.29" title="Protocol">Add Object/Vehicle (0x17) packet</a>. Can someone check that I got it right? --<a href="https://wiki.vg/index.php?title=User:Krenair&amp;action=edit&amp;redlink=1" class="new" title="User:Krenair (page does not exist)">Krenair</a> 08:28, 25 September 2011 (MST)
+</p>
+<h2><span class="mw-headline" id="0x02_.28Server_to_Client.29.2C_description_misunderstunding">0x02 (Server to Client), description misunderstunding</span></h2>
+<p>The current description is:
+"This is the first packet sent when the client connects and is used for Authentication. If the hash is '-', then the client continues without doing name authentication. If the hash is a '+', there is currently no way to send a password in at least version 1.8.1. It should be treated similarly to '+'."
+</p><p>But the meaning of the sentences is not clear.
+</p>
+<ul><li> The fact that '+' is used for password authentication is implied by the reader.</li>
+<li> "It should be treated similarly to '+'." Meaning '+' similar to '+'? I guess it was supposed to be "...similarly to '-'."</li></ul>
+<p>Am i correct on the above assumptions?
+</p>
+<h2><span class="mw-headline" id="Server_poll_not_working_in_1.0.3F">Server poll not working in 1.0?</span></h2>
+<p>I've recently converted my software to match up with MC 1.0, but it doesn't seem to be working: it gives me a communication error, as if the packet's contents are incorrect. I'm currently using my 1.8 system, where the 254 packet is received and I immediately respond by sending the 255 Kick packet, with a string, such as MyServer§0§16. Any ideas? Has the protocol changed in this sense since 1.0 was released?
+</p><p>Fixed: I forgot that my encoder was automatically generating the packet header for packet 254 in response rather than just sending packet 255. It was generating two headers, then the payload, haha. Fixed.
+</p>
+<h2><span class="mw-headline" id="More_explanations.21">More explanations!</span></h2>
+<p>I, for one, would be interested to know whether the animation packet is validated in any way by the server. For instance, could you send the eat animation to the server with something other than food in your hand?
+--<a href="https://wiki.vg/index.php?title=User:DuckDuckGo&amp;action=edit&amp;redlink=1" class="new" title="User:DuckDuckGo (page does not exist)">DuckDuckGo</a> 13:47, 29 December 2011 (MST)
+</p>
+<dl><dd>Try it and see --<a href="https://wiki.vg/index.php?title=User:Barneygale&amp;action=edit&amp;redlink=1" class="new" title="User:Barneygale (page does not exist)">Barneygale</a> 23:07, 29 December 2011 (MST)</dd></dl>
+<h2><span class="mw-headline" id="World_height_and_indexing_problem">World height and indexing problem</span></h2>
+<p>I was working with <a href="Realcraft.html" class="mw-redirect" title="Realcraft">Realcraft</a> earlier tonight, rewriting it and all (I lost the source due to a HDD failure), and I got it working back to the point that it was at when I left it so long ago. I've seemed to have stumbled upon an issue. Only a world height of 128 (Size_Y=127) will work with the indexing (<code>index = y + (z * (Size_Y+1)) + (x * (Size_Y+1) * (Size_Z+1))</code>), any other height and the Minecraft client will show erroneous chunks. Perhaps a new indexing scheme is in order? -- <a href="https://wiki.vg/index.php?title=User:Jailout2000&amp;action=edit&amp;redlink=1" class="new" title="User:Jailout2000 (page does not exist)"><span style="color: #0080C0; font-weight: bold;">Jailout2000</span></a> 04:52, 2 January 2012 (MST)
+</p>
+<dl><dd>Support for different world heights is only partially implemented in the protocol, e.g. the Player Digging packet has Y as a byte, meaning you're constrained to 127. --<a href="https://wiki.vg/index.php?title=User:Barneygale&amp;action=edit&amp;redlink=1" class="new" title="User:Barneygale (page does not exist)">Barneygale</a> 12:49, 2 January 2012 (MST)</dd></dl>
+<h2><span class="mw-headline" id="1.1_changes">1.1 changes</span></h2>
+<p>The protocol version number for 1.1 is 23.
+</p><p>Also a new string is inserted into the middle of the login packet after the Map Seed field. That increases the size of the packet to 25 plus length of strings.
+</p>
+<h2><span class="mw-headline" id="Packet_directon_changes">Packet directon changes</span></h2>
+<p>Recently there were a lot of packet direction changes from <i>Client to Server</i> into <i>Two-way</i> mainly with the Player* packets.
+</p><p>As far as my proxy implementation goes it has never received those packages from the Notchian server so I will change it back.
+</p><p>--<a href="https://wiki.vg/index.php?title=User:Ceiru&amp;action=edit&amp;redlink=1" class="new" title="User:Ceiru (page does not exist)">Ceiru</a> 13:30, 17 March 2012 (MST)
+</p>
+<h2><span class="mw-headline" id="Removed_the_last_two_.22this_command_is_not_fully_understood.22">Removed the last two "this command is not fully understood"</span></h2>
+<p>So if anyone needs to copy-paste it for new packets, here it is:
+</p>
+<pre> [[File:Icon_exclaim.gif|:!:]] This command is not fully understood.
+</pre>
+<p>Probably should be a template, but given how advanced our tools are (like burger) and how easy it is to get official explanations from the devs, I doubt anyone will need this again. --<a href="https://wiki.vg/index.php?title=User:Dx&amp;action=edit&amp;redlink=1" class="new" title="User:Dx (page does not exist)">Dx</a> 00:58, 13 June 2012‎ (MST)
+</p>
+<dl><dd>This is a relic of when I created this page. My own wiki uses DokuWiki, which provides handy icons like above. Looks like someone downloaded it and re-added it as a media upload when it was copied over. I'd advise not using it again, and instead mention it in the channel and someone will take the time to clarify before ever making a change. <a href="https://wiki.vg/index.php?title=User:TkTech&amp;action=edit&amp;redlink=1" class="new" title="User:TkTech (page does not exist)">TkTech</a> 01:54, 13 June 2012 (MST)</dd></dl>
+<h2><span class="mw-headline" id="Strange_Packets">Strange Packets</span></h2>
+<p>At first, everything goes as it says in the documentation. As soon as I send the encrypted login request packet, though, I start getting random packets.
+</p><p><a rel="nofollow" class="external text" href="http://www.mediafire.com/?kafomz31s8bg1mc">Strange Packets</a>
+</p><p>Can someone please tell me what I'm doing wrong?
+</p><p><br />
+</p>
+<dl><dd>Minecraft uses AES-128-CFB8. Not AES-128-CFB128 (happened to me). Check if this happens</dd>
+<dd><a href="https://wiki.vg/index.php?title=User:Shoghicp&amp;action=edit&amp;redlink=1" class="new" title="User:Shoghicp (page does not exist)">Shoghicp</a> (<a href="https://wiki.vg/index.php?title=User_talk:Shoghicp&amp;action=edit&amp;redlink=1" class="new" title="User talk:Shoghicp (page does not exist)">talk</a>) 12:36, 23 November 2012 (MST)</dd></dl>
+<p><br />
+OK, after some analysis, I have realized that the problem is in the specification, not my code. It is actually similar to your issue.
+</p><p>The specs should say that you don't start over counting to 16 when you get a new packet, but rather have to accumulate 16-byte chunks to decrypt (regardless of logical or network packet boundaries).
+</p>
+<dl><dd>CFB8 means that it has a block size (for encrypt/decrypt) of 1 byte, so you're able to encrypt/decrypt on the fly, and without having to wait for more data. The specifications allow variable block size for CFB, since you only have to xor the generated key with the plaintext.</dd>
+<dd><a href="https://wiki.vg/index.php?title=User:Shoghicp&amp;action=edit&amp;redlink=1" class="new" title="User:Shoghicp (page does not exist)">Shoghicp</a> (<a href="https://wiki.vg/index.php?title=User_talk:Shoghicp&amp;action=edit&amp;redlink=1" class="new" title="User talk:Shoghicp (page does not exist)">talk</a>) 05:51, 24 November 2012 (MST)</dd></dl>
+<p>Join us on IRC, freenode #mcdevs if you need help
+<a href="https://wiki.vg/index.php?title=User:Md_5&amp;action=edit&amp;redlink=1" class="new" title="User:Md 5 (page does not exist)">md_5</a> (<a href="./User_talk:Md_5.html" title="User talk:Md 5">talk</a>) 05:02, 25 November 2012 (MST)
+</p>
+<h2><span class="mw-headline" id="Packet_0x1E_description">Packet 0x1E description</span></h2>
+<p>The description of <a href="Protocol.html#Entity_.280x1E.29" title="Protocol">packet 0x1E</a> probably needs to be revised. The official server doesn't initialize this packet's class directly anymore, and it can therefore be assumed that this packet doesn't get sent by the official server anymore. The official client should theoretically handle this packet the same as either one of packets 0x1F, 0x20 or 0x21 with additional fields set to 0. <a href="https://wiki.vg/index.php?title=User:14mRh4X0r&amp;action=edit&amp;redlink=1" class="new" title="User:14mRh4X0r (page does not exist)">14mRh4X0r</a> (<a href="https://wiki.vg/index.php?title=User_talk:14mRh4X0r&amp;action=edit&amp;redlink=1" class="new" title="User talk:14mRh4X0r (page does not exist)">talk</a>) 18:33, 17 January 2013 (MST)
+</p>
+<h2><span class="mw-headline" id="Ambiguity_and_Typos.3F">Ambiguity and Typos?</span></h2>
+<p>I feel that some of the information on the Protocol page is ambiguous and contains typos
+</p>
+<ol><li> <a href="Protocol.html#Player_Digging_.280x0E.29" title="Protocol">Player Digging (0x0E)</a> - The field Y states the field type is "byte", which according to <a href="Data_Types.html" class="mw-redirect" title="Data Types">Data Types</a> only ranges from -127 to 127. However, as of 1.4.7 (current version at time of writing) I am able to dig blocks up to 255. Should the field type for field Y be changed to "unsigned byte" similar to <a href="Protocol.html#Player_Block_Placement_.280x0F.29" title="Protocol">Player Block Placement (0x0F)</a>?
+<ul><li> <a href="Protocol.html#Use_Bed_.280x11.29" title="Protocol">Use Bed (0x11)</a> has the same issue described above, and possible others too.</li></ul></li>
+<li> <a href="Protocol.html#Player_Position_and_Look_.280x0D.29" title="Protocol">Player Position and Look (0x0D)</a> says that it is <i>Two-Way</i>. However, Player Position (0x0B) and Player Look (0x0C) say only <i>Client to Server</i>. Shouldn't this be changed to <i>Client to Server</i>, or can the server actually send Player Position and Look (0x0D)?</li>
+<li> <a href="Protocol.html#Player_Look_.280x0C.29" title="Protocol">Player Look (0x0C)</a> is unclear. With Entity packets (server to client), there is Entity Look (0x20) and Entity Head Look (0x23), but only a single Look packet for the Player (client to server). How should a server implementing the protocol deal with sending Entity Look and Head Look of other players to clients?</li></ol>
+<p>--<a href="https://wiki.vg/index.php?title=User:Greenegg&amp;action=edit&amp;redlink=1" class="new" title="User:Greenegg (page does not exist)">Greenegg</a> (<a href="https://wiki.vg/index.php?title=User_talk:Greenegg&amp;action=edit&amp;redlink=1" class="new" title="User talk:Greenegg (page does not exist)">talk</a>) 09:02, 19 February 2013 (MST)
+</p>
+<dl><dd>The server sends 0x0D packets (with reversed Y and Stance) when the player makes an invalid move; Player Look is C-&gt;S, Entity Look is S-&gt;C. <a href="https://wiki.vg/index.php?title=User:ZioCrocifisso&amp;action=edit&amp;redlink=1" class="new" title="User:ZioCrocifisso (page does not exist)">ZioCrocifisso</a> (<a href="https://wiki.vg/index.php?title=User_talk:ZioCrocifisso&amp;action=edit&amp;redlink=1" class="new" title="User talk:ZioCrocifisso (page does not exist)">talk</a>)</dd></dl>
+<h2><span class="mw-headline" id="Why_is_.22float.22_in_0x08_bold.3F">Why is "float" in 0x08 bold?</span></h2>
+<p>Does it mean anything or may be safely removed?
+<a rel="nofollow" class="external free" href="Protocol.html#0x08">http://wiki.vg/Protocol#0x08</a>
+</p>
+<h2><span class="mw-headline" id="Rename_category_to_state">Rename category to state</span></h2>
+<p>Should we rename the Category column to State? This would make it clearer that the packet type depends on both the packet ID and the current state. —<a href="./User:Fenhl.html" title="User:Fenhl">Fenhl</a> 03:32, 21 January 2015 (UTC)
+</p>
+<h2><span class="mw-headline" id="String_terminator">String terminator</span></h2>
+<p>For strings, I understand that there's a VarInt for the length of the string, and the string itself. This means a null terminator isn't needed to specify the end of the string. Should my code include a null terminator, or should it trim that final character? I'm trying to mirror the behavior of the Notchian client/server. <a href="https://wiki.vg/index.php?title=User:NickNackGus&amp;action=edit&amp;redlink=1" class="new" title="User:NickNackGus (page does not exist)">NickNackGus</a> (<a href="https://wiki.vg/index.php?title=User_talk:NickNackGus&amp;action=edit&amp;redlink=1" class="new" title="User talk:NickNackGus (page does not exist)">talk</a>) 13:22, 25 May 2016 (UTC)
+</p>
+<h2><span class="mw-headline" id="What_happends_if_you_don.27t_send_CPacketConfirmTeleport_.2F_what_does_it_do_and_what_are_the_effects_of_sending_it.3F_.28serverbound-related.29">What happends if you don't send CPacketConfirmTeleport / what does it do and what are the effects of sending it? (serverbound-related)</span></h2>
+<p>I'm just curious.
+</p>
+<h2><span class="mw-headline" id="Click_Window">Click Window</span></h2>
+<p>The documentation says "Slot" is a short.
+So I used PacketContainer#getShorts().read(0), but after some tests I realized that the index 0 was actually "ActionNumber".
+To fix it, I changed to PacketContainer#getIntegers().read(1). --RoinujNosde
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823055342
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.173 seconds
+Real time usage: 0.194 seconds
+Preprocessor visited node count: 258/1000000
+Preprocessor generated node count: 288/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:33-0!*!0!!en!5!* and timestamp 20180823055342 and revision id 13323
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Talk:Protocol&amp;oldid=13323">http://wiki.vg/index.php?title=Talk:Protocol&amp;oldid=13323</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Talk%3AProtocol" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Talk%3AProtocol" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main"><span><a href="Protocol.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="selected"><span><a href="./Talk:Protocol.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="./Talk:Protocol.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="./Talk:Protocol.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Talk:Protocol&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Talk:Protocol&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="./Talk:Protocol.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Talk:Protocol" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Talk:Protocol" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Talk:Protocol&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Talk:Protocol&amp;oldid=13323" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Talk:Protocol&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 August 2017, at 16:17.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":147});});</script>
+	</body>
+</html>

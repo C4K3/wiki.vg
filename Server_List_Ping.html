@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Server List Ping - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Server_List_Ping","wgTitle":"Server List Ping","wgCurRevisionId":14011,"wgRevisionId":14011,"wgArticleId":264,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Server_List_Ping","wgRelevantArticleId":264,"wgRequestId":"d591712b468c81f19d2e9fc0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Server_List_Ping rootpage-Server_List_Ping skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Server List Ping</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Server_List_Ping.html#mw-head">navigation</a>, 					<a href="Server_List_Ping.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Server List Ping</b> (<b>SLP</b>) is an interface provided by Minecraft servers which supports querying the MOTD, player count, max players and server version via the usual port. SLP is part of the <a href="Protocol.html" title="Protocol">Protocol</a>, so unlike <a href="Query.html" title="Query">Query</a>, the interface is always enabled. The Notchian client uses this interface to display the multiplayer server list, hence the name. The SLP process changed in <span class="plainlinks"><a rel="nofollow" class="external text" href="http://minecraft.gamepedia.com/1.7">1.7</a></span> in a non-backwards compatible way, but current servers still support both the <a href="Server_List_Ping.html#Current">new</a> and <a href="Server_List_Ping.html#1.6">old</a> process.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Server_List_Ping.html#Current"><span class="tocnumber">1</span> <span class="toctext">Current</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Server_List_Ping.html#Handshake"><span class="tocnumber">1.1</span> <span class="toctext">Handshake</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Server_List_Ping.html#Request"><span class="tocnumber">1.2</span> <span class="toctext">Request</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Server_List_Ping.html#Response"><span class="tocnumber">1.3</span> <span class="toctext">Response</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Server_List_Ping.html#Ping"><span class="tocnumber">1.4</span> <span class="toctext">Ping</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Server_List_Ping.html#Pong"><span class="tocnumber">1.5</span> <span class="toctext">Pong</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Server_List_Ping.html#Examples"><span class="tocnumber">1.6</span> <span class="toctext">Examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="Server_List_Ping.html#1.6"><span class="tocnumber">2</span> <span class="toctext">1.6</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="Server_List_Ping.html#Client_to_server"><span class="tocnumber">2.1</span> <span class="toctext">Client to server</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Server_List_Ping.html#Server_to_client"><span class="tocnumber">2.2</span> <span class="toctext">Server to client</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Server_List_Ping.html#Examples_2"><span class="tocnumber">2.3</span> <span class="toctext">Examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="Server_List_Ping.html#1.4_to_1.5"><span class="tocnumber">3</span> <span class="toctext">1.4 to 1.5</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="Server_List_Ping.html#Examples_3"><span class="tocnumber">3.1</span> <span class="toctext">Examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="Server_List_Ping.html#Beta_1.8_to_1.3"><span class="tocnumber">4</span> <span class="toctext">Beta 1.8 to 1.3</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Current">Current</span></h2>
+<p>This uses the regular client-server <a href="Protocol.html" title="Protocol">protocol</a>. For the general packet format, see that article.
+</p>
+<h3><span class="mw-headline" id="Handshake">Handshake</span></h3>
+<p>First, the client sends a <a href="Protocol.html#Handshake" title="Protocol">Handshake</a> packet with its state set to 1.
+</p>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td rowspan="4"> 0x00
+</td>
+<td> Protocol Version
+</td>
+<td> VarInt
+</td>
+<td> See <a href="Protocol_version_numbers.html" title="Protocol version numbers">protocol version numbers</a>.  The version that the client plans on using to connect to the server (which is not important for the ping).  If the client is pinging to determine what version to use, by convention <code>-1</code> should be set.
+</td></tr>
+<tr>
+<td> Server Address
+</td>
+<td> String
+</td>
+<td> hostname or IP, e.g. localhost or 127.0.0.1
+</td></tr>
+<tr>
+<td> Server Port
+</td>
+<td> Unsigned Short
+</td>
+<td> default is 25565
+</td></tr>
+<tr>
+<td> Next state
+</td>
+<td> VarInt
+</td>
+<td> should be 1, for <a href="Protocol.html#Status" title="Protocol">status</a>
+</td></tr></table>
+<h3><span class="mw-headline" id="Request">Request</span></h3>
+<p>The client follows up with a <a href="Protocol.html#Request" title="Protocol">Request</a> packet. This packet has no fields.
+</p>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> 0x00
+</td>
+<td colspan="3"> <i>no fields</i>
+</td></tr></table>
+<h3><span class="mw-headline" id="Response">Response</span></h3>
+<p>The server should respond with a <a href="Protocol.html#Response" title="Protocol">Response</a> packet. Note that Notchian servers will for unknown reasons wait to receive the following <a href="Protocol.html#Ping" title="Protocol">Ping</a> packet for 30 seconds before timing out and sending Response.
+</p>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> 0x00
+</td>
+<td> JSON Response
+</td>
+<td> String
+</td>
+<td> see below
+</td></tr></table>
+<p>The JSON Response field is a <a href="http://en.wikipedia.org/wiki/JSON" class="extiw" title="wikipedia:JSON">JSON</a> object which has the following format:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;1.8.7&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;protocol&quot;</span><span class="o">:</span> <span class="mi">47</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;players&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;max&quot;</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;online&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;sample&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;thinkofdeath&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;4566e69f-c907-48ee-8d71-d7ba5aa00d20&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>	
+    <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;Hello world&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;favicon&quot;</span><span class="o">:</span> <span class="s2">&quot;data:image/png;base64,&lt;data&gt;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<p>The <i>description</i> field is a <a href="Chat.html" title="Chat">Chat</a> object.  Note that the Notchian server has no way of providing actual chat component data; instead section sign-based codes are embedded within the text of text of the object.
+</p><p>The <i>favicon</i> field is optional. The <i>sample</i> field must be set, but can be empty.
+</p><p>The <i>favicon</i> should be a <a href="http://en.wikipedia.org/wiki/Portable_Network_Graphics" class="extiw" title="wikipedia:Portable Network Graphics">PNG</a> image that is <a href="http://en.wikipedia.org/wiki/Base64" class="extiw" title="wikipedia:Base64">Base64</a> encoded and prepended with <code>data:image/png;base64,</code>.
+</p><p>After receiving the Response packet, the client may send the next packet to help calculate the server's latency, or if it is only interested in the above information it can disconnect here.
+</p><p>If the client does not receive a properly formatted response, then it will instead attempt a <a href="Server_List_Ping.html#1.6" title="Server List Ping">legacy ping</a>.
+</p>
+<h3><span class="mw-headline" id="Ping">Ping</span></h3>
+<p>If the process is continued, the client will now send a <a href="Protocol.html#Ping" title="Protocol">Ping</a> packet containing some payload which is not important.
+</p>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> 0x01
+</td>
+<td> Payload
+</td>
+<td> Long
+</td>
+<td> May be any number. Notchian clients use a system-dependent time value which is counted in milliseconds.
+</td></tr></table>
+<h3><span class="mw-headline" id="Pong">Pong</span></h3>
+<p>The server will respond with the <a href="Protocol.html#Pong" title="Protocol">Pong</a> packet and then close the connection.
+</p>
+<table class="wikitable">
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> 0x01
+</td>
+<td> Payload
+</td>
+<td> Long
+</td>
+<td> Should be the same as sent by the client
+</td></tr></table>
+<h3><span class="mw-headline" id="Examples">Examples</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="https://gist.github.com/csh/2480d14fbbb33b4bbae3">C#</a></li>
+<li> <a rel="nofollow" class="external text" href="https://gist.github.com/zh32/7190955">Java</a></li>
+<li> <a rel="nofollow" class="external text" href="https://gist.github.com/1209061">Python</a></li>
+<li> <a rel="nofollow" class="external text" href="https://gist.github.com/ewized/97814f57ac85af7128bf">Python3</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/winny-/mcstat">PHP</a></li></ul>
+<h2><span class="mw-headline" id="1.6">1.6</span></h2>
+<p>This uses a protocol which is compatible with the client-server protocol as it was before the Netty rewrite. Modern servers recognize this protocol by the starting byte of <code>fe</code> instead of the usual <code>00</code>.
+</p>
+<h3><span class="mw-headline" id="Client_to_server">Client to server</span></h3>
+<p>The client initiates a TCP connection to the server on the standard port. Instead of doing auth and logging in (as detailed in <a href="Protocol.html" title="Protocol">Protocol</a> and <a href="Protocol_Encryption.html" title="Protocol Encryption">Protocol Encryption</a>), it sends the following data, expressed in hexadecimal:
+</p>
+<ol><li> <code>FE</code> — packet identifier for a server list ping</li>
+<li> <code>01</code> — server list ping's payload (always 1)</li>
+<li> <code>FA</code> — packet identifier for a plugin message</li>
+<li> <code>00 0B</code> — length of following string, in characters, as a short (always 11)</li>
+<li> <code>00 4D 00 43 00 7C 00 50 00 69 00 6E 00 67 00 48 00 6F 00 73 00 74</code> — the string <code>MC|PingHost</code> encoded as a <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/UTF-16">UTF-16BE</a> string</li>
+<li> <code>XX XX</code> — length of the rest of the data, as a short. Compute as <code>7 + len(hostname)</code>, where <code>len(hostname)</code> is the number of bytes in the UTF-16BE encoded hostname.</li>
+<li> <code>XX</code> — <a href="Protocol_version_numbers.html#Versions_before_the_Netty_rewrite" title="Protocol version numbers">protocol version</a>, e.g. <code>4a</code> for the last version (74)</li>
+<li> <code>XX XX</code> — length of following string, in characters, as a short</li>
+<li> <code>...</code> — hostname the client is connecting to, encoded as a <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/UTF-16">UTF-16BE</a> string</li>
+<li> <code>XX XX XX XX</code> — port the client is connecting to, as an int.</li></ol>
+<p>All data types are big-endian.
+</p><p>Example packet dump:
+</p>
+<pre>0000000: fe01 fa00 0b00 4d00 4300 7c00 5000 6900  ......M.C.|.P.i.
+0000010: 6e00 6700 4800 6f00 7300 7400 1949 0009  n.g.H.o.s.t..I..
+0000020: 006c 006f 0063 0061 006c 0068 006f 0073  .l.o.c.a.l.h.o.s
+0000030: 0074 0000 63dd                           .t..c.
+</pre>
+<h3><span class="mw-headline" id="Server_to_client">Server to client</span></h3>
+<p>The server responds with a 0xFF kick packet. The packet begins with a single byte identifier <code>ff</code>, then a two-byte big endian short giving the length of the following string in characters. You can actually ignore the length because the server closes the connection after the response is sent.
+</p><p>After the first 3 bytes, the packet is a UTF-16BE string. It begins with two characters: <code>§1</code>, followed by a null character. On the wire these look like <code>00 a7 00 31 00 00</code>.
+</p><p>The remainder is null character (that is <code>00 00</code>) delimited fields:
+</p>
+<ol><li> Protocol version (e.g. <code>74</code>)</li>
+<li> Minecraft server version (e.g. <code>1.8.7</code>)</li>
+<li> Message of the day (e.g. <code>A Minecraft Server</code>)</li>
+<li> Current player count</li>
+<li> Max players</li></ol>
+<p>The entire packet looks something like this:
+</p>
+<pre>                &lt;---&gt; first character
+0000000: ff00 2300 a700 3100 0000 3400 3700 0000  ....§.1...4.7...
+0000010: 3100 2e00 3400 2e00 3200 0000 4100 2000  1...4...2...A. .
+0000020: 4d00 6900 6e00 6500 6300 7200 6100 6600  M.i.n.e.c.r.a.f.
+0000030: 7400 2000 5300 6500 7200 7600 6500 7200  t. .S.e.r.v.e.r.
+0000040: 0000 3000 0000 3200 30                   ..0...2.0
+</pre>
+<p><b>Note: </b> When using this protocol with servers on version 1.7.x and above, the protocol version (first field) in the response will always be <code>127</code> which is not a real protocol number, so older clients will always consider this server incompatible.
+</p>
+<h3><span class="mw-headline" id="Examples_2">Examples</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="https://gist.github.com/6281388">Ruby</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/winny-/mcstat">PHP</a></li></ul>
+<h2><span class="mw-headline" id="1.4_to_1.5">1.4 to 1.5</span></h2>
+<p>Prior to the Minecraft 1.6, the client to server operation is much simpler, and only sends <code>FE 01</code>, with none of the following data.
+</p>
+<h3><span class="mw-headline" id="Examples_3">Examples</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="https://gist.github.com/5795159">PHP</a></li>
+<li> <a rel="nofollow" class="external text" href="https://gist.github.com/4574114">Java</a></li>
+<li> <a rel="nofollow" class="external text" href="https://gist.github.com/6223787">C#</a></li></ul>
+<h2><span class="mw-headline" id="Beta_1.8_to_1.3">Beta 1.8 to 1.3</span></h2>
+<p>Prior to Minecraft 1.4, the client only sends <code>FE</code>. 
+</p><p>Additionally, the response from the server only contains 3 fields delimited by <code>§</code>:
+</p>
+<ol><li> Message of the day (e.g. <code>A Minecraft Server</code>)</li>
+<li> Current player count</li>
+<li> Max players</li></ol>
+<p>The entire packet looks something like this:
+</p>
+<pre>                &lt;---&gt; first character
+0000000: ff00 1700 4100 2000 4d00 6900 6e00 6500  ....A. .M.i.n.e.
+0000010: 6300 7200 6100 6600 7400 2000 5300 6500  c.r.a.f.t. .S.e.
+0000020: 7200 7600 6500 7200 a700 3000 a700 3100  r.v.e.r.§.0.§.1.
+0000030: 30                                       0
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20180823142114
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.053 seconds
+Real time usage: 0.071 seconds
+Preprocessor visited node count: 82/1000000
+Preprocessor generated node count: 182/1000000
+Post‐expand include size: 150/2097152 bytes
+Template argument size: 43/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.906      1 - -total
+100.00%   12.906      1 - Template:Minecraft_Wiki
+ 56.02%    7.230      1 - Template:Plainlink
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:264-0!*!0!!en!*!* and timestamp 20180823142114 and revision id 14011
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Server_List_Ping&amp;oldid=14011">http://wiki.vg/index.php?title=Server_List_Ping&amp;oldid=14011</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Server+List+Ping" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Server+List+Ping" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Server_List_Ping.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Server_List_Ping.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Server_List_Ping.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Server_List_Ping.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Server_List_Ping&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Server_List_Ping&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Server_List_Ping.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Server_List_Ping" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Server_List_Ping" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Server_List_Ping&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Server_List_Ping&amp;oldid=14011" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Server_List_Ping&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 15 June 2018, at 17:19.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":143});});</script>
+	</body>
+</html>

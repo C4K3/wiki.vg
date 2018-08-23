@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Pocket Realms - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pocket_Realms","wgTitle":"Pocket Realms","wgCurRevisionId":13182,"wgRevisionId":13182,"wgArticleId":318,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pocket Minecraft"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pocket_Realms","wgRelevantArticleId":318,"wgRequestId":"45714034ffcfde3583ca356b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pocket_Realms rootpage-Pocket_Realms skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Pocket Realms</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Pocket_Realms.html#mw-head">navigation</a>, 					<a href="Pocket_Realms.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+This page was last updated for Realms version 0.7.6 and will likely not be accurate for future Minecraft PE versions.
+</p><p>Currently, Pocket Realms has been discontinued for MCPE, so it would not work.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Pocket_Realms.html#Authentication"><span class="tocnumber">1</span> <span class="toctext">Authentication</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Pocket_Realms.html#POST_.2Fm.2Flogin"><span class="tocnumber">1.1</span> <span class="toctext">POST /m/login</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="Pocket_Realms.html#Endpoints"><span class="tocnumber">2</span> <span class="toctext">Endpoints</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Pocket_Realms.html#GET_.2Fserver.2Flist"><span class="tocnumber">2.1</span> <span class="toctext">GET /server/list</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Pocket_Realms.html#POST_.2Fserver.2F.7Bid.7D.2Fjoin"><span class="tocnumber">2.2</span> <span class="toctext">POST /server/{id}/join</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Pocket_Realms.html#POST_.2Fserver.2Fcreate.3Fname.3D.7Bserver_name.7D.26type.3D.7Btype.7D.26seed.3D.7Bseed.7D"><span class="tocnumber">2.3</span> <span class="toctext">POST /server/create?name={server_name}&amp;type={type}&amp;seed={seed}</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Pocket_Realms.html#PUT_.2Fserver.2F.7Bid.7D.2Fname.2F.7Bserver_name.7D"><span class="tocnumber">2.4</span> <span class="toctext">PUT /server/{id}/name/{server_name}</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Pocket_Realms.html#PUT_.2Fserver.2F.7Bid.7D.2Fopen"><span class="tocnumber">2.5</span> <span class="toctext">PUT /server/{id}/open</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Pocket_Realms.html#PUT_.2Fserver.2F.7Bid.7D.2Fclose"><span class="tocnumber">2.6</span> <span class="toctext">PUT /server/{id}/close</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Pocket_Realms.html#POST_.2Fserver.2F.7Bid.7D.2Fwhitelist.2F.7Busername.7D"><span class="tocnumber">2.7</span> <span class="toctext">POST /server/{id}/whitelist/{username}</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Pocket_Realms.html#DELETE_.2Fserver.2F.7Bid.7D.2Fwhitelist.2F.7Busername.7D"><span class="tocnumber">2.8</span> <span class="toctext">DELETE /server/{id}/whitelist/{username}</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Pocket_Realms.html#POST_.2Fserver.2Fheartbeat.3Fnplayers.3D.7Bnum_players.7D"><span class="tocnumber">2.9</span> <span class="toctext">POST /server/heartbeat?nplayers={num_players}</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Pocket_Realms.html#GET_.2Fauth.2Fvalidate-player.2F.7Bunknown_string.7D.2F.7Bunknown_string.7D"><span class="tocnumber">2.10</span> <span class="toctext">GET /auth/validate-player/{unknown_string}/{unknown_string}</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Pocket_Realms.html#GET_.2Finfo.2Fstatus"><span class="tocnumber">2.11</span> <span class="toctext">GET /info/status</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Authentication">Authentication</span></h2>
+<p>Endpoint: <a rel="nofollow" class="external free" href="https://account.mojang.com">https://account.mojang.com</a>
+</p><p>Steps to Login
+</p>
+<ul><li>Pull authenticityToken from /m/login?app=mcpe&amp;version=0.7.6</li>
+<li>POST to /m/login</li>
+<li>Client is redirected to /m/launch</li></ul>
+<h3><span class="mw-headline" id="POST_.2Fm.2Flogin">POST /m/login</span></h3>
+<p>Player Login
+</p><p>Parameters sent in body
+</p><p>Request Parameters:
+</p>
+<ul><li>authenticityToken: Pulled from /m/login?app=mcpe&amp;version=0.7.6</li>
+<li>email: Email of user</li>
+<li>password: Password of user</li></ul>
+<p>Pull mojangSessionId from the PLAY_SESSION cookie, and use that as the sid cookie in pocket.realms.minecraft.net requests. The mojangSessionId is also returned in a JSON key of sessionID with a request to /m/session
+</p><p>Cookies needed for pocket.realms.minecraft.net requests:
+</p>
+<ul><li>sid: Pulled from mojangSessionId</li>
+<li>gameversion: Version of the game the requests are coming from</li></ul>
+<p>Response:
+</p>
+<pre>
+Logged in.
+</pre>
+<h2><span class="mw-headline" id="Endpoints">Endpoints</span></h2>
+<p>Endpoint: <a rel="nofollow" class="external free" href="https://pocket.realms.minecraft.net">https://pocket.realms.minecraft.net</a>
+</p>
+<h3><span class="mw-headline" id="GET_.2Fserver.2Flist">GET /server/list</span></h3>
+<p>List servers that user own or has been invited to
+</p><p>Response Parameters:
+</p>
+<ul><li>serverId: Id of server</li>
+<li>name: Server Title</li>
+<li>open: Whether server is joinable</li>
+<li>ownerName: Name of server owner</li>
+<li>myWorld: Whether the server belongs to the current user</li>
+<li>maxNrPlayers: Max number of players</li>
+<li>type: Type of server, can be creative or survival</li>
+<li>playerNames: Usernames of players currently playing on the server</li>
+<li>invited: Usernames of players who are invited to the server</li>
+<li>daysLeft: Unknown use</li></ul>
+<p>Response:
+</p>
+<pre>[{
+
+   "serverId":1,
+   "name":"Steve's Server",
+   "open":true,
+   "ownerName":"Steve",
+   "myWorld":true,
+   "maxNrPlayers":10,
+   "type":"survival",
+   "playerNames":["Steve", "Stevie"],
+   "invited":["Steve", "Stevie"],
+   "daysLeft": 0
+
+}]
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="POST_.2Fserver.2F.7Bid.7D.2Fjoin">POST /server/{id}/join</span></h3>
+<p>Join a server
+</p><p>Request Parameters:
+</p>
+<ul><li>id: Pulled from serverId on /server/list</li></ul>
+<p>Response Paramenters:
+</p>
+<ul><li>ip: IP of server</li>
+<li>port: Port of server</li>
+<li>key: Key used to encrypt the data received on the server (AES-128 ECB)</li></ul>
+<p>Response:
+</p>
+<pre>{
+   "ip":"87.169.167.12",
+   "port":21647,
+   "key":"/6UAOMG6Q/EIjHxLa87un5l=="
+}
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="POST_.2Fserver.2Fcreate.3Fname.3D.7Bserver_name.7D.26type.3D.7Btype.7D.26seed.3D.7Bseed.7D">POST /server/create?name={server_name}&amp;type={type}&amp;seed={seed}</span></h3>
+<p>Create a server. (Not complete)
+</p><p>Request Parameters:
+</p>
+<ul><li>server_name: Title of server</li>
+<li>type: Type of server, can be creative or survival</li>
+<li>seed: Seed for server</li></ul>
+<p>Response:
+</p>
+<pre>Response not yet documented
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="PUT_.2Fserver.2F.7Bid.7D.2Fname.2F.7Bserver_name.7D">PUT /server/{id}/name/{server_name}</span></h3>
+<p>Change name of server (Not complete)
+</p><p>Request Parameters:
+</p>
+<ul><li>id: Pulled from serverId on /server/list</li>
+<li>server_name: Title of server</li></ul>
+<p>Response:
+</p>
+<pre>Response not yet documented
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="PUT_.2Fserver.2F.7Bid.7D.2Fopen">PUT /server/{id}/open</span></h3>
+<p>Open server (Not complete)
+</p><p>Request Parameters:
+</p>
+<ul><li>id: Pulled from serverId on /server/list</li></ul>
+<p>Response:
+</p>
+<pre>Response not yet documented
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="PUT_.2Fserver.2F.7Bid.7D.2Fclose">PUT /server/{id}/close</span></h3>
+<p>Close server (Not complete)
+</p><p>Request Parameters:
+</p>
+<ul><li>id: Pulled from serverId on /server/list</li></ul>
+<p>Response:
+</p>
+<pre>Response not yet documented
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="POST_.2Fserver.2F.7Bid.7D.2Fwhitelist.2F.7Busername.7D">POST /server/{id}/whitelist/{username}</span></h3>
+<p>Add username to whitelist (Not complete)
+</p><p>Request Parameters:
+</p>
+<ul><li>id: Pulled from serverId on /server/list</li>
+<li>username: Username of player to add to the whitelist</li></ul>
+<p>Response:
+</p>
+<pre>Response not yet documented
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="DELETE_.2Fserver.2F.7Bid.7D.2Fwhitelist.2F.7Busername.7D">DELETE /server/{id}/whitelist/{username}</span></h3>
+<p>Delete username from whitelist (Not complete)
+</p><p>Request Parameters:
+</p>
+<ul><li>id: Pulled from serverId on /server/list</li>
+<li>username: Username of player to delete from the whitelist</li></ul>
+<p>Response:
+</p>
+<pre>Response not yet documented
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="POST_.2Fserver.2Fheartbeat.3Fnplayers.3D.7Bnum_players.7D">POST /server/heartbeat?nplayers={num_players}</span></h3>
+<p>Exact use unknown (Not complete) (Most likely a POST)
+</p><p>Request Parameters:
+</p>
+<ul><li>num_players: Number of players currently on server?</li></ul>
+<p>Response:
+</p>
+<pre>Response not yet documented
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="GET_.2Fauth.2Fvalidate-player.2F.7Bunknown_string.7D.2F.7Bunknown_string.7D">GET /auth/validate-player/{unknown_string}/{unknown_string}</span></h3>
+<p>Check whether username is authorized? (Not complete)
+</p><p>Needs the cookie <b>key</b>
+</p><p>Request Parameters:
+</p>
+<ul><li>unknown_string: One of the values could be a username?</li></ul>
+<p>Response:
+</p>
+<pre>Response not yet documented
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="GET_.2Finfo.2Fstatus">GET /info/status</span></h3>
+<p>Determines whether server creation is allowed
+</p><p>Response Parameters:
+</p>
+<ul><li>buyServerEnabled: Whether server buying is enabled?</li>
+<li>createServerEnabled: Whether server creation is enabled?</li></ul>
+<p>Response:
+</p>
+<pre>{"serviceEnabled":true,"buyServerEnabled":false,"createServerEnabled":false}
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20180823103300
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.026 seconds
+Real time usage: 0.123 seconds
+Preprocessor visited node count: 64/1000000
+Preprocessor generated node count: 80/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:318-0!*!*!!en!*!* and timestamp 20180823103300 and revision id 13182
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Pocket_Realms&amp;oldid=13182">http://wiki.vg/index.php?title=Pocket_Realms&amp;oldid=13182</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Pocket_Minecraft.html" title="Category:Pocket Minecraft">Pocket Minecraft</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Pocket+Realms" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Pocket+Realms" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Pocket_Realms.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Pocket_Realms.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Pocket_Realms.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Pocket_Realms.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Pocket_Realms&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Pocket_Realms&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Pocket_Realms.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Pocket_Realms" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Pocket_Realms" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Pocket_Realms&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Pocket_Realms&amp;oldid=13182" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Pocket_Realms&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 10 July 2017, at 11:07.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":289});});</script>
+	</body>
+</html>

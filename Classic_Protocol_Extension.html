@@ -1,0 +1,2583 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Classic Protocol Extension - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Classic_Protocol_Extension","wgTitle":"Classic Protocol Extension","wgCurRevisionId":13624,"wgRevisionId":13624,"wgArticleId":255,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Minecraft Classic"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Classic_Protocol_Extension","wgRelevantArticleId":255,"wgRequestId":"13ff27dbdd3407d60b74d487","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Classic_Protocol_Extension rootpage-Classic_Protocol_Extension skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Classic Protocol Extension</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Classic_Protocol_Extension.html#mw-head">navigation</a>, 					<a href="Classic_Protocol_Extension.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Classic Protocol Extension</b> (CPE) is a project to augment the Minecraft Classic network protocol with new and improved functionality.
+</p><p>Extensions are designed to keep extended clients and servers compatible with standard clients and servers. Standard clients and extended clients can play on the same server side-by-side. Extensions are designed to be modular: custom clients and servers can selectively implement any subset of extensions, and only mutually-supported extensions will be used.
+</p>
+<table class="wikitable" style="margin:10px 10%;border: 1px solid #aaa;border-left:10px solid #f28500;background:#fbfbfb;width:80%;font-size:110%">
+<tr>
+<td style="padding:10px"><b>This specification has not yet been finalized, and is subject to change.</b>
+<p>Last revision: 19 Nov 2017.
+Keep an eye on <a href="Classic_Protocol_Extension/History.html" title="Classic Protocol Extension/History">the history subpage</a> for a chronology of changes.
+</p>
+</td></tr></table>
+<table class="wikitable" style="margin:10px 10%;border: 1px solid #aaa;border-left:10px solid #3dc238;background:#fbfbfb;width:80%;font-size:110%">
+<tr>
+<td style="padding:10px"><b>Do you have an idea for an extension? Please post it on the <a href="Classic_Protocol_Extension/Proposals.html" title="Classic Protocol Extension/Proposals">Proposals</a> subpage.</b>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Classic_Protocol_Extension.html#Support"><span class="tocnumber">1</span> <span class="toctext">Support</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Classic_Protocol_Extension.html#Negotiation"><span class="tocnumber">2</span> <span class="toctext">Negotiation</span></a>
+<ul>
+<li class="toclevel-2"><a href="Classic_Protocol_Extension.html#ExtInfo_Packet"><span class="tocnumber">2.1</span> <span class="toctext">ExtInfo Packet</span></a></li>
+<li class="toclevel-2"><a href="Classic_Protocol_Extension.html#ExtEntry_Packet"><span class="tocnumber">2.2</span> <span class="toctext">ExtEntry Packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="Classic_Protocol_Extension.html#Extensions"><span class="tocnumber">3</span> <span class="toctext">Extensions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Classic_Protocol_Extension.html#ClickDistance"><span class="tocnumber">3.1</span> <span class="toctext">ClickDistance</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#SetClickDistance_packet"><span class="tocnumber">3.1.1</span> <span class="toctext">SetClickDistance packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="Classic_Protocol_Extension.html#CustomBlocks"><span class="tocnumber">3.2</span> <span class="toctext">CustomBlocks</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#CustomBlockSupportLevel_packet"><span class="tocnumber">3.2.1</span> <span class="toctext">CustomBlockSupportLevel packet</span></a></li>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#Blocks_in_support_level_1"><span class="tocnumber">3.2.2</span> <span class="toctext">Blocks in support level 1</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="Classic_Protocol_Extension.html#HeldBlock"><span class="tocnumber">3.3</span> <span class="toctext">HeldBlock</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#HoldThis_packet"><span class="tocnumber">3.3.1</span> <span class="toctext">HoldThis packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="Classic_Protocol_Extension.html#EmoteFix"><span class="tocnumber">3.4</span> <span class="toctext">EmoteFix</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Classic_Protocol_Extension.html#TextHotKey"><span class="tocnumber">3.5</span> <span class="toctext">TextHotKey</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#SetTextHotKey_packet"><span class="tocnumber">3.5.1</span> <span class="toctext">SetTextHotKey packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="Classic_Protocol_Extension.html#ExtPlayerList"><span class="tocnumber">3.6</span> <span class="toctext">ExtPlayerList</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="Classic_Protocol_Extension.html#Version_1_.28Deprecated_since_28_August_2014.29"><span class="tocnumber">3.6.1</span> <span class="toctext">Version 1 (Deprecated since 28 August 2014)</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="Classic_Protocol_Extension.html#Version_2"><span class="tocnumber">3.6.2</span> <span class="toctext">Version 2</span></a>
+<ul>
+<li class="toclevel-4"><a href="Classic_Protocol_Extension.html#Client_Behavior"><span class="tocnumber">3.6.2.1</span> <span class="toctext">Client Behavior</span></a></li>
+<li class="toclevel-4"><a href="Classic_Protocol_Extension.html#Server_Behavior"><span class="tocnumber">3.6.2.2</span> <span class="toctext">Server Behavior</span></a></li>
+<li class="toclevel-4"><a href="Classic_Protocol_Extension.html#ExtAddPlayerName_Packet"><span class="tocnumber">3.6.2.3</span> <span class="toctext">ExtAddPlayerName Packet</span></a></li>
+<li class="toclevel-4"><a href="Classic_Protocol_Extension.html#ExtAddEntity2_Packet"><span class="tocnumber">3.6.2.4</span> <span class="toctext">ExtAddEntity2 Packet</span></a></li>
+<li class="toclevel-4"><a href="Classic_Protocol_Extension.html#ExtRemovePlayerName_Packet"><span class="tocnumber">3.6.2.5</span> <span class="toctext">ExtRemovePlayerName Packet</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="Classic_Protocol_Extension.html#EnvColors"><span class="tocnumber">3.7</span> <span class="toctext">EnvColors</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#EnvSetColor_Packet"><span class="tocnumber">3.7.1</span> <span class="toctext">EnvSetColor Packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="Classic_Protocol_Extension.html#SelectionCuboid"><span class="tocnumber">3.8</span> <span class="toctext">SelectionCuboid</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#MakeSelection_packet"><span class="tocnumber">3.8.1</span> <span class="toctext">MakeSelection packet</span></a></li>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#RemoveSelection_packet"><span class="tocnumber">3.8.2</span> <span class="toctext">RemoveSelection packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="Classic_Protocol_Extension.html#BlockPermissions"><span class="tocnumber">3.9</span> <span class="toctext">BlockPermissions</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#SetBlockPermission_packet"><span class="tocnumber">3.9.1</span> <span class="toctext">SetBlockPermission packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="Classic_Protocol_Extension.html#ChangeModel"><span class="tocnumber">3.10</span> <span class="toctext">ChangeModel</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#Client_Behavior_2"><span class="tocnumber">3.10.1</span> <span class="toctext">Client Behavior</span></a></li>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#Server_Behavior_2"><span class="tocnumber">3.10.2</span> <span class="toctext">Server Behavior</span></a></li>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#Interaction_with_ExtPlayerList"><span class="tocnumber">3.10.3</span> <span class="toctext">Interaction with ExtPlayerList</span></a></li>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#ChangeModel_Packet"><span class="tocnumber">3.10.4</span> <span class="toctext">ChangeModel Packet</span></a></li>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#Available_models"><span class="tocnumber">3.10.5</span> <span class="toctext">Available models</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="Classic_Protocol_Extension.html#EnvMapAppearance"><span class="tocnumber">3.11</span> <span class="toctext">EnvMapAppearance</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="Classic_Protocol_Extension.html#Version_1_.28Deprecated_since_9_May_2016.29"><span class="tocnumber">3.11.1</span> <span class="toctext">Version 1 (Deprecated since 9 May 2016)</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="Classic_Protocol_Extension.html#Version_2_.28Deprecated_since_21_June_2017.29"><span class="tocnumber">3.11.2</span> <span class="toctext">Version 2 (Deprecated since 21 June 2017)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="Classic_Protocol_Extension.html#EnvWeatherType"><span class="tocnumber">3.12</span> <span class="toctext">EnvWeatherType</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#EnvSetWeatherType_Packet"><span class="tocnumber">3.12.1</span> <span class="toctext">EnvSetWeatherType Packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="Classic_Protocol_Extension.html#HackControl"><span class="tocnumber">3.13</span> <span class="toctext">HackControl</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#HackControl_Packet"><span class="tocnumber">3.13.1</span> <span class="toctext">HackControl Packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="Classic_Protocol_Extension.html#MessageTypes"><span class="tocnumber">3.14</span> <span class="toctext">MessageTypes</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="Classic_Protocol_Extension.html#PlayerClick"><span class="tocnumber">3.15</span> <span class="toctext">PlayerClick</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#PlayerClicked_packet"><span class="tocnumber">3.15.1</span> <span class="toctext">PlayerClicked packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="Classic_Protocol_Extension.html#LongerMessages"><span class="tocnumber">3.16</span> <span class="toctext">LongerMessages</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="Classic_Protocol_Extension.html#FullCP437"><span class="tocnumber">3.17</span> <span class="toctext">FullCP437</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="Classic_Protocol_Extension.html#BlockDefinitions"><span class="tocnumber">3.18</span> <span class="toctext">BlockDefinitions</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#DefineBlock_Packet"><span class="tocnumber">3.18.1</span> <span class="toctext">DefineBlock Packet</span></a></li>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#RemoveBlockDefinition_Packet"><span class="tocnumber">3.18.2</span> <span class="toctext">RemoveBlockDefinition Packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-26"><a href="Classic_Protocol_Extension.html#BlockDefinitionsExt"><span class="tocnumber">3.19</span> <span class="toctext">BlockDefinitionsExt</span></a>
+<ul>
+<li class="toclevel-3 tocsection-27"><a href="Classic_Protocol_Extension.html#Version_1_.28Deprecated_since_9_May_2016.29_2"><span class="tocnumber">3.19.1</span> <span class="toctext">Version 1 (Deprecated since 9 May 2016)</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="Classic_Protocol_Extension.html#Version_2_2"><span class="tocnumber">3.19.2</span> <span class="toctext">Version 2</span></a>
+<ul>
+<li class="toclevel-4"><a href="Classic_Protocol_Extension.html#DefineBlockExt_Packet"><span class="tocnumber">3.19.2.1</span> <span class="toctext">DefineBlockExt Packet</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="Classic_Protocol_Extension.html#BulkBlockUpdate"><span class="tocnumber">3.20</span> <span class="toctext">BulkBlockUpdate</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#BulkBlockUpdate_packet"><span class="tocnumber">3.20.1</span> <span class="toctext">BulkBlockUpdate packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href="Classic_Protocol_Extension.html#TextColors"><span class="tocnumber">3.21</span> <span class="toctext">TextColors</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#SetTextColor_packet"><span class="tocnumber">3.21.1</span> <span class="toctext">SetTextColor packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-31"><a href="Classic_Protocol_Extension.html#EnvMapAspect"><span class="tocnumber">3.22</span> <span class="toctext">EnvMapAspect</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#SetMapEnvUrl_packet"><span class="tocnumber">3.22.1</span> <span class="toctext">SetMapEnvUrl packet</span></a>
+<ul>
+<li class="toclevel-4"><a href="Classic_Protocol_Extension.html#Texture_pack_.zip_format"><span class="tocnumber">3.22.1.1</span> <span class="toctext">Texture pack .zip format</span></a></li>
+<li class="toclevel-4"><a href="Classic_Protocol_Extension.html#animations.txt_format"><span class="tocnumber">3.22.1.2</span> <span class="toctext">animations.txt format</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#SetMapEnvProperty_packet"><span class="tocnumber">3.22.2</span> <span class="toctext">SetMapEnvProperty packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-32"><a href="Classic_Protocol_Extension.html#EntityProperty"><span class="tocnumber">3.23</span> <span class="toctext">EntityProperty</span></a>
+<ul>
+<li class="toclevel-3"><a href="Classic_Protocol_Extension.html#SetEntityProperty_packet"><span class="tocnumber">3.23.1</span> <span class="toctext">SetEntityProperty packet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-33"><a href="Classic_Protocol_Extension.html#ExtEntityPositions"><span class="tocnumber">3.24</span> <span class="toctext">ExtEntityPositions</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Support">Support</span></h2>
+<dl><dd><i>See <a href="Classic_Protocol_Extension/Support.html" title="Classic Protocol Extension/Support">support subpage</a> for a detailed table.</i></dd></dl>
+<p>Custom servers that already support CPE: <a rel="nofollow" class="external text" href="http://femto.fcraft.net/">FemtoCraft</a>, <a rel="nofollow" class="external text" href="http://umby.d3s.co/CCD3/">D3</a>, <a rel="nofollow" class="external text" href="http://github.com/LeChosenOne/LegendCraft/">LegendCraft</a>, <a rel="nofollow" class="external text" href="http://GemsCraftMC.weebly.com/">GemsCraft</a>, <a rel="nofollow" class="external text" href="https://github.com/umby24/Hypercube">Hypercube</a>, <a rel="nofollow" class="external text" href="http://mcsong.x10.mx/forums/">MCSong</a>
+</p><p>Custom servers that plan to add support: <a rel="nofollow" class="external text" href="http://800craft.net/">800Craft</a>, <a rel="nofollow" class="external text" href="http://github.com/tyteen4a03/cloudBox">cloudBox</a>, <a rel="nofollow" class="external text" href="http://www.fcraft.net/">fCraft</a>, <a rel="nofollow" class="external text" href="https://github.com/GamezGalaxy/GGS/tree/Classic-Extension">GGS</a>
+</p><p>Custom clients that already support CPE: <a rel="nofollow" class="external text" href="http://classicube.net">ClassiCube Client</a>, <a rel="nofollow" class="external text" href="https://github.com/UnknownShadow200/ClassicalSharp/">ClassicalSharp</a>
+</p><p>Custom clients that plan to add support: <a rel="nofollow" class="external text" href="http://charged-miners.com/">Charged Miners</a>, <a rel="nofollow" class="external text" href="http://Client.GemsCraft.net/">GemsClient</a>
+</p>
+<h2><span class="mw-headline" id="Negotiation">Negotiation</span></h2>
+<p>When CPE-capable client connects to a CPE-capable server, a brief negotiation needs to happen before any extensions are used. Client and server declare their capabilities and determine which extensions are mutually supported. <b>All CPE-capable software is required to support this.</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:264px;"><a href="./File:CPE_Negotiation.png.html" class="image"><img alt="CPE Negotiation.png" src="images/8/82/CPE_Negotiation.png" width="262" height="398" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
+<p><b>Client behavior</b>: Extended clients must use magic number of <code>0x42</code> (<code>66</code> decimal) for the padding byte of the <a href="Classic_Protocol.html#Client_.E2.86.92_Server_packets" title="Classic Protocol"><i><b>PlayerIdentification</b></i></a> packet. It must then await a response. If server responds with any packet other than <i><b>ExtInfo</b></i>, client must assume that the server does NOT support CPE. If the server responds with an <i><b>ExtInfo</b></i> packet, client must parse it and any <i><b>ExtEntry</b></i> packets that follow. Client must then compare its locally-supported set of extensions with the list of extensions provided by the server, and find an intersection of these sets. These are the mutually-supported extensions. Client must now send <i><b>ExtInfo</b></i> packet of its own, followed by a list of zero or more client-supported extensions. After sending the last of <i><b>ExtEntry</b></i> packets, client should activate all mutually-supported extensions and resume normal login procedure.
+</p><p><b>Server behavior</b>: When a client connects, server must read the <a href="Classic_Protocol.html#Client_.E2.86.92_Server_packets" title="Classic Protocol"><i><b>PlayerIdentification</b></i></a> packet and check its padding byte. If this byte is set to <code>0x42</code> (<code>66</code> decimal), assume that the client supports CPE. If this byte is set to any other value, assume that the client does NOT support CPE.
+</p><p>Server must immediately reply to CPE clients with an <i><b>ExtInfo</b></i> packet, followed by zero or more <i><b>ExtEntry</b></i> packets, and await a response from the client. Client will respond with one <i><b>ExtInfo</b></i> and zero or more <i><b>ExtEntry</b></i> packets. Server must then compare its locally-supported set of extensions with the list of extensions provided by the client, and find an intersection of these sets. These are the mutually-supported extensions. After receiving the last of <i><b>ExtEntry</b></i> packets, server should activate all mutually-supported extensions and resume normal login procedure. 
+</p><p><b>Note 1</b>: All standard/non-extended clients use <code>0x00</code> for the padding byte. All standard servers ignore this padding byte. Therefore, this negotiation process does not affect compatibility with standard software.
+</p><p><b>Note 2</b>: Do not make any assumptions about supported functionality based on the <i>AppName</i> field of <i><b>ExtInfo</b></i> packet. It's for logging purposes only.
+</p><p><b>Note 3</b>: Do not declare support for an extension until it is FULLY implemented, except for debugging.
+</p>
+<dl><dd><h4><span class="mw-headline" id="ExtInfo_Packet">ExtInfo Packet</span></h4></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x10
+<p>(16)
+</p>
+</td>
+<td class="col1 centeralign"> AppName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>MyServer</code>
+</td>
+<td class="col4"> Client or server software name
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> ExtensionCount
+</td>
+<td class="col1 centeralign"> short
+</td>
+<td class="col2 centeralign"> 1
+</td>
+<td class="col3"> Between 0 and 32767
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 67 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="ExtEntry_Packet">ExtEntry Packet</span></h4></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x11
+<p>(17)
+</p>
+</td>
+<td class="col1 centeralign"> ExtName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>MyExtension</code>
+</td>
+<td class="col4"> Name of a supported extension
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> Version
+</td>
+<td class="col1 centeralign"> int
+</td>
+<td class="col2 centeralign"> 1
+</td>
+<td class="col3"> Only extensions with identical version numbers should be considered compatible.
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 69 bytes
+</td></tr></table></dd></dl>
+<h2><span class="mw-headline" id="Extensions">Extensions</span></h2>
+<p><i><b>Note:</b></i> The section heading is the name of the extension. Packet names are not same as extension names. For example, the first extension listed here is named "ClickDistance" and not "SetClickDistance".
+</p>
+<table class="wikitable" style="margin:10px 10%;border: 1px solid #aaa;border-left:10px solid #3dc238;background:#fbfbfb;width:80%;font-size:110%">
+<tr>
+<td style="padding:10px"><b>Do you have an idea for an extension? Please post it on the <a href="Classic_Protocol_Extension/Proposals.html" title="Classic Protocol Extension/Proposals">Proposals</a> subpage.</b>
+</td></tr></table>
+<h3><span class="mw-headline" id="ClickDistance">ClickDistance</span></h3>
+<dl><dd>Used to extend or restrict the distance at which client may click blocks, controlled by the server. Click range is given in player-space units (32 units per block). In Minecraft Classic, the default range is 160.</dd>
+<dd><b>Motivation</b>: This extension allows trusted players to have a wider or virtually-unlimited reach. It may simplify operation of certain bots. Restricting the reach may allow new games/mini-games.</dd>
+<dd><b>Client Behavior</b>: Upon receiving a <i><b>SetClickDistance</b></i> packet, client should immediately apply the change. <i>Distance</i> should persist between worlds/maps.</dd>
+<dd><b>Server Behavior</b>: Server should send <i><b>SetClickDistance</b></i> packet when the server connects, or whenever their permitted click distance changes. Server should allow for some margin-of-error (+/- 1 block) when enforcing click distance restrictions.</dd>
+<dd><h4><span class="mw-headline" id="SetClickDistance_packet">SetClickDistance packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign"> 0x12
+<p>(18)
+</p>
+</td>
+<td class="col1 centeralign"> Distance
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> 160
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 3 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="CustomBlocks">CustomBlocks</span></h3>
+<dl><dd>Used to add support for custom block types. Custom block IDs start at 50 (0x32). New block types will be added in batches, a few at a time. Both client and server declare which batch they support, and use the lower of the two versions. Claiming to support a batch implies fully implementing all the batches that came before it. If either server or client do not support this extension, only the standard 50 block types should be used.</dd>
+<dd><b>Motivation</b>: Adding new visually distinct blocks, to enhance Classic players' experience.</dd>
+<dd><b>Client behavior</b>: Client must expect a <i><b>CustomBlockSupportLevel</b></i> packet from a compatible server immediately after sending the last <i><b>ExtEntry</b></i> packet. It should then reply with its own <i><b>CustomBlockSupportLevel</b></i> packet, containing its actual support level. Client must then use the lower of the two levels in operation. Client must not send any block types that are not defined by the current support level. Client should expect <a href="Classic_Protocol.html#Client_.E2.86.92_Server_packets" title="Classic Protocol"><i><b>ServerIdentification</b></i></a> packet only AFTER sending its <i><b>CustomBlockSupportLevel</b></i> packet.</dd>
+<dd><b>Server behavior</b>: Server must send a <i><b>CustomBlockSupportLevel</b></i> packet to compatible clients immediately after receiving the last <i><b>ExtEntry</b></i> packet from the client. It should then wait to receive a <i><b>CustomBlockSupportLevel</b></i> packet from the client before sending the <a href="Classic_Protocol.html#Client_.E2.86.92_Server_packets" title="Classic Protocol"><i><b>ServerIdentification</b></i></a> packet. Server must then use the lower of the two levels in operation. If this level is lower than the server's, it has to filter data sent to the client, to make sure that the client never receives any block types that it does not support. Each level will define what substitutions to use.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="CustomBlockSupportLevel_packet">CustomBlockSupportLevel packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign"> 0x13
+<p>(19)
+</p>
+</td>
+<td class="col1 centeralign"> SupportLevel
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 1
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 2
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="Blocks_in_support_level_1">Blocks in support level 1</span></h4></dd>
+<dd>Client must be able to receive/render all 16 custom blocks to claim support. Server must be able to receive/store all 16 custom blocks to claim support.</dd>
+<dd><a href="./File:CPE_CustomBlocks_Level1.png.html" class="image"><img alt="CPE CustomBlocks Level1.png" src="images/7/7c/CPE_CustomBlocks_Level1.png" width="679" height="170" /></a></dd></dl>
+<dl><dd><table class="wikitable">
+<tr>
+<th>Block name
+</th>
+<th>Block ID
+</th>
+<th>Fallback name
+</th>
+<th>Fallback ID
+</th></tr>
+<tr>
+<td><b>CobblestoneSlab</b>
+</td>
+<td>0x32 (50)
+</td>
+<td>Slab
+</td>
+<td>0x2C (44)
+</td></tr>
+<tr>
+<td><b>Rope</b>
+</td>
+<td>0x33 (51)
+</td>
+<td>BrownMushroom
+</td>
+<td>0x27 (39)
+</td></tr>
+<tr>
+<td><b>Sandstone</b>
+</td>
+<td>0x34 (52)
+</td>
+<td>Sand
+</td>
+<td>0x0C (12)
+</td></tr>
+<tr>
+<td><b>Snow</b>
+</td>
+<td>0x35 (53)
+</td>
+<td>Air
+</td>
+<td>0x00 (0)
+</td></tr>
+<tr>
+<td><b>Fire</b>
+</td>
+<td>0x36 (54)
+</td>
+<td>Lava
+</td>
+<td>0x0A (10)
+</td></tr>
+<tr>
+<td><b>LightPinkWool</b>
+</td>
+<td>0x37 (55)
+</td>
+<td>Pink
+</td>
+<td>0x21 (33)
+</td></tr>
+<tr>
+<td><b>ForestGreenWool</b>
+</td>
+<td>0x38 (56)
+</td>
+<td>Green
+</td>
+<td>0x19 (25)
+</td></tr>
+<tr>
+<td><b>BrownWool</b>
+</td>
+<td>0x39 (57)
+</td>
+<td>Dirt
+</td>
+<td>0x03 (3)
+</td></tr>
+<tr>
+<td><b>DeepBlue</b>
+</td>
+<td>0x3A (58)
+</td>
+<td>Blue
+</td>
+<td>0x1d (29)
+</td></tr>
+<tr>
+<td><b>Turquoise</b>
+</td>
+<td>0x3B (59)
+</td>
+<td>Cyan
+</td>
+<td>0x1c (28)
+</td></tr>
+<tr>
+<td><b>Ice</b>
+</td>
+<td>0x3C (60)
+</td>
+<td>Glass
+</td>
+<td>0x14 (20)
+</td></tr>
+<tr>
+<td><b>CeramicTile</b>
+</td>
+<td>0x3D (61)
+</td>
+<td>Iron
+</td>
+<td>0x2a (42)
+</td></tr>
+<tr>
+<td><b>Magma</b>
+</td>
+<td>0x3E (62)
+</td>
+<td>Obsidian
+</td>
+<td>0x31 (49)
+</td></tr>
+<tr>
+<td><b>Pillar</b>
+</td>
+<td>0x3F (63)
+</td>
+<td>White
+</td>
+<td>0x24 (36)
+</td></tr>
+<tr>
+<td><b>Crate</b>
+</td>
+<td>0x40 (64)
+</td>
+<td>WoodenPlanks
+</td>
+<td>0x05 (5)
+</td></tr>
+<tr>
+<td><b>StoneBrick</b>
+</td>
+<td>0x41 (65)
+</td>
+<td>Stone
+</td>
+<td>0x01 (1)
+</td></tr></table></dd></dl>
+<dl><dd>Block IDs for future support levels are guaranteed to be assigned monotonically, incrementally, and permanently.</dd></dl>
+<h3><span class="mw-headline" id="HeldBlock">HeldBlock</span></h3>
+<dl><dd>Provides a way for the client to notify the server about the blocktype that it is currently holding, and for the server to change the currently-held block type.   </dd>
+<dd><b>Motivation</b>: This allows server to know which block player is holding, for example for drawing commands, without needing to wait for the player's click. It also allows for features like <a rel="nofollow" class="external text" href="http://www.fcraft.net/wiki//Spectate">/Spectate</a> to show what block a spectated player is holding.</dd>
+<dd><b>Client behavior</b>: When this extension is mutually supported, client should use the <i>PlayerID</i> field of the <i><b><a href="Classic_Protocol.html#Client_.E2.86.92_Server_packets" title="Classic Protocol">PositionAndOrientation</a></b></i> packet (currently unused) to indicate which blocktype the client is currently holding. It should be ready to accept <i><b>HoldThis</b></i> packets to change the block that the player is holding. If <code>0</code> is given for <i>BlockToHold</i>, client should hide the hand/block from the screen, and should not be able to click blocks, until they switch to a different blocktype. If an unrecognized blocktype is given, no action is needed.</dd>
+<dd><b>Server behavior</b>: The server can use <i><b>HoldThis</b></i> packet to force the client to hold the desired block type. It should be done sparingly.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="HoldThis_packet">HoldThis packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x14
+<p>(20)
+</p>
+</td>
+<td class="col1 centeralign"> BlockToHold
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>49</code>
+</td>
+<td class="col4"> Standard block type
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> PreventChange
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> 0
+</td>
+<td class="col4">0 = Allow player to change blocktype
+<p>1 = Prevent player from changing blocktype
+</p>
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 3 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="EmoteFix">EmoteFix</span></h3>
+<dl><dd>This extension indicates that the client can render <a rel="nofollow" class="external text" href="http://fcraft.net/wiki/Emotes">emotes</a> (ASCII control characters) in chat properly, without padding or suffixes that are required for vanilla client. This extension does not define any new packets.</dd>
+<dd><b>Motivation</b>: To improve appearance of emotes in chat.</dd>
+<dd><b>Client behavior</b>: Client should not emulate vanilla client's quirks.</dd>
+<dd><b>Server behavior</b>: Server should not pad or suffix emotes in chat.</dd></dl>
+<h3><span class="mw-headline" id="TextHotKey">TextHotKey</span></h3>
+<dl><dd>This extension allows the server to define "hotkeys" for certain commands.</dd>
+<dd><b>Motivation</b>: To speed up and simplify access to commonly-used commands and command macros by providing server-defined client-side hotkeys.</dd>
+<dd><b>Client behavior:</b> Client should not try to persist previously-defined hotkeys between sessions. When a defined hotkey is activated by the user, client should open up a text prompt and type in contents of the <i>Action</i> field. A newline character (<code>\n</code>) in the <i>Action</i> field indicates that whatever is currently typed-in should be sent to the server. If <i>Action</i> does not end with a newline, text prompt should be left open, for the user to complete. Client may provide a way for the user to see a list of currently-defined hotkeys, and a way to notify the user when a hotkey was activated.</dd>
+<dd><b>Server behavior:</b> The server should send a definition of each hotkey (<i><b>SetTextHotKey</b></i> packet) once per connection.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="SetTextHotKey_packet">SetTextHotKey packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x15
+<p>(21)
+</p>
+</td>
+<td class="col1 centeralign"> Label
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>Copy</code>
+</td>
+<td class="col4"> Readable name of the hotkey
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Action
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>/Copy </code>
+</td>
+<td class="col4"> Text to type in
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> KeyCode
+</td>
+<td class="col2 centeralign"> int
+</td>
+<td class="col3 centeralign"> <code>113</code>
+</td>
+<td class="col4"> <a rel="nofollow" class="external text" href="http://www.minecraftwiki.net/wiki/Key_Codes">LWJGL keycode</a> of the key
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> KeyMods
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> Key modifier <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Flag_word">flags</a>, may be combined:
+<ul><li> 0 = None</li>
+<li> 1 = Ctrl</li>
+<li> 2 = Shift</li>
+<li> 4 = Alt</li></ul>
+</td></tr>
+<tr class="row4">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 134 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="ExtPlayerList">ExtPlayerList</span></h3>
+<dl><dd><b>Motivation</b>: Provides more flexibility in naming of players and loading of skins, autocompletion, and player tab-list display. Separates tracking of in-game entities (spawned player models) and names on the player list. <i><b>ExtAddPlayerName</b></i>/<i><b>ExtRemovePlayerName</b></i> packets take over managing the player names list (tab-list), and <i><b>ExtAddEntity2</b></i>/<i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">DespawnPlayer</a></b></i> packets are used only to manage in-game entities.</dd></dl>
+<h4><span class="mw-headline" id="Version_1_.28Deprecated_since_28_August_2014.29">Version 1 (Deprecated since 28 August 2014)</span></h4>
+<dl><dd>This version of the extension has been deprecated and replaced with version 2. See <a href="Classic_Protocol_Extension/Old_Extensions.html" title="Classic Protocol Extension/Old Extensions">old extensions subpage</a>.</dd></dl>
+<h4><span class="mw-headline" id="Version_2">Version 2</span></h4>
+<p>Version 2 of this extension replaces <i><b>ExtAddEntity</b></i> packet with <i><b>ExtAddEntity2</b></i>, allows using full URLs for <i>SkinName</i>, and clarifies interaction with <a href="Classic_Protocol_Extension.html#ChangeModel"><b>ChangeModel</b></a> extension.
+</p>
+<dl><dd><h5><span class="mw-headline" id="Client_Behavior">Client Behavior</span></h5></dd>
+<dd>When <i><b>ExtAddPlayerName</b></i> packet is received for an unrecognized <i>NameID</i>, a new name must be added to the player-name list. When receiving <i><b>ExtAddPlayerName</b></i> packet for an already-listed <i>NameID</i>, client must update its <i>ListName</i>, <i>GroupName</i>, and <i>GroupRank</i>. Player-name list must persist when client changes worlds/maps.</dd></dl>
+<dl><dd>When an <i><b>ExtAddEntity2</b></i> packet is received, it must be treated as the <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">SpawnPlayer</a></b></i> packet. A player model must be spawned in-game at the given location, with <i>InGameName</i> text drawn above it. Skin should be loaded using the given <i>SkinName</i> for a player name. When client receives <i><b>ExtAddEntity2</b></i> packet for an already-spawned player, a duplicate entity must not be spawned and existing entity's position must not be changed. Instead their <i>InGameName</i> and <i>SkinName</i> must be updated. If a negative <i>EntityID</i> is given for <i><b>ExtAddEntity2</b></i>, client must update player's own spawn point, <i>InGameName</i>, and <i>SkinName</i>. The client must ignore regular <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">SpawnPlayer</a></b></i> packets, if any are received.</dd></dl>
+<dl><dd>Player entity's skin should be loaded using the given <i>SkinName</i>. If <i>SkinName</i> appears to be a player name, skin should be downloaded from the default skin server. If <i>SkinName</i> appears to be a full URL to a PNG image (starts with <code>http://</code> or <code>https://</code> and ends with <code>.png</code>) then skin should be downloaded from that URL. If image is correctly sized/proportioned to use as a skin for the current model, it should be used. If a blank or unrecognized value is given for <i>SkinName</i>, or if given image could not be downloaded or used, then the default skin should be used.</dd></dl>
+<dl><dd>Names on the player-name list should be grouped by <i>GroupName</i> in the player-name list. Names within a <i>GroupName</i> should be sorted by <i>GroupRank</i> (in ascending order). Names with the same <i>GroupName</i> and <i>GroupRank</i> should be sorted alphabetically by <i>ListName</i>. Color codes may be either drawn or stripped from <i>ListName</i>, <i>GroupName</i>, and <i>InGameName</i>.</dd></dl>
+<dl><dd>When a standard <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">DespawnPlayer</a></b></i> packet is received for a recognized <i>EntityID</i>, player model must be removed from a world. When <i><b>ExtRemovePlayerName</b></i> packet is received for a recognized <i>NameID</i>, their name must be removed from player-name list. Packets with out-of-range or unrecognized <i>NameID</i>s must be ignored.</dd></dl>
+<dl><dd>In-game entities must never be affected by <i><b>ExtAddPlayerName</b></i> or <i><b>ExtRemovePlayerName</b></i> packets. Player name list must never be affected by <i><b>ExtAddEntity2</b></i> or <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">DespawnPlayer</a></b></i> packets.</dd></dl>
+<dl><dd><h5><span class="mw-headline" id="Server_Behavior">Server Behavior</span></h5></dd></dl>
+<table class="wikitable" style="float:right">
+<tr>
+<th>Event
+</th>
+<th>Packet to send
+</th></tr>
+<tr>
+<td>Player connects to server
+</td>
+<td><i><b>ExtAddPlayerName</b></i>
+</td></tr>
+<tr>
+<td>Player enters map
+</td>
+<td><i><b>ExtAddEntity2</b></i>
+</td></tr>
+<tr>
+<td>Player leaves map
+</td>
+<td><i><b>DespawnPlayer</b></i>
+</td></tr>
+<tr>
+<td>Player disconnects from server
+</td>
+<td><i><b>ExtRemovePlayerName</b></i>
+</td></tr></table>
+<dl><dd>Unique <i>NameID</i> between 0 and 255 should be assigned to every online player. When a new player connects to the server, <i><b>ExtAddPlayerName</b></i> must be sent. <i>GroupName</i> and <i>GroupRank</i> can be used in any way, for example to group players by map/world or rank/class/faction. Server must use <i><b>ExtAddEntity2</b></i> in place of standard <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">SpawnPlayer</a></b></i> packet. Server should re-send <i><b>ExtAddPlayerName</b></i> packet, using the identical <i>NameID</i>, when player's <i>ListName</i>, <i>GroupName</i>, or <i>GroupRank</i> change. Server must reliably send an <i><b>ExtRemovePlayerName</b></i> packet when the player disconnects. Color codes are permitted in <i>ListName</i>, <i>GroupName</i>, and <i>InGameName</i>.</dd></dl>
+<dl><dd><h5><span class="mw-headline" id="ExtAddPlayerName_Packet">ExtAddPlayerName Packet</span></h5></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="5"> 0x16
+<p>(22)
+</p>
+</td>
+<td class="col1 centeralign"> NameID
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4"> Between 0 and 255
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> PlayerName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>Notch</code>
+</td>
+<td class="col4"> Player name used for autocompletion.
+<p>May be left empty (to exclude from autocompletion).
+</p>
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> ListName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>&amp;c[Op]Notch</code>
+</td>
+<td class="col4">Name displayed in the in-game list.
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> GroupName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>Staff</code>
+</td>
+<td class="col4">May be left blank.
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> GroupRank
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> Rank of a player within the group.
+<p>Lower-number ranks are listed before higher-number ranks.
+</p>
+</td></tr>
+<tr class="row6">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 196 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h5><span class="mw-headline" id="ExtAddEntity2_Packet">ExtAddEntity2 Packet</span></h5></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="8"> 0x21
+<p>(33)
+</p>
+</td>
+<td class="col1 centeralign"> EntityID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4"> Between 0 and 127
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> InGameName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>&amp;cNotch</code>
+</td>
+<td class="col4"> Player name to be shown in-game, hovering above player model.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> SkinName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>Notch</code>
+</td>
+<td class="col4"> Player name whose skin should be used by the client.
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> SpawnX
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4"> X coordinate (32 units per block) of entity's spawn location.
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> SpawnY
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>2</code>
+</td>
+<td class="col4"> Y coordinate (32 units per block) of entity's spawn location.
+</td></tr>
+<tr class="row6">
+<td class="col1 centeralign"> SpawnZ
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>3</code>
+</td>
+<td class="col4"> Z coordinate (32 units per block) of entity's spawn location.
+</td></tr>
+<tr class="row7">
+<td class="col1 centeralign"> SpawnYaw
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>4</code>
+</td>
+<td class="col4"> Orientation (left-right) at the entity's spawn location.
+</td></tr>
+<tr class="row8">
+<td class="col1 centeralign"> SpawnPitch
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4"> Orientation (up-down) at the entity's spawn location.
+</td></tr>
+<tr class="row9">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 138 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h5><span class="mw-headline" id="ExtRemovePlayerName_Packet">ExtRemovePlayerName Packet</span></h5></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign"> 0x18
+<p>(24)
+</p>
+</td>
+<td class="col1 centeralign"> NameID
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4"> Between 0 and 255
+<p>Matches NameID of the ExtAddPlayerName packet
+</p>
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 3 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="EnvColors">EnvColors</span></h3>
+<dl><dd>This extension allows server to alter some of the colors used by the client in environment rendering.</dd>
+<dd><b>Motivation</b>: To allow the server to give worlds/maps a unique feel: time-of-day, weather/climate, lighting effect, etc.</dd>
+<dd><b>Client behavior</b>: Client must check for <i><b>EnvSetColor</b></i> packets right before <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packet, and apply these changes before the map is displayed. Client must be able to read this packet at other times, but it is not required to then apply the changes immediately. If an unrecognized or unsupported <i>Variable</i> field is given, no action is needed. If an out-of-range color is given by the server (i.e. if any of <i>Red</i>, <i>Green</i>, or <i>Blue</i> is less than <code>0</code> or greater than <code>255</code>), then the specified <i>Variable</i> should be reset to its default value.</dd>
+<dd><b>Server behavior</b>: Server should normally only use <i><b>EnvSetColor</b></i> packets right before the <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packet. To reset a variable to its default value, the server should send a packet with value <code>-1</code> for <i>Red</i>, <i>Green</i>, and <i>Blue</i>.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="EnvSetColor_Packet">EnvSetColor Packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x19
+<p>(25)
+</p>
+</td>
+<td class="col1 centeralign"> Variable
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4"> Enumeration of environmental variables
+<ul><li>0 = sky color</li>
+<li>1 = cloud color</li>
+<li>2 = fog color</li>
+<li>3 = ambient light (blocks in shadow) color</li>
+<li>4 = diffuse light (sunlight) color</li></ul>
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Red
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>25</code>
+</td>
+<td class="col4"> Between 0 and 255
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Green
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>128</code>
+</td>
+<td class="col4"> Between 0 and 255
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> Blue
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> Between 0 and 255
+</td></tr>
+<tr class="row5">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 8 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="SelectionCuboid">SelectionCuboid</span></h3>
+<dl><dd><b>Motivation</b>: Allows the server to highlight parts of a world. Applications include zoning, previewing draw commands, previewing undo commands.</dd>
+<dd><b>Coordinates</b>: {<i>StartX</i>,<i>StartY</i>,<i>StartZ</i>} are coordinates of the block inside the selection that is closest to the map origin. {<i>EndX</i>,<i>EndY</i>,<i>EndZ</i>} are coordinates of the block inside the selection that is furthest from the map origin. Therefore, the resulting selection has dimensions {<i>EndX</i>-<i>StartX</i>+1, <i>EndY</i>-<i>StartY</i>+1, <i>EndZ</i>-<i>StartZ</i>+1).</dd>
+<dd><b>Client behavior</b>: Client should be ready to receive <i><b>MakeSelection</b></i> packets any time after <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packet. Upon receiving the packet, a translucent cuboid should appear in the world. The cuboid may feature a plain or "grid" texture. Selections that extend outside the map may be either ignored or clipped to fit. Selections with inconsistent coordinates (e.g. where <i>StartX</i>&lt;<i>EndX</i>) may either be ignored or re-ordered. Out-of-range values for <i>Red</i>, <i>Green</i>, <i>Blue</i>, and <i>Opacity</i> should be clipped to fit the valid range. Supporting <i>Opacity</i> is optional: the client may opt to provide fixed opacity instead. When map changes (i.e. when <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelInitialize</a></b></i> packet is received), all existing selections should be removed. <i><b>RemoveSelection</b></i> packets that refer to non-existent <i>SelectionID</i>s should be ignored.</dd>
+<dd><b>Server behavior</b>: All given coordinates must be contained within the map. End coordinates should be higher or equal than start coordinates.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="MakeSelection_packet">MakeSelection packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="12"> 0x1A
+<p>(26)
+</p>
+</td>
+<td class="col1 centeralign"> SelectionID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> Numeric ID of the selection. Between 0 and 127.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Label
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>SomeZone</code>
+</td>
+<td class="col4"> Text label associated with the selection
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> StartX
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4"> X coordinate of the starting point
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> StartY
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>2</code>
+</td>
+<td class="col4"> Y coordinate of the starting point
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> StartZ
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>3</code>
+</td>
+<td class="col4"> Z coordinate of the starting point
+</td></tr>
+<tr class="row6">
+<td class="col1 centeralign"> EndX
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>5</code>
+</td>
+<td class="col4"> X coordinate of the ending point
+</td></tr>
+<tr class="row7">
+<td class="col1 centeralign"> EndY
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>6</code>
+</td>
+<td class="col4"> Y coordinate of the ending point
+</td></tr>
+<tr class="row8">
+<td class="col1 centeralign"> EndZ
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>7</code>
+</td>
+<td class="col4"> Z coordinate of the ending point
+</td></tr>
+<tr class="row9">
+<td class="col1 centeralign"> Red
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>255</code>
+</td>
+<td class="col4">Between 0 and 255.
+</td></tr>
+<tr class="row10">
+<td class="col1 centeralign"> Green
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>34</code>
+</td>
+<td class="col4">Between 0 and 255.
+</td></tr>
+<tr class="row11">
+<td class="col1 centeralign"> Blue
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>128</code>
+</td>
+<td class="col4">Between 0 and 255.
+</td></tr>
+<tr class="row12">
+<td class="col1 centeralign"> Opacity
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>255</code>
+</td>
+<td class="col4"> 0 = fully transparent
+<p>255 = fully opaque
+</p>
+</td></tr>
+<tr class="row4">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 86 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="RemoveSelection_packet">RemoveSelection packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign"> 0x1B
+<p>(27)
+</p>
+</td>
+<td class="col1 centeralign"> SelectionID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4">
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 2 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="BlockPermissions">BlockPermissions</span></h3>
+<dl><dd>This extension allows the server to instruct the player that certain block types are allowed/disallowed to be placed or deleted.</dd>
+<dd><b>Motivation</b>: To prevent players from inadvertently placing or removing prohibited block types (e.g. water, lava, grass, admincrete), before it even reaches the server.</dd>
+<dd><b>Client behavior:</b> Client should prevent placement of prohibited block types (by graying out or hiding blocks in block-selection screen, or any other effective means). Client should prevent player from deleting prohibited block types. Client must be ready to receive <i><b>SetBlockPermission</b></i> packet after map load (<i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packet). Permission changes should take effect as soon as packet is received. Admincrete (solid block) permissions set by <i><b>SetBlockPermission</b></i> must always override permission set by <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">ServerIdentification</a></b></i> and <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">UpdateUserType</a></b></i> packets. If <i>BlockType</i> is set to <code>0</code>, the client behaviour is undefined. Permissions must persist between map changes. Client may optionally warn the player attempting to place/delete prohibited blocks via sound effect, visual effect, chat message, etc.</dd>
+<dd><b>Server behavior:</b> Server may send <i><b>SetBlockPermission</b></i> packets any time after map load (<i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packet). Any valid block ID may be specified for <i>BlockType</i>, including custom blocks (if <a href="Classic_Protocol_Extension.html#CustomBlocks">CustomBlocks extension</a> is mutually supported). Server must not assume that client is compliant/obedient, and server must still verify each <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">SetBlock</a></b></i> packet coming from the client. What to do with non-complying clients (kick or warn) is up to you.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="SetBlockPermission_packet">SetBlockPermission packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x1C
+<p>(28)
+</p>
+</td>
+<td class="col1 centeralign"> BlockType
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>8</code>
+</td>
+<td class="col4"> Block's numeric ID (anything between 1 and max defined block).
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> AllowPlacement
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> 0 = Prohibited
+<p>1 or any other value = Allowed
+</p>
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> AllowDeletion
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> 0 = Prohibited
+<p>1 or any other value = Allowed
+</p>
+</td></tr>
+<tr class="row4">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 4 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="ChangeModel">ChangeModel</span></h3>
+<dl><dd>Allows changing appearance of player models in supporting clients.</dd></dl>
+<h5><span class="mw-headline" id="Client_Behavior_2">Client Behavior</span></h5>
+<dl><dd>The client will receive an <i>EntityID</i> and a string value containing the model name. The client will then change the model of the player whose ID is the same as the received <i><b>AddEntity</b></i>, <i><b>ExtAddEntity</b></i>, or <i><b>ExtAddEntity2</b></i> packet. The model name will be parsed by the model manager and the model changed in game. If the model does not exists in the model manager or is 0-length, change the model back to humanoid. Alternatively, you can send the client an int converted to a string which represents a valid Block ID. An <i>EntityID</i> of -1 (255 unsigned) indicates the player's own model. If model is set to <code>humanoid</code>, player-specific skin should be used. For all other models, default model-specific textures should be used.</dd></dl>
+<h5><span class="mw-headline" id="Server_Behavior_2">Server Behavior</span></h5>
+<dl><dd>The server may send an <i>EntityID</i> and then a <i>ModelName</i> to the client for a desired entity. The model name must be chosen from the list below. To reset the model to default, server should set <i>ModelName</i> to <code>humanoid</code> or to an empty string.</dd></dl>
+<h5><span class="mw-headline" id="Interaction_with_ExtPlayerList">Interaction with ExtPlayerList</span></h5>
+<dl><dd>If an <i><b>ExtAddEntity2</b></i> packet is received for a non-<code>humanoid</code> entity and <i>SkinName</i> specifies a full URL, that image should be downloaded and used as a texture for the currently model. Receiving another <i><b>ExtAddEntity2</b></i> packet should either update this texture (if <i>SkinName</i> is a full URL) or reset it back to default (if <i>SkinName</i> is anything else). Receiving another <i><b>ChangeModel</b></i> packet with a non-<code>humanoid</code> <i>ModelName</i> should reset texture back to model-specific default. </dd></dl>
+<dl><dd><h4><span class="mw-headline" id="ChangeModel_Packet">ChangeModel Packet</span></h4></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="2"> 0x1D
+<p>(29)
+</p>
+</td>
+<td class="col0 centeralign"> EntityID
+</td>
+<td class="col1 centeralign"> byte
+</td>
+<td class="col2 centeralign"> 5
+</td>
+<td class="col3"> Between 0 and 127.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> ModelName
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code>spider</code>
+</td>
+<td class="col4"> The name of the model to be used OR a valid Block ID as a string.
+</td></tr>
+<tr class="row3">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 66 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h4><span class="mw-headline" id="Available_models">Available models</span></h4></dd>
+<dd>Client can render any or none of the below, but it is down to the client to handle what can and cannot be rendered if the packet is received</dd></dl>
+<dl><dd><table class="wikitable">
+<tr>
+<th>Model Name
+</th>
+<th>Model String
+</th></tr>
+<tr>
+<td><b>Chicken</b>
+</td>
+<td><code>chicken</code>
+</td></tr>
+<tr>
+<td><b>Block Model</b>
+</td>
+<td>A valid block ID as a string
+</td></tr>
+<tr>
+<td><b>Creeper</b>
+</td>
+<td><code>creeper</code>
+</td></tr>
+<tr>
+<td><b>Crocodile</b>
+</td>
+<td><code>croc</code>
+</td></tr>
+<tr>
+<td><b>Humanoid</b>
+</td>
+<td><code>humanoid</code> (or an invalid model name)
+</td></tr>
+<tr>
+<td><b>Pig</b>
+</td>
+<td><code>pig</code>
+</td></tr>
+<tr>
+<td><b>Printer</b>
+</td>
+<td><code>printer</code>
+</td></tr>
+<tr>
+<td><b>Sheep</b>
+</td>
+<td><code>sheep</code>
+</td></tr>
+<tr>
+<td><b>Skeleton Archer</b>
+</td>
+<td><code>skeleton</code>
+</td></tr>
+<tr>
+<td><b>Spider</b>
+</td>
+<td><code>spider</code>
+</td></tr>
+<tr>
+<td><b>Zombie</b>
+</td>
+<td><code>zombie</code>
+</td></tr>
+<tr>
+<td><b>Head</b>
+</td>
+<td><code>head</code>
+</td></tr>
+<tr>
+<td><b>Sitting</b>
+</td>
+<td><code>sitting</code>
+</td></tr>
+<tr>
+<td><b>Chibi</b>
+</td>
+<td><code>chibi</code>
+</td></tr>
+</table></dd></dl>
+<h3><span class="mw-headline" id="EnvMapAppearance">EnvMapAppearance</span></h3>
+<dl><dd>This extension allows the server to specify custom terrain textures, and tweak appearance of map edges.</dd>
+<dd><b>Motivation</b>: To provide more ways to customize map appearance, including functionality that's currently provided by <a rel="nofollow" class="external text" href="http://files.worldofminecraft.com/texturing/">World of Minecraft's scheme</a>.</dd></dl>
+<h4><span class="mw-headline" id="Version_1_.28Deprecated_since_9_May_2016.29">Version 1 (Deprecated since 9 May 2016)</span></h4>
+<dl><dd>This version of the extension has been deprecated and replaced with version 2. See <a href="Classic_Protocol_Extension/Old_Extensions.html" title="Classic Protocol Extension/Old Extensions">old extensions subpage</a>.</dd></dl>
+<h4><span class="mw-headline" id="Version_2_.28Deprecated_since_21_June_2017.29">Version 2 (Deprecated since 21 June 2017)</span></h4>
+<dl><dd>This version of the extension has been deprecated and replaced with <i><b>EnvMapAspect</b></i>. See <a href="Classic_Protocol_Extension/Old_Extensions.html" title="Classic Protocol Extension/Old Extensions">old extensions subpage</a>.</dd></dl>
+<h3><span class="mw-headline" id="EnvWeatherType">EnvWeatherType</span></h3>
+<dl><dd>This extension allows the server to trigger special weather conditions (like rain and snow) on demand.</dd>
+<dd><b>Motivation</b>: To allow the server to give worlds/maps a unique feel with weather effects, e.g. for adventure maps.</dd>
+<dd><b>Client behavior</b>: Client must be able to receive <i><b>EnvWeather</b></i> packets at any time after the first <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelDataChunk</a></b></i> packet is received, and apply these changes immediately. If an unrecognized or unsupported <i>WeatherType</i> field is given, no action is needed.</dd>
+<dd><b>Server behavior</b>: Server may send <i><b>EnvSetColor</b></i> packets to connected clients at any time after the first <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelDataChunk</a></b></i> packet is sent.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="EnvSetWeatherType_Packet">EnvSetWeatherType Packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="4"> 0x1F
+<p>(31)
+</p>
+</td>
+<td class="col1 centeralign"> WeatherType
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4"> Enumeration of weather types
+<ul><li>0 = sunny</li>
+<li>1 = raining</li>
+<li>2 = snowing</li></ul>
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 2 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="HackControl">HackControl</span></h3>
+<dl><dd>This extension allows the server to control cheats/hacks in the client.</dd>
+<dd><b>Motivation</b>: To allow fine-grained control over cheats/hacks on multi-world servers.</dd>
+<dd><b>Client behavior</b>: Client must be able to receive <i><b>HackControl</b></i> packets at any time after the first <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelDataChunk</a></b></i> packet is received, and apply these changes immediately. Unrecognized or unsupported values for any field should be ignored. Clients may approximate <i>JumpHeight</i> by rounding down to the nearest half-block (i.e. nearest multiple of 16), if needed. If a negative value is given for <i>JumpHeight</i>, client should reset jump height to its default setting (around <code>40</code> in vanilla Minecraft).</dd>
+<dd><b>Server behavior</b>: Server may send <i><b>HackControl</b></i> packets to connected clients at any time after the first <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelDataChunk</a></b></i> packet is sent.</dd></dl>
+<dl><dd><h4><span class="mw-headline" id="HackControl_Packet">HackControl Packet</span></h4></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="6"> 0x20
+<p>(32)
+</p>
+</td>
+<td class="col1 centeralign"> Flying
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4">
+<ul><li>0 = Prevent player from flying</li>
+<li>1 = Allow flying</li></ul>
+</td></tr>
+<tr>
+<td class="col1 centeralign"> NoClip
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4">
+<ul><li>0 = Prevent player from no-clipping (passing through solid blocks)</li>
+<li>1 = Allow no-clipping</li></ul>
+</td></tr>
+<tr>
+<td class="col1 centeralign"> Speeding
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4">
+<ul><li>0 = Only allow normal walking speed.</li>
+<li>1 = Allow moving at any speeds.</li></ul>
+</td></tr>
+<tr>
+<td class="col1 centeralign"> SpawnControl
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4">
+<ul><li>0 = Prevent player from pressing [R] to respawn, or using [Enter] to change spawn.</li>
+<li>1 = Allow player to respawn / change spawn.</li></ul>
+</td></tr>
+<tr>
+<td class="col1 centeralign"> ThirdPersonView
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>1</code>
+</td>
+<td class="col4">
+<ul><li>0 = Disallow third-person view (only first-person view allowed).</li>
+<li>1 = Allow third-person view.</li></ul>
+</td></tr>
+<tr>
+<td class="col1 centeralign"> JumpHeight
+</td>
+<td class="col2 centeralign"> short
+</td>
+<td class="col3 centeralign"> <code>40</code>
+</td>
+<td class="col4"> Maximum height, in terms of player movement units (1/32<sup>nd</sup>s of a block), to which the player is allowed to jump.
+<p>Negative value (e.g. <code>-1</code>) means that the client should use its default jump height.
+</p>
+</td></tr>
+<tr class="row2">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 8 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="MessageTypes">MessageTypes</span></h3>
+<div class="floatright"><a href="./File:Messagetypes.PNG.html" class="image" title="Examples of all possible MessageTypes."><img alt="Examples of all possible MessageTypes." src="images/9/9c/Messagetypes.PNG" width="700" height="369" /></a></div>
+<dl><dd>This extension adds new ways of presenting messages in the client.</dd>
+<dd><b>Motivation</b>: To enhance the display of announcements and status information, and to reduce chat clutter.</dd>
+<dd><b>Client behavior</b>: When this extension is mutually supported, the <i>PlayerID</i> field of the standard server-to-client <a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol"><i><b>Message</b></i></a> packet should be treated as a <i>MessageType</i> code. Unrecognized or unsupported codes may be ignored (in which case the message should be presented as a regular chat message). When connected to non-supporting servers, this field should be ignored.</dd>
+<dd><b>Server behavior</b>: Server may use the <i>PlayerID</i> field of the <a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol"><i><b>Message</b></i></a> packet to set a <i>MessageType</i>. For non-supporting clients, this field should always be set to <code>0</code>.</dd></dl>
+<dl><dd><table class="wikitable">
+<tr>
+<th>MessageType
+</th>
+<th>Meaning
+</th>
+<th>Suggested Implementation
+</th></tr>
+<tr>
+<td><code>0</code>
+</td>
+<td>Chat
+</td>
+<td>Normal message, shown in the chat area.
+</td></tr>
+<tr>
+<td><code>1</code>
+</td>
+<td>Status1
+</td>
+<td>Shown persistently in the top-right corner of the screen, in regular font.
+</td></tr>
+<tr>
+<td><code>2</code>
+</td>
+<td>Status2
+</td>
+<td>Shown persistently just below Status1
+</td></tr>
+<tr>
+<td><code>3</code>
+</td>
+<td>Status3
+</td>
+<td>Shown persistently just below Status2
+</td></tr>
+<tr>
+<td><code>11</code>
+</td>
+<td>BottomRight1
+</td>
+<td>Shown persistently in the bottom-right corner of the screen, in regular font.
+</td></tr>
+<tr>
+<td><code>12</code>
+</td>
+<td>BottomRight2
+</td>
+<td>Shown persistently just above BottomRight1
+</td></tr>
+<tr>
+<td><code>13</code>
+</td>
+<td>BottomRight3
+</td>
+<td>Shown persistently just above BottomRight2
+</td></tr>
+<tr>
+<td><code>100</code>
+</td>
+<td>Announcement
+</td>
+<td>Pops up in larger font near the top-center of the screen. Fades out after a few seconds.
+</td></tr></table></dd></dl>
+<dl><dd>This extension does not define any new packets.</dd></dl>
+<h3><span class="mw-headline" id="PlayerClick">PlayerClick</span></h3>
+<dl><dd>This extension lets the server receive details of every mouse click a player makes, including targeting information.</dd>
+<dd><b>Motivation</b>: To allow for the creation of more interactive maps: interactive buttons, cannons, ability to "tag" or "shoot" other players, ability to drag-to-draw at a distance, etc.</dd>
+<dd><b>Client Behavior</b>: When this extension is mutually supported, a <i><b>PlayerClicked</b></i> packet should be sent to the server, as soon as reasonably possible, every time the user presses or releases a mouse button. Mouse interactions that happen while player is interacting with chat, with GUI menus, or with any other application must NOT be sent. A matching "released" event must be sent for every "pressed" event.</dd></dl>
+<dl><dd>High resolution up-to-date <i>Yaw</i> and <i>Pitch</i> for the player should be transmitted with every packet. If player is currently targeting another entity/player <i>TargetEntityID</i> fields should be set. If player is currently targeting a block (within permitted <a href="Classic_Protocol_Extension.html#ClickDistance" title="Classic Protocol Extension">ClickDistance</a>) <i>TargetBlockX</i>, <i>TargetBlockY</i>, <i>TargetBlockZ</i>, and <i>TargetBlockFace</i> should be set. An out-of-range value should be used for these fields when they are not in use. These packets should not be sent during level transitions (after receiving <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelInitialize</a></b></i> and until receiving <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packets).</dd>
+<dd><b>Server Behavior</b>: Server must be ready to accept any number of <i><b>PlayerClicked</b></i> packets at any time after level sending has completed. What to do with this information is entirely up to the server.</dd></dl>
+<h4><span class="mw-headline" id="PlayerClicked_packet">PlayerClicked packet</span></h4>
+<dl><dd><i>Client to Server</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Example
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td class="centeralign" rowspan="9"> 0x22
+<p>(34)
+</p>
+</td>
+<td class="centeralign"> Button
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> 0
+</td>
+<td class="centeralign"> 0 = Left click, 1 = Right Click, 2 = Middle click
+</td></tr>
+<tr>
+<td class="centeralign"> Action
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> 0
+</td>
+<td class="centeralign"> 0 = Pressed, 1 = Released
+</td></tr>
+<tr>
+<td class="centeralign"> Yaw
+</td>
+<td class="centeralign"> short
+</td>
+<td class="centeralign"> 0
+</td>
+<td class="centeralign"> Yaw (heading) of the player.
+<p>Same function as <i>Yaw</i> field of <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">PositionAndOrientation</a></b></i> packet, but with more precision. 
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> Pitch
+</td>
+<td class="centeralign"> short
+</td>
+<td class="centeralign"> 0
+</td>
+<td class="centeralign"> Pitch (head angle) of the player.
+<p>Same function as <i>Pitch</i> field of <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">PositionAndOrientation</a></b></i> packet, but with more precision.
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> TargetEntityID
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> 0
+</td>
+<td class="centeralign"> ID of an entity currently targeted by the player, between 0 and 127.
+<p>Any out-of-range value means "no entity is targeted."
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> TargetBlockX
+</td>
+<td class="centeralign"> short
+</td>
+<td class="centeralign"> 64
+</td>
+<td class="centeralign"> X coordinate of a targeted block, between 0 and 2048.
+<p>Any out-of-range value for any of the coordinates means "no block is targeted."
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> TargetBlockY
+</td>
+<td class="centeralign"> short
+</td>
+<td class="centeralign"> 64
+</td>
+<td class="centeralign"> Y coordinate of a targeted block, between 0 and 2048.
+</td></tr>
+<tr>
+<td class="centeralign"> TargetBlockZ
+</td>
+<td class="centeralign"> short
+</td>
+<td class="centeralign"> 64
+</td>
+<td class="centeralign"> Z coordinate of a targeted block, between 0 and 2048.
+</td></tr>
+<tr>
+<td class="centeralign"> TargetBlockFace
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> 1
+</td>
+<td class="centeralign"> Index of the block face that the player is targeting. Block faces are numbered as follows:
+<p>0. Away from X-origin
+</p><p>1. Towards X-origin
+</p><p>2. Away from Y-origin (up)
+</p><p>3. Towards Y-origin (down)
+</p><p>4. Away from Z-origin
+</p><p>5. Towards Z-origin
+</p><p>Any out-of-range value for <i>TargetBlockFace</i> mean "no block is targeted."
+</p>
+</td></tr>
+<tr>
+<th> Total Size:
+</th>
+<td class="rightalign" colspan="4"> 15 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="LongerMessages">LongerMessages</span></h3>
+<dl><dd>This extension allows clients to accept messages longer than 64 characters, and send them to the server in parts.</dd>
+<dd><b>Motivation</b>: To allow players to write longer messages!</dd>
+<dd><b>Client Behavior</b>: When a regular-length message is sent, a single <a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol"><i><b>Message</b></i></a> packet is sent, with the unused <i>PlayerID</i> (aka <i>MessageType</i>) byte set to <code>0</code>. When an extra-long message is sent, multiple <a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol"><i><b>Message</b></i></a> packets are sent. All packets except the last one should have the unused byte set to <code>1</code>, meaning "this message continues in the next Message packet".</dd>
+<dd><b>Server Behavior</b>: Server should check the unused <i>PlayerID</i> (aka <i>MessageType</i>) byte of every incoming <a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol"><i><b>Message</b></i></a> packet. If the value is non-zero, it should treat it as a partial message. Partial messages should be stored and prepended to the next message received from this player, until a message with a <code>0</code> byte is received. Server should preserve leading and trailing whitespace in message packets with a <code>1</code> byte. Server should preserve leading whitespace, but trim trailing whitespace from the last packet of a partial message.</dd></dl>
+<dl><dd>No new packets are defined, but treatment of <a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol"><i><b>Message</b></i></a> packet is altered.</dd></dl>
+<h3><span class="mw-headline" id="FullCP437">FullCP437</span></h3>
+<dl><dd>This extension allows players to send and receive chat with all characters in code page 437, rather than just the 0 to 127 characters.</dd>
+<dd><b>Motivation</b>: To allow players to use more characters for different purposes.</dd>
+<dd><b>Client Behavior</b>: When a message packet is received, clients <b>must</b> treat all characters in that message as unsigned bytes that represent indices into code page 437. Clients may optionally provide a way of directly entering code page 437 characters into chat.</dd>
+<dd><b>Server Behavior</b>: Servers <b>must</b> support being able to <b>send and receive</b> chat message packets which include unsigned byte values ranging from 0 to 255. Servers <b>must</b> also provide a fallback mechanism for converting unsigned bytes in the 128-255 range into the 0 to 127 range for clients that do not support this extension. (e.g converting all unsigned bytes in the 128 to 255 range to a '?' symbol)</dd></dl>
+<p><b>Note:</b> Ideally, servers should also provide some method of escaping that allows users to enter a token that is then converted into a code page 437 index, but that is not required to claim support for this extension.
+</p><p>As an example of an escaping mechanism, when "{infinity}" is entered by the player, it becomes a single unsigned byte with a value of '236' after being processed by the server.
+When the chat message packet is later received by the client, it renders the unsigned byte with the value of '236' as ∞.
+</p>
+<h3><span class="mw-headline" id="BlockDefinitions">BlockDefinitions</span></h3>
+<dl><dd>This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.</dd>
+<dd><b>Motivation</b>: To allow defining block types without client modifications. To make full use of custom textures.</dd>
+<dd><b>Client Behavior</b>: This extension depends on <a href="Classic_Protocol_Extension.html#EnvMapAppearance" title="Classic Protocol Extension">EnvMapAppearance extension</a>, and must only be enabled if BOTH extensions are mutually supported. Client should be able receive any number of <i><b>DefineBlock</b></i> and <i><b>RemoveBlockDefinition</b></i> packets during the level loading process (after receiving <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelInitialize</a></b></i> and until receiving <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packets). However, dependent on client, this can be sent after level loading (Some clients might just find it more extensible than others). Client must keep track of all defined blocks between level changes or until they are individually removed with <i><b>RemoveBlockDefinition</b></i>.</dd>
+<dd>Client must be able to accept and render blocks as specified in <i><b>DefineBlock</b></i> packets. Clients must accept any valid definitions with <i>BlockID</i> between 1 and 254, inclusive. If a new definition is accepted for an already-defined <i>BlockID</i>, the old definition should be replaced. If <i><b>RemoveBlockDefinition</b></i> is received for a non-defined <i>BlockID</i>, it should be ignored.</dd></dl>
+<dl><dd><b>Texturing</b>: New textures are defined by altering <code>terrain.png</code> and specifying it with <i><b><a href="Classic_Protocol_Extension.html#EnvSetMapAppearance_packet" title="Classic Protocol Extension">EnvSetMapAppearance</a></b></i> packet. <i><b>DefineBlock</b></i> fields <i>TopTextureID</i>, <i>SideTextureID</i>, and <i>BottomTextureID</i> refer to a tile number within <code>terrain.png</code>. Tiles are numbered 0 (top-left corner) through 255 (bottom-right corner), increasing left-to-right within each row. Refer to <a rel="nofollow" class="external text" href="http://123dmwm.tk/ID-Overlay.png">this</a> image for a list of standard tiles, and a graphical list of tile indices.</dd></dl>
+<dl><dd><b>Server Behavior</b>: Server may send any number of <i><b>DefineBlock</b></i> packets when client expects it. Server should only use IDs of currently-defined blocks in block data sent in <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelDataChunk</a></b></i> packets, <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">SetBlock</a></b></i> packets, or any other packets that expect block IDs.</dd></dl>
+<dl><dd><b>Compatibility</b>: For non-supporting clients, the server must convert custom block ids into fallback block ids (e.g. 'lamp' fallbacks to lava) that lie within the client's set of supported blocks. (TODO: Define how the client should store map files with block definitions. Maybe integrate this with ClassicWorld definition?) 0 is not allowed to be redefined, nor is 255, as 255 is typically used by servers to indicate 'outside map bounds'. Note that sending a <i><b>RemoveBlockDefinition</b></i> packet for a standard tile id <b>is not defined</b>, and may lead to undesired consequences.</dd></dl>
+<dl><dd><h5><span class="mw-headline" id="DefineBlock_Packet">DefineBlock Packet</span></h5></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Example
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td class="centeralign" rowspan="16"> 0x23
+<p>(35)
+</p>
+</td>
+<td class="centeralign"> BlockID
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>128</code>
+</td>
+<td> Between 1 and 254 (unsigned).
+</td></tr>
+<tr>
+<td class="centeralign"> Name
+</td>
+<td class="centeralign"> String
+</td>
+<td class="centeralign"> <code>Cactus</code>
+</td>
+<td> Short, unique, player-friendly name for the block.
+</td></tr>
+<tr>
+<td class="centeralign"> Solidity
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>1</code>
+</td>
+<td> Specified collision mode for this block type.
+<p>Blocks may be walk-through (0), swim-through (1), or solid (2).
+</p>
+<ul><li> Walk-through blocks do not collide with the player, and do not interfere with jumping. Players fall through these blocks.</li>
+<li> Swim-through blocks allow the player to descend or ascend slowly (at <i>WalkSpeed</i>), as if they were swimming.</li>
+<li> Solid blocks collide with the player. Players may walk on these.</li></ul>
+</td></tr>
+<tr>
+<td class="centeralign"> MovementSpeed
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>1</code>
+</td>
+<td> Player movement speed modifier, defined relative to regular walk speed. Ratio to normal speed is computed with this formula:
+<p>y = 2<sup>(x-128)/64</sup>
+Thus a value of <code>0</code> translates to 0.25 ratio (25% speed), <code>128</code> to 1.00 ratio (100% speed), and <code>255</code> to 3.96 (396% speed).
+</p>
+<ul><li> If <i>Solidity</i> is set to 0 or 1, speed is modified while player is inside (i.e. colliding with) the block.</li>
+<li> If <i>Solidity</i> is set to 2, speed is modified while player is standing on the block.</li></ul>
+<p>If player is affected by several tiles, the <i>lowest</i> of all modifiers is used.
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> TopTextureID
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>1</code>
+</td>
+<td> Refers to a <code>terrain.png</code> tile.
+<p>Between 0 and 255 (unsigned).
+Can be same as other texture IDs.
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> SideTextureID
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>2</code>
+</td>
+<td> Refers to a <code>terrain.png</code> tile.
+<p>Between 0 and 255 (unsigned).
+Can be same as other texture IDs. This is also the texture ID used for drawing sprite blocks (i.e. when Shape is 0).
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> BottomTextureID
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>3</code>
+</td>
+<td> Refers to a <code>terrain.png</code> tile.
+<p>Between 0 and 255 (unsigned).
+Can be same as other texture IDs.
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> TransmitsLight
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Whether this block allows the sunlight to go through, for level-lighting purposes.
+</td></tr>
+<tr>
+<td class="centeralign"> WalkSound
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> ID of a sound that client may play when player "steps" on, "walks" through, or "swims" through this tile.
+<p>0 = no sound, 1 = wood, 2 = gravel, 3 = grass, 4 = stone, 5 = metal, 6 = glass, 7 = wool, 8 = sand, 9 = snow.
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> FullBright
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Whether or not the block/liquid is affected by shadows (such as lava).
+<ul><li> 0 = Affected (darkened when in shadow)</li>
+<li> 1 = Not affected (always bright).</li></ul>
+</td></tr>
+<tr>
+<td class="centeralign"> Shape
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Shape of the block model:
+<ul><li> Sprite = 0,</li>
+<li> Cube with height = 1-16 </li></ul>
+<p>(e.g. slab would have a shape of '8', snow would have '2', dirt would have '16')
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> BlockDraw
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Can be:
+<ul><li> 0 = fully opaque</li>
+<li> 1 = transparent (e.g. like glass)</li>
+<li> 2 = transparent but with no face culling of same neighbours (e.g. like leaves)</li>
+<li> 3 = translucent, where texture's alpha is blended (e.g. like ice or water)</li>
+<li> 4 = gas (e.g. like air)</li></ul>
+</td></tr>
+<tr>
+<td class="centeralign"> FogDensity
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Density of fog while client's camera is inside this block.
+<p>Value of <code>0</code> means "do not change fog" -- level's default settings are used.
+Values between 1 and 255 are mapped to OpenGL's GL_FOG_DENSITY value for GL_EXP2 style fog with the following formula:
+</p><p>GL_FOG_DENSITY = (x+1)/128
+</p><p>Thus value of <code>1</code> means density of ~0.0156, value of <code>127</code> means 1.0000, and <code>255</code> means 2.0000
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> FogR
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>255</code>
+</td>
+<td> Red component of the aforementioned fog. Only applies if <i>FogDensity</i> is above <code>0</code>.
+</td></tr>
+<tr>
+<td class="centeralign"> FogG
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>255</code>
+</td>
+<td> Green component of the aforementioned fog. Only applies if <i>FogDensity</i> is above <code>0</code>.
+</td></tr>
+<tr>
+<td class="centeralign"> FogB
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>255</code>
+</td>
+<td> Blue component of the aforementioned fog. Only applies if <i>FogDensity</i> is above <code>0</code>.
+</td></tr>
+<tr>
+<th> Total Size:
+</th>
+<td class="rightalign" colspan="4"> 80 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h5><span class="mw-headline" id="RemoveBlockDefinition_Packet">RemoveBlockDefinition Packet</span></h5></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr>
+<th> Packet ID
+</th>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Example
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td class="centeralign"> 0x24
+<p>(36)
+</p>
+</td>
+<td class="centeralign"> BlockID
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>128</code>
+</td>
+<td> Between 128 and 255
+</td></tr>
+<tr>
+<th> Total Size:
+</th>
+<td class="rightalign" colspan="4"> 2 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="BlockDefinitionsExt">BlockDefinitionsExt</span></h3>
+<dl><dd>This extension allows servers to define new block types with custom IDs and appearance, as well as the ability to redefine the properties of standard block types.</dd>
+<dd><b>Motivation</b>: To allow defining custom block types that do not have minX/Y/Z values of 0, and maxX/Z values of 1.</dd>
+<dd><b>Client Behavior</b>: See the <i><b>BlockDefinitions</b></i> specification. Additionally, this extension depends on <a href="Classic_Protocol_Extension.html#EnvMapAppearance" title="Classic Protocol Extension">EnvMapAppearance extension</a> and <b>BlockDefinitions</b>, and must only be enabled if BOTH extensions are mutually supported.</dd></dl>
+<h4><span class="mw-headline" id="Version_1_.28Deprecated_since_9_May_2016.29_2">Version 1 (Deprecated since 9 May 2016)</span></h4>
+<dl><dd>This version of the extension has been deprecated and replaced with version 2. See <a href="Classic_Protocol_Extension/Old_Extensions.html" title="Classic Protocol Extension/Old Extensions">old extensions subpage</a>.</dd></dl>
+<h4><span class="mw-headline" id="Version_2_2">Version 2</span></h4>
+<dl><dd><b>Texturing</b>: See the <i><b>BlockDefinitions</b></i> specification. The MinX/Y/Z and MaxX/Y/Z fields also affect the location within the terrain tile for a given face that the block should sample texels from. (e.g. if minX and minZ was 8, and maxX and maxZ was 16, then for the terrain.png tile with pixels from (0, 0) to (16, 16), the top face would be drawn with the subset of pixels from (8, 8) to (16, 16))</dd></dl>
+<dl><dd><b>Server Behavior</b>: See the <i><b>BlockDefinitions</b></i> specification.</dd></dl>
+<p><br />
+This packet is the same as DefineBlock packet, except the 'shape field' is replaced by 6 fields indicating the bounding box of the block in pixel coordinates, and the 'side texture' is replaced by 4 fields indicating the individual textures for each horizontal side face.
+Note that this packet does not support sprites, you must send a regular <i><b>DefineBlock</b></i> packet for that.
+</p>
+<dl><dd><h5><span class="mw-headline" id="DefineBlockExt_Packet">DefineBlockExt Packet</span></h5></dd>
+<dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr>
+<td> Packet ID
+</td>
+<th> Field Name
+</th>
+<th> Field Type
+</th>
+<th> Example
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td class="centeralign" rowspan="16"> 0x25
+<p>(37)
+</p>
+</td>
+<td class="leftalign" colspan="4"> Following fields from DefineBlock packet: BlockID, Name, Solidity, MovementSpeed, TopTextureID
+</td></tr>
+<tr>
+<td class="centeralign"> LeftTextureId
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td>Refers to a terrain.png tile.
+<p>Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the X = 0 face.
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> RightTextureId
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td>Refers to a terrain.png tile.
+<p>Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the X = 1 face.
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> FrontTextureId
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td>Refers to a terrain.png tile.
+<p>Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the Z = 0 face.
+</p>
+</td></tr>
+<tr>
+<td class="centeralign"> BackTextureId
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td>Refers to a terrain.png tile.
+<p>Between 0 and 255 (unsigned). Can be same as other texture IDs. This is the texture ID for the Z = 1 face.
+</p>
+</td></tr>
+<tr>
+<td class="leftalign" colspan="4"> Following fields from DefineBlock packet: BottomTextureID, TransmitsLight, WalkSound, FullBright
+</td></tr>
+<tr>
+<td class="centeralign"> MinX
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Minimum X coordinate in pixels. Min allowed is 0, max allowed is 15.
+</td></tr>
+<tr>
+<td class="centeralign"> MinY
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Minimum Y coordinate in pixels. Min allowed is 0, max allowed is 15.
+</td></tr>
+<tr>
+<td class="centeralign"> MinZ
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>0</code>
+</td>
+<td> Minimum Z coordinate in pixels. Min allowed is 0, max allowed is 15.
+</td></tr>
+<tr>
+<td class="centeralign"> MaxX
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>16</code>
+</td>
+<td> Maximum X coordinate in pixels. Min allowed is 1, max allowed is 16.
+</td></tr>
+<tr>
+<td class="centeralign"> MaxY
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>16</code>
+</td>
+<td> Maximum Y coordinate in pixels. Min allowed is 1, max allowed is 16.
+</td></tr>
+<tr>
+<td class="centeralign"> MaxZ
+</td>
+<td class="centeralign"> byte
+</td>
+<td class="centeralign"> <code>16</code>
+</td>
+<td> Maximum Z coordinate in pixels. Min allowed is 1, max allowed is 16.
+</td></tr>
+<tr>
+<td class="leftalign" colspan="4"> Following fields from DefineBlock packet: BlockDraw, FogDensity, FogR, FogG, FogB
+</td></tr>
+<tr>
+<th> Total Size:
+</th>
+<td class="rightalign" colspan="4"> 88 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="BulkBlockUpdate">BulkBlockUpdate</span></h3>
+<dl><dd>Allows servers to send a single optimised packet that contains 256 block updates.</dd>
+<dd><b>Motivation</b>: Reduce bandwidth usage and increase responsiveness to clients during times of heavy block updates, e.g. for large cuboids or lava survival servers.</dd>
+<dd><b>Client Behavior</b>: When this extension is mutually supported, treat the packet in the same manner as a list of up to 256 <a href="Classic_Protocol.html#Client_.E2.86.92_Server_packets" title="Classic Protocol"><i><b>SetBlock</b></i></a> packets.</dd>
+<dd><b>Server Behavior</b>: When this extension is mutually supported, server may send <i><b>BlockBulkUpdate</b></i> packets to the client after the <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packet for the current level has been sent to the client.</dd></dl>
+<h4><span class="mw-headline" id="BulkBlockUpdate_packet">BulkBlockUpdate packet</span></h4>
+<dl><dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x26
+<p>(38)
+</p>
+</td>
+<td class="col1 centeralign"> Count
+</td>
+<td class="col2 centeralign"> unsigned byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> The number of block updates used in this packet - 1. (e.g. a value of 0 means 1 block update is used).
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Indices
+</td>
+<td class="col2 centeralign"> byte array[1024]
+</td>
+<td class="col3 centeralign"> [52, 3443]
+</td>
+<td class="col4 centeralign"> A packed list of the indices within the current level of the blocks that are to be updated.
+<p>Each element is a 32 bit integer in big endian order.
+</p>
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Blocks
+</td>
+<td class="col2 centeralign"> byte array[256]
+</td>
+<td class="col3 centeralign"> [5, 10]
+</td>
+<td class="col4 centeralign"> A packed list of the new blocks to set at each corresponding index in the indices array.
+</td></tr>
+<tr class="row12">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 1282 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="TextColors">TextColors</span></h3>
+<dl><dd>This extension allows the server to define custom text colors.</dd>
+<dd><b>Motivation</b>: To allow parts of chat to be more distinctive, allow for more colorful chat, etc.</dd>
+<dd><b>Client Behavior</b>: Client must be able to receive <i><b>SetTextColor</b></i> packets at any time. Client must then draw text using the color specified in the packet, when the color code specified by the packet is encountered in any <i><b>Message</b></i> packet. </dd>
+<dd>An alpha/opacity of 0 is treated as <b>removing</b> the custom colour code from the client's list of custom color codes.</dd>
+<dd><b>Server Behavior</b>: Server may send <i><b>SetTextColor</b></i> packets at any time.</dd>
+<dd><b>Compatibility</b>: Clients may choose to always draw text fully opaque, even if the custom text colour specifies a non fully-opaque color. These clients shall still be considered as compliant with the specification.</dd>
+<dd> For maximum compatibility, it is recommended that the color code in the <i>SetTextColor</i> be greater than 0x20(space) and less than 0x7F(delete). The color code <b>must not</b> be '&amp;', '%', ' ', or '\0'. </dd>
+<dd> Clients may support overriding /replacing the standard hex color codes, when the <i><b>code</b></i> in the range 0-9, a-f, or A-F.</dd>
+<dd><h4><span class="mw-headline" id="SetTextColor_packet">SetTextColor packet</span></h4></dd>
+<dd><i>Server to client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="11"> 0x27
+<p>(39)
+</p>
+</td>
+<td class="col1 centeralign"> Red
+</td>
+<td class="col2 centeralign"> unsigned byte
+</td>
+<td class="col3 centeralign"> <code>255</code>
+</td>
+<td class="col4 centeralign"> Red component of the text color.
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Green
+</td>
+<td class="col2 centeralign"> unsigned byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> Green component of the text color.
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Blue
+</td>
+<td class="col2 centeralign"> unsigned byte
+</td>
+<td class="col3 centeralign"> <code>127</code>
+</td>
+<td class="col4 centeralign"> Blue component of the text color.
+</td></tr>
+<tr class="row4">
+<td class="col1 centeralign"> Alpha
+</td>
+<td class="col2 centeralign"> unsigned byte
+</td>
+<td class="col3 centeralign"> <code>255</code>
+</td>
+<td class="col4 centeralign"> Alpha/Opacity of the text colour, with 255 being fully opaque.
+</td></tr>
+<tr class="row5">
+<td class="col1 centeralign"> Code
+</td>
+<td class="col2 centeralign"> unsigned byte
+</td>
+<td class="col3 centeralign"> <code>63</code>
+</td>
+<td class="col4 centeralign"> ASCII character colour code, case sensitive.
+</td></tr>
+<tr class="row12">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 6 bytes
+</td></tr></table></dd></dl>
+<p><i>Example:</i> Suppose the server sends a <i><b>SetTextColor</b></i> packet of color #123456 and color code 'G'. When the client receives a <i><b>Message</b></i> packet with the text <i>&amp;fFoo&amp;GBar</i>, <i>Foo</i> is drawn using the color #FFFFFF and  <i>Bar</i> is drawn using the color #123456.
+</p>
+<h3><span class="mw-headline" id="EnvMapAspect">EnvMapAspect</span></h3>
+<dl><dd>This extension allows the server to specify custom texture packs, and tweak appearance of a map.</dd>
+<dd><b>Client behavior:</b> Client must be able to receive <i><b>SetMapEnvUrl</b></i> and <i><b>SetMapEnvProperty</b></i> packets at any time after the <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelInitalise</a></b></i> packet is received for a level. If the <i>TexturePackURL</i> field in a <i><b>SetMapEnvUrl</b></i> packet is blank or if the given file could not be loaded for any reason, then the texture pack should be reset to the client's default. If an unsupported block ID is given for <i>SideBlock</i> or <i>EdgeBlock</i>, it should be ignored. Client should keep using the texture pack for future maps, unless specified otherwise by the server.</dd>
+<dd><b>Server behavior:</b> Server may send <i><b>SetMapEnvUrl</b></i> and <i><b>SetMapEnvProperty</b></i> packets after the <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelInitalise</a></b></i> packet is sent for a level. Server should not use any custom block IDs unless the client declared the appropriate <i>CustomBlocks</i> support level. To reset the texture pack to the client's default one, server should send an <i><b>SetMapEnvUrl</b></i> packet with empty string for <i>TexturePackURL</i>. To reset other properties, server should simply use the default values (listed below).</dd>
+<dd><b>Block type restrictions:</b> Only solid blocks are allowed to be used for <i>SideBlock</i> and <i>EdgeBlock</i> properties. Sprites (Sapling, Dandelion, Rose, BrownMushroom, RedMushroom, Rope, Fire) partial-height blocks (Slab, CobblestoneSlab, Snow), and transparent blocks (Air, Leaves, Glass) cannot be used for those fields.</dd></dl>
+<h4><span class="mw-headline" id="SetMapEnvUrl_packet">SetMapEnvUrl packet</span></h4>
+<dl><dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x28
+<p>(40)
+</p>
+</td>
+<td class="col1 centeralign"> TexturePackURL
+</td>
+<td class="col2 centeralign"> string
+</td>
+<td class="col3 centeralign"> <code><a rel="nofollow" class="external free" href="http://example.com/mypack.zip">http://example.com/mypack.zip</a></code>
+</td>
+<td class="col4"> Texture pack's full URL.
+<p>Must be a HTTP/HTTPS URL, in .zip format, and served with <code>application/zip</code> mime type.
+If a .png is instead served, this is assumed to represent a terrain.png image.
+</p>
+</td></tr>
+<tr class="row12">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 65 bytes
+</td></tr></table></dd></dl>
+<dl><dd><h5><span class="mw-headline" id="Texture_pack_.zip_format">Texture pack .zip format</span></h5></dd>
+<dd><b>Note:</b> It is up to clients which files (except for terrain.png) they support in a texture pack. These clients are still considered to be compliant with the specification.</dd>
+<dd><b>Note:</b> Texture packs may also contain other files not listed below. If clients recognise these other files, then they may perform whatever is desired with them.</dd>
+<dd><b>Note:</b> If a texture pack does not contain a certain texture, clients should continue to use the existing texture from the previous texture pack.</dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> File name
+</th>
+<th class="col2"> Details
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign"> terrain.png
+</td>
+<td class="col2 centeralign"> Texture atlas that contains the textures that are applied to blocks.
+<p><b>Note:</b> Clients <i>must</i> support this texture to be considered compliant with the specification.
+</p>
+</td></tr>
+<tr class="row2">
+<td class="col0 centeralign"> animations.png
+</td>
+<td class="col2 centeralign"> Texture atlas that contains the textures used for animations.
+</td></tr>
+<tr class="row3">
+<td class="col0 centeralign"> animations.txt
+</td>
+<td class="col2 centeralign"> File that specifies how the textures in animations.png should be applied to the terrain.png texture atlas.
+</td></tr>
+<tr class="row3">
+<td class="col0 centeralign"> char.png
+</td>
+<td class="col2 centeralign"> Default skin for humanoid models.
+</td></tr>
+<tr class="row4">
+<td class="col0 centeralign"> clouds.png
+</td>
+<td class="col2 centeralign"> Texture applied to clouds rendered by the client.
+</td></tr>
+<tr class="row5">
+<td class="col0 leftalign" colspan="2"> <i>The following may be utilised by clients if EnvWeatherType is mutually supported:</i>
+</td></tr>
+<tr class="row6">
+<td class="col0 centeralign"> rain.png
+</td>
+<td class="col2 centeralign"> Texture applied to rain rendered by the client.
+</td></tr>
+<tr class="row7">
+<td class="col0 centeralign"> snow.png
+</td>
+<td class="col2 centeralign"> Texture applied to snow rendered by the client.
+</td></tr>
+<tr class="row8">
+<td class="col0 leftalign" colspan="2"> <i>The following may be utilised by clients if ChangeModel is mutually supported:</i>
+<p><b>Note:</b> The default texture for humanoid models is specified by <i>char.png</i>. Block models use textures from <i>terrain.png</i>.
+</p>
+</td></tr>
+<tr class="row9">
+<td class="col0 centeralign"> x.png
+</td>
+<td class="col2 centeralign"> Default texture applied to a model for model string <i>x</i>.
+<p>For example, the Crocodile model has the model string <i>croc</i>. The default texture that would be applied is specified by <i>croc.png</i>. 
+</p>
+</td></tr></table></dd></dl>
+<dl><dd><h5><span class="mw-headline" id="animations.txt_format">animations.txt format</span></h5></dd></dl>
+<dl><dd><table class="wikitable" style="display:block; max-width:1000px">
+<tr>
+<td>Each line is in the format: &lt;TileX&gt; &lt;TileY&gt; &lt;FrameX&gt; &lt;FrameY&gt; &lt;Frame size&gt; &lt;Frames count&gt; &lt;Tick delay&gt;
+<dl><dd>- <i>TileX</i> and <i>TileY</i> indicate the coordinates of the tile in terrain.png that will be replaced by the animation frames. These range from 0 to 15. (inclusive of 15)</dd>
+<dd>- <i>FrameX</i> and <i>FrameY</i> indicates the pixel coordinates of the first animation frame in animations.png. The top left pixel coordinate is (0, 0)</dd>
+<dd>- <i>Frame size</i> indicates the size in pixels of an animation frame.</dd>
+<dd>- <i>Frames count</i> indicates the number of used frames.  The first frame is located at (FrameX, FrameY), second frame at (FrameX + FrameSize, FrameY) and so forth.</dd>
+<dd>- <i>Tick delay</i> is the number of ticks a frame doesn't change. For instance, a value of 0 means that the frame would be changed every tick, while a value of 2 would mean 'replace with frame 1, don't change frame, don't change frame, replace with frame 2'.</dd></dl>
+</td></tr></table></dd></dl>
+<h4><span class="mw-headline" id="SetMapEnvProperty_packet">SetMapEnvProperty packet</span></h4>
+<dl><dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x29
+<p>(41)
+</p>
+</td>
+<td class="col1 centeralign"> Property type
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> Enumeration of properties that can be changed
+<ul><li>0 = Value is map sides block ID. Default value is 7 (Admincrete).</li>
+<li>1 = Value is map edge/horizon block ID. Default value is 8 (Water).</li>
+<li>2 = Value is map edge height. Default value is <code>MapDepth/2</code>.</li>
+<li>3 = Value is map clouds height. Default value is <code>MapDepth + 2</code>.</li>
+<li>4 = Value is max fog/view distance. Default is 0. (Client has no limit on maximum view distance.)</li>
+<li>5 = Value is clouds speed * 256 (so divide value by 256 to get speed). Default is 256.</li>
+<li>6 = Value is weather speed * 256. Default is 256.</li>
+<li>7 = Value is weather fade * 128. Default is 128.</li>
+<li>8 = Value is use exponential fog (any value other than 0 means use it). Default is 0.</li>
+<li>9 = Value is offset of map sides height from map edge height. Default is -2.</li></ul>
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Property value
+</td>
+<td class="col2 centeralign"> int
+</td>
+<td class="col3 centeralign"> 45
+</td>
+<td class="col4 centeralign"> New value for the given property.
+</td></tr>
+<tr class="row12">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 6 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="EntityProperty">EntityProperty</span></h3>
+<dl><dd>Allows servers to change the properties of entities, beyond changing their position and yaw/pitch.</dd>
+<dd><b>Motivation</b>: Allow for greater customisation, while also allowing for extension to more properties in the future.</dd>
+<dd><b>Client Behavior</b>: Client must be able to receive <i><b>SetEntityProperty</b></i> packets after the <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packet for the current level has been received from the server.</dd>
+<dd><b>Server Behavior</b>: Server may send <i><b>SetEntityProperty</b></i> packets to the client after the <i><b><a href="Classic_Protocol.html#Server_.E2.86.92_Client_packets" title="Classic Protocol">LevelFinalize</a></b></i> packet for the current level has been sent to the client.</dd></dl>
+<h4><span class="mw-headline" id="SetEntityProperty_packet">SetEntityProperty packet</span></h4>
+<dl><dd><i>Server to Client</i></dd></dl>
+<dl><dd><table class="wikitable">
+
+<tr class="row0">
+<th class="col0"> Packet ID
+</th>
+<th class="col1"> Field Name
+</th>
+<th class="col2"> Field Type
+</th>
+<th class="col3"> Example
+</th>
+<th class="col4"> Notes
+</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" rowspan="3"> 0x2A
+<p>(42)
+</p>
+</td>
+<td class="col1 centeralign"> EntityID
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4 centeralign"> Between 0 and 127
+</td></tr>
+<tr class="row2">
+<td class="col1 centeralign"> Property type
+</td>
+<td class="col2 centeralign"> byte
+</td>
+<td class="col3 centeralign"> <code>0</code>
+</td>
+<td class="col4"> Enumeration of properties that can be changed
+<ul><li>0 = Model X rotation in degrees</li>
+<li>1 = Model Y (yaw) rotation in degrees</li>
+<li>2 = Model Z rotation in degrees</li></ul>
+</td></tr>
+<tr class="row3">
+<td class="col1 centeralign"> Property value
+</td>
+<td class="col2 centeralign"> int
+</td>
+<td class="col3 centeralign"> 45
+</td>
+<td class="col4 centeralign"> New value for the given property.
+</td></tr>
+<tr class="row12">
+<th class="col0"> Total Size:
+</th>
+<td class="col1 rightalign" colspan="4"> 7 bytes
+</td></tr></table></dd></dl>
+<h3><span class="mw-headline" id="ExtEntityPositions">ExtEntityPositions</span></h3>
+<dl><dd>Expands entity positions from the range of [-1023, 1023] to [-6,7108,864, 67,108,864]</dd>
+<dd><b>Motivation</b>: Allows for players to interact and see other players properly on very large/tall/long worlds.</dd>
+<dd><b>Client Behavior</b>: Client must read 32 instead of 16 bit integers for the <i><b>AddEntity</b></i>, <i><b>EntityTeleport</b></i>, <i><b>ExtAddEntity2</b></i> packets. It must write 32 instead of 16 bit integers for the <i><b>Position and Orientation</b></i> packet sent to the server.</dd>
+<dd><b>Server Behavior</b>: Server must write 32 instead of 16 bit integers for the <i><b>AddEntity</b></i>, <i><b>EntityTeleport</b></i>, <i><b>ExtAddEntity2</b></i> packets. It must read 32 instead of 16 bit integers for the <i><b>Position and Orientation</b></i> packet received from the client.</dd></dl>
+<p><b>Note:</b> No new packets are defined by this extension, instead, the reading and writing behaviour of existing packets is modified. The behaviour change only applies to the X, Y, Z fields of the aforementioned packets.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823131421
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.337 seconds
+Real time usage: 0.350 seconds
+Preprocessor visited node count: 131/1000000
+Preprocessor generated node count: 136/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:255-0!*!0!!en!5!* and timestamp 20180823131420 and revision id 13624
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Classic_Protocol_Extension&amp;oldid=13624">http://wiki.vg/index.php?title=Classic_Protocol_Extension&amp;oldid=13624</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="./Category:Minecraft_Classic.html" title="Category:Minecraft Classic">Minecraft Classic</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Classic+Protocol+Extension" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Classic+Protocol+Extension" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Classic_Protocol_Extension.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Classic_Protocol_Extension.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Classic_Protocol_Extension.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Classic_Protocol_Extension.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Classic_Protocol_Extension.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Classic_Protocol_Extension" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Classic_Protocol_Extension" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension&amp;oldid=13624" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Classic_Protocol_Extension&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 25 January 2018, at 20:09.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":307});});</script>
+	</body>
+</html>

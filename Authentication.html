@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Authentication - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Authentication","wgTitle":"Authentication","wgCurRevisionId":13558,"wgRevisionId":13558,"wgArticleId":6,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Protocol Details","Minecraft Modern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Authentication","wgRelevantArticleId":6,"wgRequestId":"e7de35ac075d223ae6eb9c0a","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Authentication rootpage-Authentication skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Authentication</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Authentication.html#mw-head">navigation</a>, 					<a href="Authentication.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Minecraft 1.6 introduced a new authentication scheme called <b>Yggdrasil</b> which completely replaces the <a href="Legacy_Authentication.html" title="Legacy Authentication">previous authentication system</a>. Mojang's other game, Scrolls, uses this method of authentication as well. Mojang has said that <a rel="nofollow" class="external text" href="https://twitter.com/KrisJelbring/status/453573406341206016">this authentication system should be used by everyone for custom logins</a>, but <a rel="nofollow" class="external text" href="https://twitter.com/KrisJelbring/status/461390585086361600">credentials should never be collected from users</a>.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Authentication.html#Request_format"><span class="tocnumber">1</span> <span class="toctext">Request format</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Authentication.html#Errors"><span class="tocnumber">2</span> <span class="toctext">Errors</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Authentication.html#Authenticate"><span class="tocnumber">3</span> <span class="toctext">Authenticate</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Authentication.html#Endpoint"><span class="tocnumber">3.1</span> <span class="toctext">Endpoint</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Authentication.html#Payload"><span class="tocnumber">3.2</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Authentication.html#Response"><span class="tocnumber">3.3</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Authentication.html#Refresh"><span class="tocnumber">4</span> <span class="toctext">Refresh</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="Authentication.html#Endpoint_2"><span class="tocnumber">4.1</span> <span class="toctext">Endpoint</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Authentication.html#Payload_2"><span class="tocnumber">4.2</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Authentication.html#Response_2"><span class="tocnumber">4.3</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="Authentication.html#Validate"><span class="tocnumber">5</span> <span class="toctext">Validate</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="Authentication.html#Endpoint_3"><span class="tocnumber">5.1</span> <span class="toctext">Endpoint</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Authentication.html#Payload_3"><span class="tocnumber">5.2</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Authentication.html#Response_3"><span class="tocnumber">5.3</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="Authentication.html#Signout"><span class="tocnumber">6</span> <span class="toctext">Signout</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="Authentication.html#Endpoint_4"><span class="tocnumber">6.1</span> <span class="toctext">Endpoint</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="Authentication.html#Payload_4"><span class="tocnumber">6.2</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="Authentication.html#Response_4"><span class="tocnumber">6.3</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="Authentication.html#Invalidate"><span class="tocnumber">7</span> <span class="toctext">Invalidate</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="Authentication.html#Endpoint_5"><span class="tocnumber">7.1</span> <span class="toctext">Endpoint</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="Authentication.html#Payload_5"><span class="tocnumber">7.2</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="Authentication.html#Response_5"><span class="tocnumber">7.3</span> <span class="toctext">Response</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="Authentication.html#Joining_a_Server"><span class="tocnumber">8</span> <span class="toctext">Joining a Server</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Request_format">Request format</span></h2>
+<p>All requests to Yggdrasil are made to the following server:
+</p>
+<pre><a rel="nofollow" class="external free" href="https://authserver.mojang.com">https://authserver.mojang.com</a>
+</pre>
+<p>Further, they are expected to fulfill the following rules:
+</p>
+<ul><li> Are <code>POST</code> requests</li>
+<li> Have the <code>Content-Type</code> header set to <code>application/json</code></li>
+<li> Contain a <a href="http://en.wikipedia.org/wiki/JSON" class="extiw" title="wikipedia:JSON">JSON</a>-encoded dictionary as payload</li></ul>
+<p>If a request was successful the server will respond with:
+</p>
+<ul><li> Status code <code>200</code></li>
+<li> A <a href="http://en.wikipedia.org/wiki/JSON" class="extiw" title="wikipedia:JSON">JSON</a>-encoded dictionary according to the specifications below</li></ul>
+<p>If however a request fails, the server will respond with:
+</p>
+<ul><li> An appropriate, non-200 <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes" class="extiw" title="wikipedia:List of HTTP status codes">HTTP status code</a></li>
+<li> A <a href="http://en.wikipedia.org/wiki/JSON" class="extiw" title="wikipedia:JSON">JSON</a>-encoded dictionary following this format:</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="s2">&quot;Short description of the error&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;errorMessage&quot;</span><span class="o">:</span> <span class="s2">&quot;Longer description which can be shown to the user&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cause&quot;</span><span class="o">:</span> <span class="s2">&quot;Cause of the error&quot;</span> <span class="c1">// optional</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Errors">Errors</span></h2>
+<p>These are some of the errors that can be encountered:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Error
+</th>
+<th> Cause
+</th>
+<th> Error message
+</th>
+<th> Notes
+</th></tr>
+<tr>
+<td> <code>Method Not Allowed</code>
+</td>
+<td>
+</td>
+<td> The method specified in the request is not allowed for the resource identified by the request URI
+</td>
+<td> Something other than a POST request was received.
+</td></tr>
+<tr>
+<td> <code>Not Found</code>
+</td>
+<td>
+</td>
+<td> The server has not found anything matching the request URI
+</td>
+<td> Non-existing endpoint was called.
+</td></tr>
+<tr>
+<td> <code>ForbiddenOperationException</code>
+</td>
+<td> <code>UserMigratedException</code>
+</td>
+<td> Invalid credentials. Account migrated, use e-mail as username.
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <code>ForbiddenOperationException</code>
+</td>
+<td>
+</td>
+<td> Invalid credentials. Invalid username or password.
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <code>ForbiddenOperationException</code>
+</td>
+<td>
+</td>
+<td> Invalid credentials.
+</td>
+<td> Too many login attempts with this username recently (see <code>/authenticate</code>). Note that username and password may still be valid!
+</td></tr>
+<tr>
+<td> <code>ForbiddenOperationException</code>
+</td>
+<td>
+</td>
+<td> Invalid token.
+</td>
+<td> <code>accessToken</code> was invalid.
+</td></tr>
+<tr>
+<td> <code>IllegalArgumentException</code>
+</td>
+<td>
+</td>
+<td> Access token already has a profile assigned.
+</td>
+<td> Selecting profiles isn't implemented yet.
+</td></tr>
+<tr>
+<td> <code>IllegalArgumentException</code>
+</td>
+<td>
+</td>
+<td> credentials is null
+</td>
+<td> Username/password was not submitted.
+</td></tr>
+<tr>
+<td> <code>IllegalArgumentException</code>
+</td>
+<td>
+</td>
+<td> Invalid salt version
+</td>
+<td>&#160;???
+</td></tr>
+<tr>
+<td> <code>Unsupported Media Type</code>
+</td>
+<td>
+</td>
+<td> The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method
+</td>
+<td> Data was not submitted as application/json
+</td></tr></table>
+<h2><span class="mw-headline" id="Authenticate">Authenticate</span></h2>
+<p>Authenticates a user using their password.
+</p>
+<h3><span class="mw-headline" id="Endpoint">Endpoint</span></h3>
+<pre>/authenticate
+</pre>
+<h3><span class="mw-headline" id="Payload">Payload</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;agent&quot;</span><span class="o">:</span> <span class="p">{</span>                              <span class="c1">// defaults to Minecraft</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Minecraft&quot;</span><span class="p">,</span>                <span class="c1">// For Mojang&#39;s other game Scrolls, &quot;Scrolls&quot; should be used</span>
+        <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>                        <span class="c1">// This number might be increased</span>
+                                            <span class="c1">// by the vanilla client in the future</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;mojang account name&quot;</span><span class="p">,</span>      <span class="c1">// Can be an email address or player name for</span>
+                                            <span class="c1">// unmigrated accounts</span>
+    <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;mojang account password&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span><span class="p">,</span>     <span class="c1">// optional</span>
+    <span class="s2">&quot;requestUser&quot;</span><span class="o">:</span> <span class="kc">true</span>                     <span class="c1">// optional; default: false; true adds the user object to the response</span>
+<span class="p">}</span>
+</pre></div>
+<p>The <code>clientToken</code> should be a randomly generated identifier and must be identical for each request. The vanilla launcher generates a random (version 4) UUID on first run and saves it, reusing it for every subsequent request. In case it is omitted the server will generate a random token based on Java's <a rel="nofollow" class="external text" href="http://docs.oracle.com/javase/7/docs/api/java/util/UUID.html#toString()"><code>UUID.toString()</code></a> which should then be stored by the client. This will however also invalidate all previously acquired <code>accessToken</code>s for this user across all clients.
+</p>
+<h3><span class="mw-headline" id="Response">Response</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;random access token&quot;</span><span class="p">,</span>      <span class="c1">// hexadecimal</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span><span class="p">,</span>        <span class="c1">// identical to the one received</span>
+    <span class="s2">&quot;availableProfiles&quot;</span><span class="o">:</span> <span class="p">[</span>                     <span class="c1">// only present if the agent field was received</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;profile identifier&quot;</span><span class="p">,</span>        <span class="c1">// hexadecimal</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;player name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;legacy&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="nx">or</span> <span class="kc">false</span>            <span class="c1">// In practice, this field only appears in the response if true. Default to false.</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;selectedProfile&quot;</span><span class="o">:</span> <span class="p">{</span>                       <span class="c1">// only present if the agent field was received</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;uuid without dashes&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;player name&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;legacy&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="nx">or</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>                                  <span class="c1">// only present if requestUser was true in the request payload</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;user identifier&quot;</span><span class="p">,</span>               <span class="c1">// hexadecimal</span>
+        <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;preferredLanguage&quot;</span><span class="p">,</span>   <span class="c1">// might not be present for all accounts</span>
+                <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;en&quot;</span>                  <span class="c1">// Java locale format (https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html#toString--)</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;twitch_access_token&quot;</span><span class="p">,</span> <span class="c1">// only present if a twitch account is associated (see https://account.mojang.com/me/settings)</span>
+                <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;twitch oauth token&quot;</span>  <span class="c1">// OAuth 2.0 Token; alphanumerical; e.g. https://api.twitch.tv/kraken?oauth_token=[...]</span>
+                                               <span class="c1">// the Twitch API is documented here: https://github.com/justintv/Twitch-API</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><b>Note:</b> If a user wishes to stay logged in on their computer you are strongly advised to store the received <code>accessToken</code> instead of the password itself.
+</p><p>Currently each account will only have one single profile, multiple profiles per account are however planned in the future. If a user attempts to log into a valid Mojang account with no attached Minecraft license, the authentication will be successful, but the response will not contain a <code>selectedProfile</code> field, and the <code>availableProfiles</code> array will be empty.
+</p><p>Some instances in the wild have been observed of Mojang returning a flat <code>null</code> for failed refresh attempts against legacy accounts. It's not clear what the actual error tied to the null response is and it is extremely rare, but implementations should be wary of null output from the response.
+</p><p>This endpoint is severely rate-limited: multiple <code>/authenticate</code> requests for the same account in a short amount of time (think 3 requests in a few seconds), even with the correct password, will eventually lead to an <code>Invalid credentials.</code> response. This error clears up a few seconds later.
+</p>
+<h2><span class="mw-headline" id="Refresh">Refresh</span></h2>
+<p>Refreshes a valid <code>accessToken</code>. It can be used to keep a user logged in between gaming sessions and is preferred over storing the user's password in a file (see <a href="Lastlogin.html" title="Lastlogin">lastlogin</a>). 
+</p>
+<h3><span class="mw-headline" id="Endpoint_2">Endpoint</span></h3>
+<pre>/refresh
+</pre>
+<h3><span class="mw-headline" id="Payload_2">Payload</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;valid accessToken&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span><span class="p">,</span>  <span class="c1">// This needs to be identical to the one used</span>
+                                         <span class="c1">// to obtain the accessToken in the first place</span>
+    <span class="s2">&quot;selectedProfile&quot;</span><span class="o">:</span> <span class="p">{</span>                 <span class="c1">// optional; sending it will result in an error</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;profile identifier&quot;</span><span class="p">,</span>      <span class="c1">// hexadecimal</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;player name&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;requestUser&quot;</span><span class="o">:</span> <span class="kc">true</span>                  <span class="c1">// optional; default: false; true adds the user object to the response</span>
+<span class="p">}</span>
+</pre></div>
+<p>Note: The provided <code>accessToken</code> gets invalidated.
+</p>
+<h3><span class="mw-headline" id="Response_2">Response</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;random access token&quot;</span><span class="p">,</span>      <span class="c1">// hexadecimal</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span><span class="p">,</span>        <span class="c1">// identical to the one received</span>
+    <span class="s2">&quot;selectedProfile&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;profile identifier&quot;</span><span class="p">,</span>            <span class="c1">// hexadecimal</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;player name&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>                                  <span class="c1">// only present if requestUser was true in the request payload</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;user identifier&quot;</span><span class="p">,</span>               <span class="c1">// hexadecimal</span>
+        <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;preferredLanguage&quot;</span><span class="p">,</span>   <span class="c1">// might not be present for all accounts</span>
+                <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;en&quot;</span>                  <span class="c1">// ISO 639-1?</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;twitch_access_token&quot;</span><span class="p">,</span> <span class="c1">// only present if a twitch account is associated (see https://account.mojang.com/me/settings)</span>
+                <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;twitch oauth token&quot;</span>  <span class="c1">// OAuth 2.0 Token; alphanumerical; e.g. https://api.twitch.tv/kraken?oauth_token=[...]</span>
+                                               <span class="c1">// the Twitch API is documented here: https://github.com/justintv/Twitch-API</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Validate">Validate</span></h2>
+<p>Checks if an <code>accessToken</code> is usable for authentication with a Minecraft server. The Minecraft Launcher (as of version 1.6.13) calls this endpoint on startup to verify that its saved token is still usable, and calls <code>/refresh</code> if this returns an error.
+</p><p>Note that an <code>accessToken</code> may be unusable for authentication with a Minecraft server, but still be good enough for <code>/refresh</code>. This mainly happens when one has used another client (e.g. played Minecraft on another PC with the same account). It seems only the most recently obtained <code>accessToken</code> for a given account can reliably be used for authentication (the next-to-last token also seems to remain valid, but don't rely on it).
+</p><p><code>/validate</code> may be called with or without a <code>clientToken</code>. If a <code>clientToken</code> is provided, it should match the one used to obtain the <code>accessToken</code>. The Minecraft Launcher does send a <code>clientToken</code> to <code>/validate</code>.
+</p>
+<h3><span class="mw-headline" id="Endpoint_3">Endpoint</span></h3>
+<pre>/validate
+</pre>
+<h3><span class="mw-headline" id="Payload_3">Payload</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;valid accessToken&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;associated clientToken&quot;</span> <span class="c1">// optional, see above</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id="Response_3">Response</span></h3>
+<p>Returns an empty payload (<code>204 No Content</code>) if successful, an error JSON with status <code>403 Forbidden</code> otherwise.
+</p>
+<h2><span class="mw-headline" id="Signout">Signout</span></h2>
+<p>Invalidates <code>accessToken</code>s using an account's username and password.
+</p>
+<h3><span class="mw-headline" id="Endpoint_4">Endpoint</span></h3>
+<pre>/signout
+</pre>
+<h3><span class="mw-headline" id="Payload_4">Payload</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;mojang account name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;mojang account password&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id="Response_4">Response</span></h3>
+<p>Returns an empty payload if successful.
+</p>
+<h2><span class="mw-headline" id="Invalidate">Invalidate</span></h2>
+<p>Invalidates <code>accessToken</code>s using a client/access token pair.
+</p>
+<h3><span class="mw-headline" id="Endpoint_5">Endpoint</span></h3>
+<pre>/invalidate
+</pre>
+<h3><span class="mw-headline" id="Payload_5">Payload</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;valid accessToken&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientToken&quot;</span><span class="o">:</span> <span class="s2">&quot;client identifier&quot;</span>   <span class="c1">// This needs to be identical to the one used</span>
+                                         <span class="c1">// to obtain the accessToken in the first place</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id="Response_5">Response</span></h3>
+<p>Returns an empty payload if successful.
+</p>
+<h2><span class="mw-headline" id="Joining_a_Server">Joining a Server</span></h2>
+<p>See <a href="Protocol_Encryption.html#Authentication" title="Protocol Encryption">Protocol Encryption#Authentication</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823081759
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.052 seconds
+Real time usage: 0.069 seconds
+Preprocessor visited node count: 163/1000000
+Preprocessor generated node count: 256/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:6-0!*!0!!en!*!* and timestamp 20180823081759 and revision id 13558
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Authentication&amp;oldid=13558">http://wiki.vg/index.php?title=Authentication&amp;oldid=13558</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Protocol_Details.html" title="Category:Protocol Details">Protocol Details</a></li><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Authentication" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Authentication" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Authentication.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:Authentication.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Authentication.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Authentication.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Authentication&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Authentication&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Authentication.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Authentication" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Authentication" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Authentication&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Authentication&amp;oldid=13558" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Authentication&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 2 January 2018, at 18:46.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":142});});</script>
+	</body>
+</html>

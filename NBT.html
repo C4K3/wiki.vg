@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>NBT - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"NBT","wgTitle":"NBT","wgCurRevisionId":13877,"wgRevisionId":13877,"wgArticleId":50,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Protocol Details","Minecraft Modern","File Formats"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"NBT","wgRelevantArticleId":50,"wgRequestId":"9fefb7b60f604b25042f4150","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NBT rootpage-NBT skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">NBT</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="NBT.html#mw-head">navigation</a>, 					<a href="NBT.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The Named Binary Tag (NBT) file format is an extremely simple, albeit annoying (did we really need yet <i>another</i> format?)<sup>[See Discussion]</sup> structured binary format used by the <a rel="nofollow" class="external text" href="http://www.minecraft.net">Minecraft</a> game for a variety of things. Due to this, several third-party utilities now also utilize the format. You may find example files at the bottom of this article.
+</p><p>Mojang has also released a reference implementation along with their Anvil conversion tool, available from <a rel="nofollow" class="external free" href="https://mojang.com/2012/02/new-minecraft-map-format-anvil/">https://mojang.com/2012/02/new-minecraft-map-format-anvil/</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="NBT.html#Current_Uses"><span class="tocnumber">1</span> <span class="toctext">Current Uses</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="NBT.html#Libraries"><span class="tocnumber">1.1</span> <span class="toctext">Libraries</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="NBT.html#Utilities"><span class="tocnumber">1.2</span> <span class="toctext">Utilities</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="NBT.html#Specification"><span class="tocnumber">2</span> <span class="toctext">Specification</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="NBT.html#Examples"><span class="tocnumber">2.1</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="NBT.html#test.nbt"><span class="tocnumber">2.1.1</span> <span class="toctext">test.nbt</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="NBT.html#bigtest.nbt"><span class="tocnumber">2.1.2</span> <span class="toctext">bigtest.nbt</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="NBT.html#servers.dat"><span class="tocnumber">2.1.3</span> <span class="toctext">servers.dat</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="NBT.html#level.dat"><span class="tocnumber">2.1.4</span> <span class="toctext">level.dat</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="NBT.html#Download"><span class="tocnumber">2.1.5</span> <span class="toctext">Download</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Current_Uses">Current Uses</span></h2>
+<p>The NBT format is currently used in several places, chiefly:
+</p>
+<ul><li> In the <a href="Protocol.html" title="Protocol">Protocol</a> as part of <a href="Slot_Data.html" title="Slot Data">Slot Data</a></li>
+<li> Multiplayer saved server list (<code>servers.dat</code>).</li>
+<li> Player data (both single player and multiplayer, one file per player). This includes such things as inventory and location.</li>
+<li> Saved worlds (both single player and multiplayer).
+<ul><li> World index file (<code>level.dat</code>) that contains general information (spawn point, time of day, etc...)</li>
+<li> Chunk data (see <a href="Region_Files.html" title="Region Files">Region Files</a>)</li></ul></li></ul>
+<p>Unfortunately, the NBT files you can encounter as a developer will be stored in three different ways, just to make things interesting.
+</p>
+<ul><li> Uncompressed,</li>
+<li> <a href="http://en.wikipedia.org/wiki/Gzip" class="extiw" title="wikipedia:Gzip">gzip'd</a>,</li>
+<li> <a href="http://en.wikipedia.org/wiki/Zlib" class="extiw" title="wikipedia:Zlib">zlib'd</a> (aka DEFLATE with a few bytes extra)</li></ul>
+<h3><span class="mw-headline" id="Libraries">Libraries</span></h3>
+<p>There are many, many libraries for manipulating NBT, written in several languages, and often several per language. For example,
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/FliPPeh/cNBT">C</a>,</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/fragmer/fNbt">C#</a>, </li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Dav1dde/nbd">D</a>,</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/toqueteos/minero/tree/master/proto/nbt">Go</a>,</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/flow/nbt">Java</a>,</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/sjmulder/nbt-js">Javascript</a>, </li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/TheFrozenFire/PHP-NBT-Decoder-Encoder">PHP</a>,</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/twoolie/NBT">Python</a>,</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/mental/nbtfile">Ruby</a>,</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/PistonDevelopers/hematite_nbt">Rust</a>,</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/drXor/ScalaNBT">Scala</a>, </li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/camdenorrb/KNBTAPI">Kotlin (Work in progress)</a>, </li>
+<li> You get the idea…</li></ul>
+<p>Unless you have specific goals or licence requirements, it is <i>extremely recommended</i> to go with one of the existing libraries.
+</p>
+<h3><span class="mw-headline" id="Utilities">Utilities</span></h3>
+<p>Almost every 3rd-party Minecraft application uses NBT on some level. There also exist several dedicated NBT editors, which will likely be useful to you if you are developing an NBT library of your own. These include:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.minecraftforum.net/topic/6661-nbtedit/">NBTEdit</a> (C#, Mono-capable), one of the very first NBT editors.</li>
+<li> <a rel="nofollow" class="external text" href="http://gerritg.de/?p=152">NEINedit</a> (Obj-C), an OS X specific editor.</li>
+<li> <a rel="nofollow" class="external text" href="https://bitbucket.org/zzzeek/nbt2yaml">nbt2yaml</a> (Python), provides command-line editing of NBT via the YAML format, as well as a fast and minimalist NBT parsing/rendering API.</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/C4K3/nbted">nbted</a> (Rust), provides command-line editing of NBT files via your $EDITOR</li></ul>
+<h2><span class="mw-headline" id="Specification">Specification</span></h2>
+<p>The NBT file format is extremely simple, and writing a library capable of reading/writing it is a simple affair. There are 11 datatypes supported by this format, and one type used to close compound tags. It is strongly advised to read this entire section or you may run into issues.
+</p><p><br />
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Type ID
+</th>
+<th> Type Name
+</th>
+<th> Payload Size (Bytes)
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> TAG_End
+</td>
+<td> 0
+</td>
+<td> Signifies the end of a TAG_Compound. It is only ever used inside a TAG_Compound, and is not named despite being in a TAG_Compound
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> TAG_Byte
+</td>
+<td> 1
+</td>
+<td> A single signed byte
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> TAG_Short
+</td>
+<td> 2
+</td>
+<td> A single signed, big endian 16 bit integer
+</td></tr>
+<tr>
+<td> 3
+</td>
+<td> TAG_Int
+</td>
+<td> 4
+</td>
+<td> A single signed, big endian 32 bit integer
+</td></tr>
+<tr>
+<td> 4
+</td>
+<td> TAG_Long
+</td>
+<td> 8
+</td>
+<td> A single signed, big endian 64 bit integer
+</td></tr>
+<tr>
+<td> 5
+</td>
+<td> TAG_Float
+</td>
+<td> 4
+</td>
+<td> A single, big endian <a href="http://en.wikipedia.org/wiki/IEEE_754-2008" class="extiw" title="wikipedia:IEEE 754-2008">IEEE-754</a> single-precision floating point number
+</td></tr>
+<tr>
+<td> 6
+</td>
+<td> TAG_Double
+</td>
+<td> 8
+</td>
+<td> A single, big endian <a href="http://en.wikipedia.org/wiki/IEEE_754-2008" class="extiw" title="wikipedia:IEEE 754-2008">IEEE-754</a> double-precision floating point number
+</td></tr>
+<tr>
+<td> 7
+</td>
+<td> TAG_Byte_Array
+</td>
+<td> ...
+</td>
+<td> A length-prefixed array of <b>signed</b> bytes. The prefix is a <b>signed</b> integer (thus 4 bytes)
+</td></tr>
+<tr>
+<td> 8
+</td>
+<td> TAG_String
+</td>
+<td> ...
+</td>
+<td> A length-prefixed <a href="http://en.wikipedia.org/wiki/UTF-8" class="extiw" title="wikipedia:UTF-8">UTF-8</a> string. The prefix is an <b>unsigned</b> short (thus 2 bytes) signifying the length of the string in bytes
+</td></tr>
+<tr>
+<td> 9
+</td>
+<td> TAG_List
+</td>
+<td> ...
+</td>
+<td> A list of <b>nameless</b> tags, all of the same type. The list is prefixed with the <code>Type ID</code> of the items it contains (thus 1 byte), and the length of the list as a <b>signed</b> integer (a further 4 bytes).  If the length of the list is 0 or negative, the type may be 0 (TAG_End) but otherwise it must be any other type.  (The notchian implementation uses TAG_End in that situation, but another reference implementation by Mojang uses 1 instead; parsers should accept any type if the length is &lt;= 0).
+</td></tr>
+<tr>
+<td> 10
+</td>
+<td> TAG_Compound
+</td>
+<td> ...
+</td>
+<td> Effectively a list of a <b>named</b> tags. Order is not guaranteed.
+</td></tr>
+<tr>
+<td> 11
+</td>
+<td> TAG_Int_Array
+</td>
+<td> ...
+</td>
+<td> A length-prefixed array of <b>signed</b> integers. The prefix is a <b>signed</b> integer (thus 4 bytes) and indicates the number of 4 byte integers.
+</td></tr>
+<tr>
+<td> 12
+</td>
+<td> TAG_Long_Array
+</td>
+<td> ...
+</td>
+<td> A length-prefixed array of <b>signed</b> longs. The prefix is a <b>signed</b> integer (thus 4 bytes) and indicates the number of 8 byte longs.
+</td></tr></table>
+<p>There are a couple of simple things to remember:
+</p>
+<ul><li> The datatypes representing numbers are in big-endian in the PC version, but Pocket Version is in little-endian. Unless you're using Java, you will most likely have to swap it to little-endian. See <a href="http://en.wikipedia.org/wiki/Endianness" class="extiw" title="wikipedia:Endianness">the Wikipedia article on Endianness</a>.</li>
+<li> Every NBT file will <b>always</b> implicitly be inside a tag compound, and also begin with a TAG_Compound</li>
+<li> The structure of a NBT file is defined by the TAG_List and TAG_Compound types, as such a tag itself will only contain the payload, but depending on what the tag is contained within may contain additional headers. I.e. if it's inside a Compound, then each tag will begin with the TAG_id, and then a string (the tag's name), and finally the payload. While in a list it will be only the payload, as there is no name and the tag type is given in the beginning of the list.</li></ul>
+<p>For example, here's the example layout of a <code>TAG_Short</code> on disk:
+</p>
+<table class="wikitable">
+
+<tr>
+<td>
+</td>
+<th> Type ID
+</th>
+<th> Length of Name
+</th>
+<th> Name
+</th>
+<th> Payload
+</th></tr>
+<tr>
+<th> Decoded
+</th>
+<td> 2
+</td>
+<td> 9
+</td>
+<td> <code>shortTest</code>
+</td>
+<td> <code>32767</code>
+</td></tr>
+<tr>
+<th> On Disk (in hex)
+</th>
+<td> <code>02</code>
+</td>
+<td> <code>00 09</code>
+</td>
+<td> <code>73 68 6F 72 74 54 65 73 74</code>
+</td>
+<td> <code>7F FF</code>
+</td></tr></table>
+<p>If this <code>TAG_Short</code> had been in a <code>TAG_List</code>, it would have been nothing more than the payload, since the type is implied and tags within the first level of a list are nameless.
+</p>
+<h3><span class="mw-headline" id="Examples">Examples</span></h3>
+<p>There are two defacto example files used for testing your implementation (<code>test.nbt</code> &amp; <code>bigtest.nbt</code>), originally provided by Markus. The example output provided below was generated using <a rel="nofollow" class="external text" href="https://github.com/TkTech/PyNBT">PyNBT</a>'s <i>debug-nbt</i> tool.
+</p>
+<h4><span class="mw-headline" id="test.nbt">test.nbt</span></h4>
+<p>This first example is an uncompressed <a href="http://en.wikipedia.org/wiki/Hello_world_program" class="extiw" title="wikipedia:Hello world program">"Hello World"</a> NBT example. Should you parse it correctly, you will get a structure similar to the following:
+</p>
+<pre>
+  TAG_Compound('hello world'): 1 entry
+  {
+    TAG_String('name'): 'Bananrama'
+  }
+</pre>
+<p>Here is the example explained:
+</p>
+<table class="wikitable">
+
+<tr>
+<td> (The entire thing is implicitly inside a compound)
+</td>
+<th> Type ID (first element in the implicit compound)
+</th>
+<th> Length of name of the root compound
+</th>
+<th> Name of the root compound
+</th>
+<th> Type ID of first element in root compound
+</th>
+<th> Length of name of first element in root
+</th>
+<th> Name of first element
+</th>
+<th> Length of string
+</th>
+<th> String
+</th>
+<th> Tag end (of root compound)
+</th></tr>
+<tr>
+<th> Decoded
+</th>
+<td> Compound
+</td>
+<td> 11
+</td>
+<td> <i>hello world</i>
+</td>
+<td> String
+</td>
+<td> 4
+</td>
+<td> <i>name</i>
+</td>
+<td> 9
+</td>
+<td> <i>Bananrama</i>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> On Disk (in hex)
+</th>
+<td> <code>0a</code>
+</td>
+<td> <code>00 0b</code>
+</td>
+<td> <code>68 65 6c 6c 6f 20 77 6f 72 6c 64</code>
+</td>
+<td> <code>08</code>
+</td>
+<td> <code>00 04</code>
+</td>
+<td> <code>6e 61 6d 65</code>
+</td>
+<td> <code>00 09</code>
+</td>
+<td> <code>42 61 6e 61 6e 72 61 6d 61</code>
+</td>
+<td> <code>00</code>
+</td></tr></table>
+<h4><span class="mw-headline" id="bigtest.nbt">bigtest.nbt</span></h4>
+<p>This second example is a gzip compressed test of every available tag. If your program can successfully parse this file, then you've done well. Note that the tags under <i>TAG_List</i> do not have a name, as mentioned above. 
+</p>
+<pre>
+  TAG_Compound('Level'): 11 entries
+  {
+    TAG_Compound('nested compound test'): 2 entries
+    {
+      TAG_Compound('egg'): 2 entries
+      {
+        TAG_String('name'): 'Eggbert'
+        TAG_Float('value'): 0.5
+      }
+      TAG_Compound('ham'): 2 entries
+      {
+        TAG_String('name'): 'Hampus'
+        TAG_Float('value'): 0.75
+      }
+    }
+    TAG_Int('intTest'): 2147483647
+    TAG_Byte('byteTest'): 127
+    TAG_String('stringTest'): 'HELLO WORLD THIS IS A TEST STRING \xc3\x85\xc3\x84\xc3\x96!'
+    TAG_List('listTest (long)'): 5 entries
+    {
+      TAG_Long(None): 11
+      TAG_Long(None): 12
+      TAG_Long(None): 13
+      TAG_Long(None): 14
+      TAG_Long(None): 15
+    }
+    TAG_Double('doubleTest'): 0.49312871321823148
+    TAG_Float('floatTest'): 0.49823147058486938
+    TAG_Long('longTest'): 9223372036854775807L
+    TAG_List('listTest (compound)'): 2 entries
+    {
+      TAG_Compound(None): 2 entries
+      {
+        TAG_Long('created-on'): 1264099775885L
+        TAG_String('name'): 'Compound tag #0'
+      }
+      TAG_Compound(None): 2 entries
+      {
+        TAG_Long('created-on'): 1264099775885L
+        TAG_String('name'): 'Compound tag #1'
+      }
+    }
+    TAG_Byte_Array('byteArrayTest (the first 1000 values of (n*n*255+n*7)%100, starting with n=0 (0, 62, 34, 16, 8, ...))'): [1000 bytes]
+    TAG_Short('shortTest'): 32767
+  }
+</pre>
+<h4><span class="mw-headline" id="servers.dat">servers.dat</span></h4>
+<p>The <i>servers.dat</i> file contains a list of multiplayer servers you've added to the game. To mix things up a bit, this file will always be uncompressed. Below is an example of the structure seen in <i>servers.dat</i>.
+</p>
+<pre>
+  TAG_Compound(''): 1 entry
+  {
+    TAG_List('servers'): 2 entries
+    {
+      TAG_Compound(None): 3 entries
+      {
+        TAG_Byte('acceptTextures'): 1 (Automatically accept resourcepacks from this server)
+        TAG_String('ip'): '199.167.132.229:25620'
+        TAG_String('name'): 'Dainz1 - Creative'
+        
+      }
+      TAG_Compound(None): 3 entries
+      {
+        TAG_String('icon'): 'iVBORw0KGgoAAAANUhEUgAAAEAAAABACA...' (The base64-encoded server icon. Trimmed here for the example's sake)
+        TAG_String('ip'): '76.127.122.65:25565'
+        TAG_String('name'): 'minstarmin4'
+        
+      }
+    }
+  }
+</pre>
+<h4><span class="mw-headline" id="level.dat">level.dat</span></h4>
+<p>This final example is of a single player <i>level.dat</i>, which is compressed using gzip. Notice the player's inventory and general world details such as spawn position, world name, and the game seed.
+</p>
+<pre>
+  TAG_Compound(''): 1 entry
+  {
+    TAG_Compound('Data'): 17 entries
+    {
+      TAG_Byte('raining'): 0
+      TAG_Long('RandomSeed'): 3142388825013346304L
+      TAG_Int('SpawnX'): 0
+      TAG_Int('SpawnZ'): 0
+      TAG_Long('LastPlayed'): 1323133681772L
+      TAG_Int('GameType'): 1
+      TAG_Int('SpawnY'): 63
+      TAG_Byte('MapFeatures'): 1
+      TAG_Compound('Player'): 24 entries
+      {
+        TAG_Int('XpTotal'): 0
+        TAG_Compound('abilities'): 4 entries
+        {
+          TAG_Byte('instabuild'): 1
+          TAG_Byte('flying'): 1
+          TAG_Byte('mayfly'): 1
+          TAG_Byte('invulnerable'): 1
+        }
+        TAG_Int('XpLevel'): 0
+        TAG_Int('Score'): 0
+        TAG_Short('Health'): 20
+        TAG_List('Inventory'): 13 entries
+        {
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 0
+            TAG_Short('id'): 24
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 1
+            TAG_Short('id'): 25
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 2
+            TAG_Short('id'): 326
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 3
+            TAG_Short('id'): 29
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 10
+            TAG_Byte('Slot'): 4
+            TAG_Short('id'): 69
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 3
+            TAG_Byte('Slot'): 5
+            TAG_Short('id'): 33
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 43
+            TAG_Byte('Slot'): 6
+            TAG_Short('id'): 356
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 64
+            TAG_Byte('Slot'): 7
+            TAG_Short('id'): 331
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 20
+            TAG_Byte('Slot'): 8
+            TAG_Short('id'): 76
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 64
+            TAG_Byte('Slot'): 9
+            TAG_Short('id'): 331
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 10
+            TAG_Short('id'): 323
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 16
+            TAG_Byte('Slot'): 11
+            TAG_Short('id'): 331
+            TAG_Short('Damage'): 0
+          }
+          TAG_Compound(None): 4 entries
+          {
+            TAG_Byte('Count'): 1
+            TAG_Byte('Slot'): 12
+            TAG_Short('id'): 110
+            TAG_Short('Damage'): 0
+          }
+        }
+        TAG_Short('HurtTime'): 0
+        TAG_Short('Fire'): -20
+        TAG_Float('foodExhaustionLevel'): 0.0
+        TAG_Float('foodSaturationLevel'): 5.0
+        TAG_Int('foodTickTimer'): 0
+        TAG_Short('SleepTimer'): 0
+        TAG_Short('DeathTime'): 0
+        TAG_List('Rotation'): 2 entries
+        {
+          TAG_Float(None): 1151.9342041015625
+          TAG_Float(None): 32.249679565429688
+        }
+        TAG_Float('XpP'): 0.0
+        TAG_Float('FallDistance'): 0.0
+        TAG_Short('Air'): 300
+        TAG_List('Motion'): 3 entries
+        {
+          TAG_Double(None): -2.9778325794951344e-11
+          TAG_Double(None): -0.078400001525878907
+          TAG_Double(None): 1.1763942772801152e-11
+        }
+        TAG_Int('Dimension'): 0
+        TAG_Byte('OnGround'): 1
+        TAG_List('Pos'): 3 entries
+        {
+          TAG_Double(None): 256.87499499518492
+          TAG_Double(None): 112.62000000476837
+          TAG_Double(None): -34.578128612797634
+        }
+        TAG_Byte('Sleeping'): 0
+        TAG_Short('AttackTime'): 0
+        TAG_Int('foodLevel'): 20
+      }
+      TAG_Int('thunderTime'): 2724
+      TAG_Int('version'): 19132
+      TAG_Int('rainTime'): 5476
+      TAG_Long('Time'): 128763
+      TAG_Byte('thundering'): 1
+      TAG_Byte('hardcore'): 0
+      TAG_Long('SizeOnDisk'): 0
+      TAG_String('LevelName'): 'Sandstone Test World'
+    }
+  }
+</pre>
+<h4><span class="mw-headline" id="Download">Download</span></h4>
+<ul><li> <a rel="nofollow" class="external text" href="https://raw.github.com/Dav1dde/nbd/master/test/hello_world.nbt">test.nbt/hello_world.nbt</a> (uncompressed),</li>
+<li> <a rel="nofollow" class="external text" href="https://raw.github.com/Dav1dde/nbd/master/test/bigtest.nbt">bigtest.nbt</a> (gzip compressed)</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20180823122756
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.050 seconds
+Real time usage: 0.104 seconds
+Preprocessor visited node count: 75/1000000
+Preprocessor generated node count: 124/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:50-0!*!0!!en!*!* and timestamp 20180823122756 and revision id 13877
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=NBT&amp;oldid=13877">http://wiki.vg/index.php?title=NBT&amp;oldid=13877</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.vg/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Protocol_Details.html" title="Category:Protocol Details">Protocol Details</a></li><li><a href="./Category:Minecraft_Modern.html" title="Category:Minecraft Modern">Minecraft Modern</a></li><li><a href="https://wiki.vg/index.php?title=Category:File_Formats&amp;action=edit&amp;redlink=1" class="new" title="Category:File Formats (page does not exist)">File Formats</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=NBT" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=NBT" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="NBT.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="./Talk:NBT.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="NBT.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="NBT.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=NBT&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=NBT&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="NBT.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/NBT" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/NBT" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=NBT&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=NBT&amp;oldid=13877" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=NBT&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 29 April 2018, at 03:01.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":602});});</script>
+	</body>
+</html>

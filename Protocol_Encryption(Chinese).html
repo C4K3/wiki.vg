@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Protocol Encryption(Chinese) - wiki.vg</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Protocol_Encryption(Chinese)","wgTitle":"Protocol Encryption(Chinese)","wgCurRevisionId":13277,"wgRevisionId":13277,"wgArticleId":5555,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Protocol_Encryption(Chinese)","wgRelevantArticleId":5555,"wgRequestId":"845aa2ab9e149d0c57db6832","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@12oj1re",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="https://wiki.vg/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="https://wiki.vg/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.vg/opensearch_desc.php" title="wiki.vg (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.vg/api.php?action=rsd"/>
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="wiki.vg Atom feed" href="https://wiki.vg/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Protocol_Encryption_Chinese rootpage-Protocol_Encryption_Chinese skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Protocol Encryption(Chinese)</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From wiki.vg</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Protocol_Encryption(Chinese).html#mw-head">navigation</a>, 					<a href="Protocol_Encryption(Chinese).html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>(It is being translated into Chinese)
+</p><p>As of 12w17a, Minecraft implements SSL-like encryption.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Protocol_Encryption(Chinese).html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Protocol_Encryption(Chinese).html#Server_ID_String"><span class="tocnumber">2</span> <span class="toctext">Server ID String</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Protocol_Encryption(Chinese).html#Key_Exchange"><span class="tocnumber">3</span> <span class="toctext">Key Exchange</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Protocol_Encryption(Chinese).html#Symmetric_Encryption"><span class="tocnumber">4</span> <span class="toctext">Symmetric Encryption</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Protocol_Encryption(Chinese).html#Authentication"><span class="tocnumber">5</span> <span class="toctext">Authentication</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="Protocol_Encryption(Chinese).html#Client"><span class="tocnumber">5.1</span> <span class="toctext">Client</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Protocol_Encryption(Chinese).html#Server"><span class="tocnumber">5.2</span> <span class="toctext">Server</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Protocol_Encryption(Chinese).html#Sample_Code"><span class="tocnumber">5.3</span> <span class="toctext">Sample Code</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="Protocol_Encryption(Chinese).html#Additional_Links"><span class="tocnumber">6</span> <span class="toctext">Additional Links</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<pre>  C-&gt;S&#160;: Handshake State=2
+  C-&gt;S&#160;: Login Start
+  S-&gt;C&#160;: Encryption Key Request
+  (Client Auth)
+  C-&gt;S&#160;: Encryption Key Response
+  (Server Auth, Both enable encryption)
+  S-&gt;C&#160;: Login Success
+</pre>
+<ol><li>see <a href="Protocol_FAQ.html" title="Protocol FAQ">Protocol FAQ</a> to get information about what happens next.</li></ol>
+<h2><span class="mw-headline" id="Server_ID_String">Server ID String</span></h2>
+<p><b>Update (1.7.x):</b> The server ID is now sent as an empty string. Hashes also utilize the public key, so they will still be correct.
+</p><p><b>Pre-1.7.x:</b>
+The server ID string is a randomly-generated string of characters with a maximum length of 20 code points (the client disconnects with an exception if the length is longer than 20).
+</p><p>The client appears to arrive at incorrect hashes if the server ID string contains certain unprintable characters, so for consistent results only characters with code points in the range U+0021-U+007E (inclusive) should be sent.  This range corresponds to all of ASCII with the exception of the space character (U+0020) and all control characters (U+0000-U+001F, U+007F).
+</p><p>The client appears to arrive at incorrect hashes if the server ID string is too short.  15 to 20 (inclusive) length strings have been observed from the Notchian server and confirmed to work as of 1.5.2.
+</p>
+<h2><span class="mw-headline" id="Key_Exchange">Key Exchange</span></h2>
+<p>The server generates a 1024-bit RSA keypair on startup. The public key is sent in the Encryption Request packet in DER encoding format. More technically, it is in ASN.1 format as defined by x.509 with the structure looking as follows.
+</p>
+<pre>SubjectPublicKeyInfo&#160;::= SEQUENCE {
+  algorithm SEQUENCE {
+    algorithm         OBJECT IDENTIFIER
+    parameters        ANY OPTIONAL
+  }
+  subjectPublicKey  BITSTRING
+}
+
+SubjectPublicKey&#160;::= SEQUENCE {
+  modulus           INTEGER
+  publicExponent    INTEGER
+}
+</pre>
+<p>If you're struggling to import this using a crypto library. Try to find a function that loads a DER encoded public key. If you can't find one, you can convert it to the more common PEM encoding by base64-encoding the raw bytes and wrapping the base64 text in '-----BEGIN PUBLIC KEY-----' and '-----END PUBLIC KEY-----'. See this example of a PEM encoded key: <a rel="nofollow" class="external free" href="https://git.io/v7Ol9">https://git.io/v7Ol9</a>
+</p>
+<h2><span class="mw-headline" id="Symmetric_Encryption">Symmetric Encryption</span></h2>
+<p>On receipt of a Encryption Request from the server, the client will generate a random 16-byte shared secret, to be used with the AES/CFB8 stream cipher. It then encrypts it with the server's public key (PKCS#1 v1.5 padded), and also encrypts the verify token received in the Encryption Request packet in the same way, then sends both to the server in a Encryption Response packet. Both byte arrays in the Encryption Response packet will be 128 bytes long because of the padding. This is the only time the client uses the server's public key.
+</p><p>The server decrypts the shared secret and token using its private key, and checks if the token is the same. It then sends a Login Success, and enables AES/CFB8 encryption. For the Initial Vector (IV) and AES setup, both sides use the shared secret key. Similarly, the client will also enable encryption upon sending Encryption Response. From this point forward, everything is encrypted.
+</p><p>The Login Success packet is sent encrypted.
+</p><p><a href="./File:Icon_exclaim.gif.html" class="image" title=":!:"><img alt=":!:" src="images/0/05/Icon_exclaim.gif" width="15" height="15" /></a> Note that the AES cipher is updated continuously, not finished and restarted every packet.
+</p>
+<h2><span class="mw-headline" id="Authentication">Authentication</span></h2>
+<p>Both server and client need to make a request to sessionserver.mojang.com if the server is in online-mode.
+</p>
+<h3><span class="mw-headline" id="Client">Client</span></h3>
+<p>After generating the shared secret, the client generates the following hash:
+</p>
+<pre>sha1&#160;:= Sha1()
+sha1.update(ASCII encoding of the server id string from Encryption Request) 
+sha1.update(shared secret) 
+sha1.update(server's encoded public key from Encryption Request) 
+hash&#160;:= sha1.hexdigest()  # String of hex characters
+</pre>
+<p><a href="./File:Icon_exclaim.gif.html" class="image" title=":!:"><img alt=":!:" src="images/0/05/Icon_exclaim.gif" width="15" height="15" /></a> Note that the Sha1.hexdigest() method used by minecraft is non standard. It doesn't match the digest method found in most programming languages and libraries. It works by treating the sha1 output bytes as one large integer in two's complement and then printing the integer in base 16, placing a minus sign if the interpreted number is negative. Some examples of the minecraft digest are found below:
+</p>
+<pre>sha1(Notch)&#160;:  4ed1f46bbe04bc756bcb17c0c7ce3e4632f06a48
+sha1(jeb_) &#160;: -7c9d5b0044c130109a5d7b5fb5c317c02b4e28c1
+sha1(simon)&#160;:  88e16a1019277b15d58faf0541e11910eb756f6
+</pre>
+<p>The resulting hash is then sent via an HTTP POST request to
+</p>
+<pre>https://sessionserver.mojang.com/session/minecraft/join
+</pre>
+<p>With the following sent as post data, Content-Type: application/json
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  <span class="p">{</span>
+    <span class="s2">&quot;accessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;accessToken&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;selectedProfile&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;player&#39;s uuid without dashes&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;serverId&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;serverHash&gt;&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+<p>The fields &lt;accessToken&gt; and the player's uuid were received by the client during <a href="Authentication.html#Authenticate" title="Authentication">authentication</a>.
+</p><p>If everything goes well, the client will receive a "HTTP/1.1 204 No Content" response.
+</p>
+<h3><span class="mw-headline" id="Server">Server</span></h3>
+<p>After decrypting the shared secret in the second Encryption Response, the server generates the login hash as above and sends a HTTP GET to
+</p>
+<pre>https://sessionserver.mojang.com/session/minecraft/hasJoined?username=<i>username</i>&amp;serverId=<i>hash</i>&amp;ip=<i>ip</i>
+</pre>
+<p>The username is case insensitive and must match the client's username (which was received in the Login Start packet). Note that this is the in-game nickname of the selected profile, not the Mojang account name (which is never sent to the server).
+Servers should use the name sent in the "name" field.
+</p><p>The response is a JSON object containing the user's UUID and skin blob
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;profile identifier&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;player name&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">[</span> 
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;textures&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;base64 string&gt;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;signature&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;base64 string; signed data using Yggdrasil&#39;s private key&gt;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<p>The "id" and "name" fields are then sent back to the client using a Login Success packet. The profile id in the json response has format
+"11111111222233334444555555555555" which needs to be changed into format "11111111-2222-3333-4444-555555555555" before sending it back to the client.
+</p>
+<h3><span class="mw-headline" id="Sample_Code">Sample Code</span></h3>
+<p>Examples of generating Minecraft-style hex digests:
+</p>
+<ul><li> C#: <a rel="nofollow" class="external free" href="http://git.io/kO6Ejg">http://git.io/kO6Ejg</a></li>
+<li> node.js: <a rel="nofollow" class="external free" href="http://git.io/v2ue_A">http://git.io/v2ue_A</a></li>
+<li> Go: <a rel="nofollow" class="external free" href="http://git.io/-5ORag">http://git.io/-5ORag</a></li>
+<li> Java: <a rel="nofollow" class="external free" href="http://git.io/vzbmS">http://git.io/vzbmS</a></li>
+<li> Python: <a rel="nofollow" class="external free" href="https://git.io/vQFUL">https://git.io/vQFUL</a></li></ul>
+<h2><span class="mw-headline" id="Additional_Links">Additional Links</span></h2>
+<p><a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb648640(v=vs.85).aspx">DER Encoding of ASN.1 Types</a>
+</p><p><a rel="nofollow" class="external text" href="http://luca.ntop.org/Teaching/Appunti/asn1.html">A Layman's Guide to a Subset of ASN.1, BER, and DER</a>
+</p><p>[<a rel="nofollow" class="external free" href="https://gist.github.com/Lazersmoke/9947ada8acdd74a8b2e37d77c">https://gist.github.com/Lazersmoke/9947ada8acdd74a8b2e37d77c</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180823152923
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.051 seconds
+Real time usage: 0.095 seconds
+Preprocessor visited node count: 71/1000000
+Preprocessor generated node count: 120/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:5555-0!*!0!!en!5!* and timestamp 20180823152922 and revision id 13277
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://wiki.vg/index.php?title=Protocol_Encryption(Chinese)&amp;oldid=13277">http://wiki.vg/index.php?title=Protocol_Encryption(Chinese)&amp;oldid=13277</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="https://wiki.vg/index.php?title=Special:CreateAccount&amp;returnto=Protocol+Encryption%28Chinese%29" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.vg/index.php?title=Special:UserLogin&amp;returnto=Protocol+Encryption%28Chinese%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Protocol_Encryption(Chinese).html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.vg/index.php?title=Talk:Protocol_Encryption(Chinese)&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Protocol_Encryption(Chinese).html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Protocol_Encryption(Chinese).html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.vg/index.php?title=Protocol_Encryption(Chinese)&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.vg/index.php?title=Protocol_Encryption(Chinese)&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Protocol_Encryption(Chinese).html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.vg/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search wiki.vg" title="Search wiki.vg [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="https://wiki.vg/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.vg/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.vg/Special:WhatLinksHere/Protocol_Encryption(Chinese)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.vg/Special:RecentChangesLinked/Protocol_Encryption(Chinese)" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.vg/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.vg/index.php?title=Protocol_Encryption(Chinese)&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.vg/index.php?title=Protocol_Encryption(Chinese)&amp;oldid=13277" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.vg/index.php?title=Protocol_Encryption(Chinese)&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 3 August 2017, at 18:40.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share Alike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="./wikivg:Privacy_policy.html" title="wikivg:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="./wikivg:About.html" title="wikivg:About">About wiki.vg</a></li>
+											<li id="footer-places-disclaimer"><a href="./wikivg:General_disclaimer.html" title="wikivg:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution Share Alike" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-11145163-13");
+pageTracker._trackPageview();
+</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":223});});</script>
+	</body>
+</html>
